@@ -1,0 +1,103 @@
+Option Compare Database
+Option Explicit
+Sub RebuildAvesisTable()
+
+    On Error GoTo RebuildAvesisTable_Err
+   
+    Dim strSQL As String
+    
+    strSQL = "Truncate Table Avesis"
+    
+    ExecuteSQL (strSQL)
+    
+    DoCmd.OpenQuery "qappAvesis_Primary"
+    DoCmd.OpenQuery "qappAvesis_Bexar"
+    DoCmd.OpenQuery "qappAvesis_Individual"
+        
+    Call CreateSuffixes
+    
+RebuildAvesisTable_Exit:
+    Exit Sub
+    
+RebuildAvesisTable_Err:
+    MsgBox Error$
+    Resume RebuildAvesisTable_Exit
+    
+End Sub
+Sub CreateSuffixes()
+    
+    ' Purpose:  Assigns suffixes to the Avesis file
+    ' --------------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  03/30/08
+    ' Update Date:  03/30/08
+    ' Updated by:  John Criswell
+    ' Reason:
+    ' ---------------------------------------------------------
+        
+    On Error GoTo ErrorHandler
+        
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim rs_Members As DAO.Recordset
+    Dim strSQL As String
+    Dim strSQL_Members As String
+    Dim strMemNbr As String
+    Dim strMemNbr2 As String
+    Dim strSuffix As String
+    Dim intSuffix As Integer
+    Dim lngRcdCnt As Long
+    Dim I As Long
+    
+    I = 1
+    
+    Set db = CurrentDb()
+    strSQL = "SELECT Avesis.Record_Type, Avesis.Member_Number, " & _
+             "Avesis.ID_Suffix, Avesis.Coverage_Code " & _
+             "FROM Avesis " & _
+             "WHERE ((Avesis.Coverage_Code) In ('DEP','FAM'));"
+             
+    Set rs = db.OpenRecordset(strSQL, dbOpenDynaset)
+    
+    rs.MoveLast
+    lngRcdCnt = rs.RecordCount
+    rs.MoveFirst
+       
+    Do Until I = lngRcdCnt
+    
+       strMemNbr = rs.Fields("Member_Number")
+       strMemNbr2 = strMemNbr
+       
+       intSuffix = 1
+        
+       Do Until strMemNbr <> strMemNbr2
+       
+       
+            If I = lngRcdCnt Then
+                'no data
+                Exit Do
+            Else
+                I = I + 1
+                rs.Edit
+                rs.Fields("ID_Suffix") = Format(intSuffix, "00")
+                rs.Update
+                rs.MoveNext
+                intSuffix = intSuffix + 1
+                strMemNbr2 = rs.Fields("Member_Number")
+            End If
+       Loop
+    Loop
+    
+    rs.Close
+    Set rs = Nothing
+    db.Close
+    Set db = Nothing
+        
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub

@@ -1,0 +1,109 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment"
+End
+Begin OutputColumns
+    Alias ="NameSort"
+    Expression ="([SubLastName]) & ([SubFirstName]) & ([SubMiddleName])"
+    Alias ="SSN"
+    Expression ="IIf(IsNull([SUBssn]) Or [SUBssn]=\"\",\"____-___-_____ Please Enter SSN\",Left(["
+        "SUBssn],3) & \"-\" & Mid([SUBssn],4,2) & \"-\" & Right([SUBssn],4) & \"  (Please"
+        " Confirm)\")"
+    Alias ="SubName"
+    Expression ="Trim([SubFirstName]) & IIf(IsNull([SubMiddleName]),\"\",([SubMiddleName])) & \" "
+        "\" & ([SubLastName])"
+    Alias ="SubAddr"
+    Expression ="Trim([Substreet1]) & \"  \" & IIf(IsNull([SubStreet2]),\"\",([SubStreet2])) & \""
+        " \" & ([SubCity]) & \",  \" & ([SubState]) & \"  \" & ([SubZip])"
+    Expression ="tblEnrollment.SUBssn"
+    Expression ="tblEnrollment.SUBlastNAME"
+    Expression ="tblEnrollment.SUBfirstNAME"
+    Expression ="tblEnrollment.SUBmiddleNAME"
+    Alias ="DOB"
+    Expression ="IIf(IsNull([SUBdob]) Or [SUBdob]=\"\",\"___/___/____\",Left([SUBdob],2) & \"/\" "
+        "& Mid([SUBdob],3,2) & \"/\" & Right([SUBdob],4))"
+    Expression ="tblEnrollment.SUBstreet1"
+    Expression ="tblEnrollment.SUBstreet2"
+    Expression ="tblEnrollment.SUBcity"
+    Expression ="tblEnrollment.SUBzip"
+    Expression ="tblEnrollment.SUBstate"
+    Alias ="Phone"
+    Expression ="IIf(IsNull([SUBphoneHOME]) Or [SUBphoneHOME]=\"\",\"(___) ___-____ Please enter "
+        "Phone Number\",\"(\" & Left([SUBphoneHOME],3) & \") \" & Mid([SUBphoneHOME],4,3)"
+        " & \"-\" & Right([SUBphoneHOME],4))"
+    Expression ="tblEnrollment.Campus"
+    Expression ="tblEnrollment.SUBeffDATE"
+    Expression ="tblEnrollment.Enrolled"
+    Alias ="GRName"
+    Expression ="[Forms]![frmImportDataDownload]![txtGroupName]"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
+        "loyee at No Monthly Charge.\""
+    Expression ="tblEnrollment.Indv"
+    Expression ="tblEnrollment.Indv1"
+    Expression ="tblEnrollment.Fam"
+End
+Begin OrderBy
+    Expression ="([SubLastName]) & ([SubFirstName]) & ([SubMiddleName])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="2610"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="2820"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="4500"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SSN"
+        dbInteger "ColumnWidth" ="2844"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Phone"
+        dbInteger "ColumnWidth" ="3996"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =35
+    Top =113
+    Right =978
+    Bottom =629
+    Left =-1
+    Top =-1
+    Right =936
+    Bottom =163
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =74
+        Top =3
+        Right =257
+        Bottom =135
+        Top =15
+        Name ="tblEnrollment"
+        Name =""
+    End
+End

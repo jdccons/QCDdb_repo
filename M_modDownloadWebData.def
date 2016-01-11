@@ -1,0 +1,286 @@
+Option Compare Database
+Option Explicit
+
+Dim R As Long, C As Long
+Dim rsArray As Variant
+'Dim nc As Long, nr As Long
+
+Dim R2 As Long, c2 As Long
+Dim nc2 As Long, nr2 As Long
+
+Dim g_adoConn As New ADODB.Connection
+Dim g_adoCommand As New ADODB.Command
+Dim db As DAO.Database
+Dim rst As DAO.Recordset
+
+Dim strSQL As String
+Dim strSQL3 As String
+
+Dim sTS() As Variant
+
+Public Function SetConnxn_Tracent()
+
+    SetConnxn_Tracent = "Provider=sqloledb;Data Source=tweb3.tracent.net,1833; " & _
+        "Initial Catalog=QCD;User ID=QCD;Password=Winter2012;"
+        
+End Function
+
+
+Public Function GetTracentRecords(intOp As Integer) As Integer
+Dim intRec As Integer
+
+    Select Case intOp
+    Case 1 ' Get the Group Updates
+        ' We need to process BOTH
+        ' Get the Individual Subscribers
+        ' Get the Individual Subscribers - Dependents
+        strSQL = "SELECT SSN, EIMBRID, SubscriberID, GroupID, PlanID, CoverID, LastName, FirstName, MiddleInitial, Street1, Street2, City, State, Zip, PhoneWork, PhoneHome, Email, DOB, NoDependents, Gender, Age, EffectiveDate, PreexistingDate, EmploymentDate, EmploymentStatus, Occupation_Title, MaritalStatus, CardPrinted, CardPrintedDate, MembershipStatus, DateCreated, DateChanged, DateDeleted, Download, DownloadDate, wSubID " & _
+                "FROM dbo.vwGrpSub WHERE Download = 'Yes' AND MembershipStatus IN ('Added','Changed', 'Deleted')"
+        intRec = LoadTbl_array(strSQL, 1, 1) ' Subscribers
+        If intRec > 0 Then
+        GetTracentRecords = 0
+        strSQL = "SELECT vD.SubSSN, vD.DepSSN, vD.EIMBRID, vD.FirstName, vD.MiddleInitial, vD.LastName, vD.DOB, vD.Age, vD.Relationship, vD.Gender, vD.EffDate, vD.PreexistingDate " & _
+                "FROM dbo.vwDepDwnGrp as vD INNER JOIN vwGrpSub as vS ON vS.SSN = vD.SubSSN " & _
+                "WHERE vS.Download = 'Yes' AND vS.MembershipStatus IN ('Added','Changed', 'Deleted')"
+        Call LoadTbl_array(strSQL, 2, 1) ' Dependents
+        Else
+            GetTracentRecords = 1
+            Exit Function
+        End If
+    Case 2 ' Get the Group Adds
+        strSQL = "SELECT SSN, EIMBRID, SubscriberID, GroupID, PlanID, CoverID, LastName, FirstName, MiddleInitial, Street1, Street2, City, State, Zip, PhoneWork, PhoneHome, Email, DOB, NoDependents, Gender, Age, EffectiveDate, PreexistingDate, EmploymentDate, EmploymentStatus, Occupation_Title, MaritalStatus, CardPrinted, CardPrintedDate, MembershipStatus, DateCreated, DateChanged, DateDeleted, Download, DownloadDate, wSubID " & _
+                "FROM dbo.vwGrpSub WHERE Download = 'Yes' AND MembershipStatus IN ('Added','Changed', 'Deleted')"
+        intRec = LoadTbl_array(strSQL, 1, 2) ' Subscribers
+        If intRec > 0 Then
+        GetTracentRecords = 0
+        strSQL = "SELECT vD.SubSSN, vD.DepSSN, vD.EIMBRID, vD.FirstName, vD.MiddleInitial, vD.LastName, vD.DOB, vD.Age, vD.Relationship, vD.Gender, vD.EffDate, vD.PreexistingDate " & _
+                "FROM dbo.vwDepDwnGrp as vD INNER JOIN vwGrpSub as vS ON vS.SSN = vD.SubSSN " & _
+                "WHERE vS.Download = 'Yes' AND vS.MembershipStatus IN ('Added','Changed', 'Deleted')"
+        Call LoadTbl_array(strSQL, 2, 2) ' Dependents
+        Else
+            GetTracentRecords = 1
+            Exit Function
+        End If
+    Case 3 ' Get the Individual Updates
+        strSQL = "SELECT SSN, EIMBRID, SubscriberID, GroupID, PlanID, CoverID, LastName, FirstName, MiddleInitial, Street1, Street2, City, State, Zip, PhoneWork, PhoneHome, Email, DOB, NoDependents, Gender, Age, EffectiveDate, PreexistingDate, SubExpDate, EmploymentStatus, Occupation_Title, MaritalStatus, CardPrinted, CardPrintedDate, MembershipStatus, DateCreated, DateChanged, DateDeleted, Download, DownloadDate, wSubID, AmtPaid " & _
+                "FROM dbo.vwIndSub  WHERE Download = 'Yes' AND MembershipStatus IN ('Changed', 'Deleted')"
+        intRec = LoadTbl_array(strSQL, 1, 3) ' Subscribers
+        If intRec > 0 Then
+        GetTracentRecords = 0
+        strSQL = "SELECT vD.SubSSN, vD.DepSSN, vD.EIMBRID, vD.FirstName, vD.MiddleInitial, vD.LastName, vD.DOB, vD.Age, vD.Relationship, vD.Gender, vD.EffDate, vD.PreexistingDate " & _
+                "FROM dbo.vwDepDwnInd as vD INNER JOIN vwIndSub as vS ON vS.SSN = vD.SubSSN " & _
+                "WHERE vS.Download = 'Yes' AND vS.MembershipStatus IN ('Changed', 'Deleted')"
+        Call LoadTbl_array(strSQL, 2, 3) ' Dependents
+        Else
+            GetTracentRecords = 1
+            Exit Function
+        End If
+    Case 4 ' Get the Individual Adds
+        strSQL = "SELECT SSN, EIMBRID, SubscriberID, GroupID, PlanID, CoverID, LastName, FirstName, MiddleInitial, Street1, Street2, City, State, Zip, PhoneWork, PhoneHome, Email, DOB, NoDependents, Gender, Age, EffectiveDate, PreexistingDate, SubExpDate, EmploymentStatus, Occupation_Title, MaritalStatus, CardPrinted, CardPrintedDate, MembershipStatus, DateCreated, DateChanged, DateDeleted, Download, DownloadDate, wSubID, AmtPaid " & _
+                "FROM dbo.vwIndSub  WHERE Download = 'Yes' AND MembershipStatus IN ('Added')"
+        intRec = LoadTbl_array(strSQL, 1, 4) ' Subscribers
+        If intRec > 0 Then
+        GetTracentRecords = 0
+        strSQL = "SELECT vD.SubSSN, vD.DepSSN, vD.EIMBRID, vD.FirstName, vD.MiddleInitial, vD.LastName, vD.DOB, vD.Age, vD.Relationship, vD.Gender, vD.EffDate, vD.PreexistingDate " & _
+                "FROM dbo.vwDepDwnInd as vD INNER JOIN vwIndSub as vS ON vS.SSN = vD.SubSSN " & _
+                "WHERE vS.Download = 'Yes' AND vS.MembershipStatus IN ('Added')"
+        Call LoadTbl_array(strSQL, 2, 4) ' Dependents
+        Else
+            GetTracentRecords = 1
+            Exit Function
+        End If
+    End Select
+    
+    ' Move the data to the processing tables
+    ExecuteSQL "TRUNCATE TABLE tblSubscriber_temp"
+    ExecuteSQL "TRUNCATE TABLE tblDependent_temp"
+    DoCmd.OpenQuery "qappOnlineEnrollment_MoveWebUpdateSub"
+    DoCmd.OpenQuery "qappOnlineEnrollment_MoveWebUpdateDep"
+    
+End Function
+
+
+Private Function LoadTbl_array(strSQL As String, intM As Integer, intOp As Integer) As Variant
+On Error GoTo err_LoadTbl_array
+
+ Call LoadADORecordSetTracent(strSQL)
+
+ ' Get the Records
+ If g_adoRS.STATE = 1 And Not g_adoRS.EOF Then
+    rsArray = g_adoRS.GetRows()
+    g_adoRS.Close
+    nr2 = UBound(rsArray, 2) + 1 ' Number of Rows
+    nc2 = UBound(rsArray, 1) + 1 ' Number of Columns
+    ReDim sTS(nr2, nc2)      ' ReDim array to size
+    For R2 = 0 To nr2 - 1 ' Rows
+      For c2 = 0 To nc2 - 1 ' Columns
+        sTS(R2, c2) = rsArray(c2, R2)
+      Next c2
+    Next R2
+    LoadTbl_array = 1
+ Else
+    LoadTbl_array = 0
+    Exit Function
+ End If
+    
+  Set db = CurrentDb()
+      
+  Select Case intM
+  Case 1  '
+         ' Populate the local table with the Downloaded rows
+        strSQL3 = "DELETE wSubscribers_tmp.* FROM wSubscribers_tmp;"
+        db.Execute strSQL3, dbSeeChanges
+        Set rst = db.OpenRecordset("SELECT wSubscribers_tmp.* FROM wSubscribers_tmp", dbOpenDynaset)
+        With rst
+         For R2 = LBound(sTS, 1) To UBound(sTS, 1) - 1
+            .AddNew
+            For c2 = LBound(sTS, 2) To UBound(sTS, 2) - 1
+              If c2 = 0 Then !SSN = sTS(R2, c2)
+              If c2 = 1 Then !EIMBRID = sTS(R2, c2)
+              If c2 = 2 Then !SubscriberID = sTS(R2, c2)
+              If c2 = 3 Then !GROUPid = sTS(R2, c2)
+              If c2 = 4 Then !PlanID = sTS(R2, c2)
+              If c2 = 5 Then !CoverID = sTS(R2, c2)
+              If c2 = 6 Then !LastName = sTS(R2, c2)
+              If c2 = 7 Then !FirstName = sTS(R2, c2)
+              If c2 = 8 Then !MiddleInitial = sTS(R2, c2)
+              If c2 = 9 Then !Street1 = sTS(R2, c2)
+              If c2 = 10 Then !Street2 = sTS(R2, c2)
+              If c2 = 11 Then !CITY = sTS(R2, c2)
+              If c2 = 12 Then !STATE = sTS(R2, c2)
+              If c2 = 13 Then !ZIP = sTS(R2, c2)
+              If c2 = 14 Then !PhoneWork = sTS(R2, c2)
+              If c2 = 15 Then !PhoneHome = sTS(R2, c2)
+              If c2 = 16 Then !Email = sTS(R2, c2)
+              If c2 = 17 Then !DOB = sTS(R2, c2)
+              If c2 = 18 Then !NoDependents = sTS(R2, c2)
+              If c2 = 19 Then !Gender = sTS(R2, c2)
+              If c2 = 20 Then !Age = sTS(R2, c2)
+              If c2 = 21 Then !EffectiveDate = sTS(R2, c2)
+              If c2 = 22 Then !PreexistingDate = sTS(R2, c2)
+              If c2 = 23 Then !EmploymentDate = sTS(R2, c2)
+              If c2 = 24 Then !EmploymentStatus = sTS(R2, c2)
+              If c2 = 25 Then !Occupation_Title = sTS(R2, c2)
+              If c2 = 26 Then !MaritalStatus = sTS(R2, c2)
+              If c2 = 27 Then !CardPrinted = sTS(R2, c2)
+              If c2 = 28 Then !CardPrintedDate = sTS(R2, c2)
+              If c2 = 29 Then !MembershipStatus = sTS(R2, c2)
+              If c2 = 30 Then !DateCreated = sTS(R2, c2)
+              If c2 = 31 Then !DateChanged = sTS(R2, c2)
+              If c2 = 32 Then !DateDeleted = sTS(R2, c2)
+              If c2 = 33 Then !Download = sTS(R2, c2)
+              If c2 = 34 Then !DownloadDate = sTS(R2, c2)
+              If c2 = 35 Then !wSubID = sTS(R2, c2)
+              If intOp = 3 Or intOp = 4 Then
+                  If c2 = 36 Then !AmtPaid = sTS(R2, c2)
+              End If
+            Next c2
+            .Update
+         Next R2
+        End With
+
+  Case 2 ' Dependents
+        strSQL3 = "DELETE wDependent_tmp.* FROM wDependent_tmp;"
+        db.Execute strSQL3, dbSeeChanges
+        Set rst = db.OpenRecordset("SELECT wDependent_tmp.* FROM wDependent_tmp", dbOpenDynaset)
+        With rst
+         For R2 = LBound(sTS, 1) To UBound(sTS, 1) - 1
+            .AddNew
+            For c2 = LBound(sTS, 2) To UBound(sTS, 2) - 1
+              If c2 = 0 Then !SUBssn = sTS(R2, c2)
+              If c2 = 1 Then !DEPssn = sTS(R2, c2)
+              If c2 = 2 Then !EIMBRID = sTS(R2, c2)
+              If c2 = 3 Then !FirstName = sTS(R2, c2)
+              If c2 = 4 Then !MiddleInitial = sTS(R2, c2)
+              If c2 = 5 Then !LastName = sTS(R2, c2)
+              If c2 = 6 Then !DOB = sTS(R2, c2)
+              If c2 = 7 Then !Age = sTS(R2, c2)
+              If c2 = 8 Then !Relationship = sTS(R2, c2)
+              If c2 = 9 Then !Gender = sTS(R2, c2)
+              If c2 = 10 Then !EffDate = sTS(R2, c2)
+              If c2 = 11 Then !PreexistingDate = sTS(R2, c2)
+            Next c2
+            .Update
+         Next R2
+        End With
+  End Select
+     
+exit_LoadTbl_array:
+    Exit Function
+    
+err_LoadTbl_array:
+    DoCmd.Hourglass False
+    MsgBox "There was an error syncing the Web database :" & vbCrLf & _
+           vbCrLf & Err.DESCRIPTION, vbOKOnly, "Web Sync Error " & Err.Source
+    'Resume Next
+    Resume exit_LoadTbl_array
+
+End Function
+
+Public Sub LoadADORecordSetTracent(strCommand, Optional lngTimeout As Long)
+  
+  If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
+  If g_adoConn.STATE = adStateOpen Then g_adoConn.Close
+  
+  On Error GoTo Err_ExecuteSQL
+
+  g_adoConn.ConnectionString = SetConnxn_Tracent
+  g_adoConn.Open
+    
+  If lngTimeout > 0 Then
+    g_adoCommand.CommandTimeout = lngTimeout
+  Else
+    g_adoCommand.CommandTimeout = 0
+  End If
+  
+  g_adoCommand.ActiveConnection = g_adoConn
+  g_adoCommand.CommandText = strCommand
+    
+  g_adoRS.CursorLocation = adUseServer
+  g_adoRS.CursorType = adOpenStatic
+  
+  Set g_adoRS = g_adoCommand.Execute
+  
+Exit_ExecuteSQL:
+    Exit Sub
+
+Err_ExecuteSQL:
+    MsgBox "SQL statement could not be executed :" & vbCrLf & strCommand _
+           & vbCrLf & Err.DESCRIPTION, vbOKOnly, "PA Data Entry " & Err.Source
+    g_adoConn.Close
+    Resume Exit_ExecuteSQL
+
+End Sub
+
+
+Public Function CheckCommitWeb() As Boolean
+Dim lngCnt As Long
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+      
+    ' this function checks ot see if there are records that have not been Committed the database after download
+    CheckCommitWeb = True
+    Set db = CurrentDb()
+    strSQL = "SELECT Count(wSubID) AS Cnt FROM tblEDI_App_Subscr WHERE wUpt = 1"
+    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+       lngCnt = rst.Fields("Cnt")
+    End If
+    If lngCnt > 0 Then
+        CheckCommitWeb = False
+        Set db = Nothing
+        Exit Function
+    End If
+    strSQL = "SELECT Count(wSubID) AS Cnt FROM tblEDI_App_Subscr_delete WHERE wUpt = 1"
+    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+       lngCnt = rst.Fields("Cnt")
+    End If
+    If lngCnt > 0 Then
+        CheckCommitWeb = False
+        Set db = Nothing
+        Exit Function
+    End If
+    Set db = Nothing
+    
+End Function

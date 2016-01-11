@@ -1,0 +1,78 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBcontEND) Between #4/1/2006# And #4/30/2006#) AND ((tblSubscr.SUB"
+    "status)=\"indiv\") AND ((tblRates.GroupID)='INDV1' Or (tblRates.GroupID)='INDV2'"
+    " Or (tblRates.GroupID)='INDV3')) OR (((tblSubscr.SUBcontEND) Between #4/1/2006# "
+    "And #4/30/2006#) AND ((tblSubscr.SUBstatus)=\"indiv\") AND ((tblRates.GroupID)='"
+    "INDV1' Or (tblRates.GroupID)='INDV2' Or (tblRates.GroupID)='INDV3')) OR (((tblSu"
+    "bscr.SUBcontEND) Between #4/1/2006# And #4/30/2006#) AND ((tblSubscr.SUBstatus)="
+    "\"indiv\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBcontBEG"
+    Expression ="tblSubscr.SUBcontEND"
+    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblRates.GroupID"
+    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.DateUpdated"
+    Expression ="tblSubscr.SUBcancelled"
+    Expression ="tblSubscr.SUBnotes"
+    Expression ="tblSubscr.SUBcardPRT"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SUBnotes"
+        dbInteger "ColumnWidth" ="3705"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =-63
+    Top =65
+    Right =1112
+    Bottom =565
+    Left =-1
+    Top =-1
+    Right =1168
+    Bottom =327
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =353
+        Bottom =206
+        Top =24
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =391
+        Top =6
+        Right =487
+        Bottom =116
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

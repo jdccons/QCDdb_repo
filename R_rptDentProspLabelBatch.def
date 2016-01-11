@@ -1,0 +1,117 @@
+Version =17
+VersionRequired =17
+Checksum =-1713825854
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =3780
+    ItemSuffix =7
+    Left =795
+    Top =720
+    Right =11520
+    Bottom =6510
+    RecSrcDt = Begin
+        0x7d599fc892c7e140
+    End
+    RecordSource ="qrptDentProspLabelBatch1"
+    Caption ="Dentist Prospect Mailing Labels"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xe0000000d0020000e00000001c03000000000000c40e0000a005000000000000 ,
+        0x03000000b400000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4550534f4e205374796c757320434f4c4f522036303000000000000000000000 ,
+        0x0004501094007a000f89800701000100eb0a7008640001000700680102000100 ,
+        0x6801010000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000003010000 ,
+        0x0300000001000000300100000000000000000000ea17f21e0000000002000400 ,
+        0x00000100030000000c0400000000000000000000000004014550534f4e205374 ,
+        0x796c757320434f4c4f5220363030000000000000000000004c5054313a000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x01000000000000000100010000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002800010077696e73706f6f6c004550534f4e205374796c757320434f ,
+        0x4c4f5220363030004c5054313a00000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="DENTlast"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =135
+                    Top =240
+                    Width =3609
+                    FontWeight =400
+                    Name ="Field2"
+                    ControlSource ="=\"DR. \" & Trim([DENTfirst] & \" \" & [DENTlast])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =135
+                    Top =495
+                    Width =3594
+                    FontWeight =400
+                    TabIndex =1
+                    Name ="Field3"
+                    ControlSource ="=Trim([DENTstreet1])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =135
+                    Top =990
+                    Width =3564
+                    FontWeight =400
+                    TabIndex =2
+                    Name ="Field4"
+                    ControlSource ="=Trim([DENTcity] & \", \" & [DENTstate] & \"  \" & [zip2])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =135
+                    Top =735
+                    Width =3564
+                    FontWeight =400
+                    TabIndex =3
+                    Name ="Field6"
+                    ControlSource ="=Trim([DENTstreet2])"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit

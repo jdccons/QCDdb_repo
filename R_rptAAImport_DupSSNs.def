@@ -679,7 +679,7 @@ Report_Close_Exit:
 
 Report_Close_Err:
       
-    MsgBox "Error " & Err.Number & ": " & Err.Description
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
     GoTo Report_Close_Exit
     
 End Sub

@@ -1,0 +1,70 @@
+Operation =1
+Option =0
+Where ="(((tblInvoiceHistory.InvMonth)=12) AND ((tblInvoiceHistory.InvYear)=2001))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblInvoiceHistory"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRcontEND"
+    Expression ="tblGrp.GRee"
+    Expression ="tblInvoiceHistory.InvMonth"
+    Expression ="tblInvoiceHistory.InvYear"
+    Alias ="Expr1"
+    Expression ="tblGrp.GRagentID1"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblInvoiceHistory"
+    Expression ="tblGrp.GROUPid = tblInvoiceHistory.GrpID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =84
+    Top =65
+    Right =778
+    Bottom =382
+    Left =-1
+    Top =-1
+    Right =687
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =101
+        Top =20
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =101
+        Top =0
+        Name ="tblInvoiceHistory"
+        Name =""
+    End
+End

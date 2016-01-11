@@ -1,0 +1,340 @@
+Operation =3
+Name ="tblEDI_App_Subscr_delete"
+Option =0
+Where ="(((tblSubscriber_temp.GroupID) Not In ('INDV1','INDV2')) And ((tblSubscriber_tem"
+    "p.MembershipStatus)=\"Deleted\"))"
+Begin InputTables
+    Name ="tblSubscriber_temp"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Name ="SubSSN"
+    Expression ="tblSubscriber_temp.SSN"
+    Alias ="Expr2"
+    Name ="EIMBRID"
+    Expression ="tblSubscriber_temp.EIMBRID"
+    Alias ="Expr3"
+    Name ="SubID"
+    Expression ="tblSubscriber_temp.SubscriberID"
+    Alias ="Status"
+    Name ="SubStatus"
+    Expression ="\"GRSUB\""
+    Alias ="Expr4"
+    Name ="SubGroupID"
+    Expression ="tblSubscriber_temp.GroupID"
+    Alias ="Expr5"
+    Name ="PlanID"
+    Expression ="tblSubscriber_temp.PlanID"
+    Alias ="Expr6"
+    Name ="CoverID"
+    Expression ="tblSubscriber_temp.CoverID"
+    Alias ="Expr7"
+    Name ="SubLastName"
+    Expression ="tblSubscriber_temp.LastName"
+    Alias ="Expr8"
+    Name ="SubFirstName"
+    Expression ="tblSubscriber_temp.FirstName"
+    Alias ="Expr9"
+    Name ="SubMiddleName"
+    Expression ="tblSubscriber_temp.MiddleInitial"
+    Alias ="LU_Name"
+    Name ="SUB_LUname"
+    Expression ="[LastName] & \", \" & [FirstName] & \" \" & Mid([MiddleInitial],1,1)"
+    Alias ="Expr10"
+    Name ="SubStreet1"
+    Expression ="tblSubscriber_temp.Street1"
+    Alias ="Expr11"
+    Name ="SubStreet2"
+    Expression ="tblSubscriber_temp.Street2"
+    Alias ="Expr12"
+    Name ="SubCity"
+    Expression ="tblSubscriber_temp.City"
+    Alias ="Expr13"
+    Name ="SubState"
+    Expression ="tblSubscriber_temp.State"
+    Alias ="Expr14"
+    Name ="SubZip"
+    Expression ="tblSubscriber_temp.Zip"
+    Alias ="PhoneH"
+    Name ="SubPhoneWork"
+    Expression ="IIf(Not IsNull([PhoneHome]) Or [PhoneHome]<>\"\",StripChars_TSB([PhoneHome],\"-\""
+        "),Null)"
+    Alias ="PhoneW"
+    Name ="SubPhoneHome"
+    Expression ="IIf(Not IsNull([PhoneWork]) Or [PhoneWork]<>\"\",StripChars_TSB([PhoneWork],\"-\""
+        "),Null)"
+    Alias ="Expr15"
+    Name ="SUBdob"
+    Expression ="tblSubscriber_temp.DOB"
+    Alias ="Expr16"
+    Name ="SubNoDepent"
+    Expression ="tblSubscriber_temp.NoDependents"
+    Alias ="Expr17"
+    Name ="SubGender"
+    Expression ="tblSubscriber_temp.Gender"
+    Alias ="Expr18"
+    Name ="SubAge"
+    Expression ="tblSubscriber_temp.Age"
+    Alias ="Expr19"
+    Name ="SubEffDate"
+    Expression ="tblSubscriber_temp.EffectiveDate"
+    Alias ="Expr20"
+    Name ="SubMaritalStatus"
+    Expression ="tblSubscriber_temp.MaritalStatus"
+    Alias ="Expr21"
+    Name ="SubCardPrt"
+    Expression ="tblSubscriber_temp.CardPrinted"
+    Alias ="Expr22"
+    Name ="SubCardPrtDte"
+    Expression ="tblSubscriber_temp.CardPrintedDate"
+    Alias ="Expr23"
+    Name ="TransactionType"
+    Expression ="tblSubscriber_temp.MembershipStatus"
+    Alias ="Expr24"
+    Name ="DateCreated"
+    Expression ="tblSubscriber_temp.DateCreated"
+    Alias ="Expr25"
+    Name ="DateUpdated"
+    Expression ="tblSubscriber_temp.DateChanged"
+    Alias ="Expr26"
+    Name ="DateDeleted"
+    Expression ="tblSubscriber_temp.DateDeleted"
+    Alias ="Expr27"
+    Name ="wSubID"
+    Expression ="tblSubscriber_temp.wSubID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbText "Description" ="moves data from tblSubscriber_temp to tblEDI_App_Subscr_delete"
+Begin
+    Begin
+        dbText "Name" ="tblSubscriber_temp.MembershipStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DateCreated"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DateChanged"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DateDeleted"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.SSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.GroupID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.EIMBRID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.SubscriberID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Status"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.PlanID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.CoverID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.LastName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.FirstName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.MiddleInitial"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="LU_Name"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Street1"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Street2"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.City"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.State"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Zip"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="PhoneH"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="PhoneW"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DOB"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.NoDependents"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Gender"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Age"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.EffectiveDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.MaritalStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.CardPrinted"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.CardPrintedDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.wSubID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr1"
+    End
+    Begin
+        dbText "Name" ="Expr2"
+    End
+    Begin
+        dbText "Name" ="Expr3"
+    End
+    Begin
+        dbText "Name" ="Expr4"
+    End
+    Begin
+        dbText "Name" ="Expr5"
+    End
+    Begin
+        dbText "Name" ="Expr6"
+    End
+    Begin
+        dbText "Name" ="Expr7"
+    End
+    Begin
+        dbText "Name" ="Expr8"
+    End
+    Begin
+        dbText "Name" ="Expr9"
+    End
+    Begin
+        dbText "Name" ="Expr10"
+    End
+    Begin
+        dbText "Name" ="Expr11"
+    End
+    Begin
+        dbText "Name" ="Expr12"
+    End
+    Begin
+        dbText "Name" ="Expr13"
+    End
+    Begin
+        dbText "Name" ="Expr14"
+    End
+    Begin
+        dbText "Name" ="Expr15"
+    End
+    Begin
+        dbText "Name" ="Expr16"
+    End
+    Begin
+        dbText "Name" ="Expr17"
+    End
+    Begin
+        dbText "Name" ="Expr18"
+    End
+    Begin
+        dbText "Name" ="Expr19"
+    End
+    Begin
+        dbText "Name" ="Expr20"
+    End
+    Begin
+        dbText "Name" ="Expr21"
+    End
+    Begin
+        dbText "Name" ="Expr22"
+    End
+    Begin
+        dbText "Name" ="Expr23"
+    End
+    Begin
+        dbText "Name" ="Expr24"
+    End
+    Begin
+        dbText "Name" ="Expr25"
+    End
+    Begin
+        dbText "Name" ="Expr26"
+    End
+    Begin
+        dbText "Name" ="Expr27"
+    End
+End
+Begin
+    State =0
+    Left =0
+    Top =0
+    Right =1129
+    Bottom =622
+    Left =-1
+    Top =-1
+    Right =1113
+    Bottom =173
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =98
+        Top =21
+        Right =408
+        Bottom =178
+        Top =0
+        Name ="tblSubscriber_temp"
+        Name =""
+    End
+End

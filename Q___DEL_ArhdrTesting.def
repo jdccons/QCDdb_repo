@@ -1,0 +1,60 @@
+Operation =5
+Option =0
+Where ="(((ARHDR.InvoiceDate)>#10/31/2006#))"
+Begin InputTables
+    Name ="ARHDR"
+End
+Begin OutputColumns
+    Expression ="ARHDR.*"
+    Expression ="ARHDR.InvoiceDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="ARLIN.DocumentDate"
+        dbInteger "ColumnWidth" ="3870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ARLIN.ItemDescription"
+        dbInteger "ColumnWidth" ="4200"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ARHDR.DocumentDate"
+        dbInteger "ColumnWidth" ="3870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ARHDR.InvoiceDate"
+        dbInteger "ColumnWidth" ="3870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =23
+    Top =41
+    Right =1209
+    Bottom =501
+    Left =-1
+    Top =-1
+    Right =1179
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =771
+    Begin
+        Left =41
+        Top =-1
+        Right =323
+        Bottom =114
+        Top =0
+        Name ="ARHDR"
+        Name =""
+    End
+End

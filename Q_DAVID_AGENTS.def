@@ -1,0 +1,59 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRPgeoID)=\"TXCEN\" Or (tblGrp.GRPgeoID)=\"TXSSW\"))"
+Begin InputTables
+    Name ="Agents"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="Agents.NAME"
+    Expression ="Agents.COMPANY"
+    Expression ="Agents.ADDR1"
+    Expression ="Agents.ADDR2"
+    Expression ="Agents.ADDR3"
+    Expression ="Agents.CITY"
+    Expression ="Agents.STATE"
+    Expression ="Agents.ZIP"
+    Expression ="Agents.PHONE"
+    Expression ="Agents.IDSTATUS"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPgeoID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =1002
+    Bottom =349
+    Left =-1
+    Top =-1
+    Right =933
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =195
+        Bottom =113
+        Top =73
+        Name ="Agents"
+        Name =""
+    End
+    Begin
+        Left =229
+        Top =8
+        Right =325
+        Bottom =115
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

@@ -1,0 +1,99 @@
+Operation =1
+Option =0
+Having ="(((tblGrp.GRname) Like \"DIV*\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.Miscellaneous"
+    Expression ="tblGrp.Parent"
+    Expression ="tblGrp.ParentGroupID"
+    Expression ="tblSubscr.PlanID"
+    Expression ="tblSubscr.CoverID"
+    Expression ="tblSubscr.RateID"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblSubscr.PlanID"
+    Flag =0
+    Expression ="tblSubscr.CoverID"
+    Flag =0
+    Expression ="tblSubscr.RateID"
+    Flag =0
+End
+Begin Groups
+    Expression ="tblSubscr.SubGroupID"
+    GroupLevel =0
+    Expression ="tblGrp.GRname"
+    GroupLevel =0
+    Expression ="tblGrp.Miscellaneous"
+    GroupLevel =0
+    Expression ="tblGrp.Parent"
+    GroupLevel =0
+    Expression ="tblGrp.ParentGroupID"
+    GroupLevel =0
+    Expression ="tblSubscr.PlanID"
+    GroupLevel =0
+    Expression ="tblSubscr.CoverID"
+    GroupLevel =0
+    Expression ="tblSubscr.RateID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="4170"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.Miscellaneous"
+        dbInteger "ColumnWidth" ="3180"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =1282
+    Bottom =714
+    Left =-1
+    Top =-1
+    Right =1281
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =294
+        Top =9
+        Right =465
+        Bottom =116
+        Top =4
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =203
+        Bottom =113
+        Top =42
+        Name ="tblGrp"
+        Name =""
+    End
+End

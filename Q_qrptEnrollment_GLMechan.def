@@ -1,0 +1,90 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment_GLMechan"
+End
+Begin OutputColumns
+    Alias ="NameSort"
+    Expression ="([LAST NAME]) & \", \" & ([FIRST NAME])"
+    Alias ="SubName"
+    Expression ="Trim([FIRST NAME]) & \" \" & Trim([LAST NAME])"
+    Alias ="SubAddr"
+    Expression ="Trim([STREET]) & \", \" & ([CITY]) & \",  \" & \"TX\" & \"  \" & ([ZIP])"
+    Alias ="GRname"
+    Expression ="\"G&L Mechanical Contractors, Inc.\""
+    Alias ="SUBeffDATE2"
+    Expression ="#2/1/00#"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
+        "loyee at No Monthly Charge.\""
+    Expression ="tblEnrollment_GLMechan.*"
+    Alias ="SUBdob"
+    Expression ="tblEnrollment_GLMechan.[DATE OF BIRTH]"
+    Alias ="SUBphoneHOME"
+    Expression ="IIf([TELEPHONE #]=\"()\",\"(___) ___-____\",[TELEPHONE #])"
+    Alias ="SUBssn"
+    Expression ="tblEnrollment_GLMechan.[SOCIAL SECURITY #]"
+End
+Begin OrderBy
+    Expression ="([LAST NAME]) & \", \" & ([FIRST NAME])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="2610"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="4500"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE2"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="NameSort"
+        dbInteger "ColumnWidth" ="2985"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =189
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =63
+        Top =17
+        Right =298
+        Bottom =139
+        Top =3
+        Name ="tblEnrollment_GLMechan"
+        Name =""
+    End
+End

@@ -1,0 +1,47 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblQCDrep"
+End
+Begin OutputColumns
+    Expression ="tblQCDrep.RepInitials"
+    Expression ="tblQCDrep.RepName"
+End
+Begin OrderBy
+    Expression ="tblQCDrep.RepName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblQCDrep.RepInitials"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =483
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =83
+        Top =0
+        Name ="tblQCDrep"
+        Name =""
+    End
+End

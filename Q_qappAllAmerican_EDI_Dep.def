@@ -1,0 +1,73 @@
+Operation =3
+Name ="tblEDI_App_Dep"
+Option =0
+Where ="(((tmpExportAllAmerican.EIRECID)=\"M\") AND ((Mid([EINMPLAN],8,3))=\"QCD\")) OR "
+    "(((tmpExportAllAmerican.EIRECID)=\"M\") AND ((tmpExportAllAmerican.EINMPLAN)=\"Q"
+    "CDBLU-NGL\")) OR (((tmpExportAllAmerican.EIRECID)=\"M\") AND ((tmpExportAllAmeri"
+    "can.EINMPLAN)=\"QCDBLU-MNL\"))"
+Begin InputTables
+    Name ="tmpExportAllAmerican"
+End
+Begin OutputColumns
+    Alias ="DepSubID"
+    Name ="DEPsubID"
+    Expression ="GetSSN(Left(Trim([EISBRID]),Len(Trim([EISBRID]))-2) & \"00\")"
+    Name ="DEPssn"
+    Expression ="tmpExportAllAmerican.EISSN"
+    Name ="DEPlastNAME"
+    Expression ="tmpExportAllAmerican.EINAML"
+    Name ="DEPfirstNAME"
+    Expression ="tmpExportAllAmerican.EINAMF"
+    Alias ="NAMM"
+    Name ="DEPmiddleNAME"
+    Expression ="Left([EINAMM],1)"
+    Alias ="DTBR"
+    Name ="DEPdob"
+    Expression ="Left([EIDTBR],2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Right([EIDTBR],4)"
+    Name ="DEPgender"
+    Expression ="tmpExportAllAmerican.EISEX"
+    Alias ="RELMBRID"
+    Name ="DEPrelationship"
+    Expression ="IIf(Right(Trim([EIMBRID]),2)='01','S','C')"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tmpExportAllAmerican.EINMPLAN"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Plan"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =53
+    Top =75
+    Right =1418
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =1358
+    Bottom =139
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =249
+        Bottom =108
+        Top =32
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+End

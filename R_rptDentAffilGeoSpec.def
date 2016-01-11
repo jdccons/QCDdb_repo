@@ -1,0 +1,364 @@
+Version =17
+VersionRequired =17
+Checksum =-254963106
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =11100
+    ItemSuffix =49
+    Left =630
+    Top =435
+    Right =9585
+    Bottom =6315
+    RecSrcDt = Begin
+        0x87fc6e0455f8e140
+    End
+    RecordSource ="qrptDentAffilGeoSpec"
+    Caption ="Affiliated Dentist Team - Spec. by Geo"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0x680100002001000000000000680100000000000018150000a005000000000000 ,
+        0x02000000d002000000000000a20700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574205365726965732049490000000000000000000000 ,
+        0x00040104940040000367000402000100000000000000010001002c0101000100 ,
+        0x2c01020000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d53554403034850 ,
+        0x204c617365724a65742053657269657320494900000000000000000000008001 ,
+        0x000000000000000000000000000064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011002700010077696e73706f6f6c004850204c617365724a657420536572 ,
+        0x696573204949005c5c4e545345525645525c5449204d6963726f000000000000 ,
+        0x000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            ControlSource ="DENTcity"
+        End
+        Begin BreakLevel
+            ControlSource ="DENTlast"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =885
+            Name ="ReportHeader5"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Width =11088
+                    Height =360
+                    FontSize =11
+                    FontWeight =700
+                    Name ="Text13"
+                    Caption ="QCD of America"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =270
+                    Width =11088
+                    Height =285
+                    FontSize =11
+                    FontWeight =700
+                    Name ="Text14"
+                    Caption ="Affiliated Dentist Team"
+                End
+                Begin Line
+                    BorderWidth =1
+                    Top =855
+                    Width =11088
+                    Name ="Line17"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =540
+                    Width =11088
+                    Height =285
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Field36"
+                    ControlSource ="=[Please input heading date]"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/00;0;_"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =240
+            Name ="PageHeader3"
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =240
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =34
+                    Width =2880
+                    FontSize =9
+                    FontWeight =700
+                    Name ="DENTcity"
+                    ControlSource ="DENTcity"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =1530
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Width =2733
+                    FontWeight =700
+                    Name ="Field2"
+                    ControlSource ="=Trim([DENTlast] & \", \" & [DENTfirst] & \" \" & [DENTmiddleINIT])"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =240
+                    Width =2733
+                    FontWeight =300
+                    TabIndex =1
+                    Name ="Field3"
+                    ControlSource ="=Trim([DENTstreet1])"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =705
+                    Width =2751
+                    FontWeight =300
+                    TabIndex =2
+                    Name ="Field5"
+                    ControlSource ="=Trim([DENTcity] & \", \" & [DENTstate] & \"  \" & [zip2])"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =945
+                    Width =1152
+                    FontWeight =300
+                    TabIndex =3
+                    Name ="Field6"
+                    ControlSource ="=Trim([DENTphoneOFFICE])"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;0;_"
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =2805
+                    Top =240
+                    Width =660
+                    Height =240
+                    Name ="Text3"
+                    Caption ="School: "
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =2805
+                    Top =705
+                    Width =1245
+                    Height =225
+                    Name ="Text11"
+                    Caption ="Affiliation Date:"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =4050
+                    Top =705
+                    Width =981
+                    FontWeight =300
+                    TabIndex =4
+                    Name ="DENTaffilDATE"
+                    ControlSource ="DENTaffilDATE"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =2805
+                    Top =930
+                    Width =2871
+                    TabIndex =5
+                    Name ="TextCO"
+                    ControlSource ="TextCO"
+                    Format ="Yes/No"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =3480
+                    Top =255
+                    Width =2310
+                    Height =210
+                    TabIndex =6
+                    Name ="Field37"
+                    ControlSource ="=Trim([DENTschool] & \"/\" & [DENTgradYR])"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Left =3285
+                    Top =1200
+                    Width =735
+                    Height =105
+                    TabIndex =7
+                    BackColor =8454143
+                    Name ="DENTgeoID"
+                    ControlSource ="tbldentist.DENTgeoID"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Left =4185
+                    Top =1200
+                    Width =735
+                    Height =105
+                    TabIndex =8
+                    BackColor =8454143
+                    Name ="DENTstate"
+                    ControlSource ="DENTstate"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Left =5010
+                    Top =1185
+                    Width =735
+                    Height =105
+                    TabIndex =9
+                    BackColor =8454143
+                    Name ="DENTcity2"
+                    ControlSource ="DENTcity"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Left =5865
+                    Top =1185
+                    Width =735
+                    Height =105
+                    TabIndex =10
+                    BackColor =8454143
+                    Name ="DENTspecialty"
+                    ControlSource ="tbldentist.DENTspecialty"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =2820
+                    Width =2211
+                    FontWeight =300
+                    TabIndex =11
+                    Name ="tbldentist.DENTspecialty"
+                    ControlSource ="SPECIALITYdesc"
+                    FontName ="Times New Roman"
+                    EventProcPrefix ="tbldentist_DENTspeci"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =1425
+                    Top =960
+                    Width =1311
+                    TabIndex =12
+                    Name ="Bilingual"
+                    ControlSource ="Bilingual"
+                    Format ="Yes/No"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =480
+                    Width =5763
+                    FontWeight =300
+                    TabIndex =13
+                    Name ="Field48"
+                    ControlSource ="=Trim([DENTstreet2])"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =240
+            Name ="PageFooter4"
+            Begin
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =9510
+                    Width =1578
+                    FontSize =9
+                    Name ="PAGE"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter6"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fdlgPrtDentAffilSpec].Visible = True
+    DoCmd.Close A_FORM, "fdlgPrtDentAffilSpec"
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportDent"
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

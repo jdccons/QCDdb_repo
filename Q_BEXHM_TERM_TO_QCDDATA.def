@@ -1,0 +1,46 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblSubscr_Bexar"
+End
+Begin OutputColumns
+    Expression ="tblSubscr_Bexar.SUBgroupID"
+    Expression ="tblSubscr_Bexar.SUBssn"
+    Expression ="tblSubscr_Bexar.SUBlastNAME"
+    Expression ="tblSubscr_Bexar.SUBfirstNAME"
+    Expression ="tblSubscr_Bexar.SUBrate"
+End
+Begin OrderBy
+    Expression ="tblSubscr_Bexar.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =60
+    Top =8
+    Right =1213
+    Bottom =891
+    Left =-1
+    Top =-1
+    Right =1146
+    Bottom =271
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =120
+        Top =3
+        Name ="tblSubscr_Bexar"
+        Name =""
+    End
+End

@@ -1,0 +1,90 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGrpAgt"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AGENCY"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblGrpAgt.AgentRATE"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Flag =1
+    LeftTable ="tblGrpAgt"
+    RightTable ="tblGrp"
+    Expression ="tblGrpAgt.GROUPid = tblGrp.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblAgent.AGENCY"
+        dbInteger "ColumnWidth" ="3180"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENT_LUname"
+        dbInteger "ColumnWidth" ="2370"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =652
+    Left =-1
+    Top =-1
+    Right =1273
+    Bottom =218
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =189
+        Bottom =143
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =268
+        Top =8
+        Right =424
+        Bottom =160
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+    Begin
+        Left =520
+        Top =6
+        Right =752
+        Bottom =158
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

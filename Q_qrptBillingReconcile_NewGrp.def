@@ -1,0 +1,60 @@
+Operation =1
+Option =0
+Where ="(((tmpBillingReconcile_rpt.GRcontBEG)=[forms].[fdlgPrtBillingReconcile].[ctlInvd"
+    "ate]))"
+Begin InputTables
+    Name ="tmpBillingReconcile_rpt"
+End
+Begin OutputColumns
+    Expression ="tmpBillingReconcile_rpt.GRcontBEG"
+    Expression ="tmpBillingReconcile_rpt.GROUPid"
+    Expression ="tmpBillingReconcile_rpt.GRname"
+    Expression ="tmpBillingReconcile_rpt.Docdate"
+    Expression ="tmpBillingReconcile_rpt.GRPgeoID"
+    Expression ="tmpBillingReconcile_rpt.GRcancelled"
+    Expression ="tmpBillingReconcile_rpt.GRcancelledDate"
+    Expression ="tmpBillingReconcile_rpt.GRreinstatedDate"
+    Expression ="tmpBillingReconcile_rpt.GRhold"
+    Expression ="tmpBillingReconcile_rpt.Docamt"
+    Expression ="tmpBillingReconcile_rpt.AgencyCom"
+    Expression ="tmpBillingReconcile_rpt.AgentsCom"
+    Expression ="tmpBillingReconcile_rpt.EmplCom"
+    Expression ="tmpBillingReconcile_rpt.Docno"
+    Expression ="tmpBillingReconcile_rpt.SubCnt"
+    Expression ="tmpBillingReconcile_rpt.DepCnt"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tmpBillingReconcile_rpt.GROUPid"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =31
+    Top =51
+    Right =1270
+    Bottom =773
+    Left =-1
+    Top =-1
+    Right =1232
+    Bottom =178
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =19
+        Top =6
+        Right =223
+        Bottom =116
+        Top =13
+        Name ="tmpBillingReconcile_rpt"
+        Name =""
+    End
+End

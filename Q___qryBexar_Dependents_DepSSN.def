@@ -1,0 +1,67 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblDependent_Bexar_new"
+    Name ="tblDependents_BEXCO_backup"
+End
+Begin OutputColumns
+    Name ="tblDependent_Bexar_new.DepSSN"
+    Expression ="[tblDependents_BEXCO_backup].[DepSSN]"
+End
+Begin Joins
+    LeftTable ="tblDependent_Bexar_new"
+    RightTable ="tblDependents_BEXCO_backup"
+    Expression ="tblDependent_Bexar_new.DepSubID = tblDependents_BEXCO_backup.DepSubID"
+    Flag =1
+    LeftTable ="tblDependent_Bexar_new"
+    RightTable ="tblDependents_BEXCO_backup"
+    Expression ="tblDependent_Bexar_new.DepFirstName = tblDependents_BEXCO_backup.DepFirstName"
+    Flag =1
+    LeftTable ="tblDependent_Bexar_new"
+    RightTable ="tblDependents_BEXCO_backup"
+    Expression ="tblDependent_Bexar_new.DepLastName = tblDependents_BEXCO_backup.DepLastName"
+    Flag =1
+    LeftTable ="tblDependent_Bexar_new"
+    RightTable ="tblDependents_BEXCO_backup"
+    Expression ="tblDependent_Bexar_new.DepDOB = tblDependents_BEXCO_backup.DepDOB"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =84
+    Right =801
+    Bottom =643
+    Left =-1
+    Top =-1
+    Right =732
+    Bottom =303
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =223
+        Bottom =240
+        Top =0
+        Name ="tblDependent_Bexar_new"
+        Name =""
+    End
+    Begin
+        Left =320
+        Top =8
+        Right =560
+        Bottom =254
+        Top =0
+        Name ="tblDependents_BEXCO_backup"
+        Name =""
+    End
+End

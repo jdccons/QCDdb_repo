@@ -1,0 +1,15 @@
+dbMemo "SQL" ="SELECT DISTINCTROW tblReport2.ReportID, tblReport2.ReportTitle, tblReport2.Repor"
+    "tName, tblReport2.CriteriaForm, tblReport2.MenuItem\015\012FROM tblReport2\015\012"
+    "WHERE (((tblReport2.MenuItem)=1))\015\012ORDER BY tblReport2.ReportID;\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblReport2.ReportTitle"
+        dbInteger "ColumnWidth" ="4665"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End

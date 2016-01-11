@@ -1,0 +1,57 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRExecSalesDirID)=\"TASA\"))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRExecSalesDirRate"
+    Expression ="tblGrp.GRExecSalesDirID"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =84
+    Top =66
+    Right =770
+    Bottom =368
+    Left =-1
+    Top =-1
+    Right =679
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =17
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =417
+        Bottom =113
+        Top =27
+        Name ="tblGrp"
+        Name =""
+    End
+End

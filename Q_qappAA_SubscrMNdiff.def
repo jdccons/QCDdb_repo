@@ -1,0 +1,97 @@
+Operation =3
+Name ="tmpAA_VarianceReport"
+Option =0
+Where ="(((UCase([SUBmiddleNAME]))<>UCase(Left([EINAMM],1)))) OR (((UCase(Left([EINAMM],"
+    "1)))<>UCase([SUBmiddleNAME])))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="qselAA_Subscr"
+End
+Begin OutputColumns
+    Alias ="Ord"
+    Name ="PrtOrder"
+    Expression ="7"
+    Alias ="Title"
+    Name ="DataElementTitle"
+    Expression ="\"Subscriber Change\""
+    Alias ="Elem"
+    Name ="DataElement"
+    Expression ="\"Sub Middle Init\""
+    Name ="SubSSN"
+    Expression ="tblSubscr.SUBssn"
+    Name ="AAGrpID"
+    Expression ="qselAA_Subscr.GRPid"
+    Alias ="AA"
+    Name ="NewValue"
+    Expression ="UCase(Left([EINAMM],1))"
+    Alias ="QCD"
+    Name ="OldValue"
+    Expression ="UCase([SUBmiddleNAME])"
+    Name ="RptDate"
+    Expression ="qselAA_Subscr.RptDate"
+End
+Begin Joins
+    LeftTable ="qselAA_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="qselAA_Subscr.AA_SSN = tblSubscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbText "Description" ="07"
+Begin
+    Begin
+        dbText "Name" ="QCD_FN"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA_LN"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="QCD"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =47
+    Top =69
+    Right =1258
+    Bottom =389
+    Left =-1
+    Top =-1
+    Right =1204
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =379
+        Top =6
+        Right =636
+        Bottom =120
+        Top =2
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =273
+        Bottom =120
+        Top =14
+        Name ="qselAA_Subscr"
+        Name =""
+    End
+End

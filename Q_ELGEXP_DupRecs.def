@@ -1,0 +1,424 @@
+Operation =3
+Name ="ELGEXP_pd"
+Option =0
+Where ="(((ELGEXP.EISBRID) In (SELECT ELGEXP_DupSSNs.EISBRID FROM ELGEXP_DupSSNs;)))"
+Begin InputTables
+    Name ="ELGEXP"
+End
+Begin OutputColumns
+    Alias ="UNIQUE_ID"
+    Name ="UNIQUEID"
+    Expression ="[EISGRPID] & [EIMBRID] & [EISBRID] & [EISSN#] & [EINAML] & [EINAMF] & [EINAMM] &"
+        " [EISGRPID] & [EINMPLAN]"
+    Name ="DTALIB"
+    Expression ="ELGEXP.DTALIB"
+    Name ="RPTINS#OA"
+    Expression ="ELGEXP.[RPTINS#OA]"
+    Name ="RPTINS#"
+    Expression ="ELGEXP.[RPTINS#]"
+    Name ="RPTPLANOA"
+    Expression ="ELGEXP.RPTPLANOA"
+    Name ="RPTNMPLAN"
+    Expression ="ELGEXP.RPTNMPLAN"
+    Name ="RPTGRPOA"
+    Expression ="ELGEXP.RPTGRPOA"
+    Name ="RPTGRPID"
+    Expression ="ELGEXP.RPTGRPID"
+    Name ="RPTPPOOA"
+    Expression ="ELGEXP.RPTPPOOA"
+    Name ="RPTPPOID"
+    Expression ="ELGEXP.RPTPPOID"
+    Name ="RPTDTASOF"
+    Expression ="ELGEXP.RPTDTASOF"
+    Name ="EISBRID"
+    Expression ="ELGEXP.EISBRID"
+    Name ="EIRECID"
+    Expression ="ELGEXP.EIRECID"
+    Name ="EIMBRID"
+    Expression ="ELGEXP.EIMBRID"
+    Name ="EIMBRRF#"
+    Expression ="ELGEXP.[EIMBRRF#]"
+    Name ="EISSN#"
+    Expression ="ELGEXP.[EISSN#]"
+    Name ="EINAML"
+    Expression ="ELGEXP.EINAML"
+    Name ="EINAMF"
+    Expression ="ELGEXP.EINAMF"
+    Name ="EINAMM"
+    Expression ="ELGEXP.EINAMM"
+    Name ="EIDTBR"
+    Expression ="ELGEXP.EIDTBR"
+    Name ="EISEX"
+    Expression ="ELGEXP.EISEX"
+    Name ="EISSNEXT"
+    Expression ="ELGEXP.EISSNEXT"
+    Name ="EIADD1"
+    Expression ="ELGEXP.EIADD1"
+    Name ="EIADD2"
+    Expression ="ELGEXP.EIADD2"
+    Name ="EIADD3"
+    Expression ="ELGEXP.EIADD3"
+    Name ="EICITY"
+    Expression ="ELGEXP.EICITY"
+    Name ="EICTY@"
+    Expression ="ELGEXP.[EICTY@]"
+    Name ="EISTE@"
+    Expression ="ELGEXP.[EISTE@]"
+    Name ="EIZIP6"
+    Expression ="ELGEXP.EIZIP6"
+    Name ="EIZIP4"
+    Expression ="ELGEXP.EIZIP4"
+    Name ="EIHEMAIL"
+    Expression ="ELGEXP.EIHEMAIL"
+    Name ="EIWEMAIL"
+    Expression ="ELGEXP.EIWEMAIL"
+    Name ="EIWPHR"
+    Expression ="ELGEXP.EIWPHR"
+    Name ="EIWEXG"
+    Expression ="ELGEXP.EIWEXG"
+    Name ="EIDPT"
+    Expression ="ELGEXP.EIDPT"
+    Name ="EIHPHR"
+    Expression ="ELGEXP.EIHPHR"
+    Name ="EIACTDB@"
+    Expression ="ELGEXP.[EIACTDB@]"
+    Name ="EICRDCR@"
+    Expression ="ELGEXP.[EICRDCR@]"
+    Name ="EIBANK"
+    Expression ="ELGEXP.EIBANK"
+    Name ="EIACTDB#"
+    Expression ="ELGEXP.[EIACTDB#]"
+    Name ="EIDTEXPR"
+    Expression ="ELGEXP.EIDTEXPR"
+    Name ="EIGRPID"
+    Expression ="ELGEXP.EIGRPID"
+    Name ="EISGRPID"
+    Expression ="ELGEXP.EISGRPID"
+    Name ="EINMPLAN"
+    Expression ="ELGEXP.EINMPLAN"
+    Name ="EIDTEFF"
+    Expression ="ELGEXP.EIDTEFF"
+    Name ="EIDTCVEF"
+    Expression ="ELGEXP.EIDTCVEF"
+    Name ="EIDTCVEN"
+    Expression ="ELGEXP.EIDTCVEN"
+    Name ="EIMBRDP@"
+    Expression ="ELGEXP.[EIMBRDP@]"
+    Name ="EISPC@"
+    Expression ="ELGEXP.[EISPC@]"
+    Name ="EIFACCN@"
+    Expression ="ELGEXP.[EIFACCN@]"
+    Name ="EIPRVCN@"
+    Expression ="ELGEXP.[EIPRVCN@]"
+    Name ="EIDTPNEF"
+    Expression ="ELGEXP.EIDTPNEF"
+    Name ="EIDTPNEN"
+    Expression ="ELGEXP.EIDTPNEN"
+    Name ="EISTUSTS"
+    Expression ="ELGEXP.EISTUSTS"
+    Name ="EIEXTCVG"
+    Expression ="ELGEXP.EIEXTCVG"
+    Name ="EITRNID"
+    Expression ="ELGEXP.EITRNID"
+    Name ="EIDTHIRE"
+    Expression ="ELGEXP.EIDTHIRE"
+    Name ="EIDTTERM"
+    Expression ="ELGEXP.EIDTTERM"
+    Name ="EIPRMSC@"
+    Expression ="ELGEXP.[EIPRMSC@]"
+    Name ="EIPRMCL@"
+    Expression ="ELGEXP.[EIPRMCL@]"
+    Name ="EIDSCL@"
+    Expression ="ELGEXP.[EIDSCL@]"
+    Name ="RecID"
+    Expression ="ELGEXP.RecID"
+End
+Begin OrderBy
+    Expression ="ELGEXP.EISBRID"
+    Flag =0
+    Expression ="ELGEXP.EIRECID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="ELGEXP.EIHPHR"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIACTDB@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EICRDCR@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIBANK"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIACTDB#]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTEXPR"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIGRPID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EISGRPID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EINMPLAN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTEFF"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTCVEF"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTCVEN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIMBRDP@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EISPC@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIFACCN@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIPRVCN@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTPNEF"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTPNEN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTTERM"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIPRMSC@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIPRMCL@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EISTUSTS"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIEXTCVG"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EITRNID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTHIRE"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIDSCL@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EISSN#]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EIMBRRF#]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.DTALIB"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[RPTINS#OA]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[RPTINS#]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RPTPLANOA"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RPTNMPLAN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RPTGRPOA"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RPTGRPID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RPTPPOOA"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RPTPPOID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RPTDTASOF"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIRECID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIMBRID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EISBRID"
+        dbInteger "ColumnWidth" ="1680"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EINAML"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EINAMF"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EINAMM"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDTBR"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EISEX"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EISSNEXT"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIADD1"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIADD2"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIADD3"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EICITY"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EICTY@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.[EISTE@]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIZIP6"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIZIP4"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIHEMAIL"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIWEMAIL"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIWPHR"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIWEXG"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EIDPT"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.UNIQUEID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="UNIQUE_ID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.RecID"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =19
+    Top =22
+    Right =1384
+    Bottom =699
+    Left =-1
+    Top =-1
+    Right =1333
+    Bottom =356
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =48
+        Top =12
+        Right =295
+        Bottom =327
+        Top =0
+        Name ="ELGEXP"
+        Name =""
+    End
+End

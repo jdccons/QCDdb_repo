@@ -1,0 +1,96 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tlkpClientServiceReps"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPLANid"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRclientSVCrep"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepName"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRagentID1"
+    Expression ="tblGrp.GRagentID2"
+    Expression ="tblGrp.GRExecSalesDirID"
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblGrp.GRclientSVCrep"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRPgeoID"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
+    Flag =1
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3675"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRmainCONT"
+        dbInteger "ColumnWidth" ="2160"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =70
+    Top =52
+    Right =757
+    Bottom =360
+    Left =-1
+    Top =-1
+    Right =680
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =179
+        Bottom =98
+        Top =1
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =443
+        Top =9
+        Right =539
+        Bottom =86
+        Top =1
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+    Begin
+        Left =212
+        Top =1
+        Right =308
+        Bottom =108
+        Top =4
+        Name ="tblAgent"
+        Name =""
+    End
+End

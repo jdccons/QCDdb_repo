@@ -1,0 +1,60 @@
+Operation =3
+Name ="tblInvLin"
+Option =8
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblInvHdrPreliminary"
+End
+Begin OutputColumns
+    Name ="DOCUMENT NO"
+    Expression ="tblInvHdrPreliminary.Tranno"
+    Alias ="Descr"
+    Name ="DESCRIPTION"
+    Expression ="(\"Contract Ending: \" & [tblSubscr].[SUBcontEND])"
+    Alias ="LineType"
+    Name ="LineItemTy"
+    Expression ="2"
+End
+Begin Joins
+    LeftTable ="tblInvHdrPreliminary"
+    RightTable ="tblSubscr"
+    Expression ="tblInvHdrPreliminary.Custkey = tblSubscr.PLTcustKEY"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =483
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =221
+        Top =8
+        Right =317
+        Bottom =115
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =9
+        Right =173
+        Bottom =116
+        Top =0
+        Name ="tblInvHdrPreliminary"
+        Name =""
+    End
+End

@@ -1,0 +1,87 @@
+Operation =4
+Option =0
+Where ="(((tblGrp.GROUPid)=[Forms]![frmGrp].[GroupID]))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="ARCUST"
+End
+Begin OutputColumns
+    Name ="ARCUST.CustomerName"
+    Expression ="[tblGrp].[GrName]"
+    Name ="ARCUST.CustomerAddress1"
+    Expression ="[tblGrp].[GRstreet1]"
+    Name ="ARCUST.CustomerAddress2"
+    Expression ="[tblGrp].[GRstreet2]"
+    Name ="ARCUST.CustomerCity"
+    Expression ="[tblGrp].[GRcity]"
+    Name ="ARCUST.CustomerState"
+    Expression ="[tblGrp].[GRstate]"
+    Name ="ARCUST.CustomerZipCode"
+    Expression ="[tblGrp].[GRzip]"
+    Name ="ARCUST.AttnPhone"
+    Expression ="[tblGrp].[GRphone1]"
+    Name ="ARCUST.CustomerAttention"
+    Expression ="[tblGrp].[GRmainCONT]"
+    Name ="ARCUST.ContactPhone"
+    Expression ="[tblGrp].[GRphone2]"
+    Name ="ARCUST.ContactName"
+    Expression ="[tblGrp].[GRsrvCONT]"
+    Name ="ARCUST.FaxNumber"
+    Expression ="[tblGrp].[GRfax]"
+    Name ="ARCUST.TerritoryKey"
+    Expression ="[tblGrp].[GRPgeoID]"
+    Name ="ARCUST.EmailAddress"
+    Expression ="[tblGrp].[GRemail]"
+    Name ="ARCUST.RecDate"
+    Expression ="Format(Date(),\"mm/dd/yyyy\")"
+    Name ="ARCUST.RecUserID"
+    Expression ="\"frmGrp\""
+    Name ="ARCUST.PaymentMthd"
+    Expression ="\"O\""
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="ARCUST"
+    Expression ="tblGrp.GROUPid = ARCUST.CustomerKey"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =436
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =222
+        Bottom =375
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =257
+        Top =3
+        Right =419
+        Bottom =342
+        Top =23
+        Name ="ARCUST"
+        Name =""
+    End
+End

@@ -1,0 +1,83 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GROUPid)=\"champ\") AND ((tblGrp.GroupType)=3) AND ((tblGrp.GRcancelle"
+    "d)=No) AND ((tblSubscr.FOCType)=2))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBmiddleNAME"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SUBGender"
+    Expression ="tblSubscr.SUBdob"
+    Expression ="tblSubscr.SUBmiddleNAME"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBmiddleNAME"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+    Expression ="tblSubscr.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =87
+    Top =24
+    Right =1269
+    Bottom =801
+    Left =-1
+    Top =-1
+    Right =1175
+    Bottom =495
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =404
+        Top =8
+        Right =634
+        Bottom =432
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =60
+        Top =6
+        Right =338
+        Bottom =445
+        Top =1
+        Name ="tblGrp"
+        Name =""
+    End
+End

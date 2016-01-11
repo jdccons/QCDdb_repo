@@ -1,0 +1,88 @@
+Operation =1
+Option =0
+Where ="((([__tblSubscr_Bexar].PlanID)<>[tblSubscr].[PlanID])) OR ((([__tblSubscr_Bexar]"
+    ".CoverID)<>[tblSubscr].[CoverID]))"
+Begin InputTables
+    Name ="__tblSubscr_Bexar"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="[__tblSubscr_Bexar].SubSSN"
+    Expression ="[__tblSubscr_Bexar].SubGroupID"
+    Expression ="[__tblSubscr_Bexar].SubLastName"
+    Expression ="[__tblSubscr_Bexar].SubFirstName"
+    Alias ="BEXIN Plan"
+    Expression ="[__tblSubscr_Bexar].PlanID"
+    Alias ="QCD Plan"
+    Expression ="tblSubscr.PlanID"
+    Alias ="BEXIN Cover"
+    Expression ="[__tblSubscr_Bexar].CoverID"
+    Alias ="QCD Cover"
+    Expression ="tblSubscr.CoverID"
+    Alias ="Plan Diff"
+    Expression ="IIf([__tblSubscr_Bexar].[PlanID]<>[tblSubscr].[PlanID],\"Plan Discrepancy\",\"\""
+        ")"
+    Alias ="Cover Diff"
+    Expression ="IIf([__tblSubscr_Bexar].[CoverID]<>[tblSubscr].[CoverID],\"Cover Discrepancy\",\""
+        "\")"
+End
+Begin Joins
+    LeftTable ="__tblSubscr_Bexar"
+    RightTable ="tblSubscr"
+    Expression ="[__tblSubscr_Bexar].SubSSN = tblSubscr.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="[__tblSubscr_Bexar].SubLastName"
+        dbInteger "ColumnWidth" ="1800"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Plan Diff"
+        dbInteger "ColumnWidth" ="2160"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Cover Diff"
+        dbInteger "ColumnWidth" ="2160"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1273
+    Bottom =310
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =248
+        Bottom =180
+        Top =5
+        Name ="__tblSubscr_Bexar"
+        Name =""
+    End
+    Begin
+        Left =363
+        Top =11
+        Right =604
+        Bottom =215
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

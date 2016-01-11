@@ -1,0 +1,48 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tbldentistspec"
+End
+Begin OutputColumns
+    Expression ="tbldentistspec.SPECIALTYID"
+    Expression ="tbldentistspec.SPECIALITYdesc"
+End
+Begin OrderBy
+    Expression ="tbldentistspec.SPECIALITYdesc"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="[tbldentistspec].SPECIALITYdesc"
+        dbInteger "ColumnWidth" ="3525"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =76
+    Top =58
+    Right =1002
+    Bottom =371
+    Left =-1
+    Top =-1
+    Right =915
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =246
+        Bottom =120
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+End

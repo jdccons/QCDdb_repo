@@ -1,0 +1,44 @@
+Operation =1
+Option =0
+Where ="(((tblDentist.DentCity)=\"Austin\" Or (tblDentist.DentCity)=\"Round Rock\" Or (t"
+    "blDentist.DentCity)=\"Georgetown\" Or (tblDentist.DentCity)=\"Marble Falls\" Or "
+    "(tblDentist.DentCity)=\"Cedar Park\" Or (tblDentist.DentCity)=\"San Marcos\" Or "
+    "(tblDentist.DentCity)=\"Elgin\") AND ((tblDentist.DentStatus)=\"A\"))"
+Begin InputTables
+    Name ="tblDentist"
+End
+Begin OutputColumns
+    Expression ="tblDentist.DentCity"
+    Expression ="tblDentist.DentSpecialty"
+    Expression ="tblDentist.DentStatus"
+    Expression ="tblDentist.DentCloseMyOff"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =36
+    Top =14
+    Right =744
+    Bottom =316
+    Left =-1
+    Top =-1
+    Right =697
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =135
+        Bottom =98
+        Top =21
+        Name ="tblDentist"
+        Name =""
+    End
+End

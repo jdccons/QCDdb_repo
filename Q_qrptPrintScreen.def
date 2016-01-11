@@ -1,0 +1,103 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblCalendar"
+    Name ="qselEligEmps_Current"
+    Name ="qselSubscriberCount_Current"
+    Name ="tlkpClientServiceReps"
+End
+Begin OutputColumns
+    Expression ="tblGrp.*"
+    Expression ="tlkpClientServiceReps.RepName"
+    Expression ="tblCalendar.calMonth"
+    Expression ="qselEligEmps_Current.CurrentEligEmps"
+    Expression ="qselSubscriberCount_Current.CurrentSubscriberCount"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="qselEligEmps_Current"
+    Expression ="tblGrp.GROUPid = qselEligEmps_Current.GroupID"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="qselSubscriberCount_Current"
+    Expression ="tblGrp.GROUPid = qselSubscriberCount_Current.GroupID"
+    Flag =2
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =3
+    LeftTable ="tblCalendar"
+    RightTable ="tblGrp"
+    Expression ="tblCalendar.calID = tblGrp.GRannvDATE"
+    Flag =3
+End
+Begin OrderBy
+    Expression ="tblGrp.GRname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =48
+    Top =96
+    Right =880
+    Bottom =488
+    Left =-1
+    Top =-1
+    Right =825
+    Bottom =223
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =240
+        Bottom =180
+        Top =34
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =467
+        Top =6
+        Right =563
+        Bottom =75
+        Top =0
+        Name ="tblCalendar"
+        Name =""
+    End
+    Begin
+        Left =601
+        Top =6
+        Right =697
+        Bottom =90
+        Top =0
+        Name ="qselEligEmps_Current"
+        Name =""
+    End
+    Begin
+        Left =455
+        Top =102
+        Right =682
+        Bottom =186
+        Top =0
+        Name ="qselSubscriberCount_Current"
+        Name =""
+    End
+    Begin
+        Left =278
+        Top =84
+        Right =374
+        Bottom =168
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+End

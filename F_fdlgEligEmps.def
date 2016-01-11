@@ -1,0 +1,167 @@
+Version =20
+VersionRequired =20
+Checksum =-1467151787
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =3240
+    DatasheetFontHeight =10
+    ItemSuffix =4
+    Left =4290
+    Top =3075
+    Right =12045
+    Bottom =7605
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x8903859034dde140
+    End
+    GUID = Begin
+        0x38c33f3a52f79445804d9db16aa82edc
+    End
+    NameMap = Begin
+        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
+        0x0000000000000000000000000000
+    End
+    Caption ="Enter Eligible Employees"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin Section
+            Height =1605
+            BackColor =65280
+            Name ="Detail"
+            GUID = Begin
+                0xb57399fafb290d44bccf84690ab4a15f
+            End
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =2175
+                    Top =255
+                    Width =885
+                    Height =285
+                    Name ="txtEligEmps"
+                    DefaultValue ="0"
+                    GUID = Begin
+                        0x66090be5b6c7514986a5af10ff7634f7
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =420
+                            Top =255
+                            Width =1680
+                            Height =240
+                            FontWeight =700
+                            Name ="Label1"
+                            Caption ="Eligible Employees:  "
+                            GUID = Begin
+                                0x34b5be971a814b48b582e4079cce0687
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1440
+                    Top =840
+                    Width =576
+                    Height =576
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =65535
+                    Name ="Command2"
+                    Caption ="OK"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x0335f234d1de9b4c85d0daeb65d1d26e
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Private Sub Command2_Click()
+
+'Purpose:  checks if record exits in tblGrowth
+'          or if record exists and BeginEligEmps > 0 then bypass
+'          else insert BeginEligEmps and CurrentEligEmps into
+'          controls on subform
+'John Criswell 3/4/00
+
+On Error GoTo Command2_Click_Err
+
+    Dim intEligEmps As Integer
+    Dim strYear As String
+    Dim strGroupID As String
+
+    strYear = CStr(Year(date))
+    strGroupID = Me.OpenArgs
+    
+    If IsThereGrowth(strGroupID, strYear) Or IsThereEligEmps(strGroupID, strYear) Then
+        MsgBox "There are already records in tblGrowth for this group."
+        DoCmd.Close
+    Else
+        intEligEmps = Me![txtEligEmps]
+
+        Forms![frmGrp]![Child150].Form![Year] = strYear
+        Forms![frmGrp]![Child150].Form![BeginEligEmps] = intEligEmps
+        Forms![frmGrp]![Child150].Form![CurrentEligEmps] = intEligEmps
+
+        DoCmd.Close
+    End If
+
+Command2_Click_Exit:
+Exit Sub
+
+Command2_Click_Err:
+    
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Command2_Click_Exit
+
+End Sub
+Private Sub Command3_Click()
+On Error GoTo Err_Command3_Click
+
+
+    DoCmd.Close
+
+Exit_Command3_Click:
+    Exit Sub
+
+Err_Command3_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_Command3_Click
+    
+End Sub

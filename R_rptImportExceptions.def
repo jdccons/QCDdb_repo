@@ -1,0 +1,494 @@
+Version =17
+VersionRequired =17
+Checksum =-380654778
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10080
+    DatasheetFontHeight =10
+    ItemSuffix =49
+    Left =855
+    Top =90
+    Right =11070
+    Bottom =6045
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xa761d14275fae140
+    End
+    RecordSource ="qselImportAlphaCheck"
+    Caption ="Import Exceptions"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xd0020000a0050000d0020000a005000000000000602700006801000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000200580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000c401 ,
+        0x000000000000250100000000040064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4e747365727665725c68706c6a350000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            ControlSource ="LastName"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =720
+            Name ="ReportHeader"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    Left =60
+                    Top =60
+                    Width =3492
+                    Height =504
+                    FontSize =20
+                    Name ="Label16"
+                    Caption ="Import Exceptions"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =480
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    Left =60
+                    Top =60
+                    Width =648
+                    Height =288
+                    Name ="GroupID Label"
+                    Caption ="Group"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="GroupID_Label"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =900
+                    Top =60
+                    Width =600
+                    Height =288
+                    Name ="SSN Label"
+                    Caption ="SSN"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SSN_Label"
+                End
+                Begin Label
+                    Left =2340
+                    Top =60
+                    Width =1200
+                    Height =288
+                    Name ="FirstName Label"
+                    Caption ="Name"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="FirstName_Label"
+                End
+                Begin Label
+                    Left =4740
+                    Top =60
+                    Width =2340
+                    Height =288
+                    Name ="StreetAddress2 Label"
+                    Caption ="Address"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="StreetAddress2_Label"
+                End
+                Begin Label
+                    Left =7200
+                    Top =60
+                    Width =1200
+                    Height =288
+                    Name ="City Label"
+                    Caption ="City"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="City_Label"
+                End
+                Begin Label
+                    Left =8580
+                    Top =60
+                    Width =480
+                    Height =288
+                    Name ="State Label"
+                    Caption ="State"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="State_Label"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =60
+                    Top =360
+                    Width =9960
+                    Height =12
+                    Name ="Line19"
+                End
+                Begin Label
+                    Left =9240
+                    Top =60
+                    Width =600
+                    Height =288
+                    Name ="ZipCode Label"
+                    Caption ="Zip"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="ZipCode_Label"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =360
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =3540
+                    Top =60
+                    Width =780
+                    BackColor =10092543
+                    Name ="LastName"
+                    ControlSource ="LastName"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Left =60
+                    Top =60
+                    Width =660
+                    Height =216
+                    TabIndex =1
+                    Name ="GroupID"
+                    ControlSource ="GroupID"
+                End
+                Begin TextBox
+                    Left =900
+                    Top =60
+                    Width =1020
+                    TabIndex =2
+                    Name ="SSN"
+                    ControlSource ="SSN"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =2340
+                    Top =60
+                    Width =540
+                    TabIndex =3
+                    BackColor =10092543
+                    Name ="FirstName"
+                    ControlSource ="FirstName"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Left =4800
+                    Top =60
+                    Width =2340
+                    TabIndex =4
+                    Name ="txtStreet"
+                    ControlSource ="=IIf(IsNull([StreetAddress2]),\"*** Missing Address ***\",[StreetAddress2])"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Left =9240
+                    Top =60
+                    Width =600
+                    TabIndex =5
+                    Name ="txtZipCode"
+                    ControlSource ="=IIf(IsNull([ZipCode]),\"* Miss Zip *\",[ZipCode])"
+                End
+                Begin TextBox
+                    Left =7200
+                    Top =60
+                    Width =1200
+                    TabIndex =6
+                    Name ="txtCity"
+                    ControlSource ="=IIf(IsNull([City]),\"*** City ***\",[City])"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Left =8520
+                    Top =60
+                    Width =600
+                    TabIndex =7
+                    Name ="txtState"
+                    ControlSource ="=IIf(IsNull([State]),\"* Miss*\",[State])"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Left =2340
+                    Top =60
+                    Width =2160
+                    TabIndex =8
+                    Name ="Text21"
+                    ControlSource ="=IIf(IsNull([FirstName]),\"*** Missing First ***\",[FirstName]) & \" \" & IIf(Is"
+                        "Null([LastName]),\"*** Missing Last ***\",[LastName])"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =4980
+                    Top =60
+                    Width =480
+                    TabIndex =9
+                    BackColor =10092543
+                    Name ="StreetAddress2"
+                    ControlSource ="StreetAddress2"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =7800
+                    Top =60
+                    Width =360
+                    TabIndex =10
+                    BackColor =10092543
+                    Name ="Text24"
+                    ControlSource ="City"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =8700
+                    Top =60
+                    Width =300
+                    TabIndex =11
+                    BackColor =10092543
+                    Name ="Text26"
+                    ControlSource ="State"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =9420
+                    Top =60
+                    Width =360
+                    TabIndex =12
+                    BackColor =10092543
+                    Name ="Text28"
+                    ControlSource ="ZipCode"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =516
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Top =240
+                    Width =4560
+                    Height =276
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text17"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =4740
+                    Top =240
+                    Width =4560
+                    Height =276
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text18"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    BorderWidth =3
+                    Left =60
+                    Top =240
+                    Width =9240
+                    BorderColor =12632256
+                    Name ="Line20"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =2100
+            Name ="ReportFooter"
+            Begin
+                Begin Subform
+                    Top =720
+                    Width =9600
+                    Height =300
+                    Name ="Child30"
+                    SourceObject ="Report.rsubImportPlanErrors"
+                End
+                Begin Label
+                    Left =60
+                    Top =420
+                    Width =648
+                    Height =288
+                    Name ="Label32"
+                    Caption ="Group"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    Left =780
+                    Top =420
+                    Width =1308
+                    Height =288
+                    Name ="Label33"
+                    Caption ="Length - SSN"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    Left =2340
+                    Top =420
+                    Width =1200
+                    Height =288
+                    Name ="Label34"
+                    Caption ="Name"
+                    Tag ="DetachedLabel"
+                End
+                Begin Subform
+                    Top =1740
+                    Width =9600
+                    Height =300
+                    TabIndex =1
+                    Name ="Child39"
+                    SourceObject ="Report.rsubImportPriceErrors"
+                End
+                Begin Label
+                    Left =60
+                    Top =1440
+                    Width =648
+                    Height =288
+                    Name ="Label40"
+                    Caption ="Group"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =900
+                    Top =1440
+                    Width =600
+                    Height =288
+                    Name ="Label41"
+                    Caption ="SSN"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    Left =2340
+                    Top =1440
+                    Width =1200
+                    Height =288
+                    Name ="Label42"
+                    Caption ="Name"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    Left =7200
+                    Top =1440
+                    Width =1200
+                    Height =288
+                    Name ="Label44"
+                    Caption ="Rate"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    Top =120
+                    Width =1740
+                    Height =288
+                    Name ="Label45"
+                    Caption ="SSN Errors"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    Top =1140
+                    Width =3420
+                    Height =288
+                    Name ="Label46"
+                    Caption ="Price Match (Rate) Errors"
+                    Tag ="DetachedLabel"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =420
+                    Width =1800
+                    Name ="Line47"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =1440
+                    Width =1860
+                    Name ="Line48"
+                End
+            End
+        End
+    End
+End

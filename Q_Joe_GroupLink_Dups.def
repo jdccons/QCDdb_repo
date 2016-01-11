@@ -1,0 +1,56 @@
+Operation =1
+Option =0
+Having ="(((Count(Joe_GroupLink_Subscrs.[EISSN#]))>1))"
+Begin InputTables
+    Name ="Joe_GroupLink_Subscrs"
+End
+Begin OutputColumns
+    Expression ="Joe_GroupLink_Subscrs.EIGRPID"
+    Alias ="EISSN# Field"
+    Expression ="First(Joe_GroupLink_Subscrs.[EISSN#])"
+    Expression ="Joe_GroupLink_Subscrs.EINAML"
+    Expression ="Joe_GroupLink_Subscrs.EINAMF"
+    Alias ="NumberOfDups"
+    Expression ="Count(Joe_GroupLink_Subscrs.[EISSN#])"
+End
+Begin Groups
+    Expression ="Joe_GroupLink_Subscrs.EIGRPID"
+    GroupLevel =0
+    Expression ="Joe_GroupLink_Subscrs.EINAML"
+    GroupLevel =0
+    Expression ="Joe_GroupLink_Subscrs.EINAMF"
+    GroupLevel =0
+    Expression ="Joe_GroupLink_Subscrs.[EISSN#]"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =62
+    Right =1258
+    Bottom =374
+    Left =-1
+    Top =-1
+    Right =1211
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =76
+        Top =5
+        Right =226
+        Bottom =112
+        Top =0
+        Name ="Joe_GroupLink_Subscrs"
+        Name =""
+    End
+End

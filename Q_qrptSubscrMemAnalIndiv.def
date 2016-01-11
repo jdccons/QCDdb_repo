@@ -1,0 +1,49 @@
+Operation =1
+Option =8
+Having ="(([tblSubscr].SUBstatus=\"indiv\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="[tblSubscr].SUBstatus"
+    Alias ="SumOfSUBnoDEPENT"
+    Expression ="Sum([tblSubscr].SUBnoDEPENT)"
+    Alias ="CountOfSUBssn"
+    Expression ="Count([tblSubscr].SUBssn)"
+End
+Begin Groups
+    Expression ="[tblSubscr].SUBstatus"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+    Begin
+        dbText "Name" ="SumOfSUBnoDEPENT"
+        dbInteger "ColumnWidth" ="2010"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =489
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =541
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =118
+        Top =0
+        Name ="t-SUBSCR"
+        Name =""
+    End
+End

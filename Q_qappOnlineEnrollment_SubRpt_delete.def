@@ -1,0 +1,115 @@
+Operation =3
+Name ="tmpEDI_Rpt"
+Option =8
+Begin InputTables
+    Name ="tblEDI_App_Subscr_delete"
+    Name ="tblPlans"
+    Name ="tblCoverage"
+End
+Begin OutputColumns
+    Name ="GroupID"
+    Expression ="tblEDI_App_Subscr_delete.SubGroupID"
+    Name ="SUBssn"
+    Expression ="tblEDI_App_Subscr_delete.SubSSN"
+    Name ="SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr_delete.SubFirstName"
+    Name ="SUBlastNAME"
+    Expression ="tblEDI_App_Subscr_delete.SubLastName"
+    Name ="PlanDesc"
+    Expression ="tblPlans.PlanDesc"
+    Name ="CoverageDesc"
+    Expression ="tblCoverage.CoverDescr"
+    Alias ="SUBStreet"
+    Name ="SUBStreet"
+    Expression ="[tblEDI_App_Subscr_delete].[SUBstreet1] & \" \" & [tblEDI_App_Subscr_delete].[SU"
+        "BStreet2]"
+    Name ="SUBcity"
+    Expression ="tblEDI_App_Subscr_delete.SubCity"
+    Name ="SUBstate"
+    Expression ="tblEDI_App_Subscr_delete.SubState"
+    Name ="SUBzip"
+    Expression ="tblEDI_App_Subscr_delete.SubZip"
+    Name ="Stat"
+    Expression ="tblEDI_App_Subscr_delete.TransactionType"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr_delete"
+    RightTable ="tblPlans"
+    Expression ="tblEDI_App_Subscr_delete.PlanID = tblPlans.PlanID"
+    Flag =2
+    LeftTable ="tblEDI_App_Subscr_delete"
+    RightTable ="tblCoverage"
+    Expression ="tblEDI_App_Subscr_delete.CoverID = tblCoverage.CoverID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+dbText "Description" ="deleted subs move to a temp table for report"
+Begin
+    Begin
+        dbText "Name" ="tblCoverage.CoverDescr"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubGroupID"
+        dbInteger "ColumnWidth" ="1395"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Plan"
+        dbInteger "ColumnWidth" ="1305"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Coverage"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =864
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =332
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =231
+        Bottom =232
+        Top =0
+        Name ="tblEDI_App_Subscr_delete"
+        Name =""
+    End
+    Begin
+        Left =287
+        Top =5
+        Right =431
+        Bottom =116
+        Top =0
+        Name ="tblPlans"
+        Name =""
+    End
+    Begin
+        Left =289
+        Top =143
+        Right =431
+        Bottom =269
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+End

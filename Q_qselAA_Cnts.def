@@ -1,0 +1,65 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GroupType)=4))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Alias ="RedEES"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],1,\"I\",\"S\"),0)"
+    Alias ="RedEE1S"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],1,\"O\",\"S\"),0)"
+    Alias ="RedEEFS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],1,\"F\",\"S\"),0)"
+    Alias ="WhtEE"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],2,\"I\",\"S\"),0)"
+    Alias ="WhtEE1S"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],2,\"O\",\"S\"),0)"
+    Alias ="WhtEEFS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],2,\"F\",\"S\"),0)"
+    Alias ="BluEEIS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],3,\"I\",\"S\"),0)"
+    Alias ="BluEEOS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],3,\"O\",\"S\"),0)"
+    Alias ="BluEEFS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],3,\"F\",\"S\"),0)"
+    Expression ="tblGrp.GroupType"
+    Alias ="RED+EEOS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],4,\"O\",\"S\"),0)"
+    Alias ="RED+EEIS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],4,\"I\",\"S\"),0)"
+    Alias ="RED+EEFS"
+    Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],4,\"F\",\"S\"),0)"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =56
+    Top =28
+    Right =976
+    Bottom =441
+    Left =-1
+    Top =-1
+    Right =913
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =190
+        Bottom =101
+        Top =38
+        Name ="tblGrp"
+        Name =""
+    End
+End

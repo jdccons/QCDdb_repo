@@ -1,0 +1,61 @@
+Operation =6
+Option =0
+Begin InputTables
+    Name ="vwSubscribersAll"
+End
+Begin OutputColumns
+    Alias ="TypeofGroup"
+    Expression ="IIf([GroupType]=1,\"QCD Only\",IIf([GroupType]=4,\"All American\",IIf([GroupType"
+        "]=9,\"Individual\",\"None\")))"
+    GroupLevel =2
+    Expression ="vwSubscribersAll.PlanID"
+    GroupLevel =1
+    Alias ="CountOfSubSSN"
+    Expression ="Count(vwSubscribersAll.SubSSN)"
+    Alias ="Total"
+    Expression ="Count(vwSubscribersAll.SubSSN)"
+    GroupLevel =2
+End
+Begin OrderBy
+    Expression ="vwSubscribersAll.GroupType"
+    Flag =0
+End
+Begin Groups
+    Expression ="IIf([GroupType]=1,\"QCD Only\",IIf([GroupType]=4,\"All American\",IIf([GroupType"
+        "]=9,\"Individual\",\"None\")))"
+    GroupLevel =2
+    Expression ="vwSubscribersAll.PlanID"
+    GroupLevel =1
+    Expression ="vwSubscribersAll.GroupType"
+    GroupLevel =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =29
+    Right =1258
+    Bottom =557
+    Left =-1
+    Top =-1
+    Right =1200
+    Bottom =359
+    Left =0
+    Top =0
+    ColumnsShown =559
+    Begin
+        Left =107
+        Top =101
+        Right =385
+        Bottom =302
+        Top =0
+        Name ="vwSubscribersAll"
+        Name =""
+    End
+End

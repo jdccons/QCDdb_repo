@@ -1,0 +1,12 @@
+dbMemo "SQL" ="INSERT INTO tblImportDeletions ( SUBssn, SUBlastNAME, SUBfirstNAME, SUBstreet1, "
+    "SUBstreet2, SUBcity, SUBstate, SUBzip )\015\012SELECT DISTINCTROW tblImportGroup"
+    "Temp.SSN, tblImportGroupTemp.LastName, tblImportGroupTemp.FirstName, tblImportGr"
+    "oupTemp.StreetAddress, tblImportGroupTemp.StreetAddress2, tblImportGroupTemp.Cit"
+    "y, tblImportGroupTemp.State, tblImportGroupTemp.ZipCode\015\012FROM tblImportGro"
+    "upTemp LEFT JOIN tblSubscr ON tblImportGroupTemp.SSN = tblSubscr.SUBssn\015\012W"
+    "HERE (((tblSubscr.SUBssn) Is Null));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

@@ -1,0 +1,99 @@
+Operation =1
+Option =0
+Where ="(((Mid([__tblSubscr_Bexar].[SubZip],1,5))<>[tblSubscr].[SubZip]))"
+Begin InputTables
+    Name ="__tblSubscr_Bexar"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Alias ="BEXIN SSN"
+    Expression ="Format([__tblSubscr_Bexar].[SubSSN],\"@@@-@@-@@@@\")"
+    Expression ="[__tblSubscr_Bexar].SubGroupID"
+    Alias ="BEXIN Last Name"
+    Expression ="[__tblSubscr_Bexar].SubLastName"
+    Alias ="BEXIN First Name"
+    Expression ="[__tblSubscr_Bexar].SubFirstName"
+    Alias ="BEXIN Street1"
+    Expression ="[__tblSubscr_Bexar].SubStreet1"
+    Alias ="BEXIN Street2"
+    Expression ="[__tblSubscr_Bexar].SubStreet2"
+    Alias ="BEXIN City"
+    Expression ="[__tblSubscr_Bexar].SubCity"
+    Alias ="BEXIN ST"
+    Expression ="[__tblSubscr_Bexar].SubState"
+    Alias ="BEXIN Zip"
+    Expression ="Mid([__tblSubscr_Bexar].[SubZip],1,5)"
+    Alias ="BEXIN Phone Home"
+    Expression ="Format([__tblSubscr_Bexar].[SubPhoneHome],\"(@@@) @@@-@@@@\")"
+    Alias ="QCD Last Name"
+    Expression ="tblSubscr.SubLastName"
+    Alias ="QCD First Name"
+    Expression ="tblSubscr.SubFirstName"
+    Alias ="QCD Street1"
+    Expression ="tblSubscr.SubStreet1"
+    Alias ="QCD Street2"
+    Expression ="tblSubscr.SubStreet2"
+    Alias ="QCD City"
+    Expression ="tblSubscr.SubCity"
+    Alias ="QCD ST"
+    Expression ="tblSubscr.SubState"
+    Alias ="QCD Zip"
+    Expression ="tblSubscr.SubZip"
+    Alias ="QCD Phone Home"
+    Expression ="Format([tblSubscr].[SubPhoneHome],\"(@@@) @@@-@@@@\")"
+End
+Begin Joins
+    LeftTable ="__tblSubscr_Bexar"
+    RightTable ="tblSubscr"
+    Expression ="[__tblSubscr_Bexar].SubSSN = tblSubscr.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="BEXIN Last Name"
+        dbInteger "ColumnWidth" ="1800"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="BEXIN Street1"
+        dbInteger "ColumnWidth" ="2715"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-32
+    Right =1282
+    Bottom =902
+    Left =-1
+    Top =-1
+    Right =1171
+    Bottom =310
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =248
+        Bottom =180
+        Top =10
+        Name ="__tblSubscr_Bexar"
+        Name =""
+    End
+    Begin
+        Left =363
+        Top =11
+        Right =604
+        Bottom =215
+        Top =11
+        Name ="tblSubscr"
+        Name =""
+    End
+End

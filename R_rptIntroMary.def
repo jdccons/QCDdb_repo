@@ -1,0 +1,242 @@
+Version =17
+VersionRequired =17
+Checksum =-521097910
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    RecordLocks =2
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =8550
+    DatasheetFontHeight =10
+    ItemSuffix =17
+    Left =1140
+    Top =870
+    Right =10245
+    Bottom =11520
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x936ba70c90d5e140
+    End
+    RecordSource ="SELECT IIf([Grzip] Like \"#####-\",Left([Grzip],Len([Grzip])-1),IIf([Grzip] Like"
+        " \"#########\",Format([Grzip],\"@@@@@-@@@@\"),[GrZip])) AS Zip2, tblGrp.GRcancel"
+        "led, tblGrp.GRsrvCONT, Trim(\"Dear \" & [FullName] & \",\") AS Salutation, Left("
+        "[GRsrvCONT],InStr(1,[GRsrvCONT],\" \")-1) AS First, Right(Trim([GRsrvCONT]),Len("
+        "Trim([GRsrvCONT]))-InStr(1,[GRsrvCONT],\" \")) AS Last, StrConv([First],3) AS Fu"
+        "llName, tblGrp.GRacctMgr, tblGrp.GRname, tblGrp.GRstreet1, tblGrp.GRstreet2, tbl"
+        "Grp.GRcity, tblGrp.GRstate, tblGrp.GRzip FROM tblGrp WHERE (((tblGrp.GRcancelled"
+        ")=0) AND ((tblGrp.GRacctMgr)=4)) ORDER BY tblGrp.GRname;"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x08070000100e000008070000a005000000000000662100005e29000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x5c5c62656c6d6f6e74626b75705c43616e6f6e2069523630302d3535302d3600 ,
+        0x01042a059c00c0080357010001000100ea0a6f08640001000700580201000100 ,
+        0x0000040000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0200000001000000020000000000000000000000000000000000000043616e6f ,
+        0x6e000000c0080000000000000001000001000000000500000c05240300010904 ,
+        0x0700430061006e006f006e002000690052003600300030002d00350035003000 ,
+        0x2d00360030002000500043004c00000000000000000000000000000000000000 ,
+        0x00008f010164010303640103026401010201040f051000036401010201040f05 ,
+        0x10000402050206020702080209010a020b020c020d640103020203020401000e ,
+        0x640102020103010401000f020004640103020203020402050106048007044008 ,
+        0x04400005640103050820060820070c080a090e0a010006640103020204020502 ,
+        0x0702080100076401030202030104010501060107010808120902000864010302 ,
+        0x0103020401050106020702080209020a020b020c020f02100211020d0d000964 ,
+        0x0101000a640202030422000b08200c0100656401640403010102030301050106 ,
+        0x030701000264010102010004640101020103010401050306030701080309010a ,
+        0x010b010c010d010e010f05100511050005640108210208100006640103020103 ,
+        0x010401050106010701080109010a010b010c010d010e020f0210021102120213 ,
+        0x0214011502160514170114180219010007640101020100086401010201030104 ,
+        0x0305084106060706080609060a060b060c060d060e0841000964010202020308 ,
+        0x100408100505060307081008081000030308000038000000000000010001006f ,
+        0x080000ea0a000040000000350000002f080000af0a0000010001006f080000ea ,
+        0x0a000040000000350000002f080000af0a000000000000006400000000000000 ,
+        0x0001003200010100010001000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000000000009200000043004f004e00 ,
+        0x46004900440045004e005400490041004c000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000000000000000000043004f004e00 ,
+        0x46004900440045004e005400490041004c000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000480000000000 ,
+        0x000090010000000041007200690061006c000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000808080000000000000000000c2010100000009000000 ,
+        0xffff000000000007000700070004000700000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000410e0200010000580258 ,
+        0x0200010100000100010000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000200005c53524742434f7e312e49434d ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000200005c53524742434f7e312e49434d0000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000005c53524742434f7e312e49434d00000000000002010101010505000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000440065006600610075006c0074002000530065007400740069006e00 ,
+        0x6700730000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000001000000000000000400000000000000010000000700000001000000 ,
+        0x0000000000000000000000000000010000000000000000000100000002000700 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000200020002000400020002000200 ,
+        0x0200020007000100320000000100010001000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000013200000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012003800010077696e73706f6f6c00005c5c62656c6d6f6e74626b75705c ,
+        0x43616e6f6e2069523630302d3535302d36302050434c000031302e32322e322e ,
+        0x33303a7072696e74000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin UnboundObjectFrame
+            OldBorderStyle =1
+        End
+        Begin PageHeader
+            Height =0
+            Name ="PageHeader"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =10590
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =30
+                    Top =2430
+                    Width =4305
+                    Height =330
+                    FontSize =12
+                    Name ="txtDear"
+                    ControlSource ="Salutation"
+                    FontName ="Book Antiqua"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =15
+                    Width =3015
+                    Height =390
+                    FontSize =12
+                    Name ="Label9"
+                    Caption ="December 30, 1999"
+                    FontName ="Book Antiqua"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =1140
+                    Width =4305
+                    Height =330
+                    FontSize =12
+                    TabIndex =1
+                    Name ="Text10"
+                    ControlSource ="GRname"
+                    FontName ="Book Antiqua"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =1470
+                    Width =4305
+                    Height =330
+                    FontSize =12
+                    TabIndex =2
+                    Name ="Text11"
+                    ControlSource ="GRstreet1"
+                    FontName ="Book Antiqua"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =1800
+                    Width =4305
+                    Height =330
+                    FontSize =12
+                    TabIndex =3
+                    Name ="Text12"
+                    ControlSource ="=Trim([GRcity] & \" , \" & [GRstate] & \"  \" & [Zip2])"
+                    FontName ="Book Antiqua"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =810
+                    Width =4305
+                    Height =330
+                    FontSize =12
+                    TabIndex =4
+                    Name ="Text13"
+                    ControlSource ="GRsrvCONT"
+                    FontName ="Book Antiqua"
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =2940
+                    Width =8535
+                    Height =7560
+                    FontSize =12
+                    Name ="Label16"
+                    Caption ="I want to take this opportunity to thank you for your support of QCD of America "
+                        "this past year and to share an exciting change within our company.\015\012\015\012"
+                        "As a result of our tremendous membership growth this past year, we have added ne"
+                        "w staff members to our Client Service Department in order to provide a more exte"
+                        "nsive and personal level of service to our customers.  Beginning with the new ye"
+                        "ar, your QCD Account Manager will be Mary Hill.\015\012                         "
+                        "                                                                                "
+                        "                           Mary will work with you and your Human Resource Depar"
+                        "tment staff on all higher level benefit questions/issues; plan design issues; re"
+                        "-enrollment and      in-group growth planning and QCD literature needs.  For you"
+                        "r convenience, I have enclosed Mary's business card.  She will be placing an int"
+                        "roduction call to you very soon.\015\012\015\012As always, our QCD Member Servic"
+                        "es Department is available from 9:00 am to 4:00 pm Monday through Friday to assi"
+                        "st your employees with any questions they may have.\015\012\015\012Again, I appr"
+                        "eciate your support of QCD and look forward to working with you more closely in "
+                        "the year to come!\015\012\015\012Sincerely,\015\012\015\012Shari D. Medlyn\015\012"
+                        "Director, Client Services\015\012\015\012\015\012\015\012\015\012"
+                    FontName ="Book Antiqua"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =0
+            Name ="PageFooter"
+        End
+    End
+End

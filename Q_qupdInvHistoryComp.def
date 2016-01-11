@@ -1,0 +1,60 @@
+Operation =4
+Option =0
+Where ="(((tblInvoiceHistory.InvMonth)=[intMonth]) AND ((tblInvoiceHistory.InvYear)=[int"
+    "Year]))"
+Begin InputTables
+    Name ="tblInvoiceHistory"
+    Name ="tblInvHistoryRpt"
+End
+Begin OutputColumns
+    Name ="tblInvHistoryRpt.CompAmt"
+    Expression ="[tblInvoiceHistory]![TotalBilling]"
+    Name ="tblInvHistoryRpt.CompMonth"
+    Expression ="[tblInvoiceHistory]![InvMonth]"
+    Name ="tblInvHistoryRpt.CompYear"
+    Expression ="[tblInvoiceHistory]![InvYear]"
+End
+Begin Joins
+    LeftTable ="tblInvHistoryRpt"
+    RightTable ="tblInvoiceHistory"
+    Expression ="tblInvHistoryRpt.GrpID = tblInvoiceHistory.GrpID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =157
+    Top =49
+    Right =1090
+    Bottom =492
+    Left =-1
+    Top =-1
+    Right =926
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =338
+        Top =5
+        Right =540
+        Bottom =137
+        Top =0
+        Name ="tblInvoiceHistory"
+        Name =""
+    End
+    Begin
+        Left =48
+        Top =7
+        Right =224
+        Bottom =139
+        Top =0
+        Name ="tblInvHistoryRpt"
+        Name =""
+    End
+End

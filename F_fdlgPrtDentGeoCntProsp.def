@@ -1,0 +1,166 @@
+Version =17
+VersionRequired =17
+Checksum =-137220005
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    Width =5760
+    ItemSuffix =28
+    Left =3660
+    Top =1725
+    Right =9825
+    Bottom =6180
+    RecSrcDt = Begin
+        0xd359ddb3b2c4e140
+    End
+    Caption ="Dentist PROSPECT Geographical Count"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin Section
+            Height =3598
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    AccessKey =82
+                    Left =2520
+                    Top =1890
+                    Width =717
+                    Height =478
+                    TabIndex =2
+                    Name ="PreviewButton"
+                    Caption ="Print Preview&R"
+                    StatusBarText ="Preview Report"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000017000000160000000100040000000000080100000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888889888888888888888888888884 ,
+                        0x88888888888888888888888388888888888888888888888e8888000000000000 ,
+                        0x8800888288880ffffffffff08000888d88880fffffff00007008888888880fff ,
+                        0xfff078870788888588880fffff0788f77088888288880fffff08888780888884 ,
+                        0x88880fffff08f8878088888888880fffff07ff877088888088880ffffff07887 ,
+                        0x0888888088880fffffff00008888888088880ffffffffff08888888088880fff ,
+                        0xffff00008888888088880fffffff08088888888188880fffffff008888888886 ,
+                        0x8888000000000888888888808888888888888888888888808888888888888888 ,
+                        0x8888888088888888888888888888888000000000000000000000000000000000 ,
+                        0x00000000000000000000000000000000000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
+                        0xffffff0000000000
+                    End
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =1140
+                    Top =360
+                    Width =2355
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text15"
+                    Caption ="Geographical Count From: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =1170
+                    Top =720
+                    Width =2295
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text8"
+                    Caption =" To: "
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =215
+                    ColumnCount =2
+                    ListWidth =3670
+                    Left =3471
+                    Top =360
+                    Width =1000
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    Name ="c-GEOfrom"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
+                        "on FROM tblGeographical ORDER BY tblGeographical.GEOid;"
+                    ColumnWidths ="915;2505"
+                    EventProcPrefix ="c_GEOfrom"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    ColumnCount =2
+                    ListWidth =3670
+                    Left =3471
+                    Top =720
+                    Width =1000
+                    TabIndex =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    Name ="c-GEOto"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
+                        "on FROM tblGeographical ORDER BY tblGeographical.GEOid;"
+                    ColumnWidths ="915;2505"
+                    EventProcPrefix ="c_GEOto"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub PreviewButton_Click()
+
+  On Error GoTo PROC_ERR
+    Dim strStDocName As String
+    Dim strData As String
+    strData = "qrptDentGeoCntProsp"
+
+    Me.Visible = False
+    
+    If DCount("*", strData) = 0 Then
+        MsgBox "The criteria you have chosen has resulted in no records." & vbCrLf & vbCrLf & "Please make another criteria selection and try again!"
+        DoCmd.Hourglass False
+        Me.Visible = True
+    Exit Sub
+    
+Else
+
+    strStDocName = "rptDentGeoCntProsp"
+    DoCmd.OpenReport strStDocName, acPreview
+
+    End If
+    
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

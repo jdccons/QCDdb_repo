@@ -1,0 +1,71 @@
+Operation =3
+Name ="ARCUST"
+Option =0
+Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmIndivSubscr]![PLTcustKEY]))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="CustomerKey"
+    Expression ="tblSubscr.PLTcustKEY"
+    Name ="CustomerName"
+    Expression ="tblSubscr.SUB_LUname"
+    Name ="CustomerAddress1"
+    Expression ="tblSubscr.SUBstreet1"
+    Name ="CustomerAddress2"
+    Expression ="tblSubscr.SUBstreet2"
+    Name ="CustomerCity"
+    Expression ="tblSubscr.SUBcity"
+    Name ="CustomerState"
+    Expression ="tblSubscr.SUBstate"
+    Name ="CustomerZipCode"
+    Expression ="tblSubscr.SUBzip"
+    Name ="AttnPhone"
+    Expression ="tblSubscr.SUBphoneHOME"
+    Name ="ContactPhone"
+    Expression ="tblSubscr.SUBphoneWORK"
+    Name ="TerritoryKey"
+    Expression ="tblSubscr.SUBgeoID"
+    Alias ="Date"
+    Name ="RecDate"
+    Expression ="Format(Date(),\"mm/dd/yyyy\")"
+    Alias ="User"
+    Name ="RecUserID"
+    Expression ="\"QCDdb\""
+    Alias ="CLASS"
+    Name ="CustomerClassKey"
+    Expression ="\"INDIV\""
+    Alias ="OPENinv"
+    Name ="PaymentMthd"
+    Expression ="\"O\""
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =-25
+    Top =29
+    Right =1011
+    Bottom =388
+    Left =-1
+    Top =-1
+    Right =1029
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =41
+        Top =5
+        Right =200
+        Bottom =104
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

@@ -1,0 +1,81 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SubCancelled)=1 Or (tblSubscr.SubCancelled) Is Null))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRPgeoID"
+    Alias ="CountOfDepSubID"
+    Expression ="Count(tblDependent.DepSubID)"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Flag =1
+End
+Begin Groups
+    Expression ="tblGrp.GRPgeoID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="CountOfDepSubID"
+        dbInteger "ColumnWidth" ="1995"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1432
+    Bottom =797
+    Left =-1
+    Top =-1
+    Right =1429
+    Bottom =308
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =189
+        Top =14
+        Right =285
+        Bottom =128
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =120
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =323
+        Top =6
+        Right =419
+        Bottom =120
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+End

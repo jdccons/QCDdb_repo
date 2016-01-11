@@ -1,0 +1,61 @@
+Operation =1
+Option =0
+Where ="(((ELGEXP.EIRECID)='P') AND ((Mid([EINMPLAN],8,3))='QCD')) OR (((ELGEXP.EIRECID)"
+    "='P') AND ((ELGEXP.EINMPLAN)='QCDBLU-MNL'))"
+Having ="(((Count(ELGEXP.[EISSN#]))>1)) OR (((Count(ELGEXP.[EISSN#]))>1))"
+Begin InputTables
+    Name ="ELGEXP"
+End
+Begin OutputColumns
+    Expression ="ELGEXP.[EISSN#]"
+    Expression ="ELGEXP.EISBRID"
+    Expression ="ELGEXP.EIMBRID"
+    Expression ="ELGEXP.EINAML"
+    Expression ="ELGEXP.EINAMF"
+    Expression ="ELGEXP.EIGRPID"
+End
+Begin Groups
+    Expression ="ELGEXP.[EISSN#]"
+    GroupLevel =0
+    Expression ="ELGEXP.EISBRID"
+    GroupLevel =0
+    Expression ="ELGEXP.EIMBRID"
+    GroupLevel =0
+    Expression ="ELGEXP.EINAML"
+    GroupLevel =0
+    Expression ="ELGEXP.EINAMF"
+    GroupLevel =0
+    Expression ="ELGEXP.EIGRPID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =84
+    Top =106
+    Right =1258
+    Bottom =715
+    Left =-1
+    Top =-1
+    Right =1163
+    Bottom =241
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =217
+        Bottom =189
+        Top =2
+        Name ="ELGEXP"
+        Name =""
+    End
+End

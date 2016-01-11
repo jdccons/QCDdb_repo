@@ -1,0 +1,107 @@
+Operation =3
+Name ="tblDependent"
+Option =0
+Having ="(((tblEDI_App_Subscr.TransactionType) Is Null Or (tblEDI_App_Subscr.TransactionT"
+    "ype)<>\"T\"))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblEDI_App_Dep"
+End
+Begin OutputColumns
+    Name ="DEPssn"
+    Expression ="tblEDI_App_Dep.DepSSN"
+    Name ="DEPsubID"
+    Expression ="tblEDI_App_Dep.DepSubID"
+    Alias ="FirstName"
+    Name ="DEPfirstNAME"
+    Expression ="UCase([DEPfirstNAME])"
+    Alias ="MI"
+    Name ="DEPmiddleNAME"
+    Expression ="UCase([DEPmiddleNAME])"
+    Alias ="LastName"
+    Name ="DEPlastNAME"
+    Expression ="UCase([DEPlastNAME])"
+    Name ="DEPdob"
+    Expression ="tblEDI_App_Dep.DepDOB"
+    Name ="DEPage"
+    Expression ="tblEDI_App_Dep.DepAge"
+    Alias ="gender"
+    Name ="DEPgender"
+    Expression ="IIf([DEPgender] Is Null,\"O\",[DEPgender])"
+    Name ="DEPrelationship"
+    Expression ="tblEDI_App_Dep.DepRelationship"
+    Name ="DepEffDate"
+    Expression ="tblEDI_App_Dep.DepEffDate"
+    Name ="PreexistingDate"
+    Expression ="tblEDI_App_Dep.PreexistingDate"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblEDI_App_Dep"
+    Expression ="tblEDI_App_Subscr.SubSSN = tblEDI_App_Dep.DepSubID"
+    Flag =3
+End
+Begin Groups
+    Expression ="tblEDI_App_Dep.DepSSN"
+    GroupLevel =0
+    Expression ="tblEDI_App_Dep.DepSubID"
+    GroupLevel =0
+    Expression ="UCase([DEPfirstNAME])"
+    GroupLevel =0
+    Expression ="UCase([DEPmiddleNAME])"
+    GroupLevel =0
+    Expression ="UCase([DEPlastNAME])"
+    GroupLevel =0
+    Expression ="tblEDI_App_Dep.DepDOB"
+    GroupLevel =0
+    Expression ="tblEDI_App_Dep.DepAge"
+    GroupLevel =0
+    Expression ="IIf([DEPgender] Is Null,\"O\",[DEPgender])"
+    GroupLevel =0
+    Expression ="tblEDI_App_Dep.DepRelationship"
+    GroupLevel =0
+    Expression ="tblEDI_App_Dep.DepEffDate"
+    GroupLevel =0
+    Expression ="tblEDI_App_Dep.PreexistingDate"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.TransactionType"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =883
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =328
+        Top =13
+        Right =616
+        Bottom =90
+        Top =43
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =274
+        Bottom =113
+        Top =7
+        Name ="tblEDI_App_Dep"
+        Name =""
+    End
+End

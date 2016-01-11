@@ -1,0 +1,56 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="qryPreexistingDates"
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Name ="tblEDI_App_Subscr.PreexistingDate"
+    Expression ="Mid([EIDTCVEF],1,2) & \"/\" & Mid([EIDTCVEF],3,2) & \"/\" & Mid([EIDTCVEF],5,4)"
+End
+Begin Joins
+    LeftTable ="qryPreexistingDates"
+    RightTable ="tblEDI_App_Subscr"
+    Expression ="qryPreexistingDates.[EISSN#] = tblEDI_App_Subscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+dbText "Description" ="p"
+Begin
+End
+Begin
+    State =0
+    Left =244
+    Top =81
+    Right =921
+    Bottom =516
+    Left =-1
+    Top =-1
+    Right =670
+    Bottom =279
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =308
+        Top =31
+        Right =517
+        Bottom =158
+        Top =0
+        Name ="qryPreexistingDates"
+        Name =""
+    End
+    Begin
+        Left =61
+        Top =28
+        Right =257
+        Bottom =248
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

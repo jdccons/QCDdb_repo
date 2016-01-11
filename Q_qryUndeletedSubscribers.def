@@ -1,0 +1,64 @@
+Operation =1
+Option =0
+Where ="(((qselAA_GroupLink_Subscribers.AA_SSN) Is Null))"
+Begin InputTables
+    Name ="qselAA_GroupLink_Subscribers"
+    Name ="qrySubscribers_All_American"
+End
+Begin OutputColumns
+    Expression ="qrySubscribers_All_American.SUBgroupID"
+    Expression ="qrySubscribers_All_American.SUBssn"
+    Expression ="qselAA_GroupLink_Subscribers.AA_SSN"
+End
+Begin Joins
+    LeftTable ="qselAA_GroupLink_Subscribers"
+    RightTable ="qrySubscribers_All_American"
+    Expression ="qselAA_GroupLink_Subscribers.AA_SSN = qrySubscribers_All_American.SUBssn"
+    Flag =3
+End
+Begin OrderBy
+    Expression ="qrySubscribers_All_American.SUBgroupID"
+    Flag =0
+    Expression ="qrySubscribers_All_American.SUBssn"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =131
+    Top =116
+    Right =1071
+    Bottom =470
+    Left =-1
+    Top =-1
+    Right =933
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =441
+        Top =8
+        Right =594
+        Bottom =115
+        Top =0
+        Name ="qselAA_GroupLink_Subscribers"
+        Name =""
+    End
+    Begin
+        Left =82
+        Top =6
+        Right =243
+        Bottom =113
+        Top =0
+        Name ="qrySubscribers_All_American"
+        Name =""
+    End
+End

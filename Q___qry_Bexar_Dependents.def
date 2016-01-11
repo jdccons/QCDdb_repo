@@ -1,0 +1,87 @@
+Operation =1
+Option =0
+Where ="((Not (tblDependent.DepSubID) Is Null) AND (([__tblDependent_Bexar].DepSubID) Is"
+    " Null) AND ((tblSubscr.SubGroupID)=\"BEXIN\"))"
+Begin InputTables
+    Name ="__tblDependent_Bexar"
+    Name ="tblDependent"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblDependent.DepSubID"
+    Expression ="tblDependent.DepFirstName"
+    Expression ="tblDependent.DepLastName"
+End
+Begin Joins
+    LeftTable ="tblDependent"
+    RightTable ="__tblDependent_Bexar"
+    Expression ="tblDependent.DepSubID = [__tblDependent_Bexar].DepSubID"
+    Flag =2
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblDependent.DepSubID"
+        dbInteger "ColumnWidth" ="1800"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblDependent.DepFirstName"
+        dbInteger "ColumnWidth" ="2040"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblDependent.DepLastName"
+        dbInteger "ColumnWidth" ="2760"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1270
+    Bottom =890
+    Left =-1
+    Top =-1
+    Right =1263
+    Bottom =426
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =717
+        Top =60
+        Right =994
+        Bottom =324
+        Top =0
+        Name ="__tblDependent_Bexar"
+        Name =""
+    End
+    Begin
+        Left =275
+        Top =61
+        Right =594
+        Bottom =310
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+    Begin
+        Left =16
+        Top =64
+        Right =209
+        Bottom =314
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

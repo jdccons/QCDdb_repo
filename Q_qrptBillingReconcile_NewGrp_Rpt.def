@@ -1,0 +1,115 @@
+Operation =3
+Name ="tmpBillingReconcile_rpt"
+Option =0
+Having ="(((tblGrp.GRcontBEG)=[forms].[fdlgPrtBillingReconcile].[ctlInvdate]))"
+Begin InputTables
+    Name ="qrptBillingReconcileARTRAN"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="GRcontBEG"
+    Expression ="tblGrp.GRcontBEG"
+    Name ="GROUPid"
+    Expression ="tblGrp.GROUPid"
+    Name ="GRname"
+    Expression ="tblGrp.GRname"
+    Name ="Docdate"
+    Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    Name ="GRPgeoID"
+    Expression ="tblGrp.GRPgeoID"
+    Name ="GRcancelled"
+    Expression ="tblGrp.GRcancelled"
+    Name ="GRcancelledDate"
+    Expression ="tblGrp.GRcancelledDate"
+    Name ="GRreinstatedDate"
+    Expression ="tblGrp.GRreinstatedDate"
+    Name ="GRhold"
+    Expression ="tblGrp.GRhold"
+    Alias ="SumOfDocamt"
+    Name ="Docamt"
+    Expression ="Sum(qrptBillingReconcileARTRAN.DocumentAmt)"
+    Name ="Docno"
+    Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
+    Name ="Trntyp"
+    Expression ="qrptBillingReconcileARTRAN.TransactionType"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="qrptBillingReconcileARTRAN"
+    Expression ="tblGrp.GROUPid = qrptBillingReconcileARTRAN.CustomerKey"
+    Flag =2
+End
+Begin Groups
+    Expression ="tblGrp.GRcontBEG"
+    GroupLevel =0
+    Expression ="tblGrp.GROUPid"
+    GroupLevel =0
+    Expression ="tblGrp.GRname"
+    GroupLevel =0
+    Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    GroupLevel =0
+    Expression ="tblGrp.GRPgeoID"
+    GroupLevel =0
+    Expression ="tblGrp.GRcancelled"
+    GroupLevel =0
+    Expression ="tblGrp.GRcancelledDate"
+    GroupLevel =0
+    Expression ="tblGrp.GRreinstatedDate"
+    GroupLevel =0
+    Expression ="tblGrp.GRhold"
+    GroupLevel =0
+    Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
+    GroupLevel =0
+    Expression ="qrptBillingReconcileARTRAN.TransactionType"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tmpBillingReconcile_rpt.GROUPid"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =930
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =156
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =437
+        Top =14
+        Right =779
+        Bottom =128
+        Top =0
+        Name ="qrptBillingReconcileARTRAN"
+        Name =""
+    End
+    Begin
+        Left =64
+        Top =14
+        Right =268
+        Bottom =113
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

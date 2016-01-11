@@ -1,0 +1,9 @@
+dbMemo "SQL" ="SELECT DISTINCTROW [ARTRAN].[Docno], [ARTRAN].[Applytodocno], [ARTRAN].[Custkey]"
+    ", [ARTRAN].[Trntyp], [ARTRAN].[Docdate], [ARTRAN].[Docamt]\015\012FROM ARTRAN LE"
+    "FT JOIN ARTRAN_BAK ON [ARTRAN].[Docno] = [ARTRAN_BAK].[Docno]\015\012WHERE ([ART"
+    "RAN_BAK].[Docno] Is Null);\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

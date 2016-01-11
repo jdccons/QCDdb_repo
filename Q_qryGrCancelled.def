@@ -1,0 +1,85 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=Yes))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRcontEND"
+    Expression ="tblGrp.GRnotes"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRPgeoID"
+End
+Begin OrderBy
+    Expression ="tblGrp.GRname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbInteger "ColumnWidth" ="990"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3660"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcity"
+        dbInteger "ColumnWidth" ="1605"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcontBEG"
+        dbInteger "ColumnWidth" ="1290"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcontEND"
+        dbInteger "ColumnWidth" ="1290"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRnotes"
+        dbInteger "ColumnWidth" ="2130"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRee"
+        dbInteger "ColumnWidth" ="960"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =778
+    Bottom =346
+    Left =-1
+    Top =-1
+    Right =709
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =217
+        Bottom =113
+        Top =4
+        Name ="tblGrp"
+        Name =""
+    End
+End

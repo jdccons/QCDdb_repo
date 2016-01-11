@@ -1,0 +1,109 @@
+Operation =3
+Name ="tblEDI_App_Subscr"
+Option =0
+Begin InputTables
+    Name ="QCDStandardSubscriber"
+    Name ="vwRates"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="QCDStandardSubscriber.SubSSN"
+    Name ="SUBgroupID"
+    Expression ="QCDStandardSubscriber.SubGroupID"
+    Name ="PlanID"
+    Expression ="vwRates.PlanID"
+    Name ="CoverID"
+    Expression ="vwRates.CoverID"
+    Name ="RateID"
+    Expression ="vwRates.RateID"
+    Name ="SUBfirstNAME"
+    Expression ="QCDStandardSubscriber.SubFirst"
+    Name ="SUBmiddleNAME"
+    Expression ="QCDStandardSubscriber.SubMI"
+    Name ="SUBlastNAME"
+    Expression ="QCDStandardSubscriber.SubLast"
+    Name ="SUBstreet1"
+    Expression ="QCDStandardSubscriber.SubAddr"
+    Name ="SUBstreet2"
+    Expression ="QCDStandardSubscriber.SubAddr2"
+    Name ="SUBcity"
+    Expression ="QCDStandardSubscriber.SubCity"
+    Name ="SUBstate"
+    Expression ="QCDStandardSubscriber.SubState"
+    Name ="SUBzip"
+    Expression ="QCDStandardSubscriber.SubZip"
+    Name ="SUBphoneHOME"
+    Expression ="QCDStandardSubscriber.SubHomePh"
+    Name ="SUBphoneWORK"
+    Expression ="QCDStandardSubscriber.SubWorkPh"
+    Alias ="DateOfBirth"
+    Name ="SUBdob"
+    Expression ="Left([SubDOB],2) & \"/\" & Mid([SubDOB],3,2) & \"/\" & Right([SubDOB],4)"
+    Alias ="DepCnt"
+    Name ="SUBnoDEPENT"
+    Expression ="nz([SubNoDep],0)"
+    Alias ="EffDate"
+    Name ="SUBeffDATE"
+    Expression ="Left([SubEffDate],2) & \"/\" & Mid([SubEffDate],3,2) & \"/\" & Right([SubEffDate"
+        "],4)"
+    Alias ="LookUpName"
+    Name ="SUB_LUname"
+    Expression ="[SubLast] & \", \" & [SubFirst] & \" \" & [SubMI]"
+    Alias ="Status"
+    Name ="SUBstatus"
+    Expression ="\"GRSUB\""
+    Name ="SUBgender"
+    Expression ="QCDStandardSubscriber.SubGender"
+    Alias ="SubAge"
+    Name ="SubAge"
+    Expression ="CalcAge(Left([SubDOB],2) & \"/\" & Mid([SubDOB],3,2) & \"/\" & Right([SubDOB],4)"
+        ")"
+End
+Begin Joins
+    LeftTable ="QCDStandardSubscriber"
+    RightTable ="vwRates"
+    Expression ="QCDStandardSubscriber.SubGroupID = vwRates.GroupID"
+    Flag =1
+    LeftTable ="QCDStandardSubscriber"
+    RightTable ="vwRates"
+    Expression ="QCDStandardSubscriber.SubTypeCov = vwRates.COVERcode"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =20
+    Right =1235
+    Bottom =482
+    Left =-1
+    Top =-1
+    Right =1166
+    Bottom =294
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =320
+        Bottom =263
+        Top =6
+        Name ="QCDStandardSubscriber"
+        Name =""
+    End
+    Begin
+        Left =483
+        Top =16
+        Right =700
+        Bottom =183
+        Top =0
+        Name ="vwRates"
+        Name =""
+    End
+End

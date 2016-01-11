@@ -1,0 +1,56 @@
+Operation =3
+Name ="tblEDI_App_Dep"
+Option =0
+Where ="(((tblEDI_Dep_Import.[Dependent Code])<>\"00\"))"
+Begin InputTables
+    Name ="tblEDI_Dep_Import"
+End
+Begin OutputColumns
+    Name ="DEPssn"
+    Expression ="tblEDI_Dep_Import.[Dependent SSN]"
+    Name ="DEPsubID"
+    Expression ="tblEDI_Dep_Import.[Primary SSN]"
+    Name ="DEPfirstNAME"
+    Expression ="tblEDI_Dep_Import.[First Name]"
+    Name ="DEPlastNAME"
+    Expression ="tblEDI_Dep_Import.[Last Name]"
+    Alias ="MI"
+    Name ="DEPmiddleNAME"
+    Expression ="Left([Middle Initial],1)"
+    Alias ="DateOfBirth"
+    Name ="DEPdob"
+    Expression ="Mid([DOB],5,2) & \"/\" & Mid([DOB],7,2) & \"/\" & Mid([DOB],1,4)"
+    Name ="DEPrelationship"
+    Expression ="tblEDI_Dep_Import.[Dependent Code]"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =39
+    Top =143
+    Right =913
+    Bottom =536
+    Left =-1
+    Top =-1
+    Right =867
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =32
+        Top =6
+        Right =261
+        Bottom =105
+        Top =19
+        Name ="tblEDI_Dep_Import"
+        Name =""
+    End
+End

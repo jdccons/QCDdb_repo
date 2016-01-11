@@ -1,0 +1,91 @@
+Operation =1
+Option =8
+Where ="(((tbldentist.DentSpecialty) Between [FORMS]![fdlgPrtDentProsp].[c-SPECfrom] And"
+    " [FORMS]![fdlgPrtDentProsp].[c-SPECto]) AND ((tbldentist.DentGeoID) Between [FOR"
+    "MS]![fdlgPrtDentProsp].[c-GEOfrom] And [FORMS]![fdlgPrtDentProsp].[c-GEOto]) AND"
+    " ((tbldentist.DentStatus)=\"P\"))"
+Begin InputTables
+    Name ="tbldentist"
+    Name ="tbldentistspec"
+    Name ="tblGeographical"
+End
+Begin OutputColumns
+    Alias ="Zip2"
+    Expression ="IIf([Dentzip] Like \"#####-#\",Left([DentZip],Len([DentZip])-1),IIf([DentZip] Li"
+        "ke \"#########\",Format([DentZip],\"@@@@@-@@@@\"),[DentZip]))"
+    Expression ="tbldentist.DentStatus"
+    Expression ="tbldentist.*"
+    Expression ="tbldentistspec.SPECIALITYdesc"
+    Expression ="tblGeographical.GEOdesc"
+    Expression ="tbldentist.DentSpecialty"
+    Alias ="TextCO"
+    Expression ="IIf([DENTcloseMYoff]=Yes,\"Existing QCD members only.\",\"Open to all QCD member"
+        "s.\")"
+    Expression ="tbldentist.DentGeoID"
+End
+Begin Joins
+    LeftTable ="tbldentist"
+    RightTable ="tbldentistspec"
+    Expression ="tbldentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Flag =2
+    LeftTable ="tbldentist"
+    RightTable ="tblGeographical"
+    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tbldentist.DentLast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="TextCO"
+        dbInteger "ColumnWidth" ="1725"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =84
+    Top =92
+    Right =970
+    Bottom =397
+    Left =-1
+    Top =-1
+    Right =879
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =98
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =98
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+End

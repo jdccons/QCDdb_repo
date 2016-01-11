@@ -1,0 +1,50 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRPgeoID)=\"TXHSE\"))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRphone2"
+    Expression ="tblGrp.GRfax"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRee"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =70
+    Top =52
+    Right =778
+    Bottom =358
+    Left =-1
+    Top =-1
+    Right =701
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =117
+        Top =28
+        Name ="tblGrp"
+        Name =""
+    End
+End

@@ -1,0 +1,795 @@
+Version =20
+VersionRequired =20
+Checksum =-2028012899
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =5460
+    DatasheetFontHeight =10
+    ItemSuffix =141
+    Left =4860
+    Top =2025
+    Right =14760
+    Bottom =6390
+    DatasheetGridlinesColor =12632256
+    OnUnload ="[Event Procedure]"
+    RecSrcDt = Begin
+        0x7b294f0319a1e240
+    End
+    RecordSource ="SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginInvoiceDate, tblGrp.GRn"
+        "ame, tblGrowth.BeginEligEmps, tblGrowth.CurrentEligEmps, tblGrowth.BeginSubscrib"
+        "erCount, tblGrowth.CurrentSubscriberCount, tblGrowth.BeginDependentCount, tblGro"
+        "wth.CurrentDependentCount, tblGrowth.BeginSubscrswithDeps, tblGrowth.CurrentSubs"
+        "crswithDeps, tblGrowth.BeginInvoiceAmt, tblGrowth.CurrentInvoiceAmt, tblGrowth.C"
+        "urrentInvoiceDate, tblGrp.GRcancelled FROM tblGrowth LEFT JOIN tblGrp ON tblGrow"
+        "th.GroupID = tblGrp.GROUPid WHERE (((tblGrowth.BeginInvoiceDate)>=[Forms]![fdlgP"
+        "rtClientSrvs]![txtFilterDate]) AND ((tblGrp.GRcancelled)=No)) ORDER BY tblGrowth"
+        ".GroupID, tblGrowth.Year, tblGrowth.BeginInvoiceDate DESC;"
+    Caption ="Client Services Report"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010418009c00b803033f80000100010000000000640001000700580202000100 ,
+        0x5802000000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
+        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
+        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
+        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
+        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bb4cbd46bd4a9b ,
+        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
+        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
+        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
+        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
+        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
+        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
+        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
+        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7c7762810000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800260038000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000048504c617365724a ,
+        0x65743232303000
+    End
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ListBox
+            SpecialEffect =2
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin CustomControl
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+        End
+        Begin Section
+            CanGrow = NotDefault
+            Height =3840
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =375
+                    Top =60
+                    Width =4620
+                    Height =360
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label5"
+                    Caption ="Client Services Report"
+                End
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =621
+                    Top =585
+                    Width =3204
+                    Height =300
+                    FontSize =10
+                    Name ="Label131"
+                    Caption ="Select Date Range to process"
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OverlapFlags =93
+                    ColumnCount =2
+                    ListWidth =2928
+                    Left =1560
+                    Top =3480
+                    Width =2940
+                    Name ="cboGEOid"
+                    RowSourceType ="Value List"
+                    ColumnWidths ="0;2220"
+                    AfterUpdate ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =600
+                            Top =3480
+                            Width =792
+                            Height =228
+                            Name ="GEOid_Label"
+                            Caption ="GEOid"
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =93
+                    Left =300
+                    Top =3180
+                    Width =1380
+                    Height =240
+                    Name ="Label139"
+                    Caption ="Filter (Optional)"
+                End
+                Begin Rectangle
+                    OverlapFlags =255
+                    Left =180
+                    Top =3120
+                    Width =5160
+                    Height =660
+                    Name ="Box140"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =480
+                    Top =1860
+                    Width =1740
+                    Height =420
+                    TabIndex =1
+                    Name ="cmdMonthAll"
+                    Caption ="Process Monthly"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =2025
+                    Top =1380
+                    Width =900
+                    TabIndex =2
+                    Name ="txtDateAll"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =765
+                            Top =1020
+                            Width =1332
+                            Height =228
+                            Name ="Label40"
+                            Caption ="Select Start Date: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =3165
+                    Top =1380
+                    Width =900
+                    TabIndex =3
+                    Name ="txtEOMAll"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =765
+                            Top =1380
+                            Width =1200
+                            Height =228
+                            Name ="Label102"
+                            Caption ="Process Dates: "
+                        End
+                    End
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    Left =2205
+                    Top =1020
+                    Width =1320
+                    TabIndex =4
+                    Name ="cboStartDate"
+                    RowSourceType ="Value List"
+                    RowSource ="JAN 1;FEB 1;MAR 1;APR 1;MAY 1;JUN 1;JUL 1;AUG 1;SEP 1;OCT 1;NOV 1;DEC 1"
+                    AfterUpdate ="[Event Procedure]"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =2985
+                    Top =1380
+                    Width =108
+                    Height =204
+                    Name ="Label104"
+                    Caption ="-"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =2271
+                    Top =1893
+                    Width =2790
+                    Height =300
+                    TabIndex =5
+                    Name ="txtMessage"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =2700
+                    Top =2373
+                    Width =2520
+                    TabIndex =6
+                    BackColor =8454143
+                    Name ="txtDateTime2"
+                    Format ="General Date"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =240
+                            Top =2385
+                            Width =2805
+                            Height =255
+                            Name ="Label112"
+                            Caption ="Employee Numbers Last Run: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =2706
+                    Top =2685
+                    Width =2520
+                    TabIndex =7
+                    BackColor =8454143
+                    Name ="txtInvHostDate2"
+                    Format ="General Date"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =240
+                            Top =2697
+                            Width =2805
+                            Height =255
+                            Name ="Label125"
+                            Caption ="Inv. Hist. Numbers Last Run: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =255
+                    Left =3429
+                    Top =3180
+                    Width =720
+                    TabIndex =8
+                    BackColor =10092543
+                    Name ="txtGEOid"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =3165
+                    Top =3180
+                    Width =660
+                    TabIndex =9
+                    BackColor =10092543
+                    Name ="txtGEOName"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =540
+            BackColor =-2147483633
+            Name ="FormFooter"
+            OnClick ="[Event Procedure]"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4620
+                    Top =60
+                    Width =720
+                    Height =420
+                    Name ="cmdClose"
+                    Caption ="Command0"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3120
+                    Top =60
+                    Width =1380
+                    Height =420
+                    TabIndex =1
+                    Name ="cmdPreviewReport"
+                    Caption ="Preview Report"
+                    OnClick ="[Event Procedure]"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Dim varGroupList As Variant
+Dim intCnt As Integer
+Dim fTargetID As Boolean
+    
+Private Sub cboGEOid_AfterUpdate()
+    With Me
+        .txtGeoID = cboGEOid.Column(0)
+        .txtGEOName = cboGEOid.Column(1)
+    End With
+End Sub
+
+Private Sub cboStartDate_AfterUpdate()
+    Dim strStart As String
+    Dim strYear As String
+    Dim datFilter As Date
+    Dim datStart As Date
+    Dim fBegin As Boolean
+    Dim datEnd As Date
+    
+    strStart = cboStartDate
+    
+    strYear = Format(date, "YYYY")
+    
+    Select Case strStart
+    Case Is = "JAN 1"
+        datStart = Format("1/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("1/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = False
+          .cmdMonthAll.Enabled = False
+        End With
+    Case Is = "FEB 1"
+        datStart = Format("2/1/" & strYear, "mm/dd/yyyy")
+        If Int(strYear) Mod 4 = 0 Then ' check for leap year
+            datEnd = Format("2/29/" & strYear, "mm/dd/yyyy")
+        Else
+            datEnd = Format("2/28/" & strYear, "mm/dd/yyyy")
+        End If
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "MAR 1"
+        datStart = Format("3/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("3/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "APR 1"
+        datStart = Format("4/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("4/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "MAY 1"
+        datStart = Format("5/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("5/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "JUN 1"
+        datStart = Format("6/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("6/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "JUL 1"
+        datStart = Format("7/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("7/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "AUG 1"
+        datStart = Format("8/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("8/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "SEP 1"
+        datStart = Format("9/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("9/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "OCT 1"
+        datStart = Format("10/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("10/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "NOV 1"
+        datStart = Format("11/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("11/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "DEC 1"
+        datStart = Format("12/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("12/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Else
+        MsgBox "There is an error in the date, please select again", vbExclamation, "Processing Error"
+        Exit Sub
+    End Select
+        datFilter = Format("1/1/" & strYear, "mm/dd/yyyy")
+    With Me
+        .txtDateAll = datStart
+        .txtEOMAll = datEnd
+    End With
+End Sub
+
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+Private Sub Command94_Click()
+    MsgBox "The Groups selected " & varGroupList & " and total groups selected = " & intCnt
+End Sub
+
+Private Sub cmdMonthAll_Click()
+    ' Process the list of groups
+    '
+    Dim datDate As Date
+    Dim datEOM As Date
+    Dim strYear As String
+    Dim fSuccess As Boolean
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+     
+    With Me
+    If IsNull(.txtDateAll) Or .txtDateAll = "" Then
+      MsgBox "You must select a Month to process from Select Start Date dropdown to proceed!", vbExclamation, "Missing date"
+      .cboStartDate.SetFocus
+      Exit Sub
+    End If
+    If IsNull(.txtEOMAll) Or .txtEOMAll = "" Then
+      MsgBox "You must select a Month to process from Select Start Date dropdown to proceed!", vbExclamation, "Missing date"
+      .cboStartDate.SetFocus
+      Exit Sub
+    End If
+    End With
+     
+    With Me
+       datDate = Format(.txtDateAll, "mm/dd/yyyy") ' add error check
+       datEOM = Format(.txtEOMAll, "mm/dd/yyyy")   ' add error check
+       strYear = Format(.txtDateAll, "YYYY")
+    End With
+    DoCmd.Hourglass True
+     
+    fSuccess = RunMonthlyGrowth(datDate, datEOM, strYear)
+     
+   Set dbs = CurrentDb()
+   strSQL = "SELECT tblDateTimeTracking.ReportDateTime"
+   strSQL = strSQL & " FROM tblDateTimeTracking;"
+   Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   If rst.RecordCount > 0 Then
+     With rst
+        datDate = !ReportDateTime
+        Me.txtDateTime2 = datDate
+     End With
+   Else
+      Me.txtDateTime2 = "Last Date/Time Not recorded"
+   End If
+    
+    With Me
+       .txtMessage.BackColor = 8454143
+       .txtMessage = "Processing, Complete!"
+       .Refresh
+    End With
+     
+    rst.Close
+    Set dbs = Nothing
+    DoCmd.Hourglass False
+    
+End Sub
+
+Private Sub Form_Load()
+   
+   Dim datFilter As Date
+   Dim datDate As Date
+   Dim strSQL As String
+   Dim rst As DAO.Recordset
+   Dim dbs As DAO.Database
+   Dim strYear As String
+   Dim strMonth As String
+   Dim strList As String
+   Dim strGEOlist As String
+   Dim str125list As String
+        
+    strYear = Format(date, "YYYY")
+      strMonth = Month(date)
+      With Me
+       .txtMessage.Visible = False
+       .txtMessage.BackColor = 16777215
+       .txtMessage = ""
+       .Refresh
+       .Requery
+      Select Case strMonth
+      Case Is = "1"
+          .cboStartDate = "JAN 1"
+      Case Is = "2"
+          .cboStartDate = "FEB 1"
+      Case Is = "3"
+          .cboStartDate = "MAR 1"
+      Case Is = "4"
+          .cboStartDate = "APR 1"
+      Case Is = "5"
+          .cboStartDate = "MAY 1"
+      Case Is = "6"
+          .cboStartDate = "JUN 1"
+      Case Is = "7"
+          .cboStartDate = "JUL 1"
+      Case Is = "8"
+          .cboStartDate = "AUG 1"
+      Case Is = "9"
+          .cboStartDate = "SEP 1"
+      Case Is = "10"
+          .cboStartDate = "OCT 1"
+      Case Is = "11"
+          .cboStartDate = "NOV 1"
+      Case Is = "12"
+          .cboStartDate = "DEC 1"
+      End Select
+         ' Default to current month per Gregg 3/14/2000
+         Call cboStartDate_AfterUpdate
+      End With
+      
+    'load row souce property for client service representive combo box
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT DISTINCTROW tblGeographical.GEOid, tblGeographical.GEOdesc"
+    strSQL = strSQL & " FROM tblGeographical;"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    
+    strGEOlist = "All, All GEO Id's;"
+    
+    If rst.RecordCount > 0 Then
+      With rst
+       Do While Not rst.EOF
+        strGEOlist = strGEOlist & !GeoID & "," & !GEOdesc & ";"
+        Me.cboGEOid.RowSource = strGEOlist
+        .MoveNext
+       Loop
+      End With
+    End If
+        
+    fTargetID = False
+    rst.Close
+    
+   strSQL = "SELECT tblDateTimeTracking.ID, tblDateTimeTracking.ReportDateTime " & _
+      "FROM tblDateTimeTracking ORDER BY tblDateTimeTracking.ID;"
+   Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   If rst.RecordCount > 0 Then
+     With rst
+      Do While Not rst.EOF
+        datDate = !ReportDateTime
+        If !ID = 1 Then
+         Me.txtDateTime2 = datDate
+        End If
+        If !ID = 2 Then
+         Me.txtInvHostDate2 = datDate
+        End If
+        .MoveNext
+      Loop
+     End With
+   Else
+      Me.txtDateTime2 = "Last Date/Time Not recorded"
+      Me.txtInvHostDate2 = "Last Date/Time Not recorded"
+   End If
+    
+    Set dbs = Nothing
+    
+End Sub
+
+
+
+Private Sub cmdPreviewReport_Click()
+
+On Error GoTo Err_cmdPreviewReport_Click
+
+    Dim stDocName As String
+    Dim strFilter As String
+    Dim strGroup As String
+    Dim datStart As Date
+    Dim datEnd As Date
+    Dim fSuccess As Boolean
+    
+    ' Report name
+    stDocName = "rptClientServices_new"
+    strGroup = varGroupList
+    
+
+     If IsNull(Me.txtGeoID) Then
+        ' Preview with no GEO filter
+        DoCmd.OpenReport stDocName, acPreview
+     Else
+        ' Preview with GEO Filter
+        If Me.txtGeoID = "All" Then
+            DoCmd.OpenReport stDocName, acPreview
+        Else
+            strFilter = "[GRPgeoID]= '" & Me.txtGeoID & "'"
+            fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+        End If
+      End If
+    
+    'Hide the current dialog form and the main switchboard
+    Me.Visible = False
+   
+    'Hide the main switchboard
+    If isloaded("fmnuSwitchboard") Then
+        Forms![fmnuSwitchboard].Visible = False
+    End If
+   
+Exit_cmdPreviewReport_Click:
+    Exit Sub
+
+NoReocords:
+    MsgBox "There are no records that match your request", vbInformation, "No Data"
+    DoCmd.SetWarnings True
+    Exit Sub
+
+Err_cmdPreviewReport_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdPreviewReport_Click
+    
+End Sub
+
+
+Private Function CheckFilter(strFilter As String) As Boolean
+    Dim strSQL As String
+    Dim rst As DAO.Recordset
+    Dim dbs As DAO.Database
+    Set dbs = CurrentDb()
+       
+    strSQL = "SELECT tblGrowth.*, * " & _
+            "FROM (tblGrp INNER JOIN tblGrpAgt ON tblGrp.GroupID = tblGrpAgt.GroupID) INNER JOIN tblGrowth ON tblGrp.GroupID = tblGrowth.GroupID "
+    If Len(strFilter) = 0 Then
+      ' do nothing
+    Else
+      strSQL = strSQL & " WHERE " & strFilter
+    End If
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        CheckFilter = True
+    Else
+        CheckFilter = False
+    End If
+     
+    rst.Close
+    Set dbs = Nothing
+End Function

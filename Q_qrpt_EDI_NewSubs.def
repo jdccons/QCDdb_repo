@@ -1,0 +1,77 @@
+Operation =3
+Name ="tmpEDI_Rpt"
+Option =8
+Where ="(((tblEDI_App_Subscr.SubGroupID)=[Forms]![frmImportProcessing]![txtGrpID]) AND ("
+    "(tblSubscr.SubSSN) Is Null))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
+    Name ="SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
+    Name ="SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
+    Alias ="SUBStreet"
+    Name ="SUBStreet"
+    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Name ="SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
+    Name ="SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
+    Name ="SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
+    Alias ="Stat"
+    Name ="Stat"
+    Expression ="\"NEW\""
+    Name ="GroupID"
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SubSSN = tblSubscr.SubSSN"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =66
+    Top =66
+    Right =971
+    Bottom =409
+    Left =-1
+    Top =-1
+    Right =898
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =493
+        Top =7
+        Right =697
+        Bottom =129
+        Top =9
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =46
+        Top =10
+        Right =180
+        Bottom =132
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

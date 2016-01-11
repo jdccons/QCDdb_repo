@@ -1,0 +1,62 @@
+Operation =1
+Option =0
+Where ="(((ARTRAN.RecDate)>#11/5/2006#))"
+Begin InputTables
+    Name ="ARLIN"
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Alias ="SumOfDocumentAmt"
+    Expression ="Sum(ARTRAN.DocumentAmt)"
+End
+Begin Joins
+    LeftTable ="ARTRAN"
+    RightTable ="ARLIN"
+    Expression ="ARTRAN.DocumentNumber = ARLIN.TransactionNumber"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="SumOfDocumentAmt"
+        dbInteger "ColumnWidth" ="1920"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =10
+    Top =289
+    Right =1171
+    Bottom =606
+    Left =-1
+    Top =-1
+    Right =1150
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =342
+        Top =1
+        Right =521
+        Bottom =111
+        Top =0
+        Name ="ARLIN"
+        Name =""
+    End
+    Begin
+        Left =42
+        Top =1
+        Right =222
+        Bottom =111
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+End

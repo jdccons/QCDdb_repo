@@ -1,0 +1,38 @@
+Operation =1
+Option =8
+Where ="(((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.*"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =802
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =30
+        Name ="tblGrp"
+        Name =""
+    End
+End

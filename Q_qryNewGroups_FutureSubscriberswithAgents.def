@@ -1,0 +1,95 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="qryNewGroups_FutureSubscribers"
+    Name ="tblAgent"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="qryNewGroups_FutureSubscribers.SUB_LUname"
+    Expression ="qryNewGroups_FutureSubscribers.SUBssn"
+    Expression ="qryNewGroups_FutureSubscribers.SUBeffDATE"
+    Expression ="tblGrp.GRname"
+    Expression ="tblAgent.AGENT_LUname"
+End
+Begin Joins
+    LeftTable ="qryNewGroups_FutureSubscribers"
+    RightTable ="tblGrp"
+    Expression ="qryNewGroups_FutureSubscribers.SUBgroupID = tblGrp.GROUPid"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblAgent"
+    Expression ="tblGrp.GRagentID1 = tblAgent.AGENTid"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblAgent.AGENT_LUname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="qryNewGroups_FutureSubscribers.SUB_LUname"
+        dbInteger "ColumnWidth" ="2760"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="qryNewGroups_FutureSubscribers.SUBssn"
+        dbInteger "ColumnWidth" ="1095"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="qryNewGroups_FutureSubscribers.SUBeffDATE"
+        dbInteger "ColumnWidth" ="1305"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3600"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =39
+        Top =-2
+        Right =244
+        Bottom =110
+        Top =0
+        Name ="qryNewGroups_FutureSubscribers"
+        Name =""
+    End
+    Begin
+        Left =438
+        Top =4
+        Right =534
+        Bottom =111
+        Top =1
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =282
+        Top =6
+        Right =398
+        Bottom =113
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

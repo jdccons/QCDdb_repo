@@ -1,0 +1,71 @@
+Operation =3
+Name ="tblInvHdr"
+Option =0
+Begin InputTables
+    Name ="BirdvilleISD"
+End
+Begin OutputColumns
+    Name ="CUST KEY"
+    Expression ="BirdvilleISD.Custkey"
+    Name ="CUST NAME"
+    Expression ="BirdvilleISD.Custname"
+    Name ="ADDRESS 1"
+    Expression ="BirdvilleISD.Custaddr1"
+    Name ="ADDRESS 2"
+    Expression ="BirdvilleISD.Custaddr2"
+    Name ="CITY"
+    Expression ="BirdvilleISD.Custcity"
+    Name ="STATE"
+    Expression ="BirdvilleISD.Custstate"
+    Name ="ZIP CODE"
+    Expression ="BirdvilleISD.Custzip"
+    Name ="TRANS NO"
+    Expression ="BirdvilleISD.Tranno"
+    Name ="SEL STATUS"
+    Expression ="BirdvilleISD.Statusflg"
+    Alias ="Date"
+    Name ="INV DATE"
+    Expression ="#1/1/2000#"
+    Name ="TERRITORY KEY"
+    Expression ="BirdvilleISD.Territkey"
+    Name ="SALESP    KEY"
+    Expression ="BirdvilleISD.Salespkey"
+    Name ="CUST CLASS"
+    Expression ="BirdvilleISD.Custclass"
+    Name ="CR MEMO FLAG"
+    Expression ="BirdvilleISD.Crmemoflg"
+    Name ="SYSDOCID"
+    Expression ="BirdvilleISD.Sysdocid"
+    Name ="RecUserID"
+    Expression ="BirdvilleISD.RecUserID"
+    Name ="RecDate"
+    Expression ="BirdvilleISD.RecDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =22
+    Right =778
+    Bottom =391
+    Left =-1
+    Top =-1
+    Right =731
+    Bottom =208
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =259
+        Bottom =173
+        Top =63
+        Name ="BirdvilleISD"
+        Name =""
+    End
+End

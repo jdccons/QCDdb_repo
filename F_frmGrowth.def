@@ -1,0 +1,2735 @@
+Version =20
+VersionRequired =20
+Checksum =1691331065
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =5475
+    DatasheetFontHeight =10
+    ItemSuffix =112
+    Left =6750
+    Top =1545
+    Right =12210
+    Bottom =6105
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x89296a3e12dee140
+    End
+    RecordSource ="SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginInvoiceDate, tblGrp.GRn"
+        "ame, tblGrowth.BeginEligEmps, tblGrowth.CurrentEligEmps, tblGrowth.BeginSubscrib"
+        "erCount, tblGrowth.CurrentSubscriberCount, tblGrowth.BeginDependentCount, tblGro"
+        "wth.CurrentDependentCount, tblGrowth.BeginSubscrswithDeps, tblGrowth.CurrentSubs"
+        "crswithDeps, tblGrowth.BeginInvoiceAmt, tblGrowth.CurrentInvoiceAmt, tblGrowth.C"
+        "urrentInvoiceDate, tblGrp.GRcancelled FROM tblGrowth INNER JOIN tblGrp ON tblGro"
+        "wth.GroupID = tblGrp.GROUPid WHERE (((tblGrowth.Year)>=Year([Forms]![frmGrowth]!"
+        "[txtFilterDate])) AND ((tblGrp.GRcancelled)=No)) ORDER BY tblGrowth.GroupID, tbl"
+        "Growth.Year, tblGrowth.BeginInvoiceDate DESC;"
+    Caption ="In Group Growth Processing"
+    DatasheetFontName ="Arial"
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin CustomControl
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+        End
+        Begin Section
+            Height =4095
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =420
+                    Top =60
+                    Width =4548
+                    Height =360
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label5"
+                    Caption ="In Group Growth Data Processing"
+                End
+                Begin Tab
+                    OverlapFlags =85
+                    Left =45
+                    Top =540
+                    Width =5430
+                    Height =3555
+                    Name ="TabCtl10"
+                    Begin
+                        Begin Page
+                            OverlapFlags =215
+                            Left =180
+                            Top =945
+                            Width =5160
+                            Height =3015
+                            Name ="Page11"
+                            Caption ="Set Criteria"
+                            Begin
+                                Begin CommandButton
+                                    Enabled = NotDefault
+                                    OverlapFlags =223
+                                    Left =480
+                                    Top =3120
+                                    Width =1560
+                                    Height =480
+                                    Name ="cmdYearAll"
+                                    Caption ="Process Beginning"
+                                    OnClick ="[Event Procedure]"
+                                    ControlTipText ="Process Beginning Yearly Numbers"
+                                End
+                                Begin TextBox
+                                    OverlapFlags =215
+                                    Left =1800
+                                    Top =1860
+                                    Width =900
+                                    TabIndex =1
+                                    Name ="txtDateAll"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =540
+                                            Top =1500
+                                            Width =1332
+                                            Height =228
+                                            Name ="Label40"
+                                            Caption ="Select Start Date: "
+                                        End
+                                    End
+                                End
+                                Begin CommandButton
+                                    Enabled = NotDefault
+                                    OverlapFlags =215
+                                    Left =480
+                                    Top =3120
+                                    Width =1560
+                                    Height =480
+                                    TabIndex =2
+                                    Name ="cmdMonthAll"
+                                    Caption ="Process Monthly"
+                                    OnClick ="[Event Procedure]"
+                                    ControlTipText ="Process Monthly Numbers"
+                                End
+                                Begin TextBox
+                                    OverlapFlags =215
+                                    Left =2940
+                                    Top =1860
+                                    Width =900
+                                    TabIndex =3
+                                    Name ="txtEOMAll"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =540
+                                            Top =1860
+                                            Width =1200
+                                            Height =228
+                                            Name ="Label42"
+                                            Caption ="Process Dates: "
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =215
+                                    Left =1080
+                                    Top =2760
+                                    Width =540
+                                    TabIndex =4
+                                    Name ="txtYear"
+                                    AfterUpdate ="[Event Procedure]"
+                                    OnExit ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =540
+                                            Top =2760
+                                            Width =480
+                                            Height =228
+                                            Name ="Label45"
+                                            Caption ="Year: "
+                                        End
+                                    End
+                                End
+                                Begin Label
+                                    SpecialEffect =4
+                                    OldBorderStyle =1
+                                    BorderWidth =3
+                                    OverlapFlags =215
+                                    TextAlign =2
+                                    Left =480
+                                    Top =1080
+                                    Width =3204
+                                    Height =300
+                                    FontSize =10
+                                    Name ="Label48"
+                                    Caption ="Select Date Range to process"
+                                End
+                                Begin Label
+                                    SpecialEffect =4
+                                    OldBorderStyle =1
+                                    BorderWidth =3
+                                    OverlapFlags =215
+                                    TextAlign =2
+                                    Left =480
+                                    Top =2340
+                                    Width =1092
+                                    Height =300
+                                    FontSize =10
+                                    Name ="Label49"
+                                    Caption ="Year"
+                                End
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =215
+                                    Left =1980
+                                    Top =1500
+                                    Width =1320
+                                    TabIndex =5
+                                    Name ="cboStartDate"
+                                    RowSourceType ="Value List"
+                                    RowSource ="JAN 1;FEB 1;MAR 1;APR 1;MAY 1;JUN 1;JUL 1;AUG 1;SEP 1;OCT 1;NOV 1;DEC 1"
+                                    AfterUpdate ="[Event Procedure]"
+                                End
+                                Begin Label
+                                    OverlapFlags =215
+                                    Left =2760
+                                    Top =1860
+                                    Width =108
+                                    Height =204
+                                    Name ="Label53"
+                                    Caption ="-"
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
+                                    OverlapFlags =223
+                                    Left =3960
+                                    Top =2580
+                                    Width =1080
+                                    TabIndex =6
+                                    Name ="txtFilterDate"
+                                    ControlTipText ="Adjust Date by changing Year"
+                                End
+                                Begin Label
+                                    OverlapFlags =223
+                                    Left =2700
+                                    Top =2580
+                                    Width =1236
+                                    Height =228
+                                    Name ="Label56"
+                                    Caption ="Form Filter Date:"
+                                End
+                                Begin Rectangle
+                                    OverlapFlags =247
+                                    Left =2640
+                                    Top =2520
+                                    Width =2460
+                                    Height =360
+                                    Name ="Box57"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =215
+                                    TextAlign =2
+                                    Left =2160
+                                    Top =3300
+                                    Width =2820
+                                    TabIndex =7
+                                    Name ="txtMessage"
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
+                                    OverlapFlags =215
+                                    TextAlign =1
+                                    Left =2460
+                                    Top =3720
+                                    Width =2460
+                                    TabIndex =8
+                                    BackColor =8454143
+                                    Name ="txtDateTime"
+                                    Format ="General Date"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =223
+                                            Left =480
+                                            Top =3720
+                                            Width =1980
+                                            Height =228
+                                            Name ="Label111"
+                                            Caption ="Report Numbers Last Run:"
+                                        End
+                                    End
+                                End
+                            End
+                        End
+                        Begin Page
+                            OverlapFlags =247
+                            Left =180
+                            Top =945
+                            Width =5160
+                            Height =3015
+                            Name ="Page12"
+                            Caption ="Group Stats"
+                            Begin
+                                Begin OptionGroup
+                                    OverlapFlags =255
+                                    Left =420
+                                    Top =1800
+                                    Width =2400
+                                    Height =1980
+                                    Name ="Frame13"
+                                    Begin
+                                        Begin Label
+                                            SpecialEffect =4
+                                            BackStyle =1
+                                            OldBorderStyle =1
+                                            BorderWidth =3
+                                            OverlapFlags =247
+                                            Left =540
+                                            Top =1620
+                                            Width =1080
+                                            Height =252
+                                            BackColor =-2147483633
+                                            Name ="Label14"
+                                            Caption ="Begin Invoice"
+                                        End
+                                    End
+                                End
+                                Begin OptionGroup
+                                    OverlapFlags =255
+                                    Left =3000
+                                    Top =1800
+                                    Width =2340
+                                    Height =1980
+                                    TabIndex =1
+                                    Name ="Frame15"
+                                    Begin
+                                        Begin Label
+                                            SpecialEffect =4
+                                            BackStyle =1
+                                            OldBorderStyle =1
+                                            BorderWidth =3
+                                            OverlapFlags =247
+                                            Left =3120
+                                            Top =1620
+                                            Width =1200
+                                            Height =252
+                                            BackColor =-2147483633
+                                            Name ="Label16"
+                                            Caption ="Current Invoice"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =1740
+                                    Top =3480
+                                    Width =720
+                                    TabIndex =2
+                                    Name ="Text17"
+                                    ControlSource ="BeginEligEmps"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =600
+                                            Top =3480
+                                            Width =1056
+                                            Height =228
+                                            Name ="Label18"
+                                            Caption ="Eligible Emps"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =420
+                                    Top =1320
+                                    Width =660
+                                    TabIndex =3
+                                    Name ="GroupID"
+                                    ControlSource ="GroupID"
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =4920
+                                    Top =1320
+                                    Width =420
+                                    TabIndex =4
+                                    Name ="Year"
+                                    ControlSource ="Year"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =4440
+                                            Top =1320
+                                            Width =444
+                                            Height =228
+                                            Name ="Label21"
+                                            Caption ="Year:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =2040
+                                    Top =1980
+                                    Width =420
+                                    TabIndex =5
+                                    Name ="BeginSubscriberCount"
+                                    ControlSource ="BeginSubscriberCount"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =600
+                                            Top =1980
+                                            Width =1320
+                                            Height =228
+                                            Name ="Label22"
+                                            Caption ="Subscriber Count:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =2040
+                                    Top =2280
+                                    Width =420
+                                    TabIndex =6
+                                    Name ="BeginDependentCount"
+                                    ControlSource ="BeginDependentCount"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =600
+                                            Top =2280
+                                            Width =1344
+                                            Height =228
+                                            Name ="Label23"
+                                            Caption ="Dependent Count:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =1740
+                                    Top =2880
+                                    Width =900
+                                    TabIndex =7
+                                    Name ="BeginInvoiceAmt"
+                                    ControlSource ="BeginInvoiceAmt"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =600
+                                            Top =2880
+                                            Width =924
+                                            Height =228
+                                            Name ="Label24"
+                                            Caption ="Invoice Amt:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =1740
+                                    Top =3180
+                                    Width =900
+                                    TabIndex =8
+                                    Name ="BeginInvoiceDate"
+                                    ControlSource ="BeginInvoiceDate"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =600
+                                            Top =3180
+                                            Width =996
+                                            Height =228
+                                            Name ="Label25"
+                                            Caption ="Invoice Date:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =4320
+                                    Top =2880
+                                    Width =840
+                                    TabIndex =9
+                                    Name ="CurrentInvoiceAmt"
+                                    ControlSource ="CurrentInvoiceAmt"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =3180
+                                            Top =2880
+                                            Width =924
+                                            Height =228
+                                            Name ="Label26"
+                                            Caption ="Invoice Amt:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =4320
+                                    Top =3180
+                                    Width =840
+                                    TabIndex =10
+                                    Name ="CurrentInvoiceDate"
+                                    ControlSource ="CurrentInvoiceDate"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =3180
+                                            Top =3180
+                                            Width =996
+                                            Height =228
+                                            Name ="Label27"
+                                            Caption ="Invoice Date:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =2040
+                                    Top =2580
+                                    Width =420
+                                    TabIndex =11
+                                    Name ="BeginSubscrswithDeps"
+                                    ControlSource ="BeginSubscrswithDeps"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =255
+                                            Left =600
+                                            Top =2580
+                                            Width =1764
+                                            Height =228
+                                            Name ="Label32"
+                                            Caption ="Subscrs w/Deps:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =4620
+                                    Top =1980
+                                    Width =420
+                                    TabIndex =12
+                                    Name ="CurrentSubscriberCount"
+                                    ControlSource ="CurrentSubscriberCount"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =3180
+                                            Top =1980
+                                            Width =1320
+                                            Height =228
+                                            Name ="Label33"
+                                            Caption ="Subscriber Count:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =4620
+                                    Top =2280
+                                    Width =420
+                                    TabIndex =13
+                                    Name ="CurrentDependentCount"
+                                    ControlSource ="CurrentDependentCount"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =3180
+                                            Top =2280
+                                            Width =1344
+                                            Height =228
+                                            Name ="Label34"
+                                            Caption ="Dependent Count:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =4620
+                                    Top =2580
+                                    Width =420
+                                    TabIndex =14
+                                    Name ="CurrentSubscrswithDeps"
+                                    ControlSource ="CurrentSubscrswithDeps"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =3180
+                                            Top =2580
+                                            Width =1296
+                                            Height =228
+                                            Name ="Label35"
+                                            Caption ="Subscrs w/Deps:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =4320
+                                    Top =3480
+                                    Width =720
+                                    TabIndex =15
+                                    Name ="CurrentEligEmps"
+                                    ControlSource ="CurrentEligEmps"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =3180
+                                            Top =3480
+                                            Width =1092
+                                            Height =228
+                                            Name ="Label36"
+                                            Caption ="Eligible Emps:"
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    ColumnHeads = NotDefault
+                                    OverlapFlags =247
+                                    ColumnCount =2
+                                    ListWidth =4008
+                                    Left =1488
+                                    Top =960
+                                    Width =3840
+                                    TabIndex =16
+                                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                                    Name ="cboCompany"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT DISTINCTROW tblGrp.GROUPid, tblGrp.GRname FROM tblGrp RIGHT JOIN tblGrowt"
+                                        "h ON tblGrp.GROUPid = tblGrowth.GroupID ORDER BY tblGrp.GROUPid, tblGrp.GRname;"
+                                    ColumnWidths ="936;3071"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =408
+                                            Top =960
+                                            Width =996
+                                            Height =228
+                                            Name ="Select Group_Label"
+                                            Caption ="Select Group"
+                                            EventProcPrefix ="Select_Group_Label"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =1140
+                                    Top =1320
+                                    Width =3240
+                                    TabIndex =17
+                                    Name ="GRname"
+                                    ControlSource ="GRname"
+                                End
+                            End
+                        End
+                        Begin Page
+                            OverlapFlags =247
+                            Left =180
+                            Top =945
+                            Width =5160
+                            Height =3015
+                            Name ="Page19"
+                            Caption ="Report Processing"
+                            Begin
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =247
+                                    ColumnCount =2
+                                    ListWidth =1560
+                                    Left =1332
+                                    Top =1368
+                                    Width =2100
+                                    Name ="cboAcctMgr"
+                                    RowSourceType ="Value List"
+                                    ColumnWidths ="0;1560"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =255
+                                            Left =180
+                                            Top =1365
+                                            Width =1335
+                                            Height =225
+                                            Name ="Acct Mgr_Label"
+                                            Caption ="Client Svc Rep"
+                                            EventProcPrefix ="Acct_Mgr_Label"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =255
+                                    Left =3852
+                                    Top =1608
+                                    Width =420
+                                    TabIndex =1
+                                    BackColor =10092543
+                                    Name ="txtAcctMgr"
+                                End
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =247
+                                    ColumnCount =2
+                                    ListWidth =2928
+                                    Left =1332
+                                    Top =1728
+                                    Width =2940
+                                    TabIndex =2
+                                    Name ="cboGEOid"
+                                    RowSourceType ="Value List"
+                                    ColumnWidths ="0;2220"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =372
+                                            Top =1728
+                                            Width =792
+                                            Height =228
+                                            Name ="GEOid_Label"
+                                            Caption ="GEOid"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =247
+                                    Left =3852
+                                    Top =1248
+                                    Width =420
+                                    TabIndex =3
+                                    BackColor =10092543
+                                    Name ="txtGEOid"
+                                End
+                                Begin Label
+                                    SpecialEffect =4
+                                    OldBorderStyle =1
+                                    BorderWidth =3
+                                    OverlapFlags =247
+                                    TextAlign =2
+                                    Left =360
+                                    Top =948
+                                    Width =3360
+                                    Height =300
+                                    FontWeight =700
+                                    Name ="Label67"
+                                    Caption ="Select Report Filters (Defaults to All)"
+                                End
+                                Begin CommandButton
+                                    OverlapFlags =247
+                                    Left =3660
+                                    Top =3480
+                                    Width =1560
+                                    Height =420
+                                    TabIndex =4
+                                    Name ="cmdPreviewReport"
+                                    Caption ="Preview Report"
+                                    OnClick ="[Event Procedure]"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =247
+                                    Left =4332
+                                    Top =1248
+                                    Width =360
+                                    TabIndex =5
+                                    BackColor =10092543
+                                    Name ="txtAcctMgrName"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =255
+                                    Left =4332
+                                    Top =1608
+                                    Width =360
+                                    TabIndex =6
+                                    BackColor =10092543
+                                    Name ="txtGEOName"
+                                End
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =255
+                                    Left =4020
+                                    Top =2495
+                                    Width =1020
+                                    TabIndex =7
+                                    Name ="cboAfter"
+                                    RowSourceType ="Value List"
+                                    RowSource ="JAN 1;FEB 1;MAR 1;APR 1;MAY 1;JUN 1;JUL 1;AUG 1;SEP 1;OCT 1;NOV 1;DEC 1"
+                                    AfterUpdate ="[Event Procedure]"
+                                End
+                                Begin OptionGroup
+                                    OverlapFlags =247
+                                    Left =372
+                                    Top =2268
+                                    Width =2162
+                                    Height =1261
+                                    TabIndex =8
+                                    Name ="fraSelGroups"
+                                    AfterUpdate ="[Event Procedure]"
+                                    DefaultValue ="3"
+                                    Begin
+                                        Begin Label
+                                            SpecialEffect =4
+                                            BackStyle =1
+                                            OldBorderStyle =1
+                                            BorderWidth =3
+                                            OverlapFlags =247
+                                            Left =492
+                                            Top =2088
+                                            Width =1200
+                                            Height =288
+                                            BackColor =-2147483633
+                                            Name ="Label83"
+                                            Caption ="Select Groups"
+                                        End
+                                        Begin OptionButton
+                                            OverlapFlags =247
+                                            Left =558
+                                            Top =2506
+                                            OptionValue =1
+                                            Name ="OptExisting"
+                                            OnGotFocus ="[Event Procedure]"
+                                            Begin
+                                                Begin Label
+                                                    OverlapFlags =247
+                                                    Left =788
+                                                    Top =2478
+                                                    Width =1536
+                                                    Height =228
+                                                    Name ="Label86"
+                                                    Caption ="Existing Groups Only"
+                                                End
+                                            End
+                                        End
+                                        Begin OptionButton
+                                            OverlapFlags =247
+                                            Left =558
+                                            Top =2836
+                                            OptionValue =2
+                                            Name ="OptNew"
+                                            OnGotFocus ="[Event Procedure]"
+                                            Begin
+                                                Begin Label
+                                                    OverlapFlags =247
+                                                    Left =788
+                                                    Top =2808
+                                                    Width =1308
+                                                    Height =228
+                                                    Name ="Label88"
+                                                    Caption ="New Groups Only"
+                                                End
+                                            End
+                                        End
+                                        Begin OptionButton
+                                            OverlapFlags =247
+                                            Left =558
+                                            Top =3166
+                                            OptionValue =3
+                                            Name ="OptAll"
+                                            OnMouseUp ="[Event Procedure]"
+                                            Begin
+                                                Begin Label
+                                                    OverlapFlags =247
+                                                    Left =788
+                                                    Top =3138
+                                                    Width =804
+                                                    Height =228
+                                                    Name ="Label90"
+                                                    Caption ="All Groups"
+                                                End
+                                            End
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =255
+                                    Left =2916
+                                    Top =3060
+                                    Width =864
+                                    TabIndex =9
+                                    Name ="cboBetweenStart"
+                                    RowSourceType ="Value List"
+                                    RowSource ="JAN 1;FEB 1;MAR 1;APR 1;MAY 1;JUN 1;JUL 1;AUG 1;SEP 1;OCT 1;NOV 1;DEC 1"
+                                    AfterUpdate ="[Event Procedure]"
+                                End
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =255
+                                    Left =4140
+                                    Top =3060
+                                    Width =960
+                                    TabIndex =10
+                                    Name ="cboBetweenEnd"
+                                    RowSourceType ="Value List"
+                                    RowSource ="JAN 31;FEB 28;MAR 31;APR 30;MAY 31;JUN 30;JUL 31;AUG 31;SEP 30;OCT 31;NOV 30;DEC"
+                                        " 31"
+                                    AfterUpdate ="[Event Procedure]"
+                                End
+                                Begin Label
+                                    OverlapFlags =255
+                                    Left =3780
+                                    Top =3060
+                                    Width =336
+                                    Height =228
+                                    Name ="Label96"
+                                    Caption ="and"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =247
+                                    Left =744
+                                    Top =3612
+                                    Width =744
+                                    TabIndex =11
+                                    BackColor =13434828
+                                    Name ="txtAfterDate"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =247
+                                    Left =1860
+                                    Top =3612
+                                    Width =816
+                                    TabIndex =12
+                                    BackColor =13434828
+                                    Name ="txtBetweenStart"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =247
+                                    Left =2736
+                                    Top =3624
+                                    Width =756
+                                    TabIndex =13
+                                    BackColor =13434828
+                                    Name ="txtBetweenEnd"
+                                End
+                                Begin OptionGroup
+                                    OverlapFlags =247
+                                    Left =2820
+                                    Top =2280
+                                    Width =2402
+                                    Height =1099
+                                    TabIndex =14
+                                    Name ="fraSelDate"
+                                    AfterUpdate ="[Event Procedure]"
+                                    DefaultValue ="1"
+                                    Begin
+                                        Begin Label
+                                            SpecialEffect =4
+                                            BackStyle =1
+                                            OldBorderStyle =1
+                                            BorderWidth =3
+                                            OverlapFlags =255
+                                            Left =2940
+                                            Top =2100
+                                            Width =1476
+                                            Height =276
+                                            BackColor =-2147483633
+                                            Name ="Label102"
+                                            Caption ="Select Date Range"
+                                        End
+                                        Begin OptionButton
+                                            OverlapFlags =247
+                                            Left =3006
+                                            Top =2518
+                                            OptionValue =1
+                                            Name ="Option104"
+                                            Begin
+                                                Begin Label
+                                                    OverlapFlags =247
+                                                    Left =3240
+                                                    Top =2496
+                                                    Width =732
+                                                    Height =228
+                                                    Name ="Label105"
+                                                    Caption ="On / After"
+                                                End
+                                            End
+                                        End
+                                        Begin OptionButton
+                                            OverlapFlags =247
+                                            Left =3006
+                                            Top =2848
+                                            OptionValue =2
+                                            Name ="Option106"
+                                            Begin
+                                                Begin Label
+                                                    OverlapFlags =247
+                                                    Left =3236
+                                                    Top =2820
+                                                    Width =684
+                                                    Height =228
+                                                    Name ="Label107"
+                                                    Caption ="Between"
+                                                End
+                                            End
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =247
+                                    Left =4380
+                                    Top =1860
+                                    Width =540
+                                    TabIndex =15
+                                    BackColor =13434828
+                                    Name ="txtGroups"
+                                End
+                            End
+                        End
+                        Begin Page
+                            OverlapFlags =247
+                            Left =180
+                            Top =945
+                            Width =5160
+                            Height =3015
+                            Name ="Page73"
+                            Caption ="Maintenance"
+                            Begin
+                                Begin CommandButton
+                                    OverlapFlags =247
+                                    Left =540
+                                    Top =1560
+                                    Width =4140
+                                    Height =480
+                                    Name ="cmdDeleteGroup"
+                                    Caption ="Delete All Groups from Growth Table for Process Year"
+                                    OnClick ="[Event Procedure]"
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =1620
+                                    Top =1140
+                                    Width =660
+                                    TabIndex =1
+                                    Name ="txtDeleteYear"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =540
+                                            Top =1140
+                                            Width =1044
+                                            Height =228
+                                            Name ="Label76"
+                                            Caption ="Process Year"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =1740
+                                    Top =2400
+                                    Width =720
+                                    Name ="txtDeleteGroup"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =540
+                                            Top =2400
+                                            Width =1140
+                                            Height =228
+                                            Name ="Label78"
+                                            Caption ="Process Group"
+                                        End
+                                    End
+                                End
+                                Begin CommandButton
+                                    OverlapFlags =247
+                                    Left =540
+                                    Top =2820
+                                    Width =4140
+                                    Height =480
+                                    Name ="cmdDeleteSelGroup"
+                                    Caption ="Delete Process Group from the Growth table"
+                                    OnClick ="[Event Procedure]"
+                                End
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =480
+            BackColor =-2147483633
+            Name ="FormFooter"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4632
+                    Top =60
+                    Width =720
+                    Height =420
+                    Name ="cmdClose"
+                    Caption ="Command0"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Dim fExistingOnly As Boolean ' Existing Groups only
+Dim fNewGroups As Boolean    ' New Groups Only
+Dim fAllGroups As Boolean    ' All Groups
+
+
+Private Sub cboAcctMgr_AfterUpdate()
+    With Me
+        .txtAcctMgr = cboAcctMgr.Column(0)
+        .txtAcctMgrName = cboAcctMgr.Column(1)
+    End With
+End Sub
+
+Private Sub cboAfter_AfterUpdate()
+    Dim strStart As String
+    Dim strYear As String
+    Dim datFilter As Date
+    Dim datStart As Date
+    Dim fBegin As Boolean
+    Dim datEnd As Date
+    
+    strStart = Me.cboAfter
+    If IsNull(Me.txtYear) Then
+        MsgBox "You must enter the Year before you can proceed!", vbExclamation, "Missing Year"
+        Exit Sub
+    Else
+        strYear = Me.txtYear
+    End If
+    
+    Select Case strStart
+    Case Is = "JAN 1"
+        datStart = Format("1/1/" & strYear, "mm/dd/yyyy")
+        'datEnd = Format("1/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "FEB 1"
+        datStart = Format("2/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "MAR 1"
+        datStart = Format("3/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "APR 1"
+        datStart = Format("4/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "MAY 1"
+        datStart = Format("5/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "JUN 1"
+        datStart = Format("6/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "JUL 1"
+        datStart = Format("7/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "AUG 1"
+        datStart = Format("8/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "SEP 1"
+        datStart = Format("9/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "OCT 1"
+        datStart = Format("10/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "NOV 1"
+        datStart = Format("11/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Is = "DEC 1"
+        datStart = Format("12/1/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = datStart
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Case Else
+        MsgBox "There is an error in the date, please select again", vbExclamation, "Processing Error"
+        Exit Sub
+    End Select
+    
+End Sub
+
+Private Sub cboBetweenEnd_AfterUpdate()
+    Dim strStart As String
+    Dim strStartTest As String
+    Dim datStartTest As Date
+    Dim strYear As String
+    Dim datFilter As Date
+    Dim datStart As Date
+    Dim fBegin As Boolean
+    Dim datEnd As Date
+    
+    strStart = Me.cboBetweenEnd
+
+    If IsNull(Me.txtYear) Then
+        MsgBox "You must enter the Year before you can proceed!", vbExclamation, "Missing Year"
+        Exit Sub
+    Else
+        strYear = Me.txtYear
+    End If
+    
+    If IsNull(Me.cboBetweenStart) Or Me.cboBetweenStart = "" Then
+        MsgBox "You must select Start Date first before you can proceed!", vbExclamation, "Missing Start"
+        Exit Sub
+    Else
+        datStartTest = Me.txtBetweenStart
+    End If
+    
+    Select Case strStart
+    Case Is = "JAN 31"
+        datEnd = Format("1/31/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "FEB 28"
+        If Int(strYear) Mod 4 = 0 Then ' check for leap year
+            datEnd = Format("2/29/" & strYear, "mm/dd/yyyy")
+        Else
+            datEnd = Format("2/28/" & strYear, "mm/dd/yyyy")
+        End If
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "MAR 31"
+        datEnd = Format("3/31/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "APR 30"
+        datEnd = Format("4/30/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "MAY 31"
+        datEnd = Format("5/31/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "JUN 30"
+        datEnd = Format("6/30/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "JUL 31"
+        datEnd = Format("7/31/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "AUG 31"
+        datEnd = Format("8/31/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "SEP 30"
+        datEnd = Format("9/30/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "OCT 31"
+        datEnd = Format("10/31/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "NOV 30"
+        datEnd = Format("11/30/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "DEC 31"
+        datEnd = Format("12/30/" & strYear, "mm/dd/yyyy")
+        ' Test for date earlier
+        If datEnd < datStartTest Then
+            MsgBox "You must select a date Greater than the Start Date", vbExclamation, "Selection Error"
+            Exit Sub
+        End If
+        
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenEnd = datEnd
+        End With
+    Case Else
+        MsgBox "There is an error in the date, please select again", vbExclamation, "Processing Error"
+        Exit Sub
+    End Select
+End Sub
+
+Private Sub cboBetweenStart_AfterUpdate()
+    Dim strStart As String
+    Dim strYear As String
+    Dim datFilter As Date
+    Dim datStart As Date
+    Dim fBegin As Boolean
+    Dim datEnd As Date
+    
+    strStart = Me.cboBetweenStart
+    If IsNull(Me.txtYear) Then
+        MsgBox "You must enter the Year before you can proceed!", vbExclamation, "Missing Year"
+        Exit Sub
+    Else
+        strYear = Me.txtYear
+    End If
+    Me.cboBetweenEnd = ""
+    
+    Select Case strStart
+    Case Is = "JAN 1"
+        datStart = Format("1/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("1/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "FEB 1"
+        datStart = Format("2/1/" & strYear, "mm/dd/yyyy")
+        If Int(strYear) Mod 4 = 0 Then ' check for leap year
+            datEnd = Format("2/29/" & strYear, "mm/dd/yyyy")
+        Else
+            datEnd = Format("2/28/" & strYear, "mm/dd/yyyy")
+        End If
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "MAR 1"
+        datStart = Format("3/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("3/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "APR 1"
+        datStart = Format("4/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("4/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "MAY 1"
+        datStart = Format("5/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("5/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "JUN 1"
+        datStart = Format("6/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("6/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "JUL 1"
+        datStart = Format("7/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("7/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "AUG 1"
+        datStart = Format("8/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("8/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "SEP 1"
+        datStart = Format("9/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("9/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "OCT 1"
+        datStart = Format("10/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("10/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "NOV 1"
+        datStart = Format("11/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("11/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Is = "DEC 1"
+        datStart = Format("12/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("12/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .txtAfterDate = ""
+          .txtBetweenStart = datStart
+          .txtBetweenEnd = datEnd
+        End With
+    Case Else
+        MsgBox "There is an error in the date, please select again", vbExclamation, "Processing Error"
+        Exit Sub
+    End Select
+    
+End Sub
+
+Private Sub cboCompany_AfterUpdate()
+    Dim varRetVal As Variant
+    varRetVal = FindRecord_RS("[GroupID] = '" & Me![cboCompany].Column(0) & "'")
+    With Me
+        .CurrentSubscriberCount.SetFocus
+        .cboCompany = ""
+    End With
+        
+End Sub
+
+
+Private Sub cboGEOid_AfterUpdate()
+    With Me
+        .txtGeoID = cboGEOid.Column(0)
+        .txtGEOName = cboGEOid.Column(1)
+    End With
+End Sub
+
+Private Sub cboStartDate_AfterUpdate()
+    Dim strStart As String
+    Dim strYear As String
+    Dim datFilter As Date
+    Dim datStart As Date
+    Dim fBegin As Boolean
+    Dim datEnd As Date
+    
+    strStart = cboStartDate
+    If IsNull(Me.txtYear) Then
+        MsgBox "You must enter the Year before you can proceed!", vbExclamation, "Missing Year"
+        Exit Sub
+    Else
+        strYear = Me.txtYear
+    End If
+    
+    Select Case strStart
+    Case Is = "JAN 1"
+        datStart = Format("1/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("1/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = True
+          .cmdYearAll.Enabled = True
+          .cmdMonthAll.Visible = False
+          .cmdMonthAll.Enabled = False
+        End With
+    Case Is = "FEB 1"
+        datStart = Format("2/1/" & strYear, "mm/dd/yyyy")
+        If Int(strYear) Mod 4 = 0 Then ' check for leap year
+            datEnd = Format("2/29/" & strYear, "mm/dd/yyyy")
+        Else
+            datEnd = Format("2/28/" & strYear, "mm/dd/yyyy")
+        End If
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "MAR 1"
+        datStart = Format("3/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("3/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "APR 1"
+        datStart = Format("4/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("4/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "MAY 1"
+        datStart = Format("5/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("5/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "JUN 1"
+        datStart = Format("6/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("6/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "JUL 1"
+        datStart = Format("7/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("7/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "AUG 1"
+        datStart = Format("8/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("8/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "SEP 1"
+        datStart = Format("9/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("9/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "OCT 1"
+        datStart = Format("10/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("10/31/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "NOV 1"
+        datStart = Format("11/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("11/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Is = "DEC 1"
+        datStart = Format("12/1/" & strYear, "mm/dd/yyyy")
+        datEnd = Format("12/30/" & strYear, "mm/dd/yyyy")
+        With Me
+          .cmdYearAll.Visible = False
+          .cmdYearAll.Enabled = False
+          .cmdMonthAll.Visible = True
+          .cmdMonthAll.Enabled = True
+        End With
+    Case Else
+        MsgBox "There is an error in the date, please select again", vbExclamation, "Processing Error"
+        Exit Sub
+    End Select
+        datFilter = Format("1/1/" & strYear, "mm/dd/yyyy")
+    With Me
+        .txtFilterDate = datFilter
+        .txtDateAll = datStart
+        .txtEOMAll = datEnd
+    End With
+End Sub
+
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+
+Private Sub cmdDeleteGroup_Click()
+    Dim strSQL As String
+    Dim strYear As String
+    Dim dbs As DAO.Database
+    Dim intRet As Integer
+    
+    Set dbs = CurrentDb()
+    
+    If IsNull(Me.txtDeleteYear) Then
+        MsgBox "You must enter a year to proceed!", vbExclamation, "Data Error"
+        Set dbs = Nothing
+        Exit Sub
+    Else
+    DoCmd.Hourglass True
+    strYear = Me.txtDeleteYear
+    intRet = MsgBox("This procedure will delete all groups from the Growth table for this year -> " & strYear & " Do you want to proceed?", vbExclamation + vbYesNo, "Confirm Delete")
+      If intRet = vbYes Then
+        strSQL = "DELETE tblGrowth.*, tblGrowth.Year FROM tblGrowth"
+        strSQL = strSQL & "  WHERE (((tblGrowth.Year)='" & strYear & "'));"
+        dbs.Execute strSQL, dbSeeChanges
+      Else
+        MsgBox "Operation Cancelled!", , "Aborted"
+      End If
+    End If
+    
+    DoCmd.Hourglass False
+    Set dbs = Nothing
+
+End Sub
+
+Private Sub cmdDeleteSelGroup_Click()
+    Dim strSQL As String
+    Dim strGroup As String
+    Dim dbs As DAO.Database
+    Dim intRet As Integer
+    
+    Set dbs = CurrentDb()
+    If IsNull(Me.txtDeleteGroup) Then
+        MsgBox "You must enter a Group ID to proceed!", vbExclamation, "Data Error"
+        Set dbs = Nothing
+        Exit Sub
+    Else
+    DoCmd.Hourglass True
+    strGroup = Me.txtDeleteGroup
+    intRet = MsgBox("This procedure will delete the Group -> " & strGroup & " from the Growth table for all years. Do you want to proceed?", vbExclamation + vbYesNo, "Confirm Delete")
+      If intRet = vbYes Then
+        strSQL = "DELETE tblGrowth.*, tblGrowth.GroupID FROM tblGrowth"
+        strSQL = strSQL & "  WHERE (((tblGrowth.GroupID)='" & strGroup & "'));"
+        dbs.Execute strSQL, dbSeeChanges
+      Else
+        MsgBox "Operation Cancelled!", , "Aborted"
+      End If
+    End If
+    
+    DoCmd.Hourglass False
+    Set dbs = Nothing
+End Sub
+
+Private Sub cmdMonthAll_Click()
+    
+    On Error GoTo cmdMonthAll_Click_Err
+    
+    ' Process the list of groups
+    '
+    Dim datDate As Date
+    Dim datEOM As Date
+    Dim strYear As String
+    Dim fSuccess As Boolean
+    Dim strSQL As String
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+     
+    With Me
+       .txtMessage.Visible = True
+       .txtMessage.BackColor = 16776960
+       .txtMessage = "Processing, Please Wait!"
+       .Refresh
+       datDate = Format(.txtDateAll, "mm/dd/yyyy")
+       datEOM = Format(.txtEOMAll, "mm/dd/yyyy")
+       strYear = .txtYear
+    End With
+    
+    DoCmd.Hourglass True
+     
+    fSuccess = RunMonthlyGrowth(datDate, datEOM, strYear)
+     
+    strSQL = "SELECT tblDateTimeTracking.ReportDateTime"
+    strSQL = strSQL & " FROM tblDateTimeTracking;"
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        With rst
+            datDate = !ReportDateTime
+        End With
+        Me.txtDateTime = datDate
+    Else
+        Me.txtDateTime = "Last Date/Time Not recorded"
+    End If
+    
+    rst.Close
+    dbs.Close
+    Set dbs = Nothing
+     
+    With Me
+       .txtMessage.BackColor = 8454143
+       .txtMessage = "Processing, Complete!"
+       .Refresh
+    End With
+     
+    DoCmd.Hourglass False
+
+cmdMonthAll_Click_Exit:
+    Exit Sub
+
+cmdMonthAll_Click_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo cmdMonthAll_Click_Exit
+    
+End Sub
+
+Private Sub cmdYearAll_Click()
+    ' Process the list of groups
+    '
+    Dim strSQL As String
+    Dim strSQLIns As String
+    Dim strSQLchk As String
+    Dim rst As DAO.Recordset
+    Dim rst2 As DAO.Recordset
+    Dim dbs As DAO.Database
+    Dim datDate As Date
+    Dim datEOM As Date
+    Dim strGroup As String
+    Dim strYear As String
+    Dim dblInvAmt As Double
+    Dim lngSubCnt As Long
+    Dim lngDepCnt As Long
+    Dim lngSubWDepCnt As Long
+    Dim lngElegEmp As Long
+    Dim intRet As Integer
+    
+    Set dbs = CurrentDb()
+     
+   
+    With Me
+       .txtMessage.Visible = True
+       .txtMessage.BackColor = 16776960
+       .txtMessage = "Processing, Please Wait!"
+       .Refresh
+       datDate = Format(.txtDateAll, "mm/dd/yyyy")
+       datEOM = Format(.txtEOMAll, "mm/dd/yyyy")
+       strYear = .txtYear
+    End With
+    DoCmd.Hourglass True
+    
+    strSQL = "SELECT tblGrp.GroupID, tblGrp.GRname, tblGrp.GRcancelled"
+    strSQL = strSQL & " FROM tblGrp"
+    strSQL = strSQL & " WHERE (((tblGrp.GRcancelled) = No))"
+    strSQL = strSQL & " ORDER BY tblGrp.GroupID;"
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+     With rst
+      Do While Not rst.EOF
+        strGroup = !GROUPid
+        ' Check for existing records
+        strSQLchk = "SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginEligEmps,"
+        strSQLchk = strSQLchk & " tblGrowth.BeginSubscriberCount"
+        strSQLchk = strSQLchk & " FROM tblGrowth"
+        strSQLchk = strSQLchk & " WHERE (((tblGrowth.GroupID)='" & strGroup & "') "
+        strSQLchk = strSQLchk & " AND ((tblGrowth.Year)='" & strYear & "'));"
+        Set rst2 = dbs.OpenRecordset(strSQLchk, dbOpenSnapshot)
+        If rst2.RecordCount > 0 Then
+            ' If group Exists prompt to replace
+            intRet = MsgBox("The group " & strGroup & " already exists on the Growth table for this year.  Do you want to replace it? (Press Cancel to Stop all processing)", vbInformation + vbYesNoCancel, "Data Exists")
+            If intRet = vbCancel Then
+                With Me
+                   .txtMessage.BackColor = 8454143
+                   .txtMessage = "Processing Cancelled!"
+                   .Refresh
+                End With
+                DoCmd.Hourglass False
+                MsgBox "Operation Cancelled!", vbInformation, "Stopped"
+                Exit Sub
+            ElseIf intRet = vbYes Then
+                lngElegEmp = GetEECnt(strGroup, strYear) ' From tblGrowth
+                lngSubCnt = GetSubscriberCnt(strGroup)   ' From tblSubscr
+                lngDepCnt = GetDependentCnt(strGroup)    ' From tblSubscr
+                lngSubWDepCnt = GetSubscriberWDepCnt(strGroup)  ' From tblSubscr
+                dblInvAmt = CalcCurrentInvoice(strGroup, datDate, datEOM) ' From Date Range on ARTRAN
+                strSQLIns = "UPDATE tblGrowth SET tblGrowth.CurrentEligEmps = " & lngElegEmp & ", "
+                strSQLIns = strSQLIns & " tblGrowth.CurrentSubscriberCount =" & lngSubCnt & ", "
+                strSQLIns = strSQLIns & " tblGrowth.CurrentDependentCount =" & lngDepCnt & ", "
+                strSQLIns = strSQLIns & " tblGrowth.CurrentSubscrswithDeps =" & lngSubWDepCnt & ", "
+                strSQLIns = strSQLIns & " tblGrowth.CurrentInvoiceAmt =" & dblInvAmt & ", "
+                strSQLIns = strSQLIns & " tblGrowth.CurrentInvoiceDate = #" & datDate & "#"
+                strSQLIns = strSQLIns & " WHERE (((tblGrowth.GroupID)='" & strGroup & "')"
+                strSQLIns = strSQLIns & " AND ((tblGrowth.Year)='" & strYear & "'));"
+                dbs.Execute strSQLIns
+            End If
+        Else
+            ' Insert new record
+            lngElegEmp = GetEECnt(strGroup, strYear) ' From tblGrowth
+            lngSubCnt = GetSubscriberCnt(strGroup)   ' From tblSubscr
+            lngDepCnt = GetDependentCnt(strGroup)    ' From tblSubscr
+            lngSubWDepCnt = GetSubscriberWDepCnt(strGroup)  ' From tblSubscr
+            dblInvAmt = CalcCurrentInvoice(strGroup, datDate, datEOM) ' From Date Range on ARTRAN
+            strSQLIns = "INSERT INTO tblGrowth ( BeginEligEmps, BeginSubscriberCount, BeginDependentCount, "
+            strSQLIns = strSQLIns & " BeginSubscrswithDeps, BeginInvoiceAmt, BeginInvoiceDate, GroupID, Year ) VALUES "
+            strSQLIns = strSQLIns & " ( " & lngElegEmp & ", "
+            strSQLIns = strSQLIns & " " & lngSubCnt & ", "
+            strSQLIns = strSQLIns & " " & lngDepCnt & ", "
+            strSQLIns = strSQLIns & " " & lngSubWDepCnt & ", "
+            strSQLIns = strSQLIns & " " & dblInvAmt & ", "
+            strSQLIns = strSQLIns & " #" & datDate & "#,"
+            strSQLIns = strSQLIns & " '" & strGroup & "',"
+            strSQLIns = strSQLIns & " '" & strYear & "' );"
+            dbs.Execute strSQLIns
+        End If
+        rst2.Close
+        .MoveNext
+      Loop
+     End With
+    End If
+     
+    With Me
+       .txtMessage.BackColor = 8454143
+       .txtMessage = "Processing, Complete!"
+       .Refresh
+    End With
+    
+   strSQL = "SELECT tblDateTimeTracking.ReportDateTime"
+   strSQL = strSQL & " FROM tblDateTimeTracking;"
+   Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   If rst.RecordCount > 0 Then
+     With rst
+        datDate = !ReportDateTime
+        Me.txtDateTime = datDate
+     End With
+   Else
+      Me.txtDateTime = "Last Date/Time Not recorded"
+   End If
+   
+    DoCmd.Hourglass False
+    rst.Close
+    Set dbs = Nothing
+     
+End Sub
+
+Private Sub Form_Load()
+   Dim datFilter As Date
+   Dim datDate As Date
+   Dim strSQL As String
+   Dim rst As DAO.Recordset
+   Dim dbs As DAO.Database
+   Dim strYear As String
+   Dim strMonth As String
+   Dim strList As String
+   Dim strGEOlist As String
+        
+        strYear = Format(date, "YYYY")
+        strMonth = Month(date)
+        With Me
+        Select Case strMonth
+        Case Is = "1"
+            .cboStartDate = "JAN 1"
+        Case Is = "2"
+            .cboStartDate = "FEB 1"
+        Case Is = "3"
+            .cboStartDate = "MAR 1"
+        Case Is = "4"
+            .cboStartDate = "APR 1"
+        Case Is = "5"
+            .cboStartDate = "MAY 1"
+        Case Is = "6"
+            .cboStartDate = "JUN 1"
+        Case Is = "7"
+            .cboStartDate = "JUL 1"
+        Case Is = "8"
+            .cboStartDate = "AUG 1"
+        Case Is = "9"
+            .cboStartDate = "SEP 1"
+        Case Is = "10"
+            .cboStartDate = "OCT 1"
+        Case Is = "11"
+            .cboStartDate = "NOV 1"
+        Case Is = "12"
+            .cboStartDate = "DEC 1"
+        End Select
+        End With
+        datFilter = Format("1/1/" & strYear, "mm/dd/yyyy")
+        
+    Set dbs = CurrentDb()
+    
+    With Me
+       .txtFilterDate = datFilter
+       .Refresh
+       .Requery
+       .txtMessage.BackColor = 16777215
+       .txtMessage = ""
+       .txtYear = Format(date, "YYYY")
+       cboStartDate_AfterUpdate
+       fraSelGroups_AfterUpdate
+       fraSelDate_AfterUpdate
+       .txtGroups = "All Groups"
+       fAllGroups = True
+    End With
+    
+    'load client service reps into combo box
+    strSQL = "SELECT tlkpClientServiceReps.RepID, tlkpClientServiceReps.RepName, tlkpClientServiceReps.IsRepActive "
+    strSQL = strSQL & "FROM tlkpClientServiceReps "
+    strSQL = strSQL & "WHERE (((tlkpClientServiceReps.IsRepActive)=Yes));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    strList = "All, All Client Service Reps;"
+    If rst.RecordCount > 0 Then
+      With rst
+       Do While Not rst.EOF
+        strList = strList & !RepID & "," & !RepName & ";"
+        Me.cboAcctMgr.RowSource = strList
+        .MoveNext
+       Loop
+      End With
+    End If
+      
+    strSQL = "SELECT DISTINCTROW tblGeographical.GEOid, tblGeographical.GEOdesc"
+    strSQL = strSQL & " FROM tblGeographical;"
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    strGEOlist = "All, All GEO Id's;"
+    If rst.RecordCount > 0 Then
+      With rst
+       Do While Not rst.EOF
+        strGEOlist = strGEOlist & !GeoID & "," & !GEOdesc & ";"
+        Me.cboGEOid.RowSource = strGEOlist
+        .MoveNext
+       Loop
+      End With
+    End If
+    
+   strSQL = "SELECT tblDateTimeTracking.ReportDateTime"
+   strSQL = strSQL & " FROM tblDateTimeTracking;"
+   Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   If rst.RecordCount > 0 Then
+     With rst
+        datDate = !ReportDateTime
+        Me.txtDateTime = datDate
+     End With
+   Else
+      Me.txtDateTime = "Last Date/Time Not recorded"
+   End If
+
+    rst.Close
+    Set dbs = Nothing
+End Sub
+
+Private Sub fraSelDate_AfterUpdate()
+    If fraSelDate = 1 Then
+        With Me
+          .cboAfter.Enabled = True
+          .cboAfter = ""
+          .txtAfterDate = ""
+          .cboBetweenStart = ""
+          .cboBetweenEnd = ""
+          .cboBetweenStart.Enabled = False
+          .cboBetweenEnd.Enabled = False
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Else
+        With Me
+          .cboAfter = ""
+          .cboAfter.Enabled = False
+          .txtAfterDate = ""
+          .cboBetweenStart.Enabled = True
+          .cboBetweenEnd.Enabled = True
+          .cboBetweenStart = ""
+          .cboBetweenEnd = ""
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    End If
+End Sub
+
+Private Sub fraSelGroups_AfterUpdate()
+    If fraSelGroups = 1 Then
+        With Me
+          fExistingOnly = True
+          fNewGroups = False
+          fAllGroups = False
+          .fraSelDate.Enabled = False
+          .cboAfter.Enabled = False
+          .cboAfter = ""
+          .txtAfterDate = ""
+          .cboBetweenStart = ""
+          .cboBetweenEnd = ""
+          .cboBetweenStart.Enabled = False
+          .cboBetweenEnd.Enabled = False
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    ElseIf fraSelGroups = 2 Then
+        With Me
+          fExistingOnly = False
+          fNewGroups = True
+          fAllGroups = False
+          .fraSelDate.Enabled = True
+          .fraSelDate.DefaultValue = 1
+          .cboAfter.Enabled = True
+          .cboAfter = ""
+          .txtAfterDate = ""
+          .cboBetweenStart = ""
+          .cboBetweenEnd = ""
+          .cboBetweenStart.Enabled = False
+          .cboBetweenEnd.Enabled = False
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    Else
+        With Me
+          fExistingOnly = False
+          fNewGroups = False
+          fAllGroups = True
+          .fraSelDate.Enabled = True
+          .fraSelDate.DefaultValue = 1
+          .cboAfter.Enabled = True
+          .cboAfter = ""
+          .txtAfterDate = ""
+          .cboBetweenStart = ""
+          .cboBetweenEnd = ""
+          .cboBetweenStart.Enabled = False
+          .cboBetweenEnd.Enabled = False
+          .txtBetweenEnd = ""
+          .txtBetweenStart = ""
+        End With
+    End If
+End Sub
+
+
+Private Sub OptAll_MouseUp(Button As Integer, Shift As Integer, X As Single, Y As Single)
+   Me.txtGroups = "All Groups"
+End Sub
+
+Private Sub OptExisting_GotFocus()
+   Me.txtGroups = "Existing Groups"
+End Sub
+
+Private Sub OptNew_GotFocus()
+   Me.txtGroups = "New Groups"
+End Sub
+
+Private Sub txtYear_AfterUpdate()
+   Dim datFilter As Date
+   Dim strYear As String
+        
+        strYear = Me.txtYear
+        datFilter = Format("1/1/" & strYear, "mm/dd/yyyy")
+        cboStartDate_AfterUpdate
+        
+    With Me
+       .txtFilterDate = datFilter
+       .Refresh
+       .Requery
+    End With
+
+End Sub
+
+Private Sub txtYear_Exit(Cancel As Integer)
+   Dim datFilter As Date
+   Dim strYear As String
+        
+        strYear = Me.txtYear
+        datFilter = Format("1/1/" & strYear, "mm/dd/yyyy")
+        cboStartDate_AfterUpdate
+        
+    With Me
+       .txtFilterDate = datFilter
+       .Refresh
+       .Requery
+    End With
+
+End Sub
+Private Sub cmdPreviewReport_Click()
+On Error GoTo Err_cmdPreviewReport_Click
+
+    Dim stDocName As String
+    Dim strFilter As String
+    Dim strFilterChk As String
+    Dim strYear As String
+    Dim datAfter As Date
+    Dim datBetweenStart As Date
+    Dim datBetweenEnd As Date
+    Dim fSuccess As Boolean
+    Dim intSelGroup As Integer
+    Dim intSelDate As Integer
+    
+    
+        
+'Dim fNewGroups
+    stDocName = "rptInGroupGrowth"
+    strYear = Me.txtYear
+    intSelGroup = Me.fraSelGroups
+    intSelDate = Me.fraSelDate
+    
+    DoCmd.SetWarnings False
+    
+' Check for Groups filter
+Select Case intSelGroup
+Case Is = 1  ' Filter by date 1/1/YEAR only
+    strFilter = "[BeginInvoiceDate] = #1/1/" & strYear & "#"
+    ' Preview with Date filter only
+    If IsNull(Me.txtAcctMgr) Then
+     If IsNull(Me.txtGeoID) Then
+        ' Preview with no GEO filter
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+     Else
+        ' Preview with GEO Filter
+        If Me.txtGeoID = "All" Then
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        Else
+            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        End If
+      End If
+    Else
+     ' Preview with Acct Manager Filtered
+     If IsNull(Me.txtGeoID) Then
+       ' Preview with no GEO filter
+       If Me.txtAcctMgr = "All" Then
+            DoCmd.OpenReport stDocName, acPreview, , strFilter
+       Else
+            strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+            strFilterChk = strFilter
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+       End If
+     Else
+        ' Preview with GEO filter
+        If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
+            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        ElseIf Me.txtAcctMgr = "All" And Me.txtGeoID = "All" Then
+            DoCmd.OpenReport stDocName, acPreview, , strFilter
+        ElseIf Me.txtGeoID = "All" Then
+            strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        Else
+            ' Preview with both filters
+            strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        End If
+     End If
+    End If
+Case Is = 2     ' Filter new Groups Only
+    datAfter = IIf(IsNull(Me.txtAfterDate) Or Me.txtAfterDate = "" Or Me.txtAfterDate = "1/1/" & strYear, "1/2/" & strYear, Me.txtAfterDate)
+    strFilter = "[BeginInvoiceDate] >=#" & datAfter & "#"
+    Select Case intSelDate
+    Case Is = 1 ' After date
+    If IsNull(Me.txtAcctMgr) Then
+        If IsNull(Me.txtGeoID) Then
+        ' Preview with no GEO filter
+        DoCmd.OpenReport stDocName, acPreview, , strFilter
+        Else
+        ' Preview with GEO Filter
+            If Me.txtGeoID = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+            fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    Else
+    ' Preview with Acct Manager Filtered
+        If IsNull(Me.txtGeoID) Then
+        ' Preview with no GEO filter
+            If Me.txtAcctMgr = "All" Then
+            DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+            strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+            fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        Else
+        ' Preview with GEO filter
+            If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
+                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            ElseIf Me.txtAcctMgr = "All" And Me.txtGeoID = "All" Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            ElseIf Me.txtGeoID = "All" Then
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+            ' Preview with both filters
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    End If
+
+    Case Is = 2 ' Between Dates
+        ' Filter by dates AFTER the date entered
+    datBetweenStart = IIf(Me.txtBetweenStart = "1/1/" & txtYear, "1/2/" & strYear, Me.txtBetweenStart)
+    datBetweenEnd = Me.txtBetweenEnd
+    strFilter = "[BeginInvoiceDate] Between #" & datBetweenStart & "# and #" & datBetweenEnd & "#"
+    If IsNull(Me.txtAcctMgr) Then
+        If IsNull(Me.txtGeoID) Then
+            ' Preview with no GEO filter
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        Else
+            ' Preview with GEO Filter
+            If Me.txtGeoID = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    Else
+        ' Preview with Acct Manager Filtered
+        If IsNull(Me.txtGeoID) Then
+            ' Preview with no GEO filter
+            If Me.txtAcctMgr = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        Else
+            ' Preview with GEO filter
+            If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
+                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            ElseIf Me.txtAcctMgr = "All" And Me.txtGeoID = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            ElseIf Me.txtGeoID = "All" Then
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+                ' Preview with both filters
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    End If
+    
+    End Select
+Case Is = 3
+    Select Case intSelDate
+    Case Is = 1 ' After date
+    datAfter = IIf(IsNull(Me.txtAfterDate) Or Me.txtAfterDate = "", "1/1/" & strYear, Me.txtAfterDate)
+    strFilter = "[BeginInvoiceDate] >=#" & datAfter & "#"
+    
+    ' No dates selected default to ALL dates and check other filters
+    If IsNull(Me.txtAcctMgr) Then
+        If IsNull(Me.txtGeoID) Then
+        ' Preview with no GEO filter
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        Else
+        ' Preview with GEO Filter
+            If Me.txtGeoID = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    Else
+    ' Preview with Acct Manager Filtered
+        If IsNull(Me.txtGeoID) Then
+        ' Preview with no GEO filter
+            If Me.txtAcctMgr = "All" Then
+            fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+            strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+            fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        Else
+        ' Preview with GEO filter
+            If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
+                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            ElseIf Me.txtAcctMgr = "All" And Me.txtGeoID = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            ElseIf Me.txtGeoID = "All" Then
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+            ' Preview with both filters
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    End If
+
+    Case Is = 2 ' Between Dates
+            ' Filter by dates AFTER the date entered
+    datBetweenStart = Me.txtBetweenStart
+    datBetweenEnd = Me.txtBetweenEnd
+    strFilter = "[BeginInvoiceDate] Between #" & datBetweenStart & "# and #" & datBetweenEnd & "#"
+    If IsNull(Me.txtAcctMgr) Then
+        If IsNull(Me.txtGeoID) Then
+            ' Preview with no GEO filter
+            fSuccess = CheckFilter(strFilter)
+            If fSuccess = True Then
+                DoCmd.OpenReport stDocName, acPreview, , strFilter
+            Else
+                GoTo NoReocords
+            End If
+        Else
+            ' Preview with GEO Filter
+            If Me.txtGeoID = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    Else
+        ' Preview with Acct Manager Filtered
+        If IsNull(Me.txtGeoID) Then
+            ' Preview with no GEO filter
+            If Me.txtAcctMgr = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        Else
+            ' Preview with GEO filter
+            If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
+                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            ElseIf Me.txtAcctMgr = "All" And Me.txtGeoID = "All" Then
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            ElseIf Me.txtGeoID = "All" Then
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            Else
+                ' Preview with both filters
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                fSuccess = CheckFilter(strFilter)
+                If fSuccess = True Then
+                    DoCmd.OpenReport stDocName, acPreview, , strFilter
+                Else
+                    GoTo NoReocords
+                End If
+            End If
+        End If
+    End If
+    End Select
+End Select
+
+Exit_cmdPreviewReport_Click:
+    DoCmd.SetWarnings True
+    Exit Sub
+
+NoReocords:
+    MsgBox "There are no records that match your request", vbInformation, "No Data"
+    DoCmd.SetWarnings True
+    Exit Sub
+
+Err_cmdPreviewReport_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdPreviewReport_Click
+    
+End Sub
+
+Private Function CheckFilter(strFilter As String) As Boolean
+    Dim strSQL As String
+    Dim rst As DAO.Recordset
+    Dim dbs As DAO.Database
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT tblGrowth.*, *"
+    strSQL = strSQL & " FROM (tblGrowth INNER JOIN tblGrp ON tblGrowth.GroupID = tblGrp.GroupID) "
+    'strSQL = strSQL & " INNER JOIN tblAcctMgr ON tblGrp.GRacctMgr = tblAcctMgr.AcctMgrID"
+    'WHERE (((tblGrowth.BeginInvoiceDate)=#1/1/2000#) AND (([GRacctMgr])=1));
+    strSQL = strSQL & " WHERE " & strFilter
+    'Debug.Print strSQL
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        CheckFilter = True
+    Else
+        CheckFilter = False
+    End If
+     
+    rst.Close
+    Set dbs = Nothing
+End Function

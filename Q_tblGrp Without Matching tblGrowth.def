@@ -1,0 +1,8 @@
+dbMemo "SQL" ="SELECT DISTINCTROW [tblGrp].[GROUPid], [tblGrp].[GRname]\015\012FROM tblGrp LEFT"
+    " JOIN tblGrowth ON [tblGrp].[GROUPid] = [tblGrowth].[GroupID]\015\012WHERE ([tbl"
+    "Growth].[GroupID] Is Null);\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

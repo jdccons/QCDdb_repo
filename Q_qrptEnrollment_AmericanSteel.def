@@ -1,0 +1,102 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment_AmericanSteel"
+End
+Begin OutputColumns
+    Expression ="tblEnrollment_AmericanSteel.SUBdob"
+    Expression ="tblEnrollment_AmericanSteel.SUBphoneHOME"
+    Alias ="NameSort"
+    Expression ="([SubLastName]) & ([SubFirstName]) & ([SubMiddleName])"
+    Alias ="Phone2"
+    Expression ="IIf(IsNull([SUBphoneHOME]),\"Phone: (______)_____________ (Please Enter) \",\"Ho"
+        "me Phone: \" & ([SUBphoneHOME]))"
+    Alias ="SubName"
+    Expression ="Trim([SubFirstName]) & IIf(IsNull([SubMiddleName]),\"\",([SubMiddleName])) & \" "
+        "\" & ([SubLastName])"
+    Alias ="Location"
+    Expression ="IIf(IsNull([Campus]),\"\",\"Campus Location: \" & ([Campus]))"
+    Alias ="SubAddr"
+    Expression ="Trim([Substreet1]) & \"  \" & IIf(IsNull([SubStreet2]),\"\",([SubStreet2])) & \""
+        " \" & ([SubCity]) & \",  \" & ([SubState]) & \"  \" & ([SubZip])"
+    Alias ="GRname"
+    Expression ="\"American Steel and Aluminum Company\""
+    Alias ="SUBeffDATE2"
+    Expression ="#1/1/2000#"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
+        "loyee at No Monthly Charge.\""
+    Expression ="tblEnrollment_AmericanSteel.Campus"
+    Expression ="tblEnrollment_AmericanSteel.SUBssn"
+    Alias ="DOB"
+    Expression ="IIf(IsNull([SUBdob]),\"\",\"Date of Birth: \" & [SUBdob])"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="1710"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="6165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE2"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Location"
+        dbInteger "ColumnWidth" ="2130"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Phone2"
+        dbInteger "ColumnWidth" ="3090"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="DOB"
+        dbInteger "ColumnWidth" ="2790"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =802
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =153
+        Bottom =113
+        Top =5
+        Name ="tblEnrollment_AmericanSteel"
+        Name =""
+    End
+End

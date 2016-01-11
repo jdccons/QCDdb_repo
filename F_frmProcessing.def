@@ -1,0 +1,109 @@
+Version =17
+VersionRequired =17
+Checksum =-1084072761
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    CloseButton = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    BorderStyle =3
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =5760
+    DatasheetFontHeight =10
+    ItemSuffix =5
+    Left =4860
+    Top =765
+    Right =10755
+    Bottom =1965
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xc7f61fcf2b99e140
+    End
+    Caption ="Processing"
+    MenuBar ="mnuMain"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin CustomControl
+            SpecialEffect =2
+        End
+        Begin Section
+            Height =1200
+            BackColor =16777088
+            Name ="Detail"
+            Begin
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =180
+                    Top =360
+                    Width =5400
+                    Height =420
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label0"
+                    Caption ="Processing request.  Please wait."
+                    OnDblClick ="[Event Procedure]"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+
+' Module     : frmProcessing
+' Description:
+' Procedures : Label0_DblClick
+
+' Created    : 9/24/98 tcook
+' Modified   :
+' --------------------------------------------------
+Option Compare Database
+Option Explicit
+
+Private Sub Label0_DblClick(intCancel As Integer)
+    ' Comments   :
+    ' Parameters : intCancel -
+    ' Returns    :  -
+    ' Created    :
+    ' Modified   :
+    ' --------------------------------------------------------
+  On Error GoTo PROC_ERR
+    DoCmd.Close acForm, "frmProcessing"
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

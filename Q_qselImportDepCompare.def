@@ -1,0 +1,68 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblImportDependentTemp"
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Expression ="tblImportDependentTemp.DepID"
+    Expression ="tblImportDependentTemp.FirstName"
+    Expression ="tblImportDependentTemp.LastName"
+End
+Begin Joins
+    LeftTable ="tblImportDependentTemp"
+    RightTable ="tblDependent"
+    Expression ="tblImportDependentTemp.DepID = tblDependent.DEPsubID"
+    Flag =1
+    LeftTable ="tblImportDependentTemp"
+    RightTable ="tblDependent"
+    Expression ="tblImportDependentTemp.FirstName = tblDependent.DEPfirstNAME"
+    Flag =1
+    LeftTable ="tblImportDependentTemp"
+    RightTable ="tblDependent"
+    Expression ="tblImportDependentTemp.LastName = tblDependent.DEPlastNAME"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblImportDependentTemp.LastName"
+        dbInteger "ColumnWidth" ="1704"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =114
+    Top =24
+    Right =990
+    Bottom =577
+    Left =-1
+    Top =-1
+    Right =869
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =51
+        Top =7
+        Right =287
+        Bottom =155
+        Top =1
+        Name ="tblImportDependentTemp"
+        Name =""
+    End
+    Begin
+        Left =335
+        Top =7
+        Right =505
+        Bottom =148
+        Top =2
+        Name ="tblDependent"
+        Name =""
+    End
+End

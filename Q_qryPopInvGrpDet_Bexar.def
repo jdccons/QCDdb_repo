@@ -1,0 +1,89 @@
+Operation =3
+Name ="tblInvLin"
+Option =8
+Begin InputTables
+    Name ="tblSubscr_Bexar"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Alias ="DocNo"
+    Name ="DOCUMENT NO"
+    Expression ="Trim([Forms]![frmInvGrp_Bexar]![TRANS NO])"
+    Alias ="ID"
+    Name ="ITEM KEY"
+    Expression ="tblSubscr_Bexar.SUBssn"
+    Alias ="Desc"
+    Name ="DESCRIPTION"
+    Expression ="([tblSubscr_Bexar].[SUBlastNAME] & \", \" & [tblSubscr_Bexar].[SUBfirstNAME] & \""
+        " \" & [tblSubscr_Bexar].[SUBmiddleNAME])"
+    Name ="UNIT PRICE"
+    Expression ="tblRates.Rate"
+    Alias ="QtyOrdered"
+    Name ="QTY ORDERED"
+    Expression ="1"
+    Alias ="QtyShipped"
+    Name ="QTY SHIPPED"
+    Expression ="1"
+    Alias ="Acct"
+    Name ="REV ACCT"
+    Expression ="CStr(5100)"
+    Alias ="Dept"
+    Name ="REV SUB"
+    Expression ="CStr(1000)"
+End
+Begin Joins
+    LeftTable ="tblSubscr_Bexar"
+    RightTable ="tblRates"
+    Expression ="tblSubscr_Bexar.RateID = tblRates.RateID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr_Bexar.SUBssn"
+    Flag =0
+    Expression ="([tblSubscr_Bexar].[SUBlastNAME] & \", \" & [tblSubscr_Bexar].[SUBfirstNAME] & \""
+        " \" & [tblSubscr_Bexar].[SUBmiddleNAME])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="Desc"
+        dbInteger "ColumnWidth" ="3255"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =8
+    Top =14
+    Right =970
+    Bottom =330
+    Left =-1
+    Top =-1
+    Right =955
+    Bottom =143
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =30
+        Top =6
+        Right =339
+        Bottom =113
+        Top =0
+        Name ="tblSubscr_Bexar"
+        Name =""
+    End
+    Begin
+        Left =377
+        Top =6
+        Right =473
+        Bottom =116
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

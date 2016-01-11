@@ -1,0 +1,49 @@
+Operation =1
+Option =8
+Where ="((ARHDR.Statusflg=\"S\"))"
+Begin InputTables
+    Name ="ARHDR"
+End
+Begin OutputColumns
+    Expression ="ARHDR.Custattn"
+    Expression ="ARHDR.Custname"
+    Expression ="ARHDR.Custaddr1"
+    Expression ="ARHDR.Custaddr2"
+    Expression ="ARHDR.Custcity"
+    Expression ="ARHDR.Custstate"
+    Expression ="ARHDR.Custzip"
+    Expression ="ARHDR.Applytodocno"
+    Expression ="ARHDR.Statusflg"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+    Begin
+        dbText "Name" ="ARHDR.Custattn"
+        dbInteger "ColumnWidth" ="1920"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =518
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =537
+    Begin
+        Left =29
+        Top =8
+        Right =125
+        Bottom =120
+        Top =0
+        Name ="ARHDR"
+        Name =""
+    End
+End

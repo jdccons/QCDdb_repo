@@ -1,0 +1,56 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="ARHDR_temp"
+End
+Begin OutputColumns
+    Expression ="ARHDR_temp.Custkey"
+    Expression ="ARHDR_temp.Custname"
+    Expression ="ARHDR_temp.CustAdd1Trim"
+    Expression ="ARHDR_temp.Custaddr2"
+    Expression ="ARHDR_temp.CityStateZip"
+    Expression ="ARHDR_temp.Tranno"
+    Expression ="ARHDR_temp.Invdate"
+    Expression ="ARHDR_temp.Salespkey"
+    Expression ="ARHDR_temp.Spare"
+    Alias ="DNM"
+    Expression ="IIf([GroupType]=2,1,IIf([GroupType]=3,1,IIf([GroupType]=4,1,0)))"
+    Expression ="ARHDR_temp.InvTot"
+    Expression ="ARHDR_temp.GroupType"
+    Expression ="ARHDR_temp.InvoiceType"
+End
+Begin OrderBy
+    Expression ="ARHDR_temp.Custkey"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1400
+    Bottom =955
+    Left =-1
+    Top =-1
+    Right =1397
+    Bottom =332
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =41
+        Top =9
+        Right =193
+        Bottom =258
+        Top =0
+        Name ="ARHDR_temp"
+        Name =""
+    End
+End

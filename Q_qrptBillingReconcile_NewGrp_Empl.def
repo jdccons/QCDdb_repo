@@ -1,0 +1,73 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="qselGrpAgt_Empl"
+    Name ="tmpBillingReconcile_rpt"
+End
+Begin OutputColumns
+    Alias ="EmplCom"
+    Expression ="qselGrpAgt_Empl.AGENT_LUname"
+    Expression ="tmpBillingReconcile_rpt.GROUPid"
+    Expression ="tmpBillingReconcile_rpt.Docno"
+    Expression ="qselGrpAgt_Empl.AgentRATE"
+End
+Begin Joins
+    LeftTable ="tmpBillingReconcile_rpt"
+    RightTable ="qselGrpAgt_Empl"
+    Expression ="tmpBillingReconcile_rpt.GROUPid = qselGrpAgt_Empl.GROUPid"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="qselGrpAgt_Empl.AGENT_LUname"
+    Flag =0
+End
+Begin Groups
+    Expression ="qselGrpAgt_Empl.AGENT_LUname"
+    GroupLevel =0
+    Expression ="tmpBillingReconcile_rpt.GROUPid"
+    GroupLevel =0
+    Expression ="tmpBillingReconcile_rpt.Docno"
+    GroupLevel =0
+    Expression ="qselGrpAgt_Empl.AgentRATE"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =103
+    Top =53
+    Right =720
+    Bottom =494
+    Left =-1
+    Top =-1
+    Right =943
+    Bottom =302
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =266
+        Top =35
+        Right =435
+        Bottom =164
+        Top =0
+        Name ="qselGrpAgt_Empl"
+        Name =""
+    End
+    Begin
+        Left =44
+        Top =35
+        Right =214
+        Bottom =239
+        Top =0
+        Name ="tmpBillingReconcile_rpt"
+        Name =""
+    End
+End

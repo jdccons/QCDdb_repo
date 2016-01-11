@@ -1,0 +1,50 @@
+Operation =1
+Option =0
+Where ="(((tblImportFile.ImportErrors)=True))"
+Begin InputTables
+    Name ="tblImportFile"
+End
+Begin OutputColumns
+    Expression ="tblImportFile.GroupID"
+    Expression ="tblImportFile.PlanID"
+    Expression ="tblImportFile.SSN"
+    Expression ="tblImportFile.CoverageID"
+    Expression ="tblImportFile.CoverageRate"
+    Expression ="tblImportFile.Dependent"
+    Expression ="tblImportFile.ImportErrors"
+    Expression ="tblImportFile.LastName"
+    Expression ="tblImportFile.FirstName"
+End
+Begin OrderBy
+    Expression ="tblImportFile.SSN"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =16
+    Top =112
+    Right =968
+    Bottom =592
+    Left =-1
+    Top =-1
+    Right =941
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =66
+        Top =9
+        Right =344
+        Bottom =141
+        Top =4
+        Name ="tblImportFile"
+        Name =""
+    End
+End

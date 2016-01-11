@@ -1,0 +1,71 @@
+Operation =3
+Name ="__dnutblSubscr_BEXCO"
+Option =0
+Begin InputTables
+    Name ="tmpBEXCO_subs_2009"
+End
+Begin OutputColumns
+    Name ="SubSSN"
+    Expression ="tmpBEXCO_subs_2009.SubSSN"
+    Name ="SubID"
+    Expression ="tmpBEXCO_subs_2009.SubID"
+    Name ="PlanID"
+    Expression ="tmpBEXCO_subs_2009.PlanID"
+    Name ="CoverID"
+    Expression ="tmpBEXCO_subs_2009.CoverID"
+    Name ="SubLastName"
+    Expression ="tmpBEXCO_subs_2009.[Last name]"
+    Name ="SubFirstName"
+    Expression ="tmpBEXCO_subs_2009.[First name]"
+    Name ="SubStreet1"
+    Expression ="tmpBEXCO_subs_2009.[House number and street]"
+    Name ="SubCity"
+    Expression ="tmpBEXCO_subs_2009.City"
+    Name ="SubState"
+    Expression ="tmpBEXCO_subs_2009.State"
+    Name ="SubZip"
+    Expression ="tmpBEXCO_subs_2009.[Zip Code]"
+    Name ="SubPhoneHome"
+    Expression ="tmpBEXCO_subs_2009.[Telephone no#]"
+    Name ="SubGender"
+    Expression ="tmpBEXCO_subs_2009.Gender"
+    Name ="SUBm/s"
+    Expression ="tmpBEXCO_subs_2009.[Marital Stat]"
+    Name ="SUBdob"
+    Expression ="tmpBEXCO_subs_2009.[Date of Birth]"
+    Name ="SubAge"
+    Expression ="tmpBEXCO_subs_2009.Age"
+    Name ="SubNoDepent"
+    Expression ="tmpBEXCO_subs_2009.[No# Depn on Cvg]"
+    Name ="SUBbankDraftNo"
+    Expression ="tmpBEXCO_subs_2009.MembershipStatus"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1440
+    Bottom =776
+    Left =-1
+    Top =-1
+    Right =1437
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =315
+        Bottom =120
+        Top =0
+        Name ="tmpBEXCO_subs_2009"
+        Name =""
+    End
+End

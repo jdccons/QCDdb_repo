@@ -1,0 +1,43 @@
+Operation =1
+Option =0
+Where ="((((tblGrp.GRcontBEG)>#9/1/99# Or (tblGrp.GRcontBEG)=#9/1/99#) And ((tblGrp.GRco"
+    "ntBEG)<#1/1/00# Or (tblGrp.GRcontBEG)=#1/1/00#)))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+End
+Begin OrderBy
+    Expression ="tblGrp.GRcontBEG"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =213
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =246
+        Bottom =113
+        Top =15
+        Name ="tblGrp"
+        Name =""
+    End
+End

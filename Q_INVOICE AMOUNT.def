@@ -1,0 +1,83 @@
+Operation =1
+Option =0
+Where ="(((tblInvoiceHistory.InvMonth)=1) AND ((tblInvoiceHistory.InvYear)=2002) AND ((["
+    "tblGrp].[GRExecSalesDirID])=\"GENSA\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblInvoiceHistory"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRfax"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRcontEND"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRcancelledDate"
+    Expression ="tblInvoiceHistory.InvMonth"
+    Expression ="tblInvoiceHistory.InvYear"
+    Expression ="tblInvoiceHistory.TotalBilling"
+    Alias ="Expr1"
+    Expression ="tblGrp.GRagentID1"
+    Alias ="Expr2"
+    Expression ="tblGrp.GRagentID2"
+    Alias ="Expr3"
+    Expression ="tblGrp.GRExecSalesDirID"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblInvoiceHistory"
+    Expression ="tblGrp.GROUPid = tblInvoiceHistory.GrpID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3495"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =93
+    Top =114
+    Right =1229
+    Bottom =431
+    Left =-1
+    Top =-1
+    Right =1129
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =172
+        Top =6
+        Right =319
+        Bottom =86
+        Top =27
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =431
+        Top =14
+        Right =527
+        Bottom =94
+        Top =0
+        Name ="tblInvoiceHistory"
+        Name =""
+    End
+End

@@ -1,0 +1,373 @@
+Option Compare Database
+Option Explicit
+Dim strSQL As String
+Dim rst As DAO.Recordset
+Dim dbs As DAO.Database
+Dim lngCnt As Long
+Function GetSubscriberCnt(strGroup As String) As Long
+
+    On Error GoTo GetSubscriberCnt_Err
+
+    strSQL = "SELECT tblSubscr.SUBgroupID, Count(tblSubscr.SUBssn) AS CountOfSUBssn"
+    strSQL = strSQL & " FROM tblSubscr"
+    strSQL = strSQL & " GROUP BY tblSubscr.SUBgroupID"
+    strSQL = strSQL & " HAVING (((tblSubscr.SUBgroupID)='" & strGroup & "'));"
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+     With rst
+        lngCnt = !CountOfSUBssn
+        .Close
+     End With
+    Else
+        lngCnt = 0
+    End If
+    
+    GetSubscriberCnt = lngCnt
+    Set dbs = Nothing
+    
+GetSubscriberCnt_Exit:
+Exit Function
+
+GetSubscriberCnt_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo GetSubscriberCnt_Exit
+    
+End Function
+
+Function GetDependentCnt(strGroup As String) As Long
+    
+    On Error GoTo GetDependentCnt_Click_Err
+
+    strSQL = "SELECT tblSubscr.SUBgroupID, Count(tblDependent.DEPsubID) AS CountOfDEPsubID"
+    strSQL = strSQL & " FROM tblSubscr "
+    strSQL = strSQL & " LEFT JOIN tblDependent ON tblSubscr.SUBssn = tblDependent.DEPsubID"
+    strSQL = strSQL & " GROUP BY tblSubscr.SUBgroupID"
+    strSQL = strSQL & " HAVING (((tblSubscr.SUBgroupID)='" & strGroup & "'));"
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+     With rst
+        lngCnt = !CountOfDEPsubID
+        .Close
+     End With
+    Else
+        lngCnt = 0
+    End If
+    
+    GetDependentCnt = lngCnt
+    Set dbs = Nothing
+
+GetDependentCnt_Click_Exit:
+    Exit Function
+
+GetDependentCnt_Click_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo GetDependentCnt_Click_Exit
+    
+End Function
+
+Function GetSubscriberWDepCnt(strGroup As String) As Long
+    
+    On Error GoTo GetSubscriberWDepCnt_Click_Err
+   
+    strSQL = "SELECT tblSubscr.SUBgroupID, Count(tblSubscr.SUBssn) AS CountOfSUBssn"
+    strSQL = strSQL & " FROM tblSubscr"
+    strSQL = strSQL & " WHERE (((tblSubscr.SUBnoDEPENT) > 0))"
+    strSQL = strSQL & " GROUP BY tblSubscr.SUBgroupID"
+    strSQL = strSQL & " HAVING (((tblSubscr.SUBgroupID)='" & strGroup & "'));"
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+     With rst
+        lngCnt = !CountOfSUBssn
+        .Close
+     End With
+    Else
+        lngCnt = 0
+    End If
+    
+    GetSubscriberWDepCnt = lngCnt
+    Set dbs = Nothing
+    
+GetSubscriberWDepCnt_Click_Exit:
+    Exit Function
+
+GetSubscriberWDepCnt_Click_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo GetSubscriberWDepCnt_Click_Exit
+    
+End Function
+Function GetEECnt(strGroup As String, strYear As String) As Long
+    
+    On Error GoTo GetEECnt_Err
+    
+    strSQL = "SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginEligEmps, tblGrowth.CurrentEligEmps"
+    strSQL = strSQL & " FROM tblGrowth"
+    strSQL = strSQL & " WHERE (((tblGrowth.GroupID)='" & strGroup & "') "
+    strSQL = strSQL & " AND ((tblGrowth.Year)='" & strYear & "'));"
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+     With rst
+        If IsNull(!CurrentEligEmps) = True Or !CurrentEligEmps = 0 Then  ' If 0 get begin elig emps
+            lngCnt = IIf(!BeginEligEmps = 0, 0, !BeginEligEmps)
+        Else                          ' If >0 then leave alone
+            lngCnt = !CurrentEligEmps
+        End If
+        .Close
+     End With
+    Else
+        lngCnt = 0
+    End If
+    
+    GetEECnt = lngCnt
+    Set dbs = Nothing
+    
+GetEECnt_Exit:
+    Exit Function
+
+GetEECnt_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo GetEECnt_Exit
+    
+End Function
+Function CalcCurrentInvoice(strGroup As String, datDate As Date, datEOM As Date) As Double
+    
+On Error GoTo CalcCurrentInvoice_Err
+    
+    Dim dblTotal As Double
+    
+    'strSQL = "SELECT Sum([DocumentAmt]) AS SumAmt " & _
+                "FROM ARTRAN " & _
+                "WHERE (((ARTRAN.CustomerKey) = '" & strGroup & "') " & _
+                "AND ((ARTRAN.TransactionType)='I' Or (ARTRAN.TransactionType)='C') " & _
+                "AND ((ARTRAN.DocumentDate) Between #" & datDate & "# And #" & datEOM & "#)) " & _
+                "ORDER BY Sum(Abs([DocumentAmt]));"
+                
+    strSQL = "SELECT Sum(ARTRAN.DocumentAmt) AS SumOfDocumentAmt " & _
+            "FROM ARTRAN " & _
+            "WHERE (((ARTRAN.CustomerKey)='" & strGroup & "') " & _
+            "AND ((ARTRAN.TransactionType)='I' Or (ARTRAN.TransactionType)='C') " & _
+            "AND ((ARTRAN.DocumentDate) Between #" & datDate & "# And #" & datEOM & "#));"
+
+    
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        With rst
+            dblTotal = Nz(!SumOfDocumentAmt)
+        End With
+    End If
+    
+    CalcCurrentInvoice = dblTotal
+    rst.Close
+    Set dbs = Nothing
+    
+CalcCurrentInvoice_Exit:
+Exit Function
+
+CalcCurrentInvoice_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo CalcCurrentInvoice_Exit
+    
+End Function
+Function RunMonthlyGrowth(datDate As Date, datEOM As Date, strYear As String) As Boolean
+
+    On Error GoTo RunMonthlyGrowth_Click_Err
+
+    Dim strGroup As String
+    Dim strSQL As String
+    Dim strSQLchk As String
+    Dim strSQLIns As String
+    Dim strSQLchkAR As String
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst1 As DAO.Recordset
+    Dim rst2 As DAO.Recordset
+    Dim dblInvAmt As Double
+    Dim lngSubCnt As Long
+    Dim lngDepCnt As Long
+    Dim lngSubWDepCnt As Long
+    Dim lngElegEmp As Long
+    Dim datDateTime As Date
+    Dim fSuccess As Boolean
+   
+    Set dbs = CurrentDb()
+   
+    strSQL = "SELECT tblGrp.GroupID, tblGrp.GRname, tblGrp.GRcancelled"
+    strSQL = strSQL & " FROM tblGrp"
+    strSQL = strSQL & " WHERE (((tblGrp.GRcancelled) = No))"
+    'strSQL = strSQL & " ORDER BY tblGrp.GroupID;"
+    
+    'strSQL = "SELECT tblGrp.GroupID, tblGrp.GRname, tblGrp.GRcancelled "
+    'strSQL = strSQL & "FROM tblGrp "
+    'strSQL = strSQL & "WHERE (((tblGrp.GroupID) = 'CLARK') And ((tblGrp.GRcancelled) = No)) "
+    'strSQL = strSQL & "ORDER BY tblGrp.GroupID;"
+     
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+     With rst
+      Do While Not rst.EOF
+        strGroup = !GROUPid
+        lngElegEmp = GetEECnt(strGroup, strYear) ' From tblGrowth
+        lngSubCnt = GetSubscriberCnt(strGroup)   ' From tblSubscr
+        lngDepCnt = GetDependentCnt(strGroup)    ' From tblSubscr
+        lngSubWDepCnt = GetSubscriberWDepCnt(strGroup)  ' From tblSubscr
+        dblInvAmt = CalcCurrentInvoice(strGroup, datDate, datEOM) ' From Date Range on ARTRAN
+        ' Check if Group Exists
+        fSuccess = CheckforGrowthRecord(strGroup, strYear)
+        If fSuccess = True Then
+         fSuccess = CheckforBeginInvoiceDate(strGroup, strYear)
+         If fSuccess = True Then
+            ' Update the Current values
+            strSQLIns = "UPDATE tblGrowth SET tblGrowth.CurrentEligEmps = " & lngElegEmp & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentSubscriberCount =" & lngSubCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentDependentCount =" & lngDepCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentSubscrswithDeps =" & lngSubWDepCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentInvoiceAmt =" & dblInvAmt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentInvoiceDate = #" & datDate & "#"
+            strSQLIns = strSQLIns & " WHERE (((tblGrowth.GroupID)='" & strGroup & "')"
+            strSQLIns = strSQLIns & " AND ((tblGrowth.Year)='" & strYear & "'));"
+            dbs.Execute strSQLIns, dbSeeChanges
+         ElseIf CheckforARTRANInvoice(strGroup, datDate, datEOM) = True Then
+            ' Update the Beginning and Current values
+            strSQLIns = "UPDATE tblGrowth SET tblGrowth.CurrentEligEmps = " & lngElegEmp & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentSubscriberCount =" & lngSubCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentDependentCount =" & lngDepCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentSubscrswithDeps =" & lngSubWDepCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentInvoiceAmt =" & dblInvAmt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.CurrentInvoiceDate = #" & datDate & "#,"
+            strSQLIns = strSQLIns & " tblGrowth.BeginEligEmps =" & lngElegEmp & ", "
+            strSQLIns = strSQLIns & " tblGrowth.BeginSubscriberCount =" & lngSubCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.BeginDependentCount =" & lngDepCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.BeginSubscrswithDeps =" & lngSubWDepCnt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.BeginInvoiceAmt =" & dblInvAmt & ", "
+            strSQLIns = strSQLIns & " tblGrowth.BeginInvoiceDate = #" & datDate & "#"
+            strSQLIns = strSQLIns & " WHERE (((tblGrowth.GroupID)='" & strGroup & "')"
+            strSQLIns = strSQLIns & " AND ((tblGrowth.Year)='" & strYear & "'));"
+            dbs.Execute strSQLIns, dbSeeChanges
+         End If
+        ElseIf CheckforARTRANInvoice(strGroup, datDate, datEOM) = True Then
+          ' Insert in Growth table
+            strSQLIns = "INSERT INTO tblGrowth ( BeginEligEmps, BeginSubscriberCount, BeginDependentCount, "
+            strSQLIns = strSQLIns & " BeginSubscrswithDeps, BeginInvoiceAmt, BeginInvoiceDate, "
+            strSQLIns = strSQLIns & " CurrentEligEmps, CurrentSubscriberCount, CurrentDependentCount, "
+            strSQLIns = strSQLIns & " CurrentSubscrswithDeps, CurrentInvoiceAmt, CurrentInvoiceDate, GroupID, Year ) VALUES "
+            strSQLIns = strSQLIns & " ( " & lngElegEmp & ", "
+            strSQLIns = strSQLIns & " " & lngSubCnt & ", "
+            strSQLIns = strSQLIns & " " & lngDepCnt & ", "
+            strSQLIns = strSQLIns & " " & lngSubWDepCnt & ", "
+            strSQLIns = strSQLIns & " " & dblInvAmt & ", "
+            strSQLIns = strSQLIns & " #" & datDate & "#,"
+            ' Added 3/24/2000 per John and Gregg to add
+            ' same values to the Current Fields
+            strSQLIns = strSQLIns & " " & lngElegEmp & ", "
+            strSQLIns = strSQLIns & " " & lngSubCnt & ", "
+            strSQLIns = strSQLIns & " " & lngDepCnt & ", "
+            strSQLIns = strSQLIns & " " & lngSubWDepCnt & ", "
+            strSQLIns = strSQLIns & " " & dblInvAmt & ", "
+            strSQLIns = strSQLIns & " #" & datDate & "#,"
+            ' End of Current entries
+            strSQLIns = strSQLIns & " '" & strGroup & "',"
+            strSQLIns = strSQLIns & " '" & strYear & "' );"
+            dbs.Execute strSQLIns, dbSeeChanges
+        End If
+        .MoveNext
+      Loop
+     End With
+    End If
+
+   ' Insert the Date and Time in the table
+   datDateTime = Now()
+   
+   strSQL = "UPDATE tblDateTimeTracking SET tblDateTimeTracking.ReportDateTime = # " & datDateTime & "# WHERE tblDateTimeTracking.ID = 1;"
+   dbs.Execute strSQL, dbSeeChanges
+   
+   Set dbs = Nothing
+   
+RunMonthlyGrowth_Click_Exit:
+    Exit Function
+
+RunMonthlyGrowth_Click_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo RunMonthlyGrowth_Click_Exit
+    
+End Function
+
+Function CheckforGrowthRecord(strGroup As String, strYear As String) As Boolean
+   Dim strSQLchk As String
+   Dim rst1 As DAO.Recordset
+   Dim dbs As DAO.Database
+   Set dbs = CurrentDb()
+   
+   strSQLchk = "SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginInvoiceDate"
+   strSQLchk = strSQLchk & " FROM tblGrowth"
+   strSQLchk = strSQLchk & " WHERE (((tblGrowth.GroupID)='" & strGroup & "')"
+   strSQLchk = strSQLchk & " AND ((tblGrowth.Year)='" & strYear & "'));"
+   Set rst1 = dbs.OpenRecordset(strSQLchk, dbOpenSnapshot)
+   ' Insert in Growth table
+   If rst1.RecordCount > 0 Then
+      CheckforGrowthRecord = True
+   Else
+      CheckforGrowthRecord = False
+   End If
+   
+   rst1.Close
+   Set dbs = Nothing
+End Function
+Function CheckforARTRANInvoice(strGroup As String, datDate As Date, datEOM As Date) As Boolean
+   
+   Dim strSQLchkAR As String
+   Dim rst1 As DAO.Recordset
+   Dim dbs As DAO.Database
+   Set dbs = CurrentDb()
+   
+   strSQLchkAR = "SELECT ARTRAN.CustomerKey, ARTRAN.DocumentDate, " & _
+                  "ARTRAN.TransactionType " & _
+                  "FROM ARTRAN " & _
+                  "WHERE (((ARTRAN.CustomerKey)='" & strGroup & "') AND (" & _
+                  "(ARTRAN.DocumentDate) Between #" & datDate & "# And #" & datEOM & "#) " & _
+                  "AND ((ARTRAN.TransactionType)='I' Or " & _
+                  "(ARTRAN.TransactionType)='C'));"
+   
+   Set rst1 = dbs.OpenRecordset(strSQLchkAR, dbOpenSnapshot)
+   If rst1.RecordCount > 0 Then
+      CheckforARTRANInvoice = True
+   Else
+      CheckforARTRANInvoice = False
+   End If
+   
+   rst1.Close
+   Set dbs = Nothing
+   
+End Function
+
+Function CheckforBeginInvoiceDate(strGroup As String, strYear As String) As Boolean
+   Dim strSQLchk As String
+   Dim rst1 As DAO.Recordset
+   Dim dbs As DAO.Database
+   Set dbs = CurrentDb()
+
+   strSQLchk = "SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginInvoiceDate"
+   strSQLchk = strSQLchk & " FROM tblGrowth"
+   strSQLchk = strSQLchk & " WHERE (((tblGrowth.GroupID)='" & strGroup & "')"
+   strSQLchk = strSQLchk & " AND ((tblGrowth.Year)='" & strYear & "')"
+   strSQLchk = strSQLchk & " AND ((tblGrowth.BeginInvoiceDate) Is Not Null));"
+   Set rst1 = dbs.OpenRecordset(strSQLchk, dbOpenSnapshot)
+   ' Insert in Growth table
+   If rst1.RecordCount > 0 Then
+      CheckforBeginInvoiceDate = True
+   Else
+      CheckforBeginInvoiceDate = False
+   End If
+   
+   rst1.Close
+   Set dbs = Nothing
+End Function

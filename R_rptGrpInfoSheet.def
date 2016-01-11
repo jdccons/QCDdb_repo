@@ -1,0 +1,371 @@
+Version =20
+VersionRequired =20
+Checksum =428027064
+Begin Report
+    LayoutForPrint = NotDefault
+    RecordLocks =2
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =8640
+    ItemSuffix =76
+    Left =6150
+    Top =90
+    Right =16440
+    Bottom =8040
+    RecSrcDt = Begin
+        0x9afff4f5f0f6e240
+    End
+    RecordSource ="qrptGrpInfoSheet"
+    Caption ="Group Information Sheet"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xa0050000a0050000d0020000a005000000000000c02100000000000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f4040f89800701000100eb0a7008640001000f00b00402000100 ,
+        0xb004030000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    Begin
+        Begin Label
+            TextAlign =3
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            OldBorderStyle =0
+            LabelAlign =3
+            LabelX =-124
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            LabelAlign =3
+            TextFontFamily =18
+            Height =300
+            LabelX =-124
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            KeepTogether =1
+            ControlSource ="GRname"
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =10740
+            Name ="GroupHeader6"
+            Begin
+                Begin TextBox
+                    TextAlign =2
+                    Width =8640
+                    Height =540
+                    FontSize =16
+                    FontWeight =700
+                    Name ="Field44"
+                    ControlSource ="GRname"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    Left =60
+                    Top =555
+                    Width =8565
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                End
+                Begin TextBox
+                    Top =1920
+                    Width =2736
+                    FontSize =12
+                    TabIndex =2
+                    Name ="Field51"
+                    ControlSource ="GRstreet1"
+                    Begin
+                        Begin Label
+                            TextAlign =1
+                            Top =1560
+                            Width =2880
+                            Height =300
+                            FontSize =12
+                            Name ="Text52"
+                            Caption ="Address:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =2880
+                    Top =1920
+                    Width =2736
+                    FontSize =12
+                    TabIndex =3
+                    Name ="Field53"
+                    ControlSource ="GRstreet2"
+                End
+                Begin TextBox
+                    Left =-6
+                    Top =2340
+                    Width =2823
+                    Height =285
+                    FontSize =12
+                    TabIndex =4
+                    Name ="Field54"
+                    ControlSource ="GRcity"
+                End
+                Begin TextBox
+                    Left =2880
+                    Top =2280
+                    Width =432
+                    FontSize =12
+                    TabIndex =5
+                    Name ="Field55"
+                    ControlSource ="GRstate"
+                End
+                Begin TextBox
+                    Left =3456
+                    Top =2280
+                    Width =1800
+                    FontSize =12
+                    TabIndex =6
+                    Name ="Field56"
+                    ControlSource ="Zip2"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Top =3180
+                    Width =2160
+                    Height =420
+                    FontSize =12
+                    TabIndex =7
+                    Name ="Field57"
+                    ControlSource ="GRphone1"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                    Begin
+                        Begin Label
+                            TextAlign =1
+                            Top =2820
+                            Width =1950
+                            Height =480
+                            FontSize =12
+                            Name ="Text58"
+                            Caption ="Phone:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Top =4080
+                    Width =2160
+                    Height =420
+                    FontSize =12
+                    TabIndex =8
+                    Name ="Field59"
+                    ControlSource ="GRfax"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                    Begin
+                        Begin Label
+                            TextAlign =1
+                            Top =3780
+                            Width =1950
+                            Height =420
+                            FontSize =12
+                            Name ="Text60"
+                            Caption ="Fax: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Top =5100
+                    Width =2736
+                    Height =420
+                    FontSize =12
+                    TabIndex =9
+                    Name ="Field61"
+                    ControlSource ="GRmainCONT"
+                    Begin
+                        Begin Label
+                            TextAlign =1
+                            Top =4800
+                            Width =1950
+                            Height =420
+                            FontSize =12
+                            Name ="Text62"
+                            Caption ="Main Contact :"
+                        End
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Top =6420
+                    Width =936
+                    FontSize =12
+                    TabIndex =10
+                    Name ="Field65"
+                    ControlSource ="GRcontBEG"
+                    Format ="Short Date"
+                    Begin
+                        Begin Label
+                            TextAlign =1
+                            Top =6000
+                            Width =1950
+                            Height =420
+                            FontSize =12
+                            Name ="Text66"
+                            Caption ="Contract Begin: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Top =7260
+                    Width =936
+                    Height =360
+                    FontSize =12
+                    TabIndex =11
+                    Name ="Field67"
+                    ControlSource ="GRcontEND"
+                    Format ="Short Date"
+                    Begin
+                        Begin Label
+                            TextAlign =1
+                            Top =6840
+                            Width =1950
+                            Height =420
+                            FontSize =12
+                            Name ="Text68"
+                            Caption ="Contract End: "
+                        End
+                    End
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =5400
+                    Top =1500
+                    Width =900
+                    Height =300
+                    FontSize =12
+                    Name ="Text72"
+                    Caption ="GeoID: "
+                End
+                Begin TextBox
+                    Left =6336
+                    Top =1500
+                    Width =933
+                    Height =285
+                    FontSize =12
+                    TabIndex =12
+                    Name ="GRPgeoID"
+                    ControlSource ="GRPgeoID"
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Top =8340
+                    Width =7560
+                    Height =1680
+                    TabIndex =13
+                    Name ="Child74"
+                    SourceObject ="Report.srptGroupInfoSheet"
+                    LinkChildFields ="GROUPid"
+                    LinkMasterFields ="GROUPid"
+                    GUID = Begin
+                        0xfab183617f3387448a7068e629ec1071
+                    End
+                    Begin
+                        Begin Label
+                            TextAlign =1
+                            Top =7920
+                            Width =1950
+                            Height =420
+                            FontSize =12
+                            Name ="Text70"
+                            Caption ="Brokers: "
+                            GUID = Begin
+                                0xe520fefb417c594c853ef0cf167acdc0
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =0
+            Name ="Detail1"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+  On Error GoTo PROC_ERR
+        Forms![fmnuSwitchboard].Visible = True
+        DoCmd.OpenForm "fmnuReportGrp"
+
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

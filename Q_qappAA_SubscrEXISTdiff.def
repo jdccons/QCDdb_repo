@@ -1,0 +1,90 @@
+Operation =3
+Name ="tmpAA_VarianceReport"
+Option =0
+Where ="(((tblSubscr.PreexistingDate)<>CDate(Left([EIDTCVEF],2) & \"/\" & Mid([EIDTCVEF]"
+    ",3,2) & \"/\" & Right([EIDTCVEF],4)) Or (tblSubscr.PreexistingDate) Is Null)) OR"
+    " (((CDate(Left([EIDTCVEF],2) & \"/\" & Mid([EIDTCVEF],3,2) & \"/\" & Right([EIDT"
+    "CVEF],4)))<>[PreexistingDate]))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="qselAA_Subscr_PreexistingDate"
+End
+Begin OutputColumns
+    Alias ="Ord"
+    Name ="PrtOrder"
+    Expression ="15"
+    Alias ="Title"
+    Name ="DataElementTitle"
+    Expression ="\"Subscriber Change\""
+    Alias ="Elem"
+    Name ="DataElement"
+    Expression ="\"Sub Prior Coverage Date\""
+    Name ="AAGrpID"
+    Expression ="qselAA_Subscr_PreexistingDate.GRPid"
+    Name ="SubSSN"
+    Expression ="tblSubscr.SUBssn"
+    Alias ="AA"
+    Name ="NewValue"
+    Expression ="CDate(Left([EIDTCVEF],2) & \"/\" & Mid([EIDTCVEF],3,2) & \"/\" & Right([EIDTCVEF"
+        "],4))"
+    Alias ="QCD"
+    Name ="OldValue"
+    Expression ="tblSubscr.PreexistingDate"
+    Name ="RptDate"
+    Expression ="qselAA_Subscr_PreexistingDate.RptDate"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="qselAA_Subscr_PreexistingDate"
+    Expression ="tblSubscr.SUBssn = qselAA_Subscr_PreexistingDate.AA_SSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbText "Description" ="15"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="QCD"
+        dbInteger "ColumnWidth" ="1290"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =47
+    Top =69
+    Right =1258
+    Bottom =469
+    Left =-1
+    Top =-1
+    Right =1204
+    Bottom =224
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =418
+        Top =15
+        Right =675
+        Bottom =174
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =98
+        Top =15
+        Right =342
+        Bottom =129
+        Top =0
+        Name ="qselAA_Subscr_PreexistingDate"
+        Name =""
+    End
+End

@@ -1,0 +1,61 @@
+Operation =1
+Option =0
+Where ="(((ContainsAlpha_TSB([DOB]))=\"true\")) OR (((ContainsAlpha_TSB([EffectiveDate])"
+    ")=\"true\")) OR (((tblImportFile.SSN) Is Null) AND ((ContainsAlpha_TSB([Effectiv"
+    "eDate]))=\"true\")) OR (((tblImportFile.LastName) Is Null)) OR (((tblImportFile."
+    "FirstName) Is Null)) OR (((tblImportFile.City) Is Null)) OR (((tblImportFile.Sta"
+    "te) Is Null)) OR (((tblImportFile.StreetAddress) Is Null))"
+Begin InputTables
+    Name ="tblImportFile"
+End
+Begin OutputColumns
+    Expression ="tblImportFile.ID"
+    Expression ="tblImportFile.GroupID"
+    Expression ="tblImportFile.PlanID"
+    Expression ="tblImportFile.SSN"
+    Expression ="tblImportFile.LastName"
+    Expression ="tblImportFile.FirstName"
+    Expression ="tblImportFile.MiddleInit"
+    Expression ="tblImportFile.StreetAddress2"
+    Expression ="tblImportFile.StreetAddress"
+    Expression ="tblImportFile.City"
+    Expression ="tblImportFile.State"
+    Expression ="tblImportFile.ZipCode"
+    Expression ="tblImportFile.Phone"
+    Expression ="tblImportFile.DOB"
+    Expression ="tblImportFile.CoverageID"
+    Expression ="tblImportFile.CoverageRate"
+    Expression ="tblImportFile.EffectiveDate"
+    Expression ="tblImportFile.DepSSN"
+    Expression ="tblImportFile.EmpStatus"
+    Expression ="tblImportFile.Dependent"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =355
+        Bottom =129
+        Top =16
+        Name ="tblImportFile"
+        Name =""
+    End
+End

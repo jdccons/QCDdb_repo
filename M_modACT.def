@@ -1,0 +1,1413 @@
+' NOTE this is a constant used throughout the app to for displaying fields.  If you
+' would like to view user-defined fields set this value higher.  User-Defined fields
+' in ACT start numbering at 1000.  I have set this intentionally at a lower number
+' for speed purposes.
+Public Const MAX_FIELDID = 99
+
+
+' Contact Field Unique IDs
+Public Const CF_UniqueID = 1
+Public Const CF_CreateTimestamp = 2
+Public Const CF_EditTimestamp = 3
+Public Const CF_MergeTimestamp = 4
+Public Const CF_PublicPrivate = 5
+Public Const CF_RecordManager = 6
+Public Const CF_Company = 25
+Public Const CF_Name = 26
+Public Const CF_Address1 = 27
+Public Const CF_Address2 = 28
+Public Const CF_Address3 = 29
+Public Const CF_City = 30
+Public Const CF_State = 31
+Public Const CF_Zip = 32
+Public Const CF_Country = 33
+Public Const CF_IDStatus = 34
+Public Const CF_Phone = 35
+Public Const CF_Fax = 36
+Public Const CF_HomePhone = 37
+Public Const CF_MobilePhone = 38
+Public Const CF_Pager = 39
+Public Const CF_Salutation = 40
+Public Const CF_LastMeet = 41
+Public Const CF_LastReach = 42
+Public Const CF_LastAttempt = 43
+Public Const CF_LetterDate = 44
+Public Const CF_Unused1 = 45
+Public Const CF_Title = 46
+Public Const CF_Assistant = 47
+Public Const CF_LastResults = 48
+Public Const CF_ReferredBy = 49
+Public Const CF_User1 = 50
+Public Const CF_User2 = 51
+Public Const CF_User3 = 52
+Public Const CF_User4 = 53
+Public Const CF_User5 = 54
+Public Const CF_User6 = 55
+Public Const CF_User7 = 56
+Public Const CF_User8 = 57
+Public Const CF_User9 = 58
+Public Const CF_User10 = 59
+Public Const CF_User11 = 60
+Public Const CF_User12 = 61
+Public Const CF_User13 = 62
+Public Const CF_User14 = 63
+Public Const CF_User15 = 64
+Public Const CF_AltAddress1 = 65
+Public Const CF_AltAddress2 = 66
+Public Const CF_AltCity = 67
+Public Const CF_AltState = 68
+Public Const CF_AltZip = 69
+Public Const CF_AltCountry = 70
+Public Const CF_AltPhone = 71
+Public Const CF_Name2 = 72
+Public Const CF_Title2 = 73
+Public Const CF_Phone2 = 74
+Public Const CF_Name3 = 75
+Public Const CF_Title3 = 76
+Public Const CF_Phone3 = 77
+Public Const CF_FirstName = 78
+Public Const CF_LastName = 79
+Public Const CF_Ext = 80                   ' the work phone extension
+Public Const CF_FaxExt = 81                ' the fax extension
+Public Const CF_AltPhoneExt = 82           ' alternate phone extension
+Public Const CF_Phone2Ext = 83             ' contact 2 phone extension
+Public Const CF_Phone3Ext = 84             ' contact 3 phone extension
+Public Const CF_AsstTitle = 85             ' the assistants title
+Public Const CF_AsstPhone = 86             ' the assistant phone
+Public Const CF_AsstExt = 87               ' the assistant extension
+Public Const CF_Department = 88            ' the contact's department
+Public Const CF_Spouse = 89                ' the contact's spouse name
+Public Const CF_Creator = 90               ' the creator of the record
+Public Const CF_UsersCompany = 91          ' equivalent to the ACT! 2.0 Owner field (the company of the user that owns the record)
+Public Const CF_Alt1Reach = 92             ' alternate contact 1 last reach (for ACT! 2.0 compatability)
+Public Const CF_Alt2Reach = 93             ' alternate contact 2 last reach (for ACT! 2.0 compatability)
+Public Const CF_URL = 94                   ' URL or web site address
+Public Const CF_TickerSymbol = 95
+Public Const CF_ContactType = 125
+
+Public Const CF_EligibleEmployees = 1000
+
+Public Const CVF_EmailAddress = 200        ' for display of e-mail address
+Public Const CVF_Note = 201                ' for "import" of note
+Public Const CVF_EmailLogon = 202          ' separate components for e-mail logon
+Public Const CVF_EmailCarrier = 203        ' separate component for e-mail carrier
+
+
+' Group Field Unique IDs
+Public Const GF_UniqueID = 1
+Public Const GF_CreateTimestamp = 2
+Public Const GF_EditTimestamp = 3
+Public Const GF_MergeTimestamp = 4
+Public Const GF_PublicPrivate = 5
+Public Const GF_RecordManager = 6
+Public Const GF_Name = 25
+Public Const GF_Division = 26
+Public Const GF_Address1 = 27
+Public Const GF_Address2 = 28
+Public Const GF_Address3 = 29
+Public Const GF_City = 30
+Public Const GF_State = 31
+Public Const GF_Zip = 32
+Public Const GF_Country = 33
+Public Const GF_Priority = 35
+Public Const GF_User1 = 36
+Public Const GF_User2 = 37
+Public Const GF_User3 = 38
+Public Const GF_User4 = 39
+Public Const GF_Description = 40
+Public Const GF_User5 = 47
+Public Const GF_User6 = 48      ' extra user field
+Public Const GF_Creator = 54    ' the creator of the record
+Public Const GF_ParentId = 55
+Public Const GF_GroupLevel = 56
+Public Const GF_Region = 57
+Public Const GF_Industry = 58
+Public Const GF_SicCode = 59
+Public Const GF_Employees = 60
+Public Const GF_Revenue = 61
+Public Const GF_TotalInGroup = 100
+Public Const GVF_Note = 200
+
+
+' Activity Field Unique IDs
+Public Const AF_UniqueID = 1
+Public Const AF_CreateTimestamp = 2
+Public Const AF_EditTimestamp = 3
+Public Const AF_MergeTimestamp = 4
+Public Const AF_PublicPrivate = 5
+Public Const AF_Type = 25
+Public Const AF_Priority = 26
+Public Const AF_Regarding = 27
+Public Const AF_StartTime = 28       ' the starting time of the series of activities
+Public Const AF_EndTime = 29         ' the ending time of the series of activities
+Public Const AF_Duration = 30        ' the duration of a single instance of the activity
+Public Const AF_TimelessStatus = 31
+Public Const AF_LeadTime = 32
+Public Const AF_AlarmStatus = 33
+Public Const AF_BannerColor = 34
+Public Const AF_EmailStatus = 35
+Public Const AF_Recurring = 36
+Public Const AF_ScheduledFor = 37
+Public Const AF_ScheduledBy = 38
+Public Const AF_GroupId = 39
+Public Const AF_FirstScheduledWith = 40   ' the first scheduled with (for performance purposes)
+Public Const AF_ClearedStatus = 41        ' the cleared status of this activity
+Public Const AF_RecurringId = 42          ' unique id of this recurring chain
+Public Const AF_Exceptions = 43           ' recurring exception list (stored as a blob)
+Public Const AF_ExceptionDate = 44
+Public Const AF_Details = 45
+Public Const AF_TotalInActivity = 100
+Public Const AF_TotalDuration = 101       ' total duration of the activity series in minutes
+Public Const AVF_ScheduledDate = 200
+Public Const AVF_ScheduledTime = 201
+
+
+
+' Note/History Field Unique IDs
+Public Const NHF_UniqueID = 1
+Public Const NHF_CreateTimestamp = 2
+Public Const NHF_EditTimestamp = 3
+Public Const NHF_MergeTimestamp = 4
+Public Const NHF_Type = 25
+Public Const NHF_Text = 26
+Public Const NHF_UserTime = 27
+Public Const NHF_Attachment = 28
+Public Const NHF_ContactId = 29
+Public Const NHF_GroupId = 30
+Public Const NHF_ActivityId = 31
+Public Const NHVF_RecordedDate = 200
+Public Const NHVF_RecordedTime = 201
+
+
+' EMAIL Field Unique IDs
+Public Const EF_UniqueID = 1
+Public Const EF_CreateTimestamp = 2
+Public Const EF_EditTimestamp = 3
+Public Const EF_MergeTimestamp = 4
+Public Const EF_Logon = 25
+Public Const EF_Carrier = 26
+Public Const EF_PrimaryStatus = 27
+Public Const EF_ContactId = 28
+
+' SALES Field Unique IDs
+Public Const SLF_UniqueID = 1
+Public Const SLF_CreateTimestamp = 2
+Public Const SLF_EditTimestamp = 3
+Public Const SLF_MergeTimestamp = 4
+Public Const SLF_ContactId = 25
+Public Const SLF_GroupId = 26
+Public Const SLF_Status = 27
+Public Const SLF_ProductId = 28
+Public Const SLF_TypeId = 29
+Public Const SLF_Probability = 30
+Public Const SLF_SaleDate = 31
+Public Const SLF_Units = 32
+Public Const SLF_UnitPrice = 33
+Public Const SLF_Amount = 34
+Public Const SLF_SaleStartDate = 35
+Public Const SLF_Notes = 36
+Public Const SLF_CompetitorsId = 37
+Public Const SLF_Reason = 38
+Public Const SLF_SalesStage = 39
+Public Const SLVF_ProductName = 200
+
+
+' LIST Table Unique IDs
+Public Const LTF_UniqueID = 1
+Public Const LTF_Type = 25
+Public Const LTF_Name = 26
+
+' activity types
+Public Const activitytype_call = 0
+Public Const activitytype_meeting = 1
+Public Const activitytype_todo = 2
+
+' activity priorities
+Public Const activitypriority_high = 0
+Public Const activitypriority_medium = 1
+Public Const activitypriority_low = 2
+
+' history types
+Public Const history_callattempt = 0
+Public Const history_callcomplete = 1
+Public Const history_callreceived = 2
+Public Const history_lettersent = 5
+Public Const history_meetingdone = 6
+Public Const history_meetingnotdone = 7
+Public Const history_tododone = 8
+Public Const history_todonotdone = 9
+Public Const history_timer = 10
+Public Const history_callerased = 11
+Public Const history_deletedcontact = 12
+Public Const history_updatecontact = 13
+Public Const history_updateconact = 14
+Public Const history_updatedelact = 15
+Public Const history_msgemailsent = 16
+Public Const history_callleftmessage = 17
+Public Const history_faxsent = 18
+Public Const history_syncsent = 19
+Public Const history_syncreceived = 20
+Public Const history_replacefieldslog = 21
+Public Const history_todoerased = 22
+Public Const history_meetingerased = 23
+Public Const history_error = 24
+
+' days in month definitions (recurring activities)
+Public Const day_sunday = 1
+Public Const day_monday = 2
+Public Const day_tuesday = 4
+Public Const day_wednesday = 8
+Public Const day_thursday = 16
+Public Const day_friday = 32
+Public Const day_saturday = 64
+
+' weeks in the month definitions (recurring activities)
+Public Const week_one = 1
+Public Const week_two = 2
+Public Const week_three = 4
+Public Const week_four = 8
+Public Const week_last = 16
+
+' types of recurring activities
+Public Const recurring_none = 0
+Public Const recurring_days = 1
+Public Const recurring_weekdays = 2
+Public Const recurring_daysofmonth = 3
+Public Const recurring_daysandweeksofmonth = 4
+
+' tables
+Public Const TABLE_CONTACT = 1
+Public Const TABLE_ACTIVITY = 2
+Public Const TABLE_NOTEHISTORY = 4
+Public Const TABLE_EMAILADDRESS = 8
+Public Const TABLE_GROUP = 16
+Public Const TABLE_SALES = 32
+
+' sales status
+Public Const SALESSTATUS_OPEN = 0
+Public Const SALESSTATUS_WON = 1
+Public Const SALESSTATUS_LOST = 2
+
+' day positions in the month
+Public Const MONTHDAYS_1 = 1
+Public Const MONTHDAYS_2 = 2
+Public Const MONTHDAYS_3 = 4
+Public Const MONTHDAYS_4 = 8
+Public Const MONTHDAYS_5 = 16
+Public Const MONTHDAYS_6 = 32
+Public Const MONTHDAYS_7 = 64
+Public Const MONTHDAYS_8 = 128
+Public Const MONTHDAYS_9 = 256
+Public Const MONTHDAYS_10 = 512
+Public Const MONTHDAYS_11 = 1024
+Public Const MONTHDAYS_12 = 2048
+Public Const MONTHDAYS_13 = 4096
+Public Const MONTHDAYS_14 = 8192
+Public Const MONTHDAYS_15 = 16384
+Public Const MONTHDAYS_16 = 32768
+Public Const MONTHDAYS_17 = 65536
+Public Const MONTHDAYS_18 = 131072
+Public Const MONTHDAYS_19 = 262144
+Public Const MONTHDAYS_20 = 524288
+Public Const MONTHDAYS_21 = 1048576
+Public Const MONTHDAYS_22 = 2097152
+Public Const MONTHDAYS_23 = 4194304
+Public Const MONTHDAYS_24 = 8388608
+Public Const MONTHDAYS_25 = 16777216
+Public Const MONTHDAYS_26 = 33554432
+Public Const MONTHDAYS_27 = 67108864
+Public Const MONTHDAYS_28 = 134217728
+Public Const MONTHDAYS_29 = 268435456
+Public Const MONTHDAYS_30 = 536870912
+Public Const MONTHDAYS_31 = 1073741824
+
+
+Const mdbName As String = "T:\clients.dbf"
+Const mdbAgentName As String = "C:\Documents and Settings\John  Criswell\My Documents\ACT\Database\agents.dbf"
+Dim mbAlreadyLoggedIn As Boolean
+
+Option Compare Database
+Option Explicit
+Function ChangeContacts_Agents() As Boolean
+On Error GoTo Err_ChangeContacts_Agents
+
+    ' Commit changes to the database
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst_CAgt As DAO.Recordset     ' change agents info
+    Dim strSQL As String
+    Dim strSQL_CAgt As String     ' change agents info
+    Dim strAgentID As String
+    Dim objDatabase As Object
+    Dim bReturn As Boolean
+    Dim strUniqueID As String
+    Dim intCount As Integer
+        
+    Set dbs = CurrentDb()
+    Set objDatabase = CreateObject("ACTOLE.DATABASE")
+    objDatabase.Open mdbAgentName
+    mbAlreadyLoggedIn = False
+    intCount = 0
+    
+    ' Identify records in ACT!2000 database (AGENTS)
+    ' that no longer are the same as the records
+    ' in Access that have the same AgentID
+    strSQL = "SELECT tblAgent.AGENTid "
+    strSQL = strSQL & "FROM tblAgent LEFT JOIN "
+    strSQL = strSQL & "qselACTCompareAgentsACT ON tblAgent."
+    strSQL = strSQL & "AGENTid = qselACTCompareAgentsACT."
+    strSQL = strSQL & "AgentID "
+    strSQL = strSQL & "WHERE (((qselACTCompareAgentsACT.AgentID)"
+    strSQL = strSQL & " Is Null));"
+    
+    'Debug.Print strSQL
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        With rst
+        Do While Not rst.EOF
+            strAgentID = !AGENTid
+            ' Run query to select all of the data that
+            ' needs to be updated to ACT using the ACT
+            ' OLE Automation object
+            strSQL_CAgt = "SELECT tblAgent.AGENTid, tblAgent.AGENCY,"
+            strSQL_CAgt = strSQL_CAgt & " tblAgent.AGENTSSN, tblAgent.AGENTfirst, "
+            strSQL_CAgt = strSQL_CAgt & "tblAgent.AGENTlast, tblAgent."
+            strSQL_CAgt = strSQL_CAgt & "AGENTstreet1, tblAgent.AGENTstreet2, "
+            strSQL_CAgt = strSQL_CAgt & "tblAgent.AGENTcity, tblAgent.AGENTstate, "
+            strSQL_CAgt = strSQL_CAgt & "tblAgent.AGENTzip, IIf([AgentPhone] Is "
+            strSQL_CAgt = strSQL_CAgt & "Not Null,ConvtoACTPhone([AgentPhone]),"
+            strSQL_CAgt = strSQL_CAgt & "Null) AS PhonePrimary, IIf([AgentFax] Is "
+            strSQL_CAgt = strSQL_CAgt & "Not Null,ConvtoACTPhone([AgentFax]),Null)"
+            strSQL_CAgt = strSQL_CAgt & " AS PhoneFax, IIf([AgentCell] Is Not "
+            strSQL_CAgt = strSQL_CAgt & "Null,ConvtoACTPhone([AgentCell]),Null) "
+            strSQL_CAgt = strSQL_CAgt & "AS PhoneCell, IIf([AgentActive]='A',"
+            strSQL_CAgt = strSQL_CAgt & "'Active','Prospective') AS IDStatus, "
+            strSQL_CAgt = strSQL_CAgt & "tblAgent.AGENTgeoID, tblAgent.AGENTtype "
+            strSQL_CAgt = strSQL_CAgt & "FROM tblAgent "
+            strSQL_CAgt = strSQL_CAgt & "WHERE (((tblAgent.AGENTid)='" & strAgentID & "'));"
+                        
+            ' perform login validation
+            bReturn = Login(objDatabase)
+            If Not bReturn Then
+                MsgBox "Failed user validation process!!!"
+            End If
+                        
+            ' check to see if the database is open
+            If objDatabase.IsOpen Then
+                
+                ' free form phone entry
+                objDatabase.PhoneFormatting = 1
+                
+                ' move to the group record in ACT
+                objDatabase.Contact.Lookup CF_User1, strAgentID, 1
+                
+                ' check to make sure that this group is in ACT
+                If objDatabase.Contact.IsEOF = False Then
+                
+                    ' check to see if someone else has locked the record
+                    If objDatabase.Contact.IsLocked = False Then
+                        
+                        ' now it's ok to edit the record
+                        objDatabase.Contact.Edit
+                        
+                        ' get the data to put into ACT
+                        Set rst_CAgt = dbs.OpenRecordset(strSQL_CAgt, dbOpenSnapshot)
+                        
+                        With rst_CAgt
+                                           
+                            ' set ACT field data with the information
+                            ' from Access
+                            objDatabase.Contact.Data CF_Company, Nz(!AGENCY)
+                            objDatabase.Contact.Data CF_User2, Nz(!AGENTSSN)
+                            objDatabase.Contact.Data CF_FirstName, Nz(!AGENTfirst)
+                            objDatabase.Contact.Data CF_LastName, Nz(!AGENTlast)
+                            objDatabase.Contact.Data CF_Address1, Nz(!AGENTstreet1)
+                            objDatabase.Contact.Data CF_Address2, Nz(!AGENTstreet2)
+                            objDatabase.Contact.Data CF_City, Nz(!AGENTcity)
+                            objDatabase.Contact.Data CF_State, Nz(!AGENTstate)
+                            objDatabase.Contact.Data CF_Zip, Nz(!AGENTzip)
+                            objDatabase.Contact.Data CF_Phone, Nz(!PhonePrimary)
+                            objDatabase.Contact.Data CF_Fax, Nz(!PhoneFax)
+                            objDatabase.Contact.Data CF_MobilePhone, Nz(!PhoneCell)
+                            objDatabase.Contact.Data CF_IDStatus, Nz(!IDStatus)
+                            objDatabase.Contact.Data CF_User4, Nz(!AGENTgeoID)
+                            objDatabase.Contact.Data CF_User5, Nz(!AGENTtype)
+                            
+                            ' update ACT
+                            strUniqueID = objDatabase.Contact.Update
+                            'intCount = intCount + 1
+                            'Debug.Print intCount & " | " & strAgentID & " | " & !AGENCY & " | " & !AGENTfirst&; " |" & !AGENTlast
+                        End With
+                    End If
+                    rst_CAgt.Close
+                End If
+            End If
+        .MoveNext
+        Loop
+        End With
+    rst.Close
+    dbs.Close
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    End If
+    ChangeContacts_Agents = True
+    
+Exit_ChangeContacts_Agents:
+    Exit Function
+    
+Err_ChangeContacts_Agents:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    dbs.Close
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    ChangeContacts_Agents = False
+    GoTo Exit_ChangeContacts_Agents
+
+End Function
+Function EligibleEmployees()
+
+On Error GoTo Err_EligibleEmployees
+
+    ' Commit changes to the database
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst_EE As DAO.Recordset     ' eligible employees change
+    Dim strSQL As String
+    Dim strSQL_EE As String     ' eligible employees change
+    Dim strGroupID As String
+    Dim objDatabase As Object
+    Dim bReturn As Boolean
+    Dim strUniqueID As String
+        
+    Set dbs = CurrentDb()
+    Set objDatabase = CreateObject("ACTOLE.DATABASE")
+    objDatabase.Open mdbName
+    mbAlreadyLoggedIn = "False"
+    
+    strSQL = "SELECT tblGrp.GroupID "
+    strSQL = strSQL & "FROM tblGrp "
+    strSQL = strSQL & "LEFT JOIN qselACTCompareCurGrpGroups_EE "
+    strSQL = strSQL & "ON tblGrp.GroupID = qselACTCompareCurGrpGroups_EE.USER1 "
+    strSQL = strSQL & "WHERE (((qselACTCompareCurGrpGroups_EE.USER1) Is Null) And "
+    strSQL = strSQL & "((tblGrp.GRcancelled) = No)) "
+    strSQL = strSQL & "ORDER BY tblGrp.GroupID;"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        With rst
+        Do While Not rst.EOF
+            strGroupID = !GROUPid
+            
+            ' Select current eligible employees from tblGrowth
+            strSQL_EE = "SELECT tblGrowth.GroupID, tblGrowth." & _
+            "CurrentEligEmps " & _
+            "FROM tblGrowth " & _
+            "WHERE (((tblGrowth.GroupID)='" & strGroupID & "') AND " & _
+            "((tblGrowth.Year)=Year(Date())));"
+            
+            Set rst_EE = dbs.OpenRecordset(strSQL_EE, dbOpenSnapshot)
+            If rst_EE.RecordCount > 0 Then
+            
+                ' perform login validation
+                bReturn = Login(objDatabase)
+                If Not bReturn Then
+                    MsgBox "Failed user validation process!!!"
+                End If
+                    
+                ' check to make sure the database is open
+                If objDatabase.IsOpen Then
+                    
+                    ' find the record in ACT
+                    objDatabase.Contact.Lookup CF_User1, strGroupID, 1
+                                       
+                    ' check to make sure that this group is in ACT
+                    If objDatabase.Contact.IsEOF = False Then
+                    
+                        ' check to make sure that the record is not locked
+                        If objDatabase.Contact.IsLocked = False Then
+                            
+                            ' update the ACT record with Access information
+                            objDatabase.Contact.Edit
+                            With rst_EE
+                                objDatabase.Contact.Data CF_EligibleEmployees, Nz(!CurrentEligEmps)
+                                strUniqueID = objDatabase.Contact.Update
+                                'Debug.Print strGroupID & " | " & !CurrentEligEmps & " | " & "Update Successful"
+                            End With
+                        End If
+                    End If
+                End If
+            rst_EE.Close
+            End If
+        .MoveNext
+        Loop
+        End With
+    rst.Close
+    End If
+    
+    dbs.Close
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    EligibleEmployees = True
+
+Exit_EligibleEmployees:
+    Exit Function
+    
+Err_EligibleEmployees:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    EligibleEmployees = False
+    GoTo Exit_EligibleEmployees
+
+End Function
+Function UpdateCancelledDate()
+    
+    On Error GoTo Err_UpdateCancelledDate
+    
+    ' Commit changes to the database
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst2 As DAO.Recordset
+    Dim strSQL As String
+    Dim strSQL2 As String
+    Dim strGroupID As String
+    Dim objDatabase As Object
+    Dim strUniqueID As String
+    Dim intCount As Integer
+    Dim bReturn As Boolean
+    Dim datCancelledDate As Date
+    
+    Set dbs = CurrentDb()
+    
+    intCount = 0
+    
+    Set rst = dbs.OpenRecordset("Query8", dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        With rst
+        Do While Not rst.EOF
+            
+            intCount = intCount + 1
+            strGroupID = !USER1
+                        
+            strUniqueID = FindUniqueID(strGroupID)
+            
+            Set objDatabase = CreateObject("ACTOLE.DATABASE")
+            objDatabase.Open mdbName
+               
+            ' perform login validation
+            bReturn = Login(objDatabase)
+            If Not bReturn Then
+                MsgBox "Failed user validation process!!!"
+            End If
+                
+            If objDatabase.IsOpen Then
+                objDatabase.Contact.GoTo strUniqueID
+                      
+                ' allocate a new record
+                objDatabase.Contact.Edit
+                strSQL2 = "SELECT tblGrp.GRcancelledDate " & _
+                            "FROM tblGrp " & _
+                            "WHERE (((tblGrp.GroupID)='" & strGroupID & "'));"
+                
+                Set rst2 = dbs.OpenRecordset(strSQL2, dbOpenSnapshot)
+                
+                With rst2
+                    If Not IsNull(!GRcancelledDate) Then
+                        objDatabase.Contact.Data CF_User13, !GRcancelledDate
+                        strUniqueID = objDatabase.Contact.Update
+                    End If
+                    
+                End With
+            End If
+        .MoveNext
+        Loop
+        End With
+    End If
+    
+    Set dbs = Nothing
+    
+    objDatabase.Close
+    
+    ' clear the object
+    Set objDatabase = Nothing
+    
+    UpdateCancelledDate = True
+    
+Exit_UpdateCancelledDate:
+    Exit Function
+    
+Err_UpdateCancelledDate:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_UpdateCancelledDate
+    
+End Function
+Function FindUniqueID(strGroupID As String) As String
+
+Dim objDatabase As Object
+Dim objContact As Object
+Dim strUniqueID As String
+
+Set objDatabase = CreateObject("ACTOLE.DATABASE")
+
+objDatabase.Open mdbName
+
+Set objContact = objDatabase.Contact
+
+If objDatabase.IsOpen Then
+    objContact.Lookup CF_User1, strGroupID, 1
+    strUniqueID = objContact.Data(CF_UniqueID)
+End If
+
+objDatabase.Close
+    
+' clear the object
+Set objDatabase = Nothing
+
+FindUniqueID = strUniqueID
+
+End Function
+Public Function SynchACT() As Boolean
+
+On Error GoTo Err_SynchACT
+
+    'Dim varRetVal As Variant
+    'Dim intRet As Integer
+   '
+   ' intRet = MsgBox("This will change the Production ACT!2000 Database, are you sure you want to proceed?", vbExclamation + vbYesNo, "Warning")
+   '
+   ' If intRet = vbNo Then
+   '     MsgBox "The operation was cancelled. No changes were made to the ACT!2000 Production Database.", vbInformation, "Operation Cancelled"
+   '     GoTo Exit_SynchACT
+   ' End If
+   '
+   ' DoCmd.Hourglass True
+   ' varRetVal = ChangeContacts()
+   ' varRetVal = AddContacts()
+   ' DoCmd.Hourglass False
+   '
+   ' MsgBox "Operation Complete", vbInformation, "Success"'
+
+   ' SynchACT = True
+
+Exit_SynchACT:
+    Exit Function
+
+Err_SynchACT:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_SynchACT
+    
+End Function
+Public Function AddContacts_Agents() As Boolean
+
+On Error GoTo Err_AddContacts_Agents
+
+    Dim objDatabase As Object
+    Dim bReturn As Boolean
+    Dim strUniqueID As String
+    Dim strAgentID As String
+    Dim strSQL As String
+    Dim strSQL_AC As String       'add a contact
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst_AC As DAO.Recordset       'add a contact
+    
+    Set dbs = CurrentDb()
+    Set objDatabase = CreateObject("ACTOLE.DATABASE")
+    objDatabase.Open mdbAgentName
+    mbAlreadyLoggedIn = "False"
+    
+    ' Determine what new records have been added to Access
+    ' that are not in the ACT!2000 database
+    strSQL = "SELECT tblAgent.AGENTid "
+    strSQL = strSQL & "FROM tblAgent LEFT JOIN Agents ON "
+    strSQL = strSQL & "tblAgent.AGENTid = Agents.USER1 "
+    strSQL = strSQL & "WHERE (((Agents.USER1) Is Null));"
+    
+    ' Add each new group to the ACT!2000 database as
+    ' a contact record
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        With rst
+        Do While Not rst.EOF
+            strAgentID = !AGENTid
+            ' find all of the field data from Access that will go
+            ' into ACT for one agent
+            strSQL_AC = "SELECT tblAgent.AGENTid, tblAgent.AGENCY,"
+            strSQL_AC = strSQL_AC & " tblAgent.AGENTSSN, tblAgent.AGENTfirst, "
+            strSQL_AC = strSQL_AC & "tblAgent.AGENTlast, tblAgent."
+            strSQL_AC = strSQL_AC & "AGENTstreet1, tblAgent.AGENTstreet2, "
+            strSQL_AC = strSQL_AC & "tblAgent.AGENTcity, tblAgent.AGENTstate, "
+            strSQL_AC = strSQL_AC & "tblAgent.AGENTzip, IIf([AGENTphone] Is "
+            strSQL_AC = strSQL_AC & "Not Null,ConvtoACTPhone([AGENTphone]),"
+            strSQL_AC = strSQL_AC & "Null) AS PhonePrimary, IIf([AGENTfax] Is "
+            strSQL_AC = strSQL_AC & "Not Null,ConvtoACTPhone([AGENTfax]),Null)"
+            strSQL_AC = strSQL_AC & " AS PhoneFax, IIf([AGENTcell] Is Not "
+            strSQL_AC = strSQL_AC & "Null,ConvtoACTPhone([AGENTcell]),Null) "
+            strSQL_AC = strSQL_AC & "AS PhoneCell, tblAgent.AGENTemail, "
+            strSQL_AC = strSQL_AC & "tblAgent.AGENTtaxID, tblAgent.AGENTgeoID,"
+            strSQL_AC = strSQL_AC & " IIf([AGENTactive]='A','Active',"
+            strSQL_AC = strSQL_AC & "'Prospective') AS [IDStatus], tblAgent."
+            strSQL_AC = strSQL_AC & "AGENTtype "
+            strSQL_AC = strSQL_AC & "FROM tblAgent "
+            strSQL_AC = strSQL_AC & "WHERE (((tblAgent.AGENTid)='" & strAgentID & "'));"
+            
+            'Debug.Print strSQL_AC
+            
+            ' perform login validation
+            bReturn = Login(objDatabase)
+            If Not bReturn Then
+                MsgBox "Failed user validation process!!!"
+            End If
+                
+            If objDatabase.IsOpen Then
+                
+                objDatabase.PhoneFormatting = 1 ' free form phone entry
+                objDatabase.Contact.MoveFirst
+                      
+                ' add the record to ACT
+                objDatabase.Contact.Add
+                
+                Set rst_AC = dbs.OpenRecordset(strSQL_AC, dbOpenSnapshot)
+                
+                With rst_AC
+                                   
+                    ' set all of the fields in ACT to the data
+                    ' from Access
+                    objDatabase.Contact.Data CF_PublicPrivate, 1    ' make it public
+                    objDatabase.Contact.Data CF_User1, Nz(!AGENTid)
+                    objDatabase.Contact.Data CF_Company, Nz(!AGENCY)
+                    objDatabase.Contact.Data CF_User2, Nz(!AGENTSSN)
+                    objDatabase.Contact.Data CF_FirstName, Nz(!AGENTfirst)
+                    objDatabase.Contact.Data CF_LastName, Nz(!AGENTlast)
+                    objDatabase.Contact.Data CF_Address1, Nz(!AGENTstreet1)
+                    objDatabase.Contact.Data CF_Address2, Nz(!AGENTstreet2)
+                    objDatabase.Contact.Data CF_City, Nz(!AGENTcity)
+                    objDatabase.Contact.Data CF_State, Nz(!AGENTstate)
+                    objDatabase.Contact.Data CF_Zip, Nz(!AGENTzip)
+                    objDatabase.Contact.Data CF_Phone, Nz(!PhonePrimary)
+                    objDatabase.Contact.Data CF_Fax, Nz(!PhoneFax)
+                    objDatabase.Contact.Data CF_MobilePhone, Nz(!PhoneCell)
+                    'objDatabase.Contact.Data CF_Name, Nz(!AGENTemail)
+                    objDatabase.Contact.Data CF_User3, Nz(!AGENTtaxID)
+                    objDatabase.Contact.Data CF_User4, Nz(!AGENTgeoID)
+                    objDatabase.Contact.Data CF_IDStatus, Nz(!IDStatus)
+                    objDatabase.Contact.Data CF_User5, Nz(!AGENTtype)
+                                    
+                    ' update the record in ACT
+                    strUniqueID = objDatabase.Contact.Update
+                End With
+            rst_AC.Close
+            End If
+        .MoveNext
+        Loop
+        End With
+    rst.Close
+    dbs.Close
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    End If
+    AddContacts_Agents = True
+    
+Exit_AddContacts_Agents:
+    Exit Function
+    
+Err_AddContacts_Agents:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    AddContacts_Agents = False
+    GoTo Exit_AddContacts_Agents
+
+End Function
+Public Function AddContacts() As Boolean
+
+On Error GoTo Err_AddContacts
+
+    Dim objDatabase As Object
+    Dim bReturn As Boolean
+    Dim strUniqueID As String
+    Dim strGroupID As String
+    Dim strSQL As String
+    Dim strSQL_AC As String       'add a contact
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst_AC As DAO.Recordset       'add a contact
+    
+    Set dbs = CurrentDb()
+    Set objDatabase = CreateObject("ACTOLE.DATABASE")
+    objDatabase.Open mdbName
+    mbAlreadyLoggedIn = "False"
+    
+    ' Determine what new records have been added to Access
+    ' that are not in the ACT!2000 database
+    strSQL = "SELECT tblGrp.GroupID " & _
+           "FROM tblGrp LEFT JOIN clients ON tblGrp." & _
+           "GroupID = clients.USER1 " & _
+           "WHERE (((clients.USER1) Is Null));"
+    
+    ' Add each new group to the ACT!2000 database as
+    ' a contact record
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        With rst
+        Do While Not rst.EOF
+            strGroupID = !GROUPid
+            ' find all of the field data from Access that will go
+            ' into ACT for one group
+            strSQL_AC = "SELECT tblGrp.GroupID, tblGrp.GRname, "
+            strSQL_AC = strSQL_AC & "tblGrp.GRPgeoID, tblGrp."
+            strSQL_AC = strSQL_AC & "GRstreet1, tblGrp.GRstreet2, tblGrp."
+            strSQL_AC = strSQL_AC & "GRcity, tblGrp.GRstate, tblGrp.GRzip, "
+            strSQL_AC = strSQL_AC & "IIf([GRphone1] Is Not Null,"
+            strSQL_AC = strSQL_AC & "ConvtoACTPhone([GRPhone1]),Null) AS "
+            strSQL_AC = strSQL_AC & "PhonePrimary, IIf([GRphone2] Is Not Null,"
+            strSQL_AC = strSQL_AC & "ConvtoACTPhone([GRPhone2]),Null) AS "
+            strSQL_AC = strSQL_AC & "PhoneSecondary, IIf([GRfax] Is Not Null,"
+            strSQL_AC = strSQL_AC & "ConvtoACTPhone([GRfax]),Null) AS "
+            strSQL_AC = strSQL_AC & "PhoneFax, tblGrp.GRmainCONT, tblGrp."
+            strSQL_AC = strSQL_AC & "GRsrvCONT, IIf([GRcontBEG] Is Not Null,"
+            strSQL_AC = strSQL_AC & "[GRcontBEG],Null) AS ContBegDate, IIf("
+            strSQL_AC = strSQL_AC & "[GRcontEND] Is Not Null,[GRcontEND],Null)"
+            strSQL_AC = strSQL_AC & " AS ContEndDate, tblGrp.GRnotes, IIf("
+            strSQL_AC = strSQL_AC & "[GRcancelled]=-1,'Cancelled','Active') "
+            strSQL_AC = strSQL_AC & "AS IDStatus, IIf([GRcancelledDate] Is "
+            strSQL_AC = strSQL_AC & "Not Null,[GRcancelledDate],Null) AS "
+            strSQL_AC = strSQL_AC & "CancelledDate, tlkpClientServiceReps."
+            strSQL_AC = strSQL_AC & "RepName, tblGrp.GRmainCONTtitle, IIf("
+            strSQL_AC = strSQL_AC & "[GroupType]=1,'QCD Only',IIf([GroupType]="
+            strSQL_AC = strSQL_AC & "2,'Mixed',IIf([GroupType]=3,'Freedom of "
+            strSQL_AC = strSQL_AC & "Choice','All American'))) AS [Group Type]"
+            strSQL_AC = strSQL_AC & " "
+            strSQL_AC = strSQL_AC & "FROM tblGrp LEFT JOIN "
+            strSQL_AC = strSQL_AC & "tlkpClientServiceReps ON tblGrp."
+            strSQL_AC = strSQL_AC & "GRClientSvcRepID = tlkpClientServiceReps."
+            strSQL_AC = strSQL_AC & "RepID "
+            strSQL_AC = strSQL_AC & "WHERE (((tblGrp.GroupID)='" & strGroupID & "'));"
+            
+            ' perform login validation
+            bReturn = Login(objDatabase)
+            If Not bReturn Then
+                MsgBox "Failed user validation process!!!"
+            End If
+                
+            If objDatabase.IsOpen Then
+                
+                objDatabase.PhoneFormatting = 1 ' free form phone entry
+                objDatabase.Contact.MoveFirst
+                      
+                ' add the record to ACT
+                objDatabase.Contact.Add
+                
+                Set rst_AC = dbs.OpenRecordset(strSQL_AC, dbOpenSnapshot)
+                
+                With rst_AC
+                
+                    'If Not IsNull(!ContBegDate) Then
+                    '            objDatabase.Contact.Data CF_User4, Nz(!ContBegDate)
+                    'End If
+                                   
+                    ' set all of the fields in ACT to the data
+                    ' from Access
+                    objDatabase.Contact.Data CF_PublicPrivate, 1    ' make it public
+                    objDatabase.Contact.Data CF_User1, Nz(!GROUPid)
+                    objDatabase.Contact.Data CF_Company, Nz(!GRname)
+                    objDatabase.Contact.Data CF_User11, Nz(!GRPgeoID)
+                    objDatabase.Contact.Data CF_Address1, Nz(!GRstreet1)
+                    objDatabase.Contact.Data CF_Address2, Nz(!GRstreet2)
+                    objDatabase.Contact.Data CF_City, Nz(!GRcity)
+                    objDatabase.Contact.Data CF_State, Nz(!GRstate)
+                    objDatabase.Contact.Data CF_Zip, Nz(!GRzip)
+                    objDatabase.Contact.Data CF_Phone, Nz(!PhonePrimary)
+                    objDatabase.Contact.Data CF_Phone2, Nz(!PhoneSecondary)
+                    objDatabase.Contact.Data CF_Fax, Nz(!PhoneFax)
+                    objDatabase.Contact.Data CF_Name, Nz(!GRsrvCONT)
+                    objDatabase.Contact.Data CF_Name2, Nz(!GRmainCONT)
+                    
+                    If Not IsNull(!ContBegDate) Then
+                        objDatabase.Contact.Data CF_User4, Nz(!ContBegDate)
+                    End If
+                    
+                    If Not IsNull(!ContEndDate) Then
+                        objDatabase.Contact.Data CF_User5, Nz(!ContEndDate)
+                    End If
+                    
+                    objDatabase.Contact.Data CF_User7, Nz(!GRnotes)
+                    objDatabase.Contact.Data CF_IDStatus, Nz(!IDStatus)
+                    
+                    If Not IsNull(!CancelledDate) Then
+                    objDatabase.Contact.Data CF_User13, Nz(!CancelledDate)
+                    End If
+                    
+                    'objDatabase.Contact.Data CF_User6, Nz(!PrimaryAgent)
+                    'objDatabase.Contact.Data CF_User10, Nz(!SecondaryAgent)
+                    objDatabase.Contact.Data CF_User2, Nz(!RepName)
+                    'objDatabase.Contact.Data CF_User3, Nz(!ExecSalesDir)
+                    objDatabase.Contact.Data CF_Title, Nz(!GRmainCONTtitle)
+                    'objDatabase.Contact.Data CF_User12, Nz(!AcctMgrName)
+                    objDatabase.Contact.Data CF_User8, Nz(![Group Type])
+                    
+                    ' update the record in ACT
+                    strUniqueID = objDatabase.Contact.Update
+                End With
+            rst_AC.Close
+            End If
+        .MoveNext
+        Loop
+        End With
+    rst.Close
+    dbs.Close
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    End If
+    AddContacts = True
+    
+Exit_AddContacts:
+    Exit Function
+    
+Err_AddContacts:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    AddContacts = False
+    GoTo Exit_AddContacts
+    
+End Function
+
+Public Function Login(objDatabase As Object) As Boolean
+    
+    Dim UserName As String
+    Dim Password As String
+    
+    
+    ' perform proper login validation
+    If objDatabase.IsMultiUser Then
+    
+        ' we do this so we dont have to keep logging in
+        ' every time
+        If Not mbAlreadyLoggedIn Then
+            'MsgBox "Already logged in."
+            UserName = "John Criswell"
+            Password = ""
+            objDatabase.validateuser UserName, Password
+            'UserName = frmValidateUser.txtUserName.Text
+            'Password = frmValidateUser.txtPassword
+        End If
+                       
+        If objDatabase.Error Then
+            Login = False
+        Else
+            Login = True
+            mbAlreadyLoggedIn = True
+        End If
+    Else
+        Login = True    ' single-user database validation not required
+    End If
+        
+End Function
+Public Function ChangeContacts() As Boolean
+
+On Error GoTo Err_ChangeContacts
+
+    ' Commit changes to the database
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst_CC As DAO.Recordset     ' contact change
+    Dim strSQL As String
+    Dim strSQL_CC As String     ' contact change
+    Dim strSQL_AC As String
+    Dim strGroupID As String
+    Dim objDatabase As Object
+    Dim bReturn As Boolean
+    Dim strUniqueID As String
+    Dim intCount As Integer
+        
+    Set dbs = CurrentDb()
+    Set objDatabase = CreateObject("ACTOLE.DATABASE")
+    objDatabase.Open mdbName
+    mbAlreadyLoggedIn = False
+    intCount = 0
+    
+    ' Identify records in ACT!2000 database (CURGRP)
+    ' that no longer are the same as the records
+    ' in Access that have the same GroupID
+    strSQL = "SELECT tblGrp.GroupID " & _
+           "FROM tblGrp LEFT JOIN " & _
+           "qselACTCompareCurGrpGroups ON tblGrp." & _
+           "GroupID = qselACTCompareCurGrpGroups." & _
+           "GroupID " & _
+           "WHERE ((qselACTCompareCurGrpGroups.GroupID) Is NULL )"
+ '   Debug.Print strSQL
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        With rst
+        Do While Not rst.EOF
+            strGroupID = !GROUPid
+            ' Run query to select all of the data that
+            ' needs to be updated to ACT using the ACT
+            ' OLE Automation object
+            strSQL_CC = "SELECT tblGrp.GroupID, tblGrp.GRname, "
+            strSQL_CC = strSQL_CC & "tblGrp.GRPgeoID, tblGrp."
+            strSQL_CC = strSQL_CC & "GRstreet1, tblGrp.GRstreet2, tblGrp."
+            strSQL_CC = strSQL_CC & "GRcity, tblGrp.GRstate, tblGrp.GRzip, "
+            strSQL_CC = strSQL_CC & "IIf([GRphone1] Is Not Null,"
+            strSQL_CC = strSQL_CC & "ConvtoACTPhone([GRPhone1]),Null) AS "
+            strSQL_CC = strSQL_CC & "PhonePrimary, IIf([GRphone2] Is Not Null,"
+            strSQL_CC = strSQL_CC & "ConvtoACTPhone([GRPhone2]),Null) AS "
+            strSQL_CC = strSQL_CC & "PhoneSecondary, IIf([GRfax] Is Not Null,"
+            strSQL_CC = strSQL_CC & "ConvtoACTPhone([GRfax]),Null) AS "
+            strSQL_CC = strSQL_CC & "PhoneFax, tblGrp.GRmainCONT, tblGrp."
+            strSQL_CC = strSQL_CC & "GRsrvCONT, IIf([GRcontBEG] Is Not Null,"
+            strSQL_CC = strSQL_CC & "[GRcontBEG],Null) AS ContBegDate, IIf("
+            strSQL_CC = strSQL_CC & "[GRcontEND] Is Not Null,[GRcontEND],Null)"
+            strSQL_CC = strSQL_CC & " AS ContEndDate, tblGrp.GRnotes, IIf("
+            strSQL_CC = strSQL_CC & "[GRcancelled]=-1,'Cancelled','Active') "
+            strSQL_CC = strSQL_CC & "AS IDStatus, IIf([GRcancelledDate] Is "
+            strSQL_CC = strSQL_CC & "Not Null,[GRcancelledDate],Null) AS "
+            strSQL_CC = strSQL_CC & "CancelledDate, tlkpClientServiceReps."
+            strSQL_CC = strSQL_CC & "RepName, tblGrp.GRmainCONTtitle, IIf("
+            strSQL_CC = strSQL_CC & "[GroupType]=1,'QCD Only',IIf([GroupType]="
+            strSQL_CC = strSQL_CC & "2,'Mixed',IIf([GroupType]=3,'Freedom of "
+            strSQL_CC = strSQL_CC & "Choice','All American'))) AS [Group Type]"
+            strSQL_CC = strSQL_CC & " "
+            strSQL_CC = strSQL_CC & "FROM tblGrp LEFT JOIN "
+            strSQL_CC = strSQL_CC & "tlkpClientServiceReps ON tblGrp."
+            strSQL_CC = strSQL_CC & "GRClientSvcRepID = tlkpClientServiceReps."
+            strSQL_CC = strSQL_CC & "RepID "
+            strSQL_CC = strSQL_CC & "WHERE (((tblGrp.GroupID)='" & strGroupID & "'));"
+            
+            ' perform login validation
+            bReturn = Login(objDatabase)
+            If Not bReturn Then
+                MsgBox "Failed user validation process!!!"
+            End If
+           
+            ' check to see if the database is open
+            If objDatabase.IsOpen Then
+                
+                ' free form phone entry
+                objDatabase.PhoneFormatting = 1
+                
+                ' move to the group record in ACT
+                objDatabase.Contact.Lookup CF_User1, strGroupID, 1
+                
+                ' check to make sure that this group is in ACT
+                If objDatabase.Contact.IsEOF = False Then
+                
+                    ' check to see if someone else has locked the record
+                    If objDatabase.Contact.IsLocked = False Then
+                        
+                        ' now it's ok to edit the record
+                        objDatabase.Contact.Edit
+                        
+                        ' get the data to put into ACT
+                        Set rst_CC = dbs.OpenRecordset(strSQL_CC, dbOpenSnapshot)
+                        
+                        'CF_User1, Nz(!GroupID)
+                        'CF_User2, Nz(!RepName)
+                        'CF_User3, Nz(!ExecSalesDir)
+                        'CF_User4, Nz(!ContBegDate)
+                        'CF_User5, Nz(!ContEndDate)
+                        'CF_User6, Nz(!PrimaryAgent)
+                        'CF_User7, Nz(!GRnotes)
+                        'CF_User8, Nz(![Group Type])
+                        'CF_User9  Level II
+                        'CF_User10, Nz(!SecondaryAgent)
+                        'CF_User11, Nz(!GRPgeoID)
+                        'CF_User12, Nz(!AcctMgrName)
+                        'CF_User13, Nz(!CancelledDate)
+                        'CF_User15 unused
+                        
+                        
+                        With rst_CC
+                                           
+                            ' set ACT field data with the information
+                            ' from Access
+                            objDatabase.Contact.Data CF_Company, Nz(!GRname)
+                            objDatabase.Contact.Data CF_User11, Nz(!GRPgeoID)
+                            objDatabase.Contact.Data CF_Address1, Nz(!GRstreet1)
+                            objDatabase.Contact.Data CF_Address2, Nz(!GRstreet2)
+                            objDatabase.Contact.Data CF_City, Nz(!GRcity)
+                            objDatabase.Contact.Data CF_State, Nz(!GRstate)
+                            objDatabase.Contact.Data CF_Zip, Nz(!GRzip)
+                            objDatabase.Contact.Data CF_Phone, Nz(!PhonePrimary)
+                            objDatabase.Contact.Data CF_Phone2, Nz(!PhoneSecondary)
+                            objDatabase.Contact.Data CF_Fax, Nz(!PhoneFax)
+                            objDatabase.Contact.Data CF_Name, Nz(!GRsrvCONT)
+                            objDatabase.Contact.Data CF_Name2, Nz(!GRmainCONT)
+                            objDatabase.Contact.Data CF_User8, Nz(![Group Type])
+                            
+                            If Not IsNull(!ContBegDate) Then
+                                objDatabase.Contact.Data CF_User4, Nz(!ContBegDate)
+                            End If
+                            
+                            If Not IsNull(!ContEndDate) Then
+                                objDatabase.Contact.Data CF_User5, Nz(!ContEndDate)
+                            End If
+                            
+                            objDatabase.Contact.Data CF_User7, Nz(!GRnotes)
+                            objDatabase.Contact.Data CF_IDStatus, Nz(!IDStatus)
+                            
+                            If Not IsNull(!CancelledDate) Then
+                                objDatabase.Contact.Data CF_User13, Nz(!CancelledDate)
+                            End If
+                            
+                            'objDatabase.Contact.Data CF_User6, Nz(!PrimaryAgent)
+                            'objDatabase.Contact.Data CF_User10, Nz(!SecondaryAgent)
+                            objDatabase.Contact.Data CF_User2, Nz(!RepName)
+                            'objDatabase.Contact.Data CF_User3, Nz(!ExecSalesDir)
+                            'objDatabase.Contact.Data CF_User12, Nz(!AcctMgrName)
+                            objDatabase.Contact.Data CF_Title, Nz(!GRmainCONTtitle)
+                        
+                            ' update ACT
+                            strUniqueID = objDatabase.Contact.Update
+                            'intCount = intCount + 1
+                            'Debug.Print intCount & " | " & strGroupID & " | " & !ContBegDate & " | " & !ContEndDate
+                        End With
+                    End If
+                    rst_CC.Close
+                End If
+            End If
+        .MoveNext
+        Loop
+        End With
+    rst.Close
+    dbs.Close
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    End If
+    ChangeContacts = True
+    
+Exit_ChangeContacts:
+    Exit Function
+    dbs.Close
+    Set dbs = Nothing
+    objDatabase.Close
+    Set objDatabase = Nothing
+    
+Err_ChangeContacts:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    ChangeContacts = False
+    GoTo Exit_ChangeContacts
+
+End Function
+Function UpdateNames()
+    
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strGroupID As String
+    Dim strServiceContact As String
+    Dim strMainContact As String
+    Dim objDatabase As Object
+    Dim bReturn As Boolean
+    Dim strUniqueID As String
+    Dim intCount As Integer
+    
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset("Query5", dbOpenSnapshot)
+    Set objDatabase = CreateObject("ACTOLE.DATABASE")
+    objDatabase.Open mdbName
+    
+    intCount = 0
+    
+    With rst
+        Do Until rst.EOF
+            intCount = intCount + 1
+            strGroupID = Nz(!GROUPid)
+            strServiceContact = Nz(!GRsrvCONT)
+            strMainContact = Nz(!GRmainCONT)
+            
+            ' perform login validation
+            bReturn = Login(objDatabase)
+            If Not bReturn Then
+                MsgBox "Failed user validation process!!!"
+            End If
+            
+            If objDatabase.IsOpen Then
+            
+            ' move to the group record in ACT
+                objDatabase.Contact.Lookup CF_User1, strGroupID, 1
+                
+                ' check to make sure that this group is in ACT
+                If objDatabase.Contact.IsEOF = False Then
+                
+                    ' check to see if someone else has locked the record
+                    If objDatabase.Contact.IsLocked = False Then
+                        
+                        ' now it's ok to edit the record
+                        objDatabase.Contact.Edit
+                        objDatabase.Contact.Data CF_Name, Nz(!GRsrvCONT)
+                        objDatabase.Contact.Data CF_Name2, Nz(!GRmainCONT)
+                        strUniqueID = objDatabase.Contact.Update
+                    End If
+                End If
+            End If
+        .MoveNext
+        Loop
+    End With
+        
+    rst.Close
+    dbs.Close
+    Set dbs = Nothing
+    
+    objDatabase.Close
+    Set objDatabase = Nothing
+
+    UpdateNames = True
+
+End Function
+Function UpdateACTPhones() As Boolean
+
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strGroupID As String
+    Dim strPhonePrimary As String
+    Dim strPhoneFax As String
+    Dim objDatabase As Object
+    Dim bReturn As Boolean
+    Dim strUniqueID As String
+    Dim intCount As Integer
+    
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset("Query13", dbOpenSnapshot)
+    
+    intCount = 0
+    
+    With rst
+        Do Until rst.EOF
+            intCount = intCount + 1
+            strGroupID = Nz(!GROUPid)
+            strPhonePrimary = Nz(!PhonePrimary)
+            strPhoneFax = Nz(!PhoneFax)
+            
+            strUniqueID = FindUniqueID(strGroupID)
+            
+            Set objDatabase = CreateObject("ACTOLE.DATABASE")
+            objDatabase.Open mdbName
+               
+            ' perform login validation
+            bReturn = Login(objDatabase)
+            If Not bReturn Then
+                MsgBox "Failed user validation process!!!"
+            End If
+                
+            If objDatabase.IsOpen Then
+                objDatabase.PhoneFormatting = 1 ' free form phone entry
+                objDatabase.Contact.GoTo strUniqueID
+                
+                If objDatabase.Contact.IsLocked = False Then
+                    objDatabase.Contact.Edit
+                        objDatabase.Contact.Data CF_Phone, Nz(!PhonePrimary)
+                        objDatabase.Contact.Data CF_Fax, Nz(!PhoneFax)
+                        strUniqueID = objDatabase.Contact.Update
+                End If
+            End If
+        .MoveNext
+        Loop
+    End With
+    
+    rst.Close
+    dbs.Close
+    Set dbs = Nothing
+    
+    objDatabase.Close
+    Set objDatabase = Nothing
+
+    UpdateACTPhones = True
+
+End Function
+Function ConvtoACTPhone(varPhone As Variant) As String
+
+On Err GoTo Err_ConvtoACTPhone
+
+    Dim strPhone As String
+    strPhone = CStr(varPhone)
+    If Len(strPhone) = 10 Then
+        strPhone = "+1 " & "(" & Mid(strPhone, 1, 3) & ") " & Mid(strPhone, 4, 7)
+    Else
+        GoTo Exit_ConvtoACTPhone
+    End If
+    
+    ConvtoACTPhone = strPhone
+
+Exit_ConvtoACTPhone:
+    Exit Function
+    
+Err_ConvtoACTPhone:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_ConvtoACTPhone
+    
+End Function
+Function ConvtoAccessDate(strDate) As Date
+
+On Error GoTo Exit_ConvtoAccessDate
+
+    Dim datDate As Date
+    
+    If Len(strDate) = 8 Then
+        datDate = CDate(Mid(strDate, 5, 2) & "/" & Mid(strDate, 7, 2) & "/" & Mid(strDate, 1, 4))
+    Else
+        GoTo Exit_ConvtoAccessDate
+    End If
+    
+    ConvtoAccessDate = datDate
+
+Exit_ConvtoAccessDate:
+    Exit Function
+    
+Err_ConvtoAccessDate:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_ConvtoAccessDate
+    
+End Function
+Function ConvtoACTDate(datDate As Date) As String
+
+On Error GoTo Exit_ConvtoACTDate
+
+    Dim strDate As String
+    strDate = CStr(Year([datDate]) & Format(Month([datDate]), "00") & Format(Day([datDate]), "00"))
+    ConvtoACTDate = strDate
+
+Exit_ConvtoACTDate:
+    Exit Function
+    
+Err_ConvtoACTDate:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_ConvtoACTDate
+    
+End Function
+Function ConvtoAccessPhone(strPhone) As Double
+
+On Err GoTo Err_ConvtoAccessPhone
+
+    Dim dblPhone As Double
+    
+    If Len(strPhone) = 12 Then
+        strPhone = Mid(strPhone, 1, 3) & Mid(strPhone, 5, 3) & Mid(strPhone, 9, 4)
+    Else
+        ConvtoAccessPhone = 0
+        GoTo Exit_ConvtoAccessPhone
+    
+    End If
+    
+    dblPhone = CDbl(strPhone)
+    ConvtoAccessPhone = dblPhone
+
+Exit_ConvtoAccessPhone:
+    Exit Function
+    
+Err_ConvtoAccessPhone:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_ConvtoAccessPhone
+
+End Function

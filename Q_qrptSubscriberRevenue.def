@@ -1,0 +1,57 @@
+Operation =6
+Option =0
+Begin InputTables
+    Name ="tblDashBoard_Revenue"
+End
+Begin OutputColumns
+    Expression ="tblDashBoard_Revenue.TypeofGroup"
+    GroupLevel =2
+    Expression ="tblDashBoard_Revenue.PlanID"
+    GroupLevel =1
+    Alias ="SumOfMonthly Premium"
+    Expression ="Sum(tblDashBoard_Revenue.[Monthly Premium])"
+    Alias ="Total"
+    Expression ="Sum(tblDashBoard_Revenue.[Monthly Premium])"
+    GroupLevel =2
+End
+Begin OrderBy
+    Expression ="tblDashBoard_Revenue.GroupType"
+    Flag =0
+End
+Begin Groups
+    Expression ="tblDashBoard_Revenue.TypeofGroup"
+    GroupLevel =2
+    Expression ="tblDashBoard_Revenue.PlanID"
+    GroupLevel =1
+    Expression ="tblDashBoard_Revenue.GroupType"
+    GroupLevel =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =559
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =120
+        Top =0
+        Name ="tblDashBoard_Revenue"
+        Name =""
+    End
+End

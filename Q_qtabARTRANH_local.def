@@ -1,0 +1,140 @@
+Operation =6
+Option =0
+Begin InputTables
+    Name ="ARTRANH_local"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Alias ="Custkey"
+    Expression ="ARTRANH_local.CustomerKey"
+    GroupLevel =2
+    Expression ="tblGrp.GRname"
+    GroupLevel =2
+    Alias ="Expr1"
+    Expression ="Format([Documentdate],\"mmm\") In (\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun"
+        "\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\")"
+    GroupLevel =1
+    Alias ="The Value"
+    Expression ="Sum(ARTRANH_local.DocumentAmt)"
+    Alias ="Total Of Docamt"
+    Expression ="Sum(ARTRANH_local.DocumentAmt)"
+    GroupLevel =2
+End
+Begin Joins
+    LeftTable ="ARTRANH_local"
+    RightTable ="tblGrp"
+    Expression ="ARTRANH_local.CustomerKey = tblGrp.GROUPid"
+    Flag =1
+End
+Begin Groups
+    Expression ="ARTRANH_local.CustomerKey"
+    GroupLevel =2
+    Expression ="tblGrp.GRname"
+    GroupLevel =2
+    Expression ="Format([Documentdate],\"mmm\")"
+    GroupLevel =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="Total Of Docamt"
+        dbInteger "ColumnWidth" ="1680"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Jan"
+        dbInteger "ColumnWidth" ="930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Feb"
+        dbInteger "ColumnWidth" ="900"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Mar"
+        dbInteger "ColumnWidth" ="960"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Apr"
+        dbInteger "ColumnWidth" ="855"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="May"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Jun"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Jul"
+        dbInteger "ColumnWidth" ="735"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Aug"
+        dbInteger "ColumnWidth" ="735"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Sep"
+        dbInteger "ColumnWidth" ="825"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Oct"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Nov"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Dec"
+        dbInteger "ColumnWidth" ="990"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =39
+    Right =1258
+    Bottom =356
+    Left =-1
+    Top =-1
+    Right =1233
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =559
+    Begin
+        Left =38
+        Top =11
+        Right =232
+        Bottom =112
+        Top =0
+        Name ="ARTRANH_local"
+        Name =""
+    End
+    Begin
+        Left =289
+        Top =7
+        Right =541
+        Bottom =102
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

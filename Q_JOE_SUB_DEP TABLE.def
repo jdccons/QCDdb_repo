@@ -1,0 +1,130 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SubGroupID)=\"KELLR\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SUBdob"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblDependent.DepSSN"
+    Expression ="tblDependent.DepSubID"
+    Expression ="tblDependent.DepFirstName"
+    Expression ="tblDependent.DepMiddleName"
+    Expression ="tblDependent.DepLastName"
+    Expression ="tblDependent.DepDOB"
+    Expression ="tblDependent.DepAge"
+    Expression ="tblDependent.DepRelationship"
+    Expression ="tblDependent.DepGender"
+    Expression ="tblDependent.upsize_ts"
+    Expression ="tblDependent.TimeStmp"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SubLastName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SubGroupID"
+        dbInteger "ColumnWidth" ="1230"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubLastName"
+        dbInteger "ColumnWidth" ="1515"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubFirstName"
+        dbInteger "ColumnWidth" ="1830"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubStreet1"
+        dbInteger "ColumnWidth" ="2850"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubStreet2"
+        dbInteger "ColumnWidth" ="1155"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubCity"
+        dbInteger "ColumnWidth" ="1545"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubState"
+        dbInteger "ColumnWidth" ="990"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubZip"
+        dbInteger "ColumnWidth" ="780"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBdob"
+        dbInteger "ColumnWidth" ="1140"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SubEffDate"
+        dbInteger "ColumnWidth" ="1155"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1430
+    Bottom =795
+    Left =-1
+    Top =-1
+    Right =1427
+    Bottom =278
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =265
+        Bottom =225
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =343
+        Top =16
+        Right =830
+        Bottom =243
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+End

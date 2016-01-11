@@ -1,0 +1,86 @@
+Operation =3
+Name ="tblEDI_App_Subscr"
+Option =0
+Where ="(((tblImportFile_ASR_Employees.TRANSACTION_TYPE)=\"C\"))"
+Begin InputTables
+    Name ="tblImportFile_ASR_Employees"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblImportFile_ASR_Employees.SSN"
+    Alias ="LN"
+    Name ="SUBlastNAME"
+    Expression ="UCase([LAST_NAME])"
+    Alias ="FN"
+    Name ="SUBfirstNAME"
+    Expression ="UCase([FIRST_NAME])"
+    Alias ="MN"
+    Name ="SUBmiddleNAME"
+    Expression ="UCase([MIDDLE_NAME])"
+    Alias ="DateOfBirth"
+    Name ="SUBdob"
+    Expression ="Mid([BIRTH_DATE],1,2) & \"/\" & Mid([BIRTH_DATE],3,2) & \"/\" & Mid([BIRTH_DATE]"
+        ",5,4)"
+    Alias ="EligibilityDate"
+    Name ="SUBeffDATE"
+    Expression ="Mid([EFFECTIVE],1,2) & \"/\" & Mid([EFFECTIVE],3,2) & \"/\" & Mid([EFFECTIVE],5,"
+        "4)"
+    Alias ="Cov"
+    Name ="SUBcoverage"
+    Expression ="IIf([BENEFIT]=\"DE\",\"I\",IIf([BENEFIT]=\"D1\",\"O\",\"F\"))"
+    Name ="SUBstreet1"
+    Expression ="tblImportFile_ASR_Employees.ADDRESS"
+    Name ="SUBcity"
+    Expression ="tblImportFile_ASR_Employees.CITY"
+    Name ="SUBstate"
+    Expression ="tblImportFile_ASR_Employees.STATE"
+    Name ="SUBzip"
+    Expression ="tblImportFile_ASR_Employees.ZIP"
+    Name ="SUBphoneHOME"
+    Expression ="tblImportFile_ASR_Employees.PHONE"
+    Alias ="SUBgroupID"
+    Name ="SUBgroupID"
+    Expression ="\"AMSTR\""
+    Alias ="PLANid"
+    Name ="SUBplanIDgr"
+    Expression ="\"PLAN16\""
+    Alias ="Rate"
+    Name ="SUBrate"
+    Expression ="IIf([BENEFIT]=\"DE\",0,IIf([BENEFIT]=\"D1\",10,14))"
+    Alias ="GrpStatus"
+    Name ="SUBstatus"
+    Expression ="\"GRSUB\""
+    Alias ="LookUpName"
+    Name ="SUB_LUname"
+    Expression ="UCase([LAST_NAME]) & \" \" & UCase([FIRST_NAME]) & \", \" & UCase([MIDDLE_NAME])"
+    Name ="TransactionType"
+    Expression ="tblImportFile_ASR_Employees.TRANSACTION_TYPE"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =0
+    Left =-32
+    Top =94
+    Right =937
+    Bottom =448
+    Left =-1
+    Top =-1
+    Right =962
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =289
+        Bottom =113
+        Top =14
+        Name ="tblImportFile_ASR_Employees"
+        Name =""
+    End
+End

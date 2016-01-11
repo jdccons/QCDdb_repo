@@ -1,0 +1,61 @@
+Operation =1
+Option =8
+Where ="(((tbldentist.DentStatus)<>\"A\"))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Alias ="Zip2"
+    Expression ="IIf([Dentzip] Like \"#####-#\",Left([DentZip],Len([DentZip])-1),IIf([DentZip] Li"
+        "ke \"#########\",Format([DentZip],\"@@@@@-@@@@\"),[DentZip]))"
+    Expression ="tbldentist.DentMail"
+    Expression ="tbldentist.DentGeoID"
+    Expression ="tbldentist.DentKeyID"
+    Expression ="tbldentist.Dent_LUName"
+    Expression ="tbldentist.DentFirst"
+    Expression ="tbldentist.DentState"
+    Expression ="tbldentist.DentCity"
+    Expression ="tbldentist.DentLast"
+    Expression ="tbldentist.DentStreet1"
+    Expression ="tbldentist.DentStreet2"
+    Expression ="tbldentist.DentZip"
+    Expression ="tbldentist.DentLastMailing"
+    Expression ="tbldentist.DentComments"
+End
+Begin OrderBy
+    Expression ="tbldentist.DentState"
+    Flag =0
+    Expression ="tbldentist.DentCity"
+    Flag =0
+    Expression ="tbldentist.DentLast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =84
+    Top =92
+    Right =970
+    Bottom =397
+    Left =-1
+    Top =-1
+    Right =879
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+End

@@ -1,0 +1,83 @@
+Operation =3
+Name ="tblInvLin"
+Option =8
+Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmInvIndiv]![CUST KEY]))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblDependent"
+    Name ="tblInvHdrPreliminary"
+End
+Begin OutputColumns
+    Alias ="DocNo"
+    Name ="DOCUMENT NO"
+    Expression ="[Forms]![frmInvIndiv]![TRANS NO]"
+    Name ="ITEM KEY"
+    Expression ="tblDependent.DEPssn"
+    Alias ="Desc"
+    Name ="DESCRIPTION"
+    Expression ="([tblDependent].[DEPlastNAME] & \", \" & [tblDependent].[DEPfirstNAME])"
+    Alias ="QtyOrdered"
+    Name ="QTY ORDERED"
+    Expression ="1"
+    Alias ="QtyShipped"
+    Name ="QTY SHIPPED"
+    Expression ="1"
+    Alias ="Acct"
+    Name ="REV ACCT"
+    Expression ="CStr(5100)"
+    Alias ="Dept"
+    Name ="REV SUB"
+    Expression ="CStr(2000)"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =25
+        Top =6
+        Right =181
+        Bottom =113
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =485
+        Top =6
+        Right =688
+        Bottom =113
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+    Begin
+        Left =236
+        Top =8
+        Right =416
+        Bottom =115
+        Top =0
+        Name ="tblInvHdrPreliminary"
+        Name =""
+    End
+End

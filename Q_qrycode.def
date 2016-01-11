@@ -1,0 +1,89 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=No) AND ((tblGrp.GRzip)=\"77301\" Or (tblGrp.GRzip)=\"733"
+    "44\" Or (tblGrp.GRzip)=\"78613\" Or (tblGrp.GRzip)=\"78617\" Or (tblGrp.GRzip)=\""
+    "78630\" Or (tblGrp.GRzip)=\"78651\" Or (tblGrp.GRzip)=\"78652\" Or (tblGrp.GRzip"
+    ")=\"78653\" Or (tblGrp.GRzip)=\"78660\" Or (tblGrp.GRzip)=\"78664\" Or (tblGrp.G"
+    "Rzip)=\"78680\" Or (tblGrp.GRzip)=\"78681\" Or (tblGrp.GRzip)=\"78682\" Or (tblG"
+    "rp.GRzip)=\"78691\" Or (tblGrp.GRzip)=\"78701\" Or (tblGrp.GRzip)=\"78702\" Or ("
+    "tblGrp.GRzip)=\"78704\" Or (tblGrp.GRzip)=\"78705\" Or (tblGrp.GRzip)=\"78708\" "
+    "Or (tblGrp.GRzip)=\"78709\" Or (tblGrp.GRzip)=\"78710\" Or (tblGrp.GRzip)=\"7871"
+    "1\" Or (tblGrp.GRzip)=\"78713\" Or (tblGrp.GRzip)=\"78714\" Or (tblGrp.GRzip)=\""
+    "78715\" Or (tblGrp.GRzip)=\"78716\" Or (tblGrp.GRzip)=\"78717\" Or (tblGrp.GRzip"
+    ")=\"78718\" Or (tblGrp.GRzip)=\"78719\" Or (tblGrp.GRzip)=\"78719\" Or (tblGrp.G"
+    "Rzip)=\"78720\" Or (tblGrp.GRzip)=\"78721\" Or (tblGrp.GRzip)=\"78722\" Or (tblG"
+    "rp.GRzip)=\"78723\" Or (tblGrp.GRzip)=\"78724\" Or (tblGrp.GRzip)=\"78725\" Or ("
+    "tblGrp.GRzip)=\"78726\" Or (tblGrp.GRzip)=\"78727\" Or (tblGrp.GRzip)=\"78728\" "
+    "Or (tblGrp.GRzip)=\"78729\" Or (tblGrp.GRzip)=\"78730\" Or (tblGrp.GRzip)=\"7873"
+    "2\" Or (tblGrp.GRzip)=\"78733\" Or (tblGrp.GRzip)=\"78734\" Or (tblGrp.GRzip)=\""
+    "78735\" Or (tblGrp.GRzip)=\"78736\" Or (tblGrp.GRzip)=\"78739\" Or (tblGrp.GRzip"
+    ")=\"78741\" Or (tblGrp.GRzip)=\"78742\" Or (tblGrp.GRzip)=\"78744\" Or (tblGrp.G"
+    "Rzip)=\"78745\" Or (tblGrp.GRzip)=\"78747\" Or (tblGrp.GRzip)=\"78748\" Or (tblG"
+    "rp.GRzip)=\"78749\" Or (tblGrp.GRzip)=\"78750\" Or (tblGrp.GRzip)=\"78751\" Or ("
+    "tblGrp.GRzip)=\"78752\" Or (tblGrp.GRzip)=\"78753\" Or (tblGrp.GRzip)=\"78754\" "
+    "Or (tblGrp.GRzip)=\"78755\" Or (tblGrp.GRzip)=\"78756\" Or (tblGrp.GRzip)=\"7875"
+    "8 78759 78750\" Or (tblGrp.GRzip)=\"78761\" Or (tblGrp.GRzip)=\"78762\" Or (tblG"
+    "rp.GRzip)=\"78763\" Or (tblGrp.GRzip)=\"78764\" Or (tblGrp.GRzip)=\"78765\" Or ("
+    "tblGrp.GRzip)=\"78766 78767 78768\" Or (tblGrp.GRzip)=\"78769\"))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRsrvCONT"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3420"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcancelled"
+        dbInteger "ColumnWidth" ="930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRstate"
+        dbInteger "ColumnWidth" ="555"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRzip"
+        dbInteger "ColumnWidth" ="840"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1024
+    Bottom =653
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =183
+    Left =96
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =31
+        Top =3
+        Right =206
+        Bottom =155
+        Top =7
+        Name ="tblGrp"
+        Name =""
+    End
+End

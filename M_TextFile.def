@@ -1,0 +1,165 @@
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+
+Option Compare Database
+Option Explicit
+
+' Private variables for properties implemented
+' using property procedures
+Private mstrPath As String
+Private mhFile As Long
+Private mintOpenMode As Integer
+Private mfIsOpen As Boolean
+Private mstrCurrentLine As String
+
+' Class constants
+Private Const tfOpenReadOnly = 0
+Private Const tfOpenReadWrite = 1
+Private Const tfOpenAppend = 2
+Private Const tfOpenReadOnlyExists = 3
+
+
+Public Function FileOpen() As Boolean
+
+    On Error GoTo HandleError
+    
+    ' If a File is already open, close it
+    If Me.IsOpen Then
+        Me.FileClose
+    End If
+    
+    ' Get next available file handle
+    mhFile = FreeFile
+    
+    ' Open file based on file open mode property
+    Select Case Me.OpenMode
+        Case tfOpenReadOnly
+            Open Me.path For Binary Access Read As mhFile
+        Case tfOpenReadWrite
+            Open Me.path For Binary Access Read Write As mhFile
+        Case tfOpenAppend
+            Open Me.path For Append Access Read Write As mhFile
+        Case tfOpenReadOnlyExists
+            Open Me.path For Input Access Read As mhFile
+    End Select
+    
+    ' Set IsOpen property
+    mfIsOpen = True
+    FileOpen = True
+    
+ExitProc:
+    Exit Function
+    
+    
+HandleError:
+    FileOpen = False
+    Resume ExitProc
+End Function
+
+Public Sub FileClose()
+    Close Me.Handle
+    mfIsOpen = False
+End Sub
+
+Public Function ReadNext() As Boolean
+    On Error GoTo HandleError
+    
+    Dim hFile As Long
+    
+    If Me.IsOpen Then
+        hFile = Me.Handle
+        If Not VBA.EOF(hFile) Then
+            Line Input #hFile, mstrCurrentLine
+            ReadNext = True
+        End If
+    End If
+    
+ExitProc:
+    Exit Function
+
+HandleError:
+    Select Case Err.Number
+        Case 62
+            ' Just ignore
+        Case Else
+            ReadNext = False
+    End Select
+    Resume ExitProc
+End Function
+
+Property Get Text() As String
+    Text = mstrCurrentLine
+End Property
+
+Property Get EOF() As Boolean
+    If Me.IsOpen Then
+        EOF = VBA.EOF(Me.Handle)
+    End If
+End Property
+
+Property Get path() As String
+    ' Return the path of the file from the
+    ' Private class variable
+    path = mstrPath
+End Property
+
+Property Let path(ByVal strPath As String)
+    ' Set the path property of the file.
+    ' If a file is already open, close it
+    If Me.IsOpen Then
+        Me.FileClose
+    End If
+    mstrPath = strPath
+End Property
+
+Property Get Handle() As Long
+    ' Get the OS file handle if a file
+    ' is open
+    If Me.IsOpen Then
+        Handle = mhFile
+    End If
+End Property
+
+Property Get OpenMode() As Integer
+    ' Retrieve the open mode of the file
+    OpenMode = mintOpenMode
+End Property
+
+Property Let OpenMode(ByVal intMode As Integer)
+    ' Set the open mode of the file only if
+    ' a file is not already open
+    If Not Me.IsOpen Then
+        mintOpenMode = intMode
+    End If
+End Property
+
+Property Get IsOpen() As Boolean
+    ' Return value of private variable indicating
+    ' whether a fiile is currently open
+    IsOpen = mfIsOpen
+End Property
+
+Private Sub Class_Initialize()
+    ' Set default file open mode property
+    Me.OpenMode = tfOpenReadWrite
+End Sub
+
+Private Sub Class_Terminate()
+    ' If a file is still open then close it
+    ' before terminating
+    If Me.IsOpen Then
+        Me.FileClose
+    End If
+End Sub
+
+Public Function Exists() As Boolean
+    ' Return existance of file based on
+    ' a directory search.
+    On Error Resume Next
+    Exists = (Len(Dir$(Me.path)) > 0)
+    If Err.Number <> 0 Then
+        Exists = False
+    End If
+End Function

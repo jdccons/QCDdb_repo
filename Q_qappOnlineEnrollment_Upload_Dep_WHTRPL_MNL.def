@@ -1,0 +1,174 @@
+Operation =3
+Name ="tmpExportAllAmerican"
+Option =0
+Where ="(((tblGrp.GroupType)=4) AND ((tblSubscr.PlanID) In (2,4)))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Alias ="EIRECID"
+    Name ="EIRECID"
+    Expression ="\"M\""
+    Name ="EIMBRID"
+    Expression ="tblDependent.EIMBRID"
+    Alias ="EISBRID"
+    Name ="EISBRID"
+    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Alias ="EISSN"
+    Name ="EISSN"
+    Expression ="tblDependent.DepSSN"
+    Alias ="EINAML"
+    Name ="EINAML"
+    Expression ="tblDependent.DepLastName"
+    Alias ="EINAMF"
+    Name ="EINAMF"
+    Expression ="tblDependent.DepFirstName"
+    Alias ="EINAMM"
+    Name ="EINAMM"
+    Expression ="tblDependent.DepMiddleName"
+    Alias ="EIDTBR"
+    Name ="EIDTBR"
+    Expression ="Format([DEPdob],\"mmddyyyy\")"
+    Alias ="EISEX"
+    Name ="EISEX"
+    Expression ="IIf([DEPgender] Is Null,\"U\",[DEPGender])"
+    Alias ="EIADD1"
+    Name ="EIADD1"
+    Expression ="tblSubscr.SubStreet1"
+    Alias ="EIADD2"
+    Name ="EIADD2"
+    Expression ="tblSubscr.SubStreet2"
+    Alias ="EICITY"
+    Name ="EICITY"
+    Expression ="tblSubscr.SubCity"
+    Alias ="EISTE"
+    Name ="EISTE"
+    Expression ="tblSubscr.SubState"
+    Alias ="EIZIP"
+    Name ="EIZIP"
+    Expression ="tblSubscr.SubZip"
+    Alias ="EIHPHR"
+    Name ="EIHPHR"
+    Expression ="IIf(Not IsNull([tblSubscr.SubPhoneHome]),StripChars_TSB([tblSubscr].[SubPhoneHom"
+        "e],\"-\"),Null)"
+    Alias ="EIWPHR"
+    Name ="EIWPHR"
+    Expression ="IIf(Not IsNull([tblSubscr.SubPhoneWork]),StripChars_TSB([tblSubscr].[SubPhoneWor"
+        "k],\"-\"),Null)"
+    Alias ="EIGRPID"
+    Name ="EIGRPID"
+    Expression ="'MNQ' & [GROUPid]"
+    Alias ="EINMPLAN"
+    Name ="EINMPLAN"
+    Expression ="IIf([tblSubscr].[PlanID]=2,\"QCDWHT-MNL\",\"QCDRPL-MNL\")"
+    Alias ="EIDTEFF"
+    Name ="EIDTEFF"
+    Expression ="Format([GRcontBEG],\"mmddyyyy\")"
+    Alias ="EIDTCVEF"
+    Name ="EIDTCVEF"
+    Expression ="IIf(IsNull([tblDependent].[PreexistingDate])=True,Format([tblDependent].[DepEffD"
+        "ate],\"mmddyyyy\"),Format([tblDependent].[PreexistingDate],\"mmddyyyy\"))"
+    Alias ="EIDTCVEN"
+    Name ="EIDTCVEN"
+    Expression ="IIf(Not IsNull([tblSubscr].[DateDeleted]),Format([tblSubscr].[DateDeleted],\"mmd"
+        "dyyyy\"),Null)"
+    Alias ="EIMBRDP"
+    Name ="EIMBRDP"
+    Expression ="IIf([tblDependent].[DepRelationship]=\"S\",1,2)"
+    Alias ="EITRNID"
+    Name ="EITRNID"
+    Expression ="IIf(IsNull([tblDependent].[PreexistingDate])=True,Null,\"        \" & \"PCOV\" &"
+        " Format([tblDependent].[PreexistingDate],\"mmddyyyy\"))"
+    Alias ="EIDTTERM"
+    Name ="EIDTTERM"
+    Expression ="IIf([tblSubscr].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr].[DateDeleted],\""
+        "mmddyyyy\"))"
+    Name ="DepID"
+    Expression ="tblDependent.DepCounter"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Flag =1
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblDependent"
+    Expression ="tblEDI_App_Subscr.SubSSN = tblDependent.DepSubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="EINAML"
+        dbInteger "ColumnWidth" ="2655"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EITRNID"
+        dbInteger "ColumnWidth" ="2295"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =883
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =408
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =911
+        Top =15
+        Right =1140
+        Bottom =122
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =69
+        Top =11
+        Right =235
+        Bottom =163
+        Top =35
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =365
+        Top =13
+        Right =533
+        Bottom =315
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =650
+        Top =15
+        Right =820
+        Bottom =257
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+End

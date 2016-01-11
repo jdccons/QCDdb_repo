@@ -1,0 +1,81 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblDependent"
+    Name ="tblEDI_App_Dep"
+End
+Begin OutputColumns
+    Expression ="tblDependent.DEPsubID"
+    Expression ="tblDependent.DEPssn"
+    Expression ="tblEDI_App_Dep.DEPssn"
+    Expression ="tblDependent.DEPfirstNAME"
+    Expression ="tblEDI_App_Dep.DEPfirstNAME"
+End
+Begin Joins
+    LeftTable ="tblDependent"
+    RightTable ="tblEDI_App_Dep"
+    Expression ="tblDependent.DEPsubID = tblEDI_App_Dep.DEPsubID"
+    Flag =1
+    LeftTable ="tblDependent"
+    RightTable ="tblEDI_App_Dep"
+    Expression ="tblDependent.DEPfirstNAME = tblEDI_App_Dep.DEPfirstNAME"
+    Flag =1
+    LeftTable ="tblDependent"
+    RightTable ="tblEDI_App_Dep"
+    Expression ="tblDependent.DEPlastNAME = tblEDI_App_Dep.DEPlastNAME"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblDependent.DEPsubID"
+    Flag =0
+    Expression ="tblDependent.DEPssn"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblDependent.DEPssn"
+        dbInteger "ColumnWidth" ="2175"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Dep.DEPssn"
+        dbInteger "ColumnWidth" ="2415"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =56
+    Top =59
+    Right =974
+    Bottom =580
+    Left =-1
+    Top =-1
+    Right =911
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =202
+        Bottom =113
+        Top =2
+        Name ="tblDependent"
+        Name =""
+    End
+    Begin
+        Left =238
+        Top =8
+        Right =458
+        Bottom =115
+        Top =2
+        Name ="tblEDI_App_Dep"
+        Name =""
+    End
+End

@@ -1,0 +1,374 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="_Online_Report_Changes_WL"
+End
+Begin OutputColumns
+    Expression ="[_Online_Report_Changes_WL].Tbl"
+    Expression ="[_Online_Report_Changes_WL].SubSSN"
+    Expression ="[_Online_Report_Changes_WL].SubID"
+    Expression ="[_Online_Report_Changes_WL].EIMBRID"
+    Expression ="[_Online_Report_Changes_WL].SubStatus"
+    Expression ="[_Online_Report_Changes_WL].SubGroupID"
+    Expression ="[_Online_Report_Changes_WL].PltCustKey"
+    Expression ="[_Online_Report_Changes_WL].PlanID"
+    Expression ="[_Online_Report_Changes_WL].CoverID"
+    Expression ="[_Online_Report_Changes_WL].RateID"
+    Expression ="[_Online_Report_Changes_WL].SubCancelled"
+    Expression ="[_Online_Report_Changes_WL].SUB_LUname"
+    Expression ="[_Online_Report_Changes_WL].SubLastName"
+    Expression ="[_Online_Report_Changes_WL].SubFirstName"
+    Expression ="[_Online_Report_Changes_WL].SubMiddleName"
+    Expression ="[_Online_Report_Changes_WL].SubStreet1"
+    Expression ="[_Online_Report_Changes_WL].SubStreet2"
+    Expression ="[_Online_Report_Changes_WL].SubCity"
+    Expression ="[_Online_Report_Changes_WL].SubState"
+    Expression ="[_Online_Report_Changes_WL].SubZip"
+    Expression ="[_Online_Report_Changes_WL].SubPhoneWork"
+    Expression ="[_Online_Report_Changes_WL].SubPhoneHome"
+    Expression ="[_Online_Report_Changes_WL].SUBdob"
+    Expression ="[_Online_Report_Changes_WL].SubNoDepent"
+    Expression ="[_Online_Report_Changes_WL].SubGender"
+    Expression ="[_Online_Report_Changes_WL].SubAge"
+    Expression ="[_Online_Report_Changes_WL].SubMaritalStatus"
+    Expression ="[_Online_Report_Changes_WL].SubEffDate"
+    Expression ="[_Online_Report_Changes_WL].SubExpDate"
+    Expression ="[_Online_Report_Changes_WL].SubClassKey"
+    Expression ="[_Online_Report_Changes_WL].PreexistingDate"
+    Expression ="[_Online_Report_Changes_WL].SubCardPrt"
+    Expression ="[_Online_Report_Changes_WL].SubCardPrtDte"
+    Expression ="[_Online_Report_Changes_WL].SubNotes"
+    Expression ="[_Online_Report_Changes_WL].TransactionType"
+    Expression ="[_Online_Report_Changes_WL].SubContBeg"
+    Expression ="[_Online_Report_Changes_WL].SubContEnd"
+    Expression ="[_Online_Report_Changes_WL].SubPymtFreq"
+    Expression ="[_Online_Report_Changes_WL].SubGeoID"
+    Expression ="[_Online_Report_Changes_WL].SUBbankDraftNo"
+    Expression ="[_Online_Report_Changes_WL].Flag"
+    Expression ="[_Online_Report_Changes_WL].UserName"
+    Expression ="[_Online_Report_Changes_WL].DateCreated"
+    Expression ="[_Online_Report_Changes_WL].DateUpdated"
+    Expression ="[_Online_Report_Changes_WL].DateDeleted"
+    Expression ="[_Online_Report_Changes_WL].SUBemployeeName"
+    Expression ="[_Online_Report_Changes_WL].SUBflyerPRTdte"
+    Expression ="[_Online_Report_Changes_WL].SUBplanIDgr"
+    Expression ="[_Online_Report_Changes_WL].SUBplanIDin"
+    Expression ="[_Online_Report_Changes_WL].SUBcoverage"
+    Expression ="[_Online_Report_Changes_WL].SUBrate"
+    Expression ="[_Online_Report_Changes_WL].SUBCOBRA"
+    Expression ="[_Online_Report_Changes_WL].SUBLOA"
+    Expression ="[_Online_Report_Changes_WL].SUBmissing"
+    Expression ="[_Online_Report_Changes_WL].SUBagentID1"
+    Expression ="[_Online_Report_Changes_WL].SUBagentRATE1"
+    Expression ="[_Online_Report_Changes_WL].SUBagentID2"
+    Expression ="[_Online_Report_Changes_WL].SUBagentRATE2"
+    Expression ="[_Online_Report_Changes_WL].GRExecSalesDirID"
+    Expression ="[_Online_Report_Changes_WL].GRExecSalesDirRate"
+    Expression ="[_Online_Report_Changes_WL].FOCType"
+    Expression ="[_Online_Report_Changes_WL].CreateDate"
+    Expression ="[_Online_Report_Changes_WL].ModifyDate"
+    Expression ="[_Online_Report_Changes_WL].CoverDesc"
+    Expression ="[_Online_Report_Changes_WL].TblD"
+    Expression ="[_Online_Report_Changes_WL].DepCounter"
+    Expression ="[_Online_Report_Changes_WL].DepSSN"
+    Expression ="[_Online_Report_Changes_WL].EIMBRID_D"
+    Expression ="[_Online_Report_Changes_WL].DepSubID"
+    Expression ="[_Online_Report_Changes_WL].DepFirstName"
+    Expression ="[_Online_Report_Changes_WL].DepMiddleName"
+    Expression ="[_Online_Report_Changes_WL].DepLastName"
+    Expression ="[_Online_Report_Changes_WL].DepDOB"
+    Expression ="[_Online_Report_Changes_WL].DepAge"
+    Expression ="[_Online_Report_Changes_WL].DepRelationship"
+    Expression ="[_Online_Report_Changes_WL].DepGender"
+    Expression ="[_Online_Report_Changes_WL].DepEffDate"
+    Expression ="[_Online_Report_Changes_WL].PreexistingDate_D"
+    Expression ="[_Online_Report_Changes_WL].CreateDate_D"
+    Expression ="[_Online_Report_Changes_WL].ModifyDate_D"
+End
+Begin OrderBy
+    Expression ="[_Online_Report_Changes_WL].SubGroupID"
+    Flag =0
+    Expression ="[_Online_Report_Changes_WL].SubSSN"
+    Flag =0
+    Expression ="[_Online_Report_Changes_WL].Tbl"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].CoverDesc"
+        dbInteger "ColumnWidth" ="3015"
+        dbInteger "ColumnOrder" ="64"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].Tbl"
+        dbInteger "ColumnOrder" ="1"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubSSN"
+        dbInteger "ColumnOrder" ="2"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubID"
+        dbInteger "ColumnOrder" ="3"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].EIMBRID"
+        dbInteger "ColumnOrder" ="4"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubStatus"
+        dbInteger "ColumnOrder" ="5"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubGroupID"
+        dbInteger "ColumnOrder" ="6"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].PltCustKey"
+        dbInteger "ColumnOrder" ="7"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].PlanID"
+        dbInteger "ColumnOrder" ="8"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].CoverID"
+        dbInteger "ColumnOrder" ="9"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].RateID"
+        dbInteger "ColumnOrder" ="10"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubCancelled"
+        dbInteger "ColumnOrder" ="11"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUB_LUname"
+        dbInteger "ColumnWidth" ="2775"
+        dbInteger "ColumnOrder" ="12"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubLastName"
+        dbInteger "ColumnOrder" ="13"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubFirstName"
+        dbInteger "ColumnOrder" ="14"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubMiddleName"
+        dbInteger "ColumnOrder" ="15"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubStreet1"
+        dbInteger "ColumnOrder" ="16"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubStreet2"
+        dbInteger "ColumnOrder" ="17"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubCity"
+        dbInteger "ColumnOrder" ="18"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubState"
+        dbInteger "ColumnOrder" ="19"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubZip"
+        dbInteger "ColumnOrder" ="20"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubPhoneWork"
+        dbInteger "ColumnOrder" ="21"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubPhoneHome"
+        dbInteger "ColumnOrder" ="22"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBdob"
+        dbInteger "ColumnOrder" ="23"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubNoDepent"
+        dbInteger "ColumnOrder" ="24"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubGender"
+        dbInteger "ColumnOrder" ="25"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubAge"
+        dbInteger "ColumnOrder" ="26"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubMaritalStatus"
+        dbInteger "ColumnOrder" ="27"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubEffDate"
+        dbInteger "ColumnOrder" ="28"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubExpDate"
+        dbInteger "ColumnOrder" ="29"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubClassKey"
+        dbInteger "ColumnOrder" ="30"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubCardPrt"
+        dbInteger "ColumnOrder" ="32"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubCardPrtDte"
+        dbInteger "ColumnOrder" ="33"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubNotes"
+        dbInteger "ColumnOrder" ="34"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].TransactionType"
+        dbInteger "ColumnOrder" ="35"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubContBeg"
+        dbInteger "ColumnOrder" ="36"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubContEnd"
+        dbInteger "ColumnOrder" ="37"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubPymtFreq"
+        dbInteger "ColumnOrder" ="38"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SubGeoID"
+        dbInteger "ColumnOrder" ="39"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBbankDraftNo"
+        dbInteger "ColumnOrder" ="40"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].Flag"
+        dbInteger "ColumnOrder" ="41"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].UserName"
+        dbInteger "ColumnOrder" ="42"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].DateCreated"
+        dbInteger "ColumnOrder" ="43"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].DateUpdated"
+        dbInteger "ColumnOrder" ="44"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].DateDeleted"
+        dbInteger "ColumnOrder" ="45"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBemployeeName"
+        dbInteger "ColumnOrder" ="46"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBflyerPRTdte"
+        dbInteger "ColumnOrder" ="47"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBplanIDgr"
+        dbInteger "ColumnOrder" ="48"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBplanIDin"
+        dbInteger "ColumnOrder" ="49"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBcoverage"
+        dbInteger "ColumnOrder" ="50"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBrate"
+        dbInteger "ColumnOrder" ="51"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBCOBRA"
+        dbInteger "ColumnOrder" ="52"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBLOA"
+        dbInteger "ColumnOrder" ="53"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBmissing"
+        dbInteger "ColumnOrder" ="54"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBagentID1"
+        dbInteger "ColumnOrder" ="55"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBagentRATE1"
+        dbInteger "ColumnOrder" ="56"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBagentID2"
+        dbInteger "ColumnOrder" ="57"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].SUBagentRATE2"
+        dbInteger "ColumnOrder" ="58"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].GRExecSalesDirID"
+        dbInteger "ColumnOrder" ="59"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].GRExecSalesDirRate"
+        dbInteger "ColumnOrder" ="60"
+    End
+    Begin
+        dbText "Name" ="[_Online_Report_Changes_WL].FOCType"
+        dbInteger "ColumnOrder" ="61"
+    End
+End
+Begin
+    State =0
+    Left =42
+    Top =120
+    Right =1313
+    Bottom =631
+    Left =-1
+    Top =-1
+    Right =1252
+    Bottom =188
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =288
+        Bottom =154
+        Top =0
+        Name ="_Online_Report_Changes_WL"
+        Name =""
+    End
+End

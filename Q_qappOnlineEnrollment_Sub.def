@@ -1,0 +1,252 @@
+Operation =3
+Name ="tblEDI_App_Subscr"
+Option =0
+Where ="(((tblSubscriber_temp.EIMBRID) Not In ('INDIV')))"
+Begin InputTables
+    Name ="tblSubscriber_temp"
+End
+Begin OutputColumns
+    Name ="SubSSN"
+    Expression ="tblSubscriber_temp.SSN"
+    Name ="EIMBRID"
+    Expression ="tblSubscriber_temp.EIMBRID"
+    Name ="SubID"
+    Expression ="tblSubscriber_temp.SubscriberID"
+    Alias ="Status"
+    Name ="SubStatus"
+    Expression ="\"GRSUB\""
+    Name ="SubGroupID"
+    Expression ="tblSubscriber_temp.GroupID"
+    Name ="PlanID"
+    Expression ="tblSubscriber_temp.PlanID"
+    Name ="CoverID"
+    Expression ="tblSubscriber_temp.CoverID"
+    Name ="SubLastName"
+    Expression ="tblSubscriber_temp.LastName"
+    Name ="SubFirstName"
+    Expression ="tblSubscriber_temp.FirstName"
+    Name ="SubMiddleName"
+    Expression ="tblSubscriber_temp.MiddleInitial"
+    Alias ="LU_Name"
+    Name ="SUB_LUname"
+    Expression ="[LastName] & \", \" & [FirstName] & \" \" & Mid([MiddleInitial],1,1)"
+    Name ="SubStreet1"
+    Expression ="tblSubscriber_temp.Street1"
+    Name ="SubStreet2"
+    Expression ="tblSubscriber_temp.Street2"
+    Name ="SubCity"
+    Expression ="tblSubscriber_temp.City"
+    Name ="SubState"
+    Expression ="tblSubscriber_temp.State"
+    Name ="SubZip"
+    Expression ="tblSubscriber_temp.Zip"
+    Alias ="PhoneH"
+    Name ="SubPhoneHome"
+    Expression ="IIf(Not IsNull([PhoneHome]) Or [PhoneHome]<>\"\",StripChars_TSB([PhoneHome],\"-\""
+        "),Null)"
+    Alias ="PhoneW"
+    Name ="SubPhoneWork"
+    Expression ="IIf(Not IsNull([PhoneWork]) Or [PhoneWork]<>\"\",StripChars_TSB([PhoneWork],\"-\""
+        "),Null)"
+    Name ="SUBdob"
+    Expression ="tblSubscriber_temp.DOB"
+    Name ="SubNoDepent"
+    Expression ="tblSubscriber_temp.NoDependents"
+    Name ="SubGender"
+    Expression ="tblSubscriber_temp.Gender"
+    Name ="SubAge"
+    Expression ="tblSubscriber_temp.Age"
+    Name ="SubEffDate"
+    Expression ="tblSubscriber_temp.EffectiveDate"
+    Name ="PreexistingDate"
+    Expression ="tblSubscriber_temp.PreexistingDate"
+    Name ="SubMaritalStatus"
+    Expression ="tblSubscriber_temp.MaritalStatus"
+    Name ="SubCardPrt"
+    Expression ="tblSubscriber_temp.CardPrinted"
+    Name ="SubCardPrtDte"
+    Expression ="tblSubscriber_temp.CardPrintedDate"
+    Name ="TransactionType"
+    Expression ="tblSubscriber_temp.MembershipStatus"
+    Name ="DateCreated"
+    Expression ="tblSubscriber_temp.DateCreated"
+    Name ="DateUpdated"
+    Expression ="tblSubscriber_temp.DateChanged"
+    Name ="DateDeleted"
+    Expression ="tblSubscriber_temp.DateDeleted"
+    Name ="wSubID"
+    Expression ="tblSubscriber_temp.wSubID"
+    Alias ="setU"
+    Name ="wUpt"
+    Expression ="1"
+    Name ="AmtPaid"
+    Expression ="tblSubscriber_temp.AmtPaid"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscriber_temp.SSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Status"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.GroupID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.NoDependents"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Gender"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Age"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.EffectiveDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.PreexistingDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.MaritalStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.CardPrinted"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.CardPrintedDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.MembershipStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DateCreated"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DateChanged"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.EIMBRID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.SubscriberID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.PlanID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.CoverID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.LastName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.FirstName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.MiddleInitial"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="LU_Name"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Street1"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Street2"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.City"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.State"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.Zip"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="PhoneH"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="PhoneW"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DOB"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.DateDeleted"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.wSubID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="setU"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.AmtPaid"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =2
+    Left =-8
+    Top =-30
+    Right =869
+    Bottom =592
+    Left =-1
+    Top =-1
+    Right =845
+    Bottom =215
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =98
+        Top =21
+        Right =421
+        Bottom =185
+        Top =0
+        Name ="tblSubscriber_temp"
+        Name =""
+    End
+End

@@ -1,0 +1,76 @@
+Operation =3
+Name ="tmpAA_VarianceReport"
+Option =0
+Where ="(((qselQCD_CntOfDeps.CountOfDEPsubID)<>[Cnt])) OR (((qselAA_CntOfDeps.Cnt)<[Coun"
+    "tOfDEPsubID]))"
+Begin InputTables
+    Name ="qselAA_CntOfDeps"
+    Name ="qselQCD_CntOfDeps"
+End
+Begin OutputColumns
+    Alias ="Ord"
+    Name ="PrtOrder"
+    Expression ="50"
+    Alias ="Title"
+    Name ="DataElementTitle"
+    Expression ="\"Subscriber Change\""
+    Alias ="Elem"
+    Name ="DataElement"
+    Expression ="\"Sub Count of Dependents\""
+    Name ="SubSSN"
+    Expression ="qselQCD_CntOfDeps.SUBssn"
+    Name ="AAGrpID"
+    Expression ="qselAA_CntOfDeps.GRPid"
+    Name ="NewValue"
+    Expression ="qselAA_CntOfDeps.Cnt"
+    Alias ="Expr1"
+    Name ="OldValue"
+    Expression ="qselQCD_CntOfDeps.CountOfDEPsubID"
+    Name ="RptDate"
+    Expression ="qselAA_CntOfDeps.RptDate"
+End
+Begin Joins
+    LeftTable ="qselAA_CntOfDeps"
+    RightTable ="qselQCD_CntOfDeps"
+    Expression ="qselAA_CntOfDeps.AA_SSN = qselQCD_CntOfDeps.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbText "Description" ="50"
+Begin
+End
+Begin
+    State =0
+    Left =57
+    Top =127
+    Right =1297
+    Bottom =480
+    Left =-1
+    Top =-1
+    Right =1233
+    Bottom =177
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =49
+        Top =6
+        Right =217
+        Bottom =120
+        Top =0
+        Name ="qselAA_CntOfDeps"
+        Name =""
+    End
+    Begin
+        Left =248
+        Top =6
+        Right =435
+        Bottom =90
+        Top =0
+        Name ="qselQCD_CntOfDeps"
+        Name =""
+    End
+End

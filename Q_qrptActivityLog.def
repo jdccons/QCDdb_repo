@@ -1,0 +1,92 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblGrpLog"
+    Name ="tblAcctMgr"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrpLog.LogNotes"
+    Expression ="tblGrpLog.LogDate"
+    Expression ="tblGrpLog.LogCallBack"
+    Expression ="tblAcctMgr.AcctMgrID"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRphone2"
+    Expression ="tblGrp.GRclientSVCrep"
+    Expression ="tblAcctMgr.AcctMgrName"
+    Expression ="tblGrpLog.LogAcctMgrID"
+    Expression ="tblGrpLog.LogPurpose"
+    Expression ="tblGrpLog.LogOutcome"
+    Expression ="tblGrpLog.LogFollowupAction"
+    Expression ="tblGrpLog.LogSize"
+    Expression ="tblGrpLog.LogDateCallVisit"
+    Expression ="tblGrpLog.LogPhoneLog"
+    Expression ="tblGrpLog.LogApptCallTime"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblAcctMgr"
+    Expression ="tblGrp.GRacctMgr = tblAcctMgr.AcctMgrID"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpLog"
+    Expression ="tblGrp.GROUPid = tblGrpLog.LogGrID"
+    Flag =3
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrpLog.LogDate"
+        dbInteger "ColumnWidth" ="2265"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =261
+        Top =7
+        Right =427
+        Bottom =99
+        Top =31
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =57
+        Top =5
+        Right =174
+        Bottom =97
+        Top =5
+        Name ="tblGrpLog"
+        Name =""
+    End
+    Begin
+        Left =468
+        Top =8
+        Right =564
+        Bottom =85
+        Top =0
+        Name ="tblAcctMgr"
+        Name =""
+    End
+End

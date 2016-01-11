@@ -1,0 +1,143 @@
+Operation =1
+Option =0
+Where ="(((tblEDI_App_Subscr.TransactionType) In ('Added','Deleted')))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Alias ="Tbl"
+    Expression ="'W'"
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    Expression ="tblEDI_App_Subscr.SubSSN"
+    Expression ="tblEDI_App_Subscr.SubID"
+    Expression ="tblEDI_App_Subscr.EIMBRID"
+    Expression ="tblEDI_App_Subscr.SubStatus"
+    Expression ="tblEDI_App_Subscr.PltCustKey"
+    Expression ="tblEDI_App_Subscr.PlanID"
+    Expression ="tblEDI_App_Subscr.CoverID"
+    Expression ="tblEDI_App_Subscr.RateID"
+    Expression ="tblEDI_App_Subscr.SubCancelled"
+    Expression ="tblEDI_App_Subscr.SUB_LUname"
+    Expression ="tblEDI_App_Subscr.SubLastName"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
+    Expression ="tblEDI_App_Subscr.SubMiddleName"
+    Expression ="tblEDI_App_Subscr.SubStreet1"
+    Expression ="tblEDI_App_Subscr.SubStreet2"
+    Expression ="tblEDI_App_Subscr.SubCity"
+    Expression ="tblEDI_App_Subscr.SubState"
+    Expression ="tblEDI_App_Subscr.SubZip"
+    Expression ="tblEDI_App_Subscr.SubPhoneWork"
+    Expression ="tblEDI_App_Subscr.SubPhoneHome"
+    Expression ="tblEDI_App_Subscr.SUBdob"
+    Expression ="tblEDI_App_Subscr.SubNoDepent"
+    Expression ="tblEDI_App_Subscr.SubGender"
+    Expression ="tblEDI_App_Subscr.SubAge"
+    Expression ="tblEDI_App_Subscr.SubMaritalStatus"
+    Expression ="tblEDI_App_Subscr.SubEffDate"
+    Expression ="tblEDI_App_Subscr.SubExpDate"
+    Expression ="tblEDI_App_Subscr.SubClassKey"
+    Expression ="tblEDI_App_Subscr.PreexistingDate"
+    Expression ="tblEDI_App_Subscr.SubCardPrt"
+    Expression ="tblEDI_App_Subscr.SubCardPrtDte"
+    Expression ="tblEDI_App_Subscr.SubNotes"
+    Expression ="tblEDI_App_Subscr.TransactionType"
+    Expression ="tblEDI_App_Subscr.SubContBeg"
+    Expression ="tblEDI_App_Subscr.SubContEnd"
+    Expression ="tblEDI_App_Subscr.SubPymtFreq"
+    Expression ="tblEDI_App_Subscr.SubGeoID"
+    Expression ="tblEDI_App_Subscr.SUBbankDraftNo"
+    Expression ="tblEDI_App_Subscr.Flag"
+    Expression ="tblEDI_App_Subscr.UserName"
+    Expression ="tblEDI_App_Subscr.DateCreated"
+    Expression ="tblEDI_App_Subscr.DateUpdated"
+    Expression ="tblEDI_App_Subscr.DateDeleted"
+    Expression ="tblEDI_App_Subscr.SUBemployeeName"
+    Expression ="tblEDI_App_Subscr.SUBflyerPRTdte"
+    Expression ="tblEDI_App_Subscr.SUBplanIDgr"
+    Expression ="tblEDI_App_Subscr.SUBplanIDin"
+    Expression ="tblEDI_App_Subscr.SUBcoverage"
+    Expression ="tblEDI_App_Subscr.SUBrate"
+    Expression ="tblEDI_App_Subscr.SUBCOBRA"
+    Expression ="tblEDI_App_Subscr.SUBLOA"
+    Expression ="tblEDI_App_Subscr.SUBmissing"
+    Expression ="tblEDI_App_Subscr.SUBagentID1"
+    Expression ="tblEDI_App_Subscr.SUBagentRATE1"
+    Expression ="tblEDI_App_Subscr.SUBagentID2"
+    Expression ="tblEDI_App_Subscr.SUBagentRATE2"
+    Expression ="tblEDI_App_Subscr.GRExecSalesDirID"
+    Expression ="tblEDI_App_Subscr.GRExecSalesDirRate"
+    Expression ="tblEDI_App_Subscr.FOCType"
+    Expression ="tblEDI_App_Subscr.CreateDate"
+    Expression ="tblEDI_App_Subscr.ModifyDate"
+    Expression ="tblEDI_App_Subscr.wSubID"
+    Expression ="tblEDI_App_Subscr.wUpt"
+    Expression ="tblEDI_App_Subscr.AmtPaid"
+    Expression ="tblEDI_App_Subscr.Coverage"
+    Expression ="tblEDI_App_Subscr.CoverDesc"
+End
+Begin OrderBy
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    Flag =0
+    Expression ="tblEDI_App_Subscr.SubSSN"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.TransactionType"
+        dbInteger "ColumnWidth" ="1605"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubSSN"
+        dbInteger "ColumnOrder" ="2"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubID"
+        dbInteger "ColumnOrder" ="3"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.EIMBRID"
+        dbInteger "ColumnOrder" ="4"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubStatus"
+        dbInteger "ColumnOrder" ="5"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubGroupID"
+        dbInteger "ColumnOrder" ="6"
+    End
+    Begin
+        dbText "Name" ="Tbl"
+        dbInteger "ColumnOrder" ="1"
+    End
+End
+Begin
+    State =0
+    Left =104
+    Top =98
+    Right =1418
+    Bottom =715
+    Left =-1
+    Top =-1
+    Right =1295
+    Bottom =174
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =129
+        Bottom =124
+        Top =63
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

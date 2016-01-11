@@ -1,0 +1,37 @@
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+'                   PublicDefinitions                          '
+'                                                              '
+'      This module contains public variables and               '
+'      constants used in the sample application                '
+'                                                              '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+Option Compare Database
+Option Explicit
+
+' Public variables
+Public strSearchString As String
+
+' VBA errors
+Public Const conPermissionDenied As Integer = 70
+Public Const conInvalidUseOfNull As Integer = 94
+Public Const conOutOfRange As Integer = 9
+
+' DAO errors
+Public Const conDatabaseCorrupt As Integer = 1000
+Public Const conTableExists As Integer = 3010
+Public Const conObjectExists As Integer = 3012
+Public Const conNoUserAccount As Integer = 3029
+Public Const conInvalidAccount As Integer = 3030
+Public Const conFileInUse As Integer = 3045
+Public Const conTooFewParameters As Integer = 3061
+Public Const conTableDoesNotExist As Integer = 3078
+Public Const conFieldExists As Integer = 3191
+Public Const conMultiUserEdit As Integer = 3197
+Public Const conDatabaseExists As Integer = 3204
+Public Const conOperationNotSupported As Integer = 3251
+Public Const conRecordLocked As Integer = 3260
+Public Const conNotInCollection As Integer = 3265
+Public Const conPropertyNotFound As Integer = 3270
+Public Const conDBOpenedExclusively As Integer = 3356

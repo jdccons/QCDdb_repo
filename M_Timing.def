@@ -1,0 +1,32 @@
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+' Other Win 95 API declarations
+'Declare Function glr_apiGetTickCount Lib "kernel32" Alias "GetTickCount" () As Long
+
+Declare Function glr_apiGetTime Lib "winmm.dll" Alias "timeGetTime" () As Long
+
+
+Declare Function glr_apiGetTickCount Lib "USER" Alias "GetTickCount" () As Long
+
+Dim mLngStartTime As Long
+
+Function EndTimer()
+  On Error GoTo PROC_ERR
+    EndTimer = glr_apiGetTickCount() - mLngStartTime
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Sub glrStartTimer()
+  On Error GoTo PROC_ERR
+    mLngStartTime = glr_apiGetTickCount()
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

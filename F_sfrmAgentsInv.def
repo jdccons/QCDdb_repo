@@ -1,0 +1,206 @@
+Version =20
+VersionRequired =20
+Checksum =1789741194
+Begin Form
+    AutoResize = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
+    NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
+    CloseButton = NotDefault
+    DividingLines = NotDefault
+    AllowAdditions = NotDefault
+    AllowEdits = NotDefault
+    ScrollBars =2
+    ViewsAllowed =1
+    BorderStyle =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4317
+    DatasheetFontHeight =10
+    ItemSuffix =8
+    Left =7620
+    Top =1650
+    Right =12180
+    Bottom =2655
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xb1c9ccb055b3e240
+    End
+    RecordSource ="qryInvAgt"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin Section
+            Height =270
+            BackColor =12632256
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    Locked = NotDefault
+                    DecimalPlaces =2
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =3465
+                    Top =15
+                    Width =762
+                    Height =255
+                    TabIndex =4
+                    BackColor =14079702
+                    Name ="GRagentRATE1"
+                    ControlSource ="AgentRATE"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =2430
+                    Top =15
+                    Width =756
+                    Height =180
+                    TabIndex =2
+                    Name ="txtPriAgentID"
+                    ControlSource ="AGENTid"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =93
+                    Left =540
+                    Top =15
+                    Width =720
+                    Height =180
+                    TabIndex =3
+                    BackColor =10092543
+                    Name ="txtGROUPid"
+                    ControlSource ="GROUPid"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =93
+                    Left =1605
+                    Top =60
+                    Width =540
+                    Height =90
+                    TabIndex =5
+                    BackColor =10092543
+                    Name ="Sort"
+                    ControlSource ="Sort"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =255
+                    Left =2400
+                    Width =426
+                    Height =180
+                    Name ="Type"
+                    ControlSource ="PayCommTo"
+                End
+                Begin CheckBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    OverlapFlags =93
+                    Width =270
+                    Height =180
+                    TabIndex =1
+                    Name ="chkPrimary"
+                    ControlSource ="Primary"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =247
+                    Width =2880
+                    Height =270
+                    TabIndex =6
+                    BackColor =14079702
+                    Name ="GRagentID1"
+                    ControlSource ="AGENT_LUname"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =247
+                    Left =2970
+                    Top =15
+                    Width =405
+                    TabIndex =7
+                    BackColor =14079702
+                    Name ="AGENTtype"
+                    ControlSource ="PayCommTo"
+                    StatusBarText ="AGT for external third party agent, ESD for internal executive sales director"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub GRagentID1_AfterUpdate()
+On Error GoTo Err_GRagentID1_AfterUpdate
+
+    If IsNull(Me![GRagentID1]) Or Me![GRagentID1] = "" Then
+        Me![txtPriAgentID] = ""
+    Else
+        Me![txtPriAgentID] = Me![GRagentID1].Column(0)
+        Me![txtGROUPid] = Forms![frmGrp]![ctlGROUPid]
+    End If
+    
+Exit_GRagentID1_AfterUpdate:
+    Exit Sub
+    
+Err_GRagentID1_AfterUpdate:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_GRagentID1_AfterUpdate
+End Sub
+
+Private Sub GRagentID1_DblClick(Cancel As Integer)
+On Error GoTo Err_GRagentID1_DblClick
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    If IsNull(Me![txtPriAgentID]) Then
+        MsgBox "You must add an Agent before you can edit.  Action Canceled!", vbExclamation, "QCD: Notice"
+        Exit Sub
+    End If
+
+    stDocName = "frmAgent"
+    
+    stLinkCriteria = "[AGENTid]=" & "'" & Me![txtPriAgentID] & "'"
+    DoCmd.OpenForm stDocName, acNormal, , stLinkCriteria, acFormEdit
+    
+Exit_GRagentID1_DblClick:
+    Exit Sub
+
+Err_GRagentID1_DblClick:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_GRagentID1_DblClick
+    
+End Sub

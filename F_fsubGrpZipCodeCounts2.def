@@ -1,0 +1,61 @@
+Version =17
+VersionRequired =17
+Checksum =-1491059835
+Begin Form
+    ScrollBars =2
+    ViewsAllowed =1
+    Width =2880
+    ItemSuffix =1
+    Left =795
+    Top =1155
+    Right =11520
+    Bottom =6510
+    RecSrcDt = Begin
+        0xad36c40eedc4e140
+    End
+    RecordSource ="tblGrpZipCodeCount"
+    OnOpen ="[Event Procedure]"
+    Begin
+        Begin Section
+            Height =240
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    Width =2880
+                    Name ="Zip Code"
+                    ControlSource ="Zip Code"
+                    StatusBarText ="Table created by Alan Reynolds on 5/3/99 to hold values for group by zip code re"
+                        "port"
+                    InputMask ="99999;;#"
+                    EventProcPrefix ="Zip_Code"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub Form_Open(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+    DoCmd.SetWarnings False
+    DoCmd.OpenQuery "qrptGrpZipCodeCounts1", acNormal, acEdit
+    DoCmd.SetWarnings True
+    DoCmd.Requery ""
+    DoCmd.GoToRecord , "", acNewRec
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

@@ -1,0 +1,73 @@
+Operation =1
+Option =8
+Where ="(((tblGrp.GRExecSalesDirID)<>\"corp\") AND ((tblAgent.AGENTtype)=\"ESD\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRExecSalesDirID"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblGrp.GRPgeoID"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENTid = tblGrp.GRExecSalesDirID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3525"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENT_LUname"
+        dbInteger "ColumnWidth" ="1710"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRExecSalesDirID"
+        dbInteger "ColumnWidth" ="1890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =299
+        Top =8
+        Right =484
+        Bottom =115
+        Top =3
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =77
+        Top =9
+        Right =268
+        Bottom =116
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

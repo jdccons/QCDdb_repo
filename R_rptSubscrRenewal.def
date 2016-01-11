@@ -1,0 +1,613 @@
+Version =20
+VersionRequired =20
+Checksum =-2132271473
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =9360
+    ItemSuffix =61
+    Left =165
+    Top =45
+    Right =13410
+    Bottom =12225
+    RecSrcDt = Begin
+        0xa294fc80350de340
+    End
+    RecordSource ="qrptSubscrRenewal"
+    Caption ="Individual Subscriber Renewal Letter"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000680100000000000090240000302a000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x6870204c617365724a6574203130313200000000000000000000000000000000 ,
+        0x01043c059c00340303d700000100010000000000000001000700580200000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000000000000000000000005344444d ,
+        0x03050000030500006870204c617365724a657420313031320000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000000000000 ,
+        0x0000000000000000010000000100000001000000010000000100000001000000 ,
+        0x0100000001000000010000000100000001000000010000000100000001000000 ,
+        0x0100000001000000010000000100000000000000010000000100000018040000 ,
+        0x0000000000000000000000000f0000002d000000000000000000000001000000 ,
+        0x000000000000000080808000ff000000ffff000000ff000000ffff000000ff00 ,
+        0xff00ff0000000000000000000000000000000000640000006400000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000de030000de0300000000000000000000 ,
+        0x0080000000000000000000000100000000000000000000000000000100000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002400010077696e73706f6f6c00006870204c617365724a6574203130 ,
+        0x31320000444f54345f303032000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            KeepTogether =1
+            ControlSource ="SUBlastNAME"
+        End
+        Begin PageHeader
+            Height =1185
+            Name ="PageHeader0"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Width =2145
+                    Height =315
+                    FontSize =12
+                    Name ="Field42"
+                    ControlSource ="=Date()"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5910
+                    Width =3420
+                    Height =300
+                    FontSize =12
+                    Name ="Text54"
+                    Caption ="QCD of America"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5910
+                    Top =570
+                    Width =3450
+                    Height =615
+                    FontSize =12
+                    Name ="Text55"
+                    Caption ="12001 N. Central Expwy Suite 600"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5910
+                    Top =855
+                    Width =1785
+                    Height =330
+                    FontSize =12
+                    Name ="Text56"
+                    Caption ="Dallas, TX 75243"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5910
+                    Top =285
+                    Width =3420
+                    Height =300
+                    FontSize =12
+                    Name ="Text57"
+                    Caption ="Dental/Vision Benefit Program"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =1320
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Width =4320
+                    Height =345
+                    FontSize =12
+                    Name ="Field3"
+                    ControlSource ="NAME"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =345
+                    Width =3600
+                    Height =345
+                    FontSize =12
+                    TabIndex =1
+                    Name ="Field7"
+                    ControlSource ="SUBstreet1"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =3600
+                    Top =360
+                    Width =3165
+                    Height =345
+                    FontSize =12
+                    TabIndex =2
+                    Name ="SUBstreet2"
+                    ControlSource ="SUBstreet2"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =675
+                    Width =5910
+                    Height =345
+                    FontSize =12
+                    TabIndex =3
+                    Name ="Field9"
+                    ControlSource ="=Trim([SUBcity] & \", \" & [SUBstate] & \"  \" & [SUBzip])"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Left =7560
+                    Width =1080
+                    Height =225
+                    TabIndex =4
+                    Name ="Field14"
+                    ControlSource ="COVERcode"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =10800
+            Name ="Detail1"
+            Begin
+                Begin Label
+                    TextFontFamily =18
+                    Top =480
+                    Width =9360
+                    Height =615
+                    FontSize =12
+                    Name ="Text0"
+                    Caption ="Our records indicate that your dental benefit coverage with QCD is up for renewa"
+                        "l.  Please select your special renewal rates for our dental and vision benefit p"
+                        "rogram:"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =1920
+                    Width =9345
+                    Height =345
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Text11"
+                    Caption ="         THE ONE YEAR PROGRAM  (Receive two additional months at no cost! )"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2880
+                    Top =2280
+                    Width =2880
+                    Height =360
+                    FontSize =12
+                    Name ="Text16"
+                    Caption ="Single Member"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5760
+                    Top =2280
+                    Width =855
+                    Height =360
+                    FontSize =12
+                    Name ="Text17"
+                    Caption ="$99.00"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2880
+                    Top =2640
+                    Width =2880
+                    Height =360
+                    FontSize =12
+                    Name ="Text18"
+                    Caption ="Single and  One Dependent"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5760
+                    Top =2640
+                    Width =855
+                    Height =360
+                    FontSize =12
+                    Name ="Text19"
+                    Caption ="$159.00"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2880
+                    Top =3000
+                    Width =2880
+                    Height =360
+                    FontSize =12
+                    Name ="Text20"
+                    Caption ="Single and Family"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5760
+                    Top =3000
+                    Width =840
+                    Height =324
+                    FontSize =12
+                    Name ="Text21"
+                    Caption ="$229.00"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =3720
+                    Width =9345
+                    Height =345
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Text22"
+                    Caption ="         THE TWO YEAR PROGRAM  (Receive four additional months at no cost! )"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2880
+                    Top =4080
+                    Width =2880
+                    Height =360
+                    FontSize =12
+                    Name ="Text23"
+                    Caption ="Single Member"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5760
+                    Top =4080
+                    Width =855
+                    Height =315
+                    FontSize =12
+                    Name ="Text24"
+                    Caption ="$169.00"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2880
+                    Top =4440
+                    Width =2880
+                    Height =360
+                    FontSize =12
+                    Name ="Text25"
+                    Caption ="Single and  One Dependent"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5760
+                    Top =4440
+                    Width =855
+                    Height =315
+                    FontSize =12
+                    Name ="Text26"
+                    Caption ="$259.00"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2880
+                    Top =4800
+                    Width =2880
+                    Height =360
+                    FontSize =12
+                    Name ="Text27"
+                    Caption ="Single and Family"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5760
+                    Top =4800
+                    Width =855
+                    Height =315
+                    FontSize =12
+                    Name ="Text28"
+                    Caption ="$369.00"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =7845
+                    Width =9345
+                    Height =735
+                    FontSize =12
+                    Name ="Text36"
+                    Caption ="Upon receipt of your check for membership renewal, QCD will issue you a new memb"
+                        "ership card and your coverage will continue for the time period selected."
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =8580
+                    Width =9360
+                    Height =810
+                    FontSize =12
+                    Name ="Text37"
+                    Caption ="Thank you for your business and please contact me at 972-726-0444 or 1-800-229-0"
+                        "304 if there are any questions regarding your membership with QCD."
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =9390
+                    Width =9360
+                    Height =360
+                    FontSize =12
+                    Name ="Text39"
+                    Caption =" Joe Lerma"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =9750
+                    Width =9360
+                    Height =360
+                    FontSize =12
+                    Name ="Text40"
+                    Caption ="Manager of Accounts Receivable and Member Services"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Width =2895
+                    Height =345
+                    FontSize =12
+                    Name ="Field53"
+                    ControlSource ="SAL"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =10110
+                    Width =9360
+                    Height =360
+                    FontSize =12
+                    Name ="Text58"
+                    Caption ="Extension 15"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =4467
+                    Top =1320
+                    Width =2220
+                    Height =360
+                    FontSize =12
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="ContractExpirationDate"
+                    ControlSource ="SUBcontEND"
+                    Begin
+                        Begin Label
+                            TextAlign =3
+                            TextFontFamily =34
+                            Left =1440
+                            Top =1320
+                            Width =3075
+                            Height =360
+                            FontSize =12
+                            FontWeight =700
+                            Name ="Label60"
+                            Caption ="Contract Expiration Date:"
+                        End
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Left =1725
+                    Top =5385
+                    Width =5190
+                    Height =360
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label61"
+                    Caption ="THE MONTHLY PAYMENT PROGRAM"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =2295
+                    Top =5760
+                    Width =3168
+                    Height =360
+                    FontSize =12
+                    Name ="Label62"
+                    Caption ="    Single Member"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5463
+                    Top =5760
+                    Width =873
+                    Height =360
+                    FontSize =12
+                    Name ="Label65"
+                    Caption ="$ 8.95"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2295
+                    Top =6120
+                    Width =3174
+                    Height =360
+                    FontSize =12
+                    Name ="Label66"
+                    Caption ="    Single and One Dependent "
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5463
+                    Top =6120
+                    Width =864
+                    Height =360
+                    FontSize =12
+                    Name ="Label67"
+                    Caption ="$12.95"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2295
+                    Top =6480
+                    Width =3165
+                    Height =360
+                    FontSize =12
+                    Name ="Label68"
+                    Caption ="    Single and Family"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5463
+                    Top =6480
+                    Width =873
+                    Height =360
+                    FontSize =12
+                    Name ="Label69"
+                    Caption ="$17.95"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =6975
+                    Width =8985
+                    Height =855
+                    FontSize =12
+                    Name ="Label70"
+                    Caption ="If paying by bank draft, please enclose a voided check along with a check for th"
+                        "e first month premium.The monthly fees will be drafted on the 5th of each month."
+                        " "
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            ForceNewPage =2
+            Height =360
+            Name ="GroupFooter0"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =8418
+                    Width =939
+                    Height =360
+                    Name ="Field4"
+                    ControlSource ="SUBssn"
+                    FontName ="Times New Roman"
+                    InputMask ="####\\-####"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =7485
+                    Width =933
+                    Height =360
+                    Name ="Text6"
+                    Caption ="Account No:"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =0
+            Name ="PageFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fdlgPrtSubscrRenewal].Visible = True
+    DoCmd.Close A_FORM, "fdlgPrtSubscrRenewal"
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportIndiv"
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

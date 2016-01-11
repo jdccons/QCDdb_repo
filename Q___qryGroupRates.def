@@ -1,0 +1,83 @@
+Operation =3
+Name ="__RateIDsFromtblSubscr"
+Option =0
+Where ="(((tblGrp.GRcancelled)=0))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="SubGroupID"
+    Expression ="tblSubscr.SubGroupID"
+    Name ="PlanID"
+    Expression ="tblSubscr.PlanID"
+    Name ="CoverID"
+    Expression ="tblSubscr.CoverID"
+    Name ="RateID"
+    Expression ="tblSubscr.RateID"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SubGroupID"
+    Flag =0
+    Expression ="tblSubscr.PlanID"
+    Flag =0
+    Expression ="tblSubscr.CoverID"
+    Flag =0
+End
+Begin Groups
+    Expression ="tblSubscr.SubGroupID"
+    GroupLevel =0
+    Expression ="tblSubscr.PlanID"
+    GroupLevel =0
+    Expression ="tblSubscr.CoverID"
+    GroupLevel =0
+    Expression ="tblSubscr.RateID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =0
+    Left =508
+    Top =106
+    Right =963
+    Bottom =619
+    Left =-1
+    Top =-1
+    Right =448
+    Bottom =252
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =300
+        Top =10
+        Right =554
+        Bottom =177
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =253
+        Bottom =188
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

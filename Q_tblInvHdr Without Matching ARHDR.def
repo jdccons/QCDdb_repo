@@ -1,0 +1,9 @@
+dbMemo "SQL" ="SELECT DISTINCTROW [tblInvHdr].[CUST KEY], [tblInvHdr].[TRANS NO], [tblInvHdr].["
+    "INV DATE], [tblInvHdr].[SEL STATUS]\015\012FROM tblInvHdr LEFT JOIN ARHDR ON [tb"
+    "lInvHdr].[TRANS NO] = [ARHDR].[Tranno]\015\012WHERE ([ARHDR].[Tranno] Is Null);\015"
+    "\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

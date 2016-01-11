@@ -1,0 +1,82 @@
+Operation =3
+Name ="tblImportGroupTemp"
+Option =0
+Begin InputTables
+    Name ="tblImportFile"
+End
+Begin OutputColumns
+    Name ="ID"
+    Expression ="tblImportFile.ID"
+    Name ="GroupID"
+    Expression ="tblImportFile.GroupID"
+    Name ="PlanId"
+    Expression ="tblImportFile.PlanID"
+    Name ="SSN"
+    Expression ="tblImportFile.SSN"
+    Name ="LastName"
+    Expression ="tblImportFile.LastName"
+    Name ="FirstName"
+    Expression ="tblImportFile.FirstName"
+    Name ="MiddleInit"
+    Expression ="tblImportFile.MiddleInit"
+    Name ="StreetAddress"
+    Expression ="tblImportFile.StreetAddress"
+    Name ="StreetAddress2"
+    Expression ="tblImportFile.StreetAddress2"
+    Name ="City"
+    Expression ="tblImportFile.City"
+    Name ="State"
+    Expression ="tblImportFile.State"
+    Name ="ZipCode"
+    Expression ="tblImportFile.ZipCode"
+    Name ="Phone"
+    Expression ="tblImportFile.Phone"
+    Name ="DOB"
+    Expression ="tblImportFile.DOB"
+    Name ="CoverageId"
+    Expression ="tblImportFile.CoverageID"
+    Name ="CoverageRate"
+    Expression ="tblImportFile.CoverageRate"
+    Name ="EffectiveDate"
+    Expression ="tblImportFile.EffectiveDate"
+    Name ="Campus"
+    Expression ="tblImportFile.Campus"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+    Begin
+        dbText "Name" ="tblImportFile.StreetAddress"
+        dbInteger "ColumnWidth" ="1692"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblImportFile.StreetAddress2"
+        dbInteger "ColumnWidth" ="1716"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =99
+    Top =81
+    Right =1002
+    Bottom =570
+    Left =-1
+    Top =-1
+    Right =892
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =48
+        Top =7
+        Right =366
+        Bottom =139
+        Top =18
+        Name ="tblImportFile"
+        Name =""
+    End
+End

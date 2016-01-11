@@ -1,0 +1,125 @@
+Version =17
+VersionRequired =17
+Checksum =-782166754
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =20
+    GridY =24
+    Width =3366
+    DatasheetFontHeight =10
+    ItemSuffix =5
+    Left =270
+    Right =9255
+    Bottom =6165
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xa063cb2393dbe140
+    End
+    RecordSource ="tblEnrollment_DMN_CirculationRoster"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xb0010000d0020000b0010000d002000000000000260d0000a005000001000000 ,
+        0x030000005202000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203232303044006e2069523630302d3535302d3600 ,
+        0x010418009c00b803033f80000100010000000000640001000700580202000100 ,
+        0x5802000000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2035650000 ,
+        0x0000000000000400320078018603789c65504d4b5c4110ac7abd3af12bd98351 ,
+        0x91884334464378ac4b3c7bd01c841c04d198bb0ffca25b77410c21d13d8a604e ,
+        0x01852082e06f10f51aff8898736e6aa26ee6bdc525903e544fd5743335552eff ,
+        0x5f1131cf6b86b6cc7db87512700d1936a6a855e80bca09ab55eb6325a23e62c5 ,
+        0xb1b227da43d9910ee844a43fb03a48fb48eda7bea20ed08618b65f324668d36c ,
+        0x86ce523f306533356635f63e30abdda5f413f3701be9c32b5fa89fb391d7cc01 ,
+        0x080e8d3ee597d29536200fb99039b89f1221ab30b3c85e6a13ed0a7a87d26fe8 ,
+        0x2db497760dfb03bd873da576503ba9bb629ed64569e31cf4312d4f7b42db96ca ,
+        0xa1e896ac9c8a9e47f25d0e10fe2aa3dc6c3517e973bae32c9cee0c9f65f80b01 ,
+        0x1b89071bc04efc700a72ae2e1ffd2b37d4e56f75d99d4901c562a1e0a792d242 ,
+        0x52f6839363effc4832349394ca0ba6debf898bf1705cf0e3c95aec53354bf806 ,
+        0xed9031ce46321e40bf8abdcda29b601bac99da426d0df9e59846b44417a20c96 ,
+        0xff026e945cd10000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002500000077696e73706f6f6c00004850204c617365724a6574203232 ,
+        0x303044006e48504c617365724a65743232303000434c000031302e32322e322e ,
+        0x33303a7072
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="LastName"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =144
+                    Top =240
+                    Width =3078
+                    Name ="Text2"
+                    ControlSource ="=Trim([FirstName] & \" \" & [LastName])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =144
+                    Top =480
+                    Width =3078
+                    TabIndex =1
+                    Name ="Text3"
+                    ControlSource ="= Trim( [Address])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =144
+                    Top =720
+                    Width =3078
+                    TabIndex =2
+                    Name ="Text4"
+                    ControlSource ="= Trim( [City] & \", \" & [ST] & \"  \" & [Zip])"
+                End
+            End
+        End
+    End
+End

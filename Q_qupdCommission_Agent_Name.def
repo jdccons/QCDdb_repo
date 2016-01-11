@@ -1,0 +1,75 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblCommission"
+    Name ="tblGrpAgt"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Name ="tblCommission.COMMagent"
+    Expression ="[tblGrpAgt].[AGENTid]"
+    Name ="tblCommission.COMMname"
+    Expression ="IIf([tblAgent].[PayCommTo]=1,[AGENCY] & \" -- \" & \"FEIN = \" & Format([AGENTta"
+        "xID],\"00-0000000;;_\"),[AGENT_LUname] & \" -- \" & \"SSN = \" & Format([AGENTSS"
+        "N],\"000-00-0000;;_\"))"
+    Name ="tblCommission.COMMrate"
+    Expression ="[tblGrpAgt].[AgentRATE]"
+End
+Begin Joins
+    LeftTable ="tblCommission"
+    RightTable ="tblGrpAgt"
+    Expression ="tblCommission.COMMcustKEY = tblGrpAgt.GROUPid"
+    Flag =1
+    LeftTable ="tblGrpAgt"
+    RightTable ="tblAgent"
+    Expression ="tblGrpAgt.AGENTid = tblAgent.AGENTid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =62
+    Right =1658
+    Bottom =431
+    Left =-1
+    Top =-1
+    Right =1611
+    Bottom =201
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =76
+        Top =3
+        Right =399
+        Bottom =139
+        Top =3
+        Name ="tblCommission"
+        Name =""
+    End
+    Begin
+        Left =461
+        Top =10
+        Right =648
+        Bottom =140
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+    Begin
+        Left =734
+        Top =11
+        Right =954
+        Bottom =118
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

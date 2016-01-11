@@ -1,0 +1,537 @@
+Version =20
+VersionRequired =20
+Checksum =117756502
+Begin Report
+    FilterOn = NotDefault
+    DefaultView =0
+    ScrollBars =2
+    ViewsAllowed =1
+    RecordLocks =2
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10800
+    DatasheetFontHeight =10
+    ItemSuffix =67
+    Left =480
+    Top =360
+    Right =14850
+    Bottom =8700
+    DatasheetGridlinesColor =12632256
+    Filter ="([GroupID] = \"INDVM\" and [SUBcancelled] <> 3)"
+    RecSrcDt = Begin
+        0x3badef33710fe340
+    End
+    RecordSource ="qrptIndivSubscrCoverage"
+    Caption ="Individual Subscriber Coverage Report"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xd0020000d0020000d0020000d002000000000000302a00000e01000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400059c0034020377000601000100ea0a6f08640001000f01580201000100 ,
+        0x5802040001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x22000000340200007eeb71d70000000000000000000000000000000000000000 ,
+        0x00000000000000000e0000000100000000000000000001000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800250035000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000048503430353000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin BreakLevel
+            ControlSource ="SUBlastNAME"
+        End
+        Begin FormHeader
+            Height =810
+            Name ="FormHeader"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    Left =45
+                    Top =15
+                    Width =10755
+                    Height =510
+                    FontSize =18
+                    Name ="Label41"
+                    Caption ="Individual Subscriber Coverage Report"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    TextAlign =1
+                    Top =210
+                    Width =2130
+                    FontSize =7
+                    Name ="txtNow"
+                    ControlSource ="=Now()"
+                    Format ="General Date"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Top =720
+                    Width =10800
+                    Height =15
+                    Name ="Line56"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Top =765
+                    Width =10800
+                    Height =15
+                    Name ="Line64"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =420
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =255
+                    Top =60
+                    Width =576
+                    Height =255
+                    FontWeight =700
+                    Name ="lblSSN"
+                    Caption ="SS# "
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =1050
+                    Top =60
+                    Width =1290
+                    Height =255
+                    FontWeight =700
+                    Name ="Text60"
+                    Caption =" Last Name "
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =2565
+                    Top =60
+                    Width =630
+                    Height =255
+                    FontWeight =700
+                    Name ="lblFirst"
+                    Caption ="First "
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =3345
+                    Top =60
+                    Width =330
+                    Height =255
+                    FontWeight =700
+                    Name ="Label0"
+                    Caption ="MI "
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =3780
+                    Top =60
+                    Width =1020
+                    Height =255
+                    FontWeight =700
+                    Name ="lblCoverage"
+                    Caption ="Coverage "
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =6975
+                    Top =60
+                    Width =1056
+                    Height =255
+                    FontWeight =700
+                    Name ="lblConBeg"
+                    Caption ="Cont. Beg. "
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =8085
+                    Top =60
+                    Width =936
+                    Height =255
+                    FontWeight =700
+                    Name ="lblConEng"
+                    Caption ="Cont. End "
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =9600
+                    Top =60
+                    Width =945
+                    Height =255
+                    FontWeight =700
+                    Name ="Label2"
+                    Caption ="Status"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    Left =9060
+                    Top =60
+                    Width =501
+                    Height =255
+                    FontWeight =700
+                    Name ="Label5"
+                    Caption ="Draft"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Left =15
+                    Top =405
+                    Width =10785
+                    Height =15
+                    Name ="Line42"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    Left =5805
+                    Top =60
+                    Width =1035
+                    Height =255
+                    FontWeight =700
+                    Name ="Label63"
+                    Caption ="Rate"
+                End
+            End
+        End
+        Begin Section
+            Height =270
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    SpecialEffect =0
+                    Top =15
+                    Width =1014
+                    Height =255
+                    FontSize =7
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                    InputMask ="000\\-00\\-0000;;_"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    Left =2388
+                    Top =15
+                    Width =954
+                    Height =255
+                    FontSize =7
+                    TabIndex =2
+                    Name ="SUBfirstNAME"
+                    ControlSource ="SUBfirstNAME"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    Left =1095
+                    Top =15
+                    Width =1254
+                    Height =255
+                    FontSize =7
+                    TabIndex =1
+                    Name ="SUBlastNAME"
+                    ControlSource ="SUBlastNAME"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    Left =3402
+                    Top =15
+                    Width =216
+                    Height =255
+                    FontSize =7
+                    TabIndex =3
+                    Name ="SUBmiddleNAME"
+                    ControlSource ="SUBmiddleNAME"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    TextAlign =3
+                    Left =7077
+                    Top =15
+                    Width =918
+                    Height =255
+                    FontSize =7
+                    TabIndex =4
+                    Name ="SUBcontBEG"
+                    ControlSource ="SUBcontBEG"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    TextAlign =3
+                    Left =8130
+                    Top =15
+                    Width =918
+                    Height =255
+                    FontSize =7
+                    TabIndex =5
+                    Name ="SUBcontEND"
+                    ControlSource ="SUBcontEND"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    SpecialEffect =0
+                    Left =9804
+                    Top =15
+                    Width =666
+                    Height =255
+                    FontSize =7
+                    TabIndex =7
+                    BackColor =10092543
+                    Name ="txtSUBcancelled"
+                    ControlSource ="SUBcancelled"
+                    Format ="General Number"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    Left =9168
+                    Top =15
+                    Width =516
+                    Height =255
+                    FontSize =7
+                    TabIndex =6
+                    Name ="txtSUBbankDraftNo"
+                    ControlSource ="SUBbankDraftNo"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    TextAlign =3
+                    Left =5880
+                    Top =15
+                    Width =1041
+                    Height =255
+                    FontSize =7
+                    TabIndex =8
+                    Name ="txtSUBrate"
+                    ControlSource ="SUBrate"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    Left =6252
+                    Top =60
+                    Width =240
+                    Height =210
+                    TabIndex =9
+                    BackColor =65535
+                    Name ="RecordCount"
+                    ControlSource ="=1"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    BackStyle =0
+                    Left =9765
+                    Top =15
+                    Width =816
+                    Height =255
+                    FontSize =7
+                    TabIndex =10
+                    BackColor =10092543
+                    Name ="txtStatus"
+                    ControlSource ="=IIf([SUBCancelled]=3,\"Cancel\",IIf([SUBCancelled]=2,\"Hold\",\"\"))"
+                    Format ="True/False"
+                    GUID = Begin
+                        0xdfba5b0d68102842ac3b076adc40c310
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    Left =3900
+                    Width =1926
+                    Height =255
+                    FontSize =7
+                    TabIndex =11
+                    Name ="Text66"
+                    ControlSource ="PLANindDESC"
+                    GUID = Begin
+                        0x65559355a3ba334a845710b2cdadc041
+                    End
+                End
+            End
+        End
+        Begin PageFooter
+            Height =255
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    SpecialEffect =0
+                    Left =8745
+                    Width =2040
+                    Name ="Text43"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =1305
+            Name ="FormFooter"
+            Begin
+                Begin TextBox
+                    SpecialEffect =0
+                    TextAlign =3
+                    Left =2880
+                    Top =585
+                    Width =1035
+                    Height =300
+                    FontWeight =700
+                    Name ="txtTotalRecordCount"
+                    ControlSource ="=[RecordCount]"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =15
+                    Top =585
+                    Width =2895
+                    Height =300
+                    FontWeight =700
+                    Name ="Label55"
+                    Caption ="Total Number of Subscribers:"
+                End
+                Begin TextBox
+                    RunningSum =2
+                    SpecialEffect =0
+                    TextAlign =3
+                    Left =5700
+                    Top =585
+                    Width =1221
+                    Height =300
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Text57"
+                    ControlSource ="=Sum([SUBrate])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Line
+                    Left =2850
+                    Top =540
+                    Width =1050
+                    Height =15
+                    Name ="Line58"
+                End
+                Begin Line
+                    Left =2850
+                    Top =480
+                    Width =1050
+                    Height =15
+                    Name ="Line59"
+                End
+                Begin Line
+                    Left =5700
+                    Top =465
+                    Width =1221
+                    Name ="Line60"
+                End
+                Begin Line
+                    Left =5700
+                    Top =525
+                    Width =1221
+                    Name ="Line61"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =4470
+                    Top =600
+                    Width =1215
+                    Height =300
+                    FontWeight =700
+                    Name ="Label62"
+                    Caption ="Total Rates:"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fdlgPrtIndivSubscrCoverage].Visible = True
+    DoCmd.Close A_FORM, "fdlgPrtIndivSubscrCoverage"
+    
+    If isloaded("fdlgPrtIndivSubscrCoverageCriteria") = True Then
+        DoCmd.Close acForm, "fdlgPrtIndivSubscrCoverageCriteria", acSaveNo
+    End If
+    
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportIndiv"
+    
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

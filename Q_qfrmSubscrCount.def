@@ -1,0 +1,60 @@
+Operation =1
+Option =8
+Having ="(((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Alias ="CountOfSUBssn"
+    Expression ="Count(tblSubscr.SUBssn)"
+    Expression ="tblGrp.GRcancelled"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =2
+End
+Begin Groups
+    Expression ="tblGrp.GRcancelled"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =483
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =208
+        Bottom =113
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =246
+        Top =6
+        Right =342
+        Bottom =113
+        Top =31
+        Name ="tblGrp"
+        Name =""
+    End
+End

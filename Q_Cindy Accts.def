@@ -1,0 +1,72 @@
+Operation =1
+Option =0
+Where ="(((tblGrp_1.GRPgeoID)=\"TXSSW\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tlkpClientServiceReps"
+    Name ="tblGrp"
+    Alias ="tblGrp_1"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tlkpClientServiceReps.RepName"
+    Expression ="tblGrp_1.GRstreet1"
+    Expression ="tblGrp_1.GRstreet2"
+    Expression ="tblGrp_1.GRcity"
+    Expression ="tblGrp_1.GRstate"
+    Expression ="tblGrp_1.GRzip"
+    Expression ="tblGrp_1.GRPgeoID"
+End
+Begin Joins
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =12
+    Top =55
+    Right =720
+    Bottom =363
+    Left =-1
+    Top =-1
+    Right =701
+    Bottom =144
+    Left =681
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =-643
+        Top =6
+        Right =-499
+        Bottom =113
+        Top =29
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =-428
+        Top =10
+        Right =-332
+        Bottom =102
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tblGrp_1"
+        Name =""
+    End
+End

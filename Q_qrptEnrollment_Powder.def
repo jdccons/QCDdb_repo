@@ -1,0 +1,106 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment_Powder"
+End
+Begin OutputColumns
+    Alias ="NameSort"
+    Expression ="([LASTNAME]) & \", \" & ([FIRSTNAME])"
+    Alias ="SubName"
+    Expression ="Trim([FIRSTNAME]) & \" \" & Trim([LASTNAME])"
+    Alias ="SubAddr"
+    Expression ="Trim([Addr]) & \"   \" & ([CITY]) & \",  \" & ([STATE]) & \"  \" & ([ZIP])"
+    Alias ="GRname"
+    Expression ="\"Powder Metallurgy Company\""
+    Alias ="SUBeffDATE2"
+    Expression ="#3/1/00#"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
+        "loyee at No Monthly Charge.\""
+    Expression ="tblEnrollment_Powder.*"
+    Alias ="SUBphoneHOME"
+    Expression ="IIf([Phone]=\"()\",\"(___) ___-____\",Mid([Phone],1,3) & \" \" & Mid([Phone],4,3"
+        ") & \"-\" & Mid([Phone],7,4))"
+    Alias ="SUBssn"
+    Expression ="tblEnrollment_Powder.SSN"
+    Alias ="SUBdob"
+    Expression ="\"__/__/__ \""
+End
+Begin OrderBy
+    Expression ="([LASTNAME]) & \", \" & ([FIRSTNAME])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="2610"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="4500"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE2"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="NameSort"
+        dbInteger "ColumnWidth" ="2985"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Powder.CompanyName"
+        dbInteger "ColumnWidth" ="2865"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBphoneHOME"
+        dbInteger "ColumnWidth" ="1725"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Powder.Addr"
+        dbInteger "ColumnWidth" ="2880"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =40
+    Top =22
+    Right =778
+    Bottom =433
+    Left =-1
+    Top =-1
+    Right =731
+    Bottom =250
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =64
+        Top =15
+        Right =306
+        Bottom =212
+        Top =0
+        Name ="tblEnrollment_Powder"
+        Name =""
+    End
+End

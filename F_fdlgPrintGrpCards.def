@@ -1,0 +1,392 @@
+Version =19
+VersionRequired =19
+Checksum =-404852867
+Begin Form
+    AutoResize = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    NavigationButtons = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4980
+    DatasheetFontHeight =10
+    ItemSuffix =16
+    Left =7875
+    Top =300
+    Right =13140
+    Bottom =3000
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xf83462b8dcbae240
+    End
+    Caption ="Print Cards"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =2700
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x0f88ca53bafaed4291c43e1e4e849416
+            End
+            Begin
+                Begin OptionGroup
+                    OverlapFlags =85
+                    Left =960
+                    Top =360
+                    Width =3065
+                    Height =1200
+                    Name ="optGrpPrintCards"
+                    DefaultValue ="1"
+                    GUID = Begin
+                        0x8deb9545fd300e4b9b18e1dd2e123e81
+                    End
+                    Begin
+                        Begin Label
+                            BackStyle =1
+                            OverlapFlags =215
+                            Left =1560
+                            Top =240
+                            Width =1140
+                            Height =240
+                            BackColor =-2147483633
+                            Name ="Cards to print"
+                            Caption ="Cards to print:"
+                            EventProcPrefix ="Cards_to_print"
+                            GUID = Begin
+                                0xd2f6376f0e942c48aed3c277c1e25a85
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =1560
+                            Top =720
+                            OptionValue =1
+                            Name ="optPrintAll"
+                            GUID = Begin
+                                0xc6fdd0e94e6f3245b2a2fbc7c12f44af
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =1790
+                                    Top =690
+                                    Width =645
+                                    Height =240
+                                    Name ="Label6"
+                                    Caption ="Print all"
+                                    GUID = Begin
+                                        0x4d56a365a234a4449672375ae8d1497c
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =1560
+                            Top =1140
+                            OptionValue =2
+                            Name ="optNotPrevPrinted"
+                            GUID = Begin
+                                0x31c2f8f4290bb144a94944f1953199ff
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =1790
+                                    Top =1110
+                                    Width =2175
+                                    Height =240
+                                    Name ="Label9"
+                                    Caption ="Print not previously printed"
+                                    GUID = Begin
+                                        0xffc7173d1f89074584edfbd90d6c470b
+                                    End
+                                End
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2400
+                    Top =1800
+                    Width =1260
+                    Height =479
+                    TabIndex =1
+                    Name ="cmdCancel"
+                    Caption ="Cancel"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x98a5269a776a3c4e83746b0cdf44e3a4
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =900
+                    Top =1800
+                    Width =1260
+                    Height =479
+                    TabIndex =2
+                    Name ="cmdPrint"
+                    Caption ="Print"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x11cc8340de656c48b1ce9f0810cb6c96
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Private Sub cmdPrint_Click()
+
+On Error GoTo Err_cmdPrint_Click
+    
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strResponse As String
+    Dim strDocName As String
+    Dim strGroupID As String
+    Dim strSQL As String
+    Dim intSubsWithMissingEffDates As Integer
+    Dim intGroupType As Integer
+    Dim strUserName As String
+
+
+    Set dbs = CurrentDb()
+
+    strUserName = GetCurrentUserName()
+    strGroupID = Forms![frmGrp]![ctlGROUPid]
+    intGroupType = Forms![frmGrp]![optgrpGroupType]
+
+    'figure out what type of group it is and print the appropriate card
+    Select Case intGroupType
+        Case 1
+            strDocName = "rptCardMemGrp"
+        Case 2
+            strDocName = ""
+        Case 3
+            strDocName = ""
+        Case 4
+            strDocName = "rptCardMemAA"
+    End Select
+
+    'count how many subscribers have no effective dates
+    'for purposes of warning the user that there are
+    'subscribers with no effective dates; the effective
+    'date gets printed on the card
+    strSQL = "SELECT tblSubscr.SubSSN, tblSubscr.SubGroupID, " & _
+             "tblSubscr.SubEffDate " & _
+             "FROM tblSubscr " & _
+             "WHERE (((tblSubscr.SubGroupID)='" & strGroupID & "') " & _
+             "AND ((tblSubscr.SubEffDate) Is Null));"
+
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        rst.MoveLast
+        intSubsWithMissingEffDates = rst.RecordCount
+    Else
+        intSubsWithMissingEffDates = 0
+    End If
+
+    'warn the user about the subscribers with missing effective dates
+    If rst.RecordCount > 0 Then
+        strResponse = MsgBox("The effective date on the membership cards are printed " & vbCrLf & _
+            "from the group subscribers' effective dates. " & vbCrLf & vbCrLf & _
+            "There are " & intSubsWithMissingEffDates & " subscribers in this group who do not have effective " & vbCrLf & _
+            "dates.  You must enter effective dates for these " & intSubsWithMissingEffDates & vbCrLf & _
+            "subscribers before printing membership cards for this group.", vbCritical, "Missing Subscriber Effective Dates")
+        GoTo Exit_cmdPrint_Click
+    End If
+
+    'print all of the cards for the group that the user in on
+    Dim Response As String
+    If (Me![optGrpPrintCards] = 1) Then
+       Response = MsgBox("You have chosen to print all cards.  Is this really what you want to do?", vbYesNo, "Do you want to print all?")
+        If Response = vbYes Then
+            'need to update tmpEDI_rpt
+            ExecuteSQL "DELETE FROM tmpEDI_rpt"
+            
+            strSQL = "INSERT INTO tmpEDI_Rpt ( SUBssn , SUBfirstNAME , " & _
+                        "SUBlastNAME , SUBStreet , SUBcity , SUBstate , " & _
+                        "SUBzip , GroupID ) " & _
+                        "SELECT tblSubscr.SubSSN , tblSubscr.SubFirstName ," & _
+                        " tblSubscr.SubLastName , [SubStreet1] + ' ' + " & _
+                        "[SubStreet2] AS Street , tblSubscr.SubCity , " & _
+                        "tblSubscr.SubState , tblSubscr.SubZip , tblSubscr.SubGroupID " & _
+                        "FROM tblSubscr " & _
+                        "WHERE (((tblSubscr.SubGroupID)='" & strGroupID & "'))"
+            ExecuteSQL strSQL
+            
+            
+            
+            'run the report that prints the card
+            DoCmd.OpenReport strDocName, acViewNormal, , "[GroupID] = '" & strGroupID & "'"
+            DoCmd.SetWarnings False
+            
+            'update the subscriber table to indicate that the card was
+            'printed, the date it was printed, and who printed it
+'            strSQL = "UPDATE tblSubscr SET tblSubscr.SUBcardPRT = Yes, " & _
+'                        "tblSubscr.SUBcardPRTdte = Date(), " & _
+'                        "tblSubscr.DateUpdated = Date(), tblSubscr.UserName = '" & strUserName & "' " & _
+'                        "WHERE (((tblSubscr.SUBgroupID)='" & strGroupID & "'));"
+'            dbs.Execute strSQL, dbSeeChanges
+
+            'update the subscriber table to indicate that the card was
+            'printed, the date it was printed, and who printed it
+            strSQL = "UPDATE tblSubscr " & _
+                        "SET SubCardPrt = 1, SubCardPrtDte = CONVERT(varchar(10), GetDate(), 101), " & _
+                        "UserName = '" & strUserName & "', " & _
+                        "ModifyDate = CONVERT(varchar(10), GetDate(), 101), " & _
+                        "DateUpdated = CONVERT(varchar(10), GetDate(), 101) " & _
+                        "WHERE SubGroupID = '" & strGroupID & "'"
+                        
+            ExecuteSQL strSQL
+            
+            DoCmd.SetWarnings True
+            MsgBox "Cards sent to the printer!", vbExclamation, "Cards Printed"
+            
+            'clean up tmpEDI_rpt
+            ExecuteSQL "DELETE FROM tmpEDI_rpt"
+            
+        End If
+        
+    End If
+
+    'print those cards not previously printed for the group that the user is on
+    If (Me![optGrpPrintCards] = 2) Then
+
+        strSQL = "SELECT tblSubscr.SubSSN, tblSubscr.SubGroupID, " & _
+             "tblSubscr.SubStatus, tblSubscr.SubEffDate, " & _
+             "tblSubscr.SubCardPrt, tblSubscr.SubCardPrtDte " & _
+             "FROM tblSubscr " & _
+             "WHERE (((tblSubscr.SubGroupID)='" & strGroupID & "') " & _
+             "AND (tblSubscr.SubStatus)='GRSUB') AND ((tblSubscr.SubCardPrt)=0) " & _
+             "ORDER BY tblSubscr.SubGroupID;"
+
+        'don't do anything if no one in the database needs to have a card printed
+        Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+        If rst.RecordCount > 0 Then
+
+            'print not previously printed cards
+            ExecuteSQL "DELETE FROM tmpEDI_rpt"
+            strSQL = "INSERT INTO tmpEDI_Rpt ( SUBssn , SUBfirstNAME , " & _
+                        "SUBlastNAME , SUBStreet , SUBcity , SUBstate , " & _
+                        "SUBzip , GroupID ) " & _
+                        "SELECT tblSubscr.SubSSN , tblSubscr.SubFirstName ," & _
+                        " tblSubscr.SubLastName , [SubStreet1] + ' ' + " & _
+                        "[SubStreet2] AS Street , tblSubscr.SubCity , " & _
+                        "tblSubscr.SubState , tblSubscr.SubZip , tblSubscr.SubGroupID " & _
+                        "FROM tblSubscr " & _
+                        "WHERE (((tblSubscr.SubStatus)='GRSUB') AND ((tblSubscr.SubCardPrt)=0) " & _
+                        "AND ((tblSubscr.SubGroupID)='" & strGroupID & "'));"
+                        
+            ExecuteSQL strSQL
+
+            'run the report that prints the card
+            DoCmd.OpenReport strDocName, acViewNormal, , "[GroupID] = '" & strGroupID & "' And [SUBcardPRT] Is Null" & " Or [SubCardPrt] = 0"
+            DoCmd.SetWarnings False
+            
+            'update the subscriber table indicated that the card was
+            'printed, the date it was printed, and who printed it
+            'strSQL = "UPDATE tblSubscr SET tblSubscr.SUBcardPRT = True, " & _
+                        "tblSubscr.SUBcardPRTdte = Date(), " & _
+                        "tblSubscr.DateUpdated = Date(), " & _
+                        "tblSubscr.UserName = '" & strUserName & "' " & _
+                        "WHERE (((tblSubscr.SubStatus)='GRSUB') AND ((tblSubscr.SubCardPrt)=0)" & _
+                        "AND ((tblSubscr.SubGroupID)='" & strGroupID & "'));"
+                        
+            'dbs.Execute strSQL, dbSeeChanges
+            
+            'update the subscriber table indicated that the card was
+            'printed, the date it was printed, and who printed it
+            strSQL = "UPDATE tblSubscr " & _
+                        "SET SubCardPrt = 1, SubCardPrtDte = CONVERT(varchar(10), GetDate(), 101), " & _
+                        "UserName = '" & strUserName & "', " & _
+                        "ModifyDate = CONVERT(varchar(10), GetDate(), 101), " & _
+                        "DateUpdated = CONVERT(varchar(10), GetDate(), 101) " & _
+                        "WHERE SubStatus = 'GRSUB' AND SubCardPrt = 0 AND SubGroupID = '" & strGroupID & "'"
+                        
+            
+            ExecuteSQL strSQL
+            DoCmd.SetWarnings True
+            MsgBox "Cards sent to the printer!", vbExclamation, "Cards Printed"
+            
+            'clean up tmpEDI_rpt
+            ExecuteSQL "DELETE FROM tmpEDI_rpt"
+            
+
+        Else
+
+            MsgBox "No subscribers to be printed!", vbExclamation, "No subscribers."
+
+        End If
+
+    End If
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+
+Exit_cmdPrint_Click:
+    Exit Sub
+
+Err_cmdPrint_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdPrint_Click
+    
+End Sub
+
+Private Sub cmdCancel_Click()
+On Error GoTo Err_cmdCancel_Click
+
+
+    DoCmd.Close
+
+Exit_cmdCancel_Click:
+    Exit Sub
+
+Err_cmdCancel_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdCancel_Click
+    
+End Sub

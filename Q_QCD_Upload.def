@@ -1,0 +1,125 @@
+Operation =2
+Name ="tblDentists"
+Database ="f:\\qcddb\\QCD_Upload.mdb"
+Option =0
+Where ="(((tblDentist.DentStatus)=\"A\"))"
+Begin InputTables
+    Name ="tblDentist"
+    Name ="tbldentistspec"
+    Name ="ProZip"
+End
+Begin OutputColumns
+    Expression ="tblDentist.DentKeyID"
+    Alias ="LName"
+    Expression ="tblDentist.DentLast"
+    Alias ="FName"
+    Expression ="tblDentist.DentFirst"
+    Alias ="Address"
+    Expression ="tblDentist.DentStreet1"
+    Alias ="Address2"
+    Expression ="tblDentist.DentStreet2"
+    Alias ="City"
+    Expression ="tblDentist.DentCity"
+    Alias ="State"
+    Expression ="tblDentist.DentState"
+    Alias ="Zipcode"
+    Expression ="tblDentist.DentZip"
+    Alias ="Specialty"
+    Expression ="tbldentistspec.SPECIALITYdesc"
+    Expression ="tblDentist.DentSchool"
+    Expression ="tblDentist.DentGradYr"
+    Expression ="tblDentist.DentAffilDate"
+    Alias ="DentCloseOff"
+    Expression ="IIf([DentCloseMyOff]=0,'Open to All QCD Members','Limited to Existing Patients')"
+    Alias ="Phone"
+    Expression ="tblDentist.DentPhoneOffice"
+    Alias ="DentSpecialPrc"
+    Expression ="IIf([DentSpecialPrice]=0,'','*Bi-Lingual*')"
+    Alias ="SearchCity"
+    Expression ="StripChars_TSB([DentCity],\" \")"
+    Alias ="zipsearch"
+    Expression ="Left([ZipCode],5)"
+    Alias ="SpecSearch"
+    Expression ="tbldentistspec.SPECIALTYID"
+    Expression ="ProZip.Latitude"
+    Expression ="ProZip.Longitude"
+End
+Begin Joins
+    LeftTable ="tblDentist"
+    RightTable ="tbldentistspec"
+    Expression ="tblDentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Flag =1
+    LeftTable ="tblDentist"
+    RightTable ="ProZip"
+    Expression ="tblDentist.DentZip = ProZip.ZipCode"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblDentist.DentKeyID"
+    Flag =0
+    Expression ="tblDentist.DentCity"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+Begin
+    Begin
+        dbText "Name" ="DentCloseOff"
+        dbInteger "ColumnWidth" ="3252"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="DentSpecialPrc"
+        dbInteger "ColumnWidth" ="2220"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Specialty"
+        dbInteger "ColumnWidth" ="2940"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =11
+    Top =14
+    Right =941
+    Bottom =608
+    Left =-1
+    Top =-1
+    Right =923
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =203
+        Bottom =139
+        Top =7
+        Name ="tblDentist"
+        Name =""
+    End
+    Begin
+        Left =241
+        Top =6
+        Right =490
+        Bottom =119
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+    Begin
+        Left =538
+        Top =7
+        Right =658
+        Bottom =139
+        Top =3
+        Name ="ProZip"
+        Name =""
+    End
+End

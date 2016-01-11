@@ -1,0 +1,94 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment_Intex"
+End
+Begin OutputColumns
+    Alias ="NameSort"
+    Expression ="([LASTNAME]) & \", \" & ([FIRSTNAME])"
+    Alias ="SubName"
+    Expression ="Trim([FIRSTNAME]) & \" \" & Trim([LASTNAME])"
+    Alias ="SubAddr"
+    Expression ="Trim([Addr1]) & \"   \" & ([City]) & \",  \" & ([ST]) & \"  \" & ([Zip])"
+    Alias ="GRname"
+    Expression ="\"Intex\""
+    Alias ="SUBeffDATE2"
+    Expression ="#3/1/00#"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
+        "loyee at No Monthly Charge.\""
+    Alias ="SUBphoneHOME"
+    Expression ="\"(___) ___-____\""
+    Alias ="SUBdob"
+    Expression ="tblEnrollment_Intex.DOB"
+    Alias ="SUBssn"
+    Expression ="tblEnrollment_Intex.SSN"
+End
+Begin OrderBy
+    Expression ="([LASTNAME]) & \", \" & ([FIRSTNAME])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="2610"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="4500"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE2"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="NameSort"
+        dbInteger "ColumnWidth" ="2985"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBphoneHOME"
+        dbInteger "ColumnWidth" ="1725"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =459
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =250
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =86
+        Top =9
+        Right =341
+        Bottom =176
+        Top =0
+        Name ="tblEnrollment_Intex"
+        Name =""
+    End
+End

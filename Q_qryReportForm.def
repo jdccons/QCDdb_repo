@@ -1,0 +1,52 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblReport"
+End
+Begin OutputColumns
+    Expression ="tblReport.ReportID"
+    Expression ="tblReport.ReportTitle"
+    Expression ="tblReport.ReportName"
+    Expression ="tblReport.CriteriaForm"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblReport.ReportTitle"
+        dbInteger "ColumnWidth" ="3450"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblReport.ReportName"
+        dbInteger "ColumnWidth" ="2595"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =77
+    Top =117
+    Right =1165
+    Bottom =594
+    Left =-1
+    Top =-1
+    Right =1077
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =233
+        Bottom =120
+        Top =0
+        Name ="tblReport"
+        Name =""
+    End
+End

@@ -1,0 +1,46 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.*"
+End
+Begin OrderBy
+    Expression ="tblGrp.GRname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRcancelled"
+        dbInteger "ColumnWidth" ="2010"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =924
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =317
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =504
+        Bottom =291
+        Top =26
+        Name ="tblGrp"
+        Name =""
+    End
+End

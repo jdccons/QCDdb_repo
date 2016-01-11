@@ -1,0 +1,60 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblGrowth"
+    Name ="tblGrowth_temp"
+End
+Begin OutputColumns
+    Name ="tblGrowth.FirstInvoiceAmt"
+    Expression ="[tblGrowth_temp].[SumOfDocamt]"
+    Name ="tblGrowth.FirstInvoiceDate"
+    Expression ="#1/1/00#"
+End
+Begin Joins
+    LeftTable ="tblGrowth_temp"
+    RightTable ="tblGrowth"
+    Expression ="tblGrowth_temp.Custkey = tblGrowth.GroupID"
+    Flag =1
+    LeftTable ="tblGrowth_temp"
+    RightTable ="tblGrowth"
+    Expression ="tblGrowth_temp.Year = tblGrowth.Year"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =315
+        Top =7
+        Right =488
+        Bottom =114
+        Top =0
+        Name ="tblGrowth"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =176
+        Bottom =98
+        Top =0
+        Name ="tblGrowth_temp"
+        Name =""
+    End
+End

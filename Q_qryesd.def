@@ -1,0 +1,114 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRagentID1"
+    Expression ="tblGrp.GRagentID1"
+    Expression ="tblGrp.GRagentRATE1"
+    Expression ="tblGrp.GRExecSalesDirID"
+    Expression ="tblGrp.GRExecSalesDirRate"
+    Expression ="tblGrp.GRagentID2"
+    Expression ="tblGrp.GRagentRATE2"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRPgeoID"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3624"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcontBEG"
+        dbInteger "ColumnWidth" ="1245"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Expr1002"
+        dbInteger "ColumnWidth" ="1005"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRagentID1"
+        dbInteger "ColumnWidth" ="1140"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRagentRATE1"
+        dbInteger "ColumnWidth" ="840"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRExecSalesDirRate"
+        dbInteger "ColumnWidth" ="825"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRExecSalesDirID"
+        dbInteger "ColumnWidth" ="1065"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRagentID2"
+        dbInteger "ColumnWidth" ="1110"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRagentRATE2"
+        dbInteger "ColumnWidth" ="1590"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcancelled"
+        dbInteger "ColumnWidth" ="930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =84
+    Top =66
+    Right =778
+    Bottom =404
+    Left =-1
+    Top =-1
+    Right =687
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =129
+        Top =6
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =199
+        Top =11
+        Right =319
+        Bottom =133
+        Top =4
+        Name ="tblGrp"
+        Name =""
+    End
+End

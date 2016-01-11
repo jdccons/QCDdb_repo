@@ -1,0 +1,97 @@
+Operation =1
+Option =0
+Where ="(((tblInvoiceHistory.InvMonth)=4) AND ((tlkpClientServiceReps.RepName)=\"A GROUP"
+    "\") AND ((tblGrp.GRPgeoID)=\"TXSSW\") AND ((tblGrp.GRcancelled)=No) AND ((tblInv"
+    "oiceHistory.InvYear)=2003))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblInvoiceHistory"
+    Name ="tlkpClientServiceReps"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblInvoiceHistory.InvMonth"
+    Expression ="tblInvoiceHistory.TotalBilling"
+    Expression ="tlkpClientServiceReps.RepName"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRfax"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRcancelled"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblInvoiceHistory"
+    Expression ="tblGrp.GROUPid = tblInvoiceHistory.GrpID"
+    Flag =1
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3810"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRstreet1"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =62
+    Top =43
+    Right =776
+    Bottom =360
+    Left =-1
+    Top =-1
+    Right =707
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =184
+        Top =8
+        Right =291
+        Bottom =103
+        Top =31
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =326
+        Top =14
+        Right =422
+        Bottom =109
+        Top =0
+        Name ="tblInvoiceHistory"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =86
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+End

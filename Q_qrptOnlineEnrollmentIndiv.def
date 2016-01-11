@@ -1,0 +1,140 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tmpEDI_rpt"
+    Name ="qsel_EDI_Indiv_rpt"
+End
+Begin OutputColumns
+    Expression ="tmpEDI_rpt.GroupID"
+    Alias ="GRLocation"
+    Expression ="[SubCity] & \", \" & [SubState]"
+    Expression ="tmpEDI_rpt.SubSSN"
+    Expression ="tmpEDI_rpt.SubFirstName"
+    Expression ="tmpEDI_rpt.SubLastName"
+    Alias ="Plan"
+    Expression ="IIf(Not IsNull([PlanDesc]),[PlanDesc],\"Missing\")"
+    Alias ="Coverage"
+    Expression ="IIf(Not IsNull([CoverageDesc]),[CoverageDesc],\"Missing\")"
+    Expression ="tmpEDI_rpt.SubStreet"
+    Expression ="tmpEDI_rpt.SubCity"
+    Expression ="tmpEDI_rpt.SubState"
+    Expression ="tmpEDI_rpt.SubZIP"
+    Expression ="tmpEDI_rpt.Stat"
+    Expression ="tmpEDI_rpt.AmtPaid"
+    Alias ="PlanLength"
+    Expression ="IIf([GroupID]=\"INDV1\",\"One Year\",\"Two Year\")"
+    Expression ="qsel_EDI_Indiv_rpt.SubEffDate"
+End
+Begin Joins
+    LeftTable ="tmpEDI_rpt"
+    RightTable ="qsel_EDI_Indiv_rpt"
+    Expression ="tmpEDI_rpt.SubSSN = qsel_EDI_Indiv_rpt.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+dbBoolean "TotalsRow" ="0"
+Begin
+    Begin
+        dbText "Name" ="tmpEDI_rpt.GroupID"
+        dbInteger "ColumnWidth" ="1380"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Coverage"
+        dbInteger "ColumnWidth" ="2475"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="GRLocation"
+        dbInteger "ColumnWidth" ="2010"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.SUBStreet"
+        dbInteger "ColumnWidth" ="1980"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.AmtPaid"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.SUBssn"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.SUBfirstNAME"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.SUBlastNAME"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Plan"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.SUBcity"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.SUBstate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.SUBzip"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tmpEDI_rpt.Stat"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="PlanLength"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =-99
+    Top =123
+    Right =945
+    Bottom =499
+    Left =-1
+    Top =-1
+    Right =1029
+    Bottom =196
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =357
+        Bottom =169
+        Top =0
+        Name ="tmpEDI_rpt"
+        Name =""
+    End
+    Begin
+        Left =395
+        Top =6
+        Right =548
+        Bottom =156
+        Top =0
+        Name ="qsel_EDI_Indiv_rpt"
+        Name =""
+    End
+End

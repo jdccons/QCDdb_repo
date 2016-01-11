@@ -1,0 +1,217 @@
+Version =17
+VersionRequired =17
+Checksum =620160632
+Begin Form
+    AllowEditing = NotDefault
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowAdditions = NotDefault
+    ScrollBars =0
+    ViewsAllowed =1
+    BorderStyle =3
+    Width =7920
+    ItemSuffix =32
+    Left =2160
+    Top =1740
+    Right =9855
+    Bottom =6480
+    RecSrcDt = Begin
+        0x2223dcb3b2c4e140
+    End
+    Caption ="Group Subscriber Mailing Labels"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000f01e00000000000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a65742035202d2053746400000000000000000000000000 ,
+        0x0004010494004000036700040100010000000000000001000901580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d5355444f034850 ,
+        0x204c617365724a6574203400000000000000000000000000000000000000e401 ,
+        0x0000000000003c0100000000040064000a000000130006454e41424c4505000a ,
+        0x000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x1c000800250001404850204c617365724a65742035202d205374640048505043 ,
+        0x4c354d53005c5c5163645c6c6173657200000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000000000000
+    End
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin FormHeader
+            Height =4575
+            BackColor =12632256
+            Name ="FormHeader1"
+            Begin
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =825
+                    Top =615
+                    Width =6855
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text17"
+                    Caption ="1. Type or Select the Group ID for which to Print Subscriber Labels:  (Required)"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =825
+                    Top =3387
+                    Width =5190
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text18"
+                    Caption ="4. Click the \"Print Labels\" Button"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =2865
+                    Top =3795
+                    Width =990
+                    Height =660
+                    FontSize =8
+                    TabIndex =3
+                    Name ="Print Labels"
+                    Caption ="Print Labels"
+                    OnClick ="=GrpSubscrLabel()"
+                    FontName ="MS Sans Serif"
+                    EventProcPrefix ="Print_Labels"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =825
+                    Top =2343
+                    Width =5085
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text20"
+                    Caption ="3. Enter a Note Here to be Added to the Group 's Comments: (Optional)"
+                End
+                Begin TextBox
+                    ScrollBars =2
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =825
+                    Top =2655
+                    Width =5430
+                    Height =420
+                    TabIndex =2
+                    Name ="Note"
+                    StatusBarText ="Enter a Note About the Mailing, If Desired"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    ColumnCount =5
+                    ListWidth =7200
+                    Left =825
+                    Top =975
+                    Width =5440
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    Name ="GROUPforLABELS"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT [tblGrp].GROUPid AS [Group ID], [tblGrp].GRname AS [Group Name], [tblGrp]"
+                        ".GRPgeoID AS [Geo ID], [tblGrp].GRsubLABELSprinted AS [Last Mail], Count([tblSub"
+                        "scr].SUBssn) AS [# of Subs] FROM [tblGrp] LEFT JOIN [tblSubscr] ON [tblGrp].GROU"
+                        "Pid = [tblSubscr].SUBgroupID GROUP BY [tblGrp].GROUPid, [tblGrp].GRname, [tblGrp"
+                        "].GRPgeoID, [tblGrp].GRsubLABELSprinted;"
+                    ColumnWidths ="720;3600;720;1080;1080"
+                    StatusBarText ="Enter Group for which to Print Subscriber Labels"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =825
+                    Top =1479
+                    Width =6870
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text30"
+                    Caption ="2. Enter a Date Here to be Posted to the Group's Last Mail Date:  (Required)"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =840
+                    Top =1800
+                    Width =1260
+                    TabIndex =1
+                    Name ="DATEprinted"
+                    Format ="m/d/yyyy"
+                    StatusBarText ="Enter Date Group Subscriber Mailing Labels Printed"
+                    ValidationRule =">=Date()"
+                    ValidationText ="You must enter a date on or after today's date"
+                    DefaultValue ="Date()"
+                End
+            End
+        End
+        Begin Section
+            Height =0
+            BackColor =12632256
+            Name ="Detail0"
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =12632256
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Form_Close()
+
+  On Error GoTo PROC_ERR
+ Forms![fmnuSwitchboard].Visible = True
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Form_Open(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+   Forms![fmnuSwitchboard].Visible = False
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

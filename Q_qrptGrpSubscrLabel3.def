@@ -1,0 +1,38 @@
+Operation =4
+Option =8
+Where ="(([tblGrp].GROUPid=[Forms]![fdlgGrpSubscrLabel].[GROUPforLABELS]))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="tblGrp.GRnotes"
+    Expression ="[GRnotes] & IIf(IsNull([GRnotes]),\"\",\"       \") & Str([Forms]![fdlgGrpSubscr"
+        "Label].[DATEprinted]) & \": \" & [Forms]![fdlgGrpSubscrLabel].[Note]"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =490
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =577
+    Begin
+        Left =38
+        Top =6
+        Right =236
+        Bottom =118
+        Top =0
+        Name ="t-GROUP"
+        Name =""
+    End
+End

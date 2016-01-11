@@ -1,0 +1,234 @@
+Version =20
+VersionRequired =20
+Checksum =-1754406585
+Begin Form
+    AutoResize = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
+    NavigationButtons = NotDefault
+    CloseButton = NotDefault
+    DividingLines = NotDefault
+    ScrollBars =2
+    ViewsAllowed =1
+    BorderStyle =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4800
+    DatasheetFontHeight =10
+    ItemSuffix =6
+    Left =12120
+    Top =4215
+    Right =17235
+    Bottom =5730
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x42587902120ee340
+    End
+    GUID = Begin
+        0xa758511cb668b54f8bfb094b657af11f
+    End
+    NameMap = Begin
+        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
+        0x0000000000000000000000000000
+    End
+    RecordSource ="qryGrpAgt"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin Section
+            Height =330
+            BackColor =12632256
+            Name ="Detail"
+            GUID = Begin
+                0xcb19a6b27d062c42aafbbb2bac5ec1a8
+            End
+            Begin
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    OverlapFlags =85
+                    ColumnCount =3
+                    ListWidth =7200
+                    Width =2359
+                    Height =270
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    GUID = Begin
+                        0x20c5ef764cb95f4a8967c80e73ff502f
+                    End
+                    Name ="GRagentID1"
+                    ControlSource ="AGENTid"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tblAgent.AGENTid, tblAgent.AGENCY, [AGENTlast] & \", \"+[AGENTfirst] AS ["
+                        "Agent Name] FROM tblAgent WHERE (((tblAgent.AGENTactive)=\"A\")) ORDER BY tblAge"
+                        "nt.AGENCY, [AGENTlast] & \", \"+[AGENTfirst];"
+                    ColumnWidths ="0;3600;3600"
+                    StatusBarText ="Select a primary agent."
+                    AfterUpdate ="[Event Procedure]"
+                    OnDblClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =4020
+                    Width =777
+                    Height =270
+                    TabIndex =5
+                    Name ="GRagentRATE1"
+                    ControlSource ="AgentRATE"
+                    Format ="Percent"
+                    GUID = Begin
+                        0x9eff0c975ef3874f91eb7efc9ac1520f
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =3240
+                    Width =756
+                    Height =270
+                    TabIndex =3
+                    Name ="txtPriAgentID"
+                    ControlSource ="AGENTid"
+                    GUID = Begin
+                        0x6b3db9bbaff52c4f9f490e309d98d4b8
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =3300
+                    Width =720
+                    Height =180
+                    TabIndex =4
+                    BackColor =10092543
+                    Name ="txtGROUPid"
+                    ControlSource ="GROUPid"
+                    GUID = Begin
+                        0x11aa06590cba1d44b2a44f95ced2a37c
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =4200
+                    Top =15
+                    Width =540
+                    Height =180
+                    TabIndex =6
+                    BackColor =10092543
+                    Name ="Sort"
+                    ControlSource ="Sort"
+                    GUID = Begin
+                        0x2a90690cc4ea534faea3b450214c2294
+                    End
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =2400
+                    Width =426
+                    Height =270
+                    TabIndex =1
+                    Name ="Type"
+                    ControlSource ="PayCommTo"
+                    GUID = Begin
+                        0x7e130d3031b56140ade38f7e3ccbf6ba
+                    End
+                End
+                Begin CheckBox
+                    OverlapFlags =85
+                    Left =2925
+                    Top =60
+                    Width =270
+                    Height =270
+                    TabIndex =2
+                    Name ="chkPrimary"
+                    ControlSource ="Primary"
+                    GUID = Begin
+                        0x31a0418ce28b414aacdfeabfd4df3b8a
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub GRagentID1_AfterUpdate()
+On Error GoTo Err_GRagentID1_AfterUpdate
+
+    If IsNull(Me![GRagentID1]) Or Me![GRagentID1] = "" Then
+        Me![txtPriAgentID] = ""
+    Else
+        Me![txtPriAgentID] = Me![GRagentID1].Column(0)
+        Me![txtGROUPid] = Forms![frmGrp]![ctlGROUPid]
+    End If
+    
+Exit_GRagentID1_AfterUpdate:
+    Exit Sub
+    
+Err_GRagentID1_AfterUpdate:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_GRagentID1_AfterUpdate
+End Sub
+
+Private Sub GRagentID1_DblClick(Cancel As Integer)
+
+On Error GoTo Err_GRagentID1_DblClick
+
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    If IsNull(Me![txtPriAgentID]) Then
+        MsgBox "You must add an Agent before you can edit.  Action Canceled!", vbExclamation, "QCD: Notice"
+        Exit Sub
+    End If
+
+    stDocName = "frmOpenAgentsForm"
+    
+    DoCmd.OpenForm stDocName, acNormal, , , , acWindowNormal
+    
+    With Forms(stDocName)
+        .txtAgentID = Me![txtPriAgentID]
+    End With
+    
+    'stDocName = "frmAgent"
+
+    'stLinkCriteria = "[AGENTid]=" & "'" & Me![txtPriAgentID] & "'"
+    'DoCmd.OpenForm stDocName, acNormal, , stLinkCriteria, acFormEdit
+    
+Exit_GRagentID1_DblClick:
+    Exit Sub
+
+Err_GRagentID1_DblClick:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_GRagentID1_DblClick
+    
+    
+End Sub

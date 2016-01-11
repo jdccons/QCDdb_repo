@@ -1,0 +1,94 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="qselACTCurGrp"
+    Name ="qselACTGroups"
+End
+Begin OutputColumns
+    Expression ="qselACTCurGrp.GroupID"
+End
+Begin Joins
+    LeftTable ="qselACTCurGrp"
+    RightTable ="qselACTGroups"
+    Expression ="qselACTCurGrp.GroupID = qselACTGroups.GROUPid"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.GRname = qselACTCurGrp.COMPANY"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.GRPLANid = qselACTCurGrp.GroupPlanID"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.GRPgeoID = qselACTCurGrp.GroupGeoID"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.GRzip = qselACTCurGrp.ZIP"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.PhonePrimary = qselACTCurGrp.PhonePrimary"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.GRmainCONT = qselACTCurGrp.NAME2"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.GRsrvCONT = qselACTCurGrp.NAME"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.IDStatus = qselACTCurGrp.IDSTATUS"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.[Group Type] = qselACTCurGrp.GroupType"
+    Flag =1
+    LeftTable ="qselACTGroups"
+    RightTable ="qselACTCurGrp"
+    Expression ="qselACTGroups.ClientServiceRep = qselACTCurGrp.ClientServiceRep"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =-46
+    Top =1
+    Right =990
+    Bottom =676
+    Left =-1
+    Top =-1
+    Right =1029
+    Bottom =510
+    Left =0
+    Top =2
+    ColumnsShown =539
+    Begin
+        Left =540
+        Top =20
+        Right =829
+        Bottom =491
+        Top =0
+        Name ="qselACTCurGrp"
+        Name =""
+    End
+    Begin
+        Left =65
+        Top =20
+        Right =297
+        Bottom =475
+        Top =0
+        Name ="qselACTGroups"
+        Name =""
+    End
+End

@@ -1,0 +1,53 @@
+Operation =4
+Option =8
+Where ="(([tblGrp].GROUPid=[forms]![frmChngExpirDte]![GroupID]))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="tblSubscr.SUBcontEND"
+    Expression ="[forms]![frmChngExpirDte]![DAte1]"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="[tblGrp].GROUPid = [tblSubscr].SUBgroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =644
+    Bottom =370
+    Left =-1
+    Top =-1
+    Right =641
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =577
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =118
+        Top =0
+        Name ="t-GROUP"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =306
+        Bottom =118
+        Top =0
+        Name ="t-SUBSCR"
+        Name =""
+    End
+End

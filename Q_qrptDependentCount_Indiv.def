@@ -1,0 +1,62 @@
+Operation =6
+Option =0
+Where ="(((vwDependentsAll.GroupType)=9))"
+Begin InputTables
+    Name ="vwDependentsAll"
+End
+Begin OutputColumns
+    Alias ="Plan"
+    Expression ="IIf([PlanID]=1,\"Red\",IIf([PlanID]=2,\"White\",IIf([PlanID]=3,\"Blue\",IIf([Pla"
+        "nID]=4,\"Red Plus\",IIf([PlanID]=5,\"QCD Only\",\"None\")))))"
+    GroupLevel =2
+    Expression ="vwDependentsAll.CoverID"
+    GroupLevel =1
+    Alias ="CountOfDepSubID"
+    Expression ="Count(vwDependentsAll.DepSubID)"
+    Alias ="Total"
+    Expression ="Count(vwDependentsAll.DepSubID)"
+    GroupLevel =2
+End
+Begin OrderBy
+    Expression ="vwDependentsAll.PlanID"
+    Flag =0
+End
+Begin Groups
+    Expression ="IIf([PlanID]=1,\"Red\",IIf([PlanID]=2,\"White\",IIf([PlanID]=3,\"Blue\",IIf([Pla"
+        "nID]=4,\"Red Plus\",IIf([PlanID]=5,\"QCD Only\",\"None\")))))"
+    GroupLevel =2
+    Expression ="vwDependentsAll.CoverID"
+    GroupLevel =1
+    Expression ="vwDependentsAll.PlanID"
+    GroupLevel =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1273
+    Bottom =461
+    Left =0
+    Top =0
+    ColumnsShown =559
+    Begin
+        Left =96
+        Top =26
+        Right =305
+        Bottom =246
+        Top =0
+        Name ="vwDependentsAll"
+        Name =""
+    End
+End

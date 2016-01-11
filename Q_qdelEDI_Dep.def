@@ -1,0 +1,57 @@
+Operation =5
+Option =0
+Where ="(((tblSubscr.SUBgroupID)=[Forms]![frmEDI]![txtGrpID]))"
+Begin InputTables
+    Name ="tblDependent"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblDependent.*"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =55
+    Top =141
+    Right =929
+    Bottom =446
+    Left =-1
+    Top =-1
+    Right =867
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =771
+    Begin
+        Left =532
+        Top =9
+        Right =737
+        Bottom =116
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =258
+        Bottom =113
+        Top =10
+        Name ="tblSubscr"
+        Name =""
+    End
+End

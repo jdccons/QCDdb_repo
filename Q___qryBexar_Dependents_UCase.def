@@ -1,0 +1,41 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblDependent_Bexar_new"
+End
+Begin OutputColumns
+    Name ="tblDependent_Bexar_new.DepFirstName"
+    Expression ="UCase([DepFirstName])"
+    Name ="tblDependent_Bexar_new.DepLastName"
+    Expression ="UCase([DepLastName])"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =308
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =286
+        Bottom =269
+        Top =0
+        Name ="tblDependent_Bexar_new"
+        Name =""
+    End
+End

@@ -1,0 +1,54 @@
+Operation =1
+Option =0
+Where ="(((XRef.Cancelled)=0) AND ((XRef.Color)=\"Multi\"))"
+Begin InputTables
+    Name ="XRef"
+End
+Begin OutputColumns
+    Expression ="XRef.[Parent GroupID]"
+    Expression ="XRef.[Child GroupID]"
+    Expression ="XRef.[Emp Count]"
+    Expression ="XRef.Cancelled"
+    Expression ="XRef.Color"
+    Expression ="XRef.Parent"
+    Expression ="XRef.Flag"
+End
+Begin OrderBy
+    Expression ="XRef.[Parent GroupID]"
+    Flag =0
+    Expression ="XRef.Parent"
+    Flag =1
+    Expression ="XRef.[Child GroupID]"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =712
+    Left =-1
+    Top =-1
+    Right =1273
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="XRef"
+        Name =""
+    End
+End

@@ -1,0 +1,59 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=True) AND ((tblGrp.GRcancelledDate)>=[Forms]![fdlgPrtCanc"
+    "elledGroups]![txtCancelledDate])) OR (((tblGrp.GRhold)=True) AND ((tblGrp.GRcanc"
+    "elledDate)>=[Forms]![fdlgPrtCancelledGroups]![txtCancelledDate]))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GRcancelledDate"
+End
+Begin OrderBy
+    Expression ="tblGrp.GRcancelledDate"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRcancelledDate"
+        dbInteger "ColumnWidth" ="2730"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =92
+    Right =1258
+    Bottom =446
+    Left =-1
+    Top =-1
+    Right =1233
+    Bottom =186
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =288
+        Bottom =128
+        Top =33
+        Name ="tblGrp"
+        Name =""
+    End
+End

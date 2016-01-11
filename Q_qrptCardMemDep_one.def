@@ -1,0 +1,68 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.PlanID)<>3 Or (tblSubscr.PlanID) Is Null) AND ((tblSubscr.SubID)='2"
+    "5188872'))"
+Begin InputTables
+    Name ="tblDependent"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblDependent.DepSubID"
+    Expression ="tblDependent.DepFirstName"
+    Expression ="tblDependent.DepMiddleName"
+    Expression ="tblDependent.DepLastName"
+    Alias ="FormName"
+    Expression ="Trim([DEPfirstNAME]) & \"  \" & Trim([DEPlastNAME])"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="FormName"
+        dbInteger "ColumnWidth" ="3930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =66
+    Top =77
+    Right =1157
+    Bottom =433
+    Left =-1
+    Top =-1
+    Right =1076
+    Bottom =176
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =387
+        Top =2
+        Right =503
+        Bottom =150
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+    Begin
+        Left =84
+        Top =16
+        Right =180
+        Bottom =134
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

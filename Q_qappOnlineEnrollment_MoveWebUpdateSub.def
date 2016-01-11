@@ -1,0 +1,123 @@
+Operation =3
+Name ="tblSubscriber_temp"
+Option =0
+Begin InputTables
+    Name ="wSubscribers_tmp"
+End
+Begin OutputColumns
+    Name ="SSN"
+    Expression ="wSubscribers_tmp.SSN"
+    Name ="EIMBRID"
+    Expression ="wSubscribers_tmp.EIMBRID"
+    Name ="SubscriberID"
+    Expression ="wSubscribers_tmp.SubscriberID"
+    Name ="GroupID"
+    Expression ="wSubscribers_tmp.GroupID"
+    Name ="PlanID"
+    Expression ="wSubscribers_tmp.PlanID"
+    Name ="CoverID"
+    Expression ="wSubscribers_tmp.CoverID"
+    Name ="LastName"
+    Expression ="wSubscribers_tmp.LastName"
+    Name ="FirstName"
+    Expression ="wSubscribers_tmp.FirstName"
+    Name ="MiddleInitial"
+    Expression ="wSubscribers_tmp.MiddleInitial"
+    Name ="Street1"
+    Expression ="wSubscribers_tmp.Street1"
+    Name ="Street2"
+    Expression ="wSubscribers_tmp.Street2"
+    Name ="City"
+    Expression ="wSubscribers_tmp.City"
+    Name ="State"
+    Expression ="wSubscribers_tmp.State"
+    Name ="Zip"
+    Expression ="wSubscribers_tmp.Zip"
+    Name ="PhoneWork"
+    Expression ="wSubscribers_tmp.PhoneWork"
+    Name ="PhoneHome"
+    Expression ="wSubscribers_tmp.PhoneHome"
+    Name ="Email"
+    Expression ="wSubscribers_tmp.Email"
+    Name ="DOB"
+    Expression ="wSubscribers_tmp.DOB"
+    Name ="NoDependents"
+    Expression ="wSubscribers_tmp.NoDependents"
+    Name ="Gender"
+    Expression ="wSubscribers_tmp.Gender"
+    Name ="Age"
+    Expression ="wSubscribers_tmp.Age"
+    Name ="EffectiveDate"
+    Expression ="wSubscribers_tmp.EffectiveDate"
+    Name ="PreexistingDate"
+    Expression ="wSubscribers_tmp.PreexistingDate"
+    Name ="EmploymentDate"
+    Expression ="wSubscribers_tmp.EmploymentDate"
+    Name ="EmploymentStatus"
+    Expression ="wSubscribers_tmp.EmploymentStatus"
+    Name ="Occupation_Title"
+    Expression ="wSubscribers_tmp.Occupation_Title"
+    Name ="MaritalStatus"
+    Expression ="wSubscribers_tmp.MaritalStatus"
+    Name ="CardPrinted"
+    Expression ="wSubscribers_tmp.CardPrinted"
+    Name ="CardPrintedDate"
+    Expression ="wSubscribers_tmp.CardPrintedDate"
+    Name ="MembershipStatus"
+    Expression ="wSubscribers_tmp.MembershipStatus"
+    Name ="DateCreated"
+    Expression ="wSubscribers_tmp.DateCreated"
+    Name ="DateChanged"
+    Expression ="wSubscribers_tmp.DateChanged"
+    Name ="DateDeleted"
+    Expression ="wSubscribers_tmp.DateDeleted"
+    Name ="Download"
+    Expression ="wSubscribers_tmp.Download"
+    Name ="DownloadDate"
+    Expression ="wSubscribers_tmp.DownloadDate"
+    Name ="wSubID"
+    Expression ="wSubscribers_tmp.wSubID"
+    Name ="AmtPaid"
+    Expression ="wSubscribers_tmp.AmtPaid"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="wSubscribers_tmp.wSubID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="wSubscribers_tmp.SSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="wSubscribers_tmp.AmtPaid"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =2
+    Left =-8
+    Top =-30
+    Right =589
+    Bottom =625
+    Left =-1
+    Top =-1
+    Right =565
+    Bottom =254
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =48
+        Top =12
+        Right =192
+        Bottom =156
+        Top =0
+        Name ="wSubscribers_tmp"
+        Name =""
+    End
+End

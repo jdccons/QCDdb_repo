@@ -1,0 +1,38 @@
+Operation =1
+Option =8
+Where ="(((tblInvHdr.[CUST CLASS])=\"GROUP\"))"
+Begin InputTables
+    Name ="tblInvHdr"
+End
+Begin OutputColumns
+    Expression ="tblInvHdr.*"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =99
+    Top =107
+    Right =1128
+    Bottom =525
+    Left =-1
+    Top =-1
+    Right =1022
+    Bottom =187
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =253
+        Bottom =160
+        Top =0
+        Name ="tblInvHdr"
+        Name =""
+    End
+End

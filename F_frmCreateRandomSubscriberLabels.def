@@ -1,0 +1,169 @@
+Version =17
+VersionRequired =17
+Checksum =609332379
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =2880
+    DatasheetFontHeight =10
+    ItemSuffix =3
+    Left =690
+    Top =3555
+    Right =3570
+    Bottom =4980
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x895a107e120fe240
+    End
+    Caption ="Subscriber Labels"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin Section
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =660
+                    Top =720
+                    Width =1260
+                    Height =420
+                    TabIndex =1
+                    Name ="cmdRun"
+                    Caption ="Run!"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin ComboBox
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    ColumnCount =2
+                    ListWidth =3600
+                    Left =660
+                    Top =300
+                    Width =1320
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    Name ="cboSelectGroup"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tblGrp.GROUPid, tblGrp.GRname FROM tblGrp ORDER BY tblGrp.GROUPid;"
+                    ColumnWidths ="720;2880"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub cmdRun_Click()
+
+    On Error GoTo ErrorHandler
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strGroupID As String
+    Dim strSQL As String
+    Dim I As Integer
+    
+    DoCmd.SetWarnings False
+    DoCmd.Hourglass True
+    
+    Set db = CurrentDb()
+    db.Execute "DELETE tblRandomSubscribers.* FROM tblRandomSubscribers;"
+
+    If Not IsNull(Me![cboSelectGroup]) Then
+        strGroupID = Me![cboSelectGroup]
+    Else
+        MsgBox "You must select a group id!"
+        Me![cboSelectGroup].SetFocus
+    End If
+    
+    ' Add subscribers to temp table
+    strSQL = "INSERT INTO tblRandomSubscribers ( FirstName, MiddleInitial, LastName, "
+    strSQL = strSQL & "Address1, Address2, City, State, Zip ) "
+    strSQL = strSQL & "SELECT tblSubscr.SUBfirstNAME, tblSubscr.SUBmiddleNAME, tblSubscr.SUBlastNAME, "
+    strSQL = strSQL & "tblSubscr.SUBstreet1, tblSubscr.SUBstreet2, tblSubscr.SUBcity, "
+    strSQL = strSQL & "tblSubscr.SUBstate, tblSubscr.SUBzip "
+    strSQL = strSQL & "FROM tblSubscr "
+    strSQL = strSQL & "WHERE (((tblSubscr.SUBgroupID)= '" & strGroupID & "'));"
+    
+    db.Execute strSQL
+    
+    ' Mark subscribers to retain
+    Set rs = db.OpenRecordset("tblRandomSubscribers", dbOpenDynaset, dbSeeChanges)
+    Do Until rs.EOF
+        rs.Edit
+        rs("RetainFlag") = True
+        rs.Update
+        For I = 1 To 6
+            If Not rs.EOF Then
+                rs.MoveNext
+            Else
+                Exit Do
+            End If
+        Next I
+    Loop
+    
+    rs.Close
+        
+    ' Delete subscribers not selected to be retained
+    strSQL = "DELETE tblRandomSubscribers.*, "
+    strSQL = strSQL & "tblRandomSubscribers.RetainFlag "
+    strSQL = strSQL & "FROM tblRandomSubscribers "
+    strSQL = strSQL & "WHERE (((tblRandomSubscribers.RetainFlag)=False));"
+
+    db.Execute strSQL
+    
+    db.Close
+    Set db = Nothing
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+    Forms![fmnuSwitchboard].Visible = False
+Me.Visible = False
+    
+    DoCmd.OpenReport "rptRandomSubscriberLabel ", acViewPreview
+       
+ExitProcedure:
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    Exit Sub
+
+ErrorHandler:
+    ' Display error information.
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo ExitProcedure
+
+End Sub

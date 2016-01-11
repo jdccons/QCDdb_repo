@@ -1,0 +1,94 @@
+Operation =1
+Option =8
+Where ="(((tblImportGroupTemp.PrintRecords)=True))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblImportGroupTemp"
+End
+Begin OutputColumns
+    Alias ="ZipSub"
+    Expression ="IIf([ZipCode] Like \"#####-#\",Left([ZipCode],Len([ZipCode])-1),IIf([ZipCode] Li"
+        "ke \"#########\",Format([ZipCode],\"@@@@@-@@@@\"),[ZipCode]))"
+    Alias ="ZipGr"
+    Expression ="IIf([GRzip] Like \"#####-#\",Left([GrZip],Len([GrZip])-1),IIf([GrZip] Like \"###"
+        "######\",Format([GrZip],\"@@@@@-@@@@\"),[GrZip]))"
+    Expression ="tblGrp.GROUPid"
+    Alias ="SUBssn"
+    Expression ="tblImportGroupTemp.SSN"
+    Alias ="SUBfirstNAME"
+    Expression ="tblImportGroupTemp.FirstName"
+    Alias ="SUBmiddleNAME"
+    Expression ="tblImportGroupTemp.MiddleInit"
+    Alias ="SUBlastNAME"
+    Expression ="tblImportGroupTemp.LastName"
+    Alias ="SUBstreet1"
+    Expression ="tblImportGroupTemp.StreetAddress"
+    Alias ="SUBstreet2"
+    Expression ="tblImportGroupTemp.StreetAddress2"
+    Alias ="SUBcity"
+    Expression ="tblImportGroupTemp.City"
+    Alias ="SUBstate"
+    Expression ="tblImportGroupTemp.State"
+    Alias ="SUBzip"
+    Expression ="tblImportGroupTemp.ZipCode"
+    Alias ="SUBplanIDgr"
+    Expression ="tblImportGroupTemp.CoverageId"
+    Expression ="tblGrp.GRcontEND"
+    Expression ="tblGrp.GRcontBEG"
+    Alias ="SUBgroupID"
+    Expression ="tblImportGroupTemp.GroupID"
+    Alias ="SUBstatus"
+    Expression ="\"GRSUB\""
+    Alias ="SUBeffDATE"
+    Expression ="Mid([EffectiveDate],1,2) & \"/\" & Mid([EffectiveDate],3,2) & \"/\" & Mid([Effec"
+        "tiveDate],5,4)"
+    Expression ="tblImportGroupTemp.PrintRecords"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblImportGroupTemp"
+    Expression ="tblGrp.GROUPid = tblImportGroupTemp.GroupID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblImportGroupTemp.LastName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =192
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =246
+        Bottom =158
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =301
+        Top =9
+        Right =538
+        Bottom =146
+        Top =12
+        Name ="tblImportGroupTemp"
+        Name =""
+    End
+End

@@ -1,0 +1,459 @@
+Option Explicit
+Public Sub DebugCleanup()
+  ' Comments  : Turns the hourglass cursor off and restores the Echo state
+  ' Parameters: none
+  ' Returns   : nothing
+  ' Source    : Total Visual SourceBook
+  '
+  On Error GoTo PROC_ERR
+
+  DoCmd.Hourglass False
+  DoCmd.Echo True
+  Application.Echo True
+
+PROC_EXIT:
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    "modApplication.DebugCleanup"
+  Resume PROC_EXIT
+
+End Sub
+Function DependentCheck(strSSN As String) As Long
+    
+    On Error GoTo Avesis_Err
+    
+    Dim strSQL As String
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT tblDependent.DEPsubID, Count(tblDependent.DEPcounter) AS CountOfDEPcounter " & _
+             "FROM tblDependent GROUP BY tblDependent.DEPsubID " & _
+             "HAVING (((tblDependent.DEPsubID)='" & strSSN & "'));"
+    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        DependentCheck = rst.Fields("CountOfDEPcounter")
+        rst.Close
+    Else
+        DependentCheck = 0
+    End If
+    
+On Error GoTo Avesis_Err
+    Set db = Nothing
+Avesis_Exit:
+    Exit Function
+    
+Avesis_Err:
+    MsgBox Error$
+    Resume Avesis_Exit
+
+End Function
+
+Function DependentCheck_Bexar(strSSN As String) As Long
+    
+    On Error GoTo Avesis_Err
+    
+    Dim strSQL As String
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT tblDependent_Bexar.DEPsubID, Count(tblDependent_Bexar.DEPcounter) AS CountOfDEPcounter " & _
+             "FROM tblDependent_Bexar GROUP BY tblDependent_Bexar.DEPsubID " & _
+             "HAVING (((tblDependent_Bexar.DEPsubID)='" & strSSN & "'));"
+    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        DependentCheck_Bexar = rst.Fields("CountOfDEPcounter")
+        rst.Close
+    Else
+        DependentCheck_Bexar = 0
+    End If
+    
+On Error GoTo Avesis_Err
+    Set db = Nothing
+Avesis_Exit:
+    Exit Function
+    
+Avesis_Err:
+    MsgBox Error$
+    Resume Avesis_Exit
+
+End Function
+Sub TableNames()
+
+    Dim dbs As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim tdfLoop As TableDef
+    
+    Set dbs = CurrentDb()
+    Set rs = dbs.OpenRecordset("tblTables", dbOpenDynaset, dbSeeChanges)
+    
+    With dbs
+      Debug.Print .TableDefs.Count & _
+         " TableDefs in " & .Name
+
+      ' Enumerate TableDefs collection.
+      For Each tdfLoop In .TableDefs
+         Debug.Print "  " & tdfLoop.Name
+         rs.AddNew
+         rs.Fields("Name") = tdfLoop.Name
+         rs.Update
+      Next tdfLoop
+
+    End With
+
+End Sub
+
+
+Function ReplaceChars_TSB(strIn As String, strFind As String, strReplace As String) As String
+  ' Comments  : Replaces characters in a string
+  ' Parameters: strIn - string to replace in
+  '             strFind - character to find
+  '             strReplace - character to replace with
+  ' Returns   : modified string
+  '
+  Dim intCounter As Integer
+  Dim strTmp As String
+  Dim chrTmp As String * 1
+
+  For intCounter = 1 To Len(strIn)
+    chrTmp = Mid$(strIn, intCounter)
+    If chrTmp <> strFind Then
+      strTmp = strTmp & chrTmp
+    Else
+      strTmp = strTmp & strReplace
+    End If
+  Next intCounter
+
+  ReplaceChars_TSB = strTmp
+
+End Function
+Function FindRecord_RS(varSQLWhere)
+    ' Comments   :
+    ' Parameters : varSQLWhere -
+    ' Returns    :  -
+    ' Created    :
+    ' Modified   :
+    '
+    ' --------------------------------------------------------
+    On Error GoTo FindRecord_RS_Err
+    
+    Dim rstRs As DAO.Recordset
+    Set rstRs = Screen.ActiveForm.RecordsetClone
+    rstRs.FindFirst varSQLWhere
+    If rstRs.NoMatch Then
+        MsgBox "No record found!"
+    Else
+        Screen.ActiveForm.Bookmark = rstRs.Bookmark
+    End If
+    
+FindRecord_RS_Exit:
+    rstRs.Close
+    Exit Function
+    
+FindRecord_RS_Err:
+    MsgBox Error$
+    Resume FindRecord_RS_Exit
+    
+    
+End Function
+
+
+Function GetDelimitedWord_TSB(strIn As String, intIndex As Integer, strChrDelimit As String) As String
+  On Error GoTo PROC_ERR
+    ' Comments   : returns word intIndex in delimited string strIn
+    ' Parameters : strIn - string to search
+    '              intIndex - word position to find
+    '              chrDelimit - character used as the delimter
+    ' Returns    : nth word
+    '
+    Dim intCounter As Integer
+    Dim intStartPos As Integer
+    Dim intEndPos As Integer
+    
+    intCounter = 1
+    intStartPos = 1
+    
+    For intCounter = 2 To intIndex
+        intStartPos = InStr(intStartPos, strIn, strChrDelimit) + 1
+    Next intCounter
+    
+    intEndPos = InStr(intStartPos, strIn, strChrDelimit) - 1
+    If intEndPos <= 0 Then intEndPos = Len(strIn)
+    
+    GetDelimitedWord_TSB = Mid$(strIn, intStartPos, intEndPos - intStartPos + 1)
+    
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+
+Function isloaded(varFrmName)
+    ' Comments   :
+    ' Parameters : varFrmName -
+    ' Returns    :  -
+    ' Created    :
+    ' Modified   :
+    '
+    ' --------------------------------------------------------
+    On Error GoTo Err_IsLoaded
+    
+    Const conFormDesign = 0
+    Dim intX As Integer
+    
+    isloaded = False
+    For intX = 0 To Forms.Count - 1
+        If Forms(intX).FormName = varFrmName Then
+            If Forms(intX).CurrentView <> conFormDesign Then
+                isloaded = True
+                Exit Function ' Quit function once form has been found.
+            End If
+        End If
+    Next
+Exit_IsLoaded:
+    Exit Function
+    
+Err_IsLoaded:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_IsLoaded
+    
+End Function
+
+Function IsReportOpen(strReportName As String) As Boolean
+  ' Comments  : Determines if the named Report is open
+  ' Parameters: strReportName - Report to check for
+  ' Returns   : True - Report is open, False - Report is not open
+  '
+  IsReportOpen = (SysCmd(acSysCmdGetObjectState, acReport, strReportName) = acObjStateOpen)
+
+Exit_IsReportOpen:
+    Exit Function
+    
+Err_IsReportOpen:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_IsReportOpen
+    
+End Function
+
+
+Function RunActionQuery(strDatabase As String, strQuery As String, strArrParameters() As String, varArrValues() As Variant) As Boolean
+    ' Comments   :
+    ' Parameters : strDatabase
+    '              strQuery
+    '              strArrParameters)
+    '              As
+    '              varArrValues)
+    '              As -
+    ' Returns    : Boolean -
+    ' Created    :
+    ' Modified   :
+    '
+    ' --------------------------------------------------------
+    
+    ' Parameters: strDatabase - path and name of database to look in or "" (blank string) for the current database
+    '             strQuery - a saved query to run (must be an action query)
+    '             arrParameters - array of parameters to specify
+    '             arrValues - array of values to assign the parameters specified in arrParameters
+    ' Returns   : True if successful, False otherwise
+    
+    Dim dbsTemp As Database
+    Dim wrkWsTemp As Workspace
+    Dim qdfTemp As QueryDef
+    Dim intCounter As Integer
+    
+    On Error GoTo PROC_ERR
+    
+    If strDatabase = "" Then
+        Set dbsTemp = CurrentDb()
+        Set wrkWsTemp = DBEngine.Workspaces(0)
+    Else
+        Set dbsTemp = DBEngine.Workspaces(0).OpenDatabase(strDatabase)
+    End If
+    
+    ' Create a query definition and assign the parameter.
+    Set qdfTemp = dbsTemp.QueryDefs(strQuery)
+    ' Assign each parameter.
+    For intCounter = LBound(strArrParameters) To UBound(strArrParameters)
+        If strArrParameters(intCounter) <> "" Then
+            qdfTemp.Parameters(strArrParameters(intCounter)) = varArrValues(intCounter)
+        End If
+    Next intCounter
+    
+    wrkWsTemp.BeginTrans
+    With qdfTemp
+        .Execute dbSeeChanges ' dbSeeChanges
+    End With
+    wrkWsTemp.CommitTrans
+    
+    qdfTemp.Close
+    dbsTemp.Close
+    
+    RunActionQuery = True
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    RunActionQuery = False
+    qdfTemp.Close
+    dbsTemp.Close
+    MsgBox Err.Number & ", " & Err.DESCRIPTION, vbOKOnly
+    wrkWsTemp.Rollback
+    Resume PROC_EXIT
+    
+End Function
+
+Function RunQueryParameter(strQuery As String, strParameter As String, varValue As Variant) As Boolean
+    ' Comments   :
+    ' Parameters : strQuery
+    '              strParameter
+    '              varValue -
+    ' Returns    : Boolean -
+    ' Created    :
+    ' Modified   :
+    '
+    ' --------------------------------------------------------
+    On Error GoTo PROC_ERR
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Dim strCriteria As String
+    
+    Set dbs = CurrentDb()
+    
+    strCriteria = "tblClosedReference![" & strParameter & "] = " & varValue
+    
+    Set rst = dbs.OpenRecordset(strQuery, dbOpenSnapshot)
+    
+    rst.FindFirst strCriteria
+    
+    If rst.NoMatch = True Then
+        RunQueryParameter = True
+    Else
+        RunQueryParameter = False
+    End If
+    
+    rst.Close
+    Set dbs = Nothing
+    
+    Exit Function
+    
+PROC_ERR:
+    MsgBox "The following error occured: " & Error$
+    Resume Next
+End Function
+
+Function RunQuery(strDatabase As String, aArrayIn() As Variant) As Boolean
+  ' Comments  : Run a saved action query
+  ' Parameters: strDatabase - path and name of database to look in or "" (blank string) for the current database
+  '             aArrayIn() - Query Name to run (must be an action query)
+  ' Returns   : True or False
+  ' Created   : By Doug Bess 01/26/99
+  Dim dbsTemp As Database
+  Dim qdfTemp As QueryDef
+  Dim strQueryName As String
+  Dim intRowCounter As Integer
+  Const intQueryName As Integer = 0
+  
+  On Error GoTo PROC_ERR
+  
+  If strDatabase = "" Then
+    Set dbsTemp = CurrentDb()
+  Else
+    Set dbsTemp = DBEngine.Workspaces(0).OpenDatabase(strDatabase)
+  End If
+    
+    For intRowCounter = 0 To UBound(aArrayIn)
+        Set qdfTemp = dbsTemp.QueryDefs(aArrayIn(intRowCounter))
+        'Debug.Print dbsTemp.QueryDefs(aArrayIn(intRowCounter))
+        qdfTemp.Execute (dbSeeChanges)
+        qdfTemp.Close
+    Next intRowCounter
+    
+  RunQuery = True
+ 
+PROC_EXIT:
+  Exit Function
+
+PROC_ERR:
+  RunQuery = False
+  'MsgBox "error " & Err.DESCRIPTION
+  Resume PROC_EXIT
+  
+End Function
+
+
+Function StripChars_TSB(strIn As String, strStrip As String) As String
+  ' Comments  : Removes the specified character from a string
+  ' Parameters: strIn - string to modify
+  '             strStrip - character to remove
+  ' Returns   : modified string
+  '
+  Dim intCounter As Integer
+  Dim strTmp As String
+  Dim chrTmp As String * 1
+
+  For intCounter = 1 To Len(strIn)
+    chrTmp = Mid$(strIn, intCounter)
+    If chrTmp <> strStrip Then
+      strTmp = strTmp & chrTmp
+    End If
+  Next intCounter
+
+  StripChars_TSB = strTmp
+
+End Function
+
+Function ContainsAlpha_TSB(strIn As String) As Boolean
+  ' Comments  : Determines if there are alpha characters other than "-" in the supplied string
+  ' Parameters: strIn - string to check
+  ' Returns   : True if the string contains alpha characters other than "-", False otherwise
+  '
+  Dim intCounter As Integer
+  Dim chrTmp As String * 1
+  Dim fAlpha As Boolean
+
+  fAlpha = False
+
+  For intCounter = 1 To Len(strIn)
+    chrTmp = Mid$(strIn, intCounter, 1)
+    If chrTmp >= "0" And chrTmp <= "9" Then
+      ' continue
+    Else
+      If chrTmp <> "-" Then
+        fAlpha = True
+        Exit For
+      End If
+    End If
+  Next intCounter
+
+  ContainsAlpha_TSB = fAlpha
+
+End Function
+
+Public Function GetCurrentUserName() As String
+  ' Comments  : returns the name of the current logged in user
+  ' Parameters: none
+  ' Returns   : string user name
+  ' Source    : Total Visual SourceBook
+  '
+  On Error GoTo PROC_ERR
+
+  GetCurrentUserName = Application.CurrentUser
+
+PROC_EXIT:
+  Exit Function
+
+PROC_ERR:
+  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    "modApplication.GetCurrentUserName"
+  Resume PROC_EXIT
+
+End Function

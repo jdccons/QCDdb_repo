@@ -1,0 +1,81 @@
+Operation =3
+Name ="tblInvHdrPreliminary"
+Option =8
+Where ="(((Left$([GROUPid],1))>=[Forms]![frmInvGrpBulk_Ins]![LetterFrom] And (Left$([GRO"
+    "UPid],1))<=[Forms]![frmInvGrpBulk_Ins]![LetterTo]) AND ((IIf([GrHold] Or [GrCanc"
+    "elled]=-1,\"Y\",\"\"))<>\"Y\") AND ((tblGrp.GroupType)=2 Or (tblGrp.GroupType)=3"
+    "))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Alias ="Default"
+    Name ="Salespkey"
+    Expression ="'CORPT'"
+    Name ="Custkey"
+    Expression ="tblGrp.GROUPid"
+    Name ="Custname"
+    Expression ="tblGrp.GRname"
+    Name ="Custaddr1"
+    Expression ="tblGrp.GRstreet1"
+    Name ="Custaddr2"
+    Expression ="tblGrp.GRstreet2"
+    Name ="Custcity"
+    Expression ="tblGrp.GRcity"
+    Name ="Custstate"
+    Expression ="tblGrp.GRstate"
+    Name ="Custzip"
+    Expression ="tblGrp.GRzip"
+    Name ="CustAttn"
+    Expression ="tblGrp.GRmainCONT"
+    Name ="Territkey"
+    Expression ="tblGrp.GRPgeoID"
+    Alias ="INVOICEdate"
+    Name ="Invdate"
+    Expression ="DLookUp(\"[FieldDateValue]\",\"tblConstants\",\"[FieldName] = 'InvoiceDate'\")"
+    Alias ="CUSTclass"
+    Name ="Custclass"
+    Expression ="\"GROUP\""
+    Alias ="RecUser"
+    Name ="RecUserID"
+    Expression ="\"QCD db\""
+    Alias ="RecDte"
+    Name ="RecDate"
+    Expression ="Date()"
+    Alias ="RecTme"
+    Name ="RecTime"
+    Expression ="Format(Time(),\"Long Time\")"
+End
+Begin OrderBy
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =55
+    Right =984
+    Bottom =645
+    Left =-1
+    Top =-1
+    Right =915
+    Bottom =417
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =51
+        Top =15
+        Right =206
+        Bottom =335
+        Top =16
+        Name ="tblGrp"
+        Name =""
+    End
+End

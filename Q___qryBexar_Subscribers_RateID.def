@@ -1,0 +1,68 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblSubscriber_Bexar_new"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Name ="tblSubscriber_Bexar_new.RateID"
+    Expression ="[tblRates].[RateID]"
+End
+Begin Joins
+    LeftTable ="tblSubscriber_Bexar_new"
+    RightTable ="tblRates"
+    Expression ="tblSubscriber_Bexar_new.PlanID = tblRates.PlanID"
+    Flag =1
+    LeftTable ="tblSubscriber_Bexar_new"
+    RightTable ="tblRates"
+    Expression ="tblSubscriber_Bexar_new.SUBgroupID = tblRates.GroupID"
+    Flag =1
+    LeftTable ="tblSubscriber_Bexar_new"
+    RightTable ="tblRates"
+    Expression ="tblSubscriber_Bexar_new.CoverID = tblRates.CoverID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblSubscriber_Bexar.Coverage"
+        dbInteger "ColumnWidth" ="3315"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =245
+        Bottom =135
+        Top =4
+        Name ="tblSubscriber_Bexar_new"
+        Name =""
+    End
+    Begin
+        Left =323
+        Top =6
+        Right =515
+        Bottom =120
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

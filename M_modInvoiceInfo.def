@@ -1,0 +1,108 @@
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Function ConvertTransNo(sngTransNo As Single) As String
+
+  On Error GoTo PROC_ERR
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function CreateInvGrpBulk()
+On Error GoTo CreateInvGrpBulk_Err
+
+    If (DCount("[CUST KEY]", "tblInvHdrPreliminary", "IsNull([TRANS NO])") > 0) Then
+    Beep
+    End If
+
+
+
+
+    '' 08/23/99 sj DoCmd.GoToRecord , "", acNext
+    '' 08/23/99 sj DoCmd.GoToRecord , "", acFirst
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    Forms!frmInvGrpBulk!Cancel.Enabled = False
+    DoCmd.RepaintObject acForm, "frmInvGrpBulk"
+    If (Eval("[Forms]![frmInvGrpBulk]![LetterFrom] Is Null")) Then
+        Beep
+        MsgBox "You must enter the letter of the Group ID with which to begin invoicing.", vbInformation, "INSUFFICIENT INFORMATION"
+    End If
+    If (Eval("[Forms]![frmInvGrpBulk]![LetterTo] Is Null")) Then
+        Beep
+        MsgBox "You must enter the letter of the Group ID with which to end invoicing.", vbInformation, "INSUFFICIENT INFORMATION"
+    End If
+    If (Eval("[Forms]![frmInvGrpBulk]![LetterFrom] Is Null Or [Forms]![frmInvGrpBulk]![LetterTo] Is Null")) Then
+        DoCmd.CancelEvent
+    End If
+   '' 08/23/99 sj DoCmd.Echo False, "Selecting Groups to Invoice . . ."
+    DoCmd.OpenQuery "qryInvGrpBulk1", acNormal, acEdit
+    If (DCount("[CUST KEY]", "tblInvHdrPreliminary", "IsNull([TRANS NO])") > 0) Then
+    ''DoCmd.RunMacro "m-INVOICEgrpBULK2", , "DCount(""[CUST KEY]"",""tblInvHdrPreliminary"",""IsNull([TRANS NO])"")>0"
+
+     '' This is m-InvoicegrBulk2
+      '' 08/23/99  DoCmd.Echo False, "Adding Transaction Numbers to Invoices . . ."
+        DoCmd.OpenQuery "qryInvGrpBulk2", acNormal, acEdit
+
+
+    End If
+   '' 08/23/99 sj DoCmd.Echo False, "Adding Invoices to Screen . . ."
+    DoCmd.OpenQuery "qryInvGrpBulk3", acNormal, acEdit
+    '' 08/23/99 sj DoCmd.Echo False, "Selecting Subscriber Information . . ."
+    DoCmd.OpenQuery "qryPopInvGrpDetBulk", acNormal, acEdit
+    DoCmd.OpenQuery "qryInvGrpBulk4", acNormal, acEdit
+    DoCmd.SelectObject acForm, "frmInvGrp", False
+   '' 08/23/99 sj DoCmd.Requery ""
+    Forms!frmInvGrpBulk!Cancel.Enabled = True
+    DoCmd.Close acForm, "frmInvGrpBulk"
+    DoCmd.GoToRecord acForm, "frmInvGrp", acLast
+    DoCmd.GoToRecord acForm, "frmInvGrp", acFirst
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+
+
+CreateInvGrpBulk_Exit:
+    Exit Function
+
+CreateInvGrpBulk_Err:
+    MsgBox Error$
+    Resume CreateInvGrpBulk_Exit
+
+End Function
+
+
+Function GETindivINFO()
+
+  On Error GoTo PROC_ERR
+    Dim dbsDb As DAO.Database
+    Dim rstRs As DAO.Recordset
+    Dim strWhere$
+    Dim strCriterion$
+    
+    strCriterion = Forms![frmInvIndiv]![CUST KEY]
+    strWhere = "[PLTcustKEY] = '" & strCriterion & "'"
+
+    Set dbsDb = DBEngine(0)(0)
+    Set rstRs = dbsDb.OpenRecordset("tblSubscr", dbOpenDynaset, dbSeeChanges)
+    rstRs.FindFirst strWhere
+    Forms![frmInvGrp]![CUST NAME] = rstRs("SUB_LUname")
+    Forms![frmInvGrp]![ADDRESS 1] = rstRs("SUBstreet1")
+    Forms![frmInvGrp]![ADDRESS 2] = rstRs("SUBstreet2")
+    Forms![frmInvGrp]![CITY] = rstRs("SUBcity")
+    Forms![frmInvGrp]![STATE] = rstRs("SUBstate")
+    Forms![frmInvGrp]![ZIP CODE] = rstRs("SUBzip")
+    Forms![frmInvGrp]![TERRITORY KEY] = rstRs("SUBgeoID")
+    Forms![frmInvGrp]![SALESP    KEY] = rstRs("SUBagentID1")
+
+    rstRs.Close
+    dbsDb.Close
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function

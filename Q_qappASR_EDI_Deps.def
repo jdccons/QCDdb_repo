@@ -1,0 +1,52 @@
+Operation =3
+Name ="tblEDI_App_Dep"
+Option =0
+Begin InputTables
+    Name ="tblImportFile_ASR_Dependents"
+End
+Begin OutputColumns
+    Name ="DEPsubID"
+    Expression ="tblImportFile_ASR_Dependents.SSN"
+    Name ="DEPlastNAME"
+    Expression ="tblImportFile_ASR_Dependents.LAST_NAME"
+    Name ="DEPfirstNAME"
+    Expression ="tblImportFile_ASR_Dependents.FIRST_NAME"
+    Name ="DEPmiddleNAME"
+    Expression ="tblImportFile_ASR_Dependents.MIDDLE_NAME"
+    Alias ="DateOfBirth"
+    Name ="DEPdob"
+    Expression ="Mid([BIRTH_DATE],1,2) & \"/\" & Mid([BIRTH_DATE],3,2) & \"/\" & Mid([BIRTH_DATE]"
+        ",5,4)"
+    Name ="DEPrelationship"
+    Expression ="tblImportFile_ASR_Dependents.RELATION"
+    Name ="DEPgender"
+    Expression ="tblImportFile_ASR_Dependents.SEX"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =0
+    Left =66
+    Top =67
+    Right =940
+    Bottom =526
+    Left =-1
+    Top =-1
+    Right =867
+    Bottom =298
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =45
+        Top =26
+        Right =374
+        Bottom =255
+        Top =0
+        Name ="tblImportFile_ASR_Dependents"
+        Name =""
+    End
+End

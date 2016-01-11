@@ -1,0 +1,66 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblImportGroupTemp"
+    Name ="tblImportDependentTemp"
+End
+Begin OutputColumns
+    Expression ="tblImportGroupTemp.GroupID"
+    Expression ="tblImportGroupTemp.SSN"
+    Alias ="CountOfDepID"
+    Expression ="Count(tblImportDependentTemp.DepID)"
+End
+Begin Joins
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblImportDependentTemp"
+    Expression ="tblImportGroupTemp.SSN = tblImportDependentTemp.DepID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblImportGroupTemp.SSN"
+    Flag =0
+End
+Begin Groups
+    Expression ="tblImportGroupTemp.GroupID"
+    GroupLevel =0
+    Expression ="tblImportGroupTemp.SSN"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =114
+    Top =24
+    Right =990
+    Bottom =577
+    Left =-1
+    Top =-1
+    Right =869
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =139
+        Top =0
+        Name ="tblImportGroupTemp"
+        Name =""
+    End
+    Begin
+        Left =216
+        Top =7
+        Right =391
+        Bottom =142
+        Top =0
+        Name ="tblImportDependentTemp"
+        Name =""
+    End
+End

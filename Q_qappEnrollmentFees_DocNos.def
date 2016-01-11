@@ -1,0 +1,40 @@
+Operation =3
+Name ="tblEnrollmentFees_temp"
+Option =0
+Where ="(((ARLINH.RevenueAcctKey)=\"51004000\"))"
+Begin InputTables
+    Name ="ARLINH"
+End
+Begin OutputColumns
+    Name ="DocNo"
+    Expression ="ARLINH.DocumentNumber"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =76
+    Top =58
+    Right =1002
+    Bottom =371
+    Left =-1
+    Top =-1
+    Right =919
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =230
+        Bottom =105
+        Top =9
+        Name ="ARLINH"
+        Name =""
+    End
+End

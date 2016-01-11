@@ -1,0 +1,59 @@
+Operation =3
+Name ="tblInvoiceHistory"
+Option =0
+Where ="(((ARTRANH.TransactionType)=\"I\" Or (ARTRANH.TransactionType)=\"C\") AND ((ARTR"
+    "ANH.DocumentDate) Between #1/1/2000# And #12/31/2001#) AND ((ARTRANH.CustomerCla"
+    "ssKey)=\"GROUP\"))"
+Begin InputTables
+    Name ="ARTRANH"
+End
+Begin OutputColumns
+    Name ="GrpID"
+    Expression ="ARTRANH.CustomerKey"
+    Alias ="MonthNo"
+    Name ="InvMonth"
+    Expression ="CLng(Month([DocumentDate]))"
+    Alias ="YearNo"
+    Name ="InvYear"
+    Expression ="CLng(Year([DocumentDate]))"
+    Alias ="SumOfDocamt"
+    Name ="TotalBilling"
+    Expression ="Sum(ARTRANH.DocumentAmt)"
+End
+Begin Groups
+    Expression ="ARTRANH.CustomerKey"
+    GroupLevel =0
+    Expression ="CLng(Month([DocumentDate]))"
+    GroupLevel =0
+    Expression ="CLng(Year([DocumentDate]))"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =267
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =38
+        Top =6
+        Right =356
+        Bottom =225
+        Top =0
+        Name ="ARTRANH"
+        Name =""
+    End
+End

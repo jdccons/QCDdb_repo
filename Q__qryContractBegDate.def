@@ -1,0 +1,89 @@
+Operation =1
+Option =0
+Where ="(((tblAcctMgr.AcctMgrName)=\"NON-APPLICABLE\") AND ((tblGrp.GRcancelled)=0))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAcctMgr"
+End
+Begin OutputColumns
+    Expression ="tblAcctMgr.AcctMgrName"
+    Alias ="BegMonth1"
+    Expression ="Left([GRcontBEG],2)"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblAcctMgr"
+    Expression ="tblGrp.GRacctMgr = tblAcctMgr.AcctMgrID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblAcctMgr.AcctMgrName"
+    Flag =0
+    Expression ="Left([GRcontBEG],2)"
+    Flag =0
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRcontBEG"
+        dbInteger "ColumnWidth" ="1185"
+        dbBoolean "ColumnHidden" ="0"
+        dbText "Format" ="Medium Date"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3795"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="BegMonth1"
+        dbInteger "ColumnWidth" ="450"
+        dbBoolean "ColumnHidden" ="0"
+        dbText "InputMask" ="99\\->L<LL\\-00;0;_"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =802
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =15
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =83
+        Top =0
+        Name ="tblAcctMgr"
+        Name =""
+    End
+End

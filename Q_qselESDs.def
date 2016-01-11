@@ -1,0 +1,86 @@
+Operation =1
+Option =0
+Having ="(((tblAgent.AGENTtype)=\"ESD\") AND ((tblAgent.AGENTactive)=\"A\"))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGrpAgt"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.AGENTtype"
+    Expression ="tblAgent.AGENTactive"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpAgt"
+    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Flag =1
+End
+Begin Groups
+    Expression ="tblAgent.AGENTid"
+    GroupLevel =0
+    Expression ="tblAgent.AGENT_LUname"
+    GroupLevel =0
+    Expression ="tblAgent.AGENTtype"
+    GroupLevel =0
+    Expression ="tblAgent.AGENTactive"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblAgent.AGENTactive"
+        dbInteger "ColumnWidth" ="1830"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =67
+    Top =58
+    Right =957
+    Bottom =552
+    Left =-1
+    Top =-1
+    Right =879
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =179
+        Bottom =120
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =223
+        Top =3
+        Right =319
+        Bottom =117
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+    Begin
+        Left =359
+        Top =6
+        Right =455
+        Bottom =120
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

@@ -1,0 +1,48 @@
+Operation =1
+Option =0
+Where ="(((tblGrowth.Year)='2000'))"
+Begin InputTables
+    Name ="tblGrowth"
+End
+Begin OutputColumns
+    Expression ="tblGrowth.GroupID"
+    Expression ="tblGrowth.Year"
+    Expression ="tblGrowth.BeginEligEmps"
+    Expression ="tblGrowth.CurrentEligEmps"
+    Alias ="Rating"
+    Expression ="IIf(Month(Date())=1,IIf([BeginEligEmps]>=1000,'A',IIf([BeginEligEmps]<1000 And ["
+        "BeginEligEmps]>=100,'B',IIf([BeginEligEmps]<100 And [BeginEligEmps]>=30,'C+',IIf"
+        "([BeginEligEmps]<30 And [BeginEligEmps]>=0,'Baby C','?')))),IIf([CurrentEligEmps"
+        "]>=1000,'A',IIf([CurrentEligEmps]<1000 And [CurrentEligEmps]>=100,'B',IIf([Curre"
+        "ntEligEmps]<100 And [CurrentEligEmps]>=30,'C+',IIf([CurrentEligEmps]<30 And [Cur"
+        "rentEligEmps]>=0,'Baby C','?')))))"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =459
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =220
+        Bottom =113
+        Top =0
+        Name ="tblGrowth"
+        Name =""
+    End
+End

@@ -1,0 +1,98 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBssn)=\"013245621\") AND ((tblSubscr.SUBcancelled) Not In (3)) AN"
+    "D ((tblSubscr.SUBstatus)=\"INDIV\")) OR (((tblSubscr.SUBssn)=\"013245621\") AND "
+    "((tblSubscr.SUBcancelled) Is Null) AND ((tblSubscr.SUBstatus)=\"INDIV\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Alias ="Record_Type"
+    Expression ="\"CH\""
+    Alias ="Action_Code"
+    Expression ="\"\""
+    Alias ="Carrier_Number"
+    Expression ="\"10001\""
+    Alias ="Group_Number"
+    Expression ="\"1\""
+    Alias ="Group_Name"
+    Expression ="\"QCD of America\""
+    Alias ="Plan_Number"
+    Expression ="\"9000\""
+    Alias ="Member_Number"
+    Expression ="tblSubscr.SubID"
+    Alias ="ID_Suffix"
+    Expression ="\"01\""
+    Alias ="SSN"
+    Expression ="tblSubscr.SUBssn"
+    Alias ="Coverage_Code"
+    Expression ="IIf([CoverID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\"))"
+    Alias ="Last_Name"
+    Expression ="tblSubscr.SUBlastNAME"
+    Alias ="First_Name"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Alias ="Middle_Initial"
+    Expression ="Mid([SubMiddleName],1,1)"
+    Alias ="Address_1"
+    Expression ="tblSubscr.SUBstreet1"
+    Alias ="Address_2"
+    Expression ="tblSubscr.SUBstreet2"
+    Alias ="City"
+    Expression ="tblSubscr.SUBcity"
+    Alias ="State"
+    Expression ="tblSubscr.SUBstate"
+    Alias ="Zip"
+    Expression ="Mid([SUBzip],1,9)"
+    Alias ="Gender"
+    Expression ="tblSubscr.SUBGender"
+    Alias ="Birth_Date"
+    Expression ="Format(Month([SUBdob]),\"00\") & Format(Day([SubDob]),\"00\") & Year([SubDob])"
+    Alias ="Effective_Date"
+    Expression ="Format(Month([SubContBeg]),\"00\") & Format(Day([SubContBeg]),\"00\") & Year([Su"
+        "bContBeg])"
+    Alias ="Term_Date"
+    Expression ="Null"
+    Alias ="Sub_Group_ID"
+    Expression ="\"\""
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="Group_Name"
+        dbInteger "ColumnWidth" ="3810"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="City"
+        dbInteger "ColumnWidth" ="1770"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =39
+    Top =137
+    Right =1483
+    Bottom =524
+    Left =-1
+    Top =-1
+    Right =1433
+    Bottom =146
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =44
+        Top =9
+        Right =275
+        Bottom =86
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

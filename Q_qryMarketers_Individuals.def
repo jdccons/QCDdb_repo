@@ -1,0 +1,59 @@
+Operation =1
+Option =0
+Where ="(((tblAgent.PayCommTo)=2) AND ((tblAgent.AGENTactive)=\"A\"))"
+Begin InputTables
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENCY"
+    Expression ="tblAgent.AGENTfirst"
+    Expression ="tblAgent.AGENTlast"
+    Expression ="tblAgent.AGENTstreet1"
+    Expression ="tblAgent.AGENTstreet2"
+    Expression ="tblAgent.AGENTcity"
+    Expression ="tblAgent.AGENTstate"
+    Expression ="tblAgent.AGENTzip"
+    Expression ="tblAgent.PayCommTo"
+    Alias ="Phoone"
+    Expression ="Format([AGENTphone],\"(###) ###-####\")"
+    Expression ="tblAgent.AGENTemail"
+End
+Begin OrderBy
+    Expression ="tblAgent.AGENCY"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblAgent.AGENCY"
+        dbInteger "ColumnWidth" ="4725"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1273
+    Bottom =384
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =365
+        Bottom =315
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

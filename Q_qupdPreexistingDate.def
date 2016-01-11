@@ -1,0 +1,56 @@
+Operation =4
+Option =0
+Where ="(((ELGEXP_SQL.EINMPLAN)=\"QCDWHT-NGL\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="ELGEXP_SQL"
+End
+Begin OutputColumns
+    Name ="tblSubscr.PreexistingDate"
+    Expression ="Mid([EIDTCVEF],1,2) & \"/\" & Mid([EIDTCVEF],3,2) & \"/\" & Mid([EIDTCVEF],5,4)"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="ELGEXP_SQL"
+    Expression ="tblSubscr.SUBssn = ELGEXP_SQL.[EISSN#]"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1400
+    Bottom =955
+    Left =-1
+    Top =-1
+    Right =1397
+    Bottom =377
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =351
+        Top =31
+        Right =514
+        Bottom =250
+        Top =38
+        Name ="ELGEXP"
+        Name =""
+    End
+    Begin
+        Left =41
+        Top =33
+        Right =246
+        Bottom =252
+        Top =12
+        Name ="tblSubscr"
+        Name =""
+    End
+End

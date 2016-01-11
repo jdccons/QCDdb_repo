@@ -1,0 +1,61 @@
+Operation =1
+Option =0
+Where ="(((ELGEXP_SQL.EINMPLAN)=\"QCDRED-QCD\" Or (ELGEXP_SQL.EINMPLAN)=\"QCDWHT-QCD\" O"
+    "r (ELGEXP_SQL.EINMPLAN)=\"QCDBLU-MNL\" Or (ELGEXP_SQL.EINMPLAN)=\"QCDRPL-QCD\") "
+    "AND ((ELGEXP_SQL.EIRECID)=\"P\"))"
+Begin InputTables
+    Name ="ELGEXP_SQL"
+End
+Begin OutputColumns
+    Alias ="GroupID"
+    Expression ="Mid([EIGRPID],4,5)"
+    Expression ="ELGEXP_SQL.[EISSN#]"
+    Expression ="ELGEXP_SQL.EINMPLAN"
+    Expression ="ELGEXP_SQL.[EIPRMCL@]"
+    Expression ="ELGEXP_SQL.[EIDSCL@]"
+End
+Begin OrderBy
+    Expression ="Mid([EIGRPID],4,5)"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="ELGEXP_SQL.EINMPLAN"
+        dbInteger "ColumnWidth" ="2085"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ELGEXP_SQL.[EIDSCL@]"
+        dbInteger "ColumnWidth" ="3315"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =422
+    Top =98
+    Right =1119
+    Bottom =410
+    Left =-1
+    Top =-1
+    Right =686
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =271
+        Bottom =113
+        Top =60
+        Name ="ELGEXP_SQL"
+        Name =""
+    End
+End

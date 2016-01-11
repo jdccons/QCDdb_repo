@@ -1,0 +1,8 @@
+dbMemo "SQL" ="SELECT DISTINCTROW [Docno], [Custkey]\015\012FROM __tbljdcPotentialDups\015\012W"
+    "HERE [Docno] In (SELECT [Docno] FROM [__tbljdcPotentialDups] As Tmp GROUP BY [Do"
+    "cno] HAVING Count(*)>1 )\015\012ORDER BY [Docno];\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

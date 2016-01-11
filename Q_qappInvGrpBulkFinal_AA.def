@@ -1,0 +1,73 @@
+Operation =3
+Name ="tblInvHdr"
+Option =8
+Begin InputTables
+    Name ="tblInvHdrPreliminary"
+End
+Begin OutputColumns
+    Name ="TERRITORY KEY"
+    Expression ="tblInvHdrPreliminary.Territkey"
+    Name ="SALESP    KEY"
+    Expression ="tblInvHdrPreliminary.Salespkey"
+    Name ="CUST KEY"
+    Expression ="tblInvHdrPreliminary.Custkey"
+    Name ="CUST NAME"
+    Expression ="tblInvHdrPreliminary.Custname"
+    Name ="ADDRESS 1"
+    Expression ="tblInvHdrPreliminary.Custaddr1"
+    Name ="ADDRESS 2"
+    Expression ="tblInvHdrPreliminary.Custaddr2"
+    Name ="CITY"
+    Expression ="tblInvHdrPreliminary.Custcity"
+    Name ="STATE"
+    Expression ="tblInvHdrPreliminary.Custstate"
+    Name ="ZIP CODE"
+    Expression ="tblInvHdrPreliminary.Custzip"
+    Name ="ATTENTION"
+    Expression ="tblInvHdrPreliminary.CustAttn"
+    Name ="TRANS NO"
+    Expression ="tblInvHdrPreliminary.Tranno"
+    Alias ="Sel Status"
+    Name ="SEL STATUS"
+    Expression ="\"S\""
+    Name ="INV DATE"
+    Expression ="tblInvHdrPreliminary.Invdate"
+    Name ="CUST CLASS"
+    Expression ="tblInvHdrPreliminary.Custclass"
+    Name ="RecUserID"
+    Expression ="tblInvHdrPreliminary.RecUserID"
+    Name ="RecDate"
+    Expression ="tblInvHdrPreliminary.RecDate"
+    Name ="RecTime"
+    Expression ="tblInvHdrPreliminary.RecTime"
+    Name ="SYSDOCID"
+    Expression ="tblInvHdrPreliminary.Sysdocid"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =38
+    Top =94
+    Right =857
+    Bottom =407
+    Left =-1
+    Top =-1
+    Right =812
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =180
+        Bottom =105
+        Top =10
+        Name ="tblInvHdrPreliminary"
+        Name =""
+    End
+End

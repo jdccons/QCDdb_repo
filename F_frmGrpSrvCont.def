@@ -1,0 +1,627 @@
+Version =17
+VersionRequired =17
+Checksum =-593878662
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    RecordLocks =2
+    BorderStyle =1
+    Width =9045
+    ItemSuffix =15
+    Left =750
+    Top =1770
+    Right =11445
+    Bottom =6525
+    RecSrcDt = Begin
+        0x2b7ae1b3b2c4e140
+    End
+    RecordSource ="qryGrp"
+    Caption ="Change Service Contact on Groups"
+    OnCurrent ="[Event Procedure]"
+    MenuBar ="FormMenuBar"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c00009303000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a657420352f354d202d205374616e646172640000000000 ,
+        0x0a03180094008601031700000100010040068403000001000700fcff00000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000000028005802000002000000ff00 ,
+        0x0000280000660500000200870000030004000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000000000200000088ef ,
+        0xdb9d010009000000000000000000000000000000000008000100010001000100 ,
+        0x0100010001000100000000000000000000000000000000000100400007000800 ,
+        0x070084034006000000000000000000000001005802020000fcff000000000000 ,
+        0x000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x240008002c0001404850204c617365724a657420352f354d202d205374616e64 ,
+        0x61726400687070636c3567004c5054313a000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000
+    End
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =12632256
+            Name ="FormHeader1"
+        End
+        Begin Section
+            Height =3615
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =2322
+                    Top =1635
+                    Width =4455
+                    Height =360
+                    TabIndex =3
+                    Name ="GRsrvCONT"
+                    ControlSource ="GRsrvCONT"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =2322
+                    Top =270
+                    Width =3450
+                    Height =360
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =165
+                    Top =1635
+                    Width =2145
+                    Height =360
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text3"
+                    Caption ="Service Contact: "
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =165
+                    Top =270
+                    Width =2145
+                    Height =360
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text4"
+                    Caption ="Group Name: "
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =2322
+                    Top =630
+                    Width =4635
+                    Height =360
+                    TabIndex =1
+                    Name ="GRmainCONT"
+                    ControlSource ="GRmainCONT"
+                End
+                Begin Label
+                    OverlapFlags =223
+                    TextAlign =3
+                    Left =180
+                    Top =615
+                    Width =2130
+                    Height =360
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text6"
+                    Caption ="Main Contact: "
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =7005
+                    Top =285
+                    Width =1860
+                    Height =690
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text8"
+                    Caption ="You cannot change these 2 fields on this form!"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =837
+                    Top =2565
+                    Width =312
+                    TabIndex =5
+                    Name ="B"
+                    Caption ="B"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1149
+                    Top =2565
+                    Width =327
+                    TabIndex =6
+                    Name ="C"
+                    Caption ="C"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1476
+                    Top =2565
+                    Width =327
+                    TabIndex =7
+                    Name ="D"
+                    Caption ="D"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =1803
+                    Top =2565
+                    Width =297
+                    TabIndex =8
+                    Name ="E"
+                    Caption ="E"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =2100
+                    Top =2565
+                    Width =297
+                    TabIndex =9
+                    Name ="F"
+                    Caption ="F"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =2397
+                    Top =2565
+                    Width =327
+                    TabIndex =10
+                    Name ="G"
+                    Caption ="G"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =2724
+                    Top =2565
+                    Width =327
+                    TabIndex =11
+                    Name ="H"
+                    Caption ="H"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =3051
+                    Top =2565
+                    Width =342
+                    TabIndex =12
+                    Name ="I"
+                    Caption ="I"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =3720
+                    Top =2565
+                    Width =327
+                    TabIndex =13
+                    Name ="K"
+                    Caption ="K"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =4047
+                    Top =2565
+                    Width =327
+                    TabIndex =14
+                    Name ="L"
+                    Caption ="L"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =4374
+                    Top =2565
+                    Width =327
+                    TabIndex =15
+                    Name ="M"
+                    Caption ="M"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =4701
+                    Top =2565
+                    Width =327
+                    TabIndex =16
+                    Name ="N"
+                    Caption ="N"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =5028
+                    Top =2565
+                    Width =327
+                    TabIndex =17
+                    Name ="O"
+                    Caption ="O"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =5355
+                    Top =2565
+                    Width =327
+                    TabIndex =18
+                    Name ="P"
+                    Caption ="P"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =5682
+                    Top =2565
+                    Width =312
+                    TabIndex =19
+                    Name ="Q"
+                    Caption ="Q"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =5994
+                    Top =2565
+                    Width =342
+                    TabIndex =20
+                    Name ="R"
+                    Caption ="R"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =6336
+                    Top =2565
+                    Width =312
+                    TabIndex =21
+                    Name ="S"
+                    Caption ="S"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =6645
+                    Top =2565
+                    Width =312
+                    TabIndex =22
+                    Name ="T"
+                    Caption ="T"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =6960
+                    Top =2565
+                    Width =327
+                    TabIndex =23
+                    Name ="U"
+                    Caption ="U"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =7287
+                    Top =2565
+                    Width =327
+                    TabIndex =24
+                    Name ="V"
+                    Caption ="V"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    Left =7620
+                    Top =2565
+                    Width =387
+                    TabIndex =25
+                    Name ="W"
+                    Caption ="W"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =8001
+                    Top =2565
+                    Width =312
+                    TabIndex =26
+                    Name ="X"
+                    Caption ="X"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =8310
+                    Top =2565
+                    Width =342
+                    TabIndex =27
+                    Name ="Y"
+                    Caption ="Y"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =8655
+                    Top =2565
+                    Width =327
+                    TabIndex =28
+                    Name ="Z"
+                    Caption ="Z"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    AccessKey =78
+                    ColumnCount =3
+                    ListRows =5
+                    Left =3450
+                    Top =2990
+                    Width =5541
+                    TabIndex =29
+                    BackColor =12632256
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"30\""
+                    Name ="GroupPickList"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tblGrp.GROUPid AS Group_ID, tblGrp.GRname AS Group_Name, tblG"
+                        "rp.GRsrvCONT AS [Service Contact] FROM tblGrp WHERE (((tblGrp.GROUPid) Like [For"
+                        "ms]![frmGrpSrvCont]![AlphaControl] & \"*\")) ORDER BY tblGrp.GRname;"
+                    ColumnWidths ="0;3240;1800"
+                    StatusBarText ="Enter Group (last) name or click on arrow to view list."
+                    AfterUpdate ="=FindID([Forms]![frmGrpSrvCont],[GroupPickList],\"[GROUPid]\",\"GROUPid\")"
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SetLabelColor([],0)"
+                    Begin
+                        Begin Label
+                            BackStyle =0
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =2160
+                            Top =2990
+                            Width =1170
+                            Height =240
+                            FontWeight =700
+                            BorderColor =16777215
+                            Name ="lblGroupPickList"
+                            Caption ="Group &Name:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    AccessKey =70
+                    Left =1410
+                    Top =2985
+                    Width =675
+                    Height =245
+                    TabIndex =30
+                    BackColor =12632256
+                    Name ="AlphaControl"
+                    StatusBarText ="Enter a letter or letters to filter on (e.g. \"smith\") and TAB out of field."
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SearchBtn(\"GroupPickList\")"
+                    DefaultValue ="\"*\""
+                    FontName ="Helv"
+                    Begin
+                        Begin Label
+                            BackStyle =0
+                            OverlapFlags =85
+                            TextFontFamily =0
+                            Left =540
+                            Top =2990
+                            Width =840
+                            Height =240
+                            FontWeight =700
+                            ForeColor =12582912
+                            Name ="lblAlphaControl"
+                            Caption ="&Filter on:"
+                        End
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    Left =525
+                    Top =2565
+                    Width =312
+                    TabIndex =31
+                    Name ="A"
+                    Caption ="A"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    Left =3390
+                    Top =2565
+                    Width =342
+                    TabIndex =32
+                    Name ="J"
+                    Caption ="J"
+                    OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                End
+                Begin Label
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =165
+                    Top =1995
+                    Width =2160
+                    Height =360
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label9"
+                    Caption ="Phone: "
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =2325
+                    Top =1995
+                    Width =1170
+                    Height =360
+                    TabIndex =4
+                    Name ="txtGRphone2"
+                    ControlSource ="GRphone2"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TabStop = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    TextAlign =1
+                    Left =6270
+                    Top =270
+                    Width =675
+                    Height =360
+                    TabIndex =33
+                    Name ="txtGROUPid"
+                    ControlSource ="GROUPid"
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =5790
+                    Top =270
+                    Width =480
+                    Height =360
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label12"
+                    Caption ="ID: "
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =165
+                    Top =975
+                    Width =2145
+                    Height =360
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label13"
+                    Caption ="Phone: "
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =2325
+                    Top =990
+                    Width =1155
+                    Height =360
+                    TabIndex =2
+                    Name ="ctlGRphone1"
+                    ControlSource ="GRphone1"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =375
+            BackColor =12632256
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Form_Current()
+
+  On Error GoTo PROC_ERR
+    Me![AlphaControl] = Null
+    Me![GroupPickList] = Null
+
+   
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

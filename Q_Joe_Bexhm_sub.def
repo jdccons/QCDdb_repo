@@ -1,0 +1,78 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblGrp_Bexar"
+    Name ="tblSubscr_Bexar"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblSubscr_Bexar.SUBssn"
+    Expression ="tblSubscr_Bexar.SUBlastNAME"
+    Expression ="tblSubscr_Bexar.SUBfirstNAME"
+    Expression ="tblRates.Rate"
+    Expression ="tblSubscr_Bexar.SUBgroupID"
+    Expression ="tblSubscr_Bexar.SUBeffDATE"
+End
+Begin Joins
+    LeftTable ="tblSubscr_Bexar"
+    RightTable ="tblRates"
+    Expression ="tblSubscr_Bexar.RateID = tblRates.RateID"
+    Flag =1
+    LeftTable ="tblGrp_Bexar"
+    RightTable ="tblSubscr_Bexar"
+    Expression ="tblGrp_Bexar.GROUPid = tblSubscr_Bexar.SUBgroupID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr_Bexar.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =-52
+    Top =49
+    Right =1144
+    Bottom =545
+    Left =-1
+    Top =-1
+    Right =1189
+    Bottom =323
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =182
+        Bottom =239
+        Top =0
+        Name ="tblGrp_Bexar"
+        Name =""
+    End
+    Begin
+        Left =248
+        Top =6
+        Right =736
+        Bottom =266
+        Top =0
+        Name ="tblSubscr_Bexar"
+        Name =""
+    End
+    Begin
+        Left =824
+        Top =12
+        Right =920
+        Bottom =122
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

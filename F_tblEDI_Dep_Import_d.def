@@ -1,0 +1,1141 @@
+Version =20
+VersionRequired =20
+Checksum =2062173090
+Begin Form
+    AutoCenter = NotDefault
+    DividingLines = NotDefault
+    AllowAdditions = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =2
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =11520
+    DatasheetFontHeight =11
+    ItemSuffix =65
+    Left =1050
+    Top =5955
+    Right =12855
+    Bottom =7905
+    DatasheetGridlinesColor =15062992
+    RecSrcDt = Begin
+        0x9afe3a4c3724e440
+    End
+    RecordSource ="SELECT tblEDI_App_Dep.DepCounter, tblEDI_App_Dep.DepSSN, tblEDI_App_Dep.EIMBRID,"
+        " tblEDI_App_Dep.DepSubID, tblEDI_App_Dep.DepFirstName, tblEDI_App_Dep.DepMiddleN"
+        "ame, tblEDI_App_Dep.DepLastName, tblEDI_App_Dep.DepDOB, tblEDI_App_Dep.DepAge, t"
+        "blEDI_App_Dep.DepRelationship, tblEDI_App_Dep.DepGender, tblEDI_App_Dep.DepEffDa"
+        "te, tblEDI_App_Dep.PreexistingDate, tblEDI_App_Dep.CreateDate, tblEDI_App_Dep.Mo"
+        "difyDate FROM tblEDI_App_Dep;"
+    Caption ="tblEDI_Dep_Import_d"
+    DatasheetFontName ="Calibri"
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    UnknownProp = {305 ,452 ,1 ,1 ,1 } Begin
+        0x00
+    End
+    UnknownProp = {391 ,580 ,4 ,4 ,4 } Begin
+        0x05000080
+    End
+    UnknownProp = {392 ,559 ,1 ,1 ,1 } Begin
+        0x00
+    End
+    UnknownProp = {394 ,561 ,2 ,1 ,1 } Begin
+        0x01
+    End
+    UnknownProp = {397 ,572 ,4 ,4 ,4 } Begin
+        0xf4f4f400
+    End
+    UnknownProp = {400 ,582 ,4 ,4 ,4 } Begin
+        0xd0d7e500
+    End
+    UnknownProp = {403 ,592 ,1 ,1 ,1 } Begin
+        0x01
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            FontSize =11
+            FontName ="Calibri"
+            UnknownProp = {291 ,615 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {292 ,616 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {295 ,619 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {298 ,622 ,4 ,0 ,4 } Begin
+                0x02000000
+            End
+            UnknownProp = {299 ,623 ,6 ,0 ,4 } Begin
+                0x00007042
+            End
+            UnknownProp = {305 ,625 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {307 ,627 ,6 ,0 ,4 } Begin
+                0x00008242
+            End
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            LabelX =-1800
+            FontSize =11
+            FontName ="Calibri"
+            AsianLineBreak =1
+            UnknownProp = {313 ,616 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {316 ,619 ,4 ,0 ,4 } Begin
+                0x03000000
+            End
+            UnknownProp = {318 ,621 ,6 ,0 ,4 } Begin
+                0x0000b442
+            End
+            UnknownProp = {319 ,615 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {320 ,622 ,4 ,0 ,4 } Begin
+                0x02000000
+            End
+            UnknownProp = {322 ,624 ,6 ,0 ,4 } Begin
+                0x00004842
+            End
+            UnknownProp = {327 ,625 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {329 ,627 ,6 ,0 ,4 } Begin
+                0x00008242
+            End
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =15849926
+            Name ="FormHeader"
+            GUID = Begin
+                0x3bdefb5fee9978448707d36f7e390a57
+            End
+            UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
+                0x01
+            End
+            UnknownProp = {268 ,628 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {270 ,630 ,6 ,0 ,4 } Begin
+                0x0000be42
+            End
+            UnknownProp = {271 ,616 ,4 ,0 ,4 } Begin
+                0x02000000
+            End
+            UnknownProp = {272 ,617 ,6 ,0 ,4 } Begin
+                0x0000a041
+            End
+        End
+        Begin Section
+            Height =8775
+            Name ="Detail"
+            GUID = Begin
+                0x1053dca4550bcb429857a80f5d800def
+            End
+            UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
+                0x01
+            End
+            UnknownProp = {267 ,571 ,4 ,4 ,4 } Begin
+                0xf2f2f200
+            End
+            UnknownProp = {268 ,628 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {270 ,630 ,6 ,0 ,4 } Begin
+                0x0000be42
+            End
+            UnknownProp = {271 ,616 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =120
+                    Height =315
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepCounter"
+                    ControlSource ="DepCounter"
+                    GUID = Begin
+                        0x3d612c2f5fcfb24f80e30c610697858c
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x78000000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0xb3010000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =120
+                            Width =1260
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label50"
+                            Caption ="DepCounter:"
+                            GUID = Begin
+                                0x7f0de8590f95184d999b735e5685a16b
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x78000000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0x28050000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0xb3010000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =540
+                    Height =315
+                    TabIndex =1
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepSSN"
+                    ControlSource ="DepSSN"
+                    GUID = Begin
+                        0x9d01223cf9ad03438dcf73f91c0f2fbf
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x1c020000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x57030000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =540
+                            Width =870
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label51"
+                            Caption ="DepSSN:"
+                            GUID = Begin
+                                0x664e4aca9296c54eb1b61b8fae7e0c59
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x1c020000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xa2030000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x57030000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =960
+                    Height =315
+                    TabIndex =2
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="EIMBRID"
+                    ControlSource ="EIMBRID"
+                    GUID = Begin
+                        0x6a20141a95a00048b13ea12cc52c573f
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0xc0030000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0xfb040000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =960
+                            Width =915
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label52"
+                            Caption ="EIMBRID:"
+                            GUID = Begin
+                                0xfcd482f438c80e46adaf75204ea4cefb
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0xc0030000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xcf030000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0xfb040000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =1380
+                    Height =315
+                    TabIndex =3
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepSubID"
+                    ControlSource ="DepSubID"
+                    GUID = Begin
+                        0xad691febeaaa304695f9b217648842da
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x64050000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x9f060000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1380
+                            Width =1050
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label53"
+                            Caption ="DepSubID:"
+                            GUID = Begin
+                                0xdf7f6df38a700b4f85ad42a3f2d94609
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x64050000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0x56040000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x9f060000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =1800
+                    Height =315
+                    TabIndex =4
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepFirstName"
+                    ControlSource ="DepFirstName"
+                    GUID = Begin
+                        0x355cf0130fdcfe40a8aa5f5d5f9d58dd
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x08070000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x43080000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1800
+                            Width =1470
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label54"
+                            Caption ="DepFirstName:"
+                            GUID = Begin
+                                0x966961356326d341b304279f89464eec
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x08070000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xfa050000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x43080000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =2220
+                    Height =315
+                    TabIndex =5
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepMiddleName"
+                    ControlSource ="DepMiddleName"
+                    GUID = Begin
+                        0x15bbfeaf542a7e40afb955cc7684be8b
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0xac080000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0xe7090000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =2220
+                            Width =1725
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label55"
+                            Caption ="DepMiddleName:"
+                            GUID = Begin
+                                0xe69b01229885344ba7fbf91f59fde721
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0xac080000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xf9060000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0xe7090000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =2640
+                    Height =315
+                    TabIndex =6
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepLastName"
+                    ControlSource ="DepLastName"
+                    GUID = Begin
+                        0xed952ac969a4ee488179699fc36897c1
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x500a0000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x8b0b0000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =2640
+                            Width =1425
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label56"
+                            Caption ="DepLastName:"
+                            GUID = Begin
+                                0xd40151d9c48b1d4b98b4080b885bc435
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x500a0000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xcd050000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x8b0b0000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =3060
+                    Height =315
+                    TabIndex =7
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepDOB"
+                    ControlSource ="DepDOB"
+                    GUID = Begin
+                        0x8db27743700daf42941a2ad8205851f5
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0xf40b0000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x2f0d0000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =3060
+                            Width =915
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label57"
+                            Caption ="DepDOB:"
+                            GUID = Begin
+                                0x7699aa323f527d44a8cf22ccf12b7f48
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0xf40b0000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xcf030000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x2f0d0000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =3480
+                    Height =315
+                    TabIndex =8
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepAge"
+                    ControlSource ="DepAge"
+                    GUID = Begin
+                        0x60110d51c837fc49a492391811cd4a91
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x980d0000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0xd30e0000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =3480
+                            Width =870
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label58"
+                            Caption ="DepAge:"
+                            GUID = Begin
+                                0x46d226792507e54fa6c3acecab27c7f7
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x980d0000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xa2030000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0xd30e0000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =3900
+                    Height =315
+                    TabIndex =9
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepRelationship"
+                    ControlSource ="DepRelationship"
+                    GUID = Begin
+                        0xb5375d63a3c67d4f8bd43df5780db0a4
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x3c0f0000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x77100000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =3900
+                            Width =1680
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label59"
+                            Caption ="DepRelationship:"
+                            GUID = Begin
+                                0x16edcc985e5ec64bbe619a74d20c8ba1
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x3c0f0000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xcc060000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x77100000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =4320
+                    Height =315
+                    TabIndex =10
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepGender"
+                    ControlSource ="DepGender"
+                    GUID = Begin
+                        0x7a7b31ec38e4e848baefb5671024be18
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0xe0100000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x1b120000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4320
+                            Width =1200
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label60"
+                            Caption ="DepGender:"
+                            GUID = Begin
+                                0x3c4115784dbb3544a6ee33e05da2dc8f
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0xe0100000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xec040000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x1b120000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =4740
+                    Height =315
+                    TabIndex =11
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="DepEffDate"
+                    ControlSource ="DepEffDate"
+                    GUID = Begin
+                        0xb5920068651e914b836660b9af275ec0
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x84120000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0xbf130000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =4740
+                            Width =1200
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label61"
+                            Caption ="DepEffDate:"
+                            GUID = Begin
+                                0x158ad26a4780c042a3f2d3a5489f40f0
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x84120000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xec040000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0xbf130000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =5160
+                    Height =315
+                    TabIndex =12
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="PreexistingDate"
+                    ControlSource ="PreexistingDate"
+                    GUID = Begin
+                        0x3224f1186368374bb0f145181744260c
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x28140000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x63150000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =5160
+                            Width =1620
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label62"
+                            Caption ="PreexistingDate:"
+                            GUID = Begin
+                                0x0a9d3a27d527a24f86fae49a35e82268
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x28140000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0x90060000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x63150000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =5580
+                    Height =315
+                    TabIndex =13
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="CreateDate"
+                    ControlSource ="CreateDate"
+                    GUID = Begin
+                        0xa1576b50aaf96f43b55711b72b7030e2
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0xcc150000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0x07170000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =5580
+                            Width =1185
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label63"
+                            Caption ="CreateDate:"
+                            GUID = Begin
+                                0x8f09f08d959318458a24499f4fbc9ba7
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0xcc150000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0xdd040000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0x07170000
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1860
+                    Top =6000
+                    Height =315
+                    TabIndex =14
+                    BorderColor =12835293
+                    ForeColor =4138256
+                    Name ="ModifyDate"
+                    ControlSource ="ModifyDate"
+                    GUID = Begin
+                        0xcc93bfcfc3b12d49ab1f518578c701de
+                    End
+                    UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
+                        0xa6a6a600
+                    End
+                    UnknownProp = {299 ,0 ,3 ,4 ,4 } Begin
+                        0xffffffff
+                    End
+                    UnknownProp = {302 ,586 ,3 ,4 ,4 } Begin
+                        0x44070000
+                    End
+                    UnknownProp = {303 ,587 ,3 ,4 ,4 } Begin
+                        0x70170000
+                    End
+                    UnknownProp = {304 ,588 ,3 ,4 ,4 } Begin
+                        0xe40c0000
+                    End
+                    UnknownProp = {305 ,589 ,3 ,4 ,4 } Begin
+                        0xab180000
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =6000
+                            Width =1230
+                            Height =315
+                            BorderColor =16777215
+                            ForeColor =13995605
+                            Name ="Label64"
+                            Caption ="ModifyDate:"
+                            GUID = Begin
+                                0x90d724bd858ca24db75140aefd835ff0
+                            End
+                            UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
+                                0xa6a6a600
+                            End
+                            UnknownProp = {282 ,586 ,3 ,4 ,4 } Begin
+                                0x3c000000
+                            End
+                            UnknownProp = {283 ,587 ,3 ,4 ,4 } Begin
+                                0x70170000
+                            End
+                            UnknownProp = {284 ,588 ,3 ,4 ,4 } Begin
+                                0x0a050000
+                            End
+                            UnknownProp = {285 ,589 ,3 ,4 ,4 } Begin
+                                0xab180000
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            Name ="FormFooter"
+            GUID = Begin
+                0xed65535db134a143b8e3609ad8879681
+            End
+            UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
+                0x01
+            End
+            UnknownProp = {268 ,628 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+            UnknownProp = {270 ,630 ,6 ,0 ,4 } Begin
+                0x0000be42
+            End
+            UnknownProp = {271 ,616 ,4 ,0 ,4 } Begin
+                0x01000000
+            End
+        End
+    End
+End

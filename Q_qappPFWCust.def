@@ -1,0 +1,82 @@
+Operation =3
+Name ="ARCUST"
+Option =0
+Where ="(((tblGrp.GROUPid)=[Forms]![frmGrp]![ctlGROUPid]))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="CustomerName"
+    Expression ="tblGrp.GRname"
+    Name ="CustomerAddress1"
+    Expression ="tblGrp.GRstreet1"
+    Name ="CustomerAddress2"
+    Expression ="tblGrp.GRstreet2"
+    Name ="CustomerCity"
+    Expression ="tblGrp.GRcity"
+    Name ="CustomerState"
+    Expression ="tblGrp.GRstate"
+    Name ="CustomerZipCode"
+    Expression ="tblGrp.GRzip"
+    Name ="AttnPhone"
+    Expression ="tblGrp.GRphone1"
+    Name ="CustomerAttention"
+    Expression ="tblGrp.GRmainCONT"
+    Name ="ContactPhone"
+    Expression ="tblGrp.GRphone2"
+    Name ="ContactName"
+    Expression ="tblGrp.GRsrvCONT"
+    Name ="FaxNumber"
+    Expression ="tblGrp.GRfax"
+    Alias ="SalesPerCode"
+    Name ="SalespersonKey"
+    Expression ="\"CORPT\""
+    Name ="TerritoryKey"
+    Expression ="tblGrp.GRPgeoID"
+    Name ="EmailAddress"
+    Expression ="tblGrp.GRemail"
+    Alias ="Date"
+    Name ="RecDate"
+    Expression ="Format(Date(),\"mm/dd/yyyy\")"
+    Alias ="User"
+    Name ="RecUserID"
+    Expression ="\"QCDdb\""
+    Name ="CustomerKey"
+    Expression ="tblGrp.GROUPid"
+    Alias ="CLASS"
+    Name ="CustomerClassKey"
+    Expression ="\"GROUP\""
+    Alias ="OPENinv"
+    Name ="PaymentMthd"
+    Expression ="\"O\""
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =56
+        Top =8
+        Right =239
+        Bottom =107
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

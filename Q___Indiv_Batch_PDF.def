@@ -1,0 +1,115 @@
+dbMemo "SQL" ="SELECT [__Indiv_Print_PDF].BatchNo, [__Indiv_Print_PDF].ZipSub, [__Indiv_Print_P"
+    "DF].SubID, [__Indiv_Print_PDF].SubSSN, [__Indiv_Print_PDF].SubFirstName, [__Indi"
+    "v_Print_PDF].SubMiddleName, [__Indiv_Print_PDF].SubLastName, [__Indiv_Print_PDF]"
+    ".SubStreet1, [__Indiv_Print_PDF].SubStreet2, [__Indiv_Print_PDF].SubCity, [__Ind"
+    "iv_Print_PDF].SubState, [__Indiv_Print_PDF].SubZip, [__Indiv_Print_PDF].SubEffDa"
+    "te, [__Indiv_Print_PDF].SubGroupID, [__Indiv_Print_PDF].SubStatus, [__Indiv_Prin"
+    "t_PDF].SubContEnd, [__Indiv_Print_PDF].SubCardPrt, [__Indiv_Print_PDF].SubContBe"
+    "g, [__Indiv_Print_PDF].ForName, [__Indiv_Print_PDF].FormAdd, [__Indiv_Print_PDF]"
+    ".FormCSZ, [__Indiv_Print_PDF].SubCancelled, [__Indiv_Print_PDF].Printed\015\012F"
+    "ROM __Indiv_Print_PDF\015\012WHERE ((([__Indiv_Print_PDF].BatchNo) Between 1 And"
+    " 250));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+dbBoolean "TotalsRow" ="0"
+Begin
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].BatchNo"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].Printed"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].ZipSub"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubSSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubFirstName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubMiddleName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubLastName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubCity"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubState"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubZip"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubEffDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubGroupID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubContEnd"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubCardPrt"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubContBeg"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].ForName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].FormAdd"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].FormCSZ"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubCancelled"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubStreet1"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="[__Indiv_Print_PDF].SubStreet2"
+        dbLong "AggregateType" ="-1"
+    End
+End

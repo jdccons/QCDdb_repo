@@ -1,0 +1,72 @@
+Operation =1
+Option =8
+Where ="(((tblGrp.GRcancelled)=No) AND ((tblGrp.GRhold)=No) AND ((tblGrp.GROUPid) Not Li"
+    "ke \"INDV*\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GROUPid"
+    Alias ="SubName"
+    Expression ="(Trim([SUBlastNAME]) & \", \" & Trim([SUBfirstNAME]) & \" \" & Trim([SUBmiddleNA"
+        "ME]))"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblGrp.GRname"
+    Expression ="tblSubscr.SUBnoDEPENT"
+    Expression ="tblSubscr.SubID"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="1965"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =102
+    Top =142
+    Right =1134
+    Bottom =459
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =101
+        Top =38
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =101
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

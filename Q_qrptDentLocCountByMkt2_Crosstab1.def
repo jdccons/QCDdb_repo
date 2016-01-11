@@ -1,0 +1,51 @@
+Operation =6
+Option =0
+Begin InputTables
+    Name ="qrptDentLocCountByMkt2"
+End
+Begin OutputColumns
+    Alias ="The Value"
+    Expression ="Count([qrptDentLocCountByMkt2].DENTspecialty)"
+    Expression ="[qrptDentLocCountByMkt2].GEOdesc"
+    GroupLevel =2
+    Alias ="Row Summary"
+    Expression ="Count([qrptDentLocCountByMkt2].DENTspecialty)"
+    GroupLevel =2
+    Expression ="[qrptDentLocCountByMkt2].DENTspecialty"
+    GroupLevel =1
+End
+Begin Groups
+    Expression ="[qrptDentLocCountByMkt2].GEOdesc"
+    GroupLevel =2
+    Expression ="[qrptDentLocCountByMkt2].DENTgeoID"
+    GroupLevel =2
+    Expression ="[qrptDentLocCountByMkt2].DENTspecialty"
+    GroupLevel =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =518
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =557
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =88
+        Top =0
+        Name ="q-DENTlocCOUNTbyMKT2"
+        Name =""
+    End
+End

@@ -1,0 +1,127 @@
+Version =17
+VersionRequired =17
+Checksum =397539432
+Begin Report
+    LayoutForPrint = NotDefault
+    RecordLocks =2
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =3780
+    ItemSuffix =6
+    Left =795
+    Top =330
+    Right =11520
+    Bottom =6510
+    RecSrcDt = Begin
+        0x53f86d3d92c7e140
+    End
+    RecordSource ="qryAgent"
+    Caption ="Agents - Mailing Labels"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xb0010000d0020000b0010000d002000000000000260d0000a005000000000000 ,
+        0x030000005202000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000100580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a00000000000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4f70315c6870350000000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="AGENT_LUname"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    OverlapFlags =81
+                    TextAlign =1
+                    Left =288
+                    Top =240
+                    Width =3219
+                    Name ="Field2"
+                    ControlSource ="=Trim([AGENTfirst] & \" \" & [AGENTlast])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    OverlapFlags =83
+                    TextAlign =1
+                    Left =288
+                    Top =480
+                    Width =3204
+                    TabIndex =1
+                    Name ="Field3"
+                    ControlSource ="=   Trim([AGENCY])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    OverlapFlags =83
+                    TextAlign =1
+                    Left =288
+                    Top =720
+                    Width =3204
+                    TabIndex =2
+                    Name ="Field4"
+                    ControlSource ="=   Trim([AGENTstreet1] & \" \" & [AGENTstreet2])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    OverlapFlags =83
+                    TextAlign =1
+                    Left =288
+                    Top =960
+                    Width =3204
+                    TabIndex =3
+                    Name ="Field5"
+                    ControlSource ="=Trim([AGENTcity] & \", \" & [AGENTstate] & \"  \" & [Zip2])"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    Forms![fmnuReportAgent].Visible = True
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

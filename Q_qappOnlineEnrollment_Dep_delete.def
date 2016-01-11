@@ -1,0 +1,80 @@
+Operation =3
+Name ="tblDependent_delete"
+Option =0
+Where ="(((tblSubscriber_temp.MembershipStatus)=\"Deleted\"))"
+Begin InputTables
+    Name ="tblDependent_temp"
+    Name ="tblSubscriber_temp"
+End
+Begin OutputColumns
+    Name ="DEPssn"
+    Expression ="tblDependent_temp.DepSSN"
+    Name ="DEPsubID"
+    Expression ="tblDependent_temp.SubSSN"
+    Name ="DEPfirstNAME"
+    Expression ="tblDependent_temp.FirstName"
+    Name ="DEPlastNAME"
+    Expression ="tblDependent_temp.LastName"
+    Name ="DEPmiddleNAME"
+    Expression ="tblDependent_temp.MiddleInitial"
+    Name ="DepDOB"
+    Expression ="tblDependent_temp.DOB"
+    Name ="DepAge"
+    Expression ="tblDependent_temp.Age"
+    Name ="DepRelationship"
+    Expression ="tblDependent_temp.Relationship"
+    Alias ="Expr1"
+    Name ="DEPgender"
+    Expression ="Mid([tblDependent_temp].[Gender],1,1)"
+    Name ="DepEffDate"
+    Expression ="tblDependent_temp.EffDate"
+End
+Begin Joins
+    LeftTable ="tblDependent_temp"
+    RightTable ="tblSubscriber_temp"
+    Expression ="tblDependent_temp.SubSSN = tblSubscriber_temp.SSN"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblDependent_temp.LastName"
+        dbInteger "ColumnWidth" ="2475"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =659
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =224
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =105
+        Top =17
+        Right =304
+        Bottom =154
+        Top =0
+        Name ="tblDependent_temp"
+        Name =""
+    End
+    Begin
+        Left =385
+        Top =20
+        Right =581
+        Bottom =127
+        Top =25
+        Name ="tblSubscriber_temp"
+        Name =""
+    End
+End

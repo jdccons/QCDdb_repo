@@ -1,0 +1,110 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="qselACTAgents"
+    Name ="qselACTAgentsACT"
+End
+Begin OutputColumns
+    Expression ="qselACTAgentsACT.AgentID"
+    Expression ="qselACTAgentsACT.COMPANY"
+    Expression ="qselACTAgentsACT.FNAME"
+    Expression ="qselACTAgentsACT.LNAME"
+    Expression ="qselACTAgentsACT.ADDR1"
+    Expression ="qselACTAgentsACT.CITY"
+    Expression ="qselACTAgentsACT.STATE"
+    Expression ="qselACTAgentsACT.ZIP"
+End
+Begin Joins
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTid = qselACTAgentsACT.AgentID"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENCY = qselACTAgentsACT.COMPANY"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTfirst = qselACTAgentsACT.FNAME"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTlast = qselACTAgentsACT.LNAME"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTstreet1 = qselACTAgentsACT.ADDR1"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTcity = qselACTAgentsACT.CITY"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTstate = qselACTAgentsACT.STATE"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTzip = qselACTAgentsACT.ZIP"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.PhonePrimary = qselACTAgentsACT.PhonePrimary"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.PhoneFax = qselACTAgentsACT.PhoneFax"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.AGENTgeoID = qselACTAgentsACT.AgentGeoID"
+    Flag =1
+    LeftTable ="qselACTAgents"
+    RightTable ="qselACTAgentsACT"
+    Expression ="qselACTAgents.IDStatus = qselACTAgentsACT.IDSTATUS"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+Begin
+    Begin
+        dbText "Name" ="qselACTAgentsACT.COMPANY"
+        dbInteger "ColumnWidth" ="4215"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =239
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =263
+        Bottom =203
+        Top =8
+        Name ="qselACTAgents"
+        Name =""
+    End
+    Begin
+        Left =359
+        Top =12
+        Right =573
+        Bottom =194
+        Top =7
+        Name ="qselACTAgentsACT"
+        Name =""
+    End
+End

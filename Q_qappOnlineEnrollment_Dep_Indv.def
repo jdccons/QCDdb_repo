@@ -1,0 +1,33 @@
+dbMemo "SQL" ="INSERT INTO tblEDI_App_Dep ( DEPssn, EIMBRID, DEPsubID, DEPfirstNAME, DEPlastNAM"
+    "E, DEPmiddleNAME, DepDOB, DepAge, DepRelationship, DEPgender, DepEffDate, Preexi"
+    "stingDate )\015\012SELECT tblDependent_temp.DepSSN, tblDependent_temp.EIMBRID, t"
+    "blDependent_temp.SubSSN, tblDependent_temp.FirstName, tblDependent_temp.LastName"
+    ", tblDependent_temp.MiddleInitial, tblDependent_temp.DOB, tblDependent_temp.Age,"
+    " tblDependent_temp.Relationship, Mid([tblDependent_temp].[Gender],1,1) AS Expr1,"
+    " tblDependent_temp.EffDate, tblDependent_temp.PreexistingDate\015\012FROM tblDep"
+    "endent_temp INNER JOIN tblSubscriber_temp ON tblDependent_temp.SubSSN = tblSubsc"
+    "riber_temp.SSN\015\012WHERE (((tblSubscriber_temp.MembershipStatus)=\"Added\" Or"
+    " (tblSubscriber_temp.MembershipStatus)=\"Changed\") AND ((tblSubscriber_temp.Gro"
+    "upID)='INDIV'));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+Begin
+    Begin
+        dbText "Name" ="tblDependent_temp.DepSSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblSubscriber_temp.GroupID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="Expr1"
+    End
+End

@@ -1,0 +1,93 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRclientSVCrep)=\"MARY HILL\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAcctMgr"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRclientSVCrep"
+    Expression ="tblGrp.GRacctMgr"
+    Expression ="tblAcctMgr.AcctMgrName"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblAcctMgr"
+    Expression ="tblGrp.GRacctMgr = tblAcctMgr.AcctMgrID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbInteger "ColumnWidth" ="1020"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3780"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRacctMgr"
+        dbInteger "ColumnWidth" ="1290"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRclientSVCrep"
+        dbInteger "ColumnWidth" ="1605"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAcctMgr.AcctMgrName"
+        dbInteger "ColumnWidth" ="1530"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRee"
+        dbInteger "ColumnWidth" ="900"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =483
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =218
+        Bottom =113
+        Top =23
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =256
+        Top =6
+        Right =352
+        Bottom =83
+        Top =0
+        Name ="tblAcctMgr"
+        Name =""
+    End
+End

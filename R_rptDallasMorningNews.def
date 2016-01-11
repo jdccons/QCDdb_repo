@@ -1,0 +1,110 @@
+Version =17
+VersionRequired =17
+Checksum =2073490486
+Begin Report
+    LayoutForPrint = NotDefault
+    RecordLocks =2
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =3780
+    ItemSuffix =6
+    Left =795
+    Top =720
+    Right =11520
+    Bottom =7500
+    RecordSource ="tblDallasMorningNews"
+    OnClose ="[Event Procedure]"
+    PrtMip = Begin
+        0xe0000000d0020000e0000000d002000000000000c40e0000a005000000000000 ,
+        0x03000000b400000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a00000005000a4249544d4150424954
+    End
+    PrtDevNames = Begin
+        0x160008001e0001804850204c617365724a657420350050434c35454d53005c5c ,
+        0x4e747365727665725c68706c6a35000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000
+    End
+    OnActivate ="[Event Procedure]"
+    OnDeactivate ="[Event Procedure]"
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="Name"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =288
+                    Top =240
+                    Width =3219
+                    Name ="Field2"
+                    ControlSource ="Name"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =288
+                    Top =480
+                    Width =3204
+                    TabIndex =1
+                    Name ="Field3"
+                    ControlSource ="Street"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =285
+                    Top =720
+                    Width =3204
+                    TabIndex =2
+                    Name ="Field5"
+                    ControlSource ="=Trim([city] & \", TX \" & [zip])"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+
+Private Sub Report_Activate()
+ DoCmd.ShowToolbar "Print Preview", A_TOOLBAR_YES
+End Sub
+
+Private Sub Report_Close()
+
+    Forms![frmSwitchboard].Visible = True
+End Sub
+
+Private Sub Report_Deactivate()
+ DoCmd.ShowToolbar "Print Preview", A_TOOLBAR_NO
+End Sub

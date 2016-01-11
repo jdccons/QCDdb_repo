@@ -1,0 +1,67 @@
+Operation =1
+Option =0
+Where ="(((qselGrowth_DependentCount.CountOfDEPcounter)<>[tblSubscr].[SUBnoDEPENT]) AND "
+    "((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Begin InputTables
+    Name ="qselGrowth_DependentCount"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBgroupID"
+    Expression ="qselGrowth_DependentCount.DEPsubID"
+    Expression ="qselGrowth_DependentCount.CountOfDEPcounter"
+    Expression ="tblSubscr.SUBnoDEPENT"
+End
+Begin Joins
+    LeftTable ="qselGrowth_DependentCount"
+    RightTable ="tblSubscr"
+    Expression ="qselGrowth_DependentCount.DEPsubID = tblSubscr.SUBssn"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUBgroupID"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SUBnoDEPENT"
+        dbInteger "ColumnWidth" ="2730"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =802
+    Bottom =487
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =234
+        Bottom =111
+        Top =0
+        Name ="qselGrowth_DependentCount"
+        Name =""
+    End
+    Begin
+        Left =272
+        Top =6
+        Right =553
+        Bottom =113
+        Top =19
+        Name ="tblSubscr"
+        Name =""
+    End
+End

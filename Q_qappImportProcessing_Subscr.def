@@ -1,0 +1,92 @@
+Operation =3
+Name ="tblSubscr"
+Option =0
+Begin InputTables
+    Name ="QCDStandardSubscriber"
+    Name ="vwRates"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="QCDStandardSubscriber.SubSSN"
+    Name ="SUBfirstNAME"
+    Expression ="QCDStandardSubscriber.SubFirst"
+    Name ="SUBmiddleNAME"
+    Expression ="QCDStandardSubscriber.SubMI"
+    Name ="SUBlastNAME"
+    Expression ="QCDStandardSubscriber.SubLast"
+    Name ="SUBstreet1"
+    Expression ="QCDStandardSubscriber.SubAddr"
+    Name ="SUBstreet2"
+    Expression ="QCDStandardSubscriber.SubAddr2"
+    Name ="SUBcity"
+    Expression ="QCDStandardSubscriber.SubCity"
+    Name ="SUBstate"
+    Expression ="QCDStandardSubscriber.SubState"
+    Name ="SUBzip"
+    Expression ="QCDStandardSubscriber.SubZip"
+    Name ="SUBphoneHOME"
+    Expression ="QCDStandardSubscriber.SubHomePh"
+    Name ="SUBphoneWORK"
+    Expression ="QCDStandardSubscriber.SubWorkPh"
+    Name ="SUBgroupID"
+    Expression ="QCDStandardSubscriber.SubGroupID"
+    Name ="RateID"
+    Expression ="vwRates.RateID"
+    Name ="SUBdob"
+    Expression ="QCDStandardSubscriber.SubDOB"
+    Name ="SUBnoDEPENT"
+    Expression ="QCDStandardSubscriber.SubNoDep"
+    Name ="SUBeffDATE"
+    Expression ="QCDStandardSubscriber.SubEffDate"
+    Alias ="Cover"
+    Name ="CoverID"
+    Expression ="IIf(CInt([SubNoDep])=1,2,IIf(CInt([SubNoDep])>1,4,1))"
+End
+Begin Joins
+    LeftTable ="QCDStandardSubscriber"
+    RightTable ="vwRates"
+    Expression ="QCDStandardSubscriber.SubTypeCov = vwRates.COVERcode"
+    Flag =2
+    LeftTable ="QCDStandardSubscriber"
+    RightTable ="vwRates"
+    Expression ="QCDStandardSubscriber.SubGroupID = vwRates.GroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =34
+    Top =27
+    Right =1131
+    Bottom =568
+    Left =-1
+    Top =-1
+    Right =1090
+    Bottom =368
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =325
+        Bottom =326
+        Top =0
+        Name ="QCDStandardSubscriber"
+        Name =""
+    End
+    Begin
+        Left =444
+        Top =17
+        Right =645
+        Bottom =176
+        Top =0
+        Name ="vwRates"
+        Name =""
+    End
+End

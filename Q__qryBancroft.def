@@ -1,0 +1,89 @@
+Operation =1
+Option =0
+Where ="(((tblEnrollment_Bancroft.Enrolled)=-1))"
+Begin InputTables
+    Name ="tblEnrollment_Bancroft"
+End
+Begin OutputColumns
+    Alias ="EFF"
+    Expression ="#1/1/2000#"
+    Alias ="GR"
+    Expression ="\"GRSUB\""
+    Expression ="tblEnrollment_Bancroft.SUBgroupID"
+    Expression ="tblEnrollment_Bancroft.SUBssn"
+    Expression ="tblEnrollment_Bancroft.SUBlastNAME"
+    Expression ="tblEnrollment_Bancroft.SUBfirstNAME"
+    Expression ="tblEnrollment_Bancroft.SUBmiddleNAME"
+    Expression ="tblEnrollment_Bancroft.SUBdob"
+    Expression ="tblEnrollment_Bancroft.SUBstreet1"
+    Expression ="tblEnrollment_Bancroft.SUBstreet2"
+    Expression ="tblEnrollment_Bancroft.SUBcity"
+    Expression ="tblEnrollment_Bancroft.SUBstate"
+    Expression ="tblEnrollment_Bancroft.SUBzip"
+    Expression ="tblEnrollment_Bancroft.SUBphoneHOME"
+    Expression ="tblEnrollment_Bancroft.Enrolled"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBgroupID"
+        dbInteger "ColumnWidth" ="1125"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBssn"
+        dbInteger "ColumnWidth" ="1410"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBlastNAME"
+        dbInteger "ColumnWidth" ="1665"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBfirstNAME"
+        dbInteger "ColumnWidth" ="1455"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBmiddleNAME"
+        dbInteger "ColumnWidth" ="555"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBdob"
+        dbInteger "ColumnWidth" ="645"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBstreet2"
+        dbInteger "ColumnWidth" ="555"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =483
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =216
+        Bottom =113
+        Top =12
+        Name ="tblEnrollment_Bancroft"
+        Name =""
+    End
+End

@@ -1,0 +1,163 @@
+Operation =3
+Name ="tmpExportAllAmerican"
+Option =0
+Where ="(((tblGrp.GroupType)=4) AND ((tblSubscr_delete.Flag)=0))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr_delete"
+    Name ="tlkpAllAmericanPlan"
+    Name ="tblDependent_delete"
+End
+Begin OutputColumns
+    Alias ="EIRECID"
+    Name ="EIRECID"
+    Expression ="\"M\""
+    Alias ="EIMBRID"
+    Name ="EIMBRID"
+    Expression ="IIf([DEPrelationship]='S',[tblSubscr_delete].[SUBssn] & \"01\",[tblSubscr_delete"
+        "].[SUBssn] & \"02\")"
+    Alias ="EISBRID"
+    Name ="EISBRID"
+    Expression ="[tblSubscr_delete].[SUBssn] & \"00\""
+    Alias ="EISSN"
+    Name ="EISSN"
+    Expression ="tblDependent_delete.DepSSN"
+    Alias ="EINAML"
+    Name ="EINAML"
+    Expression ="tblDependent_delete.DepLastName"
+    Alias ="EINAMF"
+    Name ="EINAMF"
+    Expression ="tblDependent_delete.DepFirstName"
+    Alias ="EINAMM"
+    Name ="EINAMM"
+    Expression ="tblDependent_delete.DepMiddleName"
+    Alias ="EIDTBR"
+    Name ="EIDTBR"
+    Expression ="Format([DEPdob],\"mmddyyyy\")"
+    Alias ="EISEX"
+    Name ="EISEX"
+    Expression ="IIf([DEPgender] Is Null,\"U\",[DEPGender])"
+    Alias ="EIADD1"
+    Name ="EIADD1"
+    Expression ="tblSubscr_delete.SubStreet1"
+    Alias ="EIADD2"
+    Name ="EIADD2"
+    Expression ="tblSubscr_delete.SubStreet2"
+    Alias ="EICITY"
+    Name ="EICITY"
+    Expression ="tblSubscr_delete.SubCity"
+    Alias ="EISTE"
+    Name ="EISTE"
+    Expression ="tblSubscr_delete.SubState"
+    Alias ="EIZIP"
+    Name ="EIZIP"
+    Expression ="tblSubscr_delete.SubZip"
+    Alias ="EIHPHR"
+    Name ="EIHPHR"
+    Expression ="StripChars_TSB([tblSubscr_delete].[SubPhoneHome],\"-\")"
+    Alias ="EIWPHR"
+    Name ="EIWPHR"
+    Expression ="StripChars_TSB([tblSubscr_delete].[SubPhoneWork],\"-\")"
+    Alias ="EIGRPID"
+    Name ="EIGRPID"
+    Expression ="'MNQ' & [GROUPid]"
+    Alias ="EINMPLAN"
+    Name ="EINMPLAN"
+    Expression ="tlkpAllAmericanPlan.PlanagerCode"
+    Alias ="EIDTEFF"
+    Name ="EIDTEFF"
+    Expression ="Format([GRcontBEG],\"mmddyyyy\")"
+    Alias ="EIDTCVEF"
+    Name ="EIDTCVEF"
+    Expression ="IIf(IsNull([tblSubscr_delete].[PreexistingDate])=True,Format([tblSubscr_delete]."
+        "[SUBeffDATE],\"mmddyyyy\"),Format([tblSubscr_delete].[PreexistingDate],\"mmddyyy"
+        "y\"))"
+    Alias ="EIDTCVEN"
+    Name ="EIDTCVEN"
+    Expression ="IIf(Not IsNull([tblSubscr_delete].[DateDeleted]),Format([tblSubscr_delete].[Date"
+        "Deleted],\"mmddyyyy\"),Null)"
+    Alias ="EIMBRDP"
+    Name ="EIMBRDP"
+    Expression ="IIf([tblDependent_delete].[DepRelationship]=\"S\",1,2)"
+    Alias ="EIDTTERM"
+    Name ="EIDTTERM"
+    Expression ="IIf([tblSubscr_delete].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr_delete].["
+        "DateDeleted],\"mmddyyyy\"))"
+End
+Begin Joins
+    LeftTable ="tblSubscr_delete"
+    RightTable ="tlkpAllAmericanPlan"
+    Expression ="tblSubscr_delete.PlanID = tlkpAllAmericanPlan.PlanID"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr_delete"
+    Expression ="tblGrp.GROUPid = tblSubscr_delete.SubGroupID"
+    Flag =3
+    LeftTable ="tblSubscr_delete"
+    RightTable ="tblDependent_delete"
+    Expression ="tblSubscr_delete.SubSSN = tblDependent_delete.DepSubID"
+    Flag =3
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="EINAML"
+        dbInteger "ColumnWidth" ="2655"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =40
+    Top =10
+    Right =1258
+    Bottom =595
+    Left =-1
+    Top =-1
+    Right =1211
+    Bottom =417
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =838
+        Top =43
+        Right =1004
+        Bottom =195
+        Top =35
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =411
+        Top =65
+        Right =586
+        Bottom =307
+        Top =31
+        Name ="tblSubscr_delete"
+        Name =""
+    End
+    Begin
+        Left =787
+        Top =236
+        Right =947
+        Bottom =328
+        Top =0
+        Name ="tlkpAllAmericanPlan"
+        Name =""
+    End
+    Begin
+        Left =37
+        Top =54
+        Right =312
+        Bottom =191
+        Top =0
+        Name ="tblDependent_delete"
+        Name =""
+    End
+End

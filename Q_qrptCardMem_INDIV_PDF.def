@@ -1,0 +1,75 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.SubID) = '25219512'))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Alias ="ZipSub"
+    Expression ="IIf([Subzip] Like '#####-#',Left([SubZip],Len([SubZip])-1),IIf([SubZip] Like '##"
+        "#######',Format([SubZip],'@@@@@-@@@@'),[SubZip]))"
+    Expression ="tblSubscr.SubID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubContEnd"
+    Expression ="tblSubscr.SubCardPrt"
+    Expression ="tblSubscr.SubContBeg"
+    Alias ="ForName"
+    Expression ="Trim([SUBfirstNAME]) & '  ' & Trim([SUBmiddleNAME]) & '  ' & Trim([SUBlastNAME])"
+    Alias ="FormAdd"
+    Expression ="Trim([SUBstreet1]) & '  ' & Trim([SUBstreet2])"
+    Alias ="FormCSZ"
+    Expression ="Trim([SUBcity]) & ', ' & Trim([SUBstate]) & '   ' & Trim([zipSub])"
+End
+Begin OrderBy
+    Expression ="tblSubscr.SubLastName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+dbBoolean "TotalsRow" ="0"
+Begin
+    Begin
+        dbText "Name" ="ZipSub"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =33
+    Top =115
+    Right =1275
+    Bottom =516
+    Left =-1
+    Top =-1
+    Right =1227
+    Bottom =221
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =70
+        Top =26
+        Right =166
+        Bottom =144
+        Top =0
+        Name ="__Indiv_Print_PDF"
+        Name =""
+    End
+End

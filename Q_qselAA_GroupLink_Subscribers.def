@@ -1,0 +1,53 @@
+Operation =1
+Option =0
+Where ="(((Mid([EINMPLAN],8,3))=\"QCD\") AND ((ELGEXP_SQL.EIRECID)=\"P\"))"
+Begin InputTables
+    Name ="ELGEXP_SQL"
+End
+Begin OutputColumns
+    Alias ="AA_SSN"
+    Expression ="Mid([EISBRID],1,9)"
+    Expression ="ELGEXP_SQL.EISBRID"
+    Expression ="ELGEXP_SQL.EIMBRID"
+    Expression ="ELGEXP_SQL.[EISSN#]"
+    Expression ="ELGEXP_SQL.EINAML"
+    Expression ="ELGEXP_SQL.EINAMF"
+    Alias ="GrpID"
+    Expression ="Mid([EIGRPID],4,5)"
+    Alias ="Plan"
+    Expression ="Mid([EINMPLAN],8,3)"
+    Expression ="ELGEXP_SQL.EIRECID"
+    Expression ="ELGEXP_SQL.RPTDTASOF"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbText "Description" ="p"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =39
+    Right =1258
+    Bottom =481
+    Left =-1
+    Top =-1
+    Right =1233
+    Bottom =269
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =300
+        Top =6
+        Right =602
+        Bottom =229
+        Top =0
+        Name ="ELGEXP_SQL"
+        Name =""
+    End
+End

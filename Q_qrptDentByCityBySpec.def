@@ -1,0 +1,98 @@
+Operation =1
+Option =8
+Having ="(((tbldentist.DentStatus)=\"A\" Or (tbldentist.DentStatus) Is Null))"
+Begin InputTables
+    Name ="tbldentist"
+    Name ="tblGeographical"
+    Name ="tbldentistspec"
+End
+Begin OutputColumns
+    Expression ="tbldentist.DentCity"
+    Alias ="SPECIALTY"
+    Expression ="IIf(IsNull([SPECIALITYdesc]),\"NO SPECIALTY LISTED\",[SPECIALITYdesc])"
+    Expression ="tbldentist.DentState"
+    Alias ="DENTcount"
+    Expression ="Count(tbldentist.DentStatus)"
+    Expression ="tbldentist.DentStatus"
+    Expression ="tbldentistspec.REPORTgrouping"
+End
+Begin Joins
+    LeftTable ="tbldentist"
+    RightTable ="tblGeographical"
+    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Flag =2
+    LeftTable ="tbldentist"
+    RightTable ="tbldentistspec"
+    Expression ="tbldentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tbldentist.DentCity"
+    Flag =0
+    Expression ="IIf(IsNull([SPECIALITYdesc]),\"NO SPECIALTY LISTED\",[SPECIALITYdesc])"
+    Flag =0
+End
+Begin Groups
+    Expression ="tbldentist.DentCity"
+    GroupLevel =0
+    Expression ="IIf(IsNull([SPECIALITYdesc]),\"NO SPECIALTY LISTED\",[SPECIALITYdesc])"
+    GroupLevel =0
+    Expression ="tbldentist.DentState"
+    GroupLevel =0
+    Expression ="tbldentist.DentStatus"
+    GroupLevel =0
+    Expression ="tbldentistspec.REPORTgrouping"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="SPECIALTY"
+        dbInteger "ColumnWidth" ="1920"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =992
+    Bottom =653
+    Left =-1
+    Top =-1
+    Right =985
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =5
+        Name ="tbldentist"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =98
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =98
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+End

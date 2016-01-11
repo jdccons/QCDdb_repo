@@ -1,0 +1,112 @@
+Operation =1
+Option =0
+Having ="(((tblGrp.GROUPid) Not In (\"INDV1\",\"INDV2\",\"INDV3\",\"INDVM\")))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Alias ="SubRate2"
+    Expression ="Sum(IIf(IsNull([rate]),0,([rate])))"
+    Alias ="SubDep2"
+    Expression ="Sum(IIf(IsNull([SUBnoDEPENT]),0,([SUBnoDEPENT])))"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRhold"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =2
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =2
+End
+Begin Groups
+    Expression ="tblGrp.GROUPid"
+    GroupLevel =0
+    Expression ="tblGrp.GRname"
+    GroupLevel =0
+    Expression ="tblGrp.GRcancelled"
+    GroupLevel =0
+    Expression ="tblGrp.GRhold"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3180"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcancelled"
+        dbInteger "ColumnWidth" ="1110"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRhold"
+        dbInteger "ColumnWidth" ="1080"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubRate2"
+        dbInteger "ColumnWidth" ="1095"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubDep2"
+        dbInteger "ColumnWidth" ="1830"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =93
+    Top =114
+    Right =1165
+    Bottom =488
+    Left =-1
+    Top =-1
+    Right =1065
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =101
+        Top =39
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =331
+        Bottom =101
+        Top =15
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =369
+        Top =6
+        Right =465
+        Bottom =116
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

@@ -1,0 +1,93 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="qselAA_Subscr_Rates"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Alias ="Ord"
+    Expression ="3"
+    Alias ="Title"
+    Expression ="\"Subscriber Change\""
+    Alias ="Elem"
+    Expression ="\"Sub Rate Change\""
+    Expression ="tblSubscr.SUBssn"
+    Expression ="qselAA_Subscr_Rates.GRPid"
+    Expression ="qselAA_Subscr_Rates.RptDate"
+    Alias ="AA"
+    Expression ="qselAA_Subscr_Rates.Rate"
+    Alias ="QCD"
+    Expression ="tblRates.Rate"
+End
+Begin Joins
+    LeftTable ="qselAA_Subscr_Rates"
+    RightTable ="tblSubscr"
+    Expression ="qselAA_Subscr_Rates.AA_SSN = tblSubscr.SUBssn"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbText "Description" ="03"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="AA"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="QCD"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =-111
+    Top =48
+    Right =1129
+    Bottom =434
+    Left =-1
+    Top =-1
+    Right =1233
+    Bottom =182
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =96
+        Top =13
+        Right =353
+        Bottom =138
+        Top =16
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =425
+        Top =7
+        Right =721
+        Bottom =147
+        Top =0
+        Name ="qselAA_Subscr_Rates"
+        Name =""
+    End
+    Begin
+        Left =759
+        Top =6
+        Right =855
+        Bottom =116
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

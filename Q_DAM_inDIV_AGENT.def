@@ -1,0 +1,45 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBstatus)=\"TRADM\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SUBagentID1"
+    Expression ="tblSubscr.SUBagentID2"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =-17
+    Top =-17
+    Right =1019
+    Bottom =679
+    Left =-1
+    Top =-1
+    Right =1029
+    Bottom =444
+    Left =61
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =114
+        Top =-13
+        Right =687
+        Bottom =416
+        Top =28
+        Name ="tblSubscr"
+        Name =""
+    End
+End

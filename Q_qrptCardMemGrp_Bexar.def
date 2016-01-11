@@ -1,0 +1,77 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblGrp_Bexar"
+    Name ="tblSubscr_Bexar"
+End
+Begin OutputColumns
+    Alias ="ZipSub"
+    Expression ="IIf([Subzip] Like \"#####-#\",Left([SubZip],Len([SubZip])-1),IIf([SubZip] Like \""
+        "#########\",Format([SubZip],\"@@@@@-@@@@\"),[SubZip]))"
+    Alias ="ZipGr"
+    Expression ="IIf([GRzip] Like \"#####-#\",Left([GrZip],Len([GrZip])-1),IIf([GrZip] Like \"###"
+        "######\",Format([GrZip],\"@@@@@-@@@@\"),[GrZip]))"
+    Expression ="tblGrp_Bexar.GROUPid"
+    Expression ="tblSubscr_Bexar.SubID"
+    Expression ="tblSubscr_Bexar.SUBssn"
+    Expression ="tblSubscr_Bexar.SUBfirstNAME"
+    Expression ="tblSubscr_Bexar.SUBmiddleNAME"
+    Expression ="tblSubscr_Bexar.SUBlastNAME"
+    Expression ="tblSubscr_Bexar.SUBstreet1"
+    Expression ="tblSubscr_Bexar.SUBstreet2"
+    Expression ="tblSubscr_Bexar.SUBcity"
+    Expression ="tblSubscr_Bexar.SUBstate"
+    Expression ="tblSubscr_Bexar.SUBzip"
+    Expression ="tblSubscr_Bexar.SUBgroupID"
+    Expression ="tblSubscr_Bexar.SUBeffDATE"
+    Expression ="tblSubscr_Bexar.SUBcardPRT"
+End
+Begin Joins
+    LeftTable ="tblGrp_Bexar"
+    RightTable ="tblSubscr_Bexar"
+    Expression ="tblGrp_Bexar.GROUPid = tblSubscr_Bexar.SUBgroupID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr_Bexar.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =106
+    Top =114
+    Right =1002
+    Bottom =419
+    Left =-1
+    Top =-1
+    Right =885
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =97
+        Top =10
+        Right =280
+        Bottom =109
+        Top =18
+        Name ="tblGrp_Bexar"
+        Name =""
+    End
+    Begin
+        Left =371
+        Top =8
+        Right =550
+        Bottom =107
+        Top =0
+        Name ="tblSubscr_Bexar"
+        Name =""
+    End
+End

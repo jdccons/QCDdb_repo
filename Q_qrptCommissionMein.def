@@ -1,0 +1,60 @@
+Operation =1
+Option =8
+Where ="(((tblCommission.COMMagent)=\"rm1\" Or (tblCommission.COMMagent)=\"rm2\" Or (tbl"
+    "Commission.COMMagent)=\"rm3\" Or (tblCommission.COMMagent)=\"rm4\" Or (tblCommis"
+    "sion.COMMagent)=\"rm5\" Or (tblCommission.COMMagent)=\"rm6\" Or (tblCommission.C"
+    "OMMagent)=\"rm7\") AND ((tblCommission.COMMcustCLASS)=\"INDIV\" Or (tblCommissio"
+    "n.COMMcustCLASS)=\"GROUP\"))"
+Begin InputTables
+    Name ="tblCommission"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblCommission.*"
+    Alias ="Salesp_Name"
+    Expression ="tblAgent.AGENT_LUname"
+End
+Begin Joins
+    LeftTable ="tblCommission"
+    RightTable ="tblAgent"
+    Expression ="tblCommission.COMMagent = tblAgent.AGENTid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =93
+    Top =92
+    Right =1002
+    Bottom =397
+    Left =-1
+    Top =-1
+    Right =902
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =3
+        Name ="tblCommission"
+        Name =""
+    End
+    Begin
+        Left =394
+        Top =6
+        Right =490
+        Bottom =113
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

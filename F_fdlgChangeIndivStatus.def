@@ -1,0 +1,417 @@
+Version =20
+VersionRequired =20
+Checksum =396087377
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =2760
+    DatasheetFontHeight =10
+    ItemSuffix =21
+    Left =7860
+    Top =375
+    Right =10620
+    Bottom =4020
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x7d2de97571b1e240
+    End
+    Caption ="Change Status"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+        End
+        Begin Section
+            Height =3666
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x737d83f3d8996544ba985b3c7f03d71e
+            End
+            Begin
+                Begin OptionGroup
+                    OverlapFlags =93
+                    Left =240
+                    Top =720
+                    Width =1847
+                    Height =2263
+                    Name ="fraStatus"
+                    DefaultValue ="1"
+                    GUID = Begin
+                        0x405cacde5b12ab40929125bf98f69fb8
+                    End
+                    Begin
+                        Begin Label
+                            BackStyle =1
+                            OverlapFlags =215
+                            Left =360
+                            Top =600
+                            Width =1140
+                            Height =240
+                            BackColor =-2147483633
+                            Name ="Label1"
+                            Caption ="Change Status"
+                            GUID = Begin
+                                0x4676b1103258104e81d915c8b8a28e85
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =426
+                            Top =958
+                            OptionValue =1
+                            Name ="Option3"
+                            GUID = Begin
+                                0x350a2a7fc3b86c409e5adca6c7369af6
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =656
+                                    Top =930
+                                    Width =1245
+                                    Height =240
+                                    Name ="Label4"
+                                    Caption ="Active to Cancel"
+                                    GUID = Begin
+                                        0x8f419a404bb2fd4594214f06a612a1d1
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =426
+                            Top =1288
+                            OptionValue =2
+                            Name ="Option5"
+                            GUID = Begin
+                                0x3e80dca27c2c87429790a05055d17db1
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =656
+                                    Top =1260
+                                    Width =1080
+                                    Height =240
+                                    Name ="Label6"
+                                    Caption ="Active to Hold"
+                                    GUID = Begin
+                                        0x8e01a49f271ce4498249494e29645664
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =426
+                            Top =1618
+                            OptionValue =3
+                            Name ="Option7"
+                            GUID = Begin
+                                0x86a74fab60c67742a493cdcbcdb8d3c3
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =656
+                                    Top =1590
+                                    Width =1245
+                                    Height =240
+                                    Name ="Label8"
+                                    Caption ="Cancel to Active"
+                                    GUID = Begin
+                                        0xb32134638e8ade498e2da2a9237f588f
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =426
+                            Top =1948
+                            OptionValue =4
+                            Name ="Option9"
+                            GUID = Begin
+                                0x91cea974a16e5c4f9a42459bc0105525
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =656
+                                    Top =1920
+                                    Width =1110
+                                    Height =240
+                                    Name ="Label10"
+                                    Caption ="Cancel to Hold"
+                                    GUID = Begin
+                                        0xbdc6e1d672550549b5fc9cbebda30b56
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =426
+                            Top =2278
+                            OptionValue =5
+                            Name ="Option11"
+                            GUID = Begin
+                                0xec3170e84ac05a4197472111c63b22cb
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =656
+                                    Top =2250
+                                    Width =1080
+                                    Height =240
+                                    Name ="Label12"
+                                    Caption ="Hold to Active"
+                                    GUID = Begin
+                                        0x14d1828a74ed71489c8a83b388f51d86
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =426
+                            Top =2608
+                            OptionValue =6
+                            Name ="Option13"
+                            GUID = Begin
+                                0xc7f5079dcd234843b951f0d2a7de905f
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =656
+                                    Top =2580
+                                    Width =1110
+                                    Height =240
+                                    Name ="Label14"
+                                    Caption ="Hold to Cancel"
+                                    GUID = Begin
+                                        0xb65718d0422dc44bba725757c679e9af
+                                    End
+                                End
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =600
+                    Top =3120
+                    Width =1200
+                    Height =480
+                    TabIndex =1
+                    Name ="cmdChange"
+                    Caption ="Change"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xe44a2aa0df47334b9d9382bb966f9191
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1980
+                    Top =3120
+                    Width =666
+                    Height =486
+                    TabIndex =2
+                    Name ="cmdClose"
+                    Caption ="Command16"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x4f8929e5e9610a4aa3982747498960b3
+                    End
+                End
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =180
+                    Top =120
+                    Width =2340
+                    Height =360
+                    FontSize =11
+                    FontWeight =700
+                    Name ="Label17"
+                    Caption ="Status Change"
+                    GUID = Begin
+                        0x9c07509164cf8b4c88eaeae787a85ea1
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =120
+                    Top =2820
+                    Width =780
+                    TabIndex =3
+                    BackColor =10092543
+                    Name ="txtID"
+                    GUID = Begin
+                        0x28519ef2310a7d4dbed0c8aab58a5732
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    IMESentenceMode =3
+                    Left =120
+                    Top =3180
+                    Width =780
+                    TabIndex =4
+                    BackColor =10092543
+                    Name ="txtForm"
+                    GUID = Begin
+                        0x9bf4e1b0872cce4898f23e0f90bbf7c4
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub cmdChange_Click()
+
+'canceled status for individual subscribers
+'1 - active
+'2 - hold
+'3 - canceled
+'null - this should be the status for all group subscribers because they are neither active or cancelled.
+'       if they are in the group they are active
+
+  Dim intResp As Integer
+  Dim intStat As Integer
+  Dim lngColor As Long
+  Dim strForm As String
+  
+  intResp = MsgBox("Are you sure you want to change the Status?", vbQuestion + vbYesNo, "QCD: Confirm")
+  If intResp = vbYes Then
+       Select Case Me.fraStatus
+       Case Is = 1
+        'Active to Cancel
+        intStat = 3
+        lngColor = 8421631
+       Case Is = 2
+        'Active to Hold
+        intStat = 2
+        lngColor = 10092543
+       Case Is = 3
+        'Cancel to Active
+        intStat = 1
+        lngColor = 16777215
+       Case Is = 4
+        'Cancel to Hold
+        intStat = 2
+        lngColor = 10092543
+       Case Is = 5
+        'Hold to Active
+        intStat = 1
+        lngColor = 16777215
+       Case Is = 6
+        'Hold to Cancel
+        intStat = 3
+        lngColor = 8421631
+        
+       End Select
+       
+       strForm = Me.txtForm
+       
+    With Forms(strForm)
+       .txtSubCanceled = intStat
+       .SUBlastNAME.BackColor = lngColor
+       .SUBfirstNAME.BackColor = lngColor
+       .SUBmiddleNAME.BackColor = lngColor
+    End With
+    
+  End If
+    
+End Sub
+
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub

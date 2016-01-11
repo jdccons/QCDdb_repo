@@ -1,0 +1,429 @@
+Version =17
+VersionRequired =17
+Checksum =-1417081333
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =10920
+    ItemSuffix =92
+    Left =630
+    Top =825
+    Right =9585
+    Bottom =6510
+    RecSrcDt = Begin
+        0xfa5af971efd3e140
+    End
+    RecordSource ="qrptGrpZipCodeCounts2"
+    Caption ="Group Information by Zip Code"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000a0050000c2020000d002000000000000a82a00005802000001000000 ,
+        0x01000000d002000000000000a20700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4e747365727665725c68706c6a350000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            ControlSource ="Zip Code"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            KeepTogether =1
+            ControlSource ="GROUPid"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =2160
+            Name ="ReportHeader5"
+            Begin
+                Begin Line
+                    BorderWidth =1
+                    Top =975
+                    Width =10800
+                    Name ="Line17"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Width =10800
+                    Height =480
+                    FontSize =18
+                    FontWeight =700
+                    Name ="Text13"
+                    Caption ="QCD of America"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =840
+                    Width =10800
+                    Height =330
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Field36"
+                    ControlSource ="=[Input any special heading text desired]"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/00;0;_"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =465
+                    Width =10800
+                    Height =375
+                    FontSize =14
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field52"
+                    ControlSource ="=\"Group Information by Zip Code\""
+                End
+                Begin TextBox
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =1320
+                    Width =10800
+                    Height =330
+                    FontSize =12
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="Field87"
+                    ControlSource ="=\"Total Number of Groups in Specified Zip Codes :  \"+Format(Str$(Count([GROUPi"
+                        "d])),\"#,###\")"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =1680
+                    Width =10800
+                    Height =330
+                    FontSize =12
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="Field88"
+                    ControlSource ="=\"Total Number of Subscribers in Specified Zip Codes :  \"+Format(Str$(Sum([SUB"
+                        "SCRIBERS])),\"#,###\")"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =600
+            Name ="PageHeader3"
+            Begin
+                Begin Line
+                    BorderWidth =2
+                    Top =300
+                    Width =10803
+                    Name ="Line59"
+                End
+                Begin Label
+                    BackStyle =0
+                    TextFontFamily =34
+                    Width =240
+                    Height =240
+                    Name ="Text71"
+                    Caption ="ID"
+                End
+                Begin Label
+                    BackStyle =0
+                    TextFontFamily =34
+                    Left =720
+                    Width =525
+                    Height =240
+                    Name ="Text72"
+                    Caption ="Group"
+                End
+                Begin Label
+                    BackStyle =0
+                    TextFontFamily =34
+                    Left =4032
+                    Width =660
+                    Height =240
+                    Name ="Text73"
+                    Caption ="Address"
+                End
+                Begin Label
+                    BackStyle =0
+                    TextFontFamily =34
+                    Left =7344
+                    Width =360
+                    Height =240
+                    Name ="Text74"
+                    Caption ="City"
+                End
+                Begin Label
+                    BackStyle =0
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =8865
+                    Width =450
+                    Height =240
+                    Name ="Text75"
+                    Caption ="State"
+                End
+                Begin Label
+                    BackStyle =0
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =9360
+                    Width =720
+                    Height =240
+                    Name ="Text76"
+                    Caption ="# of Sub."
+                End
+                Begin Label
+                    BackStyle =0
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =10140
+                    Width =660
+                    Height =240
+                    Name ="Label90"
+                    Caption ="Bill Hold"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =840
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =6048
+                    Top =120
+                    Width =4755
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Field80"
+                    ControlSource ="=\"Number of Groups :  \"+Format(Str$(Count([GROUPid])),\"#,###\")"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =840
+                    Width =10803
+                    Name ="Line82"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =6048
+                    Top =405
+                    Width =4755
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field84"
+                    ControlSource ="=\"Number of Subscribers :  \"+Format(Str$(Sum([SUBSCRIBERS])),\"#,###\")"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Top =240
+                    Width =3750
+                    Height =375
+                    FontSize =14
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="Field85"
+                    ControlSource ="=\"ZIP CODE:  \"+[Zip Code]"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =0
+            BreakLevel =1
+            Name ="GroupHeader1"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            CanShrink = NotDefault
+            Height =600
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextAlign =1
+                    Width =720
+                    ColumnWidth =915
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextAlign =1
+                    Left =720
+                    Width =3315
+                    ColumnWidth =2925
+                    TabIndex =1
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4032
+                    Width =3315
+                    ColumnWidth =1950
+                    TabIndex =2
+                    Name ="GRstreet1"
+                    ControlSource ="GRstreet1"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4032
+                    Top =240
+                    Width =3315
+                    ColumnWidth =1530
+                    TabIndex =3
+                    Name ="GRstreet2"
+                    ControlSource ="GRstreet2"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextAlign =1
+                    Left =7344
+                    Width =1485
+                    ColumnWidth =810
+                    TabIndex =4
+                    Name ="GRcity"
+                    ControlSource ="GRcity"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    TextAlign =2
+                    Left =8865
+                    Width =435
+                    ColumnWidth =795
+                    TabIndex =5
+                    Name ="GRstate"
+                    ControlSource ="GRstate"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =9345
+                    Width =720
+                    ColumnWidth =1410
+                    TabIndex =6
+                    Name ="SUBSCRIBERS"
+                    ControlSource ="SUBSCRIBERS"
+                    Format ="Standard"
+                End
+                Begin Line
+                    Top =480
+                    Width =10803
+                    Name ="Line77"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =10200
+                    Width =645
+                    TabIndex =7
+                    Name ="txtGRhold"
+                    ControlSource ="GRhold"
+                    Format ="Yes/No"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =0
+            BreakLevel =1
+            Name ="GroupFooter2"
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            ForceNewPage =2
+            Height =0
+            Name ="GroupFooter0"
+        End
+        Begin PageFooter
+            Height =255
+            Name ="PageFooter4"
+            Begin
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =9216
+                    Width =1578
+                    FontSize =9
+                    Name ="PAGE"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Top =15
+                    Width =3210
+                    FontSize =9
+                    TabIndex =1
+                    Name ="Field60"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy  hh:nn"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter6"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    DoCmd.OpenForm "fmnuReportGrp"
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

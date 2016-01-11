@@ -1,0 +1,70 @@
+Operation =1
+Option =8
+Where ="(((tbldentist.DentSpecialty)=\"GEN\") AND ((tbldentist.DentStatus)=\"A\"))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Expression ="tbldentist.DentFirst"
+    Expression ="tbldentist.DentLast"
+    Expression ="tbldentist.DentStreet1"
+    Expression ="tbldentist.DentStreet2"
+    Expression ="tbldentist.DentCity"
+    Expression ="tbldentist.DentState"
+    Alias ="Zip2"
+    Expression ="IIf([Dentzip] Like \"#####-#\",Left([DentZip],Len([DentZip])-1),IIf([DentZip] Li"
+        "ke \"#########\",Format([DentZip],\"@@@@@-@@@@\"),[DentZip]))"
+End
+Begin OrderBy
+    Expression ="tbldentist.DentLast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tbldentist.DentLast"
+        dbInteger "ColumnWidth" ="1665"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tbldentist.DentCity"
+        dbInteger "ColumnWidth" ="1740"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tbldentist.DentStreet2"
+        dbInteger "ColumnWidth" ="3375"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tbldentist.DentStreet1"
+        dbInteger "ColumnWidth" ="3270"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-27
+    Right =800
+    Bottom =441
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =199
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =206
+        Bottom =145
+        Top =19
+        Name ="tbldentist"
+        Name =""
+    End
+End

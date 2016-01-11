@@ -1,0 +1,91 @@
+Operation =3
+Name ="Avesis"
+Option =0
+Begin InputTables
+    Name ="qryAvesis_Bexar"
+End
+Begin OutputColumns
+    Name ="Record_Type"
+    Expression ="qryAvesis_Bexar.Record_Type"
+    Name ="Action_Code"
+    Expression ="qryAvesis_Bexar.Action_Code"
+    Name ="Carrier_Number"
+    Expression ="qryAvesis_Bexar.Carrier_Number"
+    Name ="Group_Number"
+    Expression ="qryAvesis_Bexar.Group_Number"
+    Name ="Group_Name"
+    Expression ="qryAvesis_Bexar.Group_Name"
+    Name ="Plan_Number"
+    Expression ="qryAvesis_Bexar.Plan_Number"
+    Name ="Member_Number"
+    Expression ="qryAvesis_Bexar.Member_Number"
+    Name ="ID_Suffix"
+    Expression ="qryAvesis_Bexar.ID_Suffix"
+    Name ="SSN"
+    Expression ="qryAvesis_Bexar.SSN"
+    Name ="Coverage_Code"
+    Expression ="qryAvesis_Bexar.Coverage_Code"
+    Name ="Last_Name"
+    Expression ="qryAvesis_Bexar.Last_Name"
+    Name ="First_Name"
+    Expression ="qryAvesis_Bexar.First_Name"
+    Name ="Middle_Initial"
+    Expression ="qryAvesis_Bexar.Middle_Initial"
+    Name ="Address_1"
+    Expression ="qryAvesis_Bexar.Address_1"
+    Name ="Address_2"
+    Expression ="qryAvesis_Bexar.Address_2"
+    Name ="City"
+    Expression ="qryAvesis_Bexar.City"
+    Name ="State"
+    Expression ="qryAvesis_Bexar.State"
+    Name ="Zip"
+    Expression ="qryAvesis_Bexar.Zip"
+    Name ="Gender"
+    Expression ="qryAvesis_Bexar.Gender"
+    Name ="Birth_Date"
+    Expression ="qryAvesis_Bexar.Birth_Date"
+    Name ="Effective_Date"
+    Expression ="qryAvesis_Bexar.Effective_Date"
+    Name ="Term_Date"
+    Expression ="qryAvesis_Bexar.Term_Date"
+    Name ="Sub_Group_ID"
+    Expression ="qryAvesis_Bexar.Sub_Group_ID"
+    Name ="NoDEPS"
+    Expression ="qryAvesis_Bexar.SUBnoDEPENT"
+End
+Begin OrderBy
+    Expression ="qryAvesis_Bexar.Member_Number"
+    Flag =0
+    Expression ="qryAvesis_Bexar.ID_Suffix"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =62
+    Right =748
+    Bottom =374
+    Left =-1
+    Top =-1
+    Right =701
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =315
+        Bottom =113
+        Top =0
+        Name ="qryAvesis_Bexar"
+        Name =""
+    End
+End

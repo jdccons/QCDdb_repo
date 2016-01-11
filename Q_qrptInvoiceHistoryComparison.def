@@ -1,0 +1,56 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblInvHistoryRpt"
+End
+Begin OutputColumns
+    Expression ="tblInvHistoryRpt.GrpID"
+    Expression ="tblInvHistoryRpt.CompanyName"
+    Expression ="tblInvHistoryRpt.City"
+    Expression ="tblInvHistoryRpt.State"
+    Expression ="tblInvHistoryRpt.ClientSvcRep"
+    Expression ="tblInvHistoryRpt.GeoIDDesc"
+    Expression ="tblInvHistoryRpt.Status"
+    Expression ="tblInvHistoryRpt.BaseAmt"
+    Expression ="tblInvHistoryRpt.BaseMonth"
+    Expression ="tblInvHistoryRpt.BaseYear"
+    Expression ="tblInvHistoryRpt.CompAmt"
+    Expression ="tblInvHistoryRpt.CompMonth"
+    Expression ="tblInvHistoryRpt.CompYear"
+    Alias ="AmtDiff"
+    Expression ="[BaseAmt]-Nz([CompAmt])"
+End
+Begin OrderBy
+    Expression ="tblInvHistoryRpt.CompanyName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1024
+    Bottom =653
+    Left =-1
+    Top =-1
+    Right =1017
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =274
+        Bottom =129
+        Top =8
+        Name ="tblInvHistoryRpt"
+        Name =""
+    End
+End

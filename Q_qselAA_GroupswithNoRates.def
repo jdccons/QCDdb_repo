@@ -1,0 +1,57 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    Expression ="tblEDI_App_Subscr.PlanID"
+    Expression ="tblEDI_App_Subscr.CoverID"
+End
+Begin OrderBy
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    Flag =0
+    Expression ="tblEDI_App_Subscr.PlanID"
+    Flag =0
+    Expression ="tblEDI_App_Subscr.CoverID"
+    Flag =0
+End
+Begin Groups
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.PlanID"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.CoverID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =136
+    Right =999
+    Bottom =529
+    Left =-1
+    Top =-1
+    Right =926
+    Bottom =225
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =238
+        Bottom =173
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

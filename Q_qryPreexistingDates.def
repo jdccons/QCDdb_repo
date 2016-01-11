@@ -1,0 +1,50 @@
+Operation =1
+Option =0
+Where ="(((ELGEXP_SQL.EINMPLAN)=\"QCDRPL-NGL\" Or (ELGEXP_SQL.EINMPLAN)=\"QCDWHT-NGL\") "
+    "AND ((ELGEXP_SQL.EIDTCVEF)<[EIDTEFF]))"
+Begin InputTables
+    Name ="ELGEXP_SQL"
+End
+Begin OutputColumns
+    Expression ="ELGEXP_SQL.EIGRPID"
+    Expression ="ELGEXP_SQL.[EISSN#]"
+    Expression ="ELGEXP_SQL.EINMPLAN"
+    Expression ="ELGEXP_SQL.EIDTEFF"
+    Expression ="ELGEXP_SQL.EIDTCVEF"
+End
+Begin OrderBy
+    Expression ="ELGEXP_SQL.EINMPLAN"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbText "Description" ="p"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =69
+    Right =1258
+    Bottom =641
+    Left =-1
+    Top =-1
+    Right =1200
+    Bottom =396
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =327
+        Bottom =330
+        Top =31
+        Name ="ELGEXP"
+        Name =""
+    End
+End

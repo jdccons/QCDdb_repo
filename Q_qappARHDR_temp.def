@@ -1,0 +1,97 @@
+Operation =3
+Name ="ARHDR_temp"
+Option =8
+Begin InputTables
+    Name ="ARHDR"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="Custkey"
+    Expression ="ARHDR.CustomerKey"
+    Name ="Custname"
+    Expression ="ARHDR.CustomerName"
+    Alias ="CustAdd1Trim"
+    Name ="CustAdd1Trim"
+    Expression ="Trim([CustomerAddress1])"
+    Name ="Custaddr2"
+    Expression ="ARHDR.CustomerAddress2"
+    Alias ="CityStateZip"
+    Name ="CityStateZip"
+    Expression ="Trim([CustomerCity]) & \", \" & Trim([CustomerState]) & \"  \" & Trim([CustomerZ"
+        "ipCode])"
+    Alias ="Tranno"
+    Name ="Tranno"
+    Expression ="Trim(RTrim([TransactionNumber]))"
+    Name ="Invdate"
+    Expression ="ARHDR.InvoiceDate"
+    Name ="Salespkey"
+    Expression ="ARHDR.SalespersonKey"
+    Name ="Spare"
+    Expression ="ARHDR.Spare"
+    Alias ="InvTot"
+    Name ="InvTot"
+    Expression ="SumInvoice(Trim(RTrim([TransactionNumber])))"
+    Name ="GroupType"
+    Expression ="tblGrp.GroupType"
+    Name ="GROUPid"
+    Expression ="tblGrp.GROUPid"
+    Name ="InvoiceType"
+    Expression ="tblGrp.InvoiceType"
+End
+Begin Joins
+    LeftTable ="ARHDR"
+    RightTable ="tblGrp"
+    Expression ="ARHDR.CustomerKey = tblGrp.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "UseTransaction" ="-1"
+Begin
+    Begin
+        dbText "Name" ="CityStateZip"
+        dbInteger "ColumnWidth" ="3345"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="CustAdd1Trim"
+        dbInteger "ColumnWidth" ="3675"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =47
+    Top =29
+    Right =1002
+    Bottom =530
+    Left =-1
+    Top =-1
+    Right =944
+    Bottom =332
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =40
+        Top =19
+        Right =178
+        Bottom =283
+        Top =6
+        Name ="ARHDR"
+        Name =""
+    End
+    Begin
+        Left =221
+        Top =19
+        Right =370
+        Bottom =283
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

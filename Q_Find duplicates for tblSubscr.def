@@ -1,0 +1,7 @@
+dbMemo "SQL" ="SELECT First([SubSSN]) AS [SubSSN Field], Count([SubSSN]) AS NumberOfDups\015\012"
+    "FROM tblSubscr\015\012GROUP BY [SubSSN]\015\012HAVING Count([SubSSN])>1;\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

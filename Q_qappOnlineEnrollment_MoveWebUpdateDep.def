@@ -1,0 +1,73 @@
+Operation =3
+Name ="tblDependent_temp"
+Option =0
+Begin InputTables
+    Name ="wDependent_tmp"
+End
+Begin OutputColumns
+    Name ="SubSSN"
+    Expression ="wDependent_tmp.SubSSN"
+    Name ="EIMBRID"
+    Expression ="wDependent_tmp.EIMBRID"
+    Name ="DepSSN"
+    Expression ="wDependent_tmp.DepSSN"
+    Name ="FirstName"
+    Expression ="wDependent_tmp.FirstName"
+    Name ="MiddleInitial"
+    Expression ="wDependent_tmp.MiddleInitial"
+    Name ="LastName"
+    Expression ="wDependent_tmp.LastName"
+    Name ="DOB"
+    Expression ="wDependent_tmp.DOB"
+    Name ="Age"
+    Expression ="wDependent_tmp.Age"
+    Name ="Relationship"
+    Expression ="wDependent_tmp.Relationship"
+    Name ="Gender"
+    Expression ="wDependent_tmp.Gender"
+    Name ="EffDate"
+    Expression ="wDependent_tmp.EffDate"
+    Name ="PreexistingDate"
+    Expression ="wDependent_tmp.PreexistingDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="wDependent_tmp.PreexistingDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="wDependent_tmp.DepID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="wDependent_tmp.SubSSN"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =17
+    Top =40
+    Right =938
+    Bottom =465
+    Left =-1
+    Top =-1
+    Right =889
+    Bottom =254
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =48
+        Top =12
+        Right =192
+        Bottom =156
+        Top =0
+        Name ="wDependent_tmp"
+        Name =""
+    End
+End

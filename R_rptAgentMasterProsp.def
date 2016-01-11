@@ -1,0 +1,315 @@
+Version =17
+VersionRequired =17
+Checksum =-2021873212
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =14355
+    ItemSuffix =45
+    Left =795
+    Top =330
+    Right =11520
+    Bottom =6120
+    RecSrcDt = Begin
+        0x4679d25a92c7e140
+    End
+    RecordSource ="qryAgentsMastProsp"
+    Caption ="Agents List - Prospects"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0x88020000d00200001c030000d002000000000000133800004a01000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4550534f4e205374796c757320434f4c4f522036303000000000000000000000 ,
+        0x0004501094007a000f89800702000100eb0a7008640001000700680102000100 ,
+        0x6801010000004c6574746572203820312f32207820313120696e000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000003010000 ,
+        0x0300000001000000300100000000000000000000ea17f21e0000000002000400 ,
+        0x0000010003000000040400000000000000000000000004014550534f4e205374 ,
+        0x796c757320434f4c4f5220363030000000000000000000004c5054313a000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x01000000000000000100010000000000
+    End
+    PrtDevNames = Begin
+        0x080011002800010077696e73706f6f6c004550534f4e205374796c757320434f ,
+        0x4c4f5220363030004c5054313a00000000000000000000000000000000000000
+    End
+    OnDeactivate ="[Event Procedure]"
+    Begin
+        Begin Label
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            TextFontFamily =18
+            Height =300
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            ControlSource ="AGENTgeoID"
+        End
+        Begin BreakLevel
+            ControlSource ="AGENCY"
+        End
+        Begin BreakLevel
+            ControlSource ="AGENT_LUname"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =1365
+            Name ="ReportHeader3"
+            Begin
+                Begin Label
+                    TextAlign =1
+                    Top =120
+                    Width =14328
+                    Height =405
+                    FontSize =14
+                    Name ="Text24"
+                    Caption ="QCD of America"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    Left =45
+                    Top =885
+                    Width =2625
+                    Height =240
+                    FontSize =8
+                    FontWeight =700
+                    Name ="Field25"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                End
+                Begin Line
+                    Top =60
+                    Width =14328
+                    Name ="Line27"
+                End
+                Begin Line
+                    Top =120
+                    Width =14328
+                    Name ="Line28"
+                End
+                Begin Line
+                    Left =15
+                    Top =1140
+                    Width =14310
+                    Name ="Line35"
+                End
+                Begin Line
+                    Left =30
+                    Top =1170
+                    Width =14325
+                    Name ="Line36"
+                End
+                Begin Label
+                    TextAlign =1
+                    Top =540
+                    Width =14328
+                    Height =360
+                    FontSize =14
+                    Name ="Text44"
+                    Caption ="Agents - Prospects List"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =315
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    Width =795
+                    Height =285
+                    FontSize =8
+                    Name ="Text5"
+                    Caption ="ID"
+                End
+                Begin Label
+                    Left =780
+                    Width =1170
+                    Height =285
+                    FontSize =8
+                    Name ="Text9"
+                    Caption ="Name"
+                End
+                Begin Label
+                    Left =2895
+                    Width =1440
+                    Height =285
+                    FontSize =8
+                    Name ="Text11"
+                    Caption ="Address"
+                End
+                Begin Label
+                    Left =9135
+                    Width =1170
+                    Height =285
+                    FontSize =8
+                    Name ="Text21"
+                    Caption ="Phone"
+                End
+                Begin Label
+                    Left =10365
+                    Top =15
+                    Width =1020
+                    Height =285
+                    FontSize =8
+                    Name ="Text23"
+                    Caption ="Fax"
+                End
+                Begin Line
+                    Top =300
+                    Width =14328
+                    Name ="Line38"
+                End
+                Begin Label
+                    Left =11490
+                    Width =1125
+                    Height =285
+                    FontSize =8
+                    Name ="Text43"
+                    Caption ="Agency"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =360
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    Top =60
+                    Width =2955
+                    FontWeight =700
+                    Name ="GEOdesc"
+                    ControlSource ="GEOdesc"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =330
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    Width =801
+                    FontSize =8
+                    Name ="AGENTid"
+                    ControlSource ="AGENTid"
+                End
+                Begin TextBox
+                    Left =780
+                    Width =2091
+                    FontSize =8
+                    TabIndex =1
+                    Name ="AGENTlast"
+                    ControlSource ="Name"
+                End
+                Begin TextBox
+                    Left =2910
+                    Width =6171
+                    FontSize =8
+                    TabIndex =2
+                    Name ="AGENTcity"
+                    ControlSource ="ADDR"
+                End
+                Begin TextBox
+                    Left =10350
+                    Top =15
+                    Width =1131
+                    FontSize =8
+                    TabIndex =3
+                    Name ="AGENTfax"
+                    ControlSource ="AGENTfax"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    Left =11520
+                    Width =2811
+                    Height =255
+                    FontSize =8
+                    TabIndex =4
+                    Name ="AGENCY"
+                    ControlSource ="AGENCY"
+                End
+                Begin TextBox
+                    Left =9120
+                    Width =1161
+                    FontSize =8
+                    TabIndex =5
+                    Name ="AGENTphone"
+                    ControlSource ="AGENTphone"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    Left =12960
+                    Top =60
+                    Width =1290
+                    Name ="Field26"
+                    ControlSource ="=Page"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter4"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fdlgPrtAgentProsp].Visible = True
+    DoCmd.Close A_FORM, "fdlgPrtAgentProsp"
+    Forms![fmnuSwitchboard].Visible = True
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Report_Deactivate()
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportAgent"
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

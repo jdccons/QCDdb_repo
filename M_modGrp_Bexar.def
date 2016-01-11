@@ -1,0 +1,278 @@
+Option Compare Database
+Option Explicit
+
+Function PreviewMemberCards() As Boolean
+        
+    On Error GoTo HandleError
+    
+    DoCmd.OpenReport "rptCardMemGrp_Bexar", acViewPreview
+    
+    PreviewMemberCards = True
+    
+ExitFunc:
+  Exit Function
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitFunc
+           
+End Function
+Function PreviewUnprintedMemberCards() As Boolean
+
+    On Error GoTo HandleError
+    
+    DoCmd.OpenReport "rptCardMemGrp_Bexar", acViewPreview, "qrptCardMemGrp_Bexar", "[SubCardPrt] = 0"
+
+    PreviewUnprintedMemberCards = True
+    
+ExitFunc:
+  Exit Function
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitFunc
+
+End Function
+
+
+Function PrintMemberCards() As Boolean
+
+On Error GoTo HandleError
+    
+    Dim Response As String
+    Dim Msg As String
+    
+    If Forms![frmGrp_Bexar]![GRcardstock] Then
+        Msg = "You have entered a 'Yes' on the group screen to indicate " & vbCrLf
+        Msg = Msg & "that special card stock is required for this group.  " & vbCrLf
+        Msg = Msg & "If that is true, you should put the special card stock  " & vbCrLf
+        Msg = Msg & "in the printer now.  When you click, 'Yes', the cards will  " & vbCrLf
+        Msg = Msg & "begin to print on the printer.  When you are finished printing " & vbCrLf
+        Msg = Msg & "you must change the card stock back to the orginal card stock " & vbCrLf
+        Msg = Msg & "that was in the printer." & vbCrLf & vbCrLf
+        Msg = Msg & "If you do not require special card stock, click the 'No' button, " & vbCrLf
+        Msg = Msg & "go back to the group screen, change the special card stock value " & vbCrLf
+        Msg = Msg & "to 'No', and start your print job again." & vbCrLf & vbCrLf
+        Msg = Msg & "Are you ready to start printing?"
+        Response = MsgBox(Msg, vbYesNo + vbCritical + vbDefaultButton2, "Special Condition!")
+      
+            If Response = vbNo Then
+                DoCmd.Hourglass False
+            Else
+                'this code will run if the Bexar County group form indicates that
+                'special card stock is required
+                '
+                'strGroupID = Forms![frmGrp_Bexar].[GROUPid]  this is not needed because it is passed as a parameter to the function
+                DoCmd.OpenReport "rptCardMemGrp_Bexar", acViewNormal, "qrptCardMemGrp_Bexar" ' "[GroupID] = '" & strGroupID & "'"  - this where condition is not need because only the BEXHM table is involved in the queryDef
+                'DoCmd.OpenReport "rptCardMemGrp", , , "[GroupID] = '" & strGroupID & "'"
+                DoCmd.SetWarnings False
+                'DoCmd.RunSQL "UPDATE DISTINCTROW tblSubscr SET tblSubscr.SUBcardPRT =" & "Yes" & ", tblSubscr.SUBcardPRTdte = Date() WHERE (((tblSubscr.SUBgroupID)=[Forms]![frmGrp]![GroupID]));"
+                ExecuteSQL "Update tblSubscr_Bexar Set tblSubscr_Bexar.SubCardPrt = 1, tblSubscr_Bexar.SubCardPrtDte = Convert(varchar(10), GetDate(), 101)"  'WHERE (((tblSubscr.SUBgroupID)= strGroupID));"
+                DoCmd.SetWarnings True
+                Msg = "Please change the card stock back to the original stock!"
+                Response = MsgBox(Msg, vbOKOnly, "Special Condition!")
+                
+            End If
+        
+    Else
+            'this code will run if the Bexar County group form indicates that
+            'special card stock is not required
+            '
+            'strGroupID = Forms![frmGrp_Bexar].[GROUPid]
+            'DoCmd.OpenReport "rptCardMemGrp", , , "[GroupID] = '" & strGroupID & "'"
+            DoCmd.OpenReport "rptCardMemGrp_Bexar", acViewNormal, "qrptCardMemGrp_Bexar"
+            DoCmd.SetWarnings False
+            ExecuteSQL "Update tblSubscr_Bexar Set tblSubscr_Bexar.SubCardPrt = 1, tblSubscr_Bexar.SubCardPrtDte = Convert(varchar(10), GetDate(), 101)"
+            'DoCmd.RunSQL "UPDATE DISTINCTROW tblSubscr SET tblSubscr.SUBcardPRT =" & "Yes" & ", tblSubscr.SUBcardPRTdte = Date() WHERE (((tblSubscr.SUBgroupID)=[Forms]![frmGrp]![GroupID]));"
+            DoCmd.SetWarnings True
+    End If
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+    PrintMemberCards = True
+    
+ExitFunc:
+  Exit Function
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitFunc
+
+End Function
+Function PrintMemberCard(strSSN As String) As Boolean
+
+On Error GoTo Err_PrintMemberCard
+
+    'Purpose:  This fuction is run from a menu macro.  The macro is called from
+    '          the Bexar subscriber form to print a card for the subscriber on the
+    '          current form.
+    
+    'MsgBox strSSN
+    
+    'effective date validation
+    If IsNull(Forms![frmGrpSubscr_Bexar]![SUBeffDATE]) Then
+        MsgBox "The effective date on subscriber membership cards cannot be blank." & _
+        Chr$(13) + "You must fill in this subscriber's effective date before continuing.", 16, "MISSING Subscriber EFFECTIVE DATE"
+    Else
+    
+    '+ Chr$(13) + & _
+
+    'save record prior to printing card in case info. has been changed
+    SendKeys "+{ENTER}"
+    
+    'print member card
+    'Dim strSSN As String
+    'strSSN = forms![frmGrp_Bexar].[SUBssn]
+    DoCmd.OpenReport "rptCardMemGrp_Bexar", , , "[SUBssn] = '" & strSSN & "'"
+    
+    'update controls with print confirmation and date
+    Forms![frmGrpSubscr_Bexar]![SUBcardPRT] = 1
+    Forms![frmGrpSubscr_Bexar]![SUBcardPRTdte] = date
+    
+    'save record after the card has been printed
+    SendKeys "+{ENTER}"
+    
+    PrintMemberCard = True
+    
+End If
+
+Exit_PrintMemberCard:
+    Exit Function
+
+Err_PrintMemberCard:
+    MsgBox Error$
+    GoTo Exit_PrintMemberCard
+
+End Function
+Function DeleteSubscriber(strSSN As String) As Boolean
+
+On Error GoTo Err_DeleteSubscriber
+    
+    'Purpose:  Delete the subscriber from tblSubscr_Bexar
+    
+    Dim dbs As DAO.Database
+    Dim strSQL As String
+    Dim intAns As Integer
+       
+    intAns = MsgBox("Are you sure you want to delete this subscriber from this group?", vbExclamation + vbYesNo, "Confirm Delete")
+    If intAns = vbNo Then
+        DeleteSubscriber = False
+        Exit Function
+    End If
+        
+    DoCmd.Echo False
+    Set dbs = CurrentDb()
+    strSQL = "DELETE * FROM tblSubscr_Bexar WHERE (((tblSubscr_Bexar.SUBssn)='" & strSSN & "'));"
+    dbs.Execute strSQL, dbSeeChanges
+        
+    ' Requery the form to take them off the recordset
+    If isloaded("frmGrpSubscr_Bexar") Then
+        [Forms]![frmGrpSubscr_Bexar].Requery
+    Else
+        GoTo Err_DeleteSubscriber
+    End If
+    DoCmd.Echo True
+    
+    dbs.Close
+    Set dbs = Nothing
+    
+    DeleteSubscriber = True
+    
+Exit_DeleteSubscriber:
+    Exit Function
+
+Err_DeleteSubscriber:
+    MsgBox Error$
+    GoTo Exit_DeleteSubscriber
+
+End Function
+
+Function PrintScreen(strSSN As String, strDocName As String) As Boolean
+
+    On Error GoTo Err_PrintScreen
+    
+    Dim strWhere As String
+       
+    strWhere = "(([tblSubscr_Bexar].[SUBssn]) = '" & strSSN & "')"
+    DoCmd.OpenReport strDocName, acPreview, , strWhere
+    
+    PrintScreen = True
+    
+Exit_PrintScreen:
+    Exit Function
+
+Err_PrintScreen:
+    MsgBox Error$
+    GoTo Exit_PrintScreen
+    
+End Function
+Function PrintUnprintedMemberCards() As Boolean
+
+On Error GoTo HandleError
+    
+    Dim Response As String
+    Dim Msg As String
+    
+    If Forms![frmGrp_Bexar]![GRcardstock] Then
+        Msg = "You have entered a 'Yes' on the group screen to indicate " & vbCrLf
+        Msg = Msg & "that special card stock is required for this group.  " & vbCrLf
+        Msg = Msg & "If that is true, you should put the special card stock  " & vbCrLf
+        Msg = Msg & "in the printer now.  When you click, 'Yes', the cards will  " & vbCrLf
+        Msg = Msg & "begin to print on the printer.  When you are finished printing " & vbCrLf
+        Msg = Msg & "you must change the card stock back to the orginal card stock " & vbCrLf
+        Msg = Msg & "that was in the printer." & vbCrLf & vbCrLf
+        Msg = Msg & "If you do not require special card stock, click the 'No' button, " & vbCrLf
+        Msg = Msg & "go back to the group screen, change the special card stock value " & vbCrLf
+        Msg = Msg & "to 'No', and start your print job again." & vbCrLf & vbCrLf
+        Msg = Msg & "Are you ready to start printing?"
+        Response = MsgBox(Msg, vbYesNo + vbCritical + vbDefaultButton2, "Special Condition!")
+      
+            If Response = vbNo Then
+                DoCmd.Hourglass False
+            Else
+                'this code will run if the Bexar County group form indicates that
+                'special card stock is required
+                '
+                'strGroupID = Forms![frmGrp_Bexar].[GROUPid]  this is not needed because it is passed as a parameter to the function
+                DoCmd.OpenReport "rptCardMemGrp_Bexar", acViewNormal, "qrptCardMemGrp_Bexar", "[SubCardPrt] = 0" ' "[GroupID] = '" & strGroupID & "'"  - this where condition is not need because only the BEXHM table is involved in the queryDef
+                'DoCmd.OpenReport "rptCardMemGrp", , , "[GroupID] = '" & strGroupID & "'"
+                DoCmd.SetWarnings False
+                'DoCmd.RunSQL "UPDATE DISTINCTROW tblSubscr SET tblSubscr.SUBcardPRT =" & "Yes" & ", tblSubscr.SUBcardPRTdte = Date() WHERE (((tblSubscr.SUBgroupID)=[Forms]![frmGrp]![GroupID]));"
+                ExecuteSQL "Update tblSubscr_Bexar Set tblSubscr_Bexar.SubCardPrt = 1, tblSubscr_Bexar.SubCardPrtDte = Convert(varchar(10), GetDate(), 101) Where tblSubscr_Bexar.SubCardPrt = 0"
+                DoCmd.SetWarnings True
+                Msg = "Please change the card stock back to the original stock!"
+                Response = MsgBox(Msg, vbOKOnly, "Special Condition!")
+                
+            End If
+        
+    Else
+            'this code will run if the Bexar County group form indicates that
+            'special card stock is not required
+            '
+            'strGroupID = Forms![frmGrp_Bexar].[GROUPid]
+            'DoCmd.OpenReport "rptCardMemGrp", , , "[GroupID] = '" & strGroupID & "'"
+            DoCmd.OpenReport "rptCardMemGrp_Bexar", acViewNormal, "qrptCardMemGrp_Bexar", "[SubCardPrt] = 0"
+            DoCmd.SetWarnings False
+            ExecuteSQL "Update tblSubscr_Bexar Set tblSubscr_Bexar.SubCardPrt = 1, tblSubscr_Bexar.SubCardPrtDte = Convert(varchar(10), GetDate(), 101) Where tblSubscr_Bexar.SubCardPrt = 0"
+            'DoCmd.RunSQL "UPDATE DISTINCTROW tblSubscr SET tblSubscr.SUBcardPRT =" & "Yes" & ", tblSubscr.SUBcardPRTdte = Date() WHERE (((tblSubscr.SUBgroupID)=[Forms]![frmGrp]![GroupID]));"
+            DoCmd.SetWarnings True
+    End If
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+    PrintUnprintedMemberCards = True
+    
+ExitFunc:
+  Exit Function
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitFunc
+
+End Function

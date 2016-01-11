@@ -1,0 +1,108 @@
+Operation =3
+Name ="tblInvHistoryRpt"
+Option =0
+Where ="(((tblInvoiceHistory.InvMonth)=[intMonth]) AND ((tblInvoiceHistory.InvYear)=[int"
+    "Year]) AND ((tblGrp.GRClientSvcRepID)=[strClientSvcRep]) AND ((tblGrp.GRPgeoID)="
+    "[strGeoID]))"
+Begin InputTables
+    Name ="tblInvoiceHistory"
+    Name ="tblGrp"
+    Name ="tlkpClientServiceReps"
+    Name ="tblGeographical"
+End
+Begin OutputColumns
+    Name ="GrpID"
+    Expression ="tblInvoiceHistory.GrpID"
+    Name ="CompanyName"
+    Expression ="tblGrp.GRname"
+    Name ="City"
+    Expression ="tblGrp.GRcity"
+    Name ="State"
+    Expression ="tblGrp.GRstate"
+    Alias ="BaseAmt"
+    Name ="BaseAmt"
+    Expression ="tblInvoiceHistory.TotalBilling"
+    Alias ="BaseMonth"
+    Name ="BaseMonth"
+    Expression ="tblInvoiceHistory.InvMonth"
+    Alias ="BaseYear"
+    Name ="BaseYear"
+    Expression ="tblInvoiceHistory.InvYear"
+    Name ="ClientSvcRep"
+    Expression ="tlkpClientServiceReps.RepName"
+    Name ="GeoIDDesc"
+    Expression ="tblGeographical.GEOdesc"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblInvoiceHistory"
+    Expression ="tblGrp.GROUPid = tblInvoiceHistory.GrpID"
+    Flag =1
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =1
+    LeftTable ="tblGeographical"
+    RightTable ="tblGrp"
+    Expression ="tblGeographical.GEOid = tblGrp.GRPgeoID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblGrp.GRname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =22
+    Right =1002
+    Bottom =363
+    Left =-1
+    Top =-1
+    Right =955
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =131
+        Top =0
+        Name ="tblInvoiceHistory"
+        Name =""
+    End
+    Begin
+        Left =240
+        Top =5
+        Right =485
+        Bottom =140
+        Top =3
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =523
+        Top =6
+        Right =665
+        Bottom =98
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+    Begin
+        Left =703
+        Top =6
+        Right =849
+        Bottom =98
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+End

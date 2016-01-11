@@ -1,0 +1,88 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tlkpClientServiceReps"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPLANid"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRfax"
+    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRagentID1"
+    Expression ="tblGrp.GRagentID2"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblGrp.GRClientSvcRepID"
+    Expression ="tblGrp.GRExecSalesDirID"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRannvDATE"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRcancelled"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
+    Flag =1
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-28
+    Right =779
+    Bottom =474
+    Left =-1
+    Top =-1
+    Right =776
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =268
+        Top =4
+        Right =364
+        Bottom =116
+        Top =42
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =36
+        Top =11
+        Right =132
+        Bottom =108
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+    Begin
+        Left =151
+        Top =6
+        Right =247
+        Bottom =118
+        Top =17
+        Name ="tblAgent"
+        Name =""
+    End
+End

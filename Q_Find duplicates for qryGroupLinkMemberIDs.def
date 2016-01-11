@@ -1,0 +1,8 @@
+dbMemo "SQL" ="SELECT First([EIMBRID]) AS [EIMBRID Field], Count([EIMBRID]) AS NumberOfDups\015"
+    "\012FROM qryGroupLinkMemberIDs\015\012GROUP BY [EIMBRID]\015\012HAVING Count([EI"
+    "MBRID])>1;\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

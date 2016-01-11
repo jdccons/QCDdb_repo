@@ -1,0 +1,1300 @@
+Version =20
+VersionRequired =20
+Checksum =-665150351
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    BorderStyle =1
+    GridX =16
+    GridY =16
+    Width =10101
+    ItemSuffix =226
+    Left =4470
+    Top =705
+    Right =14565
+    Bottom =5445
+    OrderBy ="qfrmDent.DENTcity"
+    RecSrcDt = Begin
+        0xb0a19afd2ff7e140
+    End
+    RecordSource ="qfrmDent"
+    Caption ="Dentist Information"
+    OnCurrent ="[Event Procedure]"
+    BeforeInsert ="[Event Procedure]"
+    BeforeUpdate ="[Event Procedure]"
+    MenuBar ="FormMenuBar"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000752700009312000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x6870204c617365724a6574203130313020536572696573204472697665720000 ,
+        0x01043c059c00340303d700000200010000000000000001000700580200000100 ,
+        0x0000000000000065747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000000000000000000000005344444d ,
+        0x03050000030500006870204c617365724a657420313031320000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000000000000 ,
+        0x0000000000000000010000000100000001000000010000000100000001000000 ,
+        0x0100000001000000010000000100000001000000010000000100000001000000 ,
+        0x0100000001000000010000000100000000000000010000000100000018040000 ,
+        0x0000000000000000000000000f0000005a000000000000000000000001000000 ,
+        0x000000000000000080808000ff000000ffff000000ff000000ffff000000ff00 ,
+        0xff00ff0000000000000000000000000000000000640000006400000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000de030000de0300000000000000000000 ,
+        0x0080000000000000000000000100000000000000000000000000000100000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011003000010077696e73706f6f6c006870204c617365724a657420313031 ,
+        0x30205365726965732044726976657200444f54345f3030310000000000000000 ,
+        0x000000000000000000
+    End
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin Section
+            SpecialEffect =2
+            Height =4755
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =3045
+                    Top =360
+                    Width =621
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text127"
+                    Caption =" First: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =90
+                    Top =630
+                    Width =1176
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text128"
+                    Caption =" Address: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =90
+                    Top =900
+                    Width =1176
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text129"
+                    Caption ="Address 2: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =90
+                    Top =1170
+                    Width =1176
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text130"
+                    Caption ="City: "
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =2985
+                    Top =1185
+                    Width =711
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text131"
+                    Caption ="State : "
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =4467
+                    Top =1185
+                    Width =600
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text132"
+                    Caption ="Zip: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    Left =3696
+                    Top =360
+                    Width =1869
+                    TabIndex =2
+                    Name ="DENTfirst"
+                    ControlSource ="DENTfirst"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OldBorderStyle =0
+                    OverlapFlags =93
+                    Left =1296
+                    Top =630
+                    Width =3834
+                    TabIndex =4
+                    Name ="DENTstreet1"
+                    ControlSource ="DENTstreet1"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    Left =1296
+                    Top =900
+                    Width =3819
+                    TabIndex =5
+                    Name ="DENTstreet2"
+                    ControlSource ="DENTstreet2"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    Left =1296
+                    Top =1170
+                    Width =1473
+                    TabIndex =6
+                    Name ="DENTcity"
+                    ControlSource ="DENTcity"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =3705
+                    Top =1185
+                    Width =576
+                    TabIndex =7
+                    Name ="DENTstate"
+                    ControlSource ="DENTstate"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =223
+                    Left =5061
+                    Top =1185
+                    Width =1152
+                    TabIndex =8
+                    Name ="DENTzip"
+                    ControlSource ="DENTzip"
+                    InputMask ="00000\\-9999;;_"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =90
+                    Top =1440
+                    Width =1176
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text139"
+                    Caption ="Phone - Off: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =90
+                    Top =2490
+                    Width =1176
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text140"
+                    Caption ="School: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    Left =1296
+                    Top =1440
+                    Width =1491
+                    TabIndex =9
+                    Name ="DENTphoneOFFICE"
+                    ControlSource ="DENTphoneOFFICE"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6300
+                    Top =2220
+                    Width =1095
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text142"
+                    Caption ="Affil. Date: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    Left =7425
+                    Top =2235
+                    Width =1284
+                    TabIndex =22
+                    Name ="DENTaffilDATE"
+                    ControlSource ="DENTaffilDATE"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =6540
+                    Top =2490
+                    Width =855
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text144"
+                    Caption ="Geo. Id: "
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    ColumnCount =2
+                    ListWidth =3130
+                    Left =7425
+                    Top =2490
+                    Width =2650
+                    TabIndex =23
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"50\""
+                    Name ="c-DENTgeoID"
+                    ControlSource ="DENTgeoID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="Select [GEOid],[GEOdesc] From [tblGeographical];"
+                    ColumnWidths ="0;1440"
+                    EventProcPrefix ="c_DENTgeoID"
+                    BaseInfo ="\"Select [GEOid],[GEOdesc] From [tblGeographical];\";\"tblGeographical\";\"\";\""
+                        "GEOid\";\"GEOdesc\";\"PK_tblGeographical\""
+                End
+                Begin Label
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =720
+                    Top =375
+                    Width =585
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text146"
+                    Caption ="Last: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =223
+                    Left =1296
+                    Top =375
+                    Width =1584
+                    TabIndex =1
+                    Name ="DENTlast"
+                    ControlSource ="DENTlast"
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =2970
+                    Top =1440
+                    Width =1296
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text148"
+                    Caption ="Phone - Hm: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =4266
+                    Top =1440
+                    Width =1491
+                    TabIndex =10
+                    Name ="DENTphoneHOME"
+                    ControlSource ="DENTphoneHOME"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =3090
+                    Top =2490
+                    Width =1509
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text150"
+                    Caption ="Year Graduated: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    Left =4620
+                    Top =2490
+                    Width =576
+                    TabIndex =13
+                    Name ="DENTgradYR"
+                    ControlSource ="DENTgradYR"
+                    InputMask ="0000"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Top =3300
+                    Width =1260
+                    Height =270
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text152"
+                    Caption ="Comments: "
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =1266
+                    Top =3300
+                    Width =8529
+                    Height =600
+                    TabIndex =25
+                    Name ="DENTcomments"
+                    ControlSource ="DENTcomments"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =1266
+                    Top =2505
+                    Width =1704
+                    TabIndex =12
+                    Name ="DENTschool"
+                    ControlSource ="DENTschool"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =1266
+                    Top =2760
+                    Width =2478
+                    TabIndex =14
+                    Name ="DENTlicense"
+                    ControlSource ="DENTlicense"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =90
+                    Top =2220
+                    Width =1176
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text156"
+                    Caption ="Specialty: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =215
+                    TextAlign =3
+                    Top =2760
+                    Width =1266
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text158"
+                    Caption ="License No.: "
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =5640
+                    Top =360
+                    Width =585
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text159"
+                    Caption ="MI:  "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    Left =6255
+                    Top =360
+                    Width =432
+                    TabIndex =3
+                    Name ="DENTmiddleINIT"
+                    ControlSource ="DENTmiddleINIT"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    Left =1296
+                    Top =105
+                    Width =1008
+                    Name ="DentKeyID"
+                    ControlSource ="DentKeyID"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =2076
+                    Top =3030
+                    Width =1590
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text162"
+                    Caption ="Active/Inactive: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =4593
+                    Top =3030
+                    Width =1380
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text164"
+                    Caption ="Inactive Date: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =6030
+                    Top =3030
+                    Width =999
+                    TabIndex =17
+                    Name ="DENTinaDTE"
+                    ControlSource ="DENTinaDTE"
+                    Format ="Short Date"
+                    InputMask ="99/99/0099;0;_"
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =7020
+                    Top =540
+                    Width =2160
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text166"
+                    Caption ="Affil. Agreement: "
+                End
+                Begin Label
+                    OverlapFlags =223
+                    TextAlign =3
+                    Left =7020
+                    Top =780
+                    Width =2160
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text167"
+                    Caption ="State Board Cert.: "
+                End
+                Begin Label
+                    OverlapFlags =223
+                    TextAlign =3
+                    Left =7020
+                    Top =1020
+                    Width =2160
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text168"
+                    Caption ="Liability Insurance: "
+                End
+                Begin Label
+                    OverlapFlags =223
+                    TextAlign =3
+                    Left =7020
+                    Top =1260
+                    Width =2160
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text169"
+                    Caption ="Controlled Substance: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =9180
+                    Top =540
+                    Width =579
+                    TabIndex =18
+                    Name ="DENTagree"
+                    ControlSource ="DENTagree"
+                    Format ="Yes/No"
+                    DefaultValue ="=\"Yes\""
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =9180
+                    Top =780
+                    Width =579
+                    TabIndex =19
+                    Name ="DENTstCERT"
+                    ControlSource ="DENTstCERT"
+                    Format ="Yes/No"
+                    DefaultValue ="=Yes"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =9180
+                    Top =1020
+                    Width =579
+                    TabIndex =20
+                    Name ="DENTins"
+                    ControlSource ="DENTins"
+                    Format ="Yes/No"
+                    DefaultValue ="=Yes"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =9180
+                    Top =1260
+                    Width =579
+                    TabIndex =21
+                    Name ="DENTsubCERT"
+                    ControlSource ="DENTsubCERT"
+                    Format ="Yes/No"
+                    DefaultValue ="=Yes"
+                End
+                Begin Label
+                    SpecialEffect =1
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =6930
+                    Top =180
+                    Width =2970
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text174"
+                    Caption ="Paper Work Complete/Incomplete"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =95
+                    TextAlign =3
+                    Top =3030
+                    Width =1260
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text179"
+                    Caption ="Close Office: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    Left =1266
+                    Top =3030
+                    Width =609
+                    TabIndex =15
+                    Name ="DENTcloseMYoff"
+                    ControlSource ="DENTcloseMYoff"
+                    Format ="Yes/No"
+                    DefaultValue ="=\"Yes\""
+                End
+                Begin ComboBox
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    ColumnCount =2
+                    ListWidth =2155
+                    Left =1266
+                    Top =2235
+                    Width =1983
+                    TabIndex =11
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"38\""
+                    Name ="c-DENTspecialty"
+                    ControlSource ="DENTspecialty"
+                    RowSourceType ="Table/Query"
+                    RowSource ="Select [SPECIALTYID],[SPECIALITYdesc] From [qryDentSpec];"
+                    ColumnWidths ="0;1890"
+                    EventProcPrefix ="c_DENTspecialty"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =90
+                    Top =105
+                    Width =1191
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text183"
+                    Caption ="Dentist ID: "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =7050
+                    Top =3030
+                    Width =1290
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text186"
+                    Caption ="Bilingual: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =8412
+                    Top =3030
+                    Width =579
+                    TabIndex =24
+                    Name ="DENTbyLING"
+                    ControlSource ="DENTspecialPRICE"
+                    Format ="Yes/No"
+                    DefaultValue ="=\"no\""
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    ListWidth =1690
+                    Left =3726
+                    Top =3030
+                    Width =835
+                    TabIndex =16
+                    Name ="DENTstatus"
+                    ControlSource ="DENTstatus"
+                    RowSourceType ="Value List"
+                    RowSource ="\"I\";\"A\""
+                    ColumnWidths ="1440"
+                    DefaultValue ="\"A\""
+                End
+                Begin Rectangle
+                    SpecialEffect =1
+                    BackStyle =0
+                    OverlapFlags =255
+                    Width =6825
+                    Height =1815
+                    Name ="Box190"
+                End
+                Begin Rectangle
+                    SpecialEffect =1
+                    BackStyle =0
+                    OverlapFlags =247
+                    Left =6840
+                    Width =3261
+                    Height =1815
+                    Name ="Box192"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =247
+                    Left =4620
+                    Top =90
+                    TabIndex =26
+                    BackColor =65535
+                    Name ="DENT_LUname"
+                    ControlSource ="DENT_LUname"
+                    Begin
+                        Begin Label
+                            Visible = NotDefault
+                            OverlapFlags =247
+                            TextAlign =1
+                            Left =2865
+                            Top =90
+                            Width =1650
+                            Height =240
+                            FontWeight =700
+                            BackColor =65535
+                            Name ="Text194"
+                            Caption ="DENT_LUname:"
+                        End
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =1392
+                    Top =4065
+                    Width =312
+                    TabIndex =27
+                    Name ="B"
+                    Caption ="B"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =1704
+                    Top =4065
+                    Width =327
+                    TabIndex =28
+                    Name ="C"
+                    Caption ="C"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =2031
+                    Top =4065
+                    Width =327
+                    TabIndex =29
+                    Name ="D"
+                    Caption ="D"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =2358
+                    Top =4065
+                    Width =297
+                    TabIndex =30
+                    Name ="E"
+                    Caption ="E"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =2655
+                    Top =4065
+                    Width =297
+                    TabIndex =31
+                    Name ="F"
+                    Caption ="F"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =2952
+                    Top =4065
+                    Width =327
+                    TabIndex =32
+                    Name ="G"
+                    Caption ="G"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =3279
+                    Top =4065
+                    Width =327
+                    TabIndex =33
+                    Name ="H"
+                    Caption ="H"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =3606
+                    Top =4065
+                    Width =342
+                    TabIndex =34
+                    Name ="I"
+                    Caption ="I"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextFontFamily =34
+                    Left =4275
+                    Top =4065
+                    Width =327
+                    TabIndex =35
+                    Name ="K"
+                    Caption ="K"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =4602
+                    Top =4065
+                    Width =327
+                    TabIndex =36
+                    Name ="L"
+                    Caption ="L"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =4929
+                    Top =4065
+                    Width =327
+                    TabIndex =37
+                    Name ="M"
+                    Caption ="M"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =5256
+                    Top =4065
+                    Width =327
+                    TabIndex =38
+                    Name ="N"
+                    Caption ="N"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =5583
+                    Top =4065
+                    Width =327
+                    TabIndex =39
+                    Name ="O"
+                    Caption ="O"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =5910
+                    Top =4065
+                    Width =327
+                    TabIndex =40
+                    Name ="P"
+                    Caption ="P"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =6237
+                    Top =4065
+                    Width =312
+                    TabIndex =41
+                    Name ="Q"
+                    Caption ="Q"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =6549
+                    Top =4065
+                    Width =342
+                    TabIndex =42
+                    Name ="R"
+                    Caption ="R"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =6891
+                    Top =4065
+                    Width =312
+                    TabIndex =43
+                    Name ="S"
+                    Caption ="S"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =7200
+                    Top =4065
+                    Width =312
+                    TabIndex =44
+                    Name ="T"
+                    Caption ="T"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =7515
+                    Top =4065
+                    Width =327
+                    TabIndex =45
+                    Name ="U"
+                    Caption ="U"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =7842
+                    Top =4065
+                    Width =327
+                    TabIndex =46
+                    Name ="V"
+                    Caption ="V"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextFontFamily =34
+                    Left =8175
+                    Top =4065
+                    Width =387
+                    TabIndex =47
+                    Name ="W"
+                    Caption ="W"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    TextFontFamily =34
+                    Left =8556
+                    Top =4065
+                    Width =312
+                    TabIndex =48
+                    Name ="X"
+                    Caption ="X"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =8865
+                    Top =4065
+                    Width =342
+                    TabIndex =49
+                    Name ="Y"
+                    Caption ="Y"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =9210
+                    Top =4065
+                    Width =327
+                    TabIndex =50
+                    Name ="Z"
+                    Caption ="Z"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    AccessKey =78
+                    ColumnCount =3
+                    ListRows =5
+                    Left =3900
+                    Top =4440
+                    Width =5601
+                    TabIndex =51
+                    BackColor =12632256
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"60\""
+                    Name ="DentPickList"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tbldentist.DentKeyID, tbldentist.Dent_LUName AS Dent_Name, Tr"
+                        "im([DENTstreet1] & \", \" & [DENTcity]) AS Address FROM tbldentist WHERE (((tbld"
+                        "entist.Dent_LUName) Like [Forms]![frmDentist]![AlphaControl] & \"*\") AND ((tbld"
+                        "entist.DentStatus)=\"A\" Or (tbldentist.DentStatus)=\"I\")) ORDER BY tbldentist."
+                        "Dent_LUName;"
+                    ColumnWidths ="0;2232;2664"
+                    StatusBarText ="Enter DENT (last) name or click on arrow to view list."
+                    AfterUpdate ="=FindDentist([Forms]![frmDentist],[DENTPickList],\"[DentKeyID]\",\"DentLast\")"
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SetLabelColor([],0)"
+                    Begin
+                        Begin Label
+                            BackStyle =0
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =2445
+                            Top =4425
+                            Width =1410
+                            Height =240
+                            FontWeight =700
+                            BorderColor =16777215
+                            Name ="lblDENTPickList"
+                            Caption ="Dentist  &Name:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    AccessKey =70
+                    TextFontFamily =0
+                    Left =1995
+                    Top =4440
+                    Width =405
+                    Height =245
+                    TabIndex =52
+                    BackColor =12632256
+                    Name ="AlphaControl"
+                    StatusBarText ="Enter a letter or letters to filter on (e.g. \"smith\") and TAB out of field."
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SearchBtn(\"DENTPickList\")"
+                    DefaultValue ="\"*\""
+                    FontName ="Helv"
+                    Begin
+                        Begin Label
+                            BackStyle =0
+                            OverlapFlags =85
+                            Left =1125
+                            Top =4440
+                            Width =840
+                            Height =240
+                            FontWeight =700
+                            ForeColor =12582912
+                            Name ="lblAlphaControl"
+                            Caption ="&Filter on:"
+                        End
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =1080
+                    Top =4065
+                    Width =312
+                    TabIndex =53
+                    Name ="A"
+                    Caption ="A"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    TextFontFamily =34
+                    Left =3945
+                    Top =4065
+                    Width =342
+                    TabIndex =54
+                    Name ="J"
+                    Caption ="J"
+                    OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
+                End
+                Begin Label
+                    Visible = NotDefault
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =3690
+                    Top =2220
+                    Width =1221
+                    Height =240
+                    FontWeight =700
+                    BackColor =8454143
+                    Name ="Text199"
+                    Caption ="Prospect: "
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    TabStop = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    Left =4905
+                    Top =2220
+                    Width =576
+                    FontSize =10
+                    TabIndex =55
+                    BackColor =8454143
+                    Name ="tbldentist.DENTprosp"
+                    ControlSource ="tbldentist.DENTprosp"
+                    DefaultValue ="\"A\""
+                    FontName ="Arial"
+                    EventProcPrefix ="tbldentist_DENTprosp"
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =5205
+                    Top =2490
+                    Width =1335
+                    Height =255
+                    BackColor =12632256
+                    Name ="Text200"
+                    Caption ="Enter 4-digit year "
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =90
+                    Top =1920
+                    Width =1176
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label202"
+                    Caption ="PR Rep: "
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    ColumnCount =2
+                    ListWidth =2155
+                    Left =1266
+                    Top =1935
+                    Width =1983
+                    TabIndex =56
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    Name ="cboProvRelsRep"
+                    ControlSource ="ProvRelsRepID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tlkpProvRelsRep.ProvRelsRepID, tlkpProvRelsRep.Name FROM tlkpProvRelsRep;"
+                    ColumnWidths ="0;1890"
+                    BaseInfo ="\"SELECT tlkpProvRelsRep.ProvRelsRepID, tlkpProvRelsRep.Name FROM tlkpProvRelsRe"
+                        "p;\";\"tlkpProvRelsRep\";\"\";\"ProvRelsRepID\";\"Name\";\"PK_tlkpProvRelsRep\""
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Form_BeforeInsert(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+    Me![Dent_LUName] = Me![DentLast] & ", " & Me![DentFirst] & " " & Me![DENTmiddleINIT]
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Form_BeforeUpdate(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+    
+    
+    Me![Dent_LUName] = Me![DentLast] & ", " & Me![DentFirst] & " " & Me![DENTmiddleINIT]
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Form_Current()
+
+On Error GoTo Err_Form_Current
+
+    With Me
+        If Me![DENTstatus] = "I" Then
+            .DentLast.BackColor = 255
+            .DentStreet1.BackColor = 255
+            .DentStreet2.BackColor = 255
+            .DentCity.BackColor = 255
+            .DentState.BackColor = 255
+            .DentZip.BackColor = 255
+            .DENTstatus.BackColor = 255
+        Else
+            .DentLast.BackColor = 16777215
+            .DentStreet1.BackColor = 16777215
+            .DentStreet2.BackColor = 16777215
+            .DentCity.BackColor = 16777215
+            .DentState.BackColor = 16777215
+            .DentZip.BackColor = 16777215
+            .DENTstatus.BackColor = 16777215
+        End If
+    End With
+  
+    
+    Me![AlphaControl] = Null
+    Me![DentPickList] = Null
+
+Exit_Form_Current:
+    Exit Sub
+
+Err_Form_Current:
+    MsgBox Error$
+    Resume Exit_Form_Current
+
+
+End Sub

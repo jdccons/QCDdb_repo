@@ -1,0 +1,58 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBCOBRA)=True) AND ((tblGrp.GROUPid) Not Like \"INDV*\")) OR (((tb"
+    "lSubscr.SUBLOA)=True) AND ((tblGrp.GROUPid) Not Like \"INDV*\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.*"
+    Expression ="tblGrp.GRname"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =59
+    Top =52
+    Right =1016
+    Bottom =449
+    Left =-1
+    Top =-1
+    Right =946
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =373
+        Bottom =132
+        Top =40
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =421
+        Top =7
+        Right =645
+        Bottom =139
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

@@ -1,0 +1,78 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GROUPid)=\"ROMEO\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="vwRates"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="vwRates.Rate"
+    Expression ="vwRates.COVERcode"
+    Expression ="tblSubscr.PlanID"
+    Expression ="tblSubscr.PreexistingDate"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="vwRates"
+    Expression ="tblSubscr.RateID = vwRates.RateID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =84
+    Top =65
+    Right =778
+    Bottom =382
+    Left =-1
+    Top =-1
+    Right =687
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =101
+        Top =8
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =347
+        Bottom =101
+        Top =25
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =519
+        Top =6
+        Right =615
+        Bottom =116
+        Top =0
+        Name ="vwRates"
+        Name =""
+    End
+End

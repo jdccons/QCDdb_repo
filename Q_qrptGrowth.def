@@ -1,0 +1,135 @@
+Operation =1
+Option =0
+Where ="(((tblGrowth.GroupID) Not Like \"INDV*\") AND ((tblGrowth.Year)=[Forms]![frmGrow"
+    "th]![txtYear]) AND ((tblGrowth.BeginInvoiceDate) Is Not Null) AND ((tblGrp.GRcan"
+    "celled)=No))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblGrowth"
+    Name ="tlkpClientServiceReps"
+End
+Begin OutputColumns
+    Expression ="tblGrowth.GroupID"
+    Expression ="tblGrowth.Year"
+    Expression ="tblGrowth.BeginEligEmps"
+    Alias ="CurrentEligEmpsCnt"
+    Expression ="IIf(IsNull([CurrentEligEmps]),0,CLng([CurrentEligEmps]))"
+    Expression ="tblGrowth.CurrentEligEmps"
+    Expression ="tblGrowth.BeginSubscriberCount"
+    Expression ="tblGrowth.CurrentSubscriberCount"
+    Expression ="tblGrowth.BeginDependentCount"
+    Expression ="tblGrowth.CurrentDependentCount"
+    Expression ="tblGrowth.BeginSubscrswithDeps"
+    Expression ="tblGrowth.CurrentSubscrswithDeps"
+    Expression ="tblGrowth.BeginInvoiceAmt"
+    Expression ="tblGrowth.BeginInvoiceDate"
+    Expression ="tblGrowth.CurrentInvoiceAmt"
+    Expression ="tblGrowth.CurrentInvoiceDate"
+    Alias ="BeginPentRate"
+    Expression ="IIf(IsNull([BeginEligEmps]) Or [BeginEligEmps]=0,0,(IIf(IsNull([BeginSubscriberC"
+        "ount]),0,[BeginSubscriberCount])/[BeginEligEmps]))"
+    Alias ="BeginAvgCont"
+    Expression ="IIf((IsNull([BeginSubscriberCount]) Or [BeginSubscriberCount]=0),0,Format((IIf(I"
+        "sNull([BeginDependentCount]),0,[BeginDependentCount])+[BeginSubscriberCount])/[B"
+        "eginSubscriberCount],\"Fixed\"))"
+    Alias ="BeginPerSub"
+    Expression ="IIf((IsNull([BeginSubscriberCount]) Or [BeginSubscriberCount]=0),0,Format([Begin"
+        "InvoiceAmt]/[BeginSubscriberCount],\"$#,##0.00;($#,##0.00)\"))"
+    Alias ="BeginDepIncl"
+    Expression ="IIf((IsNull([BeginSubscriberCount]) Or [BeginSubscriberCount]=0),0,Format((IIf(I"
+        "sNull([BeginSubscrswithDeps]),0,[BeginSubscrswithDeps]))/[BeginSubscriberCount],"
+        "\"Fixed\"))"
+    Alias ="CurrentPentRate"
+    Expression ="IIf(IsNull(Int([CurrentEligEmps])) Or Int([CurrentEligEmps])=0,0,(IIf(IsNull([Cu"
+        "rrentSubscriberCount]),0,[CurrentSubscriberCount])/Int([CurrentEligEmps])))"
+    Alias ="CurrentAvgCont"
+    Expression ="IIf((IsNull([CurrentSubscriberCount]) Or [CurrentSubscriberCount]=0),0,Format((I"
+        "If(IsNull([CurrentDependentCount]),0,[CurrentDependentCount])+[CurrentSubscriber"
+        "Count])/[CurrentSubscriberCount],\"Fixed\"))"
+    Alias ="CurrentPerSub"
+    Expression ="IIf((IsNull([CurrentSubscriberCount]) Or [CurrentSubscriberCount]=0),0,Format([C"
+        "urrentInvoiceAmt]/[CurrentSubscriberCount],\"$#,##0.00;($#,##0.00)\"))"
+    Alias ="CurrentDepIncl"
+    Expression ="IIf((IsNull([CurrentSubscriberCount]) Or [CurrentSubscriberCount]=0),0,Format((I"
+        "If(IsNull([CurrentSubscrswithDeps]),0,[CurrentSubscrswithDeps]))/[CurrentSubscri"
+        "berCount],\"Fixed\"))"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepName"
+    Expression ="tblGrp.GRacctMgr"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRname"
+    Alias ="VarPentRate"
+    Expression ="IIf([BeginPentRate]=0 Or IsNull([BeginPentRate]) Or [BeginPentRate]=\"No EE\",0,"
+        "IIf([CurrentPentRate]=0 Or IsNull([CurrentPentRate]) Or [CurrentPentRate]=\"No E"
+        "E\",0,[CurrentPentRate]-[BeginPentRate]))"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblGrowth"
+    Expression ="tblGrp.GROUPid = tblGrowth.GroupID"
+    Flag =2
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =3
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="CurrentEligEmpsCnt"
+        dbInteger "ColumnWidth" ="2064"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrowth.BeginInvoiceAmt"
+        dbInteger "ColumnWidth" ="1692"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =11
+    Top =127
+    Right =1176
+    Bottom =480
+    Left =-1
+    Top =-1
+    Right =1158
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =44
+        Top =11
+        Right =277
+        Bottom =121
+        Top =24
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =467
+        Top =9
+        Right =643
+        Bottom =119
+        Top =0
+        Name ="tblGrowth"
+        Name =""
+    End
+    Begin
+        Left =326
+        Top =14
+        Right =422
+        Bottom =94
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+End

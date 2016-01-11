@@ -1,0 +1,49 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENCY"
+    Expression ="tblAgent.AGENTfirst"
+    Expression ="tblAgent.AGENTlast"
+    Expression ="tblAgent.AGENTstreet1"
+    Expression ="tblAgent.AGENTstreet2"
+    Expression ="tblAgent.AGENTcity"
+    Expression ="tblAgent.AGENTstate"
+    Expression ="tblAgent.AGENTzip"
+    Expression ="tblAgent.AGENTactive"
+    Expression ="tblAgent.AGENTtype"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbMemo "OrderBy" ="qryAgent.AGENCY, qryAgent.AGENTfirst, qryAgent.AGENTlast, qryAgent.AGENTstreet1,"
+    " qryAgent.AGENTstreet2, qryAgent.AGENTcity, qryAgent.AGENTstate, qryAgent.AGENTz"
+    "ip, qryAgent.AGENTactive, qryAgent.AGENTtype"
+Begin
+End
+Begin
+    State =2
+    Left =-6
+    Top =-29
+    Right =777
+    Bottom =447
+    Left =-1
+    Top =-1
+    Right =646
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =117
+        Top =16
+        Name ="tblAgent"
+        Name =""
+    End
+End

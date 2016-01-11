@@ -1,0 +1,441 @@
+Version =20
+VersionRequired =20
+Checksum =-1629568911
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =9360
+    DatasheetFontHeight =10
+    ItemSuffix =127
+    Left =3060
+    Top =90
+    Right =15315
+    Bottom =8595
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x2f1d9bf4b339e340
+    End
+    RecordSource ="SELECT tmpAA_AuditReport.CoverageType, IIf([Sort]<>4,IIf([Sort]<>8,IIf([Sort]<>1"
+        "2,[Count],''))) AS Cnt, IIf([Sort]<>4,IIf([Sort]<>8,IIf([Sort]<>12,CDbl([Rate]),"
+        "Null))) AS Rte, IIf([Sort]<>4,IIf([Sort]<>8,IIf([Sort]<>12,CDbl([Premium]),Null)"
+        ")) AS Prem, tmpAA_AuditReport.Sort FROM tmpAA_AuditReport;"
+    Caption ="All American Audit Report"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000902400006801000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010418009c00b803033f80000100010000000000640001000700580202000100 ,
+        0x5802000000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
+        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
+        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
+        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
+        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bd4cbd46bd4a9b ,
+        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
+        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
+        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
+        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
+        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
+        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
+        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
+        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7ab562800000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800260038000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000048504c617365724a ,
+        0x65743232303000
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            ControlSource ="Sort"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =1200
+            Name ="ReportHeader"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    Left =105
+                    Top =60
+                    Width =6255
+                    Height =510
+                    FontSize =20
+                    Name ="Label10"
+                    Caption ="All American Group Audit Report"
+                End
+                Begin TextBox
+                    Left =1140
+                    Top =720
+                    Width =1200
+                    Height =300
+                    FontSize =11
+                    FontWeight =700
+                    Name ="txtGrpID"
+                    ControlSource ="=[Forms]![fdlgAA_AuditReport]![CUST KEY]"
+                    Begin
+                        Begin Label
+                            TextAlign =0
+                            Left =120
+                            Top =720
+                            Width =1035
+                            Height =300
+                            Name ="Label48"
+                            Caption ="Group ID:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =4020
+                    Top =720
+                    Width =5160
+                    Height =300
+                    FontSize =11
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Text49"
+                    ControlSource ="=[Forms]![fdlgAA_AuditReport]![CustName]"
+                    Begin
+                        Begin Label
+                            TextAlign =0
+                            Left =2640
+                            Top =720
+                            Width =1335
+                            Height =300
+                            Name ="Label50"
+                            Caption ="Group Name:"
+                        End
+                    End
+                End
+            End
+        End
+        Begin PageHeader
+            Height =390
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    Left =240
+                    Top =60
+                    Width =2220
+                    Height =300
+                    Name ="CoverageType Label"
+                    Caption ="Coverage Type"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="CoverageType_Label"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =2520
+                    Top =60
+                    Width =1140
+                    Height =300
+                    Name ="Count Label"
+                    Caption ="Count"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Count_Label"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =3720
+                    Top =60
+                    Width =2220
+                    Height =300
+                    Name ="Rate Label"
+                    Caption ="QCD Rate"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Rate_Label"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =6000
+                    Top =60
+                    Width =2280
+                    Height =300
+                    Name ="Premium Label"
+                    Caption ="QCD Premium"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Premium_Label"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =2
+                    Left =240
+                    Top =390
+                    Width =8055
+                    Name ="Line13"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =360
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =8700
+                    Top =60
+                    Width =390
+                    Height =270
+                    BackColor =10092543
+                    Name ="Sort"
+                    ControlSource ="Sort"
+                End
+                Begin TextBox
+                    Left =240
+                    Top =60
+                    Width =2220
+                    Height =270
+                    ColumnWidth =2670
+                    TabIndex =1
+                    BackColor =10092543
+                    Name ="CoverageType"
+                    ControlSource ="CoverageType"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =2700
+                    Top =60
+                    Width =960
+                    Height =270
+                    TabIndex =2
+                    BackColor =10092543
+                    Name ="Count"
+                    ControlSource ="Cnt"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =4080
+                    Top =60
+                    Width =1860
+                    Height =270
+                    TabIndex =3
+                    BackColor =10092543
+                    Name ="Rate"
+                    ControlSource ="Rte"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =6300
+                    Top =60
+                    Width =1980
+                    Height =270
+                    TabIndex =4
+                    BackColor =10092543
+                    Name ="Premium"
+                    ControlSource ="Prem"
+                    Format ="Standard"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =540
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Top =240
+                    Width =4560
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text11"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =4740
+                    Top =240
+                    Width =4560
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text12"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    BorderWidth =3
+                    Left =60
+                    Top =240
+                    Width =9240
+                    BorderColor =12632256
+                    Name ="Line14"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =480
+            Name ="ReportFooter"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =2520
+                    Top =120
+                    Width =1200
+                    Height =300
+                    FontSize =9
+                    Name ="txtCntGrndTotal"
+                    ControlSource ="=getCnt()"
+                    Format ="Standard"
+                    Begin
+                        Begin Label
+                            TextAlign =3
+                            Left =1080
+                            Top =120
+                            Width =1320
+                            Height =300
+                            Name ="Label122"
+                            Caption ="TOTAL:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =6525
+                    Top =120
+                    Width =1860
+                    Height =300
+                    FontSize =9
+                    TabIndex =1
+                    Name ="txtPremGrndTotal"
+                    ControlSource ="=getPrem()"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Line
+                    Left =2520
+                    Top =60
+                    Width =1200
+                    Name ="Line125"
+                    GUID = Begin
+                        0x8fee460a6312ea4fb88b494523a7ea0c
+                    End
+                End
+                Begin Line
+                    Left =6525
+                    Top =60
+                    Width =1860
+                    Name ="Line126"
+                    GUID = Begin
+                        0x273792b8a3bbdb469b6428c5610bb58e
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub Report_Close()
+On Error Resume Next
+
+    DoCmd.Restore
+    Forms![fmnuReportBilling].Visible = True
+    
+    DoCmd.Close acForm, "fdlgAA_AuditReport"
+    
+End Sub
+
+Private Sub Report_Open(Cancel As Integer)
+    
+    Forms![fdlgAA_AuditReport].Visible = False
+    
+    
+    
+End Sub

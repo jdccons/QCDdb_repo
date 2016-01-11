@@ -1,0 +1,72 @@
+Operation =1
+Option =0
+Where ="(((IIf([GrHold] Or [GrCancelled]=-1,\"Y\",\"\"))=\"Y\") AND ((qrptBillingReconci"
+    "leARTRAN.TransactionType)=\"I\" Or (qrptBillingReconcileARTRAN.TransactionType)="
+    "\"C\" Or (qrptBillingReconcileARTRAN.TransactionType)=\"A\")) OR (((IIf([GrHold]"
+    " Or [GrCancelled]=-1,\"Y\",\"\"))=\"Y\") AND ((qrptBillingReconcileARTRAN.Transa"
+    "ctionType) Is Null))"
+Begin InputTables
+    Name ="qrptBillingReconcileARTRAN"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Alias ="Flag"
+    Expression ="IIf([GrHold] Or [GrCancelled]=-1,\"Y\",\"\")"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRcancelledDate"
+    Expression ="tblGrp.GRreinstatedDate"
+    Expression ="tblGrp.GRhold"
+    Expression ="qrptBillingReconcileARTRAN.DocumentAmt"
+    Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    Expression ="qrptBillingReconcileARTRAN.TransactionType"
+    Alias ="DocNo"
+    Expression ="Trim(RTrim([DocumentNumber]))"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="qrptBillingReconcileARTRAN"
+    Expression ="tblGrp.GROUPid = qrptBillingReconcileARTRAN.CustomerKey"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =232
+        Top =12
+        Right =509
+        Bottom =111
+        Top =1
+        Name ="qrptBillingReconcileARTRAN"
+        Name =""
+    End
+    Begin
+        Left =41
+        Top =10
+        Right =169
+        Bottom =109
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

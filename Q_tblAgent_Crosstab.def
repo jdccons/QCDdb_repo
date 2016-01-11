@@ -1,0 +1,9 @@
+dbMemo "SQL" ="TRANSFORM Count([AGENT_LUname]) AS [The Value]\015\012SELECT [AGENTactive], [AGE"
+    "NTtype], [AGENTgeoID], Count([AGENT_LUname]) AS [Total Of AGENT_LUname]\015\012F"
+    "ROM tblAgent\015\012GROUP BY [AGENTactive], [AGENTtype], [AGENTgeoID]\015\012PIV"
+    "OT [AGENTlast];\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

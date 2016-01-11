@@ -1,0 +1,236 @@
+Version =17
+VersionRequired =17
+Checksum =918528142
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4200
+    DatasheetFontHeight =10
+    ItemSuffix =8
+    Left =5460
+    Top =1215
+    Right =9420
+    Bottom =3480
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xc52c2b76d236e240
+    End
+    Caption ="Manage Pending Subscibers"
+    DatasheetFontName ="Arial"
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin Section
+            Height =2520
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =312
+                    Top =96
+                    Width =3276
+                    Height =540
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Label0"
+                    Caption ="Manage Pending Indvidual Subscribers"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =1920
+                    Top =792
+                    Width =1614
+                    Height =216
+                    Name ="txtDate"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =246
+                            Top =804
+                            Width =1638
+                            Height =228
+                            Name ="Label2"
+                            Caption ="Delete all before Date:"
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3540
+                    Top =1740
+                    Width =612
+                    Height =444
+                    TabIndex =4
+                    Name ="cmdClose"
+                    Caption ="Command3"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1740
+                    Top =1740
+                    Width =1319
+                    Height =555
+                    TabIndex =3
+                    Name ="cmdDlete"
+                    Caption ="Delete Pending"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =1920
+                    Top =1200
+                    Width =1620
+                    TabIndex =1
+                    Name ="txtPrintDate"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =240
+                            Top =1200
+                            Width =1560
+                            Height =240
+                            Name ="Label6"
+                            Caption ="Print from date:"
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =240
+                    Top =1740
+                    Width =1320
+                    Height =540
+                    TabIndex =2
+                    Name ="cmdPrint"
+                    Caption ="Print Labels\015\012on Flyers"
+                    OnClick ="[Event Procedure]"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+Private Sub cmdDlete_Click()
+    'Delete the obsolete records
+    Dim dbs As DAO.Database
+    Dim strSQL As String
+    Dim datDate As Date
+    
+    On Error GoTo Err_cmdDlete_Click
+    
+    datDate = Me.txtDate
+    
+    DoCmd.Hourglass True
+    Set dbs = CurrentDb()
+    strSQL = "DELETE tblSubscr.*, tblSubscr.SUBstatus, tblSubscr.DateUpdated " & _
+        "FROM tblSubscr " & _
+        "WHERE (((tblSubscr.SUBstatus)='PENDG') " & _
+        "AND ((tblSubscr.DateUpdated) < #" & datDate & "#));"
+    dbs.Execute strSQL, dbSeeChanges
+    
+    Set dbs = Nothing
+    
+    DoCmd.Hourglass False
+    MsgBox "All obsolete Pending Subscribers have been deleted.", vbInformation, "Operation Complete"
+    
+Exit_cmdDlete_Click:
+    Exit Sub
+
+Err_cmdDlete_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdDlete_Click
+    
+End Sub
+
+Private Sub Form_Load()
+    With Me
+        .txtDate = date - 30
+        .txtPrintDate = date
+    End With
+End Sub
+Private Sub cmdPrint_Click()
+On Error GoTo Err_cmdPrint_Click
+
+    Dim stDocName As String
+
+    stDocName = "rptPendingLabel"
+    DoCmd.OpenReport stDocName, acNormal
+
+Exit_cmdPrint_Click:
+    Exit Sub
+
+Err_cmdPrint_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdPrint_Click
+    
+End Sub

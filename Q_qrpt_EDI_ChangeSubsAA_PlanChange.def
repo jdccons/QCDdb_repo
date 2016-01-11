@@ -1,0 +1,101 @@
+Operation =3
+Name ="tmpEDI_Rpt"
+Option =8
+Where ="(((tlkpAllAmericanPlan.PlanID)<>[tblSubscr]![PlanID]))"
+Begin InputTables
+    Name ="tlkpAllAmericanPlan"
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+    Name ="tmpExportAllAmerican"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblEDI_App_Subscr.SUBssn"
+    Name ="SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Name ="SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Alias ="SUBStreet"
+    Name ="SUBStreet"
+    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Name ="SUBcity"
+    Expression ="tblEDI_App_Subscr.SUBcity"
+    Name ="SUBstate"
+    Expression ="tblEDI_App_Subscr.SUBstate"
+    Name ="SUBzip"
+    Expression ="tblEDI_App_Subscr.SUBzip"
+    Alias ="Stat"
+    Name ="Stat"
+    Expression ="\"Change-D\""
+    Name ="GroupID"
+    Expression ="tblSubscr.SUBgroupID"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Flag =1
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tmpExportAllAmerican"
+    Expression ="tblEDI_App_Subscr.SUBssn = tmpExportAllAmerican.EISSN"
+    Flag =1
+    LeftTable ="tlkpAllAmericanPlan"
+    RightTable ="tmpExportAllAmerican"
+    Expression ="tlkpAllAmericanPlan.PlanagerCode = tmpExportAllAmerican.EINMPLAN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =97
+    Top =104
+    Right =958
+    Bottom =504
+    Left =-1
+    Top =-1
+    Right =854
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =229
+        Top =10
+        Right =433
+        Bottom =132
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =46
+        Top =10
+        Right =180
+        Bottom =132
+        Top =10
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =471
+        Top =6
+        Right =608
+        Bottom =143
+        Top =28
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+    Begin
+        Left =639
+        Top =9
+        Right =735
+        Bottom =101
+        Top =0
+        Name ="tlkpAllAmericanPlan"
+        Name =""
+    End
+End

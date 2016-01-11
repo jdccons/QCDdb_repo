@@ -1,0 +1,210 @@
+Version =17
+VersionRequired =17
+Checksum =974743210
+Begin Report
+    LayoutForPrint = NotDefault
+    RecordLocks =2
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =8640
+    ItemSuffix =11
+    Left =795
+    Top =495
+    Right =11475
+    Bottom =6135
+    RecSrcDt = Begin
+        0xaef2c9709238e240
+    End
+    RecordSource ="qrptPendingLabel"
+    Caption ="Mailing Labels for Pending Indiv Subscribers"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000d0020000d00200001803000000000000c02100006c24000001000000 ,
+        0x010000005202000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a65742034303530205365726965732050434c2036000000 ,
+        0x000418009400b803033f80000100010000000000640001000700580202000100 ,
+        0x5802000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x00000000000000000000000000000000000000004c042e004850204c61736572 ,
+        0x4a65742034303530205365726965732050434c203600ffff0000000000000400 ,
+        0x320080018603789c9d55418ec33008bce719bdaf643006bb5fd9f6ffdfd8b471 ,
+        0x6d7032bbd2aaea85c9c08019fb6ea56e8f6fdab2a62d6df4fec9769f6119616a ,
+        0x7b5cf33bce2d8f78da1ecf099432091e28b50046d36b06b78a1882001b408e00 ,
+        0xa11a0c529de4163b2662cdd518dfe73a13b14f942b2d894c3be04778bb3d9e9d ,
+        0x75d457d463a9fe445c42565a124e926648e213a977caad844e3f0310729dce3e ,
+        0x0508ce1227e96729fcef54b4a6ca7fa5a2df55f5a1f4435634ca6c160efac83a ,
+        0xec628eb740b3d76c4e21b97de214cf5a9167c4aedbe2027de9fd1d00e80043c5 ,
+        0x2b2a8e5c56d0321beac3bcf723d2905e24ab2600e84c45cbe42d21c58c1483e6 ,
+        0xc52df9d782c05b09542f6e59c8db58c4338e85fd38bc9e1d3e20b982fa299f33 ,
+        0x56eb2ae65aeec123d71ea09afac7af3f51a3da4d3a880a881c899cb7711dbe89 ,
+        0x068c50825103b04e0abe43439c0171751127f1ea61b97e11785a51e376659600 ,
+        0x456ceae3e58ee3cb42ace80155e4608d2f6b80a259963bcc3d234e40b113e7f5 ,
+        0xff01ba8774660000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002f00010077696e73706f6f6c004850204c617365724a657420343035 ,
+        0x30205365726965732050434c2036005c5c4e747365727665725c68706c6a3430 ,
+        0x3530000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =9324
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =7635
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    Name ="Field2"
+                    ControlSource ="=Trim([SUBfirstNAME]) & \" \" & Trim([SUBmiddleNAME]) & \" \" & Trim([SUBlastNAM"
+                        "E])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =7920
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    TabIndex =1
+                    Name ="Field3"
+                    ControlSource ="=Trim([SUBstreet1])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =8490
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    TabIndex =2
+                    Name ="Field4"
+                    ControlSource ="=[SUBcity] & \", \" & [SUBstate] & \"  \" & [zip2]"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =8205
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    TabIndex =3
+                    Name ="Field10"
+                    ControlSource ="=Trim([SUBstreet2])"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =216
+                    Top =5220
+                    Width =3156
+                    Height =264
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Label6"
+                    Caption ="QCD of America"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =210
+                    Top =5706
+                    Width =3147
+                    Height =216
+                    Name ="Label7"
+                    Caption ="12222 Merit Dr.  Suite 1070"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =210
+                    Top =5922
+                    Width =1272
+                    Height =216
+                    Name ="Label8"
+                    Caption ="Dallas, TX 75251"
+                End
+                Begin Label
+                    Left =210
+                    Top =5490
+                    Width =3150
+                    Height =216
+                    Name ="Label9"
+                    Caption ="Individual Plan Services"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =195
+                    Top =8880
+                    Width =3975
+                    Height =345
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label10"
+                    Caption ="A Special Offer for Your Family!"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    'DoCmd.OpenForm "fmnuReportIndiv"
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

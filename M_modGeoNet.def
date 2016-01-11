@@ -1,0 +1,31 @@
+Option Compare Database
+Option Explicit
+
+'------------------------------------------------------------
+' Executed from Switchboard
+'
+'------------------------------------------------------------
+Function GeoNet()
+On Error GoTo GeoNet_Err
+
+    MsgBox "Currently this feature is not functioning"
+
+
+   ' DoCmd.SetWarnings False
+   ' DoCmd.OpenQuery "qryQCDPrvDelete", acNormal, acEdit
+   ' DoCmd.OpenQuery "qryGEOAccess", acNormal, acEdit
+   ' DoCmd.RunCommand acCmdSaveAs
+   ' DoCmd.OpenQuery "qryQCDPrvDelete2", acNormal, acEdit
+   ' DoCmd.OpenQuery "qryGEOAccess2", acNormal, acEdit
+   ' DoCmd.RunCommand acCmdSaveAs
+   ' DoCmd.SetWarnings True
+
+
+GeoNet_Exit:
+    Exit Function
+
+GeoNet_Err:
+    MsgBox Error$
+    Resume GeoNet_Exit
+
+End Function

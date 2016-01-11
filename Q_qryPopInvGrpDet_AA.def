@@ -1,0 +1,99 @@
+Operation =3
+Name ="tblInvLin"
+Option =8
+Where ="(((tblSubscr.PlanID) In (1,2,4)) AND ((tblGrp.GROUPid)=[Forms]![frmInvGrpAA_Ins]"
+    "![CUST KEY]) AND ((tblGrp.GroupType)=4))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Alias ="DocNo"
+    Name ="DOCUMENT NO"
+    Expression ="Trim$([Forms]![frmInvGrpAA_Ins]![TRANS NO])"
+    Alias ="ID"
+    Name ="ITEM KEY"
+    Expression ="IIf([InvoiceType]=1,[SUBssn],[SubID])"
+    Alias ="Desc"
+    Name ="DESCRIPTION"
+    Expression ="Trim([tblSubscr].[SUBlastNAME]) & \", \" & Trim([tblSubscr].[SUBfirstNAME]) & \""
+        " \" & Trim([tblSubscr].[SUBmiddleNAME])"
+    Name ="UNIT PRICE"
+    Expression ="tblRates.Rate"
+    Alias ="QtyOrdered"
+    Name ="QTY ORDERED"
+    Expression ="1"
+    Alias ="QtyShipped"
+    Name ="QTY SHIPPED"
+    Expression ="1"
+    Alias ="Acct"
+    Name ="REV ACCT"
+    Expression ="CStr(5100)"
+    Alias ="Dept"
+    Name ="REV SUB"
+    Expression ="CStr(1000)"
+    Name ="SPARE2"
+    Expression ="tblSubscr.PlanID"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="IIf([InvoiceType]=1,[SUBssn],[SubID])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =-140
+    Top =55
+    Right =1137
+    Bottom =374
+    Left =-1
+    Top =-1
+    Right =1270
+    Bottom =146
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =162
+        Bottom =86
+        Top =39
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =224
+        Top =8
+        Right =414
+        Bottom =88
+        Top =15
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =589
+        Top =-2
+        Right =685
+        Bottom =108
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

@@ -1,0 +1,57 @@
+Operation =1
+Option =8
+Where ="(([tblAgent].AGENTactive=\"P\"))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGeographical"
+End
+Begin OutputColumns
+    Expression ="[tblAgent].*"
+    Expression ="[tblGeographical].GEOdesc"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGeographical"
+    Expression ="[tblAgent].AGENTgeoID = [tblGeographical].GEOid"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="[tblAgent].AGENTlast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =518
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =537
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =118
+        Top =12
+        Name ="t-AGENTS"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =73
+        Top =0
+        Name ="t-GEOGRAPHICAL"
+        Name =""
+    End
+End

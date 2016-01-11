@@ -1,0 +1,53 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcity)=\"Austin\" Or (tblGrp.GRcity)=\"Round Rock\" Or (tblGrp.GRcity"
+    ")=\" San Marcos\" Or (tblGrp.GRcity)=\"Georgetown\") AND ((tblGrp.GRcancelled)=N"
+    "o))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRee"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3012"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcity"
+        dbInteger "ColumnWidth" ="1800"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =-13
+    Top =99
+    Right =799
+    Bottom =472
+    Left =-1
+    Top =-1
+    Right =805
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =144
+        Top =26
+        Name ="tblGrp"
+        Name =""
+    End
+End

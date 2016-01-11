@@ -1,0 +1,86 @@
+Operation =1
+Option =8
+Where ="(((ARTRAN.Trntyp)=\"I\" Or (ARTRAN.Trntyp)=\"C\") AND ((ARTRAN.Custclass)=\"GROU"
+    "P\"))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="qrptMonthlySalesByESD_Agents"
+End
+Begin OutputColumns
+    Expression ="ARTRAN.Docno"
+    Expression ="ARTRAN.Applytodocno"
+    Expression ="ARTRAN.Custkey"
+    Expression ="ARTRAN.Docamt"
+    Expression ="ARTRAN.Trntyp"
+    Expression ="ARTRAN.Territorykey"
+    Expression ="ARTRAN.Custclass"
+    Expression ="qrptMonthlySalesByESD_Agents.GRname"
+    Expression ="ARTRAN.Docdate"
+    Alias ="DOCmonth"
+    Expression ="Month([DocDate])"
+    Alias ="DOCYear"
+    Expression ="Year([DocDate])"
+    Alias ="Invoice Date"
+    Expression ="Format(([Docdate]),\"mm/dd/yyyy\")"
+    Expression ="qrptMonthlySalesByESD_Agents.AGENT_LUname"
+    Expression ="qrptMonthlySalesByESD_Agents.GRExecSalesDirID"
+    Expression ="qrptMonthlySalesByESD_Agents.GRPgeoID"
+End
+Begin Joins
+    LeftTable ="ARTRAN"
+    RightTable ="qrptMonthlySalesByESD_Agents"
+    Expression ="ARTRAN.Custkey = qrptMonthlySalesByESD_Agents.GROUPid"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="Format(([Docdate]),\"mm/dd/yyyy\")"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="ARTRAN.Docdate"
+        dbInteger "ColumnWidth" ="930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="qrptMonthlySalesByESD_Agents.GRExecSalesDirID"
+        dbInteger "ColumnWidth" ="1890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =211
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =47
+        Top =4
+        Right =254
+        Bottom =170
+        Top =8
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =292
+        Top =6
+        Right =502
+        Bottom =150
+        Top =0
+        Name ="qrptMonthlySalesByESD_Agents"
+        Name =""
+    End
+End

@@ -1,0 +1,86 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblEnrollment_Bancroft"
+End
+Begin OutputColumns
+    Expression ="tblEnrollment_Bancroft.Enrolled"
+    Expression ="tblEnrollment_Bancroft.SUBlastNAME"
+    Expression ="tblEnrollment_Bancroft.SUBfirstNAME"
+    Expression ="tblEnrollment_Bancroft.SUBssn"
+    Expression ="tblEnrollment_Bancroft.SUBstreet1"
+    Expression ="tblEnrollment_Bancroft.SUBstreet2"
+    Expression ="tblEnrollment_Bancroft.SUBcity"
+    Expression ="tblEnrollment_Bancroft.SUBstate"
+    Expression ="tblEnrollment_Bancroft.SUBzip"
+    Expression ="tblEnrollment_Bancroft.SUBphoneHOME"
+    Expression ="tblEnrollment_Bancroft.SUBdob"
+End
+Begin OrderBy
+    Expression ="tblEnrollment_Bancroft.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBlastNAME"
+        dbInteger "ColumnWidth" ="1515"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBfirstNAME"
+        dbInteger "ColumnWidth" ="1230"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBssn"
+        dbInteger "ColumnWidth" ="1140"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBcity"
+        dbInteger "ColumnWidth" ="1695"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBstate"
+        dbInteger "ColumnWidth" ="480"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBzip"
+        dbInteger "ColumnWidth" ="585"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBphoneHOME"
+        dbInteger "ColumnWidth" ="1275"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =802
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =227
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =84
+        Top =17
+        Right =180
+        Bottom =124
+        Top =0
+        Name ="tblEnrollment_Bancroft"
+        Name =""
+    End
+End

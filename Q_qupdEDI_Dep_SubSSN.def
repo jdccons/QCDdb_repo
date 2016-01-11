@@ -1,0 +1,8 @@
+dbMemo "SQL" ="UPDATE tblEDI_App_Dep INNER JOIN ImportAllAmerican ON tblEDI_App_Dep.DEPsubID = "
+    "left(ImportAllAmerican.EIMBRID,9) SET tblEDI_App_Dep.DEPsubID = [EISSN]\015\012W"
+    "HERE (((ImportAllAmerican.EIRECID)='P'));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

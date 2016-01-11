@@ -1,0 +1,65 @@
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+
+' From Access 97 Developer's Handbook
+' by Litwin, Getz, and Gilbert. (Sybex)
+' Copyright 1996. All Rights Reserved.
+
+Option Compare Database
+Option Explicit
+
+' Private collection to store Lines
+Private mcolLines As New Collection
+
+Public Sub Add(ByVal strText As String, Optional ByVal varBefore As Variant)
+    ' Declare new Line object
+    Dim objLine As New Line
+    
+    ' Set Text property to passed string
+    objLine.Text = strText
+    ' Add to private collection, using object's
+    ' ID property as unique index
+    mcolLines.Add objLine, objLine.ID, varBefore
+End Sub
+
+Public Sub Remove(ByVal varID As Variant)
+    ' Call Remove method of private collection object
+    mcolLines.Remove varID
+End Sub
+
+Property Get Item(ByVal varID As Variant) As Line
+    ' Set return value of property to item within
+    ' the private collection object specified by
+    ' the passed index value (Note the return type!)
+    Set Item = mcolLines(varID)
+End Property
+
+Property Get Count() As Long
+    ' Return Count property of private collection
+    Count = mcolLines.Count
+End Property
+
+Property Let Changed(ByVal fChanged As Boolean)
+    Dim objLine As Line
+    
+    ' Set Changed property of each Line to fChanged
+    For Each objLine In mcolLines
+        objLine.Changed = fChanged
+    Next
+End Property
+
+Property Get Changed() As Boolean
+    Dim objLine As Line
+
+    ' Loop through all Line objects in collection--
+    ' if any Changed property is True then the
+    ' Changed property of the collection is True
+    For Each objLine In mcolLines
+        If objLine.Changed Then
+            Changed = True
+            Exit For
+        End If
+    Next
+End Property

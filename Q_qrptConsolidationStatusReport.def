@@ -1,0 +1,84 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.Miscellaneous) Is Not Null) AND ((tblGrp.GroupType)=4))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.ParentGroupID"
+    Expression ="tblGrp.Parent"
+    Alias ="GroupID"
+    Expression ="tblGrp.GROUPid"
+    Alias ="GroupName"
+    Expression ="tblGrp.GRname"
+    Alias ="Note"
+    Expression ="tblGrp.Miscellaneous"
+    Expression ="tblGrp.Color"
+    Alias ="SubCt"
+    Expression ="CtSubs([GroupID])"
+    Alias ="GrpCt"
+    Expression ="CtGrps([ParentGroupID])"
+    Alias ="GrCancelled"
+    Expression ="tblGrp.GRcancelled"
+End
+Begin OrderBy
+    Expression ="tblGrp.GRname"
+    Flag =0
+    Expression ="tblGrp.Parent"
+    Flag =1
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="Note"
+        dbInteger "ColumnWidth" ="2310"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.ParentGroupID"
+        dbInteger "ColumnOrder" ="2"
+    End
+    Begin
+        dbText "Name" ="tblGrp.Parent"
+        dbInteger "ColumnOrder" ="3"
+    End
+    Begin
+        dbText "Name" ="GroupID"
+        dbInteger "ColumnOrder" ="1"
+    End
+    Begin
+        dbText "Name" ="GroupName"
+        dbInteger "ColumnWidth" ="4890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =738
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =196
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =52
+        Top =7
+        Right =226
+        Bottom =144
+        Top =41
+        Name ="tblGrp"
+        Name =""
+    End
+End

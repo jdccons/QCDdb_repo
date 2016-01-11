@@ -1,0 +1,71 @@
+Option Compare Database
+
+Global lngRateID As Long
+Function FindRate(GROUPid As String, CoverID As Integer, PlanID As Integer) As Double
+'------------------------------------------------
+'Purpose:  Find the plan rate based on plan id
+'          and coverage type
+'------------------------------------------------
+'Programmer:  Tim Cook
+'Create Date: 10/26/2006
+'Update Date:  10/30/2007
+'Updated by:  John Criswell
+
+On Error GoTo ErrorHandler
+    
+    LoadADORecordSet "uspFindRate '" & GROUPid & "'," & CoverID & "," & PlanID
+    
+    If Not g_adoRS.EOF Then
+      FindRate = g_adoRS("Rate")
+      lngRateID = g_adoRS("RateID")
+      g_adoRS.Close
+    End If
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+Public Function RateUsedCheck(lngRateID As Long) As Boolean
+'------------------------------------------------
+'Purpose:  Find the plan rate based on plan id
+'          and coverage type
+'------------------------------------------------
+'Programmer:  Tim Cook
+'Create Date: 10/26/2006
+'Update Date:
+'Updated by:
+
+On Error GoTo ErrorHandler
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    strSQL = "SELECT COUNT(*) AS Cnt from tblSubscr WHERE RateID = " & lngRateID
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rs.RecordCount > 0 Then
+      If rs.Fields("Cnt") > 0 Then
+        RateUsedCheck = True
+        rs.Close
+      Else
+        RateUsedCheck = False
+      End If
+    Else
+        RateUsedCheck = False
+    End If
+    
+    Set db = Nothing
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Function

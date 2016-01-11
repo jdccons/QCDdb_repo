@@ -1,0 +1,67 @@
+Operation =3
+Name ="tblSubscriber_Bexar_new"
+Option =0
+Begin InputTables
+    Name ="tblSubscribers_Bexar"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblSubscribers_Bexar.SSN"
+    Name ="SUBgroupID"
+    Expression ="tblSubscribers_Bexar.GroupID"
+    Name ="SUBlastNAME"
+    Expression ="tblSubscribers_Bexar.LastName"
+    Name ="SUBfirstNAME"
+    Expression ="tblSubscribers_Bexar.FirstName"
+    Name ="SUBmiddleNAME"
+    Expression ="tblSubscribers_Bexar.MiddleInitial"
+    Name ="SUBstreet1"
+    Expression ="tblSubscribers_Bexar.Address"
+    Name ="SUBcity"
+    Expression ="tblSubscribers_Bexar.City"
+    Name ="SUBstate"
+    Expression ="tblSubscribers_Bexar.ST"
+    Name ="SUBzip"
+    Expression ="tblSubscribers_Bexar.ZipCode"
+    Name ="SUBeffDATE"
+    Expression ="tblSubscribers_Bexar.EffDate"
+    Name ="SUBGender"
+    Expression ="tblSubscribers_Bexar.Gender"
+    Name ="SubMaritalStatus"
+    Expression ="tblSubscribers_Bexar.MaritalStatus"
+    Name ="SUBdob"
+    Expression ="tblSubscribers_Bexar.DOB"
+    Name ="SUBphoneHOME"
+    Expression ="tblSubscribers_Bexar.Phone"
+    Name ="SUBnoDEPENT"
+    Expression ="tblSubscribers_Bexar.NoDependents"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =29
+    Right =1258
+    Bottom =482
+    Left =-1
+    Top =-1
+    Right =1204
+    Bottom =284
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =48
+        Top =19
+        Right =309
+        Bottom =223
+        Top =8
+        Name ="tblSubscribers_Bexar"
+        Name =""
+    End
+End

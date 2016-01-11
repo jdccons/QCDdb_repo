@@ -1,0 +1,49 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=0) AND ((tblGrp.GroupType)=4))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Alias ="Sub Ct"
+    Expression ="CtSubs([GroupID])"
+    Expression ="tblGrp.GRcancelled"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="2310"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1258
+    Bottom =499
+    Left =-1
+    Top =-1
+    Right =1233
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =267
+        Bottom =113
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

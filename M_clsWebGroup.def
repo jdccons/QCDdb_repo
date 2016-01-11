@@ -1,0 +1,280 @@
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+'Functions:
+
+'Public Function LoadFromId(p_Id) - calls LoadData() - sends SQL states to LoadData
+'public Function Store() - save a record in the database
+'Private Function FillFromRS(p_RS) - assigns values to all of the properties
+'Private Function LoadData(p_strSQL) - calls LoadRSFromDB() and FillFromRS().
+'                                      LoadRSFromDB has all of the common ADO code
+
+'Private, class member variable
+Private m_GroupID As String
+Private m_Password As String
+Private m_GroupName As String
+Private m_EnrollStatus As String
+Private m_Address As String
+Private m_City As String
+Private m_ST As String
+Private m_Zip As String
+Private m_EffDate As Date
+Private m_CreateDate As Date
+Private m_CoverageType As Integer
+Private m_GroupType As Integer
+'Read the current GroupID value
+Public Property Get GROUPid() As String
+
+    On Error GoTo PROC_ERR
+    
+    GROUPid = m_GroupID
+
+PROC_EXIT:
+    Exit Property
+
+PROC_ERR:
+    Err.Raise Err.Number
+    
+End Property
+'Store a new GroupID value
+Public Property Let GROUPid(p_Data As String)
+    
+    On Error GoTo PROC_ERR
+    
+    m_GroupID = p_Data
+
+PROC_EXIT:
+    Exit Property
+
+PROC_ERR:
+    Err.Raise Err.Number
+    
+End Property
+'Read the current Password value
+Public Property Get Password() As String
+    Password = m_Password
+End Property
+'store a new Password value
+Public Property Let Password(p_Data As String)
+    m_Password = p_Data
+End Property
+'Read the current Group Name value
+Public Property Get GroupName() As String
+    GroupName = m_GroupName
+End Property
+'store a new Group Name value
+Public Property Let GroupName(p_Data As String)
+    m_GroupName = p_Data
+End Property
+'Read the current Enroll Status value
+Public Property Get EnrollStatus() As String
+    EnrollStatus = m_EnrollStatus
+End Property
+'store a new Enroll Status value
+Public Property Let EnrollStatus(p_Data As String)
+    m_EnrollStatus = p_Data
+End Property
+'Read the current Address value
+Public Property Get Address() As String
+    Address = m_Address
+End Property
+'store a new Address value
+Public Property Let Address(p_Data As String)
+    m_Address = p_Data
+End Property
+'Read the current City value
+Public Property Get CITY() As String
+    CITY = m_City
+End Property
+'store a new City value
+Public Property Let CITY(p_Data As String)
+    m_City = (p_Data)
+End Property
+'Read the current ST value
+Public Property Get ST() As String
+    ST = m_ST
+End Property
+'store a new City value
+Public Property Let ST(p_Data As String)
+    m_ST = (p_Data)
+End Property
+'Read the current Zip value
+Public Property Get ZIP() As String
+    ZIP = m_Zip
+End Property
+'store a new Zip value
+Public Property Let ZIP(p_Data As String)
+    m_Zip = p_Data
+End Property
+'Read the current EffDate value
+Public Property Get EffDate() As Date
+    EffDate = m_EffDate
+End Property
+'store a new EffDate value
+Public Property Let EffDate(p_Data As Date)
+    m_EffDate = p_Data
+End Property
+'Read the current CreateDate value
+Public Property Get CreateDate() As Date
+    CreateDate = m_CreateDate
+End Property
+'store a new CreateDate value
+Public Property Let CreateDate(p_Data As Date)
+    m_CreateDate = p_Data
+End Property
+'Read the current CoverageType value
+Public Property Get CoverageType() As Integer
+    CoverageType = m_CoverageType
+End Property
+'store a new CoverageType value
+Public Property Let CoverageType(p_Data As Integer)
+    m_CoverageType = p_Data
+End Property
+'Read the current GroupType value
+Public Property Get GroupType() As Integer
+    GroupType = m_GroupType
+End Property
+'store a new GroupType value
+Public Property Let GroupType(p_Data As Integer)
+    m_GroupType = p_Data
+End Property
+'#############  Public Functions  ##############
+    Public Function IsGroup(p_GroupID)
+        Dim strSQL
+        Dim rs
+        strSQL = "SELECT GroupID FROM TracentRmtSrv.QCD.dbo.tblGroup " & _
+                "WHERE GroupID = '" & p_GroupID & "';"
+        Set rs = LoadRSFromDB(strSQL)
+        If rs.EOF Then
+            IsGroup = False
+        Else
+            IsGroup = True
+        End If
+        rs.Close
+        Set rs = Nothing
+    End Function
+    'Loads this object's values by loading a record based on the given ID
+'    Public Function LoadFromId(p_ID)
+'        Dim strSQL, GroupID
+'        GroupID = p_ID
+'        strSQL = "SELECT GroupID, Password, GroupName, Address, City, ST, Zip, "
+'        strSQL = strSQL & "EffDate, CreateDate, EnrollStatus, CoverageType, GroupType FROM tblGroup "
+'        strSQL = strSQL & "WHERE (GroupID = '" & GroupID & "')"
+'        LoadFromId = LoadData(strSQL)
+'        'echobr strSQL
+'    End Function
+'     Public Function Store(p_Action, p_GroupID)
+'     Dim strSQL
+'
+'     'If the Group does not exist, then run an insert
+'     If p_Action = "Add" Then
+'          Dim arr1, arr2
+'          arr1 = Array("GroupID", "Password", "GroupName", "Address", "City", "ST", "Zip", "EffDate", "CreateDate", "EnrollStatus", "CoverageType", "GroupType")
+'          arr2 = Array(Me.GroupID, Me.Password, Me.GroupName, Me.Address, Me.CITY, Me.ST, Me.ZIP, Me.EffDate, Me.CreateDate, Me.EnrollStatus, Me.CoverageType, Me.GroupType)
+'          'arr1 = Array("GroupID", "Password", "GroupName")
+'          'arr2 = Array(Me.GroupID, Me.Password, Me.GroupName)
+'          Run = InsertRecord("tblGroup", arr1, arr2)
+'          Store = True
+'
+'     'Otherwise run an update
+'     ElseIf p_Action = "Update" Then
+'
+'          strSQL = strSQL & " UPDATE tblGroup SET "
+'          strSQL = strSQL & " Password = '" & SingleQuotes(Me.Password) & "',"
+'          strSQL = strSQL & " GroupName = '" & SingleQuotes(Me.GroupName) & "',"
+'          strSQL = strSQL & " EnrollStatus = '" & SingleQuotes(Me.EnrollStatus) & "',"
+'          strSQL = strSQL & " Address = '" & SingleQuotes(Me.Address) & "',"
+'          strSQL = strSQL & " City = '" & SingleQuotes(Me.CITY) & "',"
+'          strSQL = strSQL & " ST = '" & SingleQuotes(Me.ST) & "',"
+'          strSQL = strSQL & " Zip = '" & SingleQuotes(Me.ZIP) & "',"
+'          strSQL = strSQL & " EffDate = '" & SingleQuotes(Me.EffDate) & "', "
+'          strSQL = strSQL & " CreateDate = '" & SingleQuotes(Me.CreateDate) & "', "
+'          strSQL = strSQL & " CoverageType = " & SingleQuotes(Me.CoverageType) & " "
+'          strSQL = strSQL & " GroupType = " & SingleQuotes(Me.GroupType) & " "
+'          strSQL = strSQL & " WHERE GroupID = '" & SingleQuotes(p_GroupID) & "'"
+'          'Response.Write strSQL
+'          RunSQL strSQL
+'          Store = True
+'     End If
+'     Store = False
+'
+'       End Function
+    'Public Function Delete
+    '    strSQL = "DELETE * FROM Book WHERE lngBookID = " & Me.ID
+    '    RunSQL strSQL
+    'End Function
+
+    'Public Sub AddAuthor(p_Author)
+    '    dim Library
+    '    set Library = new cLibrary
+    '    if isObject(p_Author) Then
+    '        cLibrary.AssociateAuthorWithBook p_Author.ID, Me.ID
+    '    else
+    '        cLibrary.AssociateAuthorWithBook p_Author, Me.ID
+    '    End if
+    '    Set Library = Nothing
+    'End Sub
+
+'#############  Private Functions                           ##############
+
+    'Takes a recordset
+    'Fills the object's properties using the recordset
+Private Function FillFromRS(p_RS)
+    Select Case p_RS.RecordCount
+        Case 1
+            Me.GROUPid = p_RS.Fields("GroupID").Value
+            Me.Password = p_RS.Fields("Password").Value
+            Me.GroupName = p_RS.Fields("GroupName").Value
+            Me.Address = p_RS.Fields("Address").Value
+            Me.CITY = p_RS.Fields("City").Value
+            Me.ST = p_RS.Fields("ST").Value
+            Me.ZIP = p_RS.Fields("Zip").Value
+            Me.EffDate = p_RS.Fields("EffDate").Value
+            Me.CreateDate = p_RS.Fields("CreateDate").Value
+            Me.EnrollStatus = p_RS.Fields("EnrollStatus").Value
+            Me.CoverageType = p_RS.Fields("CoverageType").Value
+            Me.GroupType = p_RS.Fields("GroupType").Value
+            FillFromRS = Me.GROUPid
+        Case -1, 0
+            'err.raise 2, "Item was not found"
+        Case Else
+            Err.Raise 3, "GroupID not unique"
+    End Select
+End Function
+Private Function LoadData(p_strSQL)
+    Dim rs As ADODB.Recordset
+    Set rs = LoadRSFromDB(p_strSQL)
+    LoadData = FillFromRS(rs)
+    rs.Close
+    Set rs = Nothing
+End Function
+Function LoadRSFromDB(p_strSQL)
+    
+    Dim rs As ADODB.Recordset
+    Dim cmd As ADODB.Command
+    Dim strConnString As String
+    
+    Set rs = New ADODB.Recordset
+    Set cmd = New ADODB.Command
+    strConnString = SetConnxn
+        
+    'Run the SQL
+    cmd.ActiveConnection = strConnString
+    cmd.CommandText = p_strSQL
+    cmd.CommandType = adCmdText
+    cmd.Prepared = True
+    
+    rs.CursorLocation = adUseClient
+    rs.Open cmd, , adOpenStatic, adLockReadOnly
+  
+    ' Disconnect the recordsets and cleanup
+    Set rs.ActiveConnection = Nothing
+    Set cmd.ActiveConnection = Nothing
+    Set cmd = Nothing
+    Set LoadRSFromDB = rs
+    
+End Function

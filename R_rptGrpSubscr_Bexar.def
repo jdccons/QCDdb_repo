@@ -1,0 +1,776 @@
+Version =20
+VersionRequired =20
+Checksum =-620782389
+Begin Report
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    BorderStyle =1
+    GridX =15
+    GridY =15
+    Width =10550
+    ItemSuffix =182
+    Left =645
+    Top =120
+    Right =15630
+    Bottom =8880
+    RecSrcDt = Begin
+        0x863ea702b11ee340
+    End
+    RecordSource ="qrySubscr_Bexar"
+    Caption ="Group Subscriber Information"
+    OnCurrent ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000a0050000d0020000d00200000000000036290000ce13000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010418009c00b803037700060100010000000000640001000f01580201000100 ,
+        0x5802040000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
+        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
+        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
+        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
+        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bd4cbd46bd4a9b ,
+        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
+        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
+        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
+        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
+        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
+        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
+        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
+        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7ab562800000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800260038000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000048504c617365724a ,
+        0x65743232303000
+    End
+    OnActivate ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin OptionButton
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            BackStyle =1
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin FormHeader
+            Height =1425
+            Name ="FormHeader1"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =15
+                    Top =465
+                    Width =10470
+                    Height =465
+                    FontSize =14
+                    Name ="Label175"
+                    Caption ="Group Subscriber - Print Screen"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Top =690
+                    Width =2310
+                    Height =225
+                    Name ="Text177"
+                    ControlSource ="=Now()"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Line
+                    Top =930
+                    Width =10530
+                    Height =15
+                    Name ="Line179"
+                End
+                Begin Line
+                    Top =1005
+                    Width =10530
+                    Height =15
+                    Name ="Line180"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =-15
+                    Width =10485
+                    Height =465
+                    FontSize =14
+                    Name ="Label181"
+                    Caption ="QCD of America"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextFontFamily =18
+                    Left =6315
+                    Width =210
+                    Height =360
+                    Name ="Text95"
+                    Caption ="®"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin Section
+            CanGrow = NotDefault
+            SpecialEffect =1
+            Height =5070
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1629
+                    Top =195
+                    Width =1584
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    InputMask ="000\\-00\\-0000;;_"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =195
+                    Top =195
+                    Width =1380
+                    Height =240
+                    FontWeight =700
+                    Name ="Text4"
+                    Caption ="Social Sec. #: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =570
+                    Top =765
+                    Width =1005
+                    Height =240
+                    FontWeight =700
+                    Name ="Text6"
+                    Caption ="Address: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =495
+                    Top =1035
+                    Width =1080
+                    Height =240
+                    FontWeight =700
+                    Name ="Text7"
+                    Caption ="Address 2: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =330
+                    Top =1305
+                    Width =1245
+                    Height =240
+                    FontWeight =700
+                    Name ="Text8"
+                    Caption ="City/ST/Zip: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =3639
+                    Top =480
+                    Width =1704
+                    TabIndex =2
+                    Name ="SUBfirstNAME"
+                    ControlSource ="SUBfirstNAME"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1629
+                    Top =765
+                    Width =3714
+                    TabIndex =4
+                    Name ="SUBstreet1"
+                    ControlSource ="SUBstreet1"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1629
+                    Top =1035
+                    Width =3713
+                    TabIndex =5
+                    Name ="SUBstreet2"
+                    ControlSource ="SUBstreet2"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1629
+                    Top =1305
+                    Width =1983
+                    TabIndex =6
+                    Name ="SUBcity"
+                    ControlSource ="SUBcity"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =3642
+                    Top =1305
+                    Width =396
+                    TabIndex =7
+                    Name ="SUBstate"
+                    ControlSource ="SUBstate"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =4068
+                    Top =1305
+                    Width =1272
+                    TabIndex =8
+                    Name ="SUBzip"
+                    ControlSource ="SUBzip"
+                    FontName ="MS Sans Serif"
+                    InputMask ="00000\\-9999;;_"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    TextFontFamily =34
+                    Top =1575
+                    Width =1575
+                    Height =240
+                    FontWeight =700
+                    Name ="Text17"
+                    Caption ="Phone - Wk/Hm: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1629
+                    Top =1575
+                    Width =1830
+                    Height =255
+                    TabIndex =9
+                    Name ="SUBphoneWORK"
+                    ControlSource ="SUBphoneWORK"
+                    FontName ="MS Sans Serif"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1635
+                    Top =480
+                    Width =1974
+                    TabIndex =1
+                    Name ="SUBlastNAME"
+                    ControlSource ="SUBlastNAME"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =3495
+                    Top =1575
+                    Width =1845
+                    Height =255
+                    TabIndex =10
+                    Name ="SUBphoneHOME"
+                    ControlSource ="SUBphoneHOME"
+                    FontName ="MS Sans Serif"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7977
+                    Top =2112
+                    Width =1350
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text64"
+                    Caption ="Card Printed: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =9312
+                    Top =2112
+                    Width =1124
+                    TabIndex =18
+                    Name ="SUBcardPRT"
+                    ControlSource ="SUBcardPRT"
+                    Format ="Yes/No"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =7185
+                    Top =2400
+                    Width =1065
+                    Height =240
+                    FontWeight =700
+                    Name ="Text67"
+                    Caption ="Notes: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =7185
+                    Top =2694
+                    Width =3219
+                    Height =2175
+                    TabIndex =19
+                    Name ="SUBnotes"
+                    ControlSource ="SUBnotes"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =270
+                    Top =1875
+                    Width =1311
+                    Height =240
+                    FontWeight =700
+                    Name ="Text85"
+                    Caption ="Date of Birth: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1635
+                    Top =1875
+                    Width =1557
+                    TabIndex =11
+                    Name ="SUBdob"
+                    ControlSource ="SUBdob"
+                    Format ="m/d/yyyy"
+                    FontName ="MS Sans Serif"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =5355
+                    Top =480
+                    Width =237
+                    TabIndex =3
+                    Name ="SUBmiddleNAME"
+                    ControlSource ="SUBmiddleNAME"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =5805
+                    Top =741
+                    Width =1020
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text107"
+                    Caption ="Coverage: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =9312
+                    Top =1824
+                    Width =1124
+                    TabIndex =17
+                    Name ="SUBcardPRTdte"
+                    ControlSource ="SUBcardPRTdte"
+                    Format ="m/d/yyyy"
+                    FontName ="MS Sans Serif"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7962
+                    Top =1824
+                    Width =1365
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text112"
+                    Caption ="Date Printed: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =5850
+                    Top =453
+                    Width =975
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text114"
+                    Caption ="Group ID: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =6789
+                    Top =453
+                    Width =1124
+                    Height =255
+                    TabIndex =12
+                    Name ="SUBgroupID"
+                    ControlSource ="SUBgroupID"
+                    DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Rectangle
+                    Left =45
+                    Top =2460
+                    Width =7020
+                    Height =2505
+                    Name ="Box134"
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =222
+                    Top =2865
+                    Width =6738
+                    Height =1965
+                    TabIndex =20
+                    Name ="fsubGrpSubscrDep"
+                    SourceObject ="Report.rsubGrpSubscrDep_Bexar"
+                    LinkChildFields ="DEPsubID"
+                    LinkMasterFields ="SUBssn"
+                    OnExit ="[Event Procedure]"
+                End
+                Begin Label
+                    SpecialEffect =1
+                    BackStyle =1
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =153
+                    Top =2490
+                    Width =1695
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text123"
+                    Caption ="  Dependents:"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Rectangle
+                    BackStyle =0
+                    Width =5745
+                    Height =2355
+                    Name ="Box124"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =255
+                    Top =465
+                    Width =1320
+                    Height =240
+                    FontWeight =700
+                    Name ="Text128"
+                    Caption ="Last/First/MI: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =9033
+                    Top =1044
+                    Width =1124
+                    Height =255
+                    TabIndex =15
+                    Name ="SUBnoDEPENT"
+                    ControlSource ="SUBnoDEPENT"
+                    ValidationRule ="[SUBnoDEPENT]=DCount(\"[DEPcounter]\",\"tblDependent\",\"[DEPsubID] = [SUBssn]\""
+                        ")"
+                    ValidationText ="The Number of Dependents entered MUST equal the number of dependents listed in t"
+                        "he Dependents list.  You must either 1) change the number you entered  OR  2) ch"
+                        "ange the list of dependents below."
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =6225
+                    Top =1029
+                    Width =600
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text134"
+                    Caption ="Rate: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =6789
+                    Top =1029
+                    Width =1124
+                    Height =255
+                    TabIndex =14
+                    Name ="SUBrate"
+                    ControlSource ="Rate"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    DefaultValue ="=0"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8019
+                    Top =1044
+                    Width =1050
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text155"
+                    Caption ="No. Dep.: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    OldBorderStyle =0
+                    TextAlign =1
+                    BackStyle =0
+                    ColumnCount =2
+                    ListWidth =2160
+                    Left =6789
+                    Top =741
+                    Width =2220
+                    Height =255
+                    ColumnWidth =1995
+                    TabIndex =13
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    Name ="SUBcoverage"
+                    ControlSource ="COVERcode"
+                    RowSourceType ="Table/Query"
+                    RowSource ="Select [COVERid],[COVERdescr] From [tblCoverage];"
+                    ColumnWidths ="0;2024"
+                    ValidationRule ="Is Not Null"
+                    AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="\"I\""
+                    BaseInfo ="\"Select [COVERid],[COVERdescr] From [tblCoverage];\";\"tblCoverage\";\"\";\"COV"
+                        "ERid\";\"COVERdescr\";\"PK_tblCoverage\""
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7392
+                    Top =1536
+                    Width =1935
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text169"
+                    Caption ="Subscriber Effective: "
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =9312
+                    Top =1536
+                    Width =1124
+                    Height =255
+                    TabIndex =16
+                    Name ="SUBeffDATE"
+                    ControlSource ="SUBeffDATE"
+                    Format ="m/d/yyyy"
+                    ValidationRule ="Is Not Null"
+                    ValidationText ="You must enter a Subscriber Effective date before continuing."
+                    DefaultValue ="Date()"
+                    FontName ="MS Sans Serif"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =6789
+                    Top =165
+                    Width =3659
+                    Height =255
+                    TabIndex =21
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="MS Sans Serif"
+                    Begin
+                        Begin Label
+                            TextAlign =3
+                            TextFontFamily =34
+                            Left =5850
+                            Top =165
+                            Width =975
+                            Height =240
+                            FontWeight =700
+                            Name ="Text171"
+                            Caption ="Group: "
+                            FontName ="MS Sans Serif"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =4575
+                    Top =195
+                    Width =930
+                    TabIndex =22
+                    BackColor =14079702
+                    Name ="SubID"
+                    ControlSource ="SubID"
+                    StatusBarText ="Subscriber ID"
+                    FontName ="MS Sans Serif"
+                    InputMask ="####\\-####"
+                    Begin
+                        Begin Label
+                            TextFontFamily =34
+                            Left =3300
+                            Top =195
+                            Width =1200
+                            Height =240
+                            FontWeight =700
+                            Name ="Label215"
+                            Caption ="Subscriber ID"
+                            FontName ="MS Sans Serif"
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =12632256
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Private Sub Report_Activate()
+    
+    'If mintGroupType = 3 Then
+    '    mintFOCType = Me![optgrpFOC]
+    'End If
+    '
+    'If mintGroupType = 4 Then
+    '    mintPlanID = Me![optgrpFOC]
+    'End If
+    
+    'Select Case Me.GroupType
+    '    Case 1 ' managed cost
+    '        optgrpFOC.Visible = False
+    '        optgrpAA.Visible = False
+    '    Case 2 ' mixed managed cost and indemnity
+    '        optgrpFOC.Visible = False
+    '        optgrpAA.Visible = False
+    '    Case 3 ' Freedom of Choice
+    '        bxToggle.Visible = False
+    '        optgrpFOC.Visible = True
+    '        optgrpAA.Visible = False
+    '    Case 4 ' All American
+    '        bxToggle.Visible = False
+    '        optgrpFOC.Visible = False
+    '        optgrpAA.Visible = True
+    'End Select
+    
+End Sub

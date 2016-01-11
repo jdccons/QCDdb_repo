@@ -1,0 +1,63 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblRates"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="tblSubscr.RateID"
+    Expression ="[tblRates].[RateID]"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.SubGroupID = tblRates.GroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.PlanID = tblRates.PlanID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.CoverID = tblRates.CoverID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =62
+    Right =738
+    Bottom =474
+    Left =-1
+    Top =-1
+    Right =691
+    Bottom =205
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =367
+        Top =2
+        Right =531
+        Bottom =165
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+    Begin
+        Left =86
+        Top =3
+        Right =263
+        Bottom =160
+        Top =2
+        Name ="tblSubscr"
+        Name =""
+    End
+End

@@ -1,0 +1,81 @@
+Operation =1
+Option =8
+Where ="(([tblGrp].GRagentID1=\"rm1\" Or [tblGrp].GRagentID1=\"rm2\" Or [tblGrp].GRagent"
+    "ID1=\"rm3\" Or [tblGrp].GRagentID1=\"rm4\" Or [tblGrp].GRagentID1=\"rm5\" Or [tb"
+    "lGrp].GRagentID1=\"rm6\" Or [tblGrp].GRagentID1=\"rm7\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAgent"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="[tblGrp].GRPgeoID"
+    Expression ="[tblGrp].GRagentID1"
+    Expression ="[tblGrp].GROUPid"
+    Alias ="SubName"
+    Expression ="([SUBlastNAME] & \", \" & [SUBfirstNAME] & \" \" & [SUBmiddleNAME])"
+    Expression ="[tblSubscr].SUBssn"
+    Expression ="[tblGrp].GRname"
+    Expression ="[tblSubscr].SUBnoDEPENT"
+    Expression ="[tblAgent].AGENT_LUname"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblAgent"
+    Expression ="[tblGrp].GRagentID1 = [tblAgent].AGENTid"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="[tblGrp].GROUPid = [tblSubscr].SUBgroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="1965"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =518
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =179
+        Top =3
+        Right =275
+        Bottom =115
+        Top =15
+        Name ="t-SUBSCR"
+        Name =""
+    End
+    Begin
+        Left =36
+        Top =2
+        Right =132
+        Bottom =114
+        Top =17
+        Name ="t-GROUP"
+        Name =""
+    End
+    Begin
+        Left =303
+        Top =3
+        Right =399
+        Bottom =115
+        Top =0
+        Name ="t-AGENTS"
+        Name =""
+    End
+End

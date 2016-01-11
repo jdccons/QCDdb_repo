@@ -1,0 +1,136 @@
+dbMemo "SQL" ="INSERT INTO __Indiv_Print_PDF ( SubSSN, SubID, SubStatus, SubCancelled, SubLastN"
+    "ame, SubFirstName, SubMiddleName, SubStreet1, SubStreet2, SubCity, SubState, Sub"
+    "Zip, SubEffDate, SubCardPrt )\015\012SELECT tblEDI_App_Subscr.SubSSN, tblEDI_App"
+    "_Subscr.SubID, tblEDI_App_Subscr.SubStatus, tblEDI_App_Subscr.SubCancelled, tblE"
+    "DI_App_Subscr.SubLastName, tblEDI_App_Subscr.SubFirstName, tblEDI_App_Subscr.Sub"
+    "MiddleName, tblEDI_App_Subscr.SubStreet1, tblEDI_App_Subscr.SubStreet2, tblEDI_A"
+    "pp_Subscr.SubCity, tblEDI_App_Subscr.SubState, tblEDI_App_Subscr.SubZip, tblEDI_"
+    "App_Subscr.SubEffDate, tblEDI_App_Subscr.SubCardPrt\015\012FROM tblEDI_App_Subsc"
+    "r\015\012WHERE (((tblEDI_App_Subscr.SubSSN)='123456789'));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+Begin
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubSSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.EIMBRID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.PltCustKey"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.PlanID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.CoverID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubCancelled"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SUB_LUname"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubLastName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubFirstName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubMiddleName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubStreet1"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubStreet2"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubCity"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubState"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubZip"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubPhoneWork"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubPhoneHome"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SUBdob"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubNoDepent"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubGender"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubEffDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubExpDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubClassKey"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.PreexistingDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubCardPrt"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubCardPrtDte"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubNotes"
+        dbLong "AggregateType" ="-1"
+    End
+End

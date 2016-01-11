@@ -1,0 +1,61 @@
+Operation =3
+Name ="tblInvoiceHistory"
+Option =0
+Where ="(((ARTRAN.TransactionType)=\"I\" Or (ARTRAN.TransactionType)=\"C\") AND ((ARTRAN"
+    ".DocumentDate) Between [dteStartDate] And [dteEndDate]) AND ((ARTRAN.CustomerCla"
+    "ssKey)=\"GROUP\"))"
+Begin InputTables
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Name ="GrpID"
+    Expression ="ARTRAN.CustomerKey"
+    Alias ="TotalBilling"
+    Name ="TotalBilling"
+    Expression ="Sum(ARTRAN.DocumentAmt)"
+    Alias ="InvMonth"
+    Name ="InvMonth"
+    Expression ="[intMonthNo]"
+    Alias ="InvYear"
+    Name ="InvYear"
+    Expression ="[intYear]"
+End
+Begin Groups
+    Expression ="ARTRAN.CustomerKey"
+    GroupLevel =0
+    Expression ="[intMonthNo]"
+    GroupLevel =0
+    Expression ="[intYear]"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =48
+        Top =7
+        Right =308
+        Bottom =121
+        Top =3
+        Name ="ARTRAN"
+        Name =""
+    End
+End

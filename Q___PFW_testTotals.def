@@ -1,0 +1,92 @@
+Operation =1
+Option =0
+Where ="(((ARLIN.TransactionNumber)>\"6021982\"))"
+Begin InputTables
+    Name ="ARLIN"
+    Name ="ARHDR"
+End
+Begin OutputColumns
+    Expression ="ARHDR.CustomerKey"
+    Expression ="ARHDR.TransactionNumber"
+    Alias ="SumOfUnitPrice"
+    Expression ="Sum(ARLIN.UnitPrice)"
+    Expression ="ARHDR.DocumentTotal"
+    Expression ="ARLIN.CustomerClassKey"
+    Expression ="ARLIN.TransactionType"
+    Expression ="ARHDR.InvoiceDate"
+    Expression ="ARHDR.Status"
+    Expression ="ARHDR.TransactionType"
+End
+Begin Joins
+    LeftTable ="ARLIN"
+    RightTable ="ARHDR"
+    Expression ="ARLIN.TransactionNumber = ARHDR.TransactionNumber"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="ARHDR.TransactionNumber"
+    Flag =0
+End
+Begin Groups
+    Expression ="ARHDR.CustomerKey"
+    GroupLevel =0
+    Expression ="ARHDR.TransactionNumber"
+    GroupLevel =0
+    Expression ="ARHDR.DocumentTotal"
+    GroupLevel =0
+    Expression ="ARLIN.CustomerClassKey"
+    GroupLevel =0
+    Expression ="ARLIN.TransactionType"
+    GroupLevel =0
+    Expression ="ARHDR.InvoiceDate"
+    GroupLevel =0
+    Expression ="ARHDR.Status"
+    GroupLevel =0
+    Expression ="ARHDR.TransactionType"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="SumOfUnitPrice"
+        dbInteger "ColumnWidth" ="2820"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =48
+    Top =24
+    Right =1117
+    Bottom =648
+    Left =-1
+    Top =-1
+    Right =1062
+    Bottom =202
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =255
+        Top =27
+        Right =467
+        Bottom =137
+        Top =14
+        Name ="ARLIN"
+        Name =""
+    End
+    Begin
+        Left =40
+        Top =23
+        Right =195
+        Bottom =138
+        Top =53
+        Name ="ARHDR"
+        Name =""
+    End
+End

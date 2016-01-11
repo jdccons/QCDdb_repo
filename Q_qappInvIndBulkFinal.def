@@ -1,0 +1,76 @@
+Operation =3
+Name ="tblInvHdr"
+Option =8
+Begin InputTables
+    Name ="tblInvHdrPreliminary"
+End
+Begin OutputColumns
+    Name ="CUST KEY"
+    Expression ="tblInvHdrPreliminary.Custkey"
+    Name ="CUST NAME"
+    Expression ="tblInvHdrPreliminary.Custname"
+    Name ="ADDRESS 1"
+    Expression ="tblInvHdrPreliminary.Custaddr1"
+    Name ="ADDRESS 2"
+    Expression ="tblInvHdrPreliminary.Custaddr2"
+    Name ="CITY"
+    Expression ="tblInvHdrPreliminary.Custcity"
+    Name ="STATE"
+    Expression ="tblInvHdrPreliminary.Custstate"
+    Name ="ZIP CODE"
+    Expression ="tblInvHdrPreliminary.Custzip"
+    Name ="ATTENTION"
+    Expression ="tblInvHdrPreliminary.CustAttn"
+    Name ="TRANS NO"
+    Expression ="tblInvHdrPreliminary.Tranno"
+    Name ="INV DATE"
+    Expression ="tblInvHdrPreliminary.Invdate"
+    Name ="CHECK NO"
+    Expression ="tblInvHdrPreliminary.Checkno"
+    Name ="CHECK AMTR"
+    Expression ="tblInvHdrPreliminary.Checkamt"
+    Name ="TERRITORY KEY"
+    Expression ="tblInvHdrPreliminary.Territkey"
+    Name ="SALESP    KEY"
+    Expression ="tblInvHdrPreliminary.Salespkey"
+    Name ="CUST CLASS"
+    Expression ="tblInvHdrPreliminary.Custclass"
+    Name ="INVOICE NO"
+    Expression ="tblInvHdrPreliminary.Tranno"
+    Name ="RecUserID"
+    Expression ="tblInvHdrPreliminary.RecUserID"
+    Name ="RecDate"
+    Expression ="tblInvHdrPreliminary.RecDate"
+    Name ="RecTime"
+    Expression ="tblInvHdrPreliminary.RecTime"
+    Name ="SYSDOCID"
+    Expression ="tblInvHdrPreliminary.Sysdocid"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =214
+        Bottom =113
+        Top =10
+        Name ="tblInvHdrPreliminary"
+        Name =""
+    End
+End

@@ -1,0 +1,1651 @@
+Version =20
+VersionRequired =20
+Checksum =2125214833
+Begin Report
+    LayoutForPrint = NotDefault
+    FilterOn = NotDefault
+    OrderByOn = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =15045
+    DatasheetFontHeight =10
+    ItemSuffix =315
+    Left =705
+    Top =270
+    Right =10950
+    Bottom =8205
+    DatasheetGridlinesColor =12632256
+    OnNoData ="[Event Procedure]"
+    Filter ="([BeginInvoiceDate] >=#1/1/2007#)"
+    RecSrcDt = Begin
+        0xe19096c9ab0de340
+    End
+    RecordSource ="qrptGrowth"
+    Caption ="In Group Growth Report"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x68010000f8010000680100009701000000000000c53a0000fe00000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010418009c00b8030367000402000100000000006400010001002c0101000100 ,
+        0x2c01020000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
+        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
+        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
+        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
+        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bd4cbd46bd4a9b ,
+        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
+        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
+        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
+        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
+        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
+        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
+        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
+        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7ab562800000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800260038000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000048504c617365724a ,
+        0x65743232303000
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            KeepTogether =1
+            ControlSource ="GroupID"
+        End
+        Begin BreakLevel
+            KeepTogether =1
+            ControlSource ="GRacctMgr"
+        End
+        Begin BreakLevel
+            KeepTogether =1
+            ControlSource ="GRPgeoID"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =564
+            Name ="ReportHeader"
+            Begin
+                Begin Label
+                    FontItalic = NotDefault
+                    BackStyle =1
+                    Left =5460
+                    Top =60
+                    Width =4632
+                    Height =504
+                    FontSize =20
+                    Name ="Label50"
+                    Caption ="In Group Growth Report -"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =10080
+                    Top =60
+                    Width =2100
+                    Height =480
+                    FontSize =18
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text216"
+                    ControlSource ="=Left([Forms]![frmGrowth]![cboStartDate],3) & \" -- \" & [Forms]![frmGrowth]![tx"
+                        "tYear]"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    Left =840
+                    Top =300
+                    Width =1920
+                    TabIndex =1
+                    Name ="Text307"
+                    ControlSource ="=[Forms]![frmGrowth]![txtGroups]"
+                    Begin
+                        Begin Label
+                            TextAlign =0
+                            Top =240
+                            Width =804
+                            Height =288
+                            Name ="Label308"
+                            Caption ="Groups:"
+                        End
+                    End
+                End
+            End
+        End
+        Begin PageHeader
+            Height =861
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =10857
+                    Top =30
+                    Width =4188
+                    Height =288
+                    Name ="Label114"
+                    Caption ="Variations"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =9690
+                    Top =286
+                    Width =630
+                    Height =569
+                    Name ="Label94"
+                    Caption ="Rev/ Sub"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =7650
+                    Top =15
+                    Width =3213
+                    Height =288
+                    Name ="Label91"
+                    Caption ="Current Invoice "
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =6420
+                    Top =285
+                    Width =594
+                    Height =570
+                    Name ="Label73"
+                    Caption ="Rev/\015\012Sub"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =0
+                    Top =540
+                    Width =300
+                    Height =288
+                    Name ="Label64"
+                    Caption ="ID"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =0
+                    Left =2940
+                    Top =540
+                    Width =717
+                    Height =288
+                    Name ="Label65"
+                    Caption ="Region"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =0
+                    Left =600
+                    Top =540
+                    Width =1740
+                    Height =288
+                    Name ="Label67"
+                    Caption ="Company Name"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =3780
+                    Width =3750
+                    Height =288
+                    Name ="Label70"
+                    Caption ="Begin Invoice "
+                End
+                Begin Rectangle
+                    Left =3720
+                    Width =3897
+                    Height =300
+                    Name ="Box75"
+                End
+                Begin Rectangle
+                    Left =3720
+                    Top =300
+                    Height =540
+                    Name ="Box76"
+                End
+                Begin Rectangle
+                    Left =4440
+                    Top =300
+                    Width =735
+                    Height =540
+                    Name ="Box77"
+                End
+                Begin Rectangle
+                    Left =7620
+                    Top =300
+                    Width =21
+                    Height =540
+                    Name ="Box78"
+                End
+                Begin Rectangle
+                    Left =6354
+                    Top =300
+                    Width =663
+                    Height =540
+                    Name ="Box80"
+                End
+                Begin Rectangle
+                    Left =7020
+                    Top =300
+                    Width =600
+                    Height =540
+                    Name ="Box81"
+                End
+                Begin Rectangle
+                    Left =7620
+                    Width =3234
+                    Height =300
+                    Name ="Box96"
+                End
+                Begin Rectangle
+                    Left =7635
+                    Top =300
+                    Height =540
+                    Name ="Box98"
+                End
+                Begin Rectangle
+                    Left =8355
+                    Top =315
+                    Height =540
+                    Name ="Box99"
+                End
+                Begin Rectangle
+                    Left =9075
+                    Top =300
+                    Width =612
+                    Height =540
+                    Name ="Box100"
+                End
+                Begin Rectangle
+                    Left =9687
+                    Top =300
+                    Width =636
+                    Height =540
+                    Name ="Box101"
+                End
+                Begin Rectangle
+                    Left =10320
+                    Top =300
+                    Width =540
+                    Height =540
+                    Name ="Box102"
+                End
+                Begin Rectangle
+                    Left =11535
+                    Top =300
+                    Width =525
+                    Height =540
+                    Name ="Box120"
+                End
+                Begin Rectangle
+                    Left =12780
+                    Top =300
+                    Height =540
+                    Name ="Box121"
+                End
+                Begin Rectangle
+                    Left =13500
+                    Top =300
+                    Width =750
+                    Height =540
+                    Name ="Box122"
+                End
+                Begin Rectangle
+                    Left =14250
+                    Top =300
+                    Width =765
+                    Height =540
+                    Name ="Box123"
+                End
+                Begin TextBox
+                    Left =1800
+                    Top =48
+                    Width =1920
+                    Name ="Text136"
+                    ControlSource ="=IIf([Forms]![frmGrowth]![txtAcctMgrName]=\"\" Or IsNull([Forms]![frmGrowth]![tx"
+                        "tAcctMgrName]),\"All Account Managers\",[Forms]![frmGrowth]![txtAcctMgrName])"
+                    Begin
+                        Begin Label
+                            TextAlign =0
+                            Width =1788
+                            Height =300
+                            Name ="Label137"
+                            Caption ="Client Svc Rep:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =612
+                    Top =336
+                    Width =3108
+                    TabIndex =1
+                    Name ="Text140"
+                    ControlSource ="=IIf([Forms]![frmGrowth]![txtGEOName]=\"\" Or IsNull([Forms]![frmGrowth]![txtGEO"
+                        "Name]),\"All GEO Id's\",[Forms]![frmGrowth]![txtGEOName])"
+                    Begin
+                        Begin Label
+                            TextAlign =0
+                            Top =300
+                            Width =600
+                            Height =240
+                            Name ="Label141"
+                            Caption ="Area:"
+                        End
+                    End
+                End
+                Begin Rectangle
+                    BorderWidth =2
+                    Left =3720
+                    Height =840
+                    Name ="Box207"
+                End
+                Begin Rectangle
+                    BorderWidth =2
+                    Left =4440
+                    Width =3177
+                    Height =840
+                    Name ="Box208"
+                End
+                Begin Rectangle
+                    BorderWidth =2
+                    Left =7620
+                    Width =3243
+                    Height =840
+                    Name ="Box209"
+                End
+                Begin Rectangle
+                    BorderWidth =2
+                    Left =10863
+                    Width =4167
+                    Height =840
+                    Name ="Box210"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =3810
+                    Top =300
+                    Width =540
+                    Height =540
+                    Name ="Label68"
+                    Caption ="Inv.Date"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =4575
+                    Top =300
+                    Width =480
+                    Height =516
+                    Name ="Label69"
+                    Caption ="Inv.Amt"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =5208
+                    Top =300
+                    Width =534
+                    Height =540
+                    Name ="Label71"
+                    Caption ="Pent Rate"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =5820
+                    Top =300
+                    Width =504
+                    Height =540
+                    Name ="Label72"
+                    Caption ="Avg Cont"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =7065
+                    Top =315
+                    Width =480
+                    Height =540
+                    Name ="Label74"
+                    Caption ="Dep Incl"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =7755
+                    Top =300
+                    Width =480
+                    Height =528
+                    Name ="Label113"
+                    Caption ="Inv.Amt"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =9120
+                    Top =300
+                    Width =540
+                    Height =540
+                    Name ="Label93"
+                    Caption ="Avg Cont"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =8445
+                    Top =300
+                    Width =570
+                    Height =540
+                    Name ="Label92"
+                    Caption ="Pent Rate"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =10335
+                    Top =300
+                    Width =480
+                    Height =540
+                    Name ="Label95"
+                    Caption ="Dep Incl"
+                End
+                Begin Rectangle
+                    Left =10854
+                    Top =15
+                    Width =4176
+                    Height =300
+                    Name ="Box119"
+                End
+                Begin Rectangle
+                    Left =10854
+                    Top =300
+                    Width =696
+                    Height =561
+                    Name ="Box124"
+                End
+                Begin Rectangle
+                    Left =12075
+                    Top =300
+                    Width =690
+                    Height =540
+                    Name ="Box304"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =10920
+                    Top =300
+                    Width =576
+                    Height =540
+                    Name ="Label223"
+                    Caption ="Inv\015\012Amt"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =11535
+                    Top =315
+                    Width =540
+                    Height =540
+                    Name ="Label125"
+                    Caption ="Inv\015\012Per"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =12075
+                    Top =315
+                    Width =705
+                    Height =540
+                    Name ="Label115"
+                    Caption ="Pen\015\012Rate"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =12765
+                    Top =300
+                    Width =720
+                    Height =540
+                    Name ="Label116"
+                    Caption ="Avg Cont"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =13500
+                    Top =315
+                    Width =734
+                    Height =540
+                    Name ="Label117"
+                    Caption ="Rev/ Sub"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Left =14250
+                    Top =300
+                    Width =750
+                    Height =540
+                    Name ="Label118"
+                    Caption ="Dep Incl"
+                End
+                Begin Rectangle
+                    Left =5184
+                    Top =300
+                    Width =615
+                    Height =540
+                    Name ="Box313"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =254
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =1
+                    Left =12090
+                    Width =675
+                    TabIndex =31
+                    Name ="Text221"
+                    ControlSource ="=([CurrentPentRate]-[BeginPentRate])"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =5205
+                    Width =600
+                    TabIndex =29
+                    Name ="Text218"
+                    ControlSource ="=IIf([txtBeginEligEmps_static]=0 Or IsNull([txtBeginEligEmps_static]),\"No EE\","
+                        "[BeginPentRate])"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =8475
+                    Width =600
+                    TabIndex =30
+                    Name ="Text220"
+                    ControlSource ="=IIf([txtCurrentEligEmps_static]=0 Or IsNull([txtCurrentEligEmps_static]),\"No E"
+                        "E\",[CurrentPentRate])"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    Width =660
+                    ColumnWidth =912
+                    Name ="GroupID"
+                    ControlSource ="GroupID"
+                End
+                Begin TextBox
+                    Left =3060
+                    Width =630
+                    TabIndex =1
+                    Name ="GRPgeoID"
+                    ControlSource ="GRPgeoID"
+                End
+                Begin TextBox
+                    Left =660
+                    Width =2400
+                    ColumnWidth =2370
+                    TabIndex =2
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                End
+                Begin TextBox
+                    Left =3780
+                    Width =660
+                    TabIndex =3
+                    Name ="txtBeginInvoiceDate"
+                    ControlSource ="BeginInvoiceDate"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =4470
+                    Width =735
+                    TabIndex =4
+                    Name ="BeginInvoiceAmt"
+                    ControlSource ="BeginInvoiceAmt"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =1
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =5724
+                    Width =225
+                    TabIndex =5
+                    BackColor =10092543
+                    Name ="BeginPentRate"
+                    ControlSource ="BeginPentRate"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =5805
+                    Width =540
+                    TabIndex =6
+                    Name ="BeginAvgCont"
+                    ControlSource ="BeginAvgCont"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =6345
+                    Width =672
+                    TabIndex =7
+                    Name ="BeginPerSub"
+                    ControlSource ="BeginPerSub"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Rectangle
+                    Left =3720
+                    Height =240
+                    Name ="Box82"
+                End
+                Begin Rectangle
+                    Left =4440
+                    Width =756
+                    Height =240
+                    Name ="Box83"
+                End
+                Begin Rectangle
+                    Left =5190
+                    Width =600
+                    Height =240
+                    Name ="Box84"
+                End
+                Begin Rectangle
+                    Left =5805
+                    Width =540
+                    Height =240
+                    Name ="Box85"
+                End
+                Begin Rectangle
+                    Left =6360
+                    Width =660
+                    Height =240
+                    Name ="Box86"
+                End
+                Begin Rectangle
+                    Left =7020
+                    Width =615
+                    Height =240
+                    Name ="Box87"
+                End
+                Begin Rectangle
+                    Width =660
+                    Height =240
+                    Name ="Box88"
+                End
+                Begin Rectangle
+                    Left =3060
+                    Width =630
+                    Height =240
+                    Name ="Box90"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =7635
+                    Width =720
+                    TabIndex =8
+                    Name ="Text103"
+                    ControlSource ="=Format([CurrentInvoiceAmt],\"$#,##0;($#,##0)\")"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =6081
+                    Width =225
+                    TabIndex =9
+                    BackColor =10092543
+                    Name ="CurrentPentRate"
+                    ControlSource ="CurrentPentRate"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =9150
+                    Width =540
+                    TabIndex =10
+                    Name ="Text105"
+                    ControlSource ="CurrentAvgCont"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =9720
+                    Width =600
+                    TabIndex =11
+                    Name ="Text106"
+                    ControlSource ="CurrentPerSub"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =10365
+                    Width =480
+                    TabIndex =12
+                    Name ="Text107"
+                    ControlSource ="CurrentDepIncl"
+                    Format ="Fixed"
+                End
+                Begin Rectangle
+                    Left =7635
+                    Width =735
+                    Height =240
+                    Name ="Box108"
+                End
+                Begin Rectangle
+                    Left =8370
+                    Height =240
+                    Name ="Box109"
+                End
+                Begin Rectangle
+                    Left =9090
+                    Width =600
+                    Height =240
+                    Name ="Box110"
+                End
+                Begin Rectangle
+                    Left =9690
+                    Width =624
+                    Height =240
+                    Name ="Box111"
+                End
+                Begin Rectangle
+                    Left =10320
+                    Width =540
+                    Height =240
+                    Name ="Box112"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =1
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =5367
+                    Width =225
+                    TabIndex =13
+                    BackColor =10092543
+                    Name ="txtVarPentRate"
+                    ControlSource ="=IIf([BeginPentRate]=0 Or IsNull([BeginPentRate]) Or [BeginPentRate]=\"No EE\",0"
+                        ",IIf([CurrentPentRate]=0 Or IsNull([CurrentPentRate]) Or [CurrentPentRate]=\"No "
+                        "EE\",0,[CurrentPentRate]-[BeginPentRate]))"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =12780
+                    Width =705
+                    TabIndex =14
+                    Name ="Text127"
+                    ControlSource ="=([CurrentAvgCont]-[BeginAvgCont])"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =13485
+                    Width =765
+                    TabIndex =15
+                    Name ="Text128"
+                    ControlSource ="=([CurrentPerSub]-[BeginPerSub])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =14265
+                    Width =720
+                    TabIndex =16
+                    Name ="Text129"
+                    ControlSource ="=([CurrentDepIncl]-[BeginDepIncl])"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =11490
+                    Width =585
+                    TabIndex =17
+                    Name ="Text130"
+                    ControlSource ="=IIf([BeginInvoiceAmt]=0,0,IIf([CurrentInvoiceAmt]=0 Or IsNull([CurrentInvoiceAm"
+                        "t]),0,(([CurrentInvoiceAmt]-[BeginInvoiceAmt])/[BeginInvoiceAmt])))"
+                    Format ="Percent"
+                End
+                Begin Rectangle
+                    Left =12081
+                    Width =705
+                    Height =240
+                    Name ="Box131"
+                End
+                Begin Rectangle
+                    Left =12786
+                    Height =240
+                    Name ="Box132"
+                End
+                Begin Rectangle
+                    Left =13506
+                    Width =735
+                    Height =240
+                    Name ="Box133"
+                End
+                Begin Rectangle
+                    Left =14241
+                    Width =750
+                    Height =240
+                    Name ="Box134"
+                End
+                Begin Rectangle
+                    Left =11541
+                    Width =540
+                    Height =240
+                    Name ="Box135"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =729
+                    Width =225
+                    TabIndex =18
+                    BackColor =10092543
+                    Name ="txtBeginInvoiceAmtSub"
+                    ControlSource ="BeginInvoiceAmt"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =1920
+                    Width =225
+                    TabIndex =19
+                    BackColor =10092543
+                    Name ="txtBeginSubscriberCountSub"
+                    ControlSource ="=IIf([txtBeginEligEmps_static]>0,[BeginSubscriberCount],0)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =2160
+                    Width =225
+                    TabIndex =20
+                    BackColor =10092543
+                    Name ="txtBeginDependentCountSub"
+                    ControlSource ="BeginDependentCount"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =2340
+                    Width =225
+                    TabIndex =21
+                    BackColor =10092543
+                    Name ="txtBeginSubscrswithDepsSub"
+                    ControlSource ="BeginSubscrswithDeps"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =4020
+                    Width =225
+                    TabIndex =22
+                    BackColor =13434828
+                    Name ="txtCurrentSubscriberCountlSub"
+                    ControlSource ="=IIf([txtCurrentEligEmps_static]>0,[CurrentSubscriberCount],0)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =2760
+                    Width =225
+                    TabIndex =23
+                    BackColor =13434828
+                    Name ="txtCurrentInvoiceAmtSub"
+                    ControlSource ="CurrentInvoiceAmt"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =4653
+                    Width =225
+                    TabIndex =24
+                    BackColor =13434828
+                    Name ="txtCurrentDependentCountSub"
+                    ControlSource ="CurrentDependentCount"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =4860
+                    Width =225
+                    TabIndex =25
+                    BackColor =13434828
+                    Name ="txtCurrentSubscrswithDepsSub"
+                    ControlSource ="CurrentSubscrswithDeps"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =1680
+                    Width =225
+                    TabIndex =26
+                    BackColor =10092543
+                    Name ="txtBeginEligEmpsSub"
+                    ControlSource ="BeginEligEmps"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =3120
+                    Width =225
+                    TabIndex =27
+                    BackColor =13434828
+                    Name ="txtCurrentEligEmpsSub"
+                    ControlSource ="CurrentEligEmpsCnt"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    BackStyle =1
+                    Left =1086
+                    Width =225
+                    TabIndex =28
+                    BackColor =10079487
+                    Name ="txtCount"
+                    ControlSource ="=1"
+                End
+                Begin Rectangle
+                    BorderWidth =0
+                    Left =4440
+                    Width =3174
+                    Height =240
+                    Name ="Box212"
+                End
+                Begin Rectangle
+                    BorderWidth =0
+                    Left =7620
+                    Width =3228
+                    Height =240
+                    Name ="Box213"
+                End
+                Begin Rectangle
+                    BorderWidth =0
+                    Left =10860
+                    Width =4155
+                    Height =240
+                    Name ="Box214"
+                End
+                Begin Rectangle
+                    Left =660
+                    Width =2399
+                    Height =240
+                    Name ="Box89"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =372
+                    Width =225
+                    TabIndex =32
+                    BackColor =10092543
+                    Name ="txtBeginInvoiceAmtSub_static"
+                    ControlSource ="BeginInvoiceAmt"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =3720
+                    Width =0
+                    Height =239
+                    Name ="Line262"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =7620
+                    Top =15
+                    Width =0
+                    Height =239
+                    Name ="Line263"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =2
+                    Left =10860
+                    Width =0
+                    Height =239
+                    Name ="Line264"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =15000
+                    Width =0
+                    Height =239
+                    Name ="Line265"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =10860
+                    Width =675
+                    TabIndex =33
+                    Name ="Text224"
+                    ControlSource ="=IIf(IsNull([BeginInvoiceAmt]) Or IsNull([CurrentInvoiceAmt]),0,([CurrentInvoice"
+                        "Amt]-[BeginInvoiceAmt]))"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =1380
+                    Width =225
+                    TabIndex =34
+                    BackColor =10092543
+                    Name ="txtBeginEligEmps_static"
+                    ControlSource ="BeginEligEmps"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =3360
+                    Width =225
+                    TabIndex =35
+                    BackColor =13434828
+                    Name ="txtCurrentEligEmps_static"
+                    ControlSource ="CurrentEligEmps"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =15
+                    Width =225
+                    TabIndex =36
+                    BackColor =10092543
+                    Name ="txtBeginSubscriberCount_all"
+                    ControlSource ="BeginSubscriberCount"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =2580
+                    Width =225
+                    TabIndex =37
+                    BackColor =13434828
+                    Name ="txtCurrentSubscriberCount_all"
+                    ControlSource ="CurrentSubscriberCount"
+                End
+                Begin Rectangle
+                    Left =10860
+                    Width =660
+                    Height =240
+                    Name ="Box303"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =7020
+                    Width =582
+                    TabIndex =38
+                    Name ="BeginDepIncl"
+                    ControlSource ="BeginDepIncl"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =3840
+                    Width =300
+                    TabIndex =39
+                    BackColor =16777164
+                    Name ="BeginInvoiceDate"
+                    ControlSource ="BeginInvoiceDate"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =291
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Top =15
+                    Width =2340
+                    Height =276
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text51"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =10800
+                    Top =15
+                    Width =4020
+                    Height =276
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text52"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =3720
+                    Top =15
+                    Width =6420
+                    Height =252
+                    FontSize =9
+                    Name ="Label309"
+                    Caption ="Excludes cancelled groups."
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =405
+            Name ="ReportFooter"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =12120
+                    Top =120
+                    Width =674
+                    Name ="Text170"
+                    ControlSource ="=[txtCurrentPentRateGrand]-[txtBeginPentRateGrand]"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =12810
+                    Top =120
+                    Width =705
+                    TabIndex =1
+                    Name ="Text171"
+                    ControlSource ="=([txtCurrentAvgContGrand]-[txtBeginAvgContGrand])"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =13530
+                    Top =120
+                    Width =764
+                    TabIndex =2
+                    Name ="Text172"
+                    ControlSource ="=([txtCurrentPerSubGrand]-[txtBeginPerSubGrand])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =14310
+                    Top =120
+                    Width =720
+                    TabIndex =3
+                    Name ="Text173"
+                    ControlSource ="=([txtCurrentDepInclGrand]-[txtBeginDepInclGrand])"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =11535
+                    Top =120
+                    Width =584
+                    TabIndex =4
+                    Name ="Text174"
+                    ControlSource ="=IIf([txtBeginInvoiceAmtGrand]=\"NoEE\",0,IIf([txtCurrentInvoiceAmtGrand]=\"NoEE"
+                        "\",0,([txtCurrentInvoiceAmtGrand]-[txtBeginInvoiceAmtGrand])/[txtBeginInvoiceAmt"
+                        "Grand]))"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =4140
+                    Top =120
+                    Width =1020
+                    TabIndex =5
+                    Name ="txtBeginInvoiceAmtGrand"
+                    ControlSource ="=[txtBeginInvoiceAmtSub]"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =5220
+                    Top =120
+                    Width =600
+                    TabIndex =6
+                    Name ="txtBeginPentRateGrand"
+                    ControlSource ="=IIf(IsNull([txtBeginEligEmpsGrand]) Or [txtBeginEligEmpsGrand]=0,\"No EE\",((II"
+                        "f(IsNull([txtBeginSubscriberCountGrand]),0,[txtBeginSubscriberCountGrand])/[txtB"
+                        "eginEligEmpsGrand])))"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =5880
+                    Top =120
+                    Width =480
+                    TabIndex =7
+                    Name ="txtBeginAvgContGrand"
+                    ControlSource ="=IIf((IsNull([txtBeginSubscriberCountGrand_all]) Or [txtBeginSubscriberCountGran"
+                        "d_all]=0),0,((IIf(IsNull([txtBeginSubscriberCountGrand_all]),0,[txtBeginDependen"
+                        "tCountGrand])+[txtBeginSubscriberCountGrand_all])/[txtBeginSubscriberCountGrand_"
+                        "all]))"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =6414
+                    Top =120
+                    Width =600
+                    TabIndex =8
+                    Name ="txtBeginPerSubGrand"
+                    ControlSource ="=IIf((IsNull([txtBeginSubscriberCountGrand_all]) Or [txtBeginSubscriberCountGran"
+                        "d_all]=0),0,Format([txtBeginInvoiceAmtGrand]/[txtBeginSubscriberCountGrand_all],"
+                        "\"$#,##0.00;($#,##0.00)\"))"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =7080
+                    Top =120
+                    Width =435
+                    TabIndex =9
+                    Name ="txtBeginDepInclGrand"
+                    ControlSource ="=IIf((IsNull([txtBeginSubscriberCountGrand_all]) Or [txtBeginSubscriberCountGran"
+                        "d_all]=0),0,(IIf(IsNull([txtBeginSubscrswithDepsGrand]),0,[txtBeginSubscrswithDe"
+                        "psGrand]))/[txtBeginSubscriberCountGrand_all])"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =7560
+                    Top =120
+                    Width =840
+                    TabIndex =10
+                    Name ="txtCurrentInvoiceAmtGrand"
+                    ControlSource ="=[txtCurrentInvoiceAmtSub]"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    TextAlign =3
+                    Left =8460
+                    Top =120
+                    Width =540
+                    TabIndex =11
+                    Name ="txtCurrentPentRateGrand"
+                    ControlSource ="=IIf(IsNull([txtCurrentEligEmpsGrand]) Or [txtCurrentEligEmpsGrand]=0,\"No EE\","
+                        "(IIf(IsNull([txtCurrentSubscriberCountGrand]),0,[txtCurrentSubscriberCountGrand]"
+                        ")/[txtCurrentEligEmpsGrand]))"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =9090
+                    Top =120
+                    Width =540
+                    TabIndex =12
+                    Name ="txtCurrentAvgContGrand"
+                    ControlSource ="=IIf((IsNull([txtCurrentSubscriberCountGrand_all]) Or [txtCurrentSubscriberCount"
+                        "Grand_all]=0),0,(IIf(IsNull([txtCurrentDependentCountGrand]),0,[txtCurrentDepend"
+                        "entCountGrand])+[txtCurrentSubscriberCountGrand_all])/[txtCurrentSubscriberCount"
+                        "Grand_all])"
+                    Format ="Fixed"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =9720
+                    Top =120
+                    Width =600
+                    TabIndex =13
+                    Name ="txtCurrentPerSubGrand"
+                    ControlSource ="=IIf((IsNull([txtCurrentSubscriberCountGrand_all]) Or [txtCurrentSubscriberCount"
+                        "Grand_all]=0),0,Format([txtCurrentInvoiceAmtGrand]/[txtCurrentSubscriberCountGra"
+                        "nd_all],\"$#,##0.00;($#,##0.00)\"))"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =10320
+                    Top =120
+                    Width =480
+                    TabIndex =14
+                    Name ="txtCurrentDepInclGrand"
+                    ControlSource ="=IIf((IsNull([txtCurrentSubscriberCountGrand_all]) Or [txtCurrentSubscriberCount"
+                        "Grand_all]=0),0,(IIf(IsNull([txtCurrentSubscrswithDepsGrand]),0,[txtCurrentSubsc"
+                        "rswithDepsGrand]))/[txtCurrentSubscriberCountGrand_all])"
+                    Format ="Fixed"
+                End
+                Begin Label
+                    Left =2940
+                    Top =75
+                    Width =624
+                    Height =300
+                    Name ="Label190"
+                    Caption ="Total:"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =942
+                    Width =195
+                    TabIndex =15
+                    BackColor =10092543
+                    Name ="txtBeginSubscriberCountGrand"
+                    ControlSource ="=[txtBeginSubscriberCountSub]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =1256
+                    Width =195
+                    TabIndex =16
+                    BackColor =10092543
+                    Name ="txtBeginDependentCountGrand"
+                    ControlSource ="=[txtBeginDependentCountSub]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =1570
+                    Width =195
+                    TabIndex =17
+                    BackColor =10092543
+                    Name ="txtBeginSubscrswithDepsGrand"
+                    ControlSource ="=[txtBeginSubscrswithDepsSub]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =2512
+                    Width =195
+                    TabIndex =18
+                    BackColor =13434828
+                    Name ="txtCurrentSubscriberCountGrand"
+                    ControlSource ="=CLng([txtCurrentSubscriberCountlSub])"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =2826
+                    Width =195
+                    TabIndex =19
+                    BackColor =13434828
+                    Name ="txtCurrentDependentCountGrand"
+                    ControlSource ="=[txtCurrentDependentCountSub]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =3140
+                    Width =195
+                    TabIndex =20
+                    BackColor =13434828
+                    Name ="txtCurrentSubscrswithDepsGrand"
+                    ControlSource ="=[txtCurrentSubscrswithDepsSub]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =628
+                    Width =195
+                    TabIndex =21
+                    BackColor =10092543
+                    Name ="txtBeginEligEmpsGrand"
+                    ControlSource ="=[txtBeginEligEmpsSub]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    TextAlign =1
+                    BackStyle =1
+                    Left =2198
+                    Width =195
+                    TabIndex =22
+                    BackColor =13434828
+                    Name ="txtCurrentEligEmpsGrand"
+                    ControlSource ="=[txtCurrentEligEmpsSub]"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    BackStyle =1
+                    Left =1875
+                    Top =90
+                    Width =510
+                    Height =315
+                    FontSize =9
+                    TabIndex =23
+                    Name ="txtGrandCount"
+                    ControlSource ="=[txtCount]"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    Left =10860
+                    Top =120
+                    Width =674
+                    TabIndex =24
+                    Name ="Text225"
+                    ControlSource ="=([txtCurrentInvoiceAmtGrand]-[txtBeginInvoiceAmtGrand])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Width =195
+                    TabIndex =25
+                    BackColor =10092543
+                    Name ="txtBeginSubscriberCountGrand_all"
+                    ControlSource ="=[txtBeginSubscriberCount_all]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    OldBorderStyle =1
+                    TextAlign =3
+                    BackStyle =1
+                    Left =1884
+                    Width =195
+                    TabIndex =26
+                    BackColor =13434828
+                    Name ="txtCurrentSubscriberCountGrand_all"
+                    ControlSource ="=[txtCurrentSubscriberCount_all]"
+                End
+                Begin Label
+                    Top =60
+                    Width =1890
+                    Height =315
+                    Name ="Label314"
+                    Caption ="Number of Groups:"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub Report_Close()
+    DoCmd.Restore
+End Sub
+
+Private Sub Report_NoData(Cancel As Integer)
+    MsgBox "The Report contains no data!", , "No Data"
+    Cancel = True
+End Sub

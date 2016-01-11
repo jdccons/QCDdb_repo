@@ -1,0 +1,82 @@
+Operation =3
+Name ="tblInvLin"
+Option =8
+Begin InputTables
+    Name ="tblInvHdrPreliminary"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="DOCUMENT NO"
+    Expression ="[tblInvHdrPreliminary].[TRANS NO]"
+    Name ="ITEM KEY"
+    Expression ="[tblSubscr].SUBssn"
+    Alias ="Desc"
+    Name ="DESCRIPTION"
+    Expression ="([tblSubscr].[SUBlastNAME] & \", \" & [tblSubscr].[SUBfirstNAME] & \" \" & [tblS"
+        "ubscr].[SUBmiddleNAME])"
+    Name ="UNIT PRICE"
+    Expression ="[tblSubscr].SUBrate"
+    Alias ="QtyOrdered"
+    Name ="QTY ORDERED"
+    Expression ="1"
+    Alias ="QtyShipped"
+    Name ="QTY SHIPPED"
+    Expression ="1"
+    Alias ="Acct"
+    Name ="REV ACCT"
+    Expression ="CStr(5100)"
+    Alias ="Dept"
+    Name ="REV SUB"
+    Expression ="CStr(1000)"
+End
+Begin Joins
+    LeftTable ="tblInvHdrPreliminary"
+    RightTable ="tblSubscr"
+    Expression ="[tblInvHdrPreliminary].[CUST KEY] = [tblSubscr].SUBgroupID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="([tblSubscr].[SUBlastNAME] & \", \" & [tblSubscr].[SUBfirstNAME] & \" \" & [tblS"
+        "ubscr].[SUBmiddleNAME])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+    Begin
+        dbText "Name" ="[t-INVhdrPRELIMINARY].[TRANS NO]"
+        dbText "Description" ="Selecting Subscribers . . ."
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =461
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =203
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =363
+        Top =39
+        Right =579
+        Bottom =151
+        Top =13
+        Name ="t-SUBSCR"
+        Name =""
+    End
+    Begin
+        Left =62
+        Top =29
+        Right =249
+        Bottom =141
+        Top =0
+        Name ="t-INVhdrPRELIMINARY"
+        Name =""
+    End
+End

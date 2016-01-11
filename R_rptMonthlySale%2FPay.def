@@ -1,0 +1,469 @@
+Version =19
+VersionRequired =19
+Checksum =-1172324938
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    PicturePages =1
+    GridX =20
+    GridY =24
+    Width =10953
+    ItemSuffix =74
+    Left =795
+    Top =330
+    Right =11775
+    Bottom =6375
+    RecSrcDt = Begin
+        0x9b6d95ba6ccde240
+    End
+    RecordSource ="qrptMonthlySale/Pay"
+    Caption ="Monthly Sales/Payments Report"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000d002000068010000d002000000000000c92a00002c01000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x5c5c4143545345525645525c4850343035300000000000000000000000000000 ,
+        0x010400059c00340243ff800701000100ea0a6f08640001000f00580201000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200000034020000ea7157490000000000000000000000000000000000000000 ,
+        0x00000000000000000d0000000100000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002600010077696e73706f6f6c00005c5c4143545345525645525c4850 ,
+        0x343035300000506f7274000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            TextFontFamily =18
+            Height =300
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            GroupFooter = NotDefault
+            KeepTogether =1
+            ControlSource ="CustomerKey"
+        End
+        Begin BreakLevel
+            GroupFooter = NotDefault
+            ControlSource ="DocNo"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =840
+            Name ="ReportHeader3"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    Top =60
+                    Width =10875
+                    Height =480
+                    FontSize =14
+                    Name ="Text25"
+                    Caption ="Monthly Sales/Payments Report"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    Top =540
+                    Width =4095
+                    Height =285
+                    Name ="Field26"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                End
+                Begin Line
+                    Top =60
+                    Width =10875
+                    Name ="Line28"
+                End
+                Begin Line
+                    Top =120
+                    Width =10875
+                    Name ="Line29"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =915
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =3
+                    Left =4968
+                    Top =480
+                    Width =870
+                    Height =285
+                    Name ="Text7"
+                    Caption ="Invoice: "
+                End
+                Begin Label
+                    Top =480
+                    Width =1125
+                    Height =285
+                    Name ="Text11"
+                    Caption ="Customer: "
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =5964
+                    Top =480
+                    Width =801
+                    Height =285
+                    Name ="Text13"
+                    Caption ="Date: "
+                End
+                Begin Label
+                    Left =6912
+                    Top =480
+                    Width =1230
+                    Height =285
+                    Name ="Text17"
+                    Caption ="Invoice Total: "
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Top =60
+                    Width =10950
+                    Name ="Line30"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Top =120
+                    Width =10950
+                    Name ="Line31"
+                End
+                Begin Line
+                    Top =780
+                    Width =10950
+                    Name ="Line32"
+                End
+                Begin Line
+                    Top =840
+                    Width =10950
+                    Name ="Line33"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =8205
+                    Top =480
+                    Width =1365
+                    Height =285
+                    Name ="Text57"
+                    Caption ="Payment Amt:"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =9648
+                    Top =480
+                    Width =930
+                    Height =285
+                    Name ="Text59"
+                    Caption ="Variance:"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Visible = NotDefault
+            Height =300
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    Left =4833
+                    Width =1155
+                    Name ="Docno"
+                    ControlSource ="DocNo"
+                End
+                Begin TextBox
+                    Width =873
+                    TabIndex =1
+                    Name ="Custkey"
+                    ControlSource ="CustomerKey"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =5976
+                    Width =936
+                    TabIndex =2
+                    Name ="Invoice Date"
+                    ControlSource ="Invoice Date"
+                    Format ="m/d/yyyy"
+                    EventProcPrefix ="Invoice_Date"
+                End
+                Begin TextBox
+                    Left =6912
+                    Width =1230
+                    TabIndex =3
+                    Name ="Docamt"
+                    ControlSource ="INVOICE"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Left =939
+                    Width =3588
+                    TabIndex =4
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =8280
+                    Width =1290
+                    TabIndex =5
+                    Name ="PAYMENT"
+                    ControlSource ="PAYMENT"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =9648
+                    Width =930
+                    TabIndex =6
+                    Name ="Variance"
+                    ControlSource ="=([invoice]-[payment])"
+                    Format ="Percent"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =300
+            BreakLevel =1
+            Name ="GroupFooter0"
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    Left =8280
+                    Width =1305
+                    Name ="PaySUBTOTAL"
+                    ControlSource ="=Sum([PAYMENT])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Left =6912
+                    Width =1215
+                    TabIndex =1
+                    Name ="INVsubtotal"
+                    ControlSource ="=Sum([INVOICE])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =5976
+                    Width =921
+                    TabIndex =2
+                    Name ="Field52"
+                    ControlSource ="Invoice Date"
+                    Format ="m/d/yyyy"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =4833
+                    Width =1140
+                    TabIndex =3
+                    Name ="Field53"
+                    ControlSource ="DocNo"
+                End
+                Begin TextBox
+                    Width =939
+                    TabIndex =4
+                    Name ="Field55"
+                    ControlSource ="CustomerKey"
+                End
+                Begin TextBox
+                    Left =936
+                    Width =3588
+                    TabIndex =5
+                    Name ="Field56"
+                    ControlSource ="GRname"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =390
+            Name ="GroupFooter1"
+            Begin
+                Begin Line
+                    Width =10950
+                    Name ="Line67"
+                End
+                Begin TextBox
+                    Left =6900
+                    Width =1215
+                    Name ="INVtotal"
+                    ControlSource ="=Sum([INVOICE])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =8265
+                    Width =1305
+                    TabIndex =1
+                    Name ="PayTOTAL"
+                    ControlSource ="=Sum([PAYMENT])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =9660
+                    Width =1005
+                    TabIndex =2
+                    Name ="Variance Total"
+                    ControlSource ="=IIf([INVtotal]=0,0,(([INVtotal]+[payTOTAL])/[INVtotal]))"
+                    Format ="Percent"
+                    EventProcPrefix ="Variance_Total"
+                End
+                Begin Label
+                    TextAlign =3
+                    Width =4890
+                    Height =285
+                    FontWeight =400
+                    Name ="Text70"
+                    Caption =" Subtotal: "
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Top =300
+                    Width =10950
+                    Name ="Line72"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Top =360
+                    Width =10950
+                    Name ="Line73"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =600
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    Left =9432
+                    Name ="Field27"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =495
+            Name ="ReportFooter4"
+            Begin
+                Begin TextBox
+                    Left =6855
+                    Top =195
+                    Width =1290
+                    FontWeight =700
+                    Name ="GrandTotalDOCAMT"
+                    ControlSource ="=Sum([INVOICE])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Line
+                    Left =6840
+                    Top =480
+                    Width =1215
+                    Name ="Line37"
+                End
+                Begin Label
+                    TextAlign =3
+                    Top =180
+                    Width =4890
+                    Height =285
+                    Name ="Text42"
+                    Caption ="Grand Total: "
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Left =6840
+                    Top =420
+                    Width =1215
+                    Name ="Line46"
+                End
+                Begin TextBox
+                    Left =8223
+                    Top =195
+                    Width =1290
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field63"
+                    ControlSource ="=Sum([payment])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Line
+                    Left =8208
+                    Top =480
+                    Width =1215
+                    Name ="Line64"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Left =8208
+                    Top =420
+                    Width =1215
+                    Name ="Line65"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportMisc"
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

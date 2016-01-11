@@ -1,0 +1,48 @@
+Operation =1
+Option =8
+Where ="(((tblGrp.GroupType) In (2,3)) AND ((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+End
+Begin OrderBy
+    Expression ="tblGrp.GRname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1400
+    Bottom =950
+    Left =-1
+    Top =-1
+    Right =1393
+    Bottom =354
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =325
+        Bottom =253
+        Top =28
+        Name ="tblGrp"
+        Name =""
+    End
+End

@@ -1,0 +1,271 @@
+Version =19
+VersionRequired =19
+Checksum =10536236
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    AllowUpdating =1
+    ScrollBars =0
+    ViewsAllowed =1
+    BorderStyle =1
+    Width =4608
+    ItemSuffix =16
+    Left =3615
+    Top =585
+    Right =8220
+    Bottom =4890
+    RecSrcDt = Begin
+        0xb000921170cbe240
+    End
+    RecordSource ="qryInvGrpBulk"
+    Caption ="Create Batch Invoices"
+    MenuBar ="FormMenuBar"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+        End
+        Begin Section
+            Height =4320
+            BackColor =12632256
+            Name ="Detail0"
+            OnClick ="[Event Procedure]"
+            Begin
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =309
+                    Top =240
+                    Width =4020
+                    Height =570
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text1"
+                    Caption ="Create Invoices for Group ID's Beginning with the Letter:"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =294
+                    Top =1395
+                    Width =4020
+                    Height =495
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text4"
+                    Caption ="Through Invoices for Group ID's Beginning with the Letter:"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    ListRows =10
+                    ListWidth =360
+                    Left =2016
+                    Top =915
+                    Width =580
+                    Height =285
+                    FontSize =10
+                    Name ="LetterFrom"
+                    RowSourceType ="Value List"
+                    RowSource =";\"A\";\"B\";\"C\";\"D\";\"E\";\"F\";\"G\";\"H\";\"I\";\"J\";\"K\";\"L\";\"M\";\""
+                        "N\";\"O\";\"P\";\"Q\";\"R\";\"S\";\"T\";\"U\";\"V\";\"W\";\"X\";\"Y\";\"Z\""
+                    ColumnWidths ="360"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    ListRows =10
+                    ListWidth =360
+                    Left =2016
+                    Top =1995
+                    Width =580
+                    Height =285
+                    FontSize =10
+                    TabIndex =1
+                    Name ="LetterTo"
+                    RowSourceType ="Value List"
+                    RowSource =";\"A\";\"B\";\"C\";\"D\";\"E\";\"F\";\"G\";\"H\";\"I\";\"J\";\"K\";\"L\";\"M\";\""
+                        "N\";\"O\";\"P\";\"Q\";\"R\";\"S\";\"T\";\"U\";\"V\";\"W\";\"X\";\"Y\";\"Z\""
+                    ColumnWidths ="360"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =3111
+                    Top =3540
+                    Width =915
+                    Height =615
+                    FontSize =8
+                    TabIndex =4
+                    Name ="Cancel"
+                    Caption ="Cancel"
+                    OnClick ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =951
+                    Top =3540
+                    Width =915
+                    Height =615
+                    FontSize =8
+                    TabIndex =3
+                    Name ="btnCreateInvoices"
+                    Caption ="Create Invoices"
+                    OnClick ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =288
+                    Top =2475
+                    Width =4020
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text13"
+                    Caption ="Date the Invoices:"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =1584
+                    Top =2835
+                    Height =285
+                    FontSize =10
+                    TabIndex =2
+                    Name ="INVdate"
+                    ControlSource ="FieldDateValue"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+Private Sub btnCreateInvoices_Click()
+'----------------------------------------------------
+'Purpose:  Creates invoices in a bulk fashion
+'          using a range of customers' first initials
+'----------------------------------------------------
+'Programmer:  John Criswell
+'Date Created:  10/14/99
+'Updated by:  John Criswell
+'Date Updated:  5/17/2005  - updated code to work with new release
+'                            of Platinum for Windows (Version 5.3)
+
+
+On Error GoTo Err_btnCreateInvoices_Click
+
+Dim varReturn As Variant
+Dim dteInvoiceDate As Date
+
+dteInvoiceDate = Forms![frmInvGrpBulk]![INVdate]
+
+'save the new invoice date
+SendKeys "+{ENTER}", True
+
+DoCmd.Hourglass True
+DoCmd.SetWarnings False
+
+'disable the cancel button and repaint the form
+Forms![frmInvGrpBulk]![Cancel].Enabled = False
+Forms![frmInvGrpBulk].Painting = True
+
+'check to make sure that the "from" text box has been populated
+If IsNull(Forms![frmInvGrpBulk]![LetterFrom]) Then
+    MsgBox "You must enter the letter of the Group ID with which to begin invoicing.", vbOKOnly, "Insufficient Information"
+    GoTo Exit_btnCreateInvoices_Click
+End If
+
+'check to make sure that the "to" text box has been populated
+If IsNull(Forms![frmInvGrpBulk]![LetterTo]) Then
+    MsgBox "You must enter the letter of the Group ID with which to end invoicing.", vbOKOnly, "Insufficient Information"
+    GoTo Exit_btnCreateInvoices_Click
+End If
+
+'set the status bar to indicate that bulk invoicing is updating records
+varReturn = SysCmd(acSysCmdSetStatus, "Selecting Groups to Invoice . . .")
+
+'run query to append records to temp table--tblInvHdrPreliminary
+DoCmd.OpenQuery "qappInvGrpBulkPreliminary"
+
+'set the status bar to indicate that Transaction Numbers
+'and SysDocID's are being added to invoices
+varReturn = SysCmd(acSysCmdSetStatus, "Adding Transaction Numbers to Invoices . . .")
+
+'updates the transno and sysdocid on tblInvHdrPreliminary for each
+'record using the next transno and the next sysdocid from PFW53
+Call AssignNos(dteInvoiceDate)    ' pass the invoice date and use it in assignnos function
+
+'set the status bar to indicate that Invoices are being
+'populated on the group invoice form
+varReturn = SysCmd(acSysCmdSetStatus, "Adding Invoices to Screen . . .")
+
+'append records from tblInvHdrPreliminary to tblInvHdr
+DoCmd.OpenQuery "qappInvGrpBulkFinal"
+
+'set the status bar to indicate that subscribers
+'are now being selected
+varReturn = SysCmd(acSysCmdSetStatus, "Selecting Subscriber Information . . .")
+
+'adds subscribers to tblInvLin using an outer join to tblInvHdrPreliminary
+DoCmd.OpenQuery "qappInvGrpDetBulk"
+
+'deletes all records form the temporary table tblInvHdrPreliminary
+DoCmd.OpenQuery "qdelInvGrpBulk"
+
+'clear the status bar
+varReturn = SysCmd(acSysCmdClearStatus)
+
+Forms![frmInvGrp].Requery
+DoCmd.Close acForm, "frmInvGrpBulk"
+
+Exit_btnCreateInvoices_Click:
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    Exit Sub
+
+Err_btnCreateInvoices_Click:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    Resume Exit_btnCreateInvoices_Click
+End Sub
+
+Private Sub Cancel_Click()
+On Error GoTo Err_Cancel_Click
+
+    DoCmd.Close
+
+Exit_Cancel_Click:
+    Exit Sub
+
+Err_Cancel_Click:
+    MsgBox Error$
+    Resume Exit_Cancel_Click
+
+End Sub

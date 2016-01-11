@@ -1,0 +1,46 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblInvoiceHistory"
+End
+Begin OutputColumns
+    Expression ="tblInvoiceHistory.InvYear"
+End
+Begin Groups
+    Expression ="tblInvoiceHistory.InvYear"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblInvoiceHistory.InvYear"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1024
+    Bottom =630
+    Left =-1
+    Top =-1
+    Right =1017
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =240
+        Bottom =113
+        Top =0
+        Name ="tblInvoiceHistory"
+        Name =""
+    End
+End

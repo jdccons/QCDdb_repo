@@ -1,0 +1,570 @@
+Version =20
+VersionRequired =20
+Checksum =-913474689
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =12624
+    ItemSuffix =73
+    Left =165
+    Top =450
+    Right =10875
+    Bottom =5340
+    RecSrcDt = Begin
+        0xb09874154a9ce240
+    End
+    RecordSource ="qrptCommissionAgent"
+    Caption ="Agent Commission Report"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xf8010000f8010000f8010000f80100000000000050310000f000000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010418009c00b80353ef80010200010000000000640001000f00b00402000100 ,
+        0xb004030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
+        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
+        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
+        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
+        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bd4cbd46bd4a9b ,
+        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
+        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
+        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
+        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
+        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
+        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
+        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
+        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7ab562800000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800260038000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000048504c617365724a ,
+        0x65743232303000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            Width =1849
+            Height =300
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            TextFontFamily =18
+            Height =300
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            ControlSource ="Salesp_Name"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            ControlSource ="COMMcustCLASS"
+        End
+        Begin BreakLevel
+            ControlSource ="COMMcustNAME"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Visible = NotDefault
+            Height =0
+            Name ="ReportHeader3"
+        End
+        Begin PageHeader
+            Height =1965
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    Left =4605
+                    Top =1320
+                    Width =630
+                    Height =525
+                    Name ="Text7"
+                    Caption ="Check\015\012 No"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =5490
+                    Top =1320
+                    Width =690
+                    Height =525
+                    Name ="Text9"
+                    Caption ="Invoice\015\012 No"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =6705
+                    Top =1320
+                    Width =630
+                    Height =525
+                    Name ="Text11"
+                    Caption ="Check\015\012 Date"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =7710
+                    Top =1560
+                    Width =495
+                    Height =285
+                    Name ="Text13"
+                    Caption ="Rate"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =8760
+                    Top =1320
+                    Width =630
+                    Height =525
+                    Name ="Text20"
+                    Caption ="Check\015\012 Amt"
+                End
+                Begin Line
+                    Top =1200
+                    Width =12624
+                    Name ="Line39"
+                End
+                Begin Line
+                    Top =1260
+                    Width =12624
+                    Name ="Line40"
+                End
+                Begin Line
+                    Top =1905
+                    Width =12624
+                    Name ="Line41"
+                End
+                Begin Line
+                    Top =1965
+                    Width =12624
+                    Name ="Line42"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =9915
+                    Top =1320
+                    Width =630
+                    Height =525
+                    Name ="Text55"
+                    Caption ="Comm\015\012 Amt"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =210
+                    Top =1590
+                    Width =645
+                    Height =270
+                    Name ="Text62"
+                    Caption ="Agent"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =1050
+                    Top =1590
+                    Width =1710
+                    Height =270
+                    Name ="Text63"
+                    Caption ="Customer"
+                End
+                Begin Label
+                    TextAlign =1
+                    Top =60
+                    Width =12624
+                    Height =480
+                    FontSize =14
+                    Name ="Text68"
+                    Caption ="Agent Commission Statement Report"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    Top =600
+                    Width =2880
+                    Name ="Field69"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                End
+                Begin Line
+                    Width =12624
+                    Name ="Line70"
+                End
+                Begin Line
+                    Top =60
+                    Width =12624
+                    Name ="Line71"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =239
+            Name ="GroupHeader5"
+            Begin
+                Begin TextBox
+                    Width =2794
+                    Height =239
+                    FontWeight =700
+                    Name ="Salesp_Name"
+                    ControlSource ="Salesp_Name"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =240
+            BreakLevel =1
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    Left =510
+                    Width =1080
+                    Height =240
+                    FontWeight =700
+                    Name ="Field47"
+                    ControlSource ="COMMcustCLASS"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =240
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    Left =4635
+                    Width =795
+                    Height =240
+                    Name ="COMMcheckNO"
+                    ControlSource ="COMMcheckNO"
+                End
+                Begin TextBox
+                    Left =5565
+                    Width =810
+                    Height =240
+                    TabIndex =1
+                    Name ="COMMinvoiceNO"
+                    ControlSource ="COMMinvoiceNO"
+                End
+                Begin TextBox
+                    Left =6375
+                    Width =1099
+                    Height =240
+                    TabIndex =2
+                    Name ="COMMcheckDATE"
+                    ControlSource ="COMMcheckDATE"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    Left =7474
+                    Width =859
+                    Height =240
+                    TabIndex =3
+                    Name ="COMMrate"
+                    ControlSource ="COMMrate"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =8333
+                    Width =1084
+                    Height =240
+                    TabIndex =4
+                    Name ="COMMcheckAMT"
+                    ControlSource ="COMMcheckAMT"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    Left =900
+                    Width =2895
+                    Height =240
+                    TabIndex =5
+                    Name ="Field44"
+                    ControlSource ="COMMcustNAME"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =9480
+                    Width =1084
+                    Height =240
+                    TabIndex =6
+                    Name ="Field54"
+                    ControlSource ="=[COMMcheckAMT]*[COMMrate]"
+                    Format ="Standard"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =315
+            BreakLevel =1
+            Name ="GroupFooter1"
+            Begin
+                Begin Line
+                    Left =7095
+                    Width =1849
+                    Name ="Line17"
+                End
+                Begin Line
+                    Left =8944
+                    Width =1849
+                    Name ="Line24"
+                End
+                Begin Line
+                    Left =10793
+                    Width =1830
+                    Name ="Line31"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =9450
+                    Top =60
+                    Width =1084
+                    Height =240
+                    FontWeight =700
+                    Name ="Field56"
+                    ControlSource ="=Sum([COMMcheckAMT]*[COMMrate])"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =7200
+                    Top =75
+                    Width =1080
+                    Height =240
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field58"
+                    ControlSource ="=[COMMcustCLASS] & \":\""
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =8325
+                    Top =75
+                    Width =1084
+                    Height =240
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="Field60"
+                    ControlSource ="=Sum([COMMcheckAMT])"
+                    Format ="Standard"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            ForceNewPage =2
+            Height =330
+            Name ="GroupFooter6"
+            Begin
+                Begin Line
+                    Left =7080
+                    Top =45
+                    Width =1849
+                    Name ="Line48"
+                End
+                Begin Line
+                    Left =8929
+                    Top =45
+                    Width =1849
+                    Name ="Line50"
+                End
+                Begin Line
+                    Left =10778
+                    Top =45
+                    Width =1830
+                    Name ="Line52"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =9435
+                    Top =90
+                    Width =1084
+                    Height =240
+                    FontWeight =700
+                    Name ="Field57"
+                    ControlSource ="=Sum([COMMcheckAMT]*[COMMrate])"
+                    Format ="Standard"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =4380
+                    Top =90
+                    Width =3900
+                    Height =240
+                    Name ="Text59"
+                    Caption ="Total of GROUP and INDIVIDUAL:"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =8325
+                    Top =90
+                    Width =1084
+                    Height =240
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field61"
+                    ControlSource ="=Sum([COMMcheckAMT])"
+                    Format ="Standard"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =0
+            Name ="PageFooter2"
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =945
+            Name ="ReportFooter4"
+            Begin
+                Begin Line
+                    Left =7081
+                    Top =60
+                    Width =1849
+                    Name ="Line14"
+                End
+                Begin Line
+                    Left =7081
+                    Top =120
+                    Width =1849
+                    Name ="Line15"
+                End
+                Begin Line
+                    Left =8930
+                    Top =60
+                    Width =1849
+                    Name ="Line21"
+                End
+                Begin Line
+                    Left =8930
+                    Top =120
+                    Width =1849
+                    Name ="Line22"
+                End
+                Begin Line
+                    Left =10779
+                    Top =60
+                    Width =1830
+                    Name ="Line28"
+                End
+                Begin Line
+                    Left =10779
+                    Top =120
+                    Width =1830
+                    Name ="Line29"
+                End
+                Begin Label
+                    TextAlign =3
+                    Top =180
+                    Width =7051
+                    Height =285
+                    Name ="Text33"
+                    Caption ="Grand Total:"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =9465
+                    Top =180
+                    Width =1084
+                    Height =240
+                    FontWeight =700
+                    Name ="Field64"
+                    ControlSource ="=Sum([COMMcheckAMT]*[COMMrate])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =8355
+                    Top =180
+                    Width =1084
+                    Height =240
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field65"
+                    ControlSource ="=Sum([COMMcheckAMT])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =2
+                    TextAlign =3
+                    Left =8355
+                    Top =540
+                    Width =1080
+                    Height =239
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="TotCashReceipts"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Report_Close()
+
+On Error GoTo Report_Close_Err
+
+    DoCmd.Restore
+    
+    If isloaded("fdlgPrtCommAgentStatements") = True Then
+        DoCmd.Restore
+        Forms![fdlgPrtCommAgentStatements].Visible = True
+        DoCmd.Close A_FORM, "fdlgPrtCommAgentStatements"
+        Forms![fmnuSwitchboard].Visible = True
+    End If
+
+Report_Close_Exit:
+Exit Sub
+
+Report_Close_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Report_Close_Exit
+    
+End Sub

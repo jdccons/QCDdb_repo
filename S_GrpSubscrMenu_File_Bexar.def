@@ -1,0 +1,17 @@
+Version =0
+ColumnsShown =1
+Begin
+    MacroName ="&Print_Screen"
+    Action ="RunCode"
+    Argument ="PrintScreen([SUBssn], \"rptGrpSubscr_Bexar\")"
+End
+Begin
+    MacroName ="Print &Member Card"
+    Action ="RunCode"
+    Argument ="PrintMemberCard([SUBssn])"
+End
+Begin
+    MacroName ="&Close"
+    Action ="RunCommand"
+    Argument ="58"
+End

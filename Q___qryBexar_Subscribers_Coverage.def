@@ -1,0 +1,60 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblSubscriber_Bexar_new"
+    Name ="tblSubscribers_Bexar"
+End
+Begin OutputColumns
+    Name ="tblSubscriber_Bexar_new.CoverID"
+    Expression ="ConvertCoverage([tblSubscribers_Bexar].[Coverage])"
+End
+Begin Joins
+    LeftTable ="tblSubscriber_Bexar_new"
+    RightTable ="tblSubscribers_Bexar"
+    Expression ="tblSubscriber_Bexar_new.SUBssn = tblSubscribers_Bexar.SSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblSubscriber_Bexar.Coverage"
+        dbInteger "ColumnWidth" ="3315"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =40
+    Top =62
+    Right =1258
+    Bottom =374
+    Left =-1
+    Top =-1
+    Right =1211
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =226
+        Bottom =113
+        Top =0
+        Name ="tblSubscriber_Bexar_new"
+        Name =""
+    End
+    Begin
+        Left =264
+        Top =6
+        Right =434
+        Bottom =113
+        Top =10
+        Name ="tblSubscribers_Bexar"
+        Name =""
+    End
+End

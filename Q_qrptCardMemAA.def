@@ -1,0 +1,118 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.PlanID)<>3 Or (tblSubscr.PlanID) Is Null))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="qselAACardReport"
+    Name ="tblPlans"
+    Name ="tblCoverage"
+End
+Begin OutputColumns
+    Expression ="qselAACardReport.GroupID"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubID"
+    Alias ="Plan"
+    Expression ="\"QCD All American:  \" & [tblPlans].[PlanDesc]"
+    Alias ="Coverage"
+    Expression ="tblCoverage.CoverDescr"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubCardPrt"
+    Expression ="qselAACardReport.GRMailCard"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="qselAACardReport"
+    Expression ="tblSubscr.SubSSN = qselAACardReport.SUBssn"
+    Flag =1
+    LeftTable ="tblPlans"
+    RightTable ="tblSubscr"
+    Expression ="tblPlans.PlanID = tblSubscr.PlanID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SubLastName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbText "Description" ="p"
+Begin
+    Begin
+        dbText "Name" ="Plan"
+        dbInteger "ColumnWidth" ="3690"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Coverage"
+        dbInteger "ColumnWidth" ="3945"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1440
+    Bottom =776
+    Left =-1
+    Top =-1
+    Right =1437
+    Bottom =244
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =373
+        Top =8
+        Right =583
+        Bottom =167
+        Top =3
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =42
+        Top =7
+        Right =231
+        Bottom =106
+        Top =0
+        Name ="qselAACardReport"
+        Name =""
+    End
+    Begin
+        Left =905
+        Top =11
+        Right =1097
+        Bottom =80
+        Top =0
+        Name ="tblPlans"
+        Name =""
+    End
+    Begin
+        Left =922
+        Top =119
+        Right =1018
+        Bottom =203
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+End

@@ -1,0 +1,73 @@
+Operation =1
+Option =8
+Where ="(((qselImportMatched.PlanId) Is Null))"
+Begin InputTables
+    Name ="tblImportGroupTemp"
+    Name ="qselImportMatched"
+End
+Begin OutputColumns
+    Expression ="tblImportGroupTemp.ID"
+    Expression ="tblImportGroupTemp.GroupID"
+    Expression ="tblImportGroupTemp.PlanId"
+    Expression ="tblImportGroupTemp.SSN"
+    Expression ="tblImportGroupTemp.LastName"
+    Expression ="tblImportGroupTemp.FirstName"
+    Expression ="tblImportGroupTemp.MiddleInit"
+    Expression ="tblImportGroupTemp.StreetAddress"
+    Expression ="tblImportGroupTemp.StreetAddress2"
+    Expression ="tblImportGroupTemp.City"
+    Expression ="tblImportGroupTemp.State"
+    Expression ="tblImportGroupTemp.ZipCode"
+    Expression ="tblImportGroupTemp.Phone"
+    Expression ="tblImportGroupTemp.DOB"
+    Expression ="tblImportGroupTemp.CoverageId"
+    Expression ="tblImportGroupTemp.CoverageRate"
+    Expression ="tblImportGroupTemp.EffectiveDate"
+    Expression ="tblImportGroupTemp.Dependents"
+    Expression ="tblImportGroupTemp.PrintRecords"
+    Expression ="qselImportMatched.Changed"
+End
+Begin Joins
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="qselImportMatched"
+    Expression ="tblImportGroupTemp.SSN = qselImportMatched.PlanId"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =153
+    Top =135
+    Right =1002
+    Bottom =507
+    Left =-1
+    Top =-1
+    Right =842
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =139
+        Top =0
+        Name ="tblImportGroupTemp"
+        Name =""
+    End
+    Begin
+        Left =216
+        Top =7
+        Right =336
+        Bottom =139
+        Top =17
+        Name ="qselImportMatched"
+        Name =""
+    End
+End

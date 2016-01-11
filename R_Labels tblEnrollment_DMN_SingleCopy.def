@@ -1,0 +1,97 @@
+Version =17
+VersionRequired =17
+Checksum =-1155020970
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =20
+    GridY =24
+    Width =3366
+    DatasheetFontHeight =10
+    ItemSuffix =5
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xd074c4be93dbe140
+    End
+    RecordSource ="tblEnrollment_DMN_SingleCopy"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xb0010000d0020000b0010000d002000000000000260d0000a005000001000000 ,
+        0x030000005202000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574205365726965732049490000000000000000000000 ,
+        0x00040104940040000367000401000100000000000000010001002c0101000100 ,
+        0x2c01020000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d53554402034850 ,
+        0x204c617365724a65742053657269657320494900000000000000000000008001 ,
+        0x000000000000000000000000000064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011002700010057494e53504f4f4c004850204c617365724a657420536572 ,
+        0x696573204949005c5c4e545345525645525c5449204d6963726f000000000000 ,
+        0x000000000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="LastName"
+        End
+        Begin BreakLevel
+            ControlSource ="FirstName"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =144
+                    Top =240
+                    Width =3078
+                    Name ="Text2"
+                    ControlSource ="= Trim( [FirstName] & \" \" & [MiddleName] & \" \" & [LastName])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =144
+                    Top =480
+                    Width =3078
+                    TabIndex =1
+                    Name ="Text3"
+                    ControlSource ="= Trim( [Addr1] & \" \" & [Addr2])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =144
+                    Top =720
+                    Width =3078
+                    TabIndex =2
+                    Name ="Text4"
+                    ControlSource ="= Trim( [City] & \", \" & [ST] & \"  \" & [Zip])"
+                End
+            End
+        End
+    End
+End

@@ -1,0 +1,155 @@
+Operation =3
+Name ="tmpExportAllAmerican"
+Option =0
+Where ="(((tblGrp.GROUPid)=[Forms]![frmGrp]![ctlGROUPid]))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tlkpAllAmericanPlan"
+End
+Begin OutputColumns
+    Alias ="EIRECID"
+    Name ="EIRECID"
+    Expression ="\"P\""
+    Alias ="EIMBRID"
+    Name ="EIMBRID"
+    Expression ="[SUBssn] & \"00\""
+    Alias ="EISBRID"
+    Name ="EISBRID"
+    Expression ="[SUBssn] & \"00\""
+    Alias ="EISSN"
+    Name ="EISSN"
+    Expression ="tblSubscr.SUBssn"
+    Alias ="EIMBRRF"
+    Name ="EIMBRRF"
+    Expression ="tblSubscr.CoverID"
+    Alias ="EINAML"
+    Name ="EINAML"
+    Expression ="tblSubscr.SUBlastNAME"
+    Alias ="EINAMF"
+    Name ="EINAMF"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Alias ="EINAMM"
+    Name ="EINAMM"
+    Expression ="tblSubscr.SUBmiddleNAME"
+    Alias ="EIDTBR"
+    Name ="EIDTBR"
+    Expression ="Format([SUBdob],\"mmddyyyy\")"
+    Alias ="SEX"
+    Name ="EISEX"
+    Expression ="IIf([SUBgender] Is Null,\"O\",[SUBgender])"
+    Alias ="EIADD1"
+    Name ="EIADD1"
+    Expression ="tblSubscr.SUBstreet1"
+    Alias ="EIADD2"
+    Name ="EIADD2"
+    Expression ="tblSubscr.SUBstreet2"
+    Alias ="EICITY"
+    Name ="EICITY"
+    Expression ="tblSubscr.SUBcity"
+    Alias ="EISTE"
+    Name ="EISTE"
+    Expression ="tblSubscr.SUBstate"
+    Alias ="EIZIP"
+    Name ="EIZIP"
+    Expression ="tblSubscr.SUBzip"
+    Alias ="EIHPHR"
+    Name ="EIHPHR"
+    Expression ="tblSubscr.SUBphoneHOME"
+    Alias ="EIWPHR"
+    Name ="EIWPHR"
+    Expression ="tblSubscr.SUBphoneWORK"
+    Alias ="EIGRPID"
+    Name ="EIGRPID"
+    Expression ="'MNQ' & [GROUPid]"
+    Alias ="EINMPLAN"
+    Name ="EINMPLAN"
+    Expression ="tlkpAllAmericanPlan.PlanagerCode"
+    Alias ="EIDTCVEF"
+    Name ="EIDTCVEF"
+    Expression ="IIf(IsNull([PreexistingDate])=True,Format([SUBeffDATE],\"mmddyyyy\"),Format([Pre"
+        "existingDate],\"mmddyyyy\"))"
+    Alias ="EIDTCVEN"
+    Name ="EIDTCVEN"
+    Expression ="Format([SUBexpDATE],\"mmddyyyy\")"
+    Alias ="EIMBRDP"
+    Name ="EIMBRDP"
+    Expression ="\"0\""
+    Alias ="EIDTEFF"
+    Name ="EIDTEFF"
+    Expression ="Format([GRcontBEG],\"mmddyyyy\")"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tlkpAllAmericanPlan"
+    Expression ="tblSubscr.PlanID = tlkpAllAmericanPlan.PlanID"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="EIDTBR"
+        dbInteger "ColumnWidth" ="1710"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EIHPHR"
+        dbInteger "ColumnWidth" ="2100"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EIWPHR"
+        dbInteger "ColumnWidth" ="1830"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =106
+    Top =87
+    Right =1002
+    Bottom =399
+    Left =-1
+    Top =-1
+    Right =889
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =42
+        Top =8
+        Right =207
+        Bottom =100
+        Top =16
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =257
+        Top =7
+        Right =483
+        Bottom =99
+        Top =43
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =527
+        Top =15
+        Right =755
+        Bottom =107
+        Top =0
+        Name ="tlkpAllAmericanPlan"
+        Name =""
+    End
+End

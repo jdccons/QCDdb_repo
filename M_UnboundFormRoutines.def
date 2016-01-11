@@ -1,0 +1,564 @@
+Option Compare Database   'Use database order for string comparisons
+'Attribute VB_Name = "UnboundFormRoutines"
+'Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Global gintFormEdited As Integer
+Global gintPerformLookup As Integer
+
+Dim mvarDummy As Variant
+
+
+Function ap_FormEdited()
+
+  On Error GoTo PROC_ERR
+   '-- Sets the form edited flag to True
+   gintFormEdited = True
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function ap_GetKey(frmCurrForm As Form) As Variant
+
+   On Error Resume Next
+
+   '-- Returns the Key Field stored in the Tag property of the form
+   'ap_GetKey = Mid$(frmCurrForm.Tag, InStr(frmCurrForm.Tag, ";") + 1)
+   ap_GetKey = frmCurrForm![txtPrimaryKey]
+
+End Function
+
+Function ap_GetRecordSource(frmCurrForm As Form) As Variant
+
+    On Error GoTo Error_ap_GetRecordSource
+
+    '-- Returns the name of the recordsource stored in the Tag property of the form
+    'If InStr(frmCurrForm.Tag, ";") <> 0 Then
+
+       'ap_GetRecordSource = Left$(frmCurrForm.Tag, InStr(frmCurrForm.Tag, ";") - 1)
+
+    'Else
+
+       'ap_GetRecordSource = frmCurrForm.Tag
+
+    'End If
+
+   ap_GetRecordSource = frmCurrForm![txtFormRecordSource]
+
+   Exit Function
+
+Error_ap_GetRecordSource:
+
+   MsgBox Error$
+   Exit Function
+
+End Function
+
+Sub ap_LoadRecord(rstDynCurrent As DAO.Recordset, frmCurrForm As Form)
+
+   Dim intI As Integer
+   Dim ctlCurrent As Control
+
+   On Error GoTo Error_ap_LoadRecord
+
+   '-- Turn the lookup feature off when a record is first loaded
+   gintPerformLookup = False
+
+   '-- For all the controls on the form ~~Access 7.0
+   'For Each ctlCurrent In frmCurrForm
+
+   For intI = 0 To frmCurrForm.Count - 1
+      Set ctlCurrent = frmCurrForm(intI)   '~~Access 2.0 only
+      '-- If an error occurs, handle it
+      On Error Resume Next
+
+      '-- Attempts to match a field in the recordset up with the
+      '-- current control from the form.
+      mvarDummy = rstDynCurrent.Fields(ctlCurrent.Name).Name
+
+      '-- If no error, that means the field exists
+      If Err = 0 Then
+
+        On Error GoTo Error_ap_LoadRecord
+
+      '-- Since either data is now present, or new record disallow editing
+      ctlCurrent.Enabled = False
+
+        '-- Store the recordset value into the form control
+        ctlCurrent.Value = rstDynCurrent(ctlCurrent.Name).Value
+
+      End If
+      Err = 0
+   Next intI
+   'Next  ~~Access 7.0
+
+   '-- Since a record has been loaded, we are not adding a record.
+   frmCurrForm!txtAddRec = 0
+
+   Exit Sub
+
+Error_ap_LoadRecord:
+
+   MsgBox Error$
+   Exit Sub
+
+End Sub
+
+Function ap_LookUpAfterUpdate(frmCurrForm As Form)
+  On Error GoTo PROC_ERR
+    'Start Timer for testing - Comment out before delivering
+    Call glrStartTimer
+
+    ap_ValueStandardSearch frmCurrForm
+
+    'End timer for testing - comment out before delivering
+    frmCurrForm![txtNavTime] = EndTimer()
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function ap_NewRecord(frmCurrForm As Form, intDisable As Integer)
+
+   Dim intI As Integer   '~~Access 2.0
+   Dim dbsDbLocal As Database
+   Dim qdfQdCurrent As QueryDef
+   Dim ctlCurrent As Control
+   Dim strFirstControl As String
+
+   On Error GoTo Error_ap_NewRecord
+
+   'Set dbLocal = CurrentDB  ~~Access 7.0
+
+   Set dbsDbLocal = CurrentDb()
+
+   '-- Open the intended recordset for this form
+   Set qdfQdCurrent = dbsDbLocal.QueryDefs(ap_GetRecordSource(frmCurrForm))
+
+   '-- This flag is used at the end to place the cursor at the first control
+   strFirstControl = ""
+
+   '-- For each of the controls on the form ~~Access 7.0
+   'For Each ctlCurrent In frmCurrForm
+   For intI = 0 To frmCurrForm.Count - 1
+      Set ctlCurrent = frmCurrForm(intI)  '~~Access 2.0 only
+      '-- If an error occurs, handle it
+      On Error Resume Next
+
+      '-- Attempts to match a field in the recordset up with the
+      '-- current control from the form.
+      mvarDummy = qdfQdCurrent.Fields(ctlCurrent.Name).Name
+
+      '-- If no error, that means the field exists
+      If Err = 0 Then
+
+         '-- If the current control is first in the index, record
+         If ctlCurrent.TabIndex = 0 Then
+            strFirstControl = ctlCurrent.Name
+         End If
+
+         On Error GoTo Error_ap_NewRecord
+
+         '-- If the argument intDisable is set to true then
+         '-- After setting the fields, un-enable the field
+         '-- unless it is a Lookup field as assigned to the
+         '-- Tag property of the control.
+
+         If intDisable Then
+
+            If IsNull(ctlCurrent.Tag) Or ctlCurrent.Tag <> "LookUp" Then
+               ctlCurrent.Enabled = False
+            ElseIf ctlCurrent.Tag = "LookUp" Then
+
+               ctlCurrent.Enabled = True
+            End If
+
+            ctlCurrent.Value = Null
+
+         Else '-- Otherwise enable it unless told to DisplayOnly in the
+              '-- Tag property of the control.
+
+            If ctlCurrent.Tag <> "DisplayOnly" Then
+               ctlCurrent.Enabled = True
+            ElseIf IsNull(ctlCurrent.Tag) Then
+               ctlCurrent.Enabled = True
+            End If
+
+            '-- Handle the default value assigned to the control.
+            If IsNull(ctlCurrent.DefaultValue) Then
+               ctlCurrent.Value = Null
+            Else
+
+               '-- Default value is a function.
+               If Left$(ctlCurrent.DefaultValue, 1) = "=" Then
+
+                  ctlCurrent.Value = Eval(Mid$(ctlCurrent.DefaultValue, 2))
+               Else
+
+                  '-- Default value is a string.
+                  If InStr(ctlCurrent.DefaultValue, """") <> 0 Then
+
+                     ctlCurrent.Value = Eval(ctlCurrent.DefaultValue)
+
+                  Else '-- Default value any other type'
+                     ctlCurrent.Value = ctlCurrent.DefaultValue
+                  End If
+               End If
+            End If
+         End If
+      End If
+      Err = 0
+   Next intI
+   'Next ~~Access 7.0
+
+   '-- Null out the key value for the form.
+   frmCurrForm(ap_GetKey(frmCurrForm)) = Null
+
+   '-- Set the flag for adding a new record on the form.
+   frmCurrForm!txtAddRec = -1
+
+   qdfQdCurrent.Close
+
+   '-- Set the flag for allowing to look up based on the disabled flag.
+   '-- True means opening current record, False means new record
+   gintPerformLookup = intDisable
+
+   '-- Go to the first control in the Tab Index.
+   If Len(strFirstControl) > 0 And Not intDisable Then
+     frmCurrForm(strFirstControl).SetFocus
+   End If
+
+   Exit Function
+
+Error_ap_NewRecord:
+
+   MsgBox Error$
+   Exit Function
+
+End Function
+
+Function ap_OpenWithChoice(frmCurrForm As Form)
+
+    Dim intI As Integer '~~Access 2.0
+   Dim ctlCurrent As Control
+   Dim intFormSaved As Integer
+
+   On Error GoTo Error_ap_OpenWithChoice
+
+   '-- If the form has been edited, call the routine to save it.
+   intFormSaved = True
+
+   If gintFormEdited Then
+      intFormSaved = ap_SaveRecord(frmCurrForm, True)
+   End If
+
+   '-- If the save was successfull, clear the controls on the form
+   '-- then set the focus to the first lookup field.
+   If intFormSaved Then
+      gintPerformLookup = True
+
+      mvarDummy = ap_NewRecord(frmCurrForm, True)
+
+      'For Each ctlCurrent In frmCurrForm  ~~Access 7.0
+      For intI = 0 To frmCurrForm.Count - 1
+          Set ctlCurrent = frmCurrForm(intI)  '~~Access 2.0 only
+         If ctlCurrent.Tag = "LookUp" Then
+            ctlCurrent.SetFocus
+            Exit For
+         End If
+      Next intI '~~ Next for Access 7.0
+   End If
+
+   Exit Function
+
+Error_ap_OpenWithChoice:
+
+   MsgBox Error$
+   Exit Function
+
+
+End Function
+
+Function ap_SaveRecord(frmCurrForm As Form, varIntAskSave) As Integer
+
+   Dim intI As Integer '~~Access 2.0
+   Dim ctlCurrent As Control
+   Dim intPerformSave As Integer
+   Dim intTrans As Integer
+   Dim intCheckField As Integer
+   Dim strKeyName As String
+
+   On Error GoTo Error_ap_SaveRecord
+
+   '-- If necessary to request whether the use wants to save the information, do so.
+   If varIntAskSave Then
+      Beep
+      intPerformSave = MsgBox("Would you like to save the information on '" & frmCurrForm.Caption & "'?", 36, "Save Information?") = 6
+   Else
+      intPerformSave = True
+   End If
+
+   If intPerformSave Then
+
+      Dim dbsDbLocal As Database
+      Dim rstDynCurrent As DAO.Recordset
+      Dim qdfSave As QueryDef
+      Dim prm As Parameter
+
+
+      '-- Begin a transactions
+      BeginTrans
+      intTrans = True
+
+      Set dbsDbLocal = CurrentDb()
+
+      '-- Create a recordset off the form's recordsource
+      Set qdfSave = dbsDbLocal.QueryDefs(ap_GetRecordSource(frmCurrForm))
+      For intI = 0 To qdfSave.Parameters.Count - 1   '~~Access 2.0
+          Set prm = qdfSave.Parameters(intI)
+          prm.Value = Eval(prm.Name)
+      Next intI
+
+      Set rstDynCurrent = qdfSave.OpenRecordset()
+
+      On Error Resume Next
+
+      '-- Get the name of the key field
+      strKeyName = ap_GetKey(frmCurrForm)
+
+      '-- If adding a record perform the addnew command.
+      If frmCurrForm!txtAddRec = -1 Then
+         rstDynCurrent.AddNew
+      Else
+
+         '-- If editing find the record to update, and perform the edit method
+         'dynCurrent.FindFirst "[" & strKeyName & "] = " & frmCurrForm(strKeyName)
+
+         If rstDynCurrent.RecordCount = 0 Then
+            Beep
+            MsgBox "An error has occurred locating the current record!", 16, "Locating Error"
+            Exit Function
+         Else
+            rstDynCurrent.MoveFirst
+         End If
+
+         rstDynCurrent.Edit
+
+      End If
+
+      'For Each ctlCurrent In frmCurrForm ~~Access 7.0
+      For intI = 0 To frmCurrForm.Count - 1
+      Set ctlCurrent = frmCurrForm(intI)  'Access 2.0 only
+
+         mvarDummy = rstDynCurrent(ctlCurrent.Name).Name
+
+         If Err = 0 Then
+
+            intCheckField = True
+
+            '-- If the keyfield and a counter, don't mess with it.
+            If ctlCurrent.Name = strKeyName Then
+
+               If rstDynCurrent(ctlCurrent.Name).Attributes And DB_AUTOINCRFIELD Then
+                  intCheckField = False
+
+               End If
+            End If
+
+            If intCheckField Then
+               '-- If data has changed, the update it.
+               If IsNull(rstDynCurrent(ctlCurrent.Name).Value) And Not IsNull(ctlCurrent.Value) Then
+                  rstDynCurrent(ctlCurrent.Name).Value = ctlCurrent.Value
+               ElseIf Not IsNull(rstDynCurrent(ctlCurrent.Name).Value) And IsNull(ctlCurrent.Value) Then
+                  rstDynCurrent(ctlCurrent.Name).Value = ctlCurrent.Value
+               ElseIf rstDynCurrent(ctlCurrent.Name).Value <> ctlCurrent.Value Then
+                  rstDynCurrent(ctlCurrent.Name).Value = ctlCurrent.Value
+               End If
+            End If
+
+         End If
+         Err = 0
+      Next intI 'Next ~~Access 7.0
+
+      On Error GoTo Error_ap_SaveRecord
+
+      '-- Grab the keyfield value from the recordset
+      frmCurrForm(strKeyName) = rstDynCurrent(strKeyName)
+
+      '-- Update the recordset
+      rstDynCurrent.Update
+
+      '-- Close the recordset and commit the transaction
+      rstDynCurrent.Close
+      CommitTrans
+
+      intTrans = False
+
+      ap_SaveRecord = True
+   Else
+      ap_SaveRecord = True
+   End If
+
+   '-- Requery the Lookup control if used
+      If frmCurrForm!txtAddRec = -1 Then
+         frmCurrForm![ClientPickList].Requery
+      End If
+
+
+   '-- set the flag that the form is edited to false.
+   gintFormEdited = False
+   frmCurrForm!txtAddRec = 0
+
+   Exit Function
+
+Error_ap_SaveRecord:
+
+   If intTrans Then
+      Rollback
+   End If
+
+   MsgBox Error$
+   Exit Function
+
+End Function
+
+Sub ap_ValueStandardSearch(frmCurrForm As Form)
+
+     Dim dbsDbLocal As Database
+     Dim qdfSearch As QueryDef
+     Dim intTrans As Integer
+     Dim prm As Parameter
+     Dim intI As Integer
+     Dim rstDynSearch As DAO.Recordset
+
+     On Error GoTo Error_ap_ValueStandardSearch
+
+     'DoCmd.Hourglass True  ~~Access 7.0
+     'DoCmd Hourglass True
+
+     BeginTrans
+     intTrans = True
+
+     Set dbsDbLocal = CurrentDb()
+
+     '-- Set a querydef to the query created for finding the value
+     Set qdfSearch = dbsDbLocal.QueryDefs(ap_GetRecordSource(frmCurrForm)) 'jdc & "ValueLocate")
+     '-- Set the parameter to the current value
+     'qdfSearch.PARAMETERS(Screen.ActiveControl.Name & "ToLocate") = Screen.ActiveControl.Value
+
+    For intI = 0 To qdfSearch.Parameters.Count - 1   '~~Access 2.0
+        Set prm = qdfSearch.Parameters(intI)
+        prm.Value = Eval(prm.Name)
+    Next intI
+
+     '-- Open the recordset
+     Set rstDynSearch = qdfSearch.OpenRecordset()
+     CommitTrans
+     intTrans = False
+
+     'DoCmd.Hourglass False   ~~Access 7.0
+     DoCmd.Hourglass False
+
+     If rstDynSearch.RecordCount = 0 Then
+        MsgBox "This " & Screen.ActiveControl.Name & " was not found!", 16, "Search Error"
+     Else
+
+        '-- If found, load up the controls
+        ap_LoadRecord rstDynSearch, frmCurrForm
+     End If
+
+     Exit Sub
+
+Error_ap_ValueStandardSearch:
+
+   'DoCmd.Hourglass False ~~Access 7.0
+   DoCmd.Hourglass False
+
+   If intTrans Then
+      Rollback
+   End If
+
+   MsgBox Error$
+
+   Exit Sub
+
+End Sub
+
+Function jdc_EditRecord(frmCurrForm As Form, intEditRecord As Integer)
+   Dim intI As Integer   '~~Access 2.0
+   Dim dbsDbLocal As Database
+   Dim qdfQdCurrent As QueryDef
+   Dim ctlCurrent As Control
+   Dim strFirstControl As String
+
+   On Error GoTo Error_jdc_EditRecord
+
+   'Set dbLocal = CurrentDB  ~~Access 7.0
+
+   Set dbsDbLocal = CurrentDb()
+
+   '-- Open the intended recordset for this form
+   Set qdfQdCurrent = dbsDbLocal.QueryDefs(ap_GetRecordSource(frmCurrForm))
+
+   '-- This flag is used at the end to place the cursor at the first control
+   strFirstControl = ""
+
+   '-- For each of the controls on the form ~~Access 7.0
+   'For Each ctlCurrent In frmCurrForm
+   For intI = 0 To frmCurrForm.Count - 1
+      Set ctlCurrent = frmCurrForm(intI)  '~~Access 2.0 only
+      '-- If an error occurs, handle it
+      On Error Resume Next
+
+      '-- Attempts to match a field in the recordset up with the
+      '-- current control from the form.
+      mvarDummy = qdfQdCurrent.Fields(ctlCurrent.Name).Name
+
+      '-- If no error, that means the field exists
+      If Err = 0 Then
+
+         '-- If the current control is first in the index, record
+         If ctlCurrent.TabIndex = 0 Then
+            strFirstControl = ctlCurrent.Name
+         End If
+
+
+         On Error GoTo Error_jdc_EditRecord
+
+
+          If IsNull(ctlCurrent.Tag) Then
+            ctlCurrent.Enabled = intEditRecord
+          ElseIf ctlCurrent.Tag = "DisplayOnly" Then
+            ctlCurrent.Enabled = False
+          End If
+      End If
+      Err = 0
+   Next intI
+   'Next ~~Access 7.0
+
+   qdfQdCurrent.Close
+
+   '-- Disable Lookup control
+   frmCurrForm("ClientPickList").Enabled = Not intEditRecord
+
+
+   '-- Go to the first control in the Tab Index.
+   If Len(strFirstControl) > 0 Then
+     frmCurrForm(strFirstControl).SetFocus
+   End If
+
+   Exit Function
+
+Error_jdc_EditRecord:
+
+   MsgBox Error$
+   Exit Function
+
+End Function

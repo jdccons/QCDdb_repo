@@ -1,0 +1,138 @@
+Version =0
+ColumnsShown =2
+Begin
+    Action ="GoToRecord"
+    Argument ="-1"
+    Argument =""
+    Argument ="1"
+End
+Begin
+    Action ="GoToRecord"
+    Argument ="-1"
+    Argument =""
+    Argument ="2"
+End
+Begin
+    Action ="Hourglass"
+    Argument ="-1"
+End
+Begin
+    Action ="SetWarnings"
+    Argument ="0"
+End
+Begin
+    Action ="SetValue"
+    Argument ="[Forms]![frmInvGrpBulk]![Cancel].[Enabled]"
+    Argument ="False"
+End
+Begin
+    Action ="RepaintObject"
+    Argument ="2"
+    Argument ="frmInvGrpBulk"
+End
+Begin
+    Condition ="[Forms]![frmInvGrpBulk]![LetterFrom] Is Null"
+    Action ="MsgBox"
+    Argument ="You must enter the letter of the Group ID with which to begin invoicing."
+    Argument ="-1"
+    Argument ="4"
+    Argument ="INSUFFICIENT INFORMATION"
+End
+Begin
+    Condition ="[Forms]![frmInvGrpBulk]![LetterTo] Is Null"
+    Action ="MsgBox"
+    Argument ="You must enter the letter of the Group ID with which to end invoicing."
+    Argument ="-1"
+    Argument ="4"
+    Argument ="INSUFFICIENT INFORMATION"
+End
+Begin
+    Condition ="[Forms]![frmInvGrpBulk]![LetterFrom] Is Null Or [Forms]![frmInvGrpBulk]![LetterT"
+        "o] Is Null"
+    Action ="CancelEvent"
+End
+Begin
+    Action ="Echo"
+    Argument ="0"
+    Argument ="Selecting Groups to Invoice . . ."
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="qryInvGrpBulk1"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Condition ="DCount(\"[CUST KEY]\",\"tblInvHdrPreliminary\",\"IsNull([TRANS NO])\")>0"
+    Action ="RunMacro"
+    Argument ="mcrINVOICEgrpBULK2"
+    Argument =""
+    Argument ="DCount(\"[CUST KEY]\",\"tblInvHdrPreliminary\",\"IsNull([TRANS NO])\")>0"
+End
+Begin
+    Action ="Echo"
+    Argument ="0"
+    Argument ="Adding Invoices to Screen . . ."
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="qryInvGrpBulk3"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="Echo"
+    Argument ="0"
+    Argument ="Selecting Subscriber Information . . ."
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="qryPopInvGrpDetBulk"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="OpenQuery"
+    Argument ="qryInvGrpBulk4"
+    Argument ="0"
+    Argument ="1"
+End
+Begin
+    Action ="SelectObject"
+    Argument ="2"
+    Argument ="frmInvGrp"
+    Argument ="0"
+End
+Begin
+    Action ="Requery"
+End
+Begin
+    Action ="SetValue"
+    Argument ="[Forms]![frmInvGrpBulk]![Cancel].[Enabled]"
+    Argument ="True"
+End
+Begin
+    Action ="Close"
+    Argument ="2"
+    Argument ="frmInvGrpBulk"
+End
+Begin
+    Action ="GoToRecord"
+    Argument ="2"
+    Argument ="frmInvGrp"
+    Argument ="3"
+End
+Begin
+    Action ="GoToRecord"
+    Argument ="2"
+    Argument ="frmInvGrp"
+    Argument ="2"
+End
+Begin
+    Action ="SetWarnings"
+    Argument ="-1"
+End
+Begin
+    Action ="Hourglass"
+    Argument ="0"
+End

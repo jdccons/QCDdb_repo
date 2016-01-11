@@ -1,0 +1,40 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblGeographical"
+End
+Begin OutputColumns
+    Expression ="[tblGeographical].GEOid"
+    Expression ="[tblGeographical].GEOdesc"
+End
+Begin OrderBy
+    Expression ="[tblGeographical].GEOdesc"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =644
+    Bottom =398
+    Left =-1
+    Top =-1
+    Right =641
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =537
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =73
+        Top =0
+        Name ="t-GEOGRAPHICAL"
+        Name =""
+    End
+End

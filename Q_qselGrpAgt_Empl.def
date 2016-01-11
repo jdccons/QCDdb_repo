@@ -1,0 +1,72 @@
+Operation =1
+Option =2
+Where ="(((tblAgent.PayCommTo)=4))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGrpAgt"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrpAgt.GROUPid"
+    Expression ="tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.PayCommTo"
+    Expression ="tblGrpAgt.AgentRATE"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpAgt"
+    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =19
+    Top =54
+    Right =776
+    Bottom =507
+    Left =-1
+    Top =-1
+    Right =750
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =318
+        Top =5
+        Right =479
+        Bottom =104
+        Top =22
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =105
+        Top =3
+        Name ="tblGrpAgt"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =105
+        Top =36
+        Name ="tblGrp"
+        Name =""
+    End
+End

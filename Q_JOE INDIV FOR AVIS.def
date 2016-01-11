@@ -1,0 +1,79 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBcontEND) Between #7/1/1996# And #6/1/2005#) AND ((tblSubscr.SUBs"
+    "tatus)=\"indiv\") AND ((tblRates.GroupID)='INDV1' Or (tblRates.GroupID)='INDV2' "
+    "Or (tblRates.GroupID)='INDV3') AND ((tblSubscr.SUBcancelled)=1 Or (tblSubscr.SUB"
+    "cancelled)=2)) OR (((tblSubscr.SUBcontEND) Between #7/1/1996# And #6/1/2005#) AN"
+    "D ((tblSubscr.SUBstatus)=\"indiv\") AND ((tblRates.GroupID)='INDV1' Or (tblRates"
+    ".GroupID)='INDV2' Or (tblRates.GroupID)='INDV3') AND ((tblSubscr.SUBcancelled)=1"
+    " Or (tblSubscr.SUBcancelled)=2)) OR (((tblSubscr.SUBcontEND) Between #7/1/1996# "
+    "And #6/1/2005#) AND ((tblSubscr.SUBstatus)=\"indiv\") AND ((tblRates.GroupID)='I"
+    "NDV1' Or (tblRates.GroupID)='INDV2' Or (tblRates.GroupID)='INDV3') AND ((tblSubs"
+    "cr.SUBcancelled)=1 Or (tblSubscr.SUBcancelled)=2))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBcontEND"
+    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblRates.GroupID"
+    Expression ="tblRates.Rate"
+    Expression ="tblSubscr.DateUpdated"
+    Expression ="tblSubscr.SUBcancelled"
+    Expression ="tblSubscr.SUBnotes"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SUBnotes"
+        dbInteger "ColumnWidth" ="3705"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =38
+    Top =20
+    Right =1135
+    Bottom =586
+    Left =-1
+    Top =-1
+    Right =1090
+    Bottom =327
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =353
+        Bottom =266
+        Top =36
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =391
+        Top =6
+        Right =487
+        Bottom =116
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

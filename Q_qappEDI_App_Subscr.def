@@ -1,0 +1,121 @@
+Operation =3
+Name ="tblEDI_App_Subscr"
+Option =0
+Where ="(((tblEDI_Subscr_Import.[Dependent Code])=\"00\"))"
+Begin InputTables
+    Name ="tblEDI_Subscr_Import"
+    Name ="qselEDI_CountOfDep"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblEDI_Subscr_Import.[Primary SSN]"
+    Alias ="FN"
+    Name ="SUBfirstNAME"
+    Expression ="UCase([First Name])"
+    Alias ="LN"
+    Name ="SUBlastNAME"
+    Expression ="UCase([Last Name])"
+    Alias ="MN"
+    Name ="SUBmiddleNAME"
+    Expression ="UCase([Middle Initial])"
+    Name ="SUBstreet1"
+    Expression ="tblEDI_Subscr_Import.[Address 1]"
+    Name ="SUBstreet2"
+    Expression ="tblEDI_Subscr_Import.[Address 2]"
+    Name ="SUBcity"
+    Expression ="tblEDI_Subscr_Import.City"
+    Name ="SUBstate"
+    Expression ="tblEDI_Subscr_Import.ST"
+    Alias ="ZipCode"
+    Name ="SUBzip"
+    Expression ="Mid([ZIP],1,5)"
+    Alias ="Start Date"
+    Name ="SUBeffDATE"
+    Expression ="Mid([Elig Start Date],5,2) & \"/\" & Mid([Elig Start Date],7,2) & \"/\" & Mid([E"
+        "lig Start Date],1,4)"
+    Alias ="GroupID"
+    Name ="SUBgroupID"
+    Expression ="[Forms]![frmImportProcessing]![txtGrpID]"
+    Alias ="PlanID"
+    Name ="SUBplanIDgr"
+    Expression ="[Forms]![frmImportProcessing]![txtPlanID]"
+    Alias ="Rate"
+    Name ="SUBrate"
+    Expression ="IIf([Tier Code]=\"1\",0,IIf([Tier Code]=\"2\",8,IIf([Tier Code]=\"3\",8,12)))"
+    Alias ="Coverage"
+    Name ="SUBcoverage"
+    Expression ="IIf([Tier Code]=\"1\",\"I\",IIf([Tier Code]=\"2\",\"O\",IIf([Tier Code]=\"3\",\""
+        "O\",\"F\")))"
+    Name ="CoverID"
+    Expression ="tblEDI_Subscr_Import.[Tier Code]"
+    Alias ="DateOfBirth"
+    Name ="SUBdob"
+    Expression ="Mid([DOB],5,2) & \"/\" & Mid([DOB],7,2) & \"/\" & Mid([DOB],1,4)"
+    Alias ="Status"
+    Name ="SUBstatus"
+    Expression ="\"GRSUB\""
+    Alias ="LookUpName"
+    Name ="SUB_LUname"
+    Expression ="UCase([Last Name]) & \", \" & UCase([First Name]) & \" \" & UCase([Middle Initia"
+        "l])"
+    Alias ="DepCnt"
+    Name ="SUBnoDEPENT"
+    Expression ="IIf(IsNull([CountOfDependent SSN]),0,[CountOfDependent SSN])"
+End
+Begin Joins
+    LeftTable ="tblEDI_Subscr_Import"
+    RightTable ="qselEDI_CountOfDep"
+    Expression ="tblEDI_Subscr_Import.[Primary SSN] = qselEDI_CountOfDep.[Primary SSN]"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbText "Description" ="p"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="LookUpName"
+        dbInteger "ColumnWidth" ="2745"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[Aldine ISD].[ADDRESS 1]"
+        dbInteger "ColumnWidth" ="2925"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =33
+    Top =93
+    Right =1105
+    Bottom =498
+    Left =-1
+    Top =-1
+    Right =1065
+    Bottom =232
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =62
+        Top =6
+        Right =238
+        Bottom =206
+        Top =10
+        Name ="tblEDI_Subscr_Import"
+        Name =""
+    End
+    Begin
+        Left =379
+        Top =3
+        Right =548
+        Bottom =83
+        Top =0
+        Name ="qselEDI_CountOfDep"
+        Name =""
+    End
+End

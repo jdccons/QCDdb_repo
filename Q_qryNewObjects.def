@@ -1,0 +1,57 @@
+Operation =1
+Option =8
+Where ="((MSysObjects.Name Like \"f-*\"))"
+Begin InputTables
+    Name ="MSysObjects"
+End
+Begin OutputColumns
+    Expression ="MSysObjects.Name"
+    Expression ="MSysObjects.DateUpdate"
+    Expression ="MSysObjects.DateCreate"
+End
+Begin OrderBy
+    Expression ="MSysObjects.DateUpdate"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+    Begin
+        dbText "Name" ="MSysObjects.DateCreate"
+        dbInteger "ColumnWidth" ="2490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="MSysObjects.DateUpdate"
+        dbInteger "ColumnWidth" ="1995"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="MSysObjects.Name"
+        dbInteger "ColumnWidth" ="4095"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =490
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =537
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =118
+        Top =12
+        Name ="MSysObjects"
+        Name =""
+    End
+End

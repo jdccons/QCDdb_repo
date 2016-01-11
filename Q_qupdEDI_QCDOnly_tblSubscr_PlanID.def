@@ -1,0 +1,42 @@
+Operation =4
+Option =0
+Where ="(((tblSubscr.SubGroupID)=[Forms]![frmImportProcessing]![txtGrpID]))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="tblSubscr.PlanID"
+    Expression ="5"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =364
+    Top =291
+    Right =862
+    Bottom =603
+    Left =-1
+    Top =-1
+    Right =491
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =194
+        Bottom =113
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

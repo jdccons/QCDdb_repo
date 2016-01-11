@@ -1,0 +1,267 @@
+Operation =1
+Option =0
+Where ="(((dbo_tblSubscriber.GroupID)=\"INDIV\"))"
+Begin InputTables
+    Name ="dbo_tblSubscriber"
+End
+Begin OutputColumns
+    Expression ="dbo_tblSubscriber.SubID"
+    Expression ="dbo_tblSubscriber.SSN"
+    Expression ="dbo_tblSubscriber.EIMBRID"
+    Expression ="dbo_tblSubscriber.SubscriberID"
+    Expression ="dbo_tblSubscriber.GroupID"
+    Expression ="dbo_tblSubscriber.PlanID"
+    Expression ="dbo_tblSubscriber.CoverID"
+    Expression ="dbo_tblSubscriber.LastName"
+    Expression ="dbo_tblSubscriber.FirstName"
+    Expression ="dbo_tblSubscriber.MiddleInitial"
+    Expression ="dbo_tblSubscriber.Street1"
+    Expression ="dbo_tblSubscriber.Street2"
+    Expression ="dbo_tblSubscriber.City"
+    Expression ="dbo_tblSubscriber.State"
+    Expression ="dbo_tblSubscriber.Zip"
+    Expression ="dbo_tblSubscriber.PhoneWork"
+    Expression ="dbo_tblSubscriber.PhoneHome"
+    Expression ="dbo_tblSubscriber.Email"
+    Expression ="dbo_tblSubscriber.DOB"
+    Expression ="dbo_tblSubscriber.NoDependents"
+    Expression ="dbo_tblSubscriber.Gender"
+    Expression ="dbo_tblSubscriber.Age"
+    Expression ="dbo_tblSubscriber.EffectiveDate"
+    Expression ="dbo_tblSubscriber.PreexistingDate"
+    Expression ="dbo_tblSubscriber.EmploymentDate"
+    Expression ="dbo_tblSubscriber.EmploymentStatus"
+    Expression ="dbo_tblSubscriber.Occupation_Title"
+    Expression ="dbo_tblSubscriber.MaritalStatus"
+    Expression ="dbo_tblSubscriber.CardPrinted"
+    Expression ="dbo_tblSubscriber.CardPrintedDate"
+    Expression ="dbo_tblSubscriber.MembershipStatus"
+    Expression ="dbo_tblSubscriber.DateCreated"
+    Expression ="dbo_tblSubscriber.DateChanged"
+    Expression ="dbo_tblSubscriber.DateDeleted"
+    Expression ="dbo_tblSubscriber.Download"
+    Expression ="dbo_tblSubscriber.DownloadDate"
+    Expression ="dbo_tblSubscriber.PaymentStatus"
+    Expression ="dbo_tblSubscriber.ContractLength"
+    Expression ="dbo_tblSubscriber.PseudoSSN"
+    Expression ="dbo_tblSubscriber.Password"
+    Expression ="dbo_tblSubscriber.SubGroupID"
+    Expression ="dbo_tblSubscriber.SubExpDate"
+    Expression ="dbo_tblSubscriber.SubBankDraftNo"
+    Expression ="dbo_tblSubscriber.lSubID"
+    Expression ="dbo_tblSubscriber.AmtPaid"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+dbBoolean "TotalsRow" ="0"
+Begin
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.EIMBRID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.SubscriberID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Zip"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.EmploymentDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Occupation_Title"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.CardPrintedDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.DateCreated"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.PaymentStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.SubExpDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.PhoneWork"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.PhoneHome"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Email"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.CardPrinted"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Download"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.DownloadDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.PseudoSSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Password"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.SubGroupID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.lSubID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.AmtPaid"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.SubID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.DOB"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Gender"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Age"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.PreexistingDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.EmploymentStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.MaritalStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.MembershipStatus"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.DateDeleted"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Street1"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.Street2"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.City"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.GroupID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.SSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.PlanID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.NoDependents"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.EffectiveDate"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.DateChanged"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.ContractLength"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.SubBankDraftNo"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.CoverID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.LastName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.FirstName"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.MiddleInitial"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="dbo_tblSubscriber.State"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =0
+    Top =40
+    Right =927
+    Bottom =663
+    Left =-1
+    Top =-1
+    Right =895
+    Bottom =340
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =12
+        Right =192
+        Bottom =156
+        Top =0
+        Name ="dbo_tblSubscriber"
+        Name =""
+    End
+End

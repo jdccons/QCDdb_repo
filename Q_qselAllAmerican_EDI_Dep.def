@@ -1,0 +1,55 @@
+Operation =1
+Option =0
+Where ="(((tmpExportAllAmerican.EIRECID)=\"M\") AND ((Mid([EINMPLAN],8,3))=\"QCD\"))"
+Begin InputTables
+    Name ="tmpExportAllAmerican"
+End
+Begin OutputColumns
+    Alias ="DepSubID"
+    Expression ="GetSSN(Left(Trim([EISBRID]),Len(Trim([EISBRID]))-2) & \"00\")"
+    Expression ="tmpExportAllAmerican.EISSN"
+    Alias ="NAML"
+    Expression ="UCase([EINAML])"
+    Alias ="NAMF"
+    Expression ="UCase([EINAMF])"
+    Alias ="NAMM"
+    Expression ="Left([EINAMM],1)"
+    Alias ="DTBR"
+    Expression ="Left([EIDTBR],2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Right([EIDTBR],4)"
+    Expression ="tmpExportAllAmerican.EISEX"
+    Alias ="RELMBRID"
+    Expression ="IIf(Right(Trim([EIMBRID]),2)='01','S','C')"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+dbText "Description" ="p"
+Begin
+End
+Begin
+    State =0
+    Left =136
+    Top =334
+    Right =1120
+    Bottom =647
+    Left =-1
+    Top =-1
+    Right =973
+    Bottom =142
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =249
+        Bottom =123
+        Top =0
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+End

@@ -1,0 +1,90 @@
+Operation =1
+Option =8
+Where ="(((tblAgent.AGENTactive)=\"A\") AND ((tblAgent.PayCommTo) In (1,2,3)))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGeographical"
+End
+Begin OutputColumns
+    Alias ="Zip2"
+    Expression ="IIf([AGENTzip] Like \"#####-#\",Left([AgentZip],Len([AgentZip])-1),IIf([AgentZip"
+        "] Like \"#########\",Format([AgentZip],\"@@@@@-@@@@\"),[AgentZip]))"
+    Expression ="tblAgent.*"
+    Expression ="tblGeographical.GEOid"
+    Expression ="tblGeographical.GEOdesc"
+    Alias ="Name"
+    Expression ="([AGENTlast] & \", \" & [AGENTfirst])"
+    Alias ="ADDR"
+    Expression ="([AGENTstreet1] & \" \" & [AGENTstreet2] & \" \" & [AGENTcity] & \" , \" & [AGEN"
+        "Tstate] & \"  \" & [zip2])"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGeographical"
+    Expression ="tblAgent.AGENTgeoID = tblGeographical.GEOid"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblAgent.AGENTlast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="ADDR"
+        dbInteger "ColumnWidth" ="6195"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENTstreet1"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENTtype"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.PayCommTo"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =650
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =176
+        Bottom =113
+        Top =17
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =254
+        Top =12
+        Right =350
+        Bottom =104
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+End

@@ -1,0 +1,63 @@
+Operation =3
+Name ="tblInvLin"
+Option =8
+Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmInvIndiv]![CUST KEY]))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Alias ="LineItem"
+    Name ="LineItemTy"
+    Expression ="1"
+    Alias ="DocNo"
+    Name ="DOCUMENT NO"
+    Expression ="CStr([Forms]![frmInvIndiv]![TRANS NO])"
+    Name ="ITEM KEY"
+    Expression ="tblSubscr.SUBssn"
+    Alias ="Desc"
+    Name ="DESCRIPTION"
+    Expression ="([tblSubscr].[SUBlastNAME] & \", \" & [tblSubscr].[SUBfirstNAME])"
+    Alias ="QtyOrdered"
+    Name ="QTY ORDERED"
+    Expression ="1"
+    Alias ="QtyShipped"
+    Name ="QTY SHIPPED"
+    Expression ="1"
+    Alias ="Acct"
+    Name ="REV ACCT"
+    Expression ="CStr(5100)"
+    Alias ="Dept"
+    Name ="REV SUB"
+    Expression ="CStr(2000)"
+    Name ="UNIT PRICE"
+    Expression ="tblSubscr.SUBrate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =52
+    Top =115
+    Right =1267
+    Bottom =427
+    Left =-1
+    Top =-1
+    Right =1208
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

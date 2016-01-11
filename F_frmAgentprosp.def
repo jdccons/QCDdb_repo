@@ -1,0 +1,1117 @@
+Version =17
+VersionRequired =17
+Checksum =520403555
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    BorderStyle =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10660
+    DatasheetFontHeight =10
+    ItemSuffix =38
+    Left =4050
+    Top =2685
+    Right =14715
+    Bottom =8010
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x1f922087d3c5e140
+    End
+    RecordSource ="qfrmAgentProsp"
+    Caption ="Agent Information - Prospects"
+    OnCurrent ="[Event Procedure]"
+    BeforeInsert ="[Event Procedure]"
+    BeforeUpdate ="[Event Procedure]"
+    MenuBar ="FormMenuBar"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000a42900007413000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060200010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4f70315c6870350000000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+        End
+        Begin Section
+            Height =4980
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1500
+                    Top =165
+                    Name ="AGENTid"
+                    ControlSource ="AGENTid"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1500
+                    Top =855
+                    Width =1785
+                    TabIndex =2
+                    Name ="AGENTfirst"
+                    ControlSource ="AGENTfirst"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =4725
+                    Top =855
+                    Width =1680
+                    TabIndex =3
+                    Name ="AGENTlast"
+                    ControlSource ="AGENTlast"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1500
+                    Top =1245
+                    Width =2970
+                    TabIndex =4
+                    Name ="AGENTstreet1"
+                    ControlSource ="AGENTstreet1"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1500
+                    Top =1605
+                    Width =2970
+                    TabIndex =5
+                    Name ="AGENTstreet2"
+                    ControlSource ="AGENTstreet2"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1500
+                    Top =1965
+                    Width =1680
+                    TabIndex =6
+                    Name ="AGENTcity"
+                    ControlSource ="AGENTcity"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =4092
+                    Top =1965
+                    Width =420
+                    TabIndex =7
+                    Name ="AGENTstate"
+                    ControlSource ="AGENTstate"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =5244
+                    Top =1965
+                    Width =990
+                    TabIndex =8
+                    Name ="AGENTzip"
+                    ControlSource ="AGENTzip"
+                    InputMask ="00000\\-9999;;_"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1500
+                    Top =2325
+                    Width =1275
+                    TabIndex =9
+                    Name ="AGENTphone"
+                    ControlSource ="AGENTphone"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1500
+                    Top =2685
+                    Width =1275
+                    TabIndex =10
+                    Name ="AGENTfax"
+                    ControlSource ="AGENTfax"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =45
+                    Top =165
+                    Width =1443
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text13"
+                    Caption ="Agent  ID: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =45
+                    Top =855
+                    Width =1443
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text14"
+                    Caption =" First Name: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =45
+                    Top =1260
+                    Width =1443
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text15"
+                    Caption ="Address: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =45
+                    Top =1620
+                    Width =1443
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text16"
+                    Caption ="Address 2: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =45
+                    Top =1965
+                    Width =1443
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text17"
+                    Caption ="City: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =45
+                    Top =2325
+                    Width =1443
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text18"
+                    Caption ="Phone: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =45
+                    Top =2685
+                    Width =1398
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text19"
+                    Caption ="Fax: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =223
+                    TextAlign =3
+                    Left =3372
+                    Top =1965
+                    Width =720
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text22"
+                    Caption ="State: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =4620
+                    Top =1950
+                    Width =600
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text23"
+                    Caption ="Zip:"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =3603
+                    Top =855
+                    Width =1110
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text24"
+                    Caption ="Last Name: "
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =8178
+                    Top =180
+                    Width =1095
+                    TabIndex =13
+                    Name ="AGENTSSN"
+                    ControlSource ="AGENTSSN"
+                    InputMask ="000\\-00\\-0000;;_"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =6555
+                    Top =165
+                    Width =1608
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text26"
+                    Caption ="Social Sec.#: "
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =8178
+                    Top =525
+                    Width =1095
+                    TabIndex =14
+                    Name ="AGENTtaxID"
+                    ControlSource ="AGENTtaxID"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =6555
+                    Top =510
+                    Width =1608
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text28"
+                    Caption ="Tax ID #: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6555
+                    Top =855
+                    Width =1608
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text30"
+                    Caption ="Geographical ID: "
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =0
+                    OverlapFlags =85
+                    ColumnCount =2
+                    ListWidth =3280
+                    Left =8175
+                    Top =855
+                    Width =2485
+                    Height =255
+                    TabIndex =15
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"25\""
+                    Name ="Field31"
+                    ControlSource ="AGENTgeoID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="Select [GEOid],[GEOdesc] From [qryGeoID];"
+                    ColumnWidths ="0;2279"
+                End
+                Begin Rectangle
+                    SpecialEffect =1
+                    OverlapFlags =255
+                    Width =6480
+                    Height =4020
+                    Name ="Box35"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =4809
+                    Top =180
+                    TabIndex =16
+                    BackColor =65535
+                    Name ="AGENT_LUname"
+                    ControlSource ="AGENT_LUname"
+                    Begin
+                        Begin Label
+                            Visible = NotDefault
+                            BackStyle =1
+                            OverlapFlags =255
+                            TextAlign =1
+                            Left =3225
+                            Top =180
+                            Width =1650
+                            Height =240
+                            FontWeight =700
+                            BackColor =65535
+                            Name ="Text194"
+                            Caption ="AGENT_LUname:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =255
+                    Left =1500
+                    Top =510
+                    Width =3165
+                    TabIndex =1
+                    Name ="AGENCY"
+                    ControlSource ="AGENCY"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =45
+                    Top =510
+                    Width =1443
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text37"
+                    Caption ="Agency: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =255
+                    TextAlign =3
+                    Left =45
+                    Top =3345
+                    Width =1443
+                    Height =405
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text38"
+                    Caption ="Acitive(A) or Prospect (P) "
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =1500
+                    Top =3345
+                    Width =435
+                    TabIndex =17
+                    Name ="AGENTactive"
+                    ControlSource ="AGENTactive"
+                    DefaultValue ="\"P\""
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextFontFamily =2
+                    Left =1392
+                    Top =4140
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =18
+                    ForeColor =0
+                    Name ="B"
+                    Caption ="B"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =1704
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =19
+                    ForeColor =0
+                    Name ="C"
+                    Caption ="C"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =2031
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =20
+                    ForeColor =0
+                    Name ="D"
+                    Caption ="D"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =2358
+                    Top =4140
+                    Width =297
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =21
+                    ForeColor =0
+                    Name ="E"
+                    Caption ="E"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =2655
+                    Top =4140
+                    Width =297
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =22
+                    ForeColor =0
+                    Name ="F"
+                    Caption ="F"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =2952
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =23
+                    ForeColor =0
+                    Name ="G"
+                    Caption ="G"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =3279
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =24
+                    ForeColor =0
+                    Name ="H"
+                    Caption ="H"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =3606
+                    Top =4140
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =25
+                    ForeColor =0
+                    Name ="I"
+                    Caption ="I"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextFontFamily =2
+                    Left =4275
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =26
+                    ForeColor =0
+                    Name ="K"
+                    Caption ="K"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =4602
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =27
+                    ForeColor =0
+                    Name ="L"
+                    Caption ="L"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =4929
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =28
+                    ForeColor =0
+                    Name ="M"
+                    Caption ="M"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =5256
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =29
+                    ForeColor =0
+                    Name ="N"
+                    Caption ="N"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =5583
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =30
+                    ForeColor =0
+                    Name ="O"
+                    Caption ="O"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =5910
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =31
+                    ForeColor =0
+                    Name ="P"
+                    Caption ="P"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =6237
+                    Top =4140
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =32
+                    ForeColor =0
+                    Name ="Q"
+                    Caption ="Q"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =6549
+                    Top =4140
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =33
+                    ForeColor =0
+                    Name ="R"
+                    Caption ="R"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =6891
+                    Top =4140
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =34
+                    ForeColor =0
+                    Name ="S"
+                    Caption ="S"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =7200
+                    Top =4140
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =35
+                    ForeColor =0
+                    Name ="T"
+                    Caption ="T"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =7515
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =36
+                    ForeColor =0
+                    Name ="U"
+                    Caption ="U"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =7842
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =37
+                    ForeColor =0
+                    Name ="V"
+                    Caption ="V"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextFontFamily =2
+                    Left =8175
+                    Top =4140
+                    Width =387
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =38
+                    ForeColor =0
+                    Name ="W"
+                    Caption ="W"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    TextFontFamily =2
+                    Left =8556
+                    Top =4140
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =39
+                    ForeColor =0
+                    Name ="X"
+                    Caption ="X"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =8865
+                    Top =4140
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =40
+                    ForeColor =0
+                    Name ="Y"
+                    Caption ="Y"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =9210
+                    Top =4140
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =41
+                    ForeColor =0
+                    Name ="Z"
+                    Caption ="Z"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    AccessKey =70
+                    Left =1965
+                    Top =4600
+                    Width =645
+                    Height =245
+                    TabIndex =42
+                    BackColor =12632256
+                    Name ="AlphaControl"
+                    StatusBarText ="Enter a letter or letters to filter on (e.g. \"smith\") and TAB out of field."
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SearchBtn(\"AGENTPickList\")"
+                    DefaultValue ="\"*\""
+                    FontName ="Helv"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextFontFamily =0
+                            Left =1095
+                            Top =4605
+                            Width =840
+                            Height =240
+                            FontWeight =700
+                            ForeColor =12582912
+                            Name ="lblAlphaControl"
+                            Caption ="&Filter on:"
+                        End
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    TextFontFamily =2
+                    Left =1125
+                    Top =4140
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =43
+                    ForeColor =0
+                    Name ="A"
+                    Caption ="A"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    TextFontFamily =2
+                    Left =3945
+                    Top =4140
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =44
+                    ForeColor =0
+                    Name ="J"
+                    Caption ="J"
+                    OnClick ="=AlphaBtn([Form],\"AGENTPickList\")"
+                    FontName ="System"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    TabStop = NotDefault
+                    SpecialEffect =0
+                    OverlapFlags =87
+                    AccessKey =78
+                    ColumnCount =3
+                    ListRows =5
+                    Left =4035
+                    Top =4605
+                    Width =5511
+                    TabIndex =45
+                    BackColor =12632256
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"30\""
+                    Name ="AGENTPickList"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tblAgent.AGENTid, tblAgent.AGENT_LUname AS Agent_Name, tblAge"
+                        "nt.AGENCY AS Agency FROM tblAgent WHERE (((tblAgent.AGENT_LUname) Like [Forms]!["
+                        "frmAgentProsp]![AlphaControl] & \"*\") AND ((tblAgent.AGENTactive)=\"P\")) ORDER"
+                        " BY tblAgent.AGENT_LUname;"
+                    ColumnWidths ="0;1800;1800"
+                    StatusBarText ="Enter AGENT (last) name or click on arrow to view list."
+                    AfterUpdate ="=FindID([Forms]![frmAgentProsp],[AGENTPickList],\"[AGENTID]\",\"AGENTID\")"
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SetLabelColor([],0)"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextAlign =3
+                            Left =2625
+                            Top =4605
+                            Width =1410
+                            Height =240
+                            FontWeight =700
+                            BorderColor =16777215
+                            Name ="Label42"
+                            Caption ="Agent &Name:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =5277
+                    Top =3315
+                    Width =720
+                    TabIndex =46
+                    Name ="AGENTtype"
+                    ControlSource ="AGENTtype"
+                    StatusBarText ="ESD is Executive Sales Director, EXT is External Third Party Agent"
+                    ValidationRule ="\"ESD\" Or \"AGT\""
+                    DefaultValue ="\"AGT\""
+                    Begin
+                        Begin Label
+                            BackStyle =1
+                            OverlapFlags =247
+                            TextAlign =3
+                            Left =3615
+                            Top =3315
+                            Width =1575
+                            Height =600
+                            FontWeight =700
+                            BackColor =12632256
+                            Name ="Label38"
+                            Caption ="Agent (AGT) \015\012or E.S.D. (ESD):"
+                        End
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    TextAlign =1
+                    Left =4155
+                    Top =2415
+                    Width =2130
+                    TabIndex =11
+                    Name ="AGENTemail"
+                    ControlSource ="AGENTemail"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =3480
+                    Top =2400
+                    Width =645
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label46"
+                    Caption ="Email: "
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    TextAlign =1
+                    Left =1485
+                    Top =3015
+                    Width =1290
+                    TabIndex =12
+                    Name ="AGENTcell"
+                    ControlSource ="AGENTcell"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =255
+                    Top =3000
+                    Width =1125
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label37"
+                    Caption ="Cell Phone: "
+                End
+            End
+        End
+        Begin FormFooter
+            Height =360
+            BackColor =-2147483633
+            Name ="FormFooter"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+
+
+Private Sub Button199_Click()
+
+  On Error GoTo PROC_ERR
+    DoCmd.GoToRecord , , A_NEWREC
+   DoCmd.GoToControl "AGENTid"
+
+Exit_Button199_Click:
+    Exit Sub
+
+Err_Button199_Click:
+    MsgBox Error$
+    Resume Exit_Button199_Click
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Form_BeforeInsert(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+    Me![AGENT_LUname] = Me![AGENTlast] & ", " & Me![AGENTfirst]
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Form_BeforeUpdate(intCancel As Integer)
+  On Error GoTo PROC_ERR
+   Me![AGENT_LUname] = Me![AGENTlast] & ", " & Me![AGENTfirst]
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Form_Current()
+On Error GoTo Err_Form_Current
+
+    Me![AlphaControl] = Null
+    Me![AGENTPickList] = Null
+
+   
+Exit_Form_Current:
+    Exit Sub
+
+Err_Form_Current:
+    MsgBox Error$
+    Resume Exit_Form_Current
+
+
+End Sub

@@ -1,0 +1,17 @@
+dbMemo "SQL" ="INSERT INTO tblSubscr ( SUBgroupID, SUBplanIDgr, SUBssn, SUBlastNAME, SUBfirstNA"
+    "ME, SUBmiddleNAME, SUBstreet1, SUBstreet2, SUBcity, SUBstate, SUBzip, SUBphoneHO"
+    "ME, SUBdob, SUBrate, SUBeffDATE )\015\012SELECT tblImportGroupTemp.GroupID, tblI"
+    "mportGroupTemp.PlanId, tblImportGroupTemp.SSN, tblImportGroupTemp.LastName, tblI"
+    "mportGroupTemp.FirstName, tblImportGroupTemp.MiddleInit, tblImportGroupTemp.Stre"
+    "etAddress, tblImportGroupTemp.StreetAddress2, tblImportGroupTemp.City, tblImport"
+    "GroupTemp.State, tblImportGroupTemp.ZipCode, tblImportGroupTemp.Phone, Left([DOB"
+    "],2) & \"/\" & Mid([DOB],2,2) & \"/\" & Right([DOB],4) AS DateOfBirth, IIf([Cove"
+    "rageRate]=0.01,0,[CoverageRate]) AS Rate, Left([EffectiveDate],2) & \"/\" & Mid("
+    "[EffectiveDate],2,2) & \"/\" & Right([EffectiveDate],4) AS EffDate\015\012FROM t"
+    "blImportGroupTemp\015\012WHERE (((tblImportGroupTemp.ChangedOrNew)=Yes));\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End

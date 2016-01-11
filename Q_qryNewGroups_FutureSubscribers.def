@@ -1,0 +1,56 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblSubscribers_A Without Matching tblSubscribers_B"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUB_LUname"
+    Expression ="[tblSubscribers_A Without Matching tblSubscribers_B].SUBssn"
+    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SUBgroupID"
+End
+Begin Joins
+    LeftTable ="tblSubscribers_A Without Matching tblSubscribers_B"
+    RightTable ="tblSubscr"
+    Expression ="[tblSubscribers_A Without Matching tblSubscribers_B].SUBssn = tblSubscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =68
+        Top =0
+        Name ="tblSubscribers_A Without Matching tblSubscribers_B"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =386
+        Bottom =113
+        Top =11
+        Name ="tblSubscr"
+        Name =""
+    End
+End

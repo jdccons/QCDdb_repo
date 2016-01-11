@@ -1,0 +1,62 @@
+Operation =4
+Option =0
+Where ="(((tblSubscr.SUBssn) Is Null))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="tblEDI_App_Subscr.SUBcardPRT"
+    Expression ="0"
+    Name ="tblEDI_App_Subscr.DateCreated"
+    Expression ="Date()"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.DateUpdated"
+        dbInteger "ColumnWidth" ="3585"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =21
+    Top =239
+    Right =926
+    Bottom =544
+    Left =-1
+    Top =-1
+    Right =898
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =257
+        Bottom =98
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =446
+        Top =3
+        Right =688
+        Bottom =110
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

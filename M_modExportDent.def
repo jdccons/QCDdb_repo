@@ -1,0 +1,28 @@
+Option Compare Database
+Option Explicit
+
+'------------------------------------------------------------
+' mcrTracy
+'
+'------------------------------------------------------------
+Function ExportDent()
+On Error GoTo ExportDent_Err
+
+    DoCmd.SetWarnings False
+    DoCmd.OpenQuery "qryTracy theguys", acNormal, acEdit
+    DoCmd.RunSQL "ALTER TABLE tblTracy ADD COLUMN ID Counter  CONSTRAINT PrimaryKey PRIMARY KEY"
+    DoCmd.RunSQL "CREATE INDEX Zipcode ON tblTracy (Zipcode)"
+    DoCmd.TransferDatabase acExport, "Microsoft Access", "P:\Access\Dentists.mdb", acTable, "tblTracy", "TheGuys", False
+    Beep
+    MsgBox "The dentist information has been successfully exported to the table TheGuys in the database F:\Access\Dentists.mdb.", vbInformation, "EXPORT SUCCESSFUL"
+    DoCmd.SetWarnings True
+
+
+ExportDent_Exit:
+    Exit Function
+
+ExportDent_Err:
+    MsgBox Error$
+    Resume ExportDent_Exit
+
+End Function

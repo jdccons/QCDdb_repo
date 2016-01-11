@@ -1,0 +1,63 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Name ="tblEDI_App_Subscr.RateID"
+    Expression ="[tblRates].[RateID]"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.SubGroupID = tblRates.GroupID"
+    Flag =1
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.CoverID = tblRates.CoverID"
+    Flag =1
+    LeftTable ="tblRates"
+    RightTable ="tblEDI_App_Subscr"
+    Expression ="tblRates.PlanID = tblEDI_App_Subscr.PlanID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =36
+    Top =93
+    Right =1133
+    Bottom =467
+    Left =-1
+    Top =-1
+    Right =1090
+    Bottom =178
+    Left =0
+    Top =7
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =-1
+        Right =278
+        Bottom =143
+        Top =3
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =386
+        Top =-2
+        Right =482
+        Bottom =105
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

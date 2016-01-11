@@ -1,0 +1,51 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblRandomSubscribers"
+End
+Begin OutputColumns
+    Expression ="tblRandomSubscribers.FirstName"
+    Expression ="tblRandomSubscribers.LastName"
+    Expression ="tblRandomSubscribers.MiddleInitial"
+    Expression ="tblRandomSubscribers.Address1"
+    Expression ="tblRandomSubscribers.Address2"
+    Expression ="tblRandomSubscribers.City"
+    Expression ="tblRandomSubscribers.State"
+    Alias ="Zip2"
+    Expression ="IIf([Zip] Like \"#####-#\",Left([Zip],Len([Zip])-1),IIf([Zip] Like \"#########\""
+        ",Format([Zip],\"@@@@@-@@@@\"),[Zip]))"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblRandomSubscribers.Address1"
+        dbInteger "ColumnWidth" ="2880"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =70
+    Top =52
+    Right =778
+    Bottom =358
+    Left =-1
+    Top =-1
+    Right =697
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =229
+        Bottom =117
+        Top =5
+        Name ="tblRandomSubscribers"
+        Name =""
+    End
+End

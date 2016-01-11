@@ -1,0 +1,122 @@
+Operation =1
+Option =8
+Having ="(((tbldentist.DentStatus)=\"A\" Or (tbldentist.DentStatus) Is Null))"
+Begin InputTables
+    Name ="tbldentist"
+    Name ="tblGeographical"
+    Name ="tbldentistspec"
+End
+Begin OutputColumns
+    Expression ="tblGeographical.GEOdesc"
+    Expression ="tbldentist.DentGeoID"
+    Expression ="tbldentist.DentCity"
+    Alias ="SPECIALTY"
+    Expression ="IIf(IsNull([SPECIALITYdesc]),\"NO SPECIALTY LISTED\",[SPECIALITYdesc])"
+    Expression ="tbldentist.DentState"
+    Alias ="DENTcount"
+    Expression ="Count(tbldentist.DentStatus)"
+    Alias ="OpenToNewPatients"
+    Expression ="Count(IIf([DentCloseMyOff]=0,1,Null))"
+    Expression ="tbldentist.DentStatus"
+    Expression ="tbldentistspec.REPORTgrouping"
+End
+Begin Joins
+    LeftTable ="tbldentist"
+    RightTable ="tblGeographical"
+    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Flag =2
+    LeftTable ="tbldentist"
+    RightTable ="tbldentistspec"
+    Expression ="tbldentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblGeographical.GEOdesc"
+    Flag =0
+    Expression ="tbldentist.DentGeoID"
+    Flag =0
+    Expression ="tbldentist.DentCity"
+    Flag =0
+    Expression ="IIf(IsNull([SPECIALITYdesc]),\"NO SPECIALTY LISTED\",[SPECIALITYdesc])"
+    Flag =0
+End
+Begin Groups
+    Expression ="tblGeographical.GEOdesc"
+    GroupLevel =0
+    Expression ="tbldentist.DentGeoID"
+    GroupLevel =0
+    Expression ="tbldentist.DentCity"
+    GroupLevel =0
+    Expression ="IIf(IsNull([SPECIALITYdesc]),\"NO SPECIALTY LISTED\",[SPECIALITYdesc])"
+    GroupLevel =0
+    Expression ="tbldentist.DentState"
+    GroupLevel =0
+    Expression ="tbldentist.DentStatus"
+    GroupLevel =0
+    Expression ="tbldentistspec.REPORTgrouping"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="SPECIALTY"
+        dbInteger "ColumnWidth" ="1920"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGeographical.GEOdesc"
+        dbInteger "ColumnWidth" ="2475"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tbldentistspec.REPORTgrouping"
+        dbInteger "ColumnWidth" ="1860"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1024
+    Bottom =650
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =218
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =199
+        Bottom =158
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+    Begin
+        Left =304
+        Top =9
+        Right =476
+        Bottom =101
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+    Begin
+        Left =486
+        Top =78
+        Right =674
+        Bottom =170
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+End

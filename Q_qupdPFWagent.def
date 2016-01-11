@@ -1,0 +1,48 @@
+Operation =4
+Option =0
+Where ="(((ARSALESP.Salesp_Key)=[Forms]![frmAgent]![AGENTid]))"
+Begin InputTables
+    Name ="ARSALESP"
+End
+Begin OutputColumns
+    Name ="ARSALESP.Salesp_Name"
+    Expression ="[Forms]![frmAgent]![AGENTlast] & \",  \" & [Forms]![frmAgent]![AGENTfirst]"
+    Name ="ARSALESP.Comm_Key"
+    Expression ="\"01\""
+    Name ="ARSALESP.RecDate"
+    Expression ="Format(Date(),\"mm/dd/yyyy\")"
+    Name ="ARSALESP.RecTime"
+    Expression ="Format(Time(),\"hh:nn:ss\")"
+    Name ="ARSALESP.RecUserID"
+    Expression ="\"ACCESS\""
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =3
+    Right =1258
+    Bottom =316
+    Left =-1
+    Top =-1
+    Right =1204
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =221
+        Bottom =105
+        Top =10
+        Name ="ARSALESP"
+        Name =""
+    End
+End

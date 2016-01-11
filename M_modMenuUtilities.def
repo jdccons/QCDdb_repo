@@ -1,0 +1,14 @@
+Option Compare Database
+Option Explicit
+
+Function cmdSelectGroup() As Variant
+    Call Forms("fdlgPrtClientSrvs").SelectGroup
+End Function
+
+Function cmdUnselectGroup() As Variant
+    Call Forms("fdlgPrtClientSrvs").UnselectGroup
+End Function
+
+Function cmdClearAllGroups() As Variant
+    Call Forms("fdlgPrtClientSrvs").ClearAllGroups
+End Function

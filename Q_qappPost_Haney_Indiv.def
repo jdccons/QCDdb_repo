@@ -1,0 +1,74 @@
+Operation =3
+Name ="tblHaneyExport"
+Option =8
+Where ="(((Format([DOCUMENT NO],\"00000\"))=Format([Forms]![frmInvGrp_Ins]![TRANS NO],\""
+    "00000\")))"
+Begin InputTables
+    Name ="tblInvLin"
+    Name ="tblInvHdr"
+End
+Begin OutputColumns
+    Alias ="GroupID"
+    Name ="GroupID"
+    Expression ="tblInvHdr.[CUST KEY]"
+    Alias ="InvoiceNo"
+    Name ="InvoiceNumber"
+    Expression ="Format([DOCUMENT NO],\"00000\")"
+    Alias ="InvoiceDate"
+    Name ="InvoiceDate"
+    Expression ="([Inv Date])"
+    Alias ="SubsciberName"
+    Name ="SubscriberName"
+    Expression ="([Description])"
+    Alias ="SSN"
+    Name ="SubscriberSSN"
+    Expression ="([ITEM KEY])"
+    Alias ="SubscriberRate"
+    Name ="SubscriberRate"
+    Expression ="tblInvLin.[UNIT PRICE]"
+End
+Begin Joins
+    LeftTable ="tblInvHdr"
+    RightTable ="tblInvLin"
+    Expression ="tblInvHdr.[TRANS NO] = tblInvLin.[DOCUMENT NO]"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =13
+    Top =96
+    Right =1057
+    Bottom =528
+    Left =-1
+    Top =-1
+    Right =1037
+    Bottom =209
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =242
+        Top =18
+        Right =470
+        Bottom =150
+        Top =0
+        Name ="tblInvLin"
+        Name =""
+    End
+    Begin
+        Left =34
+        Top =14
+        Right =193
+        Bottom =146
+        Top =10
+        Name ="tblInvHdr"
+        Name =""
+    End
+End

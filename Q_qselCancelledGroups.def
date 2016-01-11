@@ -1,0 +1,107 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=Yes)) OR (((tblGrp.GRhold)=Yes))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAgent"
+    Name ="tlkpClientServiceReps"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblAgent.AGENCY"
+    Expression ="tlkpClientServiceReps.RepName"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GRcancelledDate"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
+    Flag =3
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =3
+End
+Begin OrderBy
+    Expression ="tblGrp.GRname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3570"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcancelledDate"
+        dbInteger "ColumnWidth" ="1800"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRPgeoID"
+        dbInteger "ColumnWidth" ="1125"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENCY"
+        dbInteger "ColumnWidth" ="4215"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcity"
+        dbInteger "ColumnWidth" ="1470"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1024
+    Bottom =630
+    Left =-1
+    Top =-1
+    Right =1017
+    Bottom =189
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =270
+        Bottom =143
+        Top =19
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =308
+        Top =6
+        Right =478
+        Bottom =113
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =504
+        Top =6
+        Right =688
+        Bottom =98
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+End

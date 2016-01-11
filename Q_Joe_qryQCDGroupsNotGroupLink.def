@@ -1,0 +1,56 @@
+Operation =1
+Option =0
+Where ="(((qryQCDGroups.GRcancelled)=False) AND ((tblAAGroups.SUBgroupID) Is Null))"
+Begin InputTables
+    Name ="qryQCDGroups"
+    Name ="tblAAGroups"
+End
+Begin OutputColumns
+    Expression ="qryQCDGroups.GROUPid"
+    Expression ="qryQCDGroups.GRcancelled"
+End
+Begin Joins
+    LeftTable ="qryQCDGroups"
+    RightTable ="tblAAGroups"
+    Expression ="qryQCDGroups.GROUPid = tblAAGroups.SUBgroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-6
+    Top =-32
+    Right =1435
+    Bottom =790
+    Left =-1
+    Top =-1
+    Right =1430
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =90
+        Top =0
+        Name ="qryQCDGroups"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =75
+        Top =0
+        Name ="tblAAGroups"
+        Name =""
+    End
+End

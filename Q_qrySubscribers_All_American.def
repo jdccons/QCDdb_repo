@@ -1,0 +1,127 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GroupType)=4))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="qryDependents_Count"
+    Name ="tblCoverage"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblRates.Rate"
+    Alias ="SUBcoverage"
+    Expression ="tblCoverage.COVERcode"
+    Alias ="Calc Coverage"
+    Expression ="IIf([SUBnoDEPENT]=1,\"O\",IIf([SUBnoDEPENT]>1,'F','I'))"
+    Alias ="Coverage Diff"
+    Expression ="IIf([tblSubscr].[CoverID]<>(IIf([SUBnoDEPENT]=1,2,IIf([SUBnoDEPENT]>1,4,1))),0,1"
+        ")"
+    Expression ="tblSubscr.SUBnoDEPENT"
+    Expression ="qryDependents_Count.CountOfDEPcounter"
+    Alias ="No of Deps Difference"
+    Expression ="[SUBnoDEPENT]-[CountOfDEPcounter]"
+    Expression ="tblGrp.GroupType"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="qryDependents_Count"
+    Expression ="tblSubscr.SUBssn = qryDependents_Count.DEPsubID"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =2
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SUBnoDEPENT"
+        dbInteger "ColumnWidth" ="1575"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="qryDependents_Count.CountOfDEPcounter"
+        dbInteger "ColumnWidth" ="1935"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="No of Deps Difference"
+        dbInteger "ColumnWidth" ="2055"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =22
+    Top =108
+    Right =1136
+    Bottom =530
+    Left =-1
+    Top =-1
+    Right =1107
+    Bottom =249
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =50
+        Top =33
+        Right =284
+        Bottom =128
+        Top =39
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =342
+        Top =5
+        Right =545
+        Bottom =190
+        Top =44
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =613
+        Top =8
+        Right =749
+        Bottom =88
+        Top =0
+        Name ="qryDependents_Count"
+        Name =""
+    End
+    Begin
+        Left =653
+        Top =117
+        Right =767
+        Bottom =212
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+    Begin
+        Left =786
+        Top =42
+        Right =882
+        Bottom =152
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

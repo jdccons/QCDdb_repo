@@ -1,0 +1,45 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tlkpAllAmericanPlan"
+End
+Begin OutputColumns
+    Alias ="Code"
+    Expression ="Left([PlanagerCode],6)"
+    Expression ="tlkpAllAmericanPlan.PlanID"
+End
+Begin Groups
+    Expression ="Left([PlanagerCode],6)"
+    GroupLevel =0
+    Expression ="tlkpAllAmericanPlan.PlanID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =66
+    Top =206
+    Right =869
+    Bottom =519
+    Left =-1
+    Top =-1
+    Right =796
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =105
+        Top =0
+        Name ="tlkpAllAmericanPlan"
+        Name =""
+    End
+End

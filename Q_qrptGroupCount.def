@@ -1,0 +1,103 @@
+Operation =6
+Option =0
+Where ="(((tblGrp.GroupType) In (1,4)) AND ((tblGrp.GRcancelled)=False) AND ((tblGrowth."
+    "Year)=Year(Date())))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblGrowth"
+End
+Begin OutputColumns
+    Alias ="TypeofGroup"
+    Expression ="IIf([GroupType]=1,\"QCD Only\",\"All American\")"
+    GroupLevel =2
+    Alias ="HeadCountCategory"
+    Expression ="IIf([tblGrowth].[CurrentEligEmps]<50,1,2)"
+    GroupLevel =1
+    Alias ="CountOfGROUPid"
+    Expression ="Count(tblGrp.GROUPid)"
+    Alias ="Total"
+    Expression ="Count(tblGrp.GROUPid)"
+    GroupLevel =2
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblGrowth"
+    Expression ="tblGrp.GROUPid = tblGrowth.GroupID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblGrp.GroupType"
+    Flag =0
+End
+Begin Groups
+    Expression ="IIf([GroupType]=1,\"QCD Only\",\"All American\")"
+    GroupLevel =2
+    Expression ="IIf([tblGrowth].[CurrentEligEmps]<50,1,2)"
+    GroupLevel =1
+    Expression ="tblGrp.GroupType"
+    GroupLevel =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="HeadCountCategory"
+        dbInteger "ColumnWidth" ="2145"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="CountOfGROUPid1"
+        dbInteger "ColumnWidth" ="2430"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Equal or Over 50"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Total Count of Groups"
+        dbInteger "ColumnWidth" ="2295"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Total"
+        dbInteger "ColumnWidth" ="2295"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1024
+    Bottom =624
+    Left =-1
+    Top =-1
+    Right =1017
+    Bottom =252
+    Left =0
+    Top =0
+    ColumnsShown =559
+    Begin
+        Left =38
+        Top =6
+        Right =213
+        Bottom =188
+        Top =38
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =251
+        Top =6
+        Right =473
+        Bottom =158
+        Top =0
+        Name ="tblGrowth"
+        Name =""
+    End
+End

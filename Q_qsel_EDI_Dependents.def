@@ -1,0 +1,69 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblEDI_App_Dep"
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Expression ="tblEDI_App_Dep.DepCounter"
+    Expression ="tblEDI_App_Dep.DepSSN"
+    Expression ="tblEDI_App_Dep.EIMBRID"
+    Expression ="tblEDI_App_Dep.DepSubID"
+    Expression ="tblEDI_App_Dep.DepFirstName"
+    Expression ="tblEDI_App_Dep.DepMiddleName"
+    Expression ="tblEDI_App_Dep.DepLastName"
+    Expression ="tblEDI_App_Dep.DepDOB"
+    Expression ="tblEDI_App_Dep.DepAge"
+    Expression ="tblEDI_App_Dep.DepRelationship"
+    Expression ="tblEDI_App_Dep.DepGender"
+    Expression ="tblEDI_App_Dep.DepEffDate"
+    Expression ="tblEDI_App_Dep.PreexistingDate"
+    Expression ="tblEDI_App_Dep.CreateDate"
+    Expression ="tblEDI_App_Dep.ModifyDate"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblEDI_App_Dep"
+    Expression ="tblEDI_App_Subscr.SubSSN = tblEDI_App_Dep.DepSubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =34
+    Top =156
+    Right =889
+    Bottom =520
+    Left =-1
+    Top =-1
+    Right =836
+    Bottom =184
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =241
+        Top =2
+        Right =373
+        Bottom =150
+        Top =1
+        Name ="tblEDI_App_Dep"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =195
+        Bottom =139
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

@@ -1,0 +1,52 @@
+Operation =1
+Option =8
+Where ="(((tbldentist.DENTprosp)=\"P\"))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Expression ="tbldentist.DENTselect"
+    Expression ="tbldentist.DENTid"
+    Expression ="tbldentist.DENTfirst"
+    Expression ="tbldentist.DENTlast"
+    Expression ="tbldentist.DENTcity"
+End
+Begin OrderBy
+    Expression ="tbldentist.DENTlast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbMemo "OrderBy" ="qryDentProspSel.DENTselect DESC"
+Begin
+    Begin
+        dbText "Name" ="tbldentist.DENTcity"
+        dbInteger "ColumnWidth" ="2070"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =778
+    Bottom =418
+    Left =-1
+    Top =-1
+    Right =705
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+End

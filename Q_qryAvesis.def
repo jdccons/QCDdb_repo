@@ -1,0 +1,77 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="Avesis"
+End
+Begin OutputColumns
+    Expression ="Avesis.Record_Type"
+    Expression ="Avesis.Action_Code"
+    Expression ="Avesis.Carrier_Number"
+    Expression ="Avesis.Group_Number"
+    Expression ="Avesis.Group_Name"
+    Expression ="Avesis.Plan_Number"
+    Expression ="Avesis.Member_Number"
+    Expression ="Avesis.ID_Suffix"
+    Expression ="Avesis.SSN"
+    Expression ="Avesis.Coverage_Code"
+    Expression ="Avesis.Last_Name"
+    Expression ="Avesis.First_Name"
+    Expression ="Avesis.Middle_Initial"
+    Expression ="Avesis.Address_1"
+    Expression ="Avesis.Address_2"
+    Expression ="Avesis.City"
+    Expression ="Avesis.State"
+    Expression ="Avesis.Zip"
+    Expression ="Avesis.Gender"
+    Expression ="Avesis.Birth_Date"
+    Expression ="Avesis.Effective_Date"
+    Expression ="Avesis.Term_Date"
+    Expression ="Avesis.Sub_Group_ID"
+End
+Begin OrderBy
+    Expression ="Avesis.Member_Number"
+    Flag =0
+    Expression ="Avesis.ID_Suffix"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="Avesis.Address_1"
+        dbInteger "ColumnWidth" ="3480"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Avesis.City"
+        dbInteger "ColumnWidth" ="1890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =21
+    Top =85
+    Right =1182
+    Bottom =397
+    Left =-1
+    Top =-1
+    Right =1154
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =271
+        Bottom =113
+        Top =0
+        Name ="Avesis"
+        Name =""
+    End
+End

@@ -1,0 +1,62 @@
+Operation =1
+Option =0
+Where ="(((ARTRAN.DocumentNumber) Is Null))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="__FebInvoices"
+End
+Begin OutputColumns
+    Expression ="[__FebInvoices].DocumentNumber"
+    Expression ="[__FebInvoices].CustomerKey"
+    Expression ="[__FebInvoices].DistributionType"
+    Expression ="[__FebInvoices].CustomerClassKey"
+    Expression ="[__FebInvoices].DistributionDate"
+    Expression ="[__FebInvoices].SumOfAmt"
+    Expression ="ARTRAN.DocumentNumber"
+End
+Begin Joins
+    LeftTable ="__FebInvoices"
+    RightTable ="ARTRAN"
+    Expression ="[__FebInvoices].DocumentNumber = ARTRAN.DocumentNumber"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =1282
+    Bottom =714
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =500
+        Top =11
+        Right =596
+        Bottom =118
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =376
+        Bottom =113
+        Top =3
+        Name ="__FebInvoices"
+        Name =""
+    End
+End

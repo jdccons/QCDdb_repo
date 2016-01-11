@@ -1,0 +1,62 @@
+Operation =3
+Name ="tblInvAgt"
+Option =0
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="SubscrID"
+    Expression ="tblSubscr.SubID"
+    Name ="AGENTid"
+    Expression ="tblAgent.AGENTid"
+    Name ="AgentRATE"
+    Expression ="tblSubscr.SUBagentRATE1"
+    Alias ="Pri"
+    Name ="Primary"
+    Expression ="True"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblAgent"
+    Expression ="tblSubscr.SUBagentID1 = tblAgent.AGENTid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =66
+    Top =82
+    Right =1248
+    Bottom =395
+    Left =-1
+    Top =-1
+    Right =1175
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =426
+        Top =5
+        Right =607
+        Bottom =114
+        Top =19
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =173
+        Top =6
+        Right =339
+        Bottom =120
+        Top =36
+        Name ="tblSubscr"
+        Name =""
+    End
+End

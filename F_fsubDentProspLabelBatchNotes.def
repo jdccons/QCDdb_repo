@@ -1,0 +1,85 @@
+Version =17
+VersionRequired =17
+Checksum =793787273
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
+    ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    Width =5760
+    ItemSuffix =3
+    Left =855
+    Top =1395
+    Right =11550
+    Bottom =7560
+    RecSrcDt = Begin
+        0xaf25e4b3b2c4e140
+    End
+    RecordSource ="tbldentist"
+    Caption ="Prospect Dentist Comments"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin Section
+            Height =3480
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =150
+                    Top =120
+                    Width =5460
+                    Height =2640
+                    Name ="DENTcomments"
+                    ControlSource ="DENTcomments"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2592
+                    Top =2880
+                    Width =540
+                    Height =465
+                    TabIndex =1
+                    Name ="Close"
+                    Caption ="OK"
+                    OnClick ="[Event Procedure]"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Close_Click()
+On Error GoTo Err_Close_Click
+
+
+    DoCmd.Close
+
+Exit_Close_Click:
+    Exit Sub
+
+Err_Close_Click:
+    MsgBox Error$
+    Resume Exit_Close_Click
+
+End Sub

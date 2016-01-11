@@ -1,0 +1,42 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBrate)=10) AND ((tblSubscr.SUBgroupID)=\"KELLR\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SUBgroupID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =114
+    Top =96
+    Right =995
+    Bottom =401
+    Left =-1
+    Top =-1
+    Right =868
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =116
+        Top =10
+        Name ="tblSubscr"
+        Name =""
+    End
+End

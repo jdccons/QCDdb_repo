@@ -1,0 +1,81 @@
+Operation =3
+Name ="tblSubscr"
+Option =0
+Where ="(((tblEnrollment_TaylorPub.Enrolled)=Yes))"
+Begin InputTables
+    Name ="tblEnrollment_TaylorPub"
+End
+Begin OutputColumns
+    Name ="SUBgroupID"
+    Expression ="tblEnrollment_TaylorPub.SUBgroupID"
+    Alias ="LUName"
+    Name ="SUB_LUname"
+    Expression ="[SUBlastNAME] & \", \" & [SUBfirstNAME]"
+    Alias ="FirstName"
+    Name ="SUBfirstNAME"
+    Expression ="IIf(InStr([SUBfirstNAME],\" \")>0,Mid([SUBfirstNAME],1,(InStr([SUBfirstNAME],\" "
+        "\")-1)),[SUBfirstNAME])"
+    Alias ="MiddleInitial"
+    Name ="SUBmiddleNAME"
+    Expression ="IIf(InStr([SUBfirstNAME],\" \")>0,Mid([SUBfirstNAME],(InStr([SUBfirstNAME],\" \""
+        ")+1)),\"\")"
+    Name ="SUBlastNAME"
+    Expression ="tblEnrollment_TaylorPub.SUBlastNAME"
+    Alias ="SSN"
+    Name ="SUBssn"
+    Expression ="Mid([SUBssn],1,3) & Mid([SUBssn],5,2) & Mid([SUBssn],8,4)"
+    Name ="SUBdob"
+    Expression ="tblEnrollment_TaylorPub.SUBdob"
+    Name ="SUBstreet1"
+    Expression ="tblEnrollment_TaylorPub.SUBstreet1"
+    Name ="SUBstreet2"
+    Expression ="tblEnrollment_TaylorPub.SUBstreet2"
+    Name ="SUBcity"
+    Expression ="tblEnrollment_TaylorPub.SUBcity"
+    Name ="SUBstate"
+    Expression ="tblEnrollment_TaylorPub.SUBstate"
+    Name ="SUBzip"
+    Expression ="tblEnrollment_TaylorPub.SUBzip"
+    Alias ="PhoneNo"
+    Name ="SUBphoneHOME"
+    Expression ="IIf([SUBphoneHOME] Is Not Null,CDbl(Mid([SUBphoneHOME],2,3) & Mid([SUBphoneHOME]"
+        ",6,3) & Mid([SUBphoneHOME],10,4)),0)"
+    Alias ="SubStatus"
+    Name ="SUBstatus"
+    Expression ="\"GRSUB\""
+    Name ="SUBeffDATE"
+    Expression ="tblEnrollment_TaylorPub.SUBeffDATE"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+    Begin
+        dbText "Name" ="LUName"
+        dbInteger "ColumnWidth" ="2925"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =40
+    Top =22
+    Right =778
+    Bottom =327
+    Left =-1
+    Top =-1
+    Right =731
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =272
+        Bottom =113
+        Top =12
+        Name ="tblEnrollment_TaylorPub"
+        Name =""
+    End
+End

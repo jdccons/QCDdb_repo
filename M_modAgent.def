@@ -1,0 +1,78 @@
+Option Compare Database
+Option Explicit
+Sub COMMagent()
+'this code is no longer used
+
+  On Error GoTo PROC_ERR
+        
+        Dim db As DAO.Database
+        Set db = CurrentDb()
+
+        DoCmd.Hourglass True
+        DoCmd.SetWarnings False
+        
+        db.Execute "DELETE DISTINCTROW [tblCommission].* FROM [tblCommission];", DB_FAILONERROR
+        
+        DoCmd.OpenQuery "qappAgent1CommGroup"
+        DoCmd.OpenQuery "qappAgent2CommGroup"
+        
+        DoCmd.OpenQuery "qappAgent1CommIndiv"
+        DoCmd.OpenQuery "qappAgent2CommIndiv"
+        
+        DoCmd.OpenReport "rptCommissionagent", A_PREVIEW
+        
+        DoCmd.SetWarnings True
+        DoCmd.Hourglass False
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+
+  Resume Next
+End Sub
+
+Sub CommInternal()
+
+  On Error GoTo PROC_ERR
+        
+    Dim db As DAO.Database
+    Set db = CurrentDb()
+    Dim strSQL As String
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+          
+    'delete contents of temp commission table
+    db.Execute "DELETE DISTINCTROW [tblCommission].* FROM [tblCommission];", DB_FAILONERROR
+        
+    'add records to temp commission table for group sales and commissions
+    DoCmd.OpenQuery "qappAgent1CommGroup"
+    DoCmd.OpenQuery "qappAgent2CommGroup"
+    
+    'add records to temp table for individual sales and commissions
+    DoCmd.OpenQuery "qappAgent1CommIndiv"
+    DoCmd.OpenQuery "qappAgent2CommIndiv"
+    
+    'run report
+    DoCmd.OpenReport "rptCommission", A_PREVIEW
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+  
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+   DoCmd.SetWarnings True
+   DoCmd.Hourglass False
+  Resume Next
+End Sub
+
+Function DelAgent()
+
+    Call Forms("frmAgent_e").ConfirmDelete
+
+End Function

@@ -1,0 +1,42 @@
+Operation =1
+Option =0
+Where ="(((tblInvoiceHistory.InvMonth)=[Forms]![frmInvoiceHistory]![txtCompareMonth]) AN"
+    "D ((tblInvoiceHistory.InvYear)=[Forms]![frmInvoiceHistory]![txtCompareYear]))"
+Begin InputTables
+    Name ="tblInvoiceHistory"
+End
+Begin OutputColumns
+    Expression ="tblInvoiceHistory.GrpID"
+    Expression ="tblInvoiceHistory.TotalBilling"
+    Expression ="tblInvoiceHistory.InvMonth"
+    Expression ="tblInvoiceHistory.InvYear"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =1002
+    Bottom =349
+    Left =-1
+    Top =-1
+    Right =933
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =259
+        Bottom =113
+        Top =0
+        Name ="tblInvoiceHistory"
+        Name =""
+    End
+End

@@ -1,0 +1,3029 @@
+Version =20
+VersionRequired =20
+Checksum =-800286490
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    OrderByOn = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =14340
+    DatasheetFontHeight =10
+    ItemSuffix =57
+    Left =3450
+    Top =525
+    Right =17535
+    Bottom =8295
+    DatasheetGridlinesColor =12632256
+    OnUnload ="[Event Procedure]"
+    OnFilter ="[Event Procedure]"
+    RecSrcDt = Begin
+        0xea0e144b8c92e240
+    End
+    Caption ="Online Enrollment Processing"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00580343ff800701000100ea0a6f08640001000f00580202000100 ,
+        0x5802020000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x220010014c030c00cad2f6720000000000000000000000000000000000000000 ,
+        0x0000000000000000090000000000000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000000000000000000010010000534d544a ,
+        0x00000000100000014d006900630072006f0073006f0066007400200058005000 ,
+        0x5300200044006f00630075006d0065006e007400200057007200690074006500 ,
+        0x72000000496e70757442696e00464f524d534f5552434500524553444c4c0055 ,
+        0x6e69726573444c4c00496e7465726c656176696e67004f464600496d61676554 ,
+        0x797065004a5045474d6564004f7269656e746174696f6e00504f525452414954 ,
+        0x00436f6c6c617465004f4646005265736f6c7574696f6e004f7074696f6e3100 ,
+        0x506170657253697a65004c455454455200436f6c6f724d6f6465003234627070 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000c0000004d58445701010000
+    End
+    PrtDevNames = Begin
+        0x0800260044000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000585053506f72743a00
+    End
+    OnResize ="[Event Procedure]"
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =3420
+            BackColor =14127360
+            Name ="FormHeader"
+            GUID = Begin
+                0xe39ef51e43898b4abbadbe2a0cda97fc
+            End
+            Begin
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =93
+                    Left =5220
+                    Top =2160
+                    Width =3660
+                    Height =480
+                    BackColor =11193849
+                    Name ="Box45"
+                    GUID = Begin
+                        0xc0311cd8fb52b44080f7232ab096cbf4
+                    End
+                End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =93
+                    Left =3720
+                    Top =2700
+                    Width =6240
+                    Height =660
+                    BackColor =7961551
+                    Name ="Box20"
+                    GUID = Begin
+                        0xb87183b65c10f7469b316aea5c5eeea3
+                    End
+                End
+                Begin Rectangle
+                    BackStyle =1
+                    OverlapFlags =93
+                    Left =4980
+                    Top =900
+                    Width =4080
+                    Height =1200
+                    BackColor =7961551
+                    Name ="Box44"
+                    GUID = Begin
+                        0x6e79be51d1ff8946b7c74088f475d51c
+                    End
+                End
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =120
+                    Top =60
+                    Width =5100
+                    Height =480
+                    FontSize =14
+                    FontWeight =700
+                    ForeColor =16777215
+                    Name ="Label1"
+                    Caption ="Online Enrollment Processing"
+                    GUID = Begin
+                        0xc3a0a31c7c10b246897eed99a900a85e
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =5340
+                    Top =2235
+                    Width =3420
+                    Height =300
+                    ColumnOrder =0
+                    FontSize =10
+                    FontWeight =700
+                    Name ="txtStatus"
+                    GUID = Begin
+                        0x6d889f3430e20d4c9fb4a9c67205cd2f
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =480
+                    Top =1080
+                    Width =2448
+                    Height =480
+                    TabIndex =1
+                    Name ="cmdProcess"
+                    Caption ="Download All Records"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0xde1384151032ad4fb89488f6c7b9b34e
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =7080
+                    Top =1020
+                    Width =1923
+                    Height =420
+                    FontWeight =700
+                    TabIndex =2
+                    ForeColor =13209
+                    Name ="cmdProcessGrpExportReport"
+                    Caption ="Export Report"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0x0b1ce9328928f04bafed939509e18acc
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =10200
+                    Top =1020
+                    Width =2448
+                    Height =420
+                    TabIndex =3
+                    Name ="cmdProcessIndv"
+                    Caption ="Updated Records"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0x3b09625c48f9b849b5422a33d0cda11b
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =10200
+                    Top =1485
+                    Width =2448
+                    Height =420
+                    TabIndex =4
+                    Name ="cmdProcessIndvAdd"
+                    Caption ="Added Records"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0xc879ae03b71a4a45ba0d3ee9b43bc688
+                    End
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =240
+                    Top =720
+                    Width =2820
+                    Height =300
+                    FontSize =10
+                    FontWeight =700
+                    ForeColor =16777215
+                    Name ="Label35"
+                    Caption ="Download Group Changes"
+                    GUID = Begin
+                        0x8f202b2dab8168439d8ec6e4b05428c7
+                    End
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =10140
+                    Top =420
+                    Width =2415
+                    Height =540
+                    FontSize =10
+                    FontWeight =700
+                    ForeColor =16777215
+                    Name ="lblIndv"
+                    Caption ="Download Individual Changes"
+                    GUID = Begin
+                        0x8f6191d5fa88324b8bfcfbeebfa8ecfd
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =7080
+                    Top =1560
+                    Width =1890
+                    Height =450
+                    TabIndex =5
+                    Name ="cmdResetTables"
+                    Caption ="Clear Tables"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x13a2516eae614846835453cdd98c52d0
+                    End
+                End
+                Begin Rectangle
+                    OverlapFlags =223
+                    Left =180
+                    Top =660
+                    Width =2940
+                    Height =2640
+                    Name ="Box18"
+                    GUID = Begin
+                        0xe94749175fe17d4eaad1ae52f356db74
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =13140
+                    Top =60
+                    Width =726
+                    Height =486
+                    TabIndex =6
+                    Name ="cmdClose"
+                    Caption ="Command20"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad
+                    End
+                    FontName ="Tahoma"
+                    ObjectPalette = Begin
+                        0x000301000000000000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x1cf9c459a3111046b8901bc92218b975
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =3840
+                    Top =2820
+                    Width =2448
+                    Height =420
+                    TabIndex =7
+                    Name ="cmdAddToDB"
+                    Caption ="Commit Data to Database"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0xf8d4e85312c6b240aac43c41b5f9be0a
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =6420
+                    Top =2880
+                    Width =3420
+                    Height =300
+                    ColumnOrder =1
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =8
+                    Name ="txtStatusDataImport"
+                    GUID = Begin
+                        0xb083e06bee8235409e48ee6c3e13df20
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =480
+                    Top =2180
+                    Width =2448
+                    Height =450
+                    TabIndex =9
+                    Name ="cmdPrintNewSubscr"
+                    Caption ="Data Import Report"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0xb624abb773e6c94e80a7d3379f1fb2b8
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =5100
+                    Top =1020
+                    Width =1890
+                    Height =450
+                    TabIndex =10
+                    Name ="cmdPrintCards"
+                    Caption ="Print Cards"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0xda47b605b7a8da4b8183b8cf62f7dd32
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =480
+                    Top =2760
+                    Width =2448
+                    Height =420
+                    TabIndex =11
+                    Name ="cmdGroupLinkFile"
+                    Caption ="Create Group Link File"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0x73d60e4dabb97341ba0137544e000658
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =5100
+                    Top =1560
+                    Width =1890
+                    Height =450
+                    TabIndex =12
+                    Name ="cmdPrintMissingRates"
+                    Caption ="Missing Rates Report"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0x3b06a9073e776b45822ab31bc94c0244
+                    End
+                End
+                Begin CommandButton
+                    Enabled = NotDefault
+                    OverlapFlags =93
+                    Left =10200
+                    Top =2880
+                    Width =2448
+                    Height =420
+                    TabIndex =13
+                    Name ="cmdPrintPDFs"
+                    Caption ="Print Individual Subs PDFs"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0x78ef150693f15f4e8dfa1b2c9dbd982a
+                    End
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =13140
+                    Top =600
+                    Width =1020
+                    Height =420
+                    TabIndex =14
+                    ForeColor =0
+                    Name ="cmdViewSubs"
+                    Caption ="View/Edit Downloaded Subscibers"
+                    GUID = Begin
+                        0x4a9e8e3f4491f647bbc50397e0a85c30
+                    End
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =13140
+                    Top =1080
+                    Width =1020
+                    Height =420
+                    TabIndex =15
+                    ForeColor =0
+                    Name ="cmdViewDeps"
+                    Caption ="View/Edit Downloaded Dependents"
+                    GUID = Begin
+                        0x2f05486c627b094e8f12718532424900
+                    End
+                End
+                Begin Rectangle
+                    OverlapFlags =223
+                    Left =9900
+                    Top =360
+                    Width =3000
+                    Height =3000
+                    Name ="boxIdv"
+                    GUID = Begin
+                        0x5793387f558e0a4cb630d0e1319eacdb
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =5550
+                    Top =540
+                    Width =2865
+                    Height =300
+                    FontSize =10
+                    FontWeight =700
+                    ForeColor =16777215
+                    Name ="Label46"
+                    Caption ="Common Functions"
+                    GUID = Begin
+                        0x8111b6b7971a0441b47ba19125f87d4b
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =10200
+                    Top =1950
+                    Width =2460
+                    Height =420
+                    TabIndex =16
+                    Name ="cmdPrintIndivImportReport"
+                    Caption ="Individual Import Report"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0x1916c5f844c7c248bf33806085e6f9e2
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =660
+                    Top =1620
+                    Width =1860
+                    Height =480
+                    TabIndex =17
+                    Name ="cmdOpenWebTable"
+                    Caption ="Open Old Form"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x0413cbc231dd7444b632cf66ad6d2791
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =10200
+                    Top =2415
+                    Width =2460
+                    Height =420
+                    TabIndex =18
+                    Name ="cmdPrintIndivImportDetailReport"
+                    Caption ="Individual Detail Report"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                    GUID = Begin
+                        0xbe841e7178845146b6ddd9f0dc2c5404
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3300
+                    Top =780
+                    Height =300
+                    TabIndex =19
+                    Name ="cmdSubscribers"
+                    Caption ="Subscribers Table"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xb05783c0801dfe4190b22d651ece33b9
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3300
+                    Top =1140
+                    Height =300
+                    TabIndex =20
+                    Name ="cmdIndivSubsAll"
+                    Caption ="Indiv Subs All"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xd471ab86fb58c3489bdeed380a4270fc
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3300
+                    Top =1500
+                    Height =300
+                    TabIndex =21
+                    Name ="cmdIndivOnlineEnrollment"
+                    Caption ="Indiv Online Enroll"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x2c504530b652a04c96eb55b83be52901
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3300
+                    Top =1860
+                    Height =300
+                    TabIndex =22
+                    Name ="cmdDependents_Web"
+                    Caption ="Dependents Table"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x2e7b68744b70034d8d378a1e20dd253b
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3300
+                    Top =2220
+                    Height =300
+                    TabIndex =23
+                    Name ="cmdDependentsOnlineEnrollment"
+                    Caption ="Deps Online Enroll"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xfe56de221867ba4d87c71072d4316eca
+                    End
+                End
+            End
+        End
+        Begin Section
+            CanGrow = NotDefault
+            Height =4620
+            BackColor =14127360
+            Name ="Detail"
+            GUID = Begin
+                0x0e897794f269464989a3d6c031e4245c
+            End
+            Begin
+                Begin Subform
+                    CanGrow = NotDefault
+                    OverlapFlags =85
+                    Left =120
+                    Top =120
+                    Width =12480
+                    Height =4320
+                    BorderColor =12835293
+                    Name ="fsubDwnDetail"
+                    SourceObject ="Form.fsubDwnDetail"
+                    GUID = Begin
+                        0x899b6abe0529194287ebb33cdb449c6b
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =14127360
+            Name ="FormFooter"
+            GUID = Begin
+                0xd93719b3bacd7c40a62a63d184dfef1b
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Dim fIndiv As Boolean
+Public vStatusBar As Variant
+
+
+
+
+Function AddToDB() As Boolean
+  ' Comments   :  takes all eligible records
+  '               in tblEDI_App_Subscr and commits them
+  '               to the database
+  ' Parameters :
+  ' Returns    :  a boolean value to indicate whether
+  '               the process succeeded or failed
+  ' Created    : 2/28/2004 1:05:53 PM Admin
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+        
+      Dim fResult As Boolean
+      Dim SUBSCRIBER As clsSubscr
+      Dim db As DAO.Database
+      Dim rst As DAO.Recordset
+      Dim strSQL As String
+      Dim strSQLw As String
+      Dim strGroupID As String
+      Dim strSSN As String
+      Dim strEIMBRID As String
+      
+      Dim lngRetval As Long
+
+      lngRetval = MsgBox( _
+        "You are about to commit data to the database, are you really ready to do that?", _
+        vbYesNo + vbExclamation + vbDefaultButton1, _
+        "Warning - Database Commit")
+
+      Select Case lngRetval
+      
+      Case vbYes
+        Set db = CurrentDb()
+        fResult = False
+        
+        DoCmd.Hourglass True
+        DoCmd.SetWarnings False
+        
+        'process deleted subscribers
+        'move deleted subscribers from tblEDI_App_Subscr_delete to tblSubscr_delete
+        DoCmd.OpenQuery "qappOnlineEnrollment_Sub_delete_db"
+        'delete the subscribers and the dependents from the production tables
+        strSQL = "SELECT tblEDI_App_Subscr_delete.SubSSN,tblEDI_App_Subscr_delete.SubGroupID " & _
+                "FROM tblEDI_App_Subscr_delete;"
+        Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+        
+        Do Until rst.EOF
+            Set SUBSCRIBER = New clsSubscr
+            strSSN = rst("SubSSN")
+            strGroupID = rst("SubGroupID")
+            If SUBSCRIBER.LoadFromSSN(strSSN, strGroupID) Then
+                If SUBSCRIBER.GROUPid <> "BEXHM" Then
+                    SUBSCRIBER.DeleteSub (strSSN)
+                ElseIf SUBSCRIBER.GROUPid = "BEXHM" Then
+                    SUBSCRIBER.DeleteSub_Bexar (strSSN)
+                End If
+            End If
+            rst.MoveNext
+            Set SUBSCRIBER = Nothing
+            
+            ' *** This marks the records to update on the Web Server ***
+            strSQLw = "Update tblEDI_App_Subscr_delete SET wUpt = 0 WHERE tblEDI_App_Subscr_delete.SubSSN = '" & strSSN & "';"
+            db.Execute strSQLw, dbSeeChanges
+            ' The update to the Web Server happens near the end of this proc...after all records have been processed on the local
+        Loop
+        
+        Set rst = Nothing
+        
+        'process the added and changed subscribers
+        Set rst = db.OpenRecordset("SELECT * FROM tblEDI_App_Subscr WHERE SubStatus <> 'INDIV'", dbOpenDynaset)
+        Do Until rst.EOF
+        Set SUBSCRIBER = New clsSubscr
+        'load the object
+         With SUBSCRIBER
+          .SSN = rst("SubSSN")
+          .EIMBRID = rst("EIMBRID")
+          .SubID = rst("SubID")
+          .Status = rst("SubStatus")
+          .GROUPid = rst("SubGroupID")
+          .PlanID = rst("PlanID")
+          .CoverID = rst("CoverID")
+          .RateID = rst("RateID")
+          .LUName = rst("Sub_LUName")
+          .LastName = rst("SubLastName")
+          .FirstName = rst("SubFirstName")
+          .MiddleInitial = rst("SubMiddleName")
+          .Street1 = rst("SubStreet1")
+          .Street2 = rst("SubStreet2")
+          .CITY = rst("SubCity")
+          .STATE = rst("SubState")
+          .ZIP = rst("SubZip")
+          .PhoneWork = rst("SubPhoneWork")
+          .PhoneHome = rst("SubPhoneHome")
+          .DOB = rst("SubDOB")
+          .NoOfDeps = rst("SubNoDepent")
+          .Gender = rst("SubGender")
+          .Age = rst("SubAge")
+          .MaritalStatus = rst("SubMaritalStatus")
+          .EffectiveDate = rst("SubEffDate")
+          .PreexistingDate = rst("PreexistingDate")
+          .CardPrt = 0
+          .CardPrtDate = Null
+          .Notes = rst("SubNotes")
+          .TransactionType = rst("TransactionType")
+          .DateCreated = rst("DateCreated")
+          .DateUpdated = rst("DateUpdated")
+          .DateDeleted = rst("DateDeleted")
+        End With
+        
+        strGroupID = SUBSCRIBER.GROUPid
+        strSSN = SUBSCRIBER.SSN
+        strEIMBRID = rst("EIMBRID")
+        
+        
+        '1. Exists = Yes (in tblSubscr); T-type = Changed
+        If SUBSCRIBER.CheckSSN(strSSN) = "Std_Sub" And SUBSCRIBER.TransactionType = "Changed" Then
+          'Subscriber is in tblSubscr and t-type = changed
+          'run the update procedure
+          'from the Subscriber object
+          Call SUBSCRIBER.StoreSub("Update", strSSN, strGroupID)
+          'delete the corresponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+          
+        '1a.  Exists in tblSubscr_Bexar (BEXHM); T-type = Changed
+        '
+        ElseIf SUBSCRIBER.CheckSSN(strSSN) = "Bexar_Sub" And SUBSCRIBER.GROUPid = "BEXHM" And SUBSCRIBER.TransactionType = "Changed" Then
+          'Subscriber is in tblSubscr_Bexar and T-type = changed
+          'run the update procedure
+          'from the Subscriber object
+          Call SUBSCRIBER.StoreSub("Update", strSSN, strGroupID)
+          'delete the corresponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+          
+        '1b.  Exists in tblSubscr_Bexar (BEXHM); GroupID in tblEDI_App_Subscr is not 'BEXHM'; T-type = Changed
+        '     this is a special instance
+        '     the Subscriber is moving from BEXHM, which is in a separate table, to another group, which
+        '     is in the production Subscriber table (tblSubscr)
+        ElseIf SUBSCRIBER.CheckSSN(strSSN) = "Bexar_Sub" And SUBSCRIBER.GROUPid <> "BEXHM" And SUBSCRIBER.TransactionType = "Changed" Then
+          'Subscriber is in tblSubscr_Bexar
+          'record in tblEDI_App_Subscr is not GroupID = 'BEXHM'
+          '
+          
+          'drop the sub and deps from tblSubscr_Bexar and tblDependent_Bexar
+          Call SUBSCRIBER.DeleteSub_Bexar(strSSN)
+          
+          'delete the correcponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          '
+          'add the sub to the new Group
+           Call SUBSCRIBER.StoreSub("Add", strSSN, strGroupID)
+          '
+          '
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+          
+        
+        '2. Exists = No; T-type = Added
+        ElseIf SUBSCRIBER.CheckSSN(strSSN) = "Not_Found" And SUBSCRIBER.TransactionType = "Added" Then
+          'Subscriber is not is the database and t-type = added
+          'run the add procedure
+          'from the Subscriber object
+          Call SUBSCRIBER.StoreSub("Add", strSSN, strGroupID)
+          'delete the correcponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+          
+        '3. Exists = Yes; T-type = Added
+        ElseIf SUBSCRIBER.CheckSSN(strSSN) = "Std_Sub" And SUBSCRIBER.TransactionType = "Added" Then
+          'Subscriber is in the database and t-type = Added;
+          'this is probably a mistake, but this code is here
+          'to catch the mistake;
+          'treat this condition as an update;
+          'run the update procedure
+          'from the subscriber object
+          Call SUBSCRIBER.StoreSub("Update", strSSN, strGroupID)
+          'delete the corresponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+          
+        End If
+                    
+        ' *** This marks the records to update on the Web Server ***
+        strSQLw = "Update tblEDI_App_Subscr SET wUpt = 0 WHERE tblEDI_App_Subscr.SubSSN = '" & strSSN & "';"
+        db.Execute strSQLw, dbSeeChanges
+        ' The update to the Web Server happens near the end of this proc...after all records have been processed on the local
+        
+        rst.MoveNext
+        Set SUBSCRIBER = Nothing
+        Loop
+        
+ 'Stop
+ 
+Dim dteS As Date
+Dim dteE As Date
+
+        'process the added and changed subscribers
+        Set rst = db.OpenRecordset("SELECT * FROM tblEDI_App_Subscr WHERE SubStatus = 'INDIV'", dbOpenDynaset)
+        Do Until rst.EOF
+        Set SUBSCRIBER = New clsSubscr
+        'load the object
+         With SUBSCRIBER
+          If rst("subSSN") = "001347573" Then
+            .SSN = "001000000"
+          Else
+            .SSN = rst("SubSSN")
+          End If
+          ' The fields below are Inividual only updates
+          .SubID = rst("SubID")
+          .Status = rst("SubStatus")
+          .GROUPid = rst("SubGroupID")
+          
+          ' Calculate the Contract Begin and End Dates
+          ' QCD rules...
+          ' The Begin Date is always the First day of the Month they Enrolled
+          ' The End date is calc'd
+          ' Add 2 months if 1 Year and EffDate is <= 16th
+          ' Add 3 months if 1 Year and EffDate is > 16th
+          ' Add 4 Months if 2 Year and EffDAte is <= 16th
+          ' Add 5 months if 2 Year and EffDAte is > 16th
+          dteS = Month(rst("SubEffDate")) & "/1/" & Year(rst("SubEffDate"))
+          If rst("SubGroupID") = "INDV1" Then ' One Year
+            If Day(rst("SubEffDate")) <= 16 Then
+              dteE = DateAdd("M", 14, dteS)
+            Else
+              dteE = DateAdd("M", 15, dteS)
+            End If
+          Else  ' Two Year
+            If Day(rst("SubEffDate")) <= 16 Then
+              dteE = DateAdd("M", 28, dteS)
+            Else
+              dteE = DateAdd("M", 29, dteS)
+            End If
+          End If
+          
+          .SubContBeg = dteS
+          .SubContEnd = dteE
+        
+          .PlanID = rst("PlanID")
+          .CoverID = rst("CoverID")
+          .RateID = rst("RateID")
+          .LUName = rst("Sub_LUName")
+          .LastName = rst("SubLastName")
+          .FirstName = rst("SubFirstName")
+          .MiddleInitial = rst("SubMiddleName")
+          .Street1 = rst("SubStreet1")
+          .Street2 = rst("SubStreet2")
+          .CITY = rst("SubCity")
+          .STATE = rst("SubState")
+          .ZIP = rst("SubZip")
+         '.PhoneWork = rst("SubPhoneWork") - We are using this field for SubBankDraftNo
+          .PhoneHome = rst("SubPhoneHome")
+          .DOB = rst("SubDOB")
+          .NoOfDeps = rst("SubNoDepent")
+          .Gender = rst("SubGender")
+          .Age = rst("SubAge")
+          .MaritalStatus = rst("SubMaritalStatus")
+          .EffectiveDate = rst("SubEffDate")
+          .PreexistingDate = rst("PreexistingDate")
+          .CardPrt = 0
+          .CardPrtDate = Null
+          .Notes = rst("SubNotes")
+          .TransactionType = rst("TransactionType")
+          .DateCreated = rst("DateCreated")
+          .DateUpdated = rst("DateUpdated")
+          .DateDeleted = rst("DateDeleted")
+        End With
+        
+        ' Update the SubBankDraftNo
+        DoCmd.RunSQL "UPDATE tblSubscr INNER JOIN tblEDI_App_Subscr ON tblSubscr.SubID = tblEDI_App_Subscr.SubID SET tblSubscr.SUBbankDraftNo = [tblEDI_App_Subscr].[SubPhoneWork] " & _
+            "WHERE (((tblEDI_App_Subscr.EIMBRID) In ('INDIV')));", dbSeeChanges
+            
+        'strGroupID = SUBSCRIBER.GROUPid
+        strSSN = SUBSCRIBER.SSN
+        'strEIMBRID = rst("EIMBRID")
+        
+        
+        '1. Exists = Yes (in tblSubscr); T-type = Changed
+        If SUBSCRIBER.CheckSSN(strSSN) = "Std_Sub" And SUBSCRIBER.TransactionType = "Changed" Then
+          'Subscriber is in tblSubscr and t-type = changed
+          'run the update procedure
+          'from the Subscriber object
+          Call SUBSCRIBER.StoreSub("Update", strSSN, strGroupID)
+          'delete the corresponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+                  
+        '2. Exists = No; T-type = Added
+        ElseIf SUBSCRIBER.CheckSSN(strSSN) = "Not_Found" And SUBSCRIBER.TransactionType = "Added" Then
+          'Subscriber is not is the database and t-type = added
+          'run the add procedure
+          'from the Subscriber object
+          Call SUBSCRIBER.StoreSub("Add", strSSN, strGroupID)
+          'delete the correcponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+          
+        '3. Exists = Yes; T-type = Added
+        ElseIf SUBSCRIBER.CheckSSN(strSSN) = "Std_Sub" And SUBSCRIBER.TransactionType = "Added" Then
+          'Subscriber is in the database and t-type = Added;
+          'this is probably a mistake, but this code is here
+          'to catch the mistake;
+          'treat this condition as an update;
+          'run the update procedure
+          'from the subscriber object
+          Call SUBSCRIBER.StoreSub("Update", strSSN, strGroupID)
+          'delete the corresponding dependents
+          If DelDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          
+          'add the corresponding dependents if any
+          If AddDeps(strSSN, strGroupID) Then
+              'Nothing
+          Else
+              MsgBox "An error occurred when updating dependents."
+          End If
+          fResult = True
+          
+        End If
+
+        ' *** This marks the records to update on the Web Server ***
+        strSQLw = "Update tblEDI_App_Subscr SET wUpt = 0 WHERE tblEDI_App_Subscr.SubSSN = '" & strSSN & "';"
+        db.Execute strSQLw, dbSeeChanges
+        
+        ' The update to the Web Server happens near the end of this proc...after all records have been processed on the local
+        
+        ' Put the INDIV records in the Print PDFs table
+        db.Execute "INSERT INTO __Indiv_Print_PDF ( SubSSN, SubID, SubStatus, SubCancelled, SubLastName, SubFirstName, SubMiddleName, SubStreet1, SubStreet2, SubCity, SubState, SubZip, SubEffDate, SubCardPrt ) " & _
+                "SELECT tblEDI_App_Subscr.SubSSN, tblEDI_App_Subscr.SubID, tblEDI_App_Subscr.SubStatus, tblEDI_App_Subscr.SubCancelled, tblEDI_App_Subscr.SubLastName, tblEDI_App_Subscr.SubFirstName, tblEDI_App_Subscr.SubMiddleName, tblEDI_App_Subscr.SubStreet1, tblEDI_App_Subscr.SubStreet2, tblEDI_App_Subscr.SubCity, tblEDI_App_Subscr.SubState, tblEDI_App_Subscr.SubZip, tblEDI_App_Subscr.SubEffDate, tblEDI_App_Subscr.SubCardPrt " & _
+                "FROM tblEDI_App_Subscr " & _
+                "WHERE (((tblEDI_App_Subscr.SubSSN)='" & strSSN & "'));", dbSeeChanges
+
+        rst.MoveNext
+        Set SUBSCRIBER = Nothing
+        Loop
+           
+           
+        ' *** Update the Web Server with the Records that have been processed ***
+       ' Stop
+        
+        ExecuteSQL "EXEC usp_WebsiteSyncDwnld"
+        
+        ExecuteSQL "UPDATE tblEDI_App_Subscr SET wUpt = NULL WHERE wUpt = 0"
+        ExecuteSQL "UPDATE tblEDI_App_Subscr_delete SET wUpt = NULL WHERE wUpt = 0"
+
+        Set rst = Nothing
+        Set db = Nothing
+        
+        DoCmd.SetWarnings True
+        DoCmd.Hourglass False
+        fResult = True
+        AddToDB = fResult
+      
+      Case vbNo
+       GoTo ExitProc
+      End Select
+    
+ExitProc:
+  Exit Function
+
+HandleError:
+  If Err.Number = 94 Then
+    Resume Next
+  Else
+    fResult = False
+    AddToDB = fResult
+    MsgBox "Error: " & Err.DESCRIPTION & _
+        " (" & Err.Number & ")", vbExclamation
+    GoTo ExitProc
+  End If
+
+
+End Function
+Function AddDeps(strSSN As String, strGroupID As String) As Boolean
+
+  ' Comments   :
+  ' Parameters :
+  ' Created    : 02/06/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+        
+        Dim strSQL As String
+        Dim fResult As Boolean
+        fResult = False
+        
+        If strGroupID <> "BEXHM" Then
+            strSQL = "INSERT INTO tblDependent (DepSSN, EIMBRID, DepSubID, DepFirstName, DepMiddleName, " & _
+                 "DepLastName, DepDOB, DepAge, DepRelationship, DepGender, DepEffDate, PreexistingDate) " & _
+                 "SELECT DepSSN, EIMBRID, DepSubID, DepFirstName, " & _
+                 "DepMiddleName, DepLastName, DepDOB, DepAge, DepRelationship, DepGender, DepEffDate, PreexistingDate " & _
+                 "FROM tblEDI_App_Dep " & _
+                 "WHERE (DepSubID = '" & strSSN & "')"
+            ExecuteSQL strSQL
+        ElseIf strGroupID = "BEXHM" Then
+            strSQL = "INSERT INTO tblDependent_Bexar (DepSSN, EIMBRID, DepSubID, DepFirstName, DepMiddleName, " & _
+                 "DepLastName, DepDOB, DepAge, DepRelationship, DepGender, DepEffDate) " & _
+                 "SELECT DepSSN, EIMBRID, DepSubID, DepFirstName, " & _
+                 "DepMiddleName, DepLastName, DepDOB, DepAge, DepRelationship, DepGender, DepEffDate " & _
+                 "FROM tblEDI_App_Dep " & _
+                 "WHERE (DepSubID = '" & strSSN & "')"
+            ExecuteSQL strSQL
+        End If
+        
+        fResult = True
+        AddDeps = fResult
+        
+ExitProc:
+  Exit Function
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+     fResult = False
+     AddDeps = fResult
+  Resume ExitProc
+       
+End Function
+Function DelDeps(strSSN As String, strGroupID As String) As Boolean
+
+' Comments   :
+  ' Parameters :
+  ' Created    : 02/06/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+
+        Dim fResult As Boolean
+        Dim strSQL As String
+        
+        fResult = False
+        If strGroupID <> "BEXHM" Then
+            strSQL = "DELETE FROM tblDependent WHERE (DepSubID = '" & strSSN & "')"
+            ExecuteSQL strSQL
+        ElseIf strGroupID = "BEXHM" Then
+            strSQL = "DELETE FROM tblDependent_Bexar WHERE (DepSubID = '" & strSSN & "')"
+            ExecuteSQL strSQL
+        End If
+        
+        fResult = True
+        DelDeps = fResult
+        
+ExitProc:
+  Exit Function
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+     fResult = False
+     DelDeps = fResult
+  Resume ExitProc
+
+End Function
+
+
+Private Sub cmdAddToDB_Click()
+  ' Comments   :
+  ' Parameters :
+  ' Created    : 02/06/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+
+    Dim fCheck As Boolean
+            
+    fCheck = AddToDB()
+    
+    If fCheck = True Then
+        Me.txtStatusDataImport = "Database Commit Complete"
+        Me.txtStatus = ""
+        If fIndiv = True Then
+            MsgBox "Please print the Individual PDF's and upload to the Web Server.", vbInformation, "NOTICE"
+            Me.cmdPrintPDFs.Enabled = True
+        End If
+    Else
+        Me.txtStatusDataImport = "Database Commit Errors!"
+    End If
+
+ExitProc:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+  
+End Sub
+
+Function GetGLPlanID(SUBssn As String) As Integer
+  ' Comments   :  Retrieves the old PlanID
+  '               for the subscriber who
+  '               is changing plans
+  ' Parameters :
+  ' Created    : 03/31/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+      
+    On Error GoTo PROC_ERR
+    
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+        
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT AA_GroupLink_Subscribers.AA_SSN, AA_GroupLink_Subscribers.PlanID FROM " & _
+             "AA_GroupLink_Subscribers WHERE (((AA_GroupLink_Subscribers.AA_SSN)='" & SUBssn & "'));"
+
+    Set rst = dbs.OpenRecordset(strSQL)
+    If rst.RecordCount > 0 Then
+        GetGLPlanID = rst.Fields("PlanID")
+    Else
+        GetGLPlanID = 0
+    End If
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+    
+PROC_EXIT:
+    Exit Function
+
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+    
+  
+End Function
+Function SetDates(pDate As Date) As Integer
+
+ Select Case Month(pDate)
+  Case 1, 3, 5, 7, 8, 10, 12
+   SetDates = 31
+  Case 4, 6, 9, 11
+   SetDates = 30
+  Case 2
+   If (Year(pDate) Mod 4) = 0 Then
+    SetDates = 29
+   Else
+    SetDates = 28
+   End If
+ End Select
+ 
+ End Function
+Sub PlanChanges()
+  ' Comments   :  Creates all of the necessary transactions
+  '               to move a subscriber and dependents
+  '               from one plan to another
+  ' Parameters :
+  ' Created    : 03/31/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  
+    
+    On Error GoTo PROC_ERR
+    
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Dim strSubSSN As String
+    Dim strGLPlanID As String
+    Dim strQCDPlanID As String
+    Dim intConvCode As Integer
+    Dim dteTermDate As Date
+    Dim strTermDate As String
+    Dim dteEffDate As Date
+    Dim strEffDate As String
+    
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT tblEDI_App_Subscr.SubSSN, tblEDI_App_Subscr.PlanID, tblEDI_App_Subscr.SubEffDate " & _
+                "FROM tblGrp INNER JOIN (tblEDI_App_Subscr " & _
+                "LEFT JOIN AA_GroupLink_Subscribers ON (tblEDI_App_Subscr.PlanID = AA_GroupLink_Subscribers.PlanID) " & _
+                "AND (tblEDI_App_Subscr.SubSSN = AA_GroupLink_Subscribers.AA_SSN)) ON tblGrp.GroupID = " & _
+                "tblEDI_App_Subscr.SubGroupID " & _
+                "WHERE (((AA_GroupLink_Subscribers.AA_SSN) Is Null) " & _
+                "AND ((tblGrp.GroupType)=4) " & _
+                "AND ((tblEDI_App_Subscr.TransactionType)='Changed')) " & _
+                "OR (((AA_GroupLink_Subscribers.PlanID) Is Null) " & _
+                "AND ((tblGrp.GroupType)=4) " & _
+                "AND ((tblEDI_App_Subscr.TransactionType)='Changed'));"
+    Set rst = dbs.OpenRecordset(strSQL)
+    If rst.RecordCount > 0 Then
+       
+    Do Until rst.EOF
+     strSubSSN = rst.Fields("SubSSN")
+     
+     strGLPlanID = CStr(GetGLPlanID(rst.Fields("SubSSN")))
+     strQCDPlanID = CStr(rst.Fields("PlanID"))
+     intConvCode = CInt(strGLPlanID & strQCDPlanID)
+     
+     If Not IsNull(rst.Fields("SubEffDate")) Then
+        dteEffDate = rst.Fields("SubEffDate")
+        strEffDate = Format(Month(dteEffDate), "00") & Format(Day(dteEffDate), "00") & Year(dteEffDate)
+        dteTermDate = PriorEOM(rst.Fields("SubEffDate"))
+        strTermDate = Format(Month(dteTermDate), "00") & Format(Day(dteTermDate), "00") & Year(dteTermDate)
+     Else
+        'get the EffDate from the first day of the current month
+        dteEffDate = MonthFirstDay(Month(date), Year(date))
+        strEffDate = Format(Month(dteEffDate), "00") & Format(Day(dteEffDate), "00") & Year(dteEffDate)
+        'get the coverage terminations date from the last day of the month prior to the effective date
+        dteTermDate = PriorEOM(dteEffDate)
+        strTermDate = Format(Month(dteTermDate), "00") & Format(Day(dteTermDate), "00") & Year(dteTermDate)
+     End If
+     
+     ' create the move plan transactions
+     Select Case intConvCode
+
+        Case 12: ' RED to WHT
+            ExecuteSQL "uspRED2WHT '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 13: ' RED to BLU
+            ExecuteSQL "uspRED2BLU '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 14: ' RED to RPL
+            ExecuteSQL "uspRED2RPL '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 21: ' WHT to RED
+            ExecuteSQL "uspWHT2RED '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 23: ' WHT to BLU
+            ExecuteSQL "uspWHT2BLU '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 24: ' WHT to RPL
+            ExecuteSQL "uspWHT2RPL '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 31: ' BLU to RED
+            ExecuteSQL "uspBLU2RED '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 32: ' BLU to WHT
+            ExecuteSQL "uspBLU2WHT '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 34: ' BLU to RPL
+            ExecuteSQL "uspBLU2RPL '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 41: ' RPL to RED
+            ExecuteSQL "uspRPL2RED '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 42: ' RPL to WHT
+            ExecuteSQL "uspRPL2WHT '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case 43: ' RPL to BLU
+            ExecuteSQL "uspRPL2BLU '" & strSubSSN & "00', '" & strEffDate & "', '" & strTermDate & "'"
+        Case Else:
+            'nothing
+     End Select
+
+    rst.MoveNext
+    Loop
+    End If
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+  
+PROC_EXIT:
+    Exit Sub
+
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+
+End Sub
+Sub CorrectSubIDs()
+
+    On Error GoTo PROC_ERR
+    
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Dim strSubID As String
+    Dim strMbrID As String
+        
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT DISTINCT tmpExportAllAmerican.EIMBRID, tmpExportAllAmerican.EISBRID " & _
+                "FROM tmpExportAllAmerican " & _
+                "WHERE (((tmpExportAllAmerican.EISBRID)<>[EIMBRID]) " & _
+                "AND ((tmpExportAllAmerican.EIRECID)='P'));"
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        Do Until rst.EOF
+            ExecuteSQL "uspCorrectSubIDs" & " '" & rst.Fields("EISBRID") & "', '" & rst.Fields("EIMBRID") & "'"
+        rst.MoveNext
+        Loop
+    End If
+    
+    Set rst = Nothing
+    Set dbs = Nothing
+    
+PROC_EXIT:
+    Exit Sub
+
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+    
+    
+End Sub
+Sub AssignEIMBRID()
+  
+  ' Comments   :  Assigns MemberID's to
+  '               subscribers and dependents
+  '               who do not have them
+  ' Parameters :
+  ' Created    : 04/23/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim rst2 As DAO.Recordset
+    Dim strSQL As String
+    Dim strSQL2 As String
+    Dim strID As String
+    Dim intTID As Integer
+    Dim strSSN As String
+    Dim intSuffix As Integer
+    Dim strSuffix As String
+    Dim I As Integer
+    
+    Set dbs = CurrentDb()
+
+    'assign MemberID's
+    '
+    '04-1
+    'first I need to identify new WHITE and RED PLUS subscribers;
+    'they will have no MemberID and two records for each person;
+    'assign them a MemberID;
+    'identify if they have dependents;
+    'if they do have dependents, assign sequential MemberID numbers to them
+    strSQL = "SELECT DISTINCT tmpExportAllAmerican.EIRECID, " & _
+             "IIf(Left(RTrim(LTrim([EISBRID])),9)<>[EISSN],[EISSN]," & _
+             "Left(RTrim(LTrim([EISBRID])),9)) AS SubSSN, " & _
+             "tmpExportAllAmerican.EIMBRID, " & _
+             "tmpExportAllAmerican.EISBRID, " & _
+             "tmpExportAllAmerican.EINAMF, " & _
+             "tmpExportAllAmerican.EINAML, " & _
+             "tmpExportAllAmerican.EINMPLAN, " & _
+             "tmpExportAllAmerican.TID " & _
+             "FROM tmpExportAllAmerican " & _
+             "WHERE (((tmpExportAllAmerican.EIRECID)='P') " & _
+             "AND ((tmpExportAllAmerican.EIMBRID)='' " & _
+             "Or (tmpExportAllAmerican.EIMBRID) Is Null) " & _
+             "AND ((tmpExportAllAmerican.EINMPLAN)='QCDWHT-MNL' Or " & _
+             "(tmpExportAllAmerican.EINMPLAN)='QCDWHT-QCD' Or " & _
+             "(tmpExportAllAmerican.EINMPLAN)='QCDRPL-MNL' Or " & _
+             "(tmpExportAllAmerican.EINMPLAN)='QCDRPL-QCD'));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        'assign the MemberID from the SubscriberID
+        'to primary subscriber
+        Do Until rst.EOF
+            With rst
+            
+                strID = rst.Fields("EISBRID")
+                
+                'update the EIMBRID on tblSubscr
+                ExecuteSQL "uspMbrID_Subscr '" & rst.Fields("SubSSN") & "', '" & rst.Fields("EISBRID") & "'"
+                                
+                'update the EIMBRID on tmpExportAllAmerican
+                For I = 1 To 2
+                    ExecuteSQL "uspMbrID " & rst.Fields("TID") & ", '" & rst.Fields("EISBRID") & "'"
+                    rst.MoveNext
+                Next I
+                               
+                'now process the subscriber's dependents
+                strSQL2 = "SELECT tmpExportAllAmerican.EIRECID, tmpExportAllAmerican.EIMBRID, tmpExportAllAmerican.EISBRID, " & _
+                        "tmpExportAllAmerican.EISSN, tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF, " & _
+                        "tmpExportAllAmerican.EIGRPID, tmpExportAllAmerican.EINMPLAN, tmpExportAllAmerican.TID, " & _
+                        "CDate(Mid([EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)) AS DOB, " & _
+                        "tmpExportAllAmerican.DepID " & _
+                        "FROM tmpExportAllAmerican " & _
+                        "WHERE (((tmpExportAllAmerican.EIRECID)='M') " & _
+                        "AND ((tmpExportAllAmerican.EISBRID)='" & strID & "') " & _
+                        "AND ((tmpExportAllAmerican.EINMPLAN)='QCDWHT-MNL' Or (tmpExportAllAmerican.EINMPLAN)='QCDWHT-QCD' Or " & _
+                        "(tmpExportAllAmerican.EINMPLAN)='QCDRPL-MNL' Or (tmpExportAllAmerican.EINMPLAN)='QCDRPL-QCD')) " & _
+                        "ORDER BY tmpExportAllAmerican.EISBRID, tmpExportAllAmerican.EIRECID DESC, " & _
+                        "CDate(Mid([EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)), " & _
+                        "tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF; "
+                        
+                Set rst2 = dbs.OpenRecordset(strSQL2, dbOpenDynaset, dbSeeChanges)
+                
+                intSuffix = 1
+                
+                If rst2.RecordCount > 0 Then
+                    Do Until rst2.EOF
+                       
+                       If intSuffix < 10 Then
+                          strSuffix = "0" & CStr(intSuffix)
+                       Else
+                          strSuffix = CStr(intSuffix)
+                       End If
+                       
+                       'update the dependent's EIBMRID on tblDependent
+                       ExecuteSQL "uspMbrID_Dependent " & rst2.Fields("DepID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                            
+                       'update the dependent's EIMBRID on tmpExportAllAmerican
+                       For I = 1 To 2
+                          ExecuteSQL "uspMbrID " & rst2.Fields("TID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                          rst2.MoveNext
+                       Next I
+                            
+                    intSuffix = intSuffix + 1
+                    Loop
+                End If
+                
+            End With
+        Loop
+    End If
+    
+    
+    '04-2
+    'second need to identify new RED and BLUE subscribers
+    'they will have no MemberID and only one record for each person;
+    'assign them a MemberID;
+    'identify if they have dependents;
+    'if they do have dependents, assigned sequential MemberID numbers to dependents
+    strSQL = "SELECT DISTINCT tmpExportAllAmerican.EIRECID, " & _
+             "IIf(Left(RTrim(LTrim([EISBRID])),9)<>[EISSN],[EISSN]," & _
+             "Left(RTrim(LTrim([EISBRID])),9)) AS SubSSN, " & _
+             "tmpExportAllAmerican.EIMBRID, " & _
+             "tmpExportAllAmerican.EISBRID, tmpExportAllAmerican.EINAMF,  " & _
+             "tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EIGRPID, " & _
+             "tmpExportAllAmerican.EINMPLAN,  tmpExportAllAmerican.TID " & _
+             "FROM tmpExportAllAmerican  " & _
+             "WHERE (((tmpExportAllAmerican.EIRECID)='P')  " & _
+             "AND ((tmpExportAllAmerican.EIMBRID)='' Or (tmpExportAllAmerican.EIMBRID) Is Null)  " & _
+             "AND ((tmpExportAllAmerican.EINMPLAN)='QCDRED-QCD' " & _
+             "Or (tmpExportAllAmerican.EINMPLAN)='QCDBLU-MNL'))"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    
+    If rst.RecordCount > 0 Then
+        'assign the MemberID based upon the SubscriberID
+        'to primary subscriber
+        Do Until rst.EOF
+            With rst
+            
+                strID = rst.Fields("EISBRID")
+                        
+                'update the EIMBRID on tblSubscr
+                ExecuteSQL "uspMbrID_Subscr '" & rst.Fields("SubSSN") & "', '" & rst.Fields("EISBRID") & "'"
+                
+                'update the EIMBRID on tmpExportAllAmerican
+                ExecuteSQL "uspMbrID " & rst.Fields("TID") & ", '" & rst.Fields("EISBRID") & "'"
+                 
+                'now process the subscriber's dependents
+                strSQL2 = "SELECT tmpExportAllAmerican.EIRECID, tmpExportAllAmerican.EIMBRID, tmpExportAllAmerican.EISBRID, " & _
+                        "tmpExportAllAmerican.EISSN, tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF, " & _
+                        "tmpExportAllAmerican.EIGRPID, tmpExportAllAmerican.EINMPLAN, tmpExportAllAmerican.TID, CDate(Mid(" & _
+                        "[EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)) AS DOB, " & _
+                        "tmpExportAllAmerican.DepID " & _
+                        "FROM tmpExportAllAmerican " & _
+                        "WHERE (((tmpExportAllAmerican.EIRECID)='M') " & _
+                        "AND ((tmpExportAllAmerican.EISBRID)='" & strID & "') " & _
+                        "AND ((tmpExportAllAmerican.EINMPLAN)='QCDRED-QCD' Or (tmpExportAllAmerican.EINMPLAN)='QCDBLU-MNL')) " & _
+                        "ORDER BY tmpExportAllAmerican.EISBRID, tmpExportAllAmerican.EIRECID DESC, " & _
+                        "CDate(Mid([EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)), " & _
+                        "tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF; "
+                        
+                Set rst2 = dbs.OpenRecordset(strSQL2, dbOpenSnapshot)
+                
+                intSuffix = 1
+                If rst2.RecordCount > 0 Then
+                                        
+                    Do Until rst2.EOF
+                       If intSuffix < 10 Then
+                          strSuffix = "0" & CStr(intSuffix)
+                       Else
+                          strSuffix = CStr(intSuffix)
+                       End If
+                       
+                       'update the dependent's EIBMRID on tblDependent
+                       ExecuteSQL "uspMbrID_Dependent " & rst2.Fields("DepID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                       
+                       'update the dependent's EIMBRID on tmpExportAllAmerican
+                       ExecuteSQL "uspMbrID " & rst2.Fields("TID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                       
+                       rst2.MoveNext
+                       intSuffix = intSuffix + 1
+                    Loop
+                End If
+            End With
+            rst.MoveNext
+        Loop
+    End If
+      
+    '04-3
+    'third need to identify existing WHITE and RED PLUS subscribers;
+    'they will have a MemberID and two records for each person;
+    'do not assign them a MemberID - they already have one;
+    'identify if they have dependents who do not have MemberID's;
+    'if they do have dependents without MemberID's,
+    'assigned sequential MemberID numbers to them;
+    'the suffixes for these MemberID numbers must pick
+    'up after the last assigned MemberID number
+    strSQL = "SELECT DISTINCT tmpExportAllAmerican.EIRECID, tmpExportAllAmerican.EIMBRID, " & _
+                "tmpExportAllAmerican.EISBRID, tmpExportAllAmerican.EINAMF, tmpExportAllAmerican.EINAML, " & _
+                "tmpExportAllAmerican.EINMPLAN " & _
+                "FROM tmpExportAllAmerican " & _
+                "WHERE (((tmpExportAllAmerican.EIRECID)='P') " & _
+                "AND ((tmpExportAllAmerican.EINMPLAN)='QCDWHT-MNL' " & _
+                "Or (tmpExportAllAmerican.EINMPLAN)='QCDWHT-QCD' " & _
+                "Or (tmpExportAllAmerican.EINMPLAN)='QCDRPL-MNL' " & _
+                "Or (tmpExportAllAmerican.EINMPLAN)='QCDRPL-QCD'));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        
+        Do Until rst.EOF
+            With rst
+            
+                strID = rst.Fields("EISBRID")
+                
+                'now process the subscriber's dependents
+                strSQL2 = "SELECT tmpExportAllAmerican.EIRECID, tmpExportAllAmerican.EIMBRID, tmpExportAllAmerican.EISBRID, " & _
+                        "tmpExportAllAmerican.EISSN, tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF, " & _
+                        "tmpExportAllAmerican.EIGRPID, tmpExportAllAmerican.EINMPLAN, tmpExportAllAmerican.TID, CDate(Mid(" & _
+                        "[EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)) AS DOB, " & _
+                        "tmpExportAllAmerican.DepID " & _
+                        "FROM tmpExportAllAmerican " & _
+                        "WHERE (((tmpExportAllAmerican.EIRECID)='M') " & _
+                        "AND ((tmpExportAllAmerican.EISBRID)='" & strID & "') " & _
+                        "AND ((tmpExportAllAmerican.EIMBRID) = '' Or tmpExportAllAmerican.EIMBRID Is Null) " & _
+                        "AND ((tmpExportAllAmerican.EINMPLAN)='QCDWHT-MNL' Or (tmpExportAllAmerican.EINMPLAN)='QCDWHT-QCD' Or " & _
+                        "(tmpExportAllAmerican.EINMPLAN)='QCDRPL-MNL' Or (tmpExportAllAmerican.EINMPLAN)='QCDRPL-QCD')) " & _
+                        "ORDER BY tmpExportAllAmerican.EISBRID, tmpExportAllAmerican.EIRECID DESC, " & _
+                        "CDate(Mid([EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)), " & _
+                        "tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF; "
+                            
+                Set rst2 = dbs.OpenRecordset(strSQL2, dbOpenSnapshot)
+                
+                If rst2.RecordCount > 0 Then
+                    intSuffix = HighSuffix(strID) + 1
+                    Do Until rst2.EOF
+                       If intSuffix < 10 Then
+                          strSuffix = "0" & CStr(intSuffix)
+                       Else
+                          strSuffix = CStr(intSuffix)
+                       End If
+                       
+                       'update the dependent's EIBMRID on tblDependent
+                       ExecuteSQL "uspMbrID_Dependent " & rst2.Fields("DepID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                            
+                       'update the dependent's EIMBRID on tmpExportAllAmerican
+                       For I = 1 To 2
+                          ExecuteSQL "uspMbrID " & rst2.Fields("TID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                          rst2.MoveNext
+                       Next I
+                            
+                    intSuffix = intSuffix + 1
+                    Loop
+                End If
+                
+            End With
+            rst.MoveNext
+        Loop
+    End If
+    
+    '04-4
+    'fourth I need to identify existing RED and BLUE subscribers
+    'they will have a MemberID and only one record for each person
+    'do not assign them a MemberID - they already have one
+    'identify if they have dependents who do not have MemberID's
+    'if they do have dependents without MemberID's
+    'assigned sequential MemberID numbers to them
+    'the suffixes for these MemberID numbers must pick
+    'up after the last assigned MemberID number
+    strSQL = "SELECT DISTINCT tmpExportAllAmerican.EIRECID, tmpExportAllAmerican.EIMBRID, " & _
+                "tmpExportAllAmerican.EISBRID, tmpExportAllAmerican.EINAMF, tmpExportAllAmerican.EINAML, " & _
+                "tmpExportAllAmerican.EINMPLAN " & _
+                "FROM tmpExportAllAmerican " & _
+                "WHERE (((tmpExportAllAmerican.EIRECID)='P') " & _
+                "AND ((tmpExportAllAmerican.EINMPLAN)='QCDRED-QCD' " & _
+                "Or (tmpExportAllAmerican.EINMPLAN)='QCDBLU-MNL'));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        
+        Do Until rst.EOF
+            With rst
+                
+                strID = rst.Fields("EISBRID")
+                
+                'now process the subscriber's dependents
+                strSQL2 = "SELECT tmpExportAllAmerican.EIRECID, tmpExportAllAmerican.EIMBRID, tmpExportAllAmerican.EISBRID, " & _
+                        "tmpExportAllAmerican.EISSN, tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF, " & _
+                        "tmpExportAllAmerican.EIGRPID, tmpExportAllAmerican.EINMPLAN, tmpExportAllAmerican.TID, CDate(Mid(" & _
+                        "[EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)) AS DOB, " & _
+                        "tmpExportAllAmerican.DepID " & _
+                        "FROM tmpExportAllAmerican " & _
+                        "WHERE (((tmpExportAllAmerican.EIRECID)='M') " & _
+                        "AND ((tmpExportAllAmerican.EISBRID)='" & strID & "') " & _
+                        "AND ((tmpExportAllAmerican.EIMBRID) = '' Or tmpExportAllAmerican.EIMBRID Is Null) " & _
+                        "AND ((tmpExportAllAmerican.EINMPLAN)='QCDRED-QCD' Or (tmpExportAllAmerican.EINMPLAN)='QCDBLU-MNL')) " & _
+                        "ORDER BY tmpExportAllAmerican.EISBRID, tmpExportAllAmerican.EIRECID DESC, " & _
+                        "CDate(Mid([EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4)), " & _
+                        "tmpExportAllAmerican.EINAML, tmpExportAllAmerican.EINAMF;"
+                                  
+                Set rst2 = dbs.OpenRecordset(strSQL2, dbOpenSnapshot)
+                
+                If rst2.RecordCount > 0 Then
+                    intSuffix = HighSuffix(strID) + 1
+                    Do Until rst2.EOF
+                       If intSuffix < 10 Then
+                          strSuffix = "0" & CStr(intSuffix)
+                       Else
+                          strSuffix = CStr(intSuffix)
+                       End If
+                       
+                       'update the dependent's EIBMRID on tblDependent
+                       ExecuteSQL "uspMbrID_Dependent " & rst2.Fields("DepID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                            
+                       'update the dependent's EIMBRID on tmpExportAllAmerican
+                       ExecuteSQL "uspMbrID " & rst2.Fields("TID") & ", '" & Mid(rst2.Fields("EISBRID"), 1, 9) & strSuffix & "'"
+                       
+                       rst2.MoveNext
+                            
+                    intSuffix = intSuffix + 1
+                    Loop
+                End If
+                
+            End With
+            rst.MoveNext
+        Loop
+    End If
+    
+    Set rst = Nothing
+    Set rst2 = Nothing
+    Set dbs = Nothing
+
+ExitProc:
+  Exit Sub
+
+ErrorHandler:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+
+
+End Sub
+Function CreateExportFile()
+
+  ' Comments   :  Prepares a fixed length file for Group Link
+  '               with all of the All American CRUD
+  '               that came from the website
+  ' Parameters :
+  ' Created    : 02/06/2009
+  ' Modified   : 02/27/2009
+  '
+  ' --------------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim FileDialog As clsFileDialog
+    Dim fResult As Boolean
+    Dim strSpec As String
+    Dim strTableName As String
+    Dim strFileName As String
+    Dim strSQL As String
+        
+    fResult = False
+    
+    DoCmd.SetWarnings False
+    DoCmd.Hourglass True
+
+    'Export the Group Link (All American)
+    'subscribers and dependents to a
+    'fixed length file
+    '
+    'purge the temp table
+    ExecuteSQL ("TRUNCATE TABLE tmpExportAllAmerican")
+
+    'upload the subscribers and dependents
+    'who have a t-type of Added or Changed
+    'DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Subscr"
+    'DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Dep"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Subscr_RED"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Subscr_BLU"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Subscr_WHTRPL_MNL"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Subscr_WHTRPL_QCD"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Dep_RED"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Dep_BLU"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Dep_WHTRPL_MNL"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Dep_WHTRPL_QCD"
+    
+    'process plan changes
+    Call PlanChanges
+
+    'upload the subscribers and dependents
+    'who have a t-type of Deleted
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Subscr_delete"
+    DoCmd.OpenQuery "qappOnlineEnrollment_Upload_Dep_delete"
+
+    'flag the subscribers who have just been added to tmpExportAllAmerican,
+    'the data in tblSubscr_delete determines who is inserted into
+    'tmpExportAllAmerican where Flag = 0
+    'switching the Flag to 1 means that they have been added
+    'to the Group Link export table and will not be added again
+    strSQL = "UPDATE tblSubscr_delete SET tblSubscr_delete.Flag = 1 WHERE (((tblSubscr_delete.Flag)=0));"
+    ExecuteSQL strSQL
+
+    'reset the flag field in tblSubscr
+    strSQL = "Update tblSubscr Set Flag = Null WHERE Flag Is Not Null;"
+    ExecuteSQL strSQL
+
+    'assign MemberID's to subscribers
+    'and dependents who do not have them
+    Call AssignEIMBRID
+        
+    'correct SubID's where the primary subscriber's SubID
+    'does not match the MbrID - this is a requirement for
+    'GroupLink
+    Call CorrectSubIDs
+    
+    'finally - fix any effective date mismatches between QCD and GroupLink
+    ExecuteSQL "uspEffDateCleanup"
+    
+    'create the export file
+    strSpec = "ImportAllAmericanC"
+    strTableName = "qseltmpExportAllAmerican"
+    
+    Set FileDialog = New clsFileDialog
+  
+    With FileDialog
+        .DefaultExt = "txt"
+        .DialogTitle = "Save Group Link Export file"
+        .Filter = "Text files (*.txt)|*.txt|All Files (*.*)|*.*"
+        .FilterIndex = 0
+        'strFileName = "F:\jdcConsulting\Group Link\" & Me.ctlGroupID & "_AA_Export.txt"
+        .FileName = "OnlineEnrollment_AA_Export.txt"
+        .Flags = FleFileMustExist + FleHideReadOnly + FleCreatePrompt
+        .hWndParent = 0 'Use your form's .hwnd property if available
+        .MaxFileSize = 255
+        
+        If .Show(False) Then
+            strFileName = .FileName
+            DoCmd.TransferText acExportFixed, strSpec, strTableName, strFileName, 0
+        Else
+            MsgBox "User cancelled"
+        End If
+      
+    End With
+    
+    Set FileDialog = Nothing
+    
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+    fResult = True
+    CreateExportFile = fResult
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    GoTo Exit_Point
+
+End Function
+Function HighSuffix(strID As String) As Integer
+  ' Comments   :  find the highest suffix used in the family
+  ' Parameters :
+  ' Created    : 03/26/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+    
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+                
+    Set dbs = CurrentDb()
+                
+    strSQL = "SELECT tmpExportAllAmerican.EIMBRID " & _
+                "FROM tmpExportAllAmerican " & _
+                "WHERE (((tmpExportAllAmerican.EISBRID)='" & strID & "') " & _
+                "AND ((tmpExportAllAmerican.EINMPLAN)='QCDWHT-MNL' " & _
+                "Or (tmpExportAllAmerican.EINMPLAN)='QCDWHT-QCD' " & _
+                "Or (tmpExportAllAmerican.EINMPLAN)='QCDRPL-MNL' " & _
+                "Or (tmpExportAllAmerican.EINMPLAN)='QCDRPL-QCD')) " & _
+                "GROUP BY tmpExportAllAmerican.EIMBRID " & _
+                "ORDER BY tmpExportAllAmerican.EIMBRID DESC;"
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        HighSuffix = CInt(Mid(rst.Fields("EIMBRID"), 10, 2))
+    Else
+        HighSuffix = 0
+    End If
+    
+    Set rst = Nothing
+    Set dbs = Nothing
+    
+ExitProc:
+  Exit Function
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+
+End Function
+Private Sub cmdGroupLinkFile_Click()
+  ' Comments   :
+  ' Parameters :
+  ' Created    : 02/06/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+
+    Dim fCheck As Boolean
+            
+    fCheck = CreateExportFile
+    
+    If fCheck = True Then
+        Me.txtStatus = "Processing Complete"
+    Else
+        Me.txtStatus = "Processing Errors!"
+    End If
+
+ExitProc:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+  
+End Sub
+
+Private Sub cmdOpenWebTable_Click()
+    
+    DoCmd.OpenForm "frmOnlineEnrollmentProcessing_joe", acNormal
+    
+End Sub
+
+Private Sub cmdPrintCards_Click()
+
+  ' Comments   :
+  ' Parameters :
+  ' Created    : 03/16/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+    On Error GoTo HandleError
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    Dim strDocName
+    Dim intGroupType As Integer
+    Dim strGroupID As String
+    Dim strUserName As String
+    
+    
+    Set db = CurrentDb()
+    
+    'select all of the groups that were involved in the CRUD download
+    strSQL = "SELECT tblGrp.GroupID, tblGrp.GroupType " & _
+                "FROM tblGrp INNER JOIN tblEDI_App_Subscr ON tblGrp.GroupID = tblEDI_App_Subscr.SubGroupID " & _
+                "GROUP BY tblGrp.GroupID, tblGrp.GroupType;"
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+
+    If rs.RecordCount > 0 Then
+        
+        DoCmd.SetWarnings False
+        DoCmd.Hourglass True
+        
+        Do Until rs.EOF
+                        
+            strGroupID = rs.Fields("GroupID")
+            intGroupType = rs.Fields("GroupType")
+            strUserName = GetCurrentUserName()
+            
+            'figure out what type of group it is and print the appropriate card
+            Select Case intGroupType
+                Case 1
+                    strDocName = "rptCardMemGrp"
+                Case 2
+                    strDocName = ""
+                Case 3
+                    strDocName = ""
+                Case 4
+                    strDocName = "rptCardMemAA"
+            End Select
+            
+            
+            'first, do BEXHM if there are any
+            If strGroupID = "BEXHM" Then
+            
+                'clean up tmpEDI_rpt
+                ExecuteSQL "DELETE FROM tmpEDI_rpt"
+                
+                'populate tmpEDI_rpt
+                strSQL = "INSERT INTO tmpEDI_Rpt ( GroupID, SUBssn, SUBfirstNAME, SUBlastNAME, SUBStreet, SUBcity, SUBstate, SUBzip, GRMailCard ) " & _
+                            "SELECT tblSubscr_Bexar.SubGroupID, tblSubscr_Bexar.SubSSN, tblSubscr_Bexar.SubFirstName, tblSubscr_Bexar.SubLastName, " & _
+                            "[tblSubscr_Bexar].[SubStreet1]+' '+[tblSubscr_Bexar].[SubStreet2] AS Street, tblSubscr_Bexar.SubCity, tblSubscr_Bexar.SubState, tblSubscr_Bexar.SubZip, tblGrp.GRMailCard " & _
+                            "FROM (tblSubscr_Bexar INNER JOIN tblEDI_App_Subscr " & _
+                            "ON tblSubscr_Bexar.SubSSN = tblEDI_App_Subscr.SubSSN) " & _
+                            "INNER JOIN tblGrp " & _
+                            "ON tblSubscr_Bexar.SubGroupID = tblGrp.GroupID " & _
+                            "WHERE (((tblGrp.GroupType)=" & intGroupType & "));"
+                ExecuteSQL strSQL
+                
+                'run the report that prints the card
+                DoCmd.OpenReport strDocName, acViewNormal
+                
+                'update the subscriber table to indicate that the card was
+                'printed, the date it was printed, and who printed it
+                strSQL = "UPDATE tblSubscr_Bexar " & _
+                           "SET tblSubscr_Bexar.SubCardPrt = 1, tblSubscr_Bexar.SubCardPrtDte = Convert(varchar, GetDate(), 101), " & _
+                           "tblSubscr_Bexar.DateUpdated = Convert(varchar, GetDate(), 101), " & _
+                           "tblSubscr_Bexar.UserName = 'Access' " & _
+                           "FROM tblSubscr_Bexar " & _
+                           "INNER JOIN tblEDI_App_Subscr ON " & _
+                           "tblSubscr_Bexar.SUBssn = tblEDI_App_Subscr.SUBssn " & _
+                           "WHERE tblSubscr_Bexar.SubGroupID = '" & strGroupID & "'"
+                ExecuteSQL strSQL
+                       
+            Else
+            
+            'clean up tmpEDI_rpt
+            ExecuteSQL "DELETE FROM tmpEDI_rpt"
+            
+            'populate tmpEDI_rpt
+            strSQL = "INSERT INTO tmpEDI_Rpt ( GroupID, SUBssn, SUBfirstNAME, SUBlastNAME, SUBStreet, SUBcity, SUBstate, SUBzip, GRMailCard ) " & _
+                        "SELECT tblSubscr.SubGroupID, tblSubscr.SubSSN, tblSubscr.SubFirstName, tblSubscr.SubLastName, " & _
+                        "[tblSubscr].[SubStreet1]+' '+[tblSubscr].[SubStreet2] AS Street, tblSubscr.SubCity, tblSubscr.SubState, tblSubscr.SubZip, tblGrp.GRMailCard " & _
+                        "FROM tblSubscr INNER JOIN tblEDI_App_Subscr " & _
+                        "ON tblSubscr.SubSSN = tblEDI_App_Subscr.SubSSN " & _
+                        "INNER JOIN tblGrp " & _
+                        "ON tblSubscr.SubGroupID = tblGrp.GroupID " & _
+                        "WHERE tblSubscr.SubGroupID = '" & strGroupID & "'"
+                       ' "WHERE (((tblGrp.GroupType)=" & intGroupType & "));"
+            ExecuteSQL strSQL
+            
+            'run the report that prints the card
+            DoCmd.OpenReport strDocName, acViewNormal
+                        
+            'update the subscriber table to indicate that the card was
+            'printed, the date it was printed, and who printed it
+            strSQL = "UPDATE tblSubscr " & _
+                       "SET tblSubscr.SubCardPrt = 1, tblSubscr.SubCardPrtDte = Convert(varchar, GetDate(), 101), " & _
+                       "tblSubscr.DateUpdated = Convert(varchar, GetDate(), 101), " & _
+                       "tblSubscr.UserName = 'Access' " & _
+                       "FROM tblSubscr " & _
+                       "INNER JOIN tblEDI_App_Subscr ON " & _
+                       "tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn " & _
+                       "WHERE tblSubscr.SubGroupID = '" & strGroupID & "'"
+            ExecuteSQL strSQL
+            End If
+        rs.MoveNext
+        Loop
+        MsgBox "Cards sent to the printer!", vbExclamation, "Cards Printed"
+                
+        DoCmd.SetWarnings True
+        DoCmd.Hourglass False
+            
+        
+    End If
+    
+        Set rs = Nothing
+        Set db = Nothing
+    
+    
+ExitProc:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+
+End Sub
+
+Private Sub cmdPrintIndivImportDetailReport_Click()
+  ' Comments   : Prints a report of new subscribers
+  ' Parameters : None
+  ' Created    : 2/28/2004 1:31:11 PM Admin
+  ' Modified   :  4/23/2009
+  '              Used ado instead of dao to
+  '              clear temp table
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+    
+    'Dim db As DAO.Database
+    'Set db = CurrentDb()
+    If fIndiv = False Then
+        MsgBox "The downloaded records are not Individual Subscribers.", vbInformation, "Operation Canceled"
+        Exit Sub
+    End If
+    
+    
+    DoCmd.SetWarnings False
+    'db.Execute "DELETE FROM tmpEDI_rpt", dbSeeChanges
+    ExecuteSQL ("TRUNCATE TABLE tmpEDI_Rpt")
+
+    'insert subscribers into the report temp table
+    DoCmd.OpenQuery "qappOnlineEnrollment_SubRpt"
+    'insert deleted subscribers into report temp table
+    DoCmd.OpenQuery "qappOnlineEnrollment_SubRpt_delete"
+    'open the online enrollment report
+    DoCmd.OpenReport "rptOnlineEnrollmentIndiv_Details", acViewPreview
+    
+    DoCmd.SetWarnings True
+    
+    'Set db = Nothing
+
+ExitProc:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+End Sub
+
+Private Sub cmdPrintIndivImportReport_Click()
+  ' Comments   : Prints a report of new subscribers
+  ' Parameters : None
+  ' Created    : 2/28/2004 1:31:11 PM Admin
+  ' Modified   :  4/23/2009
+  '              Used ado instead of dao to
+  '              clear temp table
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+    
+    'Dim db As DAO.Database
+    'Set db = CurrentDb()
+    If fIndiv = False Then
+        MsgBox "The downloaded records are not Individual Subscribers.", vbInformation, "Operation Canceled"
+        Exit Sub
+    End If
+    
+    
+    DoCmd.SetWarnings False
+    'db.Execute "DELETE FROM tmpEDI_rpt", dbSeeChanges
+    ExecuteSQL ("TRUNCATE TABLE tmpEDI_Rpt")
+
+    'insert subscribers into the report temp table
+    DoCmd.OpenQuery "qappOnlineEnrollment_SubRpt"
+    'insert deleted subscribers into report temp table
+    DoCmd.OpenQuery "qappOnlineEnrollment_SubRpt_delete"
+    'open the online enrollment report
+    DoCmd.OpenReport "rptOnlineEnrollmentIndiv_Subs", acViewPreview
+    
+    DoCmd.SetWarnings True
+    
+    'Set db = Nothing
+
+ExitProc:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+End Sub
+
+Private Sub cmdPrintMissingRates_Click()
+
+On Error GoTo Err_cmdPrintMissingRates_Click
+
+    Dim stDocName As String
+
+    stDocName = "rptMissingRates"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_cmdPrintMissingRates_Click:
+    Exit Sub
+
+Err_cmdPrintMissingRates_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdPrintMissingRates_Click
+
+
+End Sub
+
+Private Sub cmdPrintNewSubscr_Click()
+  ' Comments   : Prints a report of new subscribers
+  ' Parameters : None
+  ' Created    : 2/28/2004 1:31:11 PM Admin
+  ' Modified   :  4/23/2009
+  '              Used ado instead of dao to
+  '              clear temp table
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+    
+    'Dim db As DAO.Database
+    'Set db = CurrentDb()
+    If fIndiv = True Then
+        MsgBox "The downloaded records are not Group Subscribers.", vbInformation, "Operation Canceled"
+        Exit Sub
+    End If
+    
+    
+    DoCmd.SetWarnings False
+    'db.Execute "DELETE FROM tmpEDI_rpt", dbSeeChanges
+    ExecuteSQL ("TRUNCATE TABLE tmpEDI_Rpt")
+
+    'insert subscribers into the report temp table
+    DoCmd.OpenQuery "qappOnlineEnrollment_SubRpt"
+    'insert deleted subscribers into report temp table
+    DoCmd.OpenQuery "qappOnlineEnrollment_SubRpt_delete"
+    'open the online enrollment report
+    DoCmd.OpenReport "rptOnlineEnrollment_Subs", acViewPreview
+    
+    DoCmd.SetWarnings True
+    
+    'Set db = Nothing
+
+ExitProc:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+       
+End Sub
+
+
+Private Sub cmdPrintPDFs_Click()
+    
+    DoCmd.OpenForm "frmCreateIndivPDFs", acNormal
+    
+End Sub
+
+Private Sub cmdProcess_Click()
+    fIndiv = False
+    Me.cmdPrintPDFs.Enabled = False
+    Call Process_Download(1)
+End Sub
+
+Private Sub Process_Download(intOp As Integer)
+  ' Comments   :
+  ' Parameters :
+  ' Created    : 02/06/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+  On Error GoTo HandleError
+
+    Dim fCheck As Boolean
+            
+    ' Check to make sure there are no previous records pending commit
+    If CheckCommitWeb = False Then
+        MsgBox "There are processed records that have not been committed to the database." & vbCrLf & _
+                "Please commit the records before processing another set." & vbCrLf & "Operation Canceled", vbCritical + vbOKOnly, "Pending Records Exist"
+        Me.txtStatus = "Processing Canceled"
+        Exit Sub
+    End If
+        
+    fCheck = ProcessOnlineEnrollment(intOp)
+    
+    With Me
+        .fsubDwnDetail.Controls("tblEDI_App_Subscr_d").Requery
+        .fsubDwnDetail.Controls("tblEDI_Dep_Import_d").Requery
+'        .fsubDwnDetail.tblEDI_App_Subscr_d.Requery
+'        .fsubDwnDetail.tblEDI_Dep_Import_d.Requery
+'        .fsubDwnDetail.tblEDI_App_Subscr_d.Refresh
+'        .fsubDwnDetail.tblEDI_Dep_Import_d.Refresh
+    End With
+    
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    If fCheck = True Then
+        Me.txtStatus = "Processing Complete"
+        If intOp = 3 Or intOp = 4 Then
+            fIndiv = True
+        End If
+    Else
+        Me.txtStatus = "Processing Errors!"
+    End If
+    
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+
+ExitProc:
+  Exit Sub
+
+HandleError:
+  MsgBox "Error: " & Err.DESCRIPTION & _
+     " (" & Err.Number & ")", vbExclamation
+  Resume ExitProc
+
+End Sub
+
+
+Private Sub cmdProcessGrpExportReport_Click()
+Dim strFile As String
+Dim strDate As String
+Dim strDrv As String
+Dim db As DAO.Database
+Dim rs As DAO.Recordset
+Dim I As Long
+Dim xlApp As Object
+Dim xlsheet As Object
+
+    ' Export the Downloaded Data into an Excel file
+    ' Adds/Deletes on one Tab
+    ' CHanges on a separate Tab
+    'On Error GoTo Err_CreateScorecard
+
+    ' Open the Excel Scorecard Template
+     strDrv = Left(Application.CurrentProject.path, 3)
+     Set db = CurrentDb()
+     strDate = CStr(Format(date, "yyyymmdd"))
+     strFile = "Website Records Compare " & strDate
+     
+     Set xlApp = CreateObject("Excel.Application")
+     xlApp.Application.Visible = True 'make excel visible
+     Set xlsheet = xlApp.Workbooks.Add()
+     Application.SetOption "Show Status Bar", True
+    
+     vStatusBar = SysCmd(acSysCmdSetStatus, "Creating Excel file... please wait.")
+      
+     With xlApp.Application
+        ' Save the Workbook First
+        .DisplayAlerts = False
+        If xlApp.Version < 12 Then
+           .Application.ActiveWorkbook.SaveAs FileName:=Application.CurrentProject.path & "\" & strFile & ".xls", FileFormat:=-4143, Password:="", WriteResPassword:="", _
+               ReadOnlyRecommended:=False, CreateBackup:=False
+        ElseIf xlApp.Version >= 12 Then
+           .ActiveWorkbook.SaveAs FileName:=Application.CurrentProject.path & "\" & strFile & ".xls", FileFormat:= _
+               56, Password:="", WriteResPassword:="", ReadOnlyRecommended:=False _
+               , CreateBackup:=False
+        End If
+        
+        .Sheets(1).Name = "Adds-Deletes"
+        .Sheets(1).Select
+        ' Output the Adds and Deletes
+        Set rs = db.OpenRecordset("_Online_Report_AddsDeletes")
+        
+        For I = 0 To rs.Fields.Count - 1
+            .Sheets(1).Cells(1, I + 1).Value = rs.Fields(I).Name
+        Next I
+        .Sheets(1).Range("A2").CopyFromRecordset rs
+       
+        .Sheets(2).Name = "Changes"
+        .Sheets(2).Select
+        ' Output the changes
+        Set rs = db.OpenRecordset("_Online_Report_Changes_Export")
+        For I = 0 To rs.Fields.Count - 1
+            .Sheets(2).Cells(1, I + 1).Value = rs.Fields(I).Name
+        Next I
+        .Sheets(2).Range("A2").CopyFromRecordset rs
+        
+        vStatusBar = SysCmd(acSysCmdClearStatus)
+        
+        .DisplayAlerts = False
+        .ActiveWorkbook.Save
+        .ActiveWorkbook.Close
+        .DisplayAlerts = True
+        .Quit
+        
+    End With
+  
+    Set db = Nothing
+    Set xlApp = Nothing
+    DoCmd.Hourglass (False)
+    DoCmd.SetWarnings True
+    
+End Sub
+
+Private Sub cmdProcessIndv_Click()
+    fIndiv = True
+    Me.cmdPrintPDFs.Enabled = False
+    Call Process_Download(3)
+End Sub
+
+Private Sub cmdProcessIndvAdd_Click()
+    fIndiv = True
+    Me.cmdPrintPDFs.Enabled = False
+    Call Process_Download(4)
+End Sub
+
+
+Public Function RateCheck() As Boolean
+  ' Comments   : Checks to see if the rates in the database
+  '              will support the process of the groups
+  ' Parameters :
+  ' Returns    : Boolean value to indicate if rate are
+  '              there to assign a rate to every subscriber
+  ' Created    : 02/06/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+
+    
+    On Error GoTo PROC_ERR
+    
+    Dim strSQL As String
+    strSQL = "SELECT tblEDI_App_Subscr.SubSSN, tblRates.GroupID, tblRates.PlanID, tblRates.CoverID, " & _
+             "tblRates.GroupID, tblRates.PlanID, tblRates.CoverID " & _
+             "FROM tblEDI_App_Subscr LEFT JOIN tblRates ON " & _
+             "(tblEDI_App_Subscr.CoverID = tblRates.CoverID) " & _
+             "AND (tblEDI_App_Subscr.PlanID = tblRates.PlanID) " & _
+             "AND (tblEDI_App_Subscr.SubGroupID = tblRates.GroupID) " & _
+             "WHERE (((tblRates.GroupID) Is Null)) OR (((tblRates.PlanID) Is Null)) OR (((tblRates.CoverID) Is Null));"
+    Call LoadADORecordSet(strSQL)
+    
+    'Debug.Print strSQL
+    
+    If g_adoRS.EOF Then
+        RateCheck = True
+    Else
+        RateCheck = False
+    End If
+    
+    g_adoRS.Close
+    
+
+    
+PROC_EXIT:
+    Exit Function
+
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+    
+
+End Function
+Private Function ProcessOnlineEnrollment(intOp As Integer) As Boolean
+  ' Comments   : Processes two csv files that
+  '              are downloaded from the QCD website
+  ' Parameters :
+  ' Returns    : Boolean value to indicate if process
+  '              succeeded or failed
+  ' Created    : 02/06/2009
+  ' Modified   :
+  '
+  ' --------------------------------------------------------
+
+    On Error GoTo Err_ProcessOnlineEnrollment_Click
+    
+    Dim fResult As Boolean
+    Dim fRateCheck As Boolean
+    Dim strSQL As String
+    Dim intAns As Integer
+    
+    fResult = False
+    fRateCheck = False
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    ' process subscribers
+    ' THIS PULL IS COMING STRAIGHT FROM THE Tracent SERVER
+
+        ' Get the web records
+        intAns = GetTracentRecords(intOp)
+        If intAns = 1 Then
+            MsgBox "There are no records that match your request.  Operation Canceled", vbCritical + vbOKOnly, "No Records"
+            Exit Function
+        End If
+        
+        ' clean junk out of temp table
+        ExecuteSQL "DELETE " & _
+                   "FROM tblSubscriber_temp " & _
+                   "WHERE (((tblSubscriber_temp.SSN) Is Null));"
+    
+        'process the creates and updates from the file
+        '
+        'clear out tblEDI_App_Subscr
+        ExecuteSQL "DELETE FROM tblEDI_App_Subscr" 'purge next temp table
+        'use a querydef to move the creates and updates into tblEDI_App_Subscr
+        DoCmd.OpenQuery "qappOnlineEnrollment_Sub"
+        DoCmd.OpenQuery "qappOnlineEnrollment_Sub_Indv"
+        'update fields from tblSubscr esp SubID for non BEXHM groups
+        strSQL = "UPDATE tblEDI_App_Subscr  SET tblEDI_App_Subscr.SubID = tblSubscr.SubID, " & _
+                "tblEDI_App_Subscr.SubCardPrt = tblSubscr.SUBcardPRT,  " & _
+                "tblEDI_App_Subscr.SubCardPrtDte = tblSubscr.SUBcardPRTdte, " & _
+                "tblEDI_App_Subscr.SubNotes = tblSubscr.SUBnotes " & _
+                "FROM tblEDI_App_Subscr INNER JOIN " & _
+                "tblSubscr ON tblEDI_App_Subscr.SubSSN = tblSubscr.SubSSN"
+        ExecuteSQL strSQL
+        
+        'update fields from tblSubscr_Bexar esp SubID for BEXHM
+        strSQL = "UPDATE tblEDI_App_Subscr  SET tblEDI_App_Subscr.SubID = tblSubscr_Bexar.SubID, " & _
+                "tblEDI_App_Subscr.SubCardPrt = tblSubscr_Bexar.SUBcardPRT,  " & _
+                "tblEDI_App_Subscr.SubCardPrtDte = tblSubscr_Bexar.SUBcardPRTdte, " & _
+                "tblEDI_App_Subscr.SubNotes = tblSubscr_Bexar.SUBnotes " & _
+                "FROM tblEDI_App_Subscr INNER JOIN " & _
+                "tblSubscr_Bexar ON tblEDI_App_Subscr.SubSSN = tblSubscr_Bexar.SubSSN"
+        ExecuteSQL strSQL
+        
+        'if no SubID and t-type = change then this was meant to be an add
+        'change the TransactionType to Added
+        '
+        'this is for non BEXHM groups
+        strSQL = "UPDATE tblEDI_App_Subscr " & _
+                    "SET TransactionType = 'Added' " & _
+                    "WHERE (SubID IS NULL) " & _
+                    "AND (TransactionType = 'Changed') " & _
+                    "AND (SubGroupID <> 'BEXHM')"
+        ExecuteSQL strSQL
+        
+        'this is for BEXHM
+        strSQL = "UPDATE tblEDI_App_Subscr " & _
+                    "SET TransactionType = 'Added' " & _
+                    "WHERE (SubID IS NULL) " & _
+                    "AND (TransactionType = 'Changed') " & _
+                    "AND (SubGroupID = 'BEXHM')"
+        ExecuteSQL strSQL
+        
+        'if the group type is a 1 i.e. QCD Only
+        'then change the plan to 5 which is the planid
+        'for QCD Only
+        strSQL = "UPDATE s SET s.PlanID = 5 FROM tblEDI_App_Subscr As s  " & _
+                    "INNER JOIN tblGrp as g ON s.SubGroupID = g.GroupID " & _
+                    "WHERE g.GroupType = 1"
+        ExecuteSQL strSQL
+        
+        ' Make sure we have PlanIDs for all Groups
+        DoCmd.OpenQuery "qupd_EDI_MissingPlanIDs"
+        
+        
+        
+        'update rate id's
+        strSQL = "UPDATE tblEDI_App_Subscr " & _
+                    "Set tblEDI_App_Subscr.RateID = tblRates.RateID " & _
+                    "FROM tblEDI_App_Subscr INNER JOIN tblRates ON tblEDI_App_Subscr.CoverID = tblRates.CoverID " & _
+                    "AND tblEDI_App_Subscr.PlanID = tblRates.PlanID " & _
+                    "AND tblEDI_App_Subscr.SubGroupID = tblRates.GroupID AND tblEDI_App_Subscr.SubStatus <> 'INDIV' "
+        ExecuteSQL strSQL
+        
+        'process the deletes
+        '
+        'clear out tblEDI_App_Subscr_delete
+        ExecuteSQL "DELETE FROM tblEDI_App_Subscr_delete"
+        'use a querydef to move the deletes into tblEDI_App_Subscr_delete
+        DoCmd.OpenQuery "qappOnlineEnrollment_Sub_delete"
+        
+        'update fields from tblSubscr esp SubID for non BEXHM groups
+        strSQL = "UPDATE tblEDI_App_Subscr_delete  SET tblEDI_App_Subscr_delete.SubID = tblSubscr.SubID, " & _
+                "tblEDI_App_Subscr_delete.SubCardPrt = tblSubscr.SUBcardPRT,  " & _
+                "tblEDI_App_Subscr_delete.SubCardPrtDte = tblSubscr.SUBcardPRTdte, " & _
+                "tblEDI_App_Subscr_delete.SubNotes = tblSubscr.SUBnotes " & _
+                "FROM tblEDI_App_Subscr_delete INNER JOIN " & _
+                "tblSubscr ON tblEDI_App_Subscr_delete.SubSSN = tblSubscr.SubSSN"
+
+        ExecuteSQL strSQL
+        
+        'update fields from tblSubscr_Bexar esp SubID for BEXHM
+        strSQL = "UPDATE tblEDI_App_Subscr_delete  SET tblEDI_App_Subscr_delete.SubID = tblSubscr_Bexar.SubID, " & _
+                "tblEDI_App_Subscr_delete.SubCardPrt = tblSubscr_Bexar.SUBcardPRT,  " & _
+                "tblEDI_App_Subscr_delete.SubCardPrtDte = tblSubscr_Bexar.SUBcardPRTdte, " & _
+                "tblEDI_App_Subscr_delete.SubNotes = tblSubscr_Bexar.SUBnotes " & _
+                "FROM tblEDI_App_Subscr_delete INNER JOIN " & _
+                "tblSubscr_Bexar ON tblEDI_App_Subscr_delete.SubSSN = tblSubscr_Bexar.SubSSN"
+        ExecuteSQL strSQL
+        
+        'if no SubID, t-type = deleted, and all groups except BEXHM
+        'then delete records from temporary table
+        'strSQL = "DELETE FROM tblEDI_App_Subscr_delete " & _
+                    "WHERE (SubID IS NULL) " & _
+                    "AND (TransactionType = 'Deleted') " & _
+                    "AND (SubGroupID <> 'BEXHM')"
+        'ExecuteSQL strSQL
+        
+        'if no SubID, t-type = deleted, and group = BEXHM
+        'then delete records from temporary table
+        'strSQL = "DELETE FROM tblEDI_App_Subscr_delete " & _
+                    "WHERE (SubID IS NULL) " & _
+                    "AND (TransactionType = 'Deleted') " & _
+                    "AND (SubGroupID = 'BEXHM')"
+        'ExecuteSQL strSQL
+        
+        'assign subscriber id to any subscriber who does not have one
+        Call PopulateEDISubIDs
+       
+'    End If
+    
+    ' process dependents
+
+        ' clean junk out of temp table
+        ExecuteSQL "DELETE " & _
+                   "FROM tblDependent_temp " & _
+                   "WHERE (((tblDependent_temp.SubSSN) Is Null));"
+        'purge next temp table
+        ExecuteSQL ("DELETE FROM tblEDI_App_Dep")
+        'move data from tblDependent_temp to tblEDI_App_Dep
+        'for dependents whose subscribers have been Added or Changed
+        DoCmd.OpenQuery "qappOnlineEnrollment_Dep"
+        'move data from tblDependent_temp to tblDependent_delete
+        'for dependents whose subscribers have been Deleted
+        DoCmd.OpenQuery "qappOnlineEnrollment_Dep_delete"
+        
+        ' Try to add any missing Coverage IDs here
+        strSQL = "UPDATE tblEDI_App_Subscr SET CoverID = 1 WHERE SubID IN (SELECT SubID FROM dbo.tblEDI_App_Subscr WHERE SubNoDepent = 0 AND CoverID IS NULL )"
+        ExecuteSQL strSQL
+        strSQL = "UPDATE tblEDI_App_Subscr SET CoverID = 2 WHERE SubID IN (SELECT SubID FROM dbo.tblEDI_App_Subscr s INNER JOIN tblEDI_App_Dep d ON s.SubSSN = d.DepSubID WHERE s.SubNoDepent = 1 AND d.DepRelationship = 'S' AND s.CoverID IS NULL)"
+        ExecuteSQL strSQL
+        strSQL = "UPDATE tblEDI_App_Subscr SET CoverID = 3 WHERE SubID IN (SELECT SubID FROM dbo.tblEDI_App_Subscr s INNER JOIN tblEDI_App_Dep d ON s.SubSSN = d.DepSubID WHERE s.SubNoDepent = 1 AND d.DepRelationship = 'C' AND s.CoverID IS NULL)"
+        ExecuteSQL strSQL
+        strSQL = "UPDATE tblEDI_App_Subscr SET CoverID = 4 WHERE SubID IN (SELECT SubID FROM dbo.tblEDI_App_Subscr s INNER JOIN tblEDI_App_Dep d ON s.SubSSN = d.DepSubID WHERE s.SubNoDepent > 1 AND d.DepRelationship = 'S' AND s.CoverID IS NULL)"
+        ExecuteSQL strSQL
+        strSQL = "UPDATE tblEDI_App_Subscr SET CoverID = 3 WHERE SubID IN (SELECT SubID FROM dbo.tblEDI_App_Subscr s INNER JOIN tblEDI_App_Dep d ON s.SubSSN = d.DepSubID WHERE s.SubNoDepent > 1 AND d.DepRelationship = 'C' AND s.CoverID IS NULL AND s.SubID NOT IN (SELECT SubID FROM dbo.tblEDI_App_Subscr s INNER JOIN tblEDI_App_Dep d ON s.SubSSN = d.DepSubID WHERE s.SubNoDepent > 1 AND d.DepRelationship = 'S'))"
+        ExecuteSQL strSQL
+        
+        
+        fRateCheck = RateCheck()
+        If fRateCheck Then 'check to see if we have enough rate id's
+            'Nothing
+        Else
+            
+            DoCmd.SetWarnings True
+            DoCmd.Hourglass False
+            MsgBox "You are missing GroupID or Coverage id's on some records in the downlaod!  Please check the Subscribers to fix the issues.", vbExclamation, "Process Online Enrollment"
+'
+'            Err.Raise 1, "Process Online Enrollment", "You do not have the rate id's in the database to process the download!  Run the rate report."
+'            GoTo Err_ProcessOnlineEnrollment_Click
+        End If
+        
+        ' Add the Coverage Description for the Export
+        strSQL = "EXEC uspAddCoverDesc"
+        ExecuteSQL strSQL
+
+
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+    fResult = True
+    ProcessOnlineEnrollment = fResult
+
+Exit_ProcessOnlineEnrollment_Click:
+    Exit Function
+
+Err_ProcessOnlineEnrollment_Click:
+    ProcessOnlineEnrollment = fResult
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    MsgBox Err.DESCRIPTION
+    Resume Next
+    GoTo Exit_ProcessOnlineEnrollment_Click
+    
+End Function
+
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+    DoCmd.Restore
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+
+
+Private Sub cmdResetTables_Click()
+    
+    ExecuteSQL "DELETE FROM tblEDI_App_Subscr"
+    ExecuteSQL "DELETE FROM tblEDI_App_Dep"
+
+    ExecuteSQL "DELETE FROM tblEDI_App_Subscr_delete"
+    With Me
+        .fsubDwnDetail.Controls("tblEDI_App_Subscr_d").Requery
+        .fsubDwnDetail.Controls("tblEDI_Dep_Import_d").Requery
+        .txtStatus = "Ready"
+    End With
+    
+    MsgBox "The download tables have been cleared.", vbInformation, "Cleared"
+    
+End Sub
+
+'Private Sub cmdViewDeps_Click()
+'On Error GoTo Err_cmdViewSubs_Click
+'
+'
+'    DoCmd.OpenTable "tblEDI_App_Dep", acViewNormal, acEdit
+'
+'Exit_cmdViewSubs_Click:
+'    Exit Sub
+'
+'Err_cmdViewSubs_Click:
+'    MsgBox Err.DESCRIPTION
+'    Resume Exit_cmdViewSubs_Click
+'
+'End Sub
+
+'Private Sub Form_Open(Cancel As Integer)
+'
+'    On Error GoTo PROC_ERR
+'
+''    With Me
+''        .txtMainFile = ""
+''        .txtDependentFile = ""
+''        .txtStatus = ""
+''        .txtStatusDataImport = ""
+''    End With
+'
+'PROC_EXIT:
+'    Exit Sub
+'
+'PROC_ERR:
+'    MsgBox Err.DESCRIPTION
+'    Resume PROC_EXIT
+'
+'
+'End Sub
+'Private Sub cmdViewSubs_Click()
+'On Error GoTo Err_cmdViewSubs_Click
+'
+'
+'    DoCmd.OpenTable "tblEDI_App_Subscr", acViewNormal, acEdit
+'
+'Exit_cmdViewSubs_Click:
+'    Exit Sub
+'
+'Err_cmdViewSubs_Click:
+'    MsgBox Err.DESCRIPTION
+'    Resume Exit_cmdViewSubs_Click
+'
+'End Sub
+
+
+Public Sub LoadMainSubform(ByVal sFormName As String, ByVal fLogNav As Boolean)
+    On Error GoTo Err_Handler
+    
+    Dim lngHeadFoot As Long
+    Dim lngObjWidth As Long
+    Dim lngObjHeight As Long
+    
+    ' Turn off screen painting to hide flashing of controls, etc.
+    DoCmd.Echo False
+
+    ' Handle the case where the supplied form name is missing.
+    If sFormName = "" Then sFormName = "fsubDwnDetail"
+    
+    ' Update the navigation object with the new page, unless
+    ' the LogNav flag is set to False.
+'    If fLogNav = True Then m_objNav.AddNavPage sFormName
+
+    ' Determine the client area of the detail section, based on the Window
+    ' size (InsideWidth and InsideHeight)  Subform consumes entire area, with
+    ' the exception of the Header and Footer area.
+    lngObjWidth = (Me.InsideWidth - (cGap * 2))
+
+    lngHeadFoot = Me.Section(acHeader).Height + Me.Section(acFooter).Height
+    lngObjHeight = Me.InsideHeight - (lngHeadFoot + (cGap * 2))
+
+    ' Set the header and footer control sizes and location.
+    'Me!imgLogo.Left = lngObjWidth - Me!imgLogo.Width + (cGap * 2)
+    'Me!lblFooterMessage.Width = lngObjWidth
+    'gstrFilter = Forms![frmOnlineEnrollmentProcessing]!Targets2.Form.Filter
+    ' Set the subform object size, location and source object properties.
+    
+    Debug.Print "lngObjWidth " & lngObjWidth
+    With Me
+        .boxIdv.Left = lngObjWidth - 6400
+        .boxIdv.Top = 0.24 * 1450
+        .boxIdv.Width = 2 * 1500
+        .boxIdv.Height = 2.0833 * 1500
+        
+        .cmdProcessIndv.Left = lngObjWidth - 6000
+        .cmdProcessIndv.Top = 0.7083 * 1500
+        .cmdProcessIndv.Width = 1.5 * 1500
+        .cmdProcessIndv.Height = 0.2917 * 1500
+        
+        .cmdProcessIndvAdd.Left = lngObjWidth - 6000
+        .cmdProcessIndvAdd.Top = 1.0313 * 1500
+        .cmdProcessIndvAdd.Width = 1.5 * 1500
+        .cmdProcessIndvAdd.Height = 0.29173 * 1500
+        
+        .cmdPrintPDFs.Left = lngObjWidth - 6000
+        .cmdPrintPDFs.Top = 2 * 1500
+        .cmdPrintPDFs.Width = 1.5 * 1500
+        .cmdPrintPDFs.Height = 0.2917 * 1500
+        
+        .lblIndv.Left = lngObjWidth - 6000
+        .lblIndv.Top = 0.3 * 1500
+        .lblIndv.Width = 1.5 * 1500
+        .lblIndv.Height = 0.3 * 1500
+        
+        .cmdClose.Left = lngObjWidth - 2000
+        .cmdClose.Top = 0.15 * 1500
+        .cmdClose.Width = 0.5 * 1500
+        .cmdClose.Height = 0.3 * 1500
+        
+        .cmdPrintIndivImportReport.Left = lngObjWidth - 6000
+        .cmdPrintIndivImportReport.Top = 1.3542 * 1500
+        .cmdPrintIndivImportReport.Width = 1.5 * 1500
+        .cmdPrintIndivImportReport.Height = 0.2917 * 1500
+        
+        .cmdPrintIndivImportDetailReport.Left = lngObjWidth - 6000
+        .cmdPrintIndivImportDetailReport.Top = 1.677 * 1500
+        .cmdPrintIndivImportDetailReport.Width = 1.5 * 1500
+        .cmdPrintIndivImportDetailReport.Height = 0.2917 * 1500
+    End With
+    
+    'Me!fsubDwnDetail.Top = cGap
+    'Me!fsubDwnDetail.Left = cGap
+    Me!fsubDwnDetail.Width = lngObjWidth
+    Me!fsubDwnDetail.Height = lngObjHeight - 50
+    Me!fsubDwnDetail.SourceObject = sFormName
+    
+    Me.fsubDwnDetail.Controls("tabSub").Width = lngObjWidth - 100
+    Me.fsubDwnDetail.Controls("tabSub").Height = lngObjHeight - 500
+    
+    Me.fsubDwnDetail.Controls("tblEDI_App_Subscr_d").Width = lngObjWidth - 300
+    Me.fsubDwnDetail.Controls("tblEDI_App_Subscr_d").Height = lngObjHeight - 550
+    
+    Me.fsubDwnDetail.Controls("tblEDI_Dep_Import_d").Width = lngObjWidth - 300
+    Me.fsubDwnDetail.Controls("tblEDI_Dep_Import_d").Height = lngObjHeight - 550
+    
+'    Me.boxIdv.Move Left:=lngObjWidth - 6400, Top:=0.24 * 1500, Width:=2 * 1500, Height:=2.0833 * 1500
+'    Me.cmdProcessIndv.Move Left:=lngObjWidth - 6000, Top:=0.7083 * 1500, Width:=1.5 * 1500, Height:=0.2917 * 1500
+'    Me.cmdProcessIndvAdd.Move Left:=lngObjWidth - 6000, Top:=1.0313 * 1500, Width:=1.5 * 1500, Height:=0.2917 * 1500
+'    Me.cmdPrintPDFs.Move Left:=lngObjWidth - 6000, Top:=1.5833 * 1500, Width:=1.5 * 1500, Height:=0.2917 * 1500
+'    Me.lblIndv.Move Left:=lngObjWidth - 6000, Top:=0.3 * 1500, Width:=1.5 * 1500, Height:=0.3 * 1500
+'
+'    Me.cmdClose.Move Left:=lngObjWidth - 2000, Top:=0.15 * 1500, Width:=0.5 * 1500, Height:=0.3 * 1500
+'    Me.cmdPrintIndivImportReport.Move Left:=lngObjWidth - 6000, Top:=1.3542 * 1500, Width:=1.5 * 1500, Height:=0.2917 * 1500
+'    Me.cmdPrintIndivImportDetailReport.Move Left:=lngObjWidth - 6000, Top:=1.6771 * 1500, Width:=1.5 * 1500, Height:=0.2917 * 1500
+'
+'    Me.cmdPrintPDFs.Move Left:=lngObjWidth - 6000, Top:=2 * 1500, Width:=1.5 * 1500, Height:=0.2917 * 1500
+    
+    Debug.Print "Box left " & Me.boxIdv.Left
+'    Me.fsubDwnDetail.Controls("boxIdv").Left = lngObjWidth - 300 6.875
+    'Me.cmdProcessIndv.Left = lngObjWidth - 300
+    
+    
+    ' Call
+    'g_lngResult = Me!Targets2.Form.ResizeControls(lngObjWidth, lngObjHeight)
+
+Exit_Here:
+    DoCmd.SetWarnings True
+    DoCmd.Echo True
+    Exit Sub
+Err_Handler:
+    'MsgBox Err.Description, vbCritical
+    Resume Next
+End Sub
+
+Public Function RefreshMain() As Boolean
+    On Error GoTo Err_Handler
+
+    Dim strCurrentForm As String
+    'gstrFilter = Forms![frmOnlineEnrollmentProcessing]!fsubDwnDetail.Form.Filter
+    strCurrentForm = Me!fsubDwnDetail.SourceObject
+    Call LoadMainSubform(strCurrentForm, False)
+
+Exit_Here:
+    Exit Function
+Err_Handler:
+    'MsgBox Err.description, vbCritical
+    Resume Next
+End Function
+
+Private Sub Form_Filter(Cancel As Integer, FilterType As Integer)
+    'gstrFilter = Forms![frmOnlineEnrollmentProcessing]!fsubDwnDetail.Form.Filter
+End Sub
+
+Private Sub Form_Load()
+    DoCmd.Maximize
+    Call RefreshMain
+End Sub
+
+
+Private Sub Form_Resize()
+    Call RefreshMain
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+DoCmd.Restore
+End Sub
+
+Private Sub cmdSubscribers_Click()
+On Error GoTo Err_cmdSubscribers_Click
+
+    Dim stDocName As String
+
+    stDocName = "subscrber_web"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_cmdSubscribers_Click:
+    Exit Sub
+
+Err_cmdSubscribers_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdSubscribers_Click
+    
+End Sub
+Private Sub cmdIndivSubsAll_Click()
+On Error GoTo Err_cmdIndivSubsAll_Click
+
+    Dim stDocName As String
+
+    stDocName = "Indiv_Subscribers_Web"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_cmdIndivSubsAll_Click:
+    Exit Sub
+
+Err_cmdIndivSubsAll_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdIndivSubsAll_Click
+    
+End Sub
+Private Sub cmdIndivOnlineEnrollment_Click()
+On Error GoTo Err_cmdIndivOnlineEnrollment_Click
+
+    Dim stDocName As String
+
+    stDocName = "Indiv_Subscribers_Web_Online_Enrollment"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_cmdIndivOnlineEnrollment_Click:
+    Exit Sub
+
+Err_cmdIndivOnlineEnrollment_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdIndivOnlineEnrollment_Click
+    
+End Sub
+Private Sub cmdDependents_Web_Click()
+On Error GoTo Err_cmdDependents_Web_Click
+
+    Dim stDocName As String
+
+    stDocName = "Dependents_Web"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_cmdDependents_Web_Click:
+    Exit Sub
+
+Err_cmdDependents_Web_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdDependents_Web_Click
+    
+End Sub
+Private Sub cmdDependentsOnlineEnrollment_Click()
+On Error GoTo Err_cmdDependentsOnlineEnrollment_Click
+
+    Dim stDocName As String
+
+    stDocName = "Dependents_Web_Online_Online_Enrollment"
+    DoCmd.OpenQuery stDocName, acNormal, acEdit
+
+Exit_cmdDependentsOnlineEnrollment_Click:
+    Exit Sub
+
+Err_cmdDependentsOnlineEnrollment_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdDependentsOnlineEnrollment_Click
+    
+End Sub
+Private Sub Command56_Click()
+On Error GoTo Err_Command56_Click
+
+    Dim stDialStr As String
+    Dim PrevCtl As Control
+    Const ERR_OBJNOTEXIST = 2467
+    Const ERR_OBJNOTSET = 91
+    Const ERR_CANTMOVE = 2483
+
+    Set PrevCtl = Screen.PreviousControl
+    
+    If TypeOf PrevCtl Is TextBox Then
+      stDialStr = IIf(VarType(PrevCtl) > V_NULL, PrevCtl, "")
+    ElseIf TypeOf PrevCtl Is ListBox Then
+      stDialStr = IIf(VarType(PrevCtl) > V_NULL, PrevCtl, "")
+    ElseIf TypeOf PrevCtl Is ComboBox Then
+      stDialStr = IIf(VarType(PrevCtl) > V_NULL, PrevCtl, "")
+    Else
+      stDialStr = ""
+    End If
+    
+    Application.Run "utility.wlib_AutoDial", stDialStr
+
+Exit_Command56_Click:
+    Exit Sub
+
+Err_Command56_Click:
+    If (Err = ERR_OBJNOTEXIST) Or (Err = ERR_OBJNOTSET) Or (Err = ERR_CANTMOVE) Then
+      Resume Next
+    End If
+    MsgBox Err.DESCRIPTION
+    Resume Exit_Command56_Click
+    
+End Sub

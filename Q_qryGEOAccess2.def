@@ -1,0 +1,48 @@
+Operation =3
+Name ="tblqcdtxpr2"
+Option =8
+Where ="(([tbldentist].DENTprosp=\"A\"))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Name ="DENTid"
+    Expression ="[tbldentist].DENTid"
+    Alias ="Zip"
+    Name ="Zip"
+    Expression ="[tbldentist].DENTzip"
+    Alias ="Spec"
+    Name ="Spec"
+    Expression ="[tbldentist].DENTspecialty"
+End
+Begin OrderBy
+    Expression ="[tbldentist].DENTid"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =518
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =649
+    Begin
+        Left =38
+        Top =6
+        Right =228
+        Bottom =118
+        Top =0
+        Name ="t-DENTIST"
+        Name =""
+    End
+End

@@ -1,0 +1,43 @@
+Operation =4
+Option =0
+Where ="(((tblSubscr.SubStatus)=\"INDIV\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="tblSubscr.PlanID"
+    Expression ="5"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =712
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =240
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =324
+        Top =2
+        Right =513
+        Bottom =184
+        Top =47
+        Name ="tblSubscr"
+        Name =""
+    End
+End

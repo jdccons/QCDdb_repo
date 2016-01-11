@@ -1,0 +1,147 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.SUBgroupID)=\"CARFB\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblCoverage"
+    Name ="tblDependent"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Alias ="SSN"
+    Expression ="tblSubscr.SUBssn"
+    Alias ="SUBSCRIBER NAME"
+    Expression ="tblSubscr.SUB_LUname"
+    Alias ="EFF DATE"
+    Expression ="tblSubscr.SUBeffDATE"
+    Alias ="RATE"
+    Expression ="tblRates.Rate"
+    Alias ="COVERAGE"
+    Expression ="tblCoverage.COVERdescr"
+    Alias ="DEP COUNT"
+    Expression ="tblSubscr.SUBnoDEPENT"
+    Alias ="DEPENDENT NAME"
+    Expression ="IIf(IsNull([DEPfirstNAME]),\"\",[DEPfirstNAME])+\" \"+IIf(IsNull([DEPmiddleNAME]"
+        "),\"\",[DEPmiddleNAME])+\" \"+IIf(IsNull([DEPlastNAME]),\"\",[DEPlastNAME])"
+    Alias ="TYPE OF CHANGE"
+    Expression ="\"\""
+    Alias ="CHANGED INFORMATION"
+    Expression ="\"\""
+    Expression ="tblSubscr.SUBgroupID"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Flag =2
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =2
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUB_LUname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="RATE"
+        dbInteger "ColumnWidth" ="660"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="COVERAGE"
+        dbInteger "ColumnWidth" ="2145"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBSCRIBER NAME"
+        dbInteger "ColumnWidth" ="2910"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="DEPENDENT NAME"
+        dbInteger "ColumnWidth" ="2325"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="DEP COUNT"
+        dbInteger "ColumnWidth" ="1275"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EFF DATE"
+        dbInteger "ColumnWidth" ="1695"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="TYPE OF CHANGE"
+        dbInteger "ColumnWidth" ="1710"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="CHANGED INFORMATION"
+        dbInteger "ColumnWidth" ="3120"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =62
+    Top =42
+    Right =1075
+    Bottom =481
+    Left =-1
+    Top =-1
+    Right =1006
+    Bottom =266
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =152
+        Bottom =221
+        Top =46
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =468
+        Top =34
+        Right =588
+        Bottom =129
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =101
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+    Begin
+        Left =669
+        Top =76
+        Right =765
+        Bottom =186
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

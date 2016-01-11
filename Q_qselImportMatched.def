@@ -1,0 +1,121 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblImportGroupTemp"
+    Name ="tblSubscr"
+    Name ="tblCoverage"
+End
+Begin OutputColumns
+    Expression ="tblImportGroupTemp.ID"
+    Expression ="tblImportGroupTemp.GroupID"
+    Expression ="tblImportGroupTemp.PlanId"
+    Expression ="tblImportGroupTemp.SSN"
+    Expression ="tblImportGroupTemp.LastName"
+    Expression ="tblImportGroupTemp.FirstName"
+    Expression ="tblImportGroupTemp.MiddleInit"
+    Expression ="tblImportGroupTemp.StreetAddress"
+    Expression ="tblImportGroupTemp.StreetAddress2"
+    Expression ="tblImportGroupTemp.City"
+    Expression ="tblImportGroupTemp.State"
+    Expression ="tblImportGroupTemp.ZipCode"
+    Expression ="tblImportGroupTemp.Phone"
+    Expression ="tblImportGroupTemp.DOB"
+    Expression ="tblImportGroupTemp.CoverageId"
+    Expression ="tblImportGroupTemp.CoverageRate"
+    Expression ="tblImportGroupTemp.EffectiveDate"
+    Expression ="tblImportGroupTemp.Dependents"
+    Expression ="tblImportGroupTemp.PrintRecords"
+    Expression ="tblImportGroupTemp.Changed"
+    Expression ="tblImportGroupTemp.New"
+End
+Begin Joins
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.SSN = tblSubscr.SUBssn"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.FirstName = tblSubscr.SUBfirstNAME"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.LastName = tblSubscr.SUBlastNAME"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.StreetAddress = tblSubscr.SUBstreet1"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.City = tblSubscr.SUBcity"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.State = tblSubscr.SUBstate"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.ZipCode = tblSubscr.SUBzip"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblSubscr"
+    Expression ="tblImportGroupTemp.GroupID = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblCoverage"
+    Expression ="tblImportGroupTemp.CoverageId = tblCoverage.COVERcode"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =7
+    Top =36
+    Right =1109
+    Bottom =550
+    Left =-1
+    Top =-1
+    Right =1095
+    Bottom =321
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =54
+        Top =7
+        Right =285
+        Bottom =282
+        Top =5
+        Name ="tblImportGroupTemp"
+        Name =""
+    End
+    Begin
+        Left =360
+        Top =8
+        Right =683
+        Bottom =268
+        Top =33
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =776
+        Top =62
+        Right =920
+        Bottom =192
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+End

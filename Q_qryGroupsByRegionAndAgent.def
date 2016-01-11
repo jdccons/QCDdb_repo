@@ -1,0 +1,94 @@
+Operation =1
+Option =0
+Where ="(((tblAgent.AGENTid)<>\"CORPT\") AND ((tblGrp.GRcancelled)=False) AND ((tblGrp.G"
+    "roupType)=4) AND ((tblAgent.PayCommTo)<>4))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblGrpAgt"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AGENCY"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpAgt"
+    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Flag =1
+    LeftTable ="tblGrpAgt"
+    RightTable ="tblAgent"
+    Expression ="tblGrpAgt.AGENTid = tblAgent.AGENTid"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblGrp.GRPgeoID"
+    Flag =0
+    Expression ="tblAgent.AGENTid"
+    Flag =0
+    Expression ="tblAgent.PayCommTo"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="4590"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENCY"
+        dbInteger "ColumnWidth" ="4080"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1440
+    Bottom =776
+    Left =-1
+    Top =-1
+    Right =1433
+    Bottom =220
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =260
+        Bottom =153
+        Top =4
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =359
+        Top =5
+        Right =588
+        Bottom =148
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+    Begin
+        Left =674
+        Top =9
+        Right =1015
+        Bottom =169
+        Top =18
+        Name ="tblAgent"
+        Name =""
+    End
+End

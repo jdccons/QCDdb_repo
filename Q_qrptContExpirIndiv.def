@@ -1,0 +1,40 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.SUBcancelled)<>3) AND ((tblSubscr.SUBstatus)=\"INDIV\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.*"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =66
+    Right =1002
+    Bottom =379
+    Left =-1
+    Top =-1
+    Right =977
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =182
+        Bottom =105
+        Top =38
+        Name ="tblSubscr"
+        Name =""
+    End
+End

@@ -1,0 +1,179 @@
+Version =20
+VersionRequired =20
+Checksum =-147043363
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =10785
+    ItemSuffix =11
+    Left =390
+    Top =1110
+    Right =11115
+    Bottom =6510
+    RecSrcDt = Begin
+        0x4ad1543bd4c5e140
+    End
+    Caption ="Compare Agents in Platinum to Access"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000a0050000d0020000a005000000000000212a0000fb04000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f4040377000601000100ea0a6f08640001000f01580201000100 ,
+        0x5802040001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    OnDeactivate ="[Event Procedure]"
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin PageHeader
+            Height =510
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextFontFamily =34
+                    Width =5280
+                    Height =480
+                    FontSize =14
+                    Name ="Text9"
+                    Caption ="Agents in Access - Not in Platinum"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =5490
+                    Width =5280
+                    Height =480
+                    FontSize =14
+                    Name ="Text10"
+                    Caption ="Agents in Platinum - Not in Access"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =1275
+            Name ="Detail1"
+            Begin
+                Begin Subform
+                    Top =15
+                    Width =5250
+                    Height =1170
+                    Name ="Embedded0"
+                    SourceObject ="Report.rsubAgentCompareAccess"
+                End
+                Begin Subform
+                    Left =5475
+                    Width =5295
+                    Height =1215
+                    TabIndex =1
+                    Name ="Embedded2"
+                    SourceObject ="Report.rsubAgentComparePlt"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    Left =8640
+                    Top =30
+                    Width =2040
+                    Height =255
+                    Name ="Field7"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Report_Deactivate()
+  On Error GoTo PROC_ERR
+   Forms![fmnuSwitchboard].Visible = True
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

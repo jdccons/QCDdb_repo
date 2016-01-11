@@ -1,0 +1,331 @@
+Version =19
+VersionRequired =19
+Checksum =-758038032
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    RecordLocks =2
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =9360
+    DatasheetFontHeight =10
+    ItemSuffix =18
+    Left =930
+    Top =270
+    Right =11460
+    Bottom =6750
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xbc2cd899aecde240
+    End
+    RecordSource ="qrptCheckRegister"
+    Caption ="Check Register"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000902400004a01000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x5c5c4143545345525645525c4850343035300000000000000000000000000000 ,
+        0x010400059c00340243ff800701000100ea0a6f08640001000f00580201000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200000034020000ea7157490000000000000000000000000000000000000000 ,
+        0x00000000000000000d0000000100000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002600010077696e73706f6f6c00005c5c4143545345525645525c4850 ,
+        0x343035300000506f7274000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            ControlSource ="CheckDate"
+        End
+        Begin BreakLevel
+            ControlSource ="CheckNumber"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =945
+            Name ="ReportHeader"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    Left =60
+                    Top =60
+                    Width =2940
+                    Height =525
+                    FontSize =20
+                    Name ="Label10"
+                    Caption ="Check Register"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =435
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    Left =60
+                    Top =60
+                    Width =885
+                    Height =315
+                    Name ="Chkno Label"
+                    Caption ="Chk No"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Chkno_Label"
+                End
+                Begin Label
+                    Left =1005
+                    Top =60
+                    Width =1185
+                    Height =315
+                    Name ="Vendkey Label"
+                    Caption ="Vendor Key"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Vendkey_Label"
+                End
+                Begin Label
+                    Left =2250
+                    Top =60
+                    Width =2310
+                    Height =315
+                    Name ="Vendname Label"
+                    Caption ="Vendor"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Vendname_Label"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =4620
+                    Top =60
+                    Width =2310
+                    Height =315
+                    Name ="Chkamt Label"
+                    Caption ="Check Amount"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Chkamt_Label"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =6960
+                    Top =60
+                    Width =1140
+                    Height =300
+                    Name ="Chkdate Label"
+                    Caption ="Check Date"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Chkdate_Label"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =60
+                    Top =375
+                    Width =8040
+                    Name ="Line13"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =330
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    Left =60
+                    Top =60
+                    Width =885
+                    Height =270
+                    Name ="Chkno"
+                    ControlSource ="CheckNumber"
+                End
+                Begin TextBox
+                    Left =1005
+                    Top =60
+                    Width =1185
+                    Height =270
+                    TabIndex =1
+                    Name ="Vendkey"
+                    ControlSource ="VendorKey"
+                End
+                Begin TextBox
+                    Left =2250
+                    Top =60
+                    Width =2310
+                    Height =270
+                    ColumnWidth =3525
+                    TabIndex =2
+                    Name ="Vendname"
+                    ControlSource ="VendorName"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =4620
+                    Top =60
+                    Width =2310
+                    Height =270
+                    TabIndex =3
+                    Name ="Chkamt"
+                    ControlSource ="CheckAmt"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    Left =6990
+                    Top =60
+                    Width =1110
+                    Height =270
+                    TabIndex =4
+                    Name ="Chkdate"
+                    ControlSource ="CheckDate"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =540
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Top =240
+                    Width =4560
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text11"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =4740
+                    Top =240
+                    Width =4560
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text12"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    BorderWidth =3
+                    Left =60
+                    Top =240
+                    Width =9240
+                    BorderColor =12632256
+                    Name ="Line14"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =480
+            Name ="ReportFooter"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =4680
+                    Top =180
+                    Width =2310
+                    Height =255
+                    Name ="totCheckAmt"
+                    ControlSource ="=Sum([CheckAmt])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Label
+                    Left =4080
+                    Top =180
+                    Width =555
+                    Height =270
+                    Name ="Label16"
+                    Caption ="Total"
+                End
+                Begin Line
+                    Left =4680
+                    Top =120
+                    Width =2280
+                    Name ="Line17"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database

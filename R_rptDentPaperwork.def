@@ -1,0 +1,266 @@
+Version =17
+VersionRequired =17
+Checksum =1333484868
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =10803
+    ItemSuffix =34
+    Left =795
+    Top =720
+    Right =11520
+    Bottom =6510
+    RecSrcDt = Begin
+        0x9f93b72155f8e140
+    End
+    RecordSource ="qrptDentPaperwork"
+    Caption ="Dentist - Incomplete Paperwork"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xf8010000d0020000f8010000d002000000000000332a0000d002000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574205365726965732049490000000000000000000000 ,
+        0x00040104940040000367000401000100000000000000010001002c0101000100 ,
+        0x2c01020000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d53554403034850 ,
+        0x204c617365724a65742053657269657320494900000000000000000000008001 ,
+        0x000000000000000000000000000064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011002700010077696e73706f6f6c004850204c617365724a657420536572 ,
+        0x696573204949005c5c4e545345525645525c5449204d6963726f000000000000 ,
+        0x000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin PageHeader
+            Height =1200
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Width =10803
+                    Height =360
+                    FontSize =14
+                    Name ="Text13"
+                    Caption ="QCD of America"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =480
+                    Width =10803
+                    Height =360
+                    FontSize =14
+                    Name ="Text0"
+                    Caption ="Dentist - Incomplete Paperwork"
+                End
+                Begin TextBox
+                    Top =600
+                    Width =1836
+                    Name ="date"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                End
+                Begin Line
+                    Top =960
+                    Width =10803
+                    Name ="Line26"
+                End
+                Begin Line
+                    Top =1080
+                    Width =10803
+                    Name ="Line27"
+                End
+                Begin Line
+                    Width =10803
+                    Name ="Line28"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =720
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    Left =3600
+                    Top =120
+                    Width =1584
+                    Name ="DENTcity"
+                    ControlSource ="DENTcity"
+                End
+                Begin TextBox
+                    Left =6048
+                    Top =120
+                    Width =1584
+                    TabIndex =1
+                    Name ="DENTphoneOFFICE"
+                    ControlSource ="DENTphoneOFFICE"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =4176
+                    Top =360
+                    Width =285
+                    TabIndex =2
+                    Name ="DENTagree"
+                    ControlSource ="DENTagree"
+                    Format ="Yes/No"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =3168
+                    Top =360
+                    Width =999
+                    Height =240
+                    Name ="Text14"
+                    Caption ="Affil. agree."
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =4752
+                    Top =360
+                    Width =999
+                    Height =240
+                    Name ="Text15"
+                    Caption ="Board Cert."
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =5760
+                    Top =360
+                    Width =285
+                    TabIndex =3
+                    Name ="DENTstCERT"
+                    ControlSource ="DENTstCERT"
+                    Format ="Yes/No"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =6336
+                    Top =360
+                    Width =999
+                    Height =240
+                    Name ="Text17"
+                    Caption ="Liability Ins."
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =7344
+                    Top =360
+                    Width =285
+                    TabIndex =4
+                    Name ="DENTins"
+                    ControlSource ="DENTins"
+                    Format ="Yes/No"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =7923
+                    Top =360
+                    Width =1290
+                    Height =225
+                    Name ="Text20"
+                    Caption ="Substance Cert."
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =9216
+                    Top =360
+                    Width =285
+                    TabIndex =5
+                    Name ="DENTsubCERT"
+                    ControlSource ="DENTsubCERT"
+                    Format ="Yes/No"
+                End
+                Begin TextBox
+                    Left =8640
+                    Top =120
+                    Width =1584
+                    TabIndex =6
+                    Name ="DENTphoneHOME"
+                    ControlSource ="DENTphoneHOME"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin Label
+                    Left =8076
+                    Top =120
+                    Width =555
+                    Height =225
+                    Name ="Text24"
+                    Caption ="Home"
+                End
+                Begin Line
+                    Top =720
+                    Width =10803
+                    Name ="Line25"
+                End
+                Begin TextBox
+                    Top =120
+                    Width =3024
+                    TabIndex =7
+                    Name ="Field29"
+                    ControlSource ="=Trim([DENTlast] & \", \" & [DENTfirst] & \" \" & [DENTmiddleINIT])"
+                End
+                Begin Label
+                    Left =3168
+                    Top =120
+                    Width =420
+                    Height =225
+                    Name ="Text22"
+                    Caption ="City "
+                End
+                Begin Label
+                    Left =5472
+                    Top =120
+                    Width =570
+                    Height =225
+                    Name ="Text30"
+                    Caption ="Office "
+                End
+            End
+        End
+        Begin PageFooter
+            Height =0
+            Name ="PageFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportDent"
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

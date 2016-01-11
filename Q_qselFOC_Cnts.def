@@ -1,0 +1,86 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GroupType) In (2,3)))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="qselFOC_F_Cnts"
+    Name ="qselFOC_I_Cnts"
+    Name ="qselFOC_O_Cnts"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="qselFOC_I_Cnts.RedEES"
+    Expression ="qselFOC_O_Cnts.RedEE1S"
+    Expression ="qselFOC_F_Cnts.RedEEFS"
+    Expression ="tblGrp.GroupType"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="qselFOC_F_Cnts"
+    Expression ="tblGrp.GROUPid = qselFOC_F_Cnts.GROUPid"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="qselFOC_I_Cnts"
+    Expression ="tblGrp.GROUPid = qselFOC_I_Cnts.GROUPid"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="qselFOC_O_Cnts"
+    Expression ="tblGrp.GROUPid = qselFOC_O_Cnts.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =29
+    Top =55
+    Right =949
+    Bottom =530
+    Left =-1
+    Top =-1
+    Right =909
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =171
+        Bottom =105
+        Top =38
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =209
+        Top =6
+        Right =305
+        Bottom =105
+        Top =0
+        Name ="qselFOC_F_Cnts"
+        Name =""
+    End
+    Begin
+        Left =343
+        Top =6
+        Right =439
+        Bottom =105
+        Top =0
+        Name ="qselFOC_I_Cnts"
+        Name =""
+    End
+    Begin
+        Left =477
+        Top =6
+        Right =573
+        Bottom =105
+        Top =0
+        Name ="qselFOC_O_Cnts"
+        Name =""
+    End
+End

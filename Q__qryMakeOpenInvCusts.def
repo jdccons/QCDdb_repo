@@ -1,0 +1,47 @@
+Operation =3
+Name ="tblMakeOpenInvCusts"
+Option =8
+Having ="(((Sum(ARTRAN.Docamt))>0))"
+Begin InputTables
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Name ="Custkey"
+    Expression ="ARTRAN.Custkey"
+End
+Begin Groups
+    Expression ="ARTRAN.Custkey"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+    Begin
+        dbText "Name" ="ARCUST.Customer_Name"
+        dbInteger "ColumnWidth" ="3300"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =490
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =39
+        Top =5
+        Right =197
+        Bottom =117
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+End

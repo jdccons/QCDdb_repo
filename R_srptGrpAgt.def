@@ -1,0 +1,178 @@
+Version =17
+VersionRequired =17
+Checksum =-495017055
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4797
+    DatasheetFontHeight =10
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x6d4d578e669fe240
+    End
+    RecordSource ="qryGrpAgt"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4163726f6261742044697374696c6c6572000000000000000000000000000000 ,
+        0x010402059c00ec0453ef800101000100ea0a6f08640001000f00b00402000100 ,
+        0xb004030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe230000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000280210005c4b03006843040000000000 ,
+        0x0000000000000000000000000000000000000000000000008583e3ac05000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x2802000045424441000001000100000001000000010000000100000000000000 ,
+        0x650042006f006f006b0000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002300010077696e73706f6f6c004163726f6261742044697374696c6c ,
+        0x657200433a5c446f63756d656e747320616e642053657474696e67735c416c6c ,
+        0x2055736572735c4465736b746f705c2a2e706466000000000000000000000000 ,
+        0x0000000000
+    End
+    Begin
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =330
+            Name ="Detail"
+            Begin
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    TextFontFamily =34
+                    ColumnCount =3
+                    ListWidth =7200
+                    Width =2359
+                    Height =270
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"50\""
+                    Name ="GRagentID1"
+                    ControlSource ="AGENTid"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tblAgent.AGENTid, tblAgent.AGENCY, [AGENTlast] & \", \"+[AGENTfirst] AS ["
+                        "Agent Name] FROM tblAgent WHERE (((tblAgent.AGENTactive)=\"A\")) ORDER BY tblAge"
+                        "nt.AGENCY, [AGENTlast] & \", \"+[AGENTfirst];"
+                    ColumnWidths ="0;3600;3600"
+                    StatusBarText ="Select a primary agent."
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextFontFamily =34
+                    Left =4020
+                    Width =777
+                    Height =270
+                    TabIndex =1
+                    Name ="GRagentRATE1"
+                    ControlSource ="AgentRATE"
+                    Format ="Percent"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    TextFontFamily =34
+                    Left =3240
+                    Width =756
+                    Height =270
+                    TabIndex =2
+                    Name ="txtPriAgentID"
+                    ControlSource ="AGENTid"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    TextFontFamily =34
+                    Left =3300
+                    Width =720
+                    Height =180
+                    TabIndex =3
+                    BackColor =10092543
+                    Name ="txtGROUPid"
+                    ControlSource ="GROUPid"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    TabStop = NotDefault
+                    TextFontFamily =34
+                    Left =2400
+                    Width =426
+                    Height =270
+                    TabIndex =4
+                    Name ="Type"
+                    ControlSource ="PayCommTo"
+                    FontName ="MS Sans Serif"
+                End
+                Begin CheckBox
+                    OldBorderStyle =0
+                    Left =2925
+                    Top =60
+                    Width =270
+                    Height =270
+                    TabIndex =5
+                    Name ="chkPrimary"
+                    ControlSource ="Primary"
+                End
+            End
+        End
+    End
+End

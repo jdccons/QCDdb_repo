@@ -1,0 +1,624 @@
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Global gintSortOrder As Integer
+
+
+Sub test()
+
+    Call PopulateBexarSubIDs
+    
+End Sub
+
+Sub PopulateEDISubIDs()
+    ' Purpose:  Populates the SubID field on tblEDI_App_Subscr
+    '           for all new subscribers who do not have
+    '           a SubID yet
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/22/07
+    ' Update Date:  11/22/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+        
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT tblEDI_App_Subscr.SUBssn, tblEDI_App_Subscr.SubID " & _
+    "FROM tblEDI_App_Subscr " & _
+    "WHERE tblEDI_App_Subscr.SubID Is Null " & _
+    "Order By tblEDI_App_Subscr.SUBssn;"
+    
+    Set rst = db.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        Do While Not rst.EOF
+            rst.Edit
+            rst.Fields("SubID") = AssignSubID()
+            rst.Update
+            rst.MoveNext
+        Loop
+    End If
+    
+    rst.Close
+    Set db = Nothing
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+
+Sub RefreshConnectStrings()
+
+    'this is real old code that is not being used anywhere in the
+    'in the project - it's not even using the current Pervasive OLEDB provider
+    'strConn = "ODBC;DSN=Plantinum for Windows test;ServerName=" & _
+              "192.168.0.20.1583;ServerDSN=Platinum for Windows " & _
+              "test;ArrayFetchOn=1;ArrayBufferSize=8" & _
+              ";TransportHint=TCP;DecimalSymbol=.;ClientVersion=" & _
+              "8.10.117.017;CodePageConvert=1252;;TABLE=APHDR"
+    'jdc 10/16/2007
+
+On Error GoTo PROC_ERR
+
+    
+    Dim db As DAO.Database
+    Dim td As TableDef
+    Dim strConnect As String
+    Dim strNewConnect As String
+    Dim aODBCTables() As String
+    Dim intTableCount As Integer
+    Dim I As Integer
+    Dim J As Integer
+    Dim Counter As Integer
+    
+    Set db = CurrentDb()
+    
+    DoCmd.Hourglass True
+    
+    intTableCount = db.TableDefs.Count
+    
+    Counter = 0
+    For I = 0 To intTableCount - 1
+        strConnect = db.TableDefs(I).Connect
+        If Mid(strConnect, 1, 4) = "ODBC" Then
+            Counter = Counter + 1
+        End If
+    Next I
+
+    ReDim aODBCTables(Counter)
+    
+    J = 0
+    For I = 0 To intTableCount - 1
+        strConnect = db.TableDefs(I).Connect
+        If Mid(strConnect, 1, 4) = "ODBC" Then
+            aODBCTables(J) = db.TableDefs(I).Name
+            J = J + 1
+        End If
+    Next I
+    
+    J = 0
+    For I = 0 To intTableCount - 1
+        strConnect = db.TableDefs(I).Connect
+        If Mid(strConnect, 1, 4) = "ODBC" Then
+          If Mid(strConnect, 13, 3) <> "sql" Then  ' Skip the SQL Server tables
+            strNewConnect = "ODBC;"
+            strNewConnect = strNewConnect & "DSN=Platinum for Windows;"
+            strNewConnect = strNewConnect & "DATAPATH=P:\Platinum\QCDTX;"
+            strNewConnect = strNewConnect & "DDFPATH=P:\Platinum\QCDTX;"
+            strNewConnect = strNewConnect & "NullEnabled=no;"
+            strNewConnect = strNewConnect & "FeaturesUsed=no;"
+            strNewConnect = strNewConnect & "AccessFriendly=no;"
+            strNewConnect = strNewConnect & "DateFormat=mdy;"
+            strNewConnect = strNewConnect & ";"
+            strNewConnect = strNewConnect & "TABLE="
+            strNewConnect = strNewConnect & aODBCTables(J)
+            db.TableDefs(aODBCTables(J)).Connect = strNewConnect
+            db.TableDefs(aODBCTables(J)).RefreshLink
+            J = J + 1
+          End If
+        End If
+    Next I
+
+    db.Close
+    DoCmd.Hourglass False
+    MsgBox "Platinum for Windows Links has been refreshed!"
+    
+Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+  
+End Sub
+Function RptNoData()
+    Dim Cancel As String
+    
+ On Error GoTo PROC_ERR
+ 
+    MsgBox "The report has no data." _
+        & "@Printing the report is canceled. " _
+        & "@Check the source of data for the report to make sure you " _
+        & "entered the correct criteria (for example, a valid range " _
+        & "of dates).", vbOKOnly + vbInformation
+    Cancel = True
+
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+    
+End Function
+Function AddHyphens(strInput As String)
+
+  On Error GoTo PROC_ERR
+    AddHyphens = Mid(strInput, 1, 3) & "-" & Mid(strInput, 4, 2) & "-" & Mid(strInput, 6, 4)
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Sub AddSomethingtoARCUST()
+
+  On Error GoTo PROC_ERR
+    Dim dbsDb As DAO.Database
+    Dim rstRs As DAO.Recordset
+
+    Set dbsDb = DBEngine(0)(0)
+    Set rstRs = dbsDb.OpenRecordset("ARCUST", dbOpenDynaset, dbSeeChanges)
+    rstRs.AddNew
+    rstRs("Customer_Key") = "AAAA3"
+    rstRs("Customer_Name") = "CRISWELL, JOHN D."
+    rstRs("Address_1") = "304 PLANTATION DR"
+    rstRs("Address_2") = ""
+    rstRs("City") = "COPPELL"
+    rstRs("State") = "TX"
+    rstRs("Zip_Code") = "75019"
+    rstRs.Update
+    rstRs.Close
+
+    GoTo Finish:
+
+    rstRs.MoveFirst
+    rstRs.Close
+    dbsDb.Close
+
+Finish:
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Function AlphaBtn(frmMyForm As Form, strMyCombo As String)
+'OnPush of alphabet buttons, for requerying a combo box.
+
+On Error GoTo errAlphaBtn
+    
+    Dim strMyButton As String
+    
+    strMyButton = Screen.ActiveControl.ControlName
+    
+    frmMyForm![AlphaControl] = strMyButton
+    DoCmd.Echo True, "Sorting contents of combo box. . ."
+    
+    DoCmd.Requery strMyCombo
+    
+    DoCmd.GoToControl strMyCombo
+    SendKeys "{Delete}%{Down}"
+    
+    Exit Function
+
+errAlphaBtn:
+    Exit Function
+End Function
+
+Function ConvertFirstName(strFirst1 As String)
+
+  On Error GoTo PROC_ERR
+    Dim strFirstCase As String
+
+    strFirstCase = Mid(strFirst1, 1, 1) & LCase(Mid(strFirst1, 2, 99))
+
+    ConvertFirstName = strFirstCase
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function ConvertLastName(StrLast1 As String)
+
+  On Error GoTo PROC_ERR
+    Dim StrLastCase As String
+
+    StrLastCase = Mid(StrLast1, 1, 1) & LCase(Mid(StrLast1, 2, 99))
+
+    ConvertLastName = StrLastCase
+
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function ConvertPlatDates(strMonth As String, strYear As String)
+  On Error GoTo PROC_ERR
+    Dim strDate As String
+    strDate = Mid(strMonth, 1, 2) & "/" & Mid(strMonth, 3, 2) & "/" & strYear
+    ConvertPlatDates = strDate
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+
+Function ConvertDate(strDate As String) As Date
+    'Purpose:  Converts a date to date datatype.  Parameter
+    '          must be in mmddyyyy format
+    '--------------------------------------------------------
+    '
+    ' Parameters: strDate -
+    ' Returns   : Date -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/28/07
+    ' Update Date:  12/28/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    ConvertDate = Mid(strDate, 1, 2) & "/" & Mid(strDate, 3, 2) & "/" & Mid(strDate, 5, 4)
+    
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+
+
+Function FindDentist(frmMyForm As Form, ctlMyControl As Control, varMyID, varEndControl)
+
+   On Error GoTo ErrFindDentist
+   
+   If frmMyForm.Dirty Then DoCmd.DoMenuItem A_FORMBAR, A_FILE, A_SAVERECORD
+   
+   DoCmd.Echo False, "Searching. . ."
+
+   Dim rs As DAO.Recordset
+   Dim lngID As Long
+   Dim strCriteria As String
+   Dim strCRLF As String
+
+   Set rs = frmMyForm.RecordsetClone
+   lngID = ctlMyControl
+   strCRLF = Chr(13) & Chr(10)
+   strCriteria = varMyID & "=" & lngID ' Define search criteria.
+
+   rs.FindFirst strCriteria            ' Locate first occurrence.
+   If rs.NoMatch Then
+      MsgBox "Could not find the Record ID: " & lngID & "." & strCRLF & "Select 'Show All Records' from the" & strCRLF & "Records Menu and try again."
+   Else
+      frmMyForm.Bookmark = rs.Bookmark
+      DoCmd.GoToControl varEndControl
+   End If
+
+   DoCmd.Echo True
+   
+ExitFindDentist:
+   Exit Function
+   
+ErrFindDentist:
+
+    DoCmd.Echo True, "Find canceled."
+    Resume ExitFindDentist
+      
+End Function
+Function FindID(frmMyForm As Form, ctlMyControl As Control, varMyID, varEndControl) As Boolean
+    ' Purpose:
+    '           Use this in the AfterUpdate property of the combo box:
+    '           =FindID(Forms![FormName],[ComboBox],"[Record ID]","EndControlName")
+    '------------------------------------------------
+    ' Parameters: frmMyForm
+    '             ctlMyControl
+    '             varMyID -
+    ' Returns   :  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/16/07
+    ' Update Date:  11/16/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrFindID
+    
+    Dim rst As DAO.Recordset
+    Dim strID As String
+    Dim strCriteria As String
+    Dim strCRLF As String
+    
+    If frmMyForm.Dirty Then
+        DoCmd.DoMenuItem A_FORMBAR, A_FILE, A_SAVERECORD
+    End If
+    
+    DoCmd.Echo False, "Searching. . ."
+    
+    Set rst = frmMyForm.RecordsetClone
+    strID = ctlMyControl
+    strCRLF = Chr(13) & Chr(10)
+    strCriteria = varMyID & "='" & strID & "'" ' Define search criteria.
+    
+    rst.FindFirst strCriteria            ' Locate first occurrence.
+    If rst.NoMatch Then
+        MsgBox "Could not find the Record ID: " & strID & "." & strCRLF & "Select 'Show All Records' from the" & strCRLF & "Records Menu and try again."
+        FindID = False
+    Else
+        frmMyForm.Bookmark = rst.Bookmark
+        FindID = True
+        DoCmd.GoToControl varEndControl
+    End If
+    
+    DoCmd.Echo True
+    
+    rst.Close
+    Set rst = Nothing
+        
+ByeFindID:
+    
+    Exit Function
+    
+ErrFindID:
+    DoCmd.Echo True, "Find canceled."
+    Resume ByeFindID
+    
+End Function
+Function FindID_L(strSSN As String, strEndControl As String)
+    ' Comments  :
+    ' Parameters: frmMyForm
+    '             ctlMyControl
+    ' Returns   :  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim strSQL As String
+    Dim strCrit As String
+    
+    strCrit = RemoveHyphens(strSSN)
+    
+    ExecuteSQL "EXEC uspSubscrSearch '" & strCrit & "', " & "'00000000'" & ", " & 1
+    
+    With Forms("frmSubscrInquire")
+        .Requery
+    End With
+    
+    DoCmd.GoToControl strEndControl
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Function FindSSN(strSSN As String, strEndControl As String) As Boolean
+
+  On Error GoTo PROC_ERR
+  
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strCriteria As String
+    Dim strWhere As String
+
+    Set dbs = CurrentDb()
+    
+    strCriteria = RemoveHyphens(strSSN)
+    strWhere = "[SUBssn] = '" & strCriteria & "'"
+
+    Set rst = Screen.ActiveForm.RecordsetClone
+    rst.FindFirst strWhere
+    If rst.NoMatch Then
+        MsgBox "That SSN is not in the database!"
+        FindSSN = False
+        DoCmd.GoToControl strEndControl
+    Else
+        Screen.ActiveForm.Bookmark = rst.Bookmark
+        FindSSN = True
+        DoCmd.GoToControl strEndControl
+    End If
+    
+    rst.Close
+    dbs.Close
+    Set rst = Nothing
+    Set dbs = Nothing
+    
+  Exit Function
+
+PROC_ERR:
+    FindSSN = False
+    MsgBox "The following error occured: " & Error$
+    Resume Next
+    
+End Function
+Function FindSUBID(strSubID As String, strEndControl As String)
+
+  On Error GoTo PROC_ERR
+    Dim strCriteria$
+    Dim strWhere$
+
+    strCriteria = strSubID
+    strWhere = "[SubID] = '" & strCriteria & "'"
+
+    Dim dbsDb As DAO.Database
+    Dim rstRs As DAO.Recordset
+
+    Set dbsDb = DBEngine(0)(0)
+    Set rstRs = Screen.ActiveForm.RecordsetClone
+    rstRs.FindFirst strWhere
+    If rstRs.NoMatch Then
+        MsgBox "That Subscriber ID is not in the database!"
+    Else
+        Screen.ActiveForm.Bookmark = rstRs.Bookmark
+
+        DoCmd.GoToControl strEndControl
+    End If
+    rstRs.Close
+    dbsDb.Close
+
+  Exit Function
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function RemoveHyphens(strInput As String) As String
+
+  On Error GoTo PROC_ERR
+  
+    If Len(strInput) = 11 Then
+        RemoveHyphens = Mid(strInput, 1, 3) & Mid(strInput, 5, 2) & Mid(strInput, 8, 4)
+    Else
+        RemoveHyphens = strInput
+    End If
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+Function RemoveHyphen(strInput As String)
+
+  On Error GoTo PROC_ERR
+      
+      RemoveHyphen = Left(strInput, 4) & Right(strInput, 4)
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+Function SearchBtn(strMyCombo As String)
+    ' OnClick of the Search button of a combo box filter
+    ' OnExit of the AlphaControl
+    On Error GoTo errSearchBtn
+    Dim strN As String
+    Dim varResult As Variant
+    strN = Screen.ActiveForm.Name
+    varResult = SetLabelColor(Forms(strN), 0)
+    DoCmd.Echo True, "Sorting contents of combo box. . ."
+    DoCmd.Requery strMyCombo
+    DoCmd.Echo True
+    DoCmd.GoToControl strMyCombo
+    SendKeys "{Delete}%{Down}"
+errSearchBtn:
+    Exit Function
+End Function
+Function SetLabelColor(frmMyForm As Form, intLabelColor As Integer)
+    ' Purpose:  To set and reset a form label's font color
+    ' Usage:    =SetLabelColor([F],255)
+    '           in the OnEnter and OnExit properties.
+    '           This works only if the label name is
+    '           "lbl" & ActiveControl.Name.
+    On Error GoTo errSetLabelColor
+    ' The following line can also be put in the form's OnOpen or OnCurrent property
+        DoCmd.SelectObject A_FORM, frmMyForm.Name
+        Dim strCN As String
+        strCN = "lbl" & Screen.ActiveControl.Name
+        frmMyForm(strCN).ForeColor = intLabelColor
+        DoEvents
+errSetLabelColor:
+Exit Function
+End Function
+Function ShowAll(frmMyForm As Form, strMyCombo As String)
+    'OnPush of All button on forms with Alpha buttons.
+    On Error GoTo errShowAll
+        Dim ctlMyControl As Control
+        Set ctlMyControl = frmMyForm!AlphaControl
+        ctlMyControl = "*"
+        DoCmd.Echo True, "Show all cases in the combo box. . ."
+        DoCmd.Requery strMyCombo
+        DoCmd.Echo True
+        DoCmd.GoToControl strMyCombo
+errShowAll:
+    Exit Function
+End Function
+Function UpdateLookupField(frmCurrentForm As Form, strCtlLookupField As String)
+  On Error GoTo PROC_ERR
+    
+    Dim strLookupName As String
+    frmCurrentForm(strCtlLookupField) = frmCurrentForm![L_Name] & ", " & frmCurrentForm![F_Name] & " " & frmCurrentForm![MI]
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+Function BLookup(pExpr As String, pDomain As String, pcriteria As String) As Variant
+    ' Purpose: replacement function for DLookup
+    ' Input Parameters and other Input: Field to lookup, Table to look in, criteria w/o where
+    ' Returns:  field to lookup
+    '
+    ' Written:  03/11/98   By: Ben Stanley
+    ' Modified: mm/dd/yyyy   By: developer name
+    'On Error GoTo Err_blookup
+    
+    On Error GoTo PROC_ERR
+    
+    Dim Msg As String       'Text for (error) MsgBox
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim sSQL As String
+    
+    sSQL = "Select " & pExpr & " from " & pDomain & " where " & pcriteria & ";"
+    'MsgBox ssql
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset(sSQL, dbOpenDynaset, dbSeeChanges)
+    
+    If rs.EOF = False Then
+        BLookup = rs(pExpr)
+    Else
+        BLookup = ""
+    End If
+    
+Exit_BLookup:
+    Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function

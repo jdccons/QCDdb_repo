@@ -1,0 +1,41 @@
+Operation =1
+Option =0
+Where ="(((ARTRAN.DocumentNumber)<'6021983') AND ((ARTRAN.RecDate)>#10/30/2006#))"
+Begin InputTables
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Expression ="ARTRAN.DocumentNumber"
+    Expression ="ARTRAN.RecDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =50
+    Top =47
+    Right =468
+    Bottom =623
+    Left =-1
+    Top =-1
+    Right =411
+    Bottom =205
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =226
+        Bottom =174
+        Top =2
+        Name ="ARTRAN"
+        Name =""
+    End
+End

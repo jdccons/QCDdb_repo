@@ -1,0 +1,446 @@
+Version =19
+VersionRequired =19
+Checksum =-1870360990
+Begin Report
+    LayoutForPrint = NotDefault
+    FilterOn = NotDefault
+    DateGrouping =1
+    Width =10395
+    ItemSuffix =74
+    Left =180
+    Top =105
+    Right =13440
+    Bottom =6990
+    RecSrcDt = Begin
+        0xe02d907810a6e240
+    End
+    RecordSource ="qrptBillingReconcile_Employees"
+    Caption ="Billing Reconciliation Report -New Groups"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xa0050000d002000068010000d002000000000000c8280000ee02000000000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x5c5c4143545345525645525c48503430353000724a6574203500000000000000 ,
+        0x010400059c00340243ff800701000100ea0a6f08640001000f00580201000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200000034020000ea7157490000000000000000000000000000000000000000 ,
+        0x00000000000000000d0000000100000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002400000077696e73706f6f6c005c5c4143545345525645525c485034 ,
+        0x30353000506f72740035004c5054313a000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            KeepTogether =1
+            ControlSource ="AgentName"
+        End
+        Begin BreakLevel
+            ControlSource ="GROUPid"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportHeader"
+        End
+        Begin PageHeader
+            Height =720
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =18
+                    Left =1230
+                    Width =7620
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    Name ="Text0"
+                    Caption ="Billing Reconciliation Report - New Groups Employees"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    OverlapFlags =211
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =405
+                    Width =1245
+                    Height =315
+                    Name ="= Now()"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                    FontName ="Times New Roman"
+                    EventProcPrefix ="Ctl__Now__"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =735
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    OverlapFlags =81
+                    TextFontFamily =34
+                    Left =1050
+                    Width =4290
+                    Height =315
+                    ColumnWidth =2820
+                    FontSize =10
+                    FontWeight =700
+                    Name ="AgentName"
+                    ControlSource ="AgentName"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =450
+                    Width =735
+                    Height =255
+                    FontWeight =700
+                    Name ="Text19"
+                    Caption ="Group ID"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =1020
+                    Top =450
+                    Width =1410
+                    Height =255
+                    FontWeight =700
+                    Name ="Text20"
+                    Caption ="Group Name"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =8010
+                    Top =315
+                    Width =795
+                    Height =420
+                    FontWeight =700
+                    Name ="Text23"
+                    Caption ="Contract\015\012 Beg. Date"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =5985
+                    Top =510
+                    Width =690
+                    Height =225
+                    FontWeight =700
+                    Name ="Label41"
+                    Caption ="Inv No"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =6915
+                    Top =510
+                    Width =705
+                    Height =225
+                    FontWeight =700
+                    Name ="Label42"
+                    Caption ="Inv Amt"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =8925
+                    Top =315
+                    Width =675
+                    Height =420
+                    FontWeight =700
+                    Name ="Label65"
+                    Caption ="Sub Count"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextFontFamily =34
+                    Left =30
+                    Width =990
+                    Height =300
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Label68"
+                    Caption ="Employee"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =4605
+                    Top =495
+                    Width =420
+                    Height =240
+                    FontWeight =700
+                    Name ="Label70"
+                    Caption ="Rate"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =9675
+                    Top =300
+                    Width =675
+                    Height =435
+                    FontWeight =700
+                    Name ="Label72"
+                    Caption ="Dep Count"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =255
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    OverlapFlags =81
+                    TextFontFamily =18
+                    Top =30
+                    Width =795
+                    Height =225
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextFontFamily =18
+                    Left =825
+                    Top =30
+                    Width =3639
+                    Height =225
+                    TabIndex =1
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextFontFamily =18
+                    Left =7995
+                    Top =30
+                    Width =795
+                    Height =225
+                    TabIndex =2
+                    Name ="ctlGRcontBEG"
+                    ControlSource ="GRcontBEG"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =1
+                    Left =1860
+                    Top =30
+                    Width =1470
+                    Height =225
+                    TabIndex =3
+                    BackColor =65535
+                    Name ="Counter"
+                    ControlSource ="=+1"
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =5925
+                    Top =30
+                    Width =840
+                    Height =225
+                    TabIndex =4
+                    Name ="ctlDocno"
+                    ControlSource ="Docno"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =6810
+                    Top =30
+                    Width =1140
+                    Height =225
+                    TabIndex =5
+                    Name ="ctlDocamt"
+                    ControlSource ="Docamt"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =1
+                    Left =9015
+                    Top =15
+                    Width =615
+                    TabIndex =6
+                    Name ="SubCnt"
+                    ControlSource ="SubCnt"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OverlapFlags =81
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =4575
+                    Top =30
+                    Width =840
+                    Height =225
+                    TabIndex =7
+                    Name ="AgentRATE"
+                    ControlSource ="AgentRATE"
+                    Format ="Percent"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =1
+                    Left =9780
+                    Top =15
+                    Width =615
+                    TabIndex =8
+                    Name ="Text73"
+                    ControlSource ="DepCnt"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =735
+            Name ="GroupFooter0"
+            Begin
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =6900
+                    Top =420
+                    Width =1035
+                    Height =315
+                    FontWeight =700
+                    Name ="ctlSumCounter"
+                    ControlSource ="=[Counter]"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =4335
+                    Top =435
+                    Width =2250
+                    Height =300
+                    FontWeight =700
+                    Name ="Label39"
+                    Caption ="Total Number of Groups: "
+                End
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =6585
+                    Top =45
+                    Width =1350
+                    Height =300
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Text42"
+                    ControlSource ="=Sum([DocAmt])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Label
+                    OverlapFlags =81
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =4365
+                    Top =45
+                    Width =2205
+                    Height =300
+                    FontWeight =700
+                    Name ="Label43"
+                    Caption ="Total Invoice Amt: "
+                End
+                Begin Line
+                    OverlapFlags =83
+                    Left =6525
+                    Top =45
+                    Width =1380
+                    Name ="Line69"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =315
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    OverlapFlags =81
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5760
+                    Width =4320
+                    Height =315
+                    Name ="page"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+
+Option Explicit

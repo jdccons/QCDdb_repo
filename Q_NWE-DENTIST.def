@@ -1,0 +1,59 @@
+Operation =1
+Option =0
+Where ="(((tblDentist.DentStatus)=\"A\") AND ((tblDentist.DentZip)=\"75001\" Or (tblDent"
+    "ist.DentZip)=\"75006\" Or (tblDentist.DentZip)=\"75007\" Or (tblDentist.DentZip)"
+    "=\"75008\" Or (tblDentist.DentZip)=\"75010\" Or (tblDentist.DentZip)=\"75011\" O"
+    "r (tblDentist.DentZip)=\"75014\" Or (tblDentist.DentZip)=\"75019\" Or (tblDentis"
+    "t.DentZip)=\"75024\" Or (tblDentist.DentZip)=\"75029\" Or (tblDentist.DentZip)=\""
+    "75038\" Or (tblDentist.DentZip)=\"75039\" Or (tblDentist.DentZip)=\"75056\" Or ("
+    "tblDentist.DentZip)=\"75057\" Or (tblDentist.DentZip)=\"75062\" Or (tblDentist.D"
+    "entZip)=\"75063\" Or (tblDentist.DentZip)=\"75067\" Or (tblDentist.DentZip)=\"75"
+    "075\" Or (tblDentist.DentZip)=\"75080\" Or (tblDentist.DentZip)=\"75083\" Or (tb"
+    "lDentist.DentZip)=\"75085\" Or (tblDentist.DentZip)=\"75093\" Or (tblDentist.Den"
+    "tZip)=\"75099\" Or (tblDentist.DentZip)=\"75209\" Or (tblDentist.DentZip)=\"7522"
+    "0\" Or (tblDentist.DentZip)=\"75225\" Or (tblDentist.DentZip)=\"75229\" Or (tblD"
+    "entist.DentZip)=\"75230\" Or (tblDentist.DentZip)=\"75234\" Or (tblDentist.DentZ"
+    "ip)=\"75235\" Or (tblDentist.DentZip)=\"75240\" Or (tblDentist.DentZip)=\"75243\""
+    " Or (tblDentist.DentZip)=\"75244\" Or (tblDentist.DentZip)=\"75247\" Or (tblDent"
+    "ist.DentZip)=\"75248\" Or (tblDentist.DentZip)=\"75251\" Or (tblDentist.DentZip)"
+    "=\"75252\" Or (tblDentist.DentZip)=\"75287\" Or (tblDentist.DentZip)=\"75370\" O"
+    "r (tblDentist.DentZip)=\"75374\" Or (tblDentist.DentZip)=\"75379\" Or (tblDentis"
+    "t.DentZip)=\"75381\"))"
+Begin InputTables
+    Name ="tblDentist"
+End
+Begin OutputColumns
+    Expression ="tblDentist.DentSpecialty"
+    Expression ="tblDentist.DentStatus"
+    Expression ="tblDentist.DentCloseMyOff"
+    Expression ="tblDentist.DentZip"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =1002
+    Bottom =349
+    Left =-1
+    Top =-1
+    Right =933
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =2
+        Name ="tblDentist"
+        Name =""
+    End
+End

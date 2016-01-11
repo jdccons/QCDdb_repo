@@ -1,0 +1,86 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.SUBstatus)=\"INDIV\") AND ((tblSubscr.SUBcontEND) Between [FORMS]!["
+    "fdlgPrtSubscrRenewalLabel]![FROMdate] And [FORMS]![fdlgPrtSubscrRenewalLabel]![T"
+    "oDate]))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblCoverage"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblSubscr.SUBcontEND"
+    Alias ="LastName"
+    Expression ="(ConvertLastName([SUBlastNAME]))"
+    Alias ="FirstName"
+    Expression ="(ConvertFirstName([SUBfirstNAME]))"
+    Alias ="SAL"
+    Expression ="(\"Dear \" & [Firstname] & \" \" & [LastNAME] & \":\")"
+    Alias ="Name"
+    Expression ="([SubFirstName] & \" \" & [SUBlastName])"
+    Expression ="tblCoverage.COVERcode"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SUBzip"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="NAME"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SAL"
+        dbInteger "ColumnWidth" ="2295"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =95
+    Top =116
+    Right =1192
+    Bottom =520
+    Left =-1
+    Top =-1
+    Right =1086
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =116
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =101
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+End

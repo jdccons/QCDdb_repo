@@ -1,0 +1,41 @@
+Operation =4
+Option =8
+Where ="(((tblInvHdrPreliminary.[CUST KEY])=DFirst(\"[CUST KEY]\",\"tblInvHdrPreliminary"
+    "\",\"IsNull([SYSDOCID])\")))"
+Begin InputTables
+    Name ="tblInvHdrPreliminary"
+End
+Begin OutputColumns
+    Name ="tblInvHdrPreliminary.SYSDOCID"
+    Expression ="GetNextSysDocID()"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+dbText "Description" ="Adding Transaction Numbers to Invoices . . ."
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =798
+    Bottom =504
+    Left =-1
+    Top =-1
+    Right =795
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =213
+        Bottom =113
+        Top =32
+        Name ="tblInvHdrPreliminary"
+        Name =""
+    End
+End

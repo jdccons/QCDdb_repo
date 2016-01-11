@@ -1,0 +1,92 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment_DMN_CirculationRoster"
+End
+Begin OutputColumns
+    Alias ="NameSort"
+    Expression ="[LastName] & \", \" & [FirstName]"
+    Alias ="SubName"
+    Expression ="[FirstName] & \" \"+[MiddleInitial] & \" \" & [LastName]"
+    Alias ="SubAddr"
+    Expression ="Trim([Address]) & \",\" & \" \" & [City] & \", \" & [ST] & \"  \" & [Zip]"
+    Expression ="tblEnrollment_DMN_CirculationRoster.*"
+    Alias ="GRname"
+    Expression ="\"The Dallas Morning News\""
+    Alias ="SUBeffDATE2"
+    Expression ="Format(#4/1/00#,\"m/d/yyyy\")"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each ind"
+        "ependent contractor at No Monthly Charge.\""
+    Alias ="SUBssn"
+    Expression ="\"______--____--________\""
+    Alias ="SUBdob"
+    Expression ="\"__/__/____\""
+    Alias ="SUBPhoneHome"
+    Expression ="tblEnrollment_DMN_CirculationRoster.Phone"
+End
+Begin OrderBy
+    Expression ="[LastName] & \", \" & [FirstName]"
+    Flag =0
+    Expression ="[FirstName] & \" \"+[MiddleInitial] & \" \" & [LastName]"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="2610"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="5865"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE2"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="NameSort"
+        dbInteger "ColumnWidth" ="2775"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =82
+        Top =6
+        Right =314
+        Bottom =113
+        Top =5
+        Name ="tblEnrollment_DMN_CirculationRoster"
+        Name =""
+    End
+End

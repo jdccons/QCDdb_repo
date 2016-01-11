@@ -1,0 +1,73 @@
+Operation =3
+Name ="tmpEDI_Rpt"
+Option =8
+Where ="(((tblEDI_App_Subscr.SUBzip)<>[tblSubscr]![SUBzip]))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblEDI_App_Subscr.SUBssn"
+    Name ="SUBzip"
+    Expression ="tblEDI_App_Subscr.SUBzip"
+    Alias ="Stat"
+    Name ="Stat"
+    Expression ="\"Change-B\""
+    Name ="GroupID"
+    Expression ="tblSubscr.SUBgroupID"
+    Alias ="SUBStreet"
+    Name ="SUBStreet"
+    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Name ="SUBcity"
+    Expression ="tblEDI_App_Subscr.SUBcity"
+    Name ="SUBstate"
+    Expression ="tblEDI_App_Subscr.SUBstate"
+    Name ="SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Name ="SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =116
+    Top =116
+    Right =977
+    Bottom =516
+    Left =-1
+    Top =-1
+    Right =854
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =493
+        Top =7
+        Right =697
+        Bottom =129
+        Top =44
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =46
+        Top =10
+        Right =180
+        Bottom =132
+        Top =10
+        Name ="tblSubscr"
+        Name =""
+    End
+End

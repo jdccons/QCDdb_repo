@@ -1,0 +1,39 @@
+Operation =1
+Option =0
+Where ="(((tblAgent.AGENTtype)=\"ESD\"))"
+Begin InputTables
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AGENT_LUname"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =44
+        Top =11
+        Right =243
+        Bottom =118
+        Top =1
+        Name ="tblAgent"
+        Name =""
+    End
+End

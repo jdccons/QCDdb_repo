@@ -1,0 +1,136 @@
+Operation =3
+Name ="tblEDI_App_Subscr"
+Option =0
+Where ="(((tmpExportAllAmerican.EIRECID)=\"P\") AND ((Mid([EINMPLAN],8,3))=\"QCD\")) OR "
+    "(((tmpExportAllAmerican.EIRECID)=\"P\") AND ((tmpExportAllAmerican.EINMPLAN)=\"Q"
+    "CDBLU-NGL\"))"
+Begin InputTables
+    Name ="tmpExportAllAmerican"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tmpExportAllAmerican.EISSN"
+    Name ="SUBfirstNAME"
+    Expression ="tmpExportAllAmerican.EINAMF"
+    Alias ="MidInit"
+    Name ="SUBmiddleNAME"
+    Expression ="Left(Trim([EINAMM]),1)"
+    Name ="SUBlastNAME"
+    Expression ="tmpExportAllAmerican.EINAML"
+    Name ="SUBstreet1"
+    Expression ="tmpExportAllAmerican.EIADD1"
+    Name ="SUBstreet2"
+    Expression ="tmpExportAllAmerican.EIADD2"
+    Name ="SUBcity"
+    Expression ="tmpExportAllAmerican.EICITY"
+    Name ="SUBstate"
+    Expression ="tmpExportAllAmerican.EISTE"
+    Name ="SUBzip"
+    Expression ="tmpExportAllAmerican.EIZIP"
+    Alias ="PhoneHome"
+    Name ="SUBphoneHOME"
+    Expression ="IIf([EIHPHR]<>\"\",[EIHPHR],Null)"
+    Alias ="PhoneWork"
+    Name ="SUBphoneWORK"
+    Expression ="IIf([EIWPHR]<>\"\",[EIWPHR],Null)"
+    Alias ="GROUPid"
+    Name ="SUBgroupID"
+    Expression ="Right(Trim([EIGRPID]),Len(Trim([EIGRPID]))-3)"
+    Alias ="PlanID"
+    Name ="SUBplanIDgr"
+    Expression ="tmpExportAllAmerican.EIMBRRF"
+    Alias ="DOB"
+    Name ="SUBdob"
+    Expression ="Left([EIDTBR],2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Right([EIDTBR],4)"
+    Alias ="DepCnt"
+    Name ="SUBnoDEPENT"
+    Expression ="IIf(IsNull([Cnt]),0,[Cnt])"
+    Alias ="Status"
+    Name ="SUBstatus"
+    Expression ="\"GRSUB\""
+    Alias ="EffDate"
+    Name ="SUBeffDATE"
+    Expression ="Left([EIDTCVEF],2) & \"/\" & Mid([EIDTCVEF],3,2) & \"/\" & Right([EIDTCVEF],4)"
+    Alias ="LookUpName"
+    Name ="SUB_LUname"
+    Expression ="UCase(Trim([EINAML])) & \", \" & UCase(Trim([EINAMF])) & \" \" & UCase(Left([EIN"
+        "AMM],1))"
+    Alias ="Coverage"
+    Name ="SUBcoverage"
+    Expression ="IIf([Cnt]=1,\"O\",IIf([Cnt]>1,\"F\",\"I\"))"
+    Alias ="CovID"
+    Name ="CoverID"
+    Expression ="IIf([Cnt]=1,2,IIf([Cnt]>1,4,1))"
+    Name ="SUBgender"
+    Expression ="tmpExportAllAmerican.EISEX"
+End
+Begin OrderBy
+    Expression ="tmpExportAllAmerican.EINAML"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tmpExportAllAmerican.EIMBRID"
+        dbInteger "ColumnWidth" ="1905"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tmpExportAllAmerican.EINMPLAN"
+        dbInteger "ColumnWidth" ="2205"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EIMBRID"
+        dbInteger "ColumnWidth" ="1905"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="MBRID"
+        dbInteger "ColumnWidth" ="1905"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EIMBRID_"
+        dbInteger "ColumnWidth" ="1905"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="NMPLAN"
+        dbInteger "ColumnWidth" ="2205"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Plan"
+        dbInteger "ColumnWidth" ="2205"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =640
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =256
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =113
+        Top =28
+        Right =395
+        Bottom =225
+        Top =41
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+End

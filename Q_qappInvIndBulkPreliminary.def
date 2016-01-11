@@ -1,0 +1,115 @@
+Operation =3
+Name ="tblInvHdrPreliminary"
+Option =8
+Where ="(((tblSubscr.SUBstatus)=\"INDIV\") AND ((Mid([SUB_LUname],1,1))>=[Forms]![frmInv"
+    "IndivBulk]![LetterFrom] And (Mid([SUB_LUname],1,1))<=[Forms]![frmInvIndivBulk]!["
+    "LetterTo]) AND ((tblSubscr.SUBcancelled)<>3) AND ((tblRates.GroupID)='INDVM') AN"
+    "D ((tblInvAgt.Primary)=True))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblInvAgt"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Name ="Custkey"
+    Expression ="tblSubscr.PLTcustKEY"
+    Name ="Custname"
+    Expression ="tblSubscr.SUB_LUname"
+    Name ="Custaddr1"
+    Expression ="tblSubscr.SUBstreet1"
+    Name ="Custaddr2"
+    Expression ="tblSubscr.SUBstreet2"
+    Name ="Custcity"
+    Expression ="tblSubscr.SUBcity"
+    Name ="Custstate"
+    Expression ="tblSubscr.SUBstate"
+    Name ="Custzip"
+    Expression ="tblSubscr.SUBzip"
+    Alias ="TRANSno"
+    Name ="Tranno"
+    Expression ="Null"
+    Alias ="INVOICEdate"
+    Name ="Invdate"
+    Expression ="DLookUp(\"[FieldDateValue]\",\"tblConstants\",\"[FieldName] = 'InvoiceDate'\")"
+    Name ="Territkey"
+    Expression ="tblSubscr.SUBgeoID"
+    Name ="Salespkey"
+    Expression ="tblInvAgt.AGENTid"
+    Alias ="RecUser"
+    Name ="RecUserID"
+    Expression ="\"QCD db\""
+    Alias ="RecDte"
+    Name ="RecDate"
+    Expression ="Date()"
+    Alias ="RecTme"
+    Name ="RecTime"
+    Expression ="Time()"
+    Name ="Checkamt"
+    Expression ="tblSubscr.SUBrate"
+    Name ="Checkno"
+    Expression ="tblSubscr.SUBbankDraftNo"
+    Name ="Custclass"
+    Expression ="tblSubscr.SUBstatus"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblInvAgt"
+    Expression ="tblSubscr.SubID = tblInvAgt.SubscrID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.PLTcustKEY"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =104
+    Right =1133
+    Bottom =447
+    Left =-1
+    Top =-1
+    Right =1086
+    Bottom =170
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =55
+        Top =5
+        Right =316
+        Bottom =115
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =551
+        Top =4
+        Right =660
+        Bottom =129
+        Top =1
+        Name ="tblInvAgt"
+        Name =""
+    End
+    Begin
+        Left =376
+        Top =9
+        Right =472
+        Bottom =119
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

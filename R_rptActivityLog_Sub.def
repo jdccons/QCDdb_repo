@@ -1,0 +1,234 @@
+Version =17
+VersionRequired =17
+Checksum =-2098659673
+Begin Report
+    AutoResize = NotDefault
+    PopUp = NotDefault
+    Modal = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    AllowDeletions = NotDefault
+    AllowEdits = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    Width =10725
+    ItemSuffix =117
+    Left =1305
+    Top =1200
+    Right =10515
+    Bottom =5640
+    RecSrcDt = Begin
+        0x324741e3d2d2e140
+    End
+    RecordSource ="SELECT tblGrpLog.* FROM tblGrpLog ORDER BY tblGrpLog.LogDate DESC;"
+    Caption ="Group Log"
+    OnOpen ="[Event Procedure]"
+    PrtMip = Begin
+        0x680100003804000068010000d002000000000000e5290000ff00000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4e747365727665725c68706c6a350000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin FormHeader
+            Height =480
+            Name ="FormHeader0"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    TextAlign =1
+                    Top =240
+                    Width =906
+                    Height =240
+                    FontSize =9
+                    FontWeight =600
+                    Name ="Text96"
+                    Caption ="Log Date"
+                    FontName ="Arial"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =1
+                    Left =930
+                    Top =240
+                    Width =921
+                    Height =240
+                    FontSize =9
+                    FontWeight =600
+                    Name ="Text97"
+                    Caption ="Log Time"
+                    FontName ="Arial"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =1
+                    Left =1875
+                    Top =240
+                    Width =756
+                    Height =240
+                    FontSize =9
+                    FontWeight =600
+                    Name ="Text98"
+                    Caption ="Notes"
+                    FontName ="Arial"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =1
+                    Left =8985
+                    Top =240
+                    Width =975
+                    Height =240
+                    FontSize =9
+                    FontWeight =600
+                    Name ="Label111"
+                    Caption ="Call Back"
+                    FontName ="Arial"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =1
+                    Left =10020
+                    Top =240
+                    Width =690
+                    Height =240
+                    FontSize =9
+                    FontWeight =600
+                    Name ="Label112"
+                    Caption ="Empl."
+                    FontName ="Arial"
+                End
+                Begin Label
+                    BackStyle =1
+                    TextAlign =1
+                    Left =10035
+                    Width =690
+                    Height =240
+                    FontSize =9
+                    FontWeight =600
+                    Name ="Label116"
+                    Caption ="QCd"
+                    FontName ="Arial"
+                End
+            End
+        End
+        Begin Section
+            CanGrow = NotDefault
+            Height =255
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    SpecialEffect =0
+                    Left =915
+                    Width =858
+                    BorderColor =4194368
+                    Name ="ctlLogDate_time"
+                    ControlSource ="LogTime"
+                    Format ="Medium Time"
+                    DefaultValue ="Now()"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    DecimalPlaces =0
+                    SpecialEffect =0
+                    Left =1878
+                    Width =7188
+                    TabIndex =1
+                    BorderColor =4194368
+                    Name ="ctlLogNotes"
+                    ControlSource ="LogNotes"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    SpecialEffect =0
+                    Left =5163
+                    Width =294
+                    TabIndex =4
+                    BackColor =65535
+                    BorderColor =4194368
+                    Name ="ctlLogGrID"
+                    ControlSource ="LogGrID"
+                    DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    SpecialEffect =0
+                    TextAlign =1
+                    Left =10035
+                    Width =588
+                    TabIndex =3
+                    BorderColor =4194368
+                    Name ="ctlLogQCDRep"
+                    ControlSource ="LogQCDRep"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    SpecialEffect =0
+                    Left =9060
+                    Top =15
+                    Width =813
+                    TabIndex =2
+                    BorderColor =4194368
+                    Name ="ctlLogCallBack"
+                    ControlSource ="LogCallBack"
+                    Format ="Short Date"
+                    InputMask ="99/99/0099;0;_"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    SpecialEffect =0
+                    Width =828
+                    TabIndex =5
+                    BorderColor =4194368
+                    Name ="txtLogDate"
+                    ControlSource ="LogDate"
+                    Format ="Short Date"
+                    InputMask ="99/99/0099;0;_"
+                End
+            End
+        End
+        Begin FormFooter
+            Visible = NotDefault
+            Height =0
+            BackColor =12632256
+            Name ="FormFooter1"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+
+Private Sub Form_Open(Cancel As Integer)
+
+    DoCmd.GoToRecord , , acNewRec
+    
+
+End Sub

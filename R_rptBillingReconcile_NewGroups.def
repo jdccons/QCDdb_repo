@@ -1,0 +1,432 @@
+Version =20
+VersionRequired =20
+Checksum =-1839241582
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =12660
+    ItemSuffix =65
+    Left =-405
+    Top =180
+    Right =12450
+    Bottom =6240
+    RecSrcDt = Begin
+        0x6eade14dac9de240
+    End
+    RecordSource ="qrptBillingReconcile_NewGrp"
+    Caption ="Billing Reconciliation Report -New Groups"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0x1a03000038040000d00200003804000000000000743100000e01000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f40443ff800702000100ea0a6f08640001000f00580201000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            KeepTogether =1
+            ControlSource ="GROUPid"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =360
+            Name ="ReportHeader"
+        End
+        Begin PageHeader
+            Height =1755
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Left =1935
+                    Top =60
+                    Width =6045
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    Name ="Text0"
+                    Caption ="Billing Reconciliation Report - New Groups"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    Left =15
+                    Top =720
+                    Width =12600
+                    Name ="Line13"
+                End
+                Begin Line
+                    Left =15
+                    Top =765
+                    Width =12600
+                    Name ="Line14"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =405
+                    Width =1245
+                    Height =315
+                    Name ="= Now()"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                    FontName ="Times New Roman"
+                    EventProcPrefix ="Ctl__Now__"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =45
+                    Top =960
+                    Width =735
+                    Height =255
+                    FontWeight =700
+                    Name ="Text19"
+                    Caption ="Group ID"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =1065
+                    Top =960
+                    Width =1410
+                    Height =255
+                    FontWeight =700
+                    Name ="Text20"
+                    Caption ="Group Name"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =11760
+                    Top =795
+                    Width =795
+                    Height =420
+                    FontWeight =700
+                    Name ="Text23"
+                    Caption ="Contract\015\012 Beg. Date"
+                End
+                Begin Line
+                    Width =12600
+                    Name ="Line24"
+                End
+                Begin Line
+                    Left =30
+                    Top =1245
+                    Width =12600
+                    Name ="Line25"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =9735
+                    Top =990
+                    Width =690
+                    Height =225
+                    FontWeight =700
+                    Name ="Label41"
+                    Caption ="Inv No"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =10665
+                    Top =990
+                    Width =705
+                    Height =225
+                    FontWeight =700
+                    Name ="Label42"
+                    Caption ="Inv Amt"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =4530
+                    Top =960
+                    Width =945
+                    Height =240
+                    FontWeight =700
+                    Name ="Label54"
+                    Caption ="Comm 1"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =6120
+                    Top =960
+                    Width =930
+                    Height =240
+                    FontWeight =700
+                    Name ="Label55"
+                    Caption ="Comm 2"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =7695
+                    Top =960
+                    Width =945
+                    Height =240
+                    FontWeight =700
+                    Name ="Label56"
+                    Caption ="Comm 3"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =270
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =30
+                    Width =795
+                    Height =225
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =825
+                    Top =30
+                    Width =3639
+                    Height =225
+                    TabIndex =1
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =11760
+                    Top =30
+                    Width =795
+                    Height =225
+                    TabIndex =2
+                    Name ="ctlGRcontBEG"
+                    ControlSource ="GRcontBEG"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =1
+                    Left =1860
+                    Top =30
+                    Width =1470
+                    Height =225
+                    TabIndex =3
+                    BackColor =65535
+                    Name ="Counter"
+                    ControlSource ="=+1"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =9930
+                    Top =30
+                    Width =870
+                    Height =225
+                    TabIndex =4
+                    Name ="ctlDocno"
+                    ControlSource ="Docno"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =10800
+                    Top =30
+                    Width =915
+                    Height =225
+                    TabIndex =5
+                    Name ="ctlDocamt"
+                    ControlSource ="Docamt"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    FontName ="Times New Roman"
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =4464
+                    Top =30
+                    Width =1728
+                    Height =240
+                    TabIndex =6
+                    Name ="Child59"
+                    SourceObject ="Report.srptBillingReconcileAgency"
+                    LinkChildFields ="GROUPid;Docno"
+                    LinkMasterFields ="GROUPid;Docno"
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =6192
+                    Top =30
+                    Width =1728
+                    Height =240
+                    TabIndex =7
+                    Name ="Child61"
+                    SourceObject ="Report.srptBillingReconcileAgents"
+                    LinkChildFields ="GROUPid;Docno"
+                    LinkMasterFields ="GROUPid;Docno"
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =7920
+                    Top =30
+                    Width =1728
+                    Height =240
+                    TabIndex =8
+                    Name ="Child63"
+                    SourceObject ="Report.srptBillingReconcileEmpl"
+                    LinkChildFields ="GROUPid;Docno"
+                    LinkMasterFields ="GROUPid;Docno"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =7635
+                    Top =15
+                    Width =4320
+                    Height =315
+                    Name ="page"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =840
+            Name ="ReportFooter"
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =10815
+                    Top =465
+                    Width =1035
+                    Height =315
+                    FontWeight =700
+                    Name ="ctlSumCounter"
+                    ControlSource ="=[Counter]"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8250
+                    Top =480
+                    Width =2250
+                    Height =300
+                    FontWeight =700
+                    Name ="Label39"
+                    Caption ="Total Number of Groups: "
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =10500
+                    Top =90
+                    Width =1350
+                    Height =300
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Text42"
+                    ControlSource ="=Sum([DocAmt])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8280
+                    Top =90
+                    Width =2205
+                    Height =300
+                    FontWeight =700
+                    Name ="Label43"
+                    Caption ="Total Invoice Amt: "
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =1
+                    Left =10500
+                    Top =30
+                    Width =1350
+                    Height =15
+                    Name ="Line44"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+
+Option Explicit

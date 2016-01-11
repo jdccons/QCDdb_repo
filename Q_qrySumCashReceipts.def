@@ -1,0 +1,45 @@
+Operation =1
+Option =8
+Having ="(((ARTRAN.TransactionType)=\"P\"))"
+Begin InputTables
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Expression ="ARTRAN.TransactionType"
+    Alias ="SumofDocument"
+    Expression ="Sum(ARTRAN.DocumentAmt)"
+End
+Begin Groups
+    Expression ="ARTRAN.TransactionType"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =29
+    Right =1002
+    Bottom =342
+    Left =-1
+    Top =-1
+    Right =948
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =77
+        Top =4
+        Right =173
+        Bottom =103
+        Top =11
+        Name ="ARTRAN"
+        Name =""
+    End
+End

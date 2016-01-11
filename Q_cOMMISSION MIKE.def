@@ -1,0 +1,64 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRagentID1)=\"VHUMA\") AND ((tblGrp.GRagentID2)=\"VHUMA\") AND ((tblGr"
+    "p.GRExecSalesDirID)=\"VHUMA\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRPLANid"
+    Expression ="tblGrp.GRagentID1"
+    Expression ="tblGrp.GRagentRATE1"
+    Expression ="tblGrp.GRagentID2"
+    Expression ="tblGrp.GRagentRATE2"
+    Expression ="tblGrp.GRExecSalesDirID"
+    Expression ="tblGrp.GRExecSalesDirRate"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =84
+    Top =66
+    Right =778
+    Bottom =368
+    Left =-1
+    Top =-1
+    Right =687
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =172
+        Top =6
+        Right =356
+        Bottom =113
+        Top =25
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =4
+        Name ="tblAgent"
+        Name =""
+    End
+End

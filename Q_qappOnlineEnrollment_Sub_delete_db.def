@@ -1,0 +1,106 @@
+Operation =3
+Name ="tblSubscr_delete"
+Option =0
+Begin InputTables
+    Name ="tblEDI_App_Subscr_delete"
+End
+Begin OutputColumns
+    Name ="SubSSN"
+    Expression ="tblEDI_App_Subscr_delete.SubSSN"
+    Name ="SubID"
+    Expression ="tblEDI_App_Subscr_delete.SubID"
+    Name ="EIMBRID"
+    Expression ="tblEDI_App_Subscr_delete.EIMBRID"
+    Name ="SubStatus"
+    Expression ="tblEDI_App_Subscr_delete.SubStatus"
+    Name ="SubGroupID"
+    Expression ="tblEDI_App_Subscr_delete.SubGroupID"
+    Name ="PlanID"
+    Expression ="tblEDI_App_Subscr_delete.PlanID"
+    Name ="CoverID"
+    Expression ="tblEDI_App_Subscr_delete.CoverID"
+    Name ="RateID"
+    Expression ="tblEDI_App_Subscr_delete.RateID"
+    Name ="SUB_LUname"
+    Expression ="tblEDI_App_Subscr_delete.SUB_LUname"
+    Name ="SubLastName"
+    Expression ="tblEDI_App_Subscr_delete.SubLastName"
+    Name ="SubFirstName"
+    Expression ="tblEDI_App_Subscr_delete.SubFirstName"
+    Name ="SubMiddleName"
+    Expression ="tblEDI_App_Subscr_delete.SubMiddleName"
+    Name ="SubStreet1"
+    Expression ="tblEDI_App_Subscr_delete.SubStreet1"
+    Name ="SubStreet2"
+    Expression ="tblEDI_App_Subscr_delete.SubStreet2"
+    Name ="SubCity"
+    Expression ="tblEDI_App_Subscr_delete.SubCity"
+    Name ="SubState"
+    Expression ="tblEDI_App_Subscr_delete.SubState"
+    Name ="SubZip"
+    Expression ="tblEDI_App_Subscr_delete.SubZip"
+    Name ="SubPhoneWork"
+    Expression ="tblEDI_App_Subscr_delete.SubPhoneWork"
+    Name ="SubPhoneHome"
+    Expression ="tblEDI_App_Subscr_delete.SubPhoneHome"
+    Name ="SUBdob"
+    Expression ="tblEDI_App_Subscr_delete.SUBdob"
+    Name ="SubNoDepent"
+    Expression ="tblEDI_App_Subscr_delete.SubNoDepent"
+    Name ="SubGender"
+    Expression ="tblEDI_App_Subscr_delete.SubGender"
+    Name ="SubAge"
+    Expression ="tblEDI_App_Subscr_delete.SubAge"
+    Name ="SubMaritalStatus"
+    Expression ="tblEDI_App_Subscr_delete.SubMaritalStatus"
+    Name ="SubEffDate"
+    Expression ="tblEDI_App_Subscr_delete.SubEffDate"
+    Name ="PreexistingDate"
+    Expression ="tblEDI_App_Subscr_delete.PreexistingDate"
+    Name ="SubCardPrt"
+    Expression ="tblEDI_App_Subscr_delete.SubCardPrt"
+    Name ="SubCardPrtDte"
+    Expression ="tblEDI_App_Subscr_delete.SubCardPrtDte"
+    Name ="SubNotes"
+    Expression ="tblEDI_App_Subscr_delete.SubNotes"
+    Name ="Flag"
+    Expression ="tblEDI_App_Subscr_delete.Flag"
+    Name ="TransactionType"
+    Expression ="tblEDI_App_Subscr_delete.TransactionType"
+    Name ="DateCreated"
+    Expression ="tblEDI_App_Subscr_delete.DateCreated"
+    Name ="DateUpdated"
+    Expression ="tblEDI_App_Subscr_delete.DateUpdated"
+    Name ="DateDeleted"
+    Expression ="tblEDI_App_Subscr_delete.DateDeleted"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbText "Description" ="moves data from tblEDI_App_Subscr_delete to tblSubscr_delete "
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =6
+    Right =1258
+    Bottom =398
+    Left =-1
+    Top =-1
+    Right =1189
+    Bottom =224
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =229
+        Bottom =158
+        Top =0
+        Name ="tblEDI_App_Subscr_delete"
+        Name =""
+    End
+End

@@ -1,0 +1,45 @@
+Operation =5
+Option =0
+Where ="(((ARLIN.DocumentDate)>#10/31/2006#))"
+Begin InputTables
+    Name ="ARLIN"
+End
+Begin OutputColumns
+    Expression ="ARLIN.*"
+    Expression ="ARLIN.DocumentDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="ARLIN.DocumentDate"
+        dbInteger "ColumnWidth" ="3870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =23
+    Top =42
+    Right =1209
+    Bottom =440
+    Left =-1
+    Top =-1
+    Right =1179
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =771
+    Begin
+        Left =38
+        Top =4
+        Right =228
+        Bottom =114
+        Top =0
+        Name ="ARLIN"
+        Name =""
+    End
+End

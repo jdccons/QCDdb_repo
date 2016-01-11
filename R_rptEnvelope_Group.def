@@ -1,0 +1,162 @@
+Version =20
+VersionRequired =20
+Checksum =-531546782
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =20
+    GridY =24
+    Width =15840
+    DatasheetFontHeight =10
+    ItemSuffix =8
+    Left =270
+    Top =75
+    Right =15045
+    Bottom =11505
+    DatasheetGridlinesColor =12632256
+    Filter ="((([tblGrp].[GROUPid]) = \"AAPUM\"))"
+    RecSrcDt = Begin
+        0x24659f8fb249e240
+    End
+    RecordSource ="SELECT tblGrp.GRname, tblGrp.GRsrvCONT, tblGrp.GRstreet1, tblGrp.GRstreet2, tblG"
+        "rp.GRcity, tblGrp.GRstate, tblGrp.GRzip, tblGrp.GROUPid\015\012FROM tblGrp;\015\012"
+    Caption ="Group Envelope"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x2001000068010000d00200006a01000000000000a0320000b013000000000000 ,
+        0x01000000ac02000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400059c00340203d7000002000100ea0a6f08640001000700580200000100 ,
+        0xb004000000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x22000000340200007eeb71d70000000000000000000000000000000000000000 ,
+        0x00000000000000000e0000000100000000000000000001000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800250035000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000048503430353000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            Height =360
+            FontSize =12
+            FontName ="Arial"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =9360
+            OnFormat ="[Event Procedure]"
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =6480
+                    Top =6120
+                    Width =5544
+                    Name ="Text2"
+                    ControlSource ="= Trim( [GRname])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =7344
+                    Top =6480
+                    Width =4689
+                    TabIndex =1
+                    Name ="Text3"
+                    ControlSource ="= Trim( [GRsrvCONT])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =6480
+                    Top =6840
+                    Width =5529
+                    TabIndex =2
+                    Name ="Text4"
+                    ControlSource ="= Trim( [GRstreet1])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =6480
+                    Top =7200
+                    Width =5544
+                    TabIndex =3
+                    Name ="Text5"
+                    ControlSource ="= Trim( [GRstreet2])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =6480
+                    Top =7560
+                    Width =5544
+                    TabIndex =4
+                    Name ="Text6"
+                    ControlSource ="= Trim( [GRcity] & \", \" & [GRstate] & \"  \" & [GRzip])"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =6480
+                    Top =6480
+                    Width =795
+                    Height =360
+                    FontSize =12
+                    Name ="Label7"
+                    Caption ="ATTN:"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub Report_Close()
+    
+    DoCmd.Restore
+    
+End Sub

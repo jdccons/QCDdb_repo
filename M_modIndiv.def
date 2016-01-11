@@ -1,0 +1,210 @@
+Option Compare Database
+Option Explicit
+
+Public Function CountDependents(strSSN As String) As Integer
+    'Purpose:  Counts dependents
+    '--------------------------------------------------------
+    '
+    ' Parameters: strSSN -
+    ' Returns   : Integer -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/11/07
+    ' Update Date:  12/11/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT Count(tblDependent.DEPcounter) AS "
+    strSQL = strSQL & "CountOfDEPcounter "
+    strSQL = strSQL & "FROM tblDependent "
+    strSQL = strSQL & "WHERE (((tblDependent.DEPsubID)="
+    strSQL = strSQL & "'" & strSSN & "'));"
+    
+    
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rs.RecordCount > 0 Then
+        CountDependents = rs("CountOfDEPcounter")
+    Else
+        CountDependents = 0
+    End If
+    
+    rs.Close
+    db.Close
+    Set db = Nothing
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Public Function CountFamily(strSSN As String) As Integer
+    'Purpose:  Counts the number of family members for an
+    '          All American subscriber
+    '--------------------------------------------------------
+    '
+    ' Parameters: strSSN -
+    ' Returns   : Integer -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/11/07
+    ' Update Date:  12/11/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT tblDependent.DEPsubID " & _
+               "FROM (tblGrp INNER JOIN tblSubscr ON tblGrp.GroupID = tblSubscr.SubGroupID) " & _
+               "INNER JOIN tblDependent ON tblSubscr.SUBssn = tblDependent.DEPsubID " & _
+               "WHERE (((tblGrp.GroupType)=4) " & _
+               "AND ((tblGrp.GRcancelled)=0) " & _
+               "AND ((tblDependent.DEPsubID)='" & strSSN & "') " & _
+               "AND ((tblDependent.DEPrelationship)='C'" & _
+               "Or (tblDependent.DEPrelationship)='S'));"
+    
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    CountFamily = rs.RecordCount
+    
+    rs.Close
+    db.Close
+    Set db = Nothing
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Function PrtScreen_Indiv()
+    'Purpose:  Prints a report that looks like the
+    '          individual subscriber form
+    '--------------------------------------------------------
+    '
+    ' Parameters:  -
+    ' Returns   :  -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/11/07
+    ' Update Date:  12/11/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim stDocName As String
+    Dim StrIndivID As String
+    Dim strWhere As String
+    
+    
+    StrIndivID = Forms!frmIndivSubscr!SUBssn
+    strWhere = "(([tblSubscr].[SUBssn]) = """ & StrIndivID & """)"
+    
+    stDocName = "rptIndivSubscr"
+    DoCmd.OpenReport stDocName, acPreview, , strWhere
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Function PrtScreen_IndivInquire()
+    'Purpose:  print screen report
+    '--------------------------------------------------------
+    '
+    ' Parameters:  -
+    ' Returns   :  -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/11/07
+    ' Update Date:  12/11/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    'This function is used to preview a "print Screen" on the find group subscriber form
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim stDocName As String
+    Dim StrIndivID As String
+    Dim strWhere As String
+    
+    
+    StrIndivID = Forms!frmSubscrInquire!SUBssn
+    strWhere = "(([tblSubscr].[SUBssn]) = """ & StrIndivID & """)"
+    
+    stDocName = "rptGrpSubscr"
+    DoCmd.OpenReport stDocName, acPreview, , strWhere
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Function UpdateCustKeyIndiv()
+    'Purpose:  Updates the individual PFW customer key
+    '          don't believe this function is being used
+    '--------------------------------------------------------
+    '
+    ' Parameters:  -
+    ' Returns   :  -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/11/07
+    ' Update Date:  12/11/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+   
+    On Error GoTo UpdateCustKeyIndiv_Err
+    
+    If (Eval("DLookUp(""Customer_Key"",""ARCUST"",""[Customer_Key] = Forms![frmIndivSubscr]![PLTcustKEY]"") Is Not Null And [Forms]![frmIndivSubscr].[Dirty]")) Then
+        Beep
+        MsgBox "This customer key already exists in Platinum.  Modifications to this customer key are not allowed.", vbCritical, "UNABLE TO UPDATE"
+        SendKeys "{Esc}" + "{Esc}"
+        Exit Function
+    End If
+    If (Eval("DLookUp(""Customer_Key"",""ARCUST"",""[Customer_Key] = Forms![frmIndivSubscr]![PLTcustKEY]"") Is Not Null And [Forms]![frmIndivSubscr].[Dirty]")) Then
+        DoCmd.RunCommand acCmdUndo
+    End If
+    
+    
+UpdateCustKeyIndiv_Exit:
+    Exit Function
+    
+UpdateCustKeyIndiv_Err:
+    MsgBox Error$
+    Resume UpdateCustKeyIndiv_Exit
+    
+End Function

@@ -1,0 +1,957 @@
+Version =20
+VersionRequired =20
+Checksum =-545207592
+Begin Form
+    OrderByOn = NotDefault
+    DataEntry = NotDefault
+    ScrollBars =2
+    ViewsAllowed =1
+    RecordLocks =2
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =11760
+    DatasheetFontHeight =10
+    ItemSuffix =59
+    Left =1635
+    Top =1185
+    Right =13155
+    Bottom =8550
+    DatasheetBackColor =65535
+    DatasheetGridlinesColor =12632256
+    Filter ="([SUBGroupID] Like \"INDVM\" and [SUBcancelled]=1) AND ((((tblSubscr.SUBstatus)="
+        "\"INDIV\")))"
+    OrderBy ="tblSubscr.SUBlastNAME"
+    RecSrcDt = Begin
+        0x6e644597b20de340
+    End
+    RecordSource ="qfrmIndivSubscrCoverage"
+    Caption ="Individual Coverage"
+    OnCurrent ="[Event Procedure]"
+    OnOpen ="[Event Procedure]"
+    MenuBar ="FormMenuBar"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x01043c079c00d00603770006010001009a0b3408640001000f01580201000100 ,
+        0x5802040000004134000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000050524956 ,
+        0xe012000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000446f6375436f6d2050444620506f72743a00
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin FormHeader
+            Height =1635
+            BackColor =-2147483633
+            Name ="FormHeader"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =540
+                    Top =1380
+                    Width =576
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblSSN"
+                    Caption ="SS# "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =1335
+                    Top =1380
+                    Width =1290
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text60"
+                    Caption =" Last Name "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =2850
+                    Top =1380
+                    Width =630
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblFirst"
+                    Caption ="First "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =3630
+                    Top =1380
+                    Width =330
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label0"
+                    Caption ="MI "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =5880
+                    Top =1380
+                    Width =1020
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblCoverage"
+                    Caption ="Coverage "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =8580
+                    Top =1380
+                    Width =1056
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblConBeg"
+                    Caption ="Cont. Beg. "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =9615
+                    Top =1380
+                    Width =936
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblConEng"
+                    Caption ="Cont. End "
+                End
+                Begin Label
+                    Visible = NotDefault
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =11040
+                    Top =1380
+                    Width =690
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label2"
+                    Caption ="Cancel"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =10560
+                    Top =1380
+                    Width =501
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label5"
+                    Caption ="Draft"
+                End
+                Begin OptionGroup
+                    OverlapFlags =85
+                    Left =60
+                    Top =735
+                    Width =7125
+                    Height =515
+                    Name ="OptFilter"
+                    DefaultValue ="2"
+                    OnClick ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            BackStyle =1
+                            OverlapFlags =215
+                            Left =525
+                            Top =615
+                            Width =645
+                            Height =240
+                            FontWeight =700
+                            BackColor =-2147483633
+                            ForeColor =-2147483630
+                            Name ="txtFilter"
+                            Caption ="Filter"
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =630
+                            Top =945
+                            OptionValue =1
+                            Name ="Option1"
+                            Begin
+                                Begin Label
+                                    OverlapFlags =87
+                                    Left =885
+                                    Top =885
+                                    Width =1455
+                                    Height =240
+                                    FontWeight =700
+                                    ForeColor =-2147483630
+                                    Name ="Label32"
+                                    Caption ="Cancelled Only"
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =2430
+                            Top =945
+                            OptionValue =3
+                            Name ="Option3"
+                            Begin
+                                Begin Label
+                                    OverlapFlags =87
+                                    Left =2685
+                                    Top =885
+                                    Width =1185
+                                    Height =240
+                                    FontWeight =700
+                                    ForeColor =-2147483630
+                                    Name ="Label37"
+                                    Caption ="Monthly Only"
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =3990
+                            Top =945
+                            OptionValue =4
+                            Name ="Option4"
+                            Begin
+                                Begin Label
+                                    OverlapFlags =87
+                                    Left =4245
+                                    Top =885
+                                    Width =1185
+                                    Height =240
+                                    FontWeight =700
+                                    ForeColor =-2147483630
+                                    Name ="Label39"
+                                    Caption ="Yearly Only"
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =5550
+                            Top =945
+                            OptionValue =2
+                            Name ="Option2"
+                            Begin
+                                Begin Label
+                                    OverlapFlags =87
+                                    Left =5805
+                                    Top =885
+                                    Width =990
+                                    Height =240
+                                    FontWeight =700
+                                    ForeColor =-2147483630
+                                    Name ="txtShowAll"
+                                    Caption ="Show All"
+                                End
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =615
+                    Top =210
+                    Width =270
+                    Height =225
+                    TabIndex =1
+                    Name ="txtAllowEdits"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin Label
+                    OverlapFlags =87
+                    Left =870
+                    Top =210
+                    Width =1935
+                    Height =210
+                    FontWeight =700
+                    Name ="Label47"
+                    Caption ="Allow Edits and Filter"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =3945
+                    Top =1380
+                    Width =1155
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label50"
+                    Caption ="Billing Group"
+                    GUID = Begin
+                        0x7fdd852b7e33c147be78d2dbba385a66
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =2
+                    IMESentenceMode =3
+                    Left =9060
+                    Top =360
+                    Width =1620
+                    TabIndex =2
+                    Name ="txtSelRec"
+                    GUID = Begin
+                        0xf94e95491de3a94592bb88079f58c238
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =7680
+                            Top =360
+                            Width =1320
+                            Height =240
+                            Name ="Label57"
+                            Caption ="Selected Record"
+                            GUID = Begin
+                                0x2b730d24cba5dc47bc5ce25631050aee
+                            End
+                        End
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =7965
+                    Top =1380
+                    Width =585
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label58"
+                    Caption ="Rate"
+                    GUID = Begin
+                        0x6fdbb3064e279e409f53f45139bbed56
+                    End
+                End
+            End
+        End
+        Begin Section
+            Height =270
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =300
+                    Top =15
+                    Width =1014
+                    Height =255
+                    FontSize =7
+                    Name ="ctlSUBssn"
+                    ControlSource ="SUBssn"
+                    InputMask ="000\\-00\\-0000;;_"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =2688
+                    Top =15
+                    Width =954
+                    Height =255
+                    FontSize =7
+                    TabIndex =2
+                    Name ="ctlSUBfirstNAME"
+                    ControlSource ="SUBfirstNAME"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =1374
+                    Top =15
+                    Width =1254
+                    Height =255
+                    FontSize =7
+                    TabIndex =1
+                    Name ="ctlSUBlastNAME"
+                    ControlSource ="SUBlastNAME"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =3702
+                    Top =15
+                    Width =216
+                    Height =255
+                    FontSize =7
+                    TabIndex =3
+                    Name ="ctlSUBmiddleNAME"
+                    ControlSource ="SUBmiddleNAME"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =8727
+                    Top =15
+                    Width =918
+                    Height =255
+                    FontSize =7
+                    TabIndex =4
+                    Name ="ctlSUBcontBEG"
+                    ControlSource ="SUBcontBEG"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =9705
+                    Top =15
+                    Width =918
+                    Height =255
+                    FontSize =7
+                    TabIndex =5
+                    Name ="ctlSUBcontEND"
+                    ControlSource ="SUBcontEND"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =11259
+                    Top =15
+                    Width =471
+                    Height =255
+                    FontSize =7
+                    TabIndex =7
+                    Name ="ctlSUBcancelled"
+                    ControlSource ="SUBcancelled"
+                    Format ="General Number"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =255
+                    Left =10605
+                    Top =15
+                    Width =516
+                    Height =255
+                    FontSize =7
+                    TabIndex =6
+                    Name ="ctlSUBbankDraftNo"
+                    ControlSource ="SUBbankDraftNo"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =7941
+                    Top =15
+                    Width =726
+                    Height =255
+                    FontSize =7
+                    TabIndex =8
+                    Name ="ctlSUBrate"
+                    ControlSource ="Rate"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =9360
+                    Width =780
+                    TabIndex =9
+                    BackColor =10092543
+                    Name ="RateID"
+                    ControlSource ="RateID"
+                    GUID = Begin
+                        0x8e068ecf1051cc449a6b4c9264a6e1e8
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =10320
+                    Width =540
+                    TabIndex =10
+                    BackColor =10092543
+                    Name ="CoverID"
+                    ControlSource ="CoverID"
+                    GUID = Begin
+                        0x0c133c5fc89a7a41838759faca395fff
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =3960
+                    Width =1854
+                    Height =255
+                    FontSize =7
+                    TabIndex =11
+                    Name ="txtGroupID"
+                    ControlSource ="GRname"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x3f5ebaca4e479d4e8c6040eb35d97bee
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =5880
+                    Width =1974
+                    Height =255
+                    FontSize =7
+                    TabIndex =12
+                    Name ="txtCoverage"
+                    ControlSource ="COVERdescr"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x52e850f322e1b548aafb0a0e71c9ce17
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =60
+                    Top =60
+                    Width =180
+                    Height =180
+                    TabIndex =13
+                    Name ="cmdEditRec"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Edit Record"
+                    GUID = Begin
+                        0xa03bd44b57debc48bfd05a836dc923c5
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Private Sub cboSUBPLANid_AfterUpdate()
+On Error GoTo Err_SUBPLANid_AfterUpdate
+
+    Dim Subscr As clsSubscr
+    Dim intCoverID As Integer
+    Dim intPlanID As Integer
+    Dim strGroupID As String
+    Dim strGroupPlanID As String
+    
+    Dim intDepCount
+    Dim strSSN As String
+    
+    Set Subscr = New clsSubscr
+   
+   With Me
+     strSSN = Nz(.SUBssn)
+     Subscr.SSN = strSSN
+     intDepCount = Subscr.DepCnt
+     intCoverID = .CoverID
+     strGroupID = .SUBgroupID
+     .ctlSUBrate = FindRate(strGroupID, intCoverID, intPlanID)
+     .RateID = lngRateID
+   End With
+   
+   Set Subscr = Nothing
+  
+  Exit Sub
+
+Exit_SUBPLANid_AfterUpdate:
+    Exit Sub
+    
+Err_SUBPLANid_AfterUpdate:
+    ' Display error information.
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_SUBPLANid_AfterUpdate
+
+End Sub
+
+Private Sub cmdEditRec_Click()
+
+    DoCmd.OpenForm "frmUpdateIndividualSubscriber", acNormal, , , , acWindowNormal
+    With Forms("frmUpdateIndividualSubscriber")
+        .ctlSUBssn = Me.txtSelRec
+        .ctlSUBlastNAME = Me.ctlSUBlastNAME
+        .ctlSUBfirstNAME = Me.ctlSUBfirstNAME
+        .ctlSUBmiddleNAME = Me.ctlSUBmiddleNAME
+        .cboGroupID = Me.SUBgroupID
+        .SUBPLANid = Me.CoverID
+        .ctlSUBrate = Me.ctlSUBrate
+        .ctlSUBcontBEG = Me.ctlSUBcontBEG
+        .ctlSUBcontEND = Me.ctlSUBcontEND
+        .ctlSUBbankDraftNo = Me.ctlSUBbankDraftNo
+        .ctlSUBcancelled = Me.ctlSUBcancelled
+        .CoverID = Me.CoverID
+        .RateID = Me.RateID
+    End With
+
+End Sub
+
+Private Sub ctlSUBbankDraftNo_Click()
+    Call SetRecID
+End Sub
+
+Private Sub ctlSUBcontBEG_Click()
+    Call SetRecID
+End Sub
+
+Private Sub ctlSUBcontEND_Click()
+    Call SetRecID
+End Sub
+
+Private Sub ctlSUBfirstNAME_Click()
+    Call SetRecID
+End Sub
+
+Private Sub ctlSUBlastNAME_Click()
+    Call SetRecID
+End Sub
+
+Private Sub ctlSUBrate_Click()
+    Call SetRecID
+End Sub
+
+Private Sub ctlSUBssn_Click()
+    Call SetRecID
+End Sub
+
+Private Function SetRecID()
+    
+    With Me
+        .txtSelRec = Me.SUBssn
+    End With
+
+End Function
+Private Sub Form_Current()
+With Me
+        If .ctlSUBcancelled = 2 Then
+            ' On Hold Customer change Name to Yellow
+            .ctlSUBfirstNAME.BackColor = 10092543
+            .ctlSUBlastNAME.BackColor = 10092543
+            .ctlSUBmiddleNAME.BackColor = 10092543
+        ElseIf .ctlSUBcancelled = 3 Then
+            ' Canceled change Name to Red
+            .ctlSUBfirstNAME.BackColor = 8421631
+            .ctlSUBlastNAME.BackColor = 8421631
+            .ctlSUBmiddleNAME.BackColor = 8421631
+            '.ctlSUBcancelled.BackColor = 65280
+        Else
+            ' Leave Name White
+            .ctlSUBfirstNAME.BackColor = 16777215
+            .ctlSUBlastNAME.BackColor = 16777215
+            .ctlSUBmiddleNAME.BackColor = 16777215
+            '.ctlSUBcancelled.BackColor = 16777215
+        End If
+        .Repaint
+        If Not IsNull(.SUBssn) Then
+            .txtSelRec = .SUBssn
+        Else
+            .txtSelRec = ""
+        End If
+    End With
+End Sub
+
+Private Sub OptFilter_Click()
+
+On Error GoTo PROC_ERR
+
+    Dim strSQL As String
+     
+    'Display only records that are cancelled
+            
+    If (Me.OptFilter = 1) Then
+        With Me
+            .AllowAdditions = True
+            .AllowDeletions = True
+            .AllowEdits = True
+            DoCmd.ApplyFilter "qfrmIndivSubscrCoverage", "[SUBcancelled]=3"
+            .AllowAdditions = False
+            .AllowDeletions = False
+            .AllowEdits = False
+            .ctlSUBssn.BackColor = 16777215
+            .ctlSUBlastNAME.BackColor = 16777215
+            .ctlSUBfirstNAME.BackColor = 16777215
+            .ctlSUBmiddleNAME.BackColor = 16777215
+            .ctlSUBrate.BackColor = 16777215
+            .txtGROUPid.BackColor = 16777215
+            .txtCoverage.BackColor = 16777215
+            .ctlSUBcontBEG.BackColor = 16777215
+            .ctlSUBcontEND.BackColor = 16777215
+            .ctlSUBbankDraftNo.BackColor = 16777215
+            .ctlSUBcancelled.BackColor = 16777215
+            .ctlSUBrate.BackColor = 16777215
+         End With
+    End If
+ 
+    'Display all records
+    If (Me.OptFilter = 2) Then
+        With Me
+        .AllowAdditions = True
+        .AllowDeletions = True
+        .AllowEdits = True
+        DoCmd.ShowAllRecords
+        .AllowAdditions = False
+        .AllowDeletions = False
+        .AllowEdits = False
+        .ctlSUBssn.BackColor = 16777215
+        .ctlSUBlastNAME.BackColor = 16777215
+        .ctlSUBfirstNAME.BackColor = 16777215
+        .ctlSUBmiddleNAME.BackColor = 16777215
+        .ctlSUBrate.BackColor = 16777215
+            .txtGROUPid.BackColor = 16777215
+            .txtCoverage.BackColor = 16777215
+        .ctlSUBcontBEG.BackColor = 16777215
+        .ctlSUBcontEND.BackColor = 16777215
+        .ctlSUBbankDraftNo.BackColor = 16777215
+        .ctlSUBcancelled.BackColor = 16777215
+        .ctlSUBrate.BackColor = 16777215
+        
+        End With
+        
+    End If
+    
+    'Displays only monthly subscribers that have not been cancelled
+    If (Me.OptFilter = 3) Then
+        With Me
+            .AllowAdditions = True
+            .AllowDeletions = True
+            .AllowEdits = True
+            DoCmd.ApplyFilter "qfrmIndivSubscrCoverage", "[SUBGroupID] Like ""INDVM"" and [SUBcancelled]=1"
+            .AllowAdditions = False
+            .AllowDeletions = False
+            .AllowEdits = False
+            .ctlSUBssn.BackColor = 16777215
+            .ctlSUBlastNAME.BackColor = 16777215
+            .ctlSUBfirstNAME.BackColor = 16777215
+            .ctlSUBmiddleNAME.BackColor = 16777215
+            .ctlSUBrate.BackColor = 16777215
+            .txtGROUPid.BackColor = 16777215
+            .txtCoverage.BackColor = 16777215
+            .ctlSUBcontBEG.BackColor = 16777215
+            .ctlSUBcontEND.BackColor = 16777215
+            .ctlSUBbankDraftNo.BackColor = 16777215
+            .ctlSUBcancelled.BackColor = 16777215
+            .ctlSUBrate.BackColor = 16777215
+        
+        End With
+        
+
+    End If
+ 
+    
+    'Displays only yearly subscribers that have not been cancelled
+    If (Me.OptFilter = 4) Then
+        With Me
+            .AllowAdditions = True
+            .AllowDeletions = True
+            .AllowEdits = True
+            DoCmd.ApplyFilter "qfrmIndivSubscrCoverage", "[SUBGroupID] Like ""INDV*"" AND [SUBGroupID] NOT IN (""INDVM"") and [SUBcancelled]=1"
+            .AllowAdditions = False
+            .AllowDeletions = False
+            .AllowEdits = False
+            .ctlSUBssn.BackColor = 16777215
+            .ctlSUBlastNAME.BackColor = 16777215
+            .ctlSUBfirstNAME.BackColor = 16777215
+            .ctlSUBmiddleNAME.BackColor = 16777215
+            .ctlSUBrate.BackColor = 16777215
+            .txtGROUPid.BackColor = 16777215
+            .txtCoverage.BackColor = 16777215
+            .ctlSUBcontBEG.BackColor = 16777215
+            .ctlSUBcontEND.BackColor = 16777215
+            .ctlSUBbankDraftNo.BackColor = 16777215
+            .ctlSUBcancelled.BackColor = 16777215
+            .ctlSUBrate.BackColor = 16777215
+        
+        End With
+    End If
+    Exit Sub
+    
+      
+PROC_ERR:
+    MsgBox "The following error occured: " & Error$
+    Resume Next
+
+ 
+End Sub
+
+
+Private Sub Form_Open(Cancel As Integer)
+    
+    Me.Filter = ""
+
+End Sub
+
+
+
+Private Sub Text53_Click()
+    Call SetRecID
+End Sub
+
+Private Sub Text54_Click()
+    Call SetRecID
+End Sub
+
+Private Sub txtAllowEdits_Click()
+
+On Error GoTo PROC_ERR
+
+    With Me
+                 
+        .AllowAdditions = True
+        .AllowDeletions = True
+        .AllowEdits = True
+        .ctlSUBssn.BackColor = 65535
+        .ctlSUBlastNAME.BackColor = 65535
+        .ctlSUBfirstNAME.BackColor = 65535
+        .ctlSUBmiddleNAME.BackColor = 65535
+        .txtGROUPid.BackColor = 65535
+        .ctlSUBrate.BackColor = 65535
+        .txtCoverage.BackColor = 65535
+        .ctlSUBcontBEG.BackColor = 65535
+        .ctlSUBcontEND.BackColor = 65535
+        .ctlSUBbankDraftNo.BackColor = 65535
+        .ctlSUBcancelled.BackColor = 65535
+        .ctlSUBrate.BackColor = 65535
+        
+     
+    End With
+    
+    Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+
+End Sub

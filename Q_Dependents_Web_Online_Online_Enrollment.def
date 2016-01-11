@@ -1,0 +1,80 @@
+Operation =1
+Option =0
+Where ="(((dbo_tblDependent.SubSSN) In (SELECT SSN FROM [dbo_tblSubscriber] WHERE GROUPI"
+    "D = 'INDIV' AND [PseudoSSN] = 'Y' )))"
+Begin InputTables
+    Name ="dbo_tblDependent"
+    Name ="dbo_tblSubscriber"
+End
+Begin OutputColumns
+    Expression ="dbo_tblDependent.DepID"
+    Expression ="dbo_tblDependent.SubID"
+    Expression ="dbo_tblDependent.SubSSN"
+    Expression ="dbo_tblDependent.EIMBRID"
+    Expression ="dbo_tblDependent.DepSSN"
+    Expression ="dbo_tblDependent.FirstName"
+    Expression ="dbo_tblDependent.MiddleInitial"
+    Expression ="dbo_tblDependent.LastName"
+    Expression ="dbo_tblDependent.DOB"
+    Expression ="dbo_tblDependent.Age"
+    Expression ="dbo_tblDependent.Relationship"
+    Expression ="dbo_tblDependent.Gender"
+    Expression ="dbo_tblDependent.EffDate"
+    Expression ="dbo_tblDependent.PreexistingDate"
+    Expression ="dbo_tblDependent.DepID_local"
+    Expression ="dbo_tblDependent.DateChanged"
+    Expression ="dbo_tblDependent.PseudoSSN"
+End
+Begin Joins
+    LeftTable ="dbo_tblDependent"
+    RightTable ="dbo_tblSubscriber"
+    Expression ="dbo_tblDependent.SubID = dbo_tblSubscriber.SubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+dbBoolean "TotalsRow" ="0"
+Begin
+    Begin
+        dbText "Name" ="dbo_tblDependent.SubSSN"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =4
+    Top =32
+    Right =931
+    Bottom =655
+    Left =-1
+    Top =-1
+    Right =895
+    Bottom =340
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =12
+        Right =307
+        Bottom =292
+        Top =0
+        Name ="dbo_tblDependent"
+        Name =""
+    End
+    Begin
+        Left =355
+        Top =12
+        Right =499
+        Bottom =156
+        Top =0
+        Name ="dbo_tblSubscriber"
+        Name =""
+    End
+End

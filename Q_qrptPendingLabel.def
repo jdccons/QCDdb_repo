@@ -1,0 +1,47 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.SUBflyerPRTdte) Is Null) AND ((tblSubscr.SUBstatus)=\"PENDG\") AND "
+    "((tblSubscr.DateUpdated)>=[Forms]![frmDeletePendingSubscr]![txtPrintDate]))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Alias ="Zip2"
+    Expression ="IIf([SUBzip] Like \"#####-#\",Left([SUBZip],Len([SUBZip])-1),IIf([SUBZip] Like \""
+        "#########\",Format([SUBZip],\"@@@@@-@@@@\"),[SUBZip]))"
+    Expression ="tblSubscr.*"
+    Expression ="tblSubscr.SUBflyerPRTdte"
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =150
+    Top =158
+    Right =1002
+    Bottom =463
+    Left =-1
+    Top =-1
+    Right =845
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =255
+        Bottom =98
+        Top =45
+        Name ="tblSubscr"
+        Name =""
+    End
+End

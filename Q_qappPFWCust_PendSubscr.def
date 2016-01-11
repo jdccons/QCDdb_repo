@@ -1,0 +1,92 @@
+Operation =3
+Name ="ARCUST"
+Option =0
+Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmPendingSubscr]![PLTcustKEY]) AND ((tblInvAg"
+    "t.Primary)=True))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblInvAgt"
+End
+Begin OutputColumns
+    Name ="Customer_Key"
+    Expression ="tblSubscr.PLTcustKEY"
+    Name ="Customer_Name"
+    Expression ="tblSubscr.SUB_LUname"
+    Name ="Address_1"
+    Expression ="tblSubscr.SUBstreet1"
+    Name ="Address_2"
+    Expression ="tblSubscr.SUBstreet2"
+    Name ="City"
+    Expression ="tblSubscr.SUBcity"
+    Name ="State"
+    Expression ="tblSubscr.SUBstate"
+    Name ="Zip_Code"
+    Expression ="tblSubscr.SUBzip"
+    Name ="Phone_1"
+    Expression ="tblSubscr.SUBphoneHOME"
+    Name ="Phone_2"
+    Expression ="tblSubscr.SUBphoneWORK"
+    Name ="Territory_Ky"
+    Expression ="tblSubscr.SUBgeoID"
+    Name ="Salespersn_Ky"
+    Expression ="tblInvAgt.AGENTid"
+    Alias ="Date"
+    Name ="RecDate"
+    Expression ="Date()"
+    Alias ="Time"
+    Name ="RecTime"
+    Expression ="Format(Time(),\"hh:nn:ss\")"
+    Alias ="User"
+    Name ="RecUserID"
+    Expression ="\"ACCESS\""
+    Name ="Cust_Class_Ky"
+    Expression ="tblSubscr.SUBstatus"
+    Alias ="OPENinv"
+    Name ="Open_Or_Balfwd"
+    Expression ="\"O\""
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblInvAgt"
+    Expression ="tblSubscr.SubID = tblInvAgt.SubscrID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =29
+    Right =1258
+    Bottom =386
+    Left =-1
+    Top =-1
+    Right =1204
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =41
+        Top =5
+        Right =291
+        Bottom =104
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =329
+        Top =6
+        Right =425
+        Bottom =120
+        Top =0
+        Name ="tblInvAgt"
+        Name =""
+    End
+End

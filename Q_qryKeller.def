@@ -1,0 +1,58 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblEnrollment_Keller"
+End
+Begin OutputColumns
+    Expression ="tblEnrollment_Keller.Enrolled"
+    Expression ="tblEnrollment_Keller.SUBlastNAME"
+    Expression ="tblEnrollment_Keller.SUBfirstNAME"
+    Expression ="tblEnrollment_Keller.SUBmiddleNAME"
+    Expression ="tblEnrollment_Keller.SUBssn"
+    Expression ="tblEnrollment_Keller.Campus"
+    Expression ="tblEnrollment_Keller.SUBstreet1"
+    Expression ="tblEnrollment_Keller.SUBstreet2"
+    Expression ="tblEnrollment_Keller.SUBcity"
+    Expression ="tblEnrollment_Keller.SUBstate"
+    Expression ="tblEnrollment_Keller.SUBzip"
+    Expression ="tblEnrollment_Keller.SUBphoneHOME"
+    Expression ="tblEnrollment_Keller.SUBdob"
+End
+Begin OrderBy
+    Expression ="tblEnrollment_Keller.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblEnrollment_Keller.SUBmiddleNAME"
+        dbInteger "ColumnWidth" ="2205"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =227
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =345
+        Bottom =182
+        Top =1
+        Name ="tblEnrollment_Keller"
+        Name =""
+    End
+End

@@ -1,0 +1,62 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="qselGrpAgt_Agency"
+    Name ="tmpBillingReconcile_rpt"
+End
+Begin OutputColumns
+    Alias ="AgencyCom"
+    Expression ="qselGrpAgt_Agency.AGENT_LUname"
+    Expression ="tmpBillingReconcile_rpt.GROUPid"
+    Expression ="tmpBillingReconcile_rpt.Docno"
+End
+Begin Joins
+    LeftTable ="tmpBillingReconcile_rpt"
+    RightTable ="qselGrpAgt_Agency"
+    Expression ="tmpBillingReconcile_rpt.GROUPid = qselGrpAgt_Agency.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="AgencyCom"
+        dbInteger "ColumnWidth" ="4050"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =23
+    Top =36
+    Right =977
+    Bottom =499
+    Left =-1
+    Top =-1
+    Right =947
+    Bottom =302
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =263
+        Top =18
+        Right =417
+        Bottom =125
+        Top =0
+        Name ="qselGrpAgt_Agency"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =223
+        Bottom =187
+        Top =6
+        Name ="tmpBillingReconcile_rpt"
+        Name =""
+    End
+End

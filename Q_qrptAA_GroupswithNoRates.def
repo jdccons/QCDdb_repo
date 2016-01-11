@@ -1,0 +1,117 @@
+Operation =1
+Option =0
+Having ="(((tblRates.GroupID) Is Null)) OR (((tblRates.PlanID) Is Null)) OR (((tblRates.C"
+    "overID) Is Null))"
+Begin InputTables
+    Name ="qselAA_GroupswithNoRates"
+    Name ="tblRates"
+    Name ="tblPlans"
+    Name ="tblCoverage"
+End
+Begin OutputColumns
+    Alias ="Group ID"
+    Expression ="qselAA_GroupswithNoRates.SubGroupID"
+    Alias ="Plan"
+    Expression ="tblPlans.PlanDesc"
+    Alias ="Coverage"
+    Expression ="tblCoverage.COVERdescr"
+End
+Begin Joins
+    LeftTable ="qselAA_GroupswithNoRates"
+    RightTable ="tblRates"
+    Expression ="qselAA_GroupswithNoRates.SubGroupID = tblRates.GroupID"
+    Flag =2
+    LeftTable ="qselAA_GroupswithNoRates"
+    RightTable ="tblRates"
+    Expression ="qselAA_GroupswithNoRates.PlanID = tblRates.PlanID"
+    Flag =2
+    LeftTable ="qselAA_GroupswithNoRates"
+    RightTable ="tblRates"
+    Expression ="qselAA_GroupswithNoRates.CoverID = tblRates.CoverID"
+    Flag =2
+    LeftTable ="qselAA_GroupswithNoRates"
+    RightTable ="tblPlans"
+    Expression ="qselAA_GroupswithNoRates.PlanID = tblPlans.PlanID"
+    Flag =1
+    LeftTable ="qselAA_GroupswithNoRates"
+    RightTable ="tblCoverage"
+    Expression ="qselAA_GroupswithNoRates.CoverID = tblCoverage.CoverID"
+    Flag =1
+End
+Begin Groups
+    Expression ="qselAA_GroupswithNoRates.SubGroupID"
+    GroupLevel =0
+    Expression ="tblPlans.PlanDesc"
+    GroupLevel =0
+    Expression ="tblCoverage.COVERdescr"
+    GroupLevel =0
+    Expression ="tblRates.GroupID"
+    GroupLevel =0
+    Expression ="tblRates.PlanID"
+    GroupLevel =0
+    Expression ="tblRates.CoverID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="Coverage"
+        dbInteger "ColumnWidth" ="2655"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =277
+    Top =108
+    Right =697
+    Bottom =501
+    Left =-1
+    Top =-1
+    Right =413
+    Bottom =225
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =212
+        Bottom =98
+        Top =0
+        Name ="qselAA_GroupswithNoRates"
+        Name =""
+    End
+    Begin
+        Left =250
+        Top =6
+        Right =450
+        Bottom =113
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+    Begin
+        Left =490
+        Top =4
+        Right =612
+        Bottom =81
+        Top =0
+        Name ="tblPlans"
+        Name =""
+    End
+    Begin
+        Left =638
+        Top =3
+        Right =764
+        Bottom =95
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+End

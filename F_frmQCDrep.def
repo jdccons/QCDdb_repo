@@ -1,0 +1,118 @@
+Version =17
+VersionRequired =17
+Checksum =-1175189588
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    AllowDeletions = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    BorderStyle =1
+    Width =4815
+    ItemSuffix =38
+    Left =615
+    Top =1605
+    Right =11415
+    Bottom =7530
+    RecSrcDt = Begin
+        0xd90058556cd3e140
+    End
+    RecordSource ="qryQCDrep"
+    Caption ="QCD Representative Information"
+    MenuBar ="FormMenuBar"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000892b00007415000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a65742035202d2053746400000000000000000000000000 ,
+        0x0004010494004000036700040200010000000000000001000901580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d5355444f034850 ,
+        0x204c617365724a6574203400000000000000000000000000000000000000e401 ,
+        0x0000000000003c0100000000040064000a000000130006454e41424c4505000a
+    End
+    PrtDevNames = Begin
+        0x1c000800250001004850204c617365724a65742035202d205374640048505043 ,
+        0x4c354d53005c5c5163645c6c6173657200000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000
+    End
+    OnDeactivate ="[Event Procedure]"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin FormHeader
+            SpecialEffect =2
+            Height =0
+            BackColor =12632256
+            Name ="FormHeader3"
+        End
+        Begin Section
+            SpecialEffect =2
+            Height =1185
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =1485
+                    Top =180
+                    Width =1500
+                    Name ="ctlRepInitials"
+                    ControlSource ="RepInitials"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Top =180
+                    Width =1440
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text13"
+                    Caption ="Rep.  Initials: "
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =1485
+                    Top =555
+                    Width =3225
+                    TabIndex =1
+                    Name ="ctlRepName"
+                    ControlSource ="RepName"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Top =540
+                    Width =1425
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text37"
+                    Caption ="Agency: "
+                End
+            End
+        End
+        Begin FormFooter
+            SpecialEffect =2
+            Height =0
+            BackColor =12632256
+            Name ="FormFooter4"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+
+Option Compare Database   'Use database order for string comparisons
+Option Explicit

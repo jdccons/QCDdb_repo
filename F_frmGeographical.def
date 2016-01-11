@@ -1,0 +1,151 @@
+Version =17
+VersionRequired =17
+Checksum =-1858750047
+Begin Form
+    RecordSelectors = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    Width =9360
+    ItemSuffix =20
+    Right =1260
+    Bottom =615
+    RecSrcDt = Begin
+        0x5e59b76ed4c5e140
+    End
+    RecordSource ="tblGeographical"
+    Caption ="Geographical"
+    MenuBar ="FormMenuBar"
+    OnActivate ="[Event Procedure]"
+    OnDeactivate ="[Event Procedure]"
+    Begin
+        Begin Label
+            TextAlign =3
+            FontWeight =700
+            BackColor =12632256
+        End
+        Begin Rectangle
+            SpecialEffect =2
+        End
+        Begin OptionButton
+            AddColon = NotDefault
+            SpecialEffect =2
+            LabelAlign =3
+            Width =187
+            Height =187
+            LabelX =-154
+        End
+        Begin CheckBox
+            AddColon = NotDefault
+            SpecialEffect =2
+            LabelAlign =3
+            Width =187
+            Height =187
+            LabelX =-154
+        End
+        Begin TextBox
+            SpecialEffect =2
+            LabelAlign =3
+            Height =255
+            LabelX =-154
+        End
+        Begin ListBox
+            SpecialEffect =2
+            LabelAlign =3
+            LabelX =-154
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            LabelAlign =3
+            Height =255
+            LabelX =-154
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =12632256
+            Name ="FormHeader1"
+        End
+        Begin Section
+            Height =2040
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =1584
+                    Top =120
+                    Width =855
+                    Name ="GEOid"
+                    ControlSource ="GEOid"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =555
+                            Top =90
+                            Width =1020
+                            Height =240
+                            Name ="Text15"
+                            Caption ="ID:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =1584
+                    Top =600
+                    Width =3015
+                    ColumnWidth =2445
+                    TabIndex =1
+                    Name ="GEOdesc"
+                    ControlSource ="GEOdesc"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =345
+                            Top =585
+                            Width =1248
+                            Height =240
+                            Name ="Text17"
+                            Caption ="Description:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =1584
+                    Top =1080
+                    Width =7770
+                    Height =960
+                    ColumnWidth =7440
+                    TabIndex =2
+                    Name ="GEOcities"
+                    ControlSource ="GEOcities"
+                    StatusBarText ="THESE ARE SOME OF THE CITIES WITHIN THIS GEO ID"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =585
+                            Top =1050
+                            Width =1008
+                            Height =240
+                            Name ="Text19"
+                            Caption ="Cities:"
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =12632256
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+
+Option Explicit

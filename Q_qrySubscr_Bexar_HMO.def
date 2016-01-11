@@ -1,0 +1,94 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblCoverage"
+    Name ="tblSubscr_Bexar"
+    Name ="tblGrp_Bexar"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblSubscr_Bexar.*"
+    Expression ="tblGrp_Bexar.GRcontBEG"
+    Expression ="tblGrp_Bexar.GRcontEND"
+    Expression ="tblGrp_Bexar.GRname"
+    Expression ="tblGrp_Bexar.GRcancelled"
+    Expression ="tblCoverage.COVERdescr"
+    Expression ="tblRates.Rate"
+    Expression ="tblCoverage.COVERcode"
+End
+Begin Joins
+    LeftTable ="tblSubscr_Bexar"
+    RightTable ="tblGrp_Bexar"
+    Expression ="tblSubscr_Bexar.SUBgroupID = tblGrp_Bexar.GROUPid"
+    Flag =1
+    LeftTable ="tblSubscr_Bexar"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr_Bexar.CoverID = tblCoverage.CoverID"
+    Flag =1
+    LeftTable ="tblSubscr_Bexar"
+    RightTable ="tblRates"
+    Expression ="tblSubscr_Bexar.RateID = tblRates.RateID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr_Bexar.SUB_LUname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =16
+    Top =98
+    Right =1140
+    Bottom =458
+    Left =-1
+    Top =-1
+    Right =1117
+    Bottom =187
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =541
+        Top =9
+        Right =701
+        Bottom =125
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+    Begin
+        Left =39
+        Top =8
+        Right =202
+        Bottom =144
+        Top =25
+        Name ="tblSubscr_Bexar"
+        Name =""
+    End
+    Begin
+        Left =277
+        Top =7
+        Right =481
+        Bottom =117
+        Top =12
+        Name ="tblGrp_Bexar"
+        Name =""
+    End
+    Begin
+        Left =858
+        Top =13
+        Right =954
+        Bottom =123
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

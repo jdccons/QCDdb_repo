@@ -1,0 +1,64 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="tblEDI_App_Subscr.SubID"
+    Expression ="[tblSubscr]![SubID]"
+    Name ="tblEDI_App_Subscr.SUBcardPRT"
+    Expression ="[tblSubscr]![SUBcardPRT]"
+    Name ="tblEDI_App_Subscr.SUBcardPRTdte"
+    Expression ="[tblSubscr]![SUBcardPRTdte]"
+    Name ="tblEDI_App_Subscr.SUBnotes"
+    Expression ="[tblSubscr]![SUBnotes]"
+    Name ="tblEDI_App_Subscr.DateCreated"
+    Expression ="[tblSubscr]![DateCreated]"
+    Name ="tblEDI_App_Subscr.DateUpdated"
+    Expression ="[tblSubscr]![DateUpdated]"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =20
+    Top =51
+    Right =925
+    Bottom =452
+    Left =-1
+    Top =-1
+    Right =898
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =262
+        Bottom =113
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =311
+        Top =9
+        Right =553
+        Bottom =101
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

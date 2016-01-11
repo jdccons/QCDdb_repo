@@ -1,0 +1,112 @@
+Operation =1
+Option =8
+Having ="(((tblGrp.GRcancelled)=No) AND ((Count(tblSubscr.SUBssn)) Is Not Null))"
+Begin InputTables
+    Name ="tblGrpZipCodeCount"
+    Name ="tblGrp"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRhold"
+    Expression ="tblGrpZipCodeCount.[Zip Code]"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Alias ="SUBSCRIBERS"
+    Expression ="Count(tblSubscr.SUBssn)"
+End
+Begin Joins
+    LeftTable ="tblGrpZipCodeCount"
+    RightTable ="tblGrp"
+    Expression ="tblGrpZipCodeCount.[Zip Code] = tblGrp.GRzip"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tblGrpZipCodeCount.[Zip Code]"
+    Flag =0
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+End
+Begin Groups
+    Expression ="tblGrp.GRcancelled"
+    GroupLevel =0
+    Expression ="tblGrp.GRhold"
+    GroupLevel =0
+    Expression ="tblGrpZipCodeCount.[Zip Code]"
+    GroupLevel =0
+    Expression ="tblGrp.GROUPid"
+    GroupLevel =0
+    Expression ="tblGrp.GRname"
+    GroupLevel =0
+    Expression ="tblGrp.GRstreet1"
+    GroupLevel =0
+    Expression ="tblGrp.GRstreet2"
+    GroupLevel =0
+    Expression ="tblGrp.GRcity"
+    GroupLevel =0
+    Expression ="tblGrp.GRstate"
+    GroupLevel =0
+    Expression ="tblGrp.GRzip"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="SUBSCRIBERS"
+        dbInteger "ColumnWidth" ="1410"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =483
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =211
+    Left =100
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =68
+        Top =0
+        Name ="tblGrpZipCodeCount"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =113
+        Top =38
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =113
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

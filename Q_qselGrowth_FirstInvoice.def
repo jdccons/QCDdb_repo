@@ -1,0 +1,49 @@
+Operation =1
+Option =0
+Where ="(((ARTRAN.DocumentDate)=#1/1/2000#))"
+Begin InputTables
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Expression ="ARTRAN.CustomerKey"
+    Alias ="Year"
+    Expression ="\"2000\""
+    Alias ="SumOfDocamt"
+    Expression ="Sum(ARTRAN.DocumentAmt)"
+End
+Begin Groups
+    Expression ="ARTRAN.CustomerKey"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =22
+    Right =778
+    Bottom =393
+    Left =-1
+    Top =-1
+    Right =731
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =207
+        Bottom =105
+        Top =3
+        Name ="ARTRAN"
+        Name =""
+    End
+End

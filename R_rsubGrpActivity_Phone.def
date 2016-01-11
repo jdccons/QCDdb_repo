@@ -1,0 +1,341 @@
+Version =20
+VersionRequired =20
+Checksum =-1468474063
+Begin Report
+    LayoutForPrint = NotDefault
+    FilterOn = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =14355
+    DatasheetFontHeight =10
+    ItemSuffix =24
+    Top =390
+    Right =10695
+    Bottom =3825
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x2e9f7047d20de340
+    End
+    RecordSource ="SELECT tblGrpLog.LogGrID, tblGrp.GRname, tblGrpLog.LogNotes, tblGrpLog.LogDate, "
+        " tblGrpLog.LogTime, tblGrpLog.LogCallBack, tblGrpLog.LogAcctMgrID, tblGrpLog.Log"
+        "Purpose, tblGrpLog.LogOutcome, tblGrpLog.LogFollowupAction, tblGrpLog.LogSize, t"
+        "blGrpLog.LogDateCallVisit, tblGrpLog.LogPhoneLog,  tblGrp.GRcancelled, tblGrpLog"
+        ".LogApptCallTime, tblAcctMgr.AcctMgrName FROM (tblGrp LEFT JOIN tblGrpLog ON (tb"
+        "lGrp.GROUPid = tblGrpLog.LogGrID)  AND (tblGrp.GROUPid = tblGrpLog.LogGrID)) LEF"
+        "T JOIN tblAcctMgr ON tblGrpLog.LogAcctMgrID = tblAcctMgr.AcctMgrID WHERE (((tblG"
+        "rpLog.LogPhoneLog)=Yes)  AND [LogDateCallVisit] BETWEEN #9/1/2006# AND #10/31/20"
+        "06#);"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a00500000000000013380000f000000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x01043c079c00d00603c70000020014009a0b3408640001000700580200000100 ,
+        0x0000000000004134000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000050524956 ,
+        0xe012000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000446f6375436f6d2050444620506f72743a00
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =510
+            Name ="ReportHeader"
+            Begin
+                Begin Label
+                    TextFontFamily =34
+                    Left =15
+                    Width =2970
+                    Height =255
+                    FontWeight =700
+                    Name ="Label22"
+                    Caption ="Phone Contacts"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =90
+                    Top =271
+                    Width =384
+                    Height =239
+                    FontWeight =700
+                    Name ="Label1"
+                    Caption ="Size"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =870
+                    Top =270
+                    Width =1050
+                    Height =239
+                    FontWeight =700
+                    Name ="Label2"
+                    Caption ="Date / Time"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =6870
+                    Top =90
+                    Width =1680
+                    Height =420
+                    FontWeight =700
+                    Name ="Label3"
+                    Caption ="Phone Contact\015\012 Outcome"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =9630
+                    Top =270
+                    Width =1710
+                    Height =239
+                    FontWeight =700
+                    Name ="Label4"
+                    Caption ="Follow up Action"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =1980
+                    Top =270
+                    Width =1260
+                    Height =225
+                    FontWeight =700
+                    Name ="Label7"
+                    Caption ="Client Svc. Rep."
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =12750
+                    Top =270
+                    Width =555
+                    Height =239
+                    FontWeight =700
+                    Name ="Label16"
+                    Caption ="Notes"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =4245
+                    Top =270
+                    Width =840
+                    Height =239
+                    FontWeight =700
+                    Name ="Label24"
+                    Caption ="Purpose"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =240
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Top =1
+                    Width =495
+                    Height =239
+                    Name ="LogSize"
+                    ControlSource ="LogSize"
+                    StatusBarText ="A, B, C+, or Baby C"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Left =495
+                    Top =1
+                    Width =825
+                    Height =239
+                    TabIndex =1
+                    Name ="LogDateCallVisit"
+                    ControlSource ="LogDateCallVisit"
+                    Format ="Short Date"
+                    StatusBarText ="Date Called or Visited"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Left =6285
+                    Top =1
+                    Width =3150
+                    Height =239
+                    TabIndex =2
+                    Name ="LogOutcome"
+                    ControlSource ="LogOutcome"
+                    StatusBarText ="Outcome of Call or Meeting"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Left =9450
+                    Width =2430
+                    Height =239
+                    TabIndex =3
+                    Name ="LogFollowupAction"
+                    ControlSource ="LogFollowupAction"
+                    StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Left =2010
+                    Top =1
+                    Width =1470
+                    Height =239
+                    TabIndex =4
+                    Name ="Text18"
+                    ControlSource ="RepName"
+                    StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Left =11880
+                    Width =2415
+                    Height =239
+                    TabIndex =5
+                    Name ="Text20"
+                    ControlSource ="LogNotes"
+                    StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Left =1320
+                    Top =1
+                    Width =690
+                    Height =239
+                    TabIndex =6
+                    Name ="LogApptCallTime"
+                    ControlSource ="LogApptCallTime"
+                    Format ="Short Time"
+                    InputMask ="09:00\\ >LL;0"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OldBorderStyle =1
+                    BorderWidth =1
+                    BackStyle =0
+                    Left =3480
+                    Top =1
+                    Width =2790
+                    Height =239
+                    TabIndex =7
+                    Name ="Text21"
+                    ControlSource ="LogPurpose"
+                    StatusBarText ="Outcome of Call or Meeting"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter"
+        End
+    End
+End

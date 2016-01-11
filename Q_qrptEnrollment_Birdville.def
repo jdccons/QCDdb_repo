@@ -1,0 +1,88 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment_Birdville"
+End
+Begin OutputColumns
+    Alias ="NameSort"
+    Expression ="([SubLastName]) & ([SubFirstName]) & ([SubMiddleName])"
+    Alias ="SSN"
+    Expression ="Format([SUBssn],\"000-00-0000\")"
+    Alias ="SubName"
+    Expression ="Trim([SubFirstName]) & IIf(IsNull([SubMiddleName]),\"\",([SubMiddleName])) & \" "
+        "\" & ([SubLastName])"
+    Alias ="SubAddr"
+    Expression ="Trim([Substreet1]) & \"  \" & IIf(IsNull([SubStreet2]),\"\",([SubStreet2])) & \""
+        " \" & ([SubCity]) & \",  \" & ([SubState]) & \"  \" & ([SubZip])"
+    Expression ="tblEnrollment_Birdville.*"
+    Alias ="GRname"
+    Expression ="\"Birdville Independent School District\""
+    Alias ="SUBeffDATE2"
+    Expression ="#1/1/2000#"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
+        "loyee at No Monthly Charge.\""
+End
+Begin OrderBy
+    Expression ="([SubLastName]) & ([SubFirstName]) & ([SubMiddleName])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="2610"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="2820"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="4500"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE2"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="NameSort"
+        dbInteger "ColumnWidth" ="2940"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =802
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =287
+        Top =6
+        Right =383
+        Bottom =113
+        Top =0
+        Name ="tblEnrollment_Birdville"
+        Name =""
+    End
+End

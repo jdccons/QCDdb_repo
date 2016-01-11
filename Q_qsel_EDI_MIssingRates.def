@@ -1,0 +1,82 @@
+Operation =1
+Option =0
+Where ="(((tblEDI_App_Subscr.PlanID) Is Null Or (tblEDI_App_Subscr.PlanID)=0))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="qsel_EDI_MIssingRates_1"
+End
+Begin OutputColumns
+    Expression ="tblEDI_App_Subscr.SubSSN"
+    Expression ="tblEDI_App_Subscr.SubID"
+    Expression ="tblEDI_App_Subscr.wSubID"
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    Expression ="tblEDI_App_Subscr.PlanID"
+    Expression ="qsel_EDI_MIssingRates_1.CoverID"
+    Expression ="qsel_EDI_MIssingRates_1.PlanID"
+    Expression ="qsel_EDI_MIssingRates_1.GRname"
+    Expression ="qsel_EDI_MIssingRates_1.CoverDescr"
+    Expression ="qsel_EDI_MIssingRates_1.Rate"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="qsel_EDI_MIssingRates_1"
+    Expression ="tblEDI_App_Subscr.SubGroupID = qsel_EDI_MIssingRates_1.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+dbBoolean "TotalsRow" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubGroupID"
+        dbInteger "ColumnWidth" ="1215"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubSSN"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.PlanID"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =-377
+    Top =67
+    Right =549
+    Bottom =499
+    Left =-1
+    Top =-1
+    Right =894
+    Bottom =218
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =193
+        Bottom =184
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =249
+        Top =5
+        Right =499
+        Bottom =198
+        Top =0
+        Name ="qsel_EDI_MIssingRates_1"
+        Name =""
+    End
+End

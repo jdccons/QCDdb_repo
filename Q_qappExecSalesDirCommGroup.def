@@ -1,0 +1,86 @@
+Operation =3
+Name ="tblCommission"
+Option =8
+Where ="(((tblGrp.GRExecSalesDirID)<>\"CORP\") AND ((ARTRAN.Trntyp)=\"P\"))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="COMMcustKEY"
+    Expression ="ARTRAN.Custkey"
+    Name ="COMMcustNAME"
+    Expression ="tblGrp.GRname"
+    Name ="COMMcheckNO"
+    Expression ="ARTRAN.Docno"
+    Name ="COMMinvoiceNO"
+    Expression ="ARTRAN.Applytodocno"
+    Alias ="CheckAmt"
+    Name ="COMMcheckAMT"
+    Expression ="([Docamt])*-1"
+    Name ="COMMagent"
+    Expression ="tblGrp.GRExecSalesDirID"
+    Name ="COMMrate"
+    Expression ="tblGrp.GRExecSalesDirRate"
+    Name ="COMMcustCLASS"
+    Expression ="ARTRAN.Custclass"
+    Name ="COMMcheckDATE"
+    Expression ="ARTRAN.Docdate"
+    Alias ="AgentType"
+    Name ="COMMagentTYPE"
+    Expression ="3"
+End
+Begin Joins
+    LeftTable ="ARTRAN"
+    RightTable ="tblGrp"
+    Expression ="ARTRAN.Custkey = tblGrp.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+Begin
+    Begin
+        dbText "Name" ="ARTRAN.Custkey"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRExecSalesDirID"
+        dbInteger "ColumnWidth" ="1890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =283
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =192
+        Bottom =245
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =240
+        Top =4
+        Right =390
+        Bottom =241
+        Top =24
+        Name ="tblGrp"
+        Name =""
+    End
+End

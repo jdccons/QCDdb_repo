@@ -1,0 +1,191 @@
+Version =17
+VersionRequired =17
+Checksum =610610563
+Begin Report
+    LayoutForPrint = NotDefault
+    FilterOn = NotDefault
+    OrderByOn = NotDefault
+    RecordLocks =2
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =8640
+    ItemSuffix =11
+    Left =795
+    Top =105
+    Right =11055
+    Bottom =5040
+    Filter ="((tblSubscr.SUBgroupID) In('A1FIR'))"
+    RecSrcDt = Begin
+        0x94dd56f6ad48e240
+    End
+    RecordSource ="qrptZeroBalLabel"
+    Caption ="Mailing Labels for Pending Indiv Subscribers"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000d0020000d00200001803000000000000c02100006c24000001000000 ,
+        0x010000005202000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4550534f4e205374796c75732050686f746f2037303000000000000000000000 ,
+        0x00040601940006010f8b800701000100ea0a6f08000001000700680102000000 ,
+        0x6801000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0200000001000000210100000000000000000000444c4c4e616d6531363d4550 ,
+        0x4947554932372e444c4c00000000000000000000444c4c4e616d6533323d4550 ,
+        0x4944413232302e444c4c000000000000000000004550534f4e205374796c7573 ,
+        0x2050686f746f2037303000000000000000000000000202006801680101000000 ,
+        0x000001000001000001003408410a3408410a6400000000001400000000000000 ,
+        0x000032000000ff00000000000000000003000000010000000000020000000100 ,
+        0x0000010001000600060002000000000000000000000000000000000005000100 ,
+        0x00000000000000000000000000000000000000000000000052034c0402000200 ,
+        0x0000000000000000000000000000000000000000000030b65f490000
+    End
+    PrtDevNames = Begin
+        0x080011002800010077696e73706f6f6c004550534f4e205374796c7573205068 ,
+        0x6f746f20373030005c5c536f6f5c6570736f6e00000000000000000000000000 ,
+        0x00000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =9324
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =7635
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    Name ="Field2"
+                    ControlSource ="=Trim([SUBfirstNAME]) & \" \" & Trim([SUBmiddleNAME]) & \" \" & Trim([SUBlastNAM"
+                        "E])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =7920
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    TabIndex =1
+                    Name ="Field3"
+                    ControlSource ="=Trim([SUBstreet1])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =8490
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    TabIndex =2
+                    Name ="Field4"
+                    ControlSource ="=[SUBcity] & \", \" & [SUBstate] & \"  \" & [SUBzip]"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =4920
+                    Top =8205
+                    Width =3564
+                    Height =270
+                    FontSize =10
+                    TabIndex =3
+                    Name ="Field10"
+                    ControlSource ="=Trim([SUBstreet2])"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =216
+                    Top =5220
+                    Width =3156
+                    Height =264
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Label6"
+                    Caption ="QCD of America"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =210
+                    Top =5706
+                    Width =3147
+                    Height =216
+                    Name ="Label7"
+                    Caption ="12222 Merit Dr.  Suite 1070"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =210
+                    Top =5922
+                    Width =1272
+                    Height =216
+                    Name ="Label8"
+                    Caption ="Dallas, TX 75251"
+                End
+                Begin Label
+                    Left =210
+                    Top =5490
+                    Width =3150
+                    Height =216
+                    Name ="Label9"
+                    Caption ="Individual Plan Services"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =195
+                    Top =8880
+                    Width =3975
+                    Height =345
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label10"
+                    Caption ="A Special Offer for Your Family!"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    'DoCmd.OpenForm "fmnuReportIndiv"
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

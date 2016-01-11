@@ -1,0 +1,43 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblEDI_Dep_Import"
+End
+Begin OutputColumns
+    Expression ="tblEDI_Dep_Import.[Primary SSN]"
+    Alias ="CountOfDependent SSN"
+    Expression ="Count(tblEDI_Dep_Import.[Dependent SSN])"
+End
+Begin Groups
+    Expression ="tblEDI_Dep_Import.[Primary SSN]"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =41
+    Top =244
+    Right =893
+    Bottom =549
+    Left =-1
+    Top =-1
+    Right =841
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =53
+        Top =10
+        Right =175
+        Bottom =118
+        Top =15
+        Name ="tblEDI_Dep_Import"
+        Name =""
+    End
+End

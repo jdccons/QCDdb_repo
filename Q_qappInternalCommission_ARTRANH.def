@@ -1,0 +1,57 @@
+Operation =3
+Name ="tblCommission"
+Option =0
+Where ="(((tblCommission_tmp.Docdate) Between #12/1/99# And #12/31/99#))"
+Begin InputTables
+    Name ="tblCommission_tmp"
+End
+Begin OutputColumns
+    Name ="COMMcustKEY"
+    Expression ="tblCommission_tmp.Custkey"
+    Name ="COMMcustNAME"
+    Expression ="tblCommission_tmp.GRname"
+    Name ="COMMcheckNO"
+    Expression ="tblCommission_tmp.Docno"
+    Name ="COMMcheckDATE"
+    Expression ="tblCommission_tmp.Docdate"
+    Name ="COMMcheckAMT"
+    Expression ="tblCommission_tmp.CheckAmt"
+    Name ="COMMagent"
+    Expression ="tblCommission_tmp.GRagentID2"
+    Name ="COMMrate"
+    Expression ="tblCommission_tmp.GRagentRATE2"
+    Name ="COMMagentTYPE"
+    Expression ="tblCommission_tmp.AgentType"
+    Name ="COMMinvoiceNO"
+    Expression ="tblCommission_tmp.Applytodocno"
+    Name ="COMMcustCLASS"
+    Expression ="tblCommission_tmp.Custclass"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =249
+        Bottom =113
+        Top =6
+        Name ="tblCommission_tmp"
+        Name =""
+    End
+End

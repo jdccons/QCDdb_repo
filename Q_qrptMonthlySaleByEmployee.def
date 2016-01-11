@@ -1,0 +1,128 @@
+Operation =1
+Option =8
+Where ="(((tblGrpAgt.AGENTid)<>\"CORP\" And (tblGrpAgt.AGENTid)<>\"CORPT\") AND ((tblAge"
+    "nt.PayCommTo)=4) AND ((ARTRAN.TransactionType)=\"I\" Or (ARTRAN.TransactionType)"
+    "=\"C\") AND ((ARTRAN.CustomerClassKey)=\"GROUP\"))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="tblGrp"
+    Name ="tblAgent"
+    Name ="tblGeographical"
+    Name ="tblGrpAgt"
+End
+Begin OutputColumns
+    Alias ="DocNo"
+    Expression ="Trim(RTrim([DocumentNumber]))"
+    Alias ="ApplyNo"
+    Expression ="Trim(RTrim([ApplyTo]))"
+    Expression ="ARTRAN.CustomerKey"
+    Expression ="ARTRAN.DocumentAmt"
+    Expression ="ARTRAN.TransactionType"
+    Expression ="ARTRAN.CustomerClassKey"
+    Expression ="tblGrp.GRname"
+    Alias ="Invoice Date"
+    Expression ="ARTRAN.DocumentDate"
+    Expression ="tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.AGENTgeoID"
+    Expression ="tblGeographical.GEOdesc"
+    Alias ="DocMonth"
+    Expression ="Month([DocumentDate])"
+    Alias ="DocYear"
+    Expression ="Year([DocumentDate])"
+    Expression ="tblAgent.PayCommTo"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGeographical"
+    Expression ="tblAgent.AGENTgeoID = tblGeographical.GEOid"
+    Flag =2
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpAgt"
+    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Flag =1
+    LeftTable ="ARTRAN"
+    RightTable ="tblGrp"
+    Expression ="ARTRAN.CustomerKey = tblGrp.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3570"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGeographical.GEOdesc"
+        dbInteger "ColumnWidth" ="2865"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =91
+    Top =52
+    Right =1002
+    Bottom =614
+    Left =-1
+    Top =-1
+    Right =900
+    Bottom =359
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =30
+        Top =19
+        Right =247
+        Bottom =328
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =276
+        Top =22
+        Right =482
+        Bottom =316
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =732
+        Top =19
+        Right =941
+        Bottom =343
+        Top =7
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =971
+        Top =19
+        Right =1201
+        Bottom =103
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+    Begin
+        Left =523
+        Top =22
+        Right =697
+        Bottom =151
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+End

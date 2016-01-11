@@ -1,0 +1,64 @@
+Operation =1
+Option =8
+Where ="(((tblImportGroupTemp.PrintRecords)=True))"
+Begin InputTables
+    Name ="tblImportGroupTemp"
+    Name ="tblImportDependentTemp"
+End
+Begin OutputColumns
+    Alias ="SUBssn"
+    Expression ="tblImportGroupTemp.SSN"
+    Alias ="DEPsubID"
+    Expression ="tblImportDependentTemp.ID"
+    Alias ="DEPfirstNAME"
+    Expression ="[tblImportDependentTemp]![FirstName]"
+    Alias ="DEPmiddleNAME"
+    Expression ="[tblImportDependentTemp]![MiddleInit]"
+    Alias ="DEPlastNAME"
+    Expression ="[tblImportDependentTemp]![LastName]"
+    Expression ="tblImportGroupTemp.PrintRecords"
+End
+Begin Joins
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblImportDependentTemp"
+    Expression ="tblImportGroupTemp.SSN = tblImportDependentTemp.DepID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =46
+    Top =149
+    Right =948
+    Bottom =593
+    Left =-1
+    Top =-1
+    Right =895
+    Bottom =213
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =88
+        Top =6
+        Right =248
+        Bottom =176
+        Top =0
+        Name ="tblImportGroupTemp"
+        Name =""
+    End
+    Begin
+        Left =323
+        Top =6
+        Right =528
+        Bottom =176
+        Top =0
+        Name ="tblImportDependentTemp"
+        Name =""
+    End
+End

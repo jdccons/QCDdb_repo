@@ -1,0 +1,98 @@
+Operation =2
+Name ="tblTracy"
+Option =8
+Where ="(([tbldentist].DENTstatus=\"A\"))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Alias ="LName"
+    Expression ="[tbldentist].DENTlast"
+    Alias ="FName"
+    Expression ="[tbldentist].DENTfirst"
+    Alias ="Address"
+    Expression ="[tbldentist].DENTstreet1"
+    Alias ="Address2"
+    Expression ="[tbldentist].DENTstreet2"
+    Alias ="City"
+    Expression ="[tbldentist].DENTcity"
+    Alias ="State"
+    Expression ="[tbldentist].DENTstate"
+    Alias ="Zipcode"
+    Expression ="[tbldentist].DENTzip"
+    Alias ="Specialty"
+    Expression ="[tbldentist].DENTspecialty"
+    Alias ="Phone"
+    Expression ="[tbldentist].DENTphoneOFFICE"
+End
+Begin OrderBy
+    Expression ="[tbldentist].DENTcity"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+    Begin
+        dbText "Name" ="[t-dentist].DENTlast"
+        dbInteger "ColumnWidth" ="1140"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-dentist].DENTstreet1"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-dentist].DENTstreet2"
+        dbInteger "ColumnWidth" ="1200"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-dentist].DENTcity"
+        dbInteger "ColumnWidth" ="1530"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="LName"
+        dbInteger "ColumnWidth" ="1140"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Address"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Address2"
+        dbInteger "ColumnWidth" ="1200"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="City"
+        dbInteger "ColumnWidth" ="1530"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =53
+    Top =22
+    Right =769
+    Bottom =328
+    Left =-1
+    Top =-1
+    Right =709
+    Bottom =144
+    Left =784
+    Top =0
+    ColumnsShown =537
+    Begin
+        Left =-746
+        Top =6
+        Right =-451
+        Bottom =118
+        Top =12
+        Name ="t-dentist"
+        Name =""
+    End
+End

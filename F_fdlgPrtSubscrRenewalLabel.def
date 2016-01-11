@@ -1,0 +1,162 @@
+Version =17
+VersionRequired =17
+Checksum =97495243
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    BorderStyle =1
+    Width =5760
+    ItemSuffix =23
+    Left =2940
+    Top =1710
+    Right =9105
+    Bottom =6540
+    RecSrcDt = Begin
+        0xa7cedeb3b2c4e140
+    End
+    Caption ="Individual Subscriber Renewal Labels"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin Section
+            Height =2865
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin Label
+                    BackStyle =0
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =555
+                    Top =345
+                    Width =2565
+                    Height =210
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text67"
+                    Caption ="Contract Ending Date From: "
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    AccessKey =82
+                    Left =2520
+                    Top =1905
+                    Width =717
+                    Height =478
+                    TabIndex =2
+                    Name ="PreviewButton"
+                    Caption ="Print Preview&R"
+                    StatusBarText ="Preview Report"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000017000000160000000100040000000000080100000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888889888888888888888888888884 ,
+                        0x88888888888888888888888388888888888888888888888e8888000000000000 ,
+                        0x8800888288880ffffffffff08000888d88880fffffff00007008888888880fff ,
+                        0xfff078870788888588880fffff0788f77088888288880fffff08888780888884 ,
+                        0x88880fffff08f8878088888888880fffff07ff877088888088880ffffff07887 ,
+                        0x0888888088880fffffff00008888888088880ffffffffff08888888088880fff ,
+                        0xffff00008888888088880fffffff08088888888188880fffffff008888888886 ,
+                        0x8888000000000888888888808888888888888888888888808888888888888888 ,
+                        0x8888888088888888888888888888888000000000000000000000000000000000 ,
+                        0x00000000000000000000000000000000000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
+                        0xffffff0000000000
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    Left =3120
+                    Top =345
+                    Width =1185
+                    Name ="FromDate"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =3120
+                    Top =705
+                    Width =1185
+                    TabIndex =1
+                    Name ="ToDate"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =2535
+                            Top =705
+                            Width =555
+                            Height =240
+                            FontWeight =700
+                            BackColor =12632256
+                            Name ="Text7"
+                            Caption ="To: "
+                        End
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub PreviewButton_Click()
+
+  On Error GoTo PROC_ERR
+    Dim strData As String
+    strData = "qrptSubscrRenewalLabel"
+  
+    DoCmd.Hourglass True
+    Me.Visible = False
+    
+    If DCount("*", strData) = 0 Then
+        MsgBox "The criteria you have chosen has resulted in no records." & vbCrLf & vbCrLf & "Please make another criteria selection and try again!"
+        DoCmd.Hourglass False
+        Me.Visible = True
+    Exit Sub
+    
+    Else
+    DoCmd.OpenReport "rptSubscrRenewalLabel", A_PREVIEW
+    DoCmd.Hourglass False
+    
+    End If
+    
+
+Exit_PreviewButton_Click:
+    Exit Sub
+
+Err_PreviewButton_Click:
+    MsgBox Error$
+    Resume Exit_PreviewButton_Click
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+
+  Resume Next
+End Sub

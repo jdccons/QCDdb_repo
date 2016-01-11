@@ -1,0 +1,172 @@
+Operation =3
+Name ="tmpExportAllAmerican"
+Option =0
+Where ="(((tblGrp.GroupType)=4))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tlkpAllAmericanPlan"
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Alias ="EIRECID"
+    Name ="EIRECID"
+    Expression ="\"P\""
+    Alias ="EIMBRID"
+    Name ="EIMBRID"
+    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Alias ="EISBRID"
+    Name ="EISBRID"
+    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Alias ="EISSN"
+    Name ="EISSN"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="EIMBRRF"
+    Name ="EIMBRRF"
+    Expression ="tblSubscr.CoverID"
+    Alias ="EINAML"
+    Name ="EINAML"
+    Expression ="tblSubscr.SubLastName"
+    Alias ="EINAMF"
+    Name ="EINAMF"
+    Expression ="tblSubscr.SubFirstName"
+    Alias ="EINAMM"
+    Name ="EINAMM"
+    Expression ="tblSubscr.SubMiddleName"
+    Alias ="EIDTBR"
+    Name ="EIDTBR"
+    Expression ="Format([tblSubscr].[SUBdob],\"mmddyyyy\")"
+    Alias ="SEX"
+    Name ="EISEX"
+    Expression ="IIf([tblSubscr].[SUBgender] Is Null,\"O\",[tblSubscr].[SUBgender])"
+    Alias ="EIADD1"
+    Name ="EIADD1"
+    Expression ="tblSubscr.SubStreet1"
+    Alias ="EIADD2"
+    Name ="EIADD2"
+    Expression ="tblSubscr.SubStreet2"
+    Alias ="EICITY"
+    Name ="EICITY"
+    Expression ="tblSubscr.SubCity"
+    Alias ="EISTE"
+    Name ="EISTE"
+    Expression ="tblSubscr.SubState"
+    Alias ="EIZIP"
+    Name ="EIZIP"
+    Expression ="tblSubscr.SubZip"
+    Alias ="EIHPHR"
+    Name ="EIHPHR"
+    Expression ="StripChars_TSB([tblSubscr].[SubPhoneHome],\"-\")"
+    Alias ="EIWPHR"
+    Name ="EIWPHR"
+    Expression ="StripChars_TSB([tblSubscr].[SubPhoneWork],\"-\")"
+    Alias ="EIGRPID"
+    Name ="EIGRPID"
+    Expression ="'MNQ' & [tblSubscr].[SubGroupID]"
+    Alias ="EINMPLAN"
+    Name ="EINMPLAN"
+    Expression ="tlkpAllAmericanPlan.PlanagerCode"
+    Alias ="EIDTCVEF"
+    Name ="EIDTCVEF"
+    Expression ="IIf(IsNull([tblSubscr].[PreexistingDate])=True,Format([tblSubscr].[SUBeffDATE],\""
+        "mmddyyyy\"),Format([tblSubscr].[PreexistingDate],\"mmddyyyy\"))"
+    Alias ="EIDTCVEN"
+    Name ="EIDTCVEN"
+    Expression ="IIf(Not IsNull([tblSubscr].[DateDeleted]),Format([tblSubscr].[DateDeleted],\"mmd"
+        "dyyyy\"),Null)"
+    Alias ="EIMBRDP"
+    Name ="EIMBRDP"
+    Expression ="\"0\""
+    Alias ="EIDTEFF"
+    Name ="EIDTEFF"
+    Expression ="Format([tblGrp].[GRcontBEG],\"mmddyyyy\")"
+    Alias ="EIDTTERM"
+    Name ="EIDTTERM"
+    Expression ="IIf([tblSubscr].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr].[DateDeleted],\""
+        "mmddyyyy\"))"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tlkpAllAmericanPlan"
+    Expression ="tblSubscr.PlanID = tlkpAllAmericanPlan.PlanID"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =3
+    LeftTable ="tblSubscr"
+    RightTable ="tblEDI_App_Subscr"
+    Expression ="tblSubscr.SubSSN = tblEDI_App_Subscr.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="EIDTBR"
+        dbInteger "ColumnWidth" ="1710"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EIHPHR"
+        dbInteger "ColumnWidth" ="2100"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="EIWPHR"
+        dbInteger "ColumnWidth" ="1830"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =864
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =373
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =683
+        Top =164
+        Right =848
+        Bottom =300
+        Top =37
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =345
+        Top =80
+        Right =571
+        Bottom =262
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =643
+        Top =64
+        Right =871
+        Bottom =141
+        Top =0
+        Name ="tlkpAllAmericanPlan"
+        Name =""
+    End
+    Begin
+        Left =35
+        Top =79
+        Right =213
+        Bottom =246
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

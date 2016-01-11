@@ -1,0 +1,222 @@
+Version =17
+VersionRequired =17
+Checksum =186756343
+Begin Form
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
+    ScrollBars =2
+    ViewsAllowed =1
+    Width =6765
+    ItemSuffix =111
+    Left =885
+    Top =1575
+    Right =11610
+    Bottom =6180
+    RecSrcDt = Begin
+        0xcc7a31d4f965e240
+    End
+    RecordSource ="qryInvLin"
+    PrtMip = Begin
+        0xd002000038040000d0020000d002000000000000a02900004029000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4f6b6964617461204f4c343030650045300e11000000ea0000005f019ee0821c ,
+        0x0a030c0344004c0003670000010001004552004c0072010001002c0101000100 ,
+        0x2c010200f001e85d01000000606024e022e000000c0001000000010064000200 ,
+        0x000600000000000000006060806a0000000000000000ffff0000ffffffffffff ,
+        0xffff000000000000ffff00000000ffff49434515001244455649434543415041
+    End
+    PrtDevNames = Begin
+        0x170008001e0001804f6b6964617461204f4c34303065004f4c34303065004c50 ,
+        0x54313a0000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin FormHeader
+            Height =255
+            BackColor =12632256
+            Name ="FormHeader0"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =1
+                    Top =15
+                    Width =1341
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text96"
+                    Caption ="Social Sec. #: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1590
+                    Width =3336
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text97"
+                    Caption ="Subscriber:"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =5235
+                    Width =606
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text98"
+                    Caption ="Rate:"
+                End
+                Begin Label
+                    Visible = NotDefault
+                    BackStyle =1
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =2445
+                    Width =516
+                    Height =240
+                    FontWeight =700
+                    BackColor =16711935
+                    Name ="Text99"
+                    Caption ="Qty.Ord."
+                End
+                Begin Label
+                    Visible = NotDefault
+                    BackStyle =1
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =3075
+                    Width =471
+                    Height =240
+                    FontWeight =700
+                    BackColor =16711935
+                    Name ="Text101"
+                    Caption ="Qty.Shp."
+                End
+            End
+        End
+        Begin Section
+            Height =240
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin Line
+                    OverlapFlags =93
+                    Width =6765
+                    Name ="Line85"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    Left =30
+                    Width =1323
+                    Name ="ITEM KEY"
+                    ControlSource ="ITEM KEY"
+                    InputMask ="000\\-00\\-0000;0;_"
+                    EventProcPrefix ="ITEM_KEY"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =1632
+                    Width =3318
+                    TabIndex =1
+                    Name ="DESCRIPTION"
+                    ControlSource ="DESCRIPTION"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    Left =5265
+                    Width =723
+                    TabIndex =2
+                    Name ="UNIT PRICE"
+                    ControlSource ="UNIT PRICE"
+                    Format ="Standard"
+                    EventProcPrefix ="UNIT_PRICE"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =2400
+                    Width =603
+                    TabIndex =3
+                    BackColor =16711935
+                    Name ="QTY ORDERED"
+                    ControlSource ="QTY ORDERED"
+                    DefaultValue ="1"
+                    EventProcPrefix ="QTY_ORDERED"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =3075
+                    Width =498
+                    TabIndex =4
+                    BackColor =16711935
+                    Name ="QTY SHIPPED"
+                    ControlSource ="QTY SHIPPED"
+                    DefaultValue ="1"
+                    EventProcPrefix ="QTY_SHIPPED"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =3585
+                    Width =1296
+                    TabIndex =5
+                    BackColor =65535
+                    Name ="DOCUMENT NO"
+                    ControlSource ="DOCUMENT NO"
+                    EventProcPrefix ="DOCUMENT_NO"
+                End
+            End
+        End
+        Begin FormFooter
+            Visible = NotDefault
+            Height =720
+            BackColor =12632256
+            Name ="FormFooter1"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =2
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =5175
+                    Width =846
+                    Name ="SubTotal"
+                    ControlSource ="=Sum([UNIT PRICE])"
+                    Format ="Standard"
+                End
+            End
+        End
+    End
+End

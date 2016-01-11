@@ -1,0 +1,45 @@
+Operation =3
+Name ="__dnutblSubscr_BEXHM_2009"
+Option =0
+Begin InputTables
+    Name ="tmpBEXHM_subs_2009"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tmpBEXHM_subs_2009.SubSSN"
+    Name ="SubID"
+    Expression ="tmpBEXHM_subs_2009.SubID"
+    Name ="PlanID"
+    Expression ="tmpBEXHM_subs_2009.PlanID"
+    Name ="CoverID"
+    Expression ="tmpBEXHM_subs_2009.CoverID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1440
+    Bottom =776
+    Left =-1
+    Top =-1
+    Right =1437
+    Bottom =266
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =351
+        Bottom =200
+        Top =0
+        Name ="tmpBEXHM_subs_2009"
+        Name =""
+    End
+End

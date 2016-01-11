@@ -1,0 +1,74 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcontBEG)<#9/1/99#))"
+Begin InputTables
+    Name ="qryNewPayingSubscribers"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="qryNewPayingSubscribers.SUB_LUname"
+    Expression ="qryNewPayingSubscribers.SUBeffDATE"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="qryNewPayingSubscribers"
+    Expression ="tblGrp.GROUPid = qryNewPayingSubscribers.SUBgroupID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+    Expression ="qryNewPayingSubscribers.SUB_LUname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="2775"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcontBEG"
+        dbInteger "ColumnWidth" ="1245"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =247
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =241
+        Bottom =128
+        Top =0
+        Name ="qryNewPayingSubscribers"
+        Name =""
+    End
+    Begin
+        Left =290
+        Top =6
+        Right =541
+        Bottom =188
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

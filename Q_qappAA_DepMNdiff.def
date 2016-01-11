@@ -1,0 +1,121 @@
+Operation =3
+Name ="tmpAA_VarianceReport"
+Option =0
+Where ="(((UCase([DEPmiddleNAME]))<>UCase([EINAMM]))) OR (((UCase([EINAMM]))<>UCase([DEP"
+    "middleNAME])))"
+Begin InputTables
+    Name ="qselAA_DepInfo"
+    Name ="qselQCD_DepInfo"
+End
+Begin OutputColumns
+    Alias ="Ord"
+    Name ="PrtOrder"
+    Expression ="52"
+    Name ="AAGrpID"
+    Expression ="qselAA_DepInfo.GRPid"
+    Alias ="Title"
+    Name ="DataElementTitle"
+    Expression ="\"Dependent Change\""
+    Alias ="Elem"
+    Name ="DataElement"
+    Expression ="\"Dep Middle Init\""
+    Name ="SubSSN"
+    Expression ="qselQCD_DepInfo.SUBssn"
+    Alias ="AA"
+    Name ="NewValue"
+    Expression ="UCase([EINAMM])"
+    Alias ="QCD"
+    Name ="OldValue"
+    Expression ="UCase([DEPmiddleNAME])"
+    Name ="RptDate"
+    Expression ="qselAA_DepInfo.RptDate"
+End
+Begin Joins
+    LeftTable ="qselAA_DepInfo"
+    RightTable ="qselQCD_DepInfo"
+    Expression ="qselAA_DepInfo.AA_SSN = qselQCD_DepInfo.AA_SSN"
+    Flag =1
+    LeftTable ="qselAA_DepInfo"
+    RightTable ="qselQCD_DepInfo"
+    Expression ="qselAA_DepInfo.[EISSN#] = qselQCD_DepInfo.DEPssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbText "Description" ="52"
+Begin
+    Begin
+        dbText "Name" ="Expr2"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Expr3"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EINAMF"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBfirstNAME"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA_FN"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="QCD_FN"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="QCD"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =673
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =263
+    Left =0
+    Top =17
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =7
+        Right =265
+        Bottom =181
+        Top =0
+        Name ="qselAA_DepInfo"
+        Name =""
+    End
+    Begin
+        Left =353
+        Top =9
+        Right =618
+        Bottom =168
+        Top =1
+        Name ="qselQCD_DepInfo"
+        Name =""
+    End
+End

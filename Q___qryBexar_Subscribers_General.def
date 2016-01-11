@@ -1,0 +1,51 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblSubscriber_Bexar_new"
+End
+Begin OutputColumns
+    Name ="tblSubscriber_Bexar_new.SubStatus"
+    Expression ="\"GRSUB\""
+    Name ="tblSubscriber_Bexar_new.PlanID"
+    Expression ="5"
+    Name ="tblSubscriber_Bexar_new.SUB_LUname"
+    Expression ="[SubLastName] & \", \" & [SubFirstName] & \" \" & [SubMiddleName]"
+    Name ="tblSubscriber_Bexar_new.SUBGender"
+    Expression ="Mid([SubGender],1,1)"
+    Name ="tblSubscriber_Bexar_new.SubAge"
+    Expression ="CalcAge([SubDOB])"
+    Name ="tblSubscriber_Bexar_new.SUBgroupID"
+    Expression ="\"BEXCO\""
+    Name ="tblSubscriber_Bexar_new.SUBgeoID"
+    Expression ="\"TXSSW\""
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =29
+    Right =1258
+    Bottom =528
+    Left =-1
+    Top =-1
+    Right =1204
+    Bottom =330
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =231
+        Bottom =270
+        Top =0
+        Name ="tblSubscriber_Bexar_new"
+        Name =""
+    End
+End

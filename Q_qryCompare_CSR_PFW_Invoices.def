@@ -1,0 +1,68 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="qryClientServicesReport_CurrentInvoices"
+    Name ="qryPlatinum_CurrentInvoices"
+End
+Begin OutputColumns
+    Expression ="qryClientServicesReport_CurrentInvoices.GroupID"
+    Alias ="CSR Invoice"
+    Expression ="qryClientServicesReport_CurrentInvoices.CurrentInvoiceAmt"
+    Expression ="qryPlatinum_CurrentInvoices.CustomerKey"
+    Alias ="PFW Invoice"
+    Expression ="qryPlatinum_CurrentInvoices.DocumentAmt"
+    Alias ="Difference"
+    Expression ="[CurrentInvoiceAmt]-[DocumentAmt]"
+End
+Begin Joins
+    LeftTable ="qryClientServicesReport_CurrentInvoices"
+    RightTable ="qryPlatinum_CurrentInvoices"
+    Expression ="qryClientServicesReport_CurrentInvoices.GroupID = qryPlatinum_CurrentInvoices.Cu"
+        "stomerKey"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="Difference"
+        dbInteger "ColumnWidth" ="2280"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1680
+    Bottom =962
+    Left =-1
+    Top =-1
+    Right =1673
+    Bottom =230
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =218
+        Bottom =138
+        Top =0
+        Name ="qryClientServicesReport_CurrentInvoices"
+        Name =""
+    End
+    Begin
+        Left =290
+        Top =11
+        Right =526
+        Bottom =127
+        Top =0
+        Name ="qryPlatinum_CurrentInvoices"
+        Name =""
+    End
+End

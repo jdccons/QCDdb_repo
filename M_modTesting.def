@@ -1,0 +1,228 @@
+Option Compare Database
+Option Explicit
+Sub AddSubID()
+
+'    Dim db As DAO.Database
+'    Dim rs As DAO.Recordset
+'    Dim strSQL As String
+'
+'    strSQL = "SELECT [__dnutblSubscr_BEXHM_2009].SubSSN, [__dnutblSubscr_BEXHM_2009].SubID, [__dnutblSubscr_BEXHM_2009].DateCreated " & _
+'            "FROM __dnutblSubscr_BEXHM_2009 " & _
+'            "WHERE ((([__dnutblSubscr_BEXHM_2009].SubID) Is Null));"
+'
+'    Set db = CurrentDb()
+'    Set rs = db.OpenRecordset(strSQL, dbOpenDynaset)
+'
+'    Do Until rs.EOF
+'
+'        With rs
+'            .Edit
+'            .Fields("SubID") = AssignSubID()
+'            .Fields("DateCreated") = date
+'            .Update
+'        End With
+'    rs.MoveNext
+'    Loop
+'
+'    Set rs = Nothing
+'    Set db = Nothing
+
+Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    'strSQL = "SELECT [__dnutblSubscr_BEXHM_2009].SubSSN, [__dnutblSubscr_BEXHM_2009].SubID, [__dnutblSubscr_BEXHM_2009].DateCreated " & _
+            "FROM __dnutblSubscr_BEXHM_2009 " & _
+            "WHERE ((([__dnutblSubscr_BEXHM_2009].SubID) Is Null));"
+    
+    strSQL = "SELECT tblSubscriber_Bexar_new.SubID, tblSubscriber_Bexar_new.DateCreated, " & _
+            "tblSubscriber_Bexar_new.UserName FROM tblSubscriber_Bexar_new " & _
+            "WHERE (((tblSubscriber_Bexar_new.SubID) Is Null));"
+            
+    'Debug.Print strSQL
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset(strSQL, dbOpenDynaset)
+    
+    Do Until rs.EOF
+    
+        With rs
+            .Edit
+            .Fields("SubID") = AssignSubID()
+            .Fields("DateCreated") = #1/1/2010#
+            .Fields("UserName") = "John Criswell"
+            .Update
+        End With
+    rs.MoveNext
+    Loop
+    
+    Set rs = Nothing
+    Set db = Nothing
+
+
+
+End Sub
+Function countSubscrs(strGroupID As String) As Long
+
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    Set db = CurrentDb()
+    strSQL = "SELECT Count(tblSubscr.SUBssn) AS CountOfSUBssn FROM tblSubscr " & _
+                "WHERE (((tblSubscr.SUBgroupID)='" & strGroupID & "'));"
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    countSubscrs = rs("CountOfSUBssn")
+    Set rs = Nothing
+    Set db = Nothing
+
+
+End Function
+Sub deleteARLIN()
+
+      Dim db As DAO.Database
+      Set db = CurrentDb()
+      db.Execute ("DELETE ARLIN.* FROM ARLIN;")
+      Set db = Nothing
+
+End Sub
+Sub deleteSubscrs()
+
+      Dim db As DAO.Database
+      Set db = CurrentDb()
+      db.Execute ("DELETE tblSubscr.* FROM tblSubscr INNER JOIN tblEDI_App_Subscr ON tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn;")
+      Set db = Nothing
+      
+End Sub
+
+Public Sub Agent1CommIndiv(strCriteria As String)
+    
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+    
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcustNAME, COMMcheckNO, COMMinvoiceNO," & _
+             " COMMcheckAMT, COMMagent, COMMrate, " & _
+             "COMMcustCLASS, COMMcheckDATE, " & _
+             "COMMagentTYPE ) " & _
+             "SELECT DISTINCTROW ARTRAN.Custkey, " & _
+             "tblSubscr.SUB_LUname, ARTRAN.Docno, " & _
+             "ARTRAN.Applytodocno, ([Docamt]*(-1)) AS " & _
+             "CheckAmt, tblSubscr.SUBagentID1, " & _
+             "tblSubscr.SUBagentRATE1, ARTRAN." & _
+             "Custclass, ARTRAN.Docdate, 1 AS " & _
+             "AgentType " & _
+             "FROM ARTRAN INNER JOIN tblSubscr ON " & _
+             "ARTRAN.Custkey = tblSubscr.PLTcustKEY " & _
+             "WHERE (((ARTRAN.Docdate) " & strCriteria & ") " & _
+             "AND ((ARTRAN.Trntyp)='P'));"
+    
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+    
+End Sub
+Public Sub CommAgent1Indiv()
+
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+    Dim strCriteria As String
+    
+    strCriteria = "Between #03/01/2005# and #03/31/2005#"
+    Set db = CurrentDb()
+    
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcustNAME, COMMcheckNO, COMMinvoiceNO," & _
+             " COMMcheckAMT, COMMagent, COMMrate, " & _
+             "COMMcustCLASS, COMMcheckDATE, " & _
+             "COMMagentTYPE ) " & _
+             "SELECT DISTINCTROW ARTRAN.Custkey, " & _
+             "tblSubscr.SUB_LUname, ARTRAN.Docno, " & _
+             "ARTRAN.Applytodocno, ([Docamt]*(-1)) AS " & _
+             "CheckAmt, tblSubscr.SUBagentID1, " & _
+             "tblSubscr.SUBagentRATE1, ARTRAN." & _
+             "Custclass, ARTRAN.Docdate, 1 AS " & _
+             "AgentType " & _
+             "FROM ARTRAN INNER JOIN tblSubscr ON " & _
+             "ARTRAN.Custkey = tblSubscr.PLTcustKEY " & _
+             "WHERE (((ARTRAN.Docdate) " & strCriteria & ") " & _
+             "AND ((ARTRAN.Trntyp)='P'));"
+           
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Public Sub AgentCommGroup(strCriteria As String)
+
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+
+    'strSQL = "INSERT INTO tblCommission ( COMMcustKEY, COMMcustNAME, " & _
+              "COMMcheckNO, COMMinvoiceNO, COMMcheckAMT, COMMagent, " & _
+              "COMMrate, COMMcustCLASS, COMMcheckDATE, COMMagentTYPE ) " & _
+              "SELECT DISTINCTROW ARTRAN.CustomerKey, tblGrp.GRname, " & _
+              "ARTRAN.DocumentNumber, ARTRAN.ApplyTo, ([DocumentAmt])*-1 AS CheckAmt, " & _
+              "tblGrpAgt.AGENTid, tblGrpAgt.AgentRATE, ARTRAN.CustomerClassKey, " & _
+              "ARTRAN.DocumentDate, 1 AS AgentType " & _
+              "FROM ARTRAN " & _
+              "INNER JOIN (tblGrp " & _
+              "INNER JOIN tblGrpAgt ON tblGrp.GroupID = tblGrpAgt.GroupID) ON ARTRAN.CustomerKey = tblGrp.GroupID " & _
+              "WHERE (((ARTRAN.DocumentDate) " & strCriteria & " " & _
+              "AND ((ARTRAN.TransactionType)='P'));"
+              
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcustNAME, COMMcheckNO, COMMinvoiceNO, " & _
+             "COMMcheckAMT, COMMagent, COMMrate, COMMcustCLASS, " & _
+             "COMMcheckDATE, COMMagentTYPE ) " & _
+             "SELECT DISTINCTROW ARTRAN.CustomerKey, tblGrp." & _
+             "GRname, ARTRAN.DocumentNumber, ARTRAN.ApplyTo, (" & _
+             "[DocumentAmt])*-1 AS CheckAmt, tblGrpAgt.AGENTid, " & _
+             "tblGrpAgt.AgentRATE, ARTRAN.CustomerClassKey, " & _
+             "ARTRAN.DocumentDate, tblAgent.PayCommTo AS " & _
+             "AgentType " & _
+             "FROM ARTRAN INNER JOIN (tblGrp INNER JOIN " & _
+             "(tblAgent INNER JOIN tblGrpAgt ON tblAgent." & _
+             "AGENTid = tblGrpAgt.AGENTid) ON tblGrp.GroupID = " & _
+             "tblGrpAgt.GroupID) ON ARTRAN.CustomerKey = tblGrp." & _
+             "GroupID " & _
+             "WHERE (((ARTRAN.DocumentDate) " & strCriteria & ") " & _
+             "AND ((ARTRAN.TransactionType)='P'));"
+             
+    'Debug.Print strSQL
+       
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Sub

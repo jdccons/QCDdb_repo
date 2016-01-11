@@ -1,0 +1,56 @@
+Operation =2
+Name ="tblGrowth_Subscrs_withDeps"
+Option =0
+Where ="(((tblSubscr.SUBstatus)=\"GRSUB\") AND ((tblSubscr.CoverID)=2)) OR (((tblSubscr."
+    "SUBstatus)=\"GRSUB\") AND ((tblSubscr.CoverID)=3)) OR (((tblSubscr.SUBstatus)=\""
+    "GRSUB\") AND ((tblSubscr.CoverID)=4))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBgroupID"
+    Alias ="CountOfSUBssn"
+    Expression ="Count(tblSubscr.SUBssn)"
+    Alias ="Year"
+    Expression ="\"2000\""
+End
+Begin Groups
+    Expression ="tblSubscr.SUBgroupID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="CountOfSUBssn"
+        dbInteger "ColumnWidth" ="2235"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =34
+    Top =95
+    Right =1131
+    Bottom =476
+    Left =-1
+    Top =-1
+    Right =1090
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =306
+        Bottom =101
+        Top =54
+        Name ="tblSubscr"
+        Name =""
+    End
+End

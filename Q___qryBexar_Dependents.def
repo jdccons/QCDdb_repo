@@ -1,0 +1,53 @@
+Operation =3
+Name ="tblDependent_Bexar_new"
+Option =0
+Begin InputTables
+    Name ="tblDependents_Bexar"
+End
+Begin OutputColumns
+    Name ="DepSubID"
+    Expression ="tblDependents_Bexar.SubSSN"
+    Name ="DepLastName"
+    Expression ="tblDependents_Bexar.LastName"
+    Name ="DepFirstName"
+    Expression ="tblDependents_Bexar.FirstName"
+    Name ="DepMiddleName"
+    Expression ="tblDependents_Bexar.MiddleInitial"
+    Name ="DepGender"
+    Expression ="tblDependents_Bexar.Gender"
+    Name ="DepRelationship"
+    Expression ="tblDependents_Bexar.Relationship"
+    Name ="DepDOB"
+    Expression ="tblDependents_Bexar.DOB"
+    Name ="DepEffDate"
+    Expression ="tblDependents_Bexar.DepEffDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =280
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =240
+        Bottom =216
+        Top =0
+        Name ="tblDependents_Bexar"
+        Name =""
+    End
+End

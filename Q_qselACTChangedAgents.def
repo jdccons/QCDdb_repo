@@ -1,0 +1,64 @@
+Operation =1
+Option =0
+Where ="(((qselACTCompareAgentsACT.AgentID) Is Null))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="qselACTCompareAgentsACT"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENTid"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="qselACTCompareAgentsACT"
+    Expression ="tblAgent.AGENTid = qselACTCompareAgentsACT.AgentID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbInteger "ColumnWidth" ="1575"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENTid"
+        dbInteger "ColumnWidth" ="990"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =179
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =44
+        Top =12
+        Right =170
+        Bottom =119
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =224
+        Top =13
+        Right =402
+        Bottom =120
+        Top =0
+        Name ="qselACTCompareAgentsACT"
+        Name =""
+    End
+End

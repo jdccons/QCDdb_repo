@@ -1,0 +1,1642 @@
+Version =19
+VersionRequired =19
+Checksum =283666619
+Begin Report
+    LayoutForPrint = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    TabularFamily =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10800
+    DatasheetFontHeight =10
+    ItemSuffix =144
+    Left =735
+    Top =645
+    Right =14715
+    Bottom =9285
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xe6541e2d2db6e240
+    End
+    RecordSource ="rqryNGL_Application"
+    Caption ="NGL Application Form"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x68010000ed000000870100005001000000000000302a00004038000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x5c5c7773323030335c4850343035300065720000000000000000000000000000 ,
+        0x010400059c00340243ff800701000900ea0a6f08640001000f00b00401000100 ,
+        0xb00403000000413400746572002020323130207820323937206d6d0000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x22000000340200007eeb71d70000000000000000000000000000000000000000 ,
+        0x00000000000000000e0000000100000000000000000001000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002300000077696e73706f6f6c00005c5c7773323030335c4850343035 ,
+        0x30006548503430353000436f6d2050444620506f72743a00000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            BackStyle =1
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin ListBox
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin UnboundObjectFrame
+            OldBorderStyle =1
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =14400
+            Name ="Detail"
+            GUID = Begin
+                0x0ebe6b81e27353478451b207ef20b63b
+            End
+            Begin
+                Begin Subform
+                    Top =6960
+                    Width =10800
+                    Height =2879
+                    Name ="rsubNGL_Dependents"
+                    SourceObject ="Report.rsubNGL_Dependents"
+                    LinkChildFields ="SUBssn"
+                    LinkMasterFields ="SUBssn"
+                    GUID = Begin
+                        0xb3767e51f10a834b964268659ecb7bfc
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =900
+                    Top =3060
+                    Width =1740
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Text4"
+                    ControlSource ="SUBlastNAME"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x460ecb072164fc4b84bd1c797b4333a1
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =900
+                    Top =3300
+                    Width =1740
+                    Height =240
+                    FontWeight =700
+                    Name ="Label6"
+                    Caption ="Last Name"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x1acc7863c93de94faffdda2d59f4eb45
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =4320
+                    Top =3060
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="SUBfirstNAME"
+                    ControlSource ="SUBfirstNAME"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xa6adaa04e2e1aa48934917791e292051
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =4320
+                    Top =3300
+                    Width =1440
+                    Height =240
+                    FontWeight =700
+                    Name ="Label10"
+                    Caption ="First Name"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x92b86bf71f69cb479dbb7b3d23ec09e8
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =1860
+                    Top =4020
+                    Width =3480
+                    Height =300
+                    ColumnWidth =2265
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="SUBstreet1"
+                    ControlSource ="SUBstreet1"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xc01d540a79767b4ca943d31ce02ba4cb
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =5340
+                    Top =4020
+                    Width =3540
+                    Height =300
+                    FontWeight =700
+                    TabIndex =4
+                    Name ="SUBstreet2"
+                    ControlSource ="SUBstreet2"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x0b93ef5a9283a843867c09f0b028e08b
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =960
+                    Top =4500
+                    FontWeight =700
+                    TabIndex =5
+                    Name ="SUBcity"
+                    ControlSource ="SUBcity"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xa4cc4601527c034381588163ccb52cae
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =3300
+                    Top =4500
+                    Width =1020
+                    ColumnWidth =420
+                    FontWeight =700
+                    TabIndex =6
+                    Name ="SUBstate"
+                    ControlSource ="SUBstate"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xda7260abe508214ea6b1afbac4b284be
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =34
+                    Left =6600
+                    Top =4500
+                    ColumnWidth =945
+                    FontWeight =700
+                    TabIndex =7
+                    Name ="SUBzip"
+                    ControlSource ="SUBzip"
+                    GUID = Begin
+                        0x9b34e59cb2bfa84f9a8cc71dff324d80
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =360
+                    Top =4500
+                    Width =600
+                    Height =240
+                    FontWeight =700
+                    Name ="Label18"
+                    Caption ="City"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x16dd5f1847ed6a4bb511167c67266a2d
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2880
+                    Top =4500
+                    Width =420
+                    Height =240
+                    FontWeight =700
+                    Name ="Label19"
+                    Caption ="State"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x7d199a068d36ff4a86fb7c9bac862466
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5760
+                    Top =4500
+                    Width =840
+                    Height =240
+                    FontWeight =700
+                    Name ="Label20"
+                    Caption ="Zip Code"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x3a05927300ace345924e8fa024c37cc4
+                    End
+                End
+                Begin Image
+                    Width =720
+                    Height =840
+                    Name ="Image31"
+                    PictureData = Begin
+                        0x0e000000cb1546e8010000006c00000000000000000000003400000037000000 ,
+                        0x00000000000000007a050000c905000020454d4600000100f022000011000000 ,
+                        0x010000000000000000000000000000000005000000040000510100000e010000 ,
+                        0x00000000000000000000000068240500b01e04004600000004110000f8100000 ,
+                        0x4744494301000080000300002d88b74c00000000e01000000100090000037008 ,
+                        0x00000000420800000000050000000c0238003500040000000301080005000000 ,
+                        0x0b0200000000050000000c023800350005000000070103000000050000000902 ,
+                        0x00000000050000000102ffffff0042080000430f2000cc000000380035000000 ,
+                        0x000038003500000000002800000035000000380000000100080000000000400c ,
+                        0x0000c40e0000c40e000000010000000000000000000001010100020202000303 ,
+                        0x03000404040005050500060606000707070008080800090909000a0a0a000b0b ,
+                        0x0b000c0c0c000d0d0d000e0e0e000f0f0f001010100011111100121212001313 ,
+                        0x13001414140015151500161616001717170018181800191919001a1a1a001b1b ,
+                        0x1b001c1c1c001d1d1d001e1e1e001f1f1f002020200021212100222222002323 ,
+                        0x23002424240025252500262626002727270028282800292929002a2a2a002b2b ,
+                        0x2b002c2c2c002d2d2d002e2e2e002f2f2f003030300031313100323232003333 ,
+                        0x33003434340035353500363636003737370038383800393939003a3a3a003b3b ,
+                        0x3b003c3c3c003d3d3d003e3e3e003f3f3f004040400041414100424242004343 ,
+                        0x43004444440045454500464646004747470048484800494949004a4a4a004b4b ,
+                        0x4b004c4c4c004d4d4d004e4e4e004f4f4f005050500051515100525252005353 ,
+                        0x53005454540055555500565656005757570058585800595959005a5a5a005b5b ,
+                        0x5b005c5c5c005d5d5d005e5e5e005f5f5f006060600061616100626262006363 ,
+                        0x63006464640065656500666666006767670068686800696969006a6a6a006b6b ,
+                        0x6b006c6c6c006d6d6d006e6e6e006f6f6f007070700071717100727272007373 ,
+                        0x73007474740075757500767676007777770078787800797979007a7a7a007b7b ,
+                        0x7b007c7c7c007d7d7d007e7e7e007f7f7f008080800081818100828282008383 ,
+                        0x83008484840085858500868686008787870088888800898989008a8a8a008b8b ,
+                        0x8b008c8c8c008d8d8d008e8e8e008f8f8f009090900091919100929292009393 ,
+                        0x93009494940095959500969696009797970098989800999999009a9a9a009b9b ,
+                        0x9b009c9c9c009d9d9d009e9e9e009f9f9f00a0a0a000a1a1a100a2a2a200a3a3 ,
+                        0xa300a4a4a400a5a5a500a6a6a600a7a7a700a8a8a800a9a9a900aaaaaa00abab ,
+                        0xab00acacac00adadad00aeaeae00afafaf00b0b0b000b1b1b100b2b2b200b3b3 ,
+                        0xb300b4b4b400b5b5b500b6b6b600b7b7b700b8b8b800b9b9b900bababa00bbbb ,
+                        0xbb00bcbcbc00bdbdbd00bebebe00bfbfbf00c0c0c000c1c1c100c2c2c200c3c3 ,
+                        0xc300c4c4c400c5c5c500c6c6c600c7c7c700c8c8c800c9c9c900cacaca00cbcb ,
+                        0xcb00cccccc00cdcdcd00cecece00cfcfcf00d0d0d000d1d1d100d2d2d200d3d3 ,
+                        0xd300d4d4d400d5d5d500d6d6d600d7d7d700d8d8d800d9d9d900dadada00dbdb ,
+                        0xdb00dcdcdc00dddddd00dedede00dfdfdf00e0e0e000e1e1e100e2e2e200e3e3 ,
+                        0xe300e4e4e400e5e5e500e6e6e600e7e7e700e8e8e800e9e9e900eaeaea00ebeb ,
+                        0xeb00ececec00ededed00eeeeee00efefef00f0f0f000f1f1f100f2f2f200f3f3 ,
+                        0xf300f4f4f400f5f5f500f6f6f600f7f7f700f8f8f800f9f9f900fafafa00fbfb ,
+                        0xfb00fcfcfc00fdfdfd00fefefe00ffffff00fffffffffffffffffbfffffffffe ,
+                        0xfffffffbfafffffffffefefffffffff5f5fffff9fafffffcf9ffffffffffffff ,
+                        0xffffffffffffff000000fffffffffffffffffdfffffffdfcfdfffefffffffcfb ,
+                        0xfffffff7fefffbfffff2f7fffff8f4fffff8ffffffffffffffffffffffffff00 ,
+                        0x0000fffffffffffffffffffffffefcfbfdfef7fffffaf9fffffdffbd4939a3f3 ,
+                        0xfdfffffbf7fdfffffffeffffffffffffffffffffffffff000000ffffffffffff ,
+                        0xfffffffffffefdfefffffffffffbffffebcd490c000b0542b9fffffffffffff2 ,
+                        0xf5ffffffffffffffffffffffffffff000000fffffffffffffffffffffeffffff ,
+                        0xfffffffcf9ffffcf6a110e0e00000d000243c5e7fdfbffffffe8ffffffffffff ,
+                        0xffffffffffffff000000fffffffffffffffffffefefffffffffeebffffce6813 ,
+                        0x000000000205000012020c6dd4fdf9f7ffffffffffffffffffffffffffffff00 ,
+                        0x0000fffffffffffffffffefefefffffffaf5ffc6632105000510000c0300070a ,
+                        0x000000001b75d1fefef3ffffffffffffffffffffffffff000000ffffffffffff ,
+                        0xfffffffefefffffbf3ed6a310000040300000800000300000406030800002589 ,
+                        0xe0ffffffffffffffffffffffffffff000000fffcfffffffdfffffffff8fcffd9 ,
+                        0x75200008110000130000000a0a00020b0004010000010b001e85eef9fffbfaff ,
+                        0xfffdfffcfffff9000000fbfffff2fffff3f5f1faffe67c2707001300001b3223 ,
+                        0x0208000b001005000e0011301d00000000102193f2fef5fffff6fffbfffffe00 ,
+                        0x0000fbfcfffffcf8fffffff287140006000100001e87e9ec7800040000100000 ,
+                        0x002fbed99929020b0200140028acfffef2fffffcfeffff000000ffeefffff3ff ,
+                        0xffe6982c000a000002001d8fe0ffffffdb6004001500000017a8ffffffe38913 ,
+                        0x0017000a00003badf9fffffffcfbff000000fffffbf3ffffbc4e000300060900 ,
+                        0x137cddfbfffffafcffc72300000004069efdeffffef2ffed7d030000000b0003 ,
+                        0x5ecdfafffff8ff000000fefff3feffad2000080000000873dcf2fbfcfbffffff ,
+                        0xfffe94000500005cf8fffff8fdfffff8e1d4641c000008000022bdf7fffbff00 ,
+                        0x0000fbfaffffd335000a01000862d6fff9fefffffff2f8fffafff82c180018ce ,
+                        0xfff7fdfffffbf3fffffff7a7470c000000054cc0fffeff000000fff0fff36004 ,
+                        0x0500003bacf9fffefefffffbfffdfffadfffff8f000252fffff4fbf7fdfffeff ,
+                        0xfff8fdfff58c27000000008bf5fdff000000fffffbd3080b07000fbbfcfffff3 ,
+                        0xfffffffffdcc660f1246d3d01d0ca8f575231d64bcf4fffffefafafffff0b902 ,
+                        0x00020305fffffb000000fffff49f0001010067f6fff5fffffff4ebb053060000 ,
+                        0x060025e34808dd640005050007439de7fffffff9f9fffc6201000103ecfffb00 ,
+                        0x0000fffff768000000079cfffdf4fffcdaab450d00031506000000816d3fa300 ,
+                        0x0002000000000a3a94e1f9fffefbfea900030000cbfffa000000ffffff500607 ,
+                        0x000acefff6fcfb9a350000060c0000000000034681697f060000020000060300 ,
+                        0x03167ce1fffcffe101020000b4fffa000000ffffff550a07000bc2fff8ffffa7 ,
+                        0x4f1706040000000b0b0009437f66740000050c00000000000d287fe1fff9ffe2 ,
+                        0x03030000b4fffa000000fffefc76030000098afbfff9fffff8db6c2800031204 ,
+                        0x0000008d906baf0003010000010310439feefffff8f7ffb002030000cbfffa00 ,
+                        0x0000fffefcb40a0000035bf1fff3fafefffcffda85290000030a3ff7875bff6b ,
+                        0x00000000195eb7f5fffefff8f7ffff7409000103ecfffb000000fdffffec1b09 ,
+                        0x010000aef5fffff6fffffcfcffea9d504970dfc63331a0e98d3f3b7cccfcffff ,
+                        0xfefafdfeffffd61d03000305fffffb000000fafffaff8d0f00010035e5fff5ff ,
+                        0xedfffffffffaeffffaff840001000a66fffbfafff6f4fffff7ffffeefffd5504 ,
+                        0x0003006af2fffd000000fdfffbffda19060a130050f6fff0fff8f2fcf4ffffff ,
+                        0xf6c9150000050006a4fffff4fcfffbf3ffffffefff8201001d0017bafff8f700 ,
+                        0x0000fff4fffff497000800030048edffe3fffcfff6fffff6fb890003010b0100 ,
+                        0x56fffafefffffffffff5fcff77000e0000006cfffff2ff000000fff3fff8f9ff ,
+                        0x33000100070053e9fffdfffffffaf7ffff6e0b000100070e3ffaf2fffff4ffff ,
+                        0xf9fff88f000009040029d6fff9faff000000fcfffff0fff9c61f020000170351 ,
+                        0xfdfffeebfff9fdfffe9608001000000077fffffdfffff8f3feff8603000d0004 ,
+                        0x13b3ffecfaffff000000fffdfdfffafdffa4000d000013044ef0fff6ffffffff ,
+                        0xf7e81c09080d0202d3ffffedfffff1fffc8701090200000086feffe7ffffec00 ,
+                        0x0000fff6ffffe4fff9ff6e060b000006006de3fffffffef7f8ff690b00000447 ,
+                        0xf4f5fbfafffffff8970600030008054effe7fbfbfffff2000000fcfffff8ffed ,
+                        0xfffbf73d000d0000070075fdf7fffffffcfcc6120000089df1fffbfff0f9ff90 ,
+                        0x04000500060037e6f8fffdfff0fdff000000ffffffffffffffffffd52b03000c ,
+                        0x0301007bf1fff9fffff7f35d000022e8edfffff7fcff8f05000300000812d2ff ,
+                        0xf8feffffffffff000000fffffffffffffffffdf8ce0118000000020076fbfff7 ,
+                        0xffffff9a03005bfffff0f3fff8a81c001900070000bee0fffffeffffffffff00 ,
+                        0x0000fffffffffffffffff9ffff9f000a000309000b8df1fffcfffae53211abf6 ,
+                        0xffffffff9c1b00000400030078fffffefcffffffffffff000000ffffffffffff ,
+                        0xfffffffcfbfc680007040510000985f5fff8ffff5c33fdfcf4fffcaf22000a04 ,
+                        0x0004005cffe9fffff9ffffffffffff000000fffffffffffffffffdfffaf6ff4b ,
+                        0x0a0000060300068cfaffffffcc99fffbfdff9d1b000f000002032de9fff5fcff ,
+                        0xfff9ffffffffff000000fffffffffffffffff8fffffffede330000000603000f ,
+                        0x7ffdfff1fff8f6ffffac2200000b00000412bdfffffff2fffdfcffffffffff00 ,
+                        0x0000ffffffffffffffffffebfffff2ffae23000f000611000d92fbedfffdffff ,
+                        0xa82300060100060a1a7fffe6fffbfffff6ffffffffffff000000ffffffffffff ,
+                        0xfffffffff4fffffffa950202000000050500a2fffafbffb32000030008010004 ,
+                        0x5efff1fffafbfff9ffffffffffffff000000ffffffffffffffffffffffffffff ,
+                        0xffff70050000020400021297ffffbc340004000c0000063febffffffffffffff ,
+                        0xffffffffffffff000000ffffffffffffffffffffffffffffffffdb4e00100200 ,
+                        0x1400020eafd2180024000700150712e0f6fcffffffffffffffffffffffffff00 ,
+                        0x0000ffffffffffffffffffffffffffffffffffcc22010004000200010f191000 ,
+                        0x000002000908abfffff1ffffffffffffffffffffffffff000000ffffffffffff ,
+                        0xfffffffffffffffffffffffab70006090000000700000801000c00170086fff8 ,
+                        0xffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffff ,
+                        0xfffff9fbff8e0005060003000c1000000703040062f8fffbf8ffffffffffffff ,
+                        0xffffffffffffff000000fffffffffffffffffffffffffffffffff8fff2fe5600 ,
+                        0x000b060000000a0b00000032e6fdfffcfffbffffffffffffffffffffffffff00 ,
+                        0x0000fffffffffffffffffffffffffffffffffefdffe5f6250207030004080000 ,
+                        0x0c0023cef4fff6fff2feffffffffffffffffffffffffff000000ffffffffffff ,
+                        0xfffffffffffffffffffffffdf7fff6bf1900001200000a0400069ef5fff6fffc ,
+                        0xffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffff ,
+                        0xfffffff6fffff5ffa800000700020d000083ffffffffffffffffffffffffffff ,
+                        0xffffffffffffff000000fffffffffffffffffffffffffffffffffff5fefffcff ,
+                        0xe57f00000e00010050f0ffffffffffffffffffffffffffffffffffffffffff00 ,
+                        0x0000fffffffffffffffffffffffffffffffffffbfdfefcffffeb50000d05003a ,
+                        0xcfffffffffffffffffffffffffffffffffffffffffffff000000ffffffffffff ,
+                        0xfffffffffffffffffffffdfffffdfcfafcffce32000825b5fff5ffffffffffff ,
+                        0xffffffffffffffffffffffffffffff000000ffffffffffffffffffffffffffff ,
+                        0xfffff3fffffbfffffdffffae020594fff9ffffffffffffffffffffffffffffff ,
+                        0xffffffffffffff000000fffffffffffffffffffffffffffffffff9fffff7ffff ,
+                        0xfff8fff89777f1fffcffffffffffffffffffffffffffffffffffffffffffff00 ,
+                        0x0000fffffffffffffffffffffffffffffffffffffefbfbfdfdf9fffffff9fff5 ,
+                        0xfff1ffffffffffffffffffffffffffffffffffffffffff000000ffffffffffff ,
+                        0xfffffffffffffffffffffff8fefffffbfffff6fff0fff9fffff8ffffffffffff ,
+                        0xffffffffffffffffffffffffffffff000000030000000000110000000c000000 ,
+                        0x080000000b000000100000003500000038000000090000001000000035000000 ,
+                        0x38000000090000001000000035000000380000000a0000001000000000000000 ,
+                        0x0000000009000000100000003500000038000000150000000c00000003000000 ,
+                        0x180000000c00000000000000190000000c000000ffffff0051000000b8100000 ,
+                        0x0000000000000000340000003700000000000000000000000000000000000000 ,
+                        0x3500000038000000500000002804000078040000400c0000000000002000cc00 ,
+                        0x35000000380000002800000035000000380000000100080000000000400c0000 ,
+                        0xc40e0000c40e0000000100000000000000000000010101000202020003030300 ,
+                        0x0404040005050500060606000707070008080800090909000a0a0a000b0b0b00 ,
+                        0x0c0c0c000d0d0d000e0e0e000f0f0f0010101000111111001212120013131300 ,
+                        0x1414140015151500161616001717170018181800191919001a1a1a001b1b1b00 ,
+                        0x1c1c1c001d1d1d001e1e1e001f1f1f0020202000212121002222220023232300 ,
+                        0x2424240025252500262626002727270028282800292929002a2a2a002b2b2b00 ,
+                        0x2c2c2c002d2d2d002e2e2e002f2f2f0030303000313131003232320033333300 ,
+                        0x3434340035353500363636003737370038383800393939003a3a3a003b3b3b00 ,
+                        0x3c3c3c003d3d3d003e3e3e003f3f3f0040404000414141004242420043434300 ,
+                        0x4444440045454500464646004747470048484800494949004a4a4a004b4b4b00 ,
+                        0x4c4c4c004d4d4d004e4e4e004f4f4f0050505000515151005252520053535300 ,
+                        0x5454540055555500565656005757570058585800595959005a5a5a005b5b5b00 ,
+                        0x5c5c5c005d5d5d005e5e5e005f5f5f0060606000616161006262620063636300 ,
+                        0x6464640065656500666666006767670068686800696969006a6a6a006b6b6b00 ,
+                        0x6c6c6c006d6d6d006e6e6e006f6f6f0070707000717171007272720073737300 ,
+                        0x7474740075757500767676007777770078787800797979007a7a7a007b7b7b00 ,
+                        0x7c7c7c007d7d7d007e7e7e007f7f7f0080808000818181008282820083838300 ,
+                        0x8484840085858500868686008787870088888800898989008a8a8a008b8b8b00 ,
+                        0x8c8c8c008d8d8d008e8e8e008f8f8f0090909000919191009292920093939300 ,
+                        0x9494940095959500969696009797970098989800999999009a9a9a009b9b9b00 ,
+                        0x9c9c9c009d9d9d009e9e9e009f9f9f00a0a0a000a1a1a100a2a2a200a3a3a300 ,
+                        0xa4a4a400a5a5a500a6a6a600a7a7a700a8a8a800a9a9a900aaaaaa00ababab00 ,
+                        0xacacac00adadad00aeaeae00afafaf00b0b0b000b1b1b100b2b2b200b3b3b300 ,
+                        0xb4b4b400b5b5b500b6b6b600b7b7b700b8b8b800b9b9b900bababa00bbbbbb00 ,
+                        0xbcbcbc00bdbdbd00bebebe00bfbfbf00c0c0c000c1c1c100c2c2c200c3c3c300 ,
+                        0xc4c4c400c5c5c500c6c6c600c7c7c700c8c8c800c9c9c900cacaca00cbcbcb00 ,
+                        0xcccccc00cdcdcd00cecece00cfcfcf00d0d0d000d1d1d100d2d2d200d3d3d300 ,
+                        0xd4d4d400d5d5d500d6d6d600d7d7d700d8d8d800d9d9d900dadada00dbdbdb00 ,
+                        0xdcdcdc00dddddd00dedede00dfdfdf00e0e0e000e1e1e100e2e2e200e3e3e300 ,
+                        0xe4e4e400e5e5e500e6e6e600e7e7e700e8e8e800e9e9e900eaeaea00ebebeb00 ,
+                        0xececec00ededed00eeeeee00efefef00f0f0f000f1f1f100f2f2f200f3f3f300 ,
+                        0xf4f4f400f5f5f500f6f6f600f7f7f700f8f8f800f9f9f900fafafa00fbfbfb00 ,
+                        0xfcfcfc00fdfdfd00fefefe00ffffff00fffffffffffffffffbfffffffffeffff ,
+                        0xfffbfafffffffffefefffffffff5f5fffff9fafffffcf9ffffffffffffffffff ,
+                        0xffffffffff000000fffffffffffffffffdfffffffdfcfdfffefffffffcfbffff ,
+                        0xfff7fefffbfffff2f7fffff8f4fffff8ffffffffffffffffffffffffff000000 ,
+                        0xfffffffffffffffffffffffefcfbfdfef7fffffaf9fffffdffbd4939a3f3fdff ,
+                        0xfffbf7fdfffffffeffffffffffffffffffffffffff000000ffffffffffffffff ,
+                        0xfffffffefdfefffffffffffbffffebcd490c000b0542b9fffffffffffff2f5ff ,
+                        0xffffffffffffffffffffffffff000000fffffffffffffffffffffeffffffffff ,
+                        0xfffcf9ffffcf6a110e0e00000d000243c5e7fdfbffffffe8ffffffffffffffff ,
+                        0xffffffffff000000fffffffffffffffffffefefffffffffeebffffce68130000 ,
+                        0x00000205000012020c6dd4fdf9f7ffffffffffffffffffffffffffffff000000 ,
+                        0xfffffffffffffffffefefefffffffaf5ffc6632105000510000c0300070a0000 ,
+                        0x00001b75d1fefef3ffffffffffffffffffffffffff000000ffffffffffffffff ,
+                        0xfffefefffffbf3ed6a310000040300000800000300000406030800002589e0ff ,
+                        0xffffffffffffffffffffffffff000000fffcfffffffdfffffffff8fcffd97520 ,
+                        0x0008110000130000000a0a00020b0004010000010b001e85eef9fffbfafffffd ,
+                        0xfffcfffff9000000fbfffff2fffff3f5f1faffe67c2707001300001b32230208 ,
+                        0x000b001005000e0011301d00000000102193f2fef5fffff6fffbfffffe000000 ,
+                        0xfbfcfffffcf8fffffff287140006000100001e87e9ec7800040000100000002f ,
+                        0xbed99929020b0200140028acfffef2fffffcfeffff000000ffeefffff3ffffe6 ,
+                        0x982c000a000002001d8fe0ffffffdb6004001500000017a8ffffffe389130017 ,
+                        0x000a00003badf9fffffffcfbff000000fffffbf3ffffbc4e000300060900137c ,
+                        0xddfbfffffafcffc72300000004069efdeffffef2ffed7d030000000b00035ecd ,
+                        0xfafffff8ff000000fefff3feffad2000080000000873dcf2fbfcfbfffffffffe ,
+                        0x94000500005cf8fffff8fdfffff8e1d4641c000008000022bdf7fffbff000000 ,
+                        0xfbfaffffd335000a01000862d6fff9fefffffff2f8fffafff82c180018cefff7 ,
+                        0xfdfffffbf3fffffff7a7470c000000054cc0fffeff000000fff0fff360040500 ,
+                        0x003bacf9fffefefffffbfffdfffadfffff8f000252fffff4fbf7fdfffefffff8 ,
+                        0xfdfff58c27000000008bf5fdff000000fffffbd3080b07000fbbfcfffff3ffff ,
+                        0xfffffdcc660f1246d3d01d0ca8f575231d64bcf4fffffefafafffff0b9020002 ,
+                        0x0305fffffb000000fffff49f0001010067f6fff5fffffff4ebb0530600000600 ,
+                        0x25e34808dd640005050007439de7fffffff9f9fffc6201000103ecfffb000000 ,
+                        0xfffff768000000079cfffdf4fffcdaab450d00031506000000816d3fa3000002 ,
+                        0x000000000a3a94e1f9fffefbfea900030000cbfffa000000ffffff500607000a ,
+                        0xcefff6fcfb9a350000060c0000000000034681697f0600000200000603000316 ,
+                        0x7ce1fffcffe101020000b4fffa000000ffffff550a07000bc2fff8ffffa74f17 ,
+                        0x06040000000b0b0009437f66740000050c00000000000d287fe1fff9ffe20303 ,
+                        0x0000b4fffa000000fffefc76030000098afbfff9fffff8db6c28000312040000 ,
+                        0x008d906baf0003010000010310439feefffff8f7ffb002030000cbfffa000000 ,
+                        0xfffefcb40a0000035bf1fff3fafefffcffda85290000030a3ff7875bff6b0000 ,
+                        0x0000195eb7f5fffefff8f7ffff7409000103ecfffb000000fdffffec1b090100 ,
+                        0x00aef5fffff6fffffcfcffea9d504970dfc63331a0e98d3f3b7cccfcfffffefa ,
+                        0xfdfeffffd61d03000305fffffb000000fafffaff8d0f00010035e5fff5ffedff ,
+                        0xfffffffaeffffaff840001000a66fffbfafff6f4fffff7ffffeefffd55040003 ,
+                        0x006af2fffd000000fdfffbffda19060a130050f6fff0fff8f2fcf4fffffff6c9 ,
+                        0x150000050006a4fffff4fcfffbf3ffffffefff8201001d0017bafff8f7000000 ,
+                        0xfff4fffff497000800030048edffe3fffcfff6fffff6fb890003010b010056ff ,
+                        0xfafefffffffffff5fcff77000e0000006cfffff2ff000000fff3fff8f9ff3300 ,
+                        0x0100070053e9fffdfffffffaf7ffff6e0b000100070e3ffaf2fffff4fffff9ff ,
+                        0xf88f000009040029d6fff9faff000000fcfffff0fff9c61f020000170351fdff ,
+                        0xfeebfff9fdfffe9608001000000077fffffdfffff8f3feff8603000d000413b3 ,
+                        0xffecfaffff000000fffdfdfffafdffa4000d000013044ef0fff6fffffffff7e8 ,
+                        0x1c09080d0202d3ffffedfffff1fffc8701090200000086feffe7ffffec000000 ,
+                        0xfff6ffffe4fff9ff6e060b000006006de3fffffffef7f8ff690b00000447f4f5 ,
+                        0xfbfafffffff8970600030008054effe7fbfbfffff2000000fcfffff8ffedfffb ,
+                        0xf73d000d0000070075fdf7fffffffcfcc6120000089df1fffbfff0f9ff900400 ,
+                        0x0500060037e6f8fffdfff0fdff000000ffffffffffffffffffd52b03000c0301 ,
+                        0x007bf1fff9fffff7f35d000022e8edfffff7fcff8f05000300000812d2fff8fe ,
+                        0xffffffffff000000fffffffffffffffffdf8ce0118000000020076fbfff7ffff ,
+                        0xff9a03005bfffff0f3fff8a81c001900070000bee0fffffeffffffffff000000 ,
+                        0xfffffffffffffffff9ffff9f000a000309000b8df1fffcfffae53211abf6ffff ,
+                        0xffff9c1b00000400030078fffffefcffffffffffff000000ffffffffffffffff ,
+                        0xfffcfbfc680007040510000985f5fff8ffff5c33fdfcf4fffcaf22000a040004 ,
+                        0x005cffe9fffff9ffffffffffff000000fffffffffffffffffdfffaf6ff4b0a00 ,
+                        0x00060300068cfaffffffcc99fffbfdff9d1b000f000002032de9fff5fcfffff9 ,
+                        0xffffffffff000000fffffffffffffffff8fffffffede330000000603000f7ffd ,
+                        0xfff1fff8f6ffffac2200000b00000412bdfffffff2fffdfcffffffffff000000 ,
+                        0xffffffffffffffffffebfffff2ffae23000f000611000d92fbedfffdffffa823 ,
+                        0x00060100060a1a7fffe6fffbfffff6ffffffffffff000000ffffffffffffffff ,
+                        0xfffff4fffffffa950202000000050500a2fffafbffb320000300080100045eff ,
+                        0xf1fffafbfff9ffffffffffffff000000ffffffffffffffffffffffffffffffff ,
+                        0x70050000020400021297ffffbc340004000c0000063febffffffffffffffffff ,
+                        0xffffffffff000000ffffffffffffffffffffffffffffffffdb4e001002001400 ,
+                        0x020eafd2180024000700150712e0f6fcffffffffffffffffffffffffff000000 ,
+                        0xffffffffffffffffffffffffffffffffffcc22010004000200010f1910000000 ,
+                        0x02000908abfffff1ffffffffffffffffffffffffff000000ffffffffffffffff ,
+                        0xfffffffffffffffffffab70006090000000700000801000c00170086fff8ffff ,
+                        0xffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffffff ,
+                        0xf9fbff8e0005060003000c1000000703040062f8fffbf8ffffffffffffffffff ,
+                        0xffffffffff000000fffffffffffffffffffffffffffffffff8fff2fe5600000b ,
+                        0x060000000a0b00000032e6fdfffcfffbffffffffffffffffffffffffff000000 ,
+                        0xfffffffffffffffffffffffffffffffffefdffe5f62502070300040800000c00 ,
+                        0x23cef4fff6fff2feffffffffffffffffffffffffff000000ffffffffffffffff ,
+                        0xfffffffffffffffffffdf7fff6bf1900001200000a0400069ef5fff6fffcffff ,
+                        0xffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffffff ,
+                        0xfff6fffff5ffa800000700020d000083ffffffffffffffffffffffffffffffff ,
+                        0xffffffffff000000fffffffffffffffffffffffffffffffffff5fefffcffe57f ,
+                        0x00000e00010050f0ffffffffffffffffffffffffffffffffffffffffff000000 ,
+                        0xfffffffffffffffffffffffffffffffffffbfdfefcffffeb50000d05003acfff ,
+                        0xffffffffffffffffffffffffffffffffffffffffff000000ffffffffffffffff ,
+                        0xfffffffffffffffffdfffffdfcfafcffce32000825b5fff5ffffffffffffffff ,
+                        0xffffffffffffffffffffffffff000000ffffffffffffffffffffffffffffffff ,
+                        0xf3fffffbfffffdffffae020594fff9ffffffffffffffffffffffffffffffffff ,
+                        0xffffffffff000000fffffffffffffffffffffffffffffffff9fffff7fffffff8 ,
+                        0xfff89777f1fffcffffffffffffffffffffffffffffffffffffffffffff000000 ,
+                        0xfffffffffffffffffffffffffffffffffffffefbfbfdfdf9fffffff9fff5fff1 ,
+                        0xffffffffffffffffffffffffffffffffffffffffff000000ffffffffffffffff ,
+                        0xfffffffffffffffffff8fefffffbfffff6fff0fff9fffff8ffffffffffffffff ,
+                        0xffffffffffffffffffffffffff000000250000000c0000000700008025000000 ,
+                        0x0c00000000000080300000000c0000000f0000804b0000001000000000000000 ,
+                        0x050000000e00000014000000000000001000000014000000
+                    End
+                    Picture ="C:\\Documents and Settings\\JoeL\\Desktop\\clip_image002.jpg"
+                    GUID = Begin
+                        0xb08631f0a03b1441bba1edf499751a47
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =765
+                    Top =375
+                    Width =2280
+                    Height =360
+                    FontSize =15
+                    FontWeight =700
+                    Name ="Label40"
+                    Caption ="Enrollment Form                            "
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x841574237950ce4f917b1d75622af586
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =4200
+                    Top =435
+                    Width =5700
+                    Height =300
+                    FontWeight =700
+                    Name ="Label41"
+                    Caption ="(Please type or print in ink.  This form may be photocopied or duplicated)"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x83cf0c9a8c05eb43a6c984576c6cb1ca
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =735
+                    Top =750
+                    Width =10020
+                    Height =600
+                    FontSize =24
+                    FontWeight =700
+                    Name ="Label42"
+                    Caption ="QCD “WHITE” Dental & Vision Benefit Program"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x10740095be3b9e499d812c3bc9dac347
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =75
+                    Top =1380
+                    Width =10680
+                    Height =660
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Label43"
+                    Caption ="Underwritten by: National Guardian Life Insurance Company  \015\012Administered "
+                        "by:  Group Link, Inc.: Home Office 6612 E. 75th St., Ste. 200, Indianapolis, IN "
+                        "46250   317.578.7128 or 877.223.4693 \015\012"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xdf92fb07db1745428ab2573012e62d15
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =240
+                    Top =2040
+                    Width =1740
+                    Height =240
+                    FontWeight =700
+                    Name ="Label44"
+                    Caption ="Effective Date______   "
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x4f83ca6dad103c4986764b7ea9c34748
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =240
+                    Top =2280
+                    Width =780
+                    Height =300
+                    FontWeight =700
+                    Name ="Label45"
+                    Caption ="Company:"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x5ea79c7e76a05c4b8928a69986944982
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =4980
+                    Top =2340
+                    Width =360
+                    Height =240
+                    FontWeight =700
+                    Name ="Label46"
+                    Caption ="City:"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x4de1b54e6ca936468127e7ca96e358a0
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =6780
+                    Top =2340
+                    Width =420
+                    Height =240
+                    FontWeight =700
+                    Name ="Label47"
+                    Caption ="State:"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x9c49be2e507d584b9e76bca698be87f9
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =8040
+                    Top =2340
+                    Width =840
+                    Height =240
+                    FontWeight =700
+                    Name ="Label48"
+                    Caption ="Zip Code:"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x97b4373f81fc5f458167bba181f4356f
+                    End
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =360
+                    Top =2640
+                    Width =3885
+                    Height =360
+                    FontWeight =700
+                    Name ="Label52"
+                    Caption ="\015\012TO BE COMPLETED BY EMPLOYEE (Please Print)\015\012"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xa517df176c8a9e44ac818d7ec25c4fcd
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =2100
+                    Top =3600
+                    Width =1860
+                    Height =300
+                    FontWeight =700
+                    TabIndex =8
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                    StatusBarText ="The SSN of the subscriber.  It is used for look-ups, but it cannot be printed on"
+                        " the subscriber's card.  Penalty if we do."
+                    GUID = Begin
+                        0x668ac758d803724caf3a445e80f2056a
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =360
+                    Top =3600
+                    Width =1740
+                    Height =300
+                    FontWeight =700
+                    Name ="Label58"
+                    Caption ="Social Security Number"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x81d7db3b0653f4428d67d287c83624da
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =7200
+                    Top =3060
+                    FontWeight =700
+                    TabIndex =9
+                    Name ="SUBmiddleNAME"
+                    ControlSource ="SUBmiddleNAME"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xc82c857c38311a4ca69230f979aa84d2
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =7200
+                    Top =3300
+                    Width =360
+                    Height =240
+                    FontWeight =700
+                    Name ="Label60"
+                    Caption ="MI"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x539911d475e5904cb3de970a7b1ed34b
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =240
+                    Top =3060
+                    Width =660
+                    Height =240
+                    FontWeight =700
+                    Name ="Label61"
+                    Caption ="Name"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x3e6712ed419f0140a0fc3fc23cc092e4
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5940
+                    Top =3600
+                    Width =360
+                    Height =240
+                    FontWeight =700
+                    Name ="Label62"
+                    Caption ="Sex"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x701233a0cd5db2468b483c777459a963
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =360
+                    Top =4020
+                    Width =1500
+                    Height =300
+                    FontWeight =700
+                    Name ="Label63"
+                    Caption ="Employee’s Address"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xc39f17ca8cc9554fad3b19ee54bd2c7b
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1080
+                    Top =4860
+                    Width =840
+                    FontWeight =700
+                    TabIndex =10
+                    Name ="SUBdob"
+                    ControlSource ="SUBdob"
+                    Format ="m/d/yyyy"
+                    GUID = Begin
+                        0xc525f943fe9b4647a236cad48b882bd5
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =300
+                    Top =4860
+                    Width =780
+                    Height =240
+                    FontWeight =700
+                    Name ="Label65"
+                    Caption ="Birth Date"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x0068e5759025394992608e37fe587dcd
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =4200
+                    Top =4860
+                    Width =1080
+                    Height =300
+                    FontWeight =700
+                    Name ="Label66"
+                    Caption ="Age______"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xd98539ab9eacda41ae979b5b9a78b552
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =6120
+                    Top =4860
+                    Width =1590
+                    Height =285
+                    FontWeight =700
+                    Name ="Label67"
+                    Caption ="Marital Status______"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xc0af83c3a97b544b8b815cae4d556b76
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =300
+                    Top =5160
+                    Width =2220
+                    Height =300
+                    FontWeight =700
+                    Name ="Label68"
+                    Caption ="Home Phone____________"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x7c6d185540a2fd40a226f2d3f662c8bf
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5100
+                    Top =5220
+                    Width =2040
+                    Height =300
+                    FontWeight =700
+                    Name ="Label69"
+                    Caption ="Work Phone____________"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x1cf8231f1546a34eaf0c815329639a42
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =300
+                    Top =5580
+                    Width =3600
+                    Height =300
+                    FontWeight =700
+                    Name ="Label70"
+                    Caption ="Permanent Full-time Date Employed________"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xd8891d43da50a54884596c0cf72556bf
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5100
+                    Top =5640
+                    Width =2580
+                    Height =225
+                    FontWeight =700
+                    Name ="Label71"
+                    Caption ="Hours Worked Per Week________"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x98c569a3ee8a214b9c56ba27c69af542
+                    End
+                End
+                Begin Label
+                    FontUnderline = NotDefault
+                    TextAlign =2
+                    TextFontFamily =18
+                    Left =4020
+                    Top =6000
+                    Width =2040
+                    Height =225
+                    FontWeight =700
+                    Name ="Label72"
+                    Caption ="COVERAGE SELECTED"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xc2c102171365f64ab04dc47c078c7d86
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =4020
+                    Top =6240
+                    Width =2040
+                    Height =300
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label77"
+                    Caption ="Employee + One"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x761312331e16634c9481595e73f3b8c7
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1740
+                    Top =6240
+                    Width =1800
+                    Height =300
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label78"
+                    Caption ="Employee Only"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x31e8fb06c2e49a44805ebb4db7c052fe
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =7200
+                    Top =6240
+                    Width =960
+                    Height =300
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label79"
+                    Caption ="Family"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x7b436decfa84354587ddbbfa7797e6a7
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =480
+                    Top =6600
+                    Width =960
+                    Height =300
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label80"
+                    Caption ="Dental"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x5f692df3588a0944b560fa052a883a20
+                    End
+                End
+                Begin Rectangle
+                    Left =4980
+                    Top =6540
+                    Width =360
+                    Height =240
+                    Name ="Box82"
+                    GUID = Begin
+                        0xf2a05c85187324498c65ea8391d24401
+                    End
+                End
+                Begin Rectangle
+                    Left =2400
+                    Top =6540
+                    Width =360
+                    Height =240
+                    Name ="Box85"
+                    GUID = Begin
+                        0xaad5aa745a9d7f4db8ca0d8394d2aa2f
+                    End
+                End
+                Begin Rectangle
+                    Left =7440
+                    Top =6540
+                    Width =360
+                    Height =240
+                    Name ="Box86"
+                    GUID = Begin
+                        0x9083fb447c1d0c458e6a2d04cdb56eb3
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =3540
+                    Top =9840
+                    Width =2880
+                    Height =240
+                    FontWeight =700
+                    Name ="Label87"
+                    Caption ="WAIVER OF GROUP INSURANCE"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x8053791cc56c4d4a99829f7fb00c739f
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =90
+                    Top =10080
+                    Width =1800
+                    Height =300
+                    FontWeight =700
+                    Name ="Label88"
+                    Caption ="Employee Name______"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xa4a2d7ce86ee3749a89ae7f156c05bff
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =4620
+                    Top =10080
+                    Width =3390
+                    Height =300
+                    FontWeight =700
+                    Name ="Label89"
+                    Caption ="Social Security Number_____ - _____ - _____"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x55e630d1a7e1974fb7dd6caeba6ccb2e
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =75
+                    Top =10440
+                    Width =2040
+                    Height =240
+                    FontWeight =700
+                    Name ="Label90"
+                    Caption ="Group Policy No. (s) ____"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xdf9c2fbc64024d4e8af5a6dc88041606
+                    End
+                End
+                Begin Label
+                    Left =4320
+                    Top =10440
+                    Width =660
+                    Height =300
+                    Name ="Label91"
+                    Caption ="_____"
+                    GUID = Begin
+                        0xa7c3b8234733674f9efa9fb423775442
+                    End
+                End
+                Begin Label
+                    Left =7980
+                    Top =10440
+                    Width =660
+                    Height =300
+                    Name ="Label92"
+                    Caption ="_____"
+                    GUID = Begin
+                        0x584bddd28f985146b3d719b56b2f6a13
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =60
+                    Top =10800
+                    Width =1875
+                    Height =225
+                    FontWeight =700
+                    Name ="Label93"
+                    Caption ="Policyholder Name_____"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x9088695142faf54f85b59b00e60085f5
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5160
+                    Top =10800
+                    Width =2310
+                    Height =225
+                    FontWeight =700
+                    Name ="Label94"
+                    Caption ="Date Employment Began_____"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xe4643588099ee64e827172282314698e
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =45
+                    Top =11100
+                    Width =10320
+                    Height =420
+                    FontWeight =700
+                    Name ="Label95"
+                    Caption ="  I have been given an opportunity to apply for Group Insurance as offered by th"
+                        "e Policyholder and, after careful consideration, have decided not to enroll  in "
+                        "the following coverages:"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xc08b7df0ec53e44a8b7303cffd88a361
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =11580
+                    Width =540
+                    Height =225
+                    FontWeight =700
+                    Name ="Label97"
+                    Caption ="Dental"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xf6ebe02c3e060a4a8e2c150037efd8eb
+                    End
+                End
+                Begin Rectangle
+                    Left =2280
+                    Top =11580
+                    Width =180
+                    Height =180
+                    Name ="Box98"
+                    GUID = Begin
+                        0x6a34394199fdc14fbea21c77269df900
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =2520
+                    Top =11580
+                    Width =1020
+                    Height =225
+                    FontWeight =700
+                    Name ="Label99"
+                    Caption ="Other_____"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xbe29ae60a8261840a2734b7f517555a8
+                    End
+                End
+                Begin Rectangle
+                    Left =1200
+                    Top =11880
+                    Width =180
+                    Height =180
+                    Name ="Box100"
+                    GUID = Begin
+                        0xaf4deb81e4742b49800a71deb134bfc8
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =11820
+                    Width =3720
+                    Height =240
+                    FontWeight =700
+                    Name ="Label101"
+                    Caption ="Myself (and all eligible dependents if applicable)"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xde451b92d2bc63449503beac6132de62
+                    End
+                End
+                Begin Rectangle
+                    Left =1200
+                    Top =12120
+                    Width =180
+                    Height =180
+                    Name ="Box102"
+                    GUID = Begin
+                        0x38ec83353ff0764f8a3e5b7f6ac71b87
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =12060
+                    Width =4140
+                    Height =225
+                    FontWeight =700
+                    Name ="Label103"
+                    Caption ="My eligible dependent spouse and children only"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x96f0574ef2ad0d41ad55a6861b7dd6a7
+                    End
+                End
+                Begin Rectangle
+                    Left =5700
+                    Top =11880
+                    Width =180
+                    Height =180
+                    Name ="Box104"
+                    GUID = Begin
+                        0xb080d80e3a5a554a99a92e4fa35e58dc
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5940
+                    Top =11820
+                    Width =3060
+                    Height =225
+                    FontWeight =700
+                    Name ="Label105"
+                    Caption ="My eligible dependent spouse only"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x48fb36dee5f4434b9a4f36ca59ac5288
+                    End
+                End
+                Begin Rectangle
+                    Left =5700
+                    Top =12120
+                    Width =180
+                    Height =180
+                    Name ="Box106"
+                    GUID = Begin
+                        0x02de88d2fd86504b963fc7d54e8edd5e
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =5940
+                    Top =12060
+                    Width =3060
+                    Height =225
+                    FontWeight =700
+                    Name ="Label107"
+                    Caption ="My eligible dependent children only"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xf72f7ac0f7d3b14a921f0d42e92e181f
+                    End
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =45
+                    Top =11940
+                    Width =420
+                    Height =240
+                    FontWeight =700
+                    Name ="Label108"
+                    Caption ="For:"
+                    GUID = Begin
+                        0x3c6043a9bacca04282fdb2d312b44880
+                    End
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =45
+                    Top =12420
+                    Width =675
+                    Height =225
+                    FontWeight =700
+                    Name ="Label109"
+                    Caption ="Reason:"
+                    GUID = Begin
+                        0xe75fa53f5ee38e44ba9d9f441970c5b0
+                    End
+                End
+                Begin Rectangle
+                    Left =1200
+                    Top =12420
+                    Width =180
+                    Height =180
+                    Name ="Box110"
+                    GUID = Begin
+                        0x9d4ddf5cd0a35249a26dcfcfa90da66d
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =12420
+                    Width =1050
+                    Height =225
+                    FontWeight =700
+                    Name ="Label111"
+                    Caption ="Cannot afford"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xe6e81afa0119004097c37ae8a28663b6
+                    End
+                End
+                Begin Rectangle
+                    Left =3960
+                    Top =12480
+                    Width =180
+                    Height =180
+                    Name ="Box112"
+                    GUID = Begin
+                        0xdfc8d92f90c02540b0eb9867f9ee62eb
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =4200
+                    Top =12420
+                    Width =4800
+                    Height =225
+                    FontWeight =700
+                    Name ="Label113"
+                    Caption ="Covered under an alternate health plan provided by my employer"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xb06350588f7f4d45b27b51ed1a823675
+                    End
+                End
+                Begin Rectangle
+                    Left =1200
+                    Top =12720
+                    Width =180
+                    Height =180
+                    Name ="Box114"
+                    GUID = Begin
+                        0x4c06f2ece8794c4fbda6c8b79d7da75b
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =12720
+                    Width =4500
+                    Height =225
+                    FontWeight =700
+                    Name ="Label115"
+                    Caption ="Covered under another employer health plan benefit"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x0a03721362d146408f8211c0c0f21a19
+                    End
+                End
+                Begin Rectangle
+                    Left =6120
+                    Top =12780
+                    Width =180
+                    Height =180
+                    Name ="Box116"
+                    GUID = Begin
+                        0x9d9c3446a406194cafac3e697c60c3db
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =6420
+                    Top =12720
+                    Width =3660
+                    Height =225
+                    FontWeight =700
+                    Name ="Label117"
+                    Caption ="Other Insurance / Reason ____________"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x1645052528ec324baf630fc83cceb407
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =45
+                    Top =12960
+                    Width =10620
+                    Height =540
+                    FontWeight =700
+                    Name ="Label118"
+                    Caption ="Should I apply for a waived coverage in the future, I understand that my depende"
+                        "nt(s) and I will be considered a late enrollee(s) and evidence of insurability, "
+                        "at my expense, acceptable to the Insurance Company will be required.  I also und"
+                        "erstand that my first year Dental or Vision benefits may be limited.  "
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xb8b6c7e533b0b04bbb4edd1cf68105c0
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =45
+                    Top =13500
+                    Width =9480
+                    Height =225
+                    FontWeight =700
+                    Name ="Label119"
+                    Caption ="The above provisions will apply unless otherwise stated in my policy, or unless "
+                        "prohibited by any applicable state or federal law."
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x16173c786c09494fbf1c23641126cd5c
+                    End
+                End
+                Begin Line
+                    Left =240
+                    Top =14055
+                    Width =4080
+                    Name ="Line121"
+                    GUID = Begin
+                        0x9a610867bf3e6943b71c5fd31a581214
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =14055
+                    Width =1710
+                    Height =225
+                    FontWeight =700
+                    Name ="Label122"
+                    Caption ="Signature of Employee"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x5fe55e7d01d6614795280634d845e5db
+                    End
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =5760
+                    Top =13875
+                    Width =2040
+                    Height =240
+                    FontWeight =700
+                    Name ="Label123"
+                    Caption ="________/______/______"
+                    GUID = Begin
+                        0x3cb2b0ff92982b4f9bdc1a12178d068f
+                    End
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =6540
+                    Top =14115
+                    Width =420
+                    Height =225
+                    FontWeight =700
+                    Name ="Label124"
+                    Caption ="Date"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0xf5ddada7494fed47b07a22cf424d280e
+                    End
+                End
+                Begin Line
+                    Top =5940
+                    Width =10800
+                    Name ="Line126"
+                    GUID = Begin
+                        0x62369ced324abd45ac36dd03fbdfdaa9
+                    End
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Top =2640
+                    Width =10800
+                    Name ="Line132"
+                    GUID = Begin
+                        0x3498d92a6f0df54cb376c651115dccaa
+                    End
+                End
+                Begin Line
+                    Top =2640
+                    Width =0
+                    Height =4920
+                    Name ="Line135"
+                    GUID = Begin
+                        0xb69730c9ee853e44ae7f7afa594f8824
+                    End
+                End
+                Begin Line
+                    Left =10800
+                    Top =2640
+                    Width =0
+                    Height =4560
+                    Name ="Line136"
+                    GUID = Begin
+                        0xb188ec5067b55940bf33306c87afe954
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =1020
+                    Top =2280
+                    Width =3960
+                    Height =300
+                    FontSize =11
+                    FontWeight =700
+                    TabIndex =11
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x949b5625b14baf4ab3942dee1d7f04ba
+                    End
+                End
+                Begin Rectangle
+                    Left =1200
+                    Top =11640
+                    Width =180
+                    Height =180
+                    Name ="Box138"
+                    GUID = Begin
+                        0xbb7fe04d3ea20f479c156cf4ecc7216f
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =5340
+                    Top =2340
+                    FontWeight =700
+                    TabIndex =12
+                    Name ="GRcity"
+                    ControlSource ="GRcity"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x060d7feb549be146bb34452ce6207a0e
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =7200
+                    Top =2340
+                    Width =720
+                    FontWeight =700
+                    TabIndex =13
+                    Name ="GRstate"
+                    ControlSource ="GRstate"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x725dd55522ef264cabb47221cea80335
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =8880
+                    Top =2340
+                    FontWeight =700
+                    TabIndex =14
+                    Name ="GRzip"
+                    ControlSource ="GRzip"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x1be560c8204f574e89f39f8819d1d29b
+                    End
+                End
+                Begin TextBox
+                    FontUnderline = NotDefault
+                    TextFontFamily =18
+                    Left =6300
+                    Top =3600
+                    Width =960
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =15
+                    Name ="SUBGender"
+                    ControlSource ="SUBGender"
+                    FontName ="Garamond"
+                    GUID = Begin
+                        0x2081e60fb8ba86439cb15195435cb2ad
+                    End
+                End
+            End
+        End
+    End
+End

@@ -1,0 +1,59 @@
+Operation =1
+Option =8
+Where ="(((ARTRAN.Docno) Is Null))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="ARTRAN_BAK"
+End
+Begin OutputColumns
+    Expression ="ARTRAN.Docno"
+    Expression ="ARTRAN.Applytodocno"
+    Expression ="ARTRAN.Custkey"
+    Expression ="ARTRAN.Trntyp"
+    Expression ="ARTRAN.Docdate"
+    Expression ="ARTRAN.Docamt"
+End
+Begin Joins
+    LeftTable ="ARTRAN_BAK"
+    RightTable ="ARTRAN"
+    Expression ="ARTRAN_BAK.Docno = ARTRAN.Docno"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =84
+    Top =66
+    Right =778
+    Bottom =371
+    Left =-1
+    Top =-1
+    Right =687
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =306
+        Top =4
+        Right =402
+        Bottom =111
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =116
+        Top =9
+        Right =212
+        Bottom =116
+        Top =0
+        Name ="ARTRAN_BAK"
+        Name =""
+    End
+End

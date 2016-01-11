@@ -1,0 +1,8 @@
+dbMemo "SQL" ="SELECT DISTINCTROW [Docno], [Custkey]\015\012FROM ARTRAN\015\012WHERE [Docno] In"
+    " (SELECT [Docno] FROM [ARTRAN] As Tmp GROUP BY [Docno] HAVING Count(*)>1 )\015\012"
+    "ORDER BY [Docno];\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

@@ -1,0 +1,98 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.PlanID)<>3 Or (tblSubscr.PlanID) Is Null))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="qselAACardReport"
+End
+Begin OutputColumns
+    Alias ="ZipSub"
+    Expression ="IIf([tblSubscr].[Subzip] Like \"#####-#\",Left([tblSubscr].[SubZip],Len([tblSubs"
+        "cr].[SubZip])-1),IIf([tblSubscr].[SubZip] Like \"#########\",Format([tblSubscr]."
+        "[SubZip],\"@@@@@-@@@@\"),[tblSubscr].[SubZip]))"
+    Alias ="ZipGr"
+    Expression ="IIf([GRzip] Like \"#####-#\",Left([GrZip],Len([GrZip])-1),IIf([GrZip] Like \"###"
+        "######\",Format([GrZip],\"@@@@@-@@@@\"),[GrZip]))"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblSubscr.SubID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblGrp.GRcontEND"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblGrp.GRMailCard"
+    Expression ="tblSubscr.SubCardPrt"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =1
+    LeftTable ="qselAACardReport"
+    RightTable ="tblSubscr"
+    Expression ="qselAACardReport.SUBssn = tblSubscr.SubSSN"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SubLastName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1440
+    Bottom =776
+    Left =-1
+    Top =-1
+    Right =1433
+    Bottom =350
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =805
+        Top =18
+        Right =1036
+        Bottom =207
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =423
+        Top =13
+        Right =633
+        Bottom =247
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =251
+        Bottom =183
+        Top =0
+        Name ="qselAACardReport"
+        Name =""
+    End
+End

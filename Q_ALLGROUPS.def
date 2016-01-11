@@ -1,0 +1,68 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=No) AND ((tblAgent.AGENTid)=\"coara\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAgent"
+    Name ="tlkpClientServiceReps"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblGrp.GRname"
+End
+Begin Joins
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =68
+        Top =1
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =295
+        Bottom =68
+        Top =1
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =53
+        Top =2
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+End

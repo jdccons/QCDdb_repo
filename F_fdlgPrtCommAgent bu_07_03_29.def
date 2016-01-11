@@ -1,0 +1,758 @@
+Version =20
+VersionRequired =20
+Checksum =-311834182
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =3885
+    DatasheetFontHeight =10
+    ItemSuffix =11
+    Left =10560
+    Top =4200
+    Right =14445
+    Bottom =6810
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x8903859034dde140
+    End
+    Caption ="Agent Commissions"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010418009c00b803036700060100010000000000640001000200580201000100 ,
+        0x5802040000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
+        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
+        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
+        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
+        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bd4cbd46bd4a9b ,
+        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
+        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
+        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
+        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
+        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
+        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
+        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
+        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7ab562800000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800260038000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000048504c617365724a ,
+        0x65743232303000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin Section
+            Height =2625
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    ListRows =12
+                    Left =2010
+                    Top =495
+                    Width =885
+                    Name ="cboCommissionMonth"
+                    RowSourceType ="Value List"
+                    RowSource ="Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec"
+                    DefaultValue ="\"\""
+                    ControlTipText ="Enter receipts month."
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =1110
+                            Top =495
+                            Width =825
+                            Height =240
+                            FontWeight =700
+                            Name ="Label1"
+                            Caption ="Month:  "
+                        End
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    RowSourceTypeInt =1
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    ListRows =10
+                    Left =2010
+                    Top =855
+                    Width =885
+                    TabIndex =1
+                    Name ="cboYear"
+                    RowSourceType ="Value List"
+                    RowSource ="\"2000\";\"2001\";\"2002\";\"2003\";\"2004\";\"2005\";\"2006\";\"2007\";\"2008\""
+                        ";\"2009\";\"2010\";\"2011\";\"2012\""
+                    DefaultValue ="\"\""
+                    ControlTipText ="Enter receipts year."
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =1200
+                            Top =855
+                            Width =735
+                            Height =240
+                            FontWeight =700
+                            Name ="Label6"
+                            Caption ="Year:  "
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =675
+                    Top =1260
+                    Width =2706
+                    Height =576
+                    TabIndex =2
+                    Name ="cmdCreateTempRptTbl"
+                    Caption ="Create Temporary\015\012Commission Report Table"
+                    OnClick ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Create Temporary Report Table"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =810
+                    Top =2025
+                    Width =2400
+                    Height =300
+                    TabIndex =3
+                    Name ="txtProcessing"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Public Sub PayCommissionTo()
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+    
+    strSQL = "UPDATE tblCommission SET tblCommission.PayCommTo = [tblAgent].[PayCommTo] " & _
+             "from tblCommission INNER JOIN tblAgent ON tblCommission.COMMagent = tblAgent.AGENTid"
+    
+    'ExecuteSQL (strSQL)
+    ExecuteSQL (strSQL)
+    
+'    db.Execute strSQL
+'    db.Close
+'    Set db = Nothing
+
+End Sub
+Public Function BuildCriteria(strMonth As String, strYear As String) As String
+
+    On Error GoTo ErrorHandler
+
+    Dim strCriteria As String
+    
+    Select Case strMonth
+    
+    Case "Jan"
+        strCriteria = "Between #" & "01/01/" & strYear & "# And #" & "01/31/" & strYear & "#"
+    Case "Feb"
+        If strYear = "2000" Or strYear = "2004" Then
+            strCriteria = "Between #" & "02/01/" & strYear & "# And #" & "02/29/" & strYear & "#"
+        Else
+            strCriteria = "Between #" & "02/01/" & strYear & "# And #" & "02/28/" & strYear & "#"
+        End If
+    Case "Mar"
+        strCriteria = "Between #" & "03/01/" & strYear & "# And #" & "03/31/" & strYear & "#"
+    Case "Apr"
+        strCriteria = "Between #" & "04/01/" & strYear & "# And #" & "04/30/" & strYear & "#"
+    Case "May"
+        strCriteria = "Between #" & "05/01/" & strYear & "# And #" & "05/31/" & strYear & "#"
+    Case "Jun"
+        strCriteria = "Between #" & "06/01/" & strYear & "# And #" & "06/30/" & strYear & "#"
+    Case "Jul"
+        strCriteria = "Between #" & "07/01/" & strYear & "# And #" & "07/31/" & strYear & "#"
+    Case "Aug"
+        strCriteria = "Between #" & "08/01/" & strYear & "# And #" & "08/31/" & strYear & "#"
+    Case "Sep"
+        strCriteria = "Between #" & "09/01/" & strYear & "# And #" & "09/30/" & strYear & "#"
+    Case "Oct"
+        strCriteria = "Between #" & "10/01/" & strYear & "# And #" & "10/31/" & strYear & "#"
+    Case "Nov"
+        strCriteria = "Between #" & "11/01/" & strYear & "# And #" & "11/30/" & strYear & "#"
+    Case "Dec"
+        strCriteria = "Between #" & "12/01/" & strYear & "# And #" & "12/31/" & strYear & "#"
+    End Select
+    
+    BuildCriteria = strCriteria
+    
+
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+Private Sub ExecSalesDirCommIndiv(strCriteria As String)
+    
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+    
+    'runs all Agents at once
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcustNAME, COMMcheckNO, COMMinvoiceNO," & _
+             " COMMcheckAMT, COMMagent, COMMrate, " & _
+             "COMMcustCLASS, COMMcheckDATE, " & _
+             "COMMagentTYPE ) " & _
+             "SELECT DISTINCTROW ARTRAN.Custkey, " & _
+             "tblSubscr.SUB_LUname, ARTRAN.Docno, " & _
+             "ARTRAN.Applytodocno, ([Docamt])*-1 AS " & _
+             "CheckAmt, tblSubscr.GRExecSalesDirID, " & _
+             "tblSubscr.GRExecSalesDirRate, ARTRAN." & _
+             "Custclass, ARTRAN.Docdate, 3 AS " & _
+             "AgentType " & _
+             "FROM ARTRAN INNER JOIN tblSubscr ON " & _
+             "ARTRAN.Custkey = tblSubscr.PLTcustKEY " & _
+             "WHERE (((ARTRAN.Docdate) " & strCriteria & ") " & _
+             "AND ((tblSubscr.GRExecSalesDirID)<>'CORP') " & _
+             "AND ((ARTRAN.Trntyp)='P'));"
+    
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+    
+End Sub
+
+Private Sub Agent2CommIndiv(strCriteria As String)
+
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+    
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcustNAME, COMMcheckNO, COMMinvoiceNO," & _
+             " COMMcheckAMT, COMMagent, COMMrate, " & _
+             "COMMcustCLASS, COMMcheckDATE, " & _
+             "COMMagentTYPE ) " & _
+             "SELECT DISTINCTROW ARTRAN.Custkey, " & _
+             "tblSubscr.SUB_LUname, ARTRAN.Docno, " & _
+             "ARTRAN.Applytodocno, ([Docamt]*(-1)) AS " & _
+             "CheckAmt, tblSubscr.SUBagentID2, " & _
+             "tblSubscr.SUBagentRATE2, ARTRAN." & _
+             "Custclass, ARTRAN.Docdate, 2 AS " & _
+             "AgentType " & _
+             "FROM ARTRAN INNER JOIN tblSubscr ON " & _
+             "ARTRAN.Custkey = tblSubscr.PLTcustKEY " & _
+             "WHERE (((ARTRAN.Docdate) " & strCriteria & ") " & _
+             "AND ((ARTRAN.Trntyp)='P'));"
+           
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Sub
+Private Sub AgentCommIndiv(strCriteria As String)
+    
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+         
+    'insert data from ARTRAN for individuals into temp table
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcheckNO, COMMinvoiceNO, " & _
+             "COMMcheckAMT, COMMcustCLASS, " & _
+             "COMMcheckDATE ) " & _
+             "SELECT ARTRAN.CustomerKey, " & _
+             "ARTRAN.DocumentNumber, ARTRAN.ApplyTo, " & _
+             "([DocumentAmt]*(-1)) AS CheckAmt, " & _
+             "ARTRAN.CustomerClassKey, " & _
+             "ARTRAN.DocumentDate " & _
+             "FROM ARTRAN " & _
+             "WHERE (((ARTRAN.CustomerClassKey)='INDIV') " & _
+             "AND ((ARTRAN.DocumentDate) " & strCriteria & ") " & _
+             "AND ((ARTRAN.TransactionType)='P'));"
+    db.Execute strSQL
+        
+    'update customers' names
+    strSQL = "UPDATE tblCommission " & _
+    "INNER JOIN tblSubscr ON tblCommission.COMMcustKEY = tblSubscr.PLTcustKEY SET tblCommission.COMMcustNAME = [tblSubscr].[Sub_LUname];"
+    db.Execute strSQL
+        
+    strSQL = "UPDATE (tblSubscr " & _
+               "INNER JOIN tblCommission ON tblSubscr.PLTcustKEY = tblCommission.COMMcustKEY) " & _
+               "INNER JOIN (tblAgent " & _
+               "INNER JOIN tblInvAgt ON tblAgent.AGENTid = tblInvAgt.AGENTid) " & _
+               "ON tblSubscr.SubID = tblInvAgt.SubscrID " & _
+               "SET tblCommission.COMMagent = [tblInvAgt].[AGENTid], " & _
+               "tblCommission.COMMname = IIf([tblAgent].[PayCommTo]=1,[AGENCY] & ' -- ' & 'FEIN = ' & Format([AGENTtaxID],'00-0000000;;_'),[AGENT_LUname] & ' -- ' & 'SSN = ' & Format([AGENTSSN],'000-00-0000;;_')), " & _
+               "tblCommission.COMMrate = [tblInvAgt].[AgentRATE];"
+    db.Execute strSQL
+        
+    db.Close
+    Set db = Nothing
+
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+             
+    
+End Sub
+Private Sub Agent1CommIndiv(strCriteria As String)
+    
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcustNAME, COMMcheckNO, COMMinvoiceNO," & _
+             " COMMcheckAMT, COMMagent, COMMrate, " & _
+             "COMMcustCLASS, COMMcheckDATE, " & _
+             "COMMagentTYPE ) " & _
+             "SELECT DISTINCTROW ARTRAN.Custkey, " & _
+             "tblSubscr.SUB_LUname, ARTRAN.Docno, " & _
+             "ARTRAN.Applytodocno, ([Docamt]*(-1)) AS " & _
+             "CheckAmt, tblSubscr.SUBagentID1, " & _
+             "tblSubscr.SUBagentRATE1, ARTRAN." & _
+             "Custclass, ARTRAN.Docdate, 1 AS " & _
+             "AgentType " & _
+             "FROM ARTRAN INNER JOIN tblSubscr ON " & _
+             "ARTRAN.Custkey = tblSubscr.PLTcustKEY " & _
+             "WHERE (((ARTRAN.Docdate) " & strCriteria & ") " & _
+             "AND ((ARTRAN.Trntyp)='P'));"
+           
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Sub
+Private Sub AgentCommGroup(strCriteria As String)
+    
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+         
+    'insert ARTRAN data for the groups into the temp table
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, COMMcheckNO, COMMinvoiceNO, " & _
+            "COMMcheckAMT, COMMcustCLASS, COMMcheckDATE, PayCommTo ) " & _
+            "SELECT DISTINCTROW ARTRAN.CustomerKey, ARTRAN.DocumentNumber, ARTRAN.ApplyTo, " & _
+            "([DocumentAmt])*-1 AS CheckAmt, ARTRAN.CustomerClassKey, ARTRAN.DocumentDate, 1 AS AgentType " & _
+            "FROM ARTRAN " & _
+            "WHERE ((ARTRAN.DocumentDate) " & strCriteria & " " & _
+            "AND ((ARTRAN.TransactionType) = 'P') " & _
+            "AND ((ARTRAN.CustomerClassKey) = 'GROUP'));"
+            
+    db.Execute strSQL
+    
+    'update customer names
+    strSQL = "UPDATE tblCommission INNER JOIN tblGrp ON tblCommission.COMMcustKEY = tblGrp.GroupID SET tblCommission.COMMcustNAME = [tblGrp].[GRname];"
+    db.Execute strSQL
+    
+    'update agent data
+    strSQL = "UPDATE (tblCommission " & _
+        "INNER JOIN tblGrpAgt ON tblCommission.COMMcustKEY = tblGrpAgt.GroupID) " & _
+        "INNER JOIN tblAgent ON tblGrpAgt.AGENTid = tblAgent.AGENTid " & _
+        "SET tblCommission.COMMagent = [tblGrpAgt].[AGENTid], " & _
+        "tblCommission.COMMname = IIf([tblAgent].[PayCommTo]=1,[AGENCY] & ' -- ' & 'FEIN = ' & Format([AGENTtaxID],'00-0000000;;_'),[AGENT_LUname] & ' -- ' & 'SSN = ' & Format([AGENTSSN],'000-00-0000;;_')), " & _
+        "tblCommission.COMMrate = [tblGrpAgt].[AgentRATE];"
+    db.Execute strSQL
+    
+    db.Close
+    Set db = Nothing
+
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Sub
+
+Private Sub AgentCommGroup_Ins(strCriteria As String)
+'------------------------------------------------
+'Purpose:  Appends indemnity bill cash receipts
+'          to the temporary table (tblCommissions)
+'          that feeds the internal agent commission
+'          report.  QCD Controller receives cash;
+'          these cash receipts are pulled out of
+'          PfW G/L in this query and added to commission
+'          table
+'------------------------------------------------
+'Programmer:  John Criswell
+'Create Date:
+'Update Date:
+'Updated by:
+
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+      
+    'strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+           "COMMcustNAME, COMMcheckNO, COMMcheckDATE," & _
+           " COMMcheckAMT, COMMagent, COMMrate, " & _
+           "COMMagentTYPE, COMMcustClass ) " & _
+           "SELECT qsel_NLTXD.GroupID, tblGrp.GRname," & _
+           " qsel_NLTXD.Docno, qsel_NLTXD.Apldate, " & _
+           "[Trnamt]*-1 AS CheckAmt, tblGrpAgt." & _
+           "AGENTid, 1 AS AGENTrate, tblAgent." & _
+           "PayCommTo AS AgentType, 'IBCR' AS CustClass " & _
+           "FROM ((qsel_NLTXD INNER JOIN tblGrp ON " & _
+           "qsel_NLTXD.GroupID = tblGrp.GroupID) " & _
+           "INNER JOIN tblGrpAgt ON qsel_NLTXD." & _
+           "GroupID = tblGrpAgt.GroupID) " & _
+           "INNER JOIN tblAgent ON tblGrpAgt.AGENTid = tblAgent.AGENTid " & _
+           "WHERE (((qsel_NLTXD.Apldate) " & strCriteria & ") " & _
+           "AND ((tblGrpAgt.AGENTid)<>'CORPT') " & _
+           "AND ((Trim([qsel_NLTXD].[AccountNo]))='70220000'));"
+     
+     'strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+           "COMMcustNAME, COMMcheckNO, COMMcheckDATE," & _
+           " COMMcheckAMT, COMMagent, COMMrate, " & _
+           "COMMagentTYPE, COMMcustClass ) " & _
+           "SELECT qsel_NLTXD.GroupID, tblGrp.GRname," & _
+           " qsel_NLTXD.Docno, qsel_NLTXD.Apldate, " & _
+           "[Trnamt]*-1 AS CheckAmt, tblGrpAgt." & _
+           "AGENTid, 1 AS AGENTrate, tblAgent." & _
+           "PayCommTo AS AgentType, 'IBCR' AS " & _
+           "CustClass " & _
+           "FROM ((qsel_NLTXD INNER JOIN tblGrp ON " & _
+           "qsel_NLTXD.GroupID = tblGrp.GroupID) " & _
+           "INNER JOIN tblGrpAgt ON qsel_NLTXD." & _
+           "GroupID = tblGrpAgt.GroupID) INNER JOIN " & _
+           "tblAgent ON tblGrpAgt.AGENTid = tblAgent." & _
+           "AGENTid " & _
+           "WHERE (((qsel_NLTXD.Apldate) " & strCriteria & ") " & _
+           "AND ((tblGrpAgt." & _
+           "AGENTid)<>'CORPT' And (tblGrpAgt.AGENTid)" & _
+           "<>'CORP') AND ((Trim([qsel_NLTXD]." & _
+           "[AccountNo]))='70220000') AND (" & _
+           "(tblGrpAgt.Primary)=True));"
+           
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, " & _
+             "COMMcustNAME, COMMcheckNO, COMMcheckDATE, " & _
+             "COMMcheckAMT, COMMagent, COMMrate, COMMagentTYPE, " & _
+             "COMMcustClass ) " & _
+             "SELECT qsel_NLTXD.GroupID, tblGrp.GRname, " & _
+             "qsel_NLTXD.DocumentNumber, qsel_NLTXD.ApplyDate, " & _
+             "[TransactionAmt]*-1 AS CheckAmt, tblGrpAgt." & _
+             "AGENTid, 1 AS AGENTrate, tblAgent.PayCommTo AS " & _
+             "AgentType, 'IBCR' AS CustClass " & _
+             "FROM tblAgent INNER JOIN ((qsel_NLTXD INNER JOIN " & _
+             "tblGrp ON qsel_NLTXD.GroupID = tblGrp.GroupID) " & _
+             "INNER JOIN tblGrpAgt ON qsel_NLTXD.GroupID = " & _
+             "tblGrpAgt.GroupID) ON tblAgent.AGENTid = " & _
+             "tblGrpAgt.AGENTid " & _
+             "WHERE (((tblGrpAgt.AGENTid)<>'CORPT' And " & _
+             "(tblGrpAgt.AGENTid)<>'CORP') AND ((qsel_NLTXD." & _
+             "ApplyDate) " & strCriteria & ") " & _
+             "AND ((Trim([qsel_NLTXD].[AccountNo]))='70220000') " & _
+             "AND ((tblGrpAgt.Primary)=True));"
+    
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+    
+End Sub
+Private Sub ESDCommHaney_Ins(strCriteria As String)
+    
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+        
+    ' Only pull this if the First and Secondary Agent is Corpt
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, COMMcustNAME, " & _
+        "COMMcheckNO, COMMcheckDATE, COMMcheckAMT, COMMagent, COMMrate, " & _
+        "COMMagentTYPE, COMMcustClass ) SELECT qsel_NLTXD.GroupID, tblGrp.GRname, " & _
+        "qsel_NLTXD.Docno, qsel_NLTXD.Apldate, [Trnamt]*-1 AS CheckAmt, " & _
+        "tblGrpAgt.AGENTid, 1 AS AGENTrate, 3 AS AgentType, 'IBCR' AS CustClass " & _
+        "FROM qsel_NLTXD INNER JOIN tblGrp ON qsel_NLTXD.GroupID = tblGrp.GroupID " & _
+        "INNER JOIN tblGrpAgt ON qsel_NLTXD.GroupID = tblGrpAgt.GroupID " & _
+        "WHERE (((qsel_NLTXD.Apldate) " & strCriteria & ") " & _
+        "AND ((Trim(qsel_NLTXD.AccountNo))='60210005') " & _
+        "AND ((tblGrpAgt.AGENTid)='CORPT') AND ((tblGrpAgt.AGENTid)='CORPT'));"
+
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+    
+End Sub
+Private Sub cmdCommissionReport_Click()
+
+On Error GoTo Err_cmdCommissionReport_Click
+        
+    Dim strDocName As String
+    Dim strMonth As String
+    Dim strWhere As String
+    Dim strYear As String
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    strMonth = Me![cboCommissionMonth]
+    strYear = Me![cboYear]
+    
+    Select Case strMonth
+    
+    Case "Jan"
+        strWhere = "[COMMcheckDATE] Between #" & "01/01/" & strYear & "# And #" & "01/31/" & strYear & "#"
+    Case "Feb"
+        If strYear = "2000" Or strYear = "2004" Then
+            strWhere = "[COMMcheckDATE] Between #" & "02/01/" & strYear & "# And #" & "02/29/" & strYear & "#"
+        Else
+            strWhere = "[COMMcheckDATE] Between #" & "02/01/" & strYear & "# And #" & "02/28/" & strYear & "#"
+        End If
+    Case "Mar"
+        strWhere = "[COMMcheckDATE] Between #" & "03/01/" & strYear & "# And #" & "03/31/" & strYear & "#"
+    Case "Apr"
+        strWhere = "[COMMcheckDATE] Between #" & "04/01/" & strYear & "# And #" & "04/30/" & strYear & "#"
+    Case "May"
+        strWhere = "[COMMcheckDATE] Between #" & "05/01/" & strYear & "# And #" & "05/31/" & strYear & "#"
+    Case "Jun"
+        strWhere = "[COMMcheckDATE] Between #" & "06/01/" & strYear & "# And #" & "06/30/" & strYear & "#"
+    Case "Jul"
+        strWhere = "[COMMcheckDATE] Between #" & "07/01/" & strYear & "# And #" & "07/31/" & strYear & "#"
+    Case "Aug"
+        strWhere = "[COMMcheckDATE] Between #" & "08/01/" & strYear & "# And #" & "08/31/" & strYear & "#"
+    Case "Sep"
+        strWhere = "[COMMcheckDATE] Between #" & "09/01/" & strYear & "# And #" & "09/30/" & strYear & "#"
+    Case "Oct"
+        strWhere = "[COMMcheckDATE] Between #" & "10/01/" & strYear & "# And #" & "10/31/" & strYear & "#"
+    Case "Nov"
+        strWhere = "[COMMcheckDATE] Between #" & "11/01/" & strYear & "# And #" & "11/30/" & strYear & "#"
+    Case "Dec"
+        strWhere = "[COMMcheckDATE] Between #" & "12/01/" & strYear & "# And #" & "12/31/" & strYear & "#"
+    End Select
+
+    strDocName = "rptCommission"
+    DoCmd.OpenReport strDocName, acPreview, , strWhere
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+    Me.Visible = False
+    Forms![fmnuSwitchboard].Visible = False
+     
+Exit_cmdCommissionReport_Click:
+    Exit Sub
+
+Err_cmdCommissionReport_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdCommissionReport_Click
+    
+End Sub
+Private Sub cmdCreateTempRptTbl_Click()
+'------------------------------------------------
+'Purpose:  Creates a temporary table that is used
+'          for the Internal Agent Commission Report
+'          and for the Commission Statements.  It
+'          pulls cash receipt data out of Platinum
+'          for each type of agent and puts the data
+'          into a temp table.
+'------------------------------------------------
+'Programmer:  John Criswell
+'Create Date:
+'Update Date:  3/18/2005
+'Updated by:  John Criswell
+
+On Error GoTo Err_cmdCreateTempRptTbl_Click
+    
+    Dim varReturnValue As Variant
+    Dim strCriteria As String
+    Dim strMonth As String
+    Dim strYear As String
+    Dim strSQL As String
+    Dim strMsg As String
+    Dim rst As DAO.Recordset
+    Dim fCheck As Boolean
+        
+    Dim db As DAO.Database
+    Set db = CurrentDb()
+    
+    ' validation
+    If Me![cboCommissionMonth] = Null Or Me![cboYear] = Null Or Me![cboCommissionMonth] = "" Or Me![cboYear] = "" Then
+        MsgBox "You must enter a month and year before building the report table."
+        Me!cboCommissionMonth.SetFocus
+        Exit Sub
+    End If
+    
+    ' user visual communication
+    With Me
+        .txtProcessing.SetFocus
+        .txtProcessing.BackColor = 16777088
+        .txtProcessing = "Processing... please wait."
+        .cboCommissionMonth.SetFocus
+    End With
+    
+    strMonth = Me![cboCommissionMonth]
+    strYear = Me![cboYear]
+    
+    strCriteria = BuildCriteria(strMonth, strYear)
+        
+    varReturnValue = SysCmd(acSysCmdSetStatus, "Creating temporary report table...")
+
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+        
+    'delete old temp table
+    db.Execute "DELETE DISTINCTROW [tblCommission].* FROM [tblCommission];", dbSeeChanges
+                       
+    'add all group commission records to temporary table (tblCommission)
+    Call AgentCommGroup(strCriteria)
+    
+    'old code - Call Agent1CommGroup(strCriteria)
+    'old code - Call Agent2CommGroup(strCriteria)
+    
+    'Call AgentCommGroup_Ins(strCriteria)
+        
+    Call AgentCommIndiv(strCriteria)
+    
+    'old code - Call Agent1CommGroup_Ins(strCriteria)
+    'old code - Call ESDCommHaney_Ins(strCriteria)
+    
+    'old code - Call Agent1CommIndiv(strCriteria)
+    'old code - Call Agent2CommIndiv(strCriteria)
+       
+    'old code - Call ExecSalesDirCommGroup(strCriteria)
+    'old code - Call ExecSalesDirCommIndiv(strCriteria)
+    
+    Call PayCommissionTo
+        
+    'enrollment fees
+    db.Execute "DELETE tblEnrollmentFees_temp.* FROM tblEnrollmentFees_temp;", dbSeeChanges
+    
+    db.Close
+    Set db = Nothing
+        
+    DoCmd.OpenQuery "qappEnrollmentFees_DocNos"
+    DoCmd.OpenQuery "qupdCommission_EnrollFees"
+            
+    varReturnValue = SysCmd(acSysCmdClearStatus)
+    
+    ' clear user visual communication
+    With Me
+            .txtProcessing.SetFocus
+            .txtProcessing.BackColor = 16777215
+            .txtProcessing = "Process Complete."
+            .cboCommissionMonth.SetFocus
+    End With
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+        
+Exit_cmdCreateTempRptTbl_Click:
+    Exit Sub
+
+Err_cmdCreateTempRptTbl_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdCreateTempRptTbl_Click
+End Sub

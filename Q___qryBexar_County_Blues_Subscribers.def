@@ -1,0 +1,105 @@
+Operation =2
+Name ="__Bexar_County_Blues_Subscribers_Consolidated"
+Option =0
+Begin InputTables
+    Name ="__Bexar_County_Blues_Subscribers"
+End
+Begin OutputColumns
+    Expression ="[__Bexar_County_Blues_Subscribers].[Benefit health plan option]"
+    Expression ="[__Bexar_County_Blues_Subscribers].Plan"
+    Expression ="[__Bexar_County_Blues_Subscribers].[Benefit Coverage Level]"
+    Expression ="[__Bexar_County_Blues_Subscribers].[EE Member Date]"
+    Expression ="[__Bexar_County_Blues_Subscribers].Persno"
+    Expression ="[__Bexar_County_Blues_Subscribers].SSN"
+    Expression ="[__Bexar_County_Blues_Subscribers].[Last name]"
+    Expression ="[__Bexar_County_Blues_Subscribers].[First name]"
+    Expression ="[__Bexar_County_Blues_Subscribers].Gender"
+    Expression ="[__Bexar_County_Blues_Subscribers].[Marital Status]"
+    Expression ="[__Bexar_County_Blues_Subscribers].[Date of Birth]"
+    Expression ="[__Bexar_County_Blues_Subscribers].[House number and street]"
+    Expression ="[__Bexar_County_Blues_Subscribers].City"
+    Expression ="[__Bexar_County_Blues_Subscribers].State"
+    Expression ="[__Bexar_County_Blues_Subscribers].[Zip Code]"
+    Expression ="[__Bexar_County_Blues_Subscribers].[Telephone no]"
+    Expression ="[__Bexar_County_Blues_Subscribers].[EE costs]"
+End
+Begin Groups
+    Expression ="[__Bexar_County_Blues_Subscribers].[Benefit health plan option]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].Plan"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[Benefit Coverage Level]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[EE Member Date]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].Persno"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].SSN"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[Last name]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[First name]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].Gender"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[Marital Status]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[Date of Birth]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[House number and street]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].City"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].State"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[Zip Code]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[Telephone no]"
+    GroupLevel =0
+    Expression ="[__Bexar_County_Blues_Subscribers].[EE costs]"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="[__Bexar_County_Blues_Subscribers].Plan"
+        dbInteger "ColumnWidth" ="1275"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[__Bexar_County_Blues_Subscribers].[Benefit Coverage Level]"
+        dbInteger "ColumnWidth" ="2475"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[__Bexar_County_Blues_Subscribers].[EE Member Date]"
+        dbInteger "ColumnWidth" ="1710"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =473
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =388
+        Bottom =385
+        Top =4
+        Name ="__Bexar_County_Blues_Subscribers"
+        Name =""
+    End
+End

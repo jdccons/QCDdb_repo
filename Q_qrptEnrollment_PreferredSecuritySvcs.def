@@ -1,0 +1,95 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblEnrollment_PreferredSecuritySvcs"
+End
+Begin OutputColumns
+    Alias ="NameSort"
+    Expression ="([LASTNAME]) & \", \" & ([FIRSTNAME])"
+    Alias ="SubName"
+    Expression ="Trim([FIRSTNAME]) & \" \" & Trim([LASTNAME])"
+    Alias ="STATE"
+    Expression ="Mid([STZip],2,2)"
+    Alias ="ZipCode"
+    Expression ="Mid([STZip],5,11)"
+    Alias ="SubAddr"
+    Expression ="Trim([Addr1]) & \"  \" & IIf(IsNull([Addr2]),\"\",([Addr2])) & \" \" & ([CITY]) "
+        "& \",  \" & ([STATE]) & \"  \" & ([ZIPCODE])"
+    Alias ="GRname"
+    Expression ="\"Preferred Security Services\""
+    Alias ="SUBeffDATE2"
+    Expression ="#3/1/2000#"
+    Alias ="Welcome"
+    Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
+        "loyee at No Monthly Charge.\""
+    Expression ="tblEnrollment_PreferredSecuritySvcs.*"
+    Alias ="SUBdob"
+    Expression ="tblEnrollment_PreferredSecuritySvcs.DOB"
+    Alias ="SUBphoneHOME"
+    Expression ="IIf([Phone]=\"()\",\"(___) ___-____\",[Phone])"
+    Alias ="SUBssn"
+    Expression ="tblEnrollment_PreferredSecuritySvcs.SSN"
+End
+Begin OrderBy
+    Expression ="([LASTNAME]) & \", \" & ([FIRSTNAME])"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="GRname"
+        dbInteger "ColumnWidth" ="2610"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Welcome"
+        dbInteger "ColumnWidth" ="11490"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubName"
+        dbInteger "ColumnWidth" ="3165"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubAddr"
+        dbInteger "ColumnWidth" ="4500"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE2"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="NameSort"
+        dbInteger "ColumnWidth" ="2985"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =483
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =189
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =62
+        Top =22
+        Right =259
+        Bottom =129
+        Top =4
+        Name ="tblEnrollment_PreferredSecuritySvcs"
+        Name =""
+    End
+End

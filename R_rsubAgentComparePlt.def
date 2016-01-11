@@ -1,0 +1,94 @@
+Version =20
+VersionRequired =20
+Checksum =-1619299382
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =5025
+    ItemSuffix =17
+    Left =5325
+    Top =2910
+    Right =10350
+    Bottom =3855
+    RecSrcDt = Begin
+        0x51553fb2f5f6e240
+    End
+    RecordSource ="qrptAgentComparePlt"
+    PrtMip = Begin
+        0x0000000000000000000000000000000000000000a11300006801000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4e747365727665725c68706c6a350000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextAlign =3
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            OldBorderStyle =0
+            LabelAlign =3
+            LabelX =-124
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            LabelAlign =3
+            TextFontFamily =18
+            Height =300
+            LabelX =-124
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            ControlSource ="SalespersonName"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =360
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    Left =936
+                    Top =60
+                    Width =1008
+                    Name ="AGENTid"
+                    ControlSource ="SalespersonKey"
+                    Begin
+                        Begin Label
+                            Top =60
+                            Width =936
+                            Height =300
+                            Name ="Text7"
+                            Caption ="AGENT:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =1872
+                    Top =60
+                    Width =2736
+                    ColumnWidth =2820
+                    TabIndex =1
+                    Name ="AGENT_LUname"
+                    ControlSource ="SalespersonName"
+                End
+            End
+        End
+    End
+End

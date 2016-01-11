@@ -1,0 +1,74 @@
+Operation =4
+Option =8
+Begin InputTables
+    Name ="tblGrp"
+    Name ="ARCUST"
+End
+Begin OutputColumns
+    Name ="ARCUST.Customer_Name"
+    Expression ="[GRname]"
+    Name ="ARCUST.Address_1"
+    Expression ="[GRstreet1]"
+    Name ="ARCUST.Address_2"
+    Expression ="[GRstreet2]"
+    Name ="ARCUST.City"
+    Expression ="[GRcity]"
+    Name ="ARCUST.State"
+    Expression ="[GRstate]"
+    Name ="ARCUST.Zip_Code"
+    Expression ="[GRzip]"
+    Name ="ARCUST.Attn_Name"
+    Expression ="[GRmainCONT]"
+    Name ="ARCUST.Contact_Name"
+    Expression ="[GRsrvCONT]"
+    Name ="ARCUST.Fax_No"
+    Expression ="[GRfax]"
+    Name ="ARCUST.Cust_Class_Ky"
+    Expression ="[GRclassKEY]"
+    Name ="ARCUST.Territory_Ky"
+    Expression ="[GRPgeoID]"
+    Name ="ARCUST.Salespersn_Ky"
+    Expression ="[GRagentID1]"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="ARCUST"
+    Expression ="[tblGrp].GROUPid = ARCUST.Customer_Key"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =804
+    Bottom =490
+    Left =-1
+    Top =-1
+    Right =801
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =577
+    Begin
+        Left =38
+        Top =6
+        Right =191
+        Bottom =118
+        Top =36
+        Name ="ARCUST"
+        Name =""
+    End
+    Begin
+        Left =288
+        Top =8
+        Right =494
+        Bottom =120
+        Top =18
+        Name ="t-GROUP"
+        Name =""
+    End
+End

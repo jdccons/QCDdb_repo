@@ -1,0 +1,272 @@
+Version =17
+VersionRequired =17
+Checksum =-2105813309
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =8820
+    DatasheetFontHeight =10
+    ItemSuffix =7
+    Left =564
+    Top =120
+    Right =11100
+    Bottom =5736
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x6daadab6b4d4e140
+    End
+    Caption ="Import Results"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a00500000000000074220000d809000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4550534f4e205374796c75732050686f746f2037303000000000000000000000 ,
+        0x00040601940006010f8b800701000100ea0a6f08000001000700680102000000 ,
+        0x6801000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0200000001000000210100000000000000000000444c4c4e616d6531363d4550 ,
+        0x4947554932372e444c4c00000000000000000000444c4c4e616d6533323d4550 ,
+        0x4944413232302e444c4c000000000000000000004550534f4e205374796c7573 ,
+        0x2050686f746f2037303000000000000000000000000202006801680101000000 ,
+        0x000001000001000001003408410a3408410a6400000000001400000000000000 ,
+        0x000032000000ff00000000000000000003000000010000000000020000000100 ,
+        0x0000010001000600060002000000000000000000000000000000000005000100 ,
+        0x00000000000000000000000000000000000000000000000052034c0402000200 ,
+        0x0000000000000000000000000000000000000000000030b6ff52000000000000 ,
+        0x00000000
+    End
+    PrtDevNames = Begin
+        0x080011002800010077696e73706f6f6c004550534f4e205374796c7573205068 ,
+        0x6f746f20373030005c5c536f6f5c6570736f6e20373030000000000000000000 ,
+        0x0000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin PageHeader
+            Height =540
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    FontItalic = NotDefault
+                    BackStyle =1
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Width =2508
+                    Height =504
+                    FontSize =20
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Label10"
+                    Caption ="Import Results"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =2520
+            Name ="Detail"
+            Begin
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =1200
+                    Top =60
+                    Width =1140
+                    Height =288
+                    FontSize =11
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="LastName Label"
+                    Caption ="Name"
+                    FontName ="Times New Roman"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="LastName_Label"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Top =60
+                    Width =1044
+                    Height =288
+                    FontSize =11
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="SSN Label"
+                    Caption ="SSN"
+                    FontName ="Times New Roman"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SSN_Label"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =4680
+                    Top =60
+                    Width =2208
+                    Height =288
+                    FontSize =11
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="City Label"
+                    Caption ="City"
+                    FontName ="Times New Roman"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="City_Label"
+                End
+                Begin Label
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =7020
+                    Top =60
+                    Width =888
+                    Height =288
+                    FontSize =11
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="State Label"
+                    Caption ="State"
+                    FontName ="Times New Roman"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="State_Label"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =348
+                    Width =8796
+                    BorderColor =8388608
+                    Name ="Line13"
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =60
+                    Top =780
+                    Width =8520
+                    Height =300
+                    Name ="Child1"
+                    SourceObject ="Report.rsubImportChanged"
+                    Begin
+                        Begin Label
+                            TextFontFamily =34
+                            Left =60
+                            Top =480
+                            Width =1776
+                            Height =276
+                            FontSize =10
+                            FontWeight =700
+                            Name ="Label2"
+                            Caption ="Changed Records"
+                        End
+                    End
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =60
+                    Top =2160
+                    Width =8520
+                    Height =300
+                    TabIndex =1
+                    Name ="Child3"
+                    SourceObject ="Report.rsubImportDeletions"
+                    Begin
+                        Begin Label
+                            TextFontFamily =34
+                            Left =60
+                            Top =1920
+                            Width =1080
+                            Height =216
+                            FontSize =10
+                            FontWeight =700
+                            Name ="Label4"
+                            Caption ="Deletions"
+                        End
+                    End
+                End
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =60
+                    Top =1500
+                    Width =8520
+                    Height =300
+                    TabIndex =2
+                    Name ="Child5"
+                    SourceObject ="Report.rsubImportNew"
+                    Begin
+                        Begin Label
+                            TextFontFamily =34
+                            Left =60
+                            Top =1200
+                            Width =1332
+                            Height =276
+                            FontSize =10
+                            FontWeight =700
+                            Name ="Label6"
+                            Caption ="New Records"
+                        End
+                    End
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    BackStyle =0
+                    Width =2940
+                    Height =276
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text11"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    BackStyle =0
+                    Left =4380
+                    Width =4380
+                    Height =276
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text12"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+    End
+End

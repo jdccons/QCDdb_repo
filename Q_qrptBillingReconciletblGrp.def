@@ -1,0 +1,67 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblGrp"
+    Name ="qrptBillingReconcileARTRAN"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRcancelledDate"
+    Expression ="tblGrp.GRreinstatedDate"
+    Expression ="tblGrp.GRhold"
+    Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
+    Expression ="qrptBillingReconcileARTRAN.DocumentAmt"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="qrptBillingReconcileARTRAN"
+    Expression ="tblGrp.GROUPid = qrptBillingReconcileARTRAN.CustomerKey"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =280
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =57
+        Top =8
+        Right =247
+        Bottom =228
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =520
+        Bottom =227
+        Top =0
+        Name ="qrptBillingReconcileARTRAN"
+        Name =""
+    End
+End

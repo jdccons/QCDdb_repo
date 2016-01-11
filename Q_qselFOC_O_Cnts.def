@@ -1,0 +1,83 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GroupType) In (2,3)))"
+Having ="(((tblSubscr.CoverID)=2))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tblCoverage"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblCoverage.COVERcode"
+    Expression ="tblSubscr.CoverID"
+    Alias ="RedEE1S"
+    Expression ="Count(tblSubscr.SubID)"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =1
+End
+Begin Groups
+    Expression ="tblGrp.GROUPid"
+    GroupLevel =0
+    Expression ="tblCoverage.COVERcode"
+    GroupLevel =0
+    Expression ="tblSubscr.CoverID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =29
+    Top =54
+    Right =949
+    Bottom =371
+    Left =-1
+    Top =-1
+    Right =913
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =225
+        Bottom =116
+        Top =38
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =263
+        Top =6
+        Right =412
+        Bottom =116
+        Top =40
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =450
+        Top =6
+        Right =546
+        Bottom =101
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+End

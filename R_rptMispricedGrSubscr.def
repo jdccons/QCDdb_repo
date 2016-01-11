@@ -1,0 +1,374 @@
+Version =20
+VersionRequired =20
+Checksum =-1836881027
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =9030
+    ItemSuffix =33
+    Left =390
+    Top =330
+    Right =11115
+    Bottom =5730
+    RecSrcDt = Begin
+        0x4c2f1d5b2bf7e240
+    End
+    RecordSource ="qrptMispricedGrpSubscr"
+    Caption ="Mis-Priced Group Subscribers"
+    OnOpen ="=MispricedGrSubs()"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a00500000000000046230000e100000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f404033f800001000100ea0a6f08640001000700580202000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    Begin
+        Begin Label
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            Width =1335
+            Height =300
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            TextFontFamily =18
+            Height =300
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            ControlSource ="GROUP"
+        End
+        Begin BreakLevel
+            ControlSource ="SUBSCRIBER"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =960
+            Name ="ReportHeader3"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    Top =120
+                    Width =9030
+                    Height =480
+                    FontSize =14
+                    Name ="Text24"
+                    Caption ="Mis-Priced Group Subscribers"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =2
+                    Top =660
+                    Width =9000
+                    Name ="Field25"
+                    ControlSource ="=Now()"
+                    Format ="Short Date"
+                End
+                Begin Line
+                    Top =60
+                    Width =9030
+                    Name ="Line27"
+                End
+                Begin Line
+                    Top =120
+                    Width =9030
+                    Name ="Line28"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =585
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    Top =180
+                    Width =855
+                    Height =285
+                    FontSize =8
+                    Name ="Text5"
+                    Caption ="GROUP"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =1008
+                    Top =180
+                    Width =1395
+                    Height =285
+                    FontSize =8
+                    Name ="Text7"
+                    Caption ="GROUP PLAN"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =2376
+                    Top =180
+                    Width =1380
+                    Height =285
+                    FontSize =8
+                    Name ="Text9"
+                    Caption ="SSN"
+                End
+                Begin Label
+                    Left =3744
+                    Top =180
+                    Width =1515
+                    Height =285
+                    FontSize =8
+                    Name ="Text11"
+                    Caption ="SUBSCRIBER"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =5328
+                    Top =180
+                    Width =690
+                    Height =285
+                    FontSize =8
+                    Name ="Text13"
+                    Caption ="PLAN"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =6120
+                    Top =180
+                    Width =1170
+                    Height =285
+                    FontSize =8
+                    Name ="Text15"
+                    Caption ="PLAN RATE"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =7344
+                    Top =180
+                    Width =1650
+                    Height =285
+                    FontSize =8
+                    Name ="Text20"
+                    Caption ="SUBSCRIBER RATE"
+                End
+                Begin Line
+                    Top =60
+                    Width =9030
+                    Name ="Line29"
+                End
+                Begin Line
+                    Top =120
+                    Width =9030
+                    Name ="Line30"
+                End
+                Begin Line
+                    Top =465
+                    Width =9030
+                    Name ="Line31"
+                End
+                Begin Line
+                    Top =525
+                    Width =9030
+                    Name ="Line32"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =225
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    Width =1005
+                    Height =225
+                    ColumnWidth =765
+                    FontSize =8
+                    Name ="GROUP"
+                    ControlSource ="GROUP"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    Left =1008
+                    Width =1335
+                    Height =225
+                    ColumnWidth =1305
+                    FontSize =8
+                    TabIndex =1
+                    Name ="GROUP PLAN"
+                    ControlSource ="GROUP PLAN"
+                    StatusBarText ="group id for group subscriber"
+                    EventProcPrefix ="GROUP_PLAN"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    Left =2376
+                    Width =1380
+                    Height =225
+                    ColumnWidth =900
+                    FontSize =8
+                    TabIndex =2
+                    Name ="SSN"
+                    ControlSource ="SSN"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Left =3744
+                    Width =1515
+                    Height =225
+                    ColumnWidth =2130
+                    FontSize =8
+                    TabIndex =3
+                    Name ="SUBSCRIBER"
+                    ControlSource ="SUBSCRIBER"
+                    StatusBarText ="Used for search"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    Left =5328
+                    Width =750
+                    Height =225
+                    ColumnWidth =585
+                    FontSize =8
+                    TabIndex =4
+                    Name ="PLAN"
+                    ControlSource ="PLAN"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    Left =6120
+                    Width =1215
+                    Height =225
+                    ColumnWidth =1140
+                    FontSize =8
+                    TabIndex =5
+                    Name ="PLAN RATE"
+                    ControlSource ="PLAN RATE"
+                    EventProcPrefix ="PLAN_RATE"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =2
+                    Left =7344
+                    Width =1650
+                    Height =225
+                    ColumnWidth =1845
+                    FontSize =8
+                    TabIndex =6
+                    Name ="SUBSCRIBER RATE"
+                    ControlSource ="SUBSCRIBER RATE"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    EventProcPrefix ="SUBSCRIBER_RATE"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    Left =7590
+                    Top =60
+                    Name ="Field26"
+                    ControlSource ="=Page"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter4"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+  On Error GoTo PROC_ERR
+    
+    DoCmd.Restore
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportBilling"
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+
+
+Private Sub Report_Open(Cancel As Integer)
+  DoCmd.SetWarnings False
+  DoCmd.OpenQuery "qryUpdateGrSubPlanIDs", acNormal, acEdit
+  DoCmd.SetWarnings True
+
+End Sub

@@ -1,0 +1,134 @@
+Version =20
+VersionRequired =20
+Checksum =1080570688
+Begin Report
+    LayoutForPrint = NotDefault
+    RecordLocks =2
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =3780
+    ItemSuffix =6
+    Left =795
+    Top =330
+    Right =11520
+    Bottom =6015
+    RecSrcDt = Begin
+        0x703841e8ed1ae340
+    End
+    RecordSource ="qrptGrpSubscrLabel1"
+    Caption ="Group Subscriber Mailing Labels"
+    PrtMip = Begin
+        0xb0010000d0020000b0010000d002000000000000260d0000a005000000000000 ,
+        0x030000005202000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400059c0034020377000601000100ea0a6f08640001000f01580201000100 ,
+        0x5802040001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x22000000340200007eeb71d70000000000000000000000000000000000000000 ,
+        0x00000000000000000e0000000100000000000000000001000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800250035000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000048503430353000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            AutoLabel = NotDefault
+            OldBorderStyle =0
+            FontWeight =300
+            FontName ="Arial"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =288
+                    Top =240
+                    Width =3204
+                    Height =270
+                    FontSize =10
+                    Name ="Field2"
+                    ControlSource ="=Trim([SUBfirstNAME]) & \" \" & Trim([SUBmiddleNAME]) & \" \" & Trim([SUBlastNAM"
+                        "E])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =288
+                    Top =495
+                    Width =3204
+                    Height =270
+                    FontSize =10
+                    TabIndex =1
+                    Name ="Field3"
+                    ControlSource ="=Trim([SUBstreet1])"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =285
+                    Top =1035
+                    Width =3204
+                    Height =270
+                    FontSize =10
+                    TabIndex =2
+                    Name ="Field4"
+                    ControlSource ="=[SUBcity] & \", \" & [SUBstate] & \"  \" & [SUBzip]"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    Left =285
+                    Top =765
+                    Width =3204
+                    Height =270
+                    FontSize =10
+                    TabIndex =3
+                    Name ="Field10"
+                    ControlSource ="=Trim([SUBstreet2])"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+ 

@@ -1,0 +1,91 @@
+Option Compare Database
+
+Public strMsg As String
+
+Function ValidateDateFormat(varDateIn As Variant) As Boolean
+    
+    Dim strPart As String
+    Dim fIsDate As Boolean
+    Dim fOk As Boolean
+    Dim intYear As Integer
+    Dim intDay As Integer
+    Dim intMonth As Integer
+    
+  ' Determine if the passed value can validate
+  Select Case VarType(varDateIn)
+    
+    Case vbDate
+      ' Its a date
+      fOk = True
+
+    Case vbString
+      ' Its a string so we use IsDate to determine if the value is
+      ' valid as a date.
+      On Error Resume Next
+      fIsDate = IsDate(varDateIn)
+      fOk = (Err = 0)
+      On Error GoTo PROC_ERR
+
+    Case vbLong
+      ' Check to see if it is in the serial date range
+      fOk = (varDateIn > -657434 And varDateIn < 2958465)
+
+    Case Else
+      ' Can't figure out what it is
+      ValidateDateFormat = False
+      Exit Function
+  End Select
+
+If fOk = True Then
+  intYear = CInt(Right$(Format(varDateIn, "yyyy"), 4))
+  If intYear < 1900 Then
+    fOk = False
+    strMsg = "Year less than 1900"
+  ElseIf intYear > 2099 Then
+    fOk = False
+    strMsg = "Year greater than 2099"
+  Else
+    
+  End If
+
+  intDay = CInt(Left$(Format(varDateIn, "dd"), 2))
+  If intDay < 1 Then
+    fOk = False
+    strMsg = strMsg & vbCrLf & "Day less than 1"
+  ElseIf intDay > 31 Then
+    fOk = False
+    strMsg = strMsg & vbCrLf & "Day greater than 31"
+  Else
+    
+  End If
+  
+  intMonth = CInt(Left$(Format(varDateIn, "mm"), 2))
+  If intMonth < 1 Then
+    fOk = False
+    strMsg = strMsg & vbCrLf & "Month less than 1"
+  ElseIf intMonth > 12 Then
+    fOk = False
+    strMsg = strMsg & vbCrLf & "Month greater than 12"
+  Else
+    
+  End If
+End If
+
+  If fOk = True Then
+    ValidateDateFormat = True
+  Else
+    ValidateDateFormat = False
+  End If
+    
+PROC_EXIT:
+  Exit Function
+  
+PROC_ERR:
+  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    "SafeCenturyVBA"
+      
+  ValidateDateFormat = False
+      
+  Resume PROC_EXIT
+  
+End Function

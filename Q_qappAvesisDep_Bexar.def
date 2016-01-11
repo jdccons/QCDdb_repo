@@ -1,0 +1,140 @@
+Operation =3
+Name ="Avesis"
+Option =0
+Begin InputTables
+    Name ="tblSubscr_Bexar"
+    Name ="tblDependent_Bexar"
+End
+Begin OutputColumns
+    Alias ="Record_Type"
+    Name ="Record_Type"
+    Expression ="\"DP\""
+    Alias ="Action_Code"
+    Name ="Action_Code"
+    Expression ="\"\""
+    Alias ="Carrier_Number"
+    Name ="Carrier_Number"
+    Expression ="\"10001\""
+    Alias ="Group_Number"
+    Name ="Group_Number"
+    Expression ="\"1\""
+    Alias ="Group_Name"
+    Name ="Group_Name"
+    Expression ="\"QCD of America\""
+    Alias ="Plan_Number"
+    Name ="Plan_Number"
+    Expression ="\"9000\""
+    Alias ="Member_Number"
+    Name ="Member_Number"
+    Expression ="tblSubscr_Bexar.SubID"
+    Alias ="ID_Suffix"
+    Name ="ID_Suffix"
+    Expression ="IIf([DepRelationship]=\"S\",\"02\",\"03\")"
+    Alias ="SSN"
+    Name ="SSN"
+    Expression ="tblDependent_Bexar.DEPsubID"
+    Alias ="Coverage_Code"
+    Name ="Coverage_Code"
+    Expression ="IIf([CoverID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\"))"
+    Alias ="Last_Name"
+    Name ="Last_Name"
+    Expression ="tblDependent_Bexar.DEPlastNAME"
+    Alias ="First_Name"
+    Name ="First_Name"
+    Expression ="tblDependent_Bexar.DEPfirstNAME"
+    Alias ="Middle_Initial"
+    Name ="Middle_Initial"
+    Expression ="Mid([DepMiddleName],1,1)"
+    Alias ="Address_1"
+    Name ="Address_1"
+    Expression ="tblSubscr_Bexar.SUBstreet1"
+    Alias ="Address_2"
+    Name ="Address_2"
+    Expression ="tblSubscr_Bexar.SUBstreet2"
+    Alias ="City"
+    Name ="City"
+    Expression ="tblSubscr_Bexar.SUBcity"
+    Alias ="State"
+    Name ="State"
+    Expression ="tblSubscr_Bexar.SUBstate"
+    Alias ="Zip"
+    Name ="Zip"
+    Expression ="Mid([SUBzip],1,9)"
+    Alias ="Gender"
+    Name ="Gender"
+    Expression ="tblDependent_Bexar.DEPgender"
+    Alias ="Birth_Date"
+    Name ="Birth_Date"
+    Expression ="Format(Month([Depdob]),\"00\") & Format(Day([DepDob]),\"00\") & Year([DepDob])"
+    Alias ="Effective_Date"
+    Name ="Effective_Date"
+    Expression ="tblSubscr_Bexar.SUBeffDATE"
+    Alias ="Term_Date"
+    Name ="Term_Date"
+    Expression ="Null"
+    Alias ="Sub_Group_ID"
+    Name ="Sub_Group_ID"
+    Expression ="\"\""
+End
+Begin Joins
+    LeftTable ="tblSubscr_Bexar"
+    RightTable ="tblDependent_Bexar"
+    Expression ="tblSubscr_Bexar.SUBssn = tblDependent_Bexar.DEPsubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "UseTransaction" ="-1"
+Begin
+    Begin
+        dbText "Name" ="Group_Name"
+        dbInteger "ColumnWidth" ="3810"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="City"
+        dbInteger "ColumnWidth" ="1770"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Last_Name"
+        dbInteger "ColumnWidth" ="1650"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =238
+    Top =84
+    Right =1153
+    Bottom =446
+    Left =-1
+    Top =-1
+    Right =908
+    Bottom =189
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =40
+        Top =18
+        Right =283
+        Bottom =128
+        Top =0
+        Name ="tblSubscr_Bexar"
+        Name =""
+    End
+    Begin
+        Left =345
+        Top =17
+        Right =618
+        Bottom =127
+        Top =0
+        Name ="tblDependent_Bexar"
+        Name =""
+    End
+End

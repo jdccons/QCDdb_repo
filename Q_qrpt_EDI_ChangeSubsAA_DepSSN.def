@@ -1,0 +1,136 @@
+Operation =3
+Name ="tmpEDI_Rpt"
+Option =8
+Where ="(((qselAA_DepSSN_Match.tblEDI_App_Dep.DEPssn) Is Null))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+    Name ="qselAA_DepSSN_Match"
+    Name ="tblEDI_App_Dep"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblEDI_App_Subscr.SUBssn"
+    Name ="SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Name ="SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Alias ="SUBStreet"
+    Name ="SUBStreet"
+    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Name ="SUBcity"
+    Expression ="tblEDI_App_Subscr.SUBcity"
+    Name ="SUBstate"
+    Expression ="tblEDI_App_Subscr.SUBstate"
+    Name ="SUBzip"
+    Expression ="tblEDI_App_Subscr.SUBzip"
+    Name ="GroupID"
+    Expression ="tblEDI_App_Subscr.SUBgroupID"
+    Alias ="Stat"
+    Name ="Stat"
+    Expression ="\"Change-C\""
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Flag =1
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblEDI_App_Dep"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblEDI_App_Dep.DEPsubID"
+    Flag =1
+    LeftTable ="tblEDI_App_Dep"
+    RightTable ="qselAA_DepSSN_Match"
+    Expression ="tblEDI_App_Dep.DEPsubID = qselAA_DepSSN_Match.DEPsubID"
+    Flag =2
+    LeftTable ="tblEDI_App_Dep"
+    RightTable ="qselAA_DepSSN_Match"
+    Expression ="tblEDI_App_Dep.DEPssn = qselAA_DepSSN_Match.tblEDI_App_Dep.DEPssn"
+    Flag =2
+End
+Begin Groups
+    Expression ="tblEDI_App_Subscr.SUBssn"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    GroupLevel =0
+    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBcity"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBstate"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBzip"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBgroupID"
+    GroupLevel =0
+    Expression ="\"Change-C\""
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblDependent.DEPsubID"
+        dbInteger "ColumnWidth" ="2400"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SUBStreet"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =30
+    Top =90
+    Right =938
+    Bottom =516
+    Left =-1
+    Top =-1
+    Right =897
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =235
+        Top =11
+        Right =439
+        Bottom =133
+        Top =12
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =46
+        Top =10
+        Right =180
+        Bottom =132
+        Top =10
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =665
+        Top =10
+        Right =852
+        Bottom =132
+        Top =0
+        Name ="qselAA_DepSSN_Match"
+        Name =""
+    End
+    Begin
+        Left =475
+        Top =10
+        Right =605
+        Bottom =132
+        Top =0
+        Name ="tblEDI_App_Dep"
+        Name =""
+    End
+End

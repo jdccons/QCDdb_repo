@@ -1,0 +1,71 @@
+Operation =3
+Name ="ELGEXP_DupSSNs"
+Option =0
+Begin InputTables
+    Name ="Joe_GroupLink_Dups"
+    Name ="ELGEXP"
+End
+Begin OutputColumns
+    Name ="EISSN# Field"
+    Expression ="Joe_GroupLink_Dups.[EISSN# Field]"
+    Name ="EISBRID"
+    Expression ="ELGEXP.EISBRID"
+End
+Begin Joins
+    LeftTable ="Joe_GroupLink_Dups"
+    RightTable ="ELGEXP"
+    Expression ="Joe_GroupLink_Dups.[EISSN# Field] = ELGEXP.[EISSN#]"
+    Flag =1
+End
+Begin Groups
+    Expression ="Joe_GroupLink_Dups.[EISSN# Field]"
+    GroupLevel =0
+    Expression ="ELGEXP.EISBRID"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="Joe_GroupLink_Dups.[EISSN# Field]"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EISBRID"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =69
+    Top =159
+    Right =1346
+    Bottom =786
+    Left =-1
+    Top =-1
+    Right =1245
+    Bottom =310
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =48
+        Top =12
+        Right =255
+        Bottom =190
+        Top =0
+        Name ="Joe_GroupLink_Dups"
+        Name =""
+    End
+    Begin
+        Left =303
+        Top =12
+        Right =553
+        Bottom =238
+        Top =0
+        Name ="ELGEXP"
+        Name =""
+    End
+End

@@ -1,0 +1,114 @@
+Operation =3
+Name ="tblInvHdr"
+Option =8
+Begin InputTables
+    Name ="tblInvHdrPreliminary"
+End
+Begin OutputColumns
+    Name ="CUST KEY"
+    Expression ="tblInvHdrPreliminary.[CUST KEY]"
+    Name ="CUST NAME"
+    Expression ="tblInvHdrPreliminary.[CUST NAME]"
+    Name ="ADDRESS 1"
+    Expression ="tblInvHdrPreliminary.[ADDRESS 1]"
+    Name ="ADDRESS 2"
+    Expression ="tblInvHdrPreliminary.[ADDRESS 2]"
+    Name ="ADDRESS 3"
+    Expression ="tblInvHdrPreliminary.[ADDRESS 3]"
+    Name ="CITY"
+    Expression ="tblInvHdrPreliminary.CITY"
+    Name ="STATE"
+    Expression ="tblInvHdrPreliminary.STATE"
+    Name ="ZIP CODE"
+    Expression ="tblInvHdrPreliminary.[ZIP CODE]"
+    Name ="COUNTRY"
+    Expression ="tblInvHdrPreliminary.COUNTRY"
+    Name ="ATTENTION"
+    Expression ="tblInvHdrPreliminary.ATTENTION"
+    Name ="TRANS NO"
+    Expression ="tblInvHdrPreliminary.[TRANS NO]"
+    Name ="APPLY-TO"
+    Expression ="tblInvHdrPreliminary.[APPLY-TO]"
+    Name ="SEL STATUS"
+    Expression ="tblInvHdrPreliminary.[SEL STATUS]"
+    Name ="INV DATE"
+    Expression ="tblInvHdrPreliminary.[INV DATE]"
+    Name ="RECR CYCLE"
+    Expression ="tblInvHdrPreliminary.[RECR CYCLE]"
+    Name ="BUYER"
+    Expression ="tblInvHdrPreliminary.BUYER"
+    Name ="CUST PO"
+    Expression ="tblInvHdrPreliminary.[CUST PO]"
+    Name ="CHECK NO"
+    Expression ="tblInvHdrPreliminary.[CHECK NO]"
+    Name ="CHECK AMTR"
+    Expression ="tblInvHdrPreliminary.[CHECK AMTR]"
+    Name ="COMM OVRD"
+    Expression ="tblInvHdrPreliminary.[COMM OVRD]"
+    Name ="LOCATION  KEY"
+    Expression ="tblInvHdrPreliminary.[LOCATION  KEY]"
+    Name ="TERRITORY KEY"
+    Expression ="tblInvHdrPreliminary.[TERRITORY KEY]"
+    Name ="SALESP    KEY"
+    Expression ="tblInvHdrPreliminary.[SALESP    KEY]"
+    Name ="TERMS"
+    Expression ="tblInvHdrPreliminary.TERMS"
+    Name ="FOB"
+    Expression ="tblInvHdrPreliminary.FOB"
+    Name ="SHIP VIA"
+    Expression ="tblInvHdrPreliminary.[SHIP VIA]"
+    Name ="COMMENT KEY"
+    Expression ="tblInvHdrPreliminary.[COMMENT KEY]"
+    Name ="CUST CLASS"
+    Expression ="tblInvHdrPreliminary.[CUST CLASS]"
+    Name ="SPARE"
+    Expression ="tblInvHdrPreliminary.SPARE"
+    Name ="FREIGHT"
+    Expression ="tblInvHdrPreliminary.FREIGHT"
+    Name ="DISCOUNT MULT"
+    Expression ="tblInvHdrPreliminary.[DISCOUNT MULT]"
+    Name ="CR MEMO FLAG"
+    Expression ="tblInvHdrPreliminary.[CR MEMO FLAG]"
+    Name ="INVOICE NO"
+    Expression ="tblInvHdrPreliminary.[INVOICE NO]"
+    Name ="SPARE3"
+    Expression ="tblInvHdrPreliminary.SPARE3"
+    Name ="INVOICETOTAL"
+    Expression ="tblInvHdrPreliminary.INVOICETOTAL"
+    Name ="RecUserID"
+    Expression ="tblInvHdrPreliminary.RecUserID"
+    Name ="RecDate"
+    Expression ="tblInvHdrPreliminary.RecDate"
+    Name ="RecTime"
+    Expression ="tblInvHdrPreliminary.RecTime"
+    Name ="SYSDOCID"
+    Expression ="tblInvHdrPreliminary.SYSDOCID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =798
+    Bottom =504
+    Left =-1
+    Top =-1
+    Right =795
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tblInvHdrPreliminary"
+        Name =""
+    End
+End

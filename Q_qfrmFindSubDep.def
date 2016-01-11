@@ -1,0 +1,14 @@
+dbMemo "SQL" ="SELECT [DepSubID]\015\012, [DepSSN]\015\012, [DepFirstName]\015\012, [DepMiddleN"
+    "ame]\015\012, [DepLastName]\015\012, [DepDOB]\015\012, [DepAge]\015\012, [DepRel"
+    "ationship]\015\012, [DepGender]\015\012FROM [tblDependent]\015\012\015\012UNION "
+    "SELECT [DepSubID]\015\012, [DepSSN]\015\012, [DepFirstName]\015\012, [DepMiddleN"
+    "ame]\015\012, [DepLastName]\015\012, [DepDOB]\015\012, [DepAge]\015\012, [DepRel"
+    "ationship]\015\012, [DepGender]\015\012FROM [tblDependent_Bexar];\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End

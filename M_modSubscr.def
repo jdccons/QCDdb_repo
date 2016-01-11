@@ -1,0 +1,339 @@
+Option Compare Database
+Option Explicit
+Function FindSUBID_L(strSubID As String, strEndControl As String) As Boolean
+    ' Comments  :
+    ' Parameters: strSubID
+    '             strEndControl -
+    ' Returns   :  Boolean
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim Subscr As clsSubscr
+    Dim strCrit As String
+    
+    Set Subscr = New clsSubscr
+    
+    Subscr.SubID = strSubID
+    
+    'this will tell us if the subscriber is even in the database
+    strCrit = Subscr.SubID
+    
+    If Subscr.SubID = "00000000" Then
+        FindSUBID_L = False
+        MsgBox "The Subscriber ID you have entered is not in the database.", vbCritical, "Not in database."
+    Else
+        ExecuteSQL "EXEC uspSubscrSearch " & "'000000000'" & ", '" & strCrit & "', " & 2
+        FindSUBID_L = True
+    End If
+    
+    With Forms("frmSubscrInquire")
+        .Requery
+    End With
+    
+    DoCmd.GoToControl strEndControl
+    Forms("frmSubscrInquire").ActiveControl = ""
+    
+    Set Subscr = Nothing
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    FindSUBID_L = False
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Function FindSSN_L(strSSN As String, strEndControl As String) As Boolean
+    ' Comments  :
+    ' Parameters: strSSN
+    '             strEndControl -
+    ' Returns   :  Boolean
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim Subscr As clsSubscr
+    Dim strCrit As String
+    
+    Set Subscr = New clsSubscr
+    
+    strCrit = RemoveHyphens(strSSN)
+    
+    'this will tell us if the subscriber is even in the database
+    Subscr.SSN = strCrit
+    
+    If Subscr.SSN = "000000000" Then
+        FindSSN_L = False
+        MsgBox "The SSN you have entered is not in the database.", vbCritical, "Not in database."
+    Else
+        ExecuteSQL "EXEC uspSubscrSearch '" & strCrit & "', " & "'00000000', " & 1
+        FindSSN_L = True
+    End If
+    
+    With Forms("frmSubscrInquire")
+        .Requery
+    End With
+    
+    DoCmd.GoToControl strEndControl
+    Forms("frmSubscrInquire").ActiveControl = ""
+    
+    Set Subscr = Nothing
+
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    FindSSN_L = False
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+
+Sub PopulateBexarSubIDs()
+    'Purpose:  Adds SubIDs to tblSubscr_Bexar
+    '--------------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  01/21/08
+    ' Update Date:  01/21/08
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT tblSubscr_Bexar.SUBssn, " & _
+                "tblSubscr_Bexar.SubID " & _
+                "FROM tblSubscr_Bexar " & _
+                "WHERE tblSubscr_Bexar.SubID IS NULL " & _
+                "ORDER BY tblSubscr_Bexar.SUBssn;"
+    Set rst = db.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        Do While Not rst.EOF
+            rst.Edit
+            rst.Fields("SubID") = AssignSubID()
+            rst.Update
+            rst.MoveNext
+        Loop
+    End If
+    
+    rst.Close
+    Set db = Nothing
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Sub PopulateGrpSubIDs(strGroupID As String)
+    'Purpose:  Adds SubIDs to tblSubscr
+    '--------------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  01/21/08
+    ' Update Date:  01/21/08
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT tblSubscr.SubID " & _
+             "FROM tblSubscr " & _
+             "WHERE (((tblSubscr.SubGroupID)='" & strGroupID & "') " & _
+             "AND ((tblSubscr.SubID) Is Null));"
+    Set rst = db.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        Do While Not rst.EOF
+            rst.Edit
+            rst.Fields("SubID") = AssignSubID()
+            rst.Update
+            rst.MoveNext
+        Loop
+    End If
+    
+    rst.Close
+    Set db = Nothing
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Function AssignSubID() As String
+    ' Purpose:  Generates SubID's
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Returns   : String -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/22/07
+    ' Update Date:  11/22/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    ' Get the current ID and add one to it
+    On Error GoTo ErrorHandler
+        
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT SubIDControl.LastSubID FROM SubIDControl;"
+    
+    Set rst = db.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    
+    If rst.RecordCount > 0 Then
+        AssignSubID = Right(("00000000" & Right(rst.Fields("LastSubID"), 8)), 8)
+        
+        rst.Edit
+        rst.Fields("LastSubID") = CLng(rst.Fields("LastSubID")) + 1
+        rst.Update
+        rst.Close
+    End If
+    
+    Set db = Nothing
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Function CalcAge(DOB As Date) As Integer
+    
+    'Purpose:  Calculates a person's age
+    '--------------------------------------------------------
+    '
+    ' Parameters: DOB -
+    ' Returns   : Integer -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/14/07
+    ' Update Date:  12/14/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    
+    
+    If Month(DOB) > Month(date) Then
+        CalcAge = DateDiff("yyyy", DOB, date) - 1
+    ElseIf Month(DOB) < Month(date) Then
+        CalcAge = DateDiff("yyyy", DOB, date)
+    ElseIf Month(DOB) = Month(date) Then
+        If Day(DOB) > Day(date) Then
+            CalcAge = DateDiff("yyyy", DOB, date) - 1
+        Else
+            CalcAge = DateDiff("yyyy", DOB, date)
+        End If
+    End If
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+
+Function PrtScreen_Subscr()
+    ' Comments  :
+    ' Parameters:  -
+    ' Returns   :  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+
+    On Error GoTo ErrorHandler
+
+    Dim strDocName As String
+    Dim strSubscrID As String
+    Dim strWhere As String
+
+    strDocName = "rptGrpSubscr"
+    strSubscrID = Forms!frmGrpSubscr!SUBssn
+    strWhere = "(([tblSubscr].[SUBssn]) = """ & strSubscrID & """)"
+
+    DoCmd.OpenReport strDocName, acPreview, , strWhere
+
+Exit_Point:
+    Exit Function
+
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+Public Sub PrintSubscrSearchCard(strSSN As String)
+    ' Comments  :  Prints a card from the menu on the subscriber search screen
+    ' Parameters: strSSN -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+      
+      Dim strSQL
+    
+     'print card for subscriber from frmSubscrInquire
+      ExecuteSQL "DELETE FROM tmpEDI_rpt"
+      strSQL = "INSERT INTO tmpEDI_Rpt ( SUBssn) " & _
+                        "SELECT tblSubscr.SubSSN " & _
+                        "FROM tblSubscr " & _
+                        "WHERE ((tblSubscr.SubSSN)='" & strSSN & "');"
+    ExecuteSQL strSQL
+    
+    
+    DoCmd.OpenReport "rptCardMemGrp"
+    
+    
+    'clean up
+    ExecuteSQL "DELETE FROM tmpEDI_rpt"
+    
+           
+    Exit Sub
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Sub

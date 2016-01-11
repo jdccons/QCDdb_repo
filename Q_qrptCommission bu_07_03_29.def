@@ -1,0 +1,76 @@
+Operation =1
+Option =8
+Where ="(((tblCommission.COMMcustCLASS)=\"INDIV\" Or (tblCommission.COMMcustCLASS)=\"GRO"
+    "UP\" Or (tblCommission.COMMcustCLASS)=\"IBCR\") AND ((tblCommission.EnrollmentFe"
+    "e)=No) AND ((tblCommission.COMMagent)<>\"CORPT\" And (tblCommission.COMMagent)<>"
+    "\"CORP\"))"
+Begin InputTables
+    Name ="tblCommission"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblCommission.*"
+    Alias ="Salesp_Name"
+    Expression ="tblCommission.COMMname"
+End
+Begin Joins
+    LeftTable ="tblCommission"
+    RightTable ="tblAgent"
+    Expression ="tblCommission.COMMagent = tblAgent.AGENTid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblCommission.COMMcustNAME"
+        dbInteger "ColumnWidth" ="3510"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Salesp_Name"
+        dbInteger "ColumnWidth" ="7020"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblCommission.COMMname"
+        dbInteger "ColumnWidth" ="5115"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =68
+    Top =12
+    Right =1455
+    Bottom =428
+    Left =-1
+    Top =-1
+    Right =824
+    Bottom =248
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =239
+        Bottom =159
+        Top =4
+        Name ="tblCommission"
+        Name =""
+    End
+    Begin
+        Left =312
+        Top =4
+        Right =596
+        Bottom =201
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

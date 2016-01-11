@@ -1,0 +1,379 @@
+Version =19
+VersionRequired =19
+Checksum =1570714190
+Begin Report
+    LayoutForPrint = NotDefault
+    OrderByOn = NotDefault
+    DateGrouping =1
+    Width =10791
+    ItemSuffix =50
+    Left =795
+    Top =1110
+    Right =13950
+    Bottom =5415
+    RecSrcDt = Begin
+        0x8791fcf473cde240
+    End
+    RecordSource ="qrptBillingReconcile_Cancelled"
+    Caption ="Billing Reconcilation Report - Cancelled Groups or Billing Hold"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000d0020000d0020000d002000000000000272a0000ff00000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x5c5c4143545345525645525c4850343035300000000000000000000000000000 ,
+        0x010400059c00340243ff800701000100ea0a6f08640001000f00580201000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200000034020000ea7157490000000000000000000000000000000000000000 ,
+        0x00000000000000000d0000000100000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002600010077696e73706f6f6c00005c5c4143545345525645525c4850 ,
+        0x343035300000506f7274000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="GRname"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =360
+            Name ="ReportHeader"
+        End
+        Begin PageHeader
+            Height =1605
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Left =22
+                    Top =60
+                    Width =10755
+                    Height =435
+                    FontSize =16
+                    FontWeight =700
+                    Name ="Text0"
+                    Caption ="Billing Reconcilation Report - Cancelled Groups or Billing Hold"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    Top =825
+                    Width =10746
+                    Name ="Line13"
+                End
+                Begin Line
+                    Top =870
+                    Width =10746
+                    Name ="Line14"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =495
+                    Width =1815
+                    Height =315
+                    Name ="= Now()"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                    FontName ="Times New Roman"
+                    EventProcPrefix ="Ctl__Now__"
+                End
+                Begin Label
+                    Top =1140
+                    Width =795
+                    Height =255
+                    Name ="Text19"
+                    Caption ="Group ID"
+                End
+                Begin Label
+                    Left =795
+                    Top =1140
+                    Width =1410
+                    Height =255
+                    Name ="Text20"
+                    Caption ="Group Name"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =6525
+                    Top =1140
+                    Width =1185
+                    Height =225
+                    Name ="Text22"
+                    Caption ="Cancelled Date"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =7773
+                    Top =1140
+                    Width =1410
+                    Height =225
+                    Name ="Text23"
+                    Caption ="Reinstated Date"
+                End
+                Begin Line
+                    Width =10791
+                    Name ="Line24"
+                End
+                Begin Line
+                    Top =1380
+                    Width =10776
+                    Name ="Line25"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =9840
+                    Top =1140
+                    Width =885
+                    Height =240
+                    Name ="Label26"
+                    Caption ="Cancelled?"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =9285
+                    Top =1155
+                    Width =480
+                    Height =225
+                    Name ="Label29"
+                    Caption ="Hold?"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =5580
+                    Top =1140
+                    Width =900
+                    Height =225
+                    Name ="Label45"
+                    Caption ="GEO ID"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =3510
+                    Top =1140
+                    Width =960
+                    Height =225
+                    Name ="Label41"
+                    Caption ="Invoice No"
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =4575
+                    Top =1140
+                    Width =960
+                    Height =225
+                    Name ="Label42"
+                    Caption ="Invoice Amt"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =9285
+                    Top =930
+                    Width =480
+                    Height =225
+                    Name ="Label49"
+                    Caption ="Bill"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =255
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Width =795
+                    Height =255
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =825
+                    Width =2679
+                    Height =255
+                    TabIndex =1
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =6525
+                    Width =1215
+                    Height =255
+                    TabIndex =2
+                    Name ="ctlGRcancelledDate"
+                    ControlSource ="GRcancelledDate"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =7770
+                    Height =255
+                    TabIndex =3
+                    Name ="ctlGRreinstatedDate"
+                    ControlSource ="GRreinstatedDate"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =10065
+                    Width =600
+                    Height =255
+                    TabIndex =4
+                    Name ="txtGRcancelled"
+                    ControlSource ="GRcancelled"
+                    Format ="Yes/No"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =9345
+                    Width =420
+                    Height =255
+                    TabIndex =5
+                    Name ="ctlGRhold"
+                    ControlSource ="GRhold"
+                    Format ="Yes/No"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =1
+                    Left =7455
+                    Width =240
+                    Height =165
+                    TabIndex =6
+                    BackColor =65535
+                    Name ="Counter"
+                    ControlSource ="=+1"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =5610
+                    Width =840
+                    Height =255
+                    TabIndex =7
+                    Name ="ctlGRPgeoID"
+                    ControlSource ="GRPgeoID"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =3660
+                    Width =840
+                    Height =255
+                    TabIndex =8
+                    Name ="ctlDocno"
+                    ControlSource ="DocNo"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =4500
+                    Width =1005
+                    Height =255
+                    TabIndex =9
+                    Name ="ctlDocamt"
+                    ControlSource ="DocumentAmt"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =6630
+                    Top =15
+                    Width =3735
+                    Height =315
+                    Name ="page"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =615
+            Name ="ReportFooter"
+            Begin
+                Begin TextBox
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =9405
+                    Top =210
+                    Width =465
+                    Height =315
+                    FontWeight =700
+                    Name ="ctlSumCounter"
+                    ControlSource ="=[Counter]"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7185
+                    Top =225
+                    Width =2205
+                    Height =300
+                    FontWeight =700
+                    Name ="Label39"
+                    Caption ="Total Number of Groups: "
+                End
+                Begin Line
+                    Left =9390
+                    Top =90
+                    Width =510
+                    Name ="Line40"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+
+Option Explicit

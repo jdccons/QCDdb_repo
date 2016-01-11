@@ -1,0 +1,44 @@
+dbMemo "SQL" ="SELECT tblGrp.GROUPid, tblCoverage.CoverID, tblRates.PlanID, tblGrp.GRname, tblC"
+    "overage.CoverDescr, tblRates.Rate\015\012FROM (tblPlans INNER JOIN (tblGrp INNER"
+    " JOIN tblRates ON tblGrp.GROUPid = tblRates.GroupID) ON tblPlans.PlanID = tblRat"
+    "es.PlanID) INNER JOIN tblCoverage ON tblRates.CoverID = tblCoverage.CoverID;\015"
+    "\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "FilterOnLoad" ="0"
+dbBoolean "OrderByOnLoad" ="-1"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="4230"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblCoverage.CoverDescr"
+        dbInteger "ColumnWidth" ="2865"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblCoverage.CoverID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRates.PlanID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblRates.Rate"
+        dbLong "AggregateType" ="-1"
+    End
+End

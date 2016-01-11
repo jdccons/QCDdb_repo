@@ -1,0 +1,56 @@
+Operation =4
+Option =8
+Begin InputTables
+    Name ="tmpEDI_Rpt"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="tmpEDI_Rpt.GRMailCard"
+    Expression ="[tblGrp].[GRMailCard]"
+End
+Begin Joins
+    LeftTable ="tmpEDI_Rpt"
+    RightTable ="tblGrp"
+    Expression ="tmpEDI_Rpt.GroupID = tblGrp.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+dbText "Description" ="p"
+Begin
+End
+Begin
+    State =0
+    Left =116
+    Top =116
+    Right =977
+    Bottom =467
+    Left =-1
+    Top =-1
+    Right =854
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =80
+        Top =7
+        Right =210
+        Bottom =121
+        Top =6
+        Name ="tmpEDI_Rpt"
+        Name =""
+    End
+    Begin
+        Left =314
+        Top =8
+        Right =473
+        Bottom =122
+        Top =30
+        Name ="tblGrp"
+        Name =""
+    End
+End

@@ -1,0 +1,84 @@
+Operation =5
+Option =0
+Where ="(((tblEDI_App_Subscr.SUBssn) Is Null))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblEDI_App_Subscr"
+    Name ="qselAAGroups"
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Expression ="tblDependent.*"
+    Expression ="tblEDI_App_Subscr.SUBssn"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblEDI_App_Subscr"
+    Expression ="tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn"
+    Flag =2
+    LeftTable ="qselAAGroups"
+    RightTable ="tblSubscr"
+    Expression ="qselAAGroups.SUBgroupID = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =-14
+    Top =14
+    Right =1022
+    Bottom =541
+    Left =-1
+    Top =-1
+    Right =1025
+    Bottom =177
+    Left =0
+    Top =0
+    ColumnsShown =771
+    Begin
+        Left =284
+        Top =14
+        Right =443
+        Bottom =121
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =642
+        Top =21
+        Right =864
+        Bottom =128
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =517
+        Top =77
+        Right =613
+        Bottom =139
+        Top =0
+        Name ="qselAAGroups"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =204
+        Bottom =133
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+End

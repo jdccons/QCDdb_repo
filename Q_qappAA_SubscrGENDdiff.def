@@ -1,0 +1,97 @@
+Operation =3
+Name ="tmpAA_VarianceReport"
+Option =0
+Where ="(((UCase([SUBGender]))<>UCase([EISEX]))) OR (((UCase([EISEX]))<>UCase([SUBGender"
+    "])))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="qselAA_Subscr"
+End
+Begin OutputColumns
+    Alias ="Ord"
+    Name ="PrtOrder"
+    Expression ="10"
+    Alias ="Title"
+    Name ="DataElementTitle"
+    Expression ="\"Subscriber Change\""
+    Alias ="Elem"
+    Name ="DataElement"
+    Expression ="\"Sub Gender\""
+    Name ="SubSSN"
+    Expression ="tblSubscr.SUBssn"
+    Name ="AAGrpID"
+    Expression ="qselAA_Subscr.GRPid"
+    Alias ="AA"
+    Name ="NewValue"
+    Expression ="UCase([EISEX])"
+    Alias ="QCD"
+    Name ="OldValue"
+    Expression ="UCase([SUBGender])"
+    Name ="RptDate"
+    Expression ="qselAA_Subscr.RptDate"
+End
+Begin Joins
+    LeftTable ="qselAA_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="qselAA_Subscr.AA_SSN = tblSubscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbText "Description" ="10"
+Begin
+    Begin
+        dbText "Name" ="QCD_FN"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA_LN"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="QCD"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =673
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =199
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =379
+        Top =6
+        Right =652
+        Bottom =165
+        Top =12
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =274
+        Bottom =165
+        Top =0
+        Name ="qselAA_Subscr"
+        Name =""
+    End
+End

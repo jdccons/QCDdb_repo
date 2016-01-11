@@ -1,0 +1,83 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="__qry_Bexar_Dependents"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Alias ="Subscriber_SSN"
+    Expression ="[__qry_Bexar_Dependents].DepSubID"
+    Alias ="Subscriber Last Name"
+    Expression ="tblSubscr.SubLastName"
+    Alias ="Subscriber First Name"
+    Expression ="tblSubscr.SubFirstName"
+    Alias ="Dependent Last Name"
+    Expression ="[__qry_Bexar_Dependents].DepLastName"
+    Alias ="Dependent First Name"
+    Expression ="[__qry_Bexar_Dependents].DepFirstName"
+End
+Begin Joins
+    LeftTable ="__qry_Bexar_Dependents"
+    RightTable ="tblSubscr"
+    Expression ="[__qry_Bexar_Dependents].DepSubID = tblSubscr.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="Subscriber Last Name"
+        dbInteger "ColumnWidth" ="2235"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Subscriber First Name"
+        dbInteger "ColumnWidth" ="2250"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Dependent Last Name"
+        dbInteger "ColumnWidth" ="2250"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Dependent First Name"
+        dbInteger "ColumnWidth" ="2265"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-32
+    Right =1272
+    Bottom =892
+    Left =-1
+    Top =-1
+    Right =1267
+    Bottom =285
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =328
+        Bottom =179
+        Top =0
+        Name ="__qry_Bexar_Dependents"
+        Name =""
+    End
+    Begin
+        Left =410
+        Top =26
+        Right =673
+        Bottom =243
+        Top =3
+        Name ="tblSubscr"
+        Name =""
+    End
+End

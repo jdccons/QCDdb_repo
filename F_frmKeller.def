@@ -1,0 +1,415 @@
+Version =17
+VersionRequired =17
+Checksum =14038331
+Begin Form
+    AutoCenter = NotDefault
+    DefaultView =2
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =7920
+    DatasheetFontHeight =10
+    ItemSuffix =28
+    Left =900
+    Top =720
+    Right =10605
+    Bottom =5835
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xe12443a298d3e140
+    End
+    RecordSource ="qryKeller"
+    Caption ="Keller ISD Data Entry"
+    MenuBar ="FormMenuBar"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin Line
+            SpecialEffect =3
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+        End
+        Begin TextBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+        End
+        Begin FormHeader
+            Height =360
+            BackColor =-2147483633
+            Name ="FormHeader"
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =60
+                    Top =60
+                    Width =300
+                    Height =240
+                    Name ="Enrolled Label"
+                    Caption ="Enrolled"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Enrolled_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =420
+                    Top =60
+                    Width =660
+                    Height =240
+                    Name ="SUBlastNAME Label"
+                    Caption ="SUBlastNAME"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBlastNAME_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =1140
+                    Top =60
+                    Width =480
+                    Height =240
+                    Name ="SUBfirstNAME Label"
+                    Caption ="SUBfirstNAME"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBfirstNAME_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =1680
+                    Top =60
+                    Width =540
+                    Height =240
+                    Name ="SUBmiddleNAME Label"
+                    Caption ="SUBmiddleNAME"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBmiddleNAME_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =2280
+                    Top =60
+                    Width =360
+                    Height =240
+                    Name ="SUBssn Label"
+                    Caption ="SUBssn"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBssn_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =2700
+                    Top =60
+                    Width =360
+                    Height =240
+                    Name ="Campus Label"
+                    Caption ="Campus"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Campus_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =3120
+                    Top =60
+                    Width =960
+                    Height =240
+                    Name ="SUBstreet1 Label"
+                    Caption ="SUBstreet1"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBstreet1_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =4140
+                    Top =60
+                    Width =960
+                    Height =240
+                    Name ="SUBstreet2 Label"
+                    Caption ="SUBstreet2"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBstreet2_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =5160
+                    Top =60
+                    Width =480
+                    Height =240
+                    Name ="SUBcity Label"
+                    Caption ="SUBcity"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBcity_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =5700
+                    Top =60
+                    Width =300
+                    Height =240
+                    Name ="SUBstate Label"
+                    Caption ="SUBstate"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBstate_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =6060
+                    Top =60
+                    Width =360
+                    Height =240
+                    Name ="SUBzip Label"
+                    Caption ="SUBzip"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBzip_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6480
+                    Top =60
+                    Width =960
+                    Height =240
+                    Name ="SUBphoneHOME Label"
+                    Caption ="SUBphoneHOME"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBphoneHOME_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =7500
+                    Top =60
+                    Width =360
+                    Height =240
+                    Name ="SUBdob Label"
+                    Caption ="SUBdob"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBdob_Label"
+                End
+            End
+        End
+        Begin Section
+            Height =375
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =420
+                    Top =60
+                    Width =660
+                    Height =255
+                    ColumnWidth =1560
+                    TabIndex =1
+                    Name ="SUBlastNAME"
+                    ControlSource ="SUBlastNAME"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =1140
+                    Top =60
+                    Width =480
+                    Height =255
+                    ColumnWidth =1530
+                    TabIndex =2
+                    Name ="SUBfirstNAME"
+                    ControlSource ="SUBfirstNAME"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =1680
+                    Top =60
+                    Width =540
+                    Height =255
+                    ColumnWidth =1860
+                    TabIndex =3
+                    Name ="SUBmiddleNAME"
+                    ControlSource ="SUBmiddleNAME"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =2280
+                    Top =60
+                    Width =360
+                    Height =255
+                    ColumnWidth =1530
+                    TabIndex =4
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =2700
+                    Top =60
+                    Width =360
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =5
+                    Name ="Campus"
+                    ControlSource ="Campus"
+                    StatusBarText ="Used for Birdville Only"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =3120
+                    Top =60
+                    Width =960
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =6
+                    Name ="SUBstreet1"
+                    ControlSource ="SUBstreet1"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =4140
+                    Top =60
+                    Width =960
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =7
+                    Name ="SUBstreet2"
+                    ControlSource ="SUBstreet2"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =5160
+                    Top =60
+                    Width =480
+                    Height =255
+                    ColumnWidth =1185
+                    TabIndex =8
+                    Name ="SUBcity"
+                    ControlSource ="SUBcity"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =5700
+                    Top =60
+                    Width =300
+                    Height =255
+                    ColumnWidth =390
+                    TabIndex =9
+                    Name ="SUBstate"
+                    ControlSource ="SUBstate"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =6060
+                    Top =60
+                    Width =360
+                    Height =255
+                    ColumnWidth =825
+                    TabIndex =10
+                    Name ="SUBzip"
+                    ControlSource ="SUBzip"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =6480
+                    Top =60
+                    Width =960
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =11
+                    Name ="SUBphoneHOME"
+                    ControlSource ="SUBphoneHOME"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =7500
+                    Top =60
+                    Width =360
+                    Height =255
+                    ColumnWidth =825
+                    TabIndex =12
+                    Name ="SUBdob"
+                    ControlSource ="SUBdob"
+                End
+                Begin CheckBox
+                    OverlapFlags =85
+                    Left =75
+                    Top =90
+                    Width =285
+                    Height =255
+                    Name ="chkEnrolled"
+                    ControlSource ="Enrolled"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+        End
+    End
+End

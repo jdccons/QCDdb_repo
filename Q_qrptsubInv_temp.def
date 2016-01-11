@@ -1,0 +1,62 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="__tblInvoice_Aug_Detail"
+End
+Begin OutputColumns
+    Expression ="[__tblInvoice_Aug_Detail].*"
+    Alias ="DescTrim"
+    Expression ="Trim([Description])"
+    Alias ="SSN"
+    Expression ="(Left([DescTrim],9))"
+    Alias ="Name"
+    Expression ="(Mid([DescTrim],11,40))"
+    Alias ="SSN2"
+    Expression ="Format([SSN],\"000-00-0000\")"
+    Alias ="TranNo"
+    Expression ="[__tblInvoice_Aug_Detail].Docno"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="DescTrim"
+        dbInteger "ColumnWidth" ="3465"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Name"
+        dbInteger "ColumnWidth" ="3630"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="__tblInvoice_Aug_Detail.Description"
+        dbInteger "ColumnWidth" ="4170"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =195
+        Bottom =113
+        Top =0
+        Name ="__tblInvoice_Aug_Detail"
+        Name =""
+    End
+End

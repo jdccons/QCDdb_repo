@@ -1,0 +1,100 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tmpExportAllAmerican"
+End
+Begin OutputColumns
+    Expression ="tmpExportAllAmerican.EIRECID"
+    Expression ="tmpExportAllAmerican.EIMBRID"
+    Expression ="tmpExportAllAmerican.EIMBRRF"
+    Expression ="tmpExportAllAmerican.EISBRID"
+    Expression ="tmpExportAllAmerican.EISSN"
+    Expression ="tmpExportAllAmerican.EINAML"
+    Expression ="tmpExportAllAmerican.EINAMF"
+    Expression ="tmpExportAllAmerican.EINAMM"
+    Expression ="tmpExportAllAmerican.EIDTBR"
+    Expression ="tmpExportAllAmerican.EISEX"
+    Expression ="tmpExportAllAmerican.EISSNEXT"
+    Expression ="tmpExportAllAmerican.EIADD1"
+    Expression ="tmpExportAllAmerican.EIADD2"
+    Expression ="tmpExportAllAmerican.EIADD3"
+    Expression ="tmpExportAllAmerican.EICITY"
+    Expression ="tmpExportAllAmerican.EICTY"
+    Expression ="tmpExportAllAmerican.EISTE"
+    Expression ="tmpExportAllAmerican.EIZIP"
+    Expression ="tmpExportAllAmerican.EIZIP4"
+    Expression ="tmpExportAllAmerican.EIHEMAIL"
+    Expression ="tmpExportAllAmerican.EIWEMAIL"
+    Expression ="tmpExportAllAmerican.EIWPHR"
+    Expression ="tmpExportAllAmerican.EIWEXG"
+    Expression ="tmpExportAllAmerican.EIDPT"
+    Expression ="tmpExportAllAmerican.EIHPHR"
+    Expression ="tmpExportAllAmerican.EIACTDB"
+    Expression ="tmpExportAllAmerican.EICRDCR"
+    Expression ="tmpExportAllAmerican.EIBANK"
+    Expression ="tmpExportAllAmerican.[EIACDB#]"
+    Expression ="tmpExportAllAmerican.EIDTEXPR"
+    Expression ="tmpExportAllAmerican.EIGRPID"
+    Expression ="tmpExportAllAmerican.EISGRPID"
+    Expression ="tmpExportAllAmerican.EINMPLAN"
+    Expression ="tmpExportAllAmerican.EIDTEFF"
+    Expression ="tmpExportAllAmerican.EIDTCVEF"
+    Expression ="tmpExportAllAmerican.EIDTCVEN"
+    Expression ="tmpExportAllAmerican.EIMBRDP"
+    Expression ="tmpExportAllAmerican.EISPC"
+    Expression ="tmpExportAllAmerican.EIFACCN"
+    Expression ="tmpExportAllAmerican.EIPRVCN"
+    Expression ="tmpExportAllAmerican.EIDTPNEF"
+    Expression ="tmpExportAllAmerican.EIDTPNEN"
+    Expression ="tmpExportAllAmerican.EISTUSTS"
+    Expression ="tmpExportAllAmerican.EIEXTCVG"
+    Expression ="tmpExportAllAmerican.EITRNID"
+    Expression ="tmpExportAllAmerican.EIDTHIRE"
+    Expression ="tmpExportAllAmerican.EIDTTERM"
+    Alias ="CoverDesc"
+    Expression ="tmpExportAllAmerican.Coverage"
+End
+Begin OrderBy
+    Expression ="tmpExportAllAmerican.EISBRID"
+    Flag =0
+    Expression ="tmpExportAllAmerican.EIRECID"
+    Flag =1
+    Expression ="CDate(Mid([EIDTBR],1,2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Mid([EIDTBR],5,4))"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="CoverDesc"
+        dbInteger "ColumnWidth" ="1980"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-8
+    Top =-30
+    Right =1370
+    Bottom =651
+    Left =-1
+    Top =-1
+    Right =1359
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =256
+        Bottom =109
+        Top =50
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+End

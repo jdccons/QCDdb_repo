@@ -1,0 +1,140 @@
+Version =17
+VersionRequired =17
+Checksum =-90920309
+Begin Report
+    AutoCenter = NotDefault
+    DefaultView =0
+    ScrollBars =2
+    Width =6960
+    ItemSuffix =116
+    Right =1260
+    Bottom =615
+    RecSrcDt = Begin
+        0x593b28dc12cae140
+    End
+    RecordSource ="tblDependent"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000301b0000f000000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4e747365727665725c68706c6a350000000000000000000000000000000000
+    End
+    Begin
+        Begin FormHeader
+            Height =240
+            Name ="FormHeader1"
+            Begin
+                Begin Label
+                    Width =1290
+                    Height =240
+                    FontWeight =700
+                    Name ="Text108"
+                    Caption ="Social Sec. # "
+                End
+                Begin Label
+                    Left =3456
+                    Width =1590
+                    Height =240
+                    FontWeight =700
+                    Name ="Text109"
+                    Caption ="First Name"
+                End
+                Begin Label
+                    Left =1440
+                    Width =1875
+                    Height =240
+                    FontWeight =700
+                    Name ="Text110"
+                    Caption ="Last Name"
+                End
+                Begin Label
+                    Left =5760
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    Name ="Text111"
+                    Caption ="Date of Birth"
+                End
+                Begin Label
+                    Left =5184
+                    Width =435
+                    Height =240
+                    FontWeight =700
+                    Name ="Text115"
+                    Caption ="MI"
+                End
+            End
+        End
+        Begin Section
+            Height =240
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    OldBorderStyle =0
+                    Left =144
+                    Width =1149
+                    Name ="DEPssn"
+                    ControlSource ="DEPssn"
+                    InputMask ="000\\-00\\-0000;;_"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    Left =3456
+                    Width =1584
+                    TabIndex =2
+                    Name ="DEPfirstNAME"
+                    ControlSource ="DEPfirstNAME"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    Left =1440
+                    Width =1869
+                    TabIndex =1
+                    Name ="DEPlastNAME"
+                    ControlSource ="DEPlastNAME"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =3
+                    Left =5760
+                    Width =1149
+                    TabIndex =4
+                    Name ="DEPdob"
+                    ControlSource ="DEPdob"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    Left =5184
+                    Width =429
+                    TabIndex =3
+                    Name ="DEPmiddleNAME"
+                    ControlSource ="DEPmiddleNAME"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit

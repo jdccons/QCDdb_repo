@@ -1,0 +1,245 @@
+Version =19
+VersionRequired =19
+Checksum =-844177416
+Begin Form
+    Width =5985
+    ItemSuffix =109
+    Left =4170
+    Top =3165
+    Right =10530
+    Bottom =6540
+    RecSrcDt = Begin
+        0x77e21065d6c4e140
+    End
+    RecordSource ="qryInvLin"
+    PrtMip = Begin
+        0xd002000038040000d0020000d002000000000000a02900004029000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4f6b6964617461204f4c343030650045300e11000000ea0000005f019ee0821c ,
+        0x0a030c0344004c0003670000010001004552004c0072010001002c0101000100 ,
+        0x2c010200f001e85d01000000606024e022e000000c0001000000010064000200 ,
+        0x000600000000000000006060806a0000000000000000ffff0000ffffffffffff ,
+        0xffff000000000000ffff00000000ffff49434515001244455649434543415041 ,
+        0x000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x170008001e0001804f6b6964617461204f4c34303065004f4c34303065004c50 ,
+        0x54313a0000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    OnGotFocus ="[Event Procedure]"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin FormHeader
+            Height =255
+            BackColor =12632256
+            Name ="FormHeader0"
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Top =15
+                    Width =1341
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text96"
+                    Caption ="SSN/Descr. "
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1590
+                    Width =3336
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text97"
+                    Caption ="Subscriber:"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =5100
+                    Width =741
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text98"
+                    Caption ="Rate:"
+                End
+                Begin Label
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =3825
+                    Width =276
+                    Height =240
+                    FontWeight =700
+                    BackColor =16711935
+                    Name ="Text99"
+                    Caption ="Qty.Ord."
+                End
+                Begin Label
+                    Visible = NotDefault
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =4113
+                    Width =306
+                    Height =240
+                    FontWeight =700
+                    BackColor =16711935
+                    Name ="Text101"
+                    Caption ="Qty.Shp."
+                End
+            End
+        End
+        Begin Section
+            Height =240
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin Line
+                    OverlapFlags =93
+                    Width =5985
+                    Name ="Line85"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    Left =30
+                    Width =1323
+                    Name ="ITEM KEY"
+                    ControlSource ="ITEM KEY"
+                    InputMask ="000\\-00\\-0000;0;_"
+                    EventProcPrefix ="ITEM_KEY"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    SpecialEffect =2
+                    OverlapFlags =95
+                    Left =1632
+                    Width =3318
+                    TabIndex =1
+                    Name ="DESCRIPTION"
+                    ControlSource ="DESCRIPTION"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    SpecialEffect =2
+                    OverlapFlags =87
+                    Left =5100
+                    Width =843
+                    TabIndex =2
+                    Name ="UNIT PRICE"
+                    ControlSource ="UNIT PRICE"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    EventProcPrefix ="UNIT_PRICE"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =0
+                    SpecialEffect =2
+                    OverlapFlags =247
+                    Left =3870
+                    Width =258
+                    TabIndex =3
+                    BackColor =16711935
+                    Name ="QTY ORDERED"
+                    ControlSource ="QTY ORDERED"
+                    DefaultValue ="1"
+                    EventProcPrefix ="QTY_ORDERED"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    DecimalPlaces =0
+                    SpecialEffect =2
+                    OverlapFlags =247
+                    Left =4275
+                    Width =288
+                    TabIndex =4
+                    BackColor =16711935
+                    Name ="QTY SHIPPED"
+                    ControlSource ="QTY SHIPPED"
+                    DefaultValue ="1"
+                    EventProcPrefix ="QTY_SHIPPED"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =4755
+                    Width =144
+                    TabIndex =5
+                    BackColor =65535
+                    Name ="DOCUMENT NO"
+                    ControlSource ="DOCUMENT NO"
+                    EventProcPrefix ="DOCUMENT_NO"
+                End
+            End
+        End
+        Begin FormFooter
+            Visible = NotDefault
+            Height =240
+            BackColor =12632256
+            Name ="FormFooter1"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =2
+                    OverlapFlags =85
+                    Left =5100
+                    Width =846
+                    Name ="SubTotal"
+                    ControlSource ="=Sum([UNIT PRICE])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Form_GotFocus()
+
+  On Error GoTo PROC_ERR
+    Dim dbsDb As DAO.Database
+    Dim rstRs As DAO.Recordset
+    Dim strWhere$
+    Dim strCriterion$
+
+    strCriterion = Forms![f-INVOICEsub]![CUST KEY]
+    strWhere = "[PLTcustKEY] = '" & strCriterion & "'"
+
+    Set dbsDb = DBEngine(0)(0)
+    Set rstRs = dbsDb.OpenRecordset("tblSubscr", dbOpenDynaset, dbSeeChanges)
+    rstRs.FindFirst strWhere
+     Forms![f-INVOICEsub]![ITEM KEY] = rstRs("SUBssn")
+    'Forms![f-INVOICE]![ADDRESS 1] = rs("GRstreet1")
+    'Forms![f-INVOICE]![ADDRESS 2] = rs("GRstreet2")
+    'Forms![f-INVOICE]![CITY] = rs("GRcity")
+    'Forms![f-INVOICE]![STATE] = rs("GRstate")
+    'Forms![f-INVOICE]![ZIP CODE] = rs("GRzip")
+    'Forms![f-INVOICE]![ATTENTION] = rs("GRmainCONT")
+    'Forms![f-INVOICE]![TERRITORY KEY] = rs("GRPgeoID")
+    'Forms![f-INVOICE]![SALESP    KEY] = rs("GRagentID1")
+
+    rstRs.Close
+    dbsDb.Close
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

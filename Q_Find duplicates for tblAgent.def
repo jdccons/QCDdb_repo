@@ -1,0 +1,11 @@
+dbMemo "SQL" ="SELECT DISTINCTROW [AGENTlast], [AGENTfirst], [AGENTactive], [AGENTtype], [AGENT"
+    "geoID], [AGENTstreet1], [AGENTstreet2], [AGENTcity], [AGENTstate], [AGENTzip], ["
+    "AGENTphone], [AGENTemail], [AGENCY]\015\012FROM tblAgent\015\012WHERE [AGENTlast"
+    "] In (SELECT [AGENTlast] FROM [tblAgent] As Tmp GROUP BY [AGENTlast],[AGENTfirst"
+    "] HAVING Count(*)>1  And [AGENTfirst] = [tblAgent].[AGENTfirst])\015\012ORDER BY"
+    " [AGENTlast], [AGENTfirst];\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+Begin
+End

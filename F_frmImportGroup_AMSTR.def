@@ -1,0 +1,398 @@
+Version =19
+VersionRequired =19
+Checksum =-1603769891
+Begin Form
+    RecordSelectors = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =3660
+    DatasheetFontHeight =10
+    ItemSuffix =3
+    Left =5835
+    Top =1755
+    Right =9240
+    Bottom =3585
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x77be9f72f790e240
+    End
+    Caption ="Import American Staff Resources"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin Section
+            Height =2100
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =120
+                    Top =120
+                    Width =1319
+                    Height =420
+                    Name ="cmdOpenFile"
+                    Caption ="Select File"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =1530
+                    Top =120
+                    Width =2010
+                    Height =960
+                    TabIndex =1
+                    Name ="txtFileToProcess"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =120
+                    Top =660
+                    Width =1320
+                    Height =420
+                    TabIndex =2
+                    Name ="cmdProcess"
+                    Caption ="Process File"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2820
+                    Top =1590
+                    Width =726
+                    Height =486
+                    TabIndex =3
+                    Name ="cmdClose"
+                    Caption ="Command20"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad
+                    End
+                    FontName ="Tahoma"
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =120
+                    Top =1155
+                    Width =2460
+                    Height =420
+                    TabIndex =4
+                    Name ="cmdPrintNewSubscr"
+                    Caption ="Print New Subscribers List"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =120
+                    Top =1650
+                    Width =2460
+                    Height =420
+                    TabIndex =5
+                    Name ="cmdAddToDB"
+                    Caption ="Add Group to DB"
+                    OnClick ="[Event Procedure]"
+                    FontName ="Tahoma"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Function GetPathPart_TSB(strPath As String) As String
+  ' Comments  : Returns the path part of a string
+  ' Parameters: strPath - string to parse
+  ' Returns   : path part
+  '
+  Dim intCounter As Integer
+
+  For intCounter = Len(strPath) To 1 Step -1
+    If Mid$(strPath, intCounter, 1) = "\" Then
+      Exit For
+    End If
+  Next intCounter
+
+  GetPathPart_TSB = Left$(strPath, intCounter)
+
+End Function
+Function FileExists_TSB(strDest As String) As Boolean
+  ' Comments  : Determines if the named file exists
+  ' Parameters: strDest - file to check
+  ' Returns   : True-file exists, false otherwise
+  '
+  Dim intLen As Integer
+ 
+  On Error Resume Next
+  intLen = Len(Dir(strDest))
+
+  FileExists_TSB = (Not Err And intLen > 0)
+
+End Function
+
+Private Sub cmdAddToDB_Click()
+
+    On Error GoTo Err_cmdAddToDB_Click
+    
+    'Dim intResp As Integer
+      
+    'intResp = MsgBox(strMsg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: Confirm Action")
+    'If intResp = vbYes Then
+    '    DoCmd.SetWarnings False
+    '    db.Execute ("DELETE tblSubscr.* FROM tblSubscr WHERE (((tblSubscr.SUBgroupID)= '" & [forms]![frmEDI].[txtGrpID] & "'));")
+    '    db.Execute ("DELETE tblSubscr.* FROM tblSubscr INNER JOIN tblEDI_App_Subscr ON tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn;")
+    '    Set db = Nothing
+    '    DoCmd.OpenQuery "qappEDI_Subscr_Final"
+    '    DoCmd.OpenQuery "qappEDI_Dep_Final"
+    '    DoCmd.SetWarnings True
+    '    MsgBox "EDI File information imported.", vbExclamation, "QCD: Confirm"
+    'End If
+    
+Exit_cmdAddToDB_Click:
+    Exit Sub
+
+Err_cmdAddToDB_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdAddToDB_Click
+
+End Sub
+
+Private Sub cmdClose_Click()
+
+    On Error GoTo Err_cmdClose_Click
+    
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+Private Sub cmdOpenFile_Click()
+
+    On Error GoTo Err_cmdOpenFile_Click
+
+    Dim strFileName As String
+    Dim strFile As String
+    Dim intProc As Integer
+    Dim TextLine As String
+    Dim strPath As String
+    Dim strSpec As String
+    Dim strTableName As String
+    Dim strPlan As String
+
+    strFile = GetOpenFile_TSB("C:\My Documents", "Select import file")
+    strPath = GetPathPart_TSB(strFile)
+    
+    If Not IsNull(strFile) Then
+        If FileExists_TSB(strPath & "Employees.txt") Then
+            Kill strPath & "Employees.txt"
+        End If
+        
+        If FileExists_TSB(strPath & "Dependents.txt") Then
+            Kill strPath & "Dependents.txt"
+        End If
+    End If
+    
+    If Not IsNull(strFile) Then
+        Me.txtFileToProcess = strFile
+        strFileName = strFile
+        intProc = 1
+    End If
+    
+    Open strFileName For Input As #1                    ' Open file for input.
+    Open strPath & "Employees.txt" For Output As #2     ' Open file for output.
+    Open strPath & "Dependents.txt" For Output As #3    ' Open file for output.
+    Do While Not EOF(1)                                 ' Loop until end of file.
+        Line Input #1, TextLine                         ' Read line into variable.
+        strPlan = Mid(TextLine, 11, 3)
+        If strPlan = "QCD" Then                         'it's an employee
+            Print #2, TextLine                          'write the text string to a temporary text file
+        Else                                            'it's a dependent
+            Print #3, TextLine                          'write the text string to another temporary text file
+        End If
+    Loop
+    
+    Close #3                                            ' Close file.
+    Close #2                                            ' Close file.
+    Close #1                                            ' Close file.
+        
+    If FileExists_TSB(strFileName) = True Then
+        ReDim aQueries(0 To 1) As Variant
+        aQueries(0) = "qdelImportTemp_ASRE"
+        aQueries(1) = "qdelImportTemp_ASRD"
+        If RunQuery("", aQueries()) = True Then
+            strSpec = "ImportGroupSpec_ASRE"
+            strTableName = "tblImportFile_ASR_Employees"
+            strFileName = strPath & "Employees.txt"
+            DoCmd.TransferText acImportDelim, strSpec, strTableName, strFileName, 0
+            Kill strPath & "Employees.txt"
+            
+            strSpec = "ImportGroupSpec_ASRD"
+            strTableName = "tblImportFile_ASR_Dependents"
+            strFileName = strPath & "Dependents.txt"
+            DoCmd.TransferText acImportDelim, strSpec, strTableName, strFileName, 0
+            Kill strPath & "Dependents.txt"
+        Else
+            GoTo Err_cmdOpenFile_Click
+        End If
+        
+    End If
+   
+Exit_cmdOpenFile_Click:
+    Exit Sub
+
+Err_cmdOpenFile_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdOpenFile_Click
+
+End Sub
+Private Sub cmdPrintNewSubscr_Click()
+
+    On Error GoTo Err_cmdPrintNewSubscr_Click
+    
+    'DoCmd.SetWarnings False
+    'DoCmd.RunSQL "DELETE * FROM tmpEDI_rpt"
+    'DoCmd.OpenQuery "qrpt_EDI_NewSubs"
+    'DoCmd.OpenQuery "qrpt_EDI_GrpSubs"
+    'DoCmd.OpenQuery "qrpt_EDI_IndivSubs"
+    
+    'DoCmd.OpenReport "rptEDI_NewSubscribers", acViewPreview
+    'DoCmd.SetWarnings True
+
+Exit_cmdPrintNewSubscr_Click:
+    Exit Sub
+
+Err_cmdPrintNewSubscr_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdPrintNewSubscr_Click
+
+End Sub
+
+Private Sub cmdProcess_Click()
+
+    On Error GoTo Err_cmdProcess_Click
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim rsEmps As Recordset
+    Dim strSQL As String
+    Dim strSSN As String
+    Dim intResp As Integer
+    Dim strMsg As String
+    
+    strMsg = "You are about to import data from the text file.  Do you want to continue?"
+    
+    intResp = MsgBox(strMsg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: Confirm Action")
+    If intResp = vbYes Then
+    
+    DoCmd.Hourglass True
+        
+    'delete all records in tblSubscr that match the employee import table
+    Set db = CurrentDb()
+    strSQL = "DELETE tblSubscr.* " & _
+           "FROM tblSubscr INNER JOIN " & _
+           "tblImportFile_ASR_Employees ON tblSubscr." & _
+           "SUBssn = tblImportFile_ASR_Employees.SSN" & _
+           ";"
+           
+    db.Execute strSQL, dbSeeChanges
+    
+    'insert employee and dependent import tables into tblSubscr and tblDependent
+    ReDim aQueries(0 To 1) As Variant
+    aQueries(0) = "qappASR_Subscr"
+    aQueries(1) = "qappASR_Deps"
+    If RunQuery("", aQueries()) = True Then
+        'do nothing
+    Else
+        GoTo Err_cmdProcess_Click
+    End If
+    db.Close
+        
+    'update no of dependents in tblSubscr
+    strSQL = "SELECT tblImportFile_ASR_Dependents.SSN, " & _
+           "Count(tblImportFile_ASR_Dependents." & _
+           "LAST_NAME) AS CountOfLAST_NAME " & _
+           "FROM tblImportFile_ASR_Dependents " & _
+           "GROUP BY tblImportFile_ASR_Dependents." & _
+           "SSN;"
+           
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    Dim intNoOfDeps As Integer
+    If rs.RecordCount > 0 Then
+        Do Until rs.EOF
+            'Update number of dependents on employee table
+            strSSN = rs("SSN")
+            intNoOfDeps = rs("CountOfLAST_NAME")
+            db.Execute ("UPDATE tblSubscr SET tblSubscr.SUBnoDEPENT = " & intNoOfDeps & " " & _
+                    "WHERE (((tblSubscr.SUBssn)='" & strSSN & "'));")
+        rs.MoveNext
+        Loop
+     End If
+     rs.Close
+     db.Close
+     
+     DoCmd.Hourglass False
+     
+     MsgBox "American Staff Resources file information imported.", vbExclamation, "QCD: Confirm"
+     
+     Else
+        
+        Exit Sub
+     
+     End If
+     
+     
+     
+Exit_cmdProcess_Click:
+    Exit Sub
+
+Err_cmdProcess_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdProcess_Click
+    
+End Sub

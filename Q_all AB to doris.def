@@ -1,0 +1,97 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRPgeoID)=\"TXSSW\") AND ((tlkpClientServiceReps.RepName)=\"A & B GROU"
+    "P\") AND ((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tlkpClientServiceReps"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tlkpClientServiceReps.RepName"
+    Expression ="tblGrp.GRPLANid"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRagentID1"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRExecSalesDirRate"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRfirstINVamt"
+    Expression ="tblGrp.GRcancelled"
+End
+Begin Joins
+    LeftTable ="tlkpClientServiceReps"
+    RightTable ="tblGrp"
+    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbMemo "OrderBy" ="[all AB to doris].Expr1000"
+Begin
+    Begin
+        dbText "Name" ="Expr1000"
+        dbInteger "ColumnWidth" ="3855"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tlkpClientServiceReps.RepName"
+        dbBoolean "ColumnHidden" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRPLANid"
+        dbBoolean "ColumnHidden" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRPgeoID"
+        dbInteger "ColumnWidth" ="1155"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3855"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =769
+    Bottom =487
+    Left =-1
+    Top =-1
+    Right =647
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =35
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =98
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+End

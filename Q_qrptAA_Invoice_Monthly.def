@@ -1,0 +1,100 @@
+Operation =1
+Option =0
+Where ="(((ARTRAN.DocumentDate)=[Forms]![fdlgAAMonthlyBillingReportCriteria]![txtDate]) "
+    "AND ((ARTRAN.TransactionType)=\"I\") AND ((tblGrp.GroupType)=4))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="ARTRAN.DocumentDate"
+    Expression ="ARTRAN.TransactionType"
+    Expression ="ARTRAN.DocumentAmt"
+    Expression ="tblGrp.GroupType"
+End
+Begin Parameters
+    Name ="[Forms]![fdlgAAMonthlyBillingReportCriteria]![txtDate]"
+    Flag =8
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="ARTRAN"
+    Expression ="tblGrp.GROUPid = ARTRAN.CustomerKey"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblGrp.GROUPid"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbInteger "ColumnWidth" ="1035"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ARTRAN.DocumentDate"
+        dbInteger "ColumnWidth" ="1545"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ARTRAN.TransactionType"
+        dbInteger "ColumnWidth" ="1725"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ARTRAN.DocumentAmt"
+        dbInteger "ColumnWidth" ="1485"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GroupType"
+        dbInteger "ColumnWidth" ="1200"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =26
+    Top =31
+    Right =1140
+    Bottom =619
+    Left =-1
+    Top =-1
+    Right =1107
+    Bottom =415
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =158
+        Bottom =341
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =329
+        Top =5
+        Right =688
+        Bottom =355
+        Top =2
+        Name ="ARTRAN"
+        Name =""
+    End
+End

@@ -1,0 +1,70 @@
+Operation =1
+Option =0
+Where ="(((tblRates.GroupID) Is Null)) OR (((tblRates.PlanID) Is Null)) OR (((tblRates.C"
+    "overID) Is Null))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblEDI_App_Subscr.SubSSN"
+    Expression ="tblRates.GroupID"
+    Expression ="tblRates.PlanID"
+    Expression ="tblRates.CoverID"
+    Expression ="tblRates.GroupID"
+    Expression ="tblRates.PlanID"
+    Expression ="tblRates.CoverID"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.CoverID = tblRates.CoverID"
+    Flag =2
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.PlanID = tblRates.PlanID"
+    Flag =2
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.SubGroupID = tblRates.GroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =76
+    Top =58
+    Right =857
+    Bottom =461
+    Left =-1
+    Top =-1
+    Right =495
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =120
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =1
+        Right =402
+        Bottom =115
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

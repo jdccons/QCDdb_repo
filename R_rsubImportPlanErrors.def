@@ -1,0 +1,167 @@
+Version =17
+VersionRequired =17
+Checksum =-652067450
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =6540
+    DatasheetFontHeight =10
+    ItemSuffix =32
+    Left =960
+    Top =108
+    Right =11448
+    Bottom =5376
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x32fdea1a8cd6e140
+    End
+    RecordSource ="qselImportPlanCheck"
+    Caption ="rptImportExceptions"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xd0020000a0050000d0020000a005000000000000602700006801000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4550534f4e205374796c75732050686f746f2037303000000000000000000000 ,
+        0x00040601940006010f8b800701000100ea0a6f08000001000700680102000000 ,
+        0x6801000000004c6574746572203820312f32207820313120696e000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0200000001000000210100000000000000000000444c4c4e616d6531363d4550 ,
+        0x4947554932372e444c4c00000000000000000000444c4c4e616d6533323d4550 ,
+        0x4944413232302e444c4c000000000000000000004550534f4e205374796c7573 ,
+        0x2050686f746f2037303000000000000000000000000202006801680101000000 ,
+        0x000001000001000001003408410a3408410a6400000000001400000000000000 ,
+        0x000032000000ff00000000000000000003000000010000000000020000000100 ,
+        0x0000010001000600060002000000000000000000000000000000000005000100 ,
+        0x00000000000000000000000000000000000000000000000052034c0402000200 ,
+        0x0000000000000000000000000000000000000000000030b6ff52000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002800010077696e73706f6f6c004550534f4e205374796c7573205068 ,
+        0x6f746f20373030005c5c536f6f5c6570736f6e20373030000000000000000000 ,
+        0x000000000000000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            ControlSource ="LastName"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =360
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =3540
+                    Top =60
+                    Width =780
+                    BackColor =10092543
+                    Name ="LastName"
+                    ControlSource ="LastName"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Left =60
+                    Top =60
+                    Width =660
+                    Height =216
+                    TabIndex =1
+                    Name ="GroupID"
+                    ControlSource ="GroupID"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =900
+                    Top =60
+                    Width =420
+                    TabIndex =2
+                    BackColor =10092543
+                    Name ="SSN"
+                    ControlSource ="SSN"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    BackStyle =1
+                    Left =2340
+                    Top =60
+                    Width =540
+                    TabIndex =3
+                    BackColor =10092543
+                    Name ="FirstName"
+                    ControlSource ="FirstName"
+                    StatusBarText ="Required"
+                End
+                Begin TextBox
+                    Left =2340
+                    Top =60
+                    Width =2160
+                    TabIndex =4
+                    Name ="Text21"
+                    ControlSource ="=IIf(IsNull([FirstName]),\"*** Missing First ***\",[FirstName]) & \" \" & IIf(Is"
+                        "Null([LastName]),\"*** Missing Last ***\",[LastName])"
+                End
+                Begin TextBox
+                    Left =900
+                    Top =60
+                    Width =1260
+                    TabIndex =5
+                    Name ="Text30"
+                    ControlSource ="=IIf(Len([SSN])<>9,\"**\" & Len([SSN]) & \"* \" & [SSN],[SSN])"
+                End
+            End
+        End
+    End
+End

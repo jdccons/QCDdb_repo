@@ -1,0 +1,99 @@
+Version =20
+VersionRequired =20
+Checksum =-1371697424
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =5025
+    ItemSuffix =17
+    Left =810
+    Top =2925
+    Right =5790
+    Bottom =3825
+    RecSrcDt = Begin
+        0xa4bec9bdf5f6e240
+    End
+    RecordSource ="tblAgent Without Matching ARSALESP"
+    PrtMip = Begin
+        0x0000000000000000000000000000000000000000a11300006801000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4550534f4e205374796c757320434f4c4f522036303000000000000000000000 ,
+        0x0004501094007a000f89800701000100eb0a7008640001000700680102000100 ,
+        0x6801010000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000003010000 ,
+        0x0300000001000000300100000000000000000000ea17f21e0000000002000400 ,
+        0x00000100030000000c0400000000000000000000000004014550534f4e205374 ,
+        0x796c757320434f4c4f5220363030000000000000000000004c5054313a000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x01000000000000000100010000004341504142494c49544945535b0010444556 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x1f000800260001404550534f4e205374796c757320434f4c4f52203630300045 ,
+        0x5053363030004c5054313a000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    Begin
+        Begin Label
+            TextAlign =3
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            OldBorderStyle =0
+            LabelAlign =3
+            LabelX =-124
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            LabelAlign =3
+            TextFontFamily =18
+            Height =300
+            LabelX =-124
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            ControlSource ="AGENT_LUname"
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =360
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    Left =936
+                    Top =45
+                    Width =1008
+                    Name ="AGENTid"
+                    ControlSource ="AGENTid"
+                    Begin
+                        Begin Label
+                            Top =45
+                            Width =936
+                            Height =300
+                            Name ="Text7"
+                            Caption ="AGENT:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =1872
+                    Top =45
+                    Width =2736
+                    ColumnWidth =2820
+                    TabIndex =1
+                    Name ="AGENT_LUname"
+                    ControlSource ="AGENT_LUname"
+                End
+            End
+        End
+    End
+End

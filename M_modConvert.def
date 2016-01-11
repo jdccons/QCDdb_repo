@@ -1,0 +1,158 @@
+Option Compare Database
+Option Explicit
+Function SetPending_GrpSubr(strGrpID As String) As Boolean
+
+    'Purpose:  Change the status of the Group Subscriber to PENDG
+    
+    On Error GoTo SetPending_GrpSubr_Err
+    
+    Dim dbs As DAO.Database
+    Dim strSQL As String
+   
+    Set dbs = CurrentDb()
+    
+    strSQL = "UPDATE tblSubscr SET tblSubscr."
+    strSQL = strSQL & "SUBgroupID = Null, tblSubscr.SUBstatus = 'PENDG', "
+    strSQL = strSQL & "tblSubscr.SUBeffDATE = Null, tblSubscr."
+    strSQL = strSQL & "SUBcardPRT = Null, tblSubscr."
+    strSQL = strSQL & "SUBcardPRTdte = Null, tblSubscr."
+    strSQL = strSQL & "DateUpdated = Date() "
+    strSQL = strSQL & "WHERE (((tblSubscr.SUBgroupID)='" & strGrpID & "'));"
+    
+    dbs.Execute strSQL, dbSeeChanges
+    
+    SetPending_GrpSubr = True
+    
+    ' Requery the form to take them off the deleted record
+    'If isloaded("frmGrpSubscr") Then
+    '    [forms]![frmGrpSubscr].Requery
+    'ElseIf isloaded("frmSubscrInquire") Then
+    '    [forms]![frmSubscrInquire].Requery
+    'End If
+    
+SetPending_GrpSubr_Exit:
+    Set dbs = Nothing
+    Exit Function
+    
+SetPending_GrpSubr_Err:
+    SetPending_GrpSubr = False
+    Resume SetPending_GrpSubr_Exit
+    
+End Function
+Function SetIndiv_PENDING(strCustKey As String) As Boolean
+
+    ' Change the status of the Pending Subscriber to INDIV
+    Dim dbs As DAO.Database
+    Dim strSQL As String
+    Dim strSSN As String
+    
+    If isloaded("frmPendingSubscr") Then
+        strSSN = [Forms]![frmPendingSubscr].[SUBssn]
+        Set dbs = CurrentDb()
+     
+        strSQL = "UPDATE tblSubscr SET tblSubscr.SUBstatus = 'INDIV', " & _
+            "tblSubscr.PLTcustKEY = '" & strCustKey & "', SUBcancelled =1" & _
+            "WHERE (((tblSubscr.SUBssn)='" & strSSN & "') " & _
+            "AND tblSubscr.SUBstatus = 'PENDG');"
+        dbs.Execute strSQL, dbSeeChanges
+    End If
+    
+    Set dbs = Nothing
+End Function
+
+Function SetPending_CancelGrp() As Boolean
+
+    ' Change the status of the Group Subscriber to PENDG
+    Dim dbs As DAO.Database
+    Dim strSQL As String
+    Dim rst As DAO.Recordset
+    Dim strGrp As String
+    
+    If isloaded("frmGrp") Then
+        strGrp = [Forms]![frmGrp].[ctlGROUPid]
+    ElseIf isloaded("frmGrp_Cancelled") Then
+        strGrp = [Forms]![frmGrp_Cancelled].[ctlGROUPid]
+    End If
+    
+    Set dbs = CurrentDb()
+    
+    Set rst = dbs.OpenRecordset("SELECT tblSubscr.SUBssn FROM tblSubscr WHERE (((tblSubscr.SUBgroupID)=" & strGrp & "));", dbOpenSnapshot)
+
+    'first check to make sure there are subscribers in the group
+    'if there are subscribers, change their status to pending (PENDG)
+    If rst.RecordCount > 0 Then
+    
+        strSQL = "UPDATE tblSubscr SET tblSubscr."
+        strSQL = strSQL & "SUBstatus = 'PENDG', "
+        strSQL = strSQL & "DateUpdated = Date() "
+        strSQL = strSQL & "WHERE (((tblSubscr.SUBgroupID)='" & strGrp & "'));"
+    
+        dbs.Execute strSQL, dbSeeChanges
+    
+    End If
+    
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+    
+End Function
+
+Function SetActive_CancelGrp() As Boolean
+
+    ' Change the status of the Group Subscriber to PENDG
+    Dim dbs As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    Dim strGrp As String
+    
+    If isloaded("frmGrp") Then
+        strGrp = [Forms]![frmGrp].[ctlGROUPid]
+    ElseIf isloaded("frmGrp_Cancelled") Then
+        strGrp = [Forms]![frmGrp_Cancelled].[ctlGROUPid]
+    End If
+    
+    Set dbs = CurrentDb()
+    
+    'check to make sure that the subscribers are still there
+    strSQL = "SELECT tblSubscr.SUBssn FROM tblSubscr WHERE (((tblSubscr.SUBgroupID)='" & strGrp & "'));"
+    Set rs = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    'if they are still, there then change them to active group subscripbers
+    If rs.RecordCount > 0 Then
+    
+        strSQL = "UPDATE tblSubscr SET tblSubscr."
+        strSQL = strSQL & "SUBstatus = 'GRSUB', "
+        strSQL = strSQL & "DateUpdated = Date() "
+        strSQL = strSQL & "WHERE (((tblSubscr.SUBgroupID)='" & strGrp & "') " & _
+        strSQL = strSQL & "AND tblSubscr.SUBstatus = 'PENDG');"
+    
+        dbs.Execute strSQL, dbSeeChanges
+        
+    End If
+    
+    rs.Close
+    dbs.Close
+    Set dbs = Nothing
+    
+End Function
+
+
+Function ShowGrpForm()
+
+    Dim strWhere As String
+    
+    strWhere = "[GRcancelled] = False"
+    DoCmd.OpenForm "frmGrp", acNormal, , strWhere
+       
+End Function
+
+Function ShowGrpFormCancel()
+
+    
+    
+    Dim strWhere As String
+    strWhere = "[GRcancelled] = True"
+    DoCmd.OpenForm "frmGrp", acNormal, , strWhere, , , "Cancel"
+    
+    
+End Function

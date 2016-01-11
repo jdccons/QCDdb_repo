@@ -1,0 +1,82 @@
+Option Compare Database
+
+Public g_adoRS As New ADODB.Recordset
+Public g_adoConnection As New ADODB.Connection
+Public g_adoCommand As New ADODB.Command
+
+Public g_daoRS As DAO.Recordset
+Public g_daoDB As DAO.Database
+
+Public g_lngResult                   As Long
+Public g_objPopup                    As Object
+
+Public Const cScrollBarWidth         As Long = 250
+Public Const cGap                    As Long = 100
+Public Const cButtonHeight           As Long = 400
+Public gintCounter As Long
+
+
+
+Public Sub ExecuteSQL(strSQL, Optional lngTimeout As Long)
+  On Error GoTo Err_ExecuteSQL
+
+  If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
+  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+
+  g_adoConnection.ConnectionString = SetConnxn
+  g_adoConnection.Open
+    
+  g_adoCommand.CommandTimeout = 360
+  g_adoCommand.ActiveConnection = g_adoConnection
+  g_adoCommand.CommandText = strSQL
+  
+  Set g_adoRS = g_adoCommand.Execute
+  
+  If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
+  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+ 
+Exit_ExecuteSQL:
+    Exit Sub
+
+Err_ExecuteSQL:
+    MsgBox "SQL statement could not be executed :" & vbCrLf & strSQL _
+           & vbCrLf & Err.DESCRIPTION, vbOKOnly, "QCD " & Err.Source
+    Resume Exit_ExecuteSQL
+  
+End Sub
+Public Sub LoadADORecordSet(strSQL, Optional lngTimeout As Long)
+  
+  If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
+  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+  
+  On Error GoTo Err_ExecuteSQL
+
+  g_adoConnection.ConnectionString = SetConnxn
+  g_adoConnection.Open
+    
+  'If lngTimeout > 0 Then
+  '  g_adoCommand.CommandTimeout = lngTimeout
+  'Else
+  '  g_adoCommand.CommandTimeout = 0
+  'End If
+  
+  'g_adoCommand.ActiveConnection = g_adoConnection
+  'g_adoCommand.CommandText = strSQL
+    
+   g_adoRS.CursorLocation = adUseServer
+   g_adoRS.CursorType = adOpenStatic
+  
+  'Set g_adoRS = g_adoCommand.Execute
+  
+   g_adoRS.Open strSQL, g_adoConnection
+  
+Exit_ExecuteSQL:
+    Exit Sub
+
+Err_ExecuteSQL:
+    MsgBox "SQL statement could not be executed :" & vbCrLf & strCommand _
+           & vbCrLf & Err.DESCRIPTION, vbOKOnly, "QCD " & Err.Source
+    g_adoConnection.Close
+    Resume Exit_ExecuteSQL
+
+End Sub

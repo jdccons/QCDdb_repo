@@ -1,0 +1,526 @@
+Version =19
+VersionRequired =19
+Checksum =193643730
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =10659
+    ItemSuffix =32
+    Left =1125
+    Top =270
+    Right =9120
+    Bottom =5340
+    OnNoData ="[Event Procedure]"
+    RecSrcDt = Begin
+        0x6ad7e68b76b1e240
+    End
+    RecordSource ="qrptContExpirIndiv"
+    Caption ="Contract Expiration Report- Individuals"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000d0020000d0020000d002000000000000a32900001805000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4163726f6261742044697374696c6c6572000000000000000000000000000000 ,
+        0x010402059c00ec040377000601000100ea0a6f08640001000f01580201000100 ,
+        0x5802040001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe230000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000280210005c4b03006843040000000000 ,
+        0x0000000000000000000000000000000000000000000000008583e3ac05000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x2802000045424441000001000100000001000000010000000100000000000000 ,
+        0x650042006f006f006b0000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x080022003400010041646f62655053204163726f6261742044697374696c6c65 ,
+        0x72004163726f6261742044697374696c6c657200433a5c446f63756d656e7473 ,
+        0x20616e642053657474696e67735c416c6c2055736572735c4465736b746f705c ,
+        0x2a2e70646600
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="SUBcontEND"
+        End
+        Begin BreakLevel
+            ControlSource ="SUB_LUname"
+        End
+        Begin PageHeader
+            Height =2700
+            OnFormat ="[Event Procedure]"
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Top =600
+                    Width =10650
+                    Height =360
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Text12"
+                    Caption ="Contract Expiration Report- Individuals"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =600
+                    Width =1080
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Field13"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Top =240
+                    Width =10650
+                    Height =360
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Text27"
+                    Caption ="QCD of America"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =2160
+                    Width =1155
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text5"
+                    Caption ="End Date: "
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =2160
+                    Width =2730
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text7"
+                    Caption ="ID/SSN:"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    Top =2700
+                    Width =10650
+                    Name ="Line10"
+                End
+                Begin Line
+                    Top =120
+                    Width =10650
+                    Name ="Line11"
+                End
+                Begin Line
+                    Width =10650
+                    Name ="Line12"
+                End
+                Begin Line
+                    Top =2160
+                    Width =10650
+                    Name ="Line13"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =840
+                    Width =1080
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field17"
+                    ControlSource ="=Now()"
+                    Format ="Short Time"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =3060
+                    Top =960
+                    Width =6615
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="FromTo"
+                    ControlSource ="=\"For Contracts Ending From:  \" & Format([Forms]![fdlgPrtContExpirIndiv]![From"
+                        "Date],\"m/d/yyyy\") & \" And Ending To:  \" & Format([Forms]![fdlgPrtContExpirIn"
+                        "div]![ToDate],\"m/d/yyyy\")"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =9504
+                    Top =2400
+                    Width =1155
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text28"
+                    Caption ="GeoID:"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =2400
+                    Width =1155
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text29"
+                    Caption ="Beg Date:"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =2400
+                    Width =2730
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text31"
+                    Caption ="Name:"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =3480
+                    Top =1200
+                    Width =1125
+                    Height =239
+                    FontWeight =700
+                    Name ="Text23"
+                    Caption ="Sorted by:  "
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =4605
+                    Top =1200
+                    Width =3135
+                    Height =239
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="SortedBy"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =1305
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Width =1161
+                    FontSize =10
+                    Name ="SUBcontEND"
+                    ControlSource ="SUBcontEND"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =1440
+                    Width =876
+                    FontSize =10
+                    TabIndex =1
+                    Name ="PLTcustKEY"
+                    ControlSource ="PLTcustKEY"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =2304
+                    Top =240
+                    Width =4176
+                    FontSize =10
+                    TabIndex =2
+                    Name ="SUB_LUname"
+                    ControlSource ="SUB_LUname"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =2304
+                    Top =480
+                    Width =4176
+                    FontSize =10
+                    TabIndex =3
+                    Name ="SUBstreet1"
+                    ControlSource ="SUBstreet1"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =2304
+                    Top =720
+                    Width =4176
+                    FontSize =10
+                    TabIndex =4
+                    Name ="Field5"
+                    ControlSource ="=Trim([SUBcity] & \", \" & [SUBstate] & \"  \" & [SUBzip])"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =7485
+                    Width =1551
+                    FontSize =10
+                    TabIndex =5
+                    Name ="SUBphoneHOME"
+                    ControlSource ="SUBphoneHOME"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =7200
+                    Top =480
+                    Width =3456
+                    Height =480
+                    FontSize =10
+                    TabIndex =6
+                    Name ="SUBnotes"
+                    ControlSource ="SUBnotes"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    Left =6624
+                    Top =480
+                    Width =564
+                    Height =240
+                    Name ="Text8"
+                    Caption ="Notes:"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =9510
+                    Width =1116
+                    FontSize =10
+                    TabIndex =7
+                    Name ="SUBgeoID"
+                    ControlSource ="SUBgeoID"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =2304
+                    Width =1731
+                    FontSize =10
+                    TabIndex =8
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                    FontName ="Times New Roman"
+                    InputMask ="000\\-00\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =7488
+                    Top =240
+                    Width =1551
+                    FontSize =10
+                    TabIndex =9
+                    Name ="SUBphoneWORK"
+                    ControlSource ="SUBphoneWORK"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =6636
+                    Width =855
+                    Height =285
+                    Name ="Text25"
+                    Caption ="Home: "
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =6624
+                    Top =240
+                    Width =855
+                    Height =240
+                    Name ="Text26"
+                    Caption ="Work: "
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =144
+                    Top =240
+                    Width =1161
+                    FontSize =10
+                    TabIndex =10
+                    Name ="SUBcontBEG"
+                    ControlSource ="SUBcontBEG"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                    InputMask ="99/99/0000;0;_"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =8784
+                    Width =1872
+                    Height =360
+                    FontSize =10
+                    Name ="Field14"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub PageHeader0_Format(intCancel As Integer, intFormatCount As Integer)
+
+  On Error GoTo PROC_ERR
+    Dim SortOrder As String
+  
+    Select Case gintSortOrder
+    Case 1
+        Me![SortedBy] = "Contract Ending Date"
+    Case 2
+        Me![SortedBy] = "Geographical ID"
+    End Select
+
+    SortOrder = 0
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+   '' Forms![fdlgPrtContExpirIndiv].Visible = True
+    DoCmd.Close A_FORM, "fdlgPrtContExpirIndiv"
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportIndiv"
+    
+   
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Report_NoData(Cancel As Integer)
+
+  On Error GoTo PROC_ERR
+    MsgBox "The report has no data." _
+        & "@Printing the report is canceled. " _
+        & "@Check the source of data for the report to make sure you " _
+        & "entered the correct criteria (for example, a valid range " _
+        & "of dates).", vbOKOnly + vbInformation
+   
+    Cancel = True
+    Exit Sub
+    
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+End Sub
+
+
+Private Sub Report_Open(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+  
+    Dim SortOrder As String
+    
+    Select Case gintSortOrder
+    Case 1
+        Me.GroupLevel(0).ControlSource = "SUBcontEND"
+    Case 2
+        Me.GroupLevel(0).ControlSource = "SUBgeoID"
+    End Select
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

@@ -1,0 +1,67 @@
+Operation =1
+Option =0
+Where ="(((ARTRAN.Docdate) Between #3/1/2001# And #3/31/2001#) AND ((ARTRAN.Docamt)=0))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="ARCUST"
+End
+Begin OutputColumns
+    Expression ="ARTRAN.Custkey"
+    Expression ="ARTRAN.Docdate"
+    Expression ="ARTRAN.Docamt"
+    Expression ="ARCUST.Customer_Name"
+End
+Begin Joins
+    LeftTable ="ARTRAN"
+    RightTable ="ARCUST"
+    Expression ="ARTRAN.Custkey = ARCUST.Customer_Key"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="ARTRAN.Custkey"
+        dbInteger "ColumnWidth" ="1200"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ARCUST.Customer_Name"
+        dbInteger "ColumnWidth" ="3540"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =778
+    Bottom =349
+    Left =-1
+    Top =-1
+    Right =705
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =3
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =113
+        Top =0
+        Name ="ARCUST"
+        Name =""
+    End
+End

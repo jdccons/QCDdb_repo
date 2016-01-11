@@ -1,0 +1,73 @@
+Option Compare Database
+
+Public Function CheckInvPriAgt(strSubID As String) As Boolean
+
+    Dim strSQL As String
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT tblSubscr.SubID, tblInvAgt.AGENTid, tblInvAgt.Primary " & _
+             "FROM tblSubscr INNER JOIN tblInvAgt ON tblSubscr.SubID = tblInvAgt.SubscrID " & _
+             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblInvAgt.Primary)=True));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        CheckInvPriAgt = True
+    Else
+        CheckInvPriAgt = False
+    End If
+
+    rst.Close
+    Set dbs = Nothing
+    
+End Function
+
+Public Function CheckInvSecAgt(strSubID As String) As Boolean
+
+    Dim strSQL As String
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT tblSubscr.SubID, tblInvAgt.AGENTid, tblInvAgt.Primary " & _
+             "FROM tblSubscr INNER JOIN tblInvAgt ON tblSubscr.SubID = tblInvAgt.SubscrID " & _
+             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblInvAgt.Primary)=False));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        CheckInvSecAgt = True
+    Else
+        CheckInvSecAgt = False
+    End If
+
+    rst.Close
+    Set dbs = Nothing
+    
+End Function
+
+Public Function GetInvPriAgt(strSubID As String) As Long
+
+    Dim strSQL As String
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT tblSubscr.SubID, tblInvAgt.AGENTid, tblInvAgt.Primary " & _
+             "FROM tblSubscr INNER JOIN tblInvAgt ON tblSubscr.SubID = tblInvAgt.SubscrID " & _
+             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblInvAgt.Primary)=True));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+        GetInvPriAgt = AGENTid
+    Else
+        GetInvPriAgt = 0
+    End If
+
+    rst.Close
+    Set dbs = Nothing
+    
+End Function

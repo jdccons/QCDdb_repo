@@ -1,0 +1,291 @@
+Version =20
+VersionRequired =20
+Checksum =1468507170
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =5760
+    DatasheetFontHeight =10
+    ItemSuffix =12
+    Left =6600
+    Top =1500
+    Right =12120
+    Bottom =3765
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xfe168a49709ce240
+    End
+    Caption ="Manage Import Groups"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin Section
+            Height =2520
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =720
+                    Top =60
+                    Width =4320
+                    Height =480
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Label0"
+                    Caption ="Manage Import Groups"
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    ColumnCount =2
+                    ListWidth =4665
+                    Left =2280
+                    Top =840
+                    Width =2160
+                    Height =300
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    Name ="cboGrp"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW [tblGrp].[GROUPid], [tblGrp].[GRname] FROM [tblGrp];"
+                    ColumnWidths ="960;3705"
+                    AfterUpdate ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =840
+                            Top =840
+                            Width =1380
+                            Height =240
+                            Name ="Select Group_Label"
+                            Caption ="Select Group"
+                            EventProcPrefix ="Select_Group_Label"
+                        End
+                    End
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    ColumnCount =3
+                    ListWidth =3765
+                    Left =2280
+                    Top =1320
+                    Width =2160
+                    Height =300
+                    TabIndex =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    Name ="cboImportSpec"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tlkpImportSpec.ImportType, tlkpImportSpec.ImportDesc FROM tlk"
+                        "pImportSpec GROUP BY tlkpImportSpec.ImportType, tlkpImportSpec.ImportDesc ORDER "
+                        "BY tlkpImportSpec.ImportType;"
+                    ColumnWidths ="0;3744;0"
+                    AfterUpdate ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =840
+                            Top =1320
+                            Width =1380
+                            Height =300
+                            Name ="ImportType_Label"
+                            Caption ="Import Type"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =120
+                    Top =1680
+                    Width =1020
+                    Height =300
+                    TabIndex =2
+                    BackColor =10092543
+                    Name ="txtGroupID"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =1380
+                    Top =1920
+                    Width =1140
+                    Height =300
+                    TabIndex =3
+                    BackColor =10092543
+                    Name ="txtImportID"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =60
+                    Top =2040
+                    Width =1140
+                    Height =300
+                    TabIndex =4
+                    BackColor =10092543
+                    Name ="txtImportName"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3300
+                    Top =1920
+                    Width =1380
+                    Height =540
+                    TabIndex =5
+                    Name ="cmdAddSpec"
+                    Caption ="Add Spec"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4860
+                    Top =1920
+                    Width =786
+                    Height =546
+                    TabIndex =6
+                    Name ="cmdClose"
+                    Caption ="Command11"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub cboGrp_AfterUpdate()
+    
+    With Me
+        .txtGROUPid = .cboGrp.Column(0)
+    End With
+    
+End Sub
+
+Private Sub cboImportSpec_AfterUpdate()
+    
+    With Me
+        .txtImportID = .cboImportSpec.Column(0)
+        .txtImportName = .cboImportSpec.Column(1)
+    End With
+    
+End Sub
+Private Sub cmdAddSpec_Click()
+    'Purpose:  This procedure adds a file spec to the lookup table
+    '          tlkpImportSpec
+    '--------------------------------------------------------
+    ' Parameters:  - None
+    ' Programmer:  John Criswell
+    ' Create Date:  12/07/07
+    ' Update Date:  12/07/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+        
+    On Error GoTo ErrorHandler
+        
+    Dim db As DAO.Database
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    DoCmd.SetWarnings False
+    DoCmd.Hourglass True
+    With Me
+        If Not IsNull(.txtGROUPid) Or Not IsNull(.txtImportID) Or Not IsNull(.txtImportName) Then
+            strSQL = "Insert INTO tlkpImportSpec (GroupID, ImportType, ImportDesc) " & _
+            "VALUES ('" & .txtGROUPid & "'," & .txtImportID & ",'" & .txtImportName & "')"
+            db.Execute strSQL, dbSeeChanges
+        Else
+            MsgBox "You must populate the combo boxes!"
+        End If
+    End With
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+    Set db = Nothing
+        
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+
+
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub

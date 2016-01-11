@@ -1,0 +1,51 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBgroupID)=\"BEXIN\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SUBgroupID"
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =48
+    Right =1258
+    Bottom =769
+    Left =-1
+    Top =-1
+    Right =1185
+    Bottom =351
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =409
+        Bottom =307
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

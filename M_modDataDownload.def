@@ -1,0 +1,92 @@
+Option Compare Database
+Option Explicit
+
+Function AddFieldToTableDef(strDBPath As String, strTableName As String, _
+    strFieldName As String, intType As Integer, Optional intSize As Integer) As Boolean
+    ' This procedure adds a field to a specified table and
+    ' sets its default value and position within the table. If the field already
+    ' exists, then the procedure prompts the user to delete and recreate it.
+    '
+    ' Arguments:
+    ' strDbPath: Path to the database.
+    ' strTableName: Name of table.
+    ' strFieldName: Name of field.
+    ' intType: Field data type.
+    ' intSize: Optional integer value specifying field size.
+    '
+    ' Returns:
+    ' A Boolean value (True/False) indicating whether the operation was successful.
+        
+    Dim dbs As DAO.Database
+    Dim tdf As TableDef
+    Dim fld As Field
+
+    On Error GoTo Err_AddFieldToTableDef
+    Set dbs = CurrentDb()
+    Set tdf = dbs.TableDefs(strTableName)
+    ' Check whether intSize argument was passed in.
+    If IsMissing(intSize) Then
+        ' Create field of default size.
+        Set fld = tdf.CreateField(strFieldName, intType)
+    Else
+        ' Create field of specified size.
+        Set fld = tdf.CreateField(strFieldName, intType, intSize)
+    End If
+    ' Set ordinal position for field.
+    'fld.OrdinalPosition = 1
+    tdf.Fields.Append fld
+    AddFieldToTableDef = True
+    
+Exit_AddFieldToTableDef:
+    On Error Resume Next
+    dbs.Close
+    Set dbs = Nothing
+    Exit Function
+
+Err_AddFieldToTableDef:
+    If Err = conFieldExists Then
+        Dim strMsg As String
+        strMsg = "Field already exists. Delete and recreate?"
+        If MsgBox(strMsg, vbYesNo) = vbYes Then
+            tdf.Fields.Delete strFieldName
+            Resume
+        End If
+    Else
+        MsgBox "Error: " & Err & vbCrLf & Err.DESCRIPTION
+    End If
+    AddFieldToTableDef = False
+    Resume Exit_AddFieldToTableDef
+End Function
+
+Function DeleteTable(strDBPath As String, strTableName As String) As Boolean
+    ' This procedure deletes a specified table from a database.
+    '
+    ' Arguments:
+    ' strDbPath: The path to the database.
+    ' strTableName: Name of table to delete.
+    '
+    ' Returns:
+    ' A Boolean value (True/False) indicating whether the operation was successful.
+    
+    Dim dbs As DAO.Database
+    Dim tdf As TableDef
+    
+    On Error GoTo Err_DeleteTable
+    Set dbs = CurrentDb() ' We just use the currentdb()
+    dbs.TableDefs.Delete strTableName
+    DeleteTable = True
+    
+Exit_DeleteTable:
+    On Error Resume Next
+    dbs.Close
+    Exit Function
+
+Err_DeleteTable:
+    If Err = conNotInCollection Then
+        MsgBox "Table '" & strTableName & "' does not exist in database '" & dbs.Name & "'."
+    Else
+        MsgBox Err & ": " & vbCrLf & Err.DESCRIPTION
+    End If
+    DeleteTable = False
+    Resume Exit_DeleteTable
+End Function

@@ -1,0 +1,854 @@
+Option Compare Database
+Option Explicit
+'****** Code Start ********
+Function fIsLoaded(ByVal strFormName As String) As Integer
+'Returns a 0 if form is not open or a -1 if Open
+    If SysCmd(acSysCmdGetObjectState, acForm, strFormName) <> 0 Then
+        If Forms(strFormName).CurrentView <> 0 Then
+            fIsLoaded = True
+        End If
+    End If
+End Function
+'****** Code End ********
+
+'************ Code Start ***************
+' This code was originally written by Dev Ashish.
+' It is not to be altered or distributed,
+' except as part of an application.
+' You are free to use it in any application,
+' provided the copyright notice is left unchanged.
+'
+' Code Courtesy of
+' Dev Ashish
+'
+Function fEnumControls(ByVal strfrmToEnum As String)
+'prints out control's Type and Name
+'will NOT enumerate controls within an embedded subform
+Dim astrCtlName() As String
+Dim I As Integer, intCnt As Integer
+Dim frm As Form
+'Un-Comment the next two lines for Access 95
+'Const acPage = 124
+'Const acTabCtl = 123
+    'if form is closed, exit function
+    If Not fIsLoaded(strfrmToEnum) Then
+        MsgBox "Form " & strfrmToEnum & " is probably closed!! " & _
+            vbCrLf & "Please open it & try again.", vbCritical
+        Exit Function
+    End If
+
+    Set frm = Forms(strfrmToEnum)
+    'Count the number of controls
+    intCnt = frm.Count
+    
+    'Initialize the array to hold control names
+    ReDim astrCtlName(0 To intCnt - 1, 0 To 1)
+
+    For I = 0 To intCnt - 1
+        astrCtlName(I, 0) = frm(I).Name
+        'Use ControlType to determine the Type of Control
+        Select Case frm(I).ControlType
+            Case acLabel: astrCtlName(I, 1) = "Label"
+            Case acRectangle: astrCtlName(I, 1) = "Rectangle"
+            Case acLine: astrCtlName(I, 1) = "Line"
+            Case acImage: astrCtlName(I, 1) = "Image"
+            Case acCommandButton: astrCtlName(I, 1) = "Command Button"
+            Case acOptionButton: astrCtlName(I, 1) = "Option button"
+            Case acCheckBox: astrCtlName(I, 1) = "Check box"
+            Case acOptionGroup: astrCtlName(I, 1) = "Option group"
+            Case acBoundObjectFrame: astrCtlName(I, 1) = "Bound object frame"
+            Case acTextBox: astrCtlName(I, 1) = "Text Box"
+            Case acListBox: astrCtlName(I, 1) = "List box"
+            Case acComboBox: astrCtlName(I, 1) = "Combo box"
+            Case acSubform: astrCtlName(I, 1) = "SubForm"
+            Case acObjectFrame: astrCtlName(I, 1) = "Unbound object frame or chart"
+            Case acPageBreak: astrCtlName(I, 1) = "Page break"
+            Case acPage: astrCtlName(I, 1) = "Page"
+            Case acCustomControl: astrCtlName(I, 1) = "ActiveX (custom) control"
+            Case acToggleButton: astrCtlName(I, 1) = "Toggle Button"
+            Case acTabCtl: astrCtlName(I, 1) = "Tab Control"
+        End Select
+    Next I
+    
+    'Print out the array in an orderly fashion
+    Debug.Print "Control Name", "Control Type"
+    Debug.Print "------------", "------------"
+    For I = 0 To intCnt - 1
+        Debug.Print astrCtlName(I, 0), astrCtlName(I, 1)
+    Next I
+    Erase astrCtlName
+
+
+End Function
+'************ Code End **************
+
+Public Sub testSQL2(strCriteria)
+ 
+    Dim db As DAO.Database
+    Dim strSQL As String
+
+    Set db = CurrentDb()
+    
+    ' Get the
+    strSQL = "INSERT INTO tblCommission ( COMMcustKEY, COMMcustNAME, " & _
+        "COMMcheckNO, COMMcheckDATE, COMMcheckAMT, COMMagent, COMMrate, " & _
+        "COMMagentTYPE, COMMcustClass ) SELECT qsel_NLTXD.GroupID, tblGrp.GRname, " & _
+        "qsel_NLTXD.Docno, qsel_NLTXD.Apldate, [Trnamt]*-1 AS CheckAmt, " & _
+        "tblGrpAgt.AGENTid, 1 AS AGENTrate, 1 AS AgentType, 'IBCR' AS CustClass " & _
+        "FROM qsel_NLTXD INNER JOIN tblGrp ON qsel_NLTXD.GroupID = tblGrp.GroupID " & _
+        "INNER JOIN tblGrpAgt ON qsel_NLTXD.GroupID = tblGrpAgt.GroupID " & _
+        "WHERE (((qsel_NLTXD.Apldate) " & strCriteria & ") " & _
+        "AND ((Trim(qsel_NLTXD.AccountNo))='70220000') " & _
+        "AND ((tblGrpAgt.AGENTid) <> 'CORPT'));"
+    
+    db.Execute strSQL
+    db.Close
+    Set db = Nothing
+End Sub
+Sub SeeTbl()
+
+   Dim dbs As DAO.Database
+   Dim rst As DAO.Recordset
+   Dim tdfSubscr As TableDef
+   Dim tdfLoop As TableDef
+   Dim prpLoop As Property
+
+   Set dbs = CurrentDb()
+
+   ' Create new TableDef object, append Field objects
+   ' to its Fields collection, and append TableDef
+   ' object to the TableDefs collection of the
+   ' Database object.
+   'Set tdfNew = dbsNorthwind.CreateTableDef("NewTableDef")
+   'tdfNew.Fields.Append tdfNew.CreateField("Date", dbDate)
+   'dbsNorthwind.TableDefs.Append tdfNew
+    
+   'Set tdfSubscr = dbs.TableDefs("tblSubscr")
+   'Debug.Print tdfSubscr.Fields
+   
+   With dbs
+      
+      ' Enumerate TableDefs collection.
+'      For Each tdfLoop In .TableDefs
+'           Set rst = dbs.OpenRecordset("tblTables", dbOpenDynaset)
+'           With rst
+'            .AddNew
+'            .Fields("Name") = tdfLoop.Name
+'            .Update
+'            Debug.Print "  " & tdfLoop.Name
+'           End With
+'      Next tdfLoop
+
+' Enumerate TableDefs collection.
+
+      Dim strName As String
+      
+      For Each tdfLoop In .TableDefs
+           
+           
+           strName = tdfLoop.Name
+           Debug.Print strName
+           If Mid(strName, 1, 4) = "dbo_" Then
+                'Debug.Print tdfLoop.Name
+                tdfLoop.Name = LTrim(RTrim(Mid(strName, 5, Len(strName))))
+                Debug.Print tdfLoop.Name
+           End If
+           
+      Next tdfLoop
+
+'      With tdfNew
+'         Debug.Print "Properties of " & .Name
+'
+'         ' Enumerate Properties collection of new
+'         ' TableDef object, only printing properties
+'         ' with non-empty values.
+'         For Each prpLoop In .Properties
+'            Debug.Print "  " & prpLoop.Name & " - " & _
+'               IIf(prpLoop = "", "[empty]", prpLoop)
+'         Next prpLoop
+'
+'      End With
+
+      ' Delete new TableDef since this is a
+      ' demonstration.
+'      .TableDefs.Delete tdfNew.Name
+'      .Close
+  Set dbs = Nothing
+
+
+End With
+
+
+
+End Sub
+Sub Fields()
+
+   'fields
+   Dim dbs As Database
+   Dim rstEmployees As Recordset
+   Dim fldTableDef As Field
+   Dim fldQueryDef As Field
+   Dim fldRecordset As Field
+   Dim fldRelation As Field
+   Dim fldIndex As Field
+   Dim prpLoop As Property
+
+   Set dbs = CurrentDb()
+   Set rstEmployees = dbs.OpenRecordset("tblSubscr_local", dbOpenSnapshot)
+      
+
+   ' Assign a Field object from different Fields
+   ' collections to object variables.
+   'Set fldTableDef = _
+      dbsNorthwind.TableDefs(0).Fields(0)
+   'Set fldQueryDef = dbsNorthwind.QueryDefs(0).Fields(0)
+   'Set fldRecordset = rstEmployees.Fields(0)
+   'Set fldRelation = dbsNorthwind.Relations(0).Fields(0)
+   'Set fldIndex = _
+      dbsNorthwind.TableDefs(0).Indexes(0).Fields(0)
+
+   ' Print report.
+   'FieldOutput "TableDef", fldTableDef
+   'FieldOutput "QueryDef", fldQueryDef
+   FieldOutput "Recordset", fldRecordset
+   'FieldOutput "Relation", fldRelation
+   'FieldOutput "Index", fldIndex
+
+   rstEmployees.Close
+   dbs.Close
+
+End Sub
+
+Sub FieldOutput(strTemp As String, fldTemp As Field)
+   ' Report function for FieldX.
+
+   Dim prpLoop As Property
+
+   Debug.Print "Valid Field properties in " & strTemp
+
+   ' Enumerate Properties collection of passed Field
+   ' object.
+   For Each prpLoop In fldTemp.Properties
+      ' Some properties are invalid in certain
+      ' contexts (the Value property in the Fields
+      ' collection of a TableDef for example). Any
+      ' attempt to use an invalid property will
+      ' trigger an error.
+      On Error Resume Next
+      Debug.Print "  " & prpLoop.Name & " = " & _
+         prpLoop.Value
+      On Error GoTo 0
+   Next prpLoop
+
+End Sub
+
+Sub FieldsCollection()
+
+   Dim dbs As DAO.Database
+   Dim tdfNew As TableDef
+   Dim fldField As Field
+   Dim prpLoop As Property
+
+   Set dbs = CurrentDb()
+
+'   Set tdfNew = dbsNorthwind.CreateTableDef("NewTableDef")
+'
+'   ' Create and append new Field objects for the new
+'   ' TableDef object.
+'   With tdfNew
+'      ' The CreateField method will set a default Size
+'      ' for a new Field object if one is not specified.
+'      .Fields.Append .CreateField("TextField", dbText)
+'      .Fields.Append .CreateField("IntegerField", dbInteger)
+'      .Fields.Append .CreateField("DateField", dbDate)
+'   End With
+'
+'   dbsNorthwind.TableDefs.Append tdfNew
+'
+'   Debug.Print "Properties of new Fields in " & tdfNew.Name
+
+    Dim tdfSubscr As TableDef
+    Set tdfSubscr = dbs.TableDefs("tblSubscr_local")
+
+   ' Enumerate Fields collection to show the properties of
+   ' the new Field objects.
+   Dim intFldCount As Integer
+   Set fldField = tdfSubscr.Fields(0)
+   Dim I As Integer
+   intFldCount = tdfSubscr.Fields.Count
+   
+   
+        Debug.Print fldField.Name
+        
+   
+  
+   
+   For Each fldField In tdfSubscr.Fields
+
+        Debug.Print fldField.Name
+        Debug.Print fldField.Type
+        Debug.Print fldField.ActualSize
+        Debug.Print fldField.Value
+        'Debug.Print fldField.DESCRIPTION
+        Debug.Print fldField.DefinedSize
+
+   Next fldField
+'
+'
+'   For Each fldLoop In tdfSubscr.Fields
+'      Debug.Print "  " & fldLoop.Name
+'
+'      For Each prpLoop In fldLoop.Properties
+'         ' Properties that are invalid in the context of
+'         ' TableDefs will trigger an error if an attempt
+'         ' is made to read their values.
+'         On Error Resume Next
+'         Debug.Print "    " & prpLoop.Name & " - " & _
+'            IIf(prpLoop = "", "[empty]", prpLoop)
+'         On Error GoTo 0
+'      Next prpLoop
+'
+'   Next fldLoop
+'
+'   ' Delete new TableDef because this is a demonstration.
+   dbs.Close
+'
+End Sub
+
+Public Function ReadTableFields()
+'modified from ReadTableFields2k.mdb
+'  http://www.rogersaccesslibrary.com/TableOfContents2k.asp
+'  On Error GoTo Err_ReadTableFields
+'    Dim dbs As DAO.Database
+'    Dim tdf As DAO.TableDef
+'    Dim fld As DAO.Field
+'    Dim rst As DAO.Recordset
+'    Dim prp As DAO.Property
+'    Dim prps As DAO.Properties
+'    Set dbs = CurrentDb
+'    'clear the table
+'    DoCmd.SetWarnings False
+'    DoCmd.RunSQL ("Delete * from tblTableFields")
+'    DoCmd.SetWarnings True
+'    Set rst = dbs.OpenRecordset("tblTableFields", dbOpenDynaset)
+'    ' Enumerate all the tables in the TableDefs collection
+'    For Each tdf In dbs.TableDefs
+'        ' Enumerate all fields in Fields collection of TableDef object.
+'        ' except system tables
+'        If Not tdf.Name Like "MSys*" Then
+'            For Each fld In tdf.Fields
+'                rst.AddNew
+'                rst!TableName = tdf.Name
+'                rst!ColumnName = fld.Name
+'                rst!ColumnID = fld.OrdinalPosition
+'                rst!ColumnType = fld.Type
+'                rst!ColumnMaxSize = fld.Size
+'
+'
+''problem here
+''[a] what is the first parameter?
+'If HasProperty(tdf.Fields(fld.Name), "Description") Then
+'  rst!ColumnDescription = fld.Properties("Description")
+'Else
+'  rst!ColumnDescription = Null
+'End If
+'
+'
+'                rst.Update
+'            Next fld
+'        End If
+'    Next tdf
+'    Set dbs = Nothing
+'
+'
+'Exit_ReadTableFields:
+'    Exit Function
+'
+'
+'Err_ReadTableFields:
+'    Debug.Print "Error ", tdf.Name, fld.Name
+'    MsgBox Err.Number, Err.DESCRIPTION
+'    Resume Exit_ReadTableFields
+End Function
+Sub FormControls()
+    
+    Dim frm As Form
+    Dim ctl As Control
+    
+    
+    ' Enumerate Controls collection.
+    For Each ctl In frm.Controls
+    
+        
+        ' Check to see if control is text box.
+        If ctl.ControlType = acTextBox Then
+            ' Set control properties.
+            With ctl
+                .SetFocus
+                .Enabled = True
+                .Height = 400
+                .SpecialEffect = 0
+            End With
+        End If
+    Next ctl
+
+End Sub
+Function TableInfo(strTableName As String)
+
+On Error GoTo TableInfoErr
+   ' Purpose:   Display the field names, types, sizes and descriptions for a table.
+   ' Argument:  Name of a table in the current database.
+   Dim db As DAO.Database
+   Dim tdf As DAO.TableDef
+   Dim fld As DAO.Field
+   
+   Set db = CurrentDb()
+   Set tdf = db.TableDefs(strTableName)
+   Debug.Print "FIELD NAME", "FIELD TYPE", "SIZE", "DESCRIPTION"
+   Debug.Print "==========", "==========", "====", "==========="
+
+   For Each fld In tdf.Fields
+      Debug.Print fld.Name,
+      Debug.Print FieldTypeName(fld),
+      Debug.Print fld.Size,
+      Debug.Print GetDescrip(fld)
+   Next
+   Debug.Print "==========", "==========", "====", "==========="
+
+TableInfoExit:
+   Set db = Nothing
+   Exit Function
+
+TableInfoErr:
+   Select Case Err
+   Case 3265&  'Table name invalid
+      MsgBox strTableName & " table doesn't exist"
+   Case Else
+      Debug.Print "TableInfo() Error " & Err & ": " & Error
+   End Select
+   Resume TableInfoExit
+End Function
+Function GetDescrip(obj As Object) As String
+    On Error Resume Next
+    GetDescrip = obj.Properties("Description")
+End Function
+Function FieldTypeName(fld As DAO.Field) As String
+    'Purpose: Converts the numeric results of DAO Field.Type to text.
+    Dim strReturn As String    'Name to return
+
+    Select Case CLng(fld.Type) 'fld.Type is Integer, but constants are Long.
+        Case dbBoolean: strReturn = "Yes/No"            ' 1
+        Case dbByte: strReturn = "Byte"                 ' 2
+        Case dbInteger: strReturn = "Integer"           ' 3
+        Case dbLong                                     ' 4
+            If (fld.Attributes And dbAutoIncrField) = 0& Then
+                strReturn = "Long Integer"
+            Else
+                strReturn = "AutoNumber"
+            End If
+        Case dbCurrency: strReturn = "Currency"         ' 5
+        Case dbSingle: strReturn = "Single"             ' 6
+        Case dbDouble: strReturn = "Double"             ' 7
+        Case dbDate: strReturn = "Date/Time"            ' 8
+        Case dbBinary: strReturn = "Binary"             ' 9 (no interface)
+        Case dbText                                     '10
+            If (fld.Attributes And dbFixedField) = 0& Then
+                strReturn = "Text"
+            Else
+                strReturn = "Text (fixed width)"        '(no interface)
+            End If
+        Case dbLongBinary: strReturn = "OLE Object"     '11
+        Case dbMemo                                     '12
+            If (fld.Attributes And dbHyperlinkField) = 0& Then
+                strReturn = "Memo"
+            Else
+                strReturn = "Hyperlink"
+            End If
+        Case dbGUID: strReturn = "GUID"                 '15
+
+        'Attached tables only: cannot create these in JET.
+        Case dbBigInt: strReturn = "Big Integer"        '16
+        Case dbVarBinary: strReturn = "VarBinary"       '17
+        Case dbChar: strReturn = "Char"                 '18
+        Case dbNumeric: strReturn = "Numeric"           '19
+        Case dbDecimal: strReturn = "Decimal"           '20
+        Case dbFloat: strReturn = "Float"               '21
+        Case dbTime: strReturn = "Time"                 '22
+        Case dbTimeStamp: strReturn = "Time Stamp"      '23
+
+        'Constants for complex types don't work prior to Access 2007.
+        Case 101&: strReturn = "Attachment"         'dbAttachment
+        Case 102&: strReturn = "Complex Byte"       'dbComplexByte
+        Case 103&: strReturn = "Complex Integer"    'dbComplexInteger
+        Case 104&: strReturn = "Complex Long"       'dbComplexLong
+        Case 105&: strReturn = "Complex Single"     'dbComplexSingle
+        Case 106&: strReturn = "Complex Double"     'dbComplexDouble
+        Case 107&: strReturn = "Complex GUID"       'dbComplexGUID
+        Case 108&: strReturn = "Complex Decimal"    'dbComplexDecimal
+        Case 109&: strReturn = "Complex Text"       'dbComplexText
+        Case Else: strReturn = "Field type " & fld.Type & " unknown"
+    End Select
+
+    FieldTypeName = strReturn
+End Function
+
+Sub testSQL()
+
+    Dim strSQL As String
+    Dim strGroupID As String
+    strGroupID = "AAPUM"
+    
+    
+    strSQL = "SELECT tblRates.PlanID, tblRates.CoverID, " & _
+             "tblRates.GroupID, tblPlans.PlanDesc, tblCoverage." & _
+             "COVERdescr " & _
+             "FROM (tblRates INNER JOIN tblCoverage ON tblRates." & _
+             "CoverID = tblCoverage.CoverID) INNER JOIN " & _
+             "tblPlans ON tblRates.PlanID = tblPlans.PlanID " & _
+             "WHERE (((tblRates.GroupID)='AAPUM') AND (" & _
+             "(tblPlans.PlanDesc)='QCD Only') AND ((tblCoverage." & _
+             "COVERdescr)='INDIVIDUAL ONLY')) " & _
+             "ORDER BY tblRates.PlanID, tblRates.CoverID;"
+             
+    Debug.Print strSQL
+
+End Sub
+Public Sub ProcessRates()
+
+On Error GoTo ErrorHandler
+
+    Dim dbs As DAO.Database
+    Dim strSQL As String
+    
+    Set dbs = CurrentDb()
+        
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    'Debug.Print "Multi-Color"
+    ' update the multi-color groups
+    dbs.Execute "DELETE FROM __MultiColor"
+    DoCmd.OpenQuery "__qappRates_MultiColor"  ' add records to temp table
+    DoCmd.OpenQuery "__qupdRates_MultiColor" ' update miscellaneous field in tblRates with 'Multi-Color AA'
+        
+    'Debug.Print "QCD Only"
+    ' update the QCD only groups
+    dbs.Execute "DELETE FROM __QCDOnlyGroups"
+    DoCmd.OpenQuery "__qappRates_QCDOnly" ' add records to temp table
+    DoCmd.OpenQuery "__qupdRates_QCDOnly" ' update miscellaneous field in tblRates with 'QCD Only'
+    strSQL = "UPDATE tblRates SET tblRates.PlanID = 5 " & _
+             "WHERE (((tblRates.Miscellaneous)='QCD Only'));"
+    dbs.Execute strSQL, dbSeeChanges       ' updates the PlanID with 5 for all QCD Only records
+    
+    'Debug.Print "Single Color"
+    ' update the single color groups
+    dbs.Execute "DELETE FROM __tblSubscrs_PlanIDs"
+    DoCmd.OpenQuery "__qappRates_SingleColor"
+    DoCmd.OpenQuery "__qupdRates_SingleColor"
+    
+    'Debug.Print "Fix PlanIDs"
+    ' copy the planID down to all coverages within a group for single color groups
+    Call FixPlanIDs
+      
+    'Debug.Print "Update Individuals"
+    ' update the individuals
+    strSQL = "UPDATE tblRates SET tblRates.PlanID = 5, tblRates.Miscellaneous = 'Individuals' " & _
+             "WHERE (((tblRates.GroupID) Like 'INDV*'));"
+    dbs.Execute strSQL, dbSeeChanges
+    
+    'Debug.Print "Update Cancelled Groups"
+    ' update the cancelled groups
+    dbs.Execute "DELETE FROM __tblCancelledGroups"
+    DoCmd.OpenQuery "__qappRates_CancelledGroups"
+    DoCmd.OpenQuery "__qupdRates_CancelledGroups"
+    
+    'Debug.Print "Update Groups with No Employees"
+    ' update groups with no employees
+    dbs.Execute "DELETE FROM __GroupsWithNoEmps"
+    DoCmd.OpenQuery "__qappGroupswithNoEmps"
+    DoCmd.OpenQuery "__qupdGroupsWithNoEmps"
+    strSQL = "UPDATE tblRates SET tblRates.PlanID = 6, tblRates.CoverID = 5 " & _
+             "WHERE (((tblRates.Miscellaneous)='No Employees'));"
+    dbs.Execute strSQL, dbSeeChanges
+    
+    'Debug.Print "Update all remaining miscellaneous fields with 'Single Color AA'"
+    ' update all remaining miscellaneous fields with 'Single Color AA'
+    strSQL = "UPDATE tblRates SET tblRates.Miscellaneous = 'Single Color AA' " & _
+             "WHERE (((tblRates.Miscellaneous) Is Null));"
+    dbs.Execute strSQL, dbSeeChanges
+    
+    dbs.Close
+    Set dbs = Nothing
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+    'Debug.Print "Finished"
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+   
+
+End Sub
+
+Sub FixPlanIDs()
+
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Dim GROUPid As String
+    Dim PlanID As Integer
+    Dim GroupID2 As String
+    
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT tblRates.GroupID, tblRates.PlanID, " & _
+             "tblRates.CoverID " & _
+             "FROM tblRates " & _
+             "WHERE (((tblRates.Miscellaneous) Is Null)) " & _
+             "ORDER BY tblRates.GroupID, tblRates.PlanID DESC , " & _
+             "tblRates.CoverID;"
+             
+    Set rst = dbs.OpenRecordset(strSQL)
+    
+    PlanID = Nz(rst.Fields("PlanID"))
+    
+    Do While Not rst.EOF
+        GROUPid = rst.Fields("GroupID")
+        
+        If GROUPid = GroupID2 Then
+            PlanID = PlanID
+            rst.Edit
+            rst.Fields("PlanID") = PlanID
+            rst.Update
+        Else
+            PlanID = Nz(rst.Fields("PlanID"))
+        End If
+        
+        GroupID2 = GROUPid
+        
+        rst.MoveNext
+    Loop
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+
+End Sub
+Sub UpdateRateID()
+
+
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Dim I As Long
+    
+    I = 1
+
+    Set dbs = CurrentDb()
+    strSQL = "SELECT * " & _
+             "FROM tblRates_temp"
+    Set rst = dbs.OpenRecordset(strSQL)
+    Do While Not rst.EOF
+        With rst
+            .Edit
+            .Fields("RateID") = I
+            .Update
+            .MoveNext
+            I = I + 1
+        End With
+    Loop
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+
+End Sub
+Public Function CtSubs(strGroupID As String) As Integer
+
+
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT Count(tblSubscr.SubSSN) AS CountOfSubSSN " & _
+             "FROM tblSubscr " & _
+             "WHERE (((tblSubscr.SubGroupID)='" & strGroupID & "'));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   
+    CtSubs = rst.Fields("CountOfSubSSN")
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+    
+End Function
+
+Public Function CtGrps(ParentGroupID As String) As Integer
+
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+
+    Set dbs = CurrentDb()
+    
+    If IsNull(ParentGroupID) Then
+        Exit Function
+    End If
+    
+    strSQL = "SELECT Count(tblGrp.GroupID) AS CountOfGrps " & _
+             "FROM tblGrp " & _
+             "WHERE (((tblGrp.ParentGroupID)='" & ParentGroupID & "'));"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   
+    CtGrps = rst.Fields("CountOfGrps")
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+
+
+
+End Function
+
+Public Function CtSubs_GL(GROUPid As String) As Integer
+
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT qryGroupLinkData.GroupID, Count" & _
+             "(qryGroupLinkData.[EISSN#]) AS SubCt " & _
+             "FROM qryGroupLinkData " & _
+             "WHERE (((qryGroupLinkData.GroupID)='" & GROUPid & "')) " & _
+             "GROUP BY qryGroupLinkData.GroupID " & _
+             "ORDER BY qryGroupLinkData.GroupID;"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   
+    CtSubs_GL = rst.Fields("SubCt")
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+
+End Function
+Sub AssignTranNo()
+
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Dim strTranNo As String
+    
+    strTranNo = "1000"
+    
+    Set dbs = CurrentDb()
+    
+    strSQL = "SELECT * " & _
+             "FROM tblInvHdrPreliminary"
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    Do While Not rst.EOF
+        rst.Edit
+        rst.Fields("Tranno") = strTranNo
+        rst.Update
+        strTranNo = strTranNo + 1
+        rst.MoveNext
+    Loop
+
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+
+End Sub
+Sub DropDBO()
+
+   Dim dbs As DAO.Database
+   Dim rst As DAO.Recordset
+   Dim tdfSubscr As TableDef
+   Dim tdfLoop As TableDef
+   Dim prpLoop As Property
+
+   Set dbs = CurrentDb()
+
+   ' Create new TableDef object, append Field objects
+   ' to its Fields collection, and append TableDef
+   ' object to the TableDefs collection of the
+   ' Database object.
+   'Set tdfNew = dbsNorthwind.CreateTableDef("NewTableDef")
+   'tdfNew.Fields.Append tdfNew.CreateField("Date", dbDate)
+   'dbsNorthwind.TableDefs.Append tdfNew
+    
+   'Set tdfSubscr = dbs.TableDefs("tblSubscr")
+   'Debug.Print tdfSubscr.Fields
+   
+   With dbs
+      
+      ' Enumerate TableDefs collection.
+'      For Each tdfLoop In .TableDefs
+'           Set rst = dbs.OpenRecordset("tblTables", dbOpenDynaset)
+'           With rst
+'            .AddNew
+'            .Fields("Name") = tdfLoop.Name
+'            .Update
+'            Debug.Print "  " & tdfLoop.Name
+'           End With
+'      Next tdfLoop
+
+' Enumerate TableDefs collection.
+
+      Dim strName As String
+      
+      For Each tdfLoop In .TableDefs
+           
+           
+           strName = tdfLoop.Name
+           Debug.Print strName
+           If Mid(strName, 1, 4) = "dbo_" Then
+                'Debug.Print tdfLoop.Name
+                tdfLoop.Name = LTrim(RTrim(Mid(strName, 5, Len(strName))))
+                Debug.Print tdfLoop.Name
+           End If
+           
+      Next tdfLoop
+
+'      With tdfNew
+'         Debug.Print "Properties of " & .Name
+'
+'         ' Enumerate Properties collection of new
+'         ' TableDef object, only printing properties
+'         ' with non-empty values.
+'         For Each prpLoop In .Properties
+'            Debug.Print "  " & prpLoop.Name & " - " & _
+'               IIf(prpLoop = "", "[empty]", prpLoop)
+'         Next prpLoop
+'
+'      End With
+
+      ' Delete new TableDef since this is a
+      ' demonstration.
+'      .TableDefs.Delete tdfNew.Name
+'      .Close
+  Set dbs = Nothing
+
+
+End With
+
+
+
+End Sub

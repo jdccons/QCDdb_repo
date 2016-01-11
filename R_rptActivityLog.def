@@ -1,0 +1,408 @@
+Version =17
+VersionRequired =17
+Checksum =-1480929016
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =10836
+    ItemSuffix =47
+    Left =795
+    Top =1110
+    Right =11580
+    Bottom =6360
+    Filter ="([LogDate] BETWEEN #1/1/99# AND #12/31/99# AND ([LogCallBack] BETWEEN #1/1/00# A"
+        "ND #12/31/00#) AND ([LogQCDRep]='TDF'))"
+    RecSrcDt = Begin
+        0x21d4e3d2f1d2e140
+    End
+    RecordSource ="qrptActivityLog"
+    Caption ="Monthly Group Billing Report"
+    OnClose ="[Event Procedure]"
+    PrtMip = Begin
+        0xf8010000d0020000f80100001a03000000000000542a00000000000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a00000000000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4e747365727665725c68706c6a350000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            ControlSource ="GROUPid"
+        End
+        Begin PageHeader
+            Height =1950
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Top =60
+                    Width =10800
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    Name ="Text0"
+                    Caption ="Group Activity Log Report"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    Top =930
+                    Width =10806
+                    Name ="Line13"
+                End
+                Begin Line
+                    Left =15
+                    Top =1035
+                    Width =10806
+                    Name ="Line14"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =75
+                    Width =1830
+                    Height =315
+                    Name ="= Now()"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                    FontName ="Times New Roman"
+                    EventProcPrefix ="Ctl__Now__"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =30
+                    Top =1350
+                    Width =615
+                    Height =225
+                    FontSize =9
+                    FontWeight =700
+                    Name ="txtID"
+                    Caption ="ID"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =660
+                    Top =1350
+                    Width =3135
+                    Height =225
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Text20"
+                    Caption ="Group Name"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =4725
+                    Top =1350
+                    Width =1305
+                    Height =225
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Text21"
+                    Caption ="Main Contact"
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =6435
+                    Top =1350
+                    Width =1170
+                    Height =225
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Text22"
+                    Caption ="Phone"
+                End
+                Begin Line
+                    Width =10776
+                    Name ="Line24"
+                End
+                Begin Line
+                    Top =1890
+                    Width =10761
+                    Name ="Line25"
+                End
+                Begin Label
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =9480
+                    Top =1350
+                    Width =1170
+                    Height =225
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Label36"
+                    Caption ="Phone"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =7755
+                    Top =1350
+                    Width =1455
+                    Height =225
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Label37"
+                    Caption ="Service Contact"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =1350
+                    Top =1605
+                    Width =1779
+                    Height =270
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Label40"
+                    Caption ="Client Service Rep"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =3435
+                    Top =1605
+                    Width =1890
+                    Height =270
+                    FontSize =9
+                    FontWeight =700
+                    Name ="Label41"
+                    Caption ="Account Manager"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =480
+                    Width =4740
+                    Height =105
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Text43"
+                    ControlSource ="=[Forms]![fdlgPrtActivityLog]![ctlTitleLog]"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =585
+                    Width =4740
+                    Height =105
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="Text45"
+                    ControlSource ="=[Forms]![fdlgPrtActivityLog]![ctlTitleRep]"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    CanGrow = NotDefault
+                    CanShrink = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =690
+                    Width =4740
+                    Height =105
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="Text46"
+                    ControlSource ="=[Forms]![fdlgPrtActivityLog]![ctlTitleCallBck]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =615
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Top =90
+                    Width =690
+                    Height =255
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =705
+                    Top =90
+                    Width =3099
+                    Height =255
+                    TabIndex =1
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="MS Sans Serif"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =4755
+                    Top =90
+                    Width =1689
+                    Height =255
+                    TabIndex =2
+                    Name ="txtGRmainCONT"
+                    ControlSource ="GRmainCONT"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =6465
+                    Top =90
+                    Width =1299
+                    Height =255
+                    TabIndex =3
+                    Name ="txtGRphone2"
+                    ControlSource ="GRphone2"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =7785
+                    Top =90
+                    Width =1689
+                    Height =255
+                    TabIndex =4
+                    Name ="txtGRsrvCONT"
+                    ControlSource ="GRsrvCONT"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =9480
+                    Top =90
+                    Width =1299
+                    Height =255
+                    TabIndex =5
+                    Name ="txtGRphone1"
+                    ControlSource ="GRphone1"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =1350
+                    Top =345
+                    Width =1779
+                    Height =255
+                    TabIndex =6
+                    Name ="txtGRclientSVCrep"
+                    ControlSource ="GRclientSVCrep"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =3405
+                    Top =345
+                    Width =1899
+                    Height =255
+                    TabIndex =7
+                    Name ="txtAcctMgrName"
+                    ControlSource ="AcctMgrName"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =0
+            Name ="Detail1"
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =600
+            Name ="GroupFooter1"
+            Begin
+                Begin Subform
+                    OldBorderStyle =0
+                    Left =360
+                    Width =10425
+                    Height =405
+                    Name ="rptActivityLog_Sub"
+                    SourceObject ="Report.rptActivityLog_Sub"
+                    LinkChildFields ="LogGrID"
+                    LinkMasterFields ="GROUPid"
+                End
+                Begin Line
+                    Left =30
+                    Top =585
+                    Width =10755
+                    Name ="Line35"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =7950
+                    Top =15
+                    Width =1830
+                    Height =315
+                    Name ="page"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+
+Option Explicit
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fdlgPrtActivityLog].Visible = True
+    DoCmd.Close A_FORM, "fdlgPrtActivityLog"
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportGrp"
+
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

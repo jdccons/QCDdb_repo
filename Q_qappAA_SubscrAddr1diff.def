@@ -1,0 +1,117 @@
+Operation =3
+Name ="tmpAA_VarianceReport"
+Option =0
+Where ="(((UCase([SUBstreet1]))<>UCase([EIADD1]))) OR (((UCase([EIADD1]))<>UCase([SUBstr"
+    "eet1])))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="qselAA_Subscr"
+End
+Begin OutputColumns
+    Alias ="Ord"
+    Name ="PrtOrder"
+    Expression ="16"
+    Alias ="Title"
+    Name ="DataElementTitle"
+    Expression ="\"Subscriber Change\""
+    Alias ="Elem"
+    Name ="DataElement"
+    Expression ="\"Sub Address 1\""
+    Name ="SubSSN"
+    Expression ="tblSubscr.SUBssn"
+    Name ="AAGrpID"
+    Expression ="qselAA_Subscr.GRPid"
+    Alias ="AA"
+    Name ="NewValue"
+    Expression ="UCase([EIADD1])"
+    Alias ="QCD"
+    Name ="OldValue"
+    Expression ="UCase([SUBstreet1])"
+    Name ="RptDate"
+    Expression ="qselAA_Subscr.RptDate"
+End
+Begin Joins
+    LeftTable ="qselAA_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="qselAA_Subscr.AA_SSN = tblSubscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbText "Description" ="16"
+Begin
+    Begin
+        dbText "Name" ="Expr2"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Expr3"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ELGEXP.EINAMF"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBfirstNAME"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA_FN"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="QCD_FN"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="AA"
+        dbInteger "ColumnWidth" ="1875"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="QCD"
+        dbInteger "ColumnWidth" ="2520"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =673
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =190
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =379
+        Top =6
+        Right =636
+        Bottom =120
+        Top =7
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =273
+        Bottom =120
+        Top =8
+        Name ="qselAA_Subscr"
+        Name =""
+    End
+End

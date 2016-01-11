@@ -1,0 +1,461 @@
+Version =19
+VersionRequired =19
+Checksum =1436264306
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =12960
+    ItemSuffix =65
+    Left =405
+    Top =180
+    Right =13260
+    Bottom =6240
+    RecSrcDt = Begin
+        0x8dadf0f5aadde240
+    End
+    RecordSource ="qrptBillingReconcile_NewGrp"
+    Caption ="Billing Reconciliation Report -New Groups"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0x1a03000038040000d00200003804000000000000a0320000e100000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x5c5c6163747365727665725c4850343035300000000000000000000000000000 ,
+        0x010400059c00340243ff800702000100ea0a6f08640001000f00580201000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200000034020000ea7157490000000000000000000000000000000000000000 ,
+        0x00000000000000000d0000000100000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002600010077696e73706f6f6c00005c5c6163747365727665725c4850 ,
+        0x343035300000506f7274000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            KeepTogether =1
+            ControlSource ="GRname"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =360
+            Name ="ReportHeader"
+            GUID = Begin
+                0x7c0057f7f0c3794b93ca050f1137f9a8
+            End
+        End
+        Begin PageHeader
+            Height =1755
+            Name ="PageHeader0"
+            GUID = Begin
+                0x83f76be8170d0242822e83dcb253427d
+            End
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Left =1935
+                    Top =60
+                    Width =6045
+                    Height =420
+                    FontSize =16
+                    FontWeight =700
+                    Name ="Text0"
+                    Caption ="Billing Reconciliation Report - New Groups"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x4b97f76a693dd84685f0019822de812b
+                    End
+                End
+                Begin Line
+                    Left =15
+                    Top =720
+                    Width =12600
+                    Name ="Line13"
+                    GUID = Begin
+                        0x21a88b891a1c3a4aa1d0936a4286254a
+                    End
+                End
+                Begin Line
+                    Left =15
+                    Top =765
+                    Width =12600
+                    Name ="Line14"
+                    GUID = Begin
+                        0x6c0d21cf7908b3418b8537df94a509ed
+                    End
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =405
+                    Width =1245
+                    Height =315
+                    Name ="= Now()"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                    FontName ="Times New Roman"
+                    EventProcPrefix ="Ctl__Now__"
+                    GUID = Begin
+                        0x0c26f65290aa86458f0abb723b503761
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =45
+                    Top =960
+                    Width =735
+                    Height =255
+                    FontWeight =700
+                    Name ="Text19"
+                    Caption ="Group ID"
+                    GUID = Begin
+                        0x18189f18755ad049a145498aac844f8b
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =1065
+                    Top =960
+                    Width =1410
+                    Height =255
+                    FontWeight =700
+                    Name ="Text20"
+                    Caption ="Group Name"
+                    GUID = Begin
+                        0x93c27482eae28e48a54cf8aed4855e9c
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =11760
+                    Top =795
+                    Width =795
+                    Height =420
+                    FontWeight =700
+                    Name ="Text23"
+                    Caption ="Contract\015\012 Beg. Date"
+                    GUID = Begin
+                        0xa5c57af77367224cb2fee09baff9263a
+                    End
+                End
+                Begin Line
+                    Width =12600
+                    Name ="Line24"
+                    GUID = Begin
+                        0xc1f89c6f6bbb254e96694d77d6ff162e
+                    End
+                End
+                Begin Line
+                    Left =30
+                    Top =1245
+                    Width =12600
+                    Name ="Line25"
+                    GUID = Begin
+                        0xdee7ae7529476040b3707b23e01d4386
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =9735
+                    Top =990
+                    Width =690
+                    Height =225
+                    FontWeight =700
+                    Name ="Label41"
+                    Caption ="Inv No"
+                    GUID = Begin
+                        0x602dc3222e63d74bbf95bbbb6f433904
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =10665
+                    Top =990
+                    Width =705
+                    Height =225
+                    FontWeight =700
+                    Name ="Label42"
+                    Caption ="Inv Amt"
+                    GUID = Begin
+                        0x14a5fbe98457ec4c9cbb0c8a6a048f1a
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =4530
+                    Top =960
+                    Width =945
+                    Height =240
+                    FontWeight =700
+                    Name ="Label54"
+                    Caption ="Comm 1"
+                    GUID = Begin
+                        0x2e290871ba44364a881ade4dee3ba018
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =6120
+                    Top =960
+                    Width =930
+                    Height =240
+                    FontWeight =700
+                    Name ="Label55"
+                    Caption ="Comm 2"
+                    GUID = Begin
+                        0xa91ec9c813fc4d4b90525ca9f6627dac
+                    End
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =7695
+                    Top =960
+                    Width =945
+                    Height =240
+                    FontWeight =700
+                    Name ="Label56"
+                    Caption ="Comm 3"
+                    GUID = Begin
+                        0xae3125264632cd4ea88439c264bccf71
+                    End
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            CanGrow = NotDefault
+            Height =225
+            Name ="Detail1"
+            GUID = Begin
+                0xe04b82d490965d45a22dd5859501597b
+            End
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Width =795
+                    Height =225
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x0941d6b14615a34aafea445a40949ab2
+                    End
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =864
+                    Width =3639
+                    Height =225
+                    TabIndex =1
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x8c20dad4d218914b9bc27b5656bfedb3
+                    End
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =12120
+                    Width =795
+                    Height =225
+                    TabIndex =2
+                    Name ="ctlGRcontBEG"
+                    ControlSource ="GRcontBEG"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0xda5abf1adfec7b45a0d595de066617fb
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =1
+                    Left =1860
+                    Width =1470
+                    Height =225
+                    TabIndex =3
+                    BackColor =65535
+                    Name ="Counter"
+                    ControlSource ="=+1"
+                    GUID = Begin
+                        0x241c5f8ff5be0647b813d117155df274
+                    End
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =10080
+                    Width =1155
+                    Height =225
+                    TabIndex =4
+                    Name ="ctlDocno"
+                    ControlSource ="Docno"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x88a57d3f804eba40aea459fe431d5483
+                    End
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =11205
+                    Width =915
+                    Height =225
+                    TabIndex =5
+                    Name ="ctlDocamt"
+                    ControlSource ="Docamt"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0xa0583daae49c5043a8d1e4d930210e9a
+                    End
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            GUID = Begin
+                0xf33c8c6a5dc57f4dab5f3f139c7fe90e
+            End
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =7635
+                    Top =15
+                    Width =4320
+                    Height =315
+                    Name ="page"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x662ce5ba8d9fd2458022c1c0b7b1642f
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =840
+            Name ="ReportFooter"
+            GUID = Begin
+                0x120c4672ca9d5d418c42eea0e57b222d
+            End
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =10815
+                    Top =465
+                    Width =1035
+                    Height =315
+                    FontWeight =700
+                    Name ="ctlSumCounter"
+                    ControlSource ="=[Counter]"
+                    GUID = Begin
+                        0x041bc34e2c45fa4aafc88594ff5ce37a
+                    End
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8250
+                    Top =480
+                    Width =2250
+                    Height =300
+                    FontWeight =700
+                    Name ="Label39"
+                    Caption ="Total Number of Groups: "
+                    GUID = Begin
+                        0x55b2906f7a417e4c8abd396e00a41aac
+                    End
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =10500
+                    Top =90
+                    Width =1350
+                    Height =300
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Text42"
+                    ControlSource ="=Sum([DocAmt])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    GUID = Begin
+                        0xe95654ab82228a4aa1bbc5bc8ac33746
+                    End
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8280
+                    Top =90
+                    Width =2205
+                    Height =300
+                    FontWeight =700
+                    Name ="Label43"
+                    Caption ="Total Invoice Amt: "
+                    GUID = Begin
+                        0x18b04e48d4754c41ae79348f25f1324f
+                    End
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =1
+                    Left =10500
+                    Top =30
+                    Width =1350
+                    Height =15
+                    Name ="Line44"
+                    GUID = Begin
+                        0x95d5edfbf6c9e442b0b5ada3afd8bc9c
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+
+Option Explicit

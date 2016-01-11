@@ -1,0 +1,55 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblEnrollmentFees_temp"
+    Name ="tblCommission"
+End
+Begin OutputColumns
+    Name ="tblCommission.EnrollmentFee"
+    Expression ="Yes"
+End
+Begin Joins
+    LeftTable ="tblEnrollmentFees_temp"
+    RightTable ="tblCommission"
+    Expression ="tblEnrollmentFees_temp.DocNo = tblCommission.COMMinvoiceNO"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =76
+    Top =58
+    Right =1002
+    Bottom =371
+    Left =-1
+    Top =-1
+    Right =919
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =222
+        Bottom =98
+        Top =0
+        Name ="tblEnrollmentFees_temp"
+        Name =""
+    End
+    Begin
+        Left =251
+        Top =6
+        Right =461
+        Bottom =105
+        Top =7
+        Name ="tblCommission"
+        Name =""
+    End
+End

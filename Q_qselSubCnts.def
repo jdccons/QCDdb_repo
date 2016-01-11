@@ -1,0 +1,10 @@
+dbMemo "SQL" ="SELECT tblSubscr.SUBgroupID, Count(tblSubscr.SubID) AS CountOfSubID\015\012FROM "
+    "tblSubscr\015\012WHERE (((tblSubscr.SUBstatus)=\"GRSUB\"))\015\012GROUP BY tblSu"
+    "bscr.SUBgroupID;\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End

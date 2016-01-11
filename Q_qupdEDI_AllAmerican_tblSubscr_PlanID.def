@@ -1,0 +1,71 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tlkpAllAmericanPlan"
+    Name ="tblSubscr"
+    Name ="tmpExportAllAmerican"
+End
+Begin OutputColumns
+    Name ="tblSubscr.PlanID"
+    Expression ="[tlkpAllAmericanPlan]![PlanID]"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tmpExportAllAmerican"
+    Expression ="tblSubscr.SUBssn = tmpExportAllAmerican.EISSN"
+    Flag =1
+    LeftTable ="tlkpAllAmericanPlan"
+    RightTable ="tmpExportAllAmerican"
+    Expression ="tlkpAllAmericanPlan.PlanagerCode = tmpExportAllAmerican.EINMPLAN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =57
+    Top =90
+    Right =874
+    Bottom =407
+    Left =-1
+    Top =-1
+    Right =810
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =46
+        Top =8
+        Right =168
+        Bottom =103
+        Top =0
+        Name ="tlkpAllAmericanPlan"
+        Name =""
+    End
+    Begin
+        Left =487
+        Top =10
+        Right =685
+        Bottom =105
+        Top =1
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =253
+        Top =4
+        Right =455
+        Bottom =114
+        Top =5
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+End

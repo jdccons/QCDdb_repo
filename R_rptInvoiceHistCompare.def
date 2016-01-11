@@ -1,0 +1,766 @@
+Version =17
+VersionRequired =17
+Checksum =-53298244
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10797
+    DatasheetFontHeight =10
+    ItemSuffix =74
+    Left =870
+    Top =810
+    Right =10800
+    Bottom =3825
+    DatasheetGridlinesColor =12632256
+    OnNoData ="[Event Procedure]"
+    RecSrcDt = Begin
+        0x587e4142ee2ae240
+    End
+    RecordSource ="qrptInvoiceHistoryComparison"
+    Caption ="Invoice History Comparison"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xd0020000d0020000d002000018030000000000002d2a0000f000000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x5c5c4e545345525645525c4850204c617365724a657420323230302053657200 ,
+        0x010418009c00b803033f00020100010000000000640001000700580202000100 ,
+        0x5802000000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320035018603789c65504d2f4351109d73a7eda55abaa044 ,
+        0x08f1cda27fa192b2e80f40ed2d049979d10d11ea2d455291589058482436fe80 ,
+        0x8f35bfc7ce4751f7bec7db98c59973cecdc9ccdc7afd7f19d03a6ee1da164e49 ,
+        0x26a16d92aae12617496720739029e82c741c32011906407b28507000d9876d38 ,
+        0x49241d080d6cda8bd0c2662272c1f2448e4da3e4db12b22435c82abc5a8e95c6 ,
+        0x6ac5298ddfc8eef874b00b724b2952e4fb065ac4651ce63485e091f598c36b96 ,
+        0x4ee82bc917c927c908f48db445f24dda072942faa1a3d001701e6b24ddd002b4 ,
+        0x07fc80765bef2163506bec9d1f6607231c8af0851c66406ce8b79aa53fe6ec54 ,
+        0x62df24b63c1b3962291b99375a3172ceee78bee42bdafef0997492394b326ed6 ,
+        0x3bf512575033bce02058849cb0f7abc89366215d901ca2f33761dd5738fe03fb ,
+        0x054ecb0000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011003a00010077696e73706f6f6c005c5c4e545345525645525c4850204c ,
+        0x617365724a65742032323030205365726965732050434c2036004c5054313a00 ,
+        0x00000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            ControlSource ="ClientSvcRep"
+        End
+        Begin BreakLevel
+            ControlSource ="CompanyName"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportHeader"
+        End
+        Begin PageHeader
+            Height =1260
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    TextFontFamily =18
+                    Left =120
+                    Top =60
+                    Width =2952
+                    Height =324
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label0"
+                    Caption ="Invoice History Comparison"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =1740
+                    Top =420
+                    Width =240
+                    Name ="Text1"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtBaseMonth]"
+                    Begin
+                        Begin Label
+                            Left =960
+                            Top =420
+                            Width =684
+                            Height =216
+                            Name ="Label2"
+                            Caption ="Between"
+                        End
+                    End
+                End
+                Begin Label
+                    Left =1980
+                    Top =420
+                    Width =120
+                    Height =240
+                    Name ="Label3"
+                    Caption ="/"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Left =2100
+                    Top =420
+                    Width =480
+                    TabIndex =1
+                    Name ="Text4"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtBaseYear]"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =3075
+                    Top =420
+                    Width =240
+                    TabIndex =2
+                    Name ="Text7"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtCompareMonth]"
+                    Begin
+                        Begin Label
+                            Left =2655
+                            Top =420
+                            Width =324
+                            Height =216
+                            Name ="Label8"
+                            Caption ="and"
+                        End
+                    End
+                End
+                Begin Label
+                    Left =3315
+                    Top =420
+                    Width =120
+                    Height =240
+                    Name ="Label9"
+                    Caption ="/"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    Left =3435
+                    Top =420
+                    Width =480
+                    TabIndex =3
+                    Name ="Text10"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtCompareYear]"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =390
+                    Top =795
+                    Width =615
+                    Height =435
+                    FontWeight =700
+                    Name ="Label11"
+                    Caption ="Group ID"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =1230
+                    Top =1020
+                    Width =1260
+                    Height =216
+                    FontWeight =700
+                    Name ="Label12"
+                    Caption ="Company Name:"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =4395
+                    Top =990
+                    Width =375
+                    Height =240
+                    FontWeight =700
+                    Name ="Label13"
+                    Caption ="City"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =5700
+                    Top =990
+                    Width =480
+                    Height =240
+                    FontWeight =700
+                    Name ="Label14"
+                    Caption ="State"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =8063
+                    Top =795
+                    Width =675
+                    Height =435
+                    FontWeight =700
+                    Name ="Label15"
+                    Caption ="Base Amount"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =8925
+                    Top =795
+                    Width =825
+                    Height =435
+                    FontWeight =700
+                    Name ="Label16"
+                    Caption ="Compare Amount"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =9840
+                    Top =810
+                    Width =900
+                    Height =420
+                    FontWeight =700
+                    Name ="Label17"
+                    Caption ="Amount Difference"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =6270
+                    Top =990
+                    Width =615
+                    Height =240
+                    FontWeight =700
+                    Name ="Label36"
+                    Caption ="GeoID"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7995
+                    Top =540
+                    Width =240
+                    FontWeight =700
+                    TabIndex =4
+                    Name ="Text37"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtBaseMonth]"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =8235
+                    Top =540
+                    Width =120
+                    Height =240
+                    FontWeight =700
+                    Name ="Label39"
+                    Caption ="/"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =8355
+                    Top =540
+                    Width =480
+                    FontWeight =700
+                    TabIndex =5
+                    Name ="Text41"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtBaseYear]"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8910
+                    Top =540
+                    Width =240
+                    FontWeight =700
+                    TabIndex =6
+                    Name ="Text42"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtCompareMonth]"
+                End
+                Begin Label
+                    TextFontFamily =34
+                    Left =9150
+                    Top =540
+                    Width =120
+                    Height =240
+                    FontWeight =700
+                    Name ="Label44"
+                    Caption ="/"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =9270
+                    Top =540
+                    Width =480
+                    FontWeight =700
+                    TabIndex =7
+                    Name ="Text45"
+                    ControlSource ="=[Forms]![frmInvoiceHistory]![txtCompareYear]"
+                End
+                Begin Line
+                    Left =390
+                    Top =1260
+                    Width =600
+                    Name ="Line55"
+                End
+                Begin Line
+                    Left =1095
+                    Top =1260
+                    Width =1275
+                    Name ="Line56"
+                End
+                Begin Line
+                    Left =4395
+                    Top =1260
+                    Width =374
+                    Name ="Line58"
+                End
+                Begin Line
+                    Left =5715
+                    Top =1260
+                    Width =479
+                    Name ="Line59"
+                End
+                Begin Line
+                    Left =8100
+                    Top =1260
+                    Width =674
+                    Name ="Line60"
+                End
+                Begin Line
+                    Left =8940
+                    Top =1260
+                    Width =825
+                    Name ="Line61"
+                End
+                Begin Line
+                    Left =9840
+                    Top =1260
+                    Width =900
+                    Name ="Line62"
+                End
+                Begin Line
+                    Left =6270
+                    Top =1260
+                    Width =615
+                    Name ="Line63"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =390
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    TextFontFamily =34
+                    BackStyle =0
+                    Top =90
+                    Width =2610
+                    FontWeight =700
+                    Name ="txtClientSvcRep"
+                    ControlSource ="ClientSvcRep"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =240
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    BackStyle =0
+                    Left =8850
+                    Width =864
+                    TabIndex =7
+                    Name ="Text18"
+                    ControlSource ="=IIf(IsNull([CompAmt]),\"N/A\",[CompAmt])"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    BackStyle =0
+                    Left =510
+                    Width =690
+                    Height =216
+                    Name ="GrpID"
+                    ControlSource ="GrpID"
+                End
+                Begin TextBox
+                    BackStyle =0
+                    Left =1230
+                    Width =3045
+                    TabIndex =1
+                    Name ="CompanyName"
+                    ControlSource ="CompanyName"
+                End
+                Begin TextBox
+                    BackStyle =0
+                    Left =4305
+                    Width =1335
+                    TabIndex =2
+                    Name ="City"
+                    ControlSource ="City"
+                End
+                Begin TextBox
+                    BackStyle =0
+                    Left =5715
+                    Width =420
+                    TabIndex =3
+                    Name ="State"
+                    ControlSource ="State"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    BackStyle =0
+                    Left =7920
+                    Width =864
+                    TabIndex =4
+                    Name ="BaseAmt"
+                    ControlSource ="BaseAmt"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Left =2535
+                    Width =300
+                    TabIndex =5
+                    BackColor =10092543
+                    Name ="CompAmt"
+                    ControlSource ="CompAmt"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Left =3735
+                    Width =300
+                    TabIndex =6
+                    BackColor =10092543
+                    Name ="AmtDiff"
+                    ControlSource ="AmtDiff"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    BackStyle =0
+                    Left =9780
+                    Width =864
+                    TabIndex =8
+                    Name ="Text20"
+                    ControlSource ="=IIf(IsNull([AmtDiff]),\"N/A\",[AmtDiff])"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    Left =2835
+                    Width =240
+                    TabIndex =9
+                    BackColor =10092543
+                    Name ="txtBaseTotal"
+                    ControlSource ="BaseAmt"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    Left =3075
+                    Width =420
+                    TabIndex =10
+                    BackColor =10092543
+                    Name ="txtCompTotal"
+                    ControlSource ="CompAmt"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =2
+                    Left =3495
+                    Width =240
+                    TabIndex =11
+                    BackColor =10092543
+                    Name ="txtDiffTotal"
+                    ControlSource ="AmtDiff"
+                End
+                Begin TextBox
+                    Left =6210
+                    Width =1650
+                    Height =239
+                    TabIndex =12
+                    Name ="txtGeoID"
+                    ControlSource ="GeoIDDesc"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    BackStyle =0
+                    Left =30
+                    Width =450
+                    Height =216
+                    TabIndex =13
+                    Name ="txtStatus"
+                    ControlSource ="=IIf([Status]=1,\"New\",IIf([Status]=2,\"Canc\",\"\"))"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =329
+            Name ="GroupFooter1"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7830
+                    Top =90
+                    Width =979
+                    Height =239
+                    Name ="Text49"
+                    ControlSource ="=Sum([BaseAmt])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    Begin
+                        Begin Label
+                            TextFontFamily =34
+                            Left =7050
+                            Top =90
+                            Width =588
+                            Height =239
+                            FontWeight =700
+                            Name ="Label50"
+                            Caption ="Totals:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8809
+                    Top =90
+                    Width =979
+                    Height =239
+                    TabIndex =1
+                    Name ="Text51"
+                    ControlSource ="=Sum([CompAmt])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =9788
+                    Top =90
+                    Width =979
+                    Height =239
+                    TabIndex =2
+                    Name ="Text52"
+                    ControlSource ="=Sum([AmtDiff])"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    BackStyle =0
+                    Left =4440
+                    Top =90
+                    Width =2610
+                    Height =239
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="Text54"
+                    ControlSource ="ClientSvcRep"
+                End
+                Begin Line
+                    Left =7950
+                    Top =45
+                    Width =864
+                    Name ="Line64"
+                End
+                Begin Line
+                    Left =8880
+                    Top =45
+                    Width =864
+                    Name ="Line65"
+                End
+                Begin Line
+                    Left =9795
+                    Top =45
+                    Width =864
+                    Name ="Line66"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =252
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    BackStyle =0
+                    Width =3120
+                    Height =252
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text39"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    BackStyle =0
+                    Left =7065
+                    Width =3600
+                    Height =252
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text40"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =329
+            Name ="ReportFooter"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7860
+                    Top =90
+                    Width =979
+                    Height =239
+                    Name ="Text28"
+                    ControlSource ="=[txtBaseTotal]"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    Begin
+                        Begin Label
+                            TextFontFamily =34
+                            Left =7080
+                            Top =90
+                            Width =588
+                            Height =239
+                            FontWeight =700
+                            Name ="Label29"
+                            Caption ="Totals:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =8839
+                    Top =90
+                    Width =979
+                    Height =239
+                    TabIndex =1
+                    Name ="Text30"
+                    ControlSource ="=[txtCompTotal]"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin TextBox
+                    DecimalPlaces =2
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =9818
+                    Top =90
+                    Width =979
+                    Height =239
+                    TabIndex =2
+                    Name ="Text32"
+                    ControlSource ="=[txtDiffTotal]"
+                    Format ="$#,##0.00;($#,##0.00)"
+                End
+                Begin Line
+                    Left =7980
+                    Top =45
+                    Width =864
+                    Name ="Line70"
+                End
+                Begin Line
+                    Left =8910
+                    Top =45
+                    Width =864
+                    Name ="Line71"
+                End
+                Begin Line
+                    Left =9825
+                    Top =45
+                    Width =864
+                    Name ="Line72"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![frmInvoiceHistory].Visible = True
+    DoCmd.Close A_FORM, "frmInvoiceHistory"
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportMisc"
+    DoCmd.Restore
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+
+    
+End Sub

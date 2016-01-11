@@ -1,0 +1,79 @@
+Operation =1
+Option =0
+Where ="(((tblGrowth.Year)=\"2000\") AND ((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblGrowth"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrowth.GroupID"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrowth.BeginInvoiceDate"
+    Expression ="tblGrowth.BeginInvoiceAmt"
+    Expression ="tblGrowth.CurrentInvoiceDate"
+    Expression ="tblGrowth.CurrentInvoiceAmt"
+    Alias ="Variance"
+    Expression ="[CurrentInvoiceAmt]-[BeginInvoiceAmt]"
+    Alias ="VarPerc"
+    Expression ="IIf([BeginInvoiceAmt]>0,([CurrentInvoiceAmt]-[BeginInvoiceAmt])/[BeginInvoiceAmt"
+        "],0)"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblGrowth"
+    Expression ="tblGrp.GROUPid = tblGrowth.GroupID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblGrowth.BeginInvoiceAmt"
+        dbInteger "ColumnWidth" ="1770"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrowth.CurrentInvoiceAmt"
+        dbInteger "ColumnWidth" ="1920"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3840"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =205
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =337
+        Top =14
+        Right =553
+        Bottom =151
+        Top =9
+        Name ="tblGrowth"
+        Name =""
+    End
+    Begin
+        Left =80
+        Top =11
+        Right =254
+        Bottom =148
+        Top =30
+        Name ="tblGrp"
+        Name =""
+    End
+End

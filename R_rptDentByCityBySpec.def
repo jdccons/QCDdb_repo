@@ -1,0 +1,294 @@
+Version =17
+VersionRequired =17
+Checksum =733936123
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =11103
+    ItemSuffix =66
+    Left =630
+    Top =825
+    Right =9585
+    Bottom =6510
+    RecSrcDt = Begin
+        0xc81dbf8e55f8e140
+    End
+    RecordSource ="qrptDentByCityBySpec"
+    Caption ="Affiliated Dentist Location Totals by City by Specialty"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0x3804000038040000380400003804000000000000400b0000a005000000000000 ,
+        0x03000000d002000000000000a20700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574205365726965732049490000000000000000000000 ,
+        0x00040104940040000367000401000100000000000000010001002c0101000100 ,
+        0x2c01020000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d53554403034850 ,
+        0x204c617365724a65742053657269657320494900000000000000000000008001 ,
+        0x000000000000000000000000000064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011002700010077696e73706f6f6c004850204c617365724a657420536572 ,
+        0x696573204949005c5c4e545345525645525c5449204d6963726f000000000000 ,
+        0x000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            KeepTogether =1
+            ControlSource ="DENTcity"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            KeepTogether =1
+            ControlSource ="REPORTgrouping"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =1575
+            Name ="ReportHeader5"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Width =11088
+                    Height =480
+                    FontSize =18
+                    FontWeight =700
+                    Name ="Text13"
+                    Caption ="QCD of America"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =450
+                    Width =11088
+                    Height =420
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Text14"
+                    Caption ="Affiliated Dentist Location Totals by City by Specialty"
+                End
+                Begin TextBox
+                    TextAlign =2
+                    TextFontFamily =34
+                    Top =840
+                    Width =11088
+                    Height =300
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Field36"
+                    ControlSource ="=[Input any special heading text desired]"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/00;0;_"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7553
+                    Top =1230
+                    Width =915
+                    Height =300
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field62"
+                    ControlSource ="=Sum([DENTcount])"
+                    Format ="Standard"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =2618
+                    Top =1245
+                    Width =4905
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text63"
+                    Caption ="Total Number of Dentist Locations As Of Run Date:"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =1170
+                    Width =11103
+                    Name ="Line65"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =135
+            Name ="PageHeader3"
+            Begin
+                Begin Line
+                    BorderWidth =2
+                    Top =30
+                    Width =11088
+                    Name ="Line17"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =300
+            Name ="GroupHeader0"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =34
+                    Width =2880
+                    Height =270
+                    ColumnWidth =1575
+                    FontSize =10
+                    FontWeight =700
+                    Name ="DENTcity"
+                    ControlSource ="[DENTcity]+\", \"+[DENTstate]"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =255
+            BreakLevel =1
+            Name ="GroupHeader1"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    Width =2160
+                    ColumnWidth =1905
+                    Name ="SPECIALITYdesc"
+                    ControlSource ="SPECIALTY"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =2190
+                    Top =15
+                    Width =675
+                    TabIndex =1
+                    Name ="DENTcount"
+                    ControlSource ="DENTcount"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Visible = NotDefault
+            CanGrow = NotDefault
+            Height =0
+            Name ="Detail1"
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =435
+            Name ="GroupFooter0"
+            Begin
+                Begin Line
+                    BorderWidth =1
+                    Top =390
+                    Width =11088
+                    Name ="Line56"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =1815
+                    Top =90
+                    Width =1065
+                    Height =225
+                    Name ="Field58"
+                    ControlSource ="=Sum([DENTcount])"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =34
+                    Left =525
+                    Top =90
+                    Width =930
+                    Height =225
+                    Name ="Text59"
+                    Caption ="SUBTOTAL"
+                End
+                Begin Line
+                    Left =525
+                    Top =90
+                    Width =2328
+                    Name ="Line60"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =375
+            Name ="PageFooter4"
+            Begin
+                Begin TextBox
+                    TextAlign =3
+                    TextFontFamily =34
+                    Left =7740
+                    Top =120
+                    Width =2328
+                    FontSize =9
+                    Name ="PAGE"
+                    ControlSource ="=[Page] & \" of \" & [Pages]"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =90
+                    Width =11088
+                    Name ="Line61"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =34
+                    Top =135
+                    Width =2718
+                    FontSize =9
+                    TabIndex =1
+                    Name ="Field64"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy hh:nn"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter6"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportDent"
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

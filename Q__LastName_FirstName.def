@@ -1,0 +1,124 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="AMERICANSTEEL"
+End
+Begin OutputColumns
+    Alias ="Name"
+    Expression ="AMERICANSTEEL.Field2"
+    Alias ="Last1"
+    Expression ="Left([Name],InStr(1,[Name],\",\")-1)"
+    Alias ="First1"
+    Expression ="Right(Trim([Name]),Len(Trim([Name]))-InStr(1,[Name],\",\"))"
+    Expression ="AMERICANSTEEL.FirstName"
+    Expression ="AMERICANSTEEL.LastName"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="First"
+        dbInteger "ColumnWidth" ="2025"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Last"
+        dbInteger "ColumnWidth" ="3060"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Name"
+        dbInteger "ColumnWidth" ="3330"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Zip"
+        dbInteger "ColumnWidth" ="720"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="State"
+        dbInteger "ColumnWidth" ="1110"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="City2"
+        dbInteger "ColumnWidth" ="1890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Table1.Name"
+        dbInteger "ColumnWidth" ="2040"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Expr"
+        dbInteger "ColumnWidth" ="2325"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Table1.City_State_Zip"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="City"
+        dbInteger "ColumnWidth" ="1080"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Expr3"
+        dbInteger "ColumnWidth" ="3180"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Table1.CITY"
+        dbInteger "ColumnWidth" ="2730"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEnrollment_Bancroft.SUBfirstNAME"
+        dbInteger "ColumnWidth" ="2220"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="TAYLOR.SUBfirstNAME"
+        dbInteger "ColumnWidth" ="2220"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Last1"
+        dbInteger "ColumnWidth" ="3060"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="First1"
+        dbInteger "ColumnWidth" ="2025"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-25
+    Right =802
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =113
+        Top =1
+        Name ="AMERICANSTEEL"
+        Name =""
+    End
+End

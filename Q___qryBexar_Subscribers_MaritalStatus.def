@@ -1,0 +1,42 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblSubscriber_Bexar_new"
+End
+Begin OutputColumns
+    Name ="tblSubscriber_Bexar_new.SubMaritalStatus"
+    Expression ="ConvertMaritalStatus([SubMaritalStatus])"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =900
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =313
+        Bottom =105
+        Top =0
+        Name ="tblSubscriber_Bexar_new"
+        Name =""
+    End
+End

@@ -1,0 +1,50 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblCommission"
+End
+Begin OutputColumns
+    Expression ="tblCommission.*"
+End
+Begin OrderBy
+    Expression ="tblCommission.COMMagent"
+    Flag =0
+    Expression ="tblCommission.COMMcustKEY"
+    Flag =0
+    Expression ="tblCommission.COMMcheckDATE"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblCommission.COMMcustNAME"
+        dbInteger "ColumnWidth" ="2460"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =238
+        Bottom =113
+        Top =1
+        Name ="tblCommission"
+        Name =""
+    End
+End

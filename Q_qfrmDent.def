@@ -1,0 +1,89 @@
+Operation =1
+Option =8
+Where ="(((tbldentist.DentStatus)=\"A\" Or (tbldentist.DentStatus)=\"I\"))"
+Begin InputTables
+    Name ="tbldentist"
+    Name ="tblGeographical"
+    Name ="tbldentistspec"
+    Name ="tlkpProvRelsRep"
+End
+Begin OutputColumns
+    Expression ="tbldentist.*"
+    Expression ="tbldentistspec.SPECIALITYdesc"
+    Expression ="tblGeographical.GEOdesc"
+    Expression ="tlkpProvRelsRep.Name"
+End
+Begin Joins
+    LeftTable ="tbldentist"
+    RightTable ="tblGeographical"
+    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Flag =2
+    LeftTable ="tbldentist"
+    RightTable ="tbldentistspec"
+    Expression ="tbldentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Flag =2
+    LeftTable ="tbldentist"
+    RightTable ="tlkpProvRelsRep"
+    Expression ="tbldentist.ProvRelsRepID = tlkpProvRelsRep.ProvRelsRepID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tbldentist.DentLast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =96
+    Right =778
+    Bottom =401
+    Left =-1
+    Top =-1
+    Right =709
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =155
+        Bottom =113
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =98
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =98
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+    Begin
+        Left =440
+        Top =6
+        Right =536
+        Bottom =83
+        Top =0
+        Name ="tlkpProvRelsRep"
+        Name =""
+    End
+End

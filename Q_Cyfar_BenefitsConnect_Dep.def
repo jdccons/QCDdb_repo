@@ -1,0 +1,92 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GROUPid)=\"cyfar\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblDependent.DEPssn"
+    Expression ="tblDependent.DEPlastNAME"
+    Expression ="tblDependent.DEPfirstNAME"
+    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SUBzip"
+    Expression ="tblDependent.DEPdob"
+    Expression ="tblDependent.DEPrelationship"
+    Expression ="tblDependent.DEPgender"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUBssn"
+    Flag =0
+    Expression ="tblDependent.DEPlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SUBstreet1"
+        dbInteger "ColumnWidth" ="3465"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-6
+    Top =-32
+    Right =1282
+    Bottom =926
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =397
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =15
+        Top =62
+        Right =164
+        Bottom =296
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =213
+        Top =13
+        Right =439
+        Bottom =307
+        Top =1
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =577
+        Top =27
+        Right =849
+        Bottom =231
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+End

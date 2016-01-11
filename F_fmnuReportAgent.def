@@ -1,0 +1,253 @@
+Version =20
+VersionRequired =20
+Checksum =-1955589611
+Begin Form
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    BorderStyle =1
+    Width =6192
+    ItemSuffix =19
+    Left =3255
+    Top =1950
+    Right =9450
+    Bottom =10095
+    HelpContextId =551
+    RecSrcDt = Begin
+        0xa7cedeb3b2c4e140
+    End
+    Caption ="Agent Reports"
+    MenuBar ="FormMenuBar"
+    HelpFile ="sales.hlp"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f40453ef800101000100ea0a6f08640001000f00b00402000100 ,
+        0xb004030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin Section
+            Height =4380
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin Rectangle
+                    SpecialEffect =1
+                    BackStyle =0
+                    OverlapFlags =93
+                    Left =705
+                    Top =120
+                    Width =5175
+                    Height =2925
+                    Name ="Box13"
+                End
+                Begin ListBox
+                    SpecialEffect =2
+                    OverlapFlags =215
+                    ColumnCount =4
+                    Left =1002
+                    Top =360
+                    Width =4590
+                    Height =2430
+                    FontWeight =700
+                    BackColor =8421504
+                    ForeColor =16777215
+                    Name ="ReportList"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tblReport.ReportID, tblReport.ReportTitle, tblReport.ReportNa"
+                        "me, tblReport.CriteriaForm, tblReport.MenuItem FROM tblReport WHERE (((tblReport"
+                        ".MenuItem)=5)) ORDER BY tblReport.ReportTitle;"
+                    ColumnWidths ="0;4320;0;0"
+                    StatusBarText ="Current Report"
+                    OnDblClick ="=Preview()"
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    AccessKey =82
+                    Left =2625
+                    Top =3660
+                    Width =567
+                    Height =493
+                    TabIndex =1
+                    Name ="PreviewButton"
+                    Caption ="Print Preview&R"
+                    StatusBarText ="Preview Report"
+                    OnClick ="=Preview()"
+                    PictureData = Begin
+                        0x2800000017000000160000000100040000000000080100000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888889888888888888888888888884 ,
+                        0x88888888888888888888888388888888888888888888888e8888000000000000 ,
+                        0x8800888288880ffffffffff08000888d88880fffffff00007008888888880fff ,
+                        0xfff078870788888588880fffff0788f77088888288880fffff08888780888884 ,
+                        0x88880fffff08f8878088888888880fffff07ff877088888088880ffffff07887 ,
+                        0x0888888088880fffffff00008888888088880ffffffffff08888888088880fff ,
+                        0xffff00008888888088880fffffff08088888888188880fffffff008888888886 ,
+                        0x8888000000000888888888808888888888888888888888808888888888888888 ,
+                        0x8888888088888888888888888888888000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
+                        0xffffff0000000000
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub Form_Load()
+  
+  On Error GoTo PROC_ERR
+    
+    Me![ReportList].SetFocus
+    SendKeys "{Down}"
+    Exit Sub
+  
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+'----------------------------------------------------------------------
+' Preview
+'
+'   Purpose: View the selected report in print preview.
+'
+'   Returns: Nothing
+'
+'   Comments: None
+'----------------------------------------------------------------------
+Private Function Preview()
+
+On Error GoTo Preview_Err
+
+    If IsNull(Me![ReportList]) Or Me![ReportList] = "" Then
+        MsgBox "You must select a report", 16, "Error"
+        Exit Function
+    End If
+
+    If IsNull(Me![ReportList].Column(3)) Or Me![ReportList].Column(3) = "" Then
+        DoCmd.OpenReport Me![ReportList].Column(2), A_PREVIEW
+        Forms![fmnuReportAgent].Visible = False
+        Forms![fmnuSwitchboard].Visible = False
+    Else
+        DoCmd.OpenForm Me![ReportList].Column(3), A_NORMAL
+        DoCmd.Close A_FORM, "fmnuReportAgent"
+        Forms![fmnuSwitchboard].Visible = False
+    End If
+
+
+Preview_Exit:
+    Exit Function
+
+Preview_Err:
+        MsgBox Error$
+    Resume Preview_Exit
+
+End Function
+
+'----------------------------------------------------------------------
+' ShowReports
+'
+'   Purpose: Print the selected report.
+'
+'   Returns: Nothing
+'
+'   Comments: None
+'----------------------------------------------------------------------
+Private Function ShowReports()
+On Error GoTo Reports_Err
+
+    If IsNull([ReportList]) Or [ReportList] = "" Then
+        MsgBox "You must select a report", 16, "Error"
+        DoCmd.GoToControl "ReportList"
+        Exit Function
+    End If
+
+    DoCmd.OpenReport Me![ReportList].Column(2), A_NORMAL
+
+Reports_Exit:
+    Exit Function
+
+Reports_Err:
+
+    If Err = 2202 Then
+        MsgBox Error$
+    Else
+        MsgBox ("Printing report was Cancelled")
+    End If
+    Resume Reports_Exit
+
+
+End Function

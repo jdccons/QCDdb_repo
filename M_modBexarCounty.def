@@ -1,0 +1,178 @@
+Option Compare Database
+Option Explicit
+
+Function ConvertMaritalStatus(Status As String) As String
+
+    Select Case Status
+        Case "Div."
+            ConvertMaritalStatus = "S"
+        Case "Marr."
+            ConvertMaritalStatus = "M"
+        Case "Single"
+            ConvertMaritalStatus = "S"
+        Case "Wid."
+            ConvertMaritalStatus = "S"
+    End Select
+            
+
+End Function
+
+Function ConvertCoverage(Coverage As String) As Integer
+    Select Case Coverage
+        Case "Employee Only"
+            ConvertCoverage = 1
+        Case "Employee + 1"
+            ConvertCoverage = 2
+        Case "Employee + 2 & more"
+            ConvertCoverage = 4
+        Case Else
+            ConvertCoverage = 0
+    End Select
+        
+End Function
+Function ConvertRelationships(Relationship As String) As String
+    Select Case Relationship
+        Case "Ch"
+            ConvertRelationships = "C"
+        Case "Gr"
+            ConvertRelationships = "C"
+        Case "Sp"
+            ConvertRelationships = "S"
+        Case "St"
+            ConvertRelationships = "C"
+        Case Else
+            ConvertRelationships = "O"
+    End Select
+        
+End Function
+
+Sub ProcessBEXHMSubs()
+
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    strSQL = "Delete from tblSubscriber_Bexar_new"
+    db.Execute strSQL
+    
+    'bring in the first set of data
+    DoCmd.OpenQuery "__qryBexar_Subscribers"
+    
+    'convert names to upper case
+    DoCmd.OpenQuery "__qryBexar_Subscribers_UpperCase"
+    
+    'convert general data
+    DoCmd.OpenQuery "__qryBexar_Subscribers_General"
+    
+    'convert coverages
+    DoCmd.OpenQuery "__qryBexar_Subscribers_Coverage"
+    
+    'update marital status
+    DoCmd.OpenQuery "__qryBexar_Subscribers_MaritalStatus"
+    
+    'update the rate id's
+    DoCmd.OpenQuery "__qryBexar_Subscribers_RateID"
+    
+    'copy data over for existing subscribers from current table
+    DoCmd.OpenQuery "__qryBexar_Subscribers_OldData"
+    
+    Call AddSubID
+    
+    Set rs = Nothing
+    Set db = Nothing
+
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+End Sub
+
+
+
+Public Sub ProcessBEXCOSubs()
+
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+        
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    strSQL = "Delete from tblSubscriber_Bexar_new"
+    db.Execute strSQL
+    
+    'bring in the first set of data
+    DoCmd.OpenQuery "__qryBexar_Subscribers"
+    
+    'convert names to upper case
+    DoCmd.OpenQuery "__qryBexar_Subscribers_UpperCase"
+    
+    'convert general data
+    DoCmd.OpenQuery "__qryBexar_Subscribers_General"
+    
+    'convert coverages
+    DoCmd.OpenQuery "__qryBexar_Subscribers_Coverage"
+    
+    'update marital status
+    DoCmd.OpenQuery "__qryBexar_Subscribers_MaritalStatus"
+    
+    'update the rate id's
+    DoCmd.OpenQuery "__qryBexar_Subscribers_RateID"
+    
+    'copy data over for existing subscribers from current table
+    DoCmd.OpenQuery "__qryBexar_Subscribers_OldData"
+    
+    Call AddSubID
+    
+    Set rs = Nothing
+    Set db = Nothing
+
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+End Sub
+
+Public Sub ProcessBEXCODependents()
+
+
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+        
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    strSQL = "Delete from tblDependent_Bexar_new"
+    db.Execute strSQL
+    
+    'bring in the first set of data
+    DoCmd.OpenQuery "__qryBexar_Dependents"
+    
+    'convert names to upper case
+    DoCmd.OpenQuery "__qryBexar_Dependents_UCase"
+    
+    'bring in the dependents' SSN's
+    DoCmd.OpenQuery "__qryBexar_Dependents_DepSSN"
+    
+    'calculate the dependents' age
+    DoCmd.OpenQuery "__qryBexar_Dependents_Age"
+    
+    'update dependents' relationships
+    DoCmd.OpenQuery "__qryBexar_Dependents_Relationships"
+    
+    Set rs = Nothing
+    Set db = Nothing
+
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+
+End Sub

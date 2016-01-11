@@ -1,0 +1,98 @@
+Operation =3
+Name ="tblCommission"
+Option =8
+Where ="(((tblSubscr.GRExecSalesDirID)<>\"CORP\") AND ((ARTRAN.Trntyp)=\"P\"))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="COMMcustKEY"
+    Expression ="ARTRAN.Custkey"
+    Name ="COMMcustNAME"
+    Expression ="tblSubscr.SUB_LUname"
+    Name ="COMMcheckNO"
+    Expression ="ARTRAN.Docno"
+    Name ="COMMinvoiceNO"
+    Expression ="ARTRAN.Applytodocno"
+    Alias ="CheckAmt"
+    Name ="COMMcheckAMT"
+    Expression ="([Docamt])*-1"
+    Name ="COMMagent"
+    Expression ="tblSubscr.GRExecSalesDirID"
+    Name ="COMMrate"
+    Expression ="tblSubscr.GRExecSalesDirRate"
+    Name ="COMMcustCLASS"
+    Expression ="ARTRAN.Custclass"
+    Name ="COMMcheckDATE"
+    Expression ="ARTRAN.Docdate"
+    Alias ="AgentType"
+    Name ="COMMagentTYPE"
+    Expression ="3"
+End
+Begin Joins
+    LeftTable ="ARTRAN"
+    RightTable ="tblSubscr"
+    Expression ="ARTRAN.Custkey = tblSubscr.PLTcustKEY"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="ARTRAN.Custkey"
+        dbInteger "ColumnWidth" ="1335"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRExecSalesDirID"
+        dbInteger "ColumnWidth" ="1890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.GRExecSalesDirID"
+        dbInteger "ColumnWidth" ="1890"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUB_LUname"
+        dbInteger "ColumnWidth" ="2505"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =40
+    Top =22
+    Right =778
+    Bottom =466
+    Left =-1
+    Top =-1
+    Right =731
+    Bottom =283
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =12
+        Top =6
+        Right =122
+        Bottom =233
+        Top =9
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =150
+        Top =8
+        Right =351
+        Bottom =235
+        Top =28
+        Name ="tblSubscr"
+        Name =""
+    End
+End

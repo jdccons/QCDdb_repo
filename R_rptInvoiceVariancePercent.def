@@ -1,0 +1,401 @@
+Version =20
+VersionRequired =20
+Checksum =919048992
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =9330
+    DatasheetFontHeight =10
+    ItemSuffix =21
+    Left =270
+    Top =600
+    Right =6465
+    Bottom =8625
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xcf28fa820fe1e140
+    End
+    RecordSource ="qrptInvoiceVarPerc"
+    Caption ="Invoice Variance Percent"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xd0020000a0050000d0020000a005000000000000722400004a01000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f4040367000601000100ea0a6f08640001000200580201000100 ,
+        0x5802040001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =9
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =18
+            BackStyle =0
+            FontName ="Times New Roman"
+        End
+        Begin ListBox
+            TextFontFamily =18
+            OldBorderStyle =0
+            FontName ="Times New Roman"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            TextFontFamily =18
+            BackStyle =0
+            FontName ="Times New Roman"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            ControlSource ="VarPerc"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =1035
+            Name ="ReportHeader"
+            Begin
+                Begin Label
+                    BackStyle =1
+                    Left =60
+                    Top =60
+                    Width =4935
+                    Height =615
+                    FontSize =24
+                    FontWeight =400
+                    Name ="Label12"
+                    Caption ="Invoice Variance Percent"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =645
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    Left =8835
+                    Top =75
+                    Width =465
+                    Height =525
+                    FontSize =10
+                    Name ="VarPerc Label"
+                    Caption ="Var\015\012Perc"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="VarPerc_Label"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =60
+                    Top =315
+                    Width =915
+                    Height =285
+                    FontSize =10
+                    Name ="GroupID Label"
+                    Caption ="Group ID"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="GroupID_Label"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =1177
+                    Top =315
+                    Width =1185
+                    Height =285
+                    FontSize =10
+                    Name ="GRname Label"
+                    Caption ="Group Name"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="GRname_Label"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =4620
+                    Top =60
+                    Width =900
+                    Height =525
+                    FontSize =10
+                    Name ="BeginInvoiceAmt Label"
+                    Caption ="Begin\015\012 Inv Amt"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="BeginInvoiceAmt_Label"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =6555
+                    Top =60
+                    Width =855
+                    Height =525
+                    FontSize =10
+                    Name ="CurrentInvoiceAmt Label"
+                    Caption ="Cur\015\012Inv Amt"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="CurrentInvoiceAmt_Label"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =7530
+                    Top =300
+                    Width =975
+                    Height =285
+                    FontSize =10
+                    Name ="Variance Label"
+                    Caption ="Variance"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Variance_Label"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =105
+                    Top =645
+                    Width =9216
+                    Name ="Line15"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =3495
+                    Top =45
+                    Width =900
+                    Height =525
+                    FontSize =10
+                    Name ="Label18"
+                    Caption ="Begin\015\012 Inv Date"
+                    Tag ="DetachedLabel"
+                End
+                Begin Label
+                    TextAlign =2
+                    Left =5550
+                    Top =60
+                    Width =900
+                    Height =525
+                    FontSize =10
+                    Name ="Label19"
+                    Caption ="Current\015\012 Inv Date"
+                    Tag ="DetachedLabel"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =330
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    DecimalPlaces =2
+                    Left =8490
+                    Top =60
+                    Width =840
+                    Height =270
+                    Name ="VarPerc"
+                    ControlSource ="VarPerc"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    Left =105
+                    Top =60
+                    Width =780
+                    Height =270
+                    TabIndex =1
+                    Name ="GroupID"
+                    ControlSource ="GroupID"
+                End
+                Begin TextBox
+                    Left =945
+                    Top =60
+                    Width =2595
+                    Height =270
+                    ColumnWidth =3840
+                    TabIndex =2
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    Left =4575
+                    Top =60
+                    Width =915
+                    Height =270
+                    ColumnWidth =1770
+                    TabIndex =3
+                    Name ="BeginInvoiceAmt"
+                    ControlSource ="BeginInvoiceAmt"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    Left =6540
+                    Top =60
+                    Width =870
+                    Height =270
+                    ColumnWidth =1920
+                    TabIndex =4
+                    Name ="CurrentInvoiceAmt"
+                    ControlSource ="CurrentInvoiceAmt"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    Left =7680
+                    Top =60
+                    Width =795
+                    Height =270
+                    TabIndex =5
+                    Name ="Variance"
+                    ControlSource ="Variance"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    Left =3585
+                    Top =60
+                    Width =915
+                    Height =270
+                    TabIndex =6
+                    Name ="Text17"
+                    ControlSource ="BeginInvoiceDate"
+                    Format ="Short Date"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    Left =5550
+                    Top =60
+                    Width =915
+                    Height =270
+                    TabIndex =7
+                    Name ="Text20"
+                    ControlSource ="CurrentInvoiceDate"
+                    Format ="Short Date"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =750
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    Left =60
+                    Top =240
+                    Width =4560
+                    Height =270
+                    Name ="Text13"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                End
+                Begin TextBox
+                    TextAlign =3
+                    Left =4740
+                    Top =240
+                    Width =4560
+                    Height =270
+                    TabIndex =1
+                    Name ="Text14"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                End
+                Begin Line
+                    Left =60
+                    Top =240
+                    Width =9240
+                    Name ="Line16"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportGrp"
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

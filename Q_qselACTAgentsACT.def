@@ -1,0 +1,79 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="Agents"
+End
+Begin OutputColumns
+    Alias ="AgentID"
+    Expression ="Agents.USER1"
+    Expression ="Agents.COMPANY"
+    Alias ="AgentSSN"
+    Expression ="Agents.USER2"
+    Expression ="Agents.FNAME"
+    Expression ="Agents.LNAME"
+    Expression ="Agents.ADDR1"
+    Expression ="Agents.ADDR2"
+    Expression ="Agents.CITY"
+    Expression ="Agents.STATE"
+    Expression ="Agents.ZIP"
+    Alias ="PhonePrimary"
+    Expression ="IIf([PHONE] Is Not Null,Mid([PHONE],1,10),Null)"
+    Alias ="PhoneFax"
+    Expression ="IIf([FAX] Is Not Null,Mid([FAX],1,10),Null)"
+    Alias ="PhoneMobile"
+    Expression ="IIf([MOBILPHONE] Is Not Null,Mid([MOBILPHONE],1,10),Null)"
+    Alias ="AgentGeoID"
+    Expression ="Agents.USER4"
+    Expression ="Agents.IDSTATUS"
+    Alias ="AgentType"
+    Expression ="Agents.USER5"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="PhonePrimary"
+        dbInteger "ColumnWidth" ="3405"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="PhoneFax"
+        dbInteger "ColumnWidth" ="3855"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Agents.COMPANY"
+        dbInteger "ColumnWidth" ="3210"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Agents.ADDR1"
+        dbInteger "ColumnWidth" ="3480"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =59
+        Top =6
+        Right =364
+        Bottom =113
+        Top =0
+        Name ="Agents"
+        Name =""
+    End
+End

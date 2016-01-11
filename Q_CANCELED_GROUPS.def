@@ -1,0 +1,53 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRcancelled)=True) AND ((tblGrp.GRee)>30))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRcancelledDate"
+    Expression ="tblGrp.GRannvDATE"
+    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRphone1"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =43
+    Right =874
+    Bottom =369
+    Left =-1
+    Top =-1
+    Right =805
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =298
+        Bottom =101
+        Top =6
+        Name ="tblGrp"
+        Name =""
+    End
+End

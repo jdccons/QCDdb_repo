@@ -1,0 +1,41 @@
+Option Compare Database
+Option Explicit
+
+Dim db As DAO.Database
+Dim rst As DAO.Recordset
+Dim strSQL As String
+
+Function GetSSN(SubID As String) As String
+    'Purpose:  Using the subscriber's id,
+    '          look up the SSN.  The SSN
+    '          is insert into DEPsubID field
+    '          on tblDependent.  This becomes
+    '          the foreign key to SSN on tblSubscr
+    
+    On Error GoTo PROC_ERR
+    
+    Set db = CurrentDb()
+    strSQL = "SELECT tmpExportAllAmerican.EISSN " & _
+             "FROM tmpExportAllAmerican " & _
+             "WHERE (((tmpExportAllAmerican.EISBRID)=" & _
+             "'" & SubID & "') " & _
+             "AND ((tmpExportAllAmerican." & _
+             "EINMPLAN)<>'QCDWHT-MNL'" & _
+             "AND (tmpExportAllAmerican.EIRECID) = 'P'));"
+    
+    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    GetSSN = rst.Fields("EISSN")
+
+    rst.Close
+    db.Close
+    Set db = Nothing
+
+PROC_EXIT:
+    Exit Function
+
+PROC_ERR:
+    
+    MsgBox Err.DESCRIPTION & " On EISBRID no " & SubID
+    Resume PROC_EXIT
+
+End Function

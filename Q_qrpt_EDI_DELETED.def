@@ -1,0 +1,88 @@
+Operation =3
+Name ="tmpEDI_Rpt"
+Option =0
+Where ="(((tblEDI_App_Subscr.SUBssn) Is Null))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="qselAAGroups"
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblSubscr.SUBssn"
+    Name ="SUBfirstNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Name ="SUBlastNAME"
+    Expression ="tblSubscr.SUBlastNAME"
+    Name ="GroupID"
+    Expression ="tblSubscr.SUBgroupID"
+    Alias ="Stat"
+    Name ="Stat"
+    Expression ="\"DELETED\""
+    Alias ="SUBStreet"
+    Name ="SUBStreet"
+    Expression ="[tblSubscr].[SUBstreet1] & \" \" & [tblSubscr].[SUBStreet2]"
+    Name ="SUBcity"
+    Expression ="tblSubscr.SUBcity"
+    Name ="SUBstate"
+    Expression ="tblSubscr.SUBstate"
+    Name ="SUBzip"
+    Expression ="tblSubscr.SUBzip"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblEDI_App_Subscr"
+    Expression ="tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn"
+    Flag =2
+    LeftTable ="qselAAGroups"
+    RightTable ="tblSubscr"
+    Expression ="qselAAGroups.SUBgroupID = tblSubscr.SUBgroupID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =11
+    Top =174
+    Right =971
+    Bottom =632
+    Left =-1
+    Top =-1
+    Right =953
+    Bottom =242
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =186
+        Top =9
+        Right =318
+        Bottom =116
+        Top =7
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =52
+        Top =12
+        Right =148
+        Bottom =74
+        Top =0
+        Name ="qselAAGroups"
+        Name =""
+    End
+    Begin
+        Left =374
+        Top =7
+        Right =591
+        Bottom =129
+        Top =3
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

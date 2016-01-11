@@ -1,0 +1,69 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tmpEDI_Rpt"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tmpEDI_Rpt.GroupID"
+    Expression ="tblGrp.GRname"
+    Expression ="tmpEDI_Rpt.SUBssn"
+    Expression ="tmpEDI_Rpt.SUBfirstNAME"
+    Expression ="tmpEDI_Rpt.SUBlastNAME"
+    Expression ="tmpEDI_Rpt.SUBStreet"
+    Expression ="tmpEDI_Rpt.SUBcity"
+    Expression ="tmpEDI_Rpt.SUBstate"
+    Expression ="tmpEDI_Rpt.SUBzip"
+    Expression ="tmpEDI_Rpt.Stat"
+End
+Begin Joins
+    LeftTable ="tmpEDI_Rpt"
+    RightTable ="tblGrp"
+    Expression ="tmpEDI_Rpt.GroupID = tblGrp.GROUPid"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="4470"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =84
+    Top =106
+    Right =1258
+    Bottom =516
+    Left =-1
+    Top =-1
+    Right =1163
+    Bottom =188
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =59
+        Top =-6
+        Right =265
+        Bottom =152
+        Top =5
+        Name ="tmpEDI_Rpt"
+        Name =""
+    End
+    Begin
+        Left =303
+        Top =6
+        Right =399
+        Bottom =113
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

@@ -1,0 +1,57 @@
+Operation =1
+Option =8
+Where ="(((qselInvoiceBase.GrpID) Is Null))"
+Begin InputTables
+    Name ="qselInvoiceCompare"
+    Name ="qselInvoiceBase"
+End
+Begin OutputColumns
+    Expression ="qselInvoiceCompare.GrpID"
+    Expression ="qselInvoiceCompare.InvMonth"
+    Expression ="qselInvoiceCompare.InvYear"
+    Expression ="qselInvoiceCompare.TotalBilling"
+End
+Begin Joins
+    LeftTable ="qselInvoiceCompare"
+    RightTable ="qselInvoiceBase"
+    Expression ="qselInvoiceCompare.GrpID = qselInvoiceBase.GrpID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =1002
+    Bottom =349
+    Left =-1
+    Top =-1
+    Right =933
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =181
+        Bottom =113
+        Top =0
+        Name ="qselInvoiceCompare"
+        Name =""
+    End
+    Begin
+        Left =245
+        Top =4
+        Right =416
+        Bottom =66
+        Top =0
+        Name ="qselInvoiceBase"
+        Name =""
+    End
+End

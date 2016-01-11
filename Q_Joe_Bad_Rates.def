@@ -1,0 +1,89 @@
+Operation =1
+Option =0
+Where ="((([tblSubscr].[RateID]-[tblRates].[RateID])<>0))"
+Begin InputTables
+    Name ="tblRates"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.PlanID"
+    Expression ="tblSubscr.CoverID"
+    Expression ="tblSubscr.RateID"
+    Expression ="tblRates.PlanID"
+    Expression ="tblRates.CoverID"
+    Expression ="tblRates.RateID"
+    Alias ="Expr1"
+    Expression ="[tblSubscr].[RateID]-[tblRates].[RateID]"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.SubGroupID = tblRates.GroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.PlanID = tblRates.PlanID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.CoverID = tblRates.CoverID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SubGroupID"
+    Flag =0
+    Expression ="tblSubscr.SubSSN"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.RateID"
+        dbInteger "ColumnWidth" ="2130"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblRates.RateID"
+        dbInteger "ColumnWidth" ="1860"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =62
+    Top =84
+    Right =1258
+    Bottom =540
+    Left =-1
+    Top =-1
+    Right =1189
+    Bottom =288
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =303
+        Top =18
+        Right =677
+        Bottom =140
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+    Begin
+        Left =59
+        Top =11
+        Right =219
+        Bottom =253
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

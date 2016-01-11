@@ -1,0 +1,50 @@
+Operation =3
+Name ="tblDependent"
+Option =0
+Begin InputTables
+    Name ="tblImportDependentTemp"
+End
+Begin OutputColumns
+    Name ="DEPsubID"
+    Expression ="tblImportDependentTemp.DepID"
+    Name ="DEPssn"
+    Expression ="tblImportDependentTemp.DEPssn"
+    Name ="DEPfirstNAME"
+    Expression ="tblImportDependentTemp.FirstName"
+    Name ="DEPlastNAME"
+    Expression ="tblImportDependentTemp.LastName"
+    Name ="DEPmiddleNAME"
+    Expression ="tblImportDependentTemp.MiddleInit"
+    Alias ="DOB"
+    Name ="DEPdob"
+    Expression ="IIf(IsNull([DepDOB]),\"\",Left([DepDOB],2) & \"/\" & Mid([DepDOB],3,2) & \"/\" &"
+        " Right([DepDOB],4))"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =0
+    Left =73
+    Top =97
+    Right =1004
+    Bottom =491
+    Left =-1
+    Top =-1
+    Right =924
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =139
+        Top =4
+        Name ="tblImportDependentTemp"
+        Name =""
+    End
+End

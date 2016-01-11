@@ -1,0 +1,267 @@
+Operation =3
+Name ="ARHDR"
+Option =8
+Where ="(((CStr(Format([TRANS NO],\"00000\")))=[Forms]![frmInvIndiv]![TRANS NO]))"
+Begin InputTables
+    Name ="tblInvHdr"
+End
+Begin OutputColumns
+    Name ="Custkey"
+    Expression ="tblInvHdr.[CUST KEY]"
+    Name ="Custname"
+    Expression ="tblInvHdr.[CUST NAME]"
+    Name ="Custaddr1"
+    Expression ="tblInvHdr.[ADDRESS 1]"
+    Name ="Custaddr2"
+    Expression ="tblInvHdr.[ADDRESS 2]"
+    Name ="Custcity"
+    Expression ="tblInvHdr.CITY"
+    Name ="Custstate"
+    Expression ="tblInvHdr.STATE"
+    Name ="Custzip"
+    Expression ="tblInvHdr.[ZIP CODE]"
+    Name ="Custattn"
+    Expression ="tblInvHdr.ATTENTION"
+    Alias ="Trans_No"
+    Name ="Tranno"
+    Expression ="CStr(Format([TRANS NO],\"00000\"))"
+    Name ="Invdate"
+    Expression ="tblInvHdr.[INV DATE]"
+    Name ="Agedate"
+    Expression ="tblInvHdr.[INV DATE]"
+    Name ="Reqdate"
+    Expression ="tblInvHdr.[INV DATE]"
+    Name ="Shipdate"
+    Expression ="tblInvHdr.[INV DATE]"
+    Name ="Territkey"
+    Expression ="tblInvHdr.[TERRITORY KEY]"
+    Name ="Salespkey"
+    Expression ="tblInvHdr.[SALESP    KEY]"
+    Name ="Spare"
+    Expression ="tblInvHdr.SPARE3"
+    Alias ="Crd_Memo"
+    Name ="Crmemoflg"
+    Expression ="1"
+    Name ="Custclass"
+    Expression ="tblInvHdr.[CUST CLASS]"
+    Alias ="Sel_Status"
+    Name ="Statusflg"
+    Expression ="\"S\""
+    Alias ="TRANS TYPE"
+    Name ="TranType"
+    Expression ="\"I\""
+    Alias ="Freightamt"
+    Name ="Freightamt"
+    Expression ="0"
+    Alias ="Reserved"
+    Name ="Reserved"
+    Expression ="1"
+    Alias ="ReservedOECst"
+    Name ="ReservedOECst"
+    Expression ="0"
+    Name ="Sysdocid"
+    Expression ="tblInvHdr.SYSDOCID"
+    Alias ="Applysysdocid"
+    Name ="Applysysdocid"
+    Expression ="0"
+    Alias ="Oedocid"
+    Name ="Oedocid"
+    Expression ="0"
+    Name ="RecUserID"
+    Expression ="tblInvHdr.RecUserID"
+    Name ="RecDate"
+    Expression ="tblInvHdr.RecDate"
+    Name ="RecTime"
+    Expression ="tblInvHdr.RecTime"
+    Name ="Checkno"
+    Expression ="tblInvHdr.[CHECK NO]"
+    Name ="Checkamt"
+    Expression ="tblInvHdr.[CHECK AMTR]"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+Begin
+    Begin
+        dbText "Name" ="[t-INVhdr].[CUST KEY]"
+        dbInteger "ColumnWidth" ="1020"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Trans_No"
+        dbInteger "ColumnWidth" ="930"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-INVhdr].[CUST NAME]"
+        dbInteger "ColumnWidth" ="2805"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-INVhdr].[ADDRESS 1]"
+        dbInteger "ColumnWidth" ="2070"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-INVhdr].[ADDRESS 2]"
+        dbInteger "ColumnWidth" ="1215"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-INVhdr].CITY"
+        dbInteger "ColumnWidth" ="1200"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-INVhdr].STATE"
+        dbInteger "ColumnWidth" ="705"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-INVhdr].[ZIP CODE]"
+        dbInteger "ColumnWidth" ="975"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="[t-INVhdr].ATTENTION"
+        dbInteger "ColumnWidth" ="1725"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Inv_Date"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Age_Date"
+        dbInteger "ColumnWidth" ="945"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Req_Date"
+        dbInteger "ColumnWidth" ="960"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Ship_Date"
+        dbInteger "ColumnWidth" ="990"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.CUST KEY"
+        dbInteger "ColumnOrder" ="1"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.CUST NAME"
+        dbInteger "ColumnOrder" ="3"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.ADDRESS 1"
+        dbInteger "ColumnOrder" ="4"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.ADDRESS 2"
+        dbInteger "ColumnOrder" ="5"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.ADDRESS 3"
+        dbInteger "ColumnOrder" ="6"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.CITY"
+        dbInteger "ColumnOrder" ="7"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.STATE"
+        dbInteger "ColumnOrder" ="8"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.ZIP CODE"
+        dbInteger "ColumnOrder" ="9"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.COUNTRY"
+        dbInteger "ColumnOrder" ="10"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.ATTENTION"
+        dbInteger "ColumnOrder" ="11"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP TO"
+        dbInteger "ColumnOrder" ="12"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP NAME"
+        dbInteger "ColumnOrder" ="13"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP ADDR 1"
+        dbInteger "ColumnOrder" ="14"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP ADDR 2"
+        dbInteger "ColumnOrder" ="15"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP ADDR 3"
+        dbInteger "ColumnOrder" ="16"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP CITY"
+        dbInteger "ColumnOrder" ="17"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP STATE"
+        dbInteger "ColumnOrder" ="18"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP ZIP CODE"
+        dbInteger "ColumnOrder" ="19"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP COUNTRY"
+        dbInteger "ColumnOrder" ="20"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.SHIP ATTN"
+        dbInteger "ColumnOrder" ="21"
+    End
+    Begin
+        dbText "Name" ="t-INVhdr.TRANS NO"
+        dbInteger "ColumnOrder" ="2"
+    End
+    Begin
+        dbText "Name" ="Expr1"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblInvHdr.[INV DATE]"
+        dbInteger "ColumnWidth" ="885"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =142
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =16
+        Name ="tblInvHdr"
+        Name =""
+    End
+End

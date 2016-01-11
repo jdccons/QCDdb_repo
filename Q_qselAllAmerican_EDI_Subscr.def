@@ -1,0 +1,101 @@
+Operation =1
+Option =0
+Where ="(((tmpExportAllAmerican.EINAML)=\"GRAVES\") AND ((tmpExportAllAmerican.EIRECID)="
+    "\"P\") AND ((Mid([EINMPLAN],8,3))=\"QCD\")) OR (((tmpExportAllAmerican.EINAML)=\""
+    "GRAVES\") AND ((tmpExportAllAmerican.EIRECID)=\"P\") AND ((tmpExportAllAmerican."
+    "EINMPLAN)=\"QCDBLU-NGL\"))"
+Begin InputTables
+    Name ="tmpExportAllAmerican"
+    Name ="qselAA_CntOfDeps"
+End
+Begin OutputColumns
+    Alias ="GROUPid"
+    Expression ="Right(Trim([EIGRPID]),Len(Trim([EIGRPID]))-3)"
+    Expression ="tmpExportAllAmerican.EISSN"
+    Expression ="tmpExportAllAmerican.EINAML"
+    Expression ="tmpExportAllAmerican.EINAMF"
+    Alias ="NAMM"
+    Expression ="Left(Trim([EINAMM]),1)"
+    Alias ="DTBR"
+    Expression ="Left([EIDTBR],2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Right([EIDTBR],4)"
+    Expression ="tmpExportAllAmerican.EISEX"
+    Expression ="tmpExportAllAmerican.EIADD1"
+    Expression ="tmpExportAllAmerican.EIADD2"
+    Expression ="tmpExportAllAmerican.EICITY"
+    Expression ="tmpExportAllAmerican.EISTE"
+    Expression ="tmpExportAllAmerican.EIZIP"
+    Alias ="PhoneHome"
+    Expression ="IIf([EIWPHR]<>\"\",[EIWPHR],Null)"
+    Alias ="DTEFF"
+    Expression ="Left([EIDTCVEF],2) & \"/\" & Mid([EIDTCVEF],3,2) & \"/\" & Right([EIDTCVEF],4)"
+    Alias ="Coverage"
+    Expression ="IIf([Cnt]=0,\"I\",IIf([Cnt]=1,\"O\",IIf([Cnt]>=2,\"F\",\"I\")))"
+    Alias ="Status"
+    Expression ="\"GRSUB\""
+    Alias ="LookUpName"
+    Expression ="UCase(Trim([EINAML])) & \", \" & UCase(Trim([EINAMF])) & \" \" & UCase(Left([EIN"
+        "AMM],1))"
+    Alias ="DepCnt"
+    Expression ="IIf(IsNull([Cnt]),0,[Cnt])"
+    Expression ="tmpExportAllAmerican.EIRECID"
+    Alias ="Expr1"
+    Expression ="Mid([EINMPLAN],8,3)"
+    Expression ="tmpExportAllAmerican.EINMPLAN"
+End
+Begin Joins
+    LeftTable ="tmpExportAllAmerican"
+    RightTable ="qselAA_CntOfDeps"
+    Expression ="tmpExportAllAmerican.EISBRID = qselAA_CntOfDeps.EISBRID"
+    Flag =2
+End
+Begin OrderBy
+    Expression ="tmpExportAllAmerican.EINMPLAN"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+dbText "Description" ="p"
+Begin
+    Begin
+        dbText "Name" ="tmpExportAllAmerican.EINMPLAN"
+        dbInteger "ColumnWidth" ="2205"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =76
+    Top =98
+    Right =1258
+    Bottom =403
+    Left =-1
+    Top =-1
+    Right =1175
+    Bottom =129
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =25
+        Top =6
+        Right =208
+        Bottom =105
+        Top =0
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+    Begin
+        Left =326
+        Top =-1
+        Right =475
+        Bottom =98
+        Top =0
+        Name ="qselAA_CntOfDeps"
+        Name =""
+    End
+End

@@ -1,0 +1,268 @@
+Version =20
+VersionRequired =20
+Checksum =1836709685
+Begin Form
+    AutoCenter = NotDefault
+    ScrollBars =2
+    Width =6960
+    ItemSuffix =121
+    Left =1305
+    Top =765
+    Right =9735
+    Bottom =2610
+    RecSrcDt = Begin
+        0x0e74da40317ae340
+    End
+    GUID = Begin
+        0x32d765e68a2ac541b082859da17510ea
+    End
+    NameMap = Begin
+        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
+        0x0000000000000000000000000000
+    End
+    RecordSource ="SELECT tblDependent.DepCounter, tblDependent.DepSSN, tblDependent.DepSubID, tblD"
+        "ependent.DepFirstName, tblDependent.DepMiddleName, tblDependent.DepLastName, tbl"
+        "Dependent.DepDOB, tblDependent.DepAge, tblDependent.DepRelationship, tblDependen"
+        "t.DepGender FROM tblDependent;"
+    PrtMip = Begin
+        0x0000000000000000000000000000000000000000301b0000f000000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f40453ef800101000100ea0a6f08640001000f00b00402000100 ,
+        0xb004030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    Begin
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =240
+            BackColor =12632256
+            Name ="FormHeader1"
+            GUID = Begin
+                0xcd2481d60dd19e48ab1c0ebd06207f95
+            End
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    Width =1290
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text108"
+                    Caption ="Social Sec. # "
+                    GUID = Begin
+                        0xee46549cd990c84e9d8689f452d5bacb
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =3456
+                    Width =1590
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text109"
+                    Caption ="First Name"
+                    GUID = Begin
+                        0x0183d65845483a46a1b9ad26b8ef4e02
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =1440
+                    Width =1875
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text110"
+                    Caption ="Last Name"
+                    GUID = Begin
+                        0x39e62f3e2d372e4f9ede6af3cd9d34a0
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =5760
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text111"
+                    Caption ="Date of Birth"
+                    GUID = Begin
+                        0x4e0f20284da87a4083bbcd3f7c8130e2
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =5184
+                    Width =435
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text115"
+                    Caption ="MI"
+                    GUID = Begin
+                        0xba91bc838dc43f42ab707de7ba910ec0
+                    End
+                End
+            End
+        End
+        Begin Section
+            Height =240
+            BackColor =12632256
+            Name ="Detail0"
+            GUID = Begin
+                0xf480491c9fad8444a70c175c4a15c5a0
+            End
+            Begin
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =144
+                    Width =1149
+                    Name ="DEPssn"
+                    ControlSource ="DEPssn"
+                    InputMask ="000\\-00\\-0000;;_"
+                    GUID = Begin
+                        0x72bdd16dc53a384e87ab9975bc77ce0f
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =3456
+                    Width =1584
+                    TabIndex =2
+                    Name ="DEPfirstNAME"
+                    ControlSource ="DEPfirstNAME"
+                    GUID = Begin
+                        0x56edd75ffc24ac43b94c105f834a3ca4
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =1440
+                    Width =1869
+                    TabIndex =1
+                    Name ="DEPlastNAME"
+                    ControlSource ="DEPlastNAME"
+                    GUID = Begin
+                        0xcf859f8c61b7cf4a81e16679fa33a67e
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =5760
+                    Width =1149
+                    TabIndex =4
+                    Name ="DEPdob"
+                    ControlSource ="DEPdob"
+                    Format ="m/d/yyyy"
+                    BeforeUpdate ="[Event Procedure]"
+                    InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xbdc95c3a2e4b2f40a3c26c2d17931d09
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    Left =6030
+                    Width =864
+                    TabIndex =5
+                    BackColor =65408
+                    Name ="DEPsubID"
+                    ControlSource ="DEPsubID"
+                    GUID = Begin
+                        0x879f52fa0205d442b99aac8a7fdba334
+                    End
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    Left =5184
+                    Width =429
+                    TabIndex =3
+                    Name ="DEPmiddleNAME"
+                    ControlSource ="DEPmiddleNAME"
+                    GUID = Begin
+                        0x6e48e961b9948a46a8aecfb4b889733e
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            Name ="FormFooter2"
+            GUID = Begin
+                0x312eb2c6d53abc499dd49f85c753d3b4
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub DEPdob_BeforeUpdate(Cancel As Integer)
+    If ValidateDateFormat(Me.DEPdob) = False Then
+        MsgBox "Please correct the Date of Birth...it is not in the proper range." & vbCrLf & strMsg, vbCritical, "Validation Failed"
+        Cancel = True
+    End If
+End Sub

@@ -1,0 +1,91 @@
+Operation =1
+Option =0
+Where ="(((tblAgent.PayCommTo)=4))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tmpBillingReconcile_rpt"
+    Name ="tblGrpAgt"
+End
+Begin OutputColumns
+    Expression ="tmpBillingReconcile_rpt.GRcontBEG"
+    Expression ="tmpBillingReconcile_rpt.GROUPid"
+    Expression ="tmpBillingReconcile_rpt.GRname"
+    Expression ="tmpBillingReconcile_rpt.Docdate"
+    Expression ="tmpBillingReconcile_rpt.GRPgeoID"
+    Expression ="tmpBillingReconcile_rpt.GRcancelled"
+    Expression ="tmpBillingReconcile_rpt.GRcancelledDate"
+    Expression ="tmpBillingReconcile_rpt.GRreinstatedDate"
+    Expression ="tmpBillingReconcile_rpt.GRhold"
+    Expression ="tmpBillingReconcile_rpt.Docamt"
+    Expression ="tmpBillingReconcile_rpt.AgencyCom"
+    Expression ="tmpBillingReconcile_rpt.AgentsCom"
+    Expression ="tmpBillingReconcile_rpt.EmplCom"
+    Expression ="tmpBillingReconcile_rpt.Docno"
+    Expression ="tmpBillingReconcile_rpt.SubCnt"
+    Expression ="tmpBillingReconcile_rpt.DepCnt"
+    Alias ="AgentName"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblGrpAgt.AgentRATE"
+End
+Begin Joins
+    LeftTable ="tmpBillingReconcile_rpt"
+    RightTable ="tblGrpAgt"
+    Expression ="tmpBillingReconcile_rpt.GROUPid = tblGrpAgt.GROUPid"
+    Flag =1
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tmpBillingReconcile_rpt.GROUPid"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =80
+    Top =92
+    Right =954
+    Bottom =511
+    Left =-1
+    Top =-1
+    Right =867
+    Bottom =258
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =454
+        Top =6
+        Right =704
+        Bottom =226
+        Top =14
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =19
+        Top =6
+        Right =223
+        Bottom =203
+        Top =7
+        Name ="tmpBillingReconcile_rpt"
+        Name =""
+    End
+    Begin
+        Left =281
+        Top =6
+        Right =400
+        Bottom =151
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+End

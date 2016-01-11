@@ -1,0 +1,15 @@
+dbMemo "SQL" ="SELECT SubGroupID,SubStatus, SubSSN,SubLastName, SubFirstName, PlanID, CoverID, "
+    "SubCancelled\015\012FROM tblSubscr\015\012WHERE (((SubStatus)<>\"PENDG\") AND (("
+    "SubCancelled) Is Null Or (SubCancelled)=1)) Order By SubGroupID, SubLastName;\015"
+    "\012\015\012\015\012UNION SELECT SubGroupID, SubStatus,  SubSSN, SubLastName, Su"
+    "bFirstName,  PlanID, CoverID, SubCancelled\015\012 FROM tblSubscr_Bexar\015\012W"
+    "HERE (((SubStatus)<>\"PENDG\") AND ((SubCancelled) Is Null Or (SubCancelled)=1))"
+    "\015\012ORDER BY SubGroupID, SubLastName;\015\012"
+dbMemo "Connect" =""
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End

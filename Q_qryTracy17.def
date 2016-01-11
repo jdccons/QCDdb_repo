@@ -1,0 +1,46 @@
+Operation =1
+Option =8
+Where ="(((tbldentist.DentStatus)=\"A\"))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Expression ="tbldentist.DentLast"
+    Expression ="tbldentist.DentFirst"
+    Expression ="tbldentist.DentStreet1"
+    Expression ="tbldentist.DentStreet2"
+    Expression ="tbldentist.DentCity"
+    Expression ="tbldentist.DentState"
+    Expression ="tbldentist.DentZip"
+    Expression ="tbldentist.DentSpecialty"
+    Expression ="tbldentist.DentPhoneOffice"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =778
+    Bottom =349
+    Left =-1
+    Top =-1
+    Right =705
+    Bottom =144
+    Left =784
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+End

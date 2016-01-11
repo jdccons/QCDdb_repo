@@ -1,0 +1,51 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENCY"
+    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.AGENTlast"
+    Expression ="tblAgent.AGENTtype"
+    Expression ="tblAgent.AGENTphone"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblAgent.AGENCY"
+        dbInteger "ColumnWidth" ="4140"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENTlast"
+        dbInteger "ColumnWidth" ="1872"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =96
+    Top =81
+    Right =1002
+    Bottom =446
+    Left =-1
+    Top =-1
+    Right =899
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =139
+        Top =8
+        Name ="tblAgent"
+        Name =""
+    End
+End

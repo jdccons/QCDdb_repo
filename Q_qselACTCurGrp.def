@@ -1,0 +1,103 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="clients"
+End
+Begin OutputColumns
+    Alias ="GroupID"
+    Expression ="clients.USER1"
+    Expression ="clients.COMPANY"
+    Alias ="GroupPlanID"
+    Expression ="clients.USER14"
+    Alias ="GroupGeoID"
+    Expression ="clients.USER11"
+    Expression ="clients.ADDR1"
+    Expression ="clients.ADDR2"
+    Expression ="clients.CITY"
+    Expression ="clients.STATE"
+    Expression ="clients.ZIP"
+    Alias ="PhonePrimary"
+    Expression ="IIf([PHONE] Is Not Null,Mid([PHONE],1,10),Null)"
+    Alias ="PhoneFax"
+    Expression ="IIf([FAX] Is Not Null,Mid([FAX],1,10),Null)"
+    Expression ="clients.NAME"
+    Expression ="clients.NAME2"
+    Alias ="ContBeg"
+    Expression ="IIf([USER4] Is Not Null,ConvtoAccessDate([USER4]),Null)"
+    Alias ="ContEnd"
+    Expression ="IIf([USER5] Is Not Null,ConvtoAccessDate([USER5]),Null)"
+    Alias ="AgentPrimary"
+    Expression ="clients.USER6"
+    Alias ="AgentSecondary"
+    Expression ="clients.USER10"
+    Alias ="ClientServiceRep"
+    Expression ="clients.USER2"
+    Expression ="clients.IDSTATUS"
+    Alias ="AccountManager"
+    Expression ="clients.USER12"
+    Expression ="clients.TITLE"
+    Alias ="CancelledDate"
+    Expression ="IIf([USER13] Is Not Null,ConvtoAccessDate([USER13]),Null)"
+    Alias ="ExecSalesDir"
+    Expression ="clients.USER3"
+    Alias ="GroupType"
+    Expression ="clients.USER8"
+End
+Begin OrderBy
+    Expression ="clients.USER1"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="CancelledDate"
+        dbInteger "ColumnWidth" ="1545"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="ExecSalesDir"
+        dbInteger "ColumnWidth" ="1995"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="PhonePrimary"
+        dbInteger "ColumnWidth" ="3405"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="PhoneFax"
+        dbInteger "ColumnWidth" ="3855"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="clients.COMPANY"
+        dbInteger "ColumnWidth" ="2400"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =513
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =28
+        Top =6
+        Right =124
+        Bottom =113
+        Top =0
+        Name ="clients"
+        Name =""
+    End
+End

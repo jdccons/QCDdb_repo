@@ -1,0 +1,93 @@
+Operation =1
+Option =0
+Where ="(((tblAgent.AGENTid)=\"TWALL\" Or (tblAgent.AGENTid)=\"BLDAV\") AND ((tblAgent.P"
+    "ayCommTo)=4))"
+Begin InputTables
+    Name ="tblAgent"
+    Name ="tblGrpAgt"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblGrpAgt.GROUPid"
+    Expression ="tblAgent.PayCommTo"
+    Expression ="tblGrp.GRname"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpAgt"
+    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblAgent.AGENTid"
+        dbInteger "ColumnWidth" ="990"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="4185"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrpAgt.GROUPid"
+        dbInteger "ColumnWidth" ="1035"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.PayCommTo"
+        dbInteger "ColumnWidth" ="1365"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =76
+    Top =6
+    Right =1268
+    Bottom =853
+    Left =-1
+    Top =-1
+    Right =1185
+    Bottom =579
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =4
+        Top =0
+        Right =258
+        Bottom =429
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =281
+        Top =29
+        Right =437
+        Bottom =173
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+    Begin
+        Left =475
+        Top =6
+        Right =898
+        Bottom =501
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

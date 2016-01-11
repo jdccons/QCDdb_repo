@@ -1,0 +1,73 @@
+Operation =3
+Name ="__Indiv_Print_PDF"
+Option =0
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Name ="SubSSN"
+    Expression ="tblEDI_App_Subscr.SubSSN"
+    Name ="SubID"
+    Expression ="tblEDI_App_Subscr.SubID"
+    Name ="SubStatus"
+    Expression ="tblEDI_App_Subscr.SubStatus"
+    Name ="SubGroupID"
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    Name ="SubCancelled"
+    Expression ="tblEDI_App_Subscr.SubCancelled"
+    Name ="SubLastName"
+    Expression ="tblEDI_App_Subscr.SubLastName"
+    Name ="SubFirstName"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
+    Name ="SubMiddleName"
+    Expression ="tblEDI_App_Subscr.SubMiddleName"
+    Name ="SubStreet1"
+    Expression ="tblEDI_App_Subscr.SubStreet1"
+    Name ="SubStreet2"
+    Expression ="tblEDI_App_Subscr.SubStreet2"
+    Name ="SubCity"
+    Expression ="tblEDI_App_Subscr.SubCity"
+    Name ="SubState"
+    Expression ="tblEDI_App_Subscr.SubState"
+    Name ="SubZip"
+    Expression ="tblEDI_App_Subscr.SubZip"
+    Name ="SubEffDate"
+    Expression ="tblEDI_App_Subscr.SubEffDate"
+    Name ="SubCardPrt"
+    Expression ="tblEDI_App_Subscr.SubCardPrt"
+    Name ="SubContBeg"
+    Expression ="tblEDI_App_Subscr.SubContBeg"
+    Name ="SubContEnd"
+    Expression ="tblEDI_App_Subscr.SubContEnd"
+    Name ="PlanID"
+    Expression ="tblEDI_App_Subscr.PlanID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =147
+    Top =127
+    Right =1344
+    Bottom =451
+    Left =-1
+    Top =-1
+    Right =1178
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =292
+        Bottom =124
+        Top =5
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

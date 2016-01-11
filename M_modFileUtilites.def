@@ -1,0 +1,75 @@
+' Module     : modFileUtilites
+' Description:
+' Procedures : FileExists_TSB
+'              GetCurrentPath_TSB
+
+' Created    : 12/8/99 tcook
+' Modified   :
+' --------------------------------------------------
+Option Compare Database
+Option Explicit
+
+Function FileExists_TSB(strDest As String) As Boolean
+    ' Comments   :
+    ' Parameters : strDest -
+    ' Returns    : Boolean -
+    ' Created    :
+    ' Modified   :
+    ' --------------------------------------------------------
+    ' Comments  : Determines if the named file exists
+    ' Parameters: strDest - file to check
+    ' Returns   : True-file exists, false otherwise
+    '
+    Dim intLen As Integer
+    
+    On Error Resume Next
+    intLen = Len(Dir(strDest))
+    
+    FileExists_TSB = (Not Err And intLen > 0)
+    
+End Function
+
+Function GetCurrentPath_TSB() As String
+    ' Comments   :
+    ' Parameters :  -
+    ' Returns    : String -
+    ' Created    :
+    ' Modified   :
+    ' --------------------------------------------------------
+  On Error GoTo PROC_ERR
+    ' Comments  : returns that path that the currently database is located in
+    ' Parameters: none
+    ' Returns   : path of current database
+    '
+    Dim dbsCurrent As Database
+    Dim strTmp As String
+    Dim strNew As String
+    Dim intCounter As Integer
+    Dim strChrTmp As String * 1
+    Dim fAdd As Boolean
+    
+    Set dbsCurrent = CurrentDb()
+    strTmp = dbsCurrent.Name
+    
+    For intCounter = Len(strTmp) To 1 Step -1
+        
+        strChrTmp = Mid$(strTmp, intCounter, 1)
+        
+        If strChrTmp = "\" Then
+            fAdd = True
+        End If
+        
+        If fAdd Then
+            strNew = strChrTmp & strNew
+        End If
+        
+    Next intCounter
+    
+    GetCurrentPath_TSB = strNew
+    
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function

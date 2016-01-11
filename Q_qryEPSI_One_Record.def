@@ -1,0 +1,78 @@
+Operation =1
+Option =0
+Where ="(((ELGEXP_SQL.EINMPLAN) In (\"QCDWHT-MNL\",\"QCDWHT-QCD\",\"QCDRPL-QCD\",\"QCDRP"
+    "L-MNL\")))"
+Having ="(((Count(ELGEXP_SQL.EIMBRID))<>2))"
+Begin InputTables
+    Name ="ELGEXP_SQL"
+    Name ="qryEPSI_One_Record_Plans"
+End
+Begin OutputColumns
+    Expression ="ELGEXP_SQL.EIMBRID"
+    Expression ="ELGEXP_SQL.EINAML"
+    Expression ="ELGEXP_SQL.EINAMF"
+    Expression ="ELGEXP_SQL.EINAMM"
+    Expression ="qryEPSI_One_Record_Plans.EINMPLAN"
+End
+Begin Joins
+    LeftTable ="ELGEXP_SQL"
+    RightTable ="qryEPSI_One_Record_Plans"
+    Expression ="ELGEXP_SQL.EIMBRID = qryEPSI_One_Record_Plans.EIMBRID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="ELGEXP_SQL.EIMBRID"
+    Flag =0
+End
+Begin Groups
+    Expression ="ELGEXP_SQL.EIMBRID"
+    GroupLevel =0
+    Expression ="ELGEXP_SQL.EINAML"
+    GroupLevel =0
+    Expression ="ELGEXP_SQL.EINAMF"
+    GroupLevel =0
+    Expression ="ELGEXP_SQL.EINAMM"
+    GroupLevel =0
+    Expression ="qryEPSI_One_Record_Plans.EINMPLAN"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =260
+    Top =45
+    Right =1617
+    Bottom =433
+    Left =-1
+    Top =-1
+    Right =1338
+    Bottom =208
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =212
+        Bottom =169
+        Top =9
+        Name ="ELGEXP_SQL"
+        Name =""
+    End
+    Begin
+        Left =255
+        Top =19
+        Right =517
+        Bottom =141
+        Top =0
+        Name ="qryEPSI_One_Record_Plans"
+        Name =""
+    End
+End

@@ -1,0 +1,46 @@
+Operation =3
+Name ="tblEDI_App_Dep"
+Option =0
+Begin InputTables
+    Name ="tblImportFile_MRIC_Dependents"
+End
+Begin OutputColumns
+    Name ="DEPsubID"
+    Expression ="tblImportFile_MRIC_Dependents.SubSSN"
+    Name ="DEPlastNAME"
+    Expression ="tblImportFile_MRIC_Dependents.LastName"
+    Name ="DEPfirstNAME"
+    Expression ="tblImportFile_MRIC_Dependents.FirstName"
+    Name ="DEPdob"
+    Expression ="tblImportFile_MRIC_Dependents.DOB"
+    Name ="DEPssn"
+    Expression ="tblImportFile_MRIC_Dependents.DepSSN"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+End
+Begin
+    State =0
+    Left =66
+    Top =67
+    Right =940
+    Bottom =526
+    Left =-1
+    Top =-1
+    Right =867
+    Bottom =298
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =56
+        Top =14
+        Right =286
+        Bottom =263
+        Top =0
+        Name ="tblImportFile_MRIC_Dependents"
+        Name =""
+    End
+End

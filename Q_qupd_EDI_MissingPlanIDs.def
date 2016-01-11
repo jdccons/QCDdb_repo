@@ -1,0 +1,60 @@
+Operation =4
+Option =0
+Where ="(((tblEDI_App_Subscr.PlanID) Is Null Or (tblEDI_App_Subscr.PlanID)=0))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="qsel_EDI_MIssingRates"
+End
+Begin OutputColumns
+    Name ="tblEDI_App_Subscr.PlanID"
+    Expression ="[qsel_EDI_MIssingRates].[qsel_EDI_MIssingRates_1.PlanID]"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="qsel_EDI_MIssingRates"
+    Expression ="tblEDI_App_Subscr.SubSSN = qsel_EDI_MIssingRates.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.PlanID"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =-350
+    Top =94
+    Right =548
+    Bottom =466
+    Left =-1
+    Top =-1
+    Right =866
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =221
+        Bottom =159
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =263
+        Top =6
+        Right =594
+        Bottom =154
+        Top =0
+        Name ="qsel_EDI_MIssingRates"
+        Name =""
+    End
+End

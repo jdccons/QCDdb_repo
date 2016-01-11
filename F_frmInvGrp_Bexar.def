@@ -1,0 +1,892 @@
+Version =19
+VersionRequired =19
+Checksum =158466062
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    BorderStyle =1
+    Width =10230
+    ItemSuffix =123
+    Left =4410
+    Top =2415
+    Right =14640
+    Bottom =8505
+    RecSrcDt = Begin
+        0xe1819fdcee65e240
+    End
+    RecordSource ="qfrmInvGrp"
+    Caption ="Invoice Entry - Group (Community First - Bexar County)"
+    OnCurrent ="[Event Procedure]"
+    AfterUpdate ="[Event Procedure]"
+    MenuBar ="FormMenuBar"
+    PrtMip = Begin
+        0xd002000038040000d0020000d002000000000000a02900004029000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4f6b6964617461204f4c343030650045300e11000000ea0000005f019ee0821c ,
+        0x0a030c0344004c0003670000010001004552004c0072010001002c0101000100 ,
+        0x2c010200f001e85d01000000606024e022e000000c0001000000010064000200 ,
+        0x000600000000000000006060806a0000000000000000ffff0000ffffffffffff ,
+        0xffff000000000000ffff00000000ffff49434515001244455649434543415041 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000
+    End
+    PrtDevNames = Begin
+        0x170008001e0001804f6b6964617461204f4c34303065004f4c34303065004c50 ,
+        0x54313a0000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000000000000000000000000000
+    End
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =12632256
+            Name ="FormHeader0"
+        End
+        Begin Section
+            CanGrow = NotDefault
+            Height =5400
+            BackColor =12632256
+            Name ="Detail Section"
+            EventProcPrefix ="Detail_Section"
+            Begin
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =180
+                    Top =435
+                    Width =1251
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text5"
+                    Caption ="Group Name: "
+                End
+                Begin Label
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =180
+                    Top =675
+                    Width =1251
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text6"
+                    Caption =" Address: "
+                End
+                Begin Label
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =180
+                    Top =915
+                    Width =1251
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text7"
+                    Caption ="Address 2: "
+                End
+                Begin Label
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =180
+                    Top =1155
+                    Width =1251
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text8"
+                    Caption ="City: "
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =3
+                    Left =780
+                    Top =1365
+                    Width =651
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text9"
+                    Caption ="State: "
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =1920
+                    Top =1380
+                    Width =471
+                    Height =225
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text10"
+                    Caption ="Zip: "
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1470
+                    Top =420
+                    Width =2466
+                    TabIndex =1
+                    Name ="CUST NAME"
+                    ControlSource ="CUST NAME"
+                    EventProcPrefix ="CUST_NAME"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =1470
+                    Top =660
+                    Width =2463
+                    TabIndex =2
+                    Name ="ADDRESS 1"
+                    ControlSource ="ADDRESS 1"
+                    EventProcPrefix ="ADDRESS_1"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =1470
+                    Top =900
+                    Width =2463
+                    TabIndex =3
+                    Name ="ADDRESS 2"
+                    ControlSource ="ADDRESS 2"
+                    EventProcPrefix ="ADDRESS_2"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =1470
+                    Top =1140
+                    Width =1728
+                    TabIndex =4
+                    Name ="CITY"
+                    ControlSource ="CITY"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =1470
+                    Top =1380
+                    Width =432
+                    Height =225
+                    TabIndex =5
+                    Name ="STATE"
+                    ControlSource ="STATE"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =2385
+                    Top =1395
+                    Width =1008
+                    Height =210
+                    TabIndex =6
+                    Name ="ZIP CODE"
+                    ControlSource ="ZIP CODE"
+                    InputMask ="00000\\-9999;;_"
+                    EventProcPrefix ="ZIP_CODE"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =165
+                    Top =1635
+                    Width =1281
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text65"
+                    Caption ="Attn: "
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    Left =1470
+                    Top =1620
+                    Width =2448
+                    TabIndex =7
+                    Name ="ATTENTION"
+                    ControlSource ="ATTENTION"
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =5070
+                    Top =120
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text67"
+                    Caption ="Invoice No: "
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =6480
+                    Top =105
+                    Width =1020
+                    TabIndex =8
+                    BackColor =12632256
+                    Name ="TRANS NO"
+                    ControlSource ="TRANS NO"
+                    EventProcPrefix ="TRANS_NO"
+                End
+                Begin Label
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =5070
+                    Top =360
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text69"
+                    Caption ="Invoice Date: "
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    TextAlign =2
+                    Left =6480
+                    Top =345
+                    Width =1020
+                    TabIndex =9
+                    Name ="INV DATE"
+                    ControlSource ="INV DATE"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                    EventProcPrefix ="INV_DATE"
+                End
+                Begin Label
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =5070
+                    Top =600
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text71"
+                    Caption ="Comm Ovrd: "
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    Left =6480
+                    Top =585
+                    Width =1020
+                    TabIndex =10
+                    Name ="COMM OVRD"
+                    ControlSource ="COMM OVRD"
+                    EventProcPrefix ="COMM_OVRD"
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =5070
+                    Top =840
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text73"
+                    Caption ="Territory/GEO: "
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    Left =6480
+                    Top =825
+                    Width =1020
+                    TabIndex =11
+                    BackColor =12632256
+                    Name ="TERRITORY KEY"
+                    ControlSource ="TERRITORY KEY"
+                    EventProcPrefix ="TERRITORY_KEY"
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =5070
+                    Top =1350
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text77"
+                    Caption ="Agent 2: "
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =4065
+                    Top =300
+                    Width =900
+                    Height =705
+                    FontSize =8
+                    TabIndex =12
+                    Name ="btnCreateInvoice"
+                    Caption ="Create Single Invoice"
+                    OnClick ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =195
+                    Top =165
+                    Width =1251
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text102"
+                    Caption ="Group Name: "
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =5070
+                    Top =1590
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text103"
+                    Caption ="Cust Class: "
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =6480
+                    Top =1605
+                    Width =1020
+                    TabIndex =13
+                    BackColor =12632256
+                    Name ="CUST CLASS"
+                    ControlSource ="CUST CLASS"
+                    DefaultValue ="\"GROUP\""
+                    EventProcPrefix ="CUST_CLASS"
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =7530
+                    Top =1095
+                    Width =1830
+                    TabIndex =14
+                    BackColor =12632256
+                    Name ="AGENT1 NAME"
+                    EventProcPrefix ="AGENT1_NAME"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    DecimalPlaces =1
+                    SpecialEffect =0
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =9525
+                    Top =1095
+                    Width =555
+                    TabIndex =15
+                    BackColor =12632256
+                    Name ="AGENT1 RATE"
+                    ControlSource ="LOCATION  KEY"
+                    Format ="Percent"
+                    EventProcPrefix ="AGENT1_RATE"
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =5070
+                    Top =1110
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text110"
+                    Caption ="Agent 1: "
+                End
+                Begin TextBox
+                    SpecialEffect =0
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =7530
+                    Top =1335
+                    Width =1830
+                    TabIndex =18
+                    BackColor =12632256
+                    Name ="AGENT2 NAME"
+                    EventProcPrefix ="AGENT2_NAME"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    DecimalPlaces =1
+                    SpecialEffect =0
+                    OverlapFlags =87
+                    TextAlign =2
+                    Left =9525
+                    Top =1335
+                    Width =555
+                    TabIndex =19
+                    BackColor =12632256
+                    Name ="AGENT2 RATE"
+                    ControlSource ="FOB"
+                    Format ="Percent"
+                    EventProcPrefix ="AGENT2_RATE"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    SpecialEffect =0
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =7515
+                    Top =825
+                    Width =2685
+                    TabIndex =20
+                    BackColor =12632256
+                    Name ="TERRITORY NAME"
+                    EventProcPrefix ="TERRITORY_NAME"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =7575
+                    Top =225
+                    Width =1020
+                    TabIndex =21
+                    BackColor =65535
+                    Name ="txtSYSDOCID"
+                    ControlSource ="SYSDOCID"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =7575
+                    Top =510
+                    Width =1020
+                    TabIndex =22
+                    BackColor =65535
+                    Name ="txtRecUserID"
+                    ControlSource ="RecUserID"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =8730
+                    Top =225
+                    Width =1020
+                    TabIndex =23
+                    BackColor =65535
+                    Name ="txtRecTime"
+                    ControlSource ="RecTime"
+                    Format ="Long Time"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =8730
+                    Top =510
+                    Width =1020
+                    TabIndex =24
+                    BackColor =65535
+                    Name ="txtRecDate"
+                    ControlSource ="RecDate"
+                    Format ="Short Date"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    Left =1470
+                    Top =165
+                    Width =1008
+                    Name ="CUST KEY"
+                    ControlSource ="CUST KEY"
+                    EventProcPrefix ="CUST_KEY"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =6480
+                    Top =1095
+                    Width =1020
+                    TabIndex =16
+                    Name ="AGENT1"
+                    ControlSource ="SALESP    KEY"
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    Left =6480
+                    Top =1335
+                    Width =1020
+                    TabIndex =17
+                    Name ="AGENT2"
+                    ControlSource ="SPARE3"
+                End
+                Begin Subform
+                    OverlapFlags =85
+                    Left =780
+                    Top =2205
+                    Width =6705
+                    Height =3165
+                    TabIndex =25
+                    Name ="fsubInvGrp_Bexar"
+                    SourceObject ="Form.fsubInvGrp_Bexar"
+                    LinkChildFields ="DOCUMENT NO"
+                    LinkMasterFields ="TRANS NO"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =711
+            BackColor =12632256
+            Name ="FormFooter1"
+            Begin
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =5835
+                    Top =90
+                    Width =1332
+                    Name ="INVOICE TOTAL"
+                    ControlSource ="=[fsubInvGrp_Bexar].[Form]![SubTotal]"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    EventProcPrefix ="INVOICE_TOTAL"
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =4485
+                    Top =90
+                    Width =1335
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text92"
+                    Caption ="Invoice Total: "
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =1
+                    OverlapFlags =85
+                    Left =4545
+                    Top =360
+                    Width =2640
+                    Height =15
+                    Name ="Line97"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    BorderWidth =1
+                    OverlapFlags =85
+                    Left =4545
+                    Top =390
+                    Width =2640
+                    Height =15
+                    Name ="Line98"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =3180
+                    Top =45
+                    Width =1221
+                    Height =576
+                    FontSize =8
+                    TabIndex =1
+                    Name ="btnPostPlt"
+                    Caption ="Post This\015\012Inv to Plt"
+                    OnClick ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+'Declare module level global variables
+Dim mStrCustKey$
+Private Sub btnCreateInvoice_Click()
+'Purpose:  Populate subform with subscriber information
+'Progammer:  Suzanne Johnsen
+'Date Created:  9/21/99
+'Date Updated:
+'Updated By:
+
+    On Error GoTo PROC_ERR
+    
+    SendKeys "+{ENTER}", True
+    DoCmd.SetWarnings False
+    DoCmd.OpenQuery "qryPopInvGrpDet_Bexar"  'qryPopInvGrpDet_Bexar
+    Me.Refresh
+    DoCmd.SetWarnings True
+    
+    Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub btnPostPlt_Click()
+'Purpose:  Posts a single group invoice to Platinum
+On Error GoTo PROC_ERR
+        
+        Dim strTranNo As String
+        strTranNo = Me![TRANS NO]
+        
+        DoCmd.Hourglass True
+        DoCmd.SetWarnings False
+        
+        'append ARHDR
+        DoCmd.OpenQuery "qappPostPltHdr_Bexar"
+        
+        'Check both Access and Platinum
+        'to insure data was transferred correctly
+        If DidThisInvoicePosttoPlat(strTranNo) Then
+            'nothing
+        Else
+            MsgBox "This invoice " & strTranNo & " did not post to Platinum."
+            GoTo PROC_EXIT
+        End If
+        
+        'append ARLIN
+        DoCmd.OpenQuery "qappPostPltDet_Bexar"
+        
+        'remove data from form
+        DoCmd.OpenQuery "qdelDelInvHdr_Bexar"
+        Forms![frmInvGrp_Bexar].Requery
+        
+        DoCmd.SetWarnings True
+        DoCmd.Hourglass False
+        
+    Exit Sub
+    
+PROC_EXIT:
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    Exit Sub
+    
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume PROC_EXIT
+End Sub
+
+Private Sub Form_AfterUpdate()
+
+On Error GoTo Err_Form_AfterUpdate
+
+    'Purpose:  Sets the current invoice date in tblConstants to the value on the form
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("tblConstants", dbOpenDynaset, dbSeeChanges)
+    rs.Edit
+    rs("FieldDateValue") = Me![INV DATE]
+    rs.Update
+    rs.Close
+    db.Close
+    Set db = Nothing
+
+Exit_Form_AfterUpdate:
+    Exit Sub
+
+Err_Form_AfterUpdate:
+    MsgBox Error$
+    Resume Exit_Form_AfterUpdate
+
+
+End Sub
+
+Private Sub Form_Current()
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    Dim strGeoID As String
+    Dim strAgentID1 As String
+    Dim strAgentID2 As String
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("tblGrp_Bexar", dbOpenSnapshot)
+    
+    strGeoID = rs("GRPgeoID")
+    'strAgentID1 = rs("GRagentID1")
+    'strAgentID2 = rs("GRagentID2")
+    
+    'agent names
+    'strSQL = "SELECT tblAgent.AGENTid, tblAgent.AGENT_LUname FROM tblAgent WHERE (((tblAgent.AGENTid)= '" & strAgentID1 & "'));"
+    'Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    'Forms![frmInvGrp_Bexar]![AGENT1 NAME] = rs("AGENT_LUname")
+    
+    'strSQL = "SELECT tblAgent.AGENTid, tblAgent.AGENT_LUname FROM tblAgent WHERE (((tblAgent.AGENTid)= '" & strAgentID2 & "'));"
+    'Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    'Forms![frmInvGrp_Bexar]![AGENT2 NAME] = rs("AGENT_LUname")
+    
+    'geo id
+    strSQL = "SELECT tblGeographical.GEOid, tblGeographical.GEOdesc " & _
+    "FROM tblGeographical " & _
+    "WHERE (((tblGeographical.GEOid)='" & strGeoID & "'));"
+    
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    Forms![frmInvGrp_Bexar]![TERRITORY NAME] = rs("GEOdesc")
+    
+    rs.Close
+    db.Close
+    Set db = Nothing
+    
+End Sub
+
+Private Sub Form_Load()
+
+On Error GoTo Err_Form_Load
+  
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strWhere As String
+    Dim strCriterion As String
+    Dim strTranNo As String
+    Dim lngSysDocID As Long
+    Dim varRecTime As Variant
+    Dim varRecDate As Variant
+    Dim strRecUserID As String
+    Dim dteInvoiceDate As Date
+    Dim strSQL As String
+    
+    'check to see if there are any invoices in tblInvHdr
+    'if there are invoices in the table,
+    'then exit sub
+    Set db = CurrentDb()
+    strSQL = "SELECT tblInvHdr.[CUST KEY]FROM tblInvHdr;"
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rs.RecordCount > 0 Then
+        rs.Close
+        db.Close
+        Set db = Nothing
+        MsgBox "There are other invoices waiting to be posted to Platinum."
+        Exit Sub
+    End If
+    
+    DoCmd.Hourglass True
+    
+    'get the current invoice from tblConstansts
+    strSQL = "SELECT tblConstants.FieldName, tblConstants." & _
+             "FieldDateValue " & _
+             "FROM tblConstants WHERE tblConstants.FieldName = 'InvoiceDate';"
+
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    dteInvoiceDate = rs.Fields("FieldDateValue")
+    
+    'Get the next Platinum tran no from ARONE_R9
+    strTranNo = GetCurrentTranNo()
+    If strTranNo = "0" Then
+        GoTo Exit_Form_Load
+    Else
+        Forms![frmInvGrp_Bexar]![TRANS NO] = Mid(Year(dteInvoiceDate), 4, 1) & Format(strTranNo, "000000")
+    End If
+    
+    'Get the next SysDocID from ARNEXTSY
+    lngSysDocID = GetCurrentSysDocID()
+    
+    'populate form with data
+    Forms![frmInvGrp_Bexar]![SYSDOCID] = lngSysDocID
+    Forms![frmInvGrp_Bexar]![RecUserID] = "INVOICE"
+    Forms![frmInvGrp_Bexar]![RecDate] = date
+    Forms![frmInvGrp_Bexar]![RecTime] = Time()
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("tblGrp_Bexar", dbOpenSnapshot)
+    Forms![frmInvGrp_Bexar]![CUST KEY] = rs("GroupID")
+    Forms![frmInvGrp_Bexar]![CUST NAME] = rs("GRname")
+    Forms![frmInvGrp_Bexar]![ADDRESS 1] = rs("GRstreet1")
+    Forms![frmInvGrp_Bexar]![ADDRESS 2] = rs("GRstreet2")
+    Forms![frmInvGrp_Bexar]![CITY] = rs("GRcity")
+    Forms![frmInvGrp_Bexar]![STATE] = rs("GRstate")
+    Forms![frmInvGrp_Bexar]![ZIP CODE] = rs("GRzip")
+    Forms![frmInvGrp_Bexar]![ATTENTION] = rs("GRmainCONT")
+    Forms![frmInvGrp_Bexar]![TERRITORY KEY] = rs("GRPgeoID")
+    Forms![frmInvGrp_Bexar]![AGENT1] = rs("GRagentID1")
+    Forms![frmInvGrp_Bexar]![AGENT1 RATE] = rs("GRagentRATE1")
+    Forms![frmInvGrp_Bexar]![AGENT2] = rs("GRagentID2")
+    Forms![frmInvGrp_Bexar]![AGENT2 RATE] = rs("GRagentRATE2")
+    
+    'invoice date
+    strSQL = "SELECT tblConstants.FieldName, tblConstants.FieldDateValue FROM tblConstants;"
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    Forms![frmInvGrp_Bexar]![INV DATE] = rs("FieldDateValue")
+    
+    'save everything
+    SendKeys "+{ENTER}", True
+    
+    DoCmd.Hourglass False
+    
+    rs.Close
+    db.Close
+    Set db = Nothing
+    
+Exit_Form_Load:
+    DoCmd.Hourglass False
+    Exit Sub
+
+Err_Form_Load:
+  MsgBox "The following error occured: " & Error$
+  GoTo Exit_Form_Load
+End Sub

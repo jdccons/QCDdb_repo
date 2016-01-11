@@ -1,0 +1,74 @@
+Operation =3
+Name ="tblEDI_App_Subscr"
+Option =0
+Begin InputTables
+    Name ="tblImportFile_MRIC_Employees"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblImportFile_MRIC_Employees.SSN"
+    Alias ="LN"
+    Name ="SUBlastNAME"
+    Expression ="UCase([LastName])"
+    Alias ="FN"
+    Name ="SUBfirstNAME"
+    Expression ="UCase([FirstName])"
+    Name ="SUBdob"
+    Expression ="tblImportFile_MRIC_Employees.DOB"
+    Name ="SUBeffDATE"
+    Expression ="tblImportFile_MRIC_Employees.EffDate"
+    Alias ="Cov"
+    Name ="SUBcoverage"
+    Expression ="IIf([Coverage]=\"EO\",\"I\",IIf([Coverage]=\"EF\",\"F\",\"O\"))"
+    Name ="SUBstreet1"
+    Expression ="tblImportFile_MRIC_Employees.Street1"
+    Name ="SUBstreet2"
+    Expression ="tblImportFile_MRIC_Employees.Street2"
+    Name ="SUBcity"
+    Expression ="tblImportFile_MRIC_Employees.City"
+    Name ="SUBstate"
+    Expression ="tblImportFile_MRIC_Employees.State"
+    Name ="SUBzip"
+    Expression ="tblImportFile_MRIC_Employees.Zip"
+    Name ="SUBphoneHOME"
+    Expression ="tblImportFile_MRIC_Employees.Phone"
+    Alias ="GrpStatus"
+    Name ="SUBstatus"
+    Expression ="\"GRSUB\""
+    Alias ="LookUpName"
+    Name ="SUB_LUname"
+    Expression ="UCase([LASTNAME]) & \" \" & UCase([FIRSTNAME])"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+Begin
+    Begin
+        dbText "Name" ="LookUpName"
+        dbInteger "ColumnWidth" ="2235"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =12
+    Top =125
+    Right =981
+    Bottom =554
+    Left =-1
+    Top =-1
+    Right =962
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =67
+        Top =3
+        Right =386
+        Bottom =110
+        Top =5
+        Name ="tblImportFile_MRIC_Employees"
+        Name =""
+    End
+End

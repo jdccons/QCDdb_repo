@@ -1,0 +1,116 @@
+Version =17
+VersionRequired =17
+Checksum =1082771754
+Begin Form
+    AllowEditing = NotDefault
+    PopUp = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
+    AllowAdditions = NotDefault
+    AllowEdits = NotDefault
+    ScrollBars =0
+    ViewsAllowed =1
+    BorderStyle =1
+    Width =3891
+    ItemSuffix =5
+    Left =990
+    Top =2100
+    Right =5145
+    Bottom =4395
+    RecSrcDt = Begin
+        0xf430efbbefd3e140
+    End
+    RecordSource ="qfrmSubscrCount"
+    Caption ="Count Of Subscribers"
+    Begin
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin Section
+            Height =2685
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =6
+                    Top =120
+                    Width =3885
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text0"
+                    Caption ="There are currently "
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =6
+                    Top =915
+                    Width =3885
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text1"
+                    Caption ="Subscribers in the QCD Database"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    TextAlign =2
+                    Top =510
+                    Width =3885
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Field2"
+                    ControlSource ="CountOfSUBssn"
+                    Format ="Standard"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1590
+                    Top =1350
+                    Width =540
+                    Height =465
+                    TabIndex =1
+                    Name ="OK"
+                    Caption ="OK"
+                    OnClick ="[Event Procedure]"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Private Sub OK_Click()
+On Error GoTo Err_OK_Click
+
+
+    DoCmd.Close
+
+Exit_OK_Click:
+    Exit Sub
+
+Err_OK_Click:
+    MsgBox Error$
+    Resume Exit_OK_Click
+
+End Sub

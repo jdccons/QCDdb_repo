@@ -1,0 +1,74 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBstatus)=\"GRSUB\") AND ((tblGrp.GRcancelled)=False) AND ((tblRat"
+    "es.Rate)=0))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.*"
+    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblRates.Rate"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =150
+    Top =183
+    Right =1002
+    Bottom =500
+    Left =-1
+    Top =-1
+    Right =845
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =101
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =221
+        Top =11
+        Right =438
+        Bottom =113
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =476
+        Top =6
+        Right =572
+        Bottom =116
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

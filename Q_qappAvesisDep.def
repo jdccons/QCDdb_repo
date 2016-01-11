@@ -1,0 +1,156 @@
+Operation =3
+Name ="Avesis"
+Option =0
+Where ="(((tblGrp.GRcancelled)=False) AND ((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Alias ="Record_Type"
+    Name ="Record_Type"
+    Expression ="\"DP\""
+    Alias ="Action_Code"
+    Name ="Action_Code"
+    Expression ="\"\""
+    Alias ="Carrier_Number"
+    Name ="Carrier_Number"
+    Expression ="\"10001\""
+    Alias ="Group_Number"
+    Name ="Group_Number"
+    Expression ="\"1\""
+    Alias ="Group_Name"
+    Name ="Group_Name"
+    Expression ="\"QCD of America\""
+    Alias ="Plan_Number"
+    Name ="Plan_Number"
+    Expression ="\"9000\""
+    Alias ="Member_Number"
+    Name ="Member_Number"
+    Expression ="tblSubscr.SubID"
+    Alias ="ID_Suffix"
+    Name ="ID_Suffix"
+    Expression ="IIf([DepRelationship]=\"S\",\"02\",\"03\")"
+    Alias ="SSN"
+    Name ="SSN"
+    Expression ="tblDependent.DEPsubID"
+    Alias ="Coverage_Code"
+    Name ="Coverage_Code"
+    Expression ="IIf([CoverID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\"))"
+    Alias ="Last_Name"
+    Name ="Last_Name"
+    Expression ="tblDependent.DEPlastNAME"
+    Alias ="First_Name"
+    Name ="First_Name"
+    Expression ="tblDependent.DEPfirstNAME"
+    Alias ="Middle_Initial"
+    Name ="Middle_Initial"
+    Expression ="Mid([DepMiddleName],1,1)"
+    Alias ="Address_1"
+    Name ="Address_1"
+    Expression ="tblSubscr.SUBstreet1"
+    Alias ="Address_2"
+    Name ="Address_2"
+    Expression ="tblSubscr.SUBstreet2"
+    Alias ="City"
+    Name ="City"
+    Expression ="tblSubscr.SUBcity"
+    Alias ="State"
+    Name ="State"
+    Expression ="tblSubscr.SUBstate"
+    Alias ="Zip"
+    Name ="Zip"
+    Expression ="Mid([SUBzip],1,9)"
+    Alias ="Gender"
+    Name ="Gender"
+    Expression ="tblDependent.DEPgender"
+    Alias ="Birth_Date"
+    Name ="Birth_Date"
+    Expression ="Format(Month([Depdob]),\"00\") & Format(Day([DepDob]),\"00\") & Year([DepDob])"
+    Alias ="Effective_Date"
+    Name ="Effective_Date"
+    Expression ="Format(Month([SUBEffDate]),\"00\") & Format(Day([SubEffDate]),\"00\") & Year([Su"
+        "bEffDate])"
+    Alias ="Term_Date"
+    Name ="Term_Date"
+    Expression ="Null"
+    Alias ="Sub_Group_ID"
+    Name ="Sub_Group_ID"
+    Expression ="\"\""
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblDependent"
+    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbBoolean "UseTransaction" ="-1"
+Begin
+    Begin
+        dbText "Name" ="Group_Name"
+        dbInteger "ColumnWidth" ="1590"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="City"
+        dbInteger "ColumnWidth" ="1770"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Last_Name"
+        dbInteger "ColumnWidth" ="1650"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =17
+    Top =80
+    Right =1186
+    Bottom =533
+    Left =-1
+    Top =-1
+    Right =1162
+    Bottom =285
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =367
+        Top =9
+        Right =598
+        Bottom =206
+        Top =17
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =67
+        Top =13
+        Right =274
+        Bottom =210
+        Top =23
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =690
+        Top =6
+        Right =898
+        Bottom =173
+        Top =0
+        Name ="tblDependent"
+        Name =""
+    End
+End

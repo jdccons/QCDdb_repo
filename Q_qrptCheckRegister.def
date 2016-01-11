@@ -1,0 +1,52 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="APHDR"
+End
+Begin OutputColumns
+    Expression ="APHDR.VendorKey"
+    Expression ="APHDR.VendorName"
+    Expression ="APHDR.CheckNumber"
+    Expression ="APHDR.CheckAmt"
+    Expression ="APHDR.CheckDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="APHDR.CheckNumber"
+        dbInteger "ColumnWidth" ="2310"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="APHDR.VendorName"
+        dbInteger "ColumnWidth" ="2895"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =255
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =306
+        Bottom =195
+        Top =15
+        Name ="APHDR"
+        Name =""
+    End
+End

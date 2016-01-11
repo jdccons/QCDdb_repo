@@ -1,0 +1,56 @@
+Operation =4
+Option =0
+Where ="(((tblGrp.GroupType)=1))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Name ="tblSubscr.PlanID"
+    Expression ="5"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =712
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =240
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =324
+        Top =2
+        Right =513
+        Bottom =184
+        Top =8
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =226
+        Bottom =173
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

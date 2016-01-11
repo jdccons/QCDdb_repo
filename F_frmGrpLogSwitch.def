@@ -1,0 +1,278 @@
+Version =17
+VersionRequired =17
+Checksum =-887011188
+Begin Form
+    AutoResize = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
+    DividingLines = NotDefault
+    AllowEdits = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    GridX =24
+    GridY =24
+    Width =4464
+    ItemSuffix =124
+    Left =3660
+    Top =1065
+    Right =8085
+    Bottom =3450
+    RecSrcDt = Begin
+        0x1cd178dcf1dae140
+    End
+    RecordSource ="SELECT tblGrp.GROUPid, tblGrpLog.LogGrID, tblGrp.GRname FROM tblGrp LEFT JOIN tb"
+        "lGrpLog ON (tblGrp.GROUPid = tblGrpLog.LogGrID) AND (tblGrp.GROUPid = tblGrpLog."
+        "LogGrID) WHERE (((tblGrp.GROUPid)=[Forms]![frmGrp]![GROUPid]));"
+    Caption ="Group Log Switchboard"
+    OnOpen ="[Event Procedure]"
+    PrtMip = Begin
+        0xd002000038040000d0020000d002000000000000a02900004029000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4f6b6964617461204f4c343030650045300e11000000ea0000005f019ee0821c ,
+        0x0a030c0344004c0003670000010001004552004c0072010001002c0101000100 ,
+        0x2c010200f001e85d01000000606024e022e000000c0001000000010064000200 ,
+        0x000600000000000000006060806a0000000000000000ffff0000ffffffffffff ,
+        0xffff000000000000ffff00000000ffff49434515001244455649434543415041 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x170008001e0001804f6b6964617461204f4c34303065004f4c34303065004c50 ,
+        0x54313a0000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =12632256
+            Name ="FormHeader0"
+        End
+        Begin Section
+            Height =1800
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    Visible = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =120
+                    Top =180
+                    Width =294
+                    Height =228
+                    BackColor =65535
+                    Name ="ctlLogGrID"
+                    ControlSource ="LogGrID"
+                    DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =300
+                    Top =1080
+                    Width =1872
+                    Height =600
+                    TabIndex =1
+                    Name ="cmdVisit"
+                    Caption ="Appointments"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2316
+                    Top =1080
+                    Width =1872
+                    Height =600
+                    TabIndex =2
+                    Name ="cmdPhone"
+                    Caption ="Phone Contact"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =720
+                    Top =120
+                    Width =2880
+                    Height =324
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Label121"
+                    Caption ="Activity Information"
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =85
+                    Left =720
+                    Top =600
+                    Width =720
+                    TabIndex =3
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =180
+                            Top =600
+                            Width =504
+                            Height =228
+                            Name ="Label122"
+                            Caption ="Group"
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OverlapFlags =85
+                    Left =1500
+                    Top =600
+                    Width =2820
+                    ColumnWidth =2370
+                    TabIndex =4
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =600
+            BackColor =12632256
+            Name ="FormFooter1"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =3660
+                    Top =60
+                    Width =720
+                    Height =480
+                    FontSize =8
+                    FontWeight =400
+                    ForeColor =-2147483630
+                    Name ="cmdClose"
+                    Caption ="Command0"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad
+                    End
+                    FontName ="MS Sans Serif"
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+
+Private Sub cmbQCDrep_NotInList(NewData As String, Response As Integer)
+
+On Error GoTo PROC_ERR
+' Add a new category by typing a name in CategoryID combo box.
+
+    Dim intNewCategory As Integer, intTruncateName As Integer, strTitle As String, intMsgDialog As Integer
+
+    ' Display message box asking if user wants to add a new category.
+    strTitle = "QCD Representative Not In List"
+    intMsgDialog = vbYesNo + vbQuestion + vbDefaultButton1
+    intNewCategory = MsgBox("Do you want to add a new representive?", intMsgDialog, strTitle)
+
+If intNewCategory = vbYes Then
+        ' Remove new name from CategoryID combo box so
+        ' control can be requeried when user returns to form.
+        DoCmd.RunCommand acCmdUndo
+
+        ' Display message box and adjust length of value entered in
+        ' CategoryID combo box.
+        strTitle = "Initials Too Long"
+        intMsgDialog = vbOKOnly + vbExclamation
+        If Len(NewData) > 4 Then
+            intTruncateName = MsgBox("Initials can be no longer than " _
+                & "4 characters. The initials you entered will be truncated.", _
+                intMsgDialog, strTitle)
+            NewData = Left(NewData, 15)
+        End If
+
+        ' Open AddCategory form.
+        DoCmd.OpenForm "frmQCDrep", acNormal, , , acAdd, acDialog, NewData
+        
+        ' Continue without displaying default error message.
+        Response = acDataErrAdded
+        Exit Sub
+        
+        End If
+        
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+        
+End Sub
+
+Private Sub cmdClose_Click()
+   DoCmd.Close
+End Sub
+
+Private Sub cmdPhone_Click()
+    
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "frmGrpLogPhone"
+    
+    'stLinkCriteria = "[LogGrID]=" & "'" & Me![LogGrID] & "'"
+    DoCmd.OpenForm stDocName  ' , , , stLinkCriteria
+    
+End Sub
+
+Private Sub cmdVisit_Click()
+    
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+
+    stDocName = "frmGrpLog"
+    
+    'stLinkCriteria = "[LogGrID]=" & "'" & Me![LogGrID] & "'"
+    DoCmd.OpenForm stDocName    ', , , stLinkCriteria
+    
+End Sub

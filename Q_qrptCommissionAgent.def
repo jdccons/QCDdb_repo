@@ -1,0 +1,65 @@
+Operation =1
+Option =8
+Where ="(((tblCommission.COMMcustCLASS)=\"INDIV\" Or (tblCommission.COMMcustCLASS)=\"GRO"
+    "UP\" Or (tblCommission.COMMcustCLASS)=\"IBCR\") AND ((tblCommission.EnrollmentFe"
+    "e)=No) AND ((tblCommission.COMMagent)<>\"CORPT\" And (tblCommission.COMMagent)<>"
+    "\"CORP\") AND ((tblCommission.PayCommTo)=2 Or (tblCommission.PayCommTo)=3 Or (tb"
+    "lCommission.PayCommTo)=4))"
+Begin InputTables
+    Name ="tblCommission"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblCommission.*"
+    Alias ="Salesp_Name"
+    Expression ="IIf([tblAgent].[PayCommTo]=1,[AGENCY],[AGENT_LUname])"
+End
+Begin Joins
+    LeftTable ="tblCommission"
+    RightTable ="tblAgent"
+    Expression ="tblCommission.COMMagent = tblAgent.AGENTid"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+    Begin
+        dbText "Name" ="Salesp_Name"
+        dbInteger "ColumnWidth" ="2085"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1280
+    Bottom =894
+    Left =-1
+    Top =-1
+    Right =1273
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =172
+        Bottom =90
+        Top =4
+        Name ="tblCommission"
+        Name =""
+    End
+    Begin
+        Left =529
+        Top =6
+        Right =733
+        Bottom =105
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

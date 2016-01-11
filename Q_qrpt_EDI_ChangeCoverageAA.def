@@ -1,0 +1,127 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.CoverID)<>[tblEDI_App_Subscr].[CoverID]))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+    Name ="tblCoverage"
+    Name ="tblCoverage"
+    Alias ="tblCoverage_1"
+End
+Begin OutputColumns
+    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Alias ="SUBStreet"
+    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SUBgroupID"
+    Alias ="Stat"
+    Expression ="\"Change-Cov\""
+    Expression ="tblCoverage_1.COVERcode"
+    Expression ="tblCoverage.COVERcode"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Flag =1
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblCoverage"
+    Expression ="tblEDI_App_Subscr.CoverID = tblCoverage.CoverID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage_1"
+    Expression ="tblSubscr.CoverID = tblCoverage_1.CoverID"
+    Flag =1
+End
+Begin Groups
+    Expression ="tblEDI_App_Subscr.SUBssn"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    GroupLevel =0
+    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBcity"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBstate"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBzip"
+    GroupLevel =0
+    Expression ="tblEDI_App_Subscr.SUBgroupID"
+    GroupLevel =0
+    Expression ="\"Change-Cov\""
+    GroupLevel =0
+    Expression ="tblCoverage_1.COVERcode"
+    GroupLevel =0
+    Expression ="tblCoverage.COVERcode"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="SUBStreet"
+        dbInteger "ColumnWidth" ="2580"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =30
+    Top =89
+    Right =1164
+    Bottom =532
+    Left =-1
+    Top =-1
+    Right =1127
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =235
+        Top =11
+        Right =439
+        Bottom =121
+        Top =53
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =46
+        Top =10
+        Right =180
+        Bottom =120
+        Top =53
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =529
+        Top =2
+        Right =639
+        Bottom =107
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+    Begin
+        Left =691
+        Top =5
+        Right =883
+        Bottom =100
+        Top =0
+        Name ="tblCoverage_1"
+        Name =""
+    End
+End

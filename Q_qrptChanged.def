@@ -1,0 +1,58 @@
+Operation =1
+Option =0
+Where ="(((tblImportGroupTemp.Changed)=Yes))"
+Begin InputTables
+    Name ="tblImportGroupTemp"
+End
+Begin OutputColumns
+    Expression ="tblImportGroupTemp.ID"
+    Expression ="tblImportGroupTemp.GroupID"
+    Expression ="tblImportGroupTemp.PlanId"
+    Expression ="tblImportGroupTemp.SSN"
+    Expression ="tblImportGroupTemp.LastName"
+    Expression ="tblImportGroupTemp.FirstName"
+    Expression ="tblImportGroupTemp.MiddleInit"
+    Expression ="tblImportGroupTemp.StreetAddress"
+    Expression ="tblImportGroupTemp.StreetAddress2"
+    Expression ="tblImportGroupTemp.City"
+    Expression ="tblImportGroupTemp.State"
+    Expression ="tblImportGroupTemp.ZipCode"
+    Expression ="tblImportGroupTemp.Phone"
+    Expression ="tblImportGroupTemp.DOB"
+    Expression ="tblImportGroupTemp.CoverageId"
+    Expression ="tblImportGroupTemp.CoverageRate"
+    Expression ="tblImportGroupTemp.EffectiveDate"
+    Expression ="tblImportGroupTemp.Dependents"
+    Expression ="tblImportGroupTemp.PrintRecords"
+    Expression ="tblImportGroupTemp.Changed"
+    Expression ="tblImportGroupTemp.New"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =58
+    Top =101
+    Right =934
+    Bottom =473
+    Left =-1
+    Top =-1
+    Right =869
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =341
+        Top =7
+        Right =461
+        Bottom =139
+        Top =17
+        Name ="tblImportGroupTemp"
+        Name =""
+    End
+End

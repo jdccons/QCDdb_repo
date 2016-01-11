@@ -1,0 +1,888 @@
+Version =20
+VersionRequired =20
+Checksum =-1935828587
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    NavigationButtons = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =12000
+    DatasheetFontHeight =10
+    ItemSuffix =39
+    Left =3945
+    Top =210
+    Right =16410
+    Bottom =7050
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xf91b6423ba3de340
+    End
+    Caption ="Consolidate Groups"
+    OnCurrent ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =7500
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x2ed80bd67e25f349a59abcb0248dc00d
+            End
+            Begin
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    ListWidth =4320
+                    Left =1605
+                    Top =360
+                    Width =2520
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x5153a665d5e6754a850a27c75a0e34f8
+                    End
+                    Name ="cboParent"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tblGrp.GROUPid, tblGrp.GRname FROM tblGrp WHERE (((tblGrp.GRcancelled)=0)"
+                        " AND ((tblGrp.Parent)=\"Yes\")) ORDER BY tblGrp.GROUPid;"
+                    ColumnWidths ="720;3600"
+                    AfterUpdate ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =360
+                            Top =360
+                            Width =1185
+                            Height =240
+                            Name ="Group_Label"
+                            Caption ="Parent Group:  "
+                            GUID = Begin
+                                0x825ee5b7b60bce4d93dbb75bf745e282
+                            End
+                        End
+                    End
+                End
+                Begin ListBox
+                    ColumnHeads = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    Left =1605
+                    Top =4080
+                    Width =4500
+                    Height =1800
+                    TabIndex =1
+                    Name ="lstParent"
+                    RowSourceType ="Table/Query"
+                    ColumnWidths ="1080;2160;720"
+                    GUID = Begin
+                        0x9b05278caf606240abf4f4cea24c8e40
+                    End
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ListWidth =1440
+                    Left =7365
+                    Top =300
+                    Width =2520
+                    TabIndex =2
+                    ColumnInfo ="\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x1175a7f110f88b49ab80d52d2f29dcc8
+                    End
+                    Name ="cboChild"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tblGrp.GROUPid FROM tblGrp WHERE (((tblGrp.Miscellaneous) Is Null) AND (("
+                        "tblGrp.ParentGroupID)=[Forms]![frmGrp_Consolidate]![cboParent]) AND ((tblGrp.Par"
+                        "ent)=\"No\")) ORDER BY tblGrp.GROUPid;"
+                    ColumnWidths ="1440"
+                    AfterUpdate ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6120
+                            Top =300
+                            Width =1185
+                            Height =240
+                            Name ="Label5"
+                            Caption ="Child Group:  "
+                            GUID = Begin
+                                0x8a3646339a93ea4fa76d47f7a8de5e4f
+                            End
+                        End
+                    End
+                End
+                Begin ListBox
+                    ColumnHeads = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    Left =7335
+                    Top =4035
+                    Width =4500
+                    Height =1800
+                    TabIndex =3
+                    Name ="lstChild"
+                    RowSourceType ="Table/Query"
+                    ColumnWidths ="1080;2160;720"
+                    GUID = Begin
+                        0x2f90899e95a353449e5440d9110f8075
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1680
+                    Top =6270
+                    Width =1080
+                    Height =480
+                    TabIndex =4
+                    Name ="cmdConsolidate"
+                    Caption ="Consolidate"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x8c26eed701b1a04d90af6b419cf2baec
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =720
+                    Width =2580
+                    TabIndex =5
+                    Name ="ParentGrName"
+                    GUID = Begin
+                        0x0824fa44a7fc7a468e6d84c62a58a1a4
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =240
+                            Top =720
+                            Width =1320
+                            Height =240
+                            Name ="Label9"
+                            Caption ="Group Name: "
+                            GUID = Begin
+                                0x83a7c5c20637a649b0f30a0c5297207e
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =1080
+                    Width =2580
+                    TabIndex =6
+                    Name ="ParentGrAddr1"
+                    GUID = Begin
+                        0x123603477291d3488b4fc41a2ba5f313
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =240
+                            Top =1080
+                            Width =1320
+                            Height =240
+                            Name ="Label11"
+                            Caption ="Address 1: "
+                            GUID = Begin
+                                0x2d948e7a0ef74140987bb7de41ea3163
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =1440
+                    Width =2580
+                    TabIndex =7
+                    Name ="ParentGrAddr2"
+                    GUID = Begin
+                        0x1859f5a5f70c0443b406dcbaab481f2e
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =240
+                            Top =1440
+                            Width =1320
+                            Height =240
+                            Name ="Label13"
+                            Caption ="Address 2:"
+                            GUID = Begin
+                                0xe3a34a7fa01ba7418fdd3a615fa99263
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =1800
+                    Width =1320
+                    TabIndex =8
+                    Name ="ParentGrCity"
+                    GUID = Begin
+                        0x3d2d29f424e6564096573a333a52c60d
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =240
+                            Top =1800
+                            Width =1320
+                            Height =240
+                            Name ="Label15"
+                            Caption ="City/ST/Zip:"
+                            GUID = Begin
+                                0x4a6109e50600f64cb8a8c4bf71c2bd4e
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3022
+                    Top =1800
+                    Width =360
+                    TabIndex =9
+                    Name ="ParentGrST"
+                    GUID = Begin
+                        0x59b3e8a9b8999e438943bd82d8bf586e
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3479
+                    Top =1800
+                    Width =1020
+                    TabIndex =10
+                    Name ="ParentGrZip"
+                    GUID = Begin
+                        0xfb9db76853a4d14cbaec9b387c6f499b
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =2100
+                    Width =2580
+                    TabIndex =11
+                    Name ="ParentGrType"
+                    GUID = Begin
+                        0xd32cf82f851764499f1555b682fba3d2
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =240
+                            Top =2100
+                            Width =1320
+                            Height =240
+                            Name ="Label21"
+                            Caption ="Group Type:"
+                            GUID = Begin
+                                0xa89d3bdd41c1854c9a28b3f065bce0d5
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7365
+                    Top =600
+                    Width =2580
+                    TabIndex =12
+                    Name ="ChildGrName"
+                    GUID = Begin
+                        0x1641b6bd7cb15942bd8c2cee868e9c4b
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6000
+                            Top =600
+                            Width =1320
+                            Height =240
+                            Name ="Label23"
+                            Caption ="Group Name: "
+                            GUID = Begin
+                                0xaa9879fad573994c82f9a1880e9ffeea
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7365
+                    Top =960
+                    Width =2580
+                    TabIndex =13
+                    Name ="ChildGrAddr1"
+                    GUID = Begin
+                        0x25843d5c7a30a34589236a7c8d2f5c79
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6000
+                            Top =960
+                            Width =1320
+                            Height =240
+                            Name ="Label25"
+                            Caption ="Address 1: "
+                            GUID = Begin
+                                0x2f0eacec3b972442a4d473ed9a0aa865
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7365
+                    Top =1320
+                    Width =2580
+                    TabIndex =14
+                    Name ="ChildGrAddr2"
+                    GUID = Begin
+                        0x8f0644f0ef6bc242951c9193c4bcb03f
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6000
+                            Top =1320
+                            Width =1320
+                            Height =240
+                            Name ="Label27"
+                            Caption ="Address 2:"
+                            GUID = Begin
+                                0x410d9a99de9a324fa073ef2d73523e1f
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7365
+                    Top =1680
+                    Width =1320
+                    TabIndex =15
+                    Name ="ChildGrCity"
+                    GUID = Begin
+                        0x284b7de82c4d724f9fc3f2643f7a9694
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6000
+                            Top =1680
+                            Width =1320
+                            Height =240
+                            Name ="Label29"
+                            Caption ="City/ST/Zip:"
+                            GUID = Begin
+                                0xb2c4acf2b8b3104ebf14e86e5f2ae3a2
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =8782
+                    Top =1680
+                    Width =360
+                    TabIndex =16
+                    Name ="ChildGrST"
+                    GUID = Begin
+                        0x1fbe09f83c28ca4d83d05863d5a37462
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9239
+                    Top =1680
+                    Width =1020
+                    TabIndex =17
+                    Name ="ChildGrZip"
+                    GUID = Begin
+                        0x3d342da2a2ad56419372011ea9e2850a
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7365
+                    Top =1980
+                    Width =2580
+                    TabIndex =18
+                    Name ="ChildGrType"
+                    GUID = Begin
+                        0x38e9c5d3ae1e9545a9790e270814357c
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6000
+                            Top =1980
+                            Width =1320
+                            Height =240
+                            Name ="Label33"
+                            Caption ="Group Type:"
+                            GUID = Begin
+                                0x41297a5f7610a64eaca7d5028026faf7
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2940
+                    Top =6270
+                    Width =1080
+                    Height =480
+                    TabIndex =19
+                    Name ="cmdReset"
+                    Caption ="Reset"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x9f788304967a6f4986d2243ea8a25c3f
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =2505
+                    Width =4500
+                    Height =1500
+                    TabIndex =20
+                    Name ="ParentNotes"
+                    GUID = Begin
+                        0x3d4cded90b9f9e45bd5367d735463562
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =7320
+                    Top =2460
+                    Width =4500
+                    Height =1500
+                    TabIndex =21
+                    Name ="ChildNotes"
+                    GUID = Begin
+                        0xb29c293623e1114d8d312e923b3eef12
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub cboChild_AfterUpdate()
+    ' Purpose:
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/20/07
+    ' Update Date:  11/20/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim cnn As ADODB.Connection
+    Dim rst As ADODB.Recordset
+    Dim strSQL As String
+    Dim strConnectionString As String
+    Dim strGroupID As String
+    
+    'Debug.Print Me.cboChild.RowSource
+    
+    strGroupID = Me.cboChild
+    
+    If Not IsNull(Me.cboChild) Then
+        
+        Set cnn = New ADODB.Connection
+        Set rst = New ADODB.Recordset
+        
+        strConnectionString = SetConnxn
+        
+        strSQL = "SELECT GroupID, GrName, GrStreet1, GrStreet2, " & _
+             "GrCity, GrState, GrZip, GrNotes, " & _
+             "CASE WHEN GroupType = 1 THEN 'QCD Only' " & _
+             "WHEN GroupType = 4 THEN 'All American' " & _
+             "ELSE '' END As GrType " & _
+             "FROM tblGrp " & _
+             "WHERE GroupID ='" & strGroupID & "'"
+        
+        cnn.Open strConnectionString
+        
+        rst.Open strSQL, cnn, adOpenForwardOnly
+        
+        With Me
+            .ChildGrName = rst.Fields("GrName")
+            .ChildGrAddr1 = rst.Fields("GrStreet1")
+            .ChildGrAddr2 = rst.Fields("GrStreet2")
+            .ChildGrCity = rst.Fields("GrCity")
+            .ChildGrST = rst.Fields("GrState")
+            .ChildGrZip = rst.Fields("GrZip")
+            .ChildGrType = rst.Fields("GrType")
+            .ChildNotes = rst.Fields("GrNotes")
+        End With
+        
+        rst.Close
+        Set rst = Nothing
+        cnn.Close
+        Set cnn = Nothing
+        
+        strSQL = "SELECT tblPlans.PlanDesc AS Plan, tblCoverage." & _
+                 "COVERdescr AS Description, Format([Rate],'Standard') AS Rates, " & _
+                 "tblRates.RateID, tblRates.PlanID, tblRates.CoverID " & _
+                 "FROM (tblRates INNER JOIN tblCoverage ON tblRates.CoverID = tblCoverage.CoverID) " & _
+                 "INNER JOIN tblPlans ON tblRates.PlanID = tblPlans.PlanID " & _
+                 "WHERE (((tblRates.GroupID)='" & strGroupID & "')) " & _
+                 "ORDER BY tblRates.PlanID, tblRates.CoverID;"
+        
+        Me.lstChild.RowSource = strSQL
+        
+    End If
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+
+Private Sub cboParent_AfterUpdate()
+    ' Purpose:
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/20/07
+    ' Update Date:  11/20/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim cnn As ADODB.Connection
+    Dim rst As ADODB.Recordset
+    Dim strSQL As String
+    Dim strConnectionString As String
+    Dim strGroupID As String
+    
+    strGroupID = Me.cboParent
+    
+    If Not IsNull(Me.cboParent) Then
+        
+        Set cnn = New ADODB.Connection
+        Set rst = New ADODB.Recordset
+        
+        strConnectionString = SetConnxn
+        
+        strSQL = "SELECT GroupID, GrName, GrStreet1, GrStreet2, " & _
+             "GrCity, GrState, GrZip, GrNotes, " & _
+             "CASE WHEN GroupType = 1 THEN 'QCD Only' " & _
+             "WHEN GroupType = 4 THEN 'All American' " & _
+             "ELSE '' END As GrType " & _
+             "FROM tblGrp " & _
+             "WHERE GroupID ='" & strGroupID & "'"
+        
+        cnn.Open strConnectionString
+        
+        
+        
+        rst.Open strSQL, cnn, adOpenStatic
+        
+            If rst.RecordCount > 0 Then
+                With Me
+                    .ParentGrName = rst.Fields("GrName")
+                    .ParentGrAddr1 = rst.Fields("GrStreet1")
+                    .ParentGrAddr2 = rst.Fields("GrStreet2")
+                    .ParentGrCity = rst.Fields("GrCity")
+                    .ParentGrST = rst.Fields("GrState")
+                    .ParentGrZip = rst.Fields("GrZip")
+                    .ParentGrType = rst.Fields("GrType")
+                    .ParentNotes = rst.Fields("GrNotes")
+                End With
+                
+                rst.Close
+                Set rst = Nothing
+                cnn.Close
+                Set cnn = Nothing
+                
+                strSQL = "SELECT tblPlans.PlanDesc AS Plan, tblCoverage." & _
+                         "COVERdescr AS Description, Format([Rate],'Standard') AS Rates, " & _
+                         "tblRates.RateID, tblRates.PlanID, tblRates.CoverID " & _
+                         "FROM (tblRates INNER JOIN tblCoverage ON tblRates.CoverID = tblCoverage.CoverID) " & _
+                         "INNER JOIN tblPlans ON tblRates.PlanID = tblPlans.PlanID " & _
+                         "WHERE (((tblRates.GroupID)='" & strGroupID & "')) " & _
+                         "ORDER BY tblRates.PlanID, tblRates.CoverID;"
+                
+                Me.lstParent.RowSource = strSQL
+                Me.cboChild.RowSource = "SELECT tblGrp.GroupID " & _
+                                        "FROM tblGrp " & _
+                                        "WHERE (((tblGrp.Miscellaneous) Is Null) " & _
+                                        "AND ((tblGrp.ParentGroupID)= '" & strGroupID & "') " & _
+                                        "AND ((tblGrp.Parent)='No')) " & _
+                                        "ORDER BY tblGrp.GroupID;"
+                
+            Else
+                MsgBox "The GroupID could not be found."
+            
+            End If
+    
+    End If
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+
+Private Sub cmdConsolidate_Click()
+    ' Purpose:
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/20/07
+    ' Update Date:  11/20/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    Dim strParentGroupID As String
+    Dim strChildGroupID As String
+    Dim strUpdateMessage As String
+    
+    strParentGroupID = Me.cboParent
+    strChildGroupID = Me.cboChild
+    strUpdateMessage = "Group consolidated with " & strParentGroupID & " on " & CStr(date)
+    
+    ExecuteSQL "uspConsolidateGroups '" & strParentGroupID & "', '" & strChildGroupID & "', '" & strUpdateMessage & "'"
+    
+    MsgBox "Groups consolidated."
+    
+    With Me
+        .cboParent = ""
+        .ParentGrName = ""
+        .ParentGrAddr1 = ""
+        .ParentGrAddr2 = ""
+        .ParentGrCity = ""
+        .ParentGrST = ""
+        .ParentGrZip = ""
+        .ParentGrType = ""
+        .ParentNotes = ""
+        .lstParent.RowSource = ""
+        .lstParent.Requery
+        .cboParent.Requery
+        
+        .cboChild = ""
+        .ChildGrName = ""
+        .ChildGrAddr1 = ""
+        .ChildGrAddr2 = ""
+        .ChildGrCity = ""
+        .ChildGrST = ""
+        .ChildGrZip = ""
+        .ChildGrType = ""
+        .ChildNotes = ""
+        .lstChild.RowSource = ""
+        .lstChild.Requery
+        .cboChild.Requery
+    End With
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+
+Private Sub cmdReset_Click()
+    ' Purpose:
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/20/07
+    ' Update Date:  11/20/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    With Me
+        .cboParent = ""
+        .ParentGrName = ""
+        .ParentGrAddr1 = ""
+        .ParentGrAddr2 = ""
+        .ParentGrCity = ""
+        .ParentGrST = ""
+        .ParentGrZip = ""
+        .ParentGrType = ""
+        .ParentNotes = ""
+        .lstParent.RowSource = ""
+        .lstParent.Requery
+        .cboParent.Requery
+        
+        .cboChild = ""
+        .ChildGrName = ""
+        .ChildGrAddr1 = ""
+        .ChildGrAddr2 = ""
+        .ChildGrCity = ""
+        .ChildGrST = ""
+        .ChildGrZip = ""
+        .ChildGrType = ""
+        .ChildNotes = ""
+        .lstChild.RowSource = ""
+        .lstChild.Requery
+        .cboChild.Requery
+    End With
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+
+
+
+Private Sub Form_Current()
+    ' Purpose:
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/20/07
+    ' Update Date:  11/20/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    With Me
+        .cboParent = ""
+        .ParentGrName = ""
+        .ParentGrAddr1 = ""
+        .ParentGrAddr2 = ""
+        .ParentGrCity = ""
+        .ParentGrST = ""
+        .ParentGrZip = ""
+        .ParentGrType = ""
+        .lstParent.RowSource = ""
+        .lstParent.Requery
+        
+        .cboChild = ""
+        .ChildGrName = ""
+        .ChildGrAddr1 = ""
+        .ChildGrAddr2 = ""
+        .ChildGrCity = ""
+        .ChildGrST = ""
+        .ChildGrZip = ""
+        .ChildGrType = ""
+        .lstChild.RowSource = ""
+        .lstChild.Requery
+    End With
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub

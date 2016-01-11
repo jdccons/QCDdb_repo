@@ -1,0 +1,96 @@
+Operation =1
+Option =0
+Where ="(((tblRates.Rate)=0) AND ((tblSubscr.SUBnoDEPENT)>0) AND ((tblSubscr.SUBstatus)="
+    "\"GRSUB\") AND ((tblGrp.GRcancelled)=No))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+    Name ="tblRates"
+    Name ="tblCoverage"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SUB_LUname"
+    Expression ="tblSubscr.SUBssn"
+    Expression ="tblCoverage.COVERcode"
+    Expression ="tblRates.Rate"
+    Expression ="tblSubscr.SUBnoDEPENT"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUBgroupID"
+    Flag =0
+    Expression ="tblSubscr.SUB_LUname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =31
+    Top =28
+    Right =1129
+    Bottom =595
+    Left =-1
+    Top =-1
+    Right =1091
+    Bottom =394
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =300
+        Bottom =311
+        Top =3
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =338
+        Top =6
+        Right =590
+        Bottom =311
+        Top =20
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =688
+        Top =19
+        Right =784
+        Bottom =129
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+    Begin
+        Left =688
+        Top =144
+        Right =784
+        Bottom =239
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+End

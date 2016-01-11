@@ -1,0 +1,75 @@
+Operation =3
+Name ="tmpEDI_Rpt"
+Option =8
+Where ="(((tblSubscr.SUBgroupID) Is Null))"
+Begin InputTables
+    Name ="tblEDI_App_Subscr"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="SUBssn"
+    Expression ="tblSubscr.SUBssn"
+    Name ="SUBfirstNAME"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Name ="SUBlastNAME"
+    Expression ="tblSubscr.SUBlastNAME"
+    Alias ="SUBStreet"
+    Name ="SUBStreet"
+    Expression ="[tblSubscr].[SUBstreet1] & \" \" & [tblSubscr].[SUBStreet2]"
+    Name ="SUBcity"
+    Expression ="tblSubscr.SUBcity"
+    Name ="SUBstate"
+    Expression ="tblSubscr.SUBstate"
+    Name ="SUBzip"
+    Expression ="tblSubscr.SUBzip"
+    Alias ="Stat"
+    Name ="Stat"
+    Expression ="\"INDIVL\""
+    Name ="GroupID"
+    Expression ="tblSubscr.SUBgroupID"
+End
+Begin Joins
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbBoolean "UseTransaction" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =44
+    Top =44
+    Right =928
+    Bottom =494
+    Left =-1
+    Top =-1
+    Right =877
+    Bottom =175
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =493
+        Top =7
+        Right =697
+        Bottom =136
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
+        Left =46
+        Top =10
+        Right =180
+        Bottom =139
+        Top =10
+        Name ="tblSubscr"
+        Name =""
+    End
+End

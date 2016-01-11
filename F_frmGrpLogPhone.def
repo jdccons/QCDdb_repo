@@ -1,0 +1,645 @@
+Version =20
+VersionRequired =20
+Checksum =901288618
+Begin Form
+    AutoResize = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    GridX =24
+    GridY =24
+    Width =6180
+    ItemSuffix =131
+    Left =2910
+    Top =690
+    Right =9135
+    Bottom =4590
+    Toolbar ="main"
+    RecSrcDt = Begin
+        0xc990284aeff6e240
+    End
+    RecordSource ="SELECT tblGrpLog.* FROM tblGrpLog WHERE (((tblGrpLog.LogGrID)=[Forms]![frmGrpLog"
+        "Switch]![GROUPid]) AND ((tblGrpLog.LogPhoneLog)=Yes)) ORDER BY tblGrpLog.LogDate"
+        " DESC , tblGrpLog.LogTime DESC;"
+    Caption ="Group Phone Log"
+    BeforeInsert ="[Event Procedure]"
+    OnOpen ="[Event Procedure]"
+    MenuBar ="mnuMain"
+    PrtMip = Begin
+        0xd002000038040000d0020000d002000000000000a02900004029000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f4040367000001000100ea0a6f086400010001002c0101000100 ,
+        0x2c01020001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =540
+            BackColor =12632256
+            Name ="FormHeader0"
+            Begin
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =1248
+                    Top =60
+                    Width =3492
+                    Height =360
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Label124"
+                    Caption ="Phone Log"
+                End
+            End
+        End
+        Begin Section
+            Height =2820
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    OverlapFlags =85
+                    ColumnCount =3
+                    ListWidth =1800
+                    Left =1620
+                    Top =360
+                    Width =2223
+                    TabIndex =4
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"60\""
+                    Name ="cmbQCDrep"
+                    ControlSource ="LogClientScvRepID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tlkpClientServiceReps.RepID, tlkpClientServiceReps.RepName, t"
+                        "lkpClientServiceReps.IsRepActive FROM tlkpClientServiceReps WHERE (((tlkpClientS"
+                        "erviceReps.IsRepActive)=Yes));"
+                    ColumnWidths ="0;1800;0"
+                    ValidationRule =">0"
+                    ValidationText ="You must enter an Account Manager's name."
+                    DefaultValue ="0"
+                    OnNotInList ="[Event Procedure]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =3360
+                    Top =1260
+                    Width =918
+                    Height =180
+                    TabIndex =8
+                    BackColor =10092543
+                    Name ="ctlLogDate_time"
+                    ControlSource ="LogTime"
+                    Format ="Medium Time"
+                    DefaultValue ="Time()"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =5040
+                    Top =60
+                    Width =948
+                    TabIndex =2
+                    Name ="ctlLogCallBack"
+                    ControlSource ="LogCallBack"
+                    Format ="Short Date"
+                    InputMask ="99/99/0099;0;_"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Locked = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =2400
+                    Top =1260
+                    Width =897
+                    Height =180
+                    TabIndex =7
+                    BackColor =10092543
+                    Name ="ctlLogDate"
+                    ControlSource ="LogDate"
+                    Format ="Short Date"
+                    DefaultValue ="Date()"
+                    InputMask ="99/99/0099;0;_"
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =960
+                    Top =2280
+                    Width =5157
+                    Height =480
+                    TabIndex =10
+                    Name ="ctlLogNotes"
+                    ControlSource ="LogNotes"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =5823
+                    Top =60
+                    Width =294
+                    TabIndex =3
+                    BackColor =65535
+                    Name ="ctlLogGrID"
+                    ControlSource ="LogGrID"
+                    DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =60
+                    Top =60
+                    Width =468
+                    Height =228
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text96"
+                    Caption ="Date"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1560
+                    Top =60
+                    Width =492
+                    Height =228
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text97"
+                    Caption ="Time"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =60
+                    Top =2280
+                    Width =681
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text98"
+                    Caption ="Notes"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =215
+                    TextAlign =1
+                    Left =4140
+                    Top =60
+                    Width =900
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label111"
+                    Caption ="Call Back"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =45
+                    Top =360
+                    Width =1545
+                    Height =225
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label118"
+                    Caption ="Client Svc.Rep."
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =900
+                    Top =660
+                    Width =5220
+                    TabIndex =5
+                    Name ="LogPurpose"
+                    ControlSource ="LogPurpose"
+                    StatusBarText ="Purpose of visit or Call - & - Why a Target?"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =660
+                            Width =768
+                            Height =420
+                            FontWeight =700
+                            Name ="Label119"
+                            Caption ="Purpose/Target"
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =247
+                    Left =960
+                    Top =1140
+                    Width =5160
+                    Height =540
+                    TabIndex =6
+                    Name ="LogOutcome"
+                    ControlSource ="LogOutcome"
+                    StatusBarText ="Outcome of Call or Meeting"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1140
+                            Width =804
+                            Height =228
+                            FontWeight =700
+                            Name ="Label120"
+                            Caption ="Outcome"
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =87
+                    Left =960
+                    Top =1740
+                    Width =5160
+                    Height =480
+                    TabIndex =9
+                    Name ="LogFollowupAction"
+                    ControlSource ="LogFollowupAction"
+                    StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =60
+                            Top =1740
+                            Width =900
+                            Height =540
+                            FontWeight =700
+                            Name ="Label121"
+                            Caption ="Follow up Action"
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    Left =540
+                    Top =60
+                    Width =900
+                    Name ="LogDateCallVisit"
+                    ControlSource ="LogDateCallVisit"
+                    StatusBarText ="Date Called or Visited"
+                End
+                Begin TextBox
+                    OverlapFlags =215
+                    Left =2040
+                    Top =60
+                    Width =900
+                    TabIndex =1
+                    Name ="LogApptCallDate"
+                    ControlSource ="LogApptCallTime"
+                    Format ="Medium Time"
+                    InputMask ="09:00\\ >LL;0"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =540
+            BackColor =12632256
+            Name ="FormFooter1"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    TextFontFamily =34
+                    Left =5400
+                    Top =60
+                    Width =720
+                    Height =420
+                    FontSize =8
+                    FontWeight =400
+                    ForeColor =-2147483630
+                    Name ="cmdClose"
+                    Caption ="Command0"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    FontName ="MS Sans Serif"
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    OverlapFlags =215
+                    Left =1320
+                    Top =60
+                    Width =660
+                    TabIndex =1
+                    Name ="LogSize"
+                    ControlSource ="LogSize"
+                    StatusBarText ="A, B, C+, or Baby C"
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =900
+                            Top =60
+                            Width =432
+                            Height =228
+                            FontWeight =700
+                            Name ="Label123"
+                            Caption ="Size"
+                        End
+                    End
+                End
+                Begin CheckBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =120
+                    Top =60
+                    TabIndex =2
+                    Name ="LogPhoneLog"
+                    ControlSource ="LogPhoneLog"
+                    StatusBarText ="Is it a Phone Log item"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3960
+                    Top =60
+                    Width =1350
+                    Height =420
+                    TabIndex =3
+                    Name ="cmdAdd"
+                    Caption ="Add Record"
+                    OnClick ="[Event Procedure]"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3000
+                    Top =60
+                    Width =870
+                    Height =420
+                    TabIndex =4
+                    Name ="cmdDelete"
+                    Caption ="Delete"
+                    OnClick ="[Event Procedure]"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'On Error GoTo Err_Form_Open
+'Exit_Form_Open:
+'    Exit Sub
+'
+'Err_Form_Open:
+'    MsgBox Err.DESCRIPTION
+'    Resume Exit_Form_Open
+'
+
+Dim gstrSize As String
+Dim fPhone As Boolean
+Private Sub cmbQCDrep_NotInList(NewData As String, Response As Integer)
+
+On Error GoTo PROC_ERR
+
+    ' Add a new category by typing a name in CategoryID combo box.
+    Dim intNewCategory As Integer, intTruncateName As Integer, strTitle As String, intMsgDialog As Integer
+
+    ' Display message box asking if user wants to add a new category.
+    strTitle = "QCD Representative Not In List"
+    intMsgDialog = vbYesNo + vbQuestion + vbDefaultButton1
+    intNewCategory = MsgBox("Do you want to add a new representive?", intMsgDialog, strTitle)
+
+    If intNewCategory = vbYes Then
+        ' Remove new name from CategoryID combo box so
+        ' control can be requeried when user returns to form.
+        DoCmd.RunCommand acCmdUndo
+
+        ' Display message box and adjust length of value entered in
+        ' CategoryID combo box.
+        strTitle = "Initials Too Long"
+        intMsgDialog = vbOKOnly + vbExclamation
+        If Len(NewData) > 4 Then
+            intTruncateName = MsgBox("Initials can be no longer than " _
+                & "4 characters. The initials you entered will be truncated.", _
+                intMsgDialog, strTitle)
+            NewData = Left(NewData, 15)
+        End If
+
+        ' Open AddCategory form.
+        DoCmd.OpenForm "frmQCDrep", acNormal, , , acAdd, acDialog, NewData
+        
+        ' Continue without displaying default error message.
+        Response = acDataErrAdded
+        Exit Sub
+        
+    End If
+        
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+        
+End Sub
+
+Private Sub cmdClose_Click()
+   DoCmd.Close
+End Sub
+
+Private Sub Form_BeforeInsert(Cancel As Integer)
+On Error GoTo Err_Form_BeforeInsert
+
+   With Me
+     .LogSize = gstrSize
+     .LogPhoneLog = fPhone
+   End With
+
+Exit_Form_BeforeInsert:
+    Exit Sub
+
+Err_Form_BeforeInsert:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_Form_BeforeInsert
+End Sub
+
+
+
+Private Sub Form_Open(Cancel As Integer)
+   
+   On Error GoTo Err_Form_Open
+   
+   Dim strSQL As String
+   Dim rst As DAO.Recordset
+   Dim dbs As DAO.Database
+   Dim strSize As String
+   Dim strYear As String
+   Dim strGroup As String
+   
+   Set dbs = CurrentDb()
+   
+   strYear = Year(date)
+   strGroup = [Forms]![frmGrpLogSwitch].[GROUPid]
+   
+   strSQL = "SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginEligEmps, "
+   strSQL = strSQL & " tblGrowth.CurrentEligEmps, IIf(Month(Date())=1,"
+   strSQL = strSQL & " IIf([BeginEligEmps]>=1000,'A',"
+   strSQL = strSQL & " IIf([BeginEligEmps]<1000 And [BeginEligEmps]>=100,'B',"
+   strSQL = strSQL & " IIf([BeginEligEmps]<100 And [BeginEligEmps]>=30,'C+',"
+   strSQL = strSQL & " IIf([BeginEligEmps]<30 And [BeginEligEmps]>=0,'Baby C','?')))),"
+   strSQL = strSQL & " IIf([CurrentEligEmps]>=1000,'A',"
+   strSQL = strSQL & " IIf([CurrentEligEmps]<1000 And [CurrentEligEmps]>=100,'B',"
+   strSQL = strSQL & " IIf([CurrentEligEmps]<100 And [CurrentEligEmps]>=30,'C+',"
+   strSQL = strSQL & " IIf([CurrentEligEmps]<30 And [CurrentEligEmps]>=0,'Baby C','?'))))) AS Rating"
+   strSQL = strSQL & " FROM tblGrowth"
+   strSQL = strSQL & " WHERE (((tblGrowth.GroupID)='" & strGroup & "') "
+   strSQL = strSQL & " AND ((tblGrowth.Year)='" & strYear & "'));"
+   Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   
+   If rst.RecordCount > 0 Then
+        With rst
+            gstrSize = !Rating
+            fPhone = True
+        End With
+   'If the group does not exist in tblGrowth, cannot calculate logsize
+   Else
+        gstrSize = "NA"
+        fPhone = True
+   End If
+   
+   rst.Close
+   Set dbs = Nothing
+     
+Exit_Form_Open:
+    Exit Sub
+
+Err_Form_Open:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_Form_Open
+    
+End Sub
+Private Sub cmdAdd_Click()
+On Error GoTo Err_cmdAdd_Click
+
+    DoCmd.GoToRecord , , acNewRec
+
+Exit_cmdAdd_Click:
+    Exit Sub
+
+Err_cmdAdd_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdAdd_Click
+    
+End Sub
+Private Sub cmdDelete_Click()
+On Error GoTo err_cmdDelete_Click
+
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 8, , acMenuVer70
+    DoCmd.DoMenuItem acFormBar, acEditMenu, 6, , acMenuVer70
+
+Exit_cmdDelete_Click:
+    Exit Sub
+
+err_cmdDelete_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdDelete_Click
+    
+End Sub

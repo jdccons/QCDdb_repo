@@ -1,0 +1,40 @@
+Operation =1
+Option =0
+Where ="(((ELGEXP.EINMPLAN)=\"QCDRED-QCD\" Or (ELGEXP.EINMPLAN)=\"QCDWHT-QCD\" Or (ELGEX"
+    "P.EINMPLAN)=\"QCDRPL-QCD\" Or (ELGEXP.EINMPLAN)=\"QCDBLU-MNL\"))"
+Begin InputTables
+    Name ="ELGEXP"
+End
+Begin OutputColumns
+    Expression ="ELGEXP.EIMBRID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1440
+    Bottom =776
+    Left =-1
+    Top =-1
+    Right =1437
+    Bottom =271
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =290
+        Bottom =187
+        Top =8
+        Name ="ELGEXP"
+        Name =""
+    End
+End

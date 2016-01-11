@@ -1,0 +1,366 @@
+Version =17
+VersionRequired =17
+Checksum =-1756869060
+Begin Report
+    LayoutForPrint = NotDefault
+    DefaultView =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10080
+    DatasheetFontHeight =10
+    ItemSuffix =23
+    Left =660
+    Top =1050
+    Right =12870
+    Bottom =8760
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xa568aaed588be240
+    End
+    RecordSource ="qrpt_EDI_UNION"
+    Caption ="New Subscribers"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xd0020000d0020000d0020000d002000000000000602700004a01000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a65742034303530205365726965732050434c0000000000 ,
+        0x010400059c00340243ff800701000100ea0a6f08640001000f00580201000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200000034020000ea7157490000000000000000000000000000000000000000 ,
+        0x00000000000000000d0000000100000000000100000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002d00010077696e73706f6f6c004850204c617365724a657420343035 ,
+        0x30205365726965732050434c003139322e3136382e302e355f50310000000000 ,
+        0x000000000000000000000000
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            ControlSource ="SUBlastNAME"
+        End
+        Begin BreakLevel
+            ControlSource ="SUBfirstNAME"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =930
+            Name ="ReportHeader"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextFontFamily =18
+                    Left =60
+                    Top =60
+                    Width =9120
+                    Height =540
+                    FontSize =20
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text19"
+                    ControlSource ="=\"New Subscribers for: \" & [Forms]![frmImportProcessing]![txtGroup]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin PageHeader
+            Height =360
+            Name ="PageHeader"
+            Begin
+                Begin Label
+                    Left =60
+                    Top =60
+                    Width =1440
+                    Height =300
+                    Name ="SUBlastNAME Label"
+                    Caption ="Last Name"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBlastNAME_Label"
+                End
+                Begin Label
+                    Left =1560
+                    Top =60
+                    Width =1380
+                    Height =300
+                    Name ="SUBfirstNAME Label"
+                    Caption ="First Name"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBfirstNAME_Label"
+                End
+                Begin Label
+                    Left =3000
+                    Top =60
+                    Width =1020
+                    Height =300
+                    Name ="SUBssn Label"
+                    Caption ="SSN"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBssn_Label"
+                End
+                Begin Label
+                    Left =4080
+                    Top =60
+                    Width =2100
+                    Height =300
+                    Name ="SUBstreet1 Label"
+                    Caption ="Address"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBstreet1_Label"
+                End
+                Begin Label
+                    Left =6240
+                    Top =60
+                    Width =1080
+                    Height =300
+                    Name ="SUBcity Label"
+                    Caption ="City"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBcity_Label"
+                End
+                Begin Label
+                    Left =7380
+                    Top =60
+                    Width =900
+                    Height =300
+                    Name ="SUBstate Label"
+                    Caption ="State"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBstate_Label"
+                End
+                Begin Label
+                    Left =8340
+                    Top =60
+                    Width =960
+                    Height =300
+                    Name ="SUBzip Label"
+                    Caption ="Zip"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="SUBzip_Label"
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =60
+                    Top =360
+                    Width =10020
+                    Name ="Line17"
+                End
+                Begin Label
+                    Left =9360
+                    Top =60
+                    Width =720
+                    Height =300
+                    Name ="Label21"
+                    Caption ="Status"
+                    Tag ="DetachedLabel"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =330
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    Left =60
+                    Top =60
+                    Height =270
+                    Name ="SUBlastNAME"
+                    ControlSource ="SUBlastNAME"
+                End
+                Begin TextBox
+                    Left =1560
+                    Top =60
+                    Width =1380
+                    Height =270
+                    TabIndex =1
+                    Name ="SUBfirstNAME"
+                    ControlSource ="SUBfirstNAME"
+                End
+                Begin TextBox
+                    Left =3000
+                    Top =60
+                    Width =1020
+                    Height =270
+                    TabIndex =2
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                End
+                Begin TextBox
+                    Left =4080
+                    Top =60
+                    Width =2100
+                    Height =270
+                    TabIndex =3
+                    Name ="SUBstreet1"
+                    ControlSource ="SUBStreet"
+                End
+                Begin TextBox
+                    Left =6240
+                    Top =60
+                    Width =1080
+                    Height =270
+                    TabIndex =4
+                    Name ="SUBcity"
+                    ControlSource ="SUBcity"
+                End
+                Begin TextBox
+                    Left =7380
+                    Top =60
+                    Width =900
+                    Height =270
+                    TabIndex =5
+                    Name ="SUBstate"
+                    ControlSource ="SUBstate"
+                End
+                Begin TextBox
+                    Left =8340
+                    Top =60
+                    Width =960
+                    Height =270
+                    TabIndex =6
+                    Name ="SUBzip"
+                    ControlSource ="SUBzip"
+                End
+                Begin TextBox
+                    Left =9360
+                    Top =60
+                    Width =720
+                    TabIndex =7
+                    Name ="Stat"
+                    ControlSource ="Stat"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =540
+            Name ="PageFooter"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Top =240
+                    Width =4560
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text15"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =5460
+                    Top =240
+                    Width =4560
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text16"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    BorderWidth =3
+                    Left =60
+                    Top =240
+                    Width =10020
+                    BorderColor =12632256
+                    Name ="Line18"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub Report_Close()
+
+    DoCmd.Restore
+    
+End Sub

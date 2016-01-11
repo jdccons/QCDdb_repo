@@ -1,0 +1,123 @@
+Version =17
+VersionRequired =17
+Checksum =625650622
+Begin Report
+    AutoCenter = NotDefault
+    DefaultView =0
+    ScrollBars =2
+    Width =4344
+    ItemSuffix =117
+    Left =1125
+    Top =1050
+    Right =11490
+    Bottom =6900
+    RecSrcDt = Begin
+        0x17014f9754a4e240
+    End
+    RecordSource ="qfrmGrpSubDep_Bexar"
+    Begin
+        Begin FormHeader
+            Height =240
+            Name ="FormHeader1"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    Left =1455
+                    Width =1020
+                    Height =240
+                    FontWeight =700
+                    Name ="Text109"
+                    Caption ="First Name"
+                End
+                Begin Label
+                    TextAlign =2
+                    Width =975
+                    Height =240
+                    FontWeight =700
+                    Name ="Text110"
+                    Caption ="Last Name"
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =3315
+                    Width =555
+                    Height =240
+                    FontWeight =700
+                    Name ="Text111"
+                    Caption ="DOB"
+                End
+                Begin Label
+                    TextAlign =1
+                    Left =2805
+                    Width =435
+                    Height =240
+                    FontWeight =700
+                    Name ="Text115"
+                    Caption ="MI"
+                End
+            End
+        End
+        Begin Section
+            Height =240
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =1
+                    BackStyle =0
+                    Left =1530
+                    Width =1254
+                    FontSize =7
+                    TabIndex =1
+                    Name ="uDEPfirstNAME"
+                    ControlSource ="=UCase([DEPfirstNAME])"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =1
+                    BackStyle =0
+                    Left =75
+                    Width =1479
+                    FontSize =7
+                    Name ="uDEPlastNAME"
+                    ControlSource ="=UCase([DEPlastNAME])"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =1
+                    BackStyle =0
+                    Left =3360
+                    Width =984
+                    FontSize =7
+                    TabIndex =3
+                    Name ="DEPdob"
+                    ControlSource ="DEPdob"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    OldBorderStyle =0
+                    TextAlign =1
+                    BackStyle =0
+                    Left =2835
+                    Width =429
+                    FontSize =7
+                    TabIndex =2
+                    Name ="uDEPmiddleNAME"
+                    ControlSource ="=UCase([DEPmiddleNAME])"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit

@@ -1,0 +1,53 @@
+Operation =1
+Option =8
+Where ="(((tbldentist.DENTselect)=\"S\") AND ((tbldentist.DENTprosp)=\"P\"))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Alias ="Zip2"
+    Expression ="IIf([Dentzip] Like \"#####-#\",Left([DentZip],Len([DentZip])-1),IIf([DentZip] Li"
+        "ke \"#########\",Format([DentZip],\"@@@@@-@@@@\"),[DentZip]))"
+    Expression ="tbldentist.DENTselect"
+    Expression ="tbldentist.DENTid"
+    Expression ="tbldentist.DENTfirst"
+    Expression ="tbldentist.DENTlast"
+    Expression ="tbldentist.DENTstreet1"
+    Expression ="tbldentist.DENTstreet2"
+    Expression ="tbldentist.DENTcity"
+    Expression ="tbldentist.DENTstate"
+    Expression ="tbldentist.DENTzip"
+End
+Begin OrderBy
+    Expression ="tbldentist.DENTlast"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =504
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+End

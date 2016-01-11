@@ -1,0 +1,60 @@
+Operation =1
+Option =8
+Where ="(((tblAgent.AGENTid) Is Null))"
+Begin InputTables
+    Name ="ARSALESP"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="ARSALESP.Salesp_Key"
+    Expression ="ARSALESP.Salesp_Name"
+End
+Begin Joins
+    LeftTable ="ARSALESP"
+    RightTable ="tblAgent"
+    Expression ="ARSALESP.Salesp_Key = tblAgent.AGENTid"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+Begin
+    Begin
+        dbText "Name" ="ARSALESP.Salesp_Name"
+        dbInteger "ColumnWidth" ="3615"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =62
+    Top =44
+    Right =1002
+    Bottom =349
+    Left =-1
+    Top =-1
+    Right =929
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =192
+        Bottom =113
+        Top =0
+        Name ="ARSALESP"
+        Name =""
+    End
+    Begin
+        Left =290
+        Top =6
+        Right =501
+        Bottom =113
+        Top =15
+        Name ="tblAgent"
+        Name =""
+    End
+End

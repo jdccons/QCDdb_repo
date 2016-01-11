@@ -1,12 +1,11 @@
-Version =19
-VersionRequired =19
-Checksum =-790317522
+Version =20
+VersionRequired =20
+Checksum =185837031
 Begin Form
     RecordSelectors = NotDefault
     ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     DividingLines = NotDefault
-    FilterOn = NotDefault
     OrderByOn = NotDefault
     DefaultView =0
     ScrollBars =0
@@ -18,12 +17,19 @@ Begin Form
     Left =4065
     Top =1710
     Right =14880
-    Bottom =10605
+    Bottom =7440
     AfterInsert ="[Event Procedure]"
     Filter ="[GRcancelled] = False"
     OrderBy ="GRname"
     RecSrcDt = Begin
         0xc3f5281475a7e240
+    End
+    GUID = Begin
+        0xa62365d326bf764f845c2673ae1f1710
+    End
+    NameMap = Begin
+        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
+        0x0000000000000000000000000000
     End
     RecordSource ="tblGrp"
     Caption ="Group Information"
@@ -261,6 +267,9 @@ Begin Form
             Height =0
             BackColor =12632256
             Name ="FormHeader1"
+            GUID = Begin
+                0xe7756a94e2ff904f93e7b596dd349657
+            End
         End
         Begin Section
             CanGrow = NotDefault
@@ -268,6 +277,9 @@ Begin Form
             Height =7470
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0xff584db769e5194e9bea5c046791a7fa
+            End
             Begin
                 Begin Label
                     BackStyle =1
@@ -281,6 +293,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text4"
                     Caption ="Group ID:"
+                    GUID = Begin
+                        0x1bc7eadb251342448df74b9e24bbed56
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -294,6 +309,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text5"
                     Caption ="Grp Name:"
+                    GUID = Begin
+                        0x73adb57fe378e34d97c89c3a10a6fd6c
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -307,6 +325,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text6"
                     Caption =" Address:"
+                    GUID = Begin
+                        0xb1e0b3b8305a4e459a8ea544a1b538ad
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -320,6 +341,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text7"
                     Caption ="Address 2:"
+                    GUID = Begin
+                        0x549c4d4fcaf66f40924c527b9af3cf4b
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -333,6 +357,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="City/ST/Zip:"
+                    GUID = Begin
+                        0xf17ef53f5ed5a440b5fb63775399ded1
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -345,6 +372,9 @@ Begin Form
                     Name ="ctlGRname"
                     ControlSource ="GRname"
                     StatusBarText ="Green Color indicates that this group is either on hold or has cancelled."
+                    GUID = Begin
+                        0x4c18ee2fcf658040b6d5e16bf4098db2
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -356,6 +386,9 @@ Begin Form
                     TabIndex =2
                     Name ="GRstreet1"
                     ControlSource ="GRstreet1"
+                    GUID = Begin
+                        0x885f928131f9944b9c434dce0bd2fe28
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -367,6 +400,9 @@ Begin Form
                     TabIndex =3
                     Name ="GRstreet2"
                     ControlSource ="GRstreet2"
+                    GUID = Begin
+                        0xee20ca7a3b5ffb46932eeec81272ee5a
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -378,6 +414,9 @@ Begin Form
                     TabIndex =4
                     Name ="GRcity"
                     ControlSource ="GRcity"
+                    GUID = Begin
+                        0x960077a7af219849af46312562bfb0d4
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -389,6 +428,9 @@ Begin Form
                     TabIndex =5
                     Name ="GRstate"
                     ControlSource ="GRstate"
+                    GUID = Begin
+                        0x4a28c69df4f95444b03e3c82a4570839
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -402,6 +444,9 @@ Begin Form
                     Name ="GRzip"
                     ControlSource ="GRzip"
                     InputMask ="00000\\-9999;;_"
+                    GUID = Begin
+                        0x99f6b9c838a5c34ba53e1400712ec6b5
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -415,6 +460,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text17"
                     Caption ="Phone:"
+                    GUID = Begin
+                        0x368e7321d647f84db086bf6853d5ddbe
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -428,6 +476,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text18"
                     Caption ="Main Contact:"
+                    GUID = Begin
+                        0xf425cfdf7276f04687fedd8fce1c22d2
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -441,6 +492,9 @@ Begin Form
                     ControlSource ="GRphone1"
                     InputMask ="!\\(999\") \"000\\-0000;0;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xd62cbe781bddf346895d53883d1b3d22
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -452,6 +506,9 @@ Begin Form
                     TabIndex =7
                     Name ="GRmainCONT"
                     ControlSource ="GRmainCONT"
+                    GUID = Begin
+                        0xffb2ab8eb9d6a64abe0111c589d2a867
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -465,6 +522,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text38"
                     Caption ="Contract Beg:"
+                    GUID = Begin
+                        0xdafc4ce82e83834597d091d6efcd740f
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -480,6 +540,9 @@ Begin Form
                     BeforeUpdate ="[Event Procedure]"
                     InputMask ="99/99/0000;0;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x1c04218248c1e943b055dafd06e0f07c
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -495,6 +558,9 @@ Begin Form
                     BeforeUpdate ="[Event Procedure]"
                     InputMask ="99/99/0000;0;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x3214a6786c639e42b1711162e795783f
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -508,6 +574,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text41"
                     Caption ="Contract End:"
+                    GUID = Begin
+                        0x52f589ce0ffc854b967eccb7e051d042
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -521,6 +590,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text50"
                     Caption ="Geo Id:"
+                    GUID = Begin
+                        0xe585970538f26846846c56a5d506d03a
+                    End
                 End
                 Begin ComboBox
                     SpecialEffect =2
@@ -533,6 +605,9 @@ Begin Form
                     Width =3398
                     TabIndex =15
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"50\""
+                    GUID = Begin
+                        0x6d3028d525222a4db7ee0d730253fd3e
+                    End
                     Name ="GRPgeoID"
                     ControlSource ="GRPgeoID"
                     RowSourceType ="Table/Query"
@@ -557,6 +632,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text69"
                     Caption =" Agent Information"
+                    GUID = Begin
+                        0x861de4b6d209e6438dcbe4bb49280982
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -570,6 +648,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text73"
                     Caption ="Fax:"
+                    GUID = Begin
+                        0xae4cdc1488ccf242898c9dbd3de9ea2f
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -583,6 +664,9 @@ Begin Form
                     ControlSource ="GRfax"
                     InputMask ="!\\(999\") \"000\\-0000;0;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x41470c9b34c7f443891b6e942a7108ca
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -597,6 +681,9 @@ Begin Form
                     BackColor =65535
                     Name ="Text149"
                     Caption ="Enter Group ID: "
+                    GUID = Begin
+                        0xb504c1728755c5409b2a26afbcf9fade
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -610,6 +697,9 @@ Begin Form
                     BackColor =65535
                     Name ="FindGROUPid"
                     AfterUpdate ="=FINDgroupID([FINDgroupID],\"GROUPid\")"
+                    GUID = Begin
+                        0x752a84a0f7ee47459798d1982d6dc212
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -621,6 +711,9 @@ Begin Form
                     Name ="B"
                     Caption ="B"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x2dd710d8091568439042695ea85f0711
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -632,6 +725,9 @@ Begin Form
                     Name ="C"
                     Caption ="C"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x2ea1083a65ac524ea7b8ca07b025724e
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -643,6 +739,9 @@ Begin Form
                     Name ="D"
                     Caption ="D"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x03beb2aa944c8e4faec6b82ca851c4a3
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -654,6 +753,9 @@ Begin Form
                     Name ="E"
                     Caption ="E"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0xe85c82804b44a34fae37607ee1ab174d
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -665,6 +767,9 @@ Begin Form
                     Name ="F"
                     Caption ="F"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0xdbca3e616b8c3349b44096067c0c8aee
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -676,6 +781,9 @@ Begin Form
                     Name ="G"
                     Caption ="G"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0xf52331631b7f2148a64a3d5f3325cb8b
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -687,6 +795,9 @@ Begin Form
                     Name ="H"
                     Caption ="H"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x453d48b3a573bc4f9e2eec1b5a28c76a
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -698,6 +809,9 @@ Begin Form
                     Name ="I"
                     Caption ="I"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x0d8c24536bdc0f41ba137bd651f39bdf
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -709,6 +823,9 @@ Begin Form
                     Name ="K"
                     Caption ="K"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x4e948daf29bc7143a51fe0f7024d0e6d
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -720,6 +837,9 @@ Begin Form
                     Name ="L"
                     Caption ="L"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x6ad5bae0f80c2642a4cd717f9acfc8a6
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -731,6 +851,9 @@ Begin Form
                     Name ="M"
                     Caption ="M"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x74f9fb20ba11c545ab826a2c11a220bd
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -742,6 +865,9 @@ Begin Form
                     Name ="N"
                     Caption ="N"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0xa2a34b65f58f804492db7077c9d1314f
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -753,6 +879,9 @@ Begin Form
                     Name ="O"
                     Caption ="O"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x8f21080ae8810343b93d8c9678f56a72
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -764,6 +893,9 @@ Begin Form
                     Name ="P"
                     Caption ="P"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x61f3a537a38414459c1c3e6837a0589a
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -775,6 +907,9 @@ Begin Form
                     Name ="Q"
                     Caption ="Q"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0xf0ac868b9afcfa489d39ff283cbc964f
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -786,6 +921,9 @@ Begin Form
                     Name ="R"
                     Caption ="R"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x6584337fec73334a9cc278f7b266abc8
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -797,6 +935,9 @@ Begin Form
                     Name ="S"
                     Caption ="S"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x365e859a87e17946a08d10f9bbf7e616
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -808,6 +949,9 @@ Begin Form
                     Name ="T"
                     Caption ="T"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x03ab16db4277134393bdbe0e0d4d4c1f
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -819,6 +963,9 @@ Begin Form
                     Name ="U"
                     Caption ="U"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x704b55e82b5b1247811fa37d3b3f617a
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -830,6 +977,9 @@ Begin Form
                     Name ="V"
                     Caption ="V"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x85e8315b10e30d45bc4eb82f09983f7a
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -841,6 +991,9 @@ Begin Form
                     Name ="W"
                     Caption ="W"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x4e0b19302461404792cb90c5d895b2f5
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -852,6 +1005,9 @@ Begin Form
                     Name ="X"
                     Caption ="X"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0xaa9f4227c19ce14b97111988502c7cdb
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -863,6 +1019,9 @@ Begin Form
                     Name ="Y"
                     Caption ="Y"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x8398018a457ba94d939c5f5866e17286
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -874,6 +1033,9 @@ Begin Form
                     Name ="Z"
                     Caption ="Z"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0xe354472449ce6f479eca5b21f4daf1f8
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -889,6 +1051,9 @@ Begin Form
                     TabIndex =54
                     BackColor =12632256
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0xda472745eada074990967d4e165bb644
+                    End
                     Name ="GroupPickList"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT DISTINCTROW tblGrp.GROUPid AS Group_ID, tblGrp.GRname AS Group_Name, tblG"
@@ -911,6 +1076,9 @@ Begin Form
                             BorderColor =16777215
                             Name ="lblGroupPickList"
                             Caption ="Group &Name:"
+                            GUID = Begin
+                                0xedc625b33a5f07489c98612be881da21
+                            End
                         End
                     End
                 End
@@ -932,6 +1100,9 @@ Begin Form
                     OnExit ="=SearchBtn(\"GroupPickList\")"
                     DefaultValue ="\"*\""
                     FontName ="Helv"
+                    GUID = Begin
+                        0x42a538f94c1c6e42a33cd928c06263eb
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -944,6 +1115,9 @@ Begin Form
                             ForeColor =12582912
                             Name ="lblAlphaControl"
                             Caption ="&Filter on:"
+                            GUID = Begin
+                                0x485cc38b011b164f9455b499025e0c90
+                            End
                         End
                     End
                 End
@@ -957,6 +1131,9 @@ Begin Form
                     Name ="A"
                     Caption ="A"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x7d7803cadc4c174da5afeae660737465
+                    End
                 End
                 Begin CommandButton
                     TabStop = NotDefault
@@ -968,6 +1145,9 @@ Begin Form
                     Name ="J"
                     Caption ="J"
                     OnClick ="=AlphaBtn([Form],\"GroupPickList\")"
+                    GUID = Begin
+                        0x13aed6f1802f144b9870a3981e99f96d
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -979,6 +1159,9 @@ Begin Form
                     Name ="ctlGROUPid"
                     ControlSource ="GROUPid"
                     AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0xce56427edd326e4f8a2e5d6d34b826f6
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -992,6 +1175,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text93"
                     Caption ="Notes:"
+                    GUID = Begin
+                        0x09f1db22e6af9d4cb81111b7e3bdf319
+                    End
                 End
                 Begin TextBox
                     EnterKeyBehavior = NotDefault
@@ -1004,6 +1190,9 @@ Begin Form
                     TabIndex =19
                     Name ="GRnotes"
                     ControlSource ="GRnotes"
+                    GUID = Begin
+                        0xbdf836e3bf4e81408209bc3172c78aa7
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1017,6 +1206,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text96"
                     Caption ="Serv. Contact:"
+                    GUID = Begin
+                        0x9ed5beaf65687448b9fbdb04f718245c
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -1028,6 +1220,9 @@ Begin Form
                     TabIndex =10
                     Name ="GRsrvCONT"
                     ControlSource ="GRsrvCONT"
+                    GUID = Begin
+                        0x7ef2e9bc50bf4e408a4ef1b2dc55151d
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1041,6 +1236,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text100"
                     Caption ="Phone:"
+                    GUID = Begin
+                        0xe8ee28f8e9217149871c672556a93b79
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -1054,6 +1252,9 @@ Begin Form
                     ControlSource ="GRphone2"
                     InputMask ="!\\(999\") \"000\\-0000;0;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xc6bdb8143c58444da9ea7271fb842fb7
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -1068,6 +1269,9 @@ Begin Form
                     BackColor =65535
                     Name ="Text91"
                     Caption ="CustClass"
+                    GUID = Begin
+                        0xf3f33673dfdcaa48b68a3ed7025deb44
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -1081,6 +1285,9 @@ Begin Form
                     Name ="GRclassKEY"
                     ControlSource ="GRclassKEY"
                     DefaultValue ="=\"GROUP\""
+                    GUID = Begin
+                        0xce1261b54e974e4cbaf69e38a7e61b7c
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -1095,6 +1302,9 @@ Begin Form
                     BackColor =65535
                     Name ="Text106"
                     Caption ="DateCreated:"
+                    GUID = Begin
+                        0xf64e81b65ade884e9fe8f850f03348b5
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -1110,6 +1320,9 @@ Begin Form
                     ControlSource ="DateCreated"
                     Format ="m/d/yyyy"
                     DefaultValue ="=Date()"
+                    GUID = Begin
+                        0x6cfbdae1ecb8aa42945390995a6f6a97
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -1124,6 +1337,9 @@ Begin Form
                     BackColor =65535
                     Name ="Text108"
                     Caption ="DateUpdated:"
+                    GUID = Begin
+                        0x94ab8ee40025d0459b8b013805d50814
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -1138,6 +1354,9 @@ Begin Form
                     Name ="DateUpdated"
                     ControlSource ="DateUpdated"
                     Format ="m/d/yyyy"
+                    GUID = Begin
+                        0x27d07d74d5298640882ad85066f9074f
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1151,6 +1370,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label120"
                     Caption ="Cancel Date: "
+                    GUID = Begin
+                        0xdf4a18c55481654d810ccb0b95932ae0
+                    End
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -1167,6 +1389,9 @@ Begin Form
                     Format ="m/d/yyyy"
                     BeforeUpdate ="[Event Procedure]"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xaaea08384e23c344895946f02fa0ac14
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -1182,6 +1407,9 @@ Begin Form
                     Format ="m/d/yyyy"
                     BeforeUpdate ="[Event Procedure]"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xdcd10346adc7ab4ca3b3ed5cb9d8eceb
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1195,6 +1423,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label123"
                     Caption ="Reinstated: "
+                    GUID = Begin
+                        0xbd39559ca9e37a46a7eb18339c020cb9
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1208,6 +1439,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label124"
                     Caption ="Cancel: "
+                    GUID = Begin
+                        0xf74748e732daa34886ec101efa07a1fe
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1221,6 +1455,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label125"
                     Caption ="Spec.Cardstock: "
+                    GUID = Begin
+                        0x75f7deaeccdcf14a9071b9e2ec93300f
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1234,6 +1471,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label127"
                     Caption ="Invoice Sort: "
+                    GUID = Begin
+                        0xb99ea2b990746a4ca235cae9160f8130
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -1252,6 +1492,9 @@ Begin Form
                     ValidationRule ="\"R\" Or \"N\""
                     ValidationText ="You must enter either an R for Rate or N for Name."
                     DefaultValue ="\"R\""
+                    GUID = Begin
+                        0x0dcecf6a669b9543bf31bf29bccca74e
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1265,6 +1508,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label132"
                     Caption ="Email:"
+                    GUID = Begin
+                        0x90ebe7e29e846345bc708c1aaffa62bf
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -1277,6 +1523,9 @@ Begin Form
                     Name ="ctlGRemail"
                     ControlSource ="GRemail"
                     StatusBarText ="Group's email address."
+                    GUID = Begin
+                        0x1d230fe48838554c82d2bec1a504d145
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1290,6 +1539,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label134"
                     Caption ="Bill.Hold: "
+                    GUID = Begin
+                        0x212ba743537da34e8508ac4774c22472
+                    End
                 End
                 Begin CheckBox
                     Enabled = NotDefault
@@ -1304,6 +1556,9 @@ Begin Form
                     ControlSource ="GRcancelled"
                     AfterUpdate ="[Event Procedure]"
                     OnExit ="[Event Procedure]"
+                    GUID = Begin
+                        0x48440a26591adf4da663b47961588fbd
+                    End
                 End
                 Begin CheckBox
                     OverlapFlags =85
@@ -1316,6 +1571,9 @@ Begin Form
                     ControlSource ="GRhold"
                     StatusBarText ="A check here indicates that this customer is not to receive an invoice."
                     AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0xe58886b42a47e34aa66c38cc05ab6e39
+                    End
                 End
                 Begin CheckBox
                     OverlapFlags =215
@@ -1328,6 +1586,9 @@ Begin Form
                     ControlSource ="GRcardstock"
                     StatusBarText ="A check here indicates that this customer requires special cardstock when printi"
                         "ng member cards."
+                    GUID = Begin
+                        0x4a8603b5ba484d44a5cb9a0a26861b81
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1341,6 +1602,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label141"
                     Caption ="Title: "
+                    GUID = Begin
+                        0xf36344726eca1641bee95df0520c39a0
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -1352,6 +1616,9 @@ Begin Form
                     TabIndex =11
                     Name ="ctlGRsrvCONTtitle"
                     ControlSource ="GRsrvCONTtitle"
+                    GUID = Begin
+                        0x40071e3355dda84c8e8d4b6649c9a506
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1365,6 +1632,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label143"
                     Caption ="Title: "
+                    GUID = Begin
+                        0x0726a4b8efbf934bab381d6a35ffd241
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
@@ -1376,6 +1646,9 @@ Begin Form
                     TabIndex =8
                     Name ="ctlGRmainCONTtitle"
                     ControlSource ="GRmainCONTtitle"
+                    GUID = Begin
+                        0x0ed1b8b8fc75c447bbc771eb301fea5c
+                    End
                 End
                 Begin Subform
                     OverlapFlags =85
@@ -1388,6 +1661,9 @@ Begin Form
                     SourceObject ="Form.fsubEligEmps"
                     LinkChildFields ="GroupID"
                     LinkMasterFields ="GROUPid"
+                    GUID = Begin
+                        0x49a5d92d8940704ab15bfe7938e3a9ba
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1401,6 +1677,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label153"
                     Caption ="EE:"
+                    GUID = Begin
+                        0x165ffd63eff2564fa7a349cbb5cb6174
+                    End
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
@@ -1413,6 +1692,9 @@ Begin Form
                     Width =1080
                     TabIndex =16
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    GUID = Begin
+                        0xbd9201b379c920419566b745a3e2072b
+                    End
                     Name ="GRannvDATE"
                     ControlSource ="GRannvDATE"
                     RowSourceType ="Table/Query"
@@ -1435,6 +1717,9 @@ Begin Form
                             BackColor =12632256
                             Name ="Text111"
                             Caption ="Sec 125 Anniv:"
+                            GUID = Begin
+                                0xe9513e787290684d91c443f194213a1e
+                            End
                         End
                     End
                 End
@@ -1448,6 +1733,9 @@ Begin Form
                     Name ="optgrpMailCard"
                     ControlSource ="GRMailCard"
                     DefaultValue ="1"
+                    GUID = Begin
+                        0x8b286ca31cdf5f4884507fb315a2d45d
+                    End
                     Begin
                         Begin Label
                             SpecialEffect =4
@@ -1463,6 +1751,9 @@ Begin Form
                             BackColor =12632256
                             Name ="Label175"
                             Caption ="Mail Card"
+                            GUID = Begin
+                                0x7251ae595019f941a115a41771292913
+                            End
                         End
                         Begin OptionButton
                             OverlapFlags =95
@@ -1470,6 +1761,9 @@ Begin Form
                             Top =4453
                             OptionValue =1
                             Name ="Option177"
+                            GUID = Begin
+                                0xef8ba7384b1b8944a8d30e0d1ed9a8a6
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =255
@@ -1479,6 +1773,9 @@ Begin Form
                                     Height =240
                                     Name ="Label178"
                                     Caption ="Empr"
+                                    GUID = Begin
+                                        0xb9ac7067e4877445995c0679509b9cf3
+                                    End
                                 End
                             End
                         End
@@ -1488,6 +1785,9 @@ Begin Form
                             Top =4693
                             OptionValue =2
                             Name ="Option179"
+                            GUID = Begin
+                                0x7c4e4d901e3fc44e842aaa04fb55a68c
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =255
@@ -1497,6 +1797,9 @@ Begin Form
                                     Height =240
                                     Name ="Label180"
                                     Caption ="Empe"
+                                    GUID = Begin
+                                        0x5246783d358fcf4b9c3c38143af83d67
+                                    End
                                 End
                             End
                         End
@@ -1506,6 +1809,9 @@ Begin Form
                             Top =4933
                             OptionValue =3
                             Name ="Option181"
+                            GUID = Begin
+                                0x6cd2d45dbaca8841ae8b9caa04ecee51
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -1515,6 +1821,9 @@ Begin Form
                                     Height =240
                                     Name ="Label182"
                                     Caption ="Oth"
+                                    GUID = Begin
+                                        0xcfb6b7f2bb6bf746b2340b2e078d64c5
+                                    End
                                 End
                             End
                         End
@@ -1531,6 +1840,9 @@ Begin Form
                     ControlSource ="GroupType"
                     AfterUpdate ="[Event Procedure]"
                     DefaultValue ="1"
+                    GUID = Begin
+                        0xbb6e56a7f4ced847ae1fce1c99a0dc70
+                    End
                     Begin
                         Begin Label
                             SpecialEffect =4
@@ -1546,6 +1858,9 @@ Begin Form
                             BackColor =12632256
                             Name ="Label186"
                             Caption ="Group Type"
+                            GUID = Begin
+                                0xfa201fa1c91d804f9361adff668d2aff
+                            End
                         End
                         Begin OptionButton
                             OverlapFlags =95
@@ -1553,6 +1868,9 @@ Begin Form
                             Top =4453
                             OptionValue =1
                             Name ="Option188"
+                            GUID = Begin
+                                0x54f200a0725f8545932580b973b974d6
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =255
@@ -1562,6 +1880,9 @@ Begin Form
                                     Height =240
                                     Name ="Label189"
                                     Caption ="QCD Only"
+                                    GUID = Begin
+                                        0x0a72078f1433e4499cfe76e6cdb2d865
+                                    End
                                 End
                             End
                         End
@@ -1571,6 +1892,9 @@ Begin Form
                             Top =4680
                             OptionValue =4
                             Name ="Option194"
+                            GUID = Begin
+                                0xdc6be2ed25909a4ca1730df6d928deb3
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -1580,6 +1904,9 @@ Begin Form
                                     Height =239
                                     Name ="Label195"
                                     Caption ="All American"
+                                    GUID = Begin
+                                        0x580cceed03e90a4792e9a114d4cd0f48
+                                    End
                                 End
                             End
                         End
@@ -1594,6 +1921,9 @@ Begin Form
                     Name ="Ins"
                     ControlSource ="Ins"
                     StatusBarText ="Insurance/Indemnity groups"
+                    GUID = Begin
+                        0x04e96fefa71b8d4da41a2d8eb205923c
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =215
@@ -1604,6 +1934,9 @@ Begin Form
                             FontWeight =700
                             Name ="Label172"
                             Caption ="Mixed - MCB && Insurance"
+                            GUID = Begin
+                                0xa502485a7fa38547959a1ddf10c2b20a
+                            End
                         End
                     End
                 End
@@ -1618,6 +1951,9 @@ Begin Form
                     SourceObject ="Form.sfrmAgents"
                     LinkChildFields ="GROUPid"
                     LinkMasterFields ="GROUPid"
+                    GUID = Begin
+                        0xaab7fc70610a7b4c96c740ce5f3d7cf0
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -1629,6 +1965,9 @@ Begin Form
                     FontWeight =700
                     Name ="lblName"
                     Caption ="Name"
+                    GUID = Begin
+                        0x77159eb9aac16544bce95cbc7d53bdd1
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -1640,6 +1979,9 @@ Begin Form
                     FontWeight =700
                     Name ="lblID"
                     Caption ="ID"
+                    GUID = Begin
+                        0x3caa7b821b56cc4a9df4dc18add10cdc
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -1651,6 +1993,9 @@ Begin Form
                     FontWeight =700
                     Name ="lblRate"
                     Caption ="Rate"
+                    GUID = Begin
+                        0x1912485c016550429108929ad802cfea
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -1662,6 +2007,9 @@ Begin Form
                     FontWeight =700
                     Name ="lblType"
                     Caption ="Type"
+                    GUID = Begin
+                        0x35da51a6603534479d2a0a63123efc38
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -1673,6 +2021,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label206"
                     Caption ="Pri"
+                    GUID = Begin
+                        0xccdf7552d1afe0478f705dbd39e7c1c7
+                    End
                 End
                 Begin ComboBox
                     SpecialEffect =2
@@ -1684,6 +2035,9 @@ Begin Form
                     Width =1350
                     TabIndex =63
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"60\""
+                    GUID = Begin
+                        0x634995c9ee02904b99a0830378e45883
+                    End
                     Name ="GRClientSvcRepID"
                     ControlSource ="GRClientSvcRepID"
                     RowSourceType ="Table/Query"
@@ -1704,6 +2058,9 @@ Begin Form
                             FontWeight =700
                             Name ="Label207"
                             Caption ="Grp Size:"
+                            GUID = Begin
+                                0xe346972c3f214748b6037607e3163724
+                            End
                         End
                     End
                 End
@@ -1717,6 +2074,9 @@ Begin Form
                     Name ="Frame209"
                     ControlSource ="InvoiceType"
                     DefaultValue ="1"
+                    GUID = Begin
+                        0xd0abe9f3350961448944782434156581
+                    End
                     Begin
                         Begin Label
                             SpecialEffect =4
@@ -1732,6 +2092,9 @@ Begin Form
                             BackColor =12632256
                             Name ="Label210"
                             Caption ="Invoice Type"
+                            GUID = Begin
+                                0xefa8fb6bfccbf144ad138caecf867a62
+                            End
                         End
                         Begin OptionButton
                             OverlapFlags =95
@@ -1739,6 +2102,9 @@ Begin Form
                             Top =4408
                             OptionValue =1
                             Name ="Option212"
+                            GUID = Begin
+                                0xf996803336788a40a383273cf6e42b8f
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -1748,6 +2114,9 @@ Begin Form
                                     Height =240
                                     Name ="Label213"
                                     Caption ="SSN"
+                                    GUID = Begin
+                                        0xcbaec5cdf168de40bf7b8d78a2b0e5bc
+                                    End
                                 End
                             End
                         End
@@ -1757,6 +2126,9 @@ Begin Form
                             Top =4663
                             OptionValue =2
                             Name ="Option214"
+                            GUID = Begin
+                                0x71d4091455835141bae0e54aec818f1c
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -1766,6 +2138,9 @@ Begin Form
                                     Height =240
                                     Name ="Label215"
                                     Caption ="Subscriber ID"
+                                    GUID = Begin
+                                        0xfeb16e3602f622499d6d1f2185e71e71
+                                    End
                                 End
                             End
                         End
@@ -1792,7 +2167,7 @@ Begin Form
                     ColumnWidths ="1080;2520;720"
                     OnDblClick ="[Event Procedure]"
                     GUID = Begin
-                        0x5566386d36cdf3488fd970212340e9f7
+                        0xe1b21808ddd2a24ab854b9cd2a378cca
                     End
                 End
                 Begin ComboBox
@@ -1808,7 +2183,7 @@ Begin Form
                     TabIndex =66
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
                     GUID = Begin
-                        0x1398f7c454f9204491273e7fcfbf08ee
+                        0x4de5fc80de0da049aae4dcaab3a96c55
                     End
                     Name ="cboCoverage"
                     RowSourceType ="Table/Query"
@@ -1832,7 +2207,7 @@ Begin Form
                     Name ="txtRate"
                     Format ="$#,##0.00;($#,##0.00)"
                     GUID = Begin
-                        0x2814fffb81aa5042addb84498e1b2822
+                        0x079e297b7962b741a29d830449b732de
                     End
                 End
                 Begin TextBox
@@ -1847,7 +2222,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtRateID"
                     GUID = Begin
-                        0x5c42ad4f3d190b4ebfe7480e52a3dc04
+                        0xe5dbcb9b590a1441a356209ddbbce9a9
                     End
                 End
                 Begin CommandButton
@@ -1863,7 +2238,7 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     FontName ="Arial"
                     GUID = Begin
-                        0x82c176a440209a41a1f8a7baefe33600
+                        0xc60fd387f2787e4bb34fe55376a60648
                     End
                 End
                 Begin CommandButton
@@ -1880,7 +2255,7 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     FontName ="Arial"
                     GUID = Begin
-                        0xb8b60e6f2829c04cac0f61d6d180adfc
+                        0x4b0a664994f77e4b83733ac2b1ad0b3f
                     End
                 End
                 Begin CommandButton
@@ -1896,7 +2271,7 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     FontName ="Arial"
                     GUID = Begin
-                        0x71065f84c79e1c4a9a34e4287cdeed30
+                        0x8d224436e98baa42a4e8cb18f0315829
                     End
                 End
                 Begin Label
@@ -1912,7 +2287,7 @@ Begin Form
                     Name ="Label230"
                     Caption ="Coverage:"
                     GUID = Begin
-                        0x2f66b69e1222b04783efd76659a591c0
+                        0x3fc48fcb34d09740825ed5f5efb97225
                     End
                 End
                 Begin ComboBox
@@ -1930,7 +2305,7 @@ Begin Form
                     TabIndex =65
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
                     GUID = Begin
-                        0xa68820694cfb4243a6b7f7883304568c
+                        0xc50b64a6c4093f41a360414654d7375c
                     End
                     Name ="cboPlan"
                     RowSourceType ="Table/Query"
@@ -1952,7 +2327,7 @@ Begin Form
                     Name ="Label232"
                     Caption ="Plan:"
                     GUID = Begin
-                        0xadc1446418c95f4eabab30cb8c79dd06
+                        0xfe5b39e745a2c045a2ace1709bac3d49
                     End
                 End
                 Begin Label
@@ -1968,7 +2343,7 @@ Begin Form
                     Name ="Label233"
                     Caption ="Rate:"
                     GUID = Begin
-                        0x8a3547e4eb37414483c6f78278739e28
+                        0x16cef1c7d4900a4d826ead93345a8fdd
                     End
                 End
                 Begin ComboBox
@@ -1984,7 +2359,7 @@ Begin Form
                     Height =270
                     TabIndex =73
                     GUID = Begin
-                        0xca88ab06afdc2647afdae467fbda2bdf
+                        0xba412bfade4ca147be5eedcc24a1c000
                     End
                     Name ="cboOrthoCoverage"
                     ControlSource ="OrthoCoverage"
@@ -2003,7 +2378,7 @@ Begin Form
                     Name ="Label237"
                     Caption ="Ortho Coverage"
                     GUID = Begin
-                        0xfe64563e5108454e95d44d311fcd8c1c
+                        0x42d51d8bf67740498476851862724b67
                     End
                 End
                 Begin ComboBox
@@ -2017,7 +2392,7 @@ Begin Form
                     Height =270
                     TabIndex =74
                     GUID = Begin
-                        0xbb388424fe074d45a5f8d648c7a4822b
+                        0x6c9552d5dfced242aa9e834fc618d377
                     End
                     Name ="cboOrthoLimit"
                     ControlSource ="OrthoLifetimeLimit"
@@ -2035,7 +2410,7 @@ Begin Form
                     Name ="Label239"
                     Caption ="Ortho Limit"
                     GUID = Begin
-                        0x237b3e856b72714183b367108d02a015
+                        0x3e8be9739c6e7245a10c8861044e5375
                     End
                 End
                 Begin ComboBox
@@ -2050,7 +2425,7 @@ Begin Form
                     Height =270
                     TabIndex =75
                     GUID = Begin
-                        0x309f2643de97644baaf00dad0c345a5e
+                        0xd587dd96084a5848a00671458c48fe92
                     End
                     Name ="cboWaitingPeriod"
                     ControlSource ="WaitingPeriod"
@@ -2068,7 +2443,7 @@ Begin Form
                     Name ="Label241"
                     Caption ="Wait Period"
                     GUID = Begin
-                        0x096959927beb2146be283b094e723fbf
+                        0x1a798a737f32174f9ffd332c85cc6c65
                     End
                 End
             End
@@ -2076,6 +2451,9 @@ Begin Form
         Begin FormFooter
             BackColor =12632256
             Name ="FormFooter2"
+            GUID = Begin
+                0xbf10970795958b47ac628a178a65c091
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -2088,6 +2466,9 @@ Begin Form
                     Name ="btnGotoSubscriber"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x12d1f7915d70eb45b42e6833f7e02d21
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -2101,6 +2482,9 @@ Begin Form
                     Name ="btnPrintMemCards"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x8a106d82bd99c94a807c84c04f5e2245
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -2115,6 +2499,9 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     OnDblClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x14f3d0979578d44e95036c6cf14f2df7
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -2129,6 +2516,9 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     OnExit ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x14217a4a66e18647a38733888e4f431e
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -2142,6 +2532,9 @@ Begin Form
                     Name ="cmdLog"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x6d866d382f3bf64fb89a0594c76b4607
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -2153,6 +2546,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label158"
                     Caption ="Go To\015\012Log"
+                    GUID = Begin
+                        0xf6f6803c6673d24c8eee1e6d17634605
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -2164,6 +2560,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label159"
                     Caption ="Go To\015\012Subscr"
+                    GUID = Begin
+                        0x95296b8f4d15ac4186f3620fa1c52baf
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -2175,6 +2574,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label160"
                     Caption ="Print\015\012Invite Ltr"
+                    GUID = Begin
+                        0xd904e94d0b5d2846b331e157713d3026
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -2186,6 +2588,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label161"
                     Caption ="Print\015\012Member\015\012Cards"
+                    GUID = Begin
+                        0x4e5337b81b3c7848a7ce58b92ffcba4c
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -2197,6 +2602,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label162"
                     Caption ="Preview\015\012Member Cards"
+                    GUID = Begin
+                        0x3cda66966eca7149b64d0109fc61458b
+                    End
                 End
                 Begin Line
                     OverlapFlags =85
@@ -2204,6 +2612,9 @@ Begin Form
                     Top =45
                     Width =10800
                     Name ="Line163"
+                    GUID = Begin
+                        0x9ae38f5b8147414b871c34bb7eb06013
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -2217,6 +2628,9 @@ Begin Form
                     Name ="cmdEligEmps"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xffc2e55d07c1e84281445b5d01ec1819
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -2228,6 +2642,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label165"
                     Caption ="Beginning\015\012Eligible\015\012Employees"
+                    GUID = Begin
+                        0x430cc9dcdb4aaa4796bcf83749645596
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =93
@@ -2238,6 +2655,9 @@ Begin Form
                     TabIndex =6
                     Name ="btnCancelGrp"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x87ffb970da5102429ebaa0dce512686a
+                    End
                 End
                 Begin Label
                     OverlapFlags =215
@@ -2249,6 +2669,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label173"
                     Caption ="Cancel Group "
+                    GUID = Begin
+                        0xf3cff4f2be47fa4aa6635557b9046278
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =85
@@ -2259,6 +2682,9 @@ Begin Form
                     TabIndex =7
                     Name ="txtPassword"
                     InputMask ="Password"
+                    GUID = Begin
+                        0xd871f0728481cd4a971f20fc2e3185a4
+                    End
                 End
                 Begin CommandButton
                     Visible = NotDefault
@@ -2270,6 +2696,9 @@ Begin Form
                     TabIndex =8
                     Name ="cmdAllAmerican"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xc6fde6aad03021488b7881460e78ae5f
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -2282,6 +2711,9 @@ Begin Form
                     FontWeight =700
                     Name ="lblAllAmerican"
                     Caption ="All American Upload"
+                    GUID = Begin
+                        0x1e685be02eab4a48996303f0aeff3b1e
+                    End
                 End
             End
         End

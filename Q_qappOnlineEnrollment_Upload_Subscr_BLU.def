@@ -1,0 +1,179 @@
+Operation =3
+Name ="tmpExportAllAmerican"
+Option =0
+Where ="(((tblGrp.GroupType)=4) AND ((tblSubscr.PlanID)=3))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="tblEDI_App_Subscr"
+End
+Begin OutputColumns
+    Alias ="EIRECID"
+    Name ="EIRECID"
+    Expression ="\"P\""
+    Name ="EIMBRID"
+    Expression ="tblSubscr.EIMBRID"
+    Alias ="EISBRID"
+    Name ="EISBRID"
+    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Alias ="EISSN"
+    Name ="EISSN"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="EIMBRRF"
+    Name ="EIMBRRF"
+    Expression ="tblSubscr.CoverID"
+    Alias ="EINAML"
+    Name ="EINAML"
+    Expression ="tblSubscr.SubLastName"
+    Alias ="EINAMF"
+    Name ="EINAMF"
+    Expression ="tblSubscr.SubFirstName"
+    Alias ="EINAMM"
+    Name ="EINAMM"
+    Expression ="tblSubscr.SubMiddleName"
+    Alias ="EIDTBR"
+    Name ="EIDTBR"
+    Expression ="Format([tblSubscr].[SUBdob],\"mmddyyyy\")"
+    Alias ="SEX"
+    Name ="EISEX"
+    Expression ="IIf([tblSubscr].[SUBgender] Is Null,\"O\",[tblSubscr].[SUBgender])"
+    Alias ="EIADD1"
+    Name ="EIADD1"
+    Expression ="tblSubscr.SubStreet1"
+    Alias ="EIADD2"
+    Name ="EIADD2"
+    Expression ="tblSubscr.SubStreet2"
+    Alias ="EICITY"
+    Name ="EICITY"
+    Expression ="tblSubscr.SubCity"
+    Alias ="EISTE"
+    Name ="EISTE"
+    Expression ="tblSubscr.SubState"
+    Alias ="EIZIP"
+    Name ="EIZIP"
+    Expression ="tblSubscr.SubZip"
+    Alias ="EIHPHR"
+    Name ="EIHPHR"
+    Expression ="IIf(Not IsNull([tblSubscr].[SubPhoneHome]),StripChars_TSB([tblSubscr].[SubPhoneH"
+        "ome],\"-\"),\"\")"
+    Alias ="EIWPHR"
+    Name ="EIWPHR"
+    Expression ="IIf(Not IsNull([tblSubscr].[SubPhoneWork]),StripChars_TSB([tblSubscr].[SubPhoneW"
+        "ork],\"-\"),\"\")"
+    Alias ="EIGRPID"
+    Name ="EIGRPID"
+    Expression ="'MNQ' & [tblSubscr].[SubGroupID]"
+    Alias ="EINMPLAN"
+    Name ="EINMPLAN"
+    Expression ="\"QCDBLU-MNL\""
+    Alias ="EIDTEFF"
+    Name ="EIDTEFF"
+    Expression ="Format([tblGrp].[GRcontBEG],\"mmddyyyy\")"
+    Alias ="EIDTCVEF"
+    Name ="EIDTCVEF"
+    Expression ="IIf(IsNull([tblSubscr].[PreexistingDate])=True,Format([tblSubscr].[SUBeffDATE],\""
+        "mmddyyyy\"),Format([tblSubscr].[PreexistingDate],\"mmddyyyy\"))"
+    Alias ="EIDTCVEN"
+    Name ="EIDTCVEN"
+    Expression ="IIf(Not IsNull([tblSubscr].[DateDeleted]),Format([tblSubscr].[DateDeleted],\"mmd"
+        "dyyyy\"),Null)"
+    Alias ="EIMBRDP"
+    Name ="EIMBRDP"
+    Expression ="\"0\""
+    Alias ="EITRNID"
+    Name ="EITRNID"
+    Expression ="IIf(IsNull([tblSubscr].[PreexistingDate])=True,Null,\"        \" & \"PCOV\" & Fo"
+        "rmat([tblSubscr].[PreexistingDate],\"mmddyyyy\"))"
+    Alias ="EIDTTERM"
+    Name ="EIDTTERM"
+    Expression ="IIf([tblSubscr].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr].[DateDeleted],\""
+        "mmddyyyy\"))"
+    Name ="Coverage"
+    Expression ="tblEDI_App_Subscr.CoverDesc"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Flag =1
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblSubscr"
+    Expression ="tblEDI_App_Subscr.SubSSN = tblSubscr.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="EIDTBR"
+        dbInteger "ColumnWidth" ="1710"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="EIHPHR"
+        dbInteger "ColumnWidth" ="2100"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="EIWPHR"
+        dbInteger "ColumnWidth" ="1830"
+        dbBoolean "ColumnHidden" ="0"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="EIRECID"
+        dbLong "AggregateType" ="-1"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.CoverDesc"
+        dbLong "AggregateType" ="-1"
+    End
+End
+Begin
+    State =0
+    Left =38
+    Top =86
+    Right =995
+    Bottom =663
+    Left =-1
+    Top =-1
+    Right =925
+    Bottom =356
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =34
+        Top =66
+        Right =199
+        Bottom =188
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =256
+        Top =65
+        Right =482
+        Bottom =247
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =569
+        Top =67
+        Right =747
+        Bottom =234
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

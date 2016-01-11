@@ -1,0 +1,227 @@
+Version =19
+VersionRequired =19
+Checksum =-1750734070
+Begin Form
+    AutoResize = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =3960
+    DatasheetFontHeight =10
+    ItemSuffix =1
+    Left =3750
+    Top =735
+    Right =7995
+    Bottom =3330
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x5ec77e81d4fae140
+    End
+    Caption ="Synchronize Access with ACT"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+        End
+        Begin Section
+            Height =2040
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =615
+                    Top =870
+                    Width =2880
+                    Height =300
+                    Name ="txtProcessing"
+                End
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =570
+                    Top =105
+                    Width =3000
+                    Height =660
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label0"
+                    Caption ="Synchronize Access\015\012with ACT"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2610
+                    Top =1485
+                    Width =1260
+                    Height =405
+                    TabIndex =1
+                    Name ="cmdProcess"
+                    Caption ="Process"
+                    OnClick ="[Event Procedure]"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =555
+            BackColor =-2147483633
+            Name ="FormFooter"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3165
+                    Top =105
+                    Width =696
+                    Height =426
+                    Name ="cmdClose"
+                    Caption ="Command9"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad00000000000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Private Sub cmdClose_Click()
+    On Error GoTo Err_cmdClose
+    
+    DoCmd.Close
+    
+Exit_cmdClose:
+    Exit Sub
+    
+Err_cmdClose:
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_cmdClose
+
+End Sub
+
+Private Sub cmdProcess_Click()
+    
+    On Error GoTo Err_cmdProcess
+    
+    Dim intRet As Integer
+    Dim fSuccess As Boolean
+    Dim crlf As String
+    crlf = Chr(13) & Chr(10)
+    
+    
+    fSuccess = True
+    
+    intRet = MsgBox("This will change the production ACT!2000 database!" & crlf & crlf & _
+    "You must make sure that everyone is out of the Client Services" & "'" _
+    & "s ACT database while you run this process!" & crlf & crlf & _
+    "This process will take some time, perhaps 15 to 20 minutes!" & crlf & crlf & _
+    "You must be patient, and let the process run." & crlf & crlf & _
+    "Are you sure you want to proceed?", vbExclamation + vbYesNo, "Warning")
+      
+    If intRet = vbNo Then
+        MsgBox "The operation was cancelled. No changes were made to the ACT!2000 Production Database.", vbInformation, "Operation Cancelled"
+        GoTo Exit_cmdProcess
+    End If
+    
+    With Me
+        .txtProcessing.SetFocus
+        .txtProcessing.BackColor = 16777088
+        .txtProcessing = "Processing, Please wait."
+        .cmdProcess.SetFocus
+    End With
+      
+    DoCmd.Hourglass True
+    
+    fSuccess = ChangeContacts()
+    If fSuccess = False Then
+        MsgBox "The change contacts process did not complete successfully.  Contact tech support", , "Problem"
+        GoTo Err_cmdProcess
+    End If
+    
+    fSuccess = EligibleEmployees()
+    If fSuccess = False Then
+        MsgBox "The eligible employee update process did not complete successfully.  Contact tech support", , "Problem"
+        GoTo Err_cmdProcess
+    End If
+    
+    fSuccess = AddContacts()
+    If fSuccess = False Then
+        MsgBox "The add contacts process did not complete successfully.  Contact tech support", , "Problem"
+        GoTo Err_cmdProcess
+    End If
+    
+    DoCmd.Hourglass False
+    
+    With Me
+        .txtProcessing.SetFocus
+        .txtProcessing.BackColor = 16777215
+        .txtProcessing = "Process Complete. No Errors."
+        .cmdClose.SetFocus
+    End With
+
+Exit_cmdProcess:
+    Exit Sub
+
+Err_cmdProcess:
+    
+    If fSuccess = False Then
+        DoCmd.Hourglass False
+        With Me
+              .txtProcessing.SetFocus
+              .txtProcessing.BackColor = 8421631
+              .txtProcessing = "Errors in Processing."
+              .cmdClose.SetFocus
+        End With
+    Else
+        MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+        GoTo Exit_cmdProcess
+    End If
+    
+End Sub

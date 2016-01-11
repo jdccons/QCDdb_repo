@@ -1,0 +1,146 @@
+Operation =3
+Name ="tmpBillingReconcile_rpt"
+Option =0
+Where ="(((tblAgent.PayCommTo)=4))"
+Having ="(((tblGrp.GRcontBEG)>=[forms].[fdlgPrtBillingReconcile].[ctlInvdate]) AND ((tblG"
+    "rp.GROUPid) Not In ('CORPT')) AND ((tblAgent.AGENTactive)=\"A\"))"
+Begin InputTables
+    Name ="qrptBillingReconcileARTRAN"
+    Name ="tblGrp"
+    Name ="tblAgent"
+    Name ="tblGrpAgt"
+End
+Begin OutputColumns
+    Name ="GRcontBEG"
+    Expression ="tblGrp.GRcontBEG"
+    Name ="GROUPid"
+    Expression ="tblGrp.GROUPid"
+    Name ="GRname"
+    Expression ="tblGrp.GRname"
+    Name ="Docdate"
+    Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    Name ="GRPgeoID"
+    Expression ="tblGrp.GRPgeoID"
+    Name ="GRcancelled"
+    Expression ="tblGrp.GRcancelled"
+    Name ="GRcancelledDate"
+    Expression ="tblGrp.GRcancelledDate"
+    Name ="GRreinstatedDate"
+    Expression ="tblGrp.GRreinstatedDate"
+    Name ="GRhold"
+    Expression ="tblGrp.GRhold"
+    Name ="Docamt"
+    Expression ="qrptBillingReconcileARTRAN.DocumentAmt"
+    Name ="Docno"
+    Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
+    Name ="Trntyp"
+    Expression ="qrptBillingReconcileARTRAN.TransactionType"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Flag =3
+    LeftTable ="tblGrp"
+    RightTable ="qrptBillingReconcileARTRAN"
+    Expression ="tblGrp.GROUPid = qrptBillingReconcileARTRAN.CustomerKey"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpAgt"
+    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Flag =1
+End
+Begin Groups
+    Expression ="tblGrp.GRcontBEG"
+    GroupLevel =0
+    Expression ="tblGrp.GROUPid"
+    GroupLevel =0
+    Expression ="tblGrp.GRname"
+    GroupLevel =0
+    Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    GroupLevel =0
+    Expression ="tblGrp.GRPgeoID"
+    GroupLevel =0
+    Expression ="tblGrp.GRcancelled"
+    GroupLevel =0
+    Expression ="tblGrp.GRcancelledDate"
+    GroupLevel =0
+    Expression ="tblGrp.GRreinstatedDate"
+    GroupLevel =0
+    Expression ="tblGrp.GRhold"
+    GroupLevel =0
+    Expression ="qrptBillingReconcileARTRAN.DocumentAmt"
+    GroupLevel =0
+    Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
+    GroupLevel =0
+    Expression ="qrptBillingReconcileARTRAN.TransactionType"
+    GroupLevel =0
+    Expression ="tblAgent.AGENTactive"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tmpBillingReconcile_rpt.GROUPid"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GROUPid"
+        dbInteger "ColumnWidth" ="870"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =32
+    Top =30
+    Right =922
+    Bottom =503
+    Left =-1
+    Top =-1
+    Right =883
+    Bottom =189
+    Left =0
+    Top =0
+    ColumnsShown =655
+    Begin
+        Left =46
+        Top =20
+        Right =287
+        Bottom =134
+        Top =0
+        Name ="qrptBillingReconcileARTRAN"
+        Name =""
+    End
+    Begin
+        Left =330
+        Top =22
+        Right =445
+        Bottom =136
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =671
+        Top =19
+        Right =774
+        Bottom =118
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =488
+        Top =17
+        Right =584
+        Bottom =116
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+End

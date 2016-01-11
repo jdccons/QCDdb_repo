@@ -1,0 +1,60 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SubStatus)=\"INDIV\") AND ((tblSubscr.SubGroupID) Is Null)) OR (((t"
+    "blSubscr.SubStatus)=\"INDIV\") AND ((tblSubscr.PlanID) Is Null)) OR (((tblSubscr"
+    ".SubStatus)=\"INDIV\") AND ((tblSubscr.CoverID) Is Null)) OR (((tblSubscr.SubSta"
+    "tus)=\"INDIV\") AND ((tblSubscr.RateID) Is Null))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SUB_LUname"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.PlanID"
+    Expression ="tblSubscr.CoverID"
+    Expression ="tblSubscr.RateID"
+    Expression ="tblSubscr.SubCancelled"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SUB_LUname"
+        dbInteger "ColumnWidth" ="2085"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBstatus"
+        dbInteger "ColumnWidth" ="1665"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =712
+    Left =-1
+    Top =-1
+    Right =1273
+    Bottom =194
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =253
+        Bottom =143
+        Top =45
+        Name ="tblSubscr"
+        Name =""
+    End
+End

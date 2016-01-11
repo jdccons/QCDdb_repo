@@ -1,0 +1,70 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblSubscriber_Bexar_new"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="tblSubscriber_Bexar_new.SubID"
+    Expression ="[tblSubscr].[SubID]"
+    Name ="tblSubscriber_Bexar_new.SUBcardPRT"
+    Expression ="[tblSubscr].[SUBcardPRT]"
+    Name ="tblSubscriber_Bexar_new.SUBcardPRTdte"
+    Expression ="[tblSubscr].[SUBcardPRTdte]"
+    Name ="tblSubscriber_Bexar_new.SUBnotes"
+    Expression ="[tblSubscr].[SUBnotes]"
+    Name ="tblSubscriber_Bexar_new.UserName"
+    Expression ="\"John Criswell\""
+    Name ="tblSubscriber_Bexar_new.DateCreated"
+    Expression ="#1/1/2010#"
+End
+Begin Joins
+    LeftTable ="tblSubscriber_Bexar_new"
+    RightTable ="tblSubscr"
+    Expression ="tblSubscriber_Bexar_new.SUBssn = tblSubscr.SubSSN"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+    Begin
+        dbText "Name" ="tblSubscriber_Bexar.Coverage"
+        dbInteger "ColumnWidth" ="3315"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =113
+    Top =111
+    Right =1134
+    Bottom =627
+    Left =-1
+    Top =-1
+    Right =1014
+    Bottom =348
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =226
+        Bottom =300
+        Top =0
+        Name ="tblSubscriber_Bexar_new"
+        Name =""
+    End
+    Begin
+        Left =394
+        Top =8
+        Right =651
+        Bottom =302
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

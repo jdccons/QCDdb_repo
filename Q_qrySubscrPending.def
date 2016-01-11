@@ -1,0 +1,96 @@
+Operation =1
+Option =8
+Where ="(((tblSubscr.SUBstatus)=\"PENDG\"))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+    Name ="tblCoverage"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.*"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRcontEND"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRhold"
+    Expression ="tblCoverage.COVERdescr"
+    Expression ="tblCoverage.COVERcode"
+    Expression ="tblRates.Rate"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="tblGrp"
+    Expression ="tblSubscr.SUBgroupID = tblGrp.GROUPid"
+    Flag =2
+    LeftTable ="tblSubscr"
+    RightTable ="tblRates"
+    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Flag =1
+    LeftTable ="tblSubscr"
+    RightTable ="tblCoverage"
+    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =26
+    Top =42
+    Right =1013
+    Bottom =402
+    Left =-1
+    Top =-1
+    Right =980
+    Bottom =187
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =225
+        Top =3
+        Right =374
+        Bottom =151
+        Top =47
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =11
+        Top =14
+        Right =166
+        Bottom =139
+        Top =35
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =472
+        Top =5
+        Right =640
+        Bottom =100
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+    Begin
+        Left =701
+        Top =10
+        Right =797
+        Bottom =120
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+End

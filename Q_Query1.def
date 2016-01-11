@@ -1,0 +1,66 @@
+Operation =1
+Option =0
+Where ="(((tmpExportAllAmerican.EIRECID)='M') AND ((tmpExportAllAmerican.EIMBRID)='' Or "
+    "(tmpExportAllAmerican.EIMBRID) Is Null) AND ((tmpExportAllAmerican.EISBRID)='457"
+    "55924400') AND ((tmpExportAllAmerican.EINMPLAN)='QCDWHT-MNL' Or (tmpExportAllAme"
+    "rican.EINMPLAN)='QCDWHT-QCD' Or (tmpExportAllAmerican.EINMPLAN)='QCDRPL-MNL' Or "
+    "(tmpExportAllAmerican.EINMPLAN)='QCDRPL-QCD'))"
+Begin InputTables
+    Name ="tmpExportAllAmerican"
+End
+Begin OutputColumns
+    Expression ="tmpExportAllAmerican.EIRECID"
+    Expression ="tmpExportAllAmerican.EIMBRID"
+    Expression ="tmpExportAllAmerican.EISBRID"
+    Expression ="tmpExportAllAmerican.EISSN"
+    Expression ="tmpExportAllAmerican.EINAML"
+    Expression ="tmpExportAllAmerican.EINAMF"
+    Expression ="tmpExportAllAmerican.EIGRPID"
+    Expression ="tmpExportAllAmerican.EINMPLAN"
+    Expression ="tmpExportAllAmerican.TID"
+    Alias ="DOB"
+    Expression ="CDate(Mid([EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4))"
+    Expression ="tmpExportAllAmerican.DepID"
+End
+Begin OrderBy
+    Expression ="tmpExportAllAmerican.EISBRID"
+    Flag =0
+    Expression ="tmpExportAllAmerican.EIRECID"
+    Flag =1
+    Expression ="CDate(Mid([EIDTBR],1,2) & '/' & Mid([EIDTBR],3,2) & '/' & Mid([EIDTBR],5,4))"
+    Flag =0
+    Expression ="tmpExportAllAmerican.EINAML"
+    Flag =0
+    Expression ="tmpExportAllAmerican.EINAMF"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =76
+    Top =58
+    Right =1222
+    Bottom =413
+    Left =-1
+    Top =-1
+    Right =1139
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =120
+        Top =0
+        Name ="tmpExportAllAmerican"
+        Name =""
+    End
+End

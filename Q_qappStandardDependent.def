@@ -1,0 +1,55 @@
+Operation =3
+Name ="tblEDI_App_Dep"
+Option =0
+Begin InputTables
+    Name ="QCDStandardDependent"
+End
+Begin OutputColumns
+    Name ="DEPssn"
+    Expression ="QCDStandardDependent.DepSSN"
+    Name ="DEPsubID"
+    Expression ="QCDStandardDependent.SubSSN"
+    Name ="DEPfirstNAME"
+    Expression ="QCDStandardDependent.DepFirstName"
+    Name ="DEPlastNAME"
+    Expression ="QCDStandardDependent.DepLastName"
+    Name ="DEPmiddleNAME"
+    Expression ="QCDStandardDependent.DepMI"
+    Alias ="DOB"
+    Name ="DEPdob"
+    Expression ="CDate(Mid([DepDOB],1,2) & \"/\" & Mid([DepDOB],3,2) & \"/\" & Mid([DepDOB],5,4))"
+    Name ="DEPgender"
+    Expression ="QCDStandardDependent.DepGender"
+    Alias ="Rel"
+    Name ="DEPrelationship"
+    Expression ="IIf(IsNull([DepRelation])=True,'O',[DepRelation])"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =30
+    Top =82
+    Right =1156
+    Bottom =447
+    Left =-1
+    Top =-1
+    Right =1119
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =256
+        Bottom =101
+        Top =4
+        Name ="QCDStandardDependent"
+        Name =""
+    End
+End

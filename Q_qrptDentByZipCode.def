@@ -1,0 +1,85 @@
+Operation =1
+Option =8
+Where ="(((InStr([Enter a List of 5-digit Zip Codes for Search],Left([DENTzip],5)))>0) A"
+    "ND ((tbldentist.DentStatus)=\"A\"))"
+Begin InputTables
+    Name ="tbldentistspec"
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Alias ="Zip2"
+    Expression ="IIf([Dentzip] Like \"#####-#\",Left([DentZip],Len([DentZip])-1),IIf([DentZip] Li"
+        "ke \"#########\",Format([DentZip],\"@@@@@-@@@@\"),[DentZip]))"
+    Expression ="tbldentist.Dent_LUName"
+    Expression ="tbldentist.DentKeyID"
+    Expression ="tbldentist.DentStreet1"
+    Expression ="tbldentist.DentStreet2"
+    Expression ="tbldentist.DentCity"
+    Expression ="tbldentist.DentState"
+    Expression ="tbldentist.DentZip"
+    Expression ="tbldentist.DentPhoneOffice"
+    Expression ="tbldentist.DentFax"
+    Expression ="tbldentistspec.SPECIALITYdesc"
+    Expression ="tbldentist.DentAffilDate"
+    Expression ="tbldentist.DentGradYr"
+    Expression ="tbldentist.DentSchool"
+    Expression ="tbldentist.DentLicense"
+    Expression ="tbldentist.DentStatus"
+    Expression ="tbldentist.DentGeoID"
+    Expression ="tbldentist.DentSpecialPrice"
+    Alias ="TextCO"
+    Expression ="IIf([DENTcloseMYoff]=Yes,\"Limited to existing patients.\",\"Open to all.\")"
+    Alias ="ZIP"
+    Expression ="[Enter a List of 5-digit Zip Codes for Search]"
+    Expression ="tbldentist.DentStatus"
+    Alias ="Expr1"
+    Expression ="InStr([Enter a List of 5-digit Zip Codes for Search],Left([DENTzip],5))"
+End
+Begin Parameters
+    Name ="Enter a List of 5-digit Zip Codes for Search"
+    Flag =10
+End
+Begin Joins
+    LeftTable ="tbldentistspec"
+    RightTable ="tbldentist"
+    Expression ="tbldentistspec.SPECIALTYID = tbldentist.DentSpecialty"
+    Flag =3
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =992
+    Bottom =653
+    Left =-1
+    Top =-1
+    Right =989
+    Bottom =131
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =98
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =113
+        Top =0
+        Name ="tbldentist"
+        Name =""
+    End
+End

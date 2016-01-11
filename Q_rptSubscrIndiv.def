@@ -1,0 +1,78 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="vwRates"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.*"
+    Expression ="tblGrp.GRname"
+    Alias ="PlanRate"
+    Expression ="CVar(\"$\" & [RATE] & \" per period\")"
+    Expression ="vwRates.COVERcode"
+    Expression ="vwRates.Rate"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="vwRates"
+    Expression ="tblSubscr.RateID = vwRates.RateID"
+    Flag =1
+    LeftTable ="vwRates"
+    RightTable ="tblGrp"
+    Expression ="vwRates.GroupID = tblGrp.GROUPid"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblSubscr.SUBlastNAME"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =86
+    Top =183
+    Right =1124
+    Bottom =500
+    Left =-1
+    Top =-1
+    Right =1031
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =101
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =247
+        Top =6
+        Right =451
+        Bottom =116
+        Top =2
+        Name ="vwRates"
+        Name =""
+    End
+    Begin
+        Left =565
+        Top =6
+        Right =661
+        Bottom =116
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

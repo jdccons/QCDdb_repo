@@ -1,0 +1,58 @@
+Operation =1
+Option =0
+Where ="(((tblAgent.AGENCY)=\"NSUREPOINTE OF TEXAS, INC\"))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AGENCY"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrp"
+    Expression ="tblAgent.AGENCY = tblGrp.GRname"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =793
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =300
+        Top =24
+        Right =651
+        Bottom =116
+        Top =1
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =23
+        Top =21
+        Right =272
+        Bottom =113
+        Top =1
+        Name ="tblAgent"
+        Name =""
+    End
+End

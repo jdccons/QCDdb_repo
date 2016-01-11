@@ -1,0 +1,66 @@
+Operation =1
+Option =0
+Where ="(((qrptBillingReconciletblGrp.DocumentAmt)=0))"
+Begin InputTables
+    Name ="qrptBillingReconciletblGrp"
+    Name ="qrptBillingReconcile_ZeroInv_Dep"
+End
+Begin OutputColumns
+    Expression ="qrptBillingReconciletblGrp.GROUPid"
+    Expression ="qrptBillingReconciletblGrp.GRname"
+    Expression ="qrptBillingReconciletblGrp.GRcancelled"
+    Expression ="qrptBillingReconciletblGrp.GRcancelledDate"
+    Expression ="qrptBillingReconciletblGrp.GRreinstatedDate"
+    Expression ="qrptBillingReconciletblGrp.GRhold"
+    Expression ="qrptBillingReconciletblGrp.DocumentDate"
+    Alias ="DocNo"
+    Expression ="Trim(RTrim([DocumentNumber]))"
+    Expression ="qrptBillingReconciletblGrp.DocumentAmt"
+    Expression ="qrptBillingReconcile_ZeroInv_Dep.SubRate2"
+    Expression ="qrptBillingReconcile_ZeroInv_Dep.SubDep2"
+End
+Begin Joins
+    LeftTable ="qrptBillingReconciletblGrp"
+    RightTable ="qrptBillingReconcile_ZeroInv_Dep"
+    Expression ="qrptBillingReconciletblGrp.GROUPid = qrptBillingReconcile_ZeroInv_Dep.GROUPid"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-30
+    Right =1024
+    Bottom =644
+    Left =-1
+    Top =-1
+    Right =1021
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =274
+        Bottom =105
+        Top =0
+        Name ="qrptBillingReconciletblGrp"
+        Name =""
+    End
+    Begin
+        Left =340
+        Top =9
+        Right =682
+        Bottom =108
+        Top =0
+        Name ="qrptBillingReconcile_ZeroInv_Dep"
+        Name =""
+    End
+End

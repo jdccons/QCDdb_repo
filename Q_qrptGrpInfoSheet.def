@@ -1,0 +1,55 @@
+Operation =1
+Option =8
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Alias ="Zip2"
+    Expression ="IIf([GRzip] Like \"#####-#\",Left([GRZip],Len([GRZip])-1),IIf([GRZip] Like \"###"
+        "######\",Format([GRZip],\"@@@@@-@@@@\"),[GRZip]))"
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRfax"
+    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRmarkDIR"
+    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRcontEND"
+    Expression ="tblGrp.GRPgeoID"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =43
+    Top =64
+    Right =1258
+    Bottom =381
+    Left =-1
+    Top =-1
+    Right =1208
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =101
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

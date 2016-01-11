@@ -1,0 +1,369 @@
+Version =20
+VersionRequired =20
+Checksum =1034746313
+Begin Form
+    AutoCenter = NotDefault
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =8730
+    DatasheetFontHeight =10
+    ItemSuffix =22
+    Left =4830
+    Top =1515
+    Right =13845
+    Bottom =6180
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xcfebd807f4f6e240
+    End
+    RecordSource ="qselCommission_temp"
+    Caption ="Commission Maintenance"
+    MenuBar ="AgentMenuBar"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin Line
+            SpecialEffect =3
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+        End
+        Begin TextBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+        End
+        Begin FormHeader
+            Height =465
+            BackColor =-2147483633
+            Name ="FormHeader"
+            Begin
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =915
+                    Top =225
+                    Width =495
+                    Height =240
+                    Name ="COMMcustKEY Label"
+                    Caption ="Key"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMcustKEY_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =1920
+                    Top =225
+                    Width =960
+                    Height =240
+                    Name ="COMMcustNAME Label"
+                    Caption ="Name"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMcustNAME_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =3240
+                    Top =225
+                    Width =615
+                    Height =240
+                    Name ="COMMcheckNO Label"
+                    Caption ="Chk No"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMcheckNO_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =4050
+                    Top =60
+                    Width =630
+                    Height =405
+                    Name ="COMMcheckDATE Label"
+                    Caption ="Chk\015\012 Date"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMcheckDATE_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =4830
+                    Top =195
+                    Width =735
+                    Height =240
+                    Name ="COMMcheckAMT Label"
+                    Caption ="Chk Amt"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMcheckAMT_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =45
+                    Top =195
+                    Width =495
+                    Height =240
+                    Name ="COMMagent Label"
+                    Caption ="Agent"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMagent_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =5655
+                    Top =195
+                    Width =555
+                    Height =240
+                    Name ="COMMrate Label"
+                    Caption ="Rate"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMrate_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =6240
+                    Top =195
+                    Width =540
+                    Height =240
+                    Name ="COMMagentTYPE Label"
+                    Caption ="Type"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMagentTYPE_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =6870
+                    Top =195
+                    Width =555
+                    Height =240
+                    Name ="COMMinvoiceNO Label"
+                    Caption ="Inv No"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMinvoiceNO_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =7575
+                    Top =195
+                    Width =315
+                    Height =240
+                    Name ="COMMcustCLASS Label"
+                    Caption ="Cls"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="COMMcustCLASS_Label"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =8025
+                    Top =195
+                    Width =480
+                    Height =240
+                    Name ="EnrollmentFee Label"
+                    Caption ="Fee"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="EnrollmentFee_Label"
+                End
+            End
+        End
+        Begin Section
+            Height =300
+            BackColor =-2147483633
+            Name ="Detail"
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =840
+                    Top =45
+                    Width =735
+                    Height =255
+                    ColumnWidth =1515
+                    TabIndex =1
+                    Name ="COMMcustKEY"
+                    ControlSource ="COMMcustKEY"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =1620
+                    Top =45
+                    Width =1590
+                    Height =255
+                    ColumnWidth =3780
+                    TabIndex =2
+                    Name ="COMMcustNAME"
+                    ControlSource ="COMMcustNAME"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =3300
+                    Top =45
+                    Width =555
+                    Height =255
+                    ColumnWidth =1605
+                    TabIndex =3
+                    Name ="COMMcheckNO"
+                    ControlSource ="COMMcheckNO"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =3900
+                    Top =45
+                    Width =1065
+                    Height =255
+                    ColumnWidth =1830
+                    TabIndex =4
+                    Name ="COMMcheckDATE"
+                    ControlSource ="COMMcheckDATE"
+                    Format ="m/d/yyyy"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =5010
+                    Top =45
+                    Width =660
+                    Height =255
+                    ColumnWidth =1740
+                    TabIndex =5
+                    Name ="COMMcheckAMT"
+                    ControlSource ="COMMcheckAMT"
+                    Format ="Standard"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =45
+                    Top =45
+                    Width =720
+                    Height =255
+                    ColumnWidth =1305
+                    Name ="COMMagent"
+                    ControlSource ="COMMagent"
+                End
+                Begin TextBox
+                    DecimalPlaces =1
+                    OverlapFlags =85
+                    Left =5700
+                    Top =45
+                    Width =555
+                    Height =255
+                    ColumnWidth =1140
+                    TabIndex =6
+                    Name ="COMMrate"
+                    ControlSource ="COMMrate"
+                    Format ="Percent"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =6300
+                    Top =45
+                    Width =540
+                    Height =255
+                    ColumnWidth =1800
+                    TabIndex =7
+                    Name ="COMMagentTYPE"
+                    ControlSource ="COMMagentTYPE"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =6900
+                    Top =45
+                    Width =540
+                    Height =255
+                    ColumnWidth =1740
+                    TabIndex =8
+                    Name ="COMMinvoiceNO"
+                    ControlSource ="COMMinvoiceNO"
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    Left =7500
+                    Top =45
+                    Width =705
+                    Height =255
+                    ColumnWidth =1800
+                    TabIndex =9
+                    Name ="COMMcustCLASS"
+                    ControlSource ="COMMcustCLASS"
+                End
+                Begin CheckBox
+                    OverlapFlags =85
+                    Left =8265
+                    Top =45
+                    TabIndex =10
+                    Name ="EnrollmentFee"
+                    ControlSource ="EnrollmentFee"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+        End
+    End
+End

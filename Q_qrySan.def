@@ -1,0 +1,62 @@
+Operation =1
+Option =0
+Where ="(((tblDentist.DENTgeoID)=\"TXSSW\"))"
+Begin InputTables
+    Name ="tblDentist"
+    Name ="tbldentistspec"
+    Name ="tblGeographical"
+End
+Begin OutputColumns
+    Expression ="tblDentist.DENTgeoID"
+    Expression ="tblDentist.DENTlast"
+    Expression ="tblDentist.DENTfirst"
+    Expression ="tblDentist.DENTspecialty"
+    Expression ="tblDentist.DENTzip"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =48
+    Right =778
+    Bottom =353
+    Left =-1
+    Top =-1
+    Right =727
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =5
+        Name ="tblDentist"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =98
+        Top =0
+        Name ="tbldentistspec"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =98
+        Top =0
+        Name ="tblGeographical"
+        Name =""
+    End
+End

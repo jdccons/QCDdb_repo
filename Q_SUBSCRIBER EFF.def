@@ -1,0 +1,61 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SUBcancelled)<>3))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRname"
+    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SUBcancelled"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =70
+    Top =54
+    Right =1002
+    Bottom =419
+    Left =-1
+    Top =-1
+    Right =925
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =384
+        Top =16
+        Right =504
+        Bottom =145
+        Top =39
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =216
+        Top =7
+        Right =336
+        Bottom =136
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

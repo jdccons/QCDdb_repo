@@ -1,0 +1,226 @@
+Version =19
+VersionRequired =19
+Checksum =-147186292
+Begin Form
+    AutoResize = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =55
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =3600
+    DatasheetFontHeight =10
+    ItemSuffix =4
+    Left =7620
+    Top =3540
+    Right =11325
+    Bottom =4995
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x8e62921fb1a2e340
+    End
+    Caption ="Print Subs Under Agt"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =1536
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x5d44f9c0246c2b47aab95c2accc6f8ba
+            End
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1440
+                    Top =720
+                    Width =576
+                    Height =576
+                    Name ="cmdRunAgentReport"
+                    Caption ="Command0"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadadadadadadada000000000000ad000ffffffffff0d000 ,
+                        0x0fffffff0000700d0ffffff0788707da0fffff0788e770ad0fffff08888780da ,
+                        0x0fffff08e88780ad0fffff07ee8770da0ffffff078870dad0fffffff0000dada ,
+                        0x0ffffffffff0adad0fffffff0000dada0fffffff080dadad0fffffff00dadada ,
+                        0x000000000dadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Preview Report"
+                    GUID = Begin
+                        0x2cc95518d625f243badcaf1285c79a5d
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2100
+                    Top =720
+                    Width =576
+                    Height =576
+                    TabIndex =2
+                    Name ="cmdClose"
+                    Caption ="Command3"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x669dffc23bfe27428553e2715d667fb9
+                    End
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    ColumnCount =4
+                    ListWidth =6480
+                    Left =1680
+                    Top =180
+                    Width =960
+                    TabIndex =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x0d4818a7253fa444a57db7fea64e766e
+                    End
+                    Name ="txtAgentID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT vwAgt_Indiv_Subscr.AGENTid, vwAgt_Indiv_Subscr.AGENCY, vwAgt_Indiv_Subscr"
+                        ".AGENTfirst AS [First Name], vwAgt_Indiv_Subscr.AGENTlast AS [Last Name] FROM vw"
+                        "Agt_Indiv_Subscr GROUP BY vwAgt_Indiv_Subscr.AGENTid, vwAgt_Indiv_Subscr.AGENCY,"
+                        " vwAgt_Indiv_Subscr.AGENTfirst, vwAgt_Indiv_Subscr.AGENTlast;"
+                    ColumnWidths ="720;2880;1440;1440"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =240
+                            Top =180
+                            Width =1140
+                            Height =240
+                            Name ="Label2"
+                            Caption ="Agent ID:"
+                            GUID = Begin
+                                0x9ea690cb0be2bf42b8390403f8311b96
+                            End
+                        End
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub cmdRunAgentReport_Click()
+
+On Error GoTo Err_cmdRunAgentReport_Click
+
+    Dim strDocName As String
+    Dim strAgentID As String
+    
+    If IsNull(Me.txtAgentID) Or Me.txtAgentID = "" Then
+        Me.Visible = True
+        MsgBox "Agent ID required."
+        Me.txtAgentID.SetFocus
+    Else
+        Me.Visible = False
+        strAgentID = Me.txtAgentID
+        strDocName = "rptAgent_Indiv_Subscr"
+        DoCmd.OpenReport strDocName, acPreview, , "AGENTid = '" & strAgentID & "'"
+    End If
+        
+    
+
+Exit_cmdRunAgentReport_Click:
+    Exit Sub
+
+Err_cmdRunAgentReport_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdRunAgentReport_Click
+    
+End Sub
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub

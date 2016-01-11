@@ -1,0 +1,82 @@
+Operation =4
+Option =0
+Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmIndivSubscr]![PLTcustKEY]))"
+Begin InputTables
+    Name ="tblSubscr"
+    Name ="ARCUST"
+End
+Begin OutputColumns
+    Name ="ARCUST.CustomerName"
+    Expression ="[tblSubscr].[SUB_LUname]"
+    Name ="ARCUST.CustomerAddress1"
+    Expression ="[tblSubscr].[SUBstreet1]"
+    Name ="ARCUST.CustomerAddress2"
+    Expression ="[tblSubscr].[SUBstreet2]"
+    Name ="ARCUST.CustomerCity"
+    Expression ="[tblSubscr].[SUBcity]"
+    Name ="ARCUST.CustomerState"
+    Expression ="[tblSubscr].[SUBstate]"
+    Name ="ARCUST.CustomerZipCode"
+    Expression ="[tblSubscr].[SUBzip]"
+    Name ="ARCUST.AttnPhone"
+    Expression ="[tblSubscr].[SUBphoneHOME]"
+    Name ="ARCUST.ContactPhone"
+    Expression ="[tblSubscr].[SUBphoneWORK]"
+    Name ="ARCUST.CustomerClassKey"
+    Expression ="\"INDIV\""
+    Name ="ARCUST.TerritoryKey"
+    Expression ="[tblSubscr].[SUBgeoID]"
+    Name ="ARCUST.SalespersonKey"
+    Expression ="\"CORPT\""
+    Name ="ARCUST.RecDate"
+    Expression ="Format(Date(),\"mm/dd/yyyy\")"
+    Name ="ARCUST.RecUserID"
+    Expression ="\"QCDdb\""
+    Name ="ARCUST.PaymentMthd"
+    Expression ="\"O\""
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="ARCUST"
+    Expression ="tblSubscr.PLTcustKEY = ARCUST.CustomerKey"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =47
+    Top =29
+    Right =1002
+    Bottom =554
+    Left =-1
+    Top =-1
+    Right =948
+    Bottom =356
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =195
+        Bottom =240
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =263
+        Top =7
+        Right =425
+        Bottom =301
+        Top =0
+        Name ="ARCUST"
+        Name =""
+    End
+End

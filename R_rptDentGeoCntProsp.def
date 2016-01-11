@@ -1,0 +1,300 @@
+Version =17
+VersionRequired =17
+Checksum =564232976
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    Width =13968
+    ItemSuffix =27
+    Left =795
+    Top =720
+    Right =8940
+    Bottom =5655
+    RecSrcDt = Begin
+        0x57d37f3256f8e140
+    End
+    RecordSource ="qrptDentGeoCntProsp"
+    Caption ="Dentist PROSPECT Geographical Count Report"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xf0030000d00200001a030000d00200000000000090360000f000000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574205365726965732049490000000000000000000000 ,
+        0x00040104940040000367000402000100000000000000010001002c0101000100 ,
+        0x2c01020000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000020000000000000000000000010040004d53554403034850 ,
+        0x204c617365724a65742053657269657320494900000000000000000000008001 ,
+        0x000000000000000000000000000064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011002700010077696e73706f6f6c004850204c617365724a657420536572 ,
+        0x696573204949005c5c4e545345525645525c5449204d6963726f000000000000 ,
+        0x000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            GroupHeader = NotDefault
+            GroupFooter = NotDefault
+            ControlSource ="tbldentist.DENTgeoID"
+        End
+        Begin BreakLevel
+            ControlSource ="DENTlast"
+        End
+        Begin PageHeader
+            Height =1320
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Top =480
+                    Width =13965
+                    Height =420
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Text12"
+                    Caption ="Dentist PROSPECT Geographical Count Report"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =420
+                    Width =1080
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Field13"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    Width =10800
+                    Name ="Line15"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Width =13965
+                    Height =420
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Text27"
+                    Caption ="QCD of America"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =660
+                    Width =1080
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field17"
+                    ControlSource ="=Now()"
+                    Format ="Short Time"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    Left =2880
+                    Width =11085
+                    Name ="Line22"
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Width =13965
+                    Name ="Line23"
+                End
+                Begin Line
+                    Top =1080
+                    Width =13965
+                    Name ="Line25"
+                End
+                Begin Line
+                    Top =1200
+                    Width =13965
+                    Name ="Line26"
+                End
+            End
+        End
+        Begin BreakHeader
+            KeepTogether = NotDefault
+            Height =360
+            Name ="GroupHeader3"
+            Begin
+                Begin TextBox
+                    TextFontFamily =34
+                    Width =3165
+                    Height =360
+                    FontSize =10
+                    FontWeight =700
+                    Name ="GEOdesc"
+                    ControlSource ="GEOdesc"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =240
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =8928
+                    Width =1404
+                    Name ="DENTcity"
+                    ControlSource ="DENTcity"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =12240
+                    Width =1584
+                    TabIndex =1
+                    Name ="DENTphoneOFFICE"
+                    ControlSource ="DENTphoneOFFICE"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Width =2664
+                    TabIndex =2
+                    Name ="Field29"
+                    ControlSource ="=Trim([DENTlast] & \",  \" & [DENTfirst] & \" \" & [DENTmiddleINIT])"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    RunningSum =1
+                    TextFontFamily =34
+                    Left =13824
+                    Width =141
+                    TabIndex =3
+                    BackColor =8453888
+                    Name ="record count"
+                    ControlSource ="=1"
+                    EventProcPrefix ="record_count"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =2880
+                    Width =2874
+                    TabIndex =4
+                    Name ="Field18"
+                    ControlSource ="DENTstreet1"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =5904
+                    Width =2874
+                    TabIndex =5
+                    Name ="Field19"
+                    ControlSource ="DENTstreet2"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =10410
+                    Width =489
+                    TabIndex =6
+                    Name ="DENTstate"
+                    ControlSource ="DENTstate"
+                End
+                Begin TextBox
+                    TextFontFamily =34
+                    Left =11013
+                    Width =864
+                    TabIndex =7
+                    Name ="DENTzip"
+                    ControlSource ="DENTzip"
+                    InputMask ="00000\\-9999;;_"
+                End
+            End
+        End
+        Begin BreakFooter
+            KeepTogether = NotDefault
+            Height =360
+            Name ="GroupFooter4"
+            Begin
+                Begin Label
+                    TextFontFamily =34
+                    Left =345
+                    Width =720
+                    Height =240
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text11"
+                    Caption ="TOTAL "
+                End
+                Begin Line
+                    Top =240
+                    Width =13959
+                    Name ="Line12"
+                End
+                Begin TextBox
+                    RunningSum =1
+                    TextAlign =1
+                    TextFontFamily =34
+                    Left =1122
+                    Width =2211
+                    FontSize =10
+                    FontWeight =700
+                    Name ="GEOdesc2"
+                    ControlSource ="=[RECORD COUNT2]"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    TextFontFamily =34
+                    Left =6189
+                    Width =840
+                    FontSize =10
+                    TabIndex =1
+                    BackColor =8453888
+                    Name ="RECORD COUNT2"
+                    ControlSource ="=[RECORD COUNT]"
+                    EventProcPrefix ="RECORD_COUNT2"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+
+
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    DoCmd.Close A_FORM, "fdlgPrtDentGeoCntProsp"
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportDent"
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub

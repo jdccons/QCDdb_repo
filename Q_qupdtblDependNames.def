@@ -1,0 +1,40 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblDependent"
+End
+Begin OutputColumns
+    Name ="tblDependent.DEPfirstNAME"
+    Expression ="ReplaceChars_TSB([DEPfirstNAME],\"$\",\"'\")"
+    Name ="tblDependent.DEPlastNAME"
+    Expression ="ReplaceChars_TSB([DEPlastNAME],\"$\",\"'\")"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =71
+    Top =170
+    Right =974
+    Bottom =542
+    Left =-1
+    Top =-1
+    Right =896
+    Bottom =180
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =72
+        Top =10
+        Right =347
+        Bottom =149
+        Top =2
+        Name ="tblDependent"
+        Name =""
+    End
+End

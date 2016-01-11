@@ -1,0 +1,292 @@
+Version =17
+VersionRequired =17
+Checksum =-307937006
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =10080
+    ItemSuffix =36
+    Left =795
+    Top =720
+    Right =11520
+    Bottom =7650
+    RecSrcDt = Begin
+        0xfc3ce4918fc5e140
+    End
+    RecordSource ="qrptSubscrMissing"
+    Caption ="Group Subscriber Missing Information"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd002000068010000d00200006801000000000000602700001706000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4550534f4e205374796c757320434f4c4f522036303000000000000000000000 ,
+        0x0004501094007a000f89800701000100eb0a7008640001000700680102000100 ,
+        0x6801010000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000003010000 ,
+        0x0300000001000000300100000000000000000000ea17f21e0000000002000400 ,
+        0x00000100030000000c0400000000000000000000000004014550534f4e205374 ,
+        0x796c757320434f4c4f5220363030000000000000000000004c5054313a000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010000000000000001000100000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080011002800010077696e73706f6f6c004550534f4e205374796c757320434f ,
+        0x4c4f5220363030004c5054313a00000000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextAlign =3
+            TextFontFamily =18
+            FontSize =10
+            FontWeight =700
+            FontName ="Times New Roman"
+        End
+        Begin BoundObjectFrame
+            OldBorderStyle =0
+            LabelAlign =3
+            LabelX =-124
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            LabelAlign =3
+            TextFontFamily =18
+            Height =300
+            LabelX =-124
+            FontSize =10
+            FontName ="Times New Roman"
+        End
+        Begin BreakLevel
+            ControlSource ="SUBgroupID"
+        End
+        Begin BreakLevel
+            ControlSource ="SUBssn"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportHeader3"
+        End
+        Begin PageHeader
+            Height =1470
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =1
+                    Top =120
+                    Width =10059
+                    Height =480
+                    FontSize =14
+                    Name ="Text18"
+                    Caption ="Subscribers Missing Information"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    Top =660
+                    Width =2880
+                    Name ="Field19"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy"
+                End
+                Begin Line
+                    Top =60
+                    Width =10059
+                    Name ="Line21"
+                End
+                Begin Line
+                    Top =120
+                    Width =10059
+                    Name ="Line22"
+                End
+                Begin Line
+                    Top =1020
+                    Width =10059
+                    Name ="Line23"
+                End
+                Begin Line
+                    Top =1080
+                    Width =10059
+                    Name ="Line24"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =1560
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    Left =1512
+                    Top =300
+                    Width =1728
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                    InputMask ="000\\-00\\-0000;;_"
+                    Begin
+                        Begin Label
+                            Left =720
+                            Top =300
+                            Width =792
+                            Height =300
+                            Name ="Text7"
+                            Caption ="SSN: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =1512
+                    Width =1008
+                    TabIndex =1
+                    Name ="SUBgroupID"
+                    ControlSource ="SUBgroupID"
+                    Begin
+                        Begin Label
+                            Left =216
+                            Width =1296
+                            Height =300
+                            Name ="Text11"
+                            Caption ="Group Id: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =1512
+                    Top =600
+                    Width =2736
+                    ColumnWidth =2385
+                    TabIndex =2
+                    Name ="FULLNAME"
+                    ControlSource ="FULLNAME"
+                    StatusBarText ="Used for search"
+                    Begin
+                        Begin Label
+                            Left =144
+                            Top =600
+                            Width =1368
+                            Height =300
+                            Name ="Text13"
+                            Caption ="Subscriber: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =1512
+                    Top =900
+                    Width =360
+                    TabIndex =3
+                    Name ="SUBmissing"
+                    ControlSource ="SUBmissing"
+                    Format ="Yes/No"
+                    StatusBarText ="this is for missing information"
+                    Begin
+                        Begin Label
+                            Left =648
+                            Top =900
+                            Width =864
+                            Height =300
+                            Name ="Text15"
+                            Caption ="Missing: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Left =3744
+                    Top =900
+                    Width =6336
+                    TabIndex =4
+                    Name ="SUBnotes"
+                    ControlSource ="SUBnotes"
+                    Begin
+                        Begin Label
+                            Left =2736
+                            Top =900
+                            Width =1008
+                            Height =300
+                            Name ="Text17"
+                            Caption =" Notes: "
+                        End
+                    End
+                End
+                Begin Label
+                    Left =5184
+                    Top =360
+                    Width =1275
+                    Height =285
+                    Name ="Text27"
+                    Caption ="Followed Up: "
+                End
+                Begin Line
+                    Left =6408
+                    Top =660
+                    Width =3594
+                    Name ="Line28"
+                End
+                Begin TextBox
+                    Left =3888
+                    Width =3393
+                    TabIndex =5
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    Begin
+                        Begin Label
+                            Left =2592
+                            Width =1296
+                            Height =300
+                            Name ="Text30"
+                            Caption ="Group Name: "
+                        End
+                    End
+                End
+                Begin Line
+                    Left =5253
+                    Top =900
+                    Width =4749
+                    Name ="Line31"
+                End
+                Begin Line
+                    Left =144
+                    Top =1200
+                    Width =9930
+                    Name ="Line32"
+                End
+                Begin Label
+                    Left =7290
+                    Width =1335
+                    Height =285
+                    Name ="Text33"
+                    Caption ="Group Phone: "
+                End
+                Begin TextBox
+                    Left =8640
+                    TabIndex =6
+                    Name ="txtGRphone1"
+                    ControlSource ="GRphone1"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    Left =4464
+                    Top =60
+                    Name ="Field20"
+                    ControlSource ="=Page"
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =0
+            Name ="ReportFooter4"
+        End
+    End
+End

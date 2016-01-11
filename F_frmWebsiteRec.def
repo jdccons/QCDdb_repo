@@ -1,0 +1,212 @@
+Version =19
+VersionRequired =19
+Checksum =2125725537
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4620
+    DatasheetFontHeight =10
+    ItemSuffix =5
+    Left =5610
+    Top =1830
+    Right =10230
+    Bottom =3615
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xf36d5ed31391e340
+    End
+    Caption ="Website Reconciliation"
+    DatasheetFontName ="Arial"
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =1800
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x56b6132eac6be04fbcdbc2dbf56e1778
+            End
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2880
+                    Top =1140
+                    Width =576
+                    Height =576
+                    Name ="cmdClose"
+                    Caption ="Command0"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x8b78b99017e2024c9033d0d4dff65f5a
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =240
+                    Top =240
+                    Width =299
+                    Height =300
+                    TabIndex =1
+                    Name ="btnSubscrWebsiteRec"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xcc2c982c24d4384595b3d3b93705f5d4
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =720
+                    Top =240
+                    Width =3480
+                    Height =300
+                    Name ="Label2"
+                    Caption ="Subscribers on website and not in Access"
+                    GUID = Begin
+                        0xbbc0f94a8870f14e974cd557f95a8cec
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =240
+                    Top =660
+                    Width =299
+                    Height =300
+                    TabIndex =2
+                    Name ="btnWebsiteDataRec"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xdd7ac3397624604a93f9314eed38bb3e
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =720
+                    Top =660
+                    Width =3780
+                    Height =300
+                    Name ="Label4"
+                    Caption ="Discrepancies in data between website and Access"
+                    GUID = Begin
+                        0xb0c3ba72acba224091c7e2e1fe96041a
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub btnWebsiteDataRec_Click()
+
+On Error GoTo Err_btnWebsiteDataRec_Click
+
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+
+    'run stored procedure to correct dependent counts on remote server
+    ExecuteSQL "Exec TracentRmtSrv.QCD.dbo.uspCorrectDepCnt"
+    
+    'run stored procedure to correct dependent counts on local server
+    ExecuteSQL "Exec uspCorrectDepCnt"
+    
+    'run stored procedure to populate temp table for report
+    ExecuteSQL "Exec uspWebsiteRec"
+    
+    'preview the report
+    Dim stDocName As String
+    
+    stDocName = "rptDataWebsiteRec"
+    DoCmd.OpenReport stDocName, acPreview
+    
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+Exit_btnWebsiteDataRec_Click:
+    Exit Sub
+
+Err_btnWebsiteDataRec_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_btnWebsiteDataRec_Click
+
+End Sub
+
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+Private Sub btnSubscrWebsiteRec_Click()
+On Error GoTo Err_btnSubscrWebsiteRec_Click
+
+    Dim stDocName As String
+    
+    stDocName = "rptSubscrWebsiteRec"
+    DoCmd.OpenReport stDocName, acPreview
+
+Exit_btnSubscrWebsiteRec_Click:
+    Exit Sub
+
+Err_btnSubscrWebsiteRec_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_btnSubscrWebsiteRec_Click
+    
+End Sub

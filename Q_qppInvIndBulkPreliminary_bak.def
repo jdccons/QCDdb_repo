@@ -1,0 +1,96 @@
+Operation =3
+Name ="tblInvHdrPreliminary"
+Option =8
+Where ="(((tblSubscr.SUBstatus)=\"INDIV\") AND ((Left$([SUB_LUname],1))>=[Forms]![frmInv"
+    "IndivBulk]![LetterFrom] And (Left$([SUB_LUname],1))<=[Forms]![frmInvIndivBulk]!["
+    "LetterTo]) AND ((tblSubscr.SUBcancelled)=No) AND ((tblPlanIndiv.PLANindTYPE)=\"M"
+    "ONTHLY\"))"
+Begin InputTables
+    Name ="tblPlanIndiv"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Name ="Custkey"
+    Expression ="tblSubscr.PLTcustKEY"
+    Name ="Custname"
+    Expression ="tblSubscr.SUB_LUname"
+    Name ="Custaddr1"
+    Expression ="tblSubscr.SUBstreet1"
+    Name ="Custaddr2"
+    Expression ="tblSubscr.SUBstreet2"
+    Name ="Custcity"
+    Expression ="tblSubscr.SUBcity"
+    Name ="Custstate"
+    Expression ="tblSubscr.SUBstate"
+    Name ="Custzip"
+    Expression ="tblSubscr.SUBzip"
+    Alias ="TRANSno"
+    Name ="Tranno"
+    Expression ="Null"
+    Alias ="INVOICEdate"
+    Name ="Invdate"
+    Expression ="DLookUp(\"[FieldDateValue]\",\"tblConstants\",\"[FieldName] = 'InvoiceDate'\")"
+    Name ="Territkey"
+    Expression ="tblSubscr.SUBgeoID"
+    Name ="Salespkey"
+    Expression ="tblSubscr.SUBagentID1"
+    Alias ="RecUser"
+    Name ="RecUserID"
+    Expression ="\"Invoice\""
+    Alias ="RecDte"
+    Name ="RecDate"
+    Expression ="Date()"
+    Alias ="RecTme"
+    Name ="RecTime"
+    Expression ="Time()"
+    Name ="Checkamt"
+    Expression ="tblSubscr.SUBrate"
+    Name ="Checkno"
+    Expression ="tblSubscr.SUBbankDraftNo"
+    Name ="Custclass"
+    Expression ="tblSubscr.SUBstatus"
+End
+Begin Joins
+    LeftTable ="tblPlanIndiv"
+    RightTable ="tblSubscr"
+    Expression ="tblPlanIndiv.PLANindID = tblSubscr.SUBplanIDin"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =128
+    Top =84
+    Right =778
+    Bottom =412
+    Left =-1
+    Top =-1
+    Right =643
+    Bottom =170
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =354
+        Top =6
+        Right =443
+        Bottom =128
+        Top =0
+        Name ="tblPlanIndiv"
+        Name =""
+    End
+    Begin
+        Left =55
+        Top =5
+        Right =316
+        Bottom =127
+        Top =37
+        Name ="tblSubscr"
+        Name =""
+    End
+End

@@ -1,0 +1,1247 @@
+Version =20
+VersionRequired =20
+Checksum =439022182
+Begin Form
+    PopUp = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4680
+    DatasheetFontHeight =10
+    ItemSuffix =50
+    Left =5250
+    Top =1950
+    Right =9930
+    Bottom =6870
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xfcc2a1bb0b26e240
+    End
+    Caption ="Invoice History"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010402059c00f40403bf800001000100ea0a6f08640001000700580202000100 ,
+        0x5802030000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
+        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
+        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x3002000045424441000001000100000001000000010000000100000000000000 ,
+        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000001000000
+    End
+    PrtDevNames = Begin
+        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+    End
+    OnLoad ="[Event Procedure]"
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            SpecialEffect =2
+            OldBorderStyle =0
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+        End
+        Begin Section
+            Height =4575
+            BackColor =-2147483633
+            Name ="Detail"
+            OnClick ="[Event Procedure]"
+            Begin
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =1380
+                    Top =60
+                    Width =2280
+                    Height =360
+                    FontSize =12
+                    FontWeight =700
+                    Name ="Label0"
+                    Caption ="Invoice History"
+                End
+                Begin Tab
+                    OverlapFlags =85
+                    Left =60
+                    Top =600
+                    Width =4575
+                    Height =3975
+                    Name ="TabCtl1"
+                    Begin
+                        Begin Page
+                            OverlapFlags =215
+                            Left =195
+                            Top =1005
+                            Width =4305
+                            Height =3435
+                            Name ="Page2"
+                            Caption ="History Report"
+                            Begin
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =223
+                                    ColumnCount =2
+                                    ListWidth =1440
+                                    Left =1260
+                                    Top =1620
+                                    Width =1380
+                                    Name ="cboBaseMonth"
+                                    RowSourceType ="Value List"
+                                    RowSource ="1;\"January\";2;\"February\";3;\"March\";4;\"April\";5;\"May\";6;\"June\";7;\"Ju"
+                                        "ly\";8;\"August\";9;\"September\";10;\"October\";11;\"November\";12;\"December\""
+                                    ColumnWidths ="0;1440"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =223
+                                            Left =660
+                                            Top =1620
+                                            Width =600
+                                            Height =228
+                                            Name ="Select Base Month_Label"
+                                            Caption =" Month:"
+                                            EventProcPrefix ="Select_Base_Month_Label"
+                                        End
+                                    End
+                                End
+                                Begin Label
+                                    OverlapFlags =215
+                                    Left =420
+                                    Top =1080
+                                    Width =1260
+                                    Height =240
+                                    Name ="Label19"
+                                    Caption ="Report Criteria"
+                                End
+                                Begin ComboBox
+                                    LimitToList = NotDefault
+                                    OverlapFlags =215
+                                    ListWidth =720
+                                    Left =3360
+                                    Top =1620
+                                    Width =720
+                                    TabIndex =1
+                                    ColumnInfo ="\"\";\"\";\"4\";\"4\""
+                                    Name ="cboBaseYear"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT DISTINCTROW qselInvoiceHistoryYears.InvYear FROM qselInvoiceHistoryYears "
+                                        "ORDER BY qselInvoiceHistoryYears.InvYear;"
+                                    ColumnWidths ="720"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =2820
+                                            Top =1620
+                                            Width =480
+                                            Height =228
+                                            Name ="Base Year_Label"
+                                            Caption ="Year:"
+                                            EventProcPrefix ="Base_Year_Label"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =215
+                                    Left =2940
+                                    Top =1260
+                                    Width =540
+                                    TabIndex =2
+                                    BackColor =10092543
+                                    Name ="txtBaseMonth"
+                                End
+                                Begin ComboBox
+                                    LimitToList = NotDefault
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =215
+                                    ColumnCount =2
+                                    ListWidth =1440
+                                    Left =1260
+                                    Top =2280
+                                    Width =1380
+                                    TabIndex =3
+                                    Name ="cboCompareMonth"
+                                    RowSourceType ="Value List"
+                                    RowSource ="1;\"January\";2;\"February\";3;\"March\";4;\"April\";5;\"May\";6;\"June\";7;\"Ju"
+                                        "ly\";8;\"August\";9;\"September\";10;\"October\";11;\"November\";12;\"December\""
+                                    ColumnWidths ="0;1440"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =660
+                                            Top =2280
+                                            Width =528
+                                            Height =228
+                                            Name ="Label27"
+                                            Caption ="Month:"
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    LimitToList = NotDefault
+                                    OverlapFlags =215
+                                    ListWidth =720
+                                    Left =3360
+                                    Top =2280
+                                    Width =720
+                                    TabIndex =4
+                                    ColumnInfo ="\"\";\"\";\"4\";\"4\""
+                                    Name ="cboCompareYear"
+                                    RowSourceType ="Table/Query"
+                                    RowSource ="SELECT DISTINCTROW qselInvoiceHistoryYears.InvYear FROM qselInvoiceHistoryYears "
+                                        "ORDER BY qselInvoiceHistoryYears.InvYear;"
+                                    ColumnWidths ="720"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            Left =2820
+                                            Top =2280
+                                            Width =444
+                                            Height =228
+                                            Name ="Label29"
+                                            Caption ="Year:"
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =215
+                                    ColumnCount =2
+                                    ListWidth =1440
+                                    Left =2055
+                                    Top =3000
+                                    Width =2040
+                                    Height =270
+                                    TabIndex =5
+                                    Name ="cboClientSvcRep"
+                                    RowSourceType ="Value List"
+                                    ColumnWidths ="0;1440"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =495
+                                            Top =3000
+                                            Width =1515
+                                            Height =240
+                                            Name ="Client Service Rep_Label"
+                                            Caption ="Client Service Rep: "
+                                            EventProcPrefix ="Client_Service_Rep_Label"
+                                        End
+                                    End
+                                End
+                                Begin ComboBox
+                                    LimitToList = NotDefault
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =215
+                                    ColumnCount =2
+                                    ListRows =13
+                                    ListWidth =3600
+                                    Left =2055
+                                    Top =3540
+                                    Width =2025
+                                    Height =270
+                                    TabIndex =6
+                                    Name ="cboGeoID"
+                                    RowSourceType ="Value List"
+                                    ColumnWidths ="720;2880"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =215
+                                            TextAlign =3
+                                            Left =1170
+                                            Top =3540
+                                            Width =810
+                                            Height =240
+                                            Name ="Label40"
+                                            Caption ="Geo ID: "
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =215
+                                    Left =1260
+                                    Top =2640
+                                    Width =540
+                                    TabIndex =7
+                                    BackColor =10092543
+                                    Name ="txtCompareMonth"
+                                End
+                                Begin Label
+                                    OverlapFlags =215
+                                    Left =540
+                                    Top =1380
+                                    Width =1800
+                                    Height =228
+                                    FontWeight =700
+                                    Name ="Label34"
+                                    Caption ="Base (most recent)"
+                                End
+                                Begin Label
+                                    OverlapFlags =215
+                                    Left =540
+                                    Top =1980
+                                    Width =2400
+                                    Height =240
+                                    FontWeight =700
+                                    Name ="Label35"
+                                    Caption ="Compare to"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =215
+                                    Left =3600
+                                    Top =1260
+                                    Width =600
+                                    TabIndex =8
+                                    BackColor =10092543
+                                    Name ="txtBaseYear"
+                                End
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =215
+                                    Left =2040
+                                    Top =2640
+                                    Width =540
+                                    TabIndex =9
+                                    BackColor =10092543
+                                    Name ="txtCompareYear"
+                                End
+                                Begin CommandButton
+                                    OverlapFlags =215
+                                    Left =3060
+                                    Top =4020
+                                    Width =1296
+                                    TabIndex =10
+                                    Name ="cmdInvHistReport"
+                                    Caption ="Preview Report"
+                                    OnClick ="[Event Procedure]"
+                                End
+                                Begin OptionGroup
+                                    OverlapFlags =215
+                                    Left =300
+                                    Top =3960
+                                    Width =2462
+                                    Height =475
+                                    TabIndex =11
+                                    Name ="fraReport"
+                                    DefaultValue ="1"
+                                    Begin
+                                        Begin Label
+                                            BackStyle =1
+                                            OverlapFlags =215
+                                            Left =420
+                                            Top =3840
+                                            Width =768
+                                            Height =228
+                                            BackColor =-2147483633
+                                            Name ="Label44"
+                                            Caption ="Report by"
+                                        End
+                                        Begin OptionButton
+                                            OverlapFlags =215
+                                            Left =540
+                                            Top =4162
+                                            OptionValue =1
+                                            Name ="Option46"
+                                            Begin
+                                                Begin Label
+                                                    OverlapFlags =215
+                                                    Left =774
+                                                    Top =4140
+                                                    Width =912
+                                                    Height =228
+                                                    Name ="Label47"
+                                                    Caption ="C. S. Rep"
+                                                End
+                                            End
+                                        End
+                                        Begin OptionButton
+                                            OverlapFlags =215
+                                            Left =1860
+                                            Top =4168
+                                            OptionValue =2
+                                            Name ="Option48"
+                                            Begin
+                                                Begin Label
+                                                    OverlapFlags =247
+                                                    Left =2090
+                                                    Top =4140
+                                                    Width =564
+                                                    Height =228
+                                                    Name ="Label49"
+                                                    Caption ="Geo ID"
+                                                End
+                                            End
+                                        End
+                                    End
+                                End
+                            End
+                        End
+                        Begin Page
+                            OverlapFlags =247
+                            Left =195
+                            Top =1005
+                            Width =4305
+                            Height =3435
+                            Name ="Page3"
+                            Caption ="Download History"
+                            Begin
+                                Begin TextBox
+                                    Visible = NotDefault
+                                    OverlapFlags =247
+                                    Left =2580
+                                    Top =1680
+                                    Width =840
+                                    BackColor =10092543
+                                    Name ="txtMonth"
+                                End
+                                Begin ComboBox
+                                    RowSourceTypeInt =1
+                                    OverlapFlags =247
+                                    ColumnCount =2
+                                    ListWidth =1440
+                                    Left =2640
+                                    Top =1320
+                                    Width =1680
+                                    TabIndex =1
+                                    Name ="cboMonth"
+                                    RowSourceType ="Value List"
+                                    RowSource ="1;\"January\";2;\"February\";3;\"March\";4;\"April\";5;\"May\";6;\"June\";7;\"Ju"
+                                        "ly\";8;\"August\";9;\"September\";10;\"October\";11;\"November\";12;\"December\""
+                                    ColumnWidths ="0;1440"
+                                    AfterUpdate ="[Event Procedure]"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =600
+                                            Top =1320
+                                            Width =1920
+                                            Height =228
+                                            Name ="Select Month_Label"
+                                            Caption ="Select Month to Download"
+                                            EventProcPrefix ="Select_Month_Label"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    OverlapFlags =247
+                                    Left =1560
+                                    Top =1680
+                                    Width =600
+                                    TabIndex =2
+                                    BackColor =16777164
+                                    Name ="txtYear"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =1020
+                                            Top =1680
+                                            Width =480
+                                            Height =228
+                                            Name ="Label9"
+                                            Caption ="Year"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
+                                    OverlapFlags =247
+                                    Left =1680
+                                    Top =2400
+                                    Width =1320
+                                    TabIndex =3
+                                    BackColor =16777164
+                                    Name ="txtDateStart"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =1020
+                                            Top =2400
+                                            Width =576
+                                            Height =228
+                                            Name ="Label11"
+                                            Caption ="From:"
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
+                                    OverlapFlags =247
+                                    Left =1680
+                                    Top =2760
+                                    Width =1320
+                                    TabIndex =4
+                                    BackColor =16777164
+                                    Name ="txtDateEnd"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =1020
+                                            Top =2760
+                                            Width =576
+                                            Height =228
+                                            Name ="Label13"
+                                            Caption ="To:"
+                                        End
+                                    End
+                                End
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =660
+                                    Top =2100
+                                    Width =2700
+                                    Height =240
+                                    Name ="Label14"
+                                    Caption ="Date Range to download"
+                                End
+                                Begin CommandButton
+                                    OverlapFlags =247
+                                    Left =2655
+                                    Top =3120
+                                    Width =1560
+                                    Height =420
+                                    TabIndex =5
+                                    Name ="cmdDownload"
+                                    Caption ="Download History"
+                                    OnClick ="[Event Procedure]"
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
+                                    OverlapFlags =247
+                                    TextAlign =1
+                                    Left =2460
+                                    Top =3720
+                                    Width =2040
+                                    TabIndex =6
+                                    BackColor =8454143
+                                    Name ="txtDateTime2"
+                                    Format ="General Date"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =255
+                                            Left =240
+                                            Top =3732
+                                            Width =2220
+                                            Height =255
+                                            Name ="Label112"
+                                            Caption ="Client Srvs Numbers Last Run: "
+                                        End
+                                    End
+                                End
+                                Begin TextBox
+                                    Locked = NotDefault
+                                    OverlapFlags =247
+                                    TextAlign =1
+                                    Left =2460
+                                    Top =4020
+                                    Width =2040
+                                    TabIndex =7
+                                    BackColor =8454143
+                                    Name ="txtInvHostDate2"
+                                    Format ="General Date"
+                                    Begin
+                                        Begin Label
+                                            OverlapFlags =247
+                                            Left =240
+                                            Top =4044
+                                            Width =2160
+                                            Height =255
+                                            Name ="Label125"
+                                            Caption ="Inv. Hist. Numbers Last Run: "
+                                        End
+                                    End
+                                End
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =540
+            BackColor =-2147483633
+            Name ="FormFooter"
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3855
+                    Top =60
+                    Width =660
+                    Height =480
+                    Name ="cmdClose"
+                    Caption ="Command16"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x000000000000000000000000000000000000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Sub cboBaseMonth_AfterUpdate()
+    Me.txtBaseMonth = Me.cboBaseMonth.Column(0)
+End Sub
+
+Private Sub cboBaseYear_AfterUpdate()
+    Me.txtBaseYear = Me.cboBaseYear.Column(0)
+End Sub
+
+Private Sub cboCompareMonth_AfterUpdate()
+    Me.txtCompareMonth = Me.cboCompareMonth.Column(0)
+End Sub
+
+Private Sub cboCompareYear_AfterUpdate()
+    Me.txtCompareYear = Me.cboCompareYear.Column(0)
+End Sub
+
+Private Sub cboMonth_AfterUpdate()
+    Dim intDays As Integer
+    
+    ' Set Month Number
+    Me.txtMonth = cboMonth.Column(0)
+    
+    ' Set the start and end date
+    With Me
+       intDays = DaysInMonth_TSB(.txtMonth, .txtYear)
+       .txtDateStart = .txtMonth & "/1/" & .txtYear
+       .txtDateEnd = .txtMonth & "/" & intDays & "/" & .txtYear
+    End With
+    
+End Sub
+
+Private Sub cmdDownload_Click()
+    
+    On Error GoTo ErrorHandler
+    
+    Dim dteStartDate As Date
+    Dim dteEndDate As Date
+    Dim datDateTime As Date
+    Dim intMonth As Integer
+    Dim intYear As Integer
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Dim strSQL2 As String
+            
+    With Me
+        If IsNull(.txtMonth) Then
+            MsgBox "Please select a month, even if you have to select the default month!"
+            .cboMonth.SetFocus
+            Exit Sub
+        End If
+    End With
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    ' Check for existing month before running the append query
+    strSQL = "SELECT tblInvoiceHistory.InvMonth, tblInvoiceHistory.InvYear " & _
+        "FROM tblInvoiceHistory " & _
+        "GROUP BY tblInvoiceHistory.InvMonth, tblInvoiceHistory.InvYear " & _
+        "HAVING (((tblInvoiceHistory.InvMonth)=" & Me.txtMonth & ") " & _
+        "AND ((tblInvoiceHistory.InvYear)=" & Me.txtYear & "));"
+       
+    Set dbs = CurrentDb()
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.RecordCount > 0 Then
+      ' Delete the existing month Year data and append it again
+      ' Changed 3/7/2002 after consulting with John
+      strSQL2 = "DELETE fROM tblInvoiceHistory WHERE (((tblInvoiceHistory.InvMonth)=" & Me.txtMonth & ") AND ((tblInvoiceHistory.InvYear)=" & Me.txtYear & "));"
+      ExecuteSQL (strSQL2)
+'      strSQL2 = "DELETE tblInvoiceHistory.*, tblInvoiceHistory.InvMonth, tblInvoiceHistory.InvYear " & _
+'         "FROM tblInvoiceHistory " & _
+'         "WHERE (((tblInvoiceHistory.InvMonth)=" & Me.txtMonth & ") " & _
+'         "AND ((tblInvoiceHistory.InvYear)=" & Me.txtYear & "));"
+'      dbs.Execute strSQL2, dbSeeChanges
+        'MsgBox "The Month and Year you selected already exists in the table.  Please try another month.", vbCritical, "Duplicate Insert Error"
+        'rst.Close
+        'Set dbs = Nothing
+        'Exit Sub
+    End If
+    
+    ' Populate the table
+    With Me
+        dteStartDate = .txtDateStart
+        dteEndDate = .txtDateEnd
+    End With
+    
+    strSQL = "INSERT INTO tblInvoiceHistory ( GrpID, InvMonth, " & _
+            "InvYear, TotalBilling ) " & _
+            "SELECT ARTRAN.CustomerKey, CLng(Month(" & _
+            "[DocumentDate])) AS MonthNo, CLng(Year(" & _
+            "[DocumentDate])) AS YearNo, Sum(ARTRAN." & _
+            "DocumentAmt) AS SumOfDocamt " & _
+            "FROM ARTRAN " & _
+            "WHERE (((ARTRAN.TransactionType)='I' Or (ARTRAN." & _
+            "TransactionType)='C') AND ((DocumentDate) " & _
+            "Between #" & dteStartDate & "# And #" & dteEndDate & "#) AND ((ARTRAN." & _
+            "CustomerClassKey)='GROUP')) " & _
+            "GROUP BY ARTRAN.CustomerKey, CLng(Month(" & _
+            "[DocumentDate])), CLng(Year([DocumentDate]));"
+            
+            'Debug.Print strSQL
+    
+    dbs.Execute strSQL, dbSeeChanges
+    
+    ' Insert the Date and Time in the table
+    datDateTime = Now()
+   
+    strSQL = "UPDATE tblDateTimeTracking SET tblDateTimeTracking.ReportDateTime = # " & datDateTime & "# WHERE tblDateTimeTracking.ID = 2;"
+    dbs.Execute strSQL, dbSeeChanges
+    
+    dbs.Close
+    Set dbs = Nothing
+    
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+    MsgBox "Download complete.", vbInformation, "Status"
+       
+ErrorExit:
+    Exit Sub
+    
+ErrorHandler:
+    
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo ErrorExit
+    
+End Sub
+
+Private Sub Form_Load()
+        
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strList As String
+    Dim strSQL As String
+    Dim datDate As Date
+    
+    ' Set the Month and Year
+    With Me
+       .txtYear = Year(date)
+       .cboMonth = Month(date)
+    End With
+    
+    'load row souce property for client service representive combo box
+    Set dbs = CurrentDb()
+    strSQL = "SELECT tlkpClientServiceReps.RepID, tlkpClientServiceReps.RepName, tlkpClientServiceReps.IsRepActive "
+    strSQL = strSQL & "FROM tlkpClientServiceReps "
+    strSQL = strSQL & "WHERE (((tlkpClientServiceReps.IsRepActive)=Yes)) "
+    strSQL = strSQL & "ORDER BY tlkpClientServiceReps.RepName"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    
+    strList = "All, All Client Service Reps;"
+    
+    If rst.RecordCount > 0 Then
+      With rst
+       Do While Not rst.EOF
+        strList = strList & !RepID & "," & !RepName & ";"
+        Me.cboClientSvcRep.RowSource = strList
+        .MoveNext
+       Loop
+      End With
+    End If
+    
+    strSQL = ""
+    strList = ""
+    
+    'load row souce property for geo id combo box
+    strSQL = "SELECT tblGeographical.GEOid, "
+    strSQL = strSQL & "tblGeographical.GEOdesc "
+    strSQL = strSQL & "FROM tblGeographical "
+    strSQL = strSQL & "ORDER BY tblGeographical.GEOdesc;"
+    
+    Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+    
+    strList = "All, All GeoID's;"
+    
+    If rst.RecordCount > 0 Then
+      With rst
+       Do While Not rst.EOF
+        strList = strList & !GeoID & "," & !GEOdesc & ";"
+        Me.cboGEOid.RowSource = strList
+        .MoveNext
+       Loop
+      End With
+    End If
+    
+    With Me
+        .cboClientSvcRep = "All"
+        .cboGEOid = "All"
+    End With
+    
+    Call cboMonth_AfterUpdate
+    
+    
+       strSQL = "SELECT tblDateTimeTracking.ID, tblDateTimeTracking.ReportDateTime " & _
+      "FROM tblDateTimeTracking ORDER BY tblDateTimeTracking.ID;"
+   Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
+   If rst.RecordCount > 0 Then
+     With rst
+      Do While Not rst.EOF
+        datDate = !ReportDateTime
+        If !ID = 1 Then
+         Me.txtDateTime2 = datDate
+        End If
+        If !ID = 2 Then
+         Me.txtInvHostDate2 = datDate
+        End If
+        .MoveNext
+      Loop
+     End With
+   Else
+      Me.txtDateTime2 = "Last Date/Time Not recorded"
+      Me.txtInvHostDate2 = "Last Date/Time Not recorded"
+   End If
+   
+    rst.Close
+    Set rst = Nothing
+    dbs.Close
+    Set dbs = Nothing
+    
+End Sub
+Private Sub cmdClose_Click()
+On Error GoTo Err_cmdClose_Click
+
+
+    DoCmd.Close
+
+Exit_cmdClose_Click:
+    Exit Sub
+
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+
+Private Function DaysInMonth_TSB(intMonth As Integer, intYear As Integer) As Integer
+  ' Comments  : returns the number of days in a month
+  ' Parameters: intMonth - number of the month (1-12)
+  '             intYear - year including century (eg. 1997)
+  '                       This is necessary for calculating leap years.
+  ' Returns   : number of days in the month
+  '
+  Dim datDate As Date
+
+  ' Last day of month
+  datDate = DateSerial(intYear, intMonth + 1, 0)
+
+  DaysInMonth_TSB = Day(datDate)
+
+End Function
+
+Private Function RunActionQuery(strDatabase As String, strQuery As String, strArrParameters() As String, varArrValues() As Variant) As Boolean
+    ' Comments   :
+    ' Parameters : strDatabase
+    '              strQuery
+    '              strArrParameters)
+    '              As
+    '              varArrValues)
+    '              As -
+    ' Returns    : Boolean -
+    ' Created    :
+    ' Modified   :
+    '
+    ' --------------------------------------------------------
+    
+    ' Parameters: strDatabase - path and name of database to look in or "" (blank string) for the current database
+    '             strQuery - a saved query to run (must be an action query)
+    '             arrParameters - array of parameters to specify
+    '             arrValues - array of values to assign the parameters specified in arrParameters
+    ' Returns   : True if successful, False otherwise
+    
+    Dim dbsTemp As Database
+    Dim wrkWsTemp As Workspace
+    Dim qdfTemp As QueryDef
+    Dim intCounter As Integer
+    
+    On Error GoTo PROC_ERR
+    
+    If strDatabase = "" Then
+        Set dbsTemp = CurrentDb()
+        Set wrkWsTemp = DBEngine.Workspaces(0)
+    Else
+        Set dbsTemp = DBEngine.Workspaces(0).OpenDatabase(strDatabase)
+    End If
+    
+    ' Create a query definition and assign the parameter.
+    Set qdfTemp = dbsTemp.QueryDefs(strQuery)
+    ' Assign each parameter.
+    For intCounter = LBound(strArrParameters) To UBound(strArrParameters)
+        If strArrParameters(intCounter) <> "" Then
+            qdfTemp.Parameters(strArrParameters(intCounter)) = varArrValues(intCounter)
+        End If
+    Next intCounter
+    
+    wrkWsTemp.BeginTrans
+    With qdfTemp
+        .Execute dbSeeChanges ' dbSeeChanges
+    End With
+    wrkWsTemp.CommitTrans
+    
+    qdfTemp.Close
+    dbsTemp.Close
+    
+    RunActionQuery = True
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    RunActionQuery = False
+    qdfTemp.Close
+    dbsTemp.Close
+    MsgBox Err.Number & ", " & Err.DESCRIPTION, vbOKOnly
+    wrkWsTemp.Rollback
+    Resume PROC_EXIT
+    
+End Function
+
+Private Function RunQuery(strDatabase As String, aArrayIn() As Variant) As Boolean
+  ' Comments  : Run a saved action query
+  ' Parameters: strDatabase - path and name of database to look in or "" (blank string) for the current database
+  '             aArrayIn() - Query Name to run (must be an action query)
+  ' Returns   : True or False
+  ' Created   :
+  Dim dbsTemp As Database
+  Dim qdfTemp As QueryDef
+  Dim strQueryName As String
+  Dim intRowCounter As Integer
+  Const intQueryName As Integer = 0
+  
+  On Error GoTo PROC_ERR
+  
+  If strDatabase = "" Then
+    Set dbsTemp = CurrentDb()
+  Else
+    Set dbsTemp = DBEngine.Workspaces(0).OpenDatabase(strDatabase)
+  End If
+    
+    For intRowCounter = 0 To UBound(aArrayIn)
+        Set qdfTemp = dbsTemp.QueryDefs(aArrayIn(intRowCounter))
+        qdfTemp.Execute (dbSeeChanges)
+        qdfTemp.Close
+    Next intRowCounter
+    
+  RunQuery = True
+ 
+PROC_EXIT:
+  Exit Function
+
+PROC_ERR:
+  MsgBox Err.DESCRIPTION
+  RunQuery = False
+  Resume PROC_EXIT
+  
+End Function
+Private Sub cmdInvHistReport_Click()
+
+On Error GoTo Err_cmdInvHistReport_Click
+
+    Dim dbs As DAO.Database
+    Dim stDocName As String
+    Dim aPara() As String
+    Dim aVal() As Variant
+    Dim aArray() As Variant
+    Dim aQueryName() As Variant
+    Dim dteStartDate As Date
+    Dim dteEndDate As Date
+    Dim intMonth As Integer
+    Dim intYear As Integer
+    Dim intClientSvcRep As Integer
+    Dim strClientSvcRep As String
+    Dim strGeoID As String
+    Dim strSQL As String
+    Dim strWhere As String
+    
+    With Me
+     If IsNull(.txtBaseMonth) Then
+        MsgBox "You must select a Base month to continue", vbExclamation, "Missing Month"
+        Exit Sub
+     ElseIf IsNull(.txtBaseYear) Then
+        MsgBox "You must select a Base Year to continue", vbExclamation, "Missing Year"
+        Exit Sub
+     ElseIf IsNull(.txtCompareMonth) Then
+        MsgBox "You must select a Compare month to continue", vbExclamation, "Missing Month"
+        Exit Sub
+     ElseIf IsNull(.txtCompareYear) Then
+        MsgBox "You must select a Compare Year to continue", vbExclamation, "Missing Year"
+        Exit Sub
+     End If
+     
+     If CInt(.txtBaseMonth) <= CInt(.txtCompareMonth) Then
+      If CInt(.txtBaseYear) <= CInt(.txtCompareYear) Then
+        MsgBox "The base month and year must be more recent than the compare month and year to continue", vbExclamation, "Criteria Error"
+        Exit Sub
+      End If
+     End If
+    End With
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    ' Clear old data out of the report table
+    ReDim aQueryName(0) As Variant
+    aQueryName(0) = "qdelInvHistRpt"
+    
+    Call RunQuery("", aQueryName())
+    
+    ' Populate the report table with data for the base month
+    With Me
+        intMonth = .txtBaseMonth
+        intYear = .txtBaseYear
+        
+        strWhere = "WHERE ((tblInvoiceHistory.InvMonth) = " & intMonth & ")"
+        strWhere = strWhere & " AND ((tblInvoiceHistory.InvYear) = " & intYear & ")"
+        
+        If .cboClientSvcRep <> Null Or Me.cboClientSvcRep <> "All" Then
+            intClientSvcRep = .cboClientSvcRep
+            strWhere = strWhere & " AND ((tblGrp.GRClientSvcRepID) = " & intClientSvcRep & ")"
+        End If
+        
+        If .cboGEOid <> Null Or Me.cboGEOid <> "All" Then
+            strGeoID = .cboGEOid
+            strWhere = strWhere & " AND ((tblgrp.GRPgeoID) = '" & strGeoID & "')"
+        End If
+    End With
+    
+    strSQL = "INSERT INTO tblInvHistoryRpt ( GrpID, "
+    strSQL = strSQL & "CompanyName, City, State, BaseAmt, "
+    strSQL = strSQL & "BaseMonth, BaseYear, ClientSvcRep, "
+    strSQL = strSQL & "GeoIDDesc ) "
+    strSQL = strSQL & "SELECT tblInvoiceHistory.GrpID, tblGrp."
+    strSQL = strSQL & "GRname, tblGrp.GRcity, tblGrp.GRstate, "
+    strSQL = strSQL & "tblInvoiceHistory.TotalBilling AS "
+    strSQL = strSQL & "BaseAmt, tblInvoiceHistory.InvMonth AS "
+    strSQL = strSQL & "BaseMonth, tblInvoiceHistory.InvYear AS "
+    strSQL = strSQL & "BaseYear, tlkpClientServiceReps.RepName, "
+    strSQL = strSQL & "tblGeographical.GEOdesc "
+    strSQL = strSQL & "FROM tblGeographical INNER JOIN "
+    strSQL = strSQL & "(tlkpClientServiceReps INNER JOIN "
+    strSQL = strSQL & "(tblGrp INNER JOIN tblInvoiceHistory ON "
+    strSQL = strSQL & "tblGrp.GroupID = tblInvoiceHistory.GrpID)"
+    strSQL = strSQL & " ON tlkpClientServiceReps.RepID = tblGrp."
+    strSQL = strSQL & "GRClientSvcRepID) ON tblGeographical."
+    strSQL = strSQL & "GEOid = tblGrp.GRPgeoID "
+    
+    strSQL = strSQL & strWhere
+      
+    Set dbs = CurrentDb()
+    dbs.Execute strSQL, dbSeeChanges
+        
+    'Populate the report table with data for the compare month where the group id's match
+    With Me
+        intMonth = .txtCompareMonth
+        intYear = .txtCompareYear
+    End With
+    
+    ReDim aPara(1) As String
+    aPara(0) = "intMonth"
+    aPara(1) = "intYear"
+    
+    ReDim aVal(1) As Variant
+    aVal(0) = intMonth
+    aVal(1) = intYear
+    
+    Call RunActionQuery("", "qupdInvHistoryComp", aPara(), aVal())
+        
+    'Populate report temp table with data for groups that cancelled since the compare month
+    strSQL = "DELETE tblInvHistoryCancelled.* FROM tblInvHistoryCancelled;"
+    dbs.Execute strSQL, dbSeeChanges
+    
+    DoCmd.OpenQuery "qappInvHistoryCancelled"
+    
+    'populate report table with data for groups that cancelled, filtered for CSR and GeoID
+    strSQL = ""
+    strWhere = ""
+    
+    With Me
+        strWhere = "WHERE ((tblInvHistoryCancelled.InvMonth) = " & intMonth & ")"
+        strWhere = strWhere & " AND ((tblInvHistoryCancelled.InvYear) = " & intYear & ")"
+
+
+        If .cboClientSvcRep <> Null Or Me.cboClientSvcRep <> "All" Then
+            strClientSvcRep = .cboClientSvcRep.Column(1)
+            strWhere = " AND ((tblInvHistoryCancelled.RepName)= '" & strClientSvcRep & "')"
+        End If
+        
+        If .cboGEOid <> Null Or Me.cboGEOid <> "All" Then
+            strGeoID = .cboGEOid.Column(1)
+            strWhere = strWhere & " AND ((tblInvHistoryCancelled.GEOdesc)= '" & strGeoID & "')"
+        End If
+    End With
+    
+    strSQL = "INSERT INTO tblInvHistoryRpt ( GrpID, "
+    strSQL = strSQL & "CompanyName, City, State, BaseAmt, "
+    strSQL = strSQL & "CompAmt, CompMonth, CompYear, Status, "
+    strSQL = strSQL & "ClientSvcRep, GeoIDDesc ) "
+    strSQL = strSQL & "SELECT tblInvHistoryCancelled.GrpID, "
+    strSQL = strSQL & "tblInvHistoryCancelled.GRname, "
+    strSQL = strSQL & "tblInvHistoryCancelled.GRcity, "
+    strSQL = strSQL & "tblInvHistoryCancelled.GRstate, "
+    strSQL = strSQL & "tblInvHistoryCancelled.BaseAmt, "
+    strSQL = strSQL & "tblInvHistoryCancelled.CompAmt, "
+    strSQL = strSQL & "tblInvHistoryCancelled.InvMonth, "
+    strSQL = strSQL & "tblInvHistoryCancelled.InvYear, "
+    strSQL = strSQL & "tblInvHistoryCancelled.Status, "
+    strSQL = strSQL & "tblInvHistoryCancelled.RepName, "
+    strSQL = strSQL & "tblInvHistoryCancelled.GEOdesc "
+    strSQL = strSQL & "FROM tblInvHistoryCancelled "
+        
+    strSQL = strSQL & strWhere
+    
+    dbs.Execute strSQL, dbSeeChanges
+     
+    'flag each group with appropriate status
+    'new groups
+    strSQL = "UPDATE tblInvHistoryRpt SET "
+    strSQL = strSQL & "tblInvHistoryRpt.Status = 1 "
+    strSQL = strSQL & "WHERE (((tblInvHistoryRpt.CompMonth)=0) "
+    strSQL = strSQL & "AND ((tblInvHistoryRpt.CompYear)=0)) OR "
+    strSQL = strSQL & "(((tblInvHistoryRpt.CompMonth)=0) AND ("
+    strSQL = strSQL & "(tblInvHistoryRpt.CompYear)=0));"
+       
+    dbs.Execute strSQL, dbSeeChanges
+    
+    dbs.Close
+    Set dbs = Nothing
+    
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    
+    
+    ' Added 2/28/02 by Tim Cook
+    ' Separate reports for GeoID or Client Services Rep
+    If Me.fraReport = 1 Then
+        stDocName = "rptInvoiceHistCompare"
+    Else
+        stDocName = "rptInvoiceHistCompare_GeoID"
+    End If
+    DoCmd.OpenReport stDocName, acPreview
+    
+    Me.Visible = False
+
+Exit_cmdInvHistReport_Click:
+    Exit Sub
+
+Err_cmdInvHistReport_Click:
+    DoCmd.Hourglass False
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdInvHistReport_Click
+    
+End Sub

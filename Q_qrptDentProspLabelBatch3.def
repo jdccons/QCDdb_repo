@@ -1,0 +1,40 @@
+Operation =4
+Option =8
+Where ="(((tbldentist.DENTmail)=On))"
+Begin InputTables
+    Name ="tbldentist"
+End
+Begin OutputColumns
+    Name ="tbldentist.DENTcomments"
+    Expression ="[DENTcomments] & IIf(IsNull([GRnotes]),\"\",\"       \") & Str$(Date()) & \": \""
+        " & [Forms]![fdlgDentProspLabelBatch].[Note]"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =800
+    Bottom =485
+    Left =-1
+    Top =-1
+    Right =797
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =38
+        Top =6
+        Right =257
+        Bottom =113
+        Top =35
+        Name ="tbldentist"
+        Name =""
+    End
+End

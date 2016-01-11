@@ -1,0 +1,39 @@
+Operation =5
+Option =8
+Where ="(((tblInvHdr.[TRANS NO])=[Forms]![frmInvGrp_Bexar]![TRANS NO]))"
+Begin InputTables
+    Name ="tblInvHdr"
+End
+Begin OutputColumns
+    Expression ="tblInvHdr.*"
+    Expression ="tblInvHdr.[TRANS NO]"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbBoolean "FailOnError" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =40
+    Top =22
+    Right =1002
+    Bottom =327
+    Left =-1
+    Top =-1
+    Right =955
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =771
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =113
+        Top =0
+        Name ="tblInvHdr"
+        Name =""
+    End
+End

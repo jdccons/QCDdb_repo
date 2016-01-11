@@ -1,0 +1,106 @@
+Operation =3
+Name ="tblEDI_App_Subscr"
+Option =0
+Begin InputTables
+    Name ="QCD_Subscriber_DISD"
+    Name ="vwRates"
+End
+Begin OutputColumns
+    Name ="SubSSN"
+    Expression ="QCD_Subscriber_DISD.SubSSN"
+    Name ="SubGroupID"
+    Expression ="QCD_Subscriber_DISD.SubGroupID"
+    Name ="PlanID"
+    Expression ="vwRates.PlanID"
+    Name ="CoverID"
+    Expression ="vwRates.CoverID"
+    Name ="RateID"
+    Expression ="vwRates.RateID"
+    Alias ="SubStatus"
+    Name ="SubStatus"
+    Expression ="\"GRSUB\""
+    Alias ="SubLUName"
+    Name ="SUB_LUname"
+    Expression ="[SubLast] & \", \" & [SubFirst] & [SubMI]"
+    Name ="SubFirstName"
+    Expression ="QCD_Subscriber_DISD.SubFirst"
+    Name ="SubMiddleName"
+    Expression ="QCD_Subscriber_DISD.SubMI"
+    Name ="SubLastName"
+    Expression ="QCD_Subscriber_DISD.SubLast"
+    Name ="SubStreet1"
+    Expression ="QCD_Subscriber_DISD.SubAddr"
+    Name ="SubStreet2"
+    Expression ="QCD_Subscriber_DISD.SubAddr2"
+    Name ="SubCity"
+    Expression ="QCD_Subscriber_DISD.SubCity"
+    Name ="SubState"
+    Expression ="QCD_Subscriber_DISD.SubState"
+    Name ="SubZip"
+    Expression ="QCD_Subscriber_DISD.SubZip"
+    Alias ="SubEffectiveDate"
+    Name ="SubEffDate"
+    Expression ="ConvertDate([SubEffDate])"
+    Alias ="SubDateOfBirth"
+    Name ="SUBdob"
+    Expression ="ConvertDate([SubDOB])"
+    Name ="SubNoDepent"
+    Expression ="QCD_Subscriber_DISD.SubNoDep"
+    Name ="SubGender"
+    Expression ="QCD_Subscriber_DISD.SubGender"
+    Alias ="SubAge"
+    Name ="SubAge"
+    Expression ="CalcAge(Left([SubDOB],2) & \"/\" & Mid([SubDOB],3,2) & \"/\" & Right([SubDOB],4)"
+        ")"
+End
+Begin Joins
+    LeftTable ="QCD_Subscriber_DISD"
+    RightTable ="vwRates"
+    Expression ="QCD_Subscriber_DISD.SubGroupID = vwRates.GroupID"
+    Flag =1
+    LeftTable ="vwRates"
+    RightTable ="QCD_Subscriber_DISD"
+    Expression ="vwRates.COVERcode = QCD_Subscriber_DISD.SubRate"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =2
+    Left =-4
+    Top =-23
+    Right =1280
+    Bottom =712
+    Left =-1
+    Top =-1
+    Right =1277
+    Bottom =321
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =9
+        Right =298
+        Bottom =296
+        Top =4
+        Name ="QCD_Subscriber_DISD"
+        Name =""
+    End
+    Begin
+        Left =427
+        Top =34
+        Right =629
+        Bottom =201
+        Top =0
+        Name ="vwRates"
+        Name =""
+    End
+End

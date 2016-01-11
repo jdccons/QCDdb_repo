@@ -1,0 +1,184 @@
+Version =20
+VersionRequired =20
+Checksum =-804508851
+Begin Form
+    AutoCenter = NotDefault
+    ScrollBars =2
+    Width =6315
+    ItemSuffix =117
+    Left =2535
+    Top =4740
+    Right =8985
+    Bottom =6420
+    RecSrcDt = Begin
+        0x0dd07cb9ba65e240
+    End
+    RecordSource ="qfrmGrpSubDep_Bexar"
+    PrtMip = Begin
+        0x000000000000000000000000000000000000000033180000f000000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    Begin
+        Begin FormHeader
+            Height =240
+            BackColor =12632256
+            Name ="FormHeader1"
+            Begin
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =2
+                    Left =30
+                    Width =1260
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text108"
+                    Caption ="Social Sec. # "
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =3120
+                    Width =1020
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text109"
+                    Caption ="First Name"
+                End
+                Begin Label
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =1245
+                    Width =975
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text110"
+                    Caption ="Last Name"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =5160
+                    Width =1035
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text111"
+                    Caption ="DOB"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =4710
+                    Width =435
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text115"
+                    Caption ="MI"
+                End
+            End
+        End
+        Begin Section
+            Height =240
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =15
+                    Width =1149
+                    Name ="DEPssn"
+                    ControlSource ="DEPssn"
+                    InputMask ="000\\-00\\-0000;;_"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =3105
+                    Width =1584
+                    TabIndex =2
+                    Name ="DEPfirstNAME"
+                    ControlSource ="DEPfirstNAME"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1200
+                    Width =1869
+                    TabIndex =1
+                    Name ="DEPlastNAME"
+                    ControlSource ="DEPlastNAME"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =5190
+                    Width =1104
+                    TabIndex =4
+                    Name ="DEPdob"
+                    ControlSource ="DEPdob"
+                    Format ="m/d/yyyy"
+                    BeforeUpdate ="[Event Procedure]"
+                    InputMask ="99/99/0000;0;_"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =255
+                    TextAlign =1
+                    Left =2223
+                    Width =864
+                    TabIndex =5
+                    BackColor =65408
+                    Name ="DEPsubID"
+                    ControlSource ="DEPsubID"
+                End
+                Begin TextBox
+                    SpecialEffect =2
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =4725
+                    Width =429
+                    TabIndex =3
+                    Name ="DEPmiddleNAME"
+                    ControlSource ="DEPmiddleNAME"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    TextAlign =1
+                    Left =1350
+                    Width =864
+                    TabIndex =6
+                    BackColor =65408
+                    Name ="SUBgroupID"
+                    ControlSource ="SUBgroupID"
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub DEPdob_BeforeUpdate(Cancel As Integer)
+    If ValidateDateFormat(Me.DEPdob) = False Then
+        MsgBox "Please correct the Date of Birth...it is not in the proper range." & vbCrLf & strMsg, vbCritical, "Validation Failed"
+        Cancel = True
+    End If
+End Sub

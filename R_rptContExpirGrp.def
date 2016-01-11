@@ -1,0 +1,376 @@
+Version =17
+VersionRequired =17
+Checksum =-173480811
+Begin Report
+    LayoutForPrint = NotDefault
+    DateGrouping =1
+    GridX =20
+    GridY =24
+    Width =10656
+    ItemSuffix =26
+    Left =1125
+    Top =270
+    Right =1125
+    Bottom =270
+    OrderBy ="tblGrp.GRagentID2"
+    RecSrcDt = Begin
+        0xf80a475fefd3e140
+    End
+    RecordSource ="qrptContExpirGrp"
+    Caption ="Group Contract Expiration Report"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    MenuBar ="ReportMenuBar"
+    PrtMip = Begin
+        0xd0020000d0020000d00200001c03000000000000a0290000c003000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x4850204c617365724a6574203500000000000000000000000000000000000000 ,
+        0x0004010494004000037700060100010040067903000001000f01580201000100 ,
+        0x5802040000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000009010000020000000000000000000000010040004d53554437034850 ,
+        0x204c617365724a6574203500000000000000000000000000000000000000e401 ,
+        0x000000000000250100000000040064000a000000
+    End
+    PrtDevNames = Begin
+        0x080011001f00010077696e73706f6f6c004850204c617365724a65742035005c ,
+        0x5c4e747365727665725c68706c6a350000000000000000000000000000000000
+    End
+    Begin
+        Begin Label
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin TextBox
+            OldBorderStyle =0
+            TextFontFamily =2
+            FontName ="Arial"
+        End
+        Begin BreakLevel
+            ControlSource ="GRcontEND"
+        End
+        Begin BreakLevel
+            ControlSource ="GROUPid"
+        End
+        Begin PageHeader
+            Height =2640
+            OnFormat ="[Event Procedure]"
+            Name ="PageHeader0"
+            Begin
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Top =600
+                    Width =10650
+                    Height =360
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Text12"
+                    Caption ="Group Contract Expiration Report"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =600
+                    Width =1080
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Field13"
+                    ControlSource ="=Now()"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =2
+                    TextFontFamily =18
+                    Top =240
+                    Width =10650
+                    Height =360
+                    FontSize =14
+                    FontWeight =700
+                    Name ="Text27"
+                    Caption ="QCD of America"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Top =2220
+                    Width =1155
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text5"
+                    Caption ="End Date "
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextFontFamily =18
+                    Left =1440
+                    Top =2220
+                    Width =2730
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    Name ="Text7"
+                    Caption ="Group ID - Name"
+                    FontName ="Times New Roman"
+                End
+                Begin Line
+                    Top =2520
+                    Width =10650
+                    Name ="Line10"
+                End
+                Begin Line
+                    Top =120
+                    Width =10650
+                    Name ="Line11"
+                End
+                Begin Line
+                    Width =10650
+                    Name ="Line12"
+                End
+                Begin Line
+                    Top =2160
+                    Width =10650
+                    Name ="Line13"
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Top =840
+                    Width =1080
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =1
+                    Name ="Field17"
+                    ControlSource ="=Now()"
+                    Format ="Short Time"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =3060
+                    Top =960
+                    Width =6615
+                    FontWeight =700
+                    TabIndex =2
+                    Name ="FromTo"
+                    ControlSource ="=\"For Contracts Ending From:  \" & Format([Forms]![fdlgPrtContExpirGrp]![FromDa"
+                        "te],\"m/d/yyyy\") & \" And Ending To:  \" & Format([Forms]![fdlgPrtContExpirGrp]"
+                        "![ToDate],\"m/d/yyyy\")"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =3915
+                    Top =1200
+                    Width =1125
+                    Height =239
+                    FontWeight =700
+                    Name ="Text23"
+                    Caption ="Sorted by:  "
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =5040
+                    Top =1200
+                    Width =3135
+                    Height =239
+                    FontWeight =700
+                    TabIndex =3
+                    Name ="SortedBy"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =960
+            Name ="Detail1"
+            Begin
+                Begin TextBox
+                    TextAlign =1
+                    TextFontFamily =18
+                    Width =1161
+                    FontSize =10
+                    Name ="GRcontEND"
+                    ControlSource ="GRcontEND"
+                    Format ="m/d/yyyy"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =1440
+                    Width =876
+                    FontSize =10
+                    TabIndex =1
+                    Name ="GROUPid"
+                    ControlSource ="GROUPid"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =2304
+                    Width =4176
+                    FontSize =10
+                    TabIndex =2
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =2304
+                    Top =240
+                    Width =4176
+                    FontSize =10
+                    TabIndex =3
+                    Name ="GRstreet1"
+                    ControlSource ="GRstreet1"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =2304
+                    Top =480
+                    Width =4176
+                    FontSize =10
+                    TabIndex =4
+                    Name ="Field5"
+                    ControlSource ="=Trim([GRcity] & \", \" & [GRstate] & \"  \" & [GRzip])"
+                    FontName ="Times New Roman"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =6480
+                    Width =1551
+                    FontSize =10
+                    TabIndex =5
+                    Name ="GRphone"
+                    ControlSource ="GRphone1"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =7200
+                    Top =480
+                    Width =3456
+                    Height =480
+                    FontSize =10
+                    TabIndex =6
+                    Name ="GRnotes"
+                    ControlSource ="GRnotes"
+                    FontName ="Times New Roman"
+                End
+                Begin Label
+                    Left =6624
+                    Top =480
+                    Width =564
+                    Height =240
+                    Name ="Text8"
+                    Caption ="Notes:"
+                End
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =9075
+                    Width =1551
+                    FontSize =10
+                    TabIndex =7
+                    Name ="Field20"
+                    ControlSource ="GRPgeoID"
+                    FontName ="Times New Roman"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                End
+            End
+        End
+        Begin PageFooter
+            Height =360
+            Name ="PageFooter2"
+            Begin
+                Begin TextBox
+                    TextFontFamily =18
+                    Left =8784
+                    Width =1872
+                    Height =360
+                    FontSize =10
+                    Name ="Field14"
+                    ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    FontName ="Times New Roman"
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+ Private Sub PageHeader0_Format(intCancel As Integer, intFormatCount As Integer)
+
+  On Error GoTo PROC_ERR
+    Dim SortOrder As String
+     
+    Select Case gintSortOrder
+    Case 1
+        Me![SortedBy] = "Contract Ending Date"
+    Case 2
+        Me![SortedBy] = "Geographical ID"
+    Case 3
+        Me![SortedBy] = "Group ID"
+    End Select
+
+    SortOrder = 0
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+Private Sub Report_Close()
+  On Error GoTo PROC_ERR
+    DoCmd.Close A_FORM, "fdlgPrtContExpirGrp"
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportGrp"
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+
+Private Sub Report_Open(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+    Dim SortOrder As String
+        
+    Select Case gintSortOrder
+    Case 1
+        Me.GroupLevel(0).ControlSource = "GRcontEND"
+    Case 2
+        Me.GroupLevel(0).ControlSource = "GRPgeoID"
+    Case 3
+        Me.GroupLevel(0).ControlSource = "GroupID"
+    End Select
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
