@@ -1,0 +1,2442 @@
+Version =20
+VersionRequired =20
+Checksum =396312088
+Begin Form
+    RecordSelectors = NotDefault
+    AutoCenter = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    GridX =15
+    GridY =15
+    Width =10560
+    ItemSuffix =228
+    Left =4200
+    Top =615
+    Right =14520
+    Bottom =7845
+    Tag ="BEXIN|4"
+    RecSrcDt = Begin
+        0x6ddb59e0ed7be340
+    End
+    RecordSource ="SELECT DISTINCTROW tblGrp.GRname, tblSubscr.SubSSN, tblSubscr.SubID, tblSubscr.S"
+        "ubStatus, tblSubscr.SubGroupID, tblSubscr.PltCustKey, tblSubscr.PlanID, tblSubsc"
+        "r.CoverID, tblSubscr.RateID, tblSubscr.SubCancelled, tblSubscr.SUB_LUname, tblSu"
+        "bscr.SubLastName, tblSubscr.SubFirstName, tblSubscr.SubMiddleName, tblSubscr.Sub"
+        "Street1, tblSubscr.SubStreet2, tblSubscr.SubCity, tblSubscr.SubState, tblSubscr."
+        "SubZip, tblSubscr.SubPhoneWork, tblSubscr.SubPhoneHome, tblSubscr.SUBdob, tblSub"
+        "scr.SubNoDepent, tblSubscr.SubGender, tblSubscr.SubAge, tblSubscr.SubMaritalStat"
+        "us, tblSubscr.SubEffDate, tblSubscr.SubExpDate, tblSubscr.SubClassKey, tblSubscr"
+        ".PreexistingDate, tblSubscr.SubCardPrt, tblSubscr.SubCardPrtDte, tblSubscr.SubNo"
+        "tes, tblSubscr.SUBmissing, tblSubscr.SUBflyerPRTdte FROM tblGrp INNER JOIN tblSu"
+        "bscr ON tblGrp.GROUPid = tblSubscr.SubGroupID ORDER BY tblSubscr.SubLastName;"
+    Caption ="Group Subscriber Information"
+    OnCurrent ="[Event Procedure]"
+    BeforeInsert ="[Event Procedure]"
+    BeforeUpdate ="[Event Procedure]"
+    AfterUpdate ="[Event Procedure]"
+    MenuBar ="GrpSubscrMenuBar"
+    PrtMip = Begin
+        0x4002000020010000400200003701000000000000a0290000a01a000001000000 ,
+        0x010000006801000000000000a10700000100000000000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010418009c00b80343ff80050200010000000000640001000f00580201000100 ,
+        0x5802030000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000001000000 ,
+        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
+        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
+        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
+        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
+        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
+        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
+        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bd4cbd46bd4a9b ,
+        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
+        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
+        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
+        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
+        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
+        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
+        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
+        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7ab562800000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800260038000100000000000000000000000000000000000000000000000000 ,
+        0x00000000000000000000000000000000000000000000000048504c617365724a ,
+        0x65743232303000
+    End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+        End
+        Begin CommandButton
+            TextFontFamily =2
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+        End
+        Begin ComboBox
+            SpecialEffect =2
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =12632256
+            Name ="FormHeader1"
+        End
+        Begin Section
+            CanGrow = NotDefault
+            SpecialEffect =1
+            Height =7230
+            BackColor =12632256
+            Name ="Detail0"
+            Begin
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    AccessKey =70
+                    Left =105
+                    Top =6375
+                    Width =1020
+                    Height =245
+                    TabIndex =63
+                    Name ="FindSUBID"
+                    AfterUpdate ="=FindSubID([FindSubID],\"SubID\")"
+                    FontName ="Helv"
+                    InputMask ="####\\-####"
+                    OnGotFocus ="[Event Procedure]"
+                    OnClick ="[Event Procedure]"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =255
+                    AccessKey =70
+                    Left =105
+                    Top =6375
+                    Width =1020
+                    Height =245
+                    TabIndex =64
+                    Name ="FindSSN"
+                    AfterUpdate ="=FindSSN([FindSSN],\"SUBssn\")"
+                    FontName ="Helv"
+                    InputMask ="000\\-00\\-0000;0;_"
+                    OnGotFocus ="[Event Procedure]"
+                    OnClick ="[Event Procedure]"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1629
+                    Top =195
+                    Width =1584
+                    Name ="SUBssn"
+                    ControlSource ="SUBssn"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    InputMask ="000\\-00\\-0000;;_"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =195
+                    Top =195
+                    Width =1380
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text4"
+                    Caption ="Social Sec. #: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =570
+                    Top =765
+                    Width =1005
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text6"
+                    Caption ="Address: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =495
+                    Top =1035
+                    Width =1080
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text7"
+                    Caption ="Address 2: "
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =330
+                    Top =1305
+                    Width =1245
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text8"
+                    Caption ="City/ST/Zip: "
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =3639
+                    Top =480
+                    Width =1704
+                    TabIndex =3
+                    Name ="SUBfirstNAME"
+                    ControlSource ="SUBfirstNAME"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1629
+                    Top =765
+                    Width =3714
+                    TabIndex =5
+                    Name ="SUBstreet1"
+                    ControlSource ="SUBstreet1"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1629
+                    Top =1035
+                    Width =3713
+                    TabIndex =6
+                    Name ="SUBstreet2"
+                    ControlSource ="SUBstreet2"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1629
+                    Top =1305
+                    Width =1983
+                    TabIndex =7
+                    Name ="SUBcity"
+                    ControlSource ="SUBcity"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =3642
+                    Top =1305
+                    Width =396
+                    TabIndex =8
+                    Name ="SUBstate"
+                    ControlSource ="SUBstate"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    DecimalPlaces =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =4068
+                    Top =1305
+                    Width =1272
+                    TabIndex =9
+                    Name ="SUBzip"
+                    ControlSource ="SUBzip"
+                    FontName ="MS Sans Serif"
+                    InputMask ="00000\\-9999;;_"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Top =1575
+                    Width =1575
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text17"
+                    Caption ="Phone - Wk/Hm: "
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1629
+                    Top =1575
+                    Width =1830
+                    Height =255
+                    TabIndex =10
+                    Name ="SUBphoneWORK"
+                    ControlSource ="SUBphoneWORK"
+                    FontName ="MS Sans Serif"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1635
+                    Top =480
+                    Width =1974
+                    TabIndex =2
+                    Name ="SUBlastNAME"
+                    ControlSource ="SUBlastNAME"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =3495
+                    Top =1575
+                    Width =1845
+                    Height =255
+                    TabIndex =11
+                    Name ="SUBphoneHOME"
+                    ControlSource ="SUBphoneHOME"
+                    FontName ="MS Sans Serif"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =7935
+                    Top =2256
+                    Width =1350
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text64"
+                    Caption ="Card Printed: "
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =9294
+                    Top =2256
+                    Width =1124
+                    TabIndex =22
+                    Name ="SUBcardPRT"
+                    ControlSource ="SUBcardPRT"
+                    Format ="Yes/No"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =288
+                    Top =2496
+                    Width =705
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text67"
+                    Caption ="Notes: "
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =1056
+                    Top =2496
+                    Width =4704
+                    Height =960
+                    TabIndex =28
+                    Name ="SUBnotes"
+                    ControlSource ="SUBnotes"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =270
+                    Top =1890
+                    Width =1311
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text85"
+                    Caption ="Date of Birth: "
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1635
+                    Top =1890
+                    Width =1047
+                    TabIndex =12
+                    Name ="SUBdob"
+                    ControlSource ="SUBdob"
+                    Format ="m/d/yyyy"
+                    BeforeUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    InputMask ="99/99/0000;0;_"
+                    OnClick ="[Event Procedure]"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =95
+                    TextAlign =1
+                    Left =5355
+                    Top =480
+                    Width =237
+                    TabIndex =4
+                    Name ="SUBmiddleNAME"
+                    ControlSource ="SUBmiddleNAME"
+                    AfterUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =5895
+                    Top =1080
+                    Width =975
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblCoverage"
+                    Caption ="Coverage: "
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =9294
+                    Top =1968
+                    Width =1124
+                    TabIndex =21
+                    Name ="SUBcardPRTdte"
+                    ControlSource ="SUBcardPRTdte"
+                    Format ="m/d/yyyy"
+                    FontName ="MS Sans Serif"
+                    InputMask ="99/99/0000;0;_"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =7920
+                    Top =1968
+                    Width =1365
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text112"
+                    Caption ="Date Printed: "
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =5895
+                    Top =480
+                    Width =975
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblGroupID"
+                    Caption ="Group ID: "
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =6894
+                    Top =480
+                    Width =1124
+                    Height =255
+                    TabIndex =15
+                    Name ="SUBgroupID"
+                    ControlSource ="SUBgroupID"
+                    DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Rectangle
+                    SpecialEffect =1
+                    OverlapFlags =93
+                    Top =3555
+                    Width =8640
+                    Height =2505
+                    BackColor =12632256
+                    Name ="Box134"
+                End
+                Begin Subform
+                    OverlapFlags =215
+                    Left =177
+                    Top =3960
+                    Width =8373
+                    Height =1965
+                    TabIndex =29
+                    Name ="fsubGrpSubscrDep"
+                    SourceObject ="Form.fsubGrpSubscrDep"
+                    LinkChildFields ="DEPsubID"
+                    LinkMasterFields ="SUBssn"
+                    OnExit ="[Event Procedure]"
+                End
+                Begin Label
+                    SpecialEffect =1
+                    BackStyle =1
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =108
+                    Top =3585
+                    Width =1695
+                    Height =285
+                    FontSize =10
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text123"
+                    Caption ="  Dependents:"
+                End
+                Begin Rectangle
+                    SpecialEffect =1
+                    BackStyle =0
+                    OverlapFlags =255
+                    Width =5760
+                    Height =2355
+                    Name ="Box124"
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =255
+                    Top =465
+                    Width =1320
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text128"
+                    Caption ="Last/First/MI: "
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =9294
+                    Top =1380
+                    Width =1124
+                    Height =255
+                    TabIndex =19
+                    Name ="SUBnoDEPENT"
+                    ControlSource ="SUBnoDEPENT"
+                    ValidationRule ="[SUBnoDEPENT]=DependentCheck([SUBssn])"
+                    ValidationText ="The Number of Dependents entered MUST equal the number of dependents listed in t"
+                        "he Dependents list.  You must either 1) change the number you entered  OR  2) ch"
+                        "ange the list of dependents below."
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6105
+                    Top =1380
+                    Width =765
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblRate"
+                    Caption ="Rate: "
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =8739
+                    Top =4512
+                    Width =1740
+                    Height =255
+                    TabIndex =59
+                    BackColor =65535
+                    Name ="SUBcoverage"
+                    ControlSource ="SUBcoverage"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =215
+                    Left =5760
+                    Top =3648
+                    Width =1725
+                    Height =255
+                    TabIndex =60
+                    BackColor =65535
+                    Name ="tblSUBSCR.SUBstatus"
+                    ControlSource ="tblSubscr.SUBstatus"
+                    DefaultValue ="\"GRSUB\""
+                    FontName ="MS Sans Serif"
+                    EventProcPrefix ="tblSUBSCR_SUBstatus"
+                    AsianLineBreak =0
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2067
+                    Top =6180
+                    Width =312
+                    TabIndex =31
+                    Name ="B"
+                    Caption ="B"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2379
+                    Top =6180
+                    Width =327
+                    TabIndex =32
+                    Name ="C"
+                    Caption ="C"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2706
+                    Top =6180
+                    Width =327
+                    TabIndex =33
+                    Name ="D"
+                    Caption ="D"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3033
+                    Top =6180
+                    Width =297
+                    TabIndex =34
+                    Name ="E"
+                    Caption ="E"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3330
+                    Top =6180
+                    Width =297
+                    TabIndex =35
+                    Name ="F"
+                    Caption ="F"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3627
+                    Top =6180
+                    Width =327
+                    TabIndex =36
+                    Name ="G"
+                    Caption ="G"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =3954
+                    Top =6180
+                    Width =327
+                    TabIndex =37
+                    Name ="H"
+                    Caption ="H"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4281
+                    Top =6180
+                    Width =342
+                    TabIndex =38
+                    Name ="I"
+                    Caption ="I"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =4950
+                    Top =6180
+                    Width =327
+                    TabIndex =40
+                    Name ="K"
+                    Caption ="K"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =5277
+                    Top =6180
+                    Width =327
+                    TabIndex =41
+                    Name ="L"
+                    Caption ="L"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =5604
+                    Top =6180
+                    Width =327
+                    TabIndex =42
+                    Name ="M"
+                    Caption ="M"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =5931
+                    Top =6180
+                    Width =327
+                    TabIndex =43
+                    Name ="N"
+                    Caption ="N"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =6258
+                    Top =6180
+                    Width =327
+                    TabIndex =44
+                    Name ="O"
+                    Caption ="O"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =6585
+                    Top =6180
+                    Width =327
+                    TabIndex =45
+                    Name ="P"
+                    Caption ="P"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =6912
+                    Top =6180
+                    Width =312
+                    TabIndex =46
+                    Name ="Q"
+                    Caption ="Q"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =7224
+                    Top =6180
+                    Width =342
+                    TabIndex =47
+                    Name ="R"
+                    Caption ="R"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =7566
+                    Top =6180
+                    Width =312
+                    TabIndex =48
+                    Name ="S"
+                    Caption ="S"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =7875
+                    Top =6180
+                    Width =312
+                    TabIndex =49
+                    Name ="T"
+                    Caption ="T"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =8190
+                    Top =6180
+                    Width =327
+                    TabIndex =50
+                    Name ="U"
+                    Caption ="U"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =8517
+                    Top =6180
+                    Width =327
+                    TabIndex =51
+                    Name ="V"
+                    Caption ="V"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =8850
+                    Top =6180
+                    Width =387
+                    TabIndex =52
+                    Name ="W"
+                    Caption ="W"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =9231
+                    Top =6180
+                    Width =312
+                    TabIndex =53
+                    Name ="X"
+                    Caption ="X"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =9540
+                    Top =6180
+                    Width =342
+                    TabIndex =54
+                    Name ="Y"
+                    Caption ="Y"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =9885
+                    Top =6180
+                    Width =327
+                    TabIndex =55
+                    Name ="Z"
+                    Caption ="Z"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    SpecialEffect =0
+                    OverlapFlags =215
+                    AccessKey =78
+                    ColumnCount =2
+                    ListRows =5
+                    Left =5091
+                    Top =6600
+                    Width =5076
+                    TabIndex =56
+                    BoundColumn =1
+                    BackColor =12632256
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    Name ="SUBSCRPickList"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tblSubscr.SUB_LUname AS Subscr_Name, tblSubscr.SUBssn AS SS_N"
+                        "o, tblGrp.GROUPid FROM tblGrp LEFT JOIN tblSubscr ON tblGrp.GROUPid = tblSubscr."
+                        "SUBgroupID WHERE (((tblSubscr.SUB_LUname) Like [Forms]![frmGrpSubscr]![AlphaCont"
+                        "rol] & \"*\") AND ((tblGrp.GROUPid)=[Forms]![frmGrp].[GROUPid]) AND ((tblSubscr."
+                        "SUBstatus)=\"GRSUB\")) ORDER BY tblSubscr.SUB_LUname;"
+                    ColumnWidths ="14;0"
+                    StatusBarText ="Enter SUBSCR (last) name or click on arrow to view list."
+                    AfterUpdate ="=FindID([Forms]![frmGrpSubscr],[SUBSCRPickList],\"[SUBssn]\",\"SUBssn\")"
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SetLabelColor([],0)"
+                    BaseInfo ="\"SELECT DISTINCTROW tblSubscr.SUB_LUname AS Subscr_Name, tblSubscr.SUBssn AS SS"
+                        "_No, tblGrp.GROUPid FROM tblGrp LEFT JOIN tblSubscr ON tblGrp.GROUPid = tblSubsc"
+                        "r.SUBgroupID WHERE (((tblSubscr.SUB_LUname) Like [Forms]![frmGrpSubscr]![AlphaCo"
+                        "ntrol] & \"\"*\"\") \";\"tblGrp\";\"tblSubscr\";\"\""
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextAlign =3
+                            Left =3345
+                            Top =6600
+                            Width =1755
+                            Height =240
+                            FontWeight =700
+                            BorderColor =16777215
+                            Name ="lblSUBSCRPickList"
+                            Caption ="Subscriber &Name:"
+                        End
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    AccessKey =70
+                    Left =2625
+                    Top =6585
+                    Width =705
+                    Height =245
+                    TabIndex =57
+                    BackColor =12632256
+                    Name ="AlphaControl"
+                    StatusBarText ="Enter a letter or letters to filter on (e.g. \"smith\") and TAB out of field."
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SearchBtn(\"SUBSCRPickList\")"
+                    DefaultValue ="\"*\""
+                    FontName ="Helv"
+                    AsianLineBreak =0
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextFontFamily =0
+                            Left =1755
+                            Top =6585
+                            Width =840
+                            Height =240
+                            FontWeight =700
+                            ForeColor =12582912
+                            Name ="lblAlphaControl"
+                            Caption ="&Filter on:"
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1755
+                    Top =6180
+                    Width =312
+                    TabIndex =30
+                    Name ="A"
+                    Caption ="A"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =4620
+                    Top =6180
+                    Width =342
+                    TabIndex =39
+                    Name ="J"
+                    Caption ="J"
+                    OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6894
+                    Top =1380
+                    Width =1124
+                    Height =255
+                    TabIndex =18
+                    Name ="SUBrate"
+                    Format ="$#,##0.00;($#,##0.00)"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =8295
+                    Top =1380
+                    Width =990
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text155"
+                    Caption ="No. Dep.: "
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =7995
+                    Top =2535
+                    Width =1290
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text159"
+                    Caption ="Missing Info: "
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =9294
+                    Top =2535
+                    Width =1124
+                    TabIndex =23
+                    Name ="SUBmissing"
+                    ControlSource ="SUBmissing"
+                    Format ="Yes/No"
+                    StatusBarText ="This is a \"YES\" or \"NO\" field."
+                    DefaultValue ="=\"no\""
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    ColumnCount =2
+                    ListWidth =2160
+                    Left =6894
+                    Top =1080
+                    Width =2220
+                    Height =255
+                    ColumnWidth =1995
+                    TabIndex =17
+                    BoundColumn =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    Name ="cboSUBcoverage"
+                    ControlSource ="CoverID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCT tblCoverage.COVERdescr, tblCoverage.CoverID FROM tblRates INNER "
+                        "JOIN tblCoverage ON tblRates.CoverID = tblCoverage.CoverID WHERE (((tblRates.Gro"
+                        "upID)=[Forms]![frmGrpSubscr]![SUBgroupID])) ORDER BY tblCoverage.CoverID;"
+                    ColumnWidths ="2160;0"
+                    ValidationRule ="Is Not Null"
+                    AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="\"I\""
+                    BaseInfo ="\"SELECT DISTINCT tblCoverage.COVERdescr, tblCoverage.CoverID FROM tblRates INNE"
+                        "R JOIN tblCoverage ON tblRates.CoverID = tblCoverage.CoverID WHERE (((tblRates.G"
+                        "roupID)=[Forms]![frmGrpSubscr]![SUBgroupID])) ORDER BY tblCoverage.CoverID;\";\""
+                        "tblRates\";\"tblCoverage\";\"\""
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =8739
+                    Top =4224
+                    Width =1770
+                    Height =255
+                    TabIndex =58
+                    BackColor =65535
+                    Name ="SUB_LUname"
+                    ControlSource ="SUB_LUname"
+                    DefaultValue ="\"GRSUB\""
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =8355
+                    Top =1680
+                    Width =930
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text169"
+                    Caption ="Eff Date: "
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    TextAlign =1
+                    Left =9294
+                    Top =1680
+                    Width =1124
+                    Height =255
+                    TabIndex =20
+                    Name ="SUBeffDATE"
+                    ControlSource ="SUBeffDATE"
+                    Format ="m/d/yyyy"
+                    ValidationRule ="Is Not Null"
+                    ValidationText ="You must enter a Subscriber Effective date before continuing."
+                    BeforeUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    InputMask ="99/99/0000;0;_"
+                    OnClick ="[Event Procedure]"
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =6894
+                    Top =165
+                    Width =3569
+                    Height =255
+                    TabIndex =14
+                    Name ="GRname"
+                    ControlSource ="GRname"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6375
+                    Top =2496
+                    Width =705
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblLOA"
+                    Caption ="LOA: "
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6240
+                    Top =2787
+                    Width =840
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblCOBRA"
+                    Caption ="COBRA: "
+                End
+                Begin CheckBox
+                    OverlapFlags =85
+                    Left =7110
+                    Top =2517
+                    Width =210
+                    TabIndex =26
+                    Name ="chkLOA"
+                    ControlSource ="SUBLOA"
+                End
+                Begin CheckBox
+                    OverlapFlags =85
+                    Left =7125
+                    Top =2817
+                    Width =165
+                    Height =225
+                    TabIndex =27
+                    Name ="chkCOBRA"
+                    ControlSource ="SUBCOBRA"
+                End
+                Begin Label
+                    Visible = NotDefault
+                    BackStyle =1
+                    OldBorderStyle =1
+                    OverlapFlags =215
+                    Left =4032
+                    Top =3648
+                    Width =1635
+                    Height =255
+                    BackColor =65535
+                    Name ="lbltblSubscr.SUBstatus"
+                    Caption ="tblSubscr.SUBstatus"
+                    EventProcPrefix ="lbltblSubscr_SUBstatus"
+                End
+                Begin TextBox
+                    Enabled = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =9294
+                    Top =2805
+                    Width =1124
+                    TabIndex =24
+                    Name ="txtFlyer"
+                    ControlSource ="=IIf(IsNull([SUBflyerPRTdte]),\"\",\"Y \" & Format([SUBflyerPRTdte],\"m/d/yy\"))"
+                    Format ="m/d/yyyy"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =8010
+                    Top =2805
+                    Width =1275
+                    Height =255
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label189"
+                    Caption ="Flyer Printed: "
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =5955
+                    Top =165
+                    Width =915
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="lblGroup"
+                    Caption ="Group: "
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =9294
+                    Top =3105
+                    Width =1124
+                    TabIndex =25
+                    Name ="Preexisting Date"
+                    ControlSource ="PreexistingDate"
+                    Format ="Short Date"
+                    BeforeUpdate ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    InputMask ="99/99/0000;0;_"
+                    OnClick ="[Event Procedure]"
+                    EventProcPrefix ="Preexisting_Date"
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =7395
+                    Top =3090
+                    Width =1890
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label210"
+                    Caption ="Prior Coverage Date:"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    Left =9027
+                    Top =3648
+                    Width =1152
+                    Height =255
+                    TabIndex =61
+                    BackColor =65535
+                    Name ="GroupType"
+                    FontName ="MS Sans Serif"
+                    AsianLineBreak =0
+                    Begin
+                        Begin Label
+                            Visible = NotDefault
+                            BackStyle =1
+                            OldBorderStyle =1
+                            OverlapFlags =215
+                            Left =7872
+                            Top =3648
+                            Width =1065
+                            Height =255
+                            BackColor =65535
+                            Name ="Label212"
+                            Caption ="Group Type:"
+                        End
+                    End
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OverlapFlags =247
+                    ListWidth =1440
+                    Left =4560
+                    Top =1890
+                    Width =579
+                    Height =288
+                    TabIndex =13
+                    Name ="SUBgender"
+                    ControlSource ="SUBgender"
+                    RowSourceType ="Value List"
+                    RowSource ="\"M\";\"F\""
+                    ColumnWidths ="1440"
+                    Begin
+                        Begin Label
+                            OverlapFlags =247
+                            Left =3795
+                            Top =1890
+                            Width =735
+                            Height =240
+                            FontWeight =700
+                            Name ="Gender_Label"
+                            Caption ="Gender: "
+                        End
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =4545
+                    Top =195
+                    Width =930
+                    TabIndex =1
+                    BackColor =14079702
+                    Name ="SubID"
+                    ControlSource ="SubID"
+                    StatusBarText ="Subscriber ID"
+                    FontName ="MS Sans Serif"
+                    InputMask ="####\\-####"
+                    AsianLineBreak =0
+                    Begin
+                        Begin Label
+                            OverlapFlags =247
+                            Left =3270
+                            Top =195
+                            Width =1200
+                            Height =240
+                            FontWeight =700
+                            Name ="Label215"
+                            Caption ="Subscriber ID"
+                        End
+                    End
+                End
+                Begin OptionGroup
+                    OverlapFlags =255
+                    Left =30
+                    Top =6120
+                    Width =1580
+                    Height =913
+                    TabIndex =62
+                    Name ="fraCriteria"
+                    AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="1"
+                    Begin
+                        Begin OptionButton
+                            OverlapFlags =119
+                            Left =750
+                            Top =6748
+                            OptionValue =2
+                            Name ="Option171"
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =980
+                                    Top =6720
+                                    Width =570
+                                    Height =240
+                                    Name ="Label173"
+                                    Caption ="Sub ID"
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =119
+                            Left =75
+                            Top =6763
+                            OptionValue =1
+                            Name ="Option169"
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =305
+                                    Top =6735
+                                    Width =405
+                                    Height =240
+                                    Name ="Label170"
+                                    Caption ="SSN"
+                                End
+                            End
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =247
+                    TextAlign =1
+                    Left =75
+                    Top =6135
+                    Width =990
+                    Height =225
+                    FontWeight =700
+                    BorderColor =16777215
+                    Name ="Label172"
+                    Caption ="Search"
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =9318
+                    Top =480
+                    Width =734
+                    Height =255
+                    TabIndex =65
+                    BackColor =10092543
+                    Name ="RateID"
+                    ControlSource ="RateID"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x5e284597a28e0840aeebd3e52e3b1465
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =9312
+                    Top =1056
+                    Width =734
+                    Height =255
+                    TabIndex =66
+                    BackColor =10092543
+                    Name ="CoverID"
+                    ControlSource ="CoverID"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x5a74fa862d032640bd92089cfbefbe96
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6255
+                    Top =780
+                    Width =615
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label220"
+                    Caption ="Plan: "
+                    GUID = Begin
+                        0x6aa5566e03866c4d9af2493383445dc0
+                    End
+                End
+                Begin ComboBox
+                    OverlapFlags =85
+                    TextAlign =1
+                    IMESentenceMode =3
+                    ColumnCount =2
+                    ListRows =5
+                    Left =6900
+                    Top =795
+                    Width =1439
+                    TabIndex =16
+                    BoundColumn =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    GUID = Begin
+                        0x44865444e5f8b143baa6ecf7cc26e4fe
+                    End
+                    Name ="cboPlan"
+                    ControlSource ="PlanID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCT tblPlans.PlanDesc, tblPlans.PlanID FROM tblPlans INNER JOIN tblR"
+                        "ates ON tblPlans.PlanID = tblRates.PlanID WHERE (((tblRates.GroupID)=[Forms]![fr"
+                        "mGrpSubscr]![SUBgroupID])) ORDER BY tblPlans.PlanID;"
+                    ColumnWidths ="1440;0"
+                    BaseInfo ="\"SELECT DISTINCT tblPlans.PlanDesc, tblPlans.PlanID FROM tblPlans INNER JOIN tb"
+                        "lRates ON tblPlans.PlanID = tblRates.PlanID WHERE (((tblRates.GroupID)=[Forms]!["
+                        "frmGrpSubscr]![SUBgroupID])) ORDER BY tblPlans.PlanID;\";\"tblPlans\";\"tblRates"
+                        "\";\"\""
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =9315
+                    Top =765
+                    Width =734
+                    Height =255
+                    TabIndex =67
+                    BackColor =10092543
+                    Name ="PlanID"
+                    ControlSource ="PlanID"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xee32516f1300a84693c3cc6302deb888
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =2784
+                    Top =1890
+                    Width =518
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label226"
+                    Caption ="Age: "
+                    GUID = Begin
+                        0x196d43453e722d4bbae65a6bfb418ae6
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =3333
+                    Top =1890
+                    Width =360
+                    Height =255
+                    TabIndex =68
+                    Name ="Text227"
+                    ControlSource ="SubAge"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x12f4be777ea291489c08e493650dc162
+                    End
+                    AsianLineBreak =0
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =12632256
+            Name ="FormFooter2"
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database   'Use database order for string comparisons
+Option Explicit
+
+Const Indiv = 1
+Const IndivPlusOne = 2
+Const IndivPlusChild = 3
+Const IndivPlusFamily = 4
+
+Const FourTier = 4
+Const ThreeTier = 3
+Dim mstrSSN As String
+Public Function ValidateDepsWithPlan(strSSN As String, intCntOfCoverages As Integer) As Boolean
+    ' Comments  :
+    ' Parameters: strSSN -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim Subscr As clsSubscr
+    Dim intDepCnt As Integer
+    Dim intSpouseCnt As Integer
+    Dim intOtherCnt As Integer
+    
+    'get key information on the subscriber
+    Set Subscr = New clsSubscr
+    'load SSN in Subscr object
+    Subscr.SSN = strSSN
+    
+    'get data about subscriber from Subscr class
+    intDepCnt = Subscr.DepCnt
+    intSpouseCnt = Subscr.SpouseCnt
+    intOtherCnt = Subscr.OtherCnt
+        
+    'check to see that the number of dependents is consistent with the plan type
+    
+    If intCntOfCoverages = 4 Then
+        'four tier plan
+        Select Case Me.cboSUBcoverage
+            
+            Case Indiv
+                If intDepCnt <> 0 Then
+                    MsgBox "You have selected Individual Only coverage " & vbCrLf & _
+                    "and you have also created dependents. " & vbCrLf & vbCrLf & _
+                    "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = False
+                End If
+            Case IndivPlusOne
+                If intDepCnt > 1 Or _
+                    intDepCnt = 1 And intSpouseCnt = 0 And intOtherCnt <> 1 Or _
+                    intDepCnt = 1 And intSpouseCnt <> 1 And intOtherCnt = 0 Then
+                    MsgBox "You have selected Individual Plus One coverage and " & vbCrLf & _
+                    "you have either no dependents or more than one dependent. " & vbCrLf & _
+                    "Or you may have one child and no spouse or 'other relationship'. " & vbCrLf & vbCrLf & _
+                    "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = False
+                End If
+            Case IndivPlusChild
+                If intDepCnt = 0 Or _
+                    intDepCnt > 0 And intSpouseCnt <> 0 Or _
+                    intDepCnt > 0 And intOtherCnt <> 0 Then
+                    MsgBox "You have selected Individual Plus Child(ren) coverage and " & vbCrLf & _
+                        "you have either no dependents or you have a spouse or other. " & vbCrLf & vbCrLf & _
+                        "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = False
+                End If
+            Case IndivPlusFamily
+                If intDepCnt = 0 Or _
+                    intDepCnt > 1 And intSpouseCnt = 0 And intOtherCnt <> 1 Or _
+                    intDepCnt > 1 And intSpouseCnt <> 1 And intOtherCnt = 0 Then
+                    MsgBox "You have selected Individual Plus Family coverage and " & vbCrLf & _
+                        "you either have no dependents or you don't have a spouse " & vbCrLf & _
+                        "or an other. " & vbCrLf & vbCrLf & _
+                        "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = False
+                End If
+            
+            
+        End Select
+        ValidateDepsWithPlan = True
+            
+    Else
+        'if the plan is not four tier then validate the dependents with the plans
+         Select Case Me.cboSUBcoverage
+            Case Indiv
+                If intDepCnt <> 0 Then
+                    MsgBox "The number of dependents and the plan type don't match."
+                    ValidateDepsWithPlan = False
+                End If
+            Case IndivPlusOne
+                If intDepCnt <> 1 Then
+                    MsgBox "The number of dependents and the plan type don't match."
+                    ValidateDepsWithPlan = False
+                End If
+            Case IndivPlusFamily
+                If intDepCnt < 2 Then
+                    MsgBox "The number of dependents and the plan type don't match."
+                    ValidateDepsWithPlan = False
+                End If
+        End Select
+        ValidateDepsWithPlan = True
+        
+    End If ' is four tier or not
+    
+    Set Subscr = Nothing
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    ValidateDepsWithPlan = False
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+End Function
+Public Function PrintCard() As Boolean
+    ' Comments  :
+    ' Parameters:  -
+    ' Returns   : Boolean -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Call PrintMemberCard
+    
+    PrintCard = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    PrintCard = False
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+    
+End Function
+Public Sub PrintMemberCard()
+    ' Comments  :
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim strSQL
+    Dim strSSN As String
+    
+    If IsNull(Forms![frmGrpSubscr]![SubEffDate]) Then
+        MsgBox "The Effective Date on Subscriber Membership Cards cannot be blank." + Chr$(13) + "You must fill in this Subscriber's Effective Date before continuing.", 16, "MISSING Subscriber EFFECTIVE DATE"
+    Else
+        ' Save Record prior to printing card in case info. has been changed
+        SendKeys "+{ENTER}"
+        
+        ' Print Member Card
+        strSSN = Me![SUBssn]
+        DoCmd.SetWarnings False
+        
+        'need to update tmpEDI_rpt
+         ExecuteSQL "DELETE FROM tmpEDI_rpt"
+            
+         strSQL = "INSERT INTO tmpEDI_Rpt ( SUBssn , SUBfirstNAME , " & _
+                        "SUBlastNAME , SUBStreet , SUBcity , SUBstate , " & _
+                        "SUBzip , GroupID ) " & _
+                        "SELECT tblSubscr.SubSSN , tblSubscr.SubFirstName ," & _
+                        " tblSubscr.SubLastName , [SubStreet1] + ' ' + " & _
+                        "[SubStreet2] AS Street , tblSubscr.SubCity , " & _
+                        "tblSubscr.SubState , tblSubscr.SubZip , tblSubscr.SubGroupID " & _
+                        "FROM tblSubscr " & _
+                        "WHERE (((tblSubscr.SubSSN)='" & strSSN & "'))"
+        ExecuteSQL strSQL
+               
+        DoCmd.OpenReport "rptCardMemGrp", , , "[SUBssn] = '" & strSSN & "'"
+               
+        'mark the subscriber record as card printed with date
+        Forms![frmGrpSubscr]![SUBcardPRT] = 1
+        Forms![frmGrpSubscr]![SUBcardPRTdte] = date
+               
+        'need to update tmpEDI_rpt
+        ExecuteSQL "DELETE FROM tmpEDI_rpt"
+        
+        DoCmd.SetWarnings True
+        MsgBox "Cards sent to the printer!", vbExclamation, "Cards Printed"
+    End If
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+
+End Sub
+Function DeleteSubscr()
+    ' Comments  :
+    ' Parameters:  -
+    ' Returns   :  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+        
+    If MsgBox("Delete Record?", vbYesNo + vbDefaultButton2, "Confirm") = vbYes Then
+        'The next line suppresses Access confirmation messages
+        DoCmd.SetWarnings False
+        DoCmd.RunCommand acCmdDeleteRecord
+        'Turn the Warnings back on
+        DoCmd.SetWarnings True
+    End If
+
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+End Function
+Private Sub Form_BeforeUpdate(intCancel As Integer)
+
+On Error GoTo Err_Form_BeforeUpdate
+    
+    Dim strSSN As String
+    Dim strGroupID As String
+    Dim intPlanID As String
+    Dim intCntOfCoverages As Integer
+        
+    If fDelete = True Then
+        intCancel = True
+        GoTo Exit_Form_BeforeUpdate
+    End If
+    
+    With Me
+        strGroupID = .SubGroupID
+    
+        If strGroupID <> "ALDNE" Or strGroupID <> "NSISD" Or strGroupID <> "AMSTR" Then
+        
+            'Check to see if the user has changed the subscriber's SSN (Primary Key)
+            'If the SSN has been changed, then the foreign key on the dependents'
+            'table must be updated.  Must allow database cascade update to run freely.
+            strSSN = Nz(.SUBssn)
+            If strSSN = mstrSSN Then
+            
+                'check to make sure the dob for the subscriber has been populate
+                'only if the group type is All American
+                If .OpenArgs = 4 Then ' all american ?
+                    If IsNull(.SUBdob) Or .SUBdob = "" Then
+                        MsgBox "You must populate the DOB field."
+                        intCancel = True
+                        .SUBdob.SetFocus
+                        GoTo Exit_Form_BeforeUpdate
+                    End If
+                End If
+                
+                'check to make sure the gender for the subscriber has been populated
+                'only if the group type is All American
+                If .OpenArgs = 4 Then ' all american ?
+                    If IsNull(.SubGender) Or .SubGender = "" Then
+                        MsgBox "You must populate the gender field."
+                        intCancel = True
+                        .SubGender.SetFocus
+                        GoTo Exit_Form_BeforeUpdate
+                    End If
+                End If
+                
+                'check to see if plan has been selected
+                If .OpenArgs = 4 Then ' all american ?
+                    If IsNull(.cboPlan) Or .cboPlan = "" Then
+                        MsgBox "You must enter a plan!"
+                        intCancel = True
+                        .cboPlan.SetFocus
+                        GoTo Exit_Form_BeforeUpdate
+                    End If
+                End If
+                
+                'check to see if coverage has been selected
+                If .OpenArgs = 4 Then ' all american ?
+                    If IsNull(.cboSUBcoverage) Or .cboSUBcoverage = "" Then
+                        MsgBox "You must enter a coverage type!"
+                        intCancel = True
+                        .cboSUBcoverage.SetFocus
+                        GoTo Exit_Form_BeforeUpdate
+                    End If
+                End If
+                
+                'check to see if effective date has been entered
+                If Me.OpenArgs = 4 Then ' all american ?
+                    If IsNull(.SubEffDate) Or .SubEffDate = "" Then
+                        MsgBox "You must enter an effective date."
+                        intCancel = True
+                        .SubEffDate.SetFocus
+                        GoTo Exit_Form_BeforeUpdate
+                    End If
+                End If
+                
+                'validate deps and plans
+                If Me.OpenArgs = 4 Then  ' all american ?
+                    intPlanID = .cboPlan.Column(1)
+                    LoadADORecordSet "uspTierType '" & strGroupID & "', " & intPlanID
+                    If Not g_adoRS.EOF Then
+                      intCntOfCoverages = g_adoRS("CntOfCoverages")
+                      g_adoRS.Close
+                    Else
+                      intCntOfCoverages = 0
+                      g_adoRS.Close
+                    End If
+                    
+                    If ValidateDepsWithPlan(strSSN, intCntOfCoverages) Then
+                        intCancel = False
+                    Else
+                        intCancel = True
+                        .cboSUBcoverage.SetFocus
+                        GoTo Exit_Form_BeforeUpdate
+                    End If
+                    
+                
+                End If ' all american ?
+            
+            End If 'has ssn been changed ?
+        
+        End If ' if not ALDINE etc ?
+        
+    End With
+    
+    
+Exit_Form_BeforeUpdate:
+    fDelete = False
+    Exit Sub
+
+Err_Form_BeforeUpdate:
+    MsgBox Error$
+    Resume Exit_Form_BeforeUpdate
+    
+End Sub
+Private Sub cboSubCoverage_AfterUpdate()
+'------------------------------------------------
+'Purpose:  Populate rate control based on coverage
+'          and plan id that applies to group
+'          If group is All American and the option
+'          is Blue, use zero for a rate
+'------------------------------------------------
+'Programmer:  John Criswell
+'Create Date:
+'Update Date:
+'Updated by:
+
+On Error GoTo Err_cboSubCoverage_AfterUpdate
+
+    Dim strCoverage As String
+    Dim intCoverID As Integer
+    Dim intPlanID As Integer
+    Dim strGroupID As String
+    Dim strGroupPlanID As String
+    
+    'check to see if the rate ID for that subscriber exists
+    'on the rate table
+    'if it does not then
+    'display message and exit sub
+    'parameters:
+    'SubGroupID
+    'PlanID
+    'CoverID
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+        
+    With Me
+        strGroupID = .SubGroupID
+        intPlanID = Nz(.cboPlan.Column(1))
+        intCoverID = Nz(.cboSUBcoverage.Column(1))
+    End With
+    
+    strSQL = "SELECT tblRates.GroupID, tblRates.PlanID, " & _
+                "tblRates.CoverID " & _
+                "FROM tblRates " & _
+                "WHERE (((tblRates.GroupID)='" & strGroupID & "') " & _
+                "AND ((tblRates.PlanID)= " & intPlanID & ") " & _
+                "AND ((tblRates.CoverID)= " & intCoverID & "));"
+    
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If fDelete = True Then
+        GoTo Exit_cboSubCoverage_AfterUpdate
+    Else
+        If rs.RecordCount > 0 Then
+            With Me
+                'populate no of dependents
+                .SUBnoDEPENT = DependentCheck(Me.SUBssn)
+                If .cboSUBcoverage <> "" And .cboPlan <> "" And .SubGroupID <> "" _
+                Or Not IsNull(.cboSUBcoverage) And IsNull(.cboPlan) And Not IsNull(.SubGroupID) Then
+                    'populate rate
+                    .SUBrate = FindRate(strGroupID, intCoverID, intPlanID)
+                    .RateID = lngRateID
+                Else
+                    .RateID = 0
+                End If
+            End With
+            Call Form_BeforeUpdate(True)
+        Else
+            MsgBox "The Plan and Coverage for this subscriber has not been setup " & vbCrLf & _
+                    "on the Group form.  Please go back and set up the Plans and " & vbCrLf & _
+                    "Coverages that are needed for the group.", vbOKOnly, "No Plan and Coverage"
+        End If
+    End If
+    
+    rs.Close
+    Set rs = Nothing
+    db.Close
+    Set db = Nothing
+
+Exit_cboSubCoverage_AfterUpdate:
+    fDelete = False
+    Exit Sub
+
+Err_cboSubCoverage_AfterUpdate:
+    MsgBox Error$
+    Resume Exit_cboSubCoverage_AfterUpdate
+    
+End Sub
+Private Sub FindSSN_Click()
+    ' Comments  :
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    
+    With Me!FindSSN
+        .SetFocus
+        .SelStart = 0
+    End With
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Private Sub FindSSN_GotFocus()
+    ' Comments  :
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    With Me!FindSSN
+        .SetFocus
+        .SelStart = 0
+    End With
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Private Sub FindSUBID_Click()
+    ' Comments  :
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    With Me!FindSUBID
+        .SetFocus
+        .SelStart = 0
+    End With
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Private Sub FindSUBID_GotFocus()
+    ' Comments  :
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    
+    With Me!FindSUBID
+        .SetFocus
+        .SelStart = 0
+    End With
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Private Sub Form_AfterUpdate()
+
+    On Error GoTo Err_Form_AfterUpdate
+
+    Dim strSSN As String
+    
+    If fDelete = True Then
+        Exit Sub
+    Else
+        strSSN = Nz(Me![SUBssn])
+        If mstrSSN <> strSSN Then
+            'requery the subform if the subscriber's SSN has been changed
+            Forms!frmGrpSubscr![fsubGrpSubscrDep].Form.Requery
+        End If
+    End If
+    
+Exit_Form_AfterUpdate:
+    fDelete = False
+    Exit Sub
+    
+Err_Form_AfterUpdate:
+    MsgBox Error$
+    
+    Resume Exit_Form_AfterUpdate
+End Sub
+Private Sub Form_BeforeInsert(intCancel As Integer)
+
+On Error GoTo Err_Form_BeforeInsert
+
+    'Assign a SubscriberID
+    Me.SubID = AssignSubID()
+    
+Exit_Form_BeforeInsert:
+    Exit Sub
+    
+Err_Form_BeforeInsert:
+    MsgBox Error$
+    
+    Resume Exit_Form_BeforeInsert
+End Sub
+Private Sub Form_Current()
+
+    On Error GoTo Err_Form_Current
+    
+    If fDelete = True Then
+        GoTo Exit_Form_Current
+    Else
+        If Not IsNull(Me!SUBssn) Then
+            mstrSSN = Me!SUBssn 'grab the SSN as soon as a new record comes up
+        End If
+        
+        Me![AlphaControl] = Null
+        Me![SUBSCRPickList] = Null
+
+        If Not IsNull(Me!SUBssn) Then
+            'populate the rateid and the rate controls
+            Call cboSubCoverage_AfterUpdate
+        Else
+            Me.SUBrate = Null
+        End If
+    End If
+
+Exit_Form_Current:
+    Exit Sub
+
+Err_Form_Current:
+    MsgBox Error$
+    Resume Exit_Form_Current
+
+End Sub
+Private Sub fraCriteria_AfterUpdate()
+    ' Comments  :
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    With Me
+        If .fraCriteria = 1 Then
+            .FindSSN.Visible = True
+            .FindSUBID.Visible = False
+            .FindSSN = ""
+            .FindSUBID = ""
+        Else
+            .FindSSN.Visible = False
+            .FindSUBID.Visible = True
+            .FindSSN = ""
+            .FindSUBID = ""
+        End If
+    End With
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+
+End Sub
+Private Sub fsubGrpSubscrDep_Exit(intCancel As Integer)
+
+  On Error GoTo PROC_ERR
+  
+    If fDelete = True Then
+        Exit Sub
+    Else
+        If Forms![frmGrpSubscr]![SUBnoDEPENT] <> DCount("[DEPcounter]", "tblDependent", "[DEPsubID] = [SUBssn]") Then
+            MsgBox "The Number of Dependents entered in the field above MUST equal the number of dependents listed here.  The No. Dep field above will be changed to " + Str$(DCount("[DEPcounter]", "tblDependent", "[DEPsubID] = [SUBssn]")) + "."
+            Forms![frmGrpSubscr]![SUBnoDEPENT] = DCount("[DEPcounter]", "tblDependent", "[DEPsubID] = [SUBssn]")
+        Else
+        End If
+    End If
+    Exit Sub
+
+PROC_ERR:
+  fDelete = False
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+Private Sub Preexisting_Date_BeforeUpdate(Cancel As Integer)
+    ' Comments  :
+    ' Parameters: Cancel -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    If ValidateDateFormat(Me.Preexisting_Date) = False Then
+        MsgBox "Please correct the Prior Existing Date...it is not in the proper range." & vbCrLf & strMsg, vbCritical, "Validation Failed"
+        Cancel = True
+    End If
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+
+End Sub
+Private Sub Preexisting_Date_Click()
+
+    On Error GoTo ErrorHandler
+    
+    With Me![Preexisting Date]
+        .SetFocus
+        .SelStart = 0
+        .SelLength = Len(Me![Preexisting Date]) + 2
+    End With
+
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+End Sub
+Private Sub SUBdob_BeforeUpdate(Cancel As Integer)
+    ' Comments  :
+    ' Parameters: Cancel -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    If ValidateDateFormat(Me.SUBdob) = False Then
+        MsgBox "Please correct the Date of Birth...it is not in the proper range." & vbCrLf & strMsg, vbCritical, "Validation Failed"
+        Cancel = True
+    End If
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+
+End Sub
+Private Sub SUBdob_Click()
+
+On Error GoTo ErrorHandler
+    
+    With Me!SUBdob
+        .SetFocus
+        .SelStart = 0
+        '.SelLength = Len(Me!SUBdob) + 2
+    End With
+
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+    
+End Sub
+Private Sub SUBeffDATE_BeforeUpdate(Cancel As Integer)
+    ' Comments  :
+    ' Parameters: Cancel -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    If ValidateDateFormat(Me.SubEffDate) = False Then
+        MsgBox "Please correct the Effective Date...it is not in the proper range." & vbCrLf & strMsg, vbCritical, "Validation Failed"
+        Cancel = True
+    End If
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+
+End Sub
+Private Sub SUBeffDATE_Click()
+
+On Error GoTo ErrorHandler
+    
+    With Me!SubEffDate
+        .SetFocus
+        .SelStart = 0
+        .SelLength = Len(Me!SubEffDate) + 2
+    End With
+
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+
+End Sub
+Private Sub SUBfirstNAME_AfterUpdate()
+    ' Comments  :  build the lookup name
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+
+  On Error GoTo PROC_ERR
+
+    Me![SUB_LUname] = Forms![frmGrpSubscr]![SUBlastNAME] & ", " & Me![SUBfirstNAME] & " " & Me![SUBmiddleNAME]
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+
+End Sub
+Private Sub SUBlastNAME_AfterUpdate()
+    ' Comments  :  build the lookup name
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' ---------------------------------------------------
+    
+  On Error GoTo PROC_ERR
+    
+    Me![SUB_LUname] = Forms![frmGrpSubscr]![SUBlastNAME] & ", " & Me![SUBfirstNAME] & " " & Me![SUBmiddleNAME]
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+  
+End Sub
+Private Sub SUBmiddleNAME_AfterUpdate()
+
+    ' Comments  :  build the lookup name
+    ' Parameters:  -
+    ' Modified  :
+    '
+    ' ---------------------------------------------------
+
+  On Error GoTo PROC_ERR
+    
+    Me![SUB_LUname] = Forms![frmGrpSubscr]![SUBlastNAME] & ", " & Me![SUBfirstNAME] & " " & Me![SUBmiddleNAME]
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+  
+End Sub
+Private Sub SUBssn_AfterUpdate()
+
+  On Error GoTo PROC_ERR
+    
+    Dim strSSN As String
+    strSSN = Forms!frmGrpSubscr.SUBssn
+    If mstrSSN <> strSSN Then
+        SendKeys "+{ENTER}", True
+        mstrSSN = strSSN
+    End If
+    
+ Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+  
+End Sub
+Private Sub SUBssn_BeforeUpdate(Cancel As Integer)
+    
+    On Error GoTo ErrorHandler
+
+    Dim dbs As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim strSSN As String
+    
+    strSSN = Me![SUBssn]
+    
+    Set dbs = CurrentDb()
+    Set rs = dbs.OpenRecordset("SELECT tblSubscr.SUBssn FROM tblSubscr WHERE (((tblSubscr.SUBssn)='" & strSSN & "'));", dbOpenSnapshot)
+    If rs.RecordCount > 0 Then
+        MsgBox "SSN is already in the database."
+        Cancel = True
+    End If
+    rs.Close
+    dbs.Close
+    Set dbs = Nothing
+        
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+    
+End Sub
