@@ -4,7 +4,7 @@ Option Explicit
 Dim crlf As String
 
 
-Function SumInvoice(Tranno As String) As Double
+Function SumInvoice(TRANNO As String) As Double
     ' Comments  :  Sums a PfW invoice
     ' Parameters:  Invoice tranno
     ' Created   : 10/09/04 18:14 JC
@@ -22,7 +22,7 @@ Function SumInvoice(Tranno As String) As Double
     
     strSQL = "SELECT Sum(ARLIN.Unitprice) AS SumOfUnitprice "
     strSQL = strSQL & "FROM ARLIN "
-    strSQL = strSQL & "WHERE (((ARLIN.TransactionNumber)='" & Tranno & "'));"
+    strSQL = strSQL & "WHERE (((ARLIN.TransactionNumber)='" & TRANNO & "'));"
     
     Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     SumInvoice = Nz(rst.Fields("SumOfUnitprice"))
@@ -160,7 +160,7 @@ On Error GoTo SaveSysDocID_Err
     
     strSQL = "UPDATE ARNEXTSY SET ARNEXTSY.Nextsysdocid = " & lngSysDocId & ", "
     strSQL = strSQL & "ARNEXTSY.RecUserID = 'INVOICE', "
-    strSQL = strSQL & "ARNEXTSY.RecDate = '" & Format(Date, "mm/dd/yyyy") & "'"
+    strSQL = strSQL & "ARNEXTSY.RecDate = '" & Format(date, "mm/dd/yyyy") & "'"
     'strSQL = strSQL & "ARNEXTSY.RecTime = '" & Format(Time(), "hh:nn:ss") & "';"
     
     Set db = CurrentDb()
@@ -502,7 +502,7 @@ Function SaveNextSysDocID(lngCurrentSysDocID As Long) As Boolean
     
     strSQL = "UPDATE ARNEXTSY_local SET ARNEXTSY_local.Nextsysdocid =" & lngNextSysDocID & ", "
     strSQL = strSQL & "ARNEXTSY_local.RecUserID = 'INVOICE', "
-    strSQL = strSQL & "ARNEXTSY_local.RecDate = '" & Format(Date, "mm/dd/yyyy") & "'"
+    strSQL = strSQL & "ARNEXTSY_local.RecDate = '" & Format(date, "mm/dd/yyyy") & "'"
     'strSQL = strSQL & "ARNEXTSY.RecTime = '" & Format(Time, "Long Time") & "';"
     
     db.Execute strSQL, dbSeeChanges
@@ -638,11 +638,11 @@ On Error GoTo Err_DeleteARCust
                   ' SubID input parm
                   Set g_adoParm = .CreateParameter("@SubID", adChar, adParamInput, 8)
                   .Parameters.Append g_adoParm
-                  .Parameters("@SubID").value = strSubID
+                  .Parameters("@SubID").Value = strSubID
                   ' UserName input parm
                   Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
                   .Parameters.Append g_adoParm
-                  .Parameters("@UserName").value = strUserName
+                  .Parameters("@UserName").Value = strUserName
                   .Execute
                   g_iRtnVal = .Parameters.Item("ReturnValue")
             End With
@@ -1191,7 +1191,7 @@ On Error GoTo Err_UpdateARCust
             "ARCUST_local.Territory_Ky = '" & rs.Fields("GRGeoID") & "', " & _
             "ARCUST_local.Salespersn_Ky = 'CORPT', " & _
             "ARCUST_local.EmailAddr = '" & rs.Fields("GRemail") & "', " & _
-            "ARCUST_local.RecDate ='" & Format(Date, "mm/dd/yyyy") & "', " & _
+            "ARCUST_local.RecDate ='" & Format(date, "mm/dd/yyyy") & "', " & _
             "ARCUST_local.RecTime ='" & Format(Time, "Long Time") & "', " & _
             "ARCUST_local.RecUserID = 'frmGrp', " & _
             "ARCUST_local.Open_Or_Balfwd = 'O' " & _
