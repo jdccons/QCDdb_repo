@@ -1,21 +1,23 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcity)=\"Austin\" Or (tblGrp.GRcity)=\"Round Rock\" Or (tblGrp.GRcity"
-    ")=\" San Marcos\" Or (tblGrp.GRcity)=\"Georgetown\") AND ((tblGrp.GRcancelled)=N"
+Where ="(((tblGrp.GRCity)=\"Austin\" Or (tblGrp.GRCity)=\"Round Rock\" Or (tblGrp.GRCity"
+    ")=\" San Marcos\" Or (tblGrp.GRCity)=\"Georgetown\") AND ((tblGrp.GRCancelled)=N"
     "o))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GREE"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -33,10 +35,10 @@ Begin
     Left =-13
     Top =99
     Right =799
-    Bottom =472
+    Bottom =459
     Left =-1
     Top =-1
-    Right =805
+    Right =797
     Bottom =180
     Left =0
     Top =0
@@ -45,7 +47,7 @@ Begin
         Left =48
         Top =7
         Right =168
-        Bottom =144
+        Bottom =140
         Top =26
         Name ="tblGrp"
         Name =""

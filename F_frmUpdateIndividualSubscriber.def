@@ -1,12 +1,12 @@
 Version =20
 VersionRequired =20
-Checksum =339032418
+Checksum =1981936224
 Begin Form
     PopUp = NotDefault
     RecordSelectors = NotDefault
+    MaxButton = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -17,11 +17,11 @@ Begin Form
     GridY =24
     Width =5100
     DatasheetFontHeight =10
-    ItemSuffix =16
-    Left =3255
-    Top =2535
-    Right =8295
-    Bottom =5280
+    ItemSuffix =18
+    Left =3405
+    Top =2625
+    Right =8505
+    Bottom =5370
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xe7a7730fb30de340
@@ -34,14 +34,12 @@ Begin Form
     End
     PrtDevMode = Begin
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x01043c079c00d006134f0100010009009a0b3408640001000f00580202000100 ,
-        0x0000030000004134000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000050524956 ,
-        0xe012000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000180000000000102710271027 ,
-        0x0000102700000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc02134f010001000900ea0a6f08640001000f00580202000100 ,
+        0x5802030001004134000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -57,47 +55,20 @@ Begin Form
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x000000000000000000000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000446f6375436f6d2050444620506f72743a00
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
+    OnLoad ="[Event Procedure]"
     AllowDatasheetView =0
     AllowPivotTableView =0
     AllowPivotChartView =0
@@ -126,10 +97,10 @@ Begin Form
         End
         Begin Section
             Height =2760
-            BackColor =-2147483633
+            BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0x365ac6ce6f1c864a93ca4acac9986fee
+                0x4d16ed041de4bd498a1525de071626e6
             End
             Begin
                 Begin TextBox
@@ -145,7 +116,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="000\\-00\\-0000;;_"
                     GUID = Begin
-                        0xed66095f4460274ba0e46b0a2487275e
+                        0x5de4435d2a50874dbb3ce915c4fee71d
                     End
                     AsianLineBreak =0
                 End
@@ -158,11 +129,11 @@ Begin Form
                     Width =954
                     Height =255
                     FontSize =7
-                    TabIndex =1
+                    TabIndex =2
                     Name ="ctlSUBfirstNAME"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xbfae04f31df1f6479e91ab6464ae0027
+                        0xcd3a7afd5f8a9b43bc95dfcce9965e11
                     End
                     AsianLineBreak =0
                 End
@@ -175,11 +146,11 @@ Begin Form
                     Width =1254
                     Height =255
                     FontSize =7
-                    TabIndex =2
+                    TabIndex =1
                     Name ="ctlSUBlastNAME"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x0c02c7318493ff498884e9f614a74f00
+                        0x16ceb9d308d8314fb00b83a77f396c62
                     End
                     AsianLineBreak =0
                 End
@@ -196,7 +167,7 @@ Begin Form
                     Name ="ctlSUBmiddleNAME"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x0ce0dd1d7021b545b1b1222e1c9a9dff
+                        0x8a7151ed99cbec4eb6e4171c7343c6e6
                     End
                     AsianLineBreak =0
                 End
@@ -210,13 +181,13 @@ Begin Form
                     Width =918
                     Height =255
                     FontSize =7
-                    TabIndex =4
+                    TabIndex =7
                     Name ="ctlSUBcontBEG"
                     Format ="m/d/yyyy"
                     FontName ="MS Sans Serif"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x93ba800d84cd344c84c287a5ed3b1548
+                        0xe9c9e00e8e56cd439c63fafd66568cfa
                     End
                     AsianLineBreak =0
                 End
@@ -230,13 +201,13 @@ Begin Form
                     Width =918
                     Height =255
                     FontSize =7
-                    TabIndex =5
+                    TabIndex =8
                     Name ="ctlSUBcontEND"
                     Format ="m/d/yyyy"
                     FontName ="MS Sans Serif"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x179602160edb9d48bec89f5369c752e9
+                        0x708ab15bb840a54aa0f28065fbc30ec7
                     End
                     AsianLineBreak =0
                 End
@@ -250,12 +221,12 @@ Begin Form
                     Width =471
                     Height =255
                     FontSize =7
-                    TabIndex =6
+                    TabIndex =10
                     Name ="ctlSUBcancelled"
                     Format ="General Number"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x94999b4e0ccde04b92be9ee595842f07
+                        0x60c85e1cbeb34447a21d6ee330ed2683
                     End
                     AsianLineBreak =0
                 End
@@ -268,11 +239,11 @@ Begin Form
                     Width =516
                     Height =255
                     FontSize =7
-                    TabIndex =7
+                    TabIndex =9
                     Name ="ctlSUBbankDraftNo"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x7dd326608342a34694dfce0331aa9148
+                        0xf39cd82107c07344ae487e44d085dfb5
                     End
                     AsianLineBreak =0
                 End
@@ -286,12 +257,12 @@ Begin Form
                     Width =726
                     Height =255
                     FontSize =7
-                    TabIndex =8
+                    TabIndex =6
                     Name ="ctlSUBrate"
                     Format ="$#,##0.00;($#,##0.00)"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x329f9692e56c6f46abe3b1cae397f9ee
+                        0xcc664ac70f2e8e4f8e5067c055d14299
                     End
                     AsianLineBreak =0
                 End
@@ -303,12 +274,12 @@ Begin Form
                     Left =1440
                     Top =2160
                     Width =780
-                    TabIndex =9
+                    TabIndex =12
                     BackColor =10092543
                     Name ="RateID"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x4f101ebdf4cf3940a275ae96eed9519f
+                        0xadbb2242631a8647802f90447e086252
                     End
                     AsianLineBreak =0
                 End
@@ -320,12 +291,12 @@ Begin Form
                     Left =660
                     Top =2160
                     Width =540
-                    TabIndex =10
+                    TabIndex =11
                     BackColor =10092543
                     Name ="CoverID"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xa61e4aede7d95647b6d3cc43ea73c1bb
+                        0xdb6a798710b9594ba1cc5f063bc77c22
                     End
                     AsianLineBreak =0
                 End
@@ -334,14 +305,14 @@ Begin Form
                     Left =3480
                     Top =2220
                     Height =420
-                    TabIndex =11
+                    TabIndex =13
                     Name ="cmdSave"
                     Caption ="Save Changes"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
                     ControlTipText ="Edit Record"
                     GUID = Begin
-                        0x38494f4a0e9df34f9a936e7320ee5f20
+                        0x5a38d2332ffab343936d778320f05849
                     End
                 End
                 Begin Label
@@ -358,7 +329,7 @@ Begin Form
                     Caption ="SS# "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x2849928a92387f4cbfb485670876ef7e
+                        0x1c86826f1a4fcc46a58319ce10275fa6
                     End
                 End
                 Begin Label
@@ -375,7 +346,7 @@ Begin Form
                     Caption =" Last Name "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x689d8d03f5edd548b99b719ac82a4dae
+                        0xa47747668245ab4b821f22508fab2866
                     End
                 End
                 Begin Label
@@ -392,7 +363,7 @@ Begin Form
                     Caption ="First "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xaf6291fcd422064c9e892921af1f633d
+                        0x9a6104c04cc9ed4dbedbae6eebfbbb26
                     End
                 End
                 Begin Label
@@ -409,7 +380,7 @@ Begin Form
                     Caption ="MI "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xf17da187cac13c4f8761ba0912faab18
+                        0xe64e8b12f774ae4bbc7d19e536d26f52
                     End
                 End
                 Begin Label
@@ -426,7 +397,7 @@ Begin Form
                     Caption ="Coverage "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x09fdb2332f4a1e48a3b603a6a24856b3
+                        0x1c52601bebdf67468bf1ceb89b02e150
                     End
                 End
                 Begin Label
@@ -443,7 +414,7 @@ Begin Form
                     Caption ="Cont. Beg. "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xa4c3c02bc20b9248af526810d16e43a9
+                        0xb2945ad3b0ece04ba2aeda748e742167
                     End
                 End
                 Begin Label
@@ -460,7 +431,7 @@ Begin Form
                     Caption ="Cont. End "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x7fa6398ac9748541a7061cc8008170ed
+                        0x902b31e72954a54185c4b21c12b0ec88
                     End
                 End
                 Begin Label
@@ -478,7 +449,7 @@ Begin Form
                     Caption ="Cancel"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x1b7ab9b43ccf394da018a64a80bcb872
+                        0x12776811505ba742be65ede47f2522eb
                     End
                 End
                 Begin Label
@@ -495,7 +466,7 @@ Begin Form
                     Caption ="Draft"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x018a74ebc9f4ad4da9619fc65020f5fa
+                        0xfa1c2550a6de674e81ea85e45ea07ebd
                     End
                 End
                 Begin Label
@@ -512,7 +483,7 @@ Begin Form
                     Caption ="Billing Group"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x1f237644628ffd4bbcac38f50deed729
+                        0xf7e27bbb177fb942a4fa244ddef2dcec
                     End
                 End
                 Begin Label
@@ -529,7 +500,7 @@ Begin Form
                     Caption ="Rate"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xc010bbef8fc83b429d571bf02f0daeb3
+                        0x81745b309aca4c42bacda948b4f384e5
                     End
                 End
                 Begin Label
@@ -542,7 +513,7 @@ Begin Form
                     Name ="Label14"
                     Caption ="Update Individual Subscriber"
                     GUID = Begin
-                        0x1e9f75701458a84e832abfc3e5dd75bc
+                        0x9a35f431cdb37a41802e3bae57490050
                     End
                 End
                 Begin ComboBox
@@ -554,10 +525,10 @@ Begin Form
                     Top =1260
                     Width =1863
                     Height =255
-                    TabIndex =12
+                    TabIndex =4
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"60\""
                     GUID = Begin
-                        0xa62e3ed481e14b479a9889d84ac605a0
+                        0x9fd3086f1ddbf84e844a05918a496e59
                     End
                     Name ="cboGroupID"
                     RowSourceType ="Table/Query"
@@ -578,12 +549,12 @@ Begin Form
                     Top =1260
                     Width =1983
                     Height =255
-                    TabIndex =13
+                    TabIndex =5
                     BoundColumn =5
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"1"
                         "00\""
                     GUID = Begin
-                        0xeb8e279396178545adaa107a349db6db
+                        0xa5073f3b6cf0184aa5b36de3b6492174
                     End
                     Name ="SUBPLANid"
                     RowSourceType ="Table/Query"
@@ -595,6 +566,39 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     FontName ="MS Sans Serif"
                     OnNotInList ="=\"You must select a Coverage from the list!\""
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1470
+                    Top =2460
+                    Width =765
+                    Height =239
+                    TabIndex =14
+                    BackColor =10092543
+                    Name ="UserName"
+                    GUID = Begin
+                        0x04da2d58495fd740926907c1f3aef796
+                    End
+                    Begin
+                        Begin Label
+                            Visible = NotDefault
+                            BackStyle =1
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =30
+                            Top =2460
+                            Width =1320
+                            Height =240
+                            BackColor =10092543
+                            Name ="lblUserName"
+                            Caption ="User Name:"
+                            GUID = Begin
+                                0xec0b2b12298bae44acae458c9e9c71fd
+                            End
+                        End
+                    End
                 End
             End
         End
@@ -615,16 +619,62 @@ End Sub
 
 Private Sub cmdSave_Click()
 
-    ' Save the changes to the Subscriber
+    On Error GoTo PROC_ERR
+    
+    Dim Subscr As clsSubscr
+    Dim strSSN As String
+    Dim strGroupID As String
+    
+    Set Subscr = New clsSubscr
     With Me
-        ExecuteSQL "UPDATE tblSubscr SET CoverID = " & .CoverID & " , RateID = " & .RateID & ", SUBgroupID = '" & .cboGroupID & "', SUBcontBEG = '" & .ctlSUBcontBEG & "', SUBcontEND = '" & .ctlSUBcontEND & "', SUBbankDraftNo = '" & .ctlSUBbankDraftNo & "' WHERE SUBssn = '" & .ctlSUBssn & "';"
-        With Forms("frmIndivSubscrCoverage")
-            .Requery
-            .Refresh
-        End With
+        strSSN = .ctlSUBssn
+        strGroupID = .cboGroupID
     End With
+    
+    Call Subscr.LoadFromSSN(strSSN, strGroupID)
+    
+    With Subscr
+            .LastName = Me.ctlSUBlastNAME
+            .FirstName = Me.ctlSUBfirstNAME
+            .MiddleInitial = Me.ctlSUBmiddleNAME
+            .GROUPid = Me.cboGroupID
+            .SubContBeg = Me.ctlSUBcontBEG
+            .SubContEnd = Me.ctlSUBcontEND
+            .BankDraftNo = Me.ctlSUBbankDraftNo
+            .CoverID = Me.CoverID
+            .RateID = Me.RateID
+            .TransactionType = "UPDATE"
+            .UserName = GetCurrentUserName()
+            .DateUpdated = Date
+    End With
+    Call Subscr.StoreSub("Update", strSSN, strGroupID)
+    Set Subscr = Nothing
+    
+    With Forms("frmIndivSubscrCoverage")
+        .Requery
+        .Refresh
+    End With
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
+
+
+PROC_ERR:
+    If Err.Number = 94 Then
+        Resume Next
+    Else
+        MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure: frmUpdateIndividualSubscriber.cmdSave"
+        Resume PROC_EXIT
+    End If
 
 End Sub
+
+Private Sub Form_Load()
+    Me.UserName = GetCurrentUserName()
+End Sub
+
 Private Sub SUBPLANid_AfterUpdate()
 
 On Error GoTo Err_SUBPLANid_AfterUpdate

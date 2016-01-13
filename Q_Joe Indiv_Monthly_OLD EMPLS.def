@@ -1,0 +1,86 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SubStatus)=\"indiv\" Or (tblSubscr.SubStatus)=\"indvm\") AND ((tblS"
+    "ubscr.SUBagentID1)=\"BLDAV\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SubID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubContBeg"
+    Expression ="tblSubscr.SubRate"
+    Expression ="tblSubscr.SubCancelled"
+    Expression ="tblSubscr.SUBagentID1"
+    Expression ="tblSubscr.SUBagentRATE1"
+    Expression ="tblSubscr.SUBagentID2"
+    Expression ="tblSubscr.SUBagentRATE2"
+End
+Begin OrderBy
+    Expression ="tblSubscr.SubLastName"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblSubscr.SUBlastNAME"
+        dbInteger "ColumnWidth" ="1665"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBfirstNAME"
+        dbInteger "ColumnWidth" ="1455"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBstatus"
+        dbInteger "ColumnWidth" ="1095"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBcontBEG"
+        dbInteger "ColumnWidth" ="1365"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBcancelled"
+        dbInteger "ColumnWidth" ="1485"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblSubscr.SUBagentRATE1"
+        dbInteger "ColumnWidth" ="2895"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =629
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =409
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =10
+        Top =4
+        Right =325
+        Bottom =302
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

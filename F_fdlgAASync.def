@@ -1,8 +1,11 @@
 Version =20
 VersionRequired =20
-Checksum =1496707228
+Checksum =-36584848
 Begin Form
+    Modal = NotDefault
     RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
@@ -13,50 +16,32 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =4260
+    Width =5595
     DatasheetFontHeight =10
-    ItemSuffix =15
-    Left =7080
-    Top =345
-    Right =11340
-    Bottom =6660
+    ItemSuffix =36
+    Left =9225
+    Top =240
+    Right =10650
+    Bottom =6135
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xf4f15965d3a0e240
     End
-    GUID = Begin
-        0x949db437a5bc4b46b48c5fb3b4ed6389
-    End
-    NameMap = Begin
-        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
-        0x0000000000000000000000000000
-    End
     Caption ="All American Sync"
+    MenuBar ="Dialog"
     DatasheetFontName ="Arial"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     PrtDevMode = Begin
-        0x0009f95d04000000e0c08100c424fb0200000000ecc0810030503f00f4503f00 ,
-        0x010418009c00b80353ef80010100010000000000640001000f00b00402000100 ,
-        0xb004030001004c65747465720066b438e0c08100040000000000000000000000 ,
-        0xbe61b43804000000000000000000000000000000000000000000000001000000 ,
-        0x0000000000000000000000000000000000000000000000000000000094042e00 ,
-        0x4850204c617365724a65742032323030205365726965732050434c2036000000 ,
-        0x0000000000000400320090018603789c6590cf4b545114c7bfdf779ede9a3467 ,
-        0x51265179d14a0d794d43b46da105428b20f2c7425733e4ab38679807a2483f66 ,
-        0x19816d5a14b40882fe8408755bff48d4ba9d3fcaa6fbdee0207816df73bfdf7b ,
-        0xb8f7f0c9b2e31511cb1c88427bca2f70ab24e07a0aedcdd5dad02b944db6db36 ,
-        0xca56443dc19663ebbde845ca860c426722fd06db8a6d9cb646bd4cbd46bd4a9b ,
-        0x6078608c09427bc812749ebac0dccd769c75dc5c70d6b9cbed3acb702ff2bf1b ,
-        0xcfa9cf8a9149c680d662b714977037d5345b4ef5116c3146d8dce8f3a19f3294 ,
-        0x37a00cf92135b85f12a1a830f39897a827693bd00334f7a17fa1c3b45dd81fe8 ,
-        0x3fd859ea20f51cf59d98a70d51fa59839ea6956903b4d7d2fa24fa4a1a5ba2df ,
-        0x23f9201f1118c86dbeec3317e908ddd702daf9422f14fa1b417b89c335808de4 ,
-        0xf014e2b81b7f3e1af774e3b7ddd86dcb7554ab958a7f506fa6f5cc8fdf9fbae7 ,
-        0x6f4dccd69b596aeafdcda49adc482a7ebabe92f83c2da8efe10c648af3914c07 ,
-        0xd137d2b853e09c613fac443d45ed0bf862e6849ed0059261e3ff7ab562800000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc0253ef800101000100ea0a6f08640001000f00b00402000100 ,
+        0xb004030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -72,14 +57,23 @@ Begin Form
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x080027003a000100000000000000000000000000000000000000000000000000 ,
-        0x000000000000000000000000000000000000000000000000000048504c617365 ,
-        0x724a657432323030000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin Label
             BackStyle =0
@@ -95,11 +89,11 @@ Begin Form
             FontName ="MS Sans Serif"
         End
         Begin Section
-            Height =6360
-            BackColor =65280
+            Height =5970
+            BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x6e9c65e9f37fe84e9974c9285996549e
+                0xb5b7ebaac95d1e489d1f1b4ce329e239
             End
             Begin
                 Begin Label
@@ -108,65 +102,78 @@ Begin Form
                     BorderWidth =3
                     OverlapFlags =85
                     TextAlign =2
-                    Left =165
-                    Top =120
-                    Width =3150
+                    Left =1236
+                    Top =132
+                    Width =3120
                     Height =360
                     FontSize =12
                     FontWeight =700
                     Name ="Label0"
-                    Caption ="DCA Import"
+                    Caption ="All American Sync"
                     GUID = Begin
-                        0xa3394b526d3d9043b1089992dd5fc8e7
+                        0x87cffec0f8f6f546a67c830fb4a9e566
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =93
-                    Left =780
-                    Top =3000
+                    Left =1872
+                    Top =732
                     Width =1620
-                    Height =420
+                    Height =432
                     Name ="cmdProcess"
                     Caption ="Process Groups"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x504f15d40c050d4aaef2b9444a5c730b
+                        0x9fdbabaa1ad7fa46b7ce42577cfa3626
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =93
-                    Left =780
-                    Top =4068
-                    Width =1620
-                    Height =420
+                    Left =1770
+                    Top =4005
+                    Width =288
+                    Height =288
                     TabIndex =1
                     Name ="cmdPrint"
-                    Caption ="Print Report"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x1ddc4d80d105ef418897af34a05871df
+                        0x48b2f58fc1351b4890cb661554cbfccf
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =2058
+                            Top =4005
+                            Width =1656
+                            Height =300
+                            Name ="Label26"
+                            Caption ="Cards Review"
+                            GUID = Begin
+                                0x82dcc09c47bb274586a7a3c265c3ad3c
+                            End
+                        End
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =93
-                    Left =780
-                    Top =4602
+                    OverlapFlags =85
+                    Left =1890
+                    Top =4815
                     Width =1620
-                    Height =420
+                    Height =432
                     TabIndex =2
                     Name ="cmdImport"
                     Caption ="Import New"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x1a654dbf1ed7e1458f16f47b22d6640a
+                        0x8485c33b824fc744ad2ccb14522afcbe
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =3420
-                    Top =5760
-                    Width =726
-                    Height =426
+                    Left =2418
+                    Top =5400
+                    Width =432
+                    Height =432
                     TabIndex =3
                     Name ="cmdClose"
                     Caption ="Command4"
@@ -194,137 +201,188 @@ Begin Form
                     End
                     ControlTipText ="Close Form"
                     GUID = Begin
-                        0x0ae60e9adcc51844b6d0dfc34376d6ae
+                        0x30033efcbf24964abc12edb469fa1330
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =93
-                    Left =780
-                    Top =720
-                    Width =1980
-                    Height =480
+                    Left =1770
+                    Top =3705
+                    Width =288
+                    Height =288
                     TabIndex =4
                     Name ="cmdViewChanges"
-                    Caption ="View Changed Details"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x582c59b0ff17d1498d12a8f001f8e7a5
+                        0x101c40b207fef24192cf5e9a38f7f8cc
                     End
-                End
-                Begin Rectangle
-                    OverlapFlags =215
-                    Left =420
-                    Top =600
-                    Width =2640
-                    Name ="Box6"
-                    GUID = Begin
-                        0x63bf374783b62a49a62bf492ee709760
+                    Begin
+                        Begin Label
+                            OverlapFlags =95
+                            Left =2058
+                            Top =3705
+                            Width =1656
+                            Height =300
+                            Name ="Label24"
+                            Caption ="View Changed Details"
+                            GUID = Begin
+                                0x0ad30fafc650c34a838a1df395b538bb
+                            End
+                        End
                     End
                 End
                 Begin Rectangle
                     OverlapFlags =223
-                    Left =600
-                    Top =2880
-                    Width =1980
-                    Height =3360
+                    Left =768
+                    Top =612
+                    Width =4020
+                    Height =4083
                     Name ="Box7"
                     GUID = Begin
-                        0xe2218b68a22b3d40acef94e90488583d
+                        0xfe2db56854ab6246a268d4dea13def98
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =215
-                    Left =780
-                    Top =5670
+                    Left =1872
+                    Top =1634
                     Width =1620
-                    Height =420
+                    Height =432
                     TabIndex =5
-                    Name ="cmdPrintCards"
-                    Caption ="Print Cards"
+                    Name ="btnTPA_Bad_Plan_and_Rate"
+                    Caption ="Fix Plans and Covers"
                     OnClick ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Open Form"
                     GUID = Begin
-                        0x9f363b1f7619a34f956172c05285d60d
+                        0xafa0f66711c35c409887f3a5e404f605
                     End
                 End
                 Begin CommandButton
-                    OverlapFlags =215
-                    Left =780
-                    Top =5136
-                    Width =1620
-                    Height =420
+                    OverlapFlags =223
+                    Left =1770
+                    Top =3105
+                    Width =288
+                    Height =288
                     TabIndex =6
-                    Name ="cmdRates"
-                    Caption ="Rates Report"
+                    Name ="cmdAdditions"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x9e404caddc2b114697f0ed5e49c4e2b1
+                        0xbecac95b9d1c0c42a4a858f8a918a20d
                     End
-                End
-                Begin CommandButton
-                    OverlapFlags =215
-                    Left =780
-                    Top =3534
-                    Width =1620
-                    Height =420
-                    TabIndex =7
-                    Name ="btnPrintDupSSNReport"
-                    Caption ="Dup SSN Report"
-                    OnClick ="[Event Procedure]"
-                    GUID = Begin
-                        0x6819b94ed96b584fb9f2f425dc103f86
-                    End
-                End
-                Begin CommandButton
-                    OverlapFlags =93
-                    Left =240
-                    Top =1560
-                    Width =3840
-                    Height =480
-                    TabIndex =8
-                    Name ="cmdAddUniqueID"
-                    Caption ="Add Unique IDs and Mark Auto Dups"
-                    OnClick ="[Event Procedure]"
-                    GUID = Begin
-                        0x9a600c9f645c2845bb330fd2d4499a43
-                    End
-                End
-                Begin CommandButton
-                    OverlapFlags =93
-                    Left =240
-                    Top =2220
-                    Width =1920
-                    Height =420
-                    TabIndex =9
-                    Name ="cmdViewDups"
-                    Caption ="View the Dups to Edit"
-                    OnEnter ="[Event Procedure]"
-                    GUID = Begin
-                        0x6d7ead312be172469c3a3e814ccbd9c1
-                    End
-                End
-                Begin CommandButton
-                    OverlapFlags =93
-                    Left =2280
-                    Top =2220
-                    Width =1800
-                    Height =420
-                    TabIndex =10
-                    Name ="cmdRemoveDups"
-                    Caption ="Remove Marked Dups"
-                    OnClick ="[Event Procedure]"
-                    GUID = Begin
-                        0xc2ac21f2954f0743aff43424b8bd0dcc
+                    Begin
+                        Begin Label
+                            OverlapFlags =223
+                            Left =2058
+                            Top =3105
+                            Width =1656
+                            Height =300
+                            Name ="Label25"
+                            Caption ="Additions"
+                            GUID = Begin
+                                0x354af907fb81014886d359e7fa22564f
+                            End
+                        End
                     End
                 End
                 Begin Rectangle
-                    OverlapFlags =215
-                    Left =120
-                    Top =1380
-                    Width =4020
-                    Height =1380
-                    Name ="Box14"
+                    OverlapFlags =223
+                    Left =1125
+                    Top =2205
+                    Width =3420
+                    Height =2280
+                    Name ="Box22"
                     GUID = Begin
-                        0xd5b87d4a5669bf42ad195cdb9250ac0c
+                        0xdcda5d0dd6de784492a2c4977ee9fe8e
+                    End
+                End
+                Begin Label
+                    SpecialEffect =4
+                    OldBorderStyle =1
+                    BorderWidth =3
+                    OverlapFlags =215
+                    TextAlign =2
+                    Left =1887
+                    Top =2265
+                    Width =1620
+                    Height =432
+                    Name ="Label23"
+                    Caption ="Reports"
+                    GUID = Begin
+                        0x911dffc2f37e9b4792b921d0625a0a2b
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =1770
+                    Top =3405
+                    Width =288
+                    Height =288
+                    TabIndex =7
+                    Name ="cmdDrops"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x4e29476bb1cd0547866118278dbeeb21
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =2058
+                            Top =3405
+                            Width =1656
+                            Height =300
+                            Name ="Label30"
+                            Caption ="Drops"
+                            GUID = Begin
+                                0xaa7365508a4c074abed3abac9399a1f2
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =1770
+                    Top =2805
+                    Width =288
+                    Height =288
+                    TabIndex =8
+                    Name ="cmdStatistics"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xae59eda6ffb25945ac5bc4725217a838
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =215
+                            Left =2058
+                            Top =2805
+                            Width =1656
+                            Height =300
+                            Name ="Label32"
+                            Caption ="Statistics"
+                            GUID = Begin
+                                0x085f0a85dd591945a78d787412d06c55
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =1872
+                    Top =1183
+                    Width =1620
+                    Height =432
+                    TabIndex =9
+                    Name ="btnDupSSNs"
+                    Caption ="Fix Dup SSNs"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Open Form"
+                    GUID = Begin
+                        0xaf86156ddadccc4280c8dad9c168c9ec
                     End
                 End
             End
@@ -338,287 +396,421 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
-Dim mintProcessStatus As Integer
-Dim strSQL As String
-Dim db As DAO.Database
+Dim mstrSQL As String
+Dim mstrUser As String
+Dim mstrPath As String
+Dim mstrFileName As String
+'-------------------------------------------------
+' Object:           fdlgAASync
+' Purpose:          processes data from tpa
+'
+' Change log:
+' Date          Version     Developer       Comments
+' 2007-01-01    1.0         T Cook          Created
+' 2015-10-27    2.0         J Criswell      Changed design of form
+'                                           to process data from new tpa
 
+Private Function PickFile() As String
 
-Private Sub btnPrintDupSSNReport_Click()
-
-    On Error GoTo PROC_ERR
+    On Error GoTo FUNC_ERR
     
-    Dim strDocName As String
-
-    strDocName = "rptAAImport_DupSSNs"
-    DoCmd.OpenReport strDocName, acPreview
-  Exit Sub
-
-PROC_ERR:
-  MsgBox "The following error occured: " & Error$
-  Resume Next
-
-End Sub
-
-Private Sub cmdAddUniqueID_Click()
+    Dim strFile As String
+    Dim clsFileDialog As CFileDialog
+   
+   ' creates a common file dialog object
+    Set clsFileDialog = New CFileDialog
+    With clsFileDialog
+        ' Use the GetFileName method to Display the file open dialog
+        ' and retrieve the file name
+        ' This method accepts parameters rather than requiring
+        ' the class properties to be set.
+        strFile = .GetFileName(True, "*.csv", "", "CSV files (*.csv)|Text files (*.txt)|*.txt|All Files (*.*)|*.*")
+        
+        ' make sure that it's a file
+        If IsNull(strFile) Then
+            MsgBox "You cancelled the File Open dialog"
+            GoTo FUNC_EXIT
+        End If
     
-    DoCmd.SetWarnings False
-    ' Add the Unique ID to the Import Table
-    DoCmd.OpenQuery "EXGEXP_AddUniqueIDs"
-    ' Create the DupSSN and populate the Dup Records
-    DoCmd.OpenQuery "ELGEXP_ClearDupSSN"
-    DoCmd.OpenQuery "ELGEXP_ClearDupRecs"
-    DoCmd.OpenQuery "_ELGEXP_DupSSNs"
-    DoCmd.OpenQuery "ELGEXP_DupRecs"
-    ' Identify the Dup-Dups that can be removed automatically
-    Call MarkDupRecs
+        ' set common file dialog properties
+        .DefaultExt = "csv"
+        .DialogTitle = "Import tpa file!"
+        .InitialDir = "\\dc\datafiles\Clients\Direct Care Administrators\QCD Export File\"
+        .Filter = "CSV files (*.csv)|Text files (*.txt)|*.txt|All files (*.*)|*.*"
+        .FilterIndex = 0
+        .Flags = FleFileMustExist + FleHideReadOnly + FleCreatePrompt
+        .hWndParent = 0 'Use your form's .hwnd property if available
+        .MaxFileSize = 255
+        mstrPath = .InitialDir
+    End With
     
-    ' The rest will have manual intervention and will be handled on the Edit Dups form
+    If Not IsNull(strFile) And strFile <> "" Then
+        PickFile = Replace(strFile, "F:\", "\\dc\datafiles\")
+    Else
+        PickFile = ""
+        MsgBox "User cancelled", vbExclamation, "QCD: Pick file"
+    End If
     
+    Set clsFileDialog = Nothing
     DoCmd.SetWarnings True
-    MsgBox "Operation Complete.  Please review the Manual Dups.", vbInformation, "Complete"
+    DoCmd.Hourglass False
+    
+FUNC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Function
+  
+FUNC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function:fdlgAASync.PickFile"
+  Resume FUNC_EXIT
+  
+End Function
+
+Private Function Run_Procedure(strSQL As String, strUserName As String, strPath As String, strFileName As String) As Integer
+
+On Error GoTo PROC_ERR
+    
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+         .ConnectionString = SetConnxn
+         .CommandTimeout = 300
+         .Open
+    End With
+    
+    With g_adoCommand
+          .ActiveConnection = g_adoConnection
+          .CommandTimeout = 300
+          .CommandType = adCmdStoredProc
+          .CommandText = strSQL
+          
+          Set g_adoParm = .CreateParameter("Return", adInteger, adParamReturnValue) 'Return parm
+          .Parameters.Append g_adoParm
+          
+          Set g_adoParm = .CreateParameter("@User", adVarChar, adParamInput, 50)
+          .Parameters.Append g_adoParm
+          .Parameters("@User").value = strUserName
+          
+          Set g_adoParm = .CreateParameter("@Path", adVarChar, adParamInput, 100)
+          .Parameters.Append g_adoParm
+          .Parameters("@Path").value = strPath
+          
+          Set g_adoParm = .CreateParameter("@File", adVarChar, adParamInput, 50)
+          .Parameters.Append g_adoParm
+          .Parameters("@File").value = strFileName
+          
+          .Execute
+    End With
+    
+    g_iRtnVal = g_adoCommand(0)
+    g_adoConnection.Close
+  
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+    
+    Run_Procedure = g_iRtnVal
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Function
+    
+    
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function:Form_fdlgAASync.Import"
+  Resume PROC_EXIT
+    
+End Function
+
+Private Sub btnDupSSNs_Click()
+
+    On Error GoTo Err_btnDupSSNs_Click
+
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim stDocName As String
+    
+    Set db = CurrentDb()
+    Set rst = db.OpenRecordset("vw_tpa_dup_ssn", dbOpenSnapshot)
+    If rst.BOF And rst.EOF Then
+        MsgBox "There are no duplicate SSNs.", vbOKOnly, "QCD: Dup SSNs."
+    Else
+        ' open form to fix problems
+         stDocName = "frmTPA_DupSSNs"
+         DoCmd.OpenForm stDocName, acFormDS, , , acFormEdit, acWindowNormal
+    End If
+    
+    rst.Close
+    Set db = Nothing
+        
+Exit_btnDupSSNs_Click:
+    Exit Sub
+
+Err_btnDupSSNs_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_btnDupSSNs_Click
     
 End Sub
 
-Private Sub MarkDupRecs()
-Dim db As DAO.Database
-Dim rs As DAO.Recordset
-Dim rsU As DAO.Recordset
-Dim strSQL As String
-Dim strSQLu As String
-Dim strUID As String
+'-------------------------------------------------
 
-    Set db = CurrentDb()
-    strSQL = "SELECT Count(ELGEXP_pd.UNIQUEID) AS CountOfUNIQUEID, ELGEXP_pd.UNIQUEID FROM ELGEXP_pd GROUP BY ELGEXP_pd.UNIQUEID HAVING (((Count(ELGEXP_pd.UNIQUEID))>1));"
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rs.RecordCount > 0 Then
-    Do While Not rs.EOF
-        strUID = rs.Fields("UNIQUEID")
-        strSQLu = "SELECT ELGEXP_pd.Delete, ELGEXP_pd.UNIQUEID, ELGEXP_pd.RecID FROM ELGEXP_pd WHERE (((ELGEXP_pd.UNIQUEID)='" & strUID & "'));"
-        Set rsU = db.OpenRecordset(strSQLu, dbOpenDynaset)
-        With rsU
-            .MoveFirst
-            .Edit
-            .Fields("Delete") = True
-            .Update
-        End With
-        rsU.Close
-        rs.MoveNext
-    Loop
+
+Private Sub cmdAdditions_Click()
+    ' Comments   :    Report with all new subscribers
+    '                   and dependents from the tpa file
+    ' Parameters hh
+    ' Created    :    2015-10-26  J Criswell
+    ' Modified   :
+    '
+    '
+    '
+    ' --------------------------------------------------------
+  On Error GoTo PROC_ERR
+    
+    ' validation
+    If ValidSSN And ValidPlanCover Then
+            gintProcessStatus = 1
+    Else
+        If ValidSSN Then
+            gintProcessStatus = ValidSSN
+        Else
+            gintProcessStatus = 0
+        End If
+        
+        If ValidPlanCover Then
+            gintProcessStatus = ValidPlanCover
+        Else
+            gintProcessStatus = 0
+        End If
+    End If
+    
+    ' process data
+    If gintProcessStatus <> 1 Then
+        MsgBox "You must process the data first.  Click " & vbCrLf & _
+                "'Process Groups' button to process the data! ", vbCritical, _
+                "Data Not Processed"
+        gintProcessStatus = 0
+    GoTo PROC_EXIT
     End If
 
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+    
+    DoCmd.OpenReport "Additions", acViewPreview
+    gintProcessStatus = 1
+   
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+PROC_EXIT:
+    Exit Sub
+
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+
 End Sub
 
+Private Sub cmdDrops_Click()
+
+    ' Comments   :    Report with all dropped subscribers
+    '                   and dependents from the tpa file
+    ' Parameters :
+    ' Created    :    2015-10-26  J Criswell
+    ' Modified   :
+    '
+    '
+    '
+    ' --------------------------------------------------------
+  On Error GoTo PROC_ERR
+    
+    ' validation
+    If ValidSSN And ValidPlanCover Then
+            gintProcessStatus = 1
+    Else
+        If ValidSSN Then
+            gintProcessStatus = ValidSSN
+        Else
+            gintProcessStatus = 0
+        End If
+        
+        If ValidPlanCover Then
+            gintProcessStatus = ValidPlanCover
+        Else
+            gintProcessStatus = 0
+        End If
+    End If
+    
+    ' process data
+    If gintProcessStatus <> 1 Then
+        MsgBox "You must process the data first.  Click " & vbCrLf & _
+                "'Process Groups' button to process the data! ", vbCritical, _
+                "Data Not Processed"
+        gintProcessStatus = 0
+        GoTo PROC_EXIT
+    End If
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+        
+    DoCmd.OpenReport "Drops", acViewPreview
+    gintProcessStatus = 1
+
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+PROC_EXIT:
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    Exit Sub
+
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+
+End Sub
+
+
 Private Sub cmdImport_Click()
-  ' Comments   :
-  ' Parameters :
-  ' Created    : 2/28/2004 Tim Cook
-  ' Modified   : 11/29/2007 John Criswell
-  '              built stored procedures instead of querydefs
+  ' Comments   :    This is the final import for
+  '                 subscribers and dependents
+  '                 from the tpa csv file
+  ' Parameters :    None
+  ' Created    :    2015-10-19  J Criswell
+  ' Modified   :
+  '
+  '
+  '
   ' --------------------------------------------------------
   On Error GoTo HandleError
-      
-    Dim intResp As Integer
-    Dim strGrp As String
-    Dim lngImpS As Long
-    Dim lngImpD As Long
-    Dim lngCurS As Long
-    Dim lngCurD As Long
-    Dim lngDelASR As Long
-    Dim strMsg As String
-    Dim strGrpID As String
-    Dim strSQL As String
-    Dim strGroup As String
-    Dim strGroupList As String
     
     Dim db As DAO.Database
     Dim rst As DAO.Recordset
-    
-    If mintProcessStatus <> 1 Then
-        MsgBox "You have to process the data first.  Click " & vbCrLf & _
-                "'Process Groups' button to process the data! ", vbCritical, _
-                "Data Not Processed"
-    mintProcessStatus = 0
-    GoTo ExitProc
-    End If
+    Dim intResp As Integer
+    Dim strMsg As String
+    Dim stDocName As String
+    Dim strUserName As String
     
     Set db = CurrentDb()
-      
-    'check to make sure all of the groups in the GroupLink file have been set up
-    'in the QCD database
-    strSQL = "SELECT tblAAGroups.SUBgroupID " & _
-              "FROM tblAAGroups LEFT JOIN tblGrp ON tblAAGroups." & _
-              "SUBgroupID = tblGrp.GroupID " & _
-              "WHERE (((tblGrp.GroupID) Is Null));"
-
-    Set rst = db.OpenRecordset(strSQL, dbOpenDynaset)
-
-    If rst.RecordCount > 0 Then
-
-        Do Until rst.EOF
-            strGroup = rst.Fields("SubGroupID") & vbCrLf
-            rst.MoveNext
-            strGroupList = strGroupList & strGroup
-        Loop
-
-        MsgBox "You have groups in the GroupLink synch file that have not been " & vbCrLf & _
-                "setup in the QCD database yet.  You must set these groups up and " & vbCrLf & _
-                "and then repeat the entire synch process." & vbCrLf & vbCrLf & _
-                "Groups not set up : " & vbCrLf & strGroupList, vbCritical, "Groups Not Setup"
-
-        rst.Close
-        db.Close
-        Set db = Nothing
-        mintProcessStatus = 0
-        GoTo ExitProc
-    End If
-      
-    'check to make sure all of the groups have been
-    'loaded with plan/coverages/rates
-    'qselAA_GroupswithNoRates
-    Set rst = db.OpenRecordset("qrptAA_GroupswithNoRates", dbOpenSnapshot)
-    If rst.RecordCount > 0 Then
-        MsgBox "You have groups without the proper Plans/Coverages/Rates setup. " & vbCrLf & _
-                  "You must go back to those groups and setup the Plans/Coverages/Rates " & vbCrLf & _
-                  "before you can import the GroupLink file.  In order to see which groups " & vbCrLf & _
-                  "need maintenance, run the 'Groups with No Rates' report.", vbCritical, "Plans/Coverages/Rates Not Setup"
-        rst.Close
-        db.Close
-        Set db = Nothing
-        mintProcessStatus = 0
-        GoTo ExitProc
-    End If
-            
-      DoCmd.Hourglass True
-      
-      ' get pre-import Subscriber count
-      strSQL = "SELECT Count(tblSubscr.SUBssn) AS CurSCnt " & _
-             "FROM tblGrp " & _
-             "INNER JOIN tblSubscr ON tblGrp.GroupID = tblSubscr.SUBgroupID " & _
-             "WHERE (((tblGrp.GroupType)=4));"
-             
-      Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-      If rst.RecordCount > 0 Then
-        lngCurS = rst.Fields("CurSCnt")
-        rst.Close
-      Else
-        lngCurS = 0
-      End If
-      
-      ' get pre-import Dependent count
-      strSQL = "SELECT Count([tblDependent].[DepSubID]) AS CurDCnt " & _
-             "FROM (tblGrp " & _
-             "INNER JOIN tblSubscr ON tblGrp.GroupID = tblSubscr.SUBgroupID) " & _
-             "INNER JOIN tblDependent ON tblSubscr.SUBssn = tblDependent.DEPsubID " & _
-             "WHERE (((tblGrp.GroupType)=4));"
-      
-      Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-      If rst.RecordCount > 0 Then
-        lngCurD = rst.Fields("CurDCnt")
-        rst.Close
-      Else
-        lngCurD = 0
-      End If
-            
-      ' get Import Subscriber count
-      strSQL = "SELECT Count(tblEDI_App_Subscr.SUBssn) AS ImpSCnt FROM tblEDI_App_Subscr;"
-       
-      
-      Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-      If rst.RecordCount > 0 Then
-        lngImpS = rst.Fields("ImpSCnt")
-        rst.Close
-      Else
-        lngImpS = 0
-      End If
-      
-      ' get Import Dependent Count
-      strSQL = "SELECT Count(tblEDI_App_Dep.DEPsubID) AS ImpDCnt FROM tblEDI_App_Dep;"
-      
-      Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-      If rst.RecordCount > 0 Then
-        lngImpD = rst.Fields("ImpDCnt")
-        rst.Close
-      Else
-        lngImpD = 0
-      End If
-                
-      'strMsg = "Group: " & Me.cboGroups.Column(1) & vbCrLf & vbCrLf
-      strMsg = strMsg & "Current Counts: " & vbCrLf
-      strMsg = strMsg & "Subscribers - " & CStr(lngCurS) & vbCrLf
-      strMsg = strMsg & "Dependents - " & CStr(lngCurD) & vbCrLf & vbCrLf
-      strMsg = strMsg & "Group Link All American File:" & vbCrLf
-      strMsg = strMsg & "Subscribers - " & CStr(lngImpS) & vbCrLf
-      strMsg = strMsg & "Dependents - " & CStr(lngImpD) & vbCrLf & vbCrLf
-      strMsg = strMsg & "Differences: " & vbCrLf
-      strMsg = strMsg & "Subscribers - " & CStr(lngImpS - lngCurS) & vbCrLf
-      strMsg = strMsg & "Dependents - " & CStr(lngImpD - lngCurD) & vbCrLf & vbCrLf
-      strMsg = strMsg & "Are you sure you want to perform this update? " & vbCrLf
-      strMsg = strMsg & "This procedure cannot be undone!"
     
-      DoCmd.Hourglass False
-      
-      intResp = MsgBox(strMsg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: Confirm Action")
-      If intResp = vbYes Then
-            
-            'process the subscribers and dependents
-            DoCmd.Hourglass True
-            DoCmd.SetWarnings False
-            
-            ' populate table for all AA groups
-            db.Execute "DELETE tblAAGroups.* FROM tblAAGroups;", dbSeeChanges
-            db.Execute "INSERT INTO tblAAGroups ( SUBgroupID )" & _
-            "SELECT DISTINCT tblEDI_App_Subscr.SUBgroupID " & _
-            "FROM tblEDI_App_Subscr;", dbSeeChanges
-            
-            ' delete subscribers first where the GroupID's match
-            strSQL = "DELETE FROM tblSubscr WHERE SUBgroupID IN (Select SUBgroupID FROM tblAAGroups)"
-            ExecuteSQL strSQL
-            
-            'delete subscribers second where the SSN's match
-            strSQL = "DELETE FROM tblSubscr WHERE SUBssn IN (SELECT SUBssn FROM tblEDI_App_Subscr)"
-            ExecuteSQL strSQL
-                
-            'populates the SubID control in tblEDI_App_Subscr
-            'for all new subscribers who have not been
-            'assigned a SubID yet
-            Call PopulateEDISubIDs
-                    
-            'import GroupLink data into QCD database
-            ExecuteSQL ("EXEC uspSubscrImport")
-            ExecuteSQL ("EXEC uspDepImport")
-                                     
-            DoCmd.SetWarnings True
-            DoCmd.Hourglass False
-        
-            MsgBox "Import File information imported.", vbExclamation, "QCD: Confirm"
-            
-            mintProcessStatus = 0
-                      
+    ' validation
+    If ValidSSN And ValidPlanCover Then
+            gintProcessStatus = 1
+    Else
+        If ValidSSN Then
+                gintProcessStatus = ValidSSN
+        Else
+            MsgBox "There are duplicates SSNs in the tpa file."
+            gintProcessStatus = ValidPlanCover
         End If
-            
-        db.Close
-        Set db = Nothing
+        
+        If ValidPlanCover Then
+                gintProcessStatus = ValidPlanCover
+        Else
+            MsgBox "There are incorrect plans and coverages in the tpa file."
+            gintProcessStatus = ValidSSN
+        End If
+    End If
+    
+    ' validate user running import data
+    If gintProcessStatus <> 1 Then
+        MsgBox "You're not clear to import data. " & vbCrLf & _
+                "Check to see if all issues such as bad " & vbCrLf & _
+                "plans and covers and duplicate SSN's " & vbCrLf & _
+                "have been addressed. ", vbCritical, _
+                "QCD: Data issues"
+        gintProcessStatus = 0
+        GoTo ExitProc
+    End If
+    
+    strMsg = "Are you ready to begin the final import?"
+    
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+                
+    '  begin tpa data import into QCD database
+    intResp = MsgBox(strMsg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: tpa import")
+    If intResp = vbYes Then
+        ' import tpa subscriber data into QCD database
+        strUserName = GetCurrentUserName()
+        mstrSQL = "usp_tpa_final_sub"
+        If Run_Procedure(mstrSQL, strUserName, "", "") Then
+            gintProcessStatus = 1
+            MsgBox "tpa subscriber data import succeeded.", vbExclamation, "QCD: tpa import"
+        Else
+            Err.Raise vbObjectError + 513, "usp_tpa_final_sub", "tpa subscriber import failed. Contact support."
+            gintProcessStatus = 0
+            GoTo HandleError
+        End If
+        
+        ' import tpa dependent data into QCD database
+        mstrSQL = "usp_tpa_final_dep"
+        If Run_Procedure(mstrSQL, strUserName, "", "") Then
+            MsgBox "tpa dependent data import succeeded.", vbExclamation, "QCD: tpa import"
+            gintProcessStatus = 1
+        Else
+            Err.Raise vbObjectError + 513, "usp_tpa_final_dep", "tpa dependent import failed. Contact support."
+            gintProcessStatus = 0
+            GoTo HandleError
+        End If
+        
+    End If
+    ' end of data commit
+    
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
         
 ExitProc:
-  Exit Sub
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    Exit Sub
 
 HandleError:
-  mintProcessStatus = 0
+  gintProcessStatus = 0
   MsgBox "Error: " & Err.DESCRIPTION & _
-     " (" & Err.Number & ")", vbExclamation
+     " (" & Err.Number & ")", vbCritical
   Resume ExitProc
 
 End Sub
 
 Private Sub cmdPrint_Click()
-  ' Comments   : Prints a report of new subscribers
-  ' Parameters : None
-  ' Created    : 2/28/2004 1:31:11 PM Admin
-  ' Modified   :
-  '
-  ' --------------------------------------------------------
-  On Error GoTo HandleError
-  
+    ' Comments   : Prints a report of new subscribers
+    ' Parameters : None
+    ' Created    : 2/28/2004 1:31:11 PM Admin
+    ' Modified   :
+    '
+    ' --------------------------------------------------------
+    On Error GoTo HandleError
+    
+    ' validation
+    If ValidSSN And ValidPlanCover Then
+        gintProcessStatus = 1
+    Else
+        If ValidSSN Then
+            gintProcessStatus = ValidSSN
+        Else
+            gintProcessStatus = 0
+        End If
+        
+        If ValidPlanCover Then
+            gintProcessStatus = ValidPlanCover
+        Else
+            gintProcessStatus = 0
+        End If
+    End If
+    
+    ' process data?
+    If gintProcessStatus <> 1 Then
+        MsgBox "You must process the data first.  Click " & vbCrLf & _
+        "'Process Groups' button to process the data! ", vbCritical, _
+        "Data Not Processed"
+        gintProcessStatus = 0
+        GoTo ExitProc
+    End If
+    
     DoCmd.Hourglass True
     DoCmd.SetWarnings False
     
@@ -632,126 +824,138 @@ Private Sub cmdPrint_Click()
     DoCmd.Hourglass False
     
 ExitProc:
-  Exit Sub
-
-HandleError:
-  MsgBox "Error: " & Err.DESCRIPTION & _
-     " (" & Err.Number & ")", vbExclamation
-  Resume ExitProc
-End Sub
-Private Sub cmdPrintCards_Click()
-   
-    On Error GoTo PROC_ERR
-    
-    DoCmd.Hourglass True
-    DoCmd.SetWarnings False
-    
-    'update mail card status
-    ExecuteSQL ("UPDATE tmpEDI_Rpt Set tmpEDI_Rpt.GRMailCard = tblGrp.GRMailCard " & _
-                    "FROM tmpEDI_Rpt INNER JOIN tblGrp ON tmpEDI_Rpt.GroupID = tblGrp.GroupID;")
-
-    DoCmd.OpenReport "rptCardMemAA", acViewPreview
-    
-    ExecuteSQL ("UPDATE tblSubscr SET tblSubscr.SUBcardPRT = 1, tblSubscr.SUBcardPRTdte = GetDate() " & _
-                   "FROM tblSubscr INNER JOIN tmpEDI_Rpt ON tblSubscr.SUBssn = tmpEDI_Rpt.SUBssn;")
-PROC_EXIT:
-
     DoCmd.SetWarnings True
     DoCmd.Hourglass False
-    
     Exit Sub
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION
-    Resume PROC_EXIT
     
-
+HandleError:
+    MsgBox "Error: " & Err.DESCRIPTION & _
+    " (" & Err.Number & ")", vbExclamation
+    Resume ExitProc
 End Sub
-Private Sub cmdProcess_Click()
 
+   
+Private Sub cmdProcess_Click()
+    
     On Error GoTo PROC_ERR
     
     Dim db As DAO.Database
     Dim rst As DAO.Recordset
-    Dim strSQL As String
+    Dim I As Integer
     Dim OutputMeter As Variant
     Dim MeterFull As Integer
     Dim MeterCount As Integer
+    Dim stDocName As String
     
     Set db = CurrentDb()
     
-    mintProcessStatus = 0
+    gintProcessStatus = 0
     
-    Application.SetOption "Show Status Bar", True
-    MeterFull = 10
-    MeterCount = 1
-    DoCmd.Hourglass True
-    DoCmd.SetWarnings False
+    ' warn user about cancelled groups
+    Dim Msg, Style, Title, Response
+    Msg = "Did you cancel any dropped groups?" & vbCrLf & vbCrLf & _
+    "Do you want to continue?"
+    Style = vbYesNo + vbInformation + vbDefaultButton2
+    Title = "Cancelled groups warning."
+    Response = MsgBox(Msg, Style, Title)
     
-    'first check to see if there are any duplicate SSN's
-    'in the GroupLink table (ELGEXP)
-    strSQL = "SELECT ELGEXP.[EISSN#] " & _
-             "FROM ELGEXP " & _
-             "WHERE (((ELGEXP.EIRECID)='P') AND ((Mid([EINMPLAN],8,3))='QCD')) " & _
-             "OR (((ELGEXP.EIRECID)='P') AND ((ELGEXP.EINMPLAN)='QCDBLU-MNL')) " & _
-             "GROUP BY ELGEXP.[EISSN#] " & _
-             "HAVING (((Count(ELGEXP.[EISSN#]))>1)) OR (((Count(ELGEXP.[EISSN#]))>1));"
-    'Debug.Print strSQL
-    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rst.RecordCount > 0 Then
-        MsgBox "There are duplicate SSN's in the Group Link Access file."
-        rst.Close
-        Set rst = Nothing
-        db.Close
-        Set db = Nothing
-        DoCmd.Hourglass False
-        DoCmd.SetWarnings True
-        GoTo PROC_EXIT
+    If Response = vbYes Then
+        
+        ' begin importing data into temporary tables
+        Msg = "Do you want to import the tpa data?"
+        Response = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: Confirm Action")
+        If Response = vbYes Then
+            
+            Application.SetOption "Show Status Bar", True
+            MeterFull = 10
+            MeterCount = 1
+            DoCmd.Hourglass True
+            DoCmd.SetWarnings False
+            
+            ' process data from tpa file
+            mstrSQL = "usp_tpa_import_csv"
+            mstrUser = ""
+            mstrFileName = PickFile()
+            If Not IsNull(mstrFileName) And mstrFileName <> "" Then
+                mstrFileName = Mid(mstrFileName, Len(mstrPath) + 1, Len(mstrFileName) - Len(mstrPath))
+                mstrPath = mstrPath & "\"
+                
+                ' Wait 10 seconds while stored procedures run
+                MsgBox "Wait while the process completes."
+                WaitSeconds (10)
+                
+                ' import data from tpa file with SSIS package
+                I = Run_Procedure(mstrSQL, mstrUser, mstrPath, mstrFileName)
+                If I = 1 Then
+                    ' split data into subs and deps
+                    mstrSQL = "usp_tpa_import_sub"
+                    Call GetOutPutParm(mstrSQL)                      ' import subscribers
+                    If g_sRtnVal = "Procedure Succeeded" Then
+                        mstrSQL = "usp_tpa_import_dep"
+                        Call GetOutPutParm(mstrSQL)                  ' import dependents
+                        If g_sRtnVal = "Procedure Succeeded" Then
+                            gintProcessStatus = 1
+                        Else
+                            MsgBox "tpa data import failed; contact support.", vbInformation, "QCD: Process tpa data"
+                            gintProcessStatus = 0
+                            GoTo PROC_EXIT
+                        End If
+                    End If
+                Else
+                    MsgBox "The SSIS job failed; contact support.", vbInformation, "QCD: Process tpa data"
+                    gintProcessStatus = 0
+                    GoTo PROC_EXIT
+                End If
+            End If
+            
+            ' validation
+            If ValidSSN And ValidPlanCover Then
+                gintProcessStatus = 1
+            Else
+                If ValidSSN Then
+                    gintProcessStatus = ValidSSN
+                Else
+                    MsgBox "There are duplicates SSNs in the tpa file.", vbInformation, "QCD: Process tpa data"
+                    gintProcessStatus = ValidPlanCover
+                End If
+                
+                If ValidPlanCover Then
+                    gintProcessStatus = ValidPlanCover
+                Else
+                    MsgBox "There are incorrect plans and coverages in the tpa file.", vbInformation, "QCD: Process tpa data"
+                    gintProcessStatus = ValidSSN
+                End If
+            End If
+        End If
     End If
     
-    ' Update the NULL EISSN#'s
-    strSQL = "UPDATE ELGEXP SET ELGEXP.[EISSN#] = Left([EIMBRID],9) WHERE ELGEXP.[EISSN#] Is Null AND EIRECID = 'P';"
-    db.Execute strSQL, dbSeeChanges
-    strSQL = "UPDATE ELGEXP SET ELGEXP.[EISSN#] = '000000000' WHERE ELGEXP.[EISSN#] Is Null AND EIRECID = 'M';"
-    db.Execute strSQL, dbSeeChanges
-
-    'delete data from Group Link table on SQL Server
-    OutputMeter = SysCmd(acSysCmdInitMeter, "Deleting data from import table . . .", MeterFull)
-    MeterCount = MeterCount + 3
-    OutputMeter = SysCmd(acSysCmdUpdateMeter, MeterCount)
-    ExecuteSQL ("TRUNCATE TABLE ELGEXP_SQL")
+    If gintProcessStatus = 1 Then
+        MsgBox "File processed correctly.", vbInformation, "QCD: Process tpa data."
+    Else
+        MsgBox "You have data issues." & vbCrLf & _
+        "Corrent them with the buttons below" & vbCrLf & _
+        "and move on to the import." & vbCrLf & _
+        "If you click process again, you must" & vbCrLf & _
+        "start from the beginning.", vbCritical, "QCD: Process tpa data."
+    End If
     
-    'move data from linked Group Link Access table
-    'to Group Link table on SQL Server
-    SysCmd (acSysCmdRemoveMeter)
-    DoCmd.OpenQuery "qappELGEXP_to_SQL"
-        
-    'run stored procedures that copy all of the
-    'Group Link subscribers and dependents
-    'from the Group Link SQL table
-    'to QCD tables (tblEDI_App_Subscr & tblEDI_App_Dep)
-    OutputMeter = SysCmd(acSysCmdInitMeter, "Processing data from GroupLink . . .", MeterFull)
-    MeterCount = MeterCount + 3
-    OutputMeter = SysCmd(acSysCmdUpdateMeter, MeterCount)
-    ExecuteSQL ("EXEC uspAA_Process")      ' populates tblEDI_App_Subscr & tblEDI_App_Dep
-    ExecuteSQL ("EXEC uspUpdateAAImport")  ' updates certain fields on tblEDI_App_Subscr
-    
+    Set db = Nothing
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
     OutputMeter = SysCmd(acSysCmdRemoveMeter)
     
-    DoCmd.SetWarnings True
-    DoCmd.Hourglass False
-    
-    MsgBox "The GroupLink data was processed successfully.", vbInformation, "QCD: All American Import"
-
-    mintProcessStatus = 1
-    
 PROC_EXIT:
+    Set db = Nothing
+    DoCmd.Hourglass False
+    DoCmd.SetWarnings True
+    OutputMeter = SysCmd(acSysCmdRemoveMeter)
     Exit Sub
+    
 
 PROC_ERR:
-    mintProcessStatus = 0
-    MsgBox Err.DESCRIPTION
-    Resume PROC_EXIT
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure:fdlgAASync.cmdProcess"
+  Resume PROC_EXIT
+
     
 End Sub
 
@@ -770,93 +974,159 @@ Err_cmdClose_Click:
     
 End Sub
 
-Private Sub cmdRates_Click()
-  ' Comments   : Prints a report of groups
-  '              in the GroupLink file who
-  '              have rates but the rates
-  '              have not been setup in the
-  '              QCD database
-  ' Parameters : None
-  ' Created    : 12/05/2007 John Criswell
-  ' Modified   :
-  '
-  ' --------------------------------------------------------
-  On Error GoTo HandleError
-  
-    DoCmd.Hourglass True
-    DoCmd.SetWarnings False
-    
-    'print preview the report
-    DoCmd.OpenReport "rptAA_GroupswithNoRates", acViewPreview
-    
-    DoCmd.SetWarnings True
-    DoCmd.Hourglass False
-    
-ExitProc:
-  Exit Sub
+Private Sub cmdStatistics_Click()
 
-HandleError:
-  MsgBox "Error: " & Err.DESCRIPTION & _
-     " (" & Err.Number & ")", vbExclamation
-  Resume ExitProc
-End Sub
-
-Private Sub cmdViewChanges_Click()
-    
     On Error GoTo PROC_ERR
-    
-    DoCmd.Hourglass True
-    DoCmd.SetWarnings False
-    
-    ' Update the NULL EISSN#'s
-    strSQL = "UPDATE ELGEXP SET ELGEXP.[EISSN#] = Left([EIMBRID],9) WHERE ELGEXP.[EISSN#) Is Null AND EIRECID = 'P';"
-    db.Execute strSQL, dbSeeChanges
-    strSQL = "UPDATE ELGEXP SET ELGEXP.[EISSN#] = '000000000' WHERE ELGEXP.[EISSN#) Is Null AND EIRECID = 'M';"
-    db.Execute strSQL, dbSeeChanges
 
-    ' move data from linked Access to SQL Server
-    ExecuteSQL ("TRUNCATE TABLE ELGEXP_SQL")
-    DoCmd.OpenQuery "qappELGEXP_to_SQL"
+    ' validation
+    If ValidSSN And ValidPlanCover Then
+            gintProcessStatus = 1
+    Else
+        If ValidSSN Then
+            gintProcessStatus = ValidSSN
+        Else
+            gintProcessStatus = 0
+        End If
+        
+        If ValidPlanCover Then
+            gintProcessStatus = ValidPlanCover
+        Else
+            gintProcessStatus = 0
+        End If
+    End If
+        
+    ' process data?
+    If gintProcessStatus <> 1 Then
+        MsgBox "You must process the data first.  Click " & vbCrLf & _
+                "'Process Groups' button to process the data! ", vbCritical, _
+                "Data Not Processed"
+        gintProcessStatus = 0
+        GoTo PROC_EXIT
+    End If
     
-    ExecuteSQL ("EXEC uspAA_VarianceReport")
+    DoCmd.SetWarnings False
+    DoCmd.Hourglass True
     
-    DoCmd.OpenReport "rptAA_VarianceReport", acViewPreview
+    mstrSQL = "usp_tpa_metrics"
+    Call GetOutPutParm(mstrSQL)
+    If g_sRtnVal = "Procedure Succeeded" Then
+        DoCmd.OpenReport "rptAA_Stats", acViewPreview
+    Else
+        MsgBox "tpa statistics failed.  Contact support.", vbExclamation, "QCD: Statistics"
+    End If
     
     DoCmd.SetWarnings True
     DoCmd.Hourglass False
     
 PROC_EXIT:
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
     Exit Sub
 
 PROC_ERR:
+    gintProcessStatus = 0
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+
+End Sub
+
+Private Sub cmdViewChanges_Click()
+    
+    On Error GoTo PROC_ERR
+
+    ' validation
+    If ValidSSN And ValidPlanCover Then
+            gintProcessStatus = 1
+    Else
+        If ValidSSN Then
+            gintProcessStatus = ValidSSN
+        Else
+            gintProcessStatus = 0
+        End If
+        
+        If ValidPlanCover Then
+            gintProcessStatus = ValidPlanCover
+        Else
+            gintProcessStatus = 0
+        End If
+    End If
+    
+    ' process data?
+    If gintProcessStatus <> 1 Then
+        MsgBox "You must process the data first.  Click " & vbCrLf & _
+                "'Process Groups' button to process the data! ", vbCritical, _
+                "Data Not Processed"
+        gintProcessStatus = 0
+        GoTo PROC_EXIT
+    End If
+    
+    DoCmd.OpenReport "rptAA_VarianceReport", acViewPreview
+    gintProcessStatus = 1
+
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+PROC_EXIT:
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    Exit Sub
+
+PROC_ERR:
+    gintProcessStatus = 0
     MsgBox Err.DESCRIPTION
     Resume PROC_EXIT
 End Sub
+Private Sub btnTPA_Bad_Plan_and_Rate_Click()
+
+On Error GoTo Err_btnTPA_Bad_Plan_and_Rate_Click
 
 
-Private Sub Command10_Click()
-
-End Sub
-Private Sub cmdRemoveDups_Click()
-On Error GoTo Err_cmdRemoveDups_Click
-
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSSN() As String
+    Dim I As Integer
+    Dim J As Integer
     Dim stDocName As String
+    Dim strWhere As String
     
-    DoCmd.SetWarnings True
-    stDocName = "ELGEXP_RemoveMarkedDups"
-    DoCmd.OpenQuery stDocName, acNormal, acEdit
+    Set db = CurrentDb
+    Set rst = db.OpenRecordset("vw_tpa_plan_cover", dbOpenDynaset)
+    If rst.BOF And rst.EOF Then
+        MsgBox "Plans and covers are correct", vbOKOnly, "QCD: Plans and covers."
+        GoTo Exit_btnTPA_Bad_Plan_and_Rate_Click
+    Else
+        rst.MoveLast
+        rst.MoveFirst
+        I = 0
+        J = rst.RecordCount
+        strWhere = "SSN IN ("
+        
+        ReDim strSSN(I To J)
+        If rst.RecordCount > 0 Then
+            Do Until rst.EOF
+                strSSN(I) = rst("SSN")
+                If I <> J - 1 Then
+                    strWhere = strWhere & "'" & strSSN(I) & "', "
+                Else
+                    strWhere = strWhere & "'" & strSSN(I) & "')"
+                End If
+                I = I + 1
+                rst.MoveNext
+            Loop
+        End If
+        stDocName = "frmTPA_Bad_Plan_and_Cover"
+        DoCmd.OpenForm stDocName, , , strWhere
+    End If
+    rst.Close
+    Set db = Nothing
     
-    MsgBox "Dups have been removed from the Import Table.", vbInformation, "Dups Removed"
-    
-Exit_cmdRemoveDups_Click:
+Exit_btnTPA_Bad_Plan_and_Rate_Click:
+    'rst.Close
+    Set db = Nothing
     Exit Sub
 
-Err_cmdRemoveDups_Click:
+Err_btnTPA_Bad_Plan_and_Rate_Click:
     MsgBox Err.DESCRIPTION
-    Resume Exit_cmdRemoveDups_Click
+    Resume Exit_btnTPA_Bad_Plan_and_Rate_Click
     
-End Sub
-
-Private Sub cmdViewDups_Enter()
-    DoCmd.OpenQuery "ELGSEP_DupEdit"
 End Sub

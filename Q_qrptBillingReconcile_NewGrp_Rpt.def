@@ -1,62 +1,59 @@
 Operation =3
 Name ="tmpBillingReconcile_rpt"
 Option =0
-Having ="(((tblGrp.GRcontBEG)=[forms].[fdlgPrtBillingReconcile].[ctlInvdate]))"
+Having ="(((tblGrp.GRContBeg)=forms.fdlgPrtBillingReconcile.ctlInvdate))"
 Begin InputTables
-    Name ="qrptBillingReconcileARTRAN"
     Name ="tblGrp"
+    Name ="qrptBillingReconcileARTRAN"
 End
 Begin OutputColumns
     Name ="GRcontBEG"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRContBeg"
     Name ="GROUPid"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Name ="GRname"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
     Name ="Docdate"
     Expression ="qrptBillingReconcileARTRAN.DocumentDate"
-    Name ="GRPgeoID"
-    Expression ="tblGrp.GRPgeoID"
+    Name ="GRGeoID"
+    Expression ="tblGrp.GRGeoID"
     Name ="GRcancelled"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
     Name ="GRcancelledDate"
-    Expression ="tblGrp.GRcancelledDate"
+    Expression ="tblGrp.GRCancelledDate"
     Name ="GRreinstatedDate"
-    Expression ="tblGrp.GRreinstatedDate"
+    Expression ="tblGrp.GRReinstatedDate"
     Name ="GRhold"
-    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GRHold"
     Alias ="SumOfDocamt"
     Name ="Docamt"
     Expression ="Sum(qrptBillingReconcileARTRAN.DocumentAmt)"
+    Alias ="Expr2"
     Name ="Docno"
     Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
+    Alias ="Expr3"
     Name ="Trntyp"
     Expression ="qrptBillingReconcileARTRAN.TransactionType"
 End
-Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="qrptBillingReconcileARTRAN"
-    Expression ="tblGrp.GROUPid = qrptBillingReconcileARTRAN.CustomerKey"
-    Flag =2
-End
 Begin Groups
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRContBeg"
     GroupLevel =0
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     GroupLevel =0
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     GroupLevel =0
     Expression ="qrptBillingReconcileARTRAN.DocumentDate"
     GroupLevel =0
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
     GroupLevel =0
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
     GroupLevel =0
-    Expression ="tblGrp.GRcancelledDate"
+    Expression ="tblGrp.GRCancelledDate"
     GroupLevel =0
-    Expression ="tblGrp.GRreinstatedDate"
+    Expression ="tblGrp.GRReinstatedDate"
     GroupLevel =0
-    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GRHold"
     GroupLevel =0
     Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
     GroupLevel =0
@@ -82,34 +79,34 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =930
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =376
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =156
     Left =0
     Top =0
     ColumnsShown =655
     Begin
-        Left =437
-        Top =14
-        Right =779
-        Bottom =128
-        Top =0
-        Name ="qrptBillingReconcileARTRAN"
-        Name =""
-    End
-    Begin
         Left =64
         Top =14
         Right =268
-        Bottom =113
+        Bottom =102
         Top =0
         Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =437
+        Top =14
+        Right =779
+        Bottom =57
+        Top =0
+        Name ="qrptBillingReconcileARTRAN"
         Name =""
     End
 End

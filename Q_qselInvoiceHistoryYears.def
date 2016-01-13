@@ -14,6 +14,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblInvoiceHistory.InvYear"
@@ -22,14 +24,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1024
-    Bottom =630
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =1017
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -38,7 +40,7 @@ Begin
         Left =38
         Top =6
         Right =240
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblInvoiceHistory"
         Name =""

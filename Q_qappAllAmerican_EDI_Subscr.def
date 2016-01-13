@@ -43,7 +43,7 @@ Begin OutputColumns
     Name ="SUBdob"
     Expression ="Left([EIDTBR],2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Right([EIDTBR],4)"
     Alias ="DepCnt"
-    Name ="SUBnoDEPENT"
+    Name ="DepCnt"
     Expression ="IIf(IsNull([Cnt]),0,[Cnt])"
     Alias ="Status"
     Name ="SUBstatus"
@@ -112,14 +112,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =640
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =476
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =256
     Left =0
     Top =0
@@ -128,7 +128,7 @@ Begin
         Left =113
         Top =28
         Right =395
-        Bottom =225
+        Bottom =221
         Top =41
         Name ="tmpExportAllAmerican"
         Name =""

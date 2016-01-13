@@ -6,23 +6,23 @@ Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Name ="tblCommission.COMMagent"
-    Expression ="[tblGrpAgt].[AGENTid]"
-    Name ="tblCommission.COMMname"
-    Expression ="IIf([tblAgent].[PayCommTo]=1,[AGENCY] & \" -- \" & \"FEIN = \" & Format([AGENTta"
-        "xID],\"00-0000000;;_\"),[AGENT_LUname] & \" -- \" & \"SSN = \" & Format([AGENTSS"
-        "N],\"000-00-0000;;_\"))"
-    Name ="tblCommission.COMMrate"
-    Expression ="[tblGrpAgt].[AgentRATE]"
+    Name ="tblCommission.CommAgent"
+    Expression ="tblGrpAgt.AGENTid"
+    Name ="tblCommission.CommName"
+    Expression ="IIf(tblAgent.PayCommTo=1,[AGENCY] & \" -- \" & \"FEIN = \" & Format([AGENTtaxID]"
+        ",\"00-0000000;;_\"),[AGENT_LUname] & \" -- \" & \"SSN = \" & Format([AGENTSSN],\""
+        "000-00-0000;;_\"))"
+    Name ="tblCommission.CommRate"
+    Expression ="tblGrpAgt.AgentRATE"
 End
 Begin Joins
     LeftTable ="tblCommission"
     RightTable ="tblGrpAgt"
-    Expression ="tblCommission.COMMcustKEY = tblGrpAgt.GROUPid"
+    Expression ="tblCommission.CommCustKey=tblGrpAgt.GroupId"
     Flag =1
     LeftTable ="tblGrpAgt"
     RightTable ="tblAgent"
-    Expression ="tblGrpAgt.AGENTid = tblAgent.AGENTid"
+    Expression ="tblGrpAgt.AgentId=tblAgent.AgentId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -36,11 +36,11 @@ Begin
     State =0
     Left =40
     Top =62
-    Right =1658
-    Bottom =431
+    Right =1508
+    Bottom =443
     Left =-1
     Top =-1
-    Right =1611
+    Right =1453
     Bottom =201
     Left =0
     Top =0
@@ -49,7 +49,7 @@ Begin
         Left =76
         Top =3
         Right =399
-        Bottom =139
+        Bottom =136
         Top =3
         Name ="tblCommission"
         Name =""
@@ -58,7 +58,7 @@ Begin
         Left =461
         Top =10
         Right =648
-        Bottom =140
+        Bottom =128
         Top =0
         Name ="tblGrpAgt"
         Name =""
@@ -67,7 +67,7 @@ Begin
         Left =734
         Top =11
         Right =954
-        Bottom =118
+        Bottom =114
         Top =0
         Name ="tblAgent"
         Name =""

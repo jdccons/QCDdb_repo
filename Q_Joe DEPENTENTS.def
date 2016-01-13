@@ -1,7 +1,7 @@
 Operation =1
 Option =0
-Where ="(((tblRates.Rate)<1) AND ((tblSubscr.SubNoDepent)>0) AND ((tblSubscr.SubStatus)="
-    "\"GRSUB\"))"
+Where ="(((tblRates.Rate)<1) AND ((tblSubscr.DepCnt)>0) AND ((tblSubscr.SubStatus)=\"GRS"
+    "UB\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblRates"
@@ -13,22 +13,22 @@ Begin OutputColumns
     Expression ="tblSubscr.SubGroupID"
     Expression ="tblSubscr.SubEffDate"
     Expression ="tblRates.Rate"
-    Expression ="tblSubscr.SubNoDepent"
+    Expression ="tblSubscr.DepCnt"
     Expression ="tblSubscr.SubStatus"
     Expression ="tblRates.PlanID"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.SubGroupID = tblRates.GroupID"
+    Expression ="tblSubscr.SubGroupID=tblRates.GroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.PlanID = tblRates.PlanID"
+    Expression ="tblSubscr.PlanID=tblRates.PlanID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.CoverID = tblRates.CoverID"
+    Expression ="tblSubscr.CoverID=tblRates.CoverID"
     Flag =1
 End
 Begin OrderBy
@@ -41,15 +41,11 @@ dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
 dbMemo "OrderBy" ="[Joe DEPENTENTS].SubGroupID"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblSubscr.SubSSN"
         dbInteger "ColumnWidth" ="1095"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblSubscr.SubNoDepent"
-        dbInteger "ColumnWidth" ="1455"
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
@@ -88,10 +84,10 @@ Begin
     Left =134
     Top =90
     Right =1418
-    Bottom =680
+    Bottom =691
     Left =-1
     Top =-1
-    Right =1273
+    Right =1269
     Bottom =421
     Left =0
     Top =0
@@ -100,7 +96,7 @@ Begin
         Left =51
         Top =7
         Right =615
-        Bottom =331
+        Bottom =320
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -109,7 +105,7 @@ Begin
         Left =712
         Top =26
         Right =1150
-        Bottom =155
+        Bottom =144
         Top =0
         Name ="tblRates"
         Name =""

@@ -2,8 +2,8 @@ Operation =3
 Name ="tblInvLin"
 Option =8
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblInvHdrPreliminary"
+    Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
@@ -13,10 +13,10 @@ Begin OutputColumns
     Name ="DOCUMENT NO"
     Expression ="tblInvHdrPreliminary.Tranno"
     Name ="ITEM KEY"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="Desc"
     Name ="DESCRIPTION"
-    Expression ="([tblSubscr].[SUBlastNAME] & \", \" & [tblSubscr].[SUBfirstNAME])"
+    Expression ="(tblSubscr.SUBlastNAME & \", \" & tblSubscr.SUBfirstNAME)"
     Alias ="QtyOrdered"
     Name ="QTY ORDERED"
     Expression ="1"
@@ -30,16 +30,16 @@ Begin OutputColumns
     Name ="REV SUB"
     Expression ="CStr(2000)"
     Name ="UNIT PRICE"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubRate"
 End
 Begin Joins
     LeftTable ="tblInvHdrPreliminary"
     RightTable ="tblSubscr"
-    Expression ="tblInvHdrPreliminary.Custkey = tblSubscr.PLTcustKEY"
+    Expression ="tblInvHdrPreliminary.Custkey=tblSubscr.PltCustKey"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -53,10 +53,10 @@ Begin
     Left =68
     Top =88
     Right =1165
-    Bottom =405
+    Bottom =412
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =144
     Left =0
     Top =0
@@ -65,7 +65,7 @@ Begin
         Left =289
         Top =9
         Right =385
-        Bottom =104
+        Bottom =97
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -74,7 +74,7 @@ Begin
         Left =48
         Top =11
         Right =272
-        Bottom =111
+        Bottom =99
         Top =0
         Name ="tblInvHdrPreliminary"
         Name =""
@@ -83,7 +83,7 @@ Begin
         Left =481
         Top =6
         Right =577
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

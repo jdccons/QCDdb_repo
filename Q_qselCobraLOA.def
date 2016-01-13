@@ -1,19 +1,19 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBCOBRA)=True) AND ((tblGrp.GROUPid) Not Like \"INDV*\")) OR (((tb"
-    "lSubscr.SUBLOA)=True) AND ((tblGrp.GROUPid) Not Like \"INDV*\"))"
+Where ="(((tblSubscr.SUBCOBRA)=True) AND ((tblGrp.GroupID) Not Like \"INDV*\")) OR (((tb"
+    "lGrp.GroupID) Not Like \"INDV*\") AND ((tblSubscr.SUBLOA)=True))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
     Expression ="tblSubscr.*"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -29,10 +29,10 @@ Begin
     Left =59
     Top =52
     Right =1016
-    Bottom =449
+    Bottom =412
     Left =-1
     Top =-1
-    Right =946
+    Right =942
     Bottom =180
     Left =0
     Top =0
@@ -41,7 +41,7 @@ Begin
         Left =48
         Top =7
         Right =373
-        Bottom =132
+        Bottom =125
         Top =40
         Name ="tblSubscr"
         Name =""
@@ -50,7 +50,7 @@ Begin
         Left =421
         Top =7
         Right =645
-        Bottom =139
+        Bottom =125
         Top =0
         Name ="tblGrp"
         Name =""

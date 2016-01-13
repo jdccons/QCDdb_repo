@@ -1,35 +1,35 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBcontEND) Between #7/1/1996# And #6/1/2005#) AND ((tblSubscr.SUBs"
+Where ="(((tblSubscr.SubContEnd) Between #7/1/1996# And #6/1/2005#) AND ((tblSubscr.SubS"
     "tatus)=\"indiv\") AND ((tblRates.GroupID)='INDV1' Or (tblRates.GroupID)='INDV2' "
-    "Or (tblRates.GroupID)='INDV3') AND ((tblSubscr.SUBcancelled)=1 Or (tblSubscr.SUB"
-    "cancelled)=2)) OR (((tblSubscr.SUBcontEND) Between #7/1/1996# And #6/1/2005#) AN"
-    "D ((tblSubscr.SUBstatus)=\"indiv\") AND ((tblRates.GroupID)='INDV1' Or (tblRates"
-    ".GroupID)='INDV2' Or (tblRates.GroupID)='INDV3') AND ((tblSubscr.SUBcancelled)=1"
-    " Or (tblSubscr.SUBcancelled)=2)) OR (((tblSubscr.SUBcontEND) Between #7/1/1996# "
-    "And #6/1/2005#) AND ((tblSubscr.SUBstatus)=\"indiv\") AND ((tblRates.GroupID)='I"
+    "Or (tblRates.GroupID)='INDV3') AND ((tblSubscr.SubCancelled)=1 Or (tblSubscr.Sub"
+    "Cancelled)=2)) OR (((tblSubscr.SubContEnd) Between #7/1/1996# And #6/1/2005#) AN"
+    "D ((tblSubscr.SubStatus)=\"indiv\") AND ((tblRates.GroupID)='INDV1' Or (tblRates"
+    ".GroupID)='INDV2' Or (tblRates.GroupID)='INDV3') AND ((tblSubscr.SubCancelled)=1"
+    " Or (tblSubscr.SubCancelled)=2)) OR (((tblSubscr.SubContEnd) Between #7/1/1996# "
+    "And #6/1/2005#) AND ((tblSubscr.SubStatus)=\"indiv\") AND ((tblRates.GroupID)='I"
     "NDV1' Or (tblRates.GroupID)='INDV2' Or (tblRates.GroupID)='INDV3') AND ((tblSubs"
-    "cr.SUBcancelled)=1 Or (tblSubscr.SUBcancelled)=2))"
+    "cr.SubCancelled)=1 Or (tblSubscr.SubCancelled)=2))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBcontEND"
-    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubContEnd"
+    Expression ="tblSubscr.SubStatus"
     Expression ="tblRates.GroupID"
     Expression ="tblRates.Rate"
     Expression ="tblSubscr.DateUpdated"
-    Expression ="tblSubscr.SUBcancelled"
-    Expression ="tblSubscr.SUBnotes"
+    Expression ="tblSubscr.SubCancelled"
+    Expression ="tblSubscr.SubNotes"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -50,10 +50,10 @@ Begin
     Left =38
     Top =20
     Right =1135
-    Bottom =586
+    Bottom =527
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =327
     Left =0
     Top =0
@@ -62,7 +62,7 @@ Begin
         Left =38
         Top =6
         Right =353
-        Bottom =266
+        Bottom =259
         Top =36
         Name ="tblSubscr"
         Name =""
@@ -71,7 +71,7 @@ Begin
         Left =391
         Top =6
         Right =487
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

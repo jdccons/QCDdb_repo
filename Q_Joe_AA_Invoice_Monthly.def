@@ -1,27 +1,27 @@
 Operation =1
 Option =0
-Where ="(((ARTRAN.DocumentDate)=#8/1/2006#) AND ((ARTRAN.TransactionType)=\"I\") AND ((t"
-    "blGrp.GroupType)=4))"
+Where ="(((tblGrp.GroupType)=1 Or (tblGrp.GroupType)=4) And ((ARTRAN.DocumentDate)=#7/1/"
+    "2014#) And ((ARTRAN.TransactionType)=\"I\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="ARTRAN"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
     Expression ="ARTRAN.DocumentDate"
+    Alias ="Expr2"
     Expression ="ARTRAN.TransactionType"
+    Alias ="Expr3"
     Expression ="ARTRAN.DocumentAmt"
     Expression ="tblGrp.GroupType"
-End
-Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="ARTRAN"
-    Expression ="tblGrp.GROUPid = ARTRAN.CustomerKey"
-    Flag =1
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
 End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -38,7 +38,7 @@ Begin
     End
     Begin
         dbText "Name" ="tblGrp.GRname"
-        dbInteger "ColumnWidth" ="3930"
+        dbInteger "ColumnWidth" ="3915"
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
@@ -63,14 +63,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =929
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =635
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =415
     Left =0
     Top =0
@@ -79,7 +79,7 @@ Begin
         Left =38
         Top =6
         Right =158
-        Bottom =345
+        Bottom =334
         Top =0
         Name ="tblGrp"
         Name =""
@@ -88,8 +88,8 @@ Begin
         Left =329
         Top =5
         Right =688
-        Bottom =359
-        Top =2
+        Bottom =48
+        Top =0
         Name ="ARTRAN"
         Name =""
     End

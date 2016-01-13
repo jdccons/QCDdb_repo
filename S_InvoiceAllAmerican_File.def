@@ -1,0 +1,17 @@
+Version =196611
+ColumnsShown =1
+Begin
+    MacroName ="Create &Invoices"
+    Action ="RunCode"
+    Argument ="CreateInvoicesAllAmerican()"
+End
+Begin
+    MacroName ="&Post Invoices"
+    Action ="RunCode"
+    Argument ="PostInvoicesAllAmerican()"
+End
+Begin
+    MacroName ="&Close"
+    Action ="RunCommand"
+    Argument ="58"
+End

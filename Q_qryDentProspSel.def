@@ -5,14 +5,15 @@ Begin InputTables
     Name ="tbldentist"
 End
 Begin OutputColumns
-    Expression ="tbldentist.DENTselect"
+    Expression ="tbldentist.DentSelect"
+    Alias ="Expr1"
     Expression ="tbldentist.DENTid"
-    Expression ="tbldentist.DENTfirst"
-    Expression ="tbldentist.DENTlast"
-    Expression ="tbldentist.DENTcity"
+    Expression ="tbldentist.DentFirst"
+    Expression ="tbldentist.DentLast"
+    Expression ="tbldentist.DentCity"
 End
 Begin OrderBy
-    Expression ="tbldentist.DENTlast"
+    Expression ="tbldentist.DentLast"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -20,6 +21,8 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbMemo "OrderBy" ="qryDentProspSel.DENTselect DESC"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tbldentist.DENTcity"
@@ -32,10 +35,10 @@ Begin
     Left =62
     Top =44
     Right =778
-    Bottom =418
+    Bottom =368
     Left =-1
     Top =-1
-    Right =705
+    Right =701
     Bottom =144
     Left =0
     Top =0
@@ -44,7 +47,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tbldentist"
         Name =""

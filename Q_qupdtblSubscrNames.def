@@ -4,9 +4,9 @@ Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Name ="tblSubscr.SUBfirstNAME"
+    Name ="tblSubscr.SubFirstName"
     Expression ="ReplaceChars_TSB([SUBfirstNAME],\"$\",\"'\")"
-    Name ="tblSubscr.SUBlastNAME"
+    Name ="tblSubscr.SubLastName"
     Expression ="ReplaceChars_TSB([SUBlastNAME],\"$\",\"'\")"
     Name ="tblSubscr.SUB_LUname"
     Expression ="ReplaceChars_TSB([SUB_LUname],\"$\",\"'\")"
@@ -15,6 +15,7 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -22,10 +23,10 @@ Begin
     Left =71
     Top =170
     Right =974
-    Bottom =542
+    Bottom =530
     Left =-1
     Top =-1
-    Right =896
+    Right =888
     Bottom =180
     Left =0
     Top =0
@@ -34,7 +35,7 @@ Begin
         Left =48
         Top =7
         Right =249
-        Bottom =139
+        Bottom =125
         Top =28
         Name ="tblSubscr"
         Name =""

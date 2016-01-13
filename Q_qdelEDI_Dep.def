@@ -1,18 +1,18 @@
 Operation =5
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=[Forms]![frmEDI]![txtGrpID]))"
+Where ="(((tblSubscr.SubGroupID)=Forms!frmEDI!txtGrpID))"
 Begin InputTables
-    Name ="tblDependent"
     Name ="tblSubscr"
+    Name ="tblDependent"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Expression ="tblDependent.*"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -21,6 +21,7 @@ dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="0"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -28,10 +29,10 @@ Begin
     Left =55
     Top =141
     Right =929
-    Bottom =446
+    Bottom =465
     Left =-1
     Top =-1
-    Right =867
+    Right =859
     Bottom =144
     Left =0
     Top =0
@@ -40,7 +41,7 @@ Begin
         Left =532
         Top =9
         Right =737
-        Bottom =116
+        Bottom =112
         Top =0
         Name ="tblDependent"
         Name =""
@@ -49,7 +50,7 @@ Begin
         Left =38
         Top =6
         Right =258
-        Bottom =113
+        Bottom =109
         Top =10
         Name ="tblSubscr"
         Name =""

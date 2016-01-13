@@ -6,8 +6,10 @@ Begin InputTables
     Name ="vwRates"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="SubSSN"
     Expression ="QCD_Subscriber_DISD.SubSSN"
+    Alias ="Expr2"
     Name ="SubGroupID"
     Expression ="QCD_Subscriber_DISD.SubGroupID"
     Name ="PlanID"
@@ -22,20 +24,28 @@ Begin OutputColumns
     Alias ="SubLUName"
     Name ="SUB_LUname"
     Expression ="[SubLast] & \", \" & [SubFirst] & [SubMI]"
+    Alias ="Expr3"
     Name ="SubFirstName"
     Expression ="QCD_Subscriber_DISD.SubFirst"
+    Alias ="Expr4"
     Name ="SubMiddleName"
     Expression ="QCD_Subscriber_DISD.SubMI"
+    Alias ="Expr5"
     Name ="SubLastName"
     Expression ="QCD_Subscriber_DISD.SubLast"
+    Alias ="Expr6"
     Name ="SubStreet1"
     Expression ="QCD_Subscriber_DISD.SubAddr"
+    Alias ="Expr7"
     Name ="SubStreet2"
     Expression ="QCD_Subscriber_DISD.SubAddr2"
+    Alias ="Expr8"
     Name ="SubCity"
     Expression ="QCD_Subscriber_DISD.SubCity"
+    Alias ="Expr9"
     Name ="SubState"
     Expression ="QCD_Subscriber_DISD.SubState"
+    Alias ="Expr10"
     Name ="SubZip"
     Expression ="QCD_Subscriber_DISD.SubZip"
     Alias ="SubEffectiveDate"
@@ -44,24 +54,16 @@ Begin OutputColumns
     Alias ="SubDateOfBirth"
     Name ="SUBdob"
     Expression ="ConvertDate([SubDOB])"
-    Name ="SubNoDepent"
+    Alias ="Expr11"
+    Name ="DepCnt"
     Expression ="QCD_Subscriber_DISD.SubNoDep"
+    Alias ="Expr12"
     Name ="SubGender"
     Expression ="QCD_Subscriber_DISD.SubGender"
     Alias ="SubAge"
     Name ="SubAge"
     Expression ="CalcAge(Left([SubDOB],2) & \"/\" & Mid([SubDOB],3,2) & \"/\" & Right([SubDOB],4)"
         ")"
-End
-Begin Joins
-    LeftTable ="QCD_Subscriber_DISD"
-    RightTable ="vwRates"
-    Expression ="QCD_Subscriber_DISD.SubGroupID = vwRates.GroupID"
-    Flag =1
-    LeftTable ="vwRates"
-    RightTable ="QCD_Subscriber_DISD"
-    Expression ="vwRates.COVERcode = QCD_Subscriber_DISD.SubRate"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -73,14 +75,14 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =712
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =541
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =321
     Left =0
     Top =0
@@ -89,8 +91,8 @@ Begin
         Left =38
         Top =9
         Right =298
-        Bottom =296
-        Top =4
+        Bottom =52
+        Top =0
         Name ="QCD_Subscriber_DISD"
         Name =""
     End
@@ -98,7 +100,7 @@ Begin
         Left =427
         Top =34
         Right =629
-        Bottom =201
+        Bottom =197
         Top =0
         Name ="vwRates"
         Name =""

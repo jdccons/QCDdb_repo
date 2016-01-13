@@ -1,28 +1,30 @@
 Operation =1
 Option =0
 Begin InputTables
-    Name ="tblGrpAgt"
     Name ="tblAgent"
+    Name ="tblGrpAgt"
 End
 Begin OutputColumns
-    Expression ="tblGrpAgt.GROUPid"
-    Expression ="tblAgent.AGENCY"
+    Expression ="tblGrpAgt.GroupId"
+    Expression ="tblAgent.Agency"
     Expression ="tblAgent.PayCommTo"
-    Expression ="tblGrpAgt.AGENTid"
+    Expression ="tblGrpAgt.AgentId"
     Expression ="tblGrpAgt.Primary"
-    Expression ="tblGrpAgt.AgentRATE"
-    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblGrpAgt.AgentRate"
+    Expression ="tblAgent.Agent_LUname"
 End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGrpAgt"
-    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AgentId=tblGrpAgt.AgentId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -30,10 +32,10 @@ Begin
     Left =47
     Top =125
     Right =943
-    Bottom =521
+    Bottom =540
     Left =-1
     Top =-1
-    Right =889
+    Right =881
     Bottom =235
     Left =0
     Top =0
@@ -42,7 +44,7 @@ Begin
         Left =38
         Top =6
         Right =217
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblGrpAgt"
         Name =""
@@ -51,7 +53,7 @@ Begin
         Left =339
         Top =7
         Right =647
-        Bottom =214
+        Bottom =200
         Top =15
         Name ="tblAgent"
         Name =""

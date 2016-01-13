@@ -3,27 +3,28 @@ Option =0
 Where ="(((tblInvoiceHistory.InvMonth)=[intMonth]) AND ((tblInvoiceHistory.InvYear)=[int"
     "Year]))"
 Begin InputTables
-    Name ="tblInvoiceHistory"
     Name ="tblInvHistoryRpt"
+    Name ="tblInvoiceHistory"
 End
 Begin OutputColumns
     Name ="tblInvHistoryRpt.CompAmt"
-    Expression ="[tblInvoiceHistory]![TotalBilling]"
+    Expression ="tblInvoiceHistory!TotalBilling"
     Name ="tblInvHistoryRpt.CompMonth"
-    Expression ="[tblInvoiceHistory]![InvMonth]"
+    Expression ="tblInvoiceHistory!InvMonth"
     Name ="tblInvHistoryRpt.CompYear"
-    Expression ="[tblInvoiceHistory]![InvYear]"
+    Expression ="tblInvoiceHistory!InvYear"
 End
 Begin Joins
     LeftTable ="tblInvHistoryRpt"
     RightTable ="tblInvoiceHistory"
-    Expression ="tblInvHistoryRpt.GrpID = tblInvoiceHistory.GrpID"
+    Expression ="tblInvHistoryRpt.GrpID=tblInvoiceHistory.GrpID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -31,10 +32,10 @@ Begin
     Left =157
     Top =49
     Right =1090
-    Bottom =492
+    Bottom =409
     Left =-1
     Top =-1
-    Right =926
+    Right =918
     Bottom =180
     Left =0
     Top =0
@@ -43,7 +44,7 @@ Begin
         Left =338
         Top =5
         Right =540
-        Bottom =137
+        Bottom =123
         Top =0
         Name ="tblInvoiceHistory"
         Name =""
@@ -52,7 +53,7 @@ Begin
         Left =48
         Top =7
         Right =224
-        Bottom =139
+        Bottom =125
         Top =0
         Name ="tblInvHistoryRpt"
         Name =""

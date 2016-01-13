@@ -1,21 +1,21 @@
 Operation =2
 Name ="tblGrowth_Subscrs_withDeps"
 Option =0
-Where ="(((tblSubscr.SUBstatus)=\"GRSUB\") AND ((tblSubscr.CoverID)=2)) OR (((tblSubscr."
-    "SUBstatus)=\"GRSUB\") AND ((tblSubscr.CoverID)=3)) OR (((tblSubscr.SUBstatus)=\""
+Where ="(((tblSubscr.SubStatus)=\"GRSUB\") AND ((tblSubscr.CoverID)=2)) OR (((tblSubscr."
+    "SubStatus)=\"GRSUB\") AND ((tblSubscr.CoverID)=3)) OR (((tblSubscr.SubStatus)=\""
     "GRSUB\") AND ((tblSubscr.CoverID)=4))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Alias ="CountOfSUBssn"
-    Expression ="Count(tblSubscr.SUBssn)"
+    Expression ="Count(tblSubscr.SubSSN)"
     Alias ="Year"
     Expression ="\"2000\""
 End
 Begin Groups
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -36,10 +36,10 @@ Begin
     Left =34
     Top =95
     Right =1131
-    Bottom =476
+    Bottom =419
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =144
     Left =0
     Top =0
@@ -48,7 +48,7 @@ Begin
         Left =38
         Top =6
         Right =306
-        Bottom =101
+        Bottom =94
         Top =54
         Name ="tblSubscr"
         Name =""

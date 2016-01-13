@@ -2,22 +2,22 @@ Operation =1
 Option =0
 Where ="(((tblSubscr.SubCancelled)=1 Or (tblSubscr.SubCancelled) Is Null))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
     Alias ="CountOfSubSSN"
     Expression ="Count(tblSubscr.SubSSN)"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 Begin Groups
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -29,34 +29,34 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1432
-    Bottom =797
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =1425
+    Right =1253
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =543
     Begin
-        Left =189
-        Top =14
-        Right =285
-        Bottom =128
-        Top =0
-        Name ="tblSubscr"
-        Name =""
-    End
-    Begin
         Left =38
         Top =6
         Right =134
-        Bottom =120
+        Bottom =109
         Top =0
         Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =189
+        Top =14
+        Right =285
+        Bottom =117
+        Top =0
+        Name ="tblSubscr"
         Name =""
     End
 End

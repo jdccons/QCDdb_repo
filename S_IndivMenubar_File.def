@@ -1,9 +1,19 @@
-Version =0
+Version =196611
 ColumnsShown =1
 Begin
-    MacroName ="&Print_Screen"
+    MacroName ="&Print Screen"
     Action ="RunCode"
     Argument ="PrtScreen_Indiv()"
+End
+Begin
+    MacroName ="Print &Card"
+    Action ="RunCode"
+    Argument ="PrintIndividualCard () "
+End
+Begin
+    MacroName ="&Go to Invoicing"
+    Action ="RunCode"
+    Argument ="IndivInvoice()"
 End
 Begin
     MacroName ="&Close"

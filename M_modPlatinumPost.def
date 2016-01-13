@@ -1,16 +1,10 @@
 Option Compare Database   'Use database order for string comparisons
+Option Explicit
 
 Dim crlf As String
 
-Option Explicit
-Function DeleteIndivSubscr() As Boolean
 
-    Call Form_frmIndivSubscr.btnDelete_Click
-    DeleteIndivSubscr = True
-    
-End Function
-
-Function SumInvoice(TRANNO As String) As Double
+Function SumInvoice(Tranno As String) As Double
     ' Comments  :  Sums a PfW invoice
     ' Parameters:  Invoice tranno
     ' Created   : 10/09/04 18:14 JC
@@ -28,7 +22,7 @@ Function SumInvoice(TRANNO As String) As Double
     
     strSQL = "SELECT Sum(ARLIN.Unitprice) AS SumOfUnitprice "
     strSQL = strSQL & "FROM ARLIN "
-    strSQL = strSQL & "WHERE (((ARLIN.TransactionNumber)='" & TRANNO & "'));"
+    strSQL = strSQL & "WHERE (((ARLIN.TransactionNumber)='" & Tranno & "'));"
     
     Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     SumInvoice = Nz(rst.Fields("SumOfUnitprice"))
@@ -120,29 +114,29 @@ On Error GoTo AssignNos_Err
 Dim db As DAO.Database
 Dim rs As DAO.Recordset
 Dim sngTranNo As Single
-Dim lngSysDocID As Long
+Dim lngSysDocId As Long
 
 Set db = CurrentDb()
 crlf = Chr(13) & Chr(10)
 
 sngTranNo = GetCurrentTranNo()
-lngSysDocID = GetCurrentSysDocID()
+lngSysDocId = GetCurrentSysDocID()
 
 Set rs = db.OpenRecordset("tblInvHdrPreliminary", dbOpenDynaset, dbSeeChanges)
 Do Until rs.EOF
     rs.Edit
     rs("Tranno") = Mid(Year(dteInvoiceDate), 4, 1) & Format(sngTranNo, "000000")
-    rs("Sysdocid") = lngSysDocID
+    rs("Sysdocid") = lngSysDocId
     rs.Update
     sngTranNo = sngTranNo + 1
-    lngSysDocID = lngSysDocID + 1
+    lngSysDocId = lngSysDocId + 1
     rs.MoveNext
 Loop
 rs.Close
 db.Close
 
 Call SaveTranNo(sngTranNo)
-Call SaveSysDocID(lngSysDocID)
+Call SaveSysDocID(lngSysDocId)
 
 Exit Sub
 
@@ -157,16 +151,16 @@ AssignNos_Err:
 
 End Sub
 
-Sub SaveSysDocID(lngSysDocID As Long)
+Sub SaveSysDocID(lngSysDocId As Long)
 
 On Error GoTo SaveSysDocID_Err
     
     Dim db As DAO.Database
     Dim strSQL As String
     
-    strSQL = "UPDATE ARNEXTSY SET ARNEXTSY.Nextsysdocid = " & lngSysDocID & ", "
+    strSQL = "UPDATE ARNEXTSY SET ARNEXTSY.Nextsysdocid = " & lngSysDocId & ", "
     strSQL = strSQL & "ARNEXTSY.RecUserID = 'INVOICE', "
-    strSQL = strSQL & "ARNEXTSY.RecDate = '" & Format(date, "mm/dd/yyyy") & "'"
+    strSQL = strSQL & "ARNEXTSY.RecDate = '" & Format(Date, "mm/dd/yyyy") & "'"
     'strSQL = strSQL & "ARNEXTSY.RecTime = '" & Format(Time(), "hh:nn:ss") & "';"
     
     Set db = CurrentDb()
@@ -216,30 +210,25 @@ SaveTranNo_Err:
     GoTo SaveTranNo_Exit
     
 End Sub
-Function IsThereAccessSubscr(strPltCustKey As String) As Integer
+Function IsThereAccessSubscr(strPltCustKey As String) As Boolean
 '------------------------------------------------
 'Purpose:   Checks to see if a customer id can be found in tblSubscr
 '------------------------------------------------
 '
 On Error GoTo IsThereAccessSubscr_Err
 
-    Dim db As DAO.Database
-    Dim rs As DAO.Recordset
     Dim strSQL As String
-    strSQL = "SELECT tblSubscr.PLTcustKEY FROM tblSubscr WHERE (((tblSubscr.PLTcustKEY)='" & strPltCustKey & "'));"
+    strSQL = "SELECT tblSubscr.PltCustKey FROM tblSubscr WHERE (((tblSubscr.PltCustKey)='" & strPltCustKey & "'));"
     
-    Set db = CurrentDb()
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    LoadADORecordset (strSQL)
     
-    If rs.RecordCount > 0 Then
+    If g_adoRS.RecordCount > 0 Then
         IsThereAccessSubscr = True
     Else
         IsThereAccessSubscr = False
     End If
 
-    rs.Close
-    db.Close
-    Set db = Nothing
+    g_adoRS.Close
 
 IsThereAccessSubscr_Exit:
     Exit Function
@@ -282,14 +271,56 @@ IsThereAccessGroup_Err:
     Resume IsThereAccessGroup_Exit
 
 End Function
-Function IsTranNo(strTranNo As String) As Boolean
+Function IsInvoice(strCustomerKey As String, dteInvoiceDate As Date, strTransactionType As String) As Boolean
 '------------------------------------------------
-'Purpose:  Tests for a tranno in ARHDR
+'Purpose:  Tests for a DocumentNumber in ARTRANH_local
 '------------------------------------------------
 'Programmer:  John Criswell
-'Create Date:  9/22/99
-'Update Date:  John Criswell
-'Updated by:  5/17/2005 - updated code to work with new version of PFW (ver 5.3)
+'Create Date:  9/10/2014
+'Update Date:
+'Updated by:
+    
+On Error GoTo PROC_ERR
+
+Dim db As DAO.Database
+Dim rs As DAO.Recordset
+
+Dim strSQL As String
+
+strSQL = "SELECT  DocumentNumber " & _
+            "FROM ARTRANH_local " & _
+            "WHERE   CustomerKey = '" & strCustomerKey & "' " & _
+                    "AND DocumentDate = #" & dteInvoiceDate & "# " & _
+                    "AND TransactionType = '" & strTransactionType & "';"
+
+Set db = CurrentDb()
+Set rs = db.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+
+If rs.RecordCount > 0 Then
+    IsInvoice = True
+Else
+    IsInvoice = False
+End If
+
+rs.Close
+db.Close
+Set db = Nothing
+
+Exit Function
+
+PROC_ERR:
+  MsgBox "Error no. " & Err & crlf & crlf & "The following error occurred:  " & Error$
+  Resume Next
+End Function
+
+Function IsTranNo(strTranNo As String) As Boolean
+'------------------------------------------------
+'Purpose:  Tests for a DocumentNumber in ARTRANH_local
+'------------------------------------------------
+'Programmer:  John Criswell
+'Create Date:  9/10/2014
+'Update Date:
+'Updated by:
     
 On Error GoTo PROC_ERR
 
@@ -320,34 +351,33 @@ Exit Function
 PROC_ERR:
   MsgBox "Error no. " & Err & crlf & crlf & "The following error occurred:  " & Error$
   Resume Next
-
 End Function
 Function DidThisInvoicePosttoPlat(strTranNo As String)
 '------------------------------------------------
-'Purpose:  Determines whether tranno from tblInvHdr
-'          can be found in ARHDR.  If tranno in tblInvHdr
-'          can be found in ARHDR, then the invoice was
-'          successfully posted to Platinum.
+'Purpose:  Determines whether invoice can be found
+'          in ARTRANH_local.  If invoice can be found
+'          in ARTRANH_local, then invoice posted
+'          successfully to QuickBooks
 '------------------------------------------------
 'Programmer:  John Criswell
-'Create Date:  9/22/99
+'Create Date: 9/10/2014
 'Update Date:
 'Updated by:
+
 Dim db As DAO.Database
 Dim rs As DAO.Recordset
 Dim strSQL As String
 
-strSQL = "SELECT tblInvHdr.[TRANS NO] FROM tblInvHdr WHERE (((tblInvHdr.[TRANS NO])='" & strTranNo & "'));"
-'Debug.Print strSQL
+strSQL = "SELECT tblInvHdr.[CUST KEY], tblInvHdr.[INV DATE] FROM tblInvHdr WHERE (((tblInvHdr.[TRANS NO])='" & strTranNo & "'));"
+
 Set db = CurrentDb()
 
 Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If IsTranNo(rs("TRANS NO")) Then
+    If IsInvoice(rs("CUST KEY"), rs("INV DATE"), "I") Then
         DidThisInvoicePosttoPlat = True
     Else
         DidThisInvoicePosttoPlat = False
     End If
-
 Set db = Nothing
 
 Exit Function
@@ -359,77 +389,86 @@ PROC_ERR:
   Resume Next
 
 End Function
-Function AreAnyInvoicesInPlat()
+Function AreAnyInvoicesInPlat(dteInvoiceDate As Date, strGroupType As String) As Boolean
 '------------------------------------------------
-'Purpose:  First checks to see whether any new invoices in tblInvHdr
-'          have already been posted to ARHDR through an error.
+' Purpose:  inspects the transaction table to see
+'           if there are any invoices or payments
+'           for the invoice date and group type;
+'           there should not be any invoices or
+'           payments in the transaction table
+'           when the post process is run
 '------------------------------------------------
 'Programmer:  John Criswell
-'Create Date:  9/28/99
+'Create Date:  9/12/2014
 'Update Date:
 'Updated by:
 
-On Error GoTo FUNC_ERR
-
-Dim db As DAO.Database
-Dim rs As DAO.Recordset
-
-Set db = CurrentDb()
-Set rs = db.OpenRecordset("tblInvHdr", dbOpenSnapshot)
-    Do Until rs.EOF
-        If IsTranNo(rs("TRANS NO")) Then
-           AreAnyInvoicesInPlat = True
-           GoTo FUNC_EXIT
-        Else
-           AreAnyInvoicesInPlat = False
-        End If
-    rs.MoveNext
-    Loop
-rs.Close
-db.Close
-
-Set db = Nothing
-   
-Exit Function
+    On Error GoTo FUNC_ERR
+    
+    Dim strSQL As String
+    strSQL = "SELECT DocumentNumber FROM ARTRANH_local " & _
+                "WHERE DocumentDate = cast('" & dteInvoiceDate & "' as datetime) " & _
+                "AND Spare3 = '" & strGroupType & "'"
+                
+    LoadADORecordset (strSQL)
+    
+    If g_adoRS.RecordCount > 1 Then
+        AreAnyInvoicesInPlat = True
+    Else
+        AreAnyInvoicesInPlat = False
+    End If
+    g_adoRS.Close
 
 FUNC_EXIT:
-    rs.Close
-    db.Close
     Exit Function
 
 FUNC_ERR:
-  MsgBox "Error no. " & Err & crlf & crlf & "The following error occurred:  " & Error$
-  Resume FUNC_EXIT
+    MsgBox "Error " & Err.Number & ":  " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD:  Error"
+    GoTo FUNC_EXIT
 
 End Function
+
 Function DidAllInvoicesPosttoPlat()
 '------------------------------------------------
-'Purpose:  Determines whether ALL tranno's from tblInvHdr
-'          can be found in ARHDR.  This will set the function
-'          to false and exit when it encounters the first invoice
-'          that did not post to Platinum (ARHDR).
+'Purpose:           Checks ARTRANH_local to determine if all invoices
+'                   in tblInvHdr posted properly
+'Called from:       frmInvIndiv_OneOff
+'
+'Results:           True = it did post to the transaction table properly
+'                   False = it did not post to the transaction table properly
 '------------------------------------------------
 'Programmer:  John Criswell
-'Create Date:  9/22/99
+'Create Date: 9/10/2014
 'Update Date:
 'Updated by:
 
-On Error GoTo FUNC_ERR
+    On Error GoTo FUNC_ERR
+    
+    Dim strSQL As String
+    Dim FindRecordCount As Integer
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    
+    strSQL = "SELECT ih.[CUST KEY], ih.[TRANS NO] " & _
+                "FROM tblInvHdr AS ih LEFT JOIN ARTRANH_local AS art " & _
+                "ON (ih.[TRANS NO] = art.DocumentNumber) " & _
+                "AND (ih.[CUST KEY] = art.CustomerKey) " & _
+                "WHERE (((art.DocumentNumber) Is Null));"
+                
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
 
-Dim db As DAO.Database
-Dim rs As DAO.Recordset
+If rs.EOF Then
+   FindRecordCount = 0
+   DidAllInvoicesPosttoPlat = True
+Else
+   rs.MoveLast
+   FindRecordCount = rs.RecordCount
+   DidAllInvoicesPosttoPlat = False
+End If
 
-Set db = CurrentDb()
-Set rs = db.OpenRecordset("tblInvHdr", dbOpenSnapshot)
-    Do Until rs.EOF
-        If IsTranNo(rs("TRANS NO")) Then
-           DidAllInvoicesPosttoPlat = True
-        Else
-           DidAllInvoicesPosttoPlat = False
-           GoTo FUNC_EXIT
-        End If
-    rs.MoveNext
-    Loop
 rs.Close
 db.Close
 
@@ -461,9 +500,9 @@ Function SaveNextSysDocID(lngCurrentSysDocID As Long) As Boolean
     'write back new sysdocid, userid, date, and time to ARNEXTSY
     Set db = CurrentDb()
     
-    strSQL = "UPDATE ARNEXTSY SET ARNEXTSY.Nextsysdocid =" & lngNextSysDocID & ", "
-    strSQL = strSQL & "ARNEXTSY.RecUserID = 'INVOICE', "
-    strSQL = strSQL & "ARNEXTSY.RecDate = '" & Format(date, "mm/dd/yyyy") & "'"
+    strSQL = "UPDATE ARNEXTSY_local SET ARNEXTSY_local.Nextsysdocid =" & lngNextSysDocID & ", "
+    strSQL = strSQL & "ARNEXTSY_local.RecUserID = 'INVOICE', "
+    strSQL = strSQL & "ARNEXTSY_local.RecDate = '" & Format(Date, "mm/dd/yyyy") & "'"
     'strSQL = strSQL & "ARNEXTSY.RecTime = '" & Format(Time, "Long Time") & "';"
     
     db.Execute strSQL, dbSeeChanges
@@ -507,7 +546,7 @@ Function GetCurrentSysDocID() As Long
     Dim rs As DAO.Recordset
             
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("ARNEXTSY", dbOpenSnapshot)
+    Set rs = db.OpenRecordset("ARNEXTSY_local", dbOpenSnapshot)
        
     lngCurrentSysDocID = rs("NextSysDocID")
    
@@ -536,62 +575,93 @@ Err_GetCurrentSysDocID:
 End Function
 Function CheckforOpenInvoices(strCustKey As String) As Integer
 '------------------------------------------------
-'Purpose:  Checks to see if there are any invoices in ARTRAN by customer id
+'Purpose:  Checks to see if there are any invoices in ARTRANH_local by customer id
 '------------------------------------------------
 
   On Error GoTo PROC_ERR
   
-    Dim db As DAO.Database
-    Dim rs As DAO.Recordset
     Dim strSQL As String
+    strSQL = "SELECT ARTRANH_local.CustomerKey " & _
+             "FROM ARTRANH_local " & _
+             "WHERE (((ARTRANH_local.CustomerKey)='" & strCustKey & "'));"
+             
+    LoadADORecordset (strSQL)
     
-    Set db = CurrentDb()
-    strSQL = "SELECT ARTRAN.CustomerKey " & _
-             "FROM ARTRAN " & _
-             "WHERE (((ARTRAN.CustomerKey)='" & strCustKey & "'));"
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rs.RecordCount > 0 Then
-        CheckforOpenInvoices = True
-    Else
+    If g_adoRS.EOF Then
         CheckforOpenInvoices = False
+    Else
+        CheckforOpenInvoices = True
     End If
-    rs.Close
-    db.Close
-    Set db = Nothing
-
+    
+    g_adoRS.Close
+    
   Exit Function
 
 PROC_ERR:
   MsgBox "Error no. " & Err & crlf & crlf & "The following error occurred:  " & Error$
   Resume Next
 End Function
-Function DeleteARCust(strCustKey As String)
+Function DeleteARCust(strSubID As String, strUserName As String) As Boolean
 '-------------------------------------------
 'Purpose:   Deletes a Customer from the
-'           Platinum AR Customer file
+'           Platinum AR Customer table (ARCUST_local)
 '-------------------------------------------
 '
 On Error GoTo Err_DeleteARCust
 
-        Dim db As DAO.Database
-        Dim rsARCust As DAO.Recordset
         Dim strSQL As String
         
-        Set db = CurrentDb()
+        strSQL = "SELECT ARCUST_local.CustomerKey " & _
+                    "FROM ARCUST_local " & _
+                    "WHERE (((ARCUST_local.Spare)='" & strSubID & "'));"
+                    
+        LoadADORecordset (strSQL)
         
-        strSQL = "SELECT ARCUST.CustomerKey FROM ARCUST WHERE (((ARCUST.CustomerKey)='" & strCustKey & "'));"
-        Set rsARCust = db.OpenRecordset(strSQL, dbOpenSnapshot)
-        
-        If rsARCust.RecordCount > 0 Then
-            db.Execute ("DELETE ARCUST.*, ARCUST.CustomerKey FROM ARCUST WHERE (((ARCUST.CustomerKey)='" & strCustKey & "'));")
-            DeleteARCust = True
-        Else
+        If g_adoRS.EOF Then
             DeleteARCust = False
+        Else
+            strSQL = "usp_DeleteARCust"
+            If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+            
+            With g_adoConnection
+                 .ConnectionString = SetConnxn
+                 .Open
+            End With
+            
+            With g_adoCommand
+                  .ActiveConnection = g_adoConnection
+                  .CommandType = adCmdStoredProc
+                  .CommandText = strSQL
+                  'Return parm
+                  Set g_adoParm = .CreateParameter("ReturnValue", adInteger, adParamReturnValue)
+                  .Parameters.Append g_adoParm
+                  ' SubID input parm
+                  Set g_adoParm = .CreateParameter("@SubID", adChar, adParamInput, 8)
+                  .Parameters.Append g_adoParm
+                  .Parameters("@SubID").value = strSubID
+                  ' UserName input parm
+                  Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+                  .Parameters.Append g_adoParm
+                  .Parameters("@UserName").value = strUserName
+                  .Execute
+                  g_iRtnVal = .Parameters.Item("ReturnValue")
+            End With
+            If g_iRtnVal = 1 Then
+                DeleteARCust = True
+            Else
+                DeleteARCust = False
+            End If
         End If
         
-        rsARCust.Close
-        db.Close
-        Set db = Nothing
+        If g_adoConnection.STATE = adStateOpen Then
+                g_adoConnection.Close
+                Set g_adoCommand = Nothing
+                Set g_adoConnection = Nothing
+                Set g_adoRS = Nothing
+                Set g_adoParm = Nothing
+        End If
+            
+Exit Function
         
 Exit_DeleteARCust:
     Exit Function
@@ -613,9 +683,13 @@ Function GetCurrentTranNo() As String
     Dim sngCurrentTranNo As Single
     Dim strSQL As String
     
-    strSQL = "SELECT ARONE_R9.NextTransaction, ARONE_R9.R9Key "
-    strSQL = strSQL & "FROM ARONE_R9 "
-    strSQL = strSQL & "WHERE (((ARONE_R9.R9Key)='R9'));"
+'    strSQL = "SELECT ARONE_R9_local.NextTransaction, ARONE_R9_local.R9Key "
+'    strSQL = strSQL & "FROM ARONE_R9_local "
+'    strSQL = strSQL & "WHERE (((ARONE_R9_local.R9Key)='R9'));"
+
+    strSQL = "SELECT o.NextTransaction, o.R9Key "
+    strSQL = strSQL & "FROM ARONE_R9_local o "
+    strSQL = strSQL & "WHERE (((o.R9Key)='R9'));"
     
     Set db = CurrentDb()
     Set rs = db.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
@@ -657,9 +731,9 @@ On Error GoTo Err_SaveNextTranNo
 
     sngNextTranNo = sngCurrentTranNo + 1
 
-    strSQL = "UPDATE ARONE_R9 SET ARONE_R9.NextTransaction = " & sngNextTranNo
-    strSQL = strSQL & " WHERE (((ARONE_R9.R9Key)='R9'));"
-    
+    strSQL = "UPDATE ARONE_R9_local SET ARONE_R9_local.NextTransaction = " & sngNextTranNo
+    strSQL = strSQL & " WHERE (((ARONE_R9_local.R9Key)='R9'));"
+        
     db.Execute strSQL, dbSeeChanges
 
     db.Close
@@ -672,7 +746,7 @@ Exit_SaveNextTranNo:
     
 Err_SaveNextTranNo:
     If Err = 3197 Then
-        MsgBox "The Platinum table, ARONE_R9, is locked.  You must create an invoice in PFW53 and then delete it."
+        MsgBox "The SQL Server table, ARONE_R9, is locked."
         SaveNextTranNo = False
     End If
     
@@ -691,7 +765,7 @@ On Error GoTo Err_InsertARCust
     Dim db As DAO.Database
     Dim rsARCust As DAO.Recordset
     Set db = DBEngine(0)(0)
-    Set rsARCust = db.OpenRecordset("ARCUST", dbOpenDynaset, dbSeeChanges)
+    Set rsARCust = db.OpenRecordset("ARCUST_local", dbOpenDynaset, dbSeeChanges)
     rsARCust.MoveLast
     rsARCust.AddNew
         rsARCust("Customer_Key") = strCustKey
@@ -746,7 +820,7 @@ On Error GoTo Err_IsThere
         MsgBox "The customer key has be saved to tblGrp!"
     End If
 
-    Set rs = db.OpenRecordset("ARCUST", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("ARCUST_local", dbOpenDynaset, dbSeeChanges)
     rs.FindFirst "[Customer_Key] = '" & strCustKey & "'"
     If rs.NoMatch Then
         MsgBox "The customer key has not be saved to Platinum yet!"
@@ -770,37 +844,32 @@ Public Function CheckGroupStatus(strCustKey As String) As Boolean
 '------------------------------------------------
 'Purpose:  Determines if a customer id has a customer
 '          class key of Group or Indiv to determine
-'          where the customer is a group or an
+'          whether the customer is a group or an
 '          individual
 '------------------------------------------------
 
 On Error GoTo Err_CheckGroupStatus
 
-    Dim db As DAO.Database
-    Dim rs As DAO.Recordset
     Dim strSQL As String
     
-    strSQL = "SELECT ARCUST.CustomerKey, ARCUST." & _
+    strSQL = "SELECT ARCUST_local.CustomerKey, ARCUST_local." & _
             "CustomerClassKey " & _
-            "FROM ARCUST " & _
-            "WHERE (((ARCUST.CustomerKey)='" & strCustKey & "'));"
+            "FROM ARCUST_local " & _
+            "WHERE (((ARCUST_local.CustomerKey)='" & strCustKey & "'));"
     
-    Set db = CurrentDb()
-        
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rs.RecordCount > 0 Then
-        If rs.Fields("CustomerClassKey") = "GROUP" Then
+    LoadADORecordset (strSQL)
+    
+    If g_adoRS.RecordCount > 0 Then
+        If g_adoRS("CustomerClassKey") = "GROUP" Then
             CheckGroupStatus = True
-        ElseIf rs.Fields("CustomerClassKey") = "INDIV" Then
+        ElseIf g_adoRS("CustomerClassKey") = "INDIV" Then
             CheckGroupStatus = False
         End If
     Else
         CheckGroupStatus = False
     End If
 
-    rs.Close
-    db.Close
-    Set db = Nothing
+    g_adoRS.Close
 
 Exit_CheckGroupStatus:
     Exit Function
@@ -814,28 +883,26 @@ End Function
 
 Function IsTherePlatinum(strCustKey As String) As Boolean
 '------------------------------------------------
-'Purpose:  Determines if a customer id can be found in the PfW table, ARCUST
+'Purpose:  Determines if a customer id can be found in the PfW table, ARCUST_local
 '------------------------------------------------
 
 On Error GoTo Err_IsTherePlatinum
 
-    Dim db As DAO.Database
-    Dim rs As DAO.Recordset
+   
     Dim strSQL As String
-    strSQL = "SELECT ARCUST.* FROM ARCUST WHERE (((ARCUST.CustomerKey)='" & Trim(strCustKey) & "'));"
+    strSQL = "SELECT ARCUST_local.CustomerKey " & _
+                "FROM ARCUST_local " & _
+                "WHERE (((ARCUST_local.CustomerKey)='" & Trim(strCustKey) & "'));"
     
-    Set db = CurrentDb()
-        
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rs.RecordCount > 0 Then
+    LoadADORecordset (strSQL)
+    
+    If g_adoRS.RecordCount > 0 Then
         IsTherePlatinum = True
     Else
         IsTherePlatinum = False
     End If
 
-    rs.Close
-    db.Close
-    Set db = Nothing
+    g_adoRS.Close
 
 Exit_IsTherePlatinum:
     Exit Function
@@ -849,28 +916,19 @@ End Function
 Function IsTherePltIndivSubscr(strPltCustKey As String) As Boolean
 '------------------------------------------------
 'Purpose:  Determines if an individual subscriber
-'cust key can be found in ARCUST
+'cust key can be found in ARCUST_local
 '------------------------------------------------
 On Error GoTo IsTherePltIndivSubscr_Err
-
-    Dim db As DAO.Database
-    Dim rs As DAO.Recordset
-    Set db = CurrentDb()
+    
     Dim strSQL As String
-    
-    strSQL = "SELECT ARCUST.Customer_Key FROM ARCUST WHERE (((ARCUST.Customer_Key)='" & Trim(strPltCustKey) & "'));"
-    
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    
-    If rs.RecordCount > 0 Then
+    strSQL = "SELECT ARCUST_local.CustomerKey FROM ARCUST_local WHERE ((ARCUST_local.CustomerKey)='" & Trim(strPltCustKey) & "');"
+    LoadADORecordset (strSQL)
+    If g_adoRS.RecordCount > 0 Then
         IsTherePltIndivSubscr = True
     Else
         IsTherePltIndivSubscr = False
     End If
-    
-    rs.Close
-    db.Close
-    Set db = Nothing
+    g_adoRS.Close
 
 IsTherePltIndivSubscr_Exit:
     Exit Function
@@ -880,9 +938,118 @@ IsTherePltIndivSubscr_Err:
     GoTo IsTherePltIndivSubscr_Exit
 
 End Function
+Function IsThereIndivSubscrSSN(strSSN As String) As Boolean
+    
+    On Error GoTo PROC_ERR
+    
+    Dim strSQL As String
+    strSQL = "SELECT tblSubscr.SubSSN FROM tblSubscr WHERE ((tblSubscr.SubSSN)='" & Trim(strSSN) & "');"
+    LoadADORecordset (strSQL)
+    If g_adoRS.RecordCount > 0 Then
+        IsThereIndivSubscrSSN = True
+    Else
+        IsThereIndivSubscrSSN = False
+    End If
+    g_adoRS.Close
+    
+
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Function
+
+
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function: modPlatinumPost.IsThereIndivSubscrSSN"
+  Resume PROC_EXIT
+
+
+End Function
+
+Function IsThereOneOff(CustomerKey As String, TxnDate As Date, DocumentAmt As Double) As Boolean
+    
+'------------------------------------------------
+'Purpose:           Determines if a One Off sales receipt
+'                   has already been posted to the transaction table
+'                   (ARTRANH_local) in the month being posted
+'
+'Called from:       frmInvIndiv_OneOff_btnCreateInvoice_Click
+'
+'Results:           True = it does exist in the transaction table
+'                   False = it does not exist in the transaction table
+'------------------------------------------------
+'Programmer:  John Criswell
+'Create Date: 12/14/2015
+'Update Date:
+'Updated by:
+
+  
+    On Error GoTo Err_IsThereOneOff
+    
+    Dim strSQL As String
+    Dim I As Integer
+    strSQL = "exec usp_GetPrevTxn '" & CustomerKey & "', '" & TxnDate & "', " & DocumentAmt
+    ExecuteSQL strSQL
+    I = 0
+    Do While Not g_adoRS.EOF
+        I = I + 1
+        g_adoRS.MoveNext
+    Loop
+    If I > 0 Then
+        IsThereOneOff = True
+    Else
+        IsThereOneOff = False
+    End If
+    
+    g_adoRS.Close
+    
+Exit_IsThereOneOff:
+    Exit Function
+    
+Err_IsThereOneOff:
+    MsgBox "Error no. " & Err & crlf & crlf & "The following error occurred:  " & Error$
+    Resume Exit_IsThereOneOff
+    
+    
+End Function
+Function IsThereDupOneOff() As Boolean
+    '-----------------------------------------------
+    ' Purpose:
+    ' check for sales receipts in temp table
+    ' that appear to be duplicates based on
+    ' the customer key and sales receipt amount
+    ' being the same
+    
+    On Error GoTo Err_IsThereDupOneOff
+    
+    Dim strSQL As String
+    strSQL = "SELECT [INVOICE NO], count([INVOICE NO]) AS SalesRecCnt"
+    strSQL = strSQL & " FROM tblInvHdr"
+    strSQL = strSQL & " GROUP BY [INVOICE NO], [CUST KEY], INVOICETOTAL"
+    strSQL = strSQL & " HAVING (count([CUST KEY]) > 1)OR (count(INVOICETOTAL) > 1);"
+
+    LoadADORecordset (strSQL)
+    If g_adoRS.RecordCount > 0 Then
+        IsThereDupOneOff = True
+    Else
+        IsThereDupOneOff = False
+    End If
+    
+    g_adoRS.Close
+    
+Exit_IsThereDupOneOff:
+    Exit Function
+    
+Err_IsThereDupOneOff:
+    MsgBox "Error no. " & Err & crlf & crlf & "The following error occurred:  " & Error$
+    Resume Exit_IsThereDupOneOff
+    
+    
+End Function
+
 Function IsTherePltCustKey(strPltCustKey As String) As Boolean
 '------------------------------------------------
-'Purpose:  Determines if a customer id can be found in tblSubscr
+'Purpose:  Determines if a PltCustKey can be found in tblSubscr
 '------------------------------------------------
 On Error GoTo IsTherePltCustKey_Err
 
@@ -894,7 +1061,7 @@ On Error GoTo IsTherePltCustKey_Err
 
     Set rs = db.OpenRecordset("tblSubscr", dbOpenDynaset, dbSeeChanges)
 
-    rs.FindFirst "[PLTcustKEY] = '" & strCustKey & "'"
+    rs.FindFirst "[PltCustKey] = '" & strCustKey & "'"
 
     If rs.NoMatch Then
         IsTherePltCustKey = False
@@ -987,7 +1154,11 @@ Err_PopulateTransNo:
 End Function
 Sub UpdateARCust(strCustKey As String)
 '------------------------------------------------
-'Purpose:   Updates the Platinum AR Customer file
+'Purpose:       Updates the Platinum AR Customer file
+'
+'Called from:   no Access object currently calls this
+'               procedure
+'Date:          2007-01-01
 '------------------------------------------------
 '
 On Error GoTo Err_UpdateARCust
@@ -998,7 +1169,7 @@ On Error GoTo Err_UpdateARCust
     
     strSQL = "SELECT tblGrp.GRname, tblGrp.GRstreet1, tblGrp.GRstreet2, tblGrp.GRcity, " & _
             "tblGrp.GRstate, tblGrp.GRzip, tblGrp.GRphone1, tblGrp.GRmainCONT, " & _
-            "tblGrp.GRphone2, tblGrp.GRsrvCONT, tblGrp.GRfax, tblGrp.GRPgeoID, tblGrp.GRemail " & _
+            "tblGrp.GRphone2, tblGrp.GRsrvCONT, tblGrp.GRfax, tblGrp.GRGeoID, tblGrp.GRemail " & _
             "FROM tblGrp " & _
             "WHERE (((tblGrp.GroupID)='" & strCustKey & "'));"
 
@@ -1006,25 +1177,25 @@ On Error GoTo Err_UpdateARCust
     Set db = CurrentDb()
     Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
     
-    strSQL = "UPDATE ARCUST SET ARCUST.Customer_Name ='" & rs.Fields("GRName") & "', " & _
-            "ARCUST.Address_1 = '" & rs.Fields("GRstreet1") & "', " & _
-            "ARCUST.Address_2 = '" & rs.Fields("GRstreet2") & "', " & _
-            "ARCUST.City = '" & rs.Fields("GRcity") & "', " & _
-            "ARCUST.State = '" & rs.Fields("GRstate") & "', " & _
-            "ARCUST.Zip_Code = '" & rs.Fields("GRzip") & "', " & _
-            "ARCUST.Phone_1 = '" & rs.Fields("GRphone1") & "', " & _
-            "ARCUST.Attn_Name = '" & rs.Fields("GRmainCONT") & "', " & _
-            "ARCUST.Phone_2 = '" & rs.Fields("GRphone2") & "', " & _
-            "ARCUST.Contact_Name = '" & rs.Fields("GRsrvCONT") & "', " & _
-            "ARCUST.Fax_No = '" & rs.Fields("GRfax") & "', " & _
-            "ARCUST.Territory_Ky = '" & rs.Fields("GRPgeoID") & "', " & _
-            "ARCUST.Salespersn_Ky = 'CORPT', " & _
-            "ARCUST.EmailAddr = '" & rs.Fields("GRemail") & "', " & _
-            "ARCUST.RecDate ='" & Format(date, "mm/dd/yyyy") & "', " & _
-            "ARCUST.RecTime ='" & Format(Time, "Long Time") & "', " & _
-            "ARCUST.RecUserID = 'frmGrp', " & _
-            "ARCUST.Open_Or_Balfwd = 'O' " & _
-            "WHERE (((ARCUST.Customer_Key)='" & strCustKey & "'));"
+    strSQL = "UPDATE ARCUST_local SET ARCUST_local.Customer_Name ='" & rs.Fields("GRName") & "', " & _
+            "ARCUST_local.Address_1 = '" & rs.Fields("GRstreet1") & "', " & _
+            "ARCUST_local.Address_2 = '" & rs.Fields("GRstreet2") & "', " & _
+            "ARCUST_local.City = '" & rs.Fields("GRcity") & "', " & _
+            "ARCUST_local.State = '" & rs.Fields("GRstate") & "', " & _
+            "ARCUST_local.Zip_Code = '" & rs.Fields("GRzip") & "', " & _
+            "ARCUST_local.Phone_1 = '" & rs.Fields("GRphone1") & "', " & _
+            "ARCUST_local.Attn_Name = '" & rs.Fields("GRmainCONT") & "', " & _
+            "ARCUST_local.Phone_2 = '" & rs.Fields("GRphone2") & "', " & _
+            "ARCUST_local.Contact_Name = '" & rs.Fields("GRsrvCONT") & "', " & _
+            "ARCUST_local.Fax_No = '" & rs.Fields("GRfax") & "', " & _
+            "ARCUST_local.Territory_Ky = '" & rs.Fields("GRGeoID") & "', " & _
+            "ARCUST_local.Salespersn_Ky = 'CORPT', " & _
+            "ARCUST_local.EmailAddr = '" & rs.Fields("GRemail") & "', " & _
+            "ARCUST_local.RecDate ='" & Format(Date, "mm/dd/yyyy") & "', " & _
+            "ARCUST_local.RecTime ='" & Format(Time, "Long Time") & "', " & _
+            "ARCUST_local.RecUserID = 'frmGrp', " & _
+            "ARCUST_local.Open_Or_Balfwd = 'O' " & _
+            "WHERE (((ARCUST_local.Customer_Key)='" & strCustKey & "'));"
             
     db.Execute strSQL, dbSeeChanges
     

@@ -1,15 +1,45 @@
-dbMemo "SQL" ="INSERT INTO tblEDI_App_Dep ( DEPssn, EIMBRID, DEPsubID, DEPfirstNAME, DEPlastNAM"
-    "E, DEPmiddleNAME, DepDOB, DepAge, DepRelationship, DEPgender, DepEffDate, Preexi"
-    "stingDate )\015\012SELECT tblDependent_temp.DepSSN, tblDependent_temp.EIMBRID, t"
-    "blDependent_temp.SubSSN, tblDependent_temp.FirstName, tblDependent_temp.LastName"
-    ", tblDependent_temp.MiddleInitial, tblDependent_temp.DOB, tblDependent_temp.Age,"
-    " tblDependent_temp.Relationship, Mid([tblDependent_temp].[Gender],1,1) AS Expr1,"
-    " tblDependent_temp.EffDate, tblDependent_temp.PreexistingDate\015\012FROM tblDep"
-    "endent_temp INNER JOIN tblSubscriber_temp ON tblDependent_temp.SubSSN = tblSubsc"
-    "riber_temp.SSN\015\012WHERE (((tblSubscriber_temp.MembershipStatus)=\"Added\" Or"
-    " (tblSubscriber_temp.MembershipStatus)=\"Changed\") AND ((tblSubscriber_temp.Gro"
-    "upID) Not In ('INDIV')));\015\012"
-dbMemo "Connect" =""
+Operation =3
+Name ="tblEDI_App_Dep"
+Option =0
+Where ="(((tblSubscriber_temp.MembershipStatus)=\"Added\" Or (tblSubscriber_temp.Members"
+    "hipStatus)=\"Changed\") AND ((tblSubscriber_temp.GroupID) Not In ('INDIV')))"
+Begin InputTables
+    Name ="tblDependent_temp"
+    Name ="tblSubscriber_temp"
+End
+Begin OutputColumns
+    Name ="DEPssn"
+    Expression ="tblDependent_temp.DepSSN"
+    Name ="EIMBRID"
+    Expression ="tblDependent_temp.EIMBRID"
+    Name ="DEPsubID"
+    Expression ="tblDependent_temp.SubSSN"
+    Name ="DEPfirstNAME"
+    Expression ="tblDependent_temp.FirstName"
+    Name ="DEPlastNAME"
+    Expression ="tblDependent_temp.LastName"
+    Name ="DEPmiddleNAME"
+    Expression ="tblDependent_temp.MiddleInitial"
+    Name ="DepDOB"
+    Expression ="tblDependent_temp.DOB"
+    Name ="DepAge"
+    Expression ="tblDependent_temp.Age"
+    Name ="DepRelationship"
+    Expression ="tblDependent_temp.Relationship"
+    Alias ="DepGender"
+    Name ="DEPgender"
+    Expression ="Mid([tblDependent_temp].[Gender],1,1)"
+    Name ="DepEffDate"
+    Expression ="tblDependent_temp.EffDate"
+    Name ="PreexistingDate"
+    Expression ="tblDependent_temp.PreexistingDate"
+End
+Begin Joins
+    LeftTable ="tblDependent_temp"
+    RightTable ="tblSubscriber_temp"
+    Expression ="tblDependent_temp.SubSSN = tblSubscriber_temp.SSN"
+    Flag =1
+End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
@@ -29,5 +59,37 @@ Begin
     End
     Begin
         dbText "Name" ="Expr1"
+    End
+End
+Begin
+    State =0
+    Left =0
+    Top =0
+    Right =1129
+    Bottom =622
+    Left =-1
+    Top =-1
+    Right =1122
+    Bottom =190
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =132
+        Top =7
+        Right =344
+        Bottom =181
+        Top =0
+        Name ="tblDependent_temp"
+        Name =""
+    End
+    Begin
+        Left =438
+        Top =15
+        Right =702
+        Bottom =174
+        Top =0
+        Name ="tblSubscriber_temp"
+        Name =""
     End
 End

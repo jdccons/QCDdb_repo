@@ -12,3 +12,6 @@ End Function
 Function cmdClearAllGroups() As Variant
     Call Forms("fdlgPrtClientSrvs").ClearAllGroups
 End Function
+Function QuitApp(frmForm As Form) As Variant
+    Call frmForm.btnQuit_Click
+End Function

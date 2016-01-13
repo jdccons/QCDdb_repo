@@ -1,23 +1,23 @@
 Operation =5
 Option =0
-Where ="(((tblEDI_App_Subscr.SUBssn) Is Null))"
+Where ="(((tblEDI_App_Subscr.SubSSN) Is Null))"
 Begin InputTables
+    Name ="qselAAGroups"
     Name ="tblSubscr"
     Name ="tblEDI_App_Subscr"
-    Name ="qselAAGroups"
 End
 Begin OutputColumns
     Expression ="tblSubscr.*"
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblEDI_App_Subscr"
-    Expression ="tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn"
+    Expression ="tblSubscr.SubSSN=tblEDI_App_Subscr.SubSSN"
     Flag =2
     LeftTable ="qselAAGroups"
     RightTable ="tblSubscr"
-    Expression ="qselAAGroups.SUBgroupID = tblSubscr.SUBgroupID"
+    Expression ="qselAAGroups.SUBgroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -32,10 +32,10 @@ Begin
     Left =-14
     Top =14
     Right =1022
-    Bottom =541
+    Bottom =371
     Left =-1
     Top =-1
-    Right =1029
+    Right =1021
     Bottom =177
     Left =0
     Top =0
@@ -44,7 +44,7 @@ Begin
         Left =232
         Top =15
         Right =391
-        Bottom =122
+        Bottom =118
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -53,7 +53,7 @@ Begin
         Left =453
         Top =19
         Right =675
-        Bottom =126
+        Bottom =122
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -62,7 +62,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =68
+        Bottom =79
         Top =0
         Name ="qselAAGroups"
         Name =""

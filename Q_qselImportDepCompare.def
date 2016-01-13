@@ -12,21 +12,23 @@ End
 Begin Joins
     LeftTable ="tblImportDependentTemp"
     RightTable ="tblDependent"
-    Expression ="tblImportDependentTemp.DepID = tblDependent.DEPsubID"
+    Expression ="tblImportDependentTemp.LastName=tblDependent.DepLastName"
     Flag =1
     LeftTable ="tblImportDependentTemp"
     RightTable ="tblDependent"
-    Expression ="tblImportDependentTemp.FirstName = tblDependent.DEPfirstNAME"
+    Expression ="tblImportDependentTemp.FirstName=tblDependent.DepFirstName"
     Flag =1
     LeftTable ="tblImportDependentTemp"
     RightTable ="tblDependent"
-    Expression ="tblImportDependentTemp.LastName = tblDependent.DEPlastNAME"
+    Expression ="tblImportDependentTemp.DepID=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblImportDependentTemp.LastName"
@@ -39,10 +41,10 @@ Begin
     Left =114
     Top =24
     Right =990
-    Bottom =577
+    Bottom =384
     Left =-1
     Top =-1
-    Right =869
+    Right =861
     Bottom =180
     Left =0
     Top =0
@@ -60,7 +62,7 @@ Begin
         Left =335
         Top =7
         Right =505
-        Bottom =148
+        Bottom =140
         Top =2
         Name ="tblDependent"
         Name =""

@@ -1,30 +1,30 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBgroupID)=\"NSISD\"))"
+Where ="(((tblSubscr.SubGroupID)=\"NSISD\"))"
 Begin InputTables
     Name ="tblSubscr"
-    Name ="tblCoverage"
     Name ="tblDependent"
     Name ="tblRates"
+    Name ="tblCoverage"
 End
 Begin OutputColumns
     Alias ="SSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="SUBSCRIBER NAME"
     Expression ="tblSubscr.SUB_LUname"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
     Alias ="EFF DATE"
-    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SubEffDate"
     Alias ="RATE"
     Expression ="tblRates.Rate"
     Alias ="COVERAGE"
-    Expression ="tblCoverage.COVERdescr"
+    Expression ="tblCoverage.CoverDescr"
     Alias ="DEP COUNT"
-    Expression ="tblSubscr.SUBnoDEPENT"
+    Expression ="tblSubscr.DepCnt"
     Alias ="DEPENDENT NAME"
     Expression ="IIf(IsNull([DEPfirstNAME]),\"\",[DEPfirstNAME])+\" \"+IIf(IsNull([DEPmiddleNAME]"
         "),\"\",[DEPmiddleNAME])+\" \"+IIf(IsNull([DEPlastNAME]),\"\",[DEPlastNAME])"
@@ -36,15 +36,15 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =2
 End
 Begin OrderBy
@@ -104,10 +104,10 @@ Begin
     Left =68
     Top =86
     Right =1165
-    Bottom =525
+    Bottom =532
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =266
     Left =0
     Top =0
@@ -116,25 +116,16 @@ Begin
         Left =38
         Top =6
         Right =247
-        Bottom =176
+        Bottom =169
         Top =45
         Name ="tblSubscr"
-        Name =""
-    End
-    Begin
-        Left =339
-        Top =44
-        Right =460
-        Bottom =139
-        Top =0
-        Name ="tblCoverage"
         Name =""
     End
     Begin
         Left =488
         Top =19
         Right =758
-        Bottom =159
+        Bottom =152
         Top =2
         Name ="tblDependent"
         Name =""
@@ -143,9 +134,18 @@ Begin
         Left =854
         Top =84
         Right =950
-        Bottom =194
+        Bottom =187
         Top =0
         Name ="tblRates"
+        Name =""
+    End
+    Begin
+        Left =339
+        Top =44
+        Right =460
+        Bottom =132
+        Top =0
+        Name ="tblCoverage"
         Name =""
     End
 End

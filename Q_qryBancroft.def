@@ -4,16 +4,27 @@ Begin InputTables
     Name ="tblEnrollment_Bancroft"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="tblEnrollment_Bancroft.Enrolled"
+    Alias ="Expr2"
     Expression ="tblEnrollment_Bancroft.SUBlastNAME"
+    Alias ="Expr3"
     Expression ="tblEnrollment_Bancroft.SUBfirstNAME"
+    Alias ="Expr4"
     Expression ="tblEnrollment_Bancroft.SUBssn"
+    Alias ="Expr5"
     Expression ="tblEnrollment_Bancroft.SUBstreet1"
+    Alias ="Expr6"
     Expression ="tblEnrollment_Bancroft.SUBstreet2"
+    Alias ="Expr7"
     Expression ="tblEnrollment_Bancroft.SUBcity"
+    Alias ="Expr8"
     Expression ="tblEnrollment_Bancroft.SUBstate"
+    Alias ="Expr9"
     Expression ="tblEnrollment_Bancroft.SUBzip"
+    Alias ="Expr10"
     Expression ="tblEnrollment_Bancroft.SUBphoneHOME"
+    Alias ="Expr11"
     Expression ="tblEnrollment_Bancroft.SUBdob"
 End
 Begin OrderBy
@@ -24,6 +35,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblEnrollment_Bancroft.SUBlastNAME"
@@ -62,14 +75,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-6
-    Top =-25
-    Right =802
-    Bottom =511
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =447
     Left =-1
     Top =-1
-    Right =793
+    Right =1253
     Bottom =227
     Left =0
     Top =0
@@ -78,7 +91,7 @@ Begin
         Left =84
         Top =17
         Right =180
-        Bottom =124
+        Bottom =60
         Top =0
         Name ="tblEnrollment_Bancroft"
         Name =""

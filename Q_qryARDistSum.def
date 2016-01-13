@@ -5,9 +5,11 @@ Begin InputTables
     Name ="ARDIST"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARDIST.DistributionDate"
     Alias ="SumOfAmt"
     Expression ="Sum(ARDIST.Amt)"
+    Alias ="Expr2"
     Expression ="ARDIST.AcctKey"
 End
 Begin Parameters
@@ -31,14 +33,14 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =900
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =500
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =280
     Left =0
     Top =0
@@ -47,7 +49,7 @@ Begin
         Left =38
         Top =6
         Right =280
-        Bottom =225
+        Bottom =49
         Top =0
         Name ="ARDIST"
         Name =""

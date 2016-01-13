@@ -1,6 +1,6 @@
 Operation =1
 Option =1
-Where ="(((tblEDI_App_Dep.[DepSubID]) Not In (select SubSSN FROM tblEDI_App_Subscr)))"
+Where ="(((tblEDI_App_Dep.DepSubID) Not In (select SubSSN FROM tblEDI_App_Subscr)))"
 Begin InputTables
     Name ="tblEDI_App_Dep"
 End
@@ -16,10 +16,6 @@ dbBoolean "FilterOnLoad" ="0"
 dbBoolean "OrderByOnLoad" ="-1"
 dbBoolean "TotalsRow" ="0"
 Begin
-    Begin
-        dbText "Name" ="tblEDI_App_Dep.DepCounter"
-        dbLong "AggregateType" ="-1"
-    End
     Begin
         dbText "Name" ="tblEDI_App_Dep.DepSSN"
         dbLong "AggregateType" ="-1"
@@ -82,10 +78,10 @@ Begin
     Left =36
     Top =27
     Right =1022
-    Bottom =502
+    Bottom =461
     Left =-1
     Top =-1
-    Right =954
+    Right =971
     Bottom =254
     Left =0
     Top =0
@@ -94,7 +90,7 @@ Begin
         Left =48
         Top =12
         Right =192
-        Bottom =156
+        Bottom =145
         Top =0
         Name ="tblEDI_App_Dep"
         Name =""

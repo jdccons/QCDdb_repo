@@ -2,8 +2,8 @@ Operation =3
 Name ="ARLIN"
 Option =8
 Begin InputTables
-    Name ="tblInvLin"
     Name ="tblInvHdr"
+    Name ="tblInvLin"
 End
 Begin OutputColumns
     Alias ="DocNo"
@@ -66,7 +66,7 @@ End
 Begin Joins
     LeftTable ="tblInvHdr"
     RightTable ="tblInvLin"
-    Expression ="tblInvHdr.[TRANS NO] = tblInvLin.[DOCUMENT NO]"
+    Expression ="tblInvHdr.[TRANS NO]=tblInvLin.[DOCUMENT NO]"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -229,10 +229,10 @@ Begin
     Left =76
     Top =58
     Right =1002
-    Bottom =436
+    Bottom =447
     Left =-1
     Top =-1
-    Right =919
+    Right =911
     Bottom =209
     Left =0
     Top =0
@@ -241,7 +241,7 @@ Begin
         Left =306
         Top =6
         Right =506
-        Bottom =150
+        Bottom =139
         Top =0
         Name ="tblInvLin"
         Name =""
@@ -250,7 +250,7 @@ Begin
         Left =38
         Top =6
         Right =211
-        Bottom =150
+        Bottom =139
         Top =8
         Name ="tblInvHdr"
         Name =""

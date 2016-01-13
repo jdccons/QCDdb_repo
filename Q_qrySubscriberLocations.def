@@ -1,0 +1,88 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SubStatus)=\"GRSUB\") AND ((tblGrp.GRCancelled)=False))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblSubscr"
+    Name ="ProZip"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblSubscr.SubID"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="ProZip.Latitude"
+    Expression ="ProZip.Longitude"
+End
+Begin Joins
+    LeftTable ="tblSubscr"
+    RightTable ="ProZip"
+    Expression ="tblSubscr.SubZip=ProZip.ZipCode"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblSubscr"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="2805"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =508
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =288
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =417
+        Top =17
+        Right =690
+        Bottom =225
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =781
+        Top =18
+        Right =1035
+        Bottom =181
+        Top =0
+        Name ="ProZip"
+        Name =""
+    End
+    Begin
+        Left =45
+        Top =15
+        Right =300
+        Bottom =208
+        Top =34
+        Name ="tblGrp"
+        Name =""
+    End
+End

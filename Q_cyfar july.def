@@ -1,31 +1,33 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"cyfar\") AND ((tblSubscr.SUBrate)=6))"
+Where ="(((tblSubscr.SubGroupID)=\"cyfar\") AND ((tblSubscr.SubRate)=6))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubRate"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-6
-    Top =-26
-    Right =802
-    Bottom =511
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =726
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -34,7 +36,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =114
+        Bottom =109
         Top =12
         Name ="tblSubscr"
         Name =""

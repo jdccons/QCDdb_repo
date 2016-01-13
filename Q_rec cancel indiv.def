@@ -1,31 +1,31 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBstatus)=\"indiv\") AND ((tblSubscr.SUBcancelled)=3) AND ((tblSub"
-    "scr.SUBnotes) Is Not Null))"
+Where ="(((tblSubscr.SubStatus)=\"indiv\") AND ((tblSubscr.SubCancelled)=3) AND ((tblSub"
+    "scr.SubNotes) Is Not Null))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblRates"
     Name ="tblCoverage"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblSubscr.SUBcancelled"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubCancelled"
+    Expression ="tblCoverage.CoverCode"
     Expression ="tblRates.Rate"
-    Expression ="tblSubscr.SUBnotes"
-    Expression ="tblSubscr.SUBcontBEG"
+    Expression ="tblSubscr.SubNotes"
+    Expression ="tblSubscr.SubContBeg"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -71,10 +71,10 @@ Begin
     Left =18
     Top =39
     Right =1002
-    Bottom =547
+    Bottom =554
     Left =-1
     Top =-1
-    Right =977
+    Right =969
     Bottom =335
     Left =0
     Top =0
@@ -83,7 +83,7 @@ Begin
         Left =38
         Top =6
         Right =321
-        Bottom =296
+        Bottom =289
         Top =4
         Name ="tblSubscr"
         Name =""
@@ -92,7 +92,7 @@ Begin
         Left =359
         Top =6
         Right =455
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""
@@ -101,7 +101,7 @@ Begin
         Left =493
         Top =6
         Right =589
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblCoverage"
         Name =""

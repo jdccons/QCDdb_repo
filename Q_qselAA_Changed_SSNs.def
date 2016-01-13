@@ -9,20 +9,17 @@ Begin OutputColumns
     Expression ="qselAA_GroupLink_Subscribers.AA_SSN"
     Expression ="qselAA_GroupLink_Subscribers.EISBRID"
     Expression ="qselAA_GroupLink_Subscribers.[EISSN#]"
+    Alias ="Expr1"
     Expression ="qselAA_QCD_Subscribers.SUBssn"
+    Alias ="Expr2"
     Expression ="qselAA_QCD_Subscribers.SUBfirstNAME"
+    Alias ="Expr3"
     Expression ="qselAA_QCD_Subscribers.SUBlastNAME"
     Alias ="GRPid"
     Expression ="qselAA_QCD_Subscribers.SUBgroupID"
     Alias ="RptDate"
     Expression ="CDate(Left([RPTDTASOF],2) & \"/\" & Mid([RPTDTASOF],3,2) & \"/\" & Right([RPTDTA"
         "SOF],4))"
-End
-Begin Joins
-    LeftTable ="qselAA_QCD_Subscribers"
-    RightTable ="qselAA_GroupLink_Subscribers"
-    Expression ="qselAA_QCD_Subscribers.SUBssn = qselAA_GroupLink_Subscribers.AA_SSN"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -38,10 +35,10 @@ Begin
     Left =18
     Top =39
     Right =1258
-    Bottom =483
+    Bottom =490
     Left =-1
     Top =-1
-    Right =1233
+    Right =1225
     Bottom =271
     Left =0
     Top =0
@@ -50,7 +47,7 @@ Begin
         Left =37
         Top =31
         Right =292
-        Bottom =202
+        Bottom =74
         Top =0
         Name ="qselAA_QCD_Subscribers"
         Name =""
@@ -59,7 +56,7 @@ Begin
         Left =359
         Top =32
         Right =726
-        Bottom =211
+        Bottom =210
         Top =0
         Name ="qselAA_GroupLink_Subscribers"
         Name =""

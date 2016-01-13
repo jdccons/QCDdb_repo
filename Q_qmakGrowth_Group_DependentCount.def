@@ -1,29 +1,29 @@
 Operation =2
 Name ="tblGrowth_Dependent_Count"
 Option =0
-Having ="(((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Having ="(((tblSubscr.SubStatus)=\"GRSUB\"))"
 Begin InputTables
-    Name ="qselGrowth_DependentCount"
     Name ="tblSubscr"
+    Name ="qselGrowth_DependentCount"
 End
 Begin OutputColumns
     Alias ="GroupID"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Alias ="Year"
     Expression ="\"2000\""
     Alias ="DepCt"
-    Expression ="Sum(qselGrowth_DependentCount.CountOfDEPcounter)"
+    Expression ="Sum(qselGrowth_DependentCount.CountOfID)"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="qselGrowth_DependentCount"
-    Expression ="tblSubscr.SUBssn = qselGrowth_DependentCount.DEPsubID"
+    Expression ="tblSubscr.SubSSN=qselGrowth_DependentCount.DEPsubID"
     Flag =1
 End
 Begin Groups
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     GroupLevel =0
-    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblSubscr.SubStatus"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -31,6 +31,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="DepCt"
@@ -49,34 +50,34 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =543
     Begin
-        Left =284
-        Top =12
-        Right =457
-        Bottom =89
-        Top =0
-        Name ="qselGrowth_DependentCount"
-        Name =""
-    End
-    Begin
         Left =38
         Top =6
         Right =202
-        Bottom =113
+        Bottom =109
         Top =19
         Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =284
+        Top =12
+        Right =457
+        Bottom =100
+        Top =0
+        Name ="qselGrowth_DependentCount"
         Name =""
     End
 End

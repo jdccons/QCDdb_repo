@@ -7,34 +7,35 @@ Begin InputTables
     Name ="tlkpClientServiceReps"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
     Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
     Alias ="PhonePrimary"
     Expression ="IIf([GRphone1] Is Not Null,ConvtoACTPhone([GRPhone1]),Null)"
     Alias ="PhoneSecondary"
     Expression ="IIf([GRphone2] Is Not Null,ConvtoACTPhone([GRPhone2]),Null)"
     Alias ="PhoneFax"
     Expression ="IIf([GRfax] Is Not Null,ConvtoACTPhone([GRfax]),Null)"
-    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRMainCont"
     Alias ="ContBegDate"
     Expression ="IIf([GRcontBEG] Is Not Null,[GRcontBEG],Null)"
     Alias ="ContEndDate"
     Expression ="IIf([GRcontEND] Is Not Null,[GRcontEND],Null)"
-    Expression ="tblGrp.GRnotes"
+    Expression ="tblGrp.GRNotes"
     Alias ="IDStatus"
     Expression ="IIf([GRcancelled]=-1,\"Cancelled\",\"Active\")"
     Alias ="CancelledDate"
     Expression ="IIf([GRcancelledDate] Is Not Null,[GRcancelledDate],Null)"
     Alias ="SecondaryAgent"
-    Expression ="tblAgent_1.AGENCY"
+    Expression ="tblAgent_1.Agency"
     Expression ="tlkpClientServiceReps.RepName"
-    Expression ="tblGrp.GRmainCONTtitle"
+    Expression ="tblGrp.GRMainContTitle"
 End
 Begin Joins
     LeftTable ="tblGrp"
@@ -66,10 +67,10 @@ Begin
     Left =93
     Top =114
     Right =1229
-    Bottom =526
+    Bottom =533
     Left =-1
     Top =-1
-    Right =1129
+    Right =1121
     Bottom =239
     Left =0
     Top =0
@@ -78,7 +79,7 @@ Begin
         Left =16
         Top =6
         Right =200
-        Bottom =146
+        Bottom =139
         Top =37
         Name ="tblGrp"
         Name =""
@@ -87,7 +88,7 @@ Begin
         Left =427
         Top =6
         Right =523
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblAgent_1"
         Name =""
@@ -96,7 +97,7 @@ Begin
         Left =561
         Top =6
         Right =723
-        Bottom =86
+        Bottom =94
         Top =0
         Name ="tlkpClientServiceReps"
         Name =""

@@ -1,54 +1,49 @@
 Operation =4
 Option =0
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrowth_Dependent_Count"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Name ="tblSubscr.SUBnoDEPENT"
-    Expression ="[tblGrowth_Dependent_Count].[CountOfDEPcounter]"
-End
-Begin Joins
-    LeftTable ="tblGrowth_Dependent_Count"
-    RightTable ="tblSubscr"
-    Expression ="tblGrowth_Dependent_Count.DEPsubID = tblSubscr.SUBssn"
-    Flag =1
+    Name ="tblSubscr.DepCnt"
+    Expression ="tblGrowth_Dependent_Count.CountOfID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =422
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =202
     Left =0
     Top =0
     ColumnsShown =579
     Begin
-        Left =38
-        Top =6
-        Right =259
-        Bottom =152
-        Top =17
-        Name ="tblSubscr"
-        Name =""
-    End
-    Begin
         Left =353
         Top =9
         Right =556
-        Bottom =102
+        Bottom =52
         Top =0
         Name ="tblGrowth_Dependent_Count"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =259
+        Bottom =139
+        Top =17
+        Name ="tblSubscr"
         Name =""
     End
 End

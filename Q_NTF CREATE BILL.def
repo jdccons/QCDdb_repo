@@ -1,30 +1,30 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GROUPid)=\"BMPPR\"))"
+Where ="(((tblGrp.GroupID)=\"BMPPR\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
     Name ="vwRates"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblSubscr.SubSSN"
     Alias ="NAME"
     Expression ="[SUBlastNAME] & \", \" & [SUBfirstNAME]"
     Expression ="vwRates.Rate"
     Expression ="tblSubscr.PlanID"
     Expression ="vwRates.COVERcode"
     Expression ="tblSubscr.PreexistingDate"
-    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SubEffDate"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="vwRates"
-    Expression ="tblSubscr.RateID = vwRates.RateID"
+    Expression ="tblSubscr.RateID=vwRates.RateID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -40,10 +40,10 @@ Begin
     Left =84
     Top =65
     Right =1055
-    Bottom =478
+    Bottom =389
     Left =-1
     Top =-1
-    Right =964
+    Right =956
     Bottom =144
     Left =0
     Top =0
@@ -52,7 +52,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =8
         Name ="tblGrp"
         Name =""
@@ -61,7 +61,7 @@ Begin
         Left =172
         Top =6
         Right =347
-        Bottom =101
+        Bottom =94
         Top =39
         Name ="tblSubscr"
         Name =""
@@ -70,7 +70,7 @@ Begin
         Left =466
         Top =-14
         Right =562
-        Bottom =113
+        Bottom =104
         Top =0
         Name ="vwRates"
         Name =""

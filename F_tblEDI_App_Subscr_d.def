@@ -1,11 +1,11 @@
 Version =20
 VersionRequired =20
-Checksum =831626046
+Checksum =-1982276068
 Begin Form
     AutoCenter = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    AllowDesignChanges = NotDefault
+    OrderByOn = NotDefault
     DefaultView =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -14,13 +14,13 @@ Begin Form
     Width =12060
     DatasheetFontHeight =11
     ItemSuffix =130
-    Left =-735
-    Top =5265
-    Right =11070
-    Bottom =7575
+    Left =7290
+    Top =7095
+    Right =19005
+    Bottom =7890
     DatasheetGridlinesColor =15062992
     RecSrcDt = Begin
-        0x6faf55b94f28e440
+        0x42eb92bf35ade440
     End
     RecordSource ="SELECT tblEDI_App_Subscr.SubSSN, tblEDI_App_Subscr.SubID, tblEDI_App_Subscr.EIMB"
         "RID, tblEDI_App_Subscr.SubStatus, tblEDI_App_Subscr.SubGroupID, tblEDI_App_Subsc"
@@ -30,24 +30,23 @@ Begin Form
         "iddleName, tblEDI_App_Subscr.SubStreet1, tblEDI_App_Subscr.SubStreet2, tblEDI_Ap"
         "p_Subscr.SubCity, tblEDI_App_Subscr.SubState, tblEDI_App_Subscr.SubZip, tblEDI_A"
         "pp_Subscr.SubPhoneWork, tblEDI_App_Subscr.SubPhoneHome, tblEDI_App_Subscr.SUBdob"
-        ", tblEDI_App_Subscr.SubNoDepent, tblEDI_App_Subscr.SubGender, tblEDI_App_Subscr."
-        "SubAge, tblEDI_App_Subscr.SubMaritalStatus, tblEDI_App_Subscr.SubEffDate, tblEDI"
-        "_App_Subscr.SubExpDate, tblEDI_App_Subscr.SubClassKey, tblEDI_App_Subscr.Preexis"
-        "tingDate, tblEDI_App_Subscr.SubCardPrt, tblEDI_App_Subscr.SubCardPrtDte, tblEDI_"
-        "App_Subscr.SubNotes, tblEDI_App_Subscr.TransactionType, tblEDI_App_Subscr.SubCon"
-        "tBeg, tblEDI_App_Subscr.SubContEnd, tblEDI_App_Subscr.SubPymtFreq, tblEDI_App_Su"
-        "bscr.SubGeoID, tblEDI_App_Subscr.SUBbankDraftNo, tblEDI_App_Subscr.Flag, tblEDI_"
-        "App_Subscr.UserName, tblEDI_App_Subscr.DateCreated, tblEDI_App_Subscr.DateUpdate"
-        "d, tblEDI_App_Subscr.DateDeleted, tblEDI_App_Subscr.SUBemployeeName, tblEDI_App_"
-        "Subscr.SUBflyerPRTdte, tblEDI_App_Subscr.SUBplanIDgr, tblEDI_App_Subscr.SUBplanI"
-        "Din, tblEDI_App_Subscr.SUBcoverage, tblEDI_App_Subscr.SUBrate, tblEDI_App_Subscr"
-        ".SUBCOBRA, tblEDI_App_Subscr.SUBLOA, tblEDI_App_Subscr.SUBmissing, tblEDI_App_Su"
-        "bscr.SUBagentID1, tblEDI_App_Subscr.SUBagentRATE1, tblEDI_App_Subscr.SUBagentID2"
-        ", tblEDI_App_Subscr.SUBagentRATE2, tblEDI_App_Subscr.GRExecSalesDirID, tblEDI_Ap"
-        "p_Subscr.GRExecSalesDirRate, tblEDI_App_Subscr.FOCType, tblEDI_App_Subscr.Create"
-        "Date, tblEDI_App_Subscr.ModifyDate, tblEDI_App_Subscr.wSubID, tblEDI_App_Subscr."
-        "wUpt, tblEDI_App_Subscr.AmtPaid, tblEDI_App_Subscr.CoverDesc FROM tblEDI_App_Sub"
-        "scr;"
+        ", tblEDI_App_Subscr.DepCnt, tblEDI_App_Subscr.SubGender, tblEDI_App_Subscr.SubAg"
+        "e, tblEDI_App_Subscr.SubMaritalStatus, tblEDI_App_Subscr.SubEffDate, tblEDI_App_"
+        "Subscr.SubExpDate, tblEDI_App_Subscr.SubClassKey, tblEDI_App_Subscr.PreexistingD"
+        "ate, tblEDI_App_Subscr.SubCardPrt, tblEDI_App_Subscr.SubCardPrtDte, tblEDI_App_S"
+        "ubscr.SubNotes, tblEDI_App_Subscr.TransactionType, tblEDI_App_Subscr.SubContBeg,"
+        " tblEDI_App_Subscr.SubContEnd, tblEDI_App_Subscr.SubPymtFreq, tblEDI_App_Subscr."
+        "SubGeoID, tblEDI_App_Subscr.SUBbankDraftNo, tblEDI_App_Subscr.Flag, tblEDI_App_S"
+        "ubscr.UserName, tblEDI_App_Subscr.DateCreated, tblEDI_App_Subscr.DateUpdated, tb"
+        "lEDI_App_Subscr.DateDeleted, tblEDI_App_Subscr.SUBemployeeName, tblEDI_App_Subsc"
+        "r.SUBflyerPRTdte, tblEDI_App_Subscr.SUBplanIDgr, tblEDI_App_Subscr.SUBplanIDin, "
+        "tblEDI_App_Subscr.SUBcoverage, tblEDI_App_Subscr.SUBrate, tblEDI_App_Subscr.SUBC"
+        "OBRA, tblEDI_App_Subscr.SUBLOA, tblEDI_App_Subscr.SUBmissing, tblEDI_App_Subscr."
+        "SUBagentID1, tblEDI_App_Subscr.SUBagentRATE1, tblEDI_App_Subscr.SUBagentID2, tbl"
+        "EDI_App_Subscr.SUBagentRATE2, tblEDI_App_Subscr.GRExecSalesDirID, tblEDI_App_Sub"
+        "scr.GRExecSalesDirRate, tblEDI_App_Subscr.FOCType, tblEDI_App_Subscr.CreateDate,"
+        " tblEDI_App_Subscr.ModifyDate, tblEDI_App_Subscr.wSubID, tblEDI_App_Subscr.wUpt,"
+        " tblEDI_App_Subscr.AmtPaid, tblEDI_App_Subscr.CoverDesc FROM tblEDI_App_Subscr;"
     Caption ="tblEDI_App_Subscr_d"
     DatasheetFontName ="Calibri"
     AllowPivotTableView =0
@@ -137,7 +136,7 @@ Begin Form
             BackColor =15849926
             Name ="FormHeader"
             GUID = Begin
-                0x8a4bd3cd7b0fe142b501d8428f64e4e4
+                0x389b36b8a970144dbed968056f2792cc
             End
             UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
                 0x01
@@ -161,7 +160,7 @@ Begin Form
             Height =8895
             Name ="Detail"
             GUID = Begin
-                0x694f7a347e435c4b9b85c4cd6ce0c9cd
+                0xeb1704ee25c64c409a4e5fe6d81482c2
             End
             UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
                 0x01
@@ -187,6 +186,7 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1410
+                    ColumnOrder =0
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubSSN"
@@ -199,7 +199,7 @@ Begin Form
                         0x00000000
                     End
                     GUID = Begin
-                        0x4a58f03883d4f845bb213e55520fbd43
+                        0x12c7c99cdc947e4f9cf243a8e25c7a11
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -236,7 +236,7 @@ Begin Form
                             Name ="SubSSN_Label"
                             Caption ="SubSSN"
                             GUID = Begin
-                                0xbbcb70bd9302634498e70c2b4c3c4666
+                                0x295ca34a14cf4d49b50deebf308b4c13
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -264,6 +264,7 @@ Begin Form
                     Width =1290
                     Height =330
                     ColumnWidth =1290
+                    ColumnOrder =1
                     TabIndex =1
                     BorderColor =12835293
                     ForeColor =4138256
@@ -277,7 +278,7 @@ Begin Form
                         0x00000000
                     End
                     GUID = Begin
-                        0xf0e0ae71d4777849bf0e83427607b09c
+                        0x13580a4d91a0f84abd5fdf4229b9c323
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -314,7 +315,7 @@ Begin Form
                             Name ="SubID_Label"
                             Caption ="SubID"
                             GUID = Begin
-                                0x0b3948f36d6dd84e9f80887f05869cb3
+                                0x92202db6b9bb0444b9ddd7544e924256
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -342,13 +343,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =2
                     TabIndex =2
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="EIMBRID"
                     ControlSource ="EIMBRID"
                     GUID = Begin
-                        0x87cb47c711066d49addbc7999959ceed
+                        0xb8915a56a333684f98600d96b9289325
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -380,7 +382,7 @@ Begin Form
                             Name ="EIMBRID_Label"
                             Caption ="EIMBRID"
                             GUID = Begin
-                                0xf8d341c3c5d4ec488891df32ec89bef9
+                                0xa349b2a613c7e94e990830295a4b2e24
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -408,13 +410,14 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =7
                     TabIndex =3
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubStatus"
                     ControlSource ="SubStatus"
                     GUID = Begin
-                        0x06e2ffb19d21a946b8964f82e7eb2440
+                        0x1baa78f716b34d479dcc0152a0cb7202
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -446,7 +449,7 @@ Begin Form
                             Name ="SubStatus_Label"
                             Caption ="SubStatus"
                             GUID = Begin
-                                0x2b7172aeb8123f4e96e8fe3d30881846
+                                0x34930bd632a5594795f5d520f2337cfd
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -474,13 +477,14 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1515
+                    ColumnOrder =5
                     TabIndex =4
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubGroupID"
                     ControlSource ="SubGroupID"
                     GUID = Begin
-                        0xd5f70182ebb4ae4ebc007c296166a7da
+                        0x6f51a23eaa043f4188a7b41d9d519e93
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -512,7 +516,7 @@ Begin Form
                             Name ="SubGroupID_Label"
                             Caption ="SubGroupID"
                             GUID = Begin
-                                0x9856299b6cc9044bb0c5c8e071a0727c
+                                0xb7e067642d199942b0901aaababebd6b
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -540,13 +544,14 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =8
                     TabIndex =5
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="PltCustKey"
                     ControlSource ="PltCustKey"
                     GUID = Begin
-                        0xece28bea7e059246bc9c03025edc077e
+                        0x0219da0fd3cc5241ba9de8851490fe50
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -578,7 +583,7 @@ Begin Form
                             Name ="PltCustKey_Label"
                             Caption ="PltCustKey"
                             GUID = Begin
-                                0x16b7201706c45348adea28815fb19245
+                                0xe65dc5d81e84c04d93e656ffe119edef
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -606,13 +611,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =9
                     TabIndex =6
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="PlanID"
                     ControlSource ="PlanID"
                     GUID = Begin
-                        0x57827f44f654284b96741c87f8a34aef
+                        0xc6b5335d8eb95d4c97ae86ee925e48f2
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -644,7 +650,7 @@ Begin Form
                             Name ="PlanID_Label"
                             Caption ="PlanID"
                             GUID = Begin
-                                0x67dae2e481d843429b6219d8af9268e4
+                                0xd09171885bc07746bbc756c129ab3c8e
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -672,13 +678,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =10
                     TabIndex =7
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="CoverID"
                     ControlSource ="CoverID"
                     GUID = Begin
-                        0x2dcb83a962d9814b9fe9d642d64c69c2
+                        0x6f285dcfffe91d4387a95d088efb1408
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -710,7 +717,7 @@ Begin Form
                             Name ="CoverID_Label"
                             Caption ="CoverID"
                             GUID = Begin
-                                0xf9dfafaf2c8fe54bacf0f62b296499ae
+                                0xaaa26bd599b37b4f913f23e3098fcf59
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -738,6 +745,7 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =11
                     TabIndex =8
                     BorderColor =12835293
                     ForeColor =4138256
@@ -750,7 +758,7 @@ Begin Form
                         0x4e0075006c006c0000000000
                     End
                     GUID = Begin
-                        0x9aa9471e163f8549b4168e93f9849605
+                        0xa65e86da88ab844cbba73b4c911a324b
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -786,7 +794,7 @@ Begin Form
                             Name ="RateID_Label"
                             Caption ="RateID"
                             GUID = Begin
-                                0x2648725608cce845827179d4bb658cdb
+                                0x15f58b1a1049834c97d58576938f39db
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -814,13 +822,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =12
                     TabIndex =9
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubCancelled"
                     ControlSource ="SubCancelled"
                     GUID = Begin
-                        0xa57103546884074197421ced82c55577
+                        0x68e2484855c8ae4f87fac5782abf1be7
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -852,7 +861,7 @@ Begin Form
                             Name ="SubCancelled_Label"
                             Caption ="SubCancelled"
                             GUID = Begin
-                                0x44c2ea7295a7974585d9245fc8e6b12a
+                                0xab1263be298d964c924c7102abe0f9ac
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -880,13 +889,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =13
                     TabIndex =10
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUB_LUname"
                     ControlSource ="SUB_LUname"
                     GUID = Begin
-                        0xb84906b27a202b4db2008952dfc6de80
+                        0x28f180236d1e9944879fa80bbda152ed
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -918,7 +928,7 @@ Begin Form
                             Name ="SUB_LUname_Label"
                             Caption ="SUB_LUname"
                             GUID = Begin
-                                0xf289e2ad333cee4e954268dd6da37547
+                                0xfee3b2db6d9f3c45b8a7fa9fb7402f32
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -945,14 +955,15 @@ Begin Form
                     Top =4980
                     Width =1350
                     Height =330
-                    ColumnWidth =3000
+                    ColumnWidth =1410
+                    ColumnOrder =3
                     TabIndex =11
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubLastName"
                     ControlSource ="SubLastName"
                     GUID = Begin
-                        0xd7fdada7631c4c4c843ec67ed8330e69
+                        0xa3d198d26d80ad45b2b1c924d2218c4a
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -984,7 +995,7 @@ Begin Form
                             Name ="SubLastName_Label"
                             Caption ="SubLastName"
                             GUID = Begin
-                                0xfdd465cbf59a524196f92bcb5c3477d0
+                                0xda643c8bfea829428d7247e25b670aaf
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1011,14 +1022,15 @@ Begin Form
                     Top =5400
                     Width =1350
                     Height =330
-                    ColumnWidth =3000
+                    ColumnWidth =1455
+                    ColumnOrder =4
                     TabIndex =12
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubFirstName"
                     ControlSource ="SubFirstName"
                     GUID = Begin
-                        0x4f21321cc7b62147abf75b2a292e9c0f
+                        0xa3da0eac00218c459fd5aa21833449ba
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1050,7 +1062,7 @@ Begin Form
                             Name ="SubFirstName_Label"
                             Caption ="SubFirstName"
                             GUID = Begin
-                                0xb7fb76fe0ac2e948bf8824006176e6e8
+                                0xb40c55b334dc8648a8ab2fd1842989a5
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1078,13 +1090,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =14
                     TabIndex =13
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubMiddleName"
                     ControlSource ="SubMiddleName"
                     GUID = Begin
-                        0x0d701732b27bcd4195b0703e007fc3cc
+                        0x793e317f7445954aaa7c5a3bd3f51f7b
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1116,7 +1129,7 @@ Begin Form
                             Name ="SubMiddleName_Label"
                             Caption ="SubMiddleName"
                             GUID = Begin
-                                0x5fd06e854153f24d8f0546fd391b6882
+                                0x6b31129deac3984f92393cf1bb459a00
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1144,13 +1157,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =15
                     TabIndex =14
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubStreet1"
                     ControlSource ="SubStreet1"
                     GUID = Begin
-                        0x487d8839f4630c4c88367f70c665b2ba
+                        0xe68e5217bacd404097f9c9291c80e0bb
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1182,7 +1196,7 @@ Begin Form
                             Name ="SubStreet1_Label"
                             Caption ="SubStreet1"
                             GUID = Begin
-                                0x4dd38254631d854aa85ebc3a6d621158
+                                0xf673240572352b41b715c22d665434c0
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1210,13 +1224,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =16
                     TabIndex =15
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubStreet2"
                     ControlSource ="SubStreet2"
                     GUID = Begin
-                        0xa2e8d1ee0173e14e8b22138fea7ed2c3
+                        0xd95d2b991314a94d980a441558b9f1f3
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1248,7 +1263,7 @@ Begin Form
                             Name ="SubStreet2_Label"
                             Caption ="SubStreet2"
                             GUID = Begin
-                                0x9d7005b5428a0445a9a1926d935bae69
+                                0x26806c46877d2a41bf3ba759896a8936
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1276,13 +1291,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =17
                     TabIndex =16
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubCity"
                     ControlSource ="SubCity"
                     GUID = Begin
-                        0x8bed20f4f21aa5418fd855b2f5b59219
+                        0xe017b1b51ddb7042b04701b039af77ea
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1314,7 +1330,7 @@ Begin Form
                             Name ="SubCity_Label"
                             Caption ="SubCity"
                             GUID = Begin
-                                0xb270ba01eed3c2499c443acb54030a4f
+                                0x5a108d5505ed58469e32e4c0e7667b8d
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1342,13 +1358,14 @@ Begin Form
                     Width =840
                     Height =330
                     ColumnWidth =840
+                    ColumnOrder =18
                     TabIndex =17
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubState"
                     ControlSource ="SubState"
                     GUID = Begin
-                        0xb36831e7b02f934e8b6bc0ea2e115dec
+                        0xfa23eb31e9c04d49b0c4bc8ad757d135
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1380,7 +1397,7 @@ Begin Form
                             Name ="SubState_Label"
                             Caption ="SubState"
                             GUID = Begin
-                                0xa18e5ccba2e3cd41b3e00dd3aa3e710c
+                                0x9893eddeb6bd61449c6684914fe37c5e
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1408,13 +1425,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1410
+                    ColumnOrder =19
                     TabIndex =18
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubZip"
                     ControlSource ="SubZip"
                     GUID = Begin
-                        0x46643e8341b60d419856be9de0629a57
+                        0xcca49b51ac94be45b4aef3708383df79
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1446,7 +1464,7 @@ Begin Form
                             Name ="SubZip_Label"
                             Caption ="SubZip"
                             GUID = Begin
-                                0xa6c52aacd84a5640acb45c9a3747bf38
+                                0x207bd6d0918f9a41b20054ceacd4e589
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1474,13 +1492,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1500
+                    ColumnOrder =20
                     TabIndex =19
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubPhoneWork"
                     ControlSource ="SubPhoneWork"
                     GUID = Begin
-                        0xa875f09dbfa9ee47ba58bb19ae3cbe2c
+                        0xf33b8dcb1666f84484b89aaf0cb08292
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1512,7 +1531,7 @@ Begin Form
                             Name ="SubPhoneWork_Label"
                             Caption ="SubPhoneWork"
                             GUID = Begin
-                                0x6a9c2e459b70bb47bd4440696e7bfbe4
+                                0xf7e0c7be7636ed45ba0cf2553eb6a3ca
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1540,13 +1559,14 @@ Begin Form
                     Width =1500
                     Height =330
                     ColumnWidth =1500
+                    ColumnOrder =21
                     TabIndex =20
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubPhoneHome"
                     ControlSource ="SubPhoneHome"
                     GUID = Begin
-                        0x299f7c44ee7af645bffa5a4c3645cdc8
+                        0xfb9cc120f31c984d8ff4ffaa62f7c5a7
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1578,7 +1598,7 @@ Begin Form
                             Name ="SubPhoneHome_Label"
                             Caption ="SubPhoneHome"
                             GUID = Begin
-                                0xa5078145299dcc4dbbc4fb16511ab305
+                                0x18902cfc0e3b1a4ea95c5dbac431ae20
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1606,13 +1626,14 @@ Begin Form
                     Width =1620
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =22
                     TabIndex =21
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBdob"
                     ControlSource ="SUBdob"
                     GUID = Begin
-                        0xb462d7bf45aad64392e2e89f38e92ae2
+                        0xeea7e9db381e844789e3ff524d1e68e4
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1644,7 +1665,7 @@ Begin Form
                             Name ="SUBdob_Label"
                             Caption ="SUBdob"
                             GUID = Begin
-                                0x81c8d69e09b6b24fb7e0d41c405c5f81
+                                0x74e104799593d34382fef988aacddd25
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1672,13 +1693,14 @@ Begin Form
                     Width =1530
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =23
                     TabIndex =22
                     BorderColor =12835293
                     ForeColor =4138256
-                    Name ="SubNoDepent"
-                    ControlSource ="SubNoDepent"
+                    Name ="DepCnt"
+                    ControlSource ="DepCnt"
                     GUID = Begin
-                        0x644fe5d84b60a040a61ea7741f59f0dc
+                        0xeb0c01b727d1804cbe4b2f6330200820
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1708,9 +1730,9 @@ Begin Form
                             BorderColor =16777215
                             ForeColor =13995605
                             Name ="SubNoDepent_Label"
-                            Caption ="SubNoDepent"
+                            Caption ="DepCnt"
                             GUID = Begin
-                                0xfb5ac433eb922845888dae9d734932df
+                                0x2249832cc0cbc647816a3fdc1bbbf9b8
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1738,13 +1760,14 @@ Begin Form
                     Width =1170
                     Height =330
                     ColumnWidth =1170
+                    ColumnOrder =24
                     TabIndex =23
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubGender"
                     ControlSource ="SubGender"
                     GUID = Begin
-                        0x23c2bf5de3b1e54eac4c13fc8942f329
+                        0x0ade861c34804b418d37f02c49224c34
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1776,7 +1799,7 @@ Begin Form
                             Name ="SubGender_Label"
                             Caption ="SubGender"
                             GUID = Begin
-                                0xfc8870a2f8644d429c4ab82775ffd99d
+                                0xb80e502d8a180348bfa064a9ccda512c
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1804,13 +1827,14 @@ Begin Form
                     Width =1530
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =25
                     TabIndex =24
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubAge"
                     ControlSource ="SubAge"
                     GUID = Begin
-                        0x6351507497ee94418096aceba6f29a48
+                        0xea1c612bb7e8a242afa5ef9cf5e3a11b
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1842,7 +1866,7 @@ Begin Form
                             Name ="SubAge_Label"
                             Caption ="SubAge"
                             GUID = Begin
-                                0xf48bb7efeb2ef0429c212bc08f0b7353
+                                0xf41329474c6e5747b6fd5c383c9b632c
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1870,13 +1894,14 @@ Begin Form
                     Width =1170
                     Height =330
                     ColumnWidth =1170
+                    ColumnOrder =26
                     TabIndex =25
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubMaritalStatus"
                     ControlSource ="SubMaritalStatus"
                     GUID = Begin
-                        0xc09efb7a0eaa3843b89135d8e5431d22
+                        0xd591e858f3233a45a2649de6850ce389
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1908,7 +1933,7 @@ Begin Form
                             Name ="SubMaritalStatus_Label"
                             Caption ="SubMaritalStatus"
                             GUID = Begin
-                                0xb97e285dd4b9c54fb9b3e8be4c505876
+                                0xca9fb35229d451479472458304282496
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1936,13 +1961,14 @@ Begin Form
                     Width =1620
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =27
                     TabIndex =26
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubEffDate"
                     ControlSource ="SubEffDate"
                     GUID = Begin
-                        0x77b8ddba40282d4892874ebedb55ff65
+                        0xb4ca23927323b946a2f37701df0e6c46
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1974,7 +2000,7 @@ Begin Form
                             Name ="SubEffDate_Label"
                             Caption ="SubEffDate"
                             GUID = Begin
-                                0x707b519bac77ff4fa9b72739f3ba734c
+                                0x66e2c62685f8af49a49a9047aa135948
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2002,13 +2028,14 @@ Begin Form
                     Width =1620
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =28
                     TabIndex =27
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubExpDate"
                     ControlSource ="SubExpDate"
                     GUID = Begin
-                        0xf87b33010eec8147a56a538042360dd2
+                        0x84acc55c918a1645b2971a71bae6131b
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2040,7 +2067,7 @@ Begin Form
                             Name ="SubExpDate_Label"
                             Caption ="SubExpDate"
                             GUID = Begin
-                                0xe2a97d72052b1c4582e425ee58c4a727
+                                0x13e7ee4d26672d45b970f90fbe176f6a
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2068,13 +2095,14 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =29
                     TabIndex =28
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubClassKey"
                     ControlSource ="SubClassKey"
                     GUID = Begin
-                        0x85667cec1b537e4f83b748f5f1af42e0
+                        0x4502659e421d48419a326dd6a94549a7
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2106,7 +2134,7 @@ Begin Form
                             Name ="SubClassKey_Label"
                             Caption ="SubClassKey"
                             GUID = Begin
-                                0xad0fb16b2a666b4d94c6c8719cc5b010
+                                0xcd6bf74d152dd942ac00c256a4087c92
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2134,13 +2162,14 @@ Begin Form
                     Width =1620
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =30
                     TabIndex =29
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="PreexistingDate"
                     ControlSource ="PreexistingDate"
                     GUID = Begin
-                        0x6090b7391317a84a9b34b6c8ad89c0a4
+                        0xf9e60d6b4e1d5d448c7857ba9bdae928
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2172,7 +2201,7 @@ Begin Form
                             Name ="PreexistingDate_Label"
                             Caption ="PreexistingDate"
                             GUID = Begin
-                                0x68e1427c0b412849851817d125f8c0d9
+                                0x0bf82772733cdc4ca1bd9a155d12b8a2
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2200,6 +2229,7 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =31
                     TabIndex =30
                     BorderColor =12835293
                     ForeColor =4138256
@@ -2207,7 +2237,7 @@ Begin Form
                     ControlSource ="SubCardPrt"
                     Format ="True/False"
                     GUID = Begin
-                        0x9d23fc2094533043a9c8c2e17751da09
+                        0xddf5fc9135ebbc4099f50fb5190f2007
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2239,7 +2269,7 @@ Begin Form
                             Name ="SubCardPrt_Label"
                             Caption ="SubCardPrt"
                             GUID = Begin
-                                0xb143d534b855f547b27690699ead54f3
+                                0xa642a7a750faa549a856a7d269975d82
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2267,13 +2297,14 @@ Begin Form
                     Width =1620
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =32
                     TabIndex =31
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubCardPrtDte"
                     ControlSource ="SubCardPrtDte"
                     GUID = Begin
-                        0x627699bde34e664e90b8e79f703f7dc5
+                        0xa3a0b6f17a96904cb15b897b7a623081
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2305,7 +2336,7 @@ Begin Form
                             Name ="SubCardPrtDte_Label"
                             Caption ="SubCardPrtDte"
                             GUID = Begin
-                                0xe6dfa37e339e924c89df3d28d5dc1752
+                                0x19a0c11ab9b8f345a85111e6d28fc1d9
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2335,13 +2366,14 @@ Begin Form
                     Width =2790
                     Height =1140
                     ColumnWidth =3000
+                    ColumnOrder =33
                     TabIndex =32
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubNotes"
                     ControlSource ="SubNotes"
                     GUID = Begin
-                        0x55a3bcfa234a0c4780a54f4c6f50d488
+                        0x15e3196a3dce764c9a3c6b859a025581
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2373,7 +2405,7 @@ Begin Form
                             Name ="SubNotes_Label"
                             Caption ="SubNotes"
                             GUID = Begin
-                                0x55fdf2d74645fd4aada98a0a700c12ab
+                                0xc5bee402cd36a84cb3003625974ccbc0
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2401,13 +2433,14 @@ Begin Form
                     Width =1170
                     Height =330
                     ColumnWidth =1170
+                    ColumnOrder =34
                     TabIndex =33
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="TransactionType"
                     ControlSource ="TransactionType"
                     GUID = Begin
-                        0x76c4a8e2d64bbd47b7bfeef4f39a8526
+                        0xd606e08be0ab7d49ae2c7c5ff132563a
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2439,7 +2472,7 @@ Begin Form
                             Name ="TransactionType_Label"
                             Caption ="TransactionType"
                             GUID = Begin
-                                0xe2314b708cae29408253a8f4d1f81d88
+                                0x537bdb62a9398541b4cbf3aafe4c7d17
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2467,13 +2500,14 @@ Begin Form
                     Width =1620
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =35
                     TabIndex =34
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubContBeg"
                     ControlSource ="SubContBeg"
                     GUID = Begin
-                        0x1306b3e51e53934d8434ff79fc29998a
+                        0xdfdbbb79f2d73c468ce3a5f768ea4f2f
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2505,7 +2539,7 @@ Begin Form
                             Name ="SubContBeg_Label"
                             Caption ="SubContBeg"
                             GUID = Begin
-                                0x138031df8dc60d4d8ac6c9d69a2984b0
+                                0x7ff9e74f7d04c0459e49bce560bf2ebf
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2533,13 +2567,14 @@ Begin Form
                     Width =1620
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =36
                     TabIndex =35
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubContEnd"
                     ControlSource ="SubContEnd"
                     GUID = Begin
-                        0x46fee189db385a40bdf6d8718feea9e5
+                        0x2873cae3a318e94ca887646ea0a3eec4
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2571,7 +2606,7 @@ Begin Form
                             Name ="SubContEnd_Label"
                             Caption ="SubContEnd"
                             GUID = Begin
-                                0x9fe690df9a41634ca0387e6c7aa467f8
+                                0x732a1e90d76fdd46afc2d26245836138
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2599,13 +2634,14 @@ Begin Form
                     Width =450
                     Height =330
                     ColumnWidth =450
+                    ColumnOrder =37
                     TabIndex =36
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubPymtFreq"
                     ControlSource ="SubPymtFreq"
                     GUID = Begin
-                        0xd444e9f81cd65d4f9b8bf2a5f5d26ad2
+                        0x3df9dda7519a364cb39e72c1df3f9752
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2637,7 +2673,7 @@ Begin Form
                             Name ="SubPymtFreq_Label"
                             Caption ="SubPymtFreq"
                             GUID = Begin
-                                0x145fbc11a3d81c418c8b04d23844ef2f
+                                0x54ff781f8570b147a70949c0b65bd8b9
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2665,13 +2701,14 @@ Begin Form
                     Width =1050
                     Height =330
                     ColumnWidth =1050
+                    ColumnOrder =38
                     TabIndex =37
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SubGeoID"
                     ControlSource ="SubGeoID"
                     GUID = Begin
-                        0x220c3a55690e0840b9eb39810310838e
+                        0x0764bcee776626459038784aaff2940d
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2703,7 +2740,7 @@ Begin Form
                             Name ="SubGeoID_Label"
                             Caption ="SubGeoID"
                             GUID = Begin
-                                0x4172765d39aaac4ba111234660f65223
+                                0x908099e1670f384cbb592abb834fc752
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2731,13 +2768,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =2460
+                    ColumnOrder =39
                     TabIndex =38
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBbankDraftNo"
                     ControlSource ="SUBbankDraftNo"
                     GUID = Begin
-                        0x83d430df25702845affea81e06465fde
+                        0xacbc53a98a0d4546b2d5f1acc48b97a5
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2769,7 +2807,7 @@ Begin Form
                             Name ="SUBbankDraftNo_Label"
                             Caption ="SUBbankDraftNo"
                             GUID = Begin
-                                0xb8cf4fc27c75d342ba06fb8c4f270df3
+                                0x7fa2340f5cf068488d622d9d5ac38dcc
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2797,6 +2835,7 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =40
                     TabIndex =39
                     BorderColor =12835293
                     ForeColor =4138256
@@ -2804,7 +2843,7 @@ Begin Form
                     ControlSource ="Flag"
                     Format ="True/False"
                     GUID = Begin
-                        0xd9032f975f3e56498607634cc9627b56
+                        0x146e71af5a19c044a26e52d2197fa787
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2836,7 +2875,7 @@ Begin Form
                             Name ="Flag_Label"
                             Caption ="Flag"
                             GUID = Begin
-                                0xf545ead8481304418f345562672c1b9f
+                                0xddae3a873f2d82419abde686e61938f2
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2864,13 +2903,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =41
                     TabIndex =40
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="UserName"
                     ControlSource ="UserName"
                     GUID = Begin
-                        0xfc4ed33cfee6d840b6b415cfcdb5cccc
+                        0x3ca1d4e5caf4c54a85130b5c3c79fce7
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2902,7 +2942,7 @@ Begin Form
                             Name ="UserName_Label"
                             Caption ="UserName"
                             GUID = Begin
-                                0x6e5dfbb26ddc504db4d5674a6a6614b9
+                                0xecd702170f0be04895a1cbf23522fcba
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2930,13 +2970,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =42
                     TabIndex =41
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="DateCreated"
                     ControlSource ="DateCreated"
                     GUID = Begin
-                        0x857bc554c3a40642957bdf38c3f3ed3f
+                        0x1349f8a807d3ff4f9706d494b5d87069
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -2968,7 +3009,7 @@ Begin Form
                             Name ="DateCreated_Label"
                             Caption ="DateCreated"
                             GUID = Begin
-                                0xcb76e0c4200a5f429da87125d3f820cd
+                                0x11d0ec8f343af640b94ee95778441dab
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -2996,13 +3037,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =43
                     TabIndex =42
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="DateUpdated"
                     ControlSource ="DateUpdated"
                     GUID = Begin
-                        0xb185adc2137ef547a9a5a7cc7296608b
+                        0x01d5493d9f276d418046bb300e39d7fd
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3034,7 +3076,7 @@ Begin Form
                             Name ="DateUpdated_Label"
                             Caption ="DateUpdated"
                             GUID = Begin
-                                0x0fba56c44e29a840855e1bdb069aac70
+                                0xb0e84d61b0d76c43812b46d767b9605b
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3062,13 +3104,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =44
                     TabIndex =43
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="DateDeleted"
                     ControlSource ="DateDeleted"
                     GUID = Begin
-                        0xd01e46d70973174a965e6a7116cc6877
+                        0xd398bc7c25859b4984c859c2a7f1e026
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3100,7 +3143,7 @@ Begin Form
                             Name ="DateDeleted_Label"
                             Caption ="DateDeleted"
                             GUID = Begin
-                                0x8e02c4ff16101b49a1e010e4af1280e5
+                                0xc21b964f6c0b3142887a4419bb4facf8
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3128,13 +3171,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =45
                     TabIndex =44
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBemployeeName"
                     ControlSource ="SUBemployeeName"
                     GUID = Begin
-                        0x16b24f31c03f02438de40818b1a04206
+                        0xb7e4afef25545d44ba8372f96ac76f87
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3166,7 +3210,7 @@ Begin Form
                             Name ="SUBemployeeName_Label"
                             Caption ="SUBemployeeName"
                             GUID = Begin
-                                0x84e1830bb6b3c3468dc9412fa58f26e8
+                                0xec5e14f9b42ff74e9be796abd4bea562
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3194,13 +3238,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =46
                     TabIndex =45
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBflyerPRTdte"
                     ControlSource ="SUBflyerPRTdte"
                     GUID = Begin
-                        0x590fa9f31574c84d857272e4fbb1269f
+                        0x44111b2dfc5ca245ad6ee720035d5852
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3232,7 +3277,7 @@ Begin Form
                             Name ="SUBflyerPRTdte_Label"
                             Caption ="SUBflyerPRTdte"
                             GUID = Begin
-                                0x16435b3f1ed813429f76e0d468ae4284
+                                0x81b2ac94a6f85649a7f0590e049a6cba
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3260,13 +3305,14 @@ Begin Form
                     Width =1050
                     Height =330
                     ColumnWidth =1050
+                    ColumnOrder =47
                     TabIndex =46
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBplanIDgr"
                     ControlSource ="SUBplanIDgr"
                     GUID = Begin
-                        0xf00441da1889ff4295dce7511f1321bb
+                        0x61c0bddf5d4b6946956ae435141090c9
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3298,7 +3344,7 @@ Begin Form
                             Name ="SUBplanIDgr_Label"
                             Caption ="SUBplanIDgr"
                             GUID = Begin
-                                0x0bcfe32ae6fc2846969b485a659cb29f
+                                0xec409d479a568147a1c82a46debf1aca
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3326,13 +3372,14 @@ Begin Form
                     Width =1050
                     Height =330
                     ColumnWidth =1050
+                    ColumnOrder =48
                     TabIndex =47
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBplanIDin"
                     ControlSource ="SUBplanIDin"
                     GUID = Begin
-                        0x98d9fd11cb7c5c4c904b3fb1a547f276
+                        0xe90cace313dd0f4eb8d38c967f7dc4fd
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3364,7 +3411,7 @@ Begin Form
                             Name ="SUBplanIDin_Label"
                             Caption ="SUBplanIDin"
                             GUID = Begin
-                                0x71513076d3480a4580f3d624c263c147
+                                0xb4b239716f5c924c99dd0c4a26541d58
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3392,13 +3439,14 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =49
                     TabIndex =48
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBcoverage"
                     ControlSource ="SUBcoverage"
                     GUID = Begin
-                        0x7f3ff5833aaaec4ca6db10c81c76593a
+                        0x1bc19bb12715764f93c9cdc757ccd8b7
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3430,7 +3478,7 @@ Begin Form
                             Name ="SUBcoverage_Label"
                             Caption ="SUBcoverage"
                             GUID = Begin
-                                0xdfed20c02f82ce46b77b8f30b715746c
+                                0x03efefe1cbea9d48b458e6ed5aee7775
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3458,13 +3506,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =50
                     TabIndex =49
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBrate"
                     ControlSource ="SUBrate"
                     GUID = Begin
-                        0xe12283ac57bf1f4ab999d78c193c55c5
+                        0x295d85f4aec097429cabf42a7ea86df2
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3496,7 +3545,7 @@ Begin Form
                             Name ="SUBrate_Label"
                             Caption ="SUBrate"
                             GUID = Begin
-                                0x8afafa8e6921d7468bc2498c996cccd7
+                                0x4c3e113a07a3b04cba35a70506bebe5e
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3524,6 +3573,7 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =51
                     TabIndex =50
                     BorderColor =12835293
                     ForeColor =4138256
@@ -3531,7 +3581,7 @@ Begin Form
                     ControlSource ="SUBCOBRA"
                     Format ="True/False"
                     GUID = Begin
-                        0xbfc65897dea78c49ab94ca675705ae3c
+                        0xa909c6967fba1b40a1815fa9b742859c
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3563,7 +3613,7 @@ Begin Form
                             Name ="SUBCOBRA_Label"
                             Caption ="SUBCOBRA"
                             GUID = Begin
-                                0xa10825cf8e30c445a8df5b4f79a7b129
+                                0xb5dd986db120334da0436d1a7b815eb6
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3591,6 +3641,7 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =52
                     TabIndex =51
                     BorderColor =12835293
                     ForeColor =4138256
@@ -3598,7 +3649,7 @@ Begin Form
                     ControlSource ="SUBLOA"
                     Format ="True/False"
                     GUID = Begin
-                        0xf82cf3cd9912bf46aaac706aae1e5338
+                        0x6c25b965604a2945a5dcd7b9537ac117
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3630,7 +3681,7 @@ Begin Form
                             Name ="SUBLOA_Label"
                             Caption ="SUBLOA"
                             GUID = Begin
-                                0xff4543425326414a9ae24f55ac4fd6b4
+                                0x0ae602be7b338345bd70fe113281ee21
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3658,6 +3709,7 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =53
                     TabIndex =52
                     BorderColor =12835293
                     ForeColor =4138256
@@ -3665,7 +3717,7 @@ Begin Form
                     ControlSource ="SUBmissing"
                     Format ="True/False"
                     GUID = Begin
-                        0xe996645fbdff8f4195f3a36b1edde346
+                        0x0e254e51cc6c2347bf8dcfe77924c0ae
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3697,7 +3749,7 @@ Begin Form
                             Name ="SUBmissing_Label"
                             Caption ="SUBmissing"
                             GUID = Begin
-                                0x4c6982aecfc9bc438f4db573e477ebf4
+                                0xe31c05954ea5c449ab9052cc74871362
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3725,13 +3777,14 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =54
                     TabIndex =53
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBagentID1"
                     ControlSource ="SUBagentID1"
                     GUID = Begin
-                        0x1a9594d0fa16194d869dcc3ef5076d96
+                        0xe9ab90db0eeb024e93a3dff52cd14a1f
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3763,7 +3816,7 @@ Begin Form
                             Name ="SUBagentID1_Label"
                             Caption ="SUBagentID1"
                             GUID = Begin
-                                0xe5063a0de5840948a53ae357e333567c
+                                0xf75c12889930604389b3ca67a2ad3331
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3791,13 +3844,14 @@ Begin Form
                     Width =1350
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =55
                     TabIndex =54
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBagentRATE1"
                     ControlSource ="SUBagentRATE1"
                     GUID = Begin
-                        0xd923ac99c7c50847a4f3e2ae31ac2198
+                        0x5a9cf1ba31b2d64a8ca112ffcfe5179e
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3829,7 +3883,7 @@ Begin Form
                             Name ="SUBagentRATE1_Label"
                             Caption ="SUBagentRATE1"
                             GUID = Begin
-                                0x2f07242562089a44a46ff6448dd8faf1
+                                0x779ad8c5cadf984c89d4ea2554240b6a
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3857,13 +3911,14 @@ Begin Form
                     Width =1200
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =56
                     TabIndex =55
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBagentID2"
                     ControlSource ="SUBagentID2"
                     GUID = Begin
-                        0x78605ae5acb162429ca5a8e78d74680e
+                        0xde31ad04822fec4585ab13753db6963f
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3895,7 +3950,7 @@ Begin Form
                             Name ="SUBagentID2_Label"
                             Caption ="SUBagentID2"
                             GUID = Begin
-                                0x6c1a7ce1f17b784a9a78c8c10dff205a
+                                0x103723dae20dc547b2ce562da37ef513
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3923,13 +3978,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =57
                     TabIndex =56
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="SUBagentRATE2"
                     ControlSource ="SUBagentRATE2"
                     GUID = Begin
-                        0x1ce1223a8d55e34bab844f696c0c7bc1
+                        0x7d8b90f0cfb061458c266c9506c29b09
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -3961,7 +4017,7 @@ Begin Form
                             Name ="SUBagentRATE2_Label"
                             Caption ="SUBagentRATE2"
                             GUID = Begin
-                                0x763d2ccefaee194a986be64eb518826e
+                                0x47eb3976490db34da8215e4ae7cc26d9
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -3989,13 +4045,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =1200
+                    ColumnOrder =58
                     TabIndex =57
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="GRExecSalesDirID"
                     ControlSource ="GRExecSalesDirID"
                     GUID = Begin
-                        0x10377336da85b24eb7614295b92a10d3
+                        0x30e4298fd0aecb41a29e0246e9172687
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4027,7 +4084,7 @@ Begin Form
                             Name ="GRExecSalesDirID_Label"
                             Caption ="GRExecSalesDirID"
                             GUID = Begin
-                                0xe1a7bc70461f0b4bb99d280994a7e21f
+                                0xa7646b0cb74954459be3345ac0d38209
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4055,13 +4112,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =3000
+                    ColumnOrder =59
                     TabIndex =58
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="GRExecSalesDirRate"
                     ControlSource ="GRExecSalesDirRate"
                     GUID = Begin
-                        0xb40abd7c0205c448991d504562cb194d
+                        0x2ed916bffc234247a03d80191a14597c
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4093,7 +4151,7 @@ Begin Form
                             Name ="GRExecSalesDirRate_Label"
                             Caption ="GRExecSalesDirRate"
                             GUID = Begin
-                                0x5d09a863a93d2f419d396bbc6713726e
+                                0x2e8e18a39340484a9d7994ead83771e0
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4121,13 +4179,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =1050
+                    ColumnOrder =60
                     TabIndex =59
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="FOCType"
                     ControlSource ="FOCType"
                     GUID = Begin
-                        0x3b412043f304bc4492b78d04ef29164b
+                        0xce09c10c7b16cf40a70e37c9d1b0dbfa
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4159,7 +4218,7 @@ Begin Form
                             Name ="FOCType_Label"
                             Caption ="FOCType"
                             GUID = Begin
-                                0xed1531df9e52254281d59db27b0098e2
+                                0xafc1120b27e9b74cbc85e9af6e9859fb
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4187,13 +4246,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =61
                     TabIndex =60
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="CreateDate"
                     ControlSource ="CreateDate"
                     GUID = Begin
-                        0x0f5cb6136f94aa478a0733a198e67ae2
+                        0xbeb22dde7f7cd043b8453589f891b236
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4225,7 +4285,7 @@ Begin Form
                             Name ="CreateDate_Label"
                             Caption ="CreateDate"
                             GUID = Begin
-                                0x8acf036cb07dd94e8028095eadecc22c
+                                0xdc04dbbda13d264580721edb6aba35b8
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4253,13 +4313,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =1620
+                    ColumnOrder =62
                     TabIndex =61
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="ModifyDate"
                     ControlSource ="ModifyDate"
                     GUID = Begin
-                        0xce5c06bcbba45841bf67c478b9e73582
+                        0x924b3f8e5bcf9c4cb9d1b2c87de7983b
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4291,7 +4352,7 @@ Begin Form
                             Name ="ModifyDate_Label"
                             Caption ="ModifyDate"
                             GUID = Begin
-                                0xc1ed9980337d0446a0c49d203ebcb5c4
+                                0x2c83ebd6183a564e91993d1fccd814b1
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4319,13 +4380,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =63
                     TabIndex =62
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="wSubID"
                     ControlSource ="wSubID"
                     GUID = Begin
-                        0xff6dbc71897154409c83f40691987da3
+                        0xfd4d7886d6a0e64dbb08a52d1eddb292
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4357,7 +4419,7 @@ Begin Form
                             Name ="wSubID_Label"
                             Caption ="wSubID"
                             GUID = Begin
-                                0xe15b4b6b45b0204c8fee244e38869012
+                                0x88dd85912ec2a54296637ce0efa2c9ff
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4385,13 +4447,14 @@ Begin Form
                     Width =630
                     Height =330
                     ColumnWidth =1530
+                    ColumnOrder =64
                     TabIndex =63
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="wUpt"
                     ControlSource ="wUpt"
                     GUID = Begin
-                        0x68cba56a65115c4aa401144e9916d92e
+                        0x0aaa18a76406ac4e93252af6f9ef4dad
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4423,7 +4486,7 @@ Begin Form
                             Name ="wUpt_Label"
                             Caption ="wUpt"
                             GUID = Begin
-                                0x3842982a3ce18044b42cfa630dc55485
+                                0x06fc51842416334a948b10a30ec420bf
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4449,13 +4512,14 @@ Begin Form
                     Left =8040
                     Top =8280
                     Height =315
+                    ColumnOrder =65
                     TabIndex =64
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="AmtPaid"
                     ControlSource ="AmtPaid"
                     GUID = Begin
-                        0x15c41ab180fe1041a480a1345c91ba20
+                        0x697ee4beb1c3914ab764b9a699ae5040
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4487,7 +4551,7 @@ Begin Form
                             Name ="Label128"
                             Caption ="AmtPaid:"
                             GUID = Begin
-                                0x55afa93c7770d74d9ddeef8694a096f8
+                                0x3de6334ece041142902034fb1f375832
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4514,13 +4578,14 @@ Begin Form
                     Top =8580
                     Height =315
                     ColumnWidth =2355
+                    ColumnOrder =6
                     TabIndex =65
                     BorderColor =12835293
                     ForeColor =4138256
                     Name ="CoverDesc"
                     ControlSource ="CoverDesc"
                     GUID = Begin
-                        0xaa5ffefff7b21b449ab3bfa0e9b04500
+                        0x9c35013b1973cc4aae95cddbf596f640
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -4552,7 +4617,7 @@ Begin Form
                             Name ="Label129"
                             Caption ="CoverDesc"
                             GUID = Begin
-                                0x85389eb3a7176040b94d6262a116ebe9
+                                0x95bcafc2ae15cb4bbed19046499a46c3
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -4578,7 +4643,7 @@ Begin Form
             Height =0
             Name ="FormFooter"
             GUID = Begin
-                0x96da300e73b2dd4bb347ddf657d5e46e
+                0x589174c3e724ff4b9606f66e489b2f82
             End
             UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
                 0x01

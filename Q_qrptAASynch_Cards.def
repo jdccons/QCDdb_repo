@@ -6,20 +6,20 @@ Begin InputTables
 End
 Begin OutputColumns
     Expression ="tmpEDI_Rpt.GroupID"
-    Expression ="tblGrp.GRname"
-    Expression ="tmpEDI_Rpt.SUBssn"
-    Expression ="tmpEDI_Rpt.SUBfirstNAME"
-    Expression ="tmpEDI_Rpt.SUBlastNAME"
-    Expression ="tmpEDI_Rpt.SUBStreet"
-    Expression ="tmpEDI_Rpt.SUBcity"
-    Expression ="tmpEDI_Rpt.SUBstate"
-    Expression ="tmpEDI_Rpt.SUBzip"
+    Expression ="tblGrp.GRName"
+    Expression ="tmpEDI_Rpt.SubSSN"
+    Expression ="tmpEDI_Rpt.SubFirstName"
+    Expression ="tmpEDI_Rpt.SubLastName"
+    Expression ="tmpEDI_Rpt.SubStreet"
+    Expression ="tmpEDI_Rpt.SubCity"
+    Expression ="tmpEDI_Rpt.SubState"
+    Expression ="tmpEDI_Rpt.SubZIP"
     Expression ="tmpEDI_Rpt.Stat"
 End
 Begin Joins
     LeftTable ="tmpEDI_Rpt"
     RightTable ="tblGrp"
-    Expression ="tmpEDI_Rpt.GroupID = tblGrp.GROUPid"
+    Expression ="tmpEDI_Rpt.GroupID=tblGrp.GroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -40,10 +40,10 @@ Begin
     Left =84
     Top =106
     Right =1258
-    Bottom =516
+    Bottom =474
     Left =-1
     Top =-1
-    Right =1163
+    Right =1159
     Bottom =188
     Left =0
     Top =0
@@ -52,7 +52,7 @@ Begin
         Left =59
         Top =-6
         Right =265
-        Bottom =152
+        Bottom =142
         Top =5
         Name ="tmpEDI_Rpt"
         Name =""
@@ -61,7 +61,7 @@ Begin
         Left =303
         Top =6
         Right =399
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblGrp"
         Name =""

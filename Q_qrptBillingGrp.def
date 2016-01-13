@@ -6,17 +6,17 @@ End
 Begin OutputColumns
     Alias ="Flag"
     Expression ="IIf([GrHold] Or [GrCancelled]=-1,\"*\",\"\")"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRHold"
     Expression ="tblGrp.Ins"
 End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -42,10 +42,10 @@ Begin
     Left =86
     Top =215
     Right =1127
-    Bottom =532
+    Bottom =539
     Left =-1
     Top =-1
-    Right =1034
+    Right =1026
     Bottom =144
     Left =0
     Top =0
@@ -54,7 +54,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =86
+        Bottom =94
         Top =0
         Name ="tblGrp"
         Name =""

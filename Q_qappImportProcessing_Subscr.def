@@ -34,7 +34,7 @@ Begin OutputColumns
     Expression ="vwRates.RateID"
     Name ="SUBdob"
     Expression ="QCDStandardSubscriber.SubDOB"
-    Name ="SUBnoDEPENT"
+    Name ="DepCnt"
     Expression ="QCDStandardSubscriber.SubNoDep"
     Name ="SUBeffDATE"
     Expression ="QCDStandardSubscriber.SubEffDate"
@@ -45,11 +45,11 @@ End
 Begin Joins
     LeftTable ="QCDStandardSubscriber"
     RightTable ="vwRates"
-    Expression ="QCDStandardSubscriber.SubTypeCov = vwRates.COVERcode"
+    Expression ="QCDStandardSubscriber.SubTypeCov=vwRates.COVERcode"
     Flag =2
     LeftTable ="QCDStandardSubscriber"
     RightTable ="vwRates"
-    Expression ="QCDStandardSubscriber.SubGroupID = vwRates.GroupID"
+    Expression ="QCDStandardSubscriber.SubGroupID=vwRates.GroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -63,10 +63,10 @@ Begin
     Left =34
     Top =27
     Right =1131
-    Bottom =568
+    Bottom =575
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =368
     Left =0
     Top =0
@@ -75,7 +75,7 @@ Begin
         Left =38
         Top =6
         Right =325
-        Bottom =326
+        Bottom =319
         Top =0
         Name ="QCDStandardSubscriber"
         Name =""
@@ -84,7 +84,7 @@ Begin
         Left =444
         Top =17
         Right =645
-        Bottom =176
+        Bottom =165
         Top =0
         Name ="vwRates"
         Name =""

@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =609332379
+Version =20
+VersionRequired =20
+Checksum =1004904790
 Begin Form
     PopUp = NotDefault
     Modal = NotDefault
@@ -18,10 +18,10 @@ Begin Form
     Width =2880
     DatasheetFontHeight =10
     ItemSuffix =3
-    Left =690
-    Top =3555
-    Right =3570
-    Bottom =4980
+    Left =-23016
+    Top =1104
+    Right =-21588
+    Bottom =852
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x895a107e120fe240
@@ -48,6 +48,9 @@ Begin Form
         Begin Section
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x5cc32f3ff22bc843893b3a18285c3c18
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -59,6 +62,9 @@ Begin Form
                     Name ="cmdRun"
                     Caption ="Run!"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x1d6f0c62db90f4488b3b91f803b2bf6b
+                    End
                 End
                 Begin ComboBox
                     OldBorderStyle =0
@@ -68,7 +74,10 @@ Begin Form
                     Left =660
                     Top =300
                     Width =1320
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x7a9d9117b7638843a6e305ca96564995
+                    End
                     Name ="cboSelectGroup"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGrp.GROUPid, tblGrp.GRname FROM tblGrp ORDER BY tblGrp.GROUPid;"

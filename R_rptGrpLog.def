@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =784297700
+Version =20
+VersionRequired =20
+Checksum =1765177107
 Begin Report
     AutoResize = NotDefault
     PopUp = NotDefault
@@ -15,7 +15,7 @@ Begin Report
     Width =9390
     ItemSuffix =116
     Left =1305
-    Top =1200
+    Top =1275
     Right =10515
     Bottom =5640
     RecSrcDt = Begin
@@ -55,6 +55,9 @@ Begin Report
         Begin FormHeader
             Height =435
             Name ="FormHeader0"
+            GUID = Begin
+                0xb24deb44fe1be64893a245611d2cdff8
+            End
             Begin
                 Begin Label
                     BackStyle =1
@@ -65,6 +68,9 @@ Begin Report
                     FontWeight =700
                     Name ="Text96"
                     Caption ="Log Date"
+                    GUID = Begin
+                        0x9e01eefabcbdc94499d25fe0d5b6e1d2
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -76,6 +82,9 @@ Begin Report
                     FontWeight =700
                     Name ="Text97"
                     Caption ="Log Time"
+                    GUID = Begin
+                        0xebc209bfdc287f41855f7b9dd6c60cb4
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -87,6 +96,9 @@ Begin Report
                     FontWeight =700
                     Name ="Text98"
                     Caption ="Notes"
+                    GUID = Begin
+                        0xcfea236903d1f941bc3e67ba247d4017
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -98,6 +110,9 @@ Begin Report
                     FontWeight =700
                     Name ="Label111"
                     Caption ="Call Back"
+                    GUID = Begin
+                        0x4d7929c2d467ab4987e37e480310e6ec
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -109,12 +124,18 @@ Begin Report
                     FontWeight =700
                     Name ="Label112"
                     Caption ="QCD Empl"
+                    GUID = Begin
+                        0xb2954dd3a229f847bcbebb9784cdd170
+                    End
                 End
                 Begin Line
                     Left =15
                     Top =390
                     Width =9375
                     Name ="Line114"
+                    GUID = Begin
+                        0x9579a83f47fded4089c3dec29a579313
+                    End
                 End
                 Begin Line
                     LineSlant = NotDefault
@@ -123,6 +144,9 @@ Begin Report
                     Width =9360
                     Height =15
                     Name ="Line115"
+                    GUID = Begin
+                        0x67f0c3cc24f5fc44b43acdb9014cb87b
+                    End
                 End
             End
         End
@@ -130,6 +154,9 @@ Begin Report
             CanGrow = NotDefault
             Height =330
             Name ="Detail0"
+            GUID = Begin
+                0x36389976bc46e6409472951aec2c3bd1
+            End
             Begin
                 Begin TextBox
                     Locked = NotDefault
@@ -143,6 +170,9 @@ Begin Report
                     ControlSource ="LogTime"
                     Format ="Medium Time"
                     DefaultValue ="Now()"
+                    GUID = Begin
+                        0xb21f32869312444395a71627bd898d3e
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -156,6 +186,9 @@ Begin Report
                     BorderColor =4194368
                     Name ="ctlLogNotes"
                     ControlSource ="LogNotes"
+                    GUID = Begin
+                        0xe3a88994e89f8840801d05560ff29bfd
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -169,6 +202,9 @@ Begin Report
                     Name ="ctlLogGrID"
                     ControlSource ="LogGrID"
                     DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                    GUID = Begin
+                        0xf1670c66b8a7324d97a4830323632e43
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -181,6 +217,9 @@ Begin Report
                     BorderColor =4194368
                     Name ="ctlLogQCDRep"
                     ControlSource ="LogQCDRep"
+                    GUID = Begin
+                        0xbdb7b4437f55dc49a1f72704d6f4e794
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -194,6 +233,9 @@ Begin Report
                     ControlSource ="LogCallBack"
                     Format ="Short Date"
                     InputMask ="99/99/0099;0;_"
+                    GUID = Begin
+                        0xf4f20c7916e87e44a8243775637599cf
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -206,6 +248,9 @@ Begin Report
                     ControlSource ="LogDate"
                     Format ="Short Date"
                     InputMask ="99/99/0099;0;_"
+                    GUID = Begin
+                        0xb3fa3d1a4eb0a440b6d4ae37822500bc
+                    End
                 End
             End
         End
@@ -214,6 +259,9 @@ Begin Report
             Height =0
             BackColor =12632256
             Name ="FormFooter1"
+            GUID = Begin
+                0x8b8e99e58f08634d89cf66cb0e87289b
+            End
         End
     End
 End

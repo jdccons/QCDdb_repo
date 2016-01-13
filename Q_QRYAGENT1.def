@@ -1,20 +1,22 @@
 Operation =1
 Option =0
-Where ="(((tblAgent.AGENTactive)=\"A\"))"
+Where ="(((tblAgent.AgentActive)=\"A\"))"
 Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTlast"
-    Expression ="tblAgent.AGENTfirst"
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENTactive"
-    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AgentLast"
+    Expression ="tblAgent.AgentFirst"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.AgentActive"
+    Expression ="tblAgent.AgentId"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblAgent.AGENTlast"
@@ -27,10 +29,10 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =349
+    Bottom =368
     Left =-1
     Top =-1
-    Right =933
+    Right =925
     Bottom =144
     Left =0
     Top =0
@@ -39,7 +41,7 @@ Begin
         Left =169
         Top =19
         Right =358
-        Bottom =81
+        Bottom =107
         Top =19
         Name ="tblAgent"
         Name =""

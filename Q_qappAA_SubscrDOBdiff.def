@@ -2,7 +2,7 @@ Operation =3
 Name ="tmpAA_VarianceReport"
 Option =0
 Where ="(((CDate(Left([EIDTBR],2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Right([EIDTBR],4"
-    ")))<>[SUBdob])) OR (((tblSubscr.SUBdob)<>CDate(Left([EIDTBR],2) & \"/\" & Mid([E"
+    ")))<>[SUBdob])) OR (((tblSubscr.SubDOB)<>CDate(Left([EIDTBR],2) & \"/\" & Mid([E"
     "IDTBR],3,2) & \"/\" & Right([EIDTBR],4))))"
 Begin InputTables
     Name ="tblSubscr"
@@ -19,7 +19,8 @@ Begin OutputColumns
     Name ="DataElement"
     Expression ="\"Sub DOB\""
     Name ="SubSSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="Expr1"
     Name ="AAGrpID"
     Expression ="qselAA_Subscr.GRPid"
     Alias ="AA"
@@ -27,15 +28,10 @@ Begin OutputColumns
     Expression ="CDate(Left([EIDTBR],2) & \"/\" & Mid([EIDTBR],3,2) & \"/\" & Right([EIDTBR],4))"
     Alias ="QCD"
     Name ="OldValue"
-    Expression ="tblSubscr.SUBdob"
+    Expression ="tblSubscr.SubDOB"
+    Alias ="Expr2"
     Name ="RptDate"
     Expression ="qselAA_Subscr.RptDate"
-End
-Begin Joins
-    LeftTable ="qselAA_Subscr"
-    RightTable ="tblSubscr"
-    Expression ="qselAA_Subscr.AA_SSN = tblSubscr.SUBssn"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -59,10 +55,10 @@ Begin
     Left =47
     Top =69
     Right =1258
-    Bottom =416
+    Bottom =420
     Left =-1
     Top =-1
-    Right =1204
+    Right =1196
     Bottom =171
     Left =0
     Top =0
@@ -71,7 +67,7 @@ Begin
         Left =379
         Top =6
         Right =636
-        Bottom =135
+        Bottom =124
         Top =19
         Name ="tblSubscr"
         Name =""
@@ -80,8 +76,8 @@ Begin
         Left =38
         Top =6
         Right =273
-        Bottom =135
-        Top =4
+        Bottom =49
+        Top =0
         Name ="qselAA_Subscr"
         Name =""
     End

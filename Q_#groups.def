@@ -7,18 +7,20 @@ Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
 End
 Begin Joins
     LeftTable ="tblGrp_1"
     RightTable ="tblSubscr"
-    Expression ="tblGrp_1.GROUPid = tblSubscr.SUBssn"
+    Expression ="tblGrp_1.GroupID=tblSubscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -31,10 +33,10 @@ Begin
     Left =62
     Top =44
     Right =778
-    Bottom =349
+    Bottom =368
     Left =-1
     Top =-1
-    Right =709
+    Right =701
     Bottom =144
     Left =1600
     Top =0
@@ -43,7 +45,7 @@ Begin
         Left =-1562
         Top =6
         Right =-1466
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblGrp"
         Name =""
@@ -52,7 +54,7 @@ Begin
         Left =-650
         Top =6
         Right =-554
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblGrp_1"
         Name =""
@@ -61,7 +63,7 @@ Begin
         Left =-526
         Top =11
         Right =-121
-        Bottom =118
+        Bottom =114
         Top =0
         Name ="tblSubscr"
         Name =""

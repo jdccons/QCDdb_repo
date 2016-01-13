@@ -1,27 +1,29 @@
 Operation =1
 Option =0
-Where ="(((tblAgent.AGENTgeoID)=\"TXSSW\") AND ((tblAgent.AGENTactive)=\"A\"))"
+Where ="(((tblAgent.AgentGeoID)=\"TXSSW\") AND ((tblAgent.AgentActive)=\"A\"))"
 Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTgeoID"
-    Expression ="tblAgent.AGENTlast"
-    Expression ="tblAgent.AGENTactive"
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENTfirst"
-    Expression ="tblAgent.AGENTstreet1"
-    Expression ="tblAgent.AGENTstreet2"
-    Expression ="tblAgent.AGENTcity"
-    Expression ="tblAgent.AGENTstate"
-    Expression ="tblAgent.AGENTzip"
-    Expression ="tblAgent.AGENTtaxID"
-    Expression ="tblAgent.AGENTcommission"
+    Expression ="tblAgent.AgentGeoID"
+    Expression ="tblAgent.AgentLast"
+    Expression ="tblAgent.AgentActive"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.AgentFirst"
+    Expression ="tblAgent.AgentStreet1"
+    Expression ="tblAgent.AgentStreet2"
+    Expression ="tblAgent.AgentCity"
+    Expression ="tblAgent.AgentState"
+    Expression ="tblAgent.AgentZip"
+    Expression ="tblAgent.AgentTaxID"
+    Expression ="tblAgent.AgentCommission"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblAgent.AGENTlast"
@@ -49,10 +51,10 @@ Begin
     Left =84
     Top =66
     Right =778
-    Bottom =368
+    Bottom =390
     Left =-1
     Top =-1
-    Right =687
+    Right =679
     Bottom =144
     Left =0
     Top =0
@@ -61,7 +63,7 @@ Begin
         Left =311
         Top =6
         Right =407
-        Bottom =113
+        Bottom =109
         Top =13
         Name ="tblAgent"
         Name =""

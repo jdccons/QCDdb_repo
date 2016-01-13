@@ -1,35 +1,37 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"plest\"))"
+Where ="(((tblSubscr.SubGroupID)=\"plest\"))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubGroupID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbMemo "OrderBy" ="Query12.SUBlastNAME"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =937
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =741
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =521
     Left =0
     Top =0
@@ -38,7 +40,7 @@ Begin
         Left =38
         Top =6
         Right =233
-        Bottom =500
+        Bottom =499
         Top =0
         Name ="tblSubscr"
         Name =""

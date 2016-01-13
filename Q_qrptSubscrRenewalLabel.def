@@ -1,15 +1,14 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"INDIV\") AND ((tblSubscr.SUBcontEND) Between [FORMS]!["
-    "fdlgPrtSubscrRenewalLabel]![FROMdate] And [FORMS]![fdlgPrtSubscrRenewalLabel]![T"
-    "oDate]))"
+Where ="(((tblSubscr.SubStatus)=\"INDIV\") And ((tblSubscr.SubContEnd) Between FORMS!fdl"
+    "gPrtSubscrRenewalLabel!FROMdate And FORMS!fdlgPrtSubscrRenewalLabel!ToDate))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblCoverage"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblSubscr.SUBcontEND"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubContEnd"
     Alias ="LastName"
     Expression ="(ConvertLastName([SUBlastNAME]))"
     Alias ="FirstName"
@@ -18,20 +17,20 @@ Begin OutputColumns
     Expression ="(\"Dear \" & [Firstname] & \" \" & [LastNAME] & \":\")"
     Alias ="Name"
     Expression ="([SubFirstName] & \" \" & [SUBlastName])"
-    Expression ="tblCoverage.COVERcode"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblCoverage.CoverCode"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -51,16 +50,22 @@ Begin
         dbInteger "ColumnWidth" ="2295"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="LastName"
+    End
+    Begin
+        dbText "Name" ="FirstName"
+    End
 End
 Begin
     State =0
     Left =95
     Top =116
     Right =1192
-    Bottom =520
+    Bottom =440
     Left =-1
     Top =-1
-    Right =1086
+    Right =1082
     Bottom =144
     Left =0
     Top =0
@@ -69,7 +74,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -78,7 +83,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblCoverage"
         Name =""

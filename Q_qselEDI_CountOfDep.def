@@ -16,17 +16,22 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="CountOfDependent SSN"
+    End
 End
 Begin
     State =0
     Left =41
     Top =244
     Right =893
-    Bottom =549
+    Bottom =568
     Left =-1
     Top =-1
-    Right =841
+    Right =837
     Bottom =144
     Left =0
     Top =0
@@ -35,7 +40,7 @@ Begin
         Left =53
         Top =10
         Right =175
-        Bottom =118
+        Bottom =113
         Top =15
         Name ="tblEDI_Dep_Import"
         Name =""

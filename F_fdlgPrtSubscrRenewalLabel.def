@@ -1,25 +1,31 @@
-Version =17
-VersionRequired =17
-Checksum =97495243
+Version =20
+VersionRequired =20
+Checksum =183151826
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     BorderStyle =1
     Width =5760
     ItemSuffix =23
     Left =2940
-    Top =1710
-    Right =9105
+    Top =1716
+    Right =9108
     Bottom =6540
     RecSrcDt = Begin
         0xa7cedeb3b2c4e140
     End
     Caption ="Individual Subscriber Renewal Labels"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -28,6 +34,9 @@ Begin Form
             Height =2865
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x3a34c14a9ddefc4a9b731c12369403df
+            End
             Begin
                 Begin Label
                     BackStyle =0
@@ -41,6 +50,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text67"
                     Caption ="Contract Ending Date From: "
+                    GUID = Begin
+                        0x08ba2c6e34da254ba304ad294f10c614
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -74,6 +86,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0xdd61bb46f12add45b93d3b8ee62b9ed7
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =2
@@ -84,6 +99,9 @@ Begin Form
                     Name ="FromDate"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xefdf7438e7b7b24bb340a8d3d328a3a7
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =2
@@ -95,6 +113,9 @@ Begin Form
                     Name ="ToDate"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x94f5e72da899f64c919d6827b7a655a4
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -107,6 +128,9 @@ Begin Form
                             BackColor =12632256
                             Name ="Text7"
                             Caption ="To: "
+                            GUID = Begin
+                                0xf24eebb15535cb43ae69c04693fc72f1
+                            End
                         End
                     End
                 End

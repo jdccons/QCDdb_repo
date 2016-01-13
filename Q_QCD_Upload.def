@@ -47,11 +47,11 @@ End
 Begin Joins
     LeftTable ="tblDentist"
     RightTable ="tbldentistspec"
-    Expression ="tblDentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Expression ="tblDentist.DentSpecialty=tbldentistspec.SPECIALTYID"
     Flag =1
     LeftTable ="tblDentist"
     RightTable ="ProZip"
-    Expression ="tblDentist.DentZip = ProZip.ZipCode"
+    Expression ="tblDentist.DentZip=ProZip.ZipCode"
     Flag =1
 End
 Begin OrderBy
@@ -65,6 +65,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="DentCloseOff"
@@ -87,10 +88,10 @@ Begin
     Left =11
     Top =14
     Right =941
-    Bottom =608
+    Bottom =374
     Left =-1
     Top =-1
-    Right =923
+    Right =915
     Bottom =180
     Left =0
     Top =0
@@ -99,7 +100,7 @@ Begin
         Left =48
         Top =7
         Right =203
-        Bottom =139
+        Bottom =125
         Top =7
         Name ="tblDentist"
         Name =""
@@ -108,7 +109,7 @@ Begin
         Left =241
         Top =6
         Right =490
-        Bottom =119
+        Bottom =109
         Top =0
         Name ="tbldentistspec"
         Name =""
@@ -117,7 +118,7 @@ Begin
         Left =538
         Top =7
         Right =658
-        Bottom =139
+        Bottom =125
         Top =3
         Name ="ProZip"
         Name =""

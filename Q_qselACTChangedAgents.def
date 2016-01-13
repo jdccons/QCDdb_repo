@@ -6,18 +6,14 @@ Begin InputTables
     Name ="qselACTCompareAgentsACT"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTid"
-End
-Begin Joins
-    LeftTable ="tblAgent"
-    RightTable ="qselACTCompareAgentsACT"
-    Expression ="tblAgent.AGENTid = qselACTCompareAgentsACT.AgentID"
-    Flag =2
+    Expression ="tblAgent.AgentId"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GROUPid"
@@ -31,14 +27,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =399
     Left =-1
     Top =-1
-    Right =793
+    Right =1253
     Bottom =179
     Left =0
     Top =0
@@ -47,7 +43,7 @@ Begin
         Left =44
         Top =12
         Right =170
-        Bottom =119
+        Bottom =115
         Top =0
         Name ="tblAgent"
         Name =""
@@ -56,7 +52,7 @@ Begin
         Left =224
         Top =13
         Right =402
-        Bottom =120
+        Bottom =56
         Top =0
         Name ="qselACTCompareAgentsACT"
         Name =""

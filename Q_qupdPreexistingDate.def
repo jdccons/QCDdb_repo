@@ -12,7 +12,7 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="ELGEXP_SQL"
-    Expression ="tblSubscr.SUBssn = ELGEXP_SQL.[EISSN#]"
+    Expression ="tblSubscr.SubSSN=ELGEXP_SQL.[EISSN#]"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -23,34 +23,34 @@ dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1400
-    Bottom =955
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =597
     Left =-1
     Top =-1
-    Right =1397
+    Right =1253
     Bottom =377
     Left =0
     Top =0
     ColumnsShown =579
     Begin
-        Left =351
-        Top =31
-        Right =514
-        Bottom =250
-        Top =38
-        Name ="ELGEXP"
-        Name =""
-    End
-    Begin
         Left =41
         Top =33
         Right =246
-        Bottom =252
+        Bottom =241
         Top =12
         Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =284
+        Top =6
+        Right =380
+        Bottom =124
+        Top =0
+        Name ="ELGEXP_SQL"
         Name =""
     End
 End

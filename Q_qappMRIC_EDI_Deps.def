@@ -5,20 +5,26 @@ Begin InputTables
     Name ="tblImportFile_MRIC_Dependents"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="DEPsubID"
     Expression ="tblImportFile_MRIC_Dependents.SubSSN"
+    Alias ="Expr2"
     Name ="DEPlastNAME"
     Expression ="tblImportFile_MRIC_Dependents.LastName"
+    Alias ="Expr3"
     Name ="DEPfirstNAME"
     Expression ="tblImportFile_MRIC_Dependents.FirstName"
+    Alias ="Expr4"
     Name ="DEPdob"
     Expression ="tblImportFile_MRIC_Dependents.DOB"
+    Alias ="Expr5"
     Name ="DEPssn"
     Expression ="tblImportFile_MRIC_Dependents.DepSSN"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -26,10 +32,10 @@ Begin
     Left =66
     Top =67
     Right =940
-    Bottom =526
+    Bottom =545
     Left =-1
     Top =-1
-    Right =867
+    Right =859
     Bottom =298
     Left =0
     Top =0
@@ -38,7 +44,7 @@ Begin
         Left =56
         Top =14
         Right =286
-        Bottom =263
+        Bottom =57
         Top =0
         Name ="tblImportFile_MRIC_Dependents"
         Name =""

@@ -1,7 +1,7 @@
 Operation =3
 Name ="tmpExportAllAmerican"
 Option =0
-Where ="(((tblGrp.GROUPid)=[Forms]![frmGrp]![ctlGROUPid]))"
+Where ="(((tblGrp.GroupID)=Forms!frmGrp!ctlGROUPid))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
@@ -19,19 +19,19 @@ Begin OutputColumns
     Expression ="[SUBssn] & \"00\""
     Alias ="EISSN"
     Name ="EISSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="EIMBRRF"
     Name ="EIMBRRF"
     Expression ="tblSubscr.CoverID"
     Alias ="EINAML"
     Name ="EINAML"
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Alias ="EINAMF"
     Name ="EINAMF"
-    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SubFirstName"
     Alias ="EINAMM"
     Name ="EINAMM"
-    Expression ="tblSubscr.SUBmiddleNAME"
+    Expression ="tblSubscr.SubMiddleName"
     Alias ="EIDTBR"
     Name ="EIDTBR"
     Expression ="Format([SUBdob],\"mmddyyyy\")"
@@ -40,25 +40,25 @@ Begin OutputColumns
     Expression ="IIf([SUBgender] Is Null,\"O\",[SUBgender])"
     Alias ="EIADD1"
     Name ="EIADD1"
-    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SubStreet1"
     Alias ="EIADD2"
     Name ="EIADD2"
-    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SubStreet2"
     Alias ="EICITY"
     Name ="EICITY"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Alias ="EISTE"
     Name ="EISTE"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Alias ="EIZIP"
     Name ="EIZIP"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubZip"
     Alias ="EIHPHR"
     Name ="EIHPHR"
-    Expression ="tblSubscr.SUBphoneHOME"
+    Expression ="tblSubscr.SubPhoneHome"
     Alias ="EIWPHR"
     Name ="EIWPHR"
-    Expression ="tblSubscr.SUBphoneWORK"
+    Expression ="tblSubscr.SubPhoneWork"
     Alias ="EIGRPID"
     Name ="EIGRPID"
     Expression ="'MNQ' & [GROUPid]"
@@ -82,11 +82,11 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tlkpAllAmericanPlan"
-    Expression ="tblSubscr.PlanID = tlkpAllAmericanPlan.PlanID"
+    Expression ="tblSubscr.PlanID=tlkpAllAmericanPlan.PlanID"
     Flag =1
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -117,10 +117,10 @@ Begin
     Left =106
     Top =87
     Right =1002
-    Bottom =399
+    Bottom =411
     Left =-1
     Top =-1
-    Right =889
+    Right =881
     Bottom =144
     Left =0
     Top =0
@@ -129,7 +129,7 @@ Begin
         Left =42
         Top =8
         Right =207
-        Bottom =100
+        Bottom =96
         Top =16
         Name ="tblGrp"
         Name =""
@@ -138,7 +138,7 @@ Begin
         Left =257
         Top =7
         Right =483
-        Bottom =99
+        Bottom =95
         Top =43
         Name ="tblSubscr"
         Name =""
@@ -147,7 +147,7 @@ Begin
         Left =527
         Top =15
         Right =755
-        Bottom =107
+        Bottom =103
         Top =0
         Name ="tlkpAllAmericanPlan"
         Name =""

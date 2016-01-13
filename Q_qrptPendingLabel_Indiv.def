@@ -1,7 +1,7 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"PENDG\") AND ((tblSubscr.SUBssn)=[Forms]![frmPendingSu"
-    "bscr]![SUBssn]))"
+Where ="(((tblSubscr.SubStatus)=\"PENDG\") And ((tblSubscr.SubSSN)=Forms!frmPendingSubsc"
+    "r!SUBssn))"
 Begin InputTables
     Name ="tblSubscr"
 End
@@ -12,24 +12,29 @@ Begin OutputColumns
     Expression ="tblSubscr.*"
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="Zip2"
+    End
 End
 Begin
     State =0
     Left =69
     Top =224
     Right =1058
-    Bottom =626
+    Bottom =548
     Left =-1
     Top =-1
-    Right =982
+    Right =974
     Bottom =144
     Left =0
     Top =0
@@ -38,7 +43,7 @@ Begin
         Left =38
         Top =6
         Right =255
-        Bottom =117
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""

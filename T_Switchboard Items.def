@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableDef name="Switchboard Items" foreign="False">
+  <Properties/>
+  <SQL>CREATE TABLE [Switchboard Items] (
+[SwitchboardID] LONG DEFAULT 0,
+[ItemNumber] SHORT DEFAULT 0,
+[ItemText] TEXT (255),
+[Command] SHORT DEFAULT 0,
+[Argument] TEXT (50));</SQL>
+  <Attributes value="0">
+    <dbHiddenObject value="False"/>
+    <dbAttachExclusive value="False"/>
+    <dbAttachSavePWD value="False"/>
+    <dbAttachedODBC value="False"/>
+    <dbAttachedTable value="False"/>
+    <dbSystemObject value="False"/>
+  </Attributes>
+  <FieldDefs>
+    <Field_0 name="SwitchboardID">
+      <Value name="Value" type="4"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="4"/>
+      <Name name="Name" type="12" value="SwitchboardID"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="0"/>
+      <Size name="Size" type="4" value="4"/>
+      <SourceField name="SourceField" type="12" value="SwitchboardID"/>
+      <SourceTable name="SourceTable" type="12" value="Switchboard Items"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value="0"/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="-1"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DecimalPlaces name="DecimalPlaces" type="2" value="255"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+    </Field_0>
+    <Field_1 name="ItemNumber">
+      <Value name="Value" type="3"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="3"/>
+      <Name name="Name" type="12" value="ItemNumber"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="1"/>
+      <Size name="Size" type="4" value="2"/>
+      <SourceField name="SourceField" type="12" value="ItemNumber"/>
+      <SourceTable name="SourceTable" type="12" value="Switchboard Items"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value="0"/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="3"/>
+      <VisibleValue name="VisibleValue" type="3"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="-1"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DecimalPlaces name="DecimalPlaces" type="2" value="255"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <FilterLookup name="FilterLookup" type="2" value="1"/>
+    </Field_1>
+    <Field_2 name="ItemText">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="ItemText"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="2"/>
+      <Size name="Size" type="4" value="255"/>
+      <SourceField name="SourceField" type="12" value="ItemText"/>
+      <SourceTable name="SourceTable" type="12" value="Switchboard Items"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="3750"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <FilterLookup name="FilterLookup" type="2" value="1"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+      <UnicodeCompression name="UnicodeCompression" type="1" value="False"/>
+    </Field_2>
+    <Field_3 name="Command">
+      <Value name="Value" type="3"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="3"/>
+      <Name name="Name" type="12" value="Command"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="3"/>
+      <Size name="Size" type="4" value="2"/>
+      <SourceField name="SourceField" type="12" value="Command"/>
+      <SourceTable name="SourceTable" type="12" value="Switchboard Items"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value="0"/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="3"/>
+      <VisibleValue name="VisibleValue" type="3"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="1650"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DecimalPlaces name="DecimalPlaces" type="2" value="255"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <FilterLookup name="FilterLookup" type="2" value="1"/>
+    </Field_3>
+    <Field_4 name="Argument">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="Argument"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="4"/>
+      <Size name="Size" type="4" value="50"/>
+      <SourceField name="SourceField" type="12" value="Argument"/>
+      <SourceTable name="SourceTable" type="12" value="Switchboard Items"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="True"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="5355"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <FilterLookup name="FilterLookup" type="2" value="1"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+      <UnicodeCompression name="UnicodeCompression" type="1" value="False"/>
+    </Field_4>
+  </FieldDefs>
+</TableDef>

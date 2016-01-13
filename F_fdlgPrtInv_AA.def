@@ -1,24 +1,26 @@
 Version =20
 VersionRequired =20
-Checksum =-1030168057
+Checksum =-478559174
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     Width =5040
     ItemSuffix =20
-    Left =6990
-    Top =2910
-    Right =12030
-    Bottom =5655
+    Left =-22692
+    Top =1692
+    Right =-15864
+    Bottom =6492
     RecSrcDt = Begin
         0xd359ddb3b2c4e140
     End
     Caption ="PrintAll American Invoices"
+    MenuBar ="Dialog"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
@@ -65,6 +67,10 @@ Begin Form
         0x00000000000000000000000000000000000000000000000048504c617365724a ,
         0x65743232303000
     End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -77,6 +83,9 @@ Begin Form
             Height =2760
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x2f8224f191c17b4985279462c41212f9
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -92,6 +101,9 @@ Begin Form
                     StatusBarText ="Preview Report"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x95d653096ec72848b1acfa5a845fd866
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -105,6 +117,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="Invoice Number From: "
+                    GUID = Begin
+                        0xa478f181575d2443a35dd35acec3e5fb
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -118,6 +133,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text11"
                     Caption ="  Invoice Number To: "
+                    GUID = Begin
+                        0xc4c2624054a87e498055bf2baafc0fd4
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -130,6 +148,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text16"
                     Caption ="To print \"all\" invoices, leave invoice numbers blank."
+                    GUID = Begin
+                        0x38ca10e469db754ba4411da1d4dc73e9
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -145,6 +166,9 @@ Begin Form
                     StatusBarText ="Preview Report"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xff9f1e3c11e1a84eac95485c81bdc73a
+                    End
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
@@ -157,7 +181,7 @@ Begin Form
                     FontSize =10
                     ColumnInfo ="\"\";\"\";\"10\";\"32\""
                     GUID = Begin
-                        0x03e0063b0514a84ca7f2e40d74e5ed92
+                        0xabfeb2f9f6e6494e8848afd24d53b2f0
                     End
                     Name ="InvFrom"
                     RowSourceType ="Table/Query"
@@ -178,7 +202,7 @@ Begin Form
                     TabIndex =1
                     ColumnInfo ="\"\";\"\";\"10\";\"32\""
                     GUID = Begin
-                        0x8455f03ab92d5b498715cec3863d656e
+                        0x8ee9ec2ec94d5c4997894348e1eba44c
                     End
                     Name ="InvTo"
                     RowSourceType ="Table/Query"

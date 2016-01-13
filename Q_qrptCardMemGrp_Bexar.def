@@ -29,7 +29,7 @@ End
 Begin Joins
     LeftTable ="tblGrp_Bexar"
     RightTable ="tblSubscr_Bexar"
-    Expression ="tblGrp_Bexar.GROUPid = tblSubscr_Bexar.SUBgroupID"
+    Expression ="tblGrp_Bexar.GROUPid=tblSubscr_Bexar.SUBgroupID"
     Flag =1
 End
 Begin OrderBy
@@ -41,17 +41,24 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="ZipSub"
+    End
+    Begin
+        dbText "Name" ="ZipGr"
+    End
 End
 Begin
     State =0
     Left =106
     Top =114
     Right =1002
-    Bottom =419
+    Bottom =438
     Left =-1
     Top =-1
-    Right =885
+    Right =881
     Bottom =144
     Left =0
     Top =0
@@ -60,7 +67,7 @@ Begin
         Left =97
         Top =10
         Right =280
-        Bottom =109
+        Bottom =98
         Top =18
         Name ="tblGrp_Bexar"
         Name =""
@@ -69,7 +76,7 @@ Begin
         Left =371
         Top =8
         Right =550
-        Bottom =107
+        Bottom =96
         Top =0
         Name ="tblSubscr_Bexar"
         Name =""

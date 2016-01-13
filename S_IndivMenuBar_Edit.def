@@ -1,4 +1,4 @@
-Version =131074
+Version =196611
 ColumnsShown =1
 Begin
     MacroName ="&Find"
@@ -13,5 +13,15 @@ End
 Begin
     MacroName ="&Delete"
     Action ="RunCode"
-    Argument =" DeleteIndivSubscr () "
+    Argument =" DeleteIndivSubscr()"
+End
+Begin
+    MacroName ="&Change Status"
+    Action ="RunCode"
+    Argument ="ChangeIndivStatus () "
+End
+Begin
+    MacroName ="Cust &Lookup"
+    Action ="RunCode"
+    Argument ="CustomerLookup () "
 End

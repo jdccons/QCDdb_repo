@@ -1,34 +1,34 @@
 Operation =1
 Option =8
-Where ="(((tblGrp.GRhold)=No) AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GRHold)=No) AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRhold"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRHold"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GroupID"
     Alias ="SubName"
     Expression ="(Trim([SUBlastNAME]) & \", \" & Trim([SUBfirstNAME]) & \" \" & Trim([SUBmiddleNA"
         "ME]))"
     Alias ="ID"
     Expression ="IIf(IsNull([InvoiceType])=False,[SUBssn],IIf([InvoiceType]=1,[SUBssn],[SubID]))"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblSubscr.SUBnoDEPENT"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="tblGrp.GRGeoID"
     Expression ="tblSubscr.SubID"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -43,16 +43,19 @@ Begin
         dbInteger "ColumnWidth" ="2370"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="ID"
+    End
 End
 Begin
     State =0
     Left =76
     Top =173
     Right =982
-    Bottom =490
+    Bottom =497
     Left =-1
     Top =-1
-    Right =895
+    Right =891
     Bottom =144
     Left =0
     Top =0
@@ -61,7 +64,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =86
+        Bottom =94
         Top =39
         Name ="tblGrp"
         Name =""
@@ -70,7 +73,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =86
+        Bottom =94
         Top =0
         Name ="tblSubscr"
         Name =""

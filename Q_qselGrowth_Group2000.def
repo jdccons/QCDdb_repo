@@ -4,26 +4,31 @@ Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Alias ="Year"
     Expression ="\"2000\""
-    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GREE"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="Year"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =427
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =207
     Left =0
     Top =0
@@ -32,7 +37,7 @@ Begin
         Left =38
         Top =6
         Right =272
-        Bottom =158
+        Bottom =154
         Top =24
         Name ="tblGrp"
         Name =""

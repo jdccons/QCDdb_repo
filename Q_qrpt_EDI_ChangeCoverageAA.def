@@ -1,6 +1,6 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.CoverID)<>[tblEDI_App_Subscr].[CoverID]))"
+Where ="(((tblSubscr.CoverID)<>tblEDI_App_Subscr.CoverID))"
 Begin InputTables
     Name ="tblEDI_App_Subscr"
     Name ="tblSubscr"
@@ -9,56 +9,56 @@ Begin InputTables
     Alias ="tblCoverage_1"
 End
 Begin OutputColumns
-    Expression ="tblEDI_App_Subscr.SUBssn"
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubSSN"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     Alias ="SUBStreet"
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
-    Expression ="tblEDI_App_Subscr.SUBcity"
-    Expression ="tblEDI_App_Subscr.SUBstate"
-    Expression ="tblEDI_App_Subscr.SUBzip"
-    Expression ="tblEDI_App_Subscr.SUBgroupID"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
+    Expression ="tblEDI_App_Subscr.SubCity"
+    Expression ="tblEDI_App_Subscr.SubState"
+    Expression ="tblEDI_App_Subscr.SubZip"
+    Expression ="tblEDI_App_Subscr.SubGroupID"
     Alias ="Stat"
     Expression ="\"Change-Cov\""
-    Expression ="tblCoverage_1.COVERcode"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage_1.CoverCode"
+    Expression ="tblCoverage.CoverCode"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblSubscr"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblSubscr.SubSSN"
     Flag =1
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblCoverage"
-    Expression ="tblEDI_App_Subscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblEDI_App_Subscr.CoverID=tblCoverage.CoverID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage_1"
-    Expression ="tblSubscr.CoverID = tblCoverage_1.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage_1.CoverID"
     Flag =1
 End
 Begin Groups
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     GroupLevel =0
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBgroupID"
+    Expression ="tblEDI_App_Subscr.SubGroupID"
     GroupLevel =0
     Expression ="\"Change-Cov\""
     GroupLevel =0
-    Expression ="tblCoverage_1.COVERcode"
+    Expression ="tblCoverage_1.CoverCode"
     GroupLevel =0
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverCode"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -80,10 +80,10 @@ Begin
     Left =30
     Top =89
     Right =1164
-    Bottom =532
+    Bottom =444
     Left =-1
     Top =-1
-    Right =1127
+    Right =1119
     Bottom =175
     Left =0
     Top =0
@@ -92,7 +92,7 @@ Begin
         Left =235
         Top =11
         Right =439
-        Bottom =121
+        Bottom =114
         Top =53
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -101,7 +101,7 @@ Begin
         Left =46
         Top =10
         Right =180
-        Bottom =120
+        Bottom =113
         Top =53
         Name ="tblSubscr"
         Name =""
@@ -110,7 +110,7 @@ Begin
         Left =529
         Top =2
         Right =639
-        Bottom =107
+        Bottom =105
         Top =0
         Name ="tblCoverage"
         Name =""
@@ -119,7 +119,7 @@ Begin
         Left =691
         Top =5
         Right =883
-        Bottom =100
+        Bottom =93
         Top =0
         Name ="tblCoverage_1"
         Name =""

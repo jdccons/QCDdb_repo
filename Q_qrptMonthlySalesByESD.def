@@ -1,20 +1,28 @@
 Operation =1
 Option =8
-Where ="(((ARTRAN.Trntyp)=\"I\" Or (ARTRAN.Trntyp)=\"C\") AND ((ARTRAN.Custclass)=\"GROU"
+Where ="(((ARTRAN.Trntyp)=\"I\" Or (ARTRAN.Trntyp)=\"C\") And ((ARTRAN.Custclass)=\"GROU"
     "P\"))"
 Begin InputTables
     Name ="ARTRAN"
     Name ="qrptMonthlySalesByESD_Agents"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARTRAN.Docno"
+    Alias ="Expr2"
     Expression ="ARTRAN.Applytodocno"
+    Alias ="Expr3"
     Expression ="ARTRAN.Custkey"
+    Alias ="Expr4"
     Expression ="ARTRAN.Docamt"
+    Alias ="Expr5"
     Expression ="ARTRAN.Trntyp"
+    Alias ="Expr6"
     Expression ="ARTRAN.Territorykey"
+    Alias ="Expr7"
     Expression ="ARTRAN.Custclass"
     Expression ="qrptMonthlySalesByESD_Agents.GRname"
+    Alias ="Expr8"
     Expression ="ARTRAN.Docdate"
     Alias ="DOCmonth"
     Expression ="Month([DocDate])"
@@ -24,13 +32,7 @@ Begin OutputColumns
     Expression ="Format(([Docdate]),\"mm/dd/yyyy\")"
     Expression ="qrptMonthlySalesByESD_Agents.AGENT_LUname"
     Expression ="qrptMonthlySalesByESD_Agents.GRExecSalesDirID"
-    Expression ="qrptMonthlySalesByESD_Agents.GRPgeoID"
-End
-Begin Joins
-    LeftTable ="ARTRAN"
-    RightTable ="qrptMonthlySalesByESD_Agents"
-    Expression ="ARTRAN.Custkey = qrptMonthlySalesByESD_Agents.GROUPid"
-    Flag =1
+    Expression ="qrptMonthlySalesByESD_Agents.GRGeoID"
 End
 Begin OrderBy
     Expression ="Format(([Docdate]),\"mm/dd/yyyy\")"
@@ -40,6 +42,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="ARTRAN.Docdate"
@@ -53,14 +57,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =431
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =211
     Left =0
     Top =0
@@ -69,8 +73,8 @@ Begin
         Left =47
         Top =4
         Right =254
-        Bottom =170
-        Top =8
+        Bottom =47
+        Top =0
         Name ="ARTRAN"
         Name =""
     End
@@ -78,7 +82,7 @@ Begin
         Left =292
         Top =6
         Right =502
-        Bottom =150
+        Bottom =139
         Top =0
         Name ="qrptMonthlySalesByESD_Agents"
         Name =""

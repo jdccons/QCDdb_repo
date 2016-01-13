@@ -13,7 +13,7 @@ Begin OutputColumns
     Alias ="GRname"
     Expression ="\"Powder Metallurgy Company\""
     Alias ="SUBeffDATE2"
-    Expression ="#3/1/00#"
+    Expression ="#3/1/2000#"
     Alias ="Welcome"
     Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
         "loyee at No Monthly Charge.\""
@@ -34,6 +34,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="GRname"
@@ -86,10 +88,10 @@ Begin
     Left =40
     Top =22
     Right =778
-    Bottom =433
+    Bottom =452
     Left =-1
     Top =-1
-    Right =731
+    Right =723
     Bottom =250
     Left =0
     Top =0
@@ -98,7 +100,7 @@ Begin
         Left =64
         Top =15
         Right =306
-        Bottom =212
+        Bottom =58
         Top =0
         Name ="tblEnrollment_Powder"
         Name =""

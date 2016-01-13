@@ -2,30 +2,30 @@ Operation =1
 Option =0
 Where ="(((qselAA_SSN.GRPid)=\"ANGEL\"))"
 Begin InputTables
+    Name ="qselAA_SSN"
     Name ="tblSubscr"
     Name ="tblDependent"
-    Name ="qselAA_SSN"
 End
 Begin OutputColumns
     Expression ="qselAA_SSN.AA_SSN"
     Expression ="qselAA_SSN.EIMBRID"
     Expression ="qselAA_SSN.GRPid"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblDependent.DEPssn"
-    Expression ="tblDependent.DEPfirstNAME"
-    Expression ="tblDependent.DEPmiddleNAME"
-    Expression ="tblDependent.DEPlastNAME"
-    Expression ="tblDependent.DEPrelationship"
-    Expression ="tblDependent.DEPgender"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblDependent.DepSSN"
+    Expression ="tblDependent.DepFirstName"
+    Expression ="tblDependent.DepMiddleName"
+    Expression ="tblDependent.DepLastName"
+    Expression ="tblDependent.DepRelationship"
+    Expression ="tblDependent.DepGender"
 End
 Begin Joins
     LeftTable ="qselAA_SSN"
     RightTable ="tblSubscr"
-    Expression ="qselAA_SSN.AA_SSN = tblSubscr.SUBssn"
+    Expression ="qselAA_SSN.AA_SSN=tblSubscr.SubSSN"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -42,10 +42,10 @@ Begin
     Left =27
     Top =84
     Right =1232
-    Bottom =467
+    Bottom =471
     Left =-1
     Top =-1
-    Right =1194
+    Right =1190
     Bottom =207
     Left =0
     Top =0
@@ -54,7 +54,7 @@ Begin
         Left =224
         Top =4
         Right =341
-        Bottom =148
+        Bottom =137
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -63,7 +63,7 @@ Begin
         Left =375
         Top =4
         Right =560
-        Bottom =148
+        Bottom =137
         Top =4
         Name ="tblDependent"
         Name =""
@@ -72,7 +72,7 @@ Begin
         Left =52
         Top =6
         Right =187
-        Bottom =150
+        Bottom =139
         Top =0
         Name ="qselAA_SSN"
         Name =""

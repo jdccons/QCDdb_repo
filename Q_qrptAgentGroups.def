@@ -6,27 +6,27 @@ Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTid"
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENT_LUname"
-    Expression ="tblGrpAgt.AgentRATE"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblAgent.AgentId"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.Agent_LUname"
+    Expression ="tblGrpAgt.AgentRate"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
 End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGrpAgt"
-    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AgentId=tblGrpAgt.AgentId"
     Flag =1
     LeftTable ="tblGrpAgt"
     RightTable ="tblGrp"
-    Expression ="tblGrpAgt.GROUPid = tblGrp.GROUPid"
+    Expression ="tblGrpAgt.GroupId=tblGrp.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -48,14 +48,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =652
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =438
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =218
     Left =0
     Top =0
@@ -64,7 +64,7 @@ Begin
         Left =38
         Top =6
         Right =189
-        Bottom =143
+        Bottom =139
         Top =0
         Name ="tblAgent"
         Name =""
@@ -73,7 +73,7 @@ Begin
         Left =268
         Top =8
         Right =424
-        Bottom =160
+        Bottom =156
         Top =0
         Name ="tblGrpAgt"
         Name =""
@@ -82,7 +82,7 @@ Begin
         Left =520
         Top =6
         Right =752
-        Bottom =158
+        Bottom =154
         Top =0
         Name ="tblGrp"
         Name =""

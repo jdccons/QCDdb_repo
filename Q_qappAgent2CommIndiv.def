@@ -7,12 +7,15 @@ Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="COMMcustKEY"
     Expression ="ARTRAN.Custkey"
     Name ="COMMcustNAME"
     Expression ="tblSubscr.SUB_LUname"
+    Alias ="Expr2"
     Name ="COMMcheckNO"
     Expression ="ARTRAN.Docno"
+    Alias ="Expr3"
     Name ="COMMinvoiceNO"
     Expression ="ARTRAN.Applytodocno"
     Alias ="CheckAmt"
@@ -22,34 +25,31 @@ Begin OutputColumns
     Expression ="tblSubscr.SUBagentID2"
     Name ="COMMrate"
     Expression ="tblSubscr.SUBagentRATE2"
+    Alias ="Expr4"
     Name ="COMMcustCLASS"
     Expression ="ARTRAN.Custclass"
+    Alias ="Expr5"
     Name ="COMMcheckDATE"
     Expression ="ARTRAN.Docdate"
     Alias ="AgentType"
     Name ="COMMagentTYPE"
     Expression ="2"
 End
-Begin Joins
-    LeftTable ="ARTRAN"
-    RightTable ="tblSubscr"
-    Expression ="ARTRAN.Custkey = tblSubscr.PLTcustKEY"
-    Flag =1
-End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =426
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =206
     Left =0
     Top =0
@@ -58,7 +58,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =49
         Top =0
         Name ="ARTRAN"
         Name =""
@@ -67,7 +67,7 @@ Begin
         Left =254
         Top =6
         Right =350
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""

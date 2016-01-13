@@ -4,16 +4,19 @@ Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENT_LUname"
-    Expression ="tblAgent.AGENTlast"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.Agent_LUname"
+    Expression ="tblAgent.AgentLast"
+    Alias ="Expr1"
     Expression ="tblAgent.AGENTtype"
-    Expression ="tblAgent.AGENTphone"
+    Expression ="tblAgent.AgentPhone"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblAgent.AGENCY"
@@ -31,10 +34,10 @@ Begin
     Left =96
     Top =81
     Right =1002
-    Bottom =446
+    Bottom =441
     Left =-1
     Top =-1
-    Right =899
+    Right =891
     Bottom =180
     Left =0
     Top =0
@@ -43,7 +46,7 @@ Begin
         Left =48
         Top =7
         Right =168
-        Bottom =139
+        Bottom =125
         Top =8
         Name ="tblAgent"
         Name =""

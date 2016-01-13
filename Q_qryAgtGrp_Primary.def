@@ -5,8 +5,8 @@ Begin InputTables
     Name ="tblGrpAgt"
 End
 Begin OutputColumns
-    Expression ="tblGrpAgt.AGENTid"
-    Expression ="tblGrpAgt.GROUPid"
+    Expression ="tblGrpAgt.AgentId"
+    Expression ="tblGrpAgt.GroupId"
     Expression ="tblGrpAgt.Primary"
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -14,6 +14,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -21,10 +22,10 @@ Begin
     Left =47
     Top =29
     Right =1002
-    Bottom =494
+    Bottom =439
     Left =-1
     Top =-1
-    Right =948
+    Right =940
     Bottom =230
     Left =0
     Top =0
@@ -33,7 +34,7 @@ Begin
         Left =38
         Top =6
         Right =208
-        Bottom =176
+        Bottom =169
         Top =0
         Name ="tblGrpAgt"
         Name =""

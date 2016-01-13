@@ -1,14 +1,14 @@
-Version =17
-VersionRequired =17
-Checksum =-1858750047
+Version =20
+VersionRequired =20
+Checksum =-293920561
 Begin Form
     RecordSelectors = NotDefault
     DefaultView =0
     ScrollBars =0
     Width =9360
     ItemSuffix =20
-    Right =1260
-    Bottom =615
+    Right =1380
+    Bottom =504
     RecSrcDt = Begin
         0x5e59b76ed4c5e140
     End
@@ -63,11 +63,17 @@ Begin Form
             Height =0
             BackColor =12632256
             Name ="FormHeader1"
+            GUID = Begin
+                0xb1f832b0f4ef814a97b7007646f80aba
+            End
         End
         Begin Section
             Height =2040
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0xa33368f68b3fbc40a9c829b573be7293
+            End
             Begin
                 Begin TextBox
                     OverlapFlags =87
@@ -76,6 +82,9 @@ Begin Form
                     Width =855
                     Name ="GEOid"
                     ControlSource ="GEOid"
+                    GUID = Begin
+                        0x47dae56b36c59e4483f5b57f80544667
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -85,11 +94,14 @@ Begin Form
                             Height =240
                             Name ="Text15"
                             Caption ="ID:"
+                            GUID = Begin
+                                0x036beb6bf5d69c4eb5d54c29cf08d100
+                            End
                         End
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =87
+                    OverlapFlags =215
                     Left =1584
                     Top =600
                     Width =3015
@@ -97,6 +109,9 @@ Begin Form
                     TabIndex =1
                     Name ="GEOdesc"
                     ControlSource ="GEOdesc"
+                    GUID = Begin
+                        0x97cda6ac9ebcb2448f98fb6a7c80b3ab
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -106,11 +121,14 @@ Begin Form
                             Height =240
                             Name ="Text17"
                             Caption ="Description:"
+                            GUID = Begin
+                                0xd6cf0ecb13b7fd4f970c79815d4ea36f
+                            End
                         End
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =87
+                    OverlapFlags =215
                     Left =1584
                     Top =1080
                     Width =7770
@@ -120,6 +138,9 @@ Begin Form
                     Name ="GEOcities"
                     ControlSource ="GEOcities"
                     StatusBarText ="THESE ARE SOME OF THE CITIES WITHIN THIS GEO ID"
+                    GUID = Begin
+                        0xd374e2dbcc81254e85aab278ff15cab0
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -129,6 +150,9 @@ Begin Form
                             Height =240
                             Name ="Text19"
                             Caption ="Cities:"
+                            GUID = Begin
+                                0xb79633b40c066c49af703bf4c47c08f9
+                            End
                         End
                     End
                 End
@@ -138,6 +162,9 @@ Begin Form
             Height =0
             BackColor =12632256
             Name ="FormFooter2"
+            GUID = Begin
+                0x29339ef00a3c9d46abb8ab22b4410e36
+            End
         End
     End
 End

@@ -1,30 +1,32 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRname)=\"ALAMO CRANE INC.\"))"
+Where ="(((tblGrp.GRName)=\"ALAMO CRANE INC.\"))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
-    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblGrp.GRName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubFirstName"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -32,10 +34,10 @@ Begin
     Left =84
     Top =66
     Right =778
-    Bottom =368
+    Bottom =390
     Left =-1
     Top =-1
-    Right =687
+    Right =679
     Bottom =144
     Left =0
     Top =0
@@ -44,7 +46,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =3
         Name ="tblSubscr"
         Name =""
@@ -53,7 +55,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblGrp"
         Name =""

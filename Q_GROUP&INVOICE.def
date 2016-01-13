@@ -6,17 +6,17 @@ Begin InputTables
     Name ="tblInvoiceHistory"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GREE"
     Expression ="tblInvoiceHistory.InvMonth"
     Expression ="tblInvoiceHistory.InvYear"
     Alias ="Expr1"
@@ -25,7 +25,7 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblInvoiceHistory"
-    Expression ="tblGrp.GROUPid = tblInvoiceHistory.GrpID"
+    Expression ="tblGrp.GroupID=tblInvoiceHistory.GrpID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -41,10 +41,10 @@ Begin
     Left =84
     Top =65
     Right =778
-    Bottom =382
+    Bottom =389
     Left =-1
     Top =-1
-    Right =687
+    Right =679
     Bottom =144
     Left =0
     Top =0
@@ -53,7 +53,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =20
         Name ="tblGrp"
         Name =""
@@ -62,7 +62,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblInvoiceHistory"
         Name =""

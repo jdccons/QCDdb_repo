@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =-887011188
+Version =20
+VersionRequired =20
+Checksum =403855542
 Begin Form
     AutoResize = NotDefault
     RecordSelectors = NotDefault
@@ -18,12 +18,12 @@ Begin Form
     GridY =24
     Width =4464
     ItemSuffix =124
-    Left =3660
-    Top =1065
-    Right =8085
-    Bottom =3450
+    Left =7665
+    Top =1095
+    Right =12465
+    Bottom =4680
     RecSrcDt = Begin
-        0x1cd178dcf1dae140
+        0x5055661821ace440
     End
     RecordSource ="SELECT tblGrp.GROUPid, tblGrpLog.LogGrID, tblGrp.GRname FROM tblGrp LEFT JOIN tb"
         "lGrpLog ON (tblGrp.GROUPid = tblGrpLog.LogGrID) AND (tblGrp.GROUPid = tblGrpLog."
@@ -69,11 +69,17 @@ Begin Form
             Height =0
             BackColor =12632256
             Name ="FormHeader0"
+            GUID = Begin
+                0x711ca0d881de6546aa034f7f555fdb03
+            End
         End
         Begin Section
             Height =1800
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x4fbe4f1da2f9da4aa5bf60626c05afd3
+            End
             Begin
                 Begin TextBox
                     Visible = NotDefault
@@ -88,6 +94,9 @@ Begin Form
                     Name ="ctlLogGrID"
                     ControlSource ="LogGrID"
                     DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                    GUID = Begin
+                        0x68c6b8be3995454d9457c10a74622ccb
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -99,6 +108,9 @@ Begin Form
                     Name ="cmdVisit"
                     Caption ="Appointments"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x2d0c6f1bb1babf4da1eb718d70e08bab
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -110,6 +122,9 @@ Begin Form
                     Name ="cmdPhone"
                     Caption ="Phone Contact"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xac910a73c1b1004c9ccc8a67ec315ded
+                    End
                 End
                 Begin Label
                     SpecialEffect =4
@@ -125,6 +140,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label121"
                     Caption ="Activity Information"
+                    GUID = Begin
+                        0x13c899f325db3e4b89457785e9e3df18
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -135,6 +153,9 @@ Begin Form
                     TabIndex =3
                     Name ="GROUPid"
                     ControlSource ="GROUPid"
+                    GUID = Begin
+                        0xc06fcbc6f7c6b14f8faf842c701a0e23
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -144,6 +165,9 @@ Begin Form
                             Height =228
                             Name ="Label122"
                             Caption ="Group"
+                            GUID = Begin
+                                0x6213ec2798ca9846a3936573190f9a24
+                            End
                         End
                     End
                 End
@@ -157,6 +181,9 @@ Begin Form
                     TabIndex =4
                     Name ="GRname"
                     ControlSource ="GRname"
+                    GUID = Begin
+                        0x3a9206831266dd42bc1fa8915c266044
+                    End
                 End
             End
         End
@@ -164,6 +191,9 @@ Begin Form
             Height =600
             BackColor =12632256
             Name ="FormFooter1"
+            GUID = Begin
+                0x86ad52f426c48547832c24e35de781b3
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -195,6 +225,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x4341d43c6562fd4d966915cdb5ff95da
+                    End
                 End
             End
         End

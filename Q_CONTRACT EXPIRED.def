@@ -1,20 +1,22 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcontBEG)=#5/1/1997#) AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GRContBeg)=#5/1/1997#) AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRee"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GREE"
+    Expression ="tblGrp.GRCancelled"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GROUPid"
@@ -37,10 +39,10 @@ Begin
     Left =84
     Top =66
     Right =770
-    Bottom =368
+    Bottom =390
     Left =-1
     Top =-1
-    Right =679
+    Right =671
     Bottom =144
     Left =0
     Top =0
@@ -49,7 +51,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =34
         Name ="tblGrp"
         Name =""

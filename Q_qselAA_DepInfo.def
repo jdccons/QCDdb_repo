@@ -1,13 +1,15 @@
 Operation =1
 Option =0
-Where ="(((ELGEXP_SQL.EIRECID)=\"M\") AND ((Mid([ELGEXP_SQL].[EINMPLAN],8,3))=\"QCD\")) "
-    "OR (((ELGEXP_SQL.EIRECID)=\"M\") AND ((qselAA_Subscr.EINMPLAN)=\"QCDBLU-NGL\"))"
+Where ="(((ELGEXP_SQL.EIRECID)=\"M\") And ((Mid(ELGEXP_SQL.EINMPLAN,8,3))=\"QCD\")) Or ("
+    "((ELGEXP_SQL.EIRECID)=\"M\") And ((qselAA_Subscr.EINMPLAN)=\"QCDBLU-NGL\"))"
 Begin InputTables
     Name ="qselAA_Subscr"
     Name ="ELGEXP_SQL"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="qselAA_Subscr.AA_SSN"
+    Alias ="Expr2"
     Expression ="qselAA_Subscr.EISBRID"
     Expression ="ELGEXP_SQL.EIMBRID"
     Expression ="ELGEXP_SQL.[EISSN#]"
@@ -15,21 +17,16 @@ Begin OutputColumns
     Expression ="ELGEXP_SQL.EINAMM"
     Expression ="ELGEXP_SQL.EINAML"
     Alias ="GRPid"
-    Expression ="Right([ELGEXP_SQL].[EIGRPID],Len([ELGEXP_SQL].[EIGRPID])-3)"
+    Expression ="Right(ELGEXP_SQL.EIGRPID,Len(ELGEXP_SQL.EIGRPID)-3)"
     Expression ="ELGEXP_SQL.EIRECID"
     Alias ="REL"
-    Expression ="IIf([ELGEXP_SQL].[EIMBRDP@]='1','S','C')"
+    Expression ="IIf(ELGEXP_SQL.[EIMBRDP@]='1','S','C')"
     Expression ="ELGEXP_SQL.EISEX"
     Alias ="RptDate"
     Expression ="CDate(Left([RPTDTASOF],2) & \"/\" & Mid([RPTDTASOF],3,2) & \"/\" & Right([RPTDTA"
         "SOF],4))"
+    Alias ="Expr3"
     Expression ="qselAA_Subscr.EINMPLAN"
-End
-Begin Joins
-    LeftTable ="qselAA_Subscr"
-    RightTable ="ELGEXP_SQL"
-    Expression ="qselAA_Subscr.EISBRID = ELGEXP_SQL.EISBRID"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -41,14 +38,14 @@ dbText "Description" ="p"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =673
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =410
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =190
     Left =0
     Top =0
@@ -57,18 +54,18 @@ Begin
         Left =38
         Top =6
         Right =195
-        Bottom =135
+        Bottom =49
         Top =0
         Name ="qselAA_Subscr"
         Name =""
     End
     Begin
-        Left =249
-        Top =5
-        Right =440
-        Bottom =134
-        Top =11
-        Name ="ELGEXP"
+        Left =233
+        Top =6
+        Right =329
+        Bottom =124
+        Top =0
+        Name ="ELGEXP_SQL"
         Name =""
     End
 End

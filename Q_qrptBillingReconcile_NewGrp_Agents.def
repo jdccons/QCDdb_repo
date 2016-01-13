@@ -1,8 +1,8 @@
 Operation =1
 Option =0
 Begin InputTables
-    Name ="qselGrpAgt_Agents"
     Name ="tmpBillingReconcile_rpt"
+    Name ="qselGrpAgt_Agents"
 End
 Begin OutputColumns
     Alias ="AgentsCom"
@@ -13,7 +13,7 @@ End
 Begin Joins
     LeftTable ="tmpBillingReconcile_rpt"
     RightTable ="qselGrpAgt_Agents"
-    Expression ="tmpBillingReconcile_rpt.GROUPid = qselGrpAgt_Agents.GROUPid"
+    Expression ="tmpBillingReconcile_rpt.GROUPid=qselGrpAgt_Agents.GROUPid"
     Flag =1
 End
 Begin OrderBy
@@ -26,6 +26,8 @@ dbBoolean "UseTransaction" ="0"
 dbBoolean "FailOnError" ="0"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -33,10 +35,10 @@ Begin
     Left =23
     Top =36
     Right =977
-    Bottom =499
+    Bottom =518
     Left =-1
     Top =-1
-    Right =947
+    Right =939
     Bottom =302
     Left =0
     Top =0
@@ -45,7 +47,7 @@ Begin
         Left =231
         Top =32
         Right =411
-        Bottom =139
+        Bottom =135
         Top =0
         Name ="qselGrpAgt_Agents"
         Name =""
@@ -54,7 +56,7 @@ Begin
         Left =43
         Top =22
         Right =169
-        Bottom =204
+        Bottom =200
         Top =6
         Name ="tmpBillingReconcile_rpt"
         Name =""

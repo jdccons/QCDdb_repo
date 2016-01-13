@@ -1,0 +1,76 @@
+Option Compare Database
+Option Explicit
+'================================================================================
+' Object:                   name of object i.e. frmFormName_Form_Load
+' Purpose:                  explanation of what the procedue does
+'
+'
+' VBA Parameters            ParameterName   DateType    Returns
+' -------------------------------------------------------------------------------
+'
+'
+'
+' Change Log
+' Date Modified     Developer       Version         Purpose
+' -------------------------------------------------------------------------------
+'
+'
+'
+' Stored Procedure:         if there are any SQL Server stored proceudres
+'                           called from the VBA procedure, list them here.
+'
+' SQL Server Parameters:    ParmeterName    DataType
+' -------------------------------------------------------------------------------
+'
+'
+'
+'=================================================================================
+
+
+
+'======================================================
+' Object:      Object name
+' Desc:        Description of what the object does
+'
+' Called by:   user
+' Call:        how is it called
+' Arguments:   any parameters, their data types, and the
+'              possible values
+' Comments:    No error-checking.
+' Changes----------------------------------------------
+' Date             Developer       Version     Change
+' 2015-01-01       J Criswell      1.0         Created
+'======================================================
+
+'=========================================================================
+' Object:      CreateInvoicesQCD
+' Desc:        Calls code behind a button (BulkInvoices) on the QCD Only
+'              invoices form - frmInvGrp; a macro calls this function
+'              and this function calls the code behind the button
+'
+' Called by:   user
+' Call:        called from a macro - InvoiceQCD_File
+' Arguments:   None
+'
+' Comments:    None
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-08       J Criswell      1.0         Created
+'=========================================================================
+
+
+' Purpose:  Generates SubID's
+'
+'------------------------------------------------
+' Parameters:   none
+' Returns   :   new eight digit SubscriberID as string
+' Programmer:   John Criswell
+' Create Date:  11/22/07
+' Update Date:  11/22/07
+' Updated by:   John Criswell
+' Update:       -----------
+' Update Date:  10/11/2013
+' Updated by:   John Criswell
+' Update:       Substituted stored procedure (usp_GetSubID()
+'               for VBA code
+' --------------------------------------------------

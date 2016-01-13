@@ -30,13 +30,15 @@ End
 Begin Joins
     LeftTable ="tblImportGroupTemp"
     RightTable ="qselImportMatched"
-    Expression ="tblImportGroupTemp.SSN = qselImportMatched.PlanId"
+    Expression ="tblImportGroupTemp.SSN=qselImportMatched.PlanId"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -44,10 +46,10 @@ Begin
     Left =153
     Top =135
     Right =1002
-    Bottom =507
+    Bottom =495
     Left =-1
     Top =-1
-    Right =842
+    Right =834
     Bottom =180
     Left =0
     Top =0
@@ -56,7 +58,7 @@ Begin
         Left =48
         Top =7
         Right =168
-        Bottom =139
+        Bottom =125
         Top =0
         Name ="tblImportGroupTemp"
         Name =""
@@ -65,7 +67,7 @@ Begin
         Left =216
         Top =7
         Right =336
-        Bottom =139
+        Bottom =125
         Top =17
         Name ="qselImportMatched"
         Name =""

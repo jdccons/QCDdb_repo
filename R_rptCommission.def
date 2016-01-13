@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1195855303
+Checksum =2085647594
 Begin Report
     LayoutForPrint = NotDefault
     DateGrouping =1
@@ -8,15 +8,17 @@ Begin Report
     GridY =24
     Width =10815
     ItemSuffix =100
-    Left =165
-    Top =345
-    Right =15435
-    Bottom =12165
+    Left =3900
+    Top =540
+    Right =11985
+    Bottom =7890
+    Filter ="([CommCheckDate] between #11/1/2014# and #11/30/2014#)"
     RecSrcDt = Begin
-        0xec18a6588e1fe340
+        0xae1e808b7983e440
     End
     RecordSource ="qrptCommission"
     Caption ="Internal Agent Commission Report"
+    OnOpen ="[Event Procedure]"
     OnClose ="[Event Procedure]"
     MenuBar ="ReportMenuBar"
     PrtMip = Begin
@@ -24,13 +26,13 @@ Begin Report
         0x010000006801000000000000a10700000100000000000000
     End
     PrtDevMode = Begin
-        0x5c5c7773323030335c4850343035300000000000000000000000000000000000 ,
-        0x010400059c00340243ff800702000100ea0a6f08640001000f00b00401000100 ,
-        0xb004030000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc0243ff800701000100ea0a6f08640001000f00580202000100 ,
+        0x5802020001004c65747465720000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000010000000000000001000000 ,
-        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
-        0x22000000340200007eeb71d70000000000000000000000000000000000000000 ,
-        0x00000000000000000e0000000100000000000000000001000000000000000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -46,11 +48,18 @@ Begin Report
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000000000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x080012002300000077696e73706f6f6c00655c5c7773323030335c4850343035 ,
-        0x3000444850343035300065724a6574323230300030304400485000
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
     Begin
         Begin Label
@@ -93,6 +102,9 @@ Begin Report
             KeepTogether = NotDefault
             Height =945
             Name ="ReportHeader3"
+            GUID = Begin
+                0x641aeadba827624ca8656ede5fe13a3b
+            End
             Begin
                 Begin Label
                     TextAlign =1
@@ -102,6 +114,9 @@ Begin Report
                     FontSize =14
                     Name ="Text34"
                     Caption ="Internal Agent Commission Report"
+                    GUID = Begin
+                        0x38e54c39d163ac44a78cbd339412f85a
+                    End
                 End
                 Begin TextBox
                     FontItalic = NotDefault
@@ -111,12 +126,15 @@ Begin Report
                     Name ="Field35"
                     ControlSource ="=Now()"
                     Format ="m/d/yyyy hh:nn"
+                    GUID = Begin
+                        0x3e477ebc220d34409f51753825887df5
+                    End
                 End
                 Begin Line
                     Width =10800
                     Name ="Line92"
                     GUID = Begin
-                        0x17e1f71538e6e64c97a098ef744bc4c7
+                        0x8bfe6e650763c445a5a3cfaa7f24302a
                     End
                 End
                 Begin Line
@@ -124,7 +142,7 @@ Begin Report
                     Width =10800
                     Name ="Line93"
                     GUID = Begin
-                        0xb92acc8fc2b1864ebaf4086cb8e5b10a
+                        0xca31e909157ea14ab0ac63031a3d95ff
                     End
                 End
             End
@@ -132,6 +150,9 @@ Begin Report
         Begin PageHeader
             Height =705
             Name ="PageHeader0"
+            GUID = Begin
+                0x38370d2a679f6345b6cfe53858aad926
+            End
             Begin
                 Begin Label
                     TextAlign =2
@@ -141,6 +162,9 @@ Begin Report
                     Height =525
                     Name ="Text7"
                     Caption ="Check\015\012 No"
+                    GUID = Begin
+                        0xbedbf725eb37584a87ea234072278084
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -150,6 +174,9 @@ Begin Report
                     Height =525
                     Name ="Text9"
                     Caption ="Invoice\015\012 No"
+                    GUID = Begin
+                        0x3fec7834c0326d4d9afa2b95b518325c
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -159,6 +186,9 @@ Begin Report
                     Height =525
                     Name ="Text11"
                     Caption ="Check\015\012 Date"
+                    GUID = Begin
+                        0xf27e12f601774b498b708b98f7d8cea2
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -168,6 +198,9 @@ Begin Report
                     Height =285
                     Name ="Text13"
                     Caption ="Rate"
+                    GUID = Begin
+                        0x5202161ace09814e932743196a13567e
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -177,6 +210,9 @@ Begin Report
                     Height =525
                     Name ="Text20"
                     Caption ="Check\015\012 Amt"
+                    GUID = Begin
+                        0x88eae856c3e72f48ac33f27124a35563
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -186,6 +222,9 @@ Begin Report
                     Height =525
                     Name ="Text27"
                     Caption ="Agent\015\012Type"
+                    GUID = Begin
+                        0x2e7e709a2d963f44abce8ac0b26439e2
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -195,6 +234,9 @@ Begin Report
                     Height =525
                     Name ="Text55"
                     Caption ="Comm\015\012 Amt"
+                    GUID = Begin
+                        0xc71e2770b351d647a9690b3829b97330
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -204,6 +246,9 @@ Begin Report
                     Height =270
                     Name ="Text62"
                     Caption ="Agent"
+                    GUID = Begin
+                        0x650b02d4e5f81145b737ede3fe09da26
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -213,12 +258,15 @@ Begin Report
                     Height =270
                     Name ="Text63"
                     Caption ="Customer"
+                    GUID = Begin
+                        0xf00d4face1a5ce4797e79d0580461785
+                    End
                 End
                 Begin Line
                     Width =10800
                     Name ="Line94"
                     GUID = Begin
-                        0xb13733f3d8340c4f84fee9d5c4508153
+                        0x769c7ac09f335344af40815c991ba10a
                     End
                 End
                 Begin Line
@@ -226,7 +274,7 @@ Begin Report
                     Width =10800
                     Name ="Line95"
                     GUID = Begin
-                        0x2af17b427638254e88e4dce6e21b0971
+                        0x732a32b5b4412841a7067b06738246f4
                     End
                 End
                 Begin Line
@@ -234,7 +282,7 @@ Begin Report
                     Width =10800
                     Name ="Line96"
                     GUID = Begin
-                        0xedfc67917f4c754aa4a7e0a320b92b1d
+                        0xcfcf199e19392248b8ca90e92cfd290b
                     End
                 End
                 Begin Line
@@ -242,7 +290,7 @@ Begin Report
                     Width =10800
                     Name ="Line97"
                     GUID = Begin
-                        0xed97db6e39452842b25ffa669e1a62d1
+                        0x458dde9440163e4f96ed36e221d48212
                     End
                 End
             End
@@ -251,6 +299,9 @@ Begin Report
             KeepTogether = NotDefault
             Height =360
             Name ="GroupHeader3"
+            GUID = Begin
+                0x8b2aeab5c93456438561feca61cfc3d2
+            End
             Begin
                 Begin TextBox
                     Left =15
@@ -260,6 +311,9 @@ Begin Report
                     FontWeight =700
                     Name ="Salesp_Name"
                     ControlSource ="Salesp_Name"
+                    GUID = Begin
+                        0x38e5274e80cbbd40944a1e7685b245b2
+                    End
                 End
             End
         End
@@ -268,6 +322,9 @@ Begin Report
             Height =240
             BreakLevel =1
             Name ="GroupHeader0"
+            GUID = Begin
+                0x907f5bc56ca2f3449d98ee06b7af0b96
+            End
             Begin
                 Begin TextBox
                     Left =510
@@ -276,6 +333,9 @@ Begin Report
                     FontWeight =700
                     Name ="Field47"
                     ControlSource ="COMMcustCLASS"
+                    GUID = Begin
+                        0xb8fcb0ed32ce104ab788e5cfffd8ff32
+                    End
                 End
             End
         End
@@ -283,6 +343,9 @@ Begin Report
             KeepTogether = NotDefault
             Height =240
             Name ="Detail1"
+            GUID = Begin
+                0xe03864dedde67e4fa0938ca5bd65629b
+            End
             Begin
                 Begin TextBox
                     Left =4635
@@ -290,6 +353,9 @@ Begin Report
                     Height =240
                     Name ="COMMcheckNO"
                     ControlSource ="COMMcheckNO"
+                    GUID = Begin
+                        0x45d0d0fb9ac9a74882b98589cde156a3
+                    End
                 End
                 Begin TextBox
                     Left =5565
@@ -298,6 +364,9 @@ Begin Report
                     TabIndex =1
                     Name ="COMMinvoiceNO"
                     ControlSource ="COMMinvoiceNO"
+                    GUID = Begin
+                        0xe2a183d17eb9b7459495d733b6b095cb
+                    End
                 End
                 Begin TextBox
                     Left =6375
@@ -306,6 +375,9 @@ Begin Report
                     TabIndex =2
                     Name ="COMMcheckDATE"
                     ControlSource ="COMMcheckDATE"
+                    GUID = Begin
+                        0xc586126597bd6a4c872af14cd319b4d6
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =1
@@ -316,6 +388,9 @@ Begin Report
                     Name ="COMMrate"
                     ControlSource ="COMMrate"
                     Format ="Percent"
+                    GUID = Begin
+                        0xb834e76eaaf2ad419f6b01c5b894b88d
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -326,6 +401,9 @@ Begin Report
                     Name ="COMMcheckAMT"
                     ControlSource ="COMMcheckAMT"
                     Format ="Standard"
+                    GUID = Begin
+                        0xb5a00f4e48801749a42f1bbb9b1b9fb0
+                    End
                 End
                 Begin TextBox
                     Left =3870
@@ -334,6 +412,9 @@ Begin Report
                     TabIndex =5
                     Name ="COMMagentTYPE"
                     ControlSource ="COMMagentTYPE"
+                    GUID = Begin
+                        0xe48008f75b7a2149810c0ef3f3900016
+                    End
                 End
                 Begin TextBox
                     Left =900
@@ -342,6 +423,9 @@ Begin Report
                     TabIndex =6
                     Name ="Field44"
                     ControlSource ="COMMcustNAME"
+                    GUID = Begin
+                        0x6861284c9db49947b191a1dd8dae3b60
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -352,6 +436,9 @@ Begin Report
                     Name ="Field54"
                     ControlSource ="=[COMMcheckAMT]*[COMMrate]"
                     Format ="Standard"
+                    GUID = Begin
+                        0xf7134d07077a0241bced8240917e2f5b
+                    End
                 End
             End
         End
@@ -360,12 +447,18 @@ Begin Report
             Height =345
             BreakLevel =1
             Name ="GroupFooter1"
+            GUID = Begin
+                0xa3ffd78e058d564d800f9c6a6455cb11
+            End
             Begin
                 Begin Line
                     Left =8400
                     Top =15
                     Width =2160
                     Name ="Line24"
+                    GUID = Begin
+                        0xddfc225ef1204645b377fcca6fa17ca8
+                    End
                 End
                 Begin Line
                     LineSlant = NotDefault
@@ -373,6 +466,9 @@ Begin Report
                     Top =60
                     Width =2160
                     Name ="Line31"
+                    GUID = Begin
+                        0x0cbc12e36616604e9d5bb314eac63bdf
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -384,6 +480,9 @@ Begin Report
                     Name ="Field56"
                     ControlSource ="=Sum([COMMcheckAMT]*[COMMrate])"
                     Format ="Standard"
+                    GUID = Begin
+                        0x4407c4b808869d4c97bcb72775175b45
+                    End
                 End
                 Begin TextBox
                     TextAlign =3
@@ -395,6 +494,9 @@ Begin Report
                     TabIndex =1
                     Name ="Field58"
                     ControlSource ="=[COMMcustCLASS] & \":\""
+                    GUID = Begin
+                        0xd7b16045a63bbe4db6380126aec3c7fd
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -407,6 +509,9 @@ Begin Report
                     Name ="Field60"
                     ControlSource ="=Sum([COMMcheckAMT])"
                     Format ="Standard"
+                    GUID = Begin
+                        0x66251938832ff248956ce2873de08823
+                    End
                 End
             End
         End
@@ -414,6 +519,9 @@ Begin Report
             KeepTogether = NotDefault
             Height =345
             Name ="GroupFooter4"
+            GUID = Begin
+                0xe77be0b81b87c54592b2e52d000320bc
+            End
             Begin
                 Begin TextBox
                     DecimalPlaces =2
@@ -425,6 +533,9 @@ Begin Report
                     Name ="Field57"
                     ControlSource ="=Sum([COMMcheckAMT]*[COMMrate])"
                     Format ="Standard"
+                    GUID = Begin
+                        0xf6d9c27a9b2e8443b9848ef969e1ea87
+                    End
                 End
                 Begin Label
                     TextAlign =3
@@ -434,6 +545,9 @@ Begin Report
                     Height =240
                     Name ="Text59"
                     Caption ="Total of GROUP and INDIVIDUAL:"
+                    GUID = Begin
+                        0xb57a4469987cd440844e8f00df821e5f
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -446,12 +560,18 @@ Begin Report
                     Name ="Field61"
                     ControlSource ="=Sum([COMMcheckAMT])"
                     Format ="Standard"
+                    GUID = Begin
+                        0xd8a34033be8fe944899970fb9f1014b8
+                    End
                 End
             End
         End
         Begin PageFooter
             Height =360
             Name ="PageFooter2"
+            GUID = Begin
+                0x5642d74389d9874e8d62c11eeb160b9e
+            End
             Begin
                 Begin TextBox
                     FontItalic = NotDefault
@@ -460,6 +580,9 @@ Begin Report
                     Top =60
                     Name ="Field36"
                     ControlSource ="=\"Page \" & [Page] & \" of  \" & [Pages]"
+                    GUID = Begin
+                        0xcef5342b7e21d848a3a3e4c21e60bcde
+                    End
                 End
             End
         End
@@ -468,16 +591,24 @@ Begin Report
             Height =2460
             OnFormat ="[Event Procedure]"
             Name ="ReportFooter4"
+            GUID = Begin
+                0x7f601ea08866014a92adb17fc971a868
+            End
             Begin
                 Begin Label
+                    Visible = NotDefault
                     TextAlign =3
                     Top =180
                     Width =7051
                     Height =285
                     Name ="Text33"
                     Caption ="Grand Total:"
+                    GUID = Begin
+                        0x00f935ee0cb531488d357a9fb4c4f5eb
+                    End
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     DecimalPlaces =2
                     TextAlign =3
                     Left =9465
@@ -488,8 +619,12 @@ Begin Report
                     Name ="Field64"
                     ControlSource ="=Sum([COMMcheckAMT]*[COMMrate])"
                     Format ="$#,##0.00;($#,##0.00)"
+                    GUID = Begin
+                        0xffd2426edc262148a131cc6a0f700515
+                    End
                 End
                 Begin TextBox
+                    Visible = NotDefault
                     DecimalPlaces =2
                     TextAlign =3
                     Left =8355
@@ -501,18 +636,9 @@ Begin Report
                     Name ="Field65"
                     ControlSource ="=Sum([COMMcheckAMT])"
                     Format ="$#,##0.00;($#,##0.00)"
-                End
-                Begin TextBox
-                    DecimalPlaces =2
-                    TextAlign =3
-                    Left =8265
-                    Top =930
-                    Width =1140
-                    Height =239
-                    FontWeight =700
-                    TabIndex =2
-                    Name ="TotAgyCash"
-                    Format ="$#,##0.00;($#,##0.00)"
+                    GUID = Begin
+                        0xe8a2e74d6ea3fa47ab9054837375319e
+                    End
                 End
                 Begin Label
                     TextAlign =3
@@ -521,6 +647,9 @@ Begin Report
                     Height =285
                     Name ="Text67"
                     Caption ="Agencies:"
+                    GUID = Begin
+                        0xa2192156dcbca940a006592ea9c705c9
+                    End
                 End
                 Begin Label
                     Left =8370
@@ -529,6 +658,9 @@ Begin Report
                     Height =270
                     Name ="Label70"
                     Caption ="Cash Rec'd"
+                    GUID = Begin
+                        0x83360f8774a4da4d81affa3235ff9ca0
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -538,9 +670,12 @@ Begin Report
                     Width =1110
                     Height =239
                     FontWeight =700
-                    TabIndex =3
+                    TabIndex =2
                     Name ="TotAgyComm"
-                    Format ="$#,##0.00;($#,##0.00)"
+                    Format ="Standard"
+                    GUID = Begin
+                        0xab6c9b4bc02bf343892e31dfd177157b
+                    End
                 End
                 Begin Label
                     Left =9495
@@ -549,6 +684,9 @@ Begin Report
                     Height =270
                     Name ="Label72"
                     Caption ="Comm Due"
+                    GUID = Begin
+                        0x8f8ea6cf014c924698de81c41e3653a2
+                    End
                 End
                 Begin Label
                     TextAlign =3
@@ -557,18 +695,9 @@ Begin Report
                     Height =285
                     Name ="Label73"
                     Caption ="Agents:"
-                End
-                Begin TextBox
-                    DecimalPlaces =2
-                    TextAlign =3
-                    Left =8265
-                    Top =1290
-                    Width =1125
-                    Height =239
-                    FontWeight =700
-                    TabIndex =4
-                    Name ="TotAgtCash"
-                    Format ="Standard"
+                    GUID = Begin
+                        0x23287b00c9d7c549984f6efdf7d0575f
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -578,9 +707,12 @@ Begin Report
                     Width =1110
                     Height =239
                     FontWeight =700
-                    TabIndex =5
+                    TabIndex =3
                     Name ="TotAgtComm"
                     Format ="Standard"
+                    GUID = Begin
+                        0xc70e4be54334354f962bec259cfe3ed0
+                    End
                 End
                 Begin Label
                     TextAlign =3
@@ -589,6 +721,9 @@ Begin Report
                     Height =285
                     Name ="Label76"
                     Caption ="Employees:"
+                    GUID = Begin
+                        0x7f4fdd3e7851ed488e5637b6382fdbca
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -598,10 +733,12 @@ Begin Report
                     Width =1110
                     Height =239
                     FontWeight =700
-                    TabIndex =6
+                    TabIndex =4
                     Name ="GrdTotCash"
-                    ControlSource ="=[TotAgyCash]+[TotAgtCash]+[TotEmpCash]"
-                    Format ="$#,##0.00;($#,##0.00)"
+                    Format ="Standard"
+                    GUID = Begin
+                        0xf2f4293f1c8a434391f6de9ed7d25f73
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -611,58 +748,85 @@ Begin Report
                     Width =1110
                     Height =239
                     FontWeight =700
-                    TabIndex =7
+                    TabIndex =5
                     Name ="GrdTotComm"
-                    ControlSource ="=[TotAgyComm]+[TotAgtComm]+[TotEmpComm]"
-                    Format ="$#,##0.00;($#,##0.00)"
+                    ControlSource ="=[TotAgyComm]+[TotAgtComm]"
+                    Format ="Standard"
+                    GUID = Begin
+                        0x1a2f23948a4e5146bacc83ee4935c57e
+                    End
                 End
                 Begin Line
                     Left =8385
                     Top =2040
                     Width =1065
                     Name ="Line79"
+                    GUID = Begin
+                        0xc510cf5eb1e5644a846470a50699cbbb
+                    End
                 End
                 Begin Line
                     Left =9510
                     Top =2040
                     Width =1065
                     Name ="Line80"
+                    GUID = Begin
+                        0xf871557b833f5843a46177163086d4c6
+                    End
                 End
                 Begin Line
                     Left =8400
                     Top =2415
                     Width =1065
                     Name ="Line81"
+                    GUID = Begin
+                        0xfcbb599d9dfcab4aa35ef7ed231fa961
+                    End
                 End
                 Begin Line
                     Left =8400
                     Top =2445
                     Width =1065
                     Name ="Line82"
+                    GUID = Begin
+                        0x15f947b65e82664ea0f831b6951bda59
+                    End
                 End
                 Begin Line
                     Left =9510
                     Top =2415
                     Width =1065
                     Name ="Line83"
+                    GUID = Begin
+                        0x6401c8b5ab2bba40b0172d7920f9cb88
+                    End
                 End
                 Begin Line
                     Left =9510
                     Top =2445
                     Width =1065
                     Name ="Line84"
+                    GUID = Begin
+                        0x4e39c79db1aed4468fc51c85bf8c0f2b
+                    End
                 End
                 Begin Line
                     Left =8400
                     Top =900
                     Width =1065
                     Name ="Line85"
+                    GUID = Begin
+                        0x0ffd6e9ab9a6244c9d4946c868209c7f
+                    End
                 End
                 Begin Line
                     Left =9525
                     Top =900
                     Width =1065
                     Name ="Line86"
+                    GUID = Begin
+                        0xddaee1be64589b43987d2d7c236a7b48
+                    End
                 End
                 Begin Label
                     TextAlign =3
@@ -671,18 +835,9 @@ Begin Report
                     Height =285
                     Name ="Label87"
                     Caption ="Total:"
-                End
-                Begin TextBox
-                    DecimalPlaces =2
-                    TextAlign =3
-                    Left =8265
-                    Top =1649
-                    Width =1125
-                    Height =239
-                    FontWeight =700
-                    TabIndex =8
-                    Name ="TotEmpCash"
-                    Format ="Standard"
+                    GUID = Begin
+                        0x73e430ba1ceade47ac47bf8457049188
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -692,16 +847,19 @@ Begin Report
                     Width =1110
                     Height =239
                     FontWeight =700
-                    TabIndex =9
+                    TabIndex =6
                     Name ="TotEmpComm"
                     Format ="Standard"
+                    GUID = Begin
+                        0x2966073cdfce5445b10e80ff60d45f97
+                    End
                 End
                 Begin Line
                     Left =8370
                     Width =2160
                     Name ="Line98"
                     GUID = Begin
-                        0xe99841d7de91b94eb7b27badd53e15f6
+                        0xa6515cb4f56382468d7c29e9ab9a302a
                     End
                 End
                 Begin Line
@@ -711,7 +869,7 @@ Begin Report
                     Width =2160
                     Name ="Line99"
                     GUID = Begin
-                        0x2806a90379cfe143af3abf484048cbd3
+                        0x363205f8cb6a0b499f9dd87cb211469d
                     End
                 End
             End
@@ -731,9 +889,9 @@ On Error GoTo Report_Close_Err
     
     DoCmd.Restore
     
-    If isloaded("fdlgPrtCommAgent") = True Then
-        Forms![fdlgPrtCommAgent].Visible = True
-        DoCmd.Close A_FORM, "fdlgPrtCommAgent"
+    If IsLoaded("fdlgCommission") = True Then
+        Forms![fdlgCommission].Visible = True
+        DoCmd.Close A_FORM, "fdlgCommission"
         Forms![fmnuSwitchboard].Visible = True
     End If
 
@@ -746,17 +904,69 @@ Report_Close_Err:
     GoTo Report_Close_Exit
     
 End Sub
+
+Private Sub Report_Open(Cancel As Integer)
+
+On Error GoTo Report_Open_Err
+    
+    If fIsLoaded("fdlgCommission") = True Then
+        Forms!fdlgCommission.Visible = False
+    End If
+    
+    If fIsLoaded("fmnuSwitchboard") = True Then
+        Forms!fmnuSwitchboard.Visible = False
+    End If
+    
+    Exit Sub
+    
+Report_Open_Exit:
+    Exit Sub
+
+Report_Open_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Report_Open_Exit
+
+End Sub
+
 Private Sub ReportFooter4_Format(intCancel As Integer, intFormatCount As Integer)
 
+
+    Dim dteInvoiceDate As Date
+    Dim dteMonthFirstDay As Date
+    Dim dteMonthLastDay As Date
+   
+    dteInvoiceDate = Me.OpenArgs
+    dteMonthFirstDay = MonthFirstDay(Month(dteInvoiceDate), Year(dteInvoiceDate))
+    dteMonthLastDay = MonthLastDay(Month(dteInvoiceDate), Year(dteInvoiceDate))
+    
   With Me
-    .TotAgyCash = AgyCash()
+  '  .TotAgyCash = AgyCash()
     .TotAgyComm = AgyComm()
-    .TotAgtCash = AgtCash()
+  '  .TotAgtCash = AgtCash()
     .TotAgtComm = AgtComm()
-    .TotEmpCash = EmpCash()
+  '  .TotEmpCash = EmpCash()
     .TotEmpComm = EmpComm()
 End With
+    
+
+    Me.GrdTotCash = TotCash(dteMonthFirstDay, dteMonthLastDay)
+
+
 End Sub
+Function TotCash(dteBeginDate As Date, dteEndDate As Date) As Double
+
+    Dim strSQL As String
+    
+    strSQL = "select sum(CheckAmt) As CheckTotal " & _
+                "from vw_CommissionCheck " & _
+                "where DocumentDate between '" & dteBeginDate & "' and '" & dteEndDate & "'"
+    
+    Call LoadADORecordset(strSQL)
+    TotCash = g_adoRS("CheckTotal")
+    g_adoRS.Close
+    
+End Function
 Function AgyCash() As Double
 
     Dim db As DAO.Database

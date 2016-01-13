@@ -8,8 +8,8 @@ Begin InputTables
     Name ="tblCoverage"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblCoverage.CoverCode"
     Expression ="tblSubscr.CoverID"
     Alias ="RedEE1S"
     Expression ="Count(tblSubscr.SubID)"
@@ -17,17 +17,17 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =1
 End
 Begin Groups
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     GroupLevel =0
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverCode"
     GroupLevel =0
     Expression ="tblSubscr.CoverID"
     GroupLevel =0
@@ -39,16 +39,19 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="RedEE1S"
+    End
 End
 Begin
     State =0
     Left =29
     Top =54
     Right =949
-    Bottom =371
+    Bottom =378
     Left =-1
     Top =-1
-    Right =913
+    Right =905
     Bottom =144
     Left =0
     Top =0
@@ -57,7 +60,7 @@ Begin
         Left =38
         Top =6
         Right =225
-        Bottom =116
+        Bottom =109
         Top =38
         Name ="tblGrp"
         Name =""
@@ -66,7 +69,7 @@ Begin
         Left =263
         Top =6
         Right =412
-        Bottom =116
+        Bottom =109
         Top =40
         Name ="tblSubscr"
         Name =""
@@ -75,7 +78,7 @@ Begin
         Left =450
         Top =6
         Right =546
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblCoverage"
         Name =""

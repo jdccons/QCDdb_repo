@@ -16,7 +16,7 @@ Begin OutputColumns
     Expression ="tblDependent.EIMBRID"
     Alias ="EISBRID"
     Name ="EISBRID"
-    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Expression ="tblSubscr.SUBssn & \"00\""
     Alias ="EISSN"
     Name ="EISSN"
     Expression ="tblDependent.DepSSN"
@@ -52,55 +52,57 @@ Begin OutputColumns
     Expression ="tblSubscr.SubZip"
     Alias ="EIHPHR"
     Name ="EIHPHR"
-    Expression ="IIf(Not IsNull([tblSubscr.SubPhoneHome]),StripChars_TSB([tblSubscr].[SubPhoneHom"
-        "e],\"-\"),Null)"
+    Expression ="IIf(Not IsNull([tblSubscr.SubPhoneHome]),StripChars_TSB(tblSubscr.SubPhoneHome,\""
+        "-\"),Null)"
     Alias ="EIWPHR"
     Name ="EIWPHR"
-    Expression ="IIf(Not IsNull([tblSubscr.SubPhoneWork]),StripChars_TSB([tblSubscr].[SubPhoneWor"
-        "k],\"-\"),Null)"
+    Expression ="IIf(Not IsNull([tblSubscr.SubPhoneWork]),StripChars_TSB(tblSubscr.SubPhoneWork,\""
+        "-\"),Null)"
     Alias ="EIGRPID"
     Name ="EIGRPID"
     Expression ="'MNQ' & [GROUPid]"
     Alias ="EINMPLAN"
     Name ="EINMPLAN"
-    Expression ="IIf([tblSubscr].[PlanID]=2,\"QCDWHT-MNL\",\"QCDRPL-MNL\")"
+    Expression ="IIf(tblSubscr.PlanID=2,\"QCDWHT-MNL\",\"QCDRPL-MNL\")"
     Alias ="EIDTEFF"
     Name ="EIDTEFF"
     Expression ="Format([GRcontBEG],\"mmddyyyy\")"
     Alias ="EIDTCVEF"
     Name ="EIDTCVEF"
-    Expression ="IIf(IsNull([tblDependent].[PreexistingDate])=True,Format([tblDependent].[DepEffD"
-        "ate],\"mmddyyyy\"),Format([tblDependent].[PreexistingDate],\"mmddyyyy\"))"
+    Expression ="IIf(IsNull(tblDependent.PreexistingDate)=True,Format(tblDependent.DepEffDate,\"m"
+        "mddyyyy\"),Format(tblDependent.PreexistingDate,\"mmddyyyy\"))"
     Alias ="EIDTCVEN"
     Name ="EIDTCVEN"
-    Expression ="IIf(Not IsNull([tblSubscr].[DateDeleted]),Format([tblSubscr].[DateDeleted],\"mmd"
-        "dyyyy\"),Null)"
+    Expression ="IIf(Not IsNull(tblSubscr.DateDeleted),Format(tblSubscr.DateDeleted,\"mmddyyyy\")"
+        ",Null)"
     Alias ="EIMBRDP"
     Name ="EIMBRDP"
-    Expression ="IIf([tblDependent].[DepRelationship]=\"S\",1,2)"
+    Expression ="IIf(tblDependent.DepRelationship=\"S\",1,2)"
     Alias ="EITRNID"
     Name ="EITRNID"
-    Expression ="IIf(IsNull([tblDependent].[PreexistingDate])=True,Null,\"        \" & \"PCOV\" &"
-        " Format([tblDependent].[PreexistingDate],\"mmddyyyy\"))"
+    Expression ="IIf(IsNull(tblDependent.PreexistingDate)=True,Null,\"        \" & \"PCOV\" & For"
+        "mat(tblDependent.PreexistingDate,\"mmddyyyy\"))"
     Alias ="EIDTTERM"
     Name ="EIDTTERM"
-    Expression ="IIf([tblSubscr].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr].[DateDeleted],\""
-        "mmddyyyy\"))"
+    Expression ="IIf(tblSubscr.DateDeleted=#1/1/1900#,\"\",Format(tblSubscr.DateDeleted,\"mmddyyy"
+        "y\"))"
+    Name ="Coverage"
+    Expression ="tblEDI_App_Subscr.CoverDesc"
     Name ="DepID"
-    Expression ="tblDependent.DepCounter"
+    Expression ="tblDependent.ID"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblDependent"
-    Expression ="tblEDI_App_Subscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -123,14 +125,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =883
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =628
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =408
     Left =0
     Top =0
@@ -139,7 +141,7 @@ Begin
         Left =911
         Top =15
         Right =1140
-        Bottom =122
+        Bottom =103
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -148,7 +150,7 @@ Begin
         Left =69
         Top =11
         Right =235
-        Bottom =163
+        Bottom =144
         Top =35
         Name ="tblGrp"
         Name =""
@@ -157,7 +159,7 @@ Begin
         Left =365
         Top =13
         Right =533
-        Bottom =315
+        Bottom =296
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -166,7 +168,7 @@ Begin
         Left =650
         Top =15
         Right =820
-        Bottom =257
+        Bottom =238
         Top =0
         Name ="tblDependent"
         Name =""

@@ -31,43 +31,43 @@ End
 Begin Joins
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.SSN = tblSubscr.SUBssn"
+    Expression ="tblImportGroupTemp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.FirstName = tblSubscr.SUBfirstNAME"
+    Expression ="tblImportGroupTemp.ZipCode=tblSubscr.SubZip"
     Flag =1
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.LastName = tblSubscr.SUBlastNAME"
+    Expression ="tblImportGroupTemp.State=tblSubscr.SubState"
     Flag =1
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.StreetAddress = tblSubscr.SUBstreet1"
+    Expression ="tblImportGroupTemp.City=tblSubscr.SubCity"
     Flag =1
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.City = tblSubscr.SUBcity"
+    Expression ="tblImportGroupTemp.StreetAddress=tblSubscr.SubStreet1"
     Flag =1
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.State = tblSubscr.SUBstate"
+    Expression ="tblImportGroupTemp.LastName=tblSubscr.SubLastName"
     Flag =1
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.ZipCode = tblSubscr.SUBzip"
+    Expression ="tblImportGroupTemp.FirstName=tblSubscr.SubFirstName"
     Flag =1
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblSubscr"
-    Expression ="tblImportGroupTemp.GroupID = tblSubscr.SUBgroupID"
+    Expression ="tblImportGroupTemp.SSN=tblSubscr.SubSSN"
+    Flag =1
+    LeftTable ="tblImportGroupTemp"
+    RightTable ="tblCoverage"
+    Expression ="tblImportGroupTemp.CoverageId=tblCoverage.CoverCode"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
-    Flag =1
-    LeftTable ="tblImportGroupTemp"
-    RightTable ="tblCoverage"
-    Expression ="tblImportGroupTemp.CoverageId = tblCoverage.COVERcode"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -83,10 +83,10 @@ Begin
     Left =7
     Top =36
     Right =1109
-    Bottom =550
+    Bottom =537
     Left =-1
     Top =-1
-    Right =1095
+    Right =1087
     Bottom =321
     Left =0
     Top =0
@@ -95,7 +95,7 @@ Begin
         Left =54
         Top =7
         Right =285
-        Bottom =282
+        Bottom =275
         Top =5
         Name ="tblImportGroupTemp"
         Name =""
@@ -104,7 +104,7 @@ Begin
         Left =360
         Top =8
         Right =683
-        Bottom =268
+        Bottom =261
         Top =33
         Name ="tblSubscr"
         Name =""
@@ -113,7 +113,7 @@ Begin
         Left =776
         Top =62
         Right =920
-        Bottom =192
+        Bottom =165
         Top =0
         Name ="tblCoverage"
         Name =""

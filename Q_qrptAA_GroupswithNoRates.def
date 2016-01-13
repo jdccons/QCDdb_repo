@@ -14,28 +14,28 @@ Begin OutputColumns
     Alias ="Plan"
     Expression ="tblPlans.PlanDesc"
     Alias ="Coverage"
-    Expression ="tblCoverage.COVERdescr"
+    Expression ="tblCoverage.CoverDescr"
 End
 Begin Joins
     LeftTable ="qselAA_GroupswithNoRates"
     RightTable ="tblRates"
-    Expression ="qselAA_GroupswithNoRates.SubGroupID = tblRates.GroupID"
+    Expression ="qselAA_GroupswithNoRates.CoverID=tblRates.CoverID"
     Flag =2
     LeftTable ="qselAA_GroupswithNoRates"
     RightTable ="tblRates"
-    Expression ="qselAA_GroupswithNoRates.PlanID = tblRates.PlanID"
+    Expression ="qselAA_GroupswithNoRates.PlanID=tblRates.PlanID"
     Flag =2
     LeftTable ="qselAA_GroupswithNoRates"
     RightTable ="tblRates"
-    Expression ="qselAA_GroupswithNoRates.CoverID = tblRates.CoverID"
+    Expression ="qselAA_GroupswithNoRates.SubGroupID=tblRates.GroupID"
     Flag =2
     LeftTable ="qselAA_GroupswithNoRates"
     RightTable ="tblPlans"
-    Expression ="qselAA_GroupswithNoRates.PlanID = tblPlans.PlanID"
+    Expression ="qselAA_GroupswithNoRates.PlanID=tblPlans.PlanID"
     Flag =1
     LeftTable ="qselAA_GroupswithNoRates"
     RightTable ="tblCoverage"
-    Expression ="qselAA_GroupswithNoRates.CoverID = tblCoverage.CoverID"
+    Expression ="qselAA_GroupswithNoRates.CoverID=tblCoverage.CoverID"
     Flag =1
 End
 Begin Groups
@@ -43,7 +43,7 @@ Begin Groups
     GroupLevel =0
     Expression ="tblPlans.PlanDesc"
     GroupLevel =0
-    Expression ="tblCoverage.COVERdescr"
+    Expression ="tblCoverage.CoverDescr"
     GroupLevel =0
     Expression ="tblRates.GroupID"
     GroupLevel =0
@@ -70,10 +70,10 @@ Begin
     Left =277
     Top =108
     Right =697
-    Bottom =501
+    Bottom =513
     Left =-1
     Top =-1
-    Right =413
+    Right =405
     Bottom =225
     Left =0
     Top =0
@@ -82,7 +82,7 @@ Begin
         Left =38
         Top =6
         Right =212
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="qselAA_GroupswithNoRates"
         Name =""
@@ -91,7 +91,7 @@ Begin
         Left =250
         Top =6
         Right =450
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""
@@ -100,7 +100,7 @@ Begin
         Left =490
         Top =4
         Right =612
-        Bottom =81
+        Bottom =92
         Top =0
         Name ="tblPlans"
         Name =""
@@ -109,7 +109,7 @@ Begin
         Left =638
         Top =3
         Right =764
-        Bottom =95
+        Bottom =91
         Top =0
         Name ="tblCoverage"
         Name =""

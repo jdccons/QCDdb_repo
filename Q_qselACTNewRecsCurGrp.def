@@ -6,29 +6,25 @@ Begin InputTables
     Name ="CurGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-End
-Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="CurGrp"
-    Expression ="tblGrp.GROUPid = CurGrp.USER1"
-    Flag =2
+    Expression ="tblGrp.GroupID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =433
     Left =-1
     Top =-1
-    Right =793
+    Right =1253
     Bottom =213
     Left =0
     Top =0
@@ -37,7 +33,7 @@ Begin
         Left =38
         Top =6
         Right =202
-        Bottom =172
+        Bottom =169
         Top =0
         Name ="tblGrp"
         Name =""
@@ -46,8 +42,8 @@ Begin
         Left =240
         Top =6
         Right =431
-        Bottom =171
-        Top =30
+        Bottom =49
+        Top =0
         Name ="CurGrp"
         Name =""
     End

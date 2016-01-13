@@ -174,7 +174,7 @@ End Property
 '     If p_Action = "Add" Then
 '          Dim arr1, arr2
 '          arr1 = Array("GroupID", "Password", "GroupName", "Address", "City", "ST", "Zip", "EffDate", "CreateDate", "EnrollStatus", "CoverageType", "GroupType")
-'          arr2 = Array(Me.GroupID, Me.Password, Me.GroupName, Me.Address, Me.CITY, Me.ST, Me.ZIP, Me.EffDate, Me.CreateDate, Me.EnrollStatus, Me.CoverageType, Me.GroupType)
+'          arr2 = Array(Me.GroupID, Me.Password, Me.GroupName, Me.Address, Me.City, Me.ST, Me.Zip, Me.EffDate, Me.CreateDate, Me.EnrollStatus, Me.CoverageType, Me.GroupType)
 '          'arr1 = Array("GroupID", "Password", "GroupName")
 '          'arr2 = Array(Me.GroupID, Me.Password, Me.GroupName)
 '          Run = InsertRecord("tblGroup", arr1, arr2)
@@ -188,9 +188,9 @@ End Property
 '          strSQL = strSQL & " GroupName = '" & SingleQuotes(Me.GroupName) & "',"
 '          strSQL = strSQL & " EnrollStatus = '" & SingleQuotes(Me.EnrollStatus) & "',"
 '          strSQL = strSQL & " Address = '" & SingleQuotes(Me.Address) & "',"
-'          strSQL = strSQL & " City = '" & SingleQuotes(Me.CITY) & "',"
+'          strSQL = strSQL & " City = '" & SingleQuotes(Me.City) & "',"
 '          strSQL = strSQL & " ST = '" & SingleQuotes(Me.ST) & "',"
-'          strSQL = strSQL & " Zip = '" & SingleQuotes(Me.ZIP) & "',"
+'          strSQL = strSQL & " Zip = '" & SingleQuotes(Me.Zip) & "',"
 '          strSQL = strSQL & " EffDate = '" & SingleQuotes(Me.EffDate) & "', "
 '          strSQL = strSQL & " CreateDate = '" & SingleQuotes(Me.CreateDate) & "', "
 '          strSQL = strSQL & " CoverageType = " & SingleQuotes(Me.CoverageType) & " "
@@ -226,18 +226,18 @@ End Property
 Private Function FillFromRS(p_RS)
     Select Case p_RS.RecordCount
         Case 1
-            Me.GROUPid = p_RS.Fields("GroupID").Value
-            Me.Password = p_RS.Fields("Password").Value
-            Me.GroupName = p_RS.Fields("GroupName").Value
-            Me.Address = p_RS.Fields("Address").Value
-            Me.CITY = p_RS.Fields("City").Value
-            Me.ST = p_RS.Fields("ST").Value
-            Me.ZIP = p_RS.Fields("Zip").Value
-            Me.EffDate = p_RS.Fields("EffDate").Value
-            Me.CreateDate = p_RS.Fields("CreateDate").Value
-            Me.EnrollStatus = p_RS.Fields("EnrollStatus").Value
-            Me.CoverageType = p_RS.Fields("CoverageType").Value
-            Me.GroupType = p_RS.Fields("GroupType").Value
+            Me.GROUPid = p_RS.Fields("GroupID").value
+            Me.Password = p_RS.Fields("Password").value
+            Me.GroupName = p_RS.Fields("GroupName").value
+            Me.Address = p_RS.Fields("Address").value
+            Me.CITY = p_RS.Fields("City").value
+            Me.ST = p_RS.Fields("ST").value
+            Me.ZIP = p_RS.Fields("Zip").value
+            Me.EffDate = p_RS.Fields("EffDate").value
+            Me.CreateDate = p_RS.Fields("CreateDate").value
+            Me.EnrollStatus = p_RS.Fields("EnrollStatus").value
+            Me.CoverageType = p_RS.Fields("CoverageType").value
+            Me.GroupType = p_RS.Fields("GroupType").value
             FillFromRS = Me.GROUPid
         Case -1, 0
             'err.raise 2, "Item was not found"

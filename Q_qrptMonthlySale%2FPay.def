@@ -1,6 +1,6 @@
 Operation =1
 Option =8
-Where ="(((ARTRAN.TransactionType)=\"P\" Or (ARTRAN.TransactionType)=\"I\") AND ((ARTRAN"
+Where ="(((ARTRAN.TransactionType)=\"P\" Or (ARTRAN.TransactionType)=\"I\") And ((ARTRAN"
     ".CustomerClassKey)=\"GROUP\"))"
 Begin InputTables
     Name ="ARTRAN"
@@ -9,18 +9,24 @@ End
 Begin OutputColumns
     Alias ="DocNo"
     Expression ="Trim(RTrim([DocumentNumber]))"
+    Alias ="Expr1"
     Expression ="ARTRAN.TransactionType"
     Alias ="ApplyDoc"
     Expression ="Trim(RTrim([ApplyTo]))"
+    Alias ="Expr2"
     Expression ="ARTRAN.SalespersonKey"
+    Alias ="Expr3"
     Expression ="ARTRAN.CustomerKey"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Alias ="PAYMENT"
     Expression ="(IIf([TransactionType]=\"P\",([DocumentAmt]),0))"
     Alias ="INVOICE"
     Expression ="(IIf([TransactionType]=\"I\",([DocumentAmt]),0))"
+    Alias ="Expr4"
     Expression ="ARTRAN.DocumentAmt"
+    Alias ="Expr5"
     Expression ="ARTRAN.TerritoryKey"
+    Alias ="Expr6"
     Expression ="ARTRAN.CustomerClassKey"
     Alias ="Invoice Date"
     Expression ="ARTRAN.DocumentDate"
@@ -28,12 +34,6 @@ Begin OutputColumns
     Expression ="Month([DocumentDate])"
     Alias ="DOCYear"
     Expression ="Year([DocumentDate])"
-End
-Begin Joins
-    LeftTable ="ARTRAN"
-    RightTable ="tblGrp"
-    Expression ="ARTRAN.CustomerKey = tblGrp.GROUPid"
-    Flag =1
 End
 Begin OrderBy
     Expression ="ARTRAN.DocumentDate"
@@ -44,17 +44,18 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1024
-    Bottom =644
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =455
     Left =-1
     Top =-1
-    Right =1017
+    Right =1253
     Bottom =235
     Left =0
     Top =0
@@ -63,8 +64,8 @@ Begin
         Left =47
         Top =13
         Right =195
-        Bottom =172
-        Top =5
+        Bottom =56
+        Top =0
         Name ="ARTRAN"
         Name =""
     End
@@ -72,7 +73,7 @@ Begin
         Left =230
         Top =9
         Right =480
-        Bottom =168
+        Bottom =157
         Top =0
         Name ="tblGrp"
         Name =""

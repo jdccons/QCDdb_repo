@@ -1,0 +1,1560 @@
+Version =20
+VersionRequired =20
+Checksum =-900350764
+Begin Form
+    AutoResize = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ControlBox = NotDefault
+    NavigationButtons = NotDefault
+    CloseButton = NotDefault
+    DividingLines = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =38
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10800
+    DatasheetFontHeight =10
+    Left =7590
+    Top =120
+    Right =18750
+    Bottom =6930
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x534ff9aa30ade440
+    End
+    RecordSource ="qryAgent"
+    DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =6165
+            BackColor =12632256
+            Name ="Detail"
+            GUID = Begin
+                0x3a876592037a3b45a0c7207211b2a178
+            End
+            Begin
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1325
+                    Top =510
+                    Name ="AgentID"
+                    ControlSource ="AgentId"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x1626ba8f69f8134cb4dfab257782bbd3
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1325
+                    Top =1260
+                    Width =1785
+                    TabIndex =1
+                    Name ="AGENTfirst"
+                    ControlSource ="AGENTfirst"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xd5e8967b758a4445b9d2dd76dac80822
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =4352
+                    Top =1245
+                    Width =1680
+                    TabIndex =2
+                    Name ="AGENTlast"
+                    ControlSource ="AGENTlast"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x748ea74a02c1d94e89033c80ff6e7c9c
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1325
+                    Top =1605
+                    Width =2970
+                    TabIndex =3
+                    Name ="AGENTstreet1"
+                    ControlSource ="AGENTstreet1"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xfb971c70ff2bc74e98f62438928891f3
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1325
+                    Top =1965
+                    Width =2970
+                    TabIndex =4
+                    Name ="AGENTstreet2"
+                    ControlSource ="AGENTstreet2"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x516431117c1c174cadf4e7154ebbed7c
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1325
+                    Top =2310
+                    Width =1680
+                    TabIndex =5
+                    Name ="AGENTcity"
+                    ControlSource ="AGENTcity"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x7a9f97396c9a1c478fbc837f3645175d
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =3929
+                    Top =2310
+                    Width =420
+                    TabIndex =6
+                    Name ="AGENTstate"
+                    ControlSource ="AGENTstate"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x810eb914648a8a49b69d033641564b4b
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =5081
+                    Top =2310
+                    Width =990
+                    TabIndex =7
+                    Name ="AGENTzip"
+                    ControlSource ="AgentZip"
+                    FontName ="MS Sans Serif"
+                    InputMask ="00000\\-9999;;_"
+                    GUID = Begin
+                        0x791a8b70dad7b646a91ec12e3a59601c
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1325
+                    Top =2670
+                    Width =1320
+                    TabIndex =8
+                    Name ="AGENTphone"
+                    ControlSource ="AGENTphone"
+                    FontName ="MS Sans Serif"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                    GUID = Begin
+                        0x6d5136fe79b86349b0c2eaf9c5284bf5
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    TextAlign =1
+                    Left =1340
+                    Top =3015
+                    Width =1290
+                    TabIndex =9
+                    Name ="AGENTfax"
+                    ControlSource ="AGENTfax"
+                    FontName ="MS Sans Serif"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                    GUID = Begin
+                        0x0f8230c0de2332499ea9d381cea3bbf0
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =110
+                    Top =525
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text13"
+                    Caption ="Agent  ID: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xc648b8259be53149ae16b1dd25576021
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =110
+                    Top =1260
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text14"
+                    Caption =" First Name: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xa5c00be2f4c1404daadf476bfb453baa
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =110
+                    Top =1620
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text15"
+                    Caption ="Address: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xf01c6dcca17ade44b2f825a3e79b59d0
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =110
+                    Top =1980
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text16"
+                    Caption ="Address 2: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x2484bac2403dc74baad648b8e7ad7fc6
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =110
+                    Top =2325
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text17"
+                    Caption ="City: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x7f098021fd26024592a53cc68da6bde0
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =110
+                    Top =2655
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text18"
+                    Caption ="Phone: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x5e59f1553098554a8df54b239ee475dd
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =125
+                    Top =3000
+                    Width =1185
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text19"
+                    Caption ="Fax: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xd446790ebc692d4694ed006e5a60917f
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =223
+                    TextAlign =3
+                    Left =3209
+                    Top =2310
+                    Width =720
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text22"
+                    Caption ="State: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xb64fa258951c264f9d6cda0eade2debc
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =93
+                    TextAlign =3
+                    Left =4457
+                    Top =2295
+                    Width =600
+                    Height =240
+                    FontWeight =700
+                    BackColor =-2147483633
+                    Name ="Text23"
+                    Caption ="Zip:"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xa3367d4f6f111a4cbb2a3f55c1550f11
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =95
+                    TextAlign =3
+                    Left =3230
+                    Top =1245
+                    Width =1110
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text24"
+                    Caption ="Last Name: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x843ab77beb813341ba2a07ca1eb83571
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =8060
+                    Top =1545
+                    Width =1065
+                    TabIndex =10
+                    Name ="AGENTSSN"
+                    ControlSource ="AGENTSSN"
+                    FontName ="MS Sans Serif"
+                    InputMask ="000\\-00\\-0000;;_"
+                    GUID = Begin
+                        0x11e19a207c58204292536c0083c5fb87
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =6425
+                    Top =1545
+                    Width =1608
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text26"
+                    Caption ="Social Sec.#: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xd2ab6da747b5874091da620e777ad037
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =8060
+                    Top =1890
+                    Width =1065
+                    TabIndex =11
+                    Name ="AGENTtaxID"
+                    ControlSource ="AGENTtaxID"
+                    FontName ="MS Sans Serif"
+                    InputMask ="00\\-0000000;;_"
+                    GUID = Begin
+                        0x3558a4c647810d4c81e18c99c4076a60
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =87
+                    TextAlign =3
+                    Left =6425
+                    Top =1890
+                    Width =1608
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text28"
+                    Caption ="Tax ID #: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x05b31f8eb4ec3a4788b39ce97feeb39a
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =6425
+                    Top =2250
+                    Width =1608
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text30"
+                    Caption ="Geographical ID: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x166793293a7f424d9c89107ce70c01a8
+                    End
+                End
+                Begin ComboBox
+                    LimitToList = NotDefault
+                    SpecialEffect =0
+                    OverlapFlags =85
+                    ColumnCount =2
+                    ListWidth =3280
+                    Left =8060
+                    Top =2235
+                    Width =2740
+                    Height =255
+                    TabIndex =12
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"50\""
+                    GUID = Begin
+                        0x578ca7942a372e4fa3100cdfc7378ee1
+                    End
+                    Name ="GeoID"
+                    ControlSource ="AGENTgeoID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="Select [GEOid],[GEOdesc] From [qryGeoID];"
+                    ColumnWidths ="0;2279"
+                    FontName ="MS Sans Serif"
+                End
+                Begin Rectangle
+                    SpecialEffect =1
+                    OverlapFlags =255
+                    Left =65
+                    Width =6195
+                    Height =3720
+                    Name ="Box35"
+                    GUID = Begin
+                        0x6eb12ddbaf4da24a98cb144a0f7d432d
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =4673
+                    Top =120
+                    TabIndex =13
+                    BackColor =65535
+                    Name ="AGENT_LUname"
+                    ControlSource ="AGENT_LUname"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x03272aae6698bd428accf7079d92344c
+                    End
+                    AsianLineBreak =0
+                    Begin
+                        Begin Label
+                            Visible = NotDefault
+                            BackStyle =1
+                            OverlapFlags =255
+                            TextAlign =1
+                            Left =3089
+                            Top =120
+                            Width =1650
+                            Height =240
+                            FontWeight =700
+                            BackColor =65535
+                            Name ="Text194"
+                            Caption ="AGENT_LUname:"
+                            FontName ="MS Sans Serif"
+                            GUID = Begin
+                                0x641592f3a4d9b34e8d9f6378f4fe3ad5
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =255
+                    Left =1325
+                    Top =885
+                    Width =3165
+                    TabIndex =14
+                    Name ="AGENCY"
+                    ControlSource ="AGENCY"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xc8635be1a51b0347ac9c13f217cb5d68
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =110
+                    Top =885
+                    Width =1200
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Text37"
+                    Caption ="Agency: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x4ccff0f97571c947a94f378fd76cbbad
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =255
+                    TextAlign =1
+                    Left =1340
+                    Top =3360
+                    Width =1290
+                    TabIndex =15
+                    Name ="AGENTcell"
+                    ControlSource ="AGENTcell"
+                    FontName ="MS Sans Serif"
+                    InputMask ="!\\(999\") \"000\\-0000;;_"
+                    GUID = Begin
+                        0xe74a827ca4b88e42bd79ce440fb06864
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =110
+                    Top =3345
+                    Width =1215
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label42"
+                    Caption ="Cell Phone: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x790ac02373e3f94195dab968aa3cf52f
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    TextAlign =1
+                    Left =3935
+                    Top =2685
+                    Width =2130
+                    TabIndex =16
+                    Name ="AGENTemail"
+                    ControlSource ="AGENTemail"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xf4657086f1aebe4ca6d15ac84b5b28ac
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =3260
+                    Top =2670
+                    Width =645
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label46"
+                    Caption ="Email: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xc26378a0d7a54b4085d88b4513e60458
+                    End
+                End
+                Begin OptionGroup
+                    OverlapFlags =85
+                    Left =6380
+                    Top =360
+                    Width =2058
+                    Height =1123
+                    TabIndex =17
+                    Name ="optgrpType"
+                    ControlSource ="PayCommTo"
+                    DefaultValue ="1"
+                    GUID = Begin
+                        0x2c94b0331321164c83cf67a4ef6ac303
+                    End
+                    Begin
+                        Begin Label
+                            BackStyle =1
+                            OverlapFlags =85
+                            Left =6422
+                            Top =45
+                            Width =1530
+                            Height =240
+                            FontWeight =700
+                            BackColor =12632256
+                            Name ="lblType"
+                            Caption ="Type"
+                            FontName ="MS Sans Serif"
+                            GUID = Begin
+                                0x8a2644b09814704b81992cf980dc24ca
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =95
+                            Left =6623
+                            Top =463
+                            OptionValue =1
+                            Name ="Option53"
+                            GUID = Begin
+                                0x57ba64c521031643b66e60f97a579e7f
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =255
+                                    Left =6860
+                                    Top =435
+                                    Width =615
+                                    Height =240
+                                    FontWeight =700
+                                    Name ="Label54"
+                                    Caption ="Agency"
+                                    FontName ="MS Sans Serif"
+                                    GUID = Begin
+                                        0xff4afe8842c35442a1ae1d83f3f874d8
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =95
+                            Left =6623
+                            Top =703
+                            OptionValue =2
+                            Name ="Option55"
+                            GUID = Begin
+                                0x55d07e2e851bbf4eb1608321c646ea7a
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =255
+                                    Left =6853
+                                    Top =675
+                                    Width =615
+                                    Height =240
+                                    FontWeight =700
+                                    Name ="Label56"
+                                    Caption ="Agent"
+                                    FontName ="MS Sans Serif"
+                                    GUID = Begin
+                                        0x6795cb12033282489971345712b6ff5b
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =95
+                            Left =6620
+                            Top =943
+                            OptionValue =3
+                            Name ="Option58"
+                            GUID = Begin
+                                0x11445362f43e3b4e967ae4ab612f1eda
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =255
+                                    Left =6857
+                                    Top =915
+                                    Width =1440
+                                    Height =240
+                                    FontWeight =700
+                                    Name ="Label59"
+                                    Caption ="Independent Agent"
+                                    FontName ="MS Sans Serif"
+                                    GUID = Begin
+                                        0x8fdbd6f57997294f99af889264527793
+                                    End
+                                End
+                            End
+                        End
+                        Begin OptionButton
+                            OverlapFlags =87
+                            Left =6620
+                            Top =1183
+                            OptionValue =4
+                            Name ="Option60"
+                            GUID = Begin
+                                0x77423195422b8f4583169639c7239241
+                            End
+                            Begin
+                                Begin Label
+                                    OverlapFlags =247
+                                    Left =6850
+                                    Top =1155
+                                    Width =1500
+                                    Height =240
+                                    FontWeight =700
+                                    Name ="Label61"
+                                    Caption ="Employee"
+                                    FontName ="MS Sans Serif"
+                                    GUID = Begin
+                                        0x753d452ac7b1fc41aea7c13049ce6e58
+                                    End
+                                End
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    OverlapFlags =85
+                    Left =8075
+                    Top =2595
+                    Width =630
+                    TabIndex =18
+                    Name ="Status"
+                    ControlSource ="AGENTactive"
+                    StatusBarText ="A is Active P is Prospect"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x8a1110be6acbd1448f9847e3055d4b84
+                    End
+                    AsianLineBreak =0
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6635
+                            Top =2595
+                            Width =1350
+                            Height =240
+                            FontWeight =700
+                            Name ="Label66"
+                            Caption ="Status: "
+                            FontName ="MS Sans Serif"
+                            GUID = Begin
+                                0xd4bcfdcf38bb5b4c810fb6c34d68e0eb
+                            End
+                        End
+                    End
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    Left =8075
+                    Top =3000
+                    TabIndex =19
+                    GUID = Begin
+                        0xf39fee51b194b9479c445c4e5788f0c2
+                    End
+                    Name ="AGENTclic"
+                    ControlSource ="AGENTclic"
+                    RowSourceType ="Value List"
+                    RowSource ="None;Pending;Complete"
+                    StatusBarText ="Columbian Life Insur Co status:  None, Pending, Complete"
+                    FontName ="MS Sans Serif"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6389
+                            Top =3000
+                            Width =1590
+                            Height =240
+                            FontWeight =700
+                            Name ="Label67"
+                            Caption ="CLIC Status:"
+                            FontName ="MS Sans Serif"
+                            GUID = Begin
+                                0xc094aa45eb617d488dfed03fe09e2c26
+                            End
+                        End
+                    End
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OldBorderStyle =0
+                    OverlapFlags =85
+                    Left =8072
+                    Top =3345
+                    TabIndex =20
+                    GUID = Begin
+                        0x6e57266ac79a3e489a2145d93821c953
+                    End
+                    Name ="AGENTngl"
+                    ControlSource ="AGENTngl"
+                    RowSourceType ="Value List"
+                    RowSource ="None;Pending;Complete"
+                    StatusBarText ="National Guradian Life Insur Co status:  None, Pending, Complete"
+                    FontName ="MS Sans Serif"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =6395
+                            Top =3345
+                            Width =1590
+                            Height =240
+                            FontWeight =700
+                            Name ="Label68"
+                            Caption ="NGL Status:"
+                            FontName ="MS Sans Serif"
+                            GUID = Begin
+                                0x2bc600e64f27c84d897e99fa2ec44d54
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =1272
+                    Top =5350
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =21
+                    ForeColor =0
+                    Name ="B"
+                    Caption ="B"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xb8578165f50e8c4d826e486d2c8057ab
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =1584
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =22
+                    ForeColor =0
+                    Name ="C"
+                    Caption ="C"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xd20131b4bb8def41bdab63bd7f50f5ab
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =1911
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =23
+                    ForeColor =0
+                    Name ="D"
+                    Caption ="D"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x5fb00ea1651b8b4f8f3544a469f6055a
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =2238
+                    Top =5350
+                    Width =297
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =24
+                    ForeColor =0
+                    Name ="E"
+                    Caption ="E"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x43392984a2e32a4093ae6f868553394d
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =2535
+                    Top =5350
+                    Width =297
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =25
+                    ForeColor =0
+                    Name ="F"
+                    Caption ="F"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xe1c1d56386404747ab05ecfbf2d54fd8
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =2832
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =26
+                    ForeColor =0
+                    Name ="G"
+                    Caption ="G"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x0df15364c821df4496cb739a684d65c8
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =3159
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =27
+                    ForeColor =0
+                    Name ="H"
+                    Caption ="H"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x1a7eaaeb57870e49b195403a94a19614
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =3486
+                    Top =5350
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =28
+                    ForeColor =0
+                    Name ="I"
+                    Caption ="I"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x4d2f0ecc253fcf41b568a4e4bf001b49
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextFontFamily =2
+                    Left =4155
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =29
+                    ForeColor =0
+                    Name ="K"
+                    Caption ="K"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x68dec9d03a93cc46b99bbaecb1b0a006
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =4482
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =30
+                    ForeColor =0
+                    Name ="L"
+                    Caption ="L"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x5f3dc9e245d9b34aa404248b2c933505
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =4809
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =31
+                    ForeColor =0
+                    Name ="M"
+                    Caption ="M"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xef363dce6132ee4c997a63313871b14d
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =5136
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =32
+                    ForeColor =0
+                    Name ="N"
+                    Caption ="N"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x8eea6ec189c9044b9789bbe0ab3ce196
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =5463
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =33
+                    ForeColor =0
+                    Name ="O"
+                    Caption ="O"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xa70402c1d92dce4b8b19db7b37fd3c08
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =5790
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =34
+                    ForeColor =0
+                    Name ="P"
+                    Caption ="P"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xeae91d3b15a1c34fa428a16fda3b0434
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =6117
+                    Top =5350
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =35
+                    ForeColor =0
+                    Name ="Q"
+                    Caption ="Q"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xbfadf153f6d50845b28cd78ad60c08a9
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =6429
+                    Top =5350
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =36
+                    ForeColor =0
+                    Name ="R"
+                    Caption ="R"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xc5e9de8604b668429c9d868c6fd7c385
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =6771
+                    Top =5350
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =37
+                    ForeColor =0
+                    Name ="S"
+                    Caption ="S"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x143fa0959fbf93458531ab050f7b4095
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =7080
+                    Top =5350
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =38
+                    ForeColor =0
+                    Name ="T"
+                    Caption ="T"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x284890f588813d4d94259338e57857e5
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =7395
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =39
+                    ForeColor =0
+                    Name ="U"
+                    Caption ="U"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x9b18ed747cd66d488daf34a4450fe70f
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =7722
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =40
+                    ForeColor =0
+                    Name ="V"
+                    Caption ="V"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xc2f944088960bb46b54d48935c2a3cca
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =93
+                    TextFontFamily =2
+                    Left =8055
+                    Top =5350
+                    Width =387
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =41
+                    ForeColor =0
+                    Name ="W"
+                    Caption ="W"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x850a09161f30ac48a3fdc0cd87380907
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    TextFontFamily =2
+                    Left =8436
+                    Top =5350
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =42
+                    ForeColor =0
+                    Name ="X"
+                    Caption ="X"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xf01ff159e36d804da24d7a0298b3d9d8
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =8745
+                    Top =5350
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =43
+                    ForeColor =0
+                    Name ="Y"
+                    Caption ="Y"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0x9d3f8aaf048d734e90965a4bd0dc0460
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =9090
+                    Top =5350
+                    Width =327
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =44
+                    ForeColor =0
+                    Name ="Z"
+                    Caption ="Z"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xa03d86bb63d50443b1252feffad28f63
+                    End
+                End
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    LimitToList = NotDefault
+                    TabStop = NotDefault
+                    SpecialEffect =0
+                    OverlapFlags =85
+                    AccessKey =78
+                    ColumnCount =3
+                    ListRows =5
+                    Left =4170
+                    Top =5802
+                    Width =5256
+                    TabIndex =45
+                    BackColor =12632256
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    GUID = Begin
+                        0x166fef75b62b3e4bbe88fca7cd46a144
+                    End
+                    Name ="AgentPickList"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCTROW tblAgent.AgentId, tblAgent.Agent_LUname AS Agent_Name, tblAge"
+                        "nt.Agency AS Agency FROM tblAgent WHERE (((tblAgent.Agent_LUname) Like [Form].[A"
+                        "lphaControl] & \"*\") AND ((tblAgent.AgentActive)=\"A\")) ORDER BY tblAgent.Agen"
+                        "t_LUname;"
+                    ColumnWidths ="0;1800;1800"
+                    StatusBarText ="Enter AGENT (last) name or click on arrow to view list."
+                    AfterUpdate ="=FindAgent_ID([AgentPickList],\"AgentPickList\")"
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SetLabelColor([],0)"
+                    FontName ="MS Sans Serif"
+                    UnicodeAccessKey =78
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            TextAlign =3
+                            Left =2730
+                            Top =5800
+                            Width =1410
+                            Height =240
+                            FontWeight =700
+                            BorderColor =16777215
+                            Name ="lblAGENTPickList"
+                            Caption ="Agent &Name:"
+                            FontName ="MS Sans Serif"
+                            GUID = Begin
+                                0x032c7a7a2ff3c2439b7b4c37845ff734
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    TabStop = NotDefault
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    AccessKey =70
+                    Left =1800
+                    Top =5797
+                    Width =930
+                    Height =245
+                    TabIndex =46
+                    BackColor =12632256
+                    Name ="AlphaControl"
+                    StatusBarText ="Enter a letter or letters to filter on (e.g. \"smith\") and TAB out of field."
+                    OnEnter ="=SetLabelColor([],255)"
+                    OnExit ="=SearchBtn(\"AgentPickList\")"
+                    DefaultValue ="\"*\""
+                    FontName ="Helv"
+                    GUID = Begin
+                        0x079fe927e489d4468d1f3eb9749a2ff0
+                    End
+                    UnicodeAccessKey =70
+                    AsianLineBreak =0
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextFontFamily =0
+                            Left =930
+                            Top =5802
+                            Width =840
+                            Height =240
+                            FontWeight =700
+                            ForeColor =12582912
+                            Name ="lblAlphaControl"
+                            Caption ="&Filter on:"
+                            FontName ="MS Sans Serif"
+                            GUID = Begin
+                                0x6fb62e1ca608ed40935b11b601a53d7e
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =85
+                    TextFontFamily =2
+                    Left =960
+                    Top =5350
+                    Width =312
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =47
+                    ForeColor =0
+                    Name ="A"
+                    Caption ="A"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xc61bfcf6968e3340b44b75c5bb411af1
+                    End
+                End
+                Begin CommandButton
+                    TabStop = NotDefault
+                    OverlapFlags =215
+                    TextFontFamily =2
+                    Left =3825
+                    Top =5350
+                    Width =342
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =48
+                    ForeColor =0
+                    Name ="J"
+                    Caption ="J"
+                    OnClick ="=AlphaBtn([Form],\"AgentPickList\")"
+                    FontName ="System"
+                    GUID = Begin
+                        0xd4f35284e201c149ab9c797c4b61010f
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    Enabled = NotDefault
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =93
+                    Left =1797
+                    Top =4170
+                    TabIndex =49
+                    BackColor =65535
+                    Name ="AGENTactive"
+                    ControlSource ="AGENTactive"
+                    StatusBarText ="A is Active P is Prospect"
+                    DefaultValue ="\"A\""
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x9a0761328e78a044b165bf2e7a2cb323
+                    End
+                    AsianLineBreak =0
+                End
+                Begin TextBox
+                    FELineBreak = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =75
+                    Top =4140
+                    Width =9936
+                    Height =1080
+                    TabIndex =50
+                    Name ="Notes"
+                    ControlSource ="AGENTnotes"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xd48f3e1151a642419e8f2ee152257fd0
+                    End
+                    AsianLineBreak =0
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    Left =90
+                    Top =3855
+                    Width =1530
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label64"
+                    Caption ="Notes:"
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x7932290f3574c84d9907bdd73bce535b
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database

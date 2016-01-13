@@ -1,36 +1,38 @@
 Operation =1
 Option =8
-Where ="(([tblGrp].GRagentID1=\"rm1\" Or [tblGrp].GRagentID1=\"rm2\" Or [tblGrp].GRagent"
-    "ID1=\"rm3\" Or [tblGrp].GRagentID1=\"rm4\" Or [tblGrp].GRagentID1=\"rm5\" Or [tb"
-    "lGrp].GRagentID1=\"rm6\" Or [tblGrp].GRagentID1=\"rm7\"))"
+Where ="((([tblGrp].[GRagentID1])=\"rm1\" Or ([tblGrp].[GRagentID1])=\"rm2\" Or ([tblGrp"
+    "].[GRagentID1])=\"rm3\" Or ([tblGrp].[GRagentID1])=\"rm4\" Or ([tblGrp].[GRagent"
+    "ID1])=\"rm5\" Or ([tblGrp].[GRagentID1])=\"rm6\" Or ([tblGrp].[GRagentID1])=\"rm"
+    "7\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblAgent"
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="[tblGrp].GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
+    Alias ="Expr1"
     Expression ="[tblGrp].GRagentID1"
-    Expression ="[tblGrp].GROUPid"
+    Expression ="tblGrp.GroupID"
     Alias ="SubName"
     Expression ="([SUBlastNAME] & \", \" & [SUBfirstNAME] & \" \" & [SUBmiddleNAME])"
-    Expression ="[tblSubscr].SUBssn"
-    Expression ="[tblGrp].GRname"
-    Expression ="[tblSubscr].SUBnoDEPENT"
-    Expression ="[tblAgent].AGENT_LUname"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblGrp.GRName"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="tblAgent.Agent_LUname"
 End
 Begin Joins
     LeftTable ="tblGrp"
-    RightTable ="tblAgent"
-    Expression ="[tblGrp].GRagentID1 = [tblAgent].AGENTid"
-    Flag =2
-    LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="[tblGrp].GROUPid = [tblSubscr].SUBgroupID"
+    Expression ="tblGrp.GroupID = tblSubscr.SubGroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="SubName"
@@ -39,43 +41,43 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =804
-    Bottom =518
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =801
+    Right =1253
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =179
-        Top =3
-        Right =275
-        Bottom =115
-        Top =15
-        Name ="t-SUBSCR"
-        Name =""
-    End
-    Begin
-        Left =36
-        Top =2
-        Right =132
-        Bottom =114
-        Top =17
-        Name ="t-GROUP"
-        Name =""
-    End
-    Begin
-        Left =303
-        Top =3
-        Right =399
-        Bottom =115
+        Left =38
+        Top =6
+        Right =134
+        Bottom =124
         Top =0
-        Name ="t-AGENTS"
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =124
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =306
+        Top =6
+        Right =402
+        Bottom =124
+        Top =0
+        Name ="tblSubscr"
         Name =""
     End
 End

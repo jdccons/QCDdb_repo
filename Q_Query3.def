@@ -1,0 +1,96 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GRCancelled)=No))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
+    Expression ="tblGrp.GRPLANid"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRPhone2"
+    Expression ="tblGrp.GRFax"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRSrvCont"
+    Expression ="tblGrp.GRMarkDir"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GRClassKey"
+    Expression ="tblGrp.[GRAgent%]"
+    Expression ="tblGrp.GRNotes"
+    Expression ="tblGrp.GRClientSvcRepID"
+    Expression ="tblGrp.GREE"
+    Expression ="tblGrp.GRAnnvDate"
+    Expression ="tblGrp.GRFirstInvAmt"
+    Expression ="tblGrp.GRSubLabelsPrinted"
+    Expression ="tblGrp.DateCreated"
+    Expression ="tblGrp.DateUpdated"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRAcctMgr"
+    Expression ="tblGrp.GRCardStock"
+    Expression ="tblGrp.GRMailCard"
+    Expression ="tblGrp.GRInvSort"
+    Expression ="tblGrp.GREmail"
+    Expression ="tblGrp.GRMainContTitle"
+    Alias ="Expr2"
+    Expression ="tblGrp.GRsrvCONTtitle"
+    Alias ="Expr3"
+    Expression ="tblGrp.GRinititalSubscr"
+    Expression ="tblGrp.GRHold"
+    Expression ="tblGrp.GRCancelledDate"
+    Expression ="tblGrp.GRReinstatedDate"
+    Expression ="tblGrp.Ins"
+    Expression ="tblGrp.GroupType"
+    Expression ="tblGrp.InvoiceType"
+    Alias ="Expr4"
+    Expression ="tblGrp.Miscellaneous"
+    Alias ="Expr5"
+    Expression ="tblGrp.Color"
+    Alias ="Expr6"
+    Expression ="tblGrp.Parent"
+    Alias ="Expr7"
+    Expression ="tblGrp.ParentGroupID"
+    Expression ="tblGrp.OrthoCoverage"
+    Expression ="tblGrp.OrthoLifeTimeLimit"
+    Expression ="tblGrp.WaitingPeriod"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbMemo "OrderBy" ="Query3.GRcontBEG DESC"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =109
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

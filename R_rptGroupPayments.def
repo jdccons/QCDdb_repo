@@ -1,0 +1,497 @@
+Version =20
+VersionRequired =20
+Checksum =1617440562
+Begin Report
+    LayoutForPrint = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    TabularFamily =0
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =12900
+    DatasheetFontHeight =10
+    ItemSuffix =17
+    Left =1560
+    Top =690
+    Right =12690
+    Bottom =7845
+    DatasheetGridlinesColor =12632256
+    Filter ="([Check Date] between #11/1/2014# And #11/30/2014# And [Group Type] = 'All Ameri"
+        "can')"
+    RecSrcDt = Begin
+        0x05c213f09283e440
+    End
+    RecordSource ="qrptGroupPayments"
+    Caption ="Group Payments Reprot"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000643200008601000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x4375746550444620577269746572000000000000000000000000000000000000 ,
+        0x010400069c00840353ef800102000100ea0a6f08640001000f00580202000100 ,
+        0x5802030000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe230000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x000010270000000000000000b000840300000000000000000000000000000000 ,
+        0x00000000000000000300000000000000000010005c4b03006843040000000000 ,
+        0x00000000000000000000000000000000000000000000000075ac5e6d05000000 ,
+        0x03000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x01000000000000000000000000000000b0000000534d544a000000001000a000 ,
+        0x4300750074006500500044004600200057007200690074006500720000005265 ,
+        0x736f6c7574696f6e00363030647069005061676553697a65004c657474657200 ,
+        0x50616765526567696f6e00004c656164696e67456467650000496e707574536c ,
+        0x6f74004f6e6c794f6e6500000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x080012002200000077696e73706f6f6c00204375746550444620577269746572 ,
+        0x0072435057323a006174615c54656368536d6974685c536e00
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =930
+            Name ="ReportHeader"
+            GUID = Begin
+                0x6f839e7231a8e54d94f405af8423b3ab
+            End
+            Begin
+                Begin Label
+                    BackStyle =1
+                    Left =60
+                    Top =60
+                    Width =5835
+                    Height =510
+                    FontSize =20
+                    Name ="Label12"
+                    Caption ="Group Payments Report"
+                    GUID = Begin
+                        0xdd54398f34eacd45871d511d28e7daff
+                    End
+                End
+            End
+        End
+        Begin PageHeader
+            Height =435
+            Name ="PageHeaderSection"
+            GUID = Begin
+                0xaadcf01f02d7b74e94a2c96e8f2dadf8
+            End
+            Begin
+                Begin Label
+                    Left =60
+                    Top =60
+                    Width =1260
+                    Height =315
+                    Name ="Cust Key_Label"
+                    Caption ="Cust Key"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Cust_Key_Label"
+                    GUID = Begin
+                        0xff5b5227e638ec4a80cbeacc5ab1d229
+                    End
+                End
+                Begin Label
+                    Left =1380
+                    Top =60
+                    Width =2220
+                    Height =315
+                    Name ="Name_Label"
+                    Caption ="Name"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x7bc68a80d2173241b856cd541d1fdcac
+                    End
+                End
+                Begin Label
+                    Left =3660
+                    Top =60
+                    Width =4380
+                    Height =315
+                    Name ="Group Type_Label"
+                    Caption ="Group Type"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Group_Type_Label"
+                    GUID = Begin
+                        0x0acaafb5c7ca6b439375f7abff45cd63
+                    End
+                End
+                Begin Label
+                    Left =8100
+                    Top =60
+                    Width =1260
+                    Height =315
+                    Name ="Check #_Label"
+                    Caption ="Check #"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Check___Label"
+                    GUID = Begin
+                        0xc70f67ad81285345bc497806445c6171
+                    End
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =9420
+                    Top =60
+                    Width =1140
+                    Height =315
+                    Name ="Check Date_Label"
+                    Caption ="Check Date"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Check_Date_Label"
+                    GUID = Begin
+                        0xb14d793991164346a5a7470520050705
+                    End
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =10620
+                    Top =60
+                    Width =2280
+                    Height =315
+                    Name ="Check Amt_Label"
+                    Caption ="Check Amt"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Check_Amt_Label"
+                    GUID = Begin
+                        0x3b99107c37c90b43bf9564fc1f0a05a2
+                    End
+                End
+                Begin Line
+                    BorderWidth =2
+                    Left =60
+                    Top =375
+                    Width =12840
+                    Name ="Line15"
+                    GUID = Begin
+                        0xac1d867457fa804199f982a848ea4288
+                    End
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =390
+            Name ="Detail"
+            GUID = Begin
+                0x6cec8bab652b2a44a59cedcf01294e56
+            End
+            Begin
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =60
+                    Top =60
+                    Width =1260
+                    Height =270
+                    Name ="Cust Key"
+                    ControlSource ="Cust Key"
+                    EventProcPrefix ="Cust_Key"
+                    GUID = Begin
+                        0x63ee607ccfecf44a852b726c16554d9c
+                    End
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =1380
+                    Top =60
+                    Width =2220
+                    Height =270
+                    TabIndex =1
+                    Name ="Name"
+                    ControlSource ="Name"
+                    GUID = Begin
+                        0x8d41daf482425c429fc55029bfa875bc
+                    End
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =3660
+                    Top =60
+                    Width =4380
+                    Height =270
+                    TabIndex =2
+                    Name ="Group Type"
+                    ControlSource ="Group Type"
+                    EventProcPrefix ="Group_Type"
+                    GUID = Begin
+                        0xf76ed5e365d5cf419e49ef5f0db700d1
+                    End
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =8100
+                    Top =60
+                    Width =1260
+                    Height =270
+                    TabIndex =3
+                    Name ="Check #"
+                    ControlSource ="Check #"
+                    EventProcPrefix ="Check__"
+                    GUID = Begin
+                        0x7ac565f7c941a14f976c6be53baeb723
+                    End
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =9420
+                    Top =60
+                    Width =1140
+                    Height =270
+                    TabIndex =4
+                    Name ="Check Date"
+                    ControlSource ="Check Date"
+                    EventProcPrefix ="Check_Date"
+                    GUID = Begin
+                        0xc115310aceac754ebad9e33406f21f35
+                    End
+                End
+                Begin TextBox
+                    IMESentenceMode =3
+                    Left =10620
+                    Top =60
+                    Width =2280
+                    Height =270
+                    TabIndex =5
+                    Name ="Check Amt"
+                    ControlSource ="Check Amt"
+                    Format ="Standard"
+                    EventProcPrefix ="Check_Amt"
+                    GUID = Begin
+                        0x9048b64a4448e64dbdffd507dc499685
+                    End
+                End
+            End
+        End
+        Begin PageFooter
+            Height =540
+            Name ="PageFooterSection"
+            GUID = Begin
+                0xbf3622c30f31b04fb7cb8aa35e043807
+            End
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =60
+                    Top =240
+                    Width =5040
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text13"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0xef9370d7ae864d4b921c158d5817413d
+                    End
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    IMESentenceMode =3
+                    Left =7860
+                    Top =240
+                    Width =5040
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text14"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0xbcc70514b02bcb4681404e1f69151b07
+                    End
+                End
+                Begin Line
+                    BorderWidth =3
+                    Left =60
+                    Top =240
+                    Width =12840
+                    BorderColor =12632256
+                    Name ="Line16"
+                    GUID = Begin
+                        0x12baca51b681974198e53e77a2150459
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =480
+            Name ="ReportFooter"
+            GUID = Begin
+                0x42f31a068ad2e346bf2e381a37bcc07e
+            End
+            Begin
+                Begin TextBox
+                    Left =10530
+                    Top =150
+                    Width =2295
+                    Height =270
+                    Name ="Text15"
+                    ControlSource ="=Sum([Check Amt])"
+                    Format ="Standard"
+                    GUID = Begin
+                        0xc215918fddda7640a0f881e4f819ed3e
+                    End
+                    Begin
+                        Begin Label
+                            Left =8985
+                            Top =120
+                            Width =1380
+                            Height =300
+                            Name ="Label16"
+                            Caption ="Total"
+                            Tag ="DetachedLabel"
+                            GUID = Begin
+                                0xa049a6748809d74f86f07947d2350132
+                            End
+                        End
+                    End
+                End
+                Begin Line
+                    BorderWidth =1
+                    Left =10665
+                    Top =90
+                    Width =2160
+                    Name ="Line20"
+                    GUID = Begin
+                        0x810fc2209a9ffe4695a28e35878c6e90
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Private Sub Report_Close()
+    
+    On Error GoTo PROC_ERR
+    
+    DoCmd.Restore
+    
+    If fIsLoaded("fdlgGroupPayments") = True Then
+        DoCmd.Close acForm, "fdlgGroupPayments"
+    End If
+    
+    'If fIsLoaded("fmnuReportBilling") Then
+    '    DoCmd.Close acForm, "fmnuReportBilling"
+    'End If
+    
+    If fIsLoaded("fmnuSwitchboard") = True Then
+        Forms![fmnuSwitchboard].Visible = True
+    End If
+    
+    Exit Sub
+    
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+
+End Sub
+Private Sub Report_Open(Cancel As Integer)
+
+    On Error GoTo Report_Open_Err
+    
+    If fIsLoaded("fdlgGroupPayments") = True Then
+        Forms!fdlgGroupPayments.Visible = False
+    End If
+    
+    If fIsLoaded("fmnuSwitchboard") = True Then
+        Forms!fmnuSwitchboard.Visible = False
+    End If
+    
+    Exit Sub
+    
+Report_Open_Exit:
+    Exit Sub
+
+Report_Open_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Report_Open_Exit
+    
+End Sub

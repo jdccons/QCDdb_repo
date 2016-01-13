@@ -1,6 +1,6 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SubID) = '25219512'))"
+Where ="(((tblSubscr.SubID)='25246908'))"
 Begin InputTables
     Name ="tblSubscr"
 End
@@ -49,6 +49,15 @@ Begin
         dbText "Name" ="ZipSub"
         dbLong "AggregateType" ="-1"
     End
+    Begin
+        dbText "Name" ="ForName"
+    End
+    Begin
+        dbText "Name" ="FormAdd"
+    End
+    Begin
+        dbText "Name" ="FormCSZ"
+    End
 End
 Begin
     State =0
@@ -64,12 +73,12 @@ Begin
     Top =0
     ColumnsShown =539
     Begin
-        Left =70
-        Top =26
-        Right =166
-        Bottom =144
+        Left =38
+        Top =6
+        Right =134
+        Bottom =124
         Top =0
-        Name ="__Indiv_Print_PDF"
+        Name ="tblSubscr"
         Name =""
     End
 End

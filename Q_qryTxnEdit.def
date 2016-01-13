@@ -1,0 +1,54 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="ARTRANH_local"
+End
+Begin OutputColumns
+    Expression ="ARTRANH_local.DocumentNumber"
+    Expression ="ARTRANH_local.CustomerKey"
+    Expression ="ARTRANH_local.TransactionType"
+    Expression ="ARTRANH_local.DocumentDate"
+    Expression ="ARTRANH_local.DocumentAmt"
+    Expression ="ARTRANH_local.Spare"
+    Expression ="ARTRANH_local.Spare2"
+    Expression ="ARTRANH_local.Spare3"
+End
+Begin OrderBy
+    Expression ="ARTRANH_local.CustomerKey"
+    Flag =0
+    Expression ="ARTRANH_local.DocumentDate"
+    Flag =1
+    Expression ="ARTRANH_local.TransactionType"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =66
+    Right =1344
+    Bottom =390
+    Left =-1
+    Top =-1
+    Right =1307
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =229
+        Bottom =124
+        Top =23
+        Name ="ARTRANH_local"
+        Name =""
+    End
+End

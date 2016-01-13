@@ -21,7 +21,7 @@ Dim sTS() As Variant
 Public Function SetConnxn_Tracent()
 
     SetConnxn_Tracent = "Provider=sqloledb;Data Source=tweb3.tracent.net,1833; " & _
-        "Initial Catalog=QCD;User ID=QCD;Password=Winter2012;"
+        "Initial Catalog=QCDdev;User ID=QCD;Password=1qazXSW@;"
         
 End Function
 
@@ -154,7 +154,7 @@ On Error GoTo err_LoadTbl_array
               If c2 = 16 Then !Email = sTS(R2, c2)
               If c2 = 17 Then !DOB = sTS(R2, c2)
               If c2 = 18 Then !NoDependents = sTS(R2, c2)
-              If c2 = 19 Then !Gender = sTS(R2, c2)
+              If c2 = 19 Then !GENDER = sTS(R2, c2)
               If c2 = 20 Then !Age = sTS(R2, c2)
               If c2 = 21 Then !EffectiveDate = sTS(R2, c2)
               If c2 = 22 Then !PreexistingDate = sTS(R2, c2)
@@ -196,7 +196,7 @@ On Error GoTo err_LoadTbl_array
               If c2 = 6 Then !DOB = sTS(R2, c2)
               If c2 = 7 Then !Age = sTS(R2, c2)
               If c2 = 8 Then !Relationship = sTS(R2, c2)
-              If c2 = 9 Then !Gender = sTS(R2, c2)
+              If c2 = 9 Then !GENDER = sTS(R2, c2)
               If c2 = 10 Then !EffDate = sTS(R2, c2)
               If c2 = 11 Then !PreexistingDate = sTS(R2, c2)
             Next c2
@@ -217,7 +217,7 @@ err_LoadTbl_array:
 
 End Function
 
-Public Sub LoadADORecordSetTracent(strCommand, Optional lngTimeout As Long)
+Public Sub LoadADORecordSetTracent(strCommand, Optional lngTimeOut As Long)
   
   If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
   If g_adoConn.STATE = adStateOpen Then g_adoConn.Close
@@ -227,8 +227,8 @@ Public Sub LoadADORecordSetTracent(strCommand, Optional lngTimeout As Long)
   g_adoConn.ConnectionString = SetConnxn_Tracent
   g_adoConn.Open
     
-  If lngTimeout > 0 Then
-    g_adoCommand.CommandTimeout = lngTimeout
+  If lngTimeOut > 0 Then
+    g_adoCommand.CommandTimeout = lngTimeOut
   Else
     g_adoCommand.CommandTimeout = 0
   End If

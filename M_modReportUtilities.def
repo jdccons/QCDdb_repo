@@ -5,6 +5,9 @@ Dim db As DAO.Database
 Dim rst As DAO.Recordset
 Dim strSQL As String
 
+Public g_dteMonthFirstDay As Date
+Public g_dteMonthLastDay As Date
+
 Function getCnt() As Long
 
     On Error GoTo ErrorHandler
@@ -83,7 +86,7 @@ Function PopulateAA_Audit(strGrpID As String) As Boolean
              "OR (((tblGrp.GroupID)='" & strGrpID & "') AND ((tlkpAllAmericanPlan.PlanagerCode)='QCDBLU-MNL')) " & _
              "ORDER BY tblSubscr.PlanID, vwRates.COVERcode;"
              
-    'Debug.Print strSQL
+    
   
   Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
     If rst.RecordCount > 0 Then

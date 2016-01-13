@@ -1,42 +1,42 @@
 Operation =3
 Name ="tmpEDI_Rpt"
 Option =0
-Where ="(((tblEDI_App_Subscr.SUBssn) Is Null))"
+Where ="(((tblEDI_App_Subscr.SubSSN) Is Null))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="qselAAGroups"
+    Name ="tblSubscr"
     Name ="tblEDI_App_Subscr"
 End
 Begin OutputColumns
     Name ="SUBssn"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Name ="SUBfirstNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SubFirstName"
     Name ="SUBlastNAME"
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Name ="GroupID"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Alias ="Stat"
     Name ="Stat"
     Expression ="\"DELETED\""
     Alias ="SUBStreet"
     Name ="SUBStreet"
-    Expression ="[tblSubscr].[SUBstreet1] & \" \" & [tblSubscr].[SUBStreet2]"
+    Expression ="tblSubscr.SUBstreet1 & \" \" & tblSubscr.SUBStreet2"
     Name ="SUBcity"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Name ="SUBstate"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Name ="SUBzip"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubZip"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblEDI_App_Subscr"
-    Expression ="tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn"
+    Expression ="tblSubscr.SubSSN=tblEDI_App_Subscr.SubSSN"
     Flag =2
     LeftTable ="qselAAGroups"
     RightTable ="tblSubscr"
-    Expression ="qselAAGroups.SUBgroupID = tblSubscr.SUBgroupID"
+    Expression ="qselAAGroups.SUBgroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -50,10 +50,10 @@ Begin
     Left =11
     Top =174
     Right =971
-    Bottom =632
+    Bottom =596
     Left =-1
     Top =-1
-    Right =953
+    Right =945
     Bottom =242
     Left =0
     Top =0
@@ -62,7 +62,7 @@ Begin
         Left =186
         Top =9
         Right =318
-        Bottom =116
+        Bottom =112
         Top =7
         Name ="tblSubscr"
         Name =""
@@ -71,7 +71,7 @@ Begin
         Left =52
         Top =12
         Right =148
-        Bottom =74
+        Bottom =85
         Top =0
         Name ="qselAAGroups"
         Name =""
@@ -80,7 +80,7 @@ Begin
         Left =374
         Top =7
         Right =591
-        Bottom =129
+        Bottom =125
         Top =3
         Name ="tblEDI_App_Subscr"
         Name =""

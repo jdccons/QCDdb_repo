@@ -4,48 +4,87 @@ Begin InputTables
     Name ="qrptDentLocCountByMkt2"
 End
 Begin OutputColumns
-    Alias ="The Value"
-    Expression ="Count([qrptDentLocCountByMkt2].DENTspecialty)"
-    Expression ="[qrptDentLocCountByMkt2].GEOdesc"
+    Expression ="qrptDentLocCountByMkt2.GEOdesc"
     GroupLevel =2
-    Alias ="Row Summary"
-    Expression ="Count([qrptDentLocCountByMkt2].DENTspecialty)"
-    GroupLevel =2
-    Expression ="[qrptDentLocCountByMkt2].DENTspecialty"
+    Expression ="qrptDentLocCountByMkt2.DentSpecialty"
     GroupLevel =1
+    Alias ="The Value"
+    Expression ="Count(qrptDentLocCountByMkt2.DentSpecialty)"
+    Alias ="Row Summary"
+    Expression ="Count(qrptDentLocCountByMkt2.DentSpecialty)"
+    GroupLevel =2
 End
 Begin Groups
-    Expression ="[qrptDentLocCountByMkt2].GEOdesc"
+    Expression ="qrptDentLocCountByMkt2.GEOdesc"
     GroupLevel =2
-    Expression ="[qrptDentLocCountByMkt2].DENTgeoID"
+    Expression ="qrptDentLocCountByMkt2.DentGeoID"
     GroupLevel =2
-    Expression ="[qrptDentLocCountByMkt2].DENTspecialty"
+    Expression ="qrptDentLocCountByMkt2.DentSpecialty"
     GroupLevel =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="Row Summary"
+    End
+    Begin
+        dbText "Name" ="<>"
+    End
+    Begin
+        dbText "Name" ="ENDO"
+    End
+    Begin
+        dbText "Name" ="GDSP"
+    End
+    Begin
+        dbText "Name" ="GEN"
+    End
+    Begin
+        dbText "Name" ="GEN1"
+    End
+    Begin
+        dbText "Name" ="GEN2"
+    End
+    Begin
+        dbText "Name" ="ORT"
+    End
+    Begin
+        dbText "Name" ="OSU"
+    End
+    Begin
+        dbText "Name" ="PEDO"
+    End
+    Begin
+        dbText "Name" ="PERO"
+    End
+    Begin
+        dbText "Name" ="PRO"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =804
-    Bottom =518
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =801
+    Right =1253
     Bottom =144
     Left =0
     Top =0
-    ColumnsShown =557
+    ColumnsShown =559
     Begin
         Left =38
         Top =6
         Right =134
-        Bottom =88
+        Bottom =124
         Top =0
-        Name ="q-DENTlocCOUNTbyMKT2"
+        Name ="qrptDentLocCountByMkt2"
         Name =""
     End
 End

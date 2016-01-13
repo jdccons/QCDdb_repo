@@ -1,61 +1,58 @@
 Operation =1
 Option =0
-Having ="((((tblGrp.GRcontBEG)>#9/1/99# Or (tblGrp.GRcontBEG)=#9/1/99#) And ((tblGrp.GRco"
-    "ntBEG)<#1/1/00# Or (tblGrp.GRcontBEG)=#1/1/00#)))"
+Having ="((((tblGrp.GRContBeg)>#9/1/1999# Or (tblGrp.GRContBeg)=#9/1/1999#) And ((tblGrp."
+    "GRContBeg)<#1/1/2000# Or (tblGrp.GRContBeg)=#1/1/2000#)))"
 Begin InputTables
-    Name ="qryNewPayingSubscribers"
-    Name ="tblGrp"
     Name ="tblAgent"
     Name ="tblAgent"
     Alias ="tblAgent_1"
+    Name ="qryNewPayingSubscribers"
+    Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblAgent.AGENT_LUname"
-    Expression ="tblAgent_1.AGENT_LUname"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblAgent.Agent_LUname"
+    Expression ="tblAgent_1.Agent_LUname"
     Alias ="CountOfSUBssn"
     Expression ="Count(qryNewPayingSubscribers.SUBssn)"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRContBeg"
 End
 Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="tblAgent"
-    Expression ="tblGrp.GRagentID1 = tblAgent.AGENTid"
-    Flag =1
-    LeftTable ="tblGrp"
-    RightTable ="tblAgent_1"
-    Expression ="tblGrp.GRagentID2 = tblAgent_1.AGENTid"
-    Flag =1
     LeftTable ="qryNewPayingSubscribers"
     RightTable ="tblGrp"
-    Expression ="qryNewPayingSubscribers.SUBgroupID = tblGrp.GROUPid"
+    Expression ="qryNewPayingSubscribers.SUBgroupID=tblGrp.GroupID"
     Flag =1
 End
 Begin Groups
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     GroupLevel =0
-    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.Agent_LUname"
     GroupLevel =0
-    Expression ="tblAgent_1.AGENT_LUname"
+    Expression ="tblAgent_1.Agent_LUname"
     GroupLevel =0
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRContBeg"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="CountOfSUBssn"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -64,7 +61,7 @@ Begin
         Left =38
         Top =6
         Right =217
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="qryNewPayingSubscribers"
         Name =""
@@ -73,7 +70,7 @@ Begin
         Left =282
         Top =4
         Right =398
-        Bottom =111
+        Bottom =107
         Top =0
         Name ="tblGrp"
         Name =""
@@ -82,7 +79,7 @@ Begin
         Left =518
         Top =6
         Right =614
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblAgent"
         Name =""
@@ -91,7 +88,7 @@ Begin
         Left =652
         Top =6
         Right =748
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblAgent_1"
         Name =""

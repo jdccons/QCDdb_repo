@@ -1,0 +1,302 @@
+Version =20
+VersionRequired =20
+Checksum =891954936
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDesignChanges = NotDefault
+    ScrollBars =2
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4305
+    DatasheetFontHeight =10
+    ItemSuffix =15
+    Left =7650
+    Top =1245
+    Right =12060
+    Bottom =4455
+    DatasheetGridlinesColor =12632256
+    Filter ="[GroupID]='SUNIR'"
+    RecSrcDt = Begin
+        0x323e1b2bf0a9e440
+    End
+    RecordSource ="qryPlansRates"
+    Caption ="Plans and Covers"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+        End
+        Begin FormHeader
+            Height =240
+            BackColor =-2147483633
+            Name ="FormHeader"
+            GUID = Begin
+                0xd112021f880a6c468c9a5df3e3ef75d5
+            End
+            Begin
+                Begin Label
+                    OverlapFlags =93
+                    Left =150
+                    Width =510
+                    Height =240
+                    Name ="Label10"
+                    Caption ="Group"
+                    GUID = Begin
+                        0x7d7862535fe3014fae6e09d9b4f14aa1
+                    End
+                End
+                Begin Label
+                    OverlapFlags =95
+                    Left =660
+                    Width =555
+                    Height =240
+                    Name ="Label11"
+                    Caption ="PlanID"
+                    GUID = Begin
+                        0xc47671e0e61e87458c84f8e1ed8f747d
+                    End
+                End
+                Begin Label
+                    OverlapFlags =95
+                    Left =1215
+                    Width =1215
+                    Height =240
+                    Name ="Label12"
+                    Caption ="Plan Desc"
+                    GUID = Begin
+                        0x970cd0e5b2d6f04dafea2d696efb3b9f
+                    End
+                End
+                Begin Label
+                    OverlapFlags =93
+                    Left =3390
+                    Width =660
+                    Height =240
+                    Name ="Label13"
+                    Caption ="CoverID"
+                    GUID = Begin
+                        0xa89e14a270accf4f9648e66b8761afa1
+                    End
+                End
+                Begin Label
+                    OverlapFlags =87
+                    Left =2430
+                    Width =960
+                    Height =240
+                    Name ="Label14"
+                    Caption ="Cover Desc"
+                    GUID = Begin
+                        0x849debff3e8b884b9401c3a9ebefd40e
+                    End
+                End
+            End
+        End
+        Begin Section
+            Height =360
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x2591d0c33f38e34faba5ab25870225f8
+            End
+            Begin
+                Begin TextBox
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =165
+                    Top =60
+                    Width =615
+                    Height =255
+                    ColumnWidth =615
+                    Name ="GroupID"
+                    ControlSource ="GroupID"
+                    GUID = Begin
+                        0x90b96015854021448db85cd648bc9c2b
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =95
+                    IMESentenceMode =3
+                    Left =780
+                    Top =60
+                    Width =450
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =1
+                    Name ="PlanID"
+                    ControlSource ="PlanID"
+                    GUID = Begin
+                        0x6f3c0e264a95f0478960d698a88a5ba6
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =95
+                    IMESentenceMode =3
+                    Left =1230
+                    Top =60
+                    Width =990
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =2
+                    Name ="PlanDesc"
+                    ControlSource ="PlanDesc"
+                    GUID = Begin
+                        0xbdda82e6a52d3d4587821665772838b3
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =95
+                    IMESentenceMode =3
+                    Left =2220
+                    Top =60
+                    Width =690
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =3
+                    Name ="CoverID"
+                    ControlSource ="CoverID"
+                    GUID = Begin
+                        0x94c9681e761b4546aa0277ec372e79f2
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    IMESentenceMode =3
+                    Left =2910
+                    Top =60
+                    Width =1395
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =4
+                    Name ="CoverDescr"
+                    ControlSource ="CoverDescr"
+                    GUID = Begin
+                        0xf835eaa53e46b546a7599dbc156d9aec
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+            GUID = Begin
+                0xca13b745f1616a4eaca3f4cfdbcb7778
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Private Sub Form_Close()
+On Error GoTo PROC_ERR
+        
+        ' validation
+        If ValidSSN And ValidPlanCover Then
+                gintProcessStatus = 1
+        Else
+            If ValidSSN Then
+                gintProcessStatus = ValidSSN
+            Else
+                gintProcessStatus = 0
+            End If
+            
+            If ValidPlanCover Then
+                gintProcessStatus = ValidPlanCover
+            Else
+                gintProcessStatus = 0
+            End If
+        End If
+        
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
+
+
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Proc: frmTPA_Bad_Plan_and_Cover.Form_Close"
+  Resume PROC_EXIT
+End Sub

@@ -1,46 +1,50 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GRCancelled)=No))"
 Begin InputTables
-    Name ="tblGrp"
-    Name ="tlkpClientServiceReps"
     Name ="tblAgent"
+    Name ="tlkpClientServiceReps"
+    Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
     Expression ="tblGrp.GRPLANid"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRContBeg"
+    Alias ="Expr2"
     Expression ="tblGrp.GRclientSVCrep"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
     Expression ="tblGrp.GRClientSvcRepID"
     Expression ="tlkpClientServiceReps.RepName"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRsrvCONT"
-    Expression ="tblGrp.GRee"
-    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRSrvCont"
+    Expression ="tblGrp.GREE"
+    Expression ="tblGrp.GRCity"
+    Alias ="Expr3"
     Expression ="tblGrp.GRagentID1"
+    Alias ="Expr4"
     Expression ="tblGrp.GRagentID2"
+    Alias ="Expr5"
     Expression ="tblGrp.GRExecSalesDirID"
-    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AgentId"
+    Alias ="Expr6"
     Expression ="tblGrp.GRclientSVCrep"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRGeoID"
 End
 Begin Joins
-    LeftTable ="tblAgent"
-    RightTable ="tblGrp"
-    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
-    Flag =1
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -58,28 +62,19 @@ Begin
     Left =70
     Top =52
     Right =757
-    Bottom =360
+    Bottom =376
     Left =-1
     Top =-1
-    Right =680
+    Right =672
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =38
-        Top =6
-        Right =179
-        Bottom =98
-        Top =1
-        Name ="tblGrp"
-        Name =""
-    End
-    Begin
         Left =443
         Top =9
         Right =539
-        Bottom =86
+        Bottom =97
         Top =1
         Name ="tlkpClientServiceReps"
         Name =""
@@ -88,9 +83,18 @@ Begin
         Left =212
         Top =1
         Right =308
-        Bottom =108
+        Bottom =104
         Top =4
         Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =179
+        Bottom =94
+        Top =1
+        Name ="tblGrp"
         Name =""
     End
 End

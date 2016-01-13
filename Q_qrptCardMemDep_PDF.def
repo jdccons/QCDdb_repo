@@ -6,6 +6,7 @@ Begin InputTables
     Name ="__Indiv_Print_PDF"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="[__Indiv_Print_PDF].SubSSN"
     Expression ="tblDependent.DepSubID"
     Expression ="tblDependent.DepFirstName"
@@ -13,12 +14,6 @@ Begin OutputColumns
     Expression ="tblDependent.DepLastName"
     Alias ="FormName"
     Expression ="Trim([DEPfirstNAME]) & \"  \" & Trim([DEPlastNAME])"
-End
-Begin Joins
-    LeftTable ="__Indiv_Print_PDF"
-    RightTable ="tblDependent"
-    Expression ="[__Indiv_Print_PDF].SubSSN = tblDependent.DepSubID"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -40,7 +35,7 @@ Begin
     Left =66
     Top =144
     Right =1157
-    Bottom =570
+    Bottom =500
     Left =-1
     Top =-1
     Right =1076
@@ -61,8 +56,8 @@ Begin
         Left =15
         Top =10
         Right =326
-        Bottom =143
-        Top =2
+        Bottom =53
+        Top =0
         Name ="__Indiv_Print_PDF"
         Name =""
     End

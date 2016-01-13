@@ -1,0 +1,1941 @@
+Version =20
+VersionRequired =20
+Checksum =-119071897
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10920
+    DatasheetFontHeight =10
+    ItemSuffix =118
+    Left =4530
+    Top =585
+    Right =15495
+    Bottom =9210
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xd81030e216ace440
+    End
+    RecordSource ="tblGrp"
+    Caption ="Group"
+    DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+        End
+        Begin FormHeader
+            Height =615
+            BackColor =-2147483633
+            Name ="FormHeader"
+            GUID = Begin
+                0x4d0558ed822aa747a31351ece6411bac
+            End
+            Begin
+                Begin ComboBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ListWidth =1440
+                    Left =1455
+                    Top =195
+                    Width =1755
+                    Height =270
+                    ColumnInfo ="\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0xda1c4cd1450f954ba173a88c2ab54b3e
+                    End
+                    Name ="dboGroupID"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT [tblGrp].[GroupID] FROM [tblGrp] ORDER BY [GroupID];"
+                    ColumnWidths ="1440"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =15
+                            Top =195
+                            Width =1320
+                            Height =245
+                            Name ="cboGroupID_Label"
+                            Caption ="cboGroupID"
+                            GUID = Begin
+                                0xbe53f904fec40b42b99f444ef7260856
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin Section
+            Height =8070
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0xd31cd62a89e9ca47b79c374d237be7fa
+            End
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =195
+                    Height =255
+                    ColumnWidth =1440
+                    Name ="ID"
+                    ControlSource ="ID"
+                    GUID = Begin
+                        0xd7bd33661d1d6242942b881806b8bc68
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =195
+                            Width =1394
+                            Height =255
+                            Name ="ID_Label"
+                            Caption ="ID"
+                            GUID = Begin
+                                0x42a19ecd09934c4baf025d3ec7975898
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =555
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =1
+                    Name ="GroupID"
+                    ControlSource ="GroupID"
+                    GUID = Begin
+                        0x5df12929d1fdaf46993798ce1d8e771a
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =555
+                            Width =1394
+                            Height =255
+                            Name ="GroupID_Label"
+                            Caption ="GroupID"
+                            GUID = Begin
+                                0xdfd23481ea881e4abdcea2f5f58b979d
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =915
+                    Width =2520
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =2
+                    Name ="GRName"
+                    ControlSource ="GRName"
+                    GUID = Begin
+                        0x74b217596917c844bb3c6f258f30497a
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =915
+                            Width =1394
+                            Height =255
+                            Name ="GRName_Label"
+                            Caption ="GRName"
+                            GUID = Begin
+                                0x4b52727f3b57784fb39aed99906e6777
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =1275
+                    Height =255
+                    ColumnWidth =600
+                    TabIndex =3
+                    Name ="GRGeoID"
+                    ControlSource ="GRGeoID"
+                    GUID = Begin
+                        0x450bbfaef328924cad75776d5d2fbcf6
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =1275
+                            Width =1394
+                            Height =255
+                            Name ="GRGeoID_Label"
+                            Caption ="GRGeoID"
+                            GUID = Begin
+                                0x8905fc35715cff47b1c887a239652b4b
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =1635
+                    Width =2520
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =4
+                    Name ="GRStreet1"
+                    ControlSource ="GRStreet1"
+                    GUID = Begin
+                        0xd18a974476f2a34b8c94286667f5e905
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =1635
+                            Width =1394
+                            Height =255
+                            Name ="GRStreet1_Label"
+                            Caption ="GRStreet1"
+                            GUID = Begin
+                                0xbf47420a91f62747b38aac5a373ca574
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =1995
+                    Width =2520
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =5
+                    Name ="GRStreet2"
+                    ControlSource ="GRStreet2"
+                    GUID = Begin
+                        0x93022533cc3e734cae70bb40d8007651
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =1995
+                            Width =1394
+                            Height =255
+                            Name ="GRStreet2_Label"
+                            Caption ="GRStreet2"
+                            GUID = Begin
+                                0x493388940bddbc49b47d5e7cf28d66b5
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =2355
+                    Height =255
+                    ColumnWidth =1185
+                    TabIndex =6
+                    Name ="GRCity"
+                    ControlSource ="GRCity"
+                    GUID = Begin
+                        0x494a386b02b2a045a5174ae2671606c5
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =2355
+                            Width =1394
+                            Height =255
+                            Name ="GRCity_Label"
+                            Caption ="GRCity"
+                            GUID = Begin
+                                0xe13e001d9884ed4292bcff29d40db99e
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =2715
+                    Height =255
+                    ColumnWidth =390
+                    TabIndex =7
+                    Name ="GRState"
+                    ControlSource ="GRState"
+                    GUID = Begin
+                        0x1e6a5c9daa10f34db683c2ae2cd48331
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =2715
+                            Width =1394
+                            Height =255
+                            Name ="GRState_Label"
+                            Caption ="GRState"
+                            GUID = Begin
+                                0x7e722efc4608884dbf5c40b18038dc67
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =3075
+                    Height =255
+                    ColumnWidth =825
+                    TabIndex =8
+                    Name ="GRZip"
+                    ControlSource ="GRZip"
+                    GUID = Begin
+                        0xad7e0d9a8383df4db0a275db3521befd
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =3075
+                            Width =1394
+                            Height =255
+                            Name ="GRZip_Label"
+                            Caption ="GRZip"
+                            GUID = Begin
+                                0x076021f4271cb94dbf0f2966d02e9d48
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =3435
+                    Height =255
+                    ColumnWidth =1260
+                    TabIndex =9
+                    Name ="GRPhone1"
+                    ControlSource ="GRPhone1"
+                    GUID = Begin
+                        0x104308bc6acd2e4587f49d6d1b72754d
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =3435
+                            Width =1394
+                            Height =255
+                            Name ="GRPhone1_Label"
+                            Caption ="GRPhone1"
+                            GUID = Begin
+                                0xf7dd7f710db5ef48b602829979540ab6
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1611
+                    Top =3795
+                    Height =255
+                    ColumnWidth =1260
+                    TabIndex =10
+                    Name ="GRPhone2"
+                    ControlSource ="GRPhone2"
+                    GUID = Begin
+                        0x34f8b78a4e3dff42855ee177261377e2
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =3795
+                            Width =1394
+                            Height =255
+                            Name ="GRPhone2_Label"
+                            Caption ="GRPhone2"
+                            GUID = Begin
+                                0x4f606db91ac1914b9765bb2066cbb854
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =4125
+                    Height =255
+                    ColumnWidth =1260
+                    TabIndex =11
+                    Name ="GRFax"
+                    ControlSource ="GRFax"
+                    GUID = Begin
+                        0x6b1c9cb0677ec94e8ad9dce7e640e2f7
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =4125
+                            Width =1394
+                            Height =255
+                            Name ="GRFax_Label"
+                            Caption ="GRFax"
+                            GUID = Begin
+                                0x22cd57156e675d43945f1201e1d64962
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =4485
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =12
+                    Name ="GRMainCont"
+                    ControlSource ="GRMainCont"
+                    GUID = Begin
+                        0xfe0fb549ba8d0543a9a666d16072d522
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =4485
+                            Width =1394
+                            Height =255
+                            Name ="GRMainCont_Label"
+                            Caption ="GRMainCont"
+                            GUID = Begin
+                                0x719d9019b5eee148a74d723bb0ff2259
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =4845
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =13
+                    Name ="GRSrvCont"
+                    ControlSource ="GRSrvCont"
+                    GUID = Begin
+                        0x61d3e23956902846a28d6b8b63650ce1
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =4845
+                            Width =1394
+                            Height =255
+                            Name ="GRSrvCont_Label"
+                            Caption ="GRSrvCont"
+                            GUID = Begin
+                                0x73dfc830e6d59343916259b3a4ba4ce6
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =5205
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =14
+                    Name ="GRMarkDir"
+                    ControlSource ="GRMarkDir"
+                    GUID = Begin
+                        0xdd844188cf54b54e8f521f6bc56a4785
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =5205
+                            Width =1394
+                            Height =255
+                            Name ="GRMarkDir_Label"
+                            Caption ="GRMarkDir"
+                            GUID = Begin
+                                0x4bf52bbec40d4b408934ea837b2ca83b
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =5565
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =15
+                    Name ="GRContBeg"
+                    ControlSource ="GRContBeg"
+                    GUID = Begin
+                        0xe3d550fe6382584da8cae46835755a1a
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =5565
+                            Width =1394
+                            Height =255
+                            Name ="GRContBeg_Label"
+                            Caption ="GRContBeg"
+                            GUID = Begin
+                                0xef005034c2f63f4f9a9f326fb767c028
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =5925
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =16
+                    Name ="GRContEnd"
+                    ControlSource ="GRContEnd"
+                    GUID = Begin
+                        0x7fd671bd183ec84caf8d1cb0b3621146
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =5925
+                            Width =1394
+                            Height =255
+                            Name ="GRContEnd_Label"
+                            Caption ="GRContEnd"
+                            GUID = Begin
+                                0x49b3965ee32c41479fc63f48c7a01ca2
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =6285
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =17
+                    Name ="GRClassKey"
+                    ControlSource ="GRClassKey"
+                    GUID = Begin
+                        0xd8803b5d62991840b16c2484cbfa7fef
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =6285
+                            Width =1394
+                            Height =255
+                            Name ="GRClassKey_Label"
+                            Caption ="GRClassKey"
+                            GUID = Begin
+                                0xc5a5f08d7f3bd1409b175fe34bda7ede
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =6645
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =18
+                    Name ="GRAgent%"
+                    ControlSource ="GRAgent%"
+                    EventProcPrefix ="GRAgent_"
+                    GUID = Begin
+                        0x8d4eec2bc8936841a0f5d20706f05ec4
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =6645
+                            Width =1394
+                            Height =255
+                            Name ="GRAgent%_Label"
+                            Caption ="GRAgent%"
+                            EventProcPrefix ="GRAgent__Label"
+                            GUID = Begin
+                                0x99a94bb3c5a2fb41ab356846128c8178
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1605
+                    Top =7005
+                    Width =2715
+                    Height =840
+                    ColumnWidth =3000
+                    TabIndex =19
+                    Name ="GRNotes"
+                    ControlSource ="GRNotes"
+                    GUID = Begin
+                        0x97e054788af0d9488239a8ad79be8211
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =150
+                            Top =7005
+                            Width =1394
+                            Height =255
+                            Name ="GRNotes_Label"
+                            Caption ="GRNotes"
+                            GUID = Begin
+                                0x1749363a54ab6548b7eefd81206609b6
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =180
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =20
+                    Name ="GRClientSvcRepID"
+                    ControlSource ="GRClientSvcRepID"
+                    GUID = Begin
+                        0x97a3acbba7781b42a81831fe681a03e4
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =180
+                            Width =1440
+                            Height =255
+                            Name ="GRClientSvcRepID_Label"
+                            Caption ="GRClientSvcRepID"
+                            GUID = Begin
+                                0xc1afa90f187c244db6b0d86107d4ec19
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =540
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =21
+                    Name ="GREE"
+                    ControlSource ="GREE"
+                    GUID = Begin
+                        0xba76a579b35e304fa62c7f666464db44
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =540
+                            Width =1440
+                            Height =255
+                            Name ="GREE_Label"
+                            Caption ="GREE"
+                            GUID = Begin
+                                0xdea51d15a740bd4b8ce1ff2ff6cc8e26
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =900
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =22
+                    Name ="GRAnnvDate"
+                    ControlSource ="GRAnnvDate"
+                    GUID = Begin
+                        0x129df037bf05744791384a0c9c1352c5
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =900
+                            Width =1440
+                            Height =255
+                            Name ="GRAnnvDate_Label"
+                            Caption ="GRAnnvDate"
+                            GUID = Begin
+                                0xaaafb604decf914f89c6c8fba89c657f
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =1260
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =23
+                    Name ="GRFirstInvAmt"
+                    ControlSource ="GRFirstInvAmt"
+                    GUID = Begin
+                        0x8907e5012162e64c84df9a039b3f8b24
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =1260
+                            Width =1440
+                            Height =255
+                            Name ="GRFirstInvAmt_Label"
+                            Caption ="GRFirstInvAmt"
+                            GUID = Begin
+                                0x88ee0e1b6bb11c41aa47a3498d866cd3
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =1620
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =24
+                    Name ="GRSubLabelsPrinted"
+                    ControlSource ="GRSubLabelsPrinted"
+                    GUID = Begin
+                        0xd0e1fa729b60d9419a02e74df950f191
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =1620
+                            Width =1440
+                            Height =255
+                            Name ="GRSubLabelsPrinted_Label"
+                            Caption ="GRSubLabelsPrinted"
+                            GUID = Begin
+                                0x35435bcbaa52424a9a40d63959c98bc3
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =1980
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =25
+                    Name ="DateCreated"
+                    ControlSource ="DateCreated"
+                    GUID = Begin
+                        0x43977c37a0fc764f9ebe484c42955fa0
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =1980
+                            Width =1440
+                            Height =255
+                            Name ="DateCreated_Label"
+                            Caption ="DateCreated"
+                            GUID = Begin
+                                0xb19989ae0f42e847b8883fda771c0a11
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =2340
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =26
+                    Name ="DateUpdated"
+                    ControlSource ="DateUpdated"
+                    GUID = Begin
+                        0x900e87b2df4b984e9d2cfc29f599e62e
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =2340
+                            Width =1440
+                            Height =255
+                            Name ="DateUpdated_Label"
+                            Caption ="DateUpdated"
+                            GUID = Begin
+                                0x2b67c81af1345f46a48ecd7d22b5acca
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =2700
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =27
+                    Name ="GRCancelled"
+                    ControlSource ="GRCancelled"
+                    GUID = Begin
+                        0xd46841d413c4254485e6806ef731b349
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =2700
+                            Width =1440
+                            Height =255
+                            Name ="GRCancelled_Label"
+                            Caption ="GRCancelled"
+                            GUID = Begin
+                                0x263ee5dfd2ef984d882053c82abae6e8
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =3060
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =28
+                    Name ="GRAcctMgr"
+                    ControlSource ="GRAcctMgr"
+                    GUID = Begin
+                        0xc06764dcc98652428f09e17a4b946580
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =3060
+                            Width =1440
+                            Height =255
+                            Name ="GRAcctMgr_Label"
+                            Caption ="GRAcctMgr"
+                            GUID = Begin
+                                0x91416411988ad742b4f0f4fa6b130c9f
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =3420
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =29
+                    Name ="GRCardStock"
+                    ControlSource ="GRCardStock"
+                    GUID = Begin
+                        0x5d73cd02428d8a48b61c1ccba0b95718
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =3420
+                            Width =1440
+                            Height =255
+                            Name ="GRCardStock_Label"
+                            Caption ="GRCardStock"
+                            GUID = Begin
+                                0x241a0376c1874f46b61189d5c4e441ef
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5911
+                    Top =3780
+                    Height =255
+                    ColumnWidth =600
+                    TabIndex =30
+                    Name ="GRMailCard"
+                    ControlSource ="GRMailCard"
+                    GUID = Begin
+                        0x839a3342d043174d969171365ad9d963
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =3780
+                            Width =1440
+                            Height =255
+                            Name ="GRMailCard_Label"
+                            Caption ="GRMailCard"
+                            GUID = Begin
+                                0xa9c6c2b798fe2d43ab709a8e4a42b6a6
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =4110
+                    Height =255
+                    ColumnWidth =390
+                    TabIndex =31
+                    Name ="GRInvSort"
+                    ControlSource ="GRInvSort"
+                    GUID = Begin
+                        0x4126c16f65bdc143ae158040cecb82dc
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =4110
+                            Width =1440
+                            Height =255
+                            Name ="GRInvSort_Label"
+                            Caption ="GRInvSort"
+                            GUID = Begin
+                                0x8c7879d18050334492d681656838d478
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =4470
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =32
+                    Name ="GREmail"
+                    ControlSource ="GREmail"
+                    GUID = Begin
+                        0x9308ae4a78c73e48bc8e6c838860475e
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =4470
+                            Width =1440
+                            Height =255
+                            Name ="GREmail_Label"
+                            Caption ="GREmail"
+                            GUID = Begin
+                                0xcc0edb30113f7649bb94a8489e6faee0
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =4830
+                    Height =255
+                    ColumnWidth =1560
+                    TabIndex =33
+                    Name ="GRMainContTitle"
+                    ControlSource ="GRMainContTitle"
+                    GUID = Begin
+                        0xe05c895c458aed46a5f5ac34e3df03cc
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =4830
+                            Width =1440
+                            Height =255
+                            Name ="GRMainContTitle_Label"
+                            Caption ="GRMainContTitle"
+                            GUID = Begin
+                                0x9ccee0de521d784e8c977d12eae06454
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =5190
+                    Height =255
+                    ColumnWidth =1560
+                    TabIndex =34
+                    Name ="GRSrvConTitle"
+                    ControlSource ="GRSrvConTitle"
+                    GUID = Begin
+                        0x3f810896360b074bb2ea2d163c894805
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =5190
+                            Width =1440
+                            Height =255
+                            Name ="GRSrvConTitle_Label"
+                            Caption ="GRSrvConTitle"
+                            GUID = Begin
+                                0xec7ed4edff3b8e4cbf22375589f13c75
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =5550
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =35
+                    Name ="GRInitialSubscr"
+                    ControlSource ="GRInitialSubscr"
+                    GUID = Begin
+                        0x41a9162abc8e1e40872e968ee17a3efe
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =5550
+                            Width =1440
+                            Height =255
+                            Name ="GRInitialSubscr_Label"
+                            Caption ="GRInitialSubscr"
+                            GUID = Begin
+                                0x944031478705e04aabf7b80babfb8c74
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =5910
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =36
+                    Name ="GRHold"
+                    ControlSource ="GRHold"
+                    GUID = Begin
+                        0x06df4c147fee08478aa4cf2f962af68b
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =5910
+                            Width =1440
+                            Height =255
+                            Name ="GRHold_Label"
+                            Caption ="GRHold"
+                            GUID = Begin
+                                0xedff103813332f4fb9b769cd4dfa356a
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =6270
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =37
+                    Name ="GRCancelledDate"
+                    ControlSource ="GRCancelledDate"
+                    GUID = Begin
+                        0x6699dabb78371f4284aa38f591e40156
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =6270
+                            Width =1440
+                            Height =255
+                            Name ="GRCancelledDate_Label"
+                            Caption ="GRCancelledDate"
+                            GUID = Begin
+                                0x639d3545158763428f72f0af02f2794c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =5926
+                    Top =6630
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =38
+                    Name ="GRReinstatedDate"
+                    ControlSource ="GRReinstatedDate"
+                    GUID = Begin
+                        0xc7c22a4fa503374d995dedcca117749c
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =4410
+                            Top =6630
+                            Width =1440
+                            Height =255
+                            Name ="GRReinstatedDate_Label"
+                            Caption ="GRReinstatedDate"
+                            GUID = Begin
+                                0xfebf58543686ff489364121b9e00c04d
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =510
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =39
+                    Name ="Ins"
+                    ControlSource ="Ins"
+                    GUID = Begin
+                        0x5fd20e478a63404cadd05051f3ede134
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =510
+                            Width =1454
+                            Height =255
+                            Name ="Ins_Label"
+                            Caption ="Ins"
+                            GUID = Begin
+                                0x9bc7f532195f09448bf86d25909f6fbd
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =855
+                    Height =255
+                    ColumnWidth =600
+                    TabIndex =40
+                    Name ="GroupType"
+                    ControlSource ="GroupType"
+                    GUID = Begin
+                        0x235ea369fa26ff4eab8aa9959aaf53d8
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =855
+                            Width =1454
+                            Height =255
+                            Name ="GroupType_Label"
+                            Caption ="GroupType"
+                            GUID = Begin
+                                0x36fa7445a8eceb458a9e678729d4d53b
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =1200
+                    Height =255
+                    ColumnWidth =600
+                    TabIndex =41
+                    Name ="InvoiceType"
+                    ControlSource ="InvoiceType"
+                    GUID = Begin
+                        0x4f98c4825564814fb942b30b71c3209d
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =1200
+                            Width =1454
+                            Height =255
+                            Name ="InvoiceType_Label"
+                            Caption ="InvoiceType"
+                            GUID = Begin
+                                0x187665cd97c3764694812acce4c4a55f
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =165
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =42
+                    Name ="OrthoCoverage"
+                    ControlSource ="OrthoCoverage"
+                    GUID = Begin
+                        0x3c96e678280dc944848dceefeeade359
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =7485
+                            Top =165
+                            Width =1454
+                            Height =255
+                            Name ="OrthoCoverage_Label"
+                            Caption ="OrthoCoverage"
+                            GUID = Begin
+                                0xb3c8077175b09c4baf9432421ea8b8ed
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =1545
+                    Height =255
+                    ColumnWidth =615
+                    TabIndex =43
+                    Name ="OrthoLifeTimeLimit"
+                    ControlSource ="OrthoLifeTimeLimit"
+                    GUID = Begin
+                        0xfa2aa41afb5c96448ddd3760c24d014f
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =1545
+                            Width =1454
+                            Height =255
+                            Name ="OrthoLifeTimeLimit_Label"
+                            Caption ="OrthoLifeTimeLimit"
+                            GUID = Begin
+                                0xf31490c685b9cc48b322905635b26415
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =1890
+                    Height =255
+                    ColumnWidth =465
+                    TabIndex =44
+                    Name ="WaitingPeriod"
+                    ControlSource ="WaitingPeriod"
+                    GUID = Begin
+                        0x3bc4803ea2c53f46af43308e2e5d5420
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =1890
+                            Width =1454
+                            Height =255
+                            Name ="WaitingPeriod_Label"
+                            Caption ="WaitingPeriod"
+                            GUID = Begin
+                                0xc0561d159b857441b178dc1356fea657
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =2235
+                    Height =255
+                    ColumnWidth =750
+                    TabIndex =45
+                    Name ="RecUserID"
+                    ControlSource ="RecUserID"
+                    GUID = Begin
+                        0x601d4c1133d75b4bb95736146de5857b
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =2235
+                            Width =1454
+                            Height =255
+                            Name ="RecUserID_Label"
+                            Caption ="RecUserID"
+                            GUID = Begin
+                                0xfdacc4e3c95eae4baff43053cd5dee7c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =2580
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =46
+                    Name ="RecDate"
+                    ControlSource ="RecDate"
+                    GUID = Begin
+                        0xa2bcc53893380d488543670c050d56d2
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =2580
+                            Width =1454
+                            Height =255
+                            Name ="RecDate_Label"
+                            Caption ="RecDate"
+                            GUID = Begin
+                                0x58e18c30ec846040bda94253c9a7fa7c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =2925
+                    Height =255
+                    ColumnWidth =750
+                    TabIndex =47
+                    Name ="RecTime"
+                    ControlSource ="RecTime"
+                    GUID = Begin
+                        0xe090f0124a6bd84ba5a4c7f367af2fd9
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =2925
+                            Width =1454
+                            Height =255
+                            Name ="RecTime_Label"
+                            Caption ="RecTime"
+                            GUID = Begin
+                                0x5a1d8e65471e054cb61e42ad10cb4160
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =3270
+                    Height =255
+                    ColumnWidth =3000
+                    TabIndex =48
+                    Name ="User01"
+                    ControlSource ="User01"
+                    GUID = Begin
+                        0x1047ccf83718354fbe752766db31aaf0
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =3270
+                            Width =1454
+                            Height =255
+                            Name ="User01_Label"
+                            Caption ="User01"
+                            GUID = Begin
+                                0x798b08ee36d77d4f8c111fe985c26e61
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =3615
+                    Height =255
+                    ColumnWidth =3000
+                    TabIndex =49
+                    Name ="User02"
+                    ControlSource ="User02"
+                    GUID = Begin
+                        0x04b5e1a35eb8f544aa418efe530306f9
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =3615
+                            Width =1454
+                            Height =255
+                            Name ="User02_Label"
+                            Caption ="User02"
+                            GUID = Begin
+                                0x1f8145c88446024eb49c5d46656e59f6
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    EnterKeyBehavior = NotDefault
+                    ScrollBars =2
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =3960
+                    Height =255
+                    ColumnWidth =3000
+                    TabIndex =50
+                    Name ="User03"
+                    ControlSource ="User03"
+                    GUID = Begin
+                        0xb687460523e3084aaf13f75727a92543
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7485
+                            Top =3960
+                            Width =1454
+                            Height =255
+                            Name ="User03_Label"
+                            Caption ="User03"
+                            GUID = Begin
+                                0x8b4a36142a15c04096384cdf4cdf7ef3
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =4305
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =51
+                    Name ="User04"
+                    ControlSource ="User04"
+                    GUID = Begin
+                        0x7d2dbcb18453014a9a1491267fb31ecb
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7515
+                            Top =4305
+                            Width =1454
+                            Height =255
+                            Name ="User04_Label"
+                            Caption ="User04"
+                            GUID = Begin
+                                0x6fd5cf5bf3a6dd41a94d276c15f0093c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =4650
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =52
+                    Name ="User05"
+                    ControlSource ="User05"
+                    GUID = Begin
+                        0xe80f2e9cb41f8741a70fc732b8d16b1f
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7515
+                            Top =4650
+                            Width =1454
+                            Height =255
+                            Name ="User05_Label"
+                            Caption ="User05"
+                            GUID = Begin
+                                0x30803b2793fc454e8a0c21330b6c02b5
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =4995
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =53
+                    Name ="User06"
+                    ControlSource ="User06"
+                    GUID = Begin
+                        0x635dd0466efdde4595c583fb2863b453
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7515
+                            Top =4995
+                            Width =1454
+                            Height =255
+                            Name ="User06_Label"
+                            Caption ="User06"
+                            GUID = Begin
+                                0xa1a0c3ba7c46f24db9f38eb39c16d7f2
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =5340
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =54
+                    Name ="User07"
+                    ControlSource ="User07"
+                    GUID = Begin
+                        0xb3602b292d93324eb2c56a3c3a4bf80d
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7515
+                            Top =5340
+                            Width =1454
+                            Height =255
+                            Name ="User07_Label"
+                            Caption ="User07"
+                            GUID = Begin
+                                0x460f051a67e3a5429c00e5b4ee775a4e
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =5685
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =55
+                    Name ="User08"
+                    ControlSource ="User08"
+                    GUID = Begin
+                        0x44a2d92fc7050a4d92d2dafe1747d678
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7515
+                            Top =5685
+                            Width =1454
+                            Height =255
+                            Name ="User08_Label"
+                            Caption ="User08"
+                            GUID = Begin
+                                0x8c3f51d289885b47807d02abf4994cea
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =6030
+                    Height =255
+                    ColumnWidth =900
+                    TabIndex =56
+                    Name ="User09"
+                    ControlSource ="User09"
+                    GUID = Begin
+                        0x1c710c4bdfcd994b86dceb47811f07df
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7515
+                            Top =6030
+                            Width =1454
+                            Height =255
+                            Name ="User09_Label"
+                            Caption ="User09"
+                            GUID = Begin
+                                0x3297607e3038e243b34fb7453ce5efbe
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =9030
+                    Top =6375
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =57
+                    Name ="DateModified"
+                    ControlSource ="DateModified"
+                    GUID = Begin
+                        0x5b544314f3dd8349aa96679a6db3bbfc
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =7515
+                            Top =6375
+                            Width =1454
+                            Height =255
+                            Name ="DateModified_Label"
+                            Caption ="DateModified"
+                            GUID = Begin
+                                0x4f618e8e02c8704f8d6c87e1b3e3e4ec
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+            GUID = Begin
+                0xb5977b3ab6f159459892756d401ffb54
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+
+
+Private Sub dboGroupID_AfterUpdate()
+
+
+                'ControlName
+                'dboGroupID
+                'ID
+                'GroupID
+                'GRname
+                'GRgeoID
+                'GRstreet1
+                'GRstreet2
+                'GRcity
+                'GRstate
+                'GRzip
+                'GRphone1
+                'GRphone2
+                'GRfax
+                'GRmainCONT
+                'GRsrvCONT
+                'GRmarkDIR
+                'GRcontBEG
+                'GRcontEND
+                'GRclassKEY
+                'GRAgent%
+                'GRnotes
+                'GRClientSvcRepID
+                'GRee
+                'GRannvDATE
+                'GRfirstINVamt
+                'GRsubLABELSprinted
+                'DateCreated
+                'DateUpdated
+                'GRcancelled
+                'GRacctMgr
+                'GRcardstock
+                'GRMailCard
+                'GRinvSort
+                'GRemail
+                'GRmainCONTtitle
+                'GRSrvConTitle
+                'GRInitialSubscr
+                'GRhold
+                'GRcancelledDate
+                'GRreinstatedDate
+                'Ins
+                'GroupType
+                'InvoiceType
+                'OrthoCoverage
+                'OrthoLifetimeLimit
+                'WaitingPeriod
+                'RecUserID
+                'RecDate
+                'RecTime
+                'User01
+                'User02
+                'User03
+                'User04
+                'User05
+                'User06
+                'User07
+                'User08
+                'User09
+                'DateModified
+
+
+
+    
+
+End Sub

@@ -1,0 +1,309 @@
+Version =20
+VersionRequired =20
+Checksum =-1640318060
+Begin Form
+    Modal = NotDefault
+    MaxButton = NotDefault
+    ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =2
+    ScrollBars =2
+    ViewsAllowed =2
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4050
+    DatasheetFontHeight =10
+    ItemSuffix =12
+    Left =5625
+    Top =915
+    Right =15255
+    Bottom =3075
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x59d30a1065aae440
+    End
+    RecordSource ="vw_tpa_dup_ssn"
+    Caption ="Dup SSNs"
+    MenuBar ="Dialog"
+    DatasheetFontName ="Arial"
+    AllowFormView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+            GUID = Begin
+                0x8622230ae314a94e943b4615bb85426e
+            End
+        End
+        Begin Section
+            Height =2295
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0xd18a569dc7352c44b8e7471f322ae710
+            End
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =120
+                    Height =255
+                    ColumnWidth =1440
+                    Name ="ID"
+                    ControlSource ="ID"
+                    GUID = Begin
+                        0x1c24d3a5c7b2c342a605020da2da5637
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =120
+                            Width =1560
+                            Height =255
+                            Name ="ID_Label"
+                            Caption ="ID"
+                            GUID = Begin
+                                0xa6ddd8b0a519f840b8911e80d9f0d89d
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =480
+                    Width =615
+                    Height =255
+                    ColumnWidth =885
+                    TabIndex =1
+                    Name ="GRP_ID"
+                    ControlSource ="GRP_ID"
+                    GUID = Begin
+                        0x54114f26b03cc843babc3f576f422c93
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =480
+                            Width =1560
+                            Height =255
+                            Name ="GRP_ID_Label"
+                            Caption ="GRP_ID"
+                            GUID = Begin
+                                0x18bfa9c5a68e574888321545dbc2bb81
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =840
+                    Width =825
+                    Height =255
+                    ColumnWidth =1245
+                    TabIndex =2
+                    Name ="SSN"
+                    ControlSource ="SSN"
+                    InputMask ="000\\-00\\-0000;0;_"
+                    GUID = Begin
+                        0x0de800bd64217f4291e2d0ba1064b3a3
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =840
+                            Width =1560
+                            Height =255
+                            Name ="SSN_Label"
+                            Caption ="SSN"
+                            GUID = Begin
+                                0x3045e0068ceed6408fa80043cbfe498b
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1200
+                    Width =750
+                    Height =255
+                    ColumnWidth =1020
+                    TabIndex =3
+                    Name ="SUB_ID"
+                    ControlSource ="SUB_ID"
+                    InputMask ="0000\\-0000;0;_"
+                    GUID = Begin
+                        0xa17632caf99b3b459c64f6b70815319f
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1200
+                            Width =1560
+                            Height =255
+                            Name ="SUB_ID_Label"
+                            Caption ="SUB_ID"
+                            GUID = Begin
+                                0x3148a4c9c82ab74b81b917386c93e808
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1560
+                    Width =2310
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =4
+                    Name ="LAST_NAME"
+                    ControlSource ="LAST_NAME"
+                    GUID = Begin
+                        0x3e35769c52e5414fa333af2279a10786
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1560
+                            Width =1560
+                            Height =255
+                            Name ="LAST_NAME_Label"
+                            Caption ="LAST_NAME"
+                            GUID = Begin
+                                0xd0c37f52f5ad9e4b8fce2e9d7f28074c
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1920
+                    Width =2310
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =5
+                    Name ="FIRST_NAME"
+                    ControlSource ="FIRST_NAME"
+                    GUID = Begin
+                        0x4e71887645903f4f9e8b629eb5f3b20e
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1920
+                            Width =1560
+                            Height =255
+                            Name ="FIRST_NAME_Label"
+                            Caption ="FIRST_NAME"
+                            GUID = Begin
+                                0xeeafc7e3fd553442914ae026ebef78da
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+            GUID = Begin
+                0x32b5dd3afafec841a8afd78c7c91c2be
+            End
+        End
+    End
+End

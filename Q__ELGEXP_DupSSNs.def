@@ -6,16 +6,12 @@ Begin InputTables
     Name ="ELGEXP"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="EISSN# Field"
     Expression ="Joe_GroupLink_Dups.[EISSN# Field]"
+    Alias ="Expr2"
     Name ="EISBRID"
     Expression ="ELGEXP.EISBRID"
-End
-Begin Joins
-    LeftTable ="Joe_GroupLink_Dups"
-    RightTable ="ELGEXP"
-    Expression ="Joe_GroupLink_Dups.[EISSN# Field] = ELGEXP.[EISSN#]"
-    Flag =1
 End
 Begin Groups
     Expression ="Joe_GroupLink_Dups.[EISSN# Field]"
@@ -42,10 +38,10 @@ Begin
     Left =69
     Top =159
     Right =1346
-    Bottom =786
+    Bottom =649
     Left =-1
     Top =-1
-    Right =1245
+    Right =1262
     Bottom =310
     Left =0
     Top =0
@@ -54,7 +50,7 @@ Begin
         Left =48
         Top =12
         Right =255
-        Bottom =190
+        Bottom =55
         Top =0
         Name ="Joe_GroupLink_Dups"
         Name =""
@@ -63,7 +59,7 @@ Begin
         Left =303
         Top =12
         Right =553
-        Bottom =238
+        Bottom =55
         Top =0
         Name ="ELGEXP"
         Name =""

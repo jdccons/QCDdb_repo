@@ -1,7 +1,7 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBstatus)=\"Indiv\") AND ((tblSubscr.SUBcancelled)=3) AND ((tblSub"
-    "scr.SUBcontEND)<#9/1/2000#))"
+Where ="(((tblSubscr.SubStatus)=\"Indiv\") AND ((tblSubscr.SubCancelled)=3) AND ((tblSub"
+    "scr.SubContEnd)<#9/1/2000#))"
 Begin InputTables
     Name ="tblSubscr"
 End
@@ -21,10 +21,10 @@ Begin
     Left =18
     Top =40
     Right =1002
-    Bottom =353
+    Bottom =364
     Left =-1
     Top =-1
-    Right =977
+    Right =969
     Bottom =144
     Left =0
     Top =0
@@ -33,7 +33,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =105
+        Bottom =94
         Top =28
         Name ="tblSubscr"
         Name =""

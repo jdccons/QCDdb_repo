@@ -1,24 +1,30 @@
-Version =17
-VersionRequired =17
-Checksum =2094498543
+Version =20
+VersionRequired =20
+Checksum =-1740977648
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     Width =5760
     ItemSuffix =45
-    Left =4440
-    Top =2145
-    Right =10755
-    Bottom =7200
+    Left =-22692
+    Top =1692
+    Right =-15144
+    Bottom =7332
     RecSrcDt = Begin
         0xd359ddb3b2c4e140
     End
     Caption ="Dental Prospect Report"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -27,6 +33,9 @@ Begin Form
             Height =3600
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x2fe2f5df2cee5440a29a043ff5fcb856
+            End
             Begin
                 Begin Label
                     BackStyle =0
@@ -40,6 +49,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text62"
                     Caption ="Geographical  From: "
+                    GUID = Begin
+                        0x07af1cd837af0c44a3fc243cb7eb4d9a
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -54,6 +66,9 @@ Begin Form
                     BackColor =8454143
                     Name ="Text2"
                     Caption ="City From: "
+                    GUID = Begin
+                        0xcf8dccd4895adf4ebb047739e29ba34a
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -67,6 +82,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text7"
                     Caption ="Specialty From: "
+                    GUID = Begin
+                        0x8cb0e05ced8f4c468d7f66d906eb8f3d
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -76,7 +94,10 @@ Begin Form
                     Left =3312
                     Top =360
                     Width =1008
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x3fab5add800983408ac65623490ba54e
+                    End
                     Name ="c-GEOfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -93,7 +114,10 @@ Begin Form
                     Top =600
                     Width =1008
                     TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x4a34a47e75f1b24ba01dc2d1a1412d55
+                    End
                     Name ="c-GEOto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -103,7 +127,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =0
-                    OverlapFlags =87
+                    OverlapFlags =247
                     TextAlign =3
                     Left =1443
                     Top =600
@@ -113,6 +137,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text24"
                     Caption =" To: "
+                    GUID = Begin
+                        0x790b3257270d284293f5d14c02301e6b
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -127,6 +154,9 @@ Begin Form
                     BackColor =8454143
                     Name ="Text27"
                     Caption =" To: "
+                    GUID = Begin
+                        0xa67951eff254d941b3b1fea83ba0905d
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -140,6 +170,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text31"
                     Caption ="To: "
+                    GUID = Begin
+                        0x7ec1eb7f09ab104eb92f5a8cd3816230
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -150,7 +183,10 @@ Begin Form
                     Top =960
                     Width =1008
                     TabIndex =2
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"6\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"12\""
+                    GUID = Begin
+                        0x9d28309ccc1cf44d92e0b2c2c8cd2d3b
+                    End
                     Name ="c-SPECfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tbldentistspec.SPECIALTYID AS Spec_ID, tbldentistspec.SPECIALITYdesc AS S"
@@ -167,7 +203,10 @@ Begin Form
                     Top =1200
                     Width =1008
                     TabIndex =3
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"6\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"12\""
+                    GUID = Begin
+                        0x1600bf9a0bc95940820e0cb9f10ef693
+                    End
                     Name ="c-SPECto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tbldentistspec.SPECIALTYID AS Spec_ID, tbldentistspec.SPECIALITYdesc AS S"
@@ -207,6 +246,9 @@ Begin Form
                         0x0003100000000000800000000080000080800000000080008000800000808000 ,
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
+                    End
+                    GUID = Begin
+                        0x605d61399c9a2944bb3a9de783f1cfe2
                     End
                 End
             End

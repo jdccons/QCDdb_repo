@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =-74112313
+Version =20
+VersionRequired =20
+Checksum =822909426
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -19,8 +19,8 @@ Begin Form
     ItemSuffix =9
     Left =1920
     Top =480
-    Right =6510
-    Bottom =2730
+    Right =6516
+    Bottom =2736
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x7886207030f7e140
@@ -103,11 +103,17 @@ Begin Form
             Height =0
             BackColor =-2147483633
             Name ="FormHeader"
+            GUID = Begin
+                0x63f2941c6b0cc44daea41239ffe504a2
+            End
         End
         Begin Section
             Height =1620
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x2382eed317057242ba867a2dd021b6be
+            End
             Begin
                 Begin TextBox
                     Enabled = NotDefault
@@ -119,6 +125,9 @@ Begin Form
                     ColumnWidth =900
                     Name ="ProvRelsRepID"
                     ControlSource ="ProvRelsRepID"
+                    GUID = Begin
+                        0x5363148f4452024fa8f3d75dbbd5e458
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -129,6 +138,9 @@ Begin Form
                             Name ="OperatorID Label"
                             Caption ="PRR ID"
                             EventProcPrefix ="OperatorID_Label"
+                            GUID = Begin
+                                0xd6a8f89a498db6488ef5e61a401e9846
+                            End
                         End
                     End
                 End
@@ -142,6 +154,9 @@ Begin Form
                     TabIndex =1
                     Name ="Name"
                     ControlSource ="Name"
+                    GUID = Begin
+                        0xb36d61ae8cd4634aaf22158ecbeba21f
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -152,6 +167,9 @@ Begin Form
                             Name ="OperatorName Label"
                             Caption ="PRR Name"
                             EventProcPrefix ="OperatorName_Label"
+                            GUID = Begin
+                                0xa266b65ddbbf1a4586757bed82a8e240
+                            End
                         End
                     End
                 End
@@ -169,6 +187,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label5"
                     Caption ="Provider Relations Reps"
+                    GUID = Begin
+                        0xe52baba05a9d094ab864975dc39e0745
+                    End
                 End
             End
         End
@@ -176,6 +197,9 @@ Begin Form
             Height =660
             BackColor =-2147483633
             Name ="FormFooter"
+            GUID = Begin
+                0xb32b9c7675b24e47a4de1a492ebe403e
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -210,6 +234,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0xe0c6800032522d4cb79b164af2bb7cb8
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -245,6 +272,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Add Record"
+                    GUID = Begin
+                        0x6e7c7682a619a341bca7cc9d6c824644
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -280,6 +310,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Delete Record"
+                    GUID = Begin
+                        0xdf5100db3a53554ca93035319465e84f
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -315,6 +348,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Save Record"
+                    GUID = Begin
+                        0x5a416d5fc5715e4ba746d783184048fe
+                    End
                 End
             End
         End

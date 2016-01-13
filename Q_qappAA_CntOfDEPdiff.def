@@ -1,7 +1,7 @@
 Operation =3
 Name ="tmpAA_VarianceReport"
 Option =0
-Where ="(((qselQCD_CntOfDeps.CountOfDEPsubID)<>[Cnt])) OR (((qselAA_CntOfDeps.Cnt)<[Coun"
+Where ="(((qselQCD_CntOfDeps.CountOfDEPsubID)<>[Cnt])) Or (((qselAA_CntOfDeps.Cnt)<[Coun"
     "tOfDEPsubID]))"
 Begin InputTables
     Name ="qselAA_CntOfDeps"
@@ -19,21 +19,18 @@ Begin OutputColumns
     Expression ="\"Sub Count of Dependents\""
     Name ="SubSSN"
     Expression ="qselQCD_CntOfDeps.SUBssn"
+    Alias ="Expr1"
     Name ="AAGrpID"
     Expression ="qselAA_CntOfDeps.GRPid"
+    Alias ="Expr2"
     Name ="NewValue"
     Expression ="qselAA_CntOfDeps.Cnt"
     Alias ="Expr1"
     Name ="OldValue"
     Expression ="qselQCD_CntOfDeps.CountOfDEPsubID"
+    Alias ="Expr3"
     Name ="RptDate"
     Expression ="qselAA_CntOfDeps.RptDate"
-End
-Begin Joins
-    LeftTable ="qselAA_CntOfDeps"
-    RightTable ="qselQCD_CntOfDeps"
-    Expression ="qselAA_CntOfDeps.AA_SSN = qselQCD_CntOfDeps.SUBssn"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -47,10 +44,10 @@ Begin
     Left =57
     Top =127
     Right =1297
-    Bottom =480
+    Bottom =484
     Left =-1
     Top =-1
-    Right =1233
+    Right =1225
     Bottom =177
     Left =0
     Top =0
@@ -59,7 +56,7 @@ Begin
         Left =49
         Top =6
         Right =217
-        Bottom =120
+        Bottom =49
         Top =0
         Name ="qselAA_CntOfDeps"
         Name =""
@@ -68,7 +65,7 @@ Begin
         Left =248
         Top =6
         Right =435
-        Bottom =90
+        Bottom =94
         Top =0
         Name ="qselQCD_CntOfDeps"
         Name =""

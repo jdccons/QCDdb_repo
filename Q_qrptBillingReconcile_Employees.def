@@ -11,7 +11,8 @@ Begin OutputColumns
     Expression ="tmpBillingReconcile_rpt.GROUPid"
     Expression ="tmpBillingReconcile_rpt.GRname"
     Expression ="tmpBillingReconcile_rpt.Docdate"
-    Expression ="tmpBillingReconcile_rpt.GRPgeoID"
+    Alias ="Expr1"
+    Expression ="tmpBillingReconcile_rpt.GRGeoID"
     Expression ="tmpBillingReconcile_rpt.GRcancelled"
     Expression ="tmpBillingReconcile_rpt.GRcancelledDate"
     Expression ="tmpBillingReconcile_rpt.GRreinstatedDate"
@@ -24,28 +25,33 @@ Begin OutputColumns
     Expression ="tmpBillingReconcile_rpt.SubCnt"
     Expression ="tmpBillingReconcile_rpt.DepCnt"
     Alias ="AgentName"
-    Expression ="tblAgent.AGENT_LUname"
-    Expression ="tblGrpAgt.AgentRATE"
+    Expression ="tblAgent.Agent_LUname"
+    Expression ="tblGrpAgt.AgentRate"
 End
 Begin Joins
     LeftTable ="tmpBillingReconcile_rpt"
     RightTable ="tblGrpAgt"
-    Expression ="tmpBillingReconcile_rpt.GROUPid = tblGrpAgt.GROUPid"
+    Expression ="tmpBillingReconcile_rpt.GROUPid=tblGrpAgt.GroupId"
     Flag =1
     LeftTable ="tblAgent"
     RightTable ="tblGrpAgt"
-    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AgentId=tblGrpAgt.AgentId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tmpBillingReconcile_rpt.GROUPid"
         dbInteger "ColumnWidth" ="870"
         dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Expr1"
     End
 End
 Begin
@@ -53,10 +59,10 @@ Begin
     Left =80
     Top =92
     Right =954
-    Bottom =511
+    Bottom =530
     Left =-1
     Top =-1
-    Right =867
+    Right =859
     Bottom =258
     Left =0
     Top =0
@@ -65,7 +71,7 @@ Begin
         Left =454
         Top =6
         Right =704
-        Bottom =226
+        Bottom =214
         Top =14
         Name ="tblAgent"
         Name =""
@@ -74,7 +80,7 @@ Begin
         Left =19
         Top =6
         Right =223
-        Bottom =203
+        Bottom =199
         Top =7
         Name ="tmpBillingReconcile_rpt"
         Name =""
@@ -83,7 +89,7 @@ Begin
         Left =281
         Top =6
         Right =400
-        Bottom =151
+        Bottom =139
         Top =0
         Name ="tblGrpAgt"
         Name =""

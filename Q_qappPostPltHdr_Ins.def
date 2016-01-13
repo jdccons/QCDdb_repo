@@ -1,8 +1,8 @@
 Operation =3
 Name ="ARHDR"
 Option =8
-Where ="(((CStr(Format([TRANS NO],\"0000000\")))=CStr(Format([Forms]![frmInvGrp_Ins]![TR"
-    "ANS NO],\"0000000\"))))"
+Where ="(((CStr(Format([TRANS NO],\"0000000\")))=CStr(Format(Forms!frmInvGrp_Ins![TRANS "
+    "NO],\"0000000\"))))"
 Begin InputTables
     Name ="tblInvHdr"
 End
@@ -257,14 +257,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1024
-    Bottom =644
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =432
     Left =-1
     Top =-1
-    Right =1021
+    Right =1253
     Bottom =212
     Left =0
     Top =0
@@ -273,7 +273,7 @@ Begin
         Left =38
         Top =6
         Right =218
-        Bottom =150
+        Bottom =139
         Top =31
         Name ="tblInvHdr"
         Name =""

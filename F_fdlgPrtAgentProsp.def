@@ -1,23 +1,30 @@
-Version =17
-VersionRequired =17
-Checksum =-1476569030
+Version =20
+VersionRequired =20
+Checksum =1116377664
 Begin Form
-    PopUp = NotDefault
+    Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     Width =5820
     ItemSuffix =18
-    Left =3660
-    Top =1050
-    Right =10065
-    Bottom =5640
+    Left =-22692
+    Top =1692
+    Right =-15084
+    Bottom =7344
     RecSrcDt = Begin
         0x2223dcb3b2c4e140
     End
     Caption ="Print Agents - Prospect List"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -26,6 +33,9 @@ Begin Form
             Height =3615
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x49eb6377dfab594386f1a49bc66fe594
+            End
             Begin
                 Begin Label
                     BackStyle =0
@@ -39,6 +49,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text67"
                     Caption ="Geographical From: "
+                    GUID = Begin
+                        0xef6d5f888a8b544ba479c61c3034367a
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -72,6 +85,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0x504c11d07b008e42b898502218fdd1ac
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -85,6 +101,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="To:  "
+                    GUID = Begin
+                        0x723da236bb29784ab0eaa6a1df09c88e
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -94,7 +113,10 @@ Begin Form
                     Left =3231
                     Top =825
                     Width =1165
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0xdaecbca33c7f8a4fb7359fd09983861b
+                    End
                     Name ="c-GEOfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descr FRO"
@@ -111,7 +133,10 @@ Begin Form
                     Top =1185
                     Width =1165
                     TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x70ea414d9fe2f249ade8b742d3de2f43
+                    End
                     Name ="c-GEOto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descr FRO"

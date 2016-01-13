@@ -14,11 +14,11 @@ Begin OutputColumns
     Expression ="\"M\""
     Alias ="EIMBRID"
     Name ="EIMBRID"
-    Expression ="IIf([DEPrelationship]='S',[tblSubscr_delete].[SUBssn] & \"01\",[tblSubscr_delete"
-        "].[SUBssn] & \"02\")"
+    Expression ="IIf([DEPrelationship]='S',tblSubscr_delete.SUBssn & \"01\",tblSubscr_delete.SUBs"
+        "sn & \"02\")"
     Alias ="EISBRID"
     Name ="EISBRID"
-    Expression ="[tblSubscr_delete].[SUBssn] & \"00\""
+    Expression ="tblSubscr_delete.SUBssn & \"00\""
     Alias ="EISSN"
     Name ="EISSN"
     Expression ="tblDependent_delete.DepSSN"
@@ -54,10 +54,10 @@ Begin OutputColumns
     Expression ="tblSubscr_delete.SubZip"
     Alias ="EIHPHR"
     Name ="EIHPHR"
-    Expression ="StripChars_TSB([tblSubscr_delete].[SubPhoneHome],\"-\")"
+    Expression ="StripChars_TSB(tblSubscr_delete.SubPhoneHome,\"-\")"
     Alias ="EIWPHR"
     Name ="EIWPHR"
-    Expression ="StripChars_TSB([tblSubscr_delete].[SubPhoneWork],\"-\")"
+    Expression ="StripChars_TSB(tblSubscr_delete.SubPhoneWork,\"-\")"
     Alias ="EIGRPID"
     Name ="EIGRPID"
     Expression ="'MNQ' & [GROUPid]"
@@ -69,33 +69,32 @@ Begin OutputColumns
     Expression ="Format([GRcontBEG],\"mmddyyyy\")"
     Alias ="EIDTCVEF"
     Name ="EIDTCVEF"
-    Expression ="IIf(IsNull([tblSubscr_delete].[PreexistingDate])=True,Format([tblSubscr_delete]."
-        "[SUBeffDATE],\"mmddyyyy\"),Format([tblSubscr_delete].[PreexistingDate],\"mmddyyy"
-        "y\"))"
+    Expression ="IIf(IsNull(tblSubscr_delete.PreexistingDate)=True,Format(tblSubscr_delete.SUBeff"
+        "DATE,\"mmddyyyy\"),Format(tblSubscr_delete.PreexistingDate,\"mmddyyyy\"))"
     Alias ="EIDTCVEN"
     Name ="EIDTCVEN"
-    Expression ="IIf(Not IsNull([tblSubscr_delete].[DateDeleted]),Format([tblSubscr_delete].[Date"
-        "Deleted],\"mmddyyyy\"),Null)"
+    Expression ="IIf(Not IsNull(tblSubscr_delete.DateDeleted),Format(tblSubscr_delete.DateDeleted"
+        ",\"mmddyyyy\"),Null)"
     Alias ="EIMBRDP"
     Name ="EIMBRDP"
-    Expression ="IIf([tblDependent_delete].[DepRelationship]=\"S\",1,2)"
+    Expression ="IIf(tblDependent_delete.DepRelationship=\"S\",1,2)"
     Alias ="EIDTTERM"
     Name ="EIDTTERM"
-    Expression ="IIf([tblSubscr_delete].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr_delete].["
-        "DateDeleted],\"mmddyyyy\"))"
+    Expression ="IIf(tblSubscr_delete.DateDeleted=#1/1/1900#,\"\",Format(tblSubscr_delete.DateDel"
+        "eted,\"mmddyyyy\"))"
 End
 Begin Joins
     LeftTable ="tblSubscr_delete"
     RightTable ="tlkpAllAmericanPlan"
-    Expression ="tblSubscr_delete.PlanID = tlkpAllAmericanPlan.PlanID"
+    Expression ="tblSubscr_delete.PlanID=tlkpAllAmericanPlan.PlanID"
     Flag =2
     LeftTable ="tblGrp"
     RightTable ="tblSubscr_delete"
-    Expression ="tblGrp.GROUPid = tblSubscr_delete.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr_delete.SubGroupID"
     Flag =3
     LeftTable ="tblSubscr_delete"
     RightTable ="tblDependent_delete"
-    Expression ="tblSubscr_delete.SubSSN = tblDependent_delete.DepSubID"
+    Expression ="tblSubscr_delete.SubSSN=tblDependent_delete.DepSubID"
     Flag =3
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -116,10 +115,10 @@ Begin
     Left =40
     Top =10
     Right =1258
-    Bottom =595
+    Bottom =607
     Left =-1
     Top =-1
-    Right =1211
+    Right =1203
     Bottom =417
     Left =0
     Top =0
@@ -128,7 +127,7 @@ Begin
         Left =838
         Top =43
         Right =1004
-        Bottom =195
+        Bottom =191
         Top =35
         Name ="tblGrp"
         Name =""
@@ -137,7 +136,7 @@ Begin
         Left =411
         Top =65
         Right =586
-        Bottom =307
+        Bottom =303
         Top =31
         Name ="tblSubscr_delete"
         Name =""
@@ -146,7 +145,7 @@ Begin
         Left =787
         Top =236
         Right =947
-        Bottom =328
+        Bottom =324
         Top =0
         Name ="tlkpAllAmericanPlan"
         Name =""
@@ -155,7 +154,7 @@ Begin
         Left =37
         Top =54
         Right =312
-        Bottom =191
+        Bottom =187
         Top =0
         Name ="tblDependent_delete"
         Name =""

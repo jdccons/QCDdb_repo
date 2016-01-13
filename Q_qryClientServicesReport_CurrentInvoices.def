@@ -1,6 +1,6 @@
 Operation =1
 Option =0
-Where ="(((tblGrowth.Year)=\"2006\") AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrowth.Year)=\"2006\") AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblGrowth"
     Name ="tblGrp"
@@ -12,7 +12,7 @@ End
 Begin Joins
     LeftTable ="tblGrowth"
     RightTable ="tblGrp"
-    Expression ="tblGrowth.GroupID = tblGrp.GROUPid"
+    Expression ="tblGrowth.GroupID=tblGrp.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -27,11 +27,11 @@ Begin
     State =0
     Left =18
     Top =40
-    Right =1658
-    Bottom =464
+    Right =1486
+    Bottom =476
     Left =-1
     Top =-1
-    Right =1633
+    Right =1453
     Bottom =256
     Left =0
     Top =0
@@ -40,7 +40,7 @@ Begin
         Left =38
         Top =6
         Right =288
-        Bottom =158
+        Bottom =154
         Top =0
         Name ="tblGrowth"
         Name =""
@@ -49,7 +49,7 @@ Begin
         Left =323
         Top =14
         Right =494
-        Bottom =152
+        Bottom =147
         Top =27
         Name ="tblGrp"
         Name =""

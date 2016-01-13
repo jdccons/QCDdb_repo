@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =477836133
+Version =20
+VersionRequired =20
+Checksum =-245109533
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -48,11 +48,17 @@ Begin Form
             Height =0
             BackColor =-2147483633
             Name ="FormHeader"
+            GUID = Begin
+                0xb43162f3b44c36489e38d355937087e3
+            End
         End
         Begin Section
             Height =1920
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x9c4aacfdb0ced1438f2044fcaeca2cb1
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -63,6 +69,9 @@ Begin Form
                     Name ="cmdUploadWebDatabase"
                     Caption ="Export/Upload Data"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xe7afa0729ab2a141a7bb07ab08f28b63
+                    End
                 End
                 Begin Label
                     SpecialEffect =4
@@ -78,6 +87,9 @@ Begin Form
                     FontWeight =700
                     Name ="lblStatus"
                     Caption ="Upload Dentists to Web"
+                    GUID = Begin
+                        0xdd9245d88c0947458df7caa2da767922
+                    End
                 End
                 Begin Label
                     FontUnderline = NotDefault
@@ -90,6 +102,9 @@ Begin Form
                     Name ="lblQCDUpload"
                     Caption ="Open QCD upload Form"
                     HyperlinkAddress ="http://www.qcdofamerica.com/database/upload_action.asp"
+                    GUID = Begin
+                        0x8d9cd53912d68840a38048bc66fddc27
+                    End
                 End
             End
         End
@@ -97,6 +112,9 @@ Begin Form
             Height =540
             BackColor =-2147483633
             Name ="FormFooter"
+            GUID = Begin
+                0xabd63e9ea9e0614a93cac682487a34d7
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -131,6 +149,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x09e8864bf3ef104492b322baee07a21e
+                    End
                 End
             End
         End

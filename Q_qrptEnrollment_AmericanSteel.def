@@ -4,7 +4,9 @@ Begin InputTables
     Name ="tblEnrollment_AmericanSteel"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="tblEnrollment_AmericanSteel.SUBdob"
+    Alias ="Expr2"
     Expression ="tblEnrollment_AmericanSteel.SUBphoneHOME"
     Alias ="NameSort"
     Expression ="([SubLastName]) & ([SubFirstName]) & ([SubMiddleName])"
@@ -26,7 +28,9 @@ Begin OutputColumns
     Alias ="Welcome"
     Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
         "loyee at No Monthly Charge.\""
+    Alias ="Expr3"
     Expression ="tblEnrollment_AmericanSteel.Campus"
+    Alias ="Expr4"
     Expression ="tblEnrollment_AmericanSteel.SUBssn"
     Alias ="DOB"
     Expression ="IIf(IsNull([SUBdob]),\"\",\"Date of Birth: \" & [SUBdob])"
@@ -35,6 +39,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="GRname"
@@ -78,14 +84,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-6
-    Top =-25
-    Right =802
-    Bottom =511
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =793
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -94,8 +100,8 @@ Begin
         Left =38
         Top =6
         Right =153
-        Bottom =113
-        Top =5
+        Bottom =49
+        Top =0
         Name ="tblEnrollment_AmericanSteel"
         Name =""
     End

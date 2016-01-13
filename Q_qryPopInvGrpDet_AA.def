@@ -1,8 +1,8 @@
 Operation =3
 Name ="tblInvLin"
 Option =8
-Where ="(((tblSubscr.PlanID) In (1,2,4)) AND ((tblGrp.GROUPid)=[Forms]![frmInvGrpAA_Ins]"
-    "![CUST KEY]) AND ((tblGrp.GroupType)=4))"
+Where ="(((tblSubscr.PlanID) In (1,2,4)) And ((tblGrp.GroupID)=Forms!frmInvGrpAA_Ins![CU"
+    "ST KEY]) And ((tblGrp.GroupType)=4))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
@@ -11,14 +11,14 @@ End
 Begin OutputColumns
     Alias ="DocNo"
     Name ="DOCUMENT NO"
-    Expression ="Trim$([Forms]![frmInvGrpAA_Ins]![TRANS NO])"
+    Expression ="Trim$(Forms!frmInvGrpAA_Ins![TRANS NO])"
     Alias ="ID"
     Name ="ITEM KEY"
     Expression ="IIf([InvoiceType]=1,[SUBssn],[SubID])"
     Alias ="Desc"
     Name ="DESCRIPTION"
-    Expression ="Trim([tblSubscr].[SUBlastNAME]) & \", \" & Trim([tblSubscr].[SUBfirstNAME]) & \""
-        " \" & Trim([tblSubscr].[SUBmiddleNAME])"
+    Expression ="Trim(tblSubscr.SUBlastNAME) & \", \" & Trim(tblSubscr.SUBfirstNAME) & \" \" & Tr"
+        "im(tblSubscr.SUBmiddleNAME)"
     Name ="UNIT PRICE"
     Expression ="tblRates.Rate"
     Alias ="QtyOrdered"
@@ -39,11 +39,11 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
@@ -61,10 +61,10 @@ Begin
     Left =-140
     Top =55
     Right =1137
-    Bottom =374
+    Bottom =381
     Left =-1
     Top =-1
-    Right =1270
+    Right =1262
     Bottom =146
     Left =0
     Top =0
@@ -73,7 +73,7 @@ Begin
         Left =38
         Top =6
         Right =162
-        Bottom =86
+        Bottom =94
         Top =39
         Name ="tblGrp"
         Name =""
@@ -82,7 +82,7 @@ Begin
         Left =224
         Top =8
         Right =414
-        Bottom =88
+        Bottom =96
         Top =15
         Name ="tblSubscr"
         Name =""
@@ -91,7 +91,7 @@ Begin
         Left =589
         Top =-2
         Right =685
-        Bottom =108
+        Bottom =101
         Top =0
         Name ="tblRates"
         Name =""

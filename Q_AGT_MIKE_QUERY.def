@@ -1,26 +1,26 @@
 Operation =1
 Option =0
-Where ="(((tblAgent.AGENTid)=\"TWALL\" Or (tblAgent.AGENTid)=\"BLDAV\") AND ((tblAgent.P"
+Where ="(((tblAgent.AgentId)=\"TWALL\" Or (tblAgent.AgentId)=\"BLDAV\") AND ((tblAgent.P"
     "ayCommTo)=4))"
 Begin InputTables
+    Name ="tblGrp"
     Name ="tblAgent"
     Name ="tblGrpAgt"
-    Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTid"
-    Expression ="tblGrpAgt.GROUPid"
+    Expression ="tblAgent.AgentId"
+    Expression ="tblGrpAgt.GroupId"
     Expression ="tblAgent.PayCommTo"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
 End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGrpAgt"
-    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AgentId=tblGrpAgt.AgentId"
     Flag =1
     LeftTable ="tblGrp"
     RightTable ="tblGrpAgt"
-    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Expression ="tblGrp.GroupID=tblGrpAgt.GroupId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -28,6 +28,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblAgent.AGENTid"
@@ -55,10 +56,10 @@ Begin
     Left =76
     Top =6
     Right =1268
-    Bottom =853
+    Bottom =765
     Left =-1
     Top =-1
-    Right =1185
+    Right =1177
     Bottom =579
     Left =0
     Top =0
@@ -67,7 +68,7 @@ Begin
         Left =4
         Top =0
         Right =258
-        Bottom =429
+        Bottom =418
         Top =0
         Name ="tblAgent"
         Name =""
@@ -76,7 +77,7 @@ Begin
         Left =281
         Top =29
         Right =437
-        Bottom =173
+        Bottom =162
         Top =0
         Name ="tblGrpAgt"
         Name =""
@@ -85,7 +86,7 @@ Begin
         Left =475
         Top =6
         Right =898
-        Bottom =501
+        Bottom =499
         Top =0
         Name ="tblGrp"
         Name =""

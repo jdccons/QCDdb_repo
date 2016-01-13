@@ -6,7 +6,7 @@ Function ValidateDateFormat(varDateIn As Variant) As Boolean
     
     Dim strPart As String
     Dim fIsDate As Boolean
-    Dim fOk As Boolean
+    Dim fOK As Boolean
     Dim intYear As Integer
     Dim intDay As Integer
     Dim intMonth As Integer
@@ -16,19 +16,19 @@ Function ValidateDateFormat(varDateIn As Variant) As Boolean
     
     Case vbDate
       ' Its a date
-      fOk = True
+      fOK = True
 
     Case vbString
       ' Its a string so we use IsDate to determine if the value is
       ' valid as a date.
       On Error Resume Next
       fIsDate = IsDate(varDateIn)
-      fOk = (Err = 0)
+      fOK = (Err = 0)
       On Error GoTo PROC_ERR
 
     Case vbLong
       ' Check to see if it is in the serial date range
-      fOk = (varDateIn > -657434 And varDateIn < 2958465)
+      fOK = (varDateIn > -657434 And varDateIn < 2958465)
 
     Case Else
       ' Can't figure out what it is
@@ -36,13 +36,13 @@ Function ValidateDateFormat(varDateIn As Variant) As Boolean
       Exit Function
   End Select
 
-If fOk = True Then
+If fOK = True Then
   intYear = CInt(Right$(Format(varDateIn, "yyyy"), 4))
   If intYear < 1900 Then
-    fOk = False
+    fOK = False
     strMsg = "Year less than 1900"
   ElseIf intYear > 2099 Then
-    fOk = False
+    fOK = False
     strMsg = "Year greater than 2099"
   Else
     
@@ -50,10 +50,10 @@ If fOk = True Then
 
   intDay = CInt(Left$(Format(varDateIn, "dd"), 2))
   If intDay < 1 Then
-    fOk = False
+    fOK = False
     strMsg = strMsg & vbCrLf & "Day less than 1"
   ElseIf intDay > 31 Then
-    fOk = False
+    fOK = False
     strMsg = strMsg & vbCrLf & "Day greater than 31"
   Else
     
@@ -61,17 +61,17 @@ If fOk = True Then
   
   intMonth = CInt(Left$(Format(varDateIn, "mm"), 2))
   If intMonth < 1 Then
-    fOk = False
+    fOK = False
     strMsg = strMsg & vbCrLf & "Month less than 1"
   ElseIf intMonth > 12 Then
-    fOk = False
+    fOK = False
     strMsg = strMsg & vbCrLf & "Month greater than 12"
   Else
     
   End If
 End If
 
-  If fOk = True Then
+  If fOK = True Then
     ValidateDateFormat = True
   Else
     ValidateDateFormat = False

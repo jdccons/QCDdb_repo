@@ -1,0 +1,221 @@
+Version =20
+VersionRequired =20
+Checksum =1303975790
+Begin Form
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =2
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =11130
+    DatasheetFontHeight =10
+    ItemSuffix =16
+    Left =3750
+    Top =90
+    Right =14745
+    Bottom =6780
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xc24c027e32ade440
+    End
+    RecordSource ="SELECT tblAgent.AgentId FROM tblAgent WHERE (((tblAgent.AgentActive)=\"A\") AND "
+        "((tblAgent.PayCommTo) In (1,2,3)));"
+    Caption ="Agent"
+    MenuBar ="AgentMenuBar"
+    DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin Tab
+            FontName ="Tahoma"
+        End
+        Begin Section
+            CanGrow = NotDefault
+            Height =6750
+            BackColor =12632256
+            Name ="Detail"
+            GUID = Begin
+                0xbf2802a1cc7ebf4ba997dadb9f36b38b
+            End
+            Begin
+                Begin Tab
+                    OverlapFlags =85
+                    Width =11130
+                    Height =6750
+                    Name ="TabCtl0"
+                    GUID = Begin
+                        0xbba15051fd2ea74da3da8e2f8905c7b3
+                    End
+                    Begin
+                        Begin Page
+                            OverlapFlags =215
+                            Left =135
+                            Top =405
+                            Width =10860
+                            Height =6210
+                            Name ="pgAgents"
+                            Caption ="Agent"
+                            GUID = Begin
+                                0xd012a3441c389f4d8bc4c413b801807b
+                            End
+                            Begin
+                                Begin Subform
+                                    OverlapFlags =215
+                                    Left =165
+                                    Top =405
+                                    Width =10830
+                                    Height =6180
+                                    Name ="Agent Attributes"
+                                    SourceObject ="Form.Agent Attributes"
+                                    LinkChildFields ="AgentId"
+                                    LinkMasterFields ="AgentId"
+                                    EventProcPrefix ="Agent_Attributes"
+                                    GUID = Begin
+                                        0xd7dc0bf30a4078429192654374db30fb
+                                    End
+                                End
+                            End
+                        End
+                        Begin Page
+                            OverlapFlags =215
+                            Left =135
+                            Top =405
+                            Width =10860
+                            Height =6210
+                            Name ="pgGroups"
+                            Caption ="Custs"
+                            GUID = Begin
+                                0x30e7b310cd17e341a0d165cdb36867b2
+                            End
+                            Begin
+                                Begin Subform
+                                    OverlapFlags =247
+                                    Left =195
+                                    Top =585
+                                    Width =10080
+                                    Height =5025
+                                    Name ="Agent Groups"
+                                    SourceObject ="Form.Agent Groups"
+                                    LinkChildFields ="AgentId"
+                                    LinkMasterFields ="AgentId"
+                                    EventProcPrefix ="Agent_Groups"
+                                    GUID = Begin
+                                        0x3a30585d6164cb4ba5f035a6cfcd1997
+                                    End
+                                End
+                            End
+                        End
+                        Begin Page
+                            OverlapFlags =215
+                            Left =105
+                            Top =390
+                            Width =10890
+                            Height =6225
+                            Name ="pgCommissions"
+                            Caption ="Commissions"
+                            GUID = Begin
+                                0x918029477fa6ba43a44c17003c94f61a
+                            End
+                            Begin
+                                Begin Subform
+                                    OverlapFlags =247
+                                    Left =105
+                                    Top =390
+                                    Width =9360
+                                    Height =5250
+                                    Name ="AgentCommissions"
+                                    SourceObject ="Form.Agent Commissions"
+                                    LinkChildFields ="AgentId"
+                                    LinkMasterFields ="AgentId"
+                                    GUID = Begin
+                                        0xf876b96ab6120c469de125c670e6979e
+                                    End
+                                End
+                            End
+                        End
+                        Begin Page
+                            OverlapFlags =215
+                            Left =105
+                            Top =375
+                            Width =10890
+                            Height =6240
+                            Name ="QCD Chks"
+                            EventProcPrefix ="QCD_Chks"
+                            GUID = Begin
+                                0x15197fe76caeb54a807445c5527bc27f
+                            End
+                            Begin
+                                Begin Subform
+                                    OverlapFlags =247
+                                    Left =105
+                                    Top =375
+                                    Width =9390
+                                    Height =5250
+                                    Name ="Agent Bill Payment"
+                                    SourceObject ="Form.Agent Bill Payment"
+                                    LinkChildFields ="AgentID"
+                                    LinkMasterFields ="AgentId"
+                                    EventProcPrefix ="Agent_Bill_Payment"
+                                    GUID = Begin
+                                        0xa265e7e6f68d54428b3449380d57faaf
+                                    End
+                                End
+                            End
+                        End
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database

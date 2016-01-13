@@ -2,46 +2,45 @@ Operation =3
 Name ="ARHDR_temp"
 Option =8
 Begin InputTables
-    Name ="ARHDR"
+    Name ="ARTRANH_local"
     Name ="tblGrp"
 End
 Begin OutputColumns
     Name ="Custkey"
-    Expression ="ARHDR.CustomerKey"
+    Expression ="ARTRANH_local.CustomerKey"
     Name ="Custname"
-    Expression ="ARHDR.CustomerName"
+    Expression ="tblGrp.GRName"
     Alias ="CustAdd1Trim"
     Name ="CustAdd1Trim"
-    Expression ="Trim([CustomerAddress1])"
+    Expression ="Trim(tblGrp.GrStreet1)"
     Name ="Custaddr2"
-    Expression ="ARHDR.CustomerAddress2"
+    Expression ="tblGrp.GRStreet2"
     Alias ="CityStateZip"
     Name ="CityStateZip"
-    Expression ="Trim([CustomerCity]) & \", \" & Trim([CustomerState]) & \"  \" & Trim([CustomerZ"
-        "ipCode])"
-    Alias ="Tranno"
+    Expression ="Trim(tblGrp.GrCity) & \", \" & Trim(tblGrp.GrState) & \"  \" & Trim(tblGrp.GrZip"
+        ")"
     Name ="Tranno"
-    Expression ="Trim(RTrim([TransactionNumber]))"
+    Expression ="ARTRANH_local.DocumentNumber"
     Name ="Invdate"
-    Expression ="ARHDR.InvoiceDate"
+    Expression ="ARTRANH_local.DocumentDate"
     Name ="Salespkey"
-    Expression ="ARHDR.SalespersonKey"
+    Expression ="ARTRANH_local.SalespersonKey"
     Name ="Spare"
-    Expression ="ARHDR.Spare"
+    Expression ="ARTRANH_local.Spare"
     Alias ="InvTot"
     Name ="InvTot"
-    Expression ="SumInvoice(Trim(RTrim([TransactionNumber])))"
+    Expression ="SumInvoice(ARTRANH_local.DocumentNumber)"
     Name ="GroupType"
     Expression ="tblGrp.GroupType"
     Name ="GROUPid"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Name ="InvoiceType"
     Expression ="tblGrp.InvoiceType"
 End
 Begin Joins
-    LeftTable ="ARHDR"
+    LeftTable ="ARTRANH_local"
     RightTable ="tblGrp"
-    Expression ="ARHDR.CustomerKey = tblGrp.GROUPid"
+    Expression ="ARTRANH_local.CustomerKey=tblGrp.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -65,31 +64,31 @@ Begin
 End
 Begin
     State =0
-    Left =47
-    Top =29
-    Right =1002
-    Bottom =530
+    Left =76
+    Top =46
+    Right =994
+    Bottom =558
     Left =-1
     Top =-1
-    Right =944
+    Right =903
     Bottom =332
     Left =0
     Top =0
     ColumnsShown =651
     Begin
-        Left =40
-        Top =19
-        Right =178
-        Bottom =283
+        Left =38
         Top =6
-        Name ="ARHDR"
+        Right =213
+        Bottom =229
+        Top =0
+        Name ="ARTRANH_local"
         Name =""
     End
     Begin
-        Left =221
-        Top =19
-        Right =370
-        Bottom =283
+        Left =283
+        Top =2
+        Right =432
+        Bottom =255
         Top =0
         Name ="tblGrp"
         Name =""

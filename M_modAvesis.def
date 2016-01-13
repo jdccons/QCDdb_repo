@@ -11,7 +11,6 @@ Sub RebuildAvesisTable()
     ExecuteSQL (strSQL)
     
     DoCmd.OpenQuery "qappAvesis_Primary"
-    DoCmd.OpenQuery "qappAvesis_Bexar"
     DoCmd.OpenQuery "qappAvesis_Individual"
         
     Call CreateSuffixes

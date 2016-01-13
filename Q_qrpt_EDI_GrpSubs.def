@@ -1,7 +1,7 @@
 Operation =3
 Name ="tmpEDI_Rpt"
 Option =0
-Where ="(((tblSubscr.SubGroupID)<>[tblEDI_App_Subscr].[SubGroupID]))"
+Where ="(((tblSubscr.SubGroupID)<>tblEDI_App_Subscr.SubGroupID))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblEDI_App_Subscr"
@@ -15,7 +15,7 @@ Begin OutputColumns
     Expression ="tblSubscr.SubLastName"
     Alias ="SUBStreet"
     Name ="SUBStreet"
-    Expression ="[tblSubscr].[SUBstreet1] & \" \" & [tblSubscr].[SUBStreet2]"
+    Expression ="tblSubscr.SUBstreet1 & \" \" & tblSubscr.SUBStreet2"
     Name ="SUBcity"
     Expression ="tblSubscr.SubCity"
     Name ="SUBstate"
@@ -29,7 +29,7 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblEDI_App_Subscr"
-    Expression ="tblSubscr.SubSSN = tblEDI_App_Subscr.SubSSN"
+    Expression ="tblSubscr.SubSSN=tblEDI_App_Subscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -46,10 +46,10 @@ Begin
     Left =249
     Top =352
     Right =1207
-    Bottom =664
+    Bottom =676
     Left =-1
     Top =-1
-    Right =951
+    Right =943
     Bottom =144
     Left =0
     Top =0
@@ -58,7 +58,7 @@ Begin
         Left =38
         Top =6
         Right =150
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -67,7 +67,7 @@ Begin
         Left =172
         Top =6
         Right =337
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""

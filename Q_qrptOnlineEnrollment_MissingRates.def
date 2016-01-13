@@ -1,0 +1,122 @@
+Operation =1
+Option =0
+Where ="(((tblRates.GroupID) Is Null)) OR (((tblRates.PlanID) Is Null)) OR (((tblRates.C"
+    "overID) Is Null))"
+Begin InputTables
+    Name ="tblCoverage"
+    Name ="tblPlans"
+    Name ="tblEDI_App_Subscr"
+    Name ="tblRates"
+End
+Begin OutputColumns
+    Expression ="tblEDI_App_Subscr.SubGroupID"
+    Expression ="tblEDI_App_Subscr.SubLastName"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
+    Expression ="tblPlans.PlanDesc"
+    Expression ="tblCoverage.CoverDescr"
+End
+Begin Joins
+    LeftTable ="tblPlans"
+    RightTable ="tblEDI_App_Subscr"
+    Expression ="tblPlans.PlanID=tblEDI_App_Subscr.PlanID"
+    Flag =1
+    LeftTable ="tblCoverage"
+    RightTable ="tblEDI_App_Subscr"
+    Expression ="tblCoverage.CoverID=tblEDI_App_Subscr.CoverID"
+    Flag =1
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.CoverID=tblRates.CoverID"
+    Flag =2
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.PlanID=tblRates.PlanID"
+    Flag =2
+    LeftTable ="tblEDI_App_Subscr"
+    RightTable ="tblRates"
+    Expression ="tblEDI_App_Subscr.SubGroupID=tblRates.GroupID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblPlans.PlanDesc"
+        dbInteger "ColumnWidth" ="1650"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblCoverage.CoverDescr"
+        dbInteger "ColumnWidth" ="2775"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubGroupID"
+        dbInteger "ColumnWidth" ="1605"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubLastName"
+        dbInteger "ColumnWidth" ="1605"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblEDI_App_Subscr.SubFirstName"
+        dbInteger "ColumnWidth" ="1590"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =608
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =388
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =597
+        Top =21
+        Right =735
+        Bottom =124
+        Top =0
+        Name ="tblRates"
+        Name =""
+    End
+    Begin
+        Left =51
+        Top =10
+        Right =207
+        Bottom =98
+        Top =0
+        Name ="tblPlans"
+        Name =""
+    End
+    Begin
+        Left =60
+        Top =98
+        Right =199
+        Bottom =186
+        Top =0
+        Name ="tblCoverage"
+        Name =""
+    End
+    Begin
+        Left =289
+        Top =21
+        Right =477
+        Bottom =199
+        Top =3
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+End

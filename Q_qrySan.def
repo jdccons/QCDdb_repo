@@ -1,22 +1,24 @@
 Operation =1
 Option =0
-Where ="(((tblDentist.DENTgeoID)=\"TXSSW\"))"
+Where ="(((tblDentist.DentGeoID)=\"TXSSW\"))"
 Begin InputTables
     Name ="tblDentist"
     Name ="tbldentistspec"
     Name ="tblGeographical"
 End
 Begin OutputColumns
-    Expression ="tblDentist.DENTgeoID"
-    Expression ="tblDentist.DENTlast"
-    Expression ="tblDentist.DENTfirst"
-    Expression ="tblDentist.DENTspecialty"
-    Expression ="tblDentist.DENTzip"
+    Expression ="tblDentist.DentGeoID"
+    Expression ="tblDentist.DentLast"
+    Expression ="tblDentist.DentFirst"
+    Expression ="tblDentist.DentSpecialty"
+    Expression ="tblDentist.DentZip"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -24,10 +26,10 @@ Begin
     Left =40
     Top =48
     Right =778
-    Bottom =353
+    Bottom =372
     Left =-1
     Top =-1
-    Right =727
+    Right =723
     Bottom =144
     Left =0
     Top =0
@@ -36,7 +38,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =5
         Name ="tblDentist"
         Name =""
@@ -45,7 +47,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tbldentistspec"
         Name =""
@@ -54,7 +56,7 @@ Begin
         Left =306
         Top =6
         Right =402
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tblGeographical"
         Name =""

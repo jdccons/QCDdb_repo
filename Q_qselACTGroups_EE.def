@@ -1,9 +1,9 @@
 Operation =1
 Option =0
-Where ="(((tblGrowth.Year)=Year(Now())) AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrowth.Year)=Year(Now())) AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
-    Name ="tblGrowth"
     Name ="tblGrp"
+    Name ="tblGrowth"
 End
 Begin OutputColumns
     Expression ="tblGrowth.GroupID"
@@ -12,24 +12,26 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblGrowth"
-    Expression ="tblGrp.GROUPid = tblGrowth.GroupID"
+    Expression ="tblGrp.GroupID=tblGrowth.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =924
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =497
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =277
     Left =0
     Top =0
@@ -38,7 +40,7 @@ Begin
         Left =38
         Top =6
         Right =306
-        Bottom =202
+        Bottom =199
         Top =0
         Name ="tblGrowth"
         Name =""
@@ -47,7 +49,7 @@ Begin
         Left =344
         Top =6
         Right =589
-        Bottom =200
+        Bottom =199
         Top =33
         Name ="tblGrp"
         Name =""

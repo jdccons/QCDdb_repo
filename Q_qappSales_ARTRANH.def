@@ -1,17 +1,20 @@
 Operation =3
 Name ="ARTRANH_local"
 Option =0
-Where ="(((ARTRANH.DocumentDate) Between #1/1/2001# And #12/31/2001#) AND ((ARTRANH.Tran"
-    "sactionType)=\"I\" Or (ARTRANH.TransactionType)=\"C\") AND ((ARTRANH.CustomerCla"
+Where ="(((ARTRANH.DocumentDate) Between #1/1/2001# And #12/31/2001#) And ((ARTRANH.Tran"
+    "sactionType)=\"I\" Or (ARTRANH.TransactionType)=\"C\") And ((ARTRANH.CustomerCla"
     "ssKey)=\"GROUP\"))"
 Begin InputTables
     Name ="ARTRANH"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="Custkey"
     Expression ="ARTRANH.CustomerKey"
+    Alias ="Expr2"
     Name ="Docdate"
     Expression ="ARTRANH.DocumentDate"
+    Alias ="Expr3"
     Name ="Docamt"
     Expression ="ARTRANH.DocumentAmt"
 End
@@ -26,10 +29,10 @@ Begin
     Left =50
     Top =115
     Right =1265
-    Bottom =476
+    Bottom =483
     Left =-1
     Top =-1
-    Right =1208
+    Right =1200
     Bottom =188
     Left =0
     Top =0
@@ -38,7 +41,7 @@ Begin
         Left =38
         Top =6
         Right =266
-        Bottom =131
+        Bottom =49
         Top =0
         Name ="ARTRANH"
         Name =""

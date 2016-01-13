@@ -1,39 +1,39 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"PENDG\"))"
+Where ="(((tblSubscr.SubStatus)=\"PENDG\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblGrp"
-    Name ="tblCoverage"
     Name ="tblRates"
+    Name ="tblCoverage"
 End
 Begin OutputColumns
     Expression ="tblSubscr.*"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRhold"
-    Expression ="tblCoverage.COVERdescr"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRHold"
+    Expression ="tblCoverage.CoverDescr"
+    Expression ="tblCoverage.CoverCode"
     Expression ="tblRates.Rate"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblGrp"
-    Expression ="tblSubscr.SUBgroupID = tblGrp.GROUPid"
+    Expression ="tblSubscr.SubGroupID=tblGrp.GroupID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -49,10 +49,10 @@ Begin
     Left =26
     Top =42
     Right =1013
-    Bottom =402
+    Bottom =409
     Left =-1
     Top =-1
-    Right =980
+    Right =972
     Bottom =187
     Left =0
     Top =0
@@ -70,7 +70,7 @@ Begin
         Left =11
         Top =14
         Right =166
-        Bottom =139
+        Bottom =132
         Top =35
         Name ="tblGrp"
         Name =""
@@ -79,7 +79,7 @@ Begin
         Left =472
         Top =5
         Right =640
-        Bottom =100
+        Bottom =93
         Top =0
         Name ="tblCoverage"
         Name =""
@@ -88,7 +88,7 @@ Begin
         Left =701
         Top =10
         Right =797
-        Bottom =120
+        Bottom =113
         Top =0
         Name ="tblRates"
         Name =""

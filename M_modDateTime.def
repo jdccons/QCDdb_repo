@@ -5,1570 +5,1582 @@ Option Compare Database
 ' Source      : Total Visual SourceBook
 
 Public Enum DateParts
-  theYear 'yyyy
-  theQuarter 'q
-  theMonth 'm
-  theDayOfYear 'y
-  theDay 'd
-  theweekday 'w
-  theWeek 'ww
-  theHour 'h
-  theMinute 'n
-  theSecond 's
+    theYear 'yyyy
+    theQuarter 'q
+    theMonth 'm
+    theDayOfYear 'y
+    theDay 'd
+    theweekday 'w
+    theWeek 'ww
+    theHour 'h
+    theMinute 'n
+    theSecond 's
 End Enum
 
 Public Enum TypesOfDateValues
-  numberOfMinutes
-  numberOfDays
-  numberOfHours
-  numberOfSeconds
-  numberOfMonths
-  numberOfYears
+    numberOfMinutes
+    numberOfDays
+    numberOfHours
+    numberOfSeconds
+    numberOfMonths
+    numberOfYears
 End Enum
+Public Function FirstDayOfMonth(dteDate As Date) As Date
+    
+    
+    FirstDayOfMonth = DateSerial(Year(dteDate), Month(dteDate), 1)
+    
+End Function
+Public Function LastDayOfMonth(dteDate As Date) As Date
+    
+    LastDayOfMonth = DateSerial(Year(dteDate), Month(dteDate) + 1, 0)
+    
+End Function
+
 
 Public Function AddWeekdays( _
-  datDateIn As Date, _
-  intDays As Integer) _
-  As Date
-  ' Comments  : Add or subtract a number of weekdays to a date
-  '             Weekend dates are not counted in adding/subtracting days
-  ' Parameters: datDateIn - Starting date
-  '             intDays - Number of days to add (negative to subtract)
-  ' Returns   : Original date plus the number of weekdays added
-  ' Source    : Total Visual SourceBook
-  '
-  Dim intCounter As Integer
-  Dim intDirection As Integer
-  Dim datNewDate As Date
-  Dim lngWeeks As Long
-  Dim intDaysLeft As Integer
-
-  On Error GoTo PROC_ERR
-  
-  datNewDate = datDateIn
-  
-  If intDays > 0 Then
-    intDirection = 1
-  Else
-    intDirection = -1
-  End If
-  lngWeeks = Fix(Abs(intDays) / 5)
-
-  If lngWeeks > 0 Then
-    datNewDate = datNewDate + lngWeeks * 7 * intDirection
-  End If
-
-  intDaysLeft = Abs(intDays) - lngWeeks * 5
-
-  For intCounter = 1 To intDaysLeft
-    datNewDate = datNewDate + 1 * intDirection
-    If intDirection > 0 Then
-      ' Increment date
-      If Weekday(datNewDate) = 7 Then
-        datNewDate = datNewDate + 2
-      End If
+    datDateIn As Date, _
+    intDays As Integer) _
+    As Date
+    ' Comments  : Add or subtract a number of weekdays to a date
+    '             Weekend dates are not counted in adding/subtracting days
+    ' Parameters: datDateIn - Starting date
+    '             intDays - Number of days to add (negative to subtract)
+    ' Returns   : Original date plus the number of weekdays added
+    ' Source    : Total Visual SourceBook
+    '
+    Dim intCounter As Integer
+    Dim intDirection As Integer
+    Dim datNewDate As Date
+    Dim lngWeeks As Long
+    Dim intDaysLeft As Integer
+    
+    On Error GoTo PROC_ERR
+    
+    datNewDate = datDateIn
+    
+    If intDays > 0 Then
+        intDirection = 1
     Else
-      ' Decrement date
-      If Weekday(datNewDate) = 1 Then
-        datNewDate = datNewDate - 2
-      End If
+        intDirection = -1
     End If
-  Next
-
-  AddWeekdays = datNewDate
-  
+    lngWeeks = Fix(Abs(intDays) / 5)
+    
+    If lngWeeks > 0 Then
+        datNewDate = datNewDate + lngWeeks * 7 * intDirection
+    End If
+    
+    intDaysLeft = Abs(intDays) - lngWeeks * 5
+    
+    For intCounter = 1 To intDaysLeft
+        datNewDate = datNewDate + 1 * intDirection
+        If intDirection > 0 Then
+            ' Increment date
+            If Weekday(datNewDate) = 7 Then
+                datNewDate = datNewDate + 2
+            End If
+        Else
+            ' Decrement date
+            If Weekday(datNewDate) = 1 Then
+                datNewDate = datNewDate - 2
+            End If
+        End If
+    Next
+    
+    AddWeekdays = datNewDate
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.AddWeekdays"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function AgeCalc( _
-  datBirthDate As Date, _
-  intWeeks As Integer) _
-  As Integer
-  ' Comments  : Returns the age in years and weeks for the supplied
-  '             birthdate
-  ' Parameters: datBirthDate - Date to check
-  ' Sets      : intWeeks - Set to the age in weeks
-  ' Returns   : Number of years
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  If Day(datBirthDate) <= Day(Now) Then
-    intWeeks = DateDiff("w", datBirthDate, Now)
-  Else
-    intWeeks = DateDiff("w", datBirthDate, Now) - 1
-  End If
-            
-  AgeCalc = Year(Now) - Year(datBirthDate) + _
+    datBirthDate As Date, _
+    intWeeks As Integer) _
+    As Integer
+    ' Comments  : Returns the age in years and weeks for the supplied
+    '             birthdate
+    ' Parameters: datBirthDate - Date to check
+    ' Sets      : intWeeks - Set to the age in weeks
+    ' Returns   : Number of years
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    If Day(datBirthDate) <= Day(Now) Then
+        intWeeks = DateDiff("w", datBirthDate, Now)
+    Else
+        intWeeks = DateDiff("w", datBirthDate, Now) - 1
+    End If
+    
+    AgeCalc = Year(Now) - Year(datBirthDate) + _
     (DateSerial(Year(Now), Month(datBirthDate), Day(datBirthDate)) > Now)
-
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.AgeCalc"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DaysInMonth( _
-  intMonth As Integer, _
-  intYear As Integer) _
-  As Integer
-  ' Comments  : Returns the number of days in a month
-  ' Parameters: intMonth - number of the month (1-12)
-  '             intYear - Year for the month for considering leap
-  '             years.
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  ' Returns   : Number of days in the month
-  ' Source    : Total Visual SourceBook
-  '
-  Dim datDate As Date
-
-  On Error GoTo PROC_ERR
-  
-  ' Last day of month
-  datDate = DateSerial(intYear, intMonth + 1, 0)
-
-  DaysInMonth = Day(datDate)
-
+    intMonth As Integer, _
+    intYear As Integer) _
+    As Integer
+    ' Comments  : Returns the number of days in a month
+    ' Parameters: intMonth - number of the month (1-12)
+    '             intYear - Year for the month for considering leap
+    '             years.
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    ' Returns   : Number of days in the month
+    ' Source    : Total Visual SourceBook
+    '
+    Dim datDate As Date
+    
+    On Error GoTo PROC_ERR
+    
+    ' Last day of month
+    datDate = DateSerial(intYear, intMonth + 1, 0)
+    
+    DaysInMonth = Day(datDate)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DaysInMonth"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffDatesFormatted_CalculatedByCalendar( _
-  datDay1 As Date, _
-  datDay2 As Date, _
-  fVerbose As Boolean) _
-  As String
-  ' Comments  : Calculates the number of Years, Months, Days, Hours,
-  '             Minutes, and Seconds between 2 dates.
-  '             Calculates based on calendar days and months.
-  ' Parameters: datDay1 - first date/time (subtracted from datDay2)
-  '             datDay2 - second date/time
-  '             fVerbose -
-  '             True - formats the string as:
-  '             "nYear(s), nMonth(s), nDay(s), nHour(s), nMinute(s),
-  '             nSecond(s)"
-  '             e.g. 1 Year, 2 Months, 25 Days, 2 Hours, 1 Minute, 30 Seconds
-  '             False - formats the string as:
-  '             Years:Months:Days:Hours:Minutes:Seconds
-  '             e.g. 01:02:25:02:01:30
-  ' Returns   : A difference between 2 dates formatted as YMDHMS (string)
-  ' NOTES     : If you use a leap date such as:
-  '             #2/28/2008 2:01:30 AM#, #3/1/2009 2:01:29 AM#
-  '             OR
-  '             #2/29/2008 2:01:30 AM#, #3/1/2009 2:01:29 AM#
-  '             The output will be the same because this function
-  '             uses the calendar year for its calculations.
-  '             Why? Since the end year uses 2/28/2009 as the end of the
-  '             month for February, the result is:
-  '             (2/29/2008 to 2/28/2009 = 1 Full year) even though only
-  '             364 days have passed. Now add 1 day to 2/28/2009 or
-  '             add 1 day to 2/29/2009 (if it existed) and the
-  '             result is 3/1/2009 in both cases.
-  ' Source    : Total Visual SourceBook
-
-  On Error GoTo PROC_ERR
+    datDay1 As Date, _
+    datDay2 As Date, _
+    fVerbose As Boolean) _
+    As String
+    ' Comments  : Calculates the number of Years, Months, Days, Hours,
+    '             Minutes, and Seconds between 2 dates.
+    '             Calculates based on calendar days and months.
+    ' Parameters: datDay1 - first date/time (subtracted from datDay2)
+    '             datDay2 - second date/time
+    '             fVerbose -
+    '             True - formats the string as:
+    '             "nYear(s), nMonth(s), nDay(s), nHour(s), nMinute(s),
+    '             nSecond(s)"
+    '             e.g. 1 Year, 2 Months, 25 Days, 2 Hours, 1 Minute, 30 Seconds
+    '             False - formats the string as:
+    '             Years:Months:Days:Hours:Minutes:Seconds
+    '             e.g. 01:02:25:02:01:30
+    ' Returns   : A difference between 2 dates formatted as YMDHMS (string)
+    ' NOTES     : If you use a leap date such as:
+    '             #2/28/2008 2:01:30 AM#, #3/1/2009 2:01:29 AM#
+    '             OR
+    '             #2/29/2008 2:01:30 AM#, #3/1/2009 2:01:29 AM#
+    '             The output will be the same because this function
+    '             uses the calendar year for its calculations.
+    '             Why? Since the end year uses 2/28/2009 as the end of the
+    '             month for February, the result is:
+    '             (2/29/2008 to 2/28/2009 = 1 Full year) even though only
+    '             364 days have passed. Now add 1 day to 2/28/2009 or
+    '             add 1 day to 2/29/2009 (if it existed) and the
+    '             result is 3/1/2009 in both cases.
+    ' Source    : Total Visual SourceBook
     
-  Dim lngYears As Long
-  Dim lngMonths As Long
-  Dim lngDays As Long
-  Dim lngHours As Long
-  Dim lngMinutes As Long
-  Dim lngSeconds As Long
-  
-  Dim strResult As String
+    On Error GoTo PROC_ERR
     
-  Dim strOutPutYear As String
-  Dim strOutPutMonth As String
-  Dim strOutPutDay As String
-  Dim strOutPutHour As String
-  Dim strOutPutMinute As String
-  Dim strOutPutSecond As String
-  
-  Dim datTmp As Date
-        
-  'Ensure datDay1 is less than than datDay2
-  If datDay1 > datDay2 Then
-      datTmp = datDay1
-      datDay1 = datDay2
-      datDay2 = datTmp
-  End If
-  
-  lngYears = DateDiff("yyyy", datDay1, datDay2)
-  If DateAdd("yyyy", lngYears, datDay1) > datDay2 Then
-    lngYears = lngYears - 1
-  End If
-
-  lngMonths = DateDiff("m", datDay1, datDay2)
-  lngDays = DateDiff("d", DateAdd("m", lngMonths, datDay1), datDay2)
-  If lngDays < 0 Then
-    lngMonths = lngMonths - 1
-    lngDays = DateDiff("d", DateAdd("m", lngMonths, datDay1), datDay2)
-    If TimeSerial(Hour(datDay1), Minute(datDay1), Second(datDay1)) > _
-      TimeSerial(Hour(datDay2), Minute(datDay2), Second(datDay2)) Then
-      lngDays = lngDays - 1
+    Dim lngYears As Long
+    Dim lngMonths As Long
+    Dim lngDays As Long
+    Dim lngHours As Long
+    Dim lngMinutes As Long
+    Dim lngSeconds As Long
+    
+    Dim strResult As String
+    
+    Dim strOutPutYear As String
+    Dim strOutPutMonth As String
+    Dim strOutPutDay As String
+    Dim strOutPutHour As String
+    Dim strOutPutMinute As String
+    Dim strOutPutSecond As String
+    
+    Dim datTmp As Date
+    
+    'Ensure datDay1 is less than than datDay2
+    If datDay1 > datDay2 Then
+        datTmp = datDay1
+        datDay1 = datDay2
+        datDay2 = datTmp
     End If
-  End If
-  
-  If lngMonths = 12 And lngYears = 0 Then
-    lngMonths = lngMonths - 1
-  End If
-  lngMonths = lngMonths Mod 12
     
-  lngHours = CLng(Left(Format(DateSerial(Year(datDay2), Month(datDay2), _
+    lngYears = DateDiff("yyyy", datDay1, datDay2)
+    If DateAdd("yyyy", lngYears, datDay1) > datDay2 Then
+        lngYears = lngYears - 1
+    End If
+    
+    lngMonths = DateDiff("m", datDay1, datDay2)
+    lngDays = DateDiff("d", DateAdd("m", lngMonths, datDay1), datDay2)
+    If lngDays < 0 Then
+        lngMonths = lngMonths - 1
+        lngDays = DateDiff("d", DateAdd("m", lngMonths, datDay1), datDay2)
+        If TimeSerial(Hour(datDay1), Minute(datDay1), Second(datDay1)) > _
+            TimeSerial(Hour(datDay2), Minute(datDay2), Second(datDay2)) Then
+            lngDays = lngDays - 1
+        End If
+    End If
+    
+    If lngMonths = 12 And lngYears = 0 Then
+        lngMonths = lngMonths - 1
+    End If
+    lngMonths = lngMonths Mod 12
+    
+    lngHours = CLng(Left(Format(DateSerial(Year(datDay2), Month(datDay2), _
     Day(datDay2)) + _
     TimeSerial(Hour(datDay1), Minute(datDay1), Second(datDay1)) - _
     DateAdd("d", 1, datDay2), "HH:MM:SS"), 2))
-  
-  lngMinutes = CLng(Mid(Format(DateSerial(Year(datDay2), Month(datDay2), _
+    
+    lngMinutes = CLng(Mid(Format(DateSerial(Year(datDay2), Month(datDay2), _
     Day(datDay2)) + _
     TimeSerial(Hour(datDay1), Minute(datDay1), Second(datDay1)) - _
     DateAdd("d", 1, datDay2), "HH:MM:SS"), 4, 2))
-            
-  lngSeconds = CLng(Right(Format(DateSerial(Year(datDay2), Month(datDay2), _
+    
+    lngSeconds = CLng(Right(Format(DateSerial(Year(datDay2), Month(datDay2), _
     Day(datDay2)) + _
     TimeSerial(Hour(datDay1), Minute(datDay1), Second(datDay1)) - _
     DateAdd("d", 1, datDay2), "HH:MM:SS"), 2))
-  
-  If fVerbose Then
-    'Format the result as nYears, nMonths, nDays, nHours, nMinutes, nSeconds
     
-    If lngYears <> 1 Then
-      strOutPutYear = " Years, "
+    If fVerbose Then
+        'Format the result as nYears, nMonths, nDays, nHours, nMinutes, nSeconds
+        
+        If lngYears <> 1 Then
+            strOutPutYear = " Years, "
+        Else
+            strOutPutYear = " Year, "
+        End If
+        
+        If lngMonths <> 1 Then
+            strOutPutMonth = " Months, "
+        Else
+            strOutPutMonth = " Month, "
+        End If
+        
+        If lngDays <> 1 Then
+            strOutPutDay = " Days, "
+        Else
+            strOutPutDay = " Day, "
+        End If
+        
+        If lngHours <> 1 Then
+            strOutPutHour = " Hours, "
+        Else
+            strOutPutHour = " Hour, "
+        End If
+        
+        If lngMinutes <> 1 Then
+            strOutPutMinute = " Minutes, "
+        Else
+            strOutPutMinute = " Minute, "
+        End If
+        
+        If lngSeconds <> 1 Then
+            strOutPutSecond = " Seconds"
+        Else
+            strOutPutSecond = " Second"
+        End If
+        
+        strResult = Format(CStr(lngYears), "0") & strOutPutYear & _
+        Format(CStr(lngMonths), "0") & strOutPutMonth & _
+        Format(CStr(lngDays), "0") & strOutPutDay & _
+        Format(CStr(lngHours), "0") & strOutPutHour & _
+        Format(CStr(lngMinutes), "0") & strOutPutMinute & _
+        Format(CStr(lngSeconds), "0") & strOutPutSecond
+        
     Else
-      strOutPutYear = " Year, "
-    End If
-
-    If lngMonths <> 1 Then
-      strOutPutMonth = " Months, "
-    Else
-      strOutPutMonth = " Month, "
-    End If
-
-    If lngDays <> 1 Then
-      strOutPutDay = " Days, "
-    Else
-      strOutPutDay = " Day, "
-    End If
-
-    If lngHours <> 1 Then
-      strOutPutHour = " Hours, "
-    Else
-      strOutPutHour = " Hour, "
-    End If
-
-    If lngMinutes <> 1 Then
-      strOutPutMinute = " Minutes, "
-    Else
-      strOutPutMinute = " Minute, "
-    End If
-
-    If lngSeconds <> 1 Then
-      strOutPutSecond = " Seconds"
-    Else
-      strOutPutSecond = " Second"
+        'Format the result as Years:Months:Days:Hours:Minutes:Seconds
+        strResult = Format(CStr(lngYears), "00") & ":" & _
+        Format(CStr(lngMonths), "00") & ":" & _
+        Format(CStr(lngDays), "00") & ":" & _
+        Format(CStr(lngHours), "00") & ":" & _
+        Format(CStr(lngMinutes), "00") & ":" & _
+        Format(CStr(lngSeconds), "00")
     End If
     
-    strResult = Format(CStr(lngYears), "0") & strOutPutYear & _
-      Format(CStr(lngMonths), "0") & strOutPutMonth & _
-      Format(CStr(lngDays), "0") & strOutPutDay & _
-      Format(CStr(lngHours), "0") & strOutPutHour & _
-      Format(CStr(lngMinutes), "0") & strOutPutMinute & _
-      Format(CStr(lngSeconds), "0") & strOutPutSecond
-
-  Else
-    'Format the result as Years:Months:Days:Hours:Minutes:Seconds
-    strResult = Format(CStr(lngYears), "00") & ":" & _
-      Format(CStr(lngMonths), "00") & ":" & _
-      Format(CStr(lngDays), "00") & ":" & _
-      Format(CStr(lngHours), "00") & ":" & _
-      Format(CStr(lngMinutes), "00") & ":" & _
-      Format(CStr(lngSeconds), "00")
-  End If
-  
-  DiffDatesFormatted_CalculatedByCalendar = strResult
-  
+    DiffDatesFormatted_CalculatedByCalendar = strResult
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffDatesFormatted_CalculatedByCalendar"
-  Resume PROC_EXIT
-
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffDatesFormatted_CalculatedBySecondsPerYear( _
-  dblIn As Double, _
-  strTypeOfValuePassed As TypesOfDateValues, _
-  fVerbose As Boolean) _
-  As String
-  ' Comments  : Calculates the number of Years, Months, Days, Hours,
-  '             Minutes, and Seconds that exist in the value passed to it.
-  '             Calculates based on number of seconds per year. That
-  '             means the number of months, etc, are averaged based on
-  '             seconds per year.
-  ' Parameters: dblIn - The number to format.
-  '             strTypeOfValuePassed - the type of value dblIn represents.
-  '             This is an enumerated constant.
-  '             fVerbose -
-  '             Given a number that is 38959290 seconds -
-  '             True - formats the string as:
-  '             "nYear(s), nMonth(s), nDay(s), nHour(s), nMinute(s),
-  '             nSecond(s)"
-  '             e.g. 1 Year, 2 Months, 25 Days, 2 Hours, 1 Minute, 30 Seconds
-  '             False - formats the string as:
-  '             Years:Months:Days:Hours:Minutes:Seconds
-  '             e.g. 01:02:25:02:01:30
-  ' Returns   : A string formatted as YMDHMS
-  ' Source    : Total Visual SourceBook
-  '
-  
-  'If you want to use exact days per year averaged out,
-  'uncomment the following constants, and comment the ones after
-  'this.
-  ''1 year = 365.242199 days
-  
-  ''60sec * 60min * 24hrs * 365.242199days
-  'Const lngSecondsInAYear As Long = 31556925.9936
-  
-  ''lngSecondsInAYear / 12
-  'Const lngSecondsInAMonth As Long = 2629743.8328
-  
-  ''lngSecondsInAYear / 365.242199
-  'Const lngSecondsInADay As Long = 86400
-  
-  ''lngSecondsInAYear / (365.242199*24)
-  'Const lngSecondsInAHour As Long = 3600
-  
-  ''lngSecondsInAYear / (365.242199*24))/60
-  'Const lngSecondsInAMinute As Long = 60
-
-
-  'Comment out the following constants, and uncomment the ones above
-  'this if you want to use 365 days per year calculations.
-  ''1 Year = 365 days
-  
-  '60sec * 60min * 24hrs * 365days
-  Const lngSecondsInAYear As Long = 31536000
-  
-  'lngSecondsInAYear / 12
-  Const lngSecondsInAMonth As Long = 2628000
-  
-  'lngSecondsInAYear / 365
-  Const lngSecondsInADay As Long = 86400
-  
-  'lngSecondsInAYear / (365*24)
-  Const lngSecondsInAHour As Long = 3600
-  
-  'lngSecondsInAYear / (365*24))/60
-  Const lngSecondsInAMinute As Long = 60
-
-  Dim strOutPutYear As String
-  Dim strOutPutMonth As String
-  Dim strOutPutDay As String
-  Dim strOutPutHour As String
-  Dim strOutPutMinute As String
-  Dim strOutPutSecond As String
-
-  Dim dblYears As Double
-  Dim dblMonths As Double
-  Dim dblDays As Double
-  Dim dblHours As Double
-  Dim dblMinutes As Double
-  Dim dblSeconds As Double
-  Dim dblSeconds1 As Double
-
-  Dim strResult As String
-
-  On Error GoTo PROC_ERR
-
-  'Convert the passed value to Seconds
-  Select Case strTypeOfValuePassed
-    Case TypesOfDateValues.numberOfYears
-      dblSeconds = dblIn * lngSecondsInAYear
-
-    Case TypesOfDateValues.numberOfMonths
-      dblSeconds = dblIn * lngSecondsInAMonth
-
-    Case TypesOfDateValues.numberOfDays
-      dblSeconds = dblIn * lngSecondsInADay
-
-    Case TypesOfDateValues.numberOfHours
-      dblSeconds = dblIn * lngSecondsInAHour
-
-    Case TypesOfDateValues.numberOfMinutes
-      dblSeconds = dblIn * lngSecondsInAMinute
-
-    Case TypesOfDateValues.numberOfSeconds
-      dblSeconds = dblIn
-
-  End Select
-
-  dblYears = Int(dblSeconds / lngSecondsInAYear)
-
-  dblMonths = Int((dblSeconds - _
-  (lngSecondsInAYear * dblYears)) / lngSecondsInAMonth)
-
-  dblDays = Int((dblSeconds - (lngSecondsInAYear * dblYears) - _
-            (lngSecondsInAMonth * dblMonths)) / lngSecondsInADay)
-
-  dblHours = Int((dblSeconds - (lngSecondsInAYear * dblYears) - _
-            (lngSecondsInAMonth * dblMonths) - _
-            (lngSecondsInADay * dblDays)) / lngSecondsInAHour)
-
-  dblMinutes = Int((dblSeconds - (lngSecondsInAYear * dblYears) - _
-            (lngSecondsInAMonth * dblMonths) - _
-            (lngSecondsInADay * dblDays) - _
-            (lngSecondsInAHour * dblHours)) / lngSecondsInAMinute)
-
-  dblSeconds1 = ((dblSeconds - (lngSecondsInAYear * dblYears) - _
-            (lngSecondsInAMonth * dblMonths) - _
-            (lngSecondsInADay * dblDays) - _
-            (lngSecondsInAHour * dblHours) - _
-            (lngSecondsInAMinute * dblMinutes)) Mod 60)
-
-  If fVerbose Then
-    'Format the result as nYears, nMonths, nDays, nHours, nMinutes, nSeconds
+    dblIn As Double, _
+    strTypeOfValuePassed As TypesOfDateValues, _
+    fVerbose As Boolean) _
+    As String
+    ' Comments  : Calculates the number of Years, Months, Days, Hours,
+    '             Minutes, and Seconds that exist in the value passed to it.
+    '             Calculates based on number of seconds per year. That
+    '             means the number of months, etc, are averaged based on
+    '             seconds per year.
+    ' Parameters: dblIn - The number to format.
+    '             strTypeOfValuePassed - the type of value dblIn represents.
+    '             This is an enumerated constant.
+    '             fVerbose -
+    '             Given a number that is 38959290 seconds -
+    '             True - formats the string as:
+    '             "nYear(s), nMonth(s), nDay(s), nHour(s), nMinute(s),
+    '             nSecond(s)"
+    '             e.g. 1 Year, 2 Months, 25 Days, 2 Hours, 1 Minute, 30 Seconds
+    '             False - formats the string as:
+    '             Years:Months:Days:Hours:Minutes:Seconds
+    '             e.g. 01:02:25:02:01:30
+    ' Returns   : A string formatted as YMDHMS
+    ' Source    : Total Visual SourceBook
+    '
     
-    If dblYears <> 1 Then
-      strOutPutYear = " Years, "
+    'If you want to use exact days per year averaged out,
+    'uncomment the following constants, and comment the ones after
+    'this.
+    ''1 year = 365.242199 days
+    
+    ''60sec * 60min * 24hrs * 365.242199days
+    'Const lngSecondsInAYear As Long = 31556925.9936
+    
+    ''lngSecondsInAYear / 12
+    'Const lngSecondsInAMonth As Long = 2629743.8328
+    
+    ''lngSecondsInAYear / 365.242199
+    'Const lngSecondsInADay As Long = 86400
+    
+    ''lngSecondsInAYear / (365.242199*24)
+    'Const lngSecondsInAHour As Long = 3600
+    
+    ''lngSecondsInAYear / (365.242199*24))/60
+    'Const lngSecondsInAMinute As Long = 60
+    
+    
+    'Comment out the following constants, and uncomment the ones above
+    'this if you want to use 365 days per year calculations.
+    ''1 Year = 365 days
+    
+    '60sec * 60min * 24hrs * 365days
+    Const lngSecondsInAYear As Long = 31536000
+    
+    'lngSecondsInAYear / 12
+    Const lngSecondsInAMonth As Long = 2628000
+    
+    'lngSecondsInAYear / 365
+    Const lngSecondsInADay As Long = 86400
+    
+    'lngSecondsInAYear / (365*24)
+    Const lngSecondsInAHour As Long = 3600
+    
+    'lngSecondsInAYear / (365*24))/60
+    Const lngSecondsInAMinute As Long = 60
+    
+    Dim strOutPutYear As String
+    Dim strOutPutMonth As String
+    Dim strOutPutDay As String
+    Dim strOutPutHour As String
+    Dim strOutPutMinute As String
+    Dim strOutPutSecond As String
+    
+    Dim dblYears As Double
+    Dim dblMonths As Double
+    Dim dblDays As Double
+    Dim dblHours As Double
+    Dim dblMinutes As Double
+    Dim dblSeconds As Double
+    Dim dblSeconds1 As Double
+    
+    Dim strResult As String
+    
+    On Error GoTo PROC_ERR
+    
+    'Convert the passed value to Seconds
+    Select Case strTypeOfValuePassed
+        Case TypesOfDateValues.numberOfYears
+        dblSeconds = dblIn * lngSecondsInAYear
+        
+        Case TypesOfDateValues.numberOfMonths
+        dblSeconds = dblIn * lngSecondsInAMonth
+        
+        Case TypesOfDateValues.numberOfDays
+        dblSeconds = dblIn * lngSecondsInADay
+        
+        Case TypesOfDateValues.numberOfHours
+        dblSeconds = dblIn * lngSecondsInAHour
+        
+        Case TypesOfDateValues.numberOfMinutes
+        dblSeconds = dblIn * lngSecondsInAMinute
+        
+        Case TypesOfDateValues.numberOfSeconds
+        dblSeconds = dblIn
+        
+    End Select
+    
+    dblYears = Int(dblSeconds / lngSecondsInAYear)
+    
+    dblMonths = Int((dblSeconds - _
+    (lngSecondsInAYear * dblYears)) / lngSecondsInAMonth)
+    
+    dblDays = Int((dblSeconds - (lngSecondsInAYear * dblYears) - _
+    (lngSecondsInAMonth * dblMonths)) / lngSecondsInADay)
+    
+    dblHours = Int((dblSeconds - (lngSecondsInAYear * dblYears) - _
+    (lngSecondsInAMonth * dblMonths) - _
+    (lngSecondsInADay * dblDays)) / lngSecondsInAHour)
+    
+    dblMinutes = Int((dblSeconds - (lngSecondsInAYear * dblYears) - _
+    (lngSecondsInAMonth * dblMonths) - _
+    (lngSecondsInADay * dblDays) - _
+    (lngSecondsInAHour * dblHours)) / lngSecondsInAMinute)
+    
+    dblSeconds1 = ((dblSeconds - (lngSecondsInAYear * dblYears) - _
+    (lngSecondsInAMonth * dblMonths) - _
+    (lngSecondsInADay * dblDays) - _
+    (lngSecondsInAHour * dblHours) - _
+    (lngSecondsInAMinute * dblMinutes)) Mod 60)
+    
+    If fVerbose Then
+        'Format the result as nYears, nMonths, nDays, nHours, nMinutes, nSeconds
+        
+        If dblYears <> 1 Then
+            strOutPutYear = " Years, "
+        Else
+            strOutPutYear = " Year, "
+        End If
+        
+        If dblMonths <> 1 Then
+            strOutPutMonth = " Months, "
+        Else
+            strOutPutMonth = " Month, "
+        End If
+        
+        If dblDays <> 1 Then
+            strOutPutDay = " Days, "
+        Else
+            strOutPutDay = " Day, "
+        End If
+        
+        If dblHours <> 1 Then
+            strOutPutHour = " Hours, "
+        Else
+            strOutPutHour = " Hour, "
+        End If
+        
+        If dblMinutes <> 1 Then
+            strOutPutMinute = " Minutes, "
+        Else
+            strOutPutMinute = " Minute, "
+        End If
+        
+        If dblSeconds1 <> 1 Then
+            strOutPutSecond = " Seconds"
+        Else
+            strOutPutSecond = " Second"
+        End If
+        
+        strResult = Format(CStr(dblYears), "0") & strOutPutYear & _
+        Format(CStr(dblMonths), "0") & strOutPutMonth & _
+        Format(CStr(dblDays), "0") & strOutPutDay & _
+        Format(CStr(dblHours), "0") & strOutPutHour & _
+        Format(CStr(dblMinutes), "0") & strOutPutMinute & _
+        Format(CStr(dblSeconds1), "0") & strOutPutSecond
+        
     Else
-      strOutPutYear = " Year, "
-    End If
-
-    If dblMonths <> 1 Then
-      strOutPutMonth = " Months, "
-    Else
-      strOutPutMonth = " Month, "
-    End If
-
-    If dblDays <> 1 Then
-      strOutPutDay = " Days, "
-    Else
-      strOutPutDay = " Day, "
-    End If
-
-    If dblHours <> 1 Then
-      strOutPutHour = " Hours, "
-    Else
-      strOutPutHour = " Hour, "
-    End If
-
-    If dblMinutes <> 1 Then
-      strOutPutMinute = " Minutes, "
-    Else
-      strOutPutMinute = " Minute, "
-    End If
-
-    If dblSeconds1 <> 1 Then
-      strOutPutSecond = " Seconds"
-    Else
-      strOutPutSecond = " Second"
+        'Format the result as Years:Months:Days:Hours:Minutes:Seconds
+        strResult = Format(CStr(dblYears), "00") & ":" & _
+        Format(CStr(dblMonths), "00") & ":" & _
+        Format(CStr(dblDays), "00") & ":" & _
+        Format(CStr(dblHours), "00") & ":" & _
+        Format(CStr(dblMinutes), "00") & ":" & _
+        Format(CStr(dblSeconds1), "00")
     End If
     
-    strResult = Format(CStr(dblYears), "0") & strOutPutYear & _
-      Format(CStr(dblMonths), "0") & strOutPutMonth & _
-      Format(CStr(dblDays), "0") & strOutPutDay & _
-      Format(CStr(dblHours), "0") & strOutPutHour & _
-      Format(CStr(dblMinutes), "0") & strOutPutMinute & _
-      Format(CStr(dblSeconds1), "0") & strOutPutSecond
-
-  Else
-    'Format the result as Years:Months:Days:Hours:Minutes:Seconds
-    strResult = Format(CStr(dblYears), "00") & ":" & _
-      Format(CStr(dblMonths), "00") & ":" & _
-      Format(CStr(dblDays), "00") & ":" & _
-      Format(CStr(dblHours), "00") & ":" & _
-      Format(CStr(dblMinutes), "00") & ":" & _
-      Format(CStr(dblSeconds1), "00")
-  End If
-
-  DiffDatesFormatted_CalculatedBySecondsPerYear = strResult
-
+    DiffDatesFormatted_CalculatedBySecondsPerYear = strResult
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffDatesFormatted_CalculatedBySecondsPerYear"
-  Resume PROC_EXIT
-
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffDays( _
-  datDay1 As Date, _
-  datDay2 As Date) _
-  As Long
-  ' Comments  : Returns the number of whole days between two dates
-  '             The date is rounded down (it takes 24 hours to make a day)
-  ' Parameters: datDay1 - first date/time (subtracted from datDay2)
-  '             datDay2 - second date/time
-  ' Returns   : Number of whole days between two dates
-  ' Source    : Total Visual SourceBook
-  '
-  Dim dblTemp As Double
-  
-  On Error GoTo PROC_ERR
-  
-  dblTemp = datDay2 - datDay1
-
-  DiffDays = Fix(dblTemp)
-
+    datDay1 As Date, _
+    datDay2 As Date) _
+    As Long
+    ' Comments  : Returns the number of whole days between two dates
+    '             The date is rounded down (it takes 24 hours to make a day)
+    ' Parameters: datDay1 - first date/time (subtracted from datDay2)
+    '             datDay2 - second date/time
+    ' Returns   : Number of whole days between two dates
+    ' Source    : Total Visual SourceBook
+    '
+    Dim dblTemp As Double
+    
+    On Error GoTo PROC_ERR
+    
+    dblTemp = datDay2 - datDay1
+    
+    DiffDays = Fix(dblTemp)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffDays"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffDaysFractional( _
-  datDay1 As Date, _
-  datDay2 As Date) _
-  As Double
-  ' Comments  : The number of days (including fractions) between
-  '             two date/time values
-  ' Parameters: datDay1 - first date/time (subtracted from datDay2)
-  '             datDay2 - second date/time
-  ' Returns   : Difference in days
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  DiffDaysFractional = CDbl(datDay2 - datDay1)
-
+    datDay1 As Date, _
+    datDay2 As Date) _
+    As Double
+    ' Comments  : The number of days (including fractions) between
+    '             two date/time values
+    ' Parameters: datDay1 - first date/time (subtracted from datDay2)
+    '             datDay2 - second date/time
+    ' Returns   : Difference in days
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    DiffDaysFractional = CDbl(datDay2 - datDay1)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffDaysFractional"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffMinutes(datDay1 As Date, datDay2 As Date) As Long
-  ' Comments  : Returns the number of whole minutes between two
-  '             date/time values. Minutes are rounded down (must have 60
-  '             seconds to count as a minute)
-  ' Parameters: datDay1 - first date/time (subtracted from datDay)
-  '             datDay2 - second date/time
-  ' Returns   : Difference in minutes
-  ' Source    : Total Visual SourceBook
-  '
-  Dim dblTemp As Double
-  Const clngMinutesPerDay As Long = 1440
-
-  On Error GoTo PROC_ERR
-  
-  dblTemp = (datDay2 - datDay1) * clngMinutesPerDay
-
-  DiffMinutes = Fix(dblTemp)
-
+    ' Comments  : Returns the number of whole minutes between two
+    '             date/time values. Minutes are rounded down (must have 60
+    '             seconds to count as a minute)
+    ' Parameters: datDay1 - first date/time (subtracted from datDay)
+    '             datDay2 - second date/time
+    ' Returns   : Difference in minutes
+    ' Source    : Total Visual SourceBook
+    '
+    Dim dblTemp As Double
+    Const clngMinutesPerDay As Long = 1440
+    
+    On Error GoTo PROC_ERR
+    
+    dblTemp = (datDay2 - datDay1) * clngMinutesPerDay
+    
+    DiffMinutes = Fix(dblTemp)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffMinutes"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffMinutesFractional( _
-  datDay1 As Date, _
-  datDay2 As Date) _
-  As Double
-  ' Comments  : Returns the number of minutes (including fractions) between
-  '             two date/time values
-  ' Parameters: datDay1 - first date/time (subtracted from datDay2)
-  '             datDay2 - second date/time
-  ' Returns   : Difference in minutes
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  DiffMinutesFractional = CDbl(DateDiff("s", datDay1, datDay2) / 60)
-
+    datDay1 As Date, _
+    datDay2 As Date) _
+    As Double
+    ' Comments  : Returns the number of minutes (including fractions) between
+    '             two date/time values
+    ' Parameters: datDay1 - first date/time (subtracted from datDay2)
+    '             datDay2 - second date/time
+    ' Returns   : Difference in minutes
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    DiffMinutesFractional = CDbl(DateDiff("s", datDay1, datDay2) / 60)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffMinutesFractional"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffSeconds(datDay1 As Date, datDay2 As Date) As Long
-  ' Comments  : Returns the number of seconds between two dates/times
-  ' Parameters: datDay1 - first date/time (subtracted from datDay2)
-  '             datDay2 - second date/time
-  ' Returns   : Difference in seconds
-  ' Source    : Total Visual SourceBook
-  '
-  Dim dblTemp As Double
-  Const clngSecondsPerDay As Long = 86400
-
-  On Error GoTo PROC_ERR
-  
-  dblTemp = (datDay2 - datDay1) * clngSecondsPerDay
-  DiffSeconds = Fix(dblTemp)
-
+    ' Comments  : Returns the number of seconds between two dates/times
+    ' Parameters: datDay1 - first date/time (subtracted from datDay2)
+    '             datDay2 - second date/time
+    ' Returns   : Difference in seconds
+    ' Source    : Total Visual SourceBook
+    '
+    Dim dblTemp As Double
+    Const clngSecondsPerDay As Long = 86400
+    
+    On Error GoTo PROC_ERR
+    
+    dblTemp = (datDay2 - datDay1) * clngSecondsPerDay
+    DiffSeconds = Fix(dblTemp)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffSeconds"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function DiffWeekdays(datDay1 As Date, datDay2 As Date) As Long
-  ' Comments  : Returns the number of weekdays between two dates
-  '             The days are rounded down (it takes 24 hours to make a day)
-  ' Parameters: datDay1 - first (earlier) date/time
-  '             (subtracted from datDay2)
-  '             datDay2 - second (later) date/time
-  ' Returns   : Number of whole business days between two dates
-  '             (Returns negative days if datDay1 is after datDay2)
-  ' Source    : Total Visual SourceBook
-  '
-  Dim lngDays As Long
-  Dim lngWeeks As Long
-  Dim datFirstDate As Date
-  Dim datLastDate As Date
-  Dim datNewDate As Date
-  Dim intDirection As Integer
-
-  On Error GoTo PROC_ERR
-  
-  If datDay1 < datDay2 Then
-    datFirstDate = datDay1
-    datLastDate = datDay2
-    intDirection = 1
-  Else
-    datFirstDate = datDay2
-    datLastDate = datDay1
-    intDirection = -1
-  End If
-  
-  ' Subtract weekends
-  lngWeeks = Fix(Fix(datLastDate - datFirstDate) / 7)
-  lngDays = lngWeeks * 5
-
-  datNewDate = CDate(datFirstDate) + lngWeeks * 7
-
-  While datNewDate < datLastDate
+    ' Comments  : Returns the number of weekdays between two dates
+    '             The days are rounded down (it takes 24 hours to make a day)
+    ' Parameters: datDay1 - first (earlier) date/time
+    '             (subtracted from datDay2)
+    '             datDay2 - second (later) date/time
+    ' Returns   : Number of whole business days between two dates
+    '             (Returns negative days if datDay1 is after datDay2)
+    ' Source    : Total Visual SourceBook
+    '
+    Dim lngDays As Long
+    Dim lngWeeks As Long
+    Dim datFirstDate As Date
+    Dim datLastDate As Date
+    Dim datNewDate As Date
+    Dim intDirection As Integer
+    
+    On Error GoTo PROC_ERR
+    
+    If datDay1 < datDay2 Then
+        datFirstDate = datDay1
+        datLastDate = datDay2
+        intDirection = 1
+    Else
+        datFirstDate = datDay2
+        datLastDate = datDay1
+        intDirection = -1
+    End If
+    
+    ' Subtract weekends
+    lngWeeks = Fix(Fix(datLastDate - datFirstDate) / 7)
+    lngDays = lngWeeks * 5
+    
+    datNewDate = CDate(datFirstDate) + lngWeeks * 7
+    
+    While datNewDate < datLastDate
     datNewDate = datNewDate + 1
     If datNewDate <= datLastDate Then
-
-      ' Don't count days when new day is Sunday or Monday.
-      ' (When new day is Saturday, you are actually counting Friday)
-      If Weekday(datNewDate) <> 1 And Weekday(datNewDate) <> 2 Then
-        lngDays = lngDays + 1
-      End If
-
+        
+        ' Don't count days when new day is Sunday or Monday.
+        ' (When new day is Saturday, you are actually counting Friday)
+        If Weekday(datNewDate) <> 1 And Weekday(datNewDate) <> 2 Then
+            lngDays = lngDays + 1
+        End If
+        
     End If
-  Wend
+Wend
 
-  DiffWeekdays = intDirection * lngDays
-  
+DiffWeekdays = intDirection * lngDays
+
 PROC_EXIT:
-  Exit Function
+Exit Function
 
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
-    "modDateTime.DiffWeekdays"
-  Resume PROC_EXIT
-  
+MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+"modDateTime.DiffWeekdays"
+Resume PROC_EXIT
+
 End Function
 
 Public Function DiffWeeks(datDay1 As Date, datDay2 As Date) As Integer
-  ' Comments  : Returns the number of whole weeks between two dates
-  '             The week is rounded down-it takes 7 whole days to make a week.
-  ' Parameters: datDay1 - first date/time (subtracted from datDay2)
-  '             datDay2 - second date/time
-  ' Returns   : Number of whole weeks between two dates
-  ' Source    : Total Visual SourceBook
-  '
-  Dim dblTemp As Double
-
-  On Error GoTo PROC_ERR
-  
-  dblTemp = (datDay2 - datDay1) / 7
-
-  DiffWeeks = Fix(dblTemp)
-
+    ' Comments  : Returns the number of whole weeks between two dates
+    '             The week is rounded down-it takes 7 whole days to make a week.
+    ' Parameters: datDay1 - first date/time (subtracted from datDay2)
+    '             datDay2 - second date/time
+    ' Returns   : Number of whole weeks between two dates
+    ' Source    : Total Visual SourceBook
+    '
+    Dim dblTemp As Double
+    
+    On Error GoTo PROC_ERR
+    
+    dblTemp = (datDay2 - datDay1) / 7
+    
+    DiffWeeks = Fix(dblTemp)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.DiffWeeks"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function FirstDayOfWeek(datDateIn As Date) As Date
-  ' Comments  : Returns the first day (Sunday) of the week of a
-  '             given date
-  ' Parameters: datDateIn - date to check
-  ' Returns   : Date for the first Sunday of the given week
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  FirstDayOfWeek = datDateIn - (Weekday(datDateIn) - 1)
-  
+    ' Comments  : Returns the first day (Sunday) of the week of a
+    '             given date
+    ' Parameters: datDateIn - date to check
+    ' Returns   : Date for the first Sunday of the given week
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    FirstDayOfWeek = datDateIn - (Weekday(datDateIn) - 1)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.FirstDayOfWeek"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function Get4YearShortDate() As String
-  ' Comments  : Retrieve a date string that displays the full date and
-  '             4 digit year based on the user's windows settings.
-  ' Parameters: None
-  ' Returns   : String: Format for short date with four digit years
-  '             If a format cannot be determined, the Long Date format is returned
-  ' Source    : Total Visual SourceBook
-  '
-  Dim strDate As String
-  Dim strFormatStart As String
-  Dim strFormatEnd As String
-  Dim strFormat As String
-  Dim strSep As String
-  Dim fContinue As Integer
-  Dim intLen As Integer
-
-  Const cstrShortDate As String = "ddddd"
-  Const cstrLongDate As String = "dddddd"
-  Const cvarTestDate As String = #1/2/1998#
-
-  On Error GoTo PROC_ERR
-
-  ' Short date test
-  strDate = Format(cvarTestDate, cstrShortDate)
-  
-  If InStr(strDate, "1998") > 0 Then
-    ' Short date format already displays 4 digit years, stop analysis.
-    strFormat = cstrShortDate
-  Else
-    ' Default to long date format
-    strFormat = cstrLongDate
-  
-    strFormatStart = ""
-    strFormatEnd = ""
-    fContinue = True
+    ' Comments  : Retrieve a date string that displays the full date and
+    '             4 digit year based on the user's windows settings.
+    ' Parameters: None
+    ' Returns   : String: Format for short date with four digit years
+    '             If a format cannot be determined, the Long Date format is returned
+    ' Source    : Total Visual SourceBook
+    '
+    Dim strDate As String
+    Dim strFormatStart As String
+    Dim strFormatEnd As String
+    Dim strFormat As String
+    Dim strSep As String
+    Dim fContinue As Integer
+    Dim intLen As Integer
     
-    ' See if year is at beginning
-    If Left$(strDate, 2) = "98" Then
-      strFormatStart = "yyyy"
-      strDate = Right$(strDate, Len(strDate) - 2)
+    Const cstrShortDate As String = "ddddd"
+    Const cstrLongDate As String = "dddddd"
+    Const cvarTestDate As String = #1/2/1998#
     
-      strSep = Left$(strDate, 1)
-      
-      If Not IsNumeric(strSep) Then
-        strDate = Right$(strDate, Len(strDate) - 1)
-        strFormatStart = strFormatStart & strSep
-      Else
-        fContinue = False
-      End If
+    On Error GoTo PROC_ERR
     
-    ' See if year is at end
-    ElseIf Right$(strDate, 2) = "98" Then
-      strFormatEnd = "yyyy"
-      strDate = Left$(strDate, Len(strDate) - 2)
+    ' Short date test
+    strDate = Format(cvarTestDate, cstrShortDate)
     
-      strSep = Right$(strDate, 1)
-      
-      If Not IsNumeric(strSep) Then
-        strDate = Left$(strDate, Len(strDate) - 1)
-        strFormatEnd = strSep & strFormatEnd
-      Else
-        fContinue = False
-      End If
+    If InStr(strDate, "1998") > 0 Then
+        ' Short date format already displays 4 digit years, stop analysis.
+        strFormat = cstrShortDate
     Else
-      fContinue = False
-    End If
-    
-    ' Continue analysis if year was found
-    If fContinue Then
-      ' Look at first digit for month or day
-      intLen = 1
-      
-      Select Case Left$(strDate, intLen)
-        Case "1":
-          strFormatStart = strFormatStart & "m"
-          
-        Case "2":
-          strFormatStart = strFormatStart & "d"
-          
-        Case Else
-          intLen = 2
-          
-          Select Case Left$(strDate, intLen)
-            Case "01":
-              strFormatStart = strFormatStart & "mm"
-            
-            Case "02":
-              strFormatStart = strFormatStart & "dd"
-            
-            Case Else:
-              fContinue = False
-              
-          End Select
-          
-      End Select
-    
-      If fContinue Then
-        strDate = Right$(strDate, Len(strDate) - intLen)
-        strSep = Left$(strDate, 1)
+        ' Default to long date format
+        strFormat = cstrLongDate
         
-        If Not IsNumeric(strSep) Then
-          strDate = Right$(strDate, Len(strDate) - 1)
-          strFormatStart = strFormatStart & strSep
+        strFormatStart = ""
+        strFormatEnd = ""
+        fContinue = True
+        
+        ' See if year is at beginning
+        If Left$(strDate, 2) = "98" Then
+            strFormatStart = "yyyy"
+            strDate = Right$(strDate, Len(strDate) - 2)
+            
+            strSep = Left$(strDate, 1)
+            
+            If Not IsNumeric(strSep) Then
+                strDate = Right$(strDate, Len(strDate) - 1)
+                strFormatStart = strFormatStart & strSep
+            Else
+                fContinue = False
+            End If
+            
+            ' See if year is at end
+            ElseIf Right$(strDate, 2) = "98" Then
+            strFormatEnd = "yyyy"
+            strDate = Left$(strDate, Len(strDate) - 2)
+            
+            strSep = Right$(strDate, 1)
+            
+            If Not IsNumeric(strSep) Then
+                strDate = Left$(strDate, Len(strDate) - 1)
+                strFormatEnd = strSep & strFormatEnd
+            Else
+                fContinue = False
+            End If
         Else
-          fContinue = False
+            fContinue = False
         End If
         
+        ' Continue analysis if year was found
         If fContinue Then
-              ' Check for remaining characters
-          Select Case strDate
-            Case "1":
-              strFormatStart = strFormatStart & "m"
+            ' Look at first digit for month or day
+            intLen = 1
             
-            Case "01":
-              strFormatStart = strFormatStart & "mm"
+            Select Case Left$(strDate, intLen)
+                Case "1":
+                strFormatStart = strFormatStart & "m"
+                
+                Case "2":
+                strFormatStart = strFormatStart & "d"
+                
+                Case Else
+                intLen = 2
+                
+                Select Case Left$(strDate, intLen)
+                    Case "01":
+                    strFormatStart = strFormatStart & "mm"
+                    
+                    Case "02":
+                    strFormatStart = strFormatStart & "dd"
+                    
+                    Case Else:
+                    fContinue = False
+                    
+                End Select
+                
+            End Select
             
-            Case "2":
-              strFormatStart = strFormatStart & "d"
-            
-            Case "02":
-              strFormatStart = strFormatStart & "dd"
-            
-            Case Else:
-              fContinue = False
-          
-          End Select
-          
-          If fContinue Then
-            ' Only at this point are we sure we found what we want
-            strFormat = strFormatStart & strFormatEnd
-          End If
-        
+            If fContinue Then
+                strDate = Right$(strDate, Len(strDate) - intLen)
+                strSep = Left$(strDate, 1)
+                
+                If Not IsNumeric(strSep) Then
+                    strDate = Right$(strDate, Len(strDate) - 1)
+                    strFormatStart = strFormatStart & strSep
+                Else
+                    fContinue = False
+                End If
+                
+                If fContinue Then
+                    ' Check for remaining characters
+                    Select Case strDate
+                        Case "1":
+                        strFormatStart = strFormatStart & "m"
+                        
+                        Case "01":
+                        strFormatStart = strFormatStart & "mm"
+                        
+                        Case "2":
+                        strFormatStart = strFormatStart & "d"
+                        
+                        Case "02":
+                        strFormatStart = strFormatStart & "dd"
+                        
+                        Case Else:
+                        fContinue = False
+                        
+                    End Select
+                    
+                    If fContinue Then
+                        ' Only at this point are we sure we found what we want
+                        strFormat = strFormatStart & strFormatEnd
+                    End If
+                    
+                End If
+            End If
         End If
-      End If
     End If
-  End If
-  
-  Get4YearShortDate = strFormat
-
+    
+    Get4YearShortDate = strFormat
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.Get4YearShortDate"
-  Resume PROC_EXIT
-
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function GetDatePart(dtDateIn As Date, _
-  dtFormat As DateParts, _
-  Optional FirstDayOfWeek As VbDayOfWeek = vbSunday, _
-  Optional FirstWeekOfYear As VbFirstWeekOfYear = vbFirstJan1) _
-  As Variant
-  ' Comments  : Returns the specific portion of the date requested.
-  ' Parameters: dtDateIn - The date to get the part for.
-  '             dtFormat - Date and time portions to retrieve.
-  '             FirstDayOfWeek - affects calculations that use the
-  '             "theWeekday" and "theWeek" values.
-  '             FirstWeekOfYear - affects calculations that use the
-  '             "theDayOfYear" value.
-  ' Returns   : The specific part of the date from the passed dtDateIn.
-  ' Source    : Total Visual SourceBook.
-  '
-  Dim strValue As String
-  
-  On Error GoTo PROC_ERR
-
-  Select Case dtFormat
-    Case DateParts.theYear 'Year
-      strValue = "yyyy"
-    Case DateParts.theQuarter 'Quarter
-      strValue = "q"
-    Case DateParts.theMonth 'Month
-      strValue = "m"
-    Case DateParts.theDayOfYear 'Day of year
-      strValue = "y"
-    Case DateParts.theDay 'Day
-      strValue = "d"
-    Case DateParts.theweekday 'Weekday
-      strValue = "w"
-    Case DateParts.theWeek 'Week
-      strValue = "ww"
-    Case DateParts.theHour 'Hour
-      strValue = "h"
-    Case DateParts.theMinute 'Minute
-      strValue = "n"
-    Case DateParts.theSecond 'Second
-      strValue = "s"
-  End Select
-
-  GetDatePart = DatePart(strValue, dtDateIn, FirstDayOfWeek, FirstWeekOfYear)
-
+    dtFormat As DateParts, _
+    Optional FirstDayOfWeek As VbDayOfWeek = vbSunday, _
+    Optional FirstWeekOfYear As VbFirstWeekOfYear = vbFirstJan1) _
+    As Variant
+    ' Comments  : Returns the specific portion of the date requested.
+    ' Parameters: dtDateIn - The date to get the part for.
+    '             dtFormat - Date and time portions to retrieve.
+    '             FirstDayOfWeek - affects calculations that use the
+    '             "theWeekday" and "theWeek" values.
+    '             FirstWeekOfYear - affects calculations that use the
+    '             "theDayOfYear" value.
+    ' Returns   : The specific part of the date from the passed dtDateIn.
+    ' Source    : Total Visual SourceBook.
+    '
+    Dim strValue As String
+    
+    On Error GoTo PROC_ERR
+    
+    Select Case dtFormat
+        Case DateParts.theYear 'Year
+        strValue = "yyyy"
+        Case DateParts.theQuarter 'Quarter
+        strValue = "q"
+        Case DateParts.theMonth 'Month
+        strValue = "m"
+        Case DateParts.theDayOfYear 'Day of year
+        strValue = "y"
+        Case DateParts.theDay 'Day
+        strValue = "d"
+        Case DateParts.theweekday 'Weekday
+        strValue = "w"
+        Case DateParts.theWeek 'Week
+        strValue = "ww"
+        Case DateParts.theHour 'Hour
+        strValue = "h"
+        Case DateParts.theMinute 'Minute
+        strValue = "n"
+        Case DateParts.theSecond 'Second
+        strValue = "s"
+    End Select
+    
+    GetDatePart = DatePart(strValue, dtDateIn, FirstDayOfWeek, FirstWeekOfYear)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.GetDatePart"
-  Resume PROC_EXIT
-
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function GetRandomDate( _
-  dtLowDate As Date, _
-  dtHighDate As Date) _
-  As Date
-  ' Comments  : Returns a random date between the
-  '             range specified in the arguments, inclusive
-  ' Parameters: dtLowDate - Lower bound of the range of dates
-  '             dtHighDate - Upper bound of the range of dates
-  ' Returns   : The random date
-  ' Source    : Total Visual SourceBook
-  '
-  
-  Dim dtResult As Date
-  
-  ' change the random date generator "seed"
-  Randomize Timer
-  
-  ' Scale the output of the rnd function so that it returns
-  ' a date in the correct range instead of a floating
-  ' point value
-  dtResult = _
+    dtLowDate As Date, _
+    dtHighDate As Date) _
+    As Date
+    ' Comments  : Returns a random date between the
+    '             range specified in the arguments, inclusive
+    ' Parameters: dtLowDate - Lower bound of the range of dates
+    '             dtHighDate - Upper bound of the range of dates
+    ' Returns   : The random date
+    ' Source    : Total Visual SourceBook
+    '
+    
+    Dim dtResult As Date
+    
+    ' change the random date generator "seed"
+    Randomize Timer
+    
+    ' Scale the output of the rnd function so that it returns
+    ' a date in the correct range instead of a floating
+    ' point value
+    dtResult = _
     Fix((dtHighDate - dtLowDate + 1) * Rnd + dtLowDate)
-  
-  GetRandomDate = dtResult
-
+    
+    GetRandomDate = dtResult
+    
 End Function
 
 Public Function IsLeapYear(intYear As Integer) As Boolean
-  ' Comments  : Determines if the year is a leap year using the
-  '             internal DateSerial function
-  ' Parameters: intYear - Integer year
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  ' Returns   : True if the year is a leap year, False otherwise
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  IsLeapYear = Month(DateSerial(intYear, 2, 29)) = 2
-
+    ' Comments  : Determines if the year is a leap year using the
+    '             internal DateSerial function
+    ' Parameters: intYear - Integer year
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    ' Returns   : True if the year is a leap year, False otherwise
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    IsLeapYear = Month(DateSerial(intYear, 2, 29)) = 2
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.IsLeapYear"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function IsLeapYear2(intYear As Integer) As Boolean
-  ' Comments  : Determines if the specified year is a leap year without
-  '             relying on the DateSerial method.
-  ' Parameters: intYear - integer year
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  ' Returns   : True - year is a leap year, False otherwise
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  IsLeapYear2 = False
-  
-  If intYear Mod 4 = 0 Then
-    If intYear Mod 100 = 0 Then
-      If intYear Mod 400 = 0 Then
-        IsLeapYear2 = True
-      End If
-    Else
-      IsLeapYear2 = True
+    ' Comments  : Determines if the specified year is a leap year without
+    '             relying on the DateSerial method.
+    ' Parameters: intYear - integer year
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    ' Returns   : True - year is a leap year, False otherwise
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    IsLeapYear2 = False
+    
+    If intYear Mod 4 = 0 Then
+        If intYear Mod 100 = 0 Then
+            If intYear Mod 400 = 0 Then
+                IsLeapYear2 = True
+            End If
+        Else
+            IsLeapYear2 = True
+        End If
     End If
-  End If
-
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.IsLeapYear2"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function LastDayOfWeek(datDateIn As Date) As Date
-  ' Comments  : Returns the last day of the week (Saturday) of
-  '             the supplied date
-  ' Parameters: datDateIn - date to check the end of the week
-  ' Returns   : Date of the last day of the week
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  LastDayOfWeek = datDateIn + (7 - Weekday(datDateIn))
-
+    ' Comments  : Returns the last day of the week (Saturday) of
+    '             the supplied date
+    ' Parameters: datDateIn - date to check the end of the week
+    ' Returns   : Date of the last day of the week
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    LastDayOfWeek = datDateIn + (7 - Weekday(datDateIn))
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.LastDayOfWeek"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function LastDayOfWeekInMonth( _
-  intMonth As Integer, _
-  intYear As Integer, _
-  intDOW As Integer) _
-  As Date
-  ' Comments  : Calculates the last day (Sunday, Monday, etc.) of the month
-  ' Parameters: intMonth - month to check
-  '             intYear - year to check
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  '             intDOW - the day of the week to calculate
-  '             (1 for Sunday, 2 for Monday, etc.)
-  ' Returns   : Date of the last day of month
-  ' Source    : Total Visual SourceBook
-  '
-  Dim datDate As Date
-  Dim intOccurrence As Integer
-
-  On Error GoTo PROC_ERR
-
-  intOccurrence = 5
-  
-  Do While IsNull(NthDayOfMonth(intMonth, intYear, intOccurrence, intDOW))
-    intOccurrence = intOccurrence - 1
-  Loop
-
-  datDate = NthDayOfMonth(intMonth, intYear, intOccurrence, intDOW)
-
-  LastDayOfWeekInMonth = datDate
-
+    intMonth As Integer, _
+    intYear As Integer, _
+    intDOW As Integer) _
+    As Date
+    ' Comments  : Calculates the last day (Sunday, Monday, etc.) of the month
+    ' Parameters: intMonth - month to check
+    '             intYear - year to check
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    '             intDOW - the day of the week to calculate
+    '             (1 for Sunday, 2 for Monday, etc.)
+    ' Returns   : Date of the last day of month
+    ' Source    : Total Visual SourceBook
+    '
+    Dim datDate As Date
+    Dim intOccurrence As Integer
+    
+    On Error GoTo PROC_ERR
+    
+    intOccurrence = 5
+    
+    Do While IsNull(NthDayOfMonth(intMonth, intYear, intOccurrence, intDOW))
+        intOccurrence = intOccurrence - 1
+    Loop
+    
+    datDate = NthDayOfMonth(intMonth, intYear, intOccurrence, intDOW)
+    
+    LastDayOfWeekInMonth = datDate
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.LastDayOfWeekInMonth"
-  Resume PROC_EXIT
-
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function MonthFirstDay( _
-  intMonth As Integer, _
-  intYear As Integer) _
-  As Date
-  ' Comments  : Returns the date of the first day of the month
-  ' Parameters: intMonth - Number of the month (1-12)
-  '             intYear - Year to check
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  ' Returns   : Date of the first day of the month
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  MonthFirstDay = DateSerial(intYear, intMonth, 1)
-
+    intMonth As Integer, _
+    intYear As Integer) _
+    As Date
+    ' Comments  : Returns the date of the first day of the month
+    ' Parameters: intMonth - Number of the month (1-12)
+    '             intYear - Year to check
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    ' Returns   : Date of the first day of the month
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    MonthFirstDay = DateSerial(intYear, intMonth, 1)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.MonthFirstDay"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function MonthFirstWeekday( _
-  intMonth As Integer, _
-  intYear As Integer) _
-  As Date
-  ' Comments  : Returns the first weekday of the month
-  '             (first day of the month that is not a Saturday or Sunday)
-  ' Parameters: intMonth - Number of the month (1-12)
-  '             intYear - Year of the month
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  ' Returns   : First weekday of the month
-  ' Source    : Total Visual SourceBook
-  '
-  Dim datTempDate As Date
-  
-  On Error GoTo PROC_ERR
+    intMonth As Integer, _
+    intYear As Integer) _
+    As Date
+    ' Comments  : Returns the first weekday of the month
+    '             (first day of the month that is not a Saturday or Sunday)
+    ' Parameters: intMonth - Number of the month (1-12)
+    '             intYear - Year of the month
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    ' Returns   : First weekday of the month
+    ' Source    : Total Visual SourceBook
+    '
+    Dim datTempDate As Date
     
-  ' First day of month
-  datTempDate = DateSerial(intYear, intMonth, 1)
-
-  ' Go to next day until it is not a Sunday (1) or Saturday (7).
-  Do While Weekday(datTempDate) = 1 Or Weekday(datTempDate) = 7
-    datTempDate = datTempDate + 1
-  Loop
-
-  MonthFirstWeekday = datTempDate
-
+    On Error GoTo PROC_ERR
+    
+    ' First day of month
+    datTempDate = DateSerial(intYear, intMonth, 1)
+    
+    ' Go to next day until it is not a Sunday (1) or Saturday (7).
+    Do While Weekday(datTempDate) = 1 Or Weekday(datTempDate) = 7
+        datTempDate = datTempDate + 1
+    Loop
+    
+    MonthFirstWeekday = datTempDate
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.MonthFirstWeekday"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function MonthLastDay( _
-  intMonth As Integer, _
-  intYear As Integer) _
-  As Date
-  ' Comments  : Returns the last day of the month
-  ' Parameters: intMonth - number of the month (1-12)
-  '             intYear - year (necessary for calculating leap years)
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  ' Returns   : Last day of the month
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  MonthLastDay = DateSerial(intYear, intMonth + 1, 0)
-
+    intMonth As Integer, _
+    intYear As Integer) _
+    As Date
+    ' Comments  : Returns the last day of the month
+    ' Parameters: intMonth - number of the month (1-12)
+    '             intYear - year (necessary for calculating leap years)
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    ' Returns   : Last day of the month
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    MonthLastDay = DateSerial(intYear, intMonth + 1, 0)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.MonthLastDay"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function MonthLastWeekday( _
-  intMonth As Integer, _
-  intYear As Integer) _
-  As Date
-  ' Comments  : Returns the last weekday of the month
-  '             (last day of the month that is not a Saturday or Sunday)
-  ' Parameters: intMonth - number of the month (1-12)
-  '             intYear - year
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  ' Returns   : Last weekday of the month
-  ' Source    : Total Visual SourceBook
-  '
-  Dim datTempDate As Date
+    intMonth As Integer, _
+    intYear As Integer) _
+    As Date
+    ' Comments  : Returns the last weekday of the month
+    '             (last day of the month that is not a Saturday or Sunday)
+    ' Parameters: intMonth - number of the month (1-12)
+    '             intYear - year
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    ' Returns   : Last weekday of the month
+    ' Source    : Total Visual SourceBook
+    '
+    Dim datTempDate As Date
     
-  On Error GoTo PROC_ERR
-  
-  ' Last day of month
-  datTempDate = DateSerial(intYear, intMonth + 1, 0)
-
-  ' Go to previous day until it is not a Sunday (1) or Saturday (7).
-  Do While Weekday(datTempDate) = 1 Or Weekday(datTempDate) = 7
-    datTempDate = datTempDate - 1
-  Loop
-
-  MonthLastWeekday = datTempDate
-
+    On Error GoTo PROC_ERR
+    
+    ' Last day of month
+    datTempDate = DateSerial(intYear, intMonth + 1, 0)
+    
+    ' Go to previous day until it is not a Sunday (1) or Saturday (7).
+    Do While Weekday(datTempDate) = 1 Or Weekday(datTempDate) = 7
+        datTempDate = datTempDate - 1
+    Loop
+    
+    MonthLastWeekday = datTempDate
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.MonthLastWeekday"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function NextDate(datDateIn As Date) As Date
-  ' Comments  : Increments a date by 1
-  ' Parameters: datDateIn - date to increment
-  ' Returns   : date incremented by one
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-
-  NextDate = datDateIn + 1
+    ' Comments  : Increments a date by 1
+    ' Parameters: datDateIn - date to increment
+    ' Returns   : date incremented by one
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+NextDate = datDateIn + 1
 
 PROC_EXIT:
-  Exit Function
+Exit Function
 
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
-    "modDateTime.NextDate"
-  Resume PROC_EXIT
-  
+MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+"modDateTime.NextDate"
+Resume PROC_EXIT
+
 End Function
 
 Public Function NextDOW(datDateIn As Date, intDay As Integer) As Date
-  ' Comments  : Returns the specified day of the week after the given
-  '             date (eg. NextDOW (#03/28/64#, 6) returns the date of
-  '             the next friday after 03/28/64)
-  ' Parameters: datDateIn - date to check
-  '             intDay - day of week to calculate (1=Sunday, 7=Saturday)
-  ' Returns   : date
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  NextDOW = datDateIn - Weekday(datDateIn) + intDay + _
-    IIf(Weekday(datDateIn) < intDay, 0, 7)
+    ' Comments  : Returns the specified day of the week after the given
+    '             date (eg. NextDOW (#03/28/64#, 6) returns the date of
+    '             the next friday after 03/28/64)
+    ' Parameters: datDateIn - date to check
+    '             intDay - day of week to calculate (1=Sunday, 7=Saturday)
+    ' Returns   : date
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+NextDOW = datDateIn - Weekday(datDateIn) + intDay + _
+IIf(Weekday(datDateIn) < intDay, 0, 7)
 
 PROC_EXIT:
-  Exit Function
+Exit Function
 
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
-    "modDateTime.NextDOW"
-  Resume PROC_EXIT
-  
+MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+"modDateTime.NextDOW"
+Resume PROC_EXIT
+
 End Function
 
 Public Function NextWeekday(datDateIn As Date) As Date
-  ' Comments  : Calculates the next weekday (skips weekend dates)
-  '             Date returned is always between Monday and Friday.
-  ' Parameters: datDateIn - Date to calculate for.
-  ' Returns   : Date of the next weekday
-  ' Source    : Total Visual SourceBook
-  '
-  Dim datDate As Date
-
-  On Error GoTo PROC_ERR
-  
-  datDate = datDateIn + 1
-
-  ' Go to next day until you are not on a weekend
-  ' (1 = Sunday, 7 = Saturday)
-  While Weekday(datDate) = 1 Or Weekday(datDate) = 7
+    ' Comments  : Calculates the next weekday (skips weekend dates)
+    '             Date returned is always between Monday and Friday.
+    ' Parameters: datDateIn - Date to calculate for.
+    ' Returns   : Date of the next weekday
+    ' Source    : Total Visual SourceBook
+    '
+    Dim datDate As Date
+    
+    On Error GoTo PROC_ERR
+    
+    datDate = datDateIn + 1
+    
+    ' Go to next day until you are not on a weekend
+    ' (1 = Sunday, 7 = Saturday)
+    While Weekday(datDate) = 1 Or Weekday(datDate) = 7
     datDate = datDate + 1
-  Wend
+Wend
 
-  NextWeekday = datDate
+NextWeekday = datDate
 
 PROC_EXIT:
-  Exit Function
+Exit Function
 
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
-    "modDateTime.NextWeekday"
-  Resume PROC_EXIT
-  
+MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+"modDateTime.NextWeekday"
+Resume PROC_EXIT
+
 End Function
 
 Public Function NthDayOfMonth( _
-  intMonth As Integer, _
-  intYear As Integer, _
-  intOccurrence As Integer, _
-  intDay As Integer) _
-  As Variant
-  ' Comments  : Returns the date of the Nth day (Monday, Tuesday, etc.)
-  '             of the month
-  ' Parameters: intMonth - month to check
-  '             intYear - year to check
-  '             Note: Always specify the full four digits of the year
-  '             or the code cannot be considered Year 2000 compliant.
-  '             intOccurrence - the occurrence number of the day
-  '             to calculate (1 for first, 2 for second, etc.)
-  '             intDay - the day of the week to calculate (1 for Sunday,
-  '             2 for Monday, etc.)
-  ' Returns   : Nth day of month (null if date does not exist)
-  ' Source    : Total Visual SourceBook
-  '
-  Dim varTempDate As Variant
-  Dim intCurrDay As Integer
+    intMonth As Integer, _
+    intYear As Integer, _
+    intOccurrence As Integer, _
+    intDay As Integer) _
+    As Variant
+    ' Comments  : Returns the date of the Nth day (Monday, Tuesday, etc.)
+    '             of the month
+    ' Parameters: intMonth - month to check
+    '             intYear - year to check
+    '             Note: Always specify the full four digits of the year
+    '             or the code cannot be considered Year 2000 compliant.
+    '             intOccurrence - the occurrence number of the day
+    '             to calculate (1 for first, 2 for second, etc.)
+    '             intDay - the day of the week to calculate (1 for Sunday,
+    '             2 for Monday, etc.)
+    ' Returns   : Nth day of month (null if date does not exist)
+    ' Source    : Total Visual SourceBook
+    '
+    Dim varTempDate As Variant
+    Dim intCurrDay As Integer
     
-  On Error GoTo PROC_ERR
-  
-  varTempDate = DateSerial(intYear, intMonth, 1)
-
-  If (intDay > 0) And (intDay < 8) And (intOccurrence > 0) Then
+    On Error GoTo PROC_ERR
     
-    ' Calculate first intDay of the month.
-    intCurrDay = Weekday(varTempDate)
+    varTempDate = DateSerial(intYear, intMonth, 1)
     
-    If intCurrDay <> intDay Then
-      
-      If intCurrDay < intDay Then
-        varTempDate = varTempDate + (intDay - intCurrDay)
-      Else
-        varTempDate = varTempDate + (7 + intDay - intCurrDay)
-      End If
-    
-    End If
-    
-    If intOccurrence > 1 Then
-      varTempDate = varTempDate + 7 * (intOccurrence - 1)
-      
-      If Month(varTempDate) <> intMonth Then
-        ' Date goes past month
+    If (intDay > 0) And (intDay < 8) And (intOccurrence > 0) Then
+        
+        ' Calculate first intDay of the month.
+        intCurrDay = Weekday(varTempDate)
+        
+        If intCurrDay <> intDay Then
+            
+            If intCurrDay < intDay Then
+                varTempDate = varTempDate + (intDay - intCurrDay)
+            Else
+                varTempDate = varTempDate + (7 + intDay - intCurrDay)
+            End If
+            
+        End If
+        
+        If intOccurrence > 1 Then
+            varTempDate = varTempDate + 7 * (intOccurrence - 1)
+            
+            If Month(varTempDate) <> intMonth Then
+                ' Date goes past month
+                varTempDate = Null
+            End If
+            
+        End If
+        
+    Else
         varTempDate = Null
-      End If
-    
     End If
-  
-  Else
-    varTempDate = Null
-  End If
     
-  NthDayOfMonth = varTempDate
-
+    NthDayOfMonth = varTempDate
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.NthDayOfMonth"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function PriorDate(datDateIn As Date) As Date
-  ' Comments  : Decrements the passed date by 1
-  ' Parameters: datDateIn - date to decrement
-  ' Returns   : date decremented by one
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  PriorDate = datDateIn - 1
-
+    ' Comments  : Decrements the passed date by 1
+    ' Parameters: datDateIn - date to decrement
+    ' Returns   : date decremented by one
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    PriorDate = datDateIn - 1
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.PriorDate"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function PriorDOW(datDateIn As Date, intDay As Integer) As Date
-  ' Comments  : Returns the specified day of the week after the given date
-  '             (eg. PriorDOW (#03/28/64#, 6) returns the date of the
-  '             Friday before 03/28/64)
-  ' Parameters: datDateIn - Date to check
-  '             intDay - Day of week to look for (1=Sunday, 7=Saturday)
-  ' Returns   : Specified day of the week after the given date
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  PriorDOW = datDateIn - Weekday(datDateIn) + _
+    ' Comments  : Returns the specified day of the week after the given date
+    '             (eg. PriorDOW (#03/28/64#, 6) returns the date of the
+    '             Friday before 03/28/64)
+    ' Parameters: datDateIn - Date to check
+    '             intDay - Day of week to look for (1=Sunday, 7=Saturday)
+    ' Returns   : Specified day of the week after the given date
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    PriorDOW = datDateIn - Weekday(datDateIn) + _
     intDay - IIf(Weekday(datDateIn) > intDay, 0, 7)
-
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.PriorDOW"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function PriorWeekday(datDateIn As Date) As Date
-  ' Comments  : Calculates previous weekday (skips weekend dates)
-  ' Parameters: datDateIn - Date to decrement
-  ' Returns   : Previous weekday
-  ' Source    : Total Visual SourceBook
-  '
-  Dim datTmp As Date
-
-  On Error GoTo PROC_ERR
-  
-  datTmp = CDate(datDateIn) - 1
-
-  ' Go to next day until you are not on a weekend
-  ' (1 = Sunday, 7 = Saturday)
-  While Weekday(datTmp) = 1 Or Weekday(datTmp) = 7
+    ' Comments  : Calculates previous weekday (skips weekend dates)
+    ' Parameters: datDateIn - Date to decrement
+    ' Returns   : Previous weekday
+    ' Source    : Total Visual SourceBook
+    '
+    Dim datTmp As Date
+    
+    On Error GoTo PROC_ERR
+    
+    datTmp = CDate(datDateIn) - 1
+    
+    ' Go to next day until you are not on a weekend
+    ' (1 = Sunday, 7 = Saturday)
+    While Weekday(datTmp) = 1 Or Weekday(datTmp) = 7
     datTmp = datTmp - 1
-  Wend
+Wend
 
-  PriorWeekday = datTmp
-  
+PriorWeekday = datTmp
+
 PROC_EXIT:
-  Exit Function
+Exit Function
 
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
-    "modDateTime.PriorWeekday"
-  Resume PROC_EXIT
+MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+"modDateTime.PriorWeekday"
+Resume PROC_EXIT
 
 End Function
 
 Public Function QuarterFirstDay(datDateIn As Date) As Date
-  ' Comments   : Calculates the first day of the quarter for a given date.
-  '              (quarters start at the beginning of January, April,
-  '              July, October)
-  ' Parameters : datDateIn - date to test
-  ' Returns    : First day of the quarter
-  ' Source    : Total Visual SourceBook
-  '
-  Dim dbl As Double
-  
-  On Error GoTo PROC_ERR
-  
-  dbl = (Month(datDateIn) - 1) / 3
-  QuarterFirstDay = DateSerial(Year(datDateIn), Int(dbl) * 3 + 1, 1)
-
+    ' Comments   : Calculates the first day of the quarter for a given date.
+    '              (quarters start at the beginning of January, April,
+    '              July, October)
+    ' Parameters : datDateIn - date to test
+    ' Returns    : First day of the quarter
+    ' Source    : Total Visual SourceBook
+    '
+    Dim dbl As Double
+    
+    On Error GoTo PROC_ERR
+    
+    dbl = (Month(datDateIn) - 1) / 3
+    QuarterFirstDay = DateSerial(Year(datDateIn), Int(dbl) * 3 + 1, 1)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.QuarterFirstDay"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Function QuarterLastDay(datDateIn As Date) As Date
-  ' Comments   : For a given date, calculate the last day of the quarter
-  '              (quarters end at the end of March, June, September,
-  '              December)
-  ' Parameters : datDateIn - Date to test
-  ' Returns    : Date of the last day of the quarter
-  ' Source    : Total Visual SourceBook
-  '
-  Dim dbl As Double
-
-  On Error GoTo PROC_ERR
-  
-  dbl = (Month(datDateIn) - 1) / 3
-  QuarterLastDay = DateSerial(Year(datDateIn), Int(dbl) * 3 + 4, 0)
-
+    ' Comments   : For a given date, calculate the last day of the quarter
+    '              (quarters end at the end of March, June, September,
+    '              December)
+    ' Parameters : datDateIn - Date to test
+    ' Returns    : Date of the last day of the quarter
+    ' Source    : Total Visual SourceBook
+    '
+    Dim dbl As Double
+    
+    On Error GoTo PROC_ERR
+    
+    dbl = (Month(datDateIn) - 1) / 3
+    QuarterLastDay = DateSerial(Year(datDateIn), Int(dbl) * 3 + 4, 0)
+    
 PROC_EXIT:
-  Exit Function
-
+    Exit Function
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.QuarterLastDay"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Function
 
 Public Sub WaitForTime(datDate As Date)
-  ' Comments  : Waits until the specified date and time
-  ' Parameters: datDate - date/time to wait for
-  ' Returns   : None
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-  
-  Do
-    ' Yield to other programs
-    DoEvents
-  Loop Until Now >= datDate
-
+    ' Comments  : Waits until the specified date and time
+    ' Parameters: datDate - date/time to wait for
+    ' Returns   : None
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    Do
+        ' Yield to other programs
+        DoEvents
+    Loop Until Now >= datDate
+    
 PROC_EXIT:
-  Exit Sub
-
+    Exit Sub
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.WaitForTime"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Sub
 
 Public Sub WaitSeconds(intSeconds As Integer)
-  ' Comments  : Waits for a specified number of seconds
-  ' Parameters: intSeconds - Number of seconds to wait
-  ' Returns   : Nothing
-  ' Source    : Total Visual SourceBook
-  '
-  Dim datTime As Date
-
-  On Error GoTo PROC_ERR
-
-  datTime = DateAdd("s", intSeconds, Now)
-
-  Do
-    ' Yield to other programs
-    DoEvents
-  Loop Until Now >= datTime
-
+    ' Comments  : Waits for a specified number of seconds
+    ' Parameters: intSeconds - Number of seconds to wait
+    ' Returns   : Nothing
+    ' Source    : Total Visual SourceBook
+    '
+    Dim datTime As Date
+    
+    On Error GoTo PROC_ERR
+    
+    datTime = DateAdd("s", intSeconds, Now)
+    
+    Do
+        ' Yield to other programs
+        DoEvents
+    Loop Until Now >= datTime
+    
 PROC_EXIT:
-  Exit Sub
-
+    Exit Sub
+    
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
     "modDateTime.WaitSeconds"
-  Resume PROC_EXIT
-  
+    Resume PROC_EXIT
+    
 End Sub
 
 Public Function YearsBetweenDates( _
-  datBeginDate As Date, _
-  datEndDate As Date) _
-  As Integer
-  ' Comments  : Returns the number years between two dates
-  ' Parameters: datBeginDate - First date (must be < EndDate)
-  '             datEndDate - Second date
-  ' Returns   : Integer number of years
-  ' Source    : Total Visual SourceBook
-  '
-  On Error GoTo PROC_ERR
-
-  If Month(datEndDate) < Month(datBeginDate) Or _
+    datBeginDate As Date, _
+    datEndDate As Date) _
+    As Integer
+    ' Comments  : Returns the number years between two dates
+    ' Parameters: datBeginDate - First date (must be < EndDate)
+    '             datEndDate - Second date
+    ' Returns   : Integer number of years
+    ' Source    : Total Visual SourceBook
+    '
+    On Error GoTo PROC_ERR
+    
+    If Month(datEndDate) < Month(datBeginDate) Or _
     (Month(datEndDate) = Month(datBeginDate) And _
     Day(datEndDate) < Day(datBeginDate)) Then
     YearsBetweenDates = Year(datEndDate) - Year(datBeginDate) - 1
-  Else
+Else
     YearsBetweenDates = Year(datEndDate) - Year(datBeginDate)
-  End If
+End If
 
 PROC_EXIT:
-  Exit Function
+Exit Function
 
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
-    "modDateTime.YearsBetweenDates"
-  Resume PROC_EXIT
-  
+MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
+"modDateTime.YearsBetweenDates"
+Resume PROC_EXIT
+
 End Function
 
 Public Function GetPriorDay(pintPriorMonth As Integer, pDate) As Integer
@@ -1581,29 +1593,29 @@ Public Function GetPriorDay(pintPriorMonth As Integer, pDate) As Integer
     ' --------------------------------------------------
     
     On Error GoTo PROC_ERR
-        
+    
     Select Case pintPriorMonth
-            
-        Case 1, 3, 5, 7, 8, 10, 12
-            GetPriorDay = 31
-        Case 4, 6, 9, 11
-            GetPriorDay = 30
-        Case 2
-            If (Year(pDate) Mod 4) = 0 Then
-                GetPriorDay = 29
-            Else
-                GetPriorDay = 28
-            End If
-            
-    End Select
         
+        Case 1, 3, 5, 7, 8, 10, 12
+        GetPriorDay = 31
+        Case 4, 6, 9, 11
+        GetPriorDay = 30
+        Case 2
+        If (Year(pDate) Mod 4) = 0 Then
+            GetPriorDay = 29
+        Else
+            GetPriorDay = 28
+        End If
+        
+    End Select
+    
 PROC_EXIT:
     Exit Function
     
 PROC_ERR:
     MsgBox Err.DESCRIPTION
     Resume PROC_EXIT
-        
+    
 End Function
 
 Public Function PriorEOM(pDate As Date) As Date
@@ -1613,7 +1625,7 @@ Public Function PriorEOM(pDate As Date) As Date
     ' Modified  :
     '
     ' --------------------------------------------------
-        
+    
     On Error GoTo PROC_ERR
     
     Dim PriorMonth As Integer
@@ -1633,14 +1645,56 @@ Public Function PriorEOM(pDate As Date) As Date
     Else
         PriorYear = Year(pDate)
     End If
-        
+    
     PriorEOM = DateSerial(PriorYear, PriorMonth, PriorDay)
-        
+    
 PROC_EXIT:
     Exit Function
     
 PROC_ERR:
     MsgBox Err.DESCRIPTION
     Resume PROC_EXIT
-        
+    
+End Function
+
+
+Public Function FirstDayInMonth(Optional dteDate As Date) As Date
+    
+    On Error GoTo PROC_ERR
+    
+    If IsMissing(dteDate) Then
+        dteDate = Date
+    End If
+    
+    FirstDayInMonth = DateSerial( _
+     Year(dteDate), Month(dteDate), 1)
+     
+PROC_EXIT:
+  Exit Function
+
+PROC_ERR:
+  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, vbOKOnly
+  Resume PROC_EXIT
+  
+End Function
+
+Public Function LastDayInMonth(Optional dteDate As Date) As Date
+
+    On Error GoTo PROC_ERR
+
+    If IsMissing(dteDate) Then
+            dteDate = Date
+    End If
+    
+    LastDayInMonth = DateSerial( _
+     Year(dteDate), Month(dteDate) + 1, 0)
+     
+PROC_EXIT:
+  Exit Function
+
+PROC_ERR:
+  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, vbOKOnly
+  Resume PROC_EXIT
+  
+     
 End Function

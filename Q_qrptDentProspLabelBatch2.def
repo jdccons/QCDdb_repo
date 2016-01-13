@@ -1,37 +1,40 @@
 Operation =4
 Option =8
-Where ="(([tbldentist].DENTmail=On))"
+Where ="(((tbldentist.DentMail)=On))"
 Begin InputTables
     Name ="tbldentist"
 End
 Begin OutputColumns
-    Name ="tbldentist.DENTmail"
+    Name ="tbldentist.DentMail"
     Expression ="Off"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =804
-    Bottom =490
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =801
+    Right =1253
     Bottom =144
     Left =0
     Top =0
-    ColumnsShown =577
+    ColumnsShown =579
     Begin
         Left =38
         Top =6
         Right =134
-        Bottom =118
-        Top =34
-        Name ="t-dentist"
+        Bottom =124
+        Top =0
+        Name ="tbldentist"
         Name =""
     End
 End

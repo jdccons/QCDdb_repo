@@ -1,10 +1,10 @@
 Operation =3
 Name ="ARLIN"
 Option =8
-Where ="(((Format([DOCUMENT NO],\"0000000\"))=[Forms]![frmInvGrp_Bexar]![TRANS NO]))"
+Where ="(((Format([DOCUMENT NO],\"0000000\"))=Forms!frmInvGrp_Bexar![TRANS NO]))"
 Begin InputTables
-    Name ="tblInvLin"
     Name ="tblInvHdr"
+    Name ="tblInvLin"
 End
 Begin OutputColumns
     Alias ="DocNo"
@@ -74,7 +74,7 @@ End
 Begin Joins
     LeftTable ="tblInvHdr"
     RightTable ="tblInvLin"
-    Expression ="tblInvHdr.[TRANS NO] = tblInvLin.[DOCUMENT NO]"
+    Expression ="tblInvHdr.[TRANS NO]=tblInvLin.[DOCUMENT NO]"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -237,10 +237,10 @@ Begin
     Left =40
     Top =22
     Right =1002
-    Bottom =392
+    Bottom =411
     Left =-1
     Top =-1
-    Right =955
+    Right =947
     Bottom =209
     Left =0
     Top =0
@@ -249,7 +249,7 @@ Begin
         Left =218
         Top =1
         Right =351
-        Bottom =130
+        Bottom =119
         Top =7
         Name ="tblInvLin"
         Name =""
@@ -258,7 +258,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =105
+        Bottom =94
         Top =35
         Name ="tblInvHdr"
         Name =""

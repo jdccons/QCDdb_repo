@@ -1,0 +1,117 @@
+Operation =3
+Name ="ARTRANH_local"
+Option =0
+Where ="(((ARTRANH.DocumentDate)>=#1/1/2014#))"
+Begin InputTables
+    Name ="ARTRANH"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Name ="DocumentNumber"
+    Expression ="ARTRANH.DocumentNumber"
+    Alias ="Expr2"
+    Name ="ApplyTo"
+    Expression ="ARTRANH.ApplyTo"
+    Alias ="Expr3"
+    Name ="TerritoryKey"
+    Expression ="ARTRANH.TerritoryKey"
+    Alias ="Expr4"
+    Name ="SalespersonKey"
+    Expression ="ARTRANH.SalespersonKey"
+    Alias ="Expr5"
+    Name ="CustomerKey"
+    Expression ="ARTRANH.CustomerKey"
+    Alias ="Expr6"
+    Name ="CustomerClassKey"
+    Expression ="ARTRANH.CustomerClassKey"
+    Alias ="Expr7"
+    Name ="OrderNumber"
+    Expression ="ARTRANH.OrderNumber"
+    Alias ="Expr8"
+    Name ="ShipToKey"
+    Expression ="ARTRANH.ShipToKey"
+    Alias ="Expr9"
+    Name ="CheckBatch"
+    Expression ="ARTRANH.CheckBatch"
+    Alias ="Expr10"
+    Name ="TransactionType"
+    Expression ="ARTRANH.TransactionType"
+    Alias ="Expr11"
+    Name ="DocumentDate"
+    Expression ="ARTRANH.DocumentDate"
+    Alias ="Expr12"
+    Name ="AgeDate"
+    Expression ="ARTRANH.AgeDate"
+    Alias ="Expr13"
+    Name ="DaysTillDue"
+    Expression ="ARTRANH.DaysTillDue"
+    Alias ="Expr14"
+    Name ="DocumentAmt"
+    Expression ="ARTRANH.DocumentAmt"
+    Alias ="Expr15"
+    Name ="DiscountAmt"
+    Expression ="ARTRANH.DiscountAmt"
+    Alias ="Expr16"
+    Name ="FreightAmt"
+    Expression ="ARTRANH.FreightAmt"
+    Alias ="Expr17"
+    Name ="TaxAmt"
+    Expression ="ARTRANH.TaxAmt"
+    Alias ="Expr18"
+    Name ="CostAmt"
+    Expression ="ARTRANH.CostAmt"
+    Alias ="Expr19"
+    Name ="CommissionHomeOvride"
+    Expression ="ARTRANH.CommissionHomeOvride"
+    Alias ="Expr20"
+    Name ="RetentionInvoice"
+    Expression ="ARTRANH.RetentionInvoice"
+    Alias ="Expr21"
+    Name ="SysDocID"
+    Expression ="ARTRANH.SysDocID"
+    Alias ="Expr22"
+    Name ="ApplySysDocID"
+    Expression ="ARTRANH.ApplySysDocID"
+    Alias ="Expr23"
+    Name ="Spare"
+    Expression ="ARTRANH.Spare"
+    Alias ="Expr24"
+    Name ="RecUserID"
+    Expression ="ARTRANH.RecUserID"
+    Alias ="Expr25"
+    Name ="RecDate"
+    Expression ="ARTRANH.RecDate"
+    Alias ="Expr26"
+    Name ="RecTime"
+    Expression ="ARTRANH.RecTime"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =105
+    Top =87
+    Right =1258
+    Bottom =411
+    Left =-1
+    Top =-1
+    Right =1138
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =49
+        Top =0
+        Name ="ARTRANH"
+        Name =""
+    End
+End

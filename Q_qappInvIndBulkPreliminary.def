@@ -1,30 +1,30 @@
 Operation =3
 Name ="tblInvHdrPreliminary"
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"INDIV\") AND ((Mid([SUB_LUname],1,1))>=[Forms]![frmInv"
-    "IndivBulk]![LetterFrom] And (Mid([SUB_LUname],1,1))<=[Forms]![frmInvIndivBulk]!["
-    "LetterTo]) AND ((tblSubscr.SUBcancelled)<>3) AND ((tblRates.GroupID)='INDVM') AN"
-    "D ((tblInvAgt.Primary)=True))"
+Where ="(((tblSubscr.SubStatus)=\"INDIV\") And ((Mid([SUB_LUname],1,1))>=Forms!frmInvInd"
+    "ivBulk!LetterFrom And (Mid([SUB_LUname],1,1))<=Forms!frmInvIndivBulk!LetterTo) A"
+    "nd ((tblSubscr.SubCancelled)<>3) And ((tblRates.GroupID)='INDVM') And ((tblIndiv"
+    "Agt.Primary)=True))"
 Begin InputTables
     Name ="tblSubscr"
-    Name ="tblInvAgt"
+    Name ="tblIndivAgt"
     Name ="tblRates"
 End
 Begin OutputColumns
     Name ="Custkey"
-    Expression ="tblSubscr.PLTcustKEY"
+    Expression ="tblSubscr.PltCustKey"
     Name ="Custname"
     Expression ="tblSubscr.SUB_LUname"
     Name ="Custaddr1"
-    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SubStreet1"
     Name ="Custaddr2"
-    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SubStreet2"
     Name ="Custcity"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Name ="Custstate"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Name ="Custzip"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubZip"
     Alias ="TRANSno"
     Name ="Tranno"
     Expression ="Null"
@@ -32,9 +32,9 @@ Begin OutputColumns
     Name ="Invdate"
     Expression ="DLookUp(\"[FieldDateValue]\",\"tblConstants\",\"[FieldName] = 'InvoiceDate'\")"
     Name ="Territkey"
-    Expression ="tblSubscr.SUBgeoID"
+    Expression ="tblSubscr.SubGeoID"
     Name ="Salespkey"
-    Expression ="tblInvAgt.AGENTid"
+    Expression ="tblIndivAgt.AgentId"
     Alias ="RecUser"
     Name ="RecUserID"
     Expression ="\"QCD db\""
@@ -45,24 +45,24 @@ Begin OutputColumns
     Name ="RecTime"
     Expression ="Time()"
     Name ="Checkamt"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubRate"
     Name ="Checkno"
     Expression ="tblSubscr.SUBbankDraftNo"
     Name ="Custclass"
-    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblSubscr.SubStatus"
 End
 Begin Joins
     LeftTable ="tblSubscr"
-    RightTable ="tblInvAgt"
-    Expression ="tblSubscr.SubID = tblInvAgt.SubscrID"
+    RightTable ="tblIndivAgt"
+    Expression ="tblSubscr.SubID=tblIndivAgt.SubscrId"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.PLTcustKEY"
+    Expression ="tblSubscr.PltCustKey"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -77,10 +77,10 @@ Begin
     Left =40
     Top =104
     Right =1133
-    Bottom =447
+    Bottom =454
     Left =-1
     Top =-1
-    Right =1086
+    Right =1078
     Bottom =170
     Left =0
     Top =0
@@ -89,7 +89,7 @@ Begin
         Left =55
         Top =5
         Right =316
-        Bottom =115
+        Bottom =108
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -98,7 +98,7 @@ Begin
         Left =551
         Top =4
         Right =660
-        Bottom =129
+        Bottom =122
         Top =1
         Name ="tblInvAgt"
         Name =""
@@ -107,7 +107,7 @@ Begin
         Left =376
         Top =9
         Right =472
-        Bottom =119
+        Bottom =112
         Top =0
         Name ="tblRates"
         Name =""

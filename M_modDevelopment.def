@@ -1,0 +1,186 @@
+Option Compare Database
+Option Explicit
+
+Function Test()
+
+Dim str As String: str = "everything is lower case"
+str = IIf(Len(str) > 0, UCase(Left(str, 1)) & Mid(str, 2), "")
+Debug.Print str
+End Function
+Public Function Test2() As Boolean
+'Purpose    :
+'Author     :
+'Description:
+'Date       : 05Jan16
+    On Error GoTo PROC_ERR
+    MsgBox "this is Test2"
+PROC_EXIT:
+    Exit Function
+PROC_ERR:
+    MsgBox "Error " & Err.Number & ":  " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD:  Error"
+    GoTo PROC_EXIT
+End Function
+
+Public Function Test3() As Boolean
+'============================================================================================================
+' Object:                   name of procedure or function
+' Purpose:
+'
+'
+' VBA Parameters:           Name   DateType       Returns
+' -----------------------------------------------------------------------------------------------------------
+' None
+'
+' Stored Procedures:        Name                        Parms               DataType        Returns     Notes
+' -----------------------------------------------------------------------------------------------------------
+' None
+'
+' Change Log
+' Date Modified     Version       Developer         Purpose
+' -----------------------------------------------------------------------------------------------------------
+' Date              1.0           Developer's Name  Created
+'
+'
+'
+'============================================================================================================
+    DoCmd.Hourglass True
+    On Error GoTo PROC_ERR
+    Dim X As Integer
+    X = 1 / 0
+PROC_EXIT:
+    DoCmd.Hourglass False
+    Exit Function
+PROC_ERR:
+    MsgBox "Error " & " " & Err.Source & " " & Err.Number & ":  " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD:  Error"
+    GoTo PROC_EXIT
+    Test3 = False
+End Function
+
+Public Function Test4(strUserName As String) As Boolean
+On Error GoTo HandleError
+    Dim X As Integer
+    X = 1 / 0
+Exit Function
+HandleError:
+'Err.Raise Err.Number, IIf(Err.Source = Application.VBE.ActiveVBProject.Name, "modDevelopment.Test4" & " " & Erl, Err.Source), Err.DESCRIPTION
+End Function
+
+Sub A()
+    Dim strStatusBarText As String: strStatusBarText = ""
+    DoCmd.AddMenu MenuName:="&File", MenuMacroName:="CustomerLookup_File", StatusBarText:=strStatusBarText
+
+
+
+
+End Sub
+
+Public Sub CreateNewDB(strTargetDB As String)
+    
+    Dim qdf As QueryDef
+    Dim tbl As TableDef
+        
+    'strNewDB = InputBox("Please Enter New Database Name", "Database Name", "New_database")
+    On Error Resume Next
+    'strTargetDB = CurrentProject.path & "\" & strNewDB & ".mdb"
+    DBEngine.CreateDatabase strTargetDB, dbLangGeneral
+    For Each qdf In CurrentDb.QueryDefs
+        'If Left$(qdf.Name, 3) = "qry" Then
+        DoCmd.TransferDatabase acExport, "Microsoft Access", _
+        strTargetDB, acQuery, qdf.Name, qdf.Name
+        'End If
+    Next
+    
+    For Each tbl In CurrentDb.TableDefs
+        'If (tbl.Connect) <> "" Then
+        If (tbl.Name) <> "MySys*" Then
+            DoCmd.TransferDatabase acExport, "Microsoft Access", _
+            strTargetDB, acTable, tbl.Name, tbl.Name
+        End If
+        'End If
+    Next
+    
+    Dim obj As AccessObject, dbs As Object
+    Set dbs = Application.CurrentProject
+    
+    ' forms
+    For Each obj In dbs.AllForms
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acForm, obj.Name, obj.Name
+    Next obj
+    ' modules
+    For Each obj In dbs.AllModules
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acModule, obj.Name, _
+        obj.Name
+    Next obj
+    ' macros
+    For Each obj In dbs.AllMacros
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acMacro, obj.Name, _
+        obj.Name
+    Next obj
+    ' reprots
+    For Each obj In dbs.AllReports
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acReport, obj.Name, _
+        obj.Name
+    Next obj
+    Set obj = Nothing
+    Set dbs = Nothing
+    ' "F:\QCDFrontend\dev\container2.mdb"
+    On Error GoTo 0
+    Exit Sub
+End Sub
+
+Sub ExportForms()
+    
+    Dim obj As AccessObject, dbs As Object
+    Set dbs = Application.CurrentProject
+    
+    ' forms
+    For Each obj In dbs.AllForms
+        DoCmd.TransferDatabase acExport, "Microsoft Access", "F:\QCDFrontend\dev\container.mdb", acForm, obj.Name, obj.Name
+    Next obj
+    Set obj = Nothing
+    Set dbs = Nothing
+End Sub
+
+Sub ExportModules()
+
+    Dim obj As AccessObject
+    Dim dbs As Object
+    Set dbs = Application.CurrentProject
+    For Each obj In dbs.AllModules
+        DoCmd.TransferDatabase acExport, "Microsoft Access", "F:\QCDFrontend\dev\container.mdb", acModule, obj.Name, _
+                obj.Name
+    Next obj
+    Set obj = Nothing
+    Set dbs = Nothing
+    
+End Sub
+
+Sub ExportMacros()
+
+    Dim obj As AccessObject
+    Dim dbs As Object
+    Set dbs = Application.CurrentProject
+    For Each obj In dbs.AllMacros
+        DoCmd.TransferDatabase acExport, "Microsoft Access", "F:\QCDFrontend\dev\container.mdb", acMacro, obj.Name, _
+                obj.Name
+    Next obj
+    Set obj = Nothing
+    Set dbs = Nothing
+
+End Sub
+
+Sub ExportReports()
+
+    Dim obj As AccessObject
+    Dim dbs As Object
+    Set dbs = Application.CurrentProject
+    For Each obj In dbs.AllReports
+        DoCmd.TransferDatabase acExport, "Microsoft Access", "F:\QCDFrontend\dev\container.mdb", acReport, obj.Name, _
+                obj.Name
+    Next obj
+    Set obj = Nothing
+    Set dbs = Nothing
+
+End Sub

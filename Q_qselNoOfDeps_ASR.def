@@ -4,6 +4,7 @@ Begin InputTables
     Name ="tblImportFile_ASR_Dependents"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="tblImportFile_ASR_Dependents.SSN"
     Alias ="CountOfLAST_NAME"
     Expression ="Count(tblImportFile_ASR_Dependents.LAST_NAME)"
@@ -16,6 +17,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -23,10 +26,10 @@ Begin
     Left =47
     Top =29
     Right =1258
-    Bottom =401
+    Bottom =388
     Left =-1
     Top =-1
-    Right =1204
+    Right =1196
     Bottom =179
     Left =0
     Top =0
@@ -35,7 +38,7 @@ Begin
         Left =38
         Top =6
         Right =251
-        Bottom =120
+        Bottom =49
         Top =0
         Name ="tblImportFile_ASR_Dependents"
         Name =""

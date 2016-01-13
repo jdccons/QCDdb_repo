@@ -1,0 +1,22 @@
+Version =196611
+ColumnsShown =1
+Begin
+    MacroName ="Create &Invoices"
+    Action ="RunCode"
+    Argument ="CreateInvoicesQCD()"
+End
+Begin
+    MacroName ="&Post Invoices"
+    Action ="RunCode"
+    Argument ="PostInvoicesQCD()"
+End
+Begin
+    MacroName ="Print Invoices &Rate"
+    Action ="RunCode"
+    Argument ="PrtInvQCDRate()"
+End
+Begin
+    MacroName ="&Close"
+    Action ="RunCommand"
+    Argument ="58"
+End

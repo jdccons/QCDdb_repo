@@ -1,28 +1,30 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=False) AND ((tblGrp.GRPgeoID)=\"OKWES\" Or (tblGrp.GRPgeo"
-    "ID)=\"OKEAS\"))"
+Where ="(((tblGrp.GRCancelled)=False) AND ((tblGrp.GRGeoID)=\"OKWES\" Or (tblGrp.GRGeoID"
+    ")=\"OKEAS\"))"
 Begin InputTables
-    Name ="tblGrp"
     Name ="tlkpClientServiceReps"
+    Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRee"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GREE"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRCity"
 End
 Begin Joins
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -30,30 +32,30 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =349
+    Bottom =368
     Left =-1
     Top =-1
-    Right =933
+    Right =925
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =172
-        Top =6
-        Right =343
-        Bottom =83
-        Top =28
-        Name ="tblGrp"
-        Name =""
-    End
-    Begin
         Left =381
         Top =6
         Right =477
-        Bottom =83
+        Bottom =94
         Top =1
         Name ="tlkpClientServiceReps"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =343
+        Bottom =94
+        Top =28
+        Name ="tblGrp"
         Name =""
     End
 End

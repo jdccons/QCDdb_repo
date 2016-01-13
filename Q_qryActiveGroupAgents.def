@@ -1,34 +1,36 @@
 Operation =1
 Option =2
-Where ="(((tblGrp.GRcancelled)=False))"
+Where ="(((tblGrp.GRCancelled)=False))"
 Begin InputTables
     Name ="tblGrpAgt"
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrpAgt.AGENTid"
+    Expression ="tblGrpAgt.AgentId"
 End
 Begin Joins
     LeftTable ="tblGrpAgt"
     RightTable ="tblGrp"
-    Expression ="tblGrpAgt.GROUPid = tblGrp.GROUPid"
+    Expression ="tblGrpAgt.GroupId=tblGrp.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =924
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =677
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =457
     Left =0
     Top =0
@@ -37,7 +39,7 @@ Begin
         Left =516
         Top =76
         Right =766
-        Bottom =321
+        Bottom =254
         Top =0
         Name ="tblGrpAgt"
         Name =""
@@ -46,7 +48,7 @@ Begin
         Left =73
         Top =72
         Right =343
-        Bottom =358
+        Bottom =355
         Top =24
         Name ="tblGrp"
         Name =""

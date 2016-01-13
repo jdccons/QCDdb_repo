@@ -1,58 +1,46 @@
 Operation =1
 Option =8
+Where ="(((ARLINH_local.LineItemType)=\"1\"))"
 Begin InputTables
-    Name ="ARLIN_TEMP"
+    Name ="ARLINH_local"
 End
 Begin OutputColumns
-    Expression ="ARLIN_TEMP.Tranno"
-    Expression ="ARLIN_TEMP.Description"
-    Expression ="ARLIN_TEMP.Unitprice"
+    Alias ="Tranno"
+    Expression ="ARLINH_local.DocumentNumber"
+    Alias ="Description"
+    Expression ="ARLINH_local.Spare"
     Alias ="Name"
-    Expression ="IIf(Len(Trim(Left([Description],9)))=8,(Mid([Description],11,40)),(Mid([Descript"
-        "ion],12,40)))"
-End
-Begin OrderBy
-    Expression ="IIf(Len(Trim(Left([Description],9)))=8,(Mid([Description],11,40)),(Mid([Descript"
-        "ion],12,40)))"
-    Flag =0
+    Expression ="ARLINH_local.ItemDescription"
+    Expression ="ARLINH_local.UnitPrice"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
-    Begin
-        dbText "Name" ="ARLIN_TEMP.Description"
-        dbInteger "ColumnWidth" ="3150"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="Name"
-        dbInteger "ColumnWidth" ="3090"
-        dbBoolean "ColumnHidden" ="0"
-    End
 End
 Begin
     State =0
-    Left =100
-    Top =74
-    Right =1136
-    Bottom =563
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =569
     Left =-1
     Top =-1
-    Right =1025
-    Bottom =144
+    Right =1253
+    Bottom =349
     Left =0
     Top =0
     ColumnsShown =539
     Begin
         Left =38
-        Top =6
-        Right =134
-        Bottom =105
+        Top =11
+        Right =217
+        Bottom =264
         Top =0
-        Name ="ARLIN_TEMP"
+        Name ="ARLINH_local"
         Name =""
     End
 End

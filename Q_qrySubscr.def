@@ -1,6 +1,6 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Where ="(((tblSubscr.SubStatus)=\"GRSUB\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblGrp"
@@ -9,32 +9,32 @@ Begin InputTables
 End
 Begin OutputColumns
     Expression ="tblSubscr.*"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRHold"
     Expression ="tblGrp.GroupType"
-    Expression ="tblCoverage.COVERdescr"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverDescr"
+    Expression ="tblCoverage.CoverCode"
     Expression ="tblRates.Rate"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblGrp"
-    Expression ="tblSubscr.SUBgroupID = tblGrp.GROUPid"
+    Expression ="tblSubscr.SubGroupID=tblGrp.GroupID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =2
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -50,10 +50,10 @@ Begin
     Left =18
     Top =101
     Right =1142
-    Bottom =461
+    Bottom =468
     Left =-1
     Top =-1
-    Right =1117
+    Right =1109
     Bottom =187
     Left =0
     Top =0
@@ -62,7 +62,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =131
+        Bottom =124
         Top =48
         Name ="tblSubscr"
         Name =""
@@ -71,7 +71,7 @@ Begin
         Left =221
         Top =6
         Right =376
-        Bottom =131
+        Bottom =124
         Top =38
         Name ="tblGrp"
         Name =""
@@ -80,7 +80,7 @@ Begin
         Left =459
         Top =10
         Right =620
-        Bottom =105
+        Bottom =98
         Top =0
         Name ="tblCoverage"
         Name =""
@@ -89,7 +89,7 @@ Begin
         Left =673
         Top =9
         Right =769
-        Bottom =119
+        Bottom =112
         Top =0
         Name ="tblRates"
         Name =""

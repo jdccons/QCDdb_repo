@@ -1,11 +1,13 @@
 Operation =1
 Option =0
-Where ="(((ARTRAN.TransactionType)=\"I\") AND ((ARTRAN.DocumentDate)=#7/1/2006#))"
+Where ="(((ARTRAN.TransactionType)=\"I\") And ((ARTRAN.DocumentDate)=#7/1/2006#))"
 Begin InputTables
     Name ="ARTRAN"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARTRAN.CustomerKey"
+    Alias ="Expr2"
     Expression ="ARTRAN.DocumentAmt"
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -17,14 +19,14 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1680
-    Bottom =962
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =466
     Left =-1
     Top =-1
-    Right =1677
+    Right =1253
     Bottom =246
     Left =0
     Top =0
@@ -33,8 +35,8 @@ Begin
         Left =38
         Top =6
         Right =353
-        Bottom =167
-        Top =8
+        Bottom =49
+        Top =0
         Name ="ARTRAN"
         Name =""
     End

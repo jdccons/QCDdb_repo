@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =918528142
+Version =20
+VersionRequired =20
+Checksum =1402927730
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -17,7 +17,7 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =8
     Left =5460
-    Top =1215
+    Top =1212
     Right =9420
     Bottom =3480
     DatasheetGridlinesColor =12632256
@@ -45,6 +45,9 @@ Begin Form
             Height =2520
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x1b2682984221944bbccf56da22ee6a93
+            End
             Begin
                 Begin Label
                     OverlapFlags =85
@@ -57,6 +60,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label0"
                     Caption ="Manage Pending Indvidual Subscribers"
+                    GUID = Begin
+                        0x4fabcf386f89d4438eef47b79edc0156
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =85
@@ -65,6 +71,9 @@ Begin Form
                     Width =1614
                     Height =216
                     Name ="txtDate"
+                    GUID = Begin
+                        0x998d3d0241dbe9448096b01a14c5e2a2
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -74,6 +83,9 @@ Begin Form
                             Height =228
                             Name ="Label2"
                             Caption ="Delete all before Date:"
+                            GUID = Begin
+                                0xca57d06c28f14545999fb1c3eda31303
+                            End
                         End
                     End
                 End
@@ -111,6 +123,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x8de6d4859830e542b5b5ad68c72e4061
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -122,6 +137,9 @@ Begin Form
                     Name ="cmdDlete"
                     Caption ="Delete Pending"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x8bf6055388dfb44f8aa24a6bee633340
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =85
@@ -130,6 +148,9 @@ Begin Form
                     Width =1620
                     TabIndex =1
                     Name ="txtPrintDate"
+                    GUID = Begin
+                        0x5c036750deb31443b1a85641e6f247fd
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -139,6 +160,9 @@ Begin Form
                             Height =240
                             Name ="Label6"
                             Caption ="Print from date:"
+                            GUID = Begin
+                                0x40d1d8fdde6c724dbf619ae0deb2496e
+                            End
                         End
                     End
                 End
@@ -152,6 +176,9 @@ Begin Form
                     Name ="cmdPrint"
                     Caption ="Print Labels\015\012on Flyers"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xe2b0bacb8f3d234c99d0792edff49b61
+                    End
                 End
             End
         End
@@ -214,8 +241,8 @@ End Sub
 
 Private Sub Form_Load()
     With Me
-        .txtDate = date - 30
-        .txtPrintDate = date
+        .txtDate = Date - 30
+        .txtPrintDate = Date
     End With
 End Sub
 Private Sub cmdPrint_Click()

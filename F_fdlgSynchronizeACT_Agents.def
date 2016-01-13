@@ -1,11 +1,13 @@
-Version =17
-VersionRequired =17
-Checksum =-567509270
+Version =20
+VersionRequired =20
+Checksum =681935408
 Begin Form
     AutoResize = NotDefault
+    Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
     MinButton = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
@@ -28,7 +30,12 @@ Begin Form
         0x5ec77e81d4fae140
     End
     Caption ="Synchronize Access Agents with ACT"
+    MenuBar ="Dialog"
     DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin Label
             BackStyle =0
@@ -47,11 +54,17 @@ Begin Form
             Height =0
             BackColor =-2147483633
             Name ="FormHeader"
+            GUID = Begin
+                0xec9a26c34d23644da141b9edf351a040
+            End
         End
         Begin Section
             Height =2040
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0xb8dcd2d898f22242a680b141ea1039bc
+            End
             Begin
                 Begin TextBox
                     OverlapFlags =85
@@ -61,6 +74,9 @@ Begin Form
                     Width =2880
                     Height =300
                     Name ="txtProcessing"
+                    GUID = Begin
+                        0xab369145cabe824a9d03f85eb9f1c303
+                    End
                 End
                 Begin Label
                     SpecialEffect =4
@@ -76,6 +92,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label0"
                     Caption ="Synchronize Access Agents with ACT"
+                    GUID = Begin
+                        0x1b03dc7d59264546b1714e87f15cf365
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -86,7 +105,9 @@ Begin Form
                     TabIndex =1
                     Name ="cmdProcess"
                     Caption ="Process"
-                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x99d5c8ebef078446b7dc6ba3915fd736
+                    End
                 End
             End
         End
@@ -94,6 +115,9 @@ Begin Form
             Height =555
             BackColor =-2147483633
             Name ="FormFooter"
+            GUID = Begin
+                0x4dbe5c35d253534fa5dae234a2c9a8d5
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -103,7 +127,6 @@ Begin Form
                     Height =426
                     Name ="cmdClose"
                     Caption ="Command9"
-                    OnClick ="[Event Procedure]"
                     PictureData = Begin
                         0x2800000010000000100000000100040000000000800000000000000000000000 ,
                         0x0000000000000000000000000000800000800000008080008000000080008000 ,
@@ -120,6 +143,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x324b770a14af314fbc661fe0f18656ee
+                    End
                 End
             End
         End
@@ -130,92 +156,92 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
-Option Compare Database
-Option Explicit
-Private Sub cmdClose_Click()
-    On Error GoTo Err_cmdClose
-    
-    DoCmd.Close
-    
-Exit_cmdClose:
-    Exit Sub
-    
-Err_cmdClose:
-    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
-    GoTo Exit_cmdClose
-
-End Sub
-
-Private Sub cmdProcess_Click()
-    
-    On Error GoTo Err_cmdProcess
-    
-    Dim intRet As Integer
-    Dim fSuccess As Boolean
-    Dim crlf As String
-    crlf = Chr(13) & Chr(10)
-    
-    
-    fSuccess = True
-    
-    intRet = MsgBox("This will change the production ACT!2000 database!" & crlf & crlf & _
-    "You must make sure that everyone is out of the Agents " & _
-    "ACT database while you run this process!" & crlf & crlf & _
-    "This process will take some time, perhaps 15 to 20 minutes!" & crlf & crlf & _
-    "You must be patient, and let the process run." & crlf & crlf & _
-    "Are you sure you want to proceed?", vbExclamation + vbYesNo, "Warning")
-      
-    If intRet = vbNo Then
-        MsgBox "The operation was cancelled. No changes were made to the ACT!2000 Production Database.", vbInformation, "Operation Cancelled"
-        GoTo Exit_cmdProcess
-    End If
-    
-    With Me
-        .txtProcessing.SetFocus
-        .txtProcessing.BackColor = 16777088
-        .txtProcessing = "Processing, Please wait."
-        .cmdProcess.SetFocus
-    End With
-      
-    DoCmd.Hourglass True
-    
-    fSuccess = ChangeContacts_Agents()
-    If fSuccess = False Then
-        MsgBox "The change contacts process did not complete successfully.  Contact tech support", , "Problem"
-        GoTo Err_cmdProcess
-    End If
-       
-    fSuccess = AddContacts_Agents()
-    If fSuccess = False Then
-        MsgBox "The add contacts process did not complete successfully.  Contact tech support", , "Problem"
-        GoTo Err_cmdProcess
-    End If
-    
-    DoCmd.Hourglass False
-    
-    With Me
-        .txtProcessing.SetFocus
-        .txtProcessing.BackColor = 16777215
-        .txtProcessing = "Process Complete. No Errors."
-        .cmdClose.SetFocus
-    End With
-
-Exit_cmdProcess:
-    Exit Sub
-
-Err_cmdProcess:
-    
-    If fSuccess = False Then
-        DoCmd.Hourglass False
-        With Me
-              .txtProcessing.SetFocus
-              .txtProcessing.BackColor = 8421631
-              .txtProcessing = "Errors in Processing."
-              .cmdClose.SetFocus
-        End With
-    Else
-        MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
-        GoTo Exit_cmdProcess
-    End If
-    
-End Sub
+'Option Compare Database
+'Option Explicit
+'Private Sub cmdClose_Click()
+'    On Error GoTo Err_cmdClose
+'
+'    DoCmd.Close
+'
+'Exit_cmdClose:
+'    Exit Sub
+'
+'Err_cmdClose:
+'    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+'    GoTo Exit_cmdClose
+'
+'End Sub
+'
+'Private Sub cmdProcess_Click()
+'
+'    On Error GoTo Err_cmdProcess
+'
+'    Dim intRet As Integer
+'    Dim fSuccess As Boolean
+'    Dim crlf As String
+'    crlf = Chr(13) & Chr(10)
+'
+'
+'    fSuccess = True
+'
+'    intRet = MsgBox("This will change the production ACT!2000 database!" & crlf & crlf & _
+'    "You must make sure that everyone is out of the Agents " & _
+'    "ACT database while you run this process!" & crlf & crlf & _
+'    "This process will take some time, perhaps 15 to 20 minutes!" & crlf & crlf & _
+'    "You must be patient, and let the process run." & crlf & crlf & _
+'    "Are you sure you want to proceed?", vbExclamation + vbYesNo, "Warning")
+'
+'    If intRet = vbNo Then
+'        MsgBox "The operation was cancelled. No changes were made to the ACT!2000 Production Database.", vbInformation, "Operation Cancelled"
+'        GoTo Exit_cmdProcess
+'    End If
+'
+'    With Me
+'        .txtProcessing.SetFocus
+'        .txtProcessing.BackColor = 16777088
+'        .txtProcessing = "Processing, Please wait."
+'        .cmdProcess.SetFocus
+'    End With
+'
+'    DoCmd.Hourglass True
+'
+'    fSuccess = ChangeContacts_Agents()
+'    If fSuccess = False Then
+'        MsgBox "The change contacts process did not complete successfully.  Contact tech support", , "Problem"
+'        GoTo Err_cmdProcess
+'    End If
+'
+'    fSuccess = AddContacts_Agents()
+'    If fSuccess = False Then
+'        MsgBox "The add contacts process did not complete successfully.  Contact tech support", , "Problem"
+'        GoTo Err_cmdProcess
+'    End If
+'
+'    DoCmd.Hourglass False
+'
+'    With Me
+'        .txtProcessing.SetFocus
+'        .txtProcessing.BackColor = 16777215
+'        .txtProcessing = "Process Complete. No Errors."
+'        .cmdClose.SetFocus
+'    End With
+'
+'Exit_cmdProcess:
+'    Exit Sub
+'
+'Err_cmdProcess:
+'
+'    If fSuccess = False Then
+'        DoCmd.Hourglass False
+'        With Me
+'              .txtProcessing.SetFocus
+'              .txtProcessing.BackColor = 8421631
+'              .txtProcessing = "Errors in Processing."
+'              .cmdClose.SetFocus
+'        End With
+'    Else
+'        MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+'        GoTo Exit_cmdProcess
+'    End If
+'
+'End Sub

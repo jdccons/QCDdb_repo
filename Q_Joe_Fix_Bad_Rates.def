@@ -1,25 +1,25 @@
 Operation =4
 Option =0
 Begin InputTables
-    Name ="tblRates"
     Name ="tblSubscr"
+    Name ="tblRates"
 End
 Begin OutputColumns
     Name ="tblSubscr.RateID"
-    Expression ="[tblRates].[RateID]"
+    Expression ="tblRates.RateID"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.SubGroupID = tblRates.GroupID"
+    Expression ="tblSubscr.CoverID=tblRates.CoverID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.PlanID = tblRates.PlanID"
+    Expression ="tblSubscr.PlanID=tblRates.PlanID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.CoverID = tblRates.CoverID"
+    Expression ="tblSubscr.SubGroupID=tblRates.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -34,10 +34,10 @@ Begin
     Left =40
     Top =62
     Right =738
-    Bottom =474
+    Bottom =447
     Left =-1
     Top =-1
-    Right =691
+    Right =683
     Bottom =205
     Left =0
     Top =0
@@ -46,7 +46,7 @@ Begin
         Left =367
         Top =2
         Right =531
-        Bottom =165
+        Bottom =135
         Top =0
         Name ="tblRates"
         Name =""
@@ -55,7 +55,7 @@ Begin
         Left =86
         Top =3
         Right =263
-        Bottom =160
+        Bottom =151
         Top =2
         Name ="tblSubscr"
         Name =""

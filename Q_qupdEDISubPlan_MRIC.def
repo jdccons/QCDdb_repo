@@ -11,7 +11,7 @@ End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblGrp"
-    Expression ="tblEDI_App_Subscr.SUBgroupID = tblGrp.GROUPid"
+    Expression ="tblEDI_App_Subscr.SubGroupID=tblGrp.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -26,10 +26,10 @@ Begin
     Left =39
     Top =17
     Right =944
-    Bottom =555
+    Bottom =562
     Left =-1
     Top =-1
-    Right =898
+    Right =890
     Bottom =365
     Left =0
     Top =0
@@ -38,7 +38,7 @@ Begin
         Left =38
         Top =6
         Right =261
-        Bottom =311
+        Bottom =304
         Top =9
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -47,7 +47,7 @@ Begin
         Left =330
         Top =19
         Right =488
-        Bottom =279
+        Bottom =272
         Top =0
         Name ="tblGrp"
         Name =""

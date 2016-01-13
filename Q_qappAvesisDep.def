@@ -1,10 +1,10 @@
 Operation =3
 Name ="Avesis"
 Option =0
-Where ="(((tblGrp.GRcancelled)=False) AND ((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Where ="(((tblGrp.GRCancelled)=False) AND ((tblSubscr.SubStatus)=\"GRSUB\"))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
     Name ="tblDependent"
 End
 Begin OutputColumns
@@ -34,37 +34,37 @@ Begin OutputColumns
     Expression ="IIf([DepRelationship]=\"S\",\"02\",\"03\")"
     Alias ="SSN"
     Name ="SSN"
-    Expression ="tblDependent.DEPsubID"
+    Expression ="tblDependent.DepSubID"
     Alias ="Coverage_Code"
     Name ="Coverage_Code"
     Expression ="IIf([CoverID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\"))"
     Alias ="Last_Name"
     Name ="Last_Name"
-    Expression ="tblDependent.DEPlastNAME"
+    Expression ="tblDependent.DepLastName"
     Alias ="First_Name"
     Name ="First_Name"
-    Expression ="tblDependent.DEPfirstNAME"
+    Expression ="tblDependent.DepFirstName"
     Alias ="Middle_Initial"
     Name ="Middle_Initial"
     Expression ="Mid([DepMiddleName],1,1)"
     Alias ="Address_1"
     Name ="Address_1"
-    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SubStreet1"
     Alias ="Address_2"
     Name ="Address_2"
-    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SubStreet2"
     Alias ="City"
     Name ="City"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Alias ="State"
     Name ="State"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Alias ="Zip"
     Name ="Zip"
     Expression ="Mid([SUBzip],1,9)"
     Alias ="Gender"
     Name ="Gender"
-    Expression ="tblDependent.DEPgender"
+    Expression ="tblDependent.DepGender"
     Alias ="Birth_Date"
     Name ="Birth_Date"
     Expression ="Format(Month([Depdob]),\"00\") & Format(Day([DepDob]),\"00\") & Year([DepDob])"
@@ -82,11 +82,11 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -118,10 +118,10 @@ Begin
     Left =17
     Top =80
     Right =1186
-    Bottom =533
+    Bottom =545
     Left =-1
     Top =-1
-    Right =1162
+    Right =1154
     Bottom =285
     Left =0
     Top =0
@@ -130,7 +130,7 @@ Begin
         Left =367
         Top =9
         Right =598
-        Bottom =206
+        Bottom =202
         Top =17
         Name ="tblSubscr"
         Name =""
@@ -139,7 +139,7 @@ Begin
         Left =67
         Top =13
         Right =274
-        Bottom =210
+        Bottom =206
         Top =23
         Name ="tblGrp"
         Name =""
@@ -148,7 +148,7 @@ Begin
         Left =690
         Top =6
         Right =898
-        Bottom =173
+        Bottom =169
         Top =0
         Name ="tblDependent"
         Name =""

@@ -1,13 +1,14 @@
 Operation =3
 Name ="tblInvoiceHistory"
 Option =0
-Where ="(((ARTRAN.TransactionType)=\"I\" Or (ARTRAN.TransactionType)=\"C\") AND ((ARTRAN"
-    ".DocumentDate) Between #1/1/2000# And #12/31/2001#) AND ((ARTRAN.CustomerClassKe"
+Where ="(((ARTRAN.TransactionType)=\"I\" Or (ARTRAN.TransactionType)=\"C\") And ((ARTRAN"
+    ".DocumentDate) Between #1/1/2000# And #12/31/2001#) And ((ARTRAN.CustomerClassKe"
     "y)=\"GROUP\"))"
 Begin InputTables
     Name ="ARTRAN"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="GrpID"
     Expression ="ARTRAN.CustomerKey"
     Alias ="MonthNo"
@@ -51,14 +52,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1024
-    Bottom =644
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =403
     Left =-1
     Top =-1
-    Right =1021
+    Right =1253
     Bottom =183
     Left =0
     Top =0
@@ -67,8 +68,8 @@ Begin
         Left =38
         Top =6
         Right =221
-        Bottom =105
-        Top =6
+        Bottom =49
+        Top =0
         Name ="ARTRAN"
         Name =""
     End

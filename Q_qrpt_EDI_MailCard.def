@@ -6,12 +6,12 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="tmpEDI_Rpt.GRMailCard"
-    Expression ="[tblGrp].[GRMailCard]"
+    Expression ="tblGrp.GRMailCard"
 End
 Begin Joins
     LeftTable ="tmpEDI_Rpt"
     RightTable ="tblGrp"
-    Expression ="tmpEDI_Rpt.GroupID = tblGrp.GROUPid"
+    Expression ="tmpEDI_Rpt.GroupID=tblGrp.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -27,10 +27,10 @@ Begin
     Left =116
     Top =116
     Right =977
-    Bottom =467
+    Bottom =471
     Left =-1
     Top =-1
-    Right =854
+    Right =846
     Bottom =175
     Left =0
     Top =0
@@ -39,7 +39,7 @@ Begin
         Left =80
         Top =7
         Right =210
-        Bottom =121
+        Bottom =110
         Top =6
         Name ="tmpEDI_Rpt"
         Name =""
@@ -48,7 +48,7 @@ Begin
         Left =314
         Top =8
         Right =473
-        Bottom =122
+        Bottom =111
         Top =30
         Name ="tblGrp"
         Name =""

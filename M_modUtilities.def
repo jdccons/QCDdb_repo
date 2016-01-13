@@ -1,5 +1,110 @@
 Option Explicit
-Public Sub DebugCleanup()
+Private Declare Function GetUserName Lib "advapi32.dll" Alias "GetUserNameA" _
+                     (ByVal IpBuffer As String, nSize As Long) As Long
+Global gintSortOrder As Integer
+
+  Public Sub turnOffFormProps()
+        Dim strForm As String, db As DAO.Database
+        Dim doc As DAO.Document
+        Set db = CurrentDb
+        
+        For Each doc In db.Containers("Forms").Documents
+            strForm = doc.Name
+            If Mid(strForm, 1, 4) = "fdlg" Then
+                DoCmd.OpenForm strForm, acDesign
+                Forms(strForm).Properties("PopUp") = False
+                DoCmd.Close acForm, strForm, acSaveYes
+            End If
+        Next doc
+        
+        Set doc = Nothing
+        db.Close
+        Set db = Nothing
+End Sub
+Public Sub FormNames()
+    
+    Dim strForm As String
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim doc As DAO.Document
+    Set db = CurrentDb
+    Set rs = db.OpenRecordset("tblForms", dbOpenDynaset, dbSeeChanges)
+    
+    For Each doc In db.Containers("Forms").Documents
+        strForm = doc.Name
+        DoCmd.OpenForm strForm, acDesign
+        With rs
+            .AddNew
+            .Fields("Name") = doc.Name
+            .Fields("Caption") = Forms(strForm).Properties("Caption")
+            '.Fields("DateModified") = Forms(strForm).Properties("DateModified")
+            .Update
+        End With
+        DoCmd.Close acForm, strForm, acSaveNo
+    Next doc
+    
+'    For Each doc In db.Containers("Forms").Documents
+'            strForm = doc.Name
+'            If Mid(strForm, 1, 4) = "fdlg" Then
+'                DoCmd.OpenForm strForm, acDesign
+'                Debug.Print strForm & " " & Forms(strForm).Properties("Caption")
+'                Forms(strForm).Properties("PopUp") = False
+'                DoCmd.Close acForm, strForm, acSaveYes
+'            End If
+'        Next doc
+    
+'    Dim obj As AccessObject, dbs As Object
+'    Set dbs = Application.CurrentProject
+'    ' Search for open AccessObject objects in AllForms collection.
+'    For Each obj In dbs.AllForms
+'        If obj.IsLoaded = True Then
+'            ' Print name of obj.
+'            Debug.Print obj.Name
+'        End If
+'    Next obj
+
+    
+    Set doc = Nothing
+    db.Close
+    Set db = Nothing
+    
+End Sub
+Sub AllFormsColl()
+Application.CurrentProject.AllForms(0).value
+'Application.CurrentProject.AllForms(0).Properties ("name")
+
+End Sub
+Sub AllForms()
+
+    Dim obj As AccessObject, dbs As Object
+    Set dbs = Application.CurrentProject
+    
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset("tblForms", dbOpenDynaset, dbSeeChanges)
+    
+    ' Search for open AccessObject objects in AllForms collection.
+    For Each obj In dbs.AllForms
+        'If obj.IsLoaded = True Then
+            ' Print name of obj.
+            With obj
+                Debug.Print .Name & "|" & .DateCreated & "|" & .DateModified & "|" & .Type & "|" & .FullName
+               
+                rs.AddNew
+                rs.Fields("Name") = .Name
+                rs.Fields("DateCreated") = .DateCreated
+                rs.Fields("DateModified") = .DateModified
+                rs.Fields("TxnDate") = Date
+                rs.Update
+            End With
+    Next obj
+    rs.Close
+    Set db = Nothing
+
+    
+End Sub
+ Public Sub DebugCleanup()
   ' Comments  : Turns the hourglass cursor off and restores the Echo state
   ' Parameters: none
   ' Returns   : nothing
@@ -20,69 +125,7 @@ PROC_ERR:
   Resume PROC_EXIT
 
 End Sub
-Function DependentCheck(strSSN As String) As Long
-    
-    On Error GoTo Avesis_Err
-    
-    Dim strSQL As String
-    Dim db As DAO.Database
-    Dim rst As DAO.Recordset
-    
-    Set db = CurrentDb()
-    
-    strSQL = "SELECT tblDependent.DEPsubID, Count(tblDependent.DEPcounter) AS CountOfDEPcounter " & _
-             "FROM tblDependent GROUP BY tblDependent.DEPsubID " & _
-             "HAVING (((tblDependent.DEPsubID)='" & strSSN & "'));"
-    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rst.RecordCount > 0 Then
-        DependentCheck = rst.Fields("CountOfDEPcounter")
-        rst.Close
-    Else
-        DependentCheck = 0
-    End If
-    
-On Error GoTo Avesis_Err
-    Set db = Nothing
-Avesis_Exit:
-    Exit Function
-    
-Avesis_Err:
-    MsgBox Error$
-    Resume Avesis_Exit
 
-End Function
-
-Function DependentCheck_Bexar(strSSN As String) As Long
-    
-    On Error GoTo Avesis_Err
-    
-    Dim strSQL As String
-    Dim db As DAO.Database
-    Dim rst As DAO.Recordset
-    
-    Set db = CurrentDb()
-    
-    strSQL = "SELECT tblDependent_Bexar.DEPsubID, Count(tblDependent_Bexar.DEPcounter) AS CountOfDEPcounter " & _
-             "FROM tblDependent_Bexar GROUP BY tblDependent_Bexar.DEPsubID " & _
-             "HAVING (((tblDependent_Bexar.DEPsubID)='" & strSSN & "'));"
-    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rst.RecordCount > 0 Then
-        DependentCheck_Bexar = rst.Fields("CountOfDEPcounter")
-        rst.Close
-    Else
-        DependentCheck_Bexar = 0
-    End If
-    
-On Error GoTo Avesis_Err
-    Set db = Nothing
-Avesis_Exit:
-    Exit Function
-    
-Avesis_Err:
-    MsgBox Error$
-    Resume Avesis_Exit
-
-End Function
 Sub TableNames()
 
     Dim dbs As DAO.Database
@@ -107,7 +150,25 @@ Sub TableNames()
     End With
 
 End Sub
+Public Function DropLinks()
+    
+    ' DropLinks
+    ' Purpose:  Drops all tables with an ODBC link
+    ' Parameters:  None
+    '
+    '
+    '
+       
+    Dim tdf As TableDef
+    For Each tdf In CurrentDb.TableDefs
+        ' If the table has a connect string, it's a linked table.
+        If Len(tdf.Connect) > 0 Then
+            DoCmd.DeleteObject acTable, tdf.Name
+            
+        End If
+    Next tdf
 
+End Function
 
 Function ReplaceChars_TSB(strIn As String, strFind As String, strReplace As String) As String
   ' Comments  : Replaces characters in a string
@@ -193,9 +254,7 @@ PROC_ERR:
   MsgBox "The following error occured: " & Error$
   Resume Next
 End Function
-
-
-Function isloaded(varFrmName)
+Function IsLoaded(varFrmName)
     ' Comments   :
     ' Parameters : varFrmName -
     ' Returns    :  -
@@ -208,11 +267,11 @@ Function isloaded(varFrmName)
     Const conFormDesign = 0
     Dim intX As Integer
     
-    isloaded = False
+    IsLoaded = False
     For intX = 0 To Forms.Count - 1
         If Forms(intX).FormName = varFrmName Then
             If Forms(intX).CurrentView <> conFormDesign Then
-                isloaded = True
+                IsLoaded = True
                 Exit Function ' Quit function once form has been found.
             End If
         End If
@@ -437,23 +496,634 @@ Function ContainsAlpha_TSB(strIn As String) As Boolean
   ContainsAlpha_TSB = fAlpha
 
 End Function
-
 Public Function GetCurrentUserName() As String
-  ' Comments  : returns the name of the current logged in user
-  ' Parameters: none
-  ' Returns   : string user name
-  ' Source    : Total Visual SourceBook
-  '
+  
   On Error GoTo PROC_ERR
+  
+     Dim LngBufLen As Long
+     Dim strUser As String
 
-  GetCurrentUserName = Application.CurrentUser
+     strUser = String$(15, " ")
+     LngBufLen = 15
+
+     If GetUserName(strUser, LngBufLen) = 1 Then
+         GetCurrentUserName = Left(strUser, LngBufLen - 1)
+     Else
+         GetCurrentUserName = "Unknown"
+     End If
 
 PROC_EXIT:
   Exit Function
 
 PROC_ERR:
-  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , _
-    "modApplication.GetCurrentUserName"
+  MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, vbOKOnly
   Resume PROC_EXIT
 
+End Function
+
+
+
+'****** Code Start ********
+Function fIsLoaded(ByVal strFormName As String) As Integer
+'Returns a 0 if form is not open or a -1 if Open
+    If SysCmd(acSysCmdGetObjectState, acForm, strFormName) <> 0 Then
+        If Forms(strFormName).CurrentView <> 0 Then
+            fIsLoaded = True
+        End If
+    End If
+End Function
+'****** Code End ********
+
+
+
+
+Sub PopulateEDISubIDs()
+    ' Purpose:  Populates the SubID field on tblEDI_App_Subscr
+    '           for all new subscribers who do not have
+    '           a SubID yet
+    '
+    '------------------------------------------------
+    ' Parameters:  -
+    ' Programmer:  John Criswell
+    ' Create Date:  11/22/07
+    ' Update Date:  11/22/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+        
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    
+    Set db = CurrentDb()
+    
+    strSQL = "SELECT  tblEDI_App_Subscr.SUBssn, tblEDI_App_Subscr.SubID " & _
+                "FROM tblEDI_App_Subscr " & _
+                "WHERE   (tblEDI_App_Subscr.SubID = '' " & _
+                "OR tblEDI_App_Subscr.SubID IS NULL) " & _
+                "ORDER BY tblEDI_App_Subscr.SUBssn;"
+    
+    Set rst = db.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
+    If rst.RecordCount > 0 Then
+        Do While Not rst.EOF
+            rst.Edit
+            rst.Fields("SubID") = AssignSubID()
+            rst.Update
+            rst.MoveNext
+        Loop
+    End If
+    
+    rst.Close
+    Set db = Nothing
+    
+    
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Sub
+
+Sub RefreshConnectStrings()
+
+    'this is real old code that is not being used anywhere in the
+    'in the project - it's not even using the current Pervasive OLEDB provider
+    'strConn = "ODBC;DSN=Plantinum for Windows test;ServerName=" & _
+              "192.168.0.20.1583;ServerDSN=Platinum for Windows " & _
+              "test;ArrayFetchOn=1;ArrayBufferSize=8" & _
+              ";TransportHint=TCP;DecimalSymbol=.;ClientVersion=" & _
+              "8.10.117.017;CodePageConvert=1252;;TABLE=APHDR"
+    'jdc 10/16/2007
+
+On Error GoTo PROC_ERR
+
+    
+    Dim db As DAO.Database
+    Dim td As TableDef
+    Dim strConnect As String
+    Dim strNewConnect As String
+    Dim aODBCTables() As String
+    Dim intTableCount As Integer
+    Dim I As Integer
+    Dim J As Integer
+    Dim Counter As Integer
+    
+    Set db = CurrentDb()
+    
+    DoCmd.Hourglass True
+    
+    intTableCount = db.TableDefs.Count
+    
+    Counter = 0
+    For I = 0 To intTableCount - 1
+        strConnect = db.TableDefs(I).Connect
+        If Mid(strConnect, 1, 4) = "ODBC" Then
+            Counter = Counter + 1
+        End If
+    Next I
+
+    ReDim aODBCTables(Counter)
+    
+    J = 0
+    For I = 0 To intTableCount - 1
+        strConnect = db.TableDefs(I).Connect
+        If Mid(strConnect, 1, 4) = "ODBC" Then
+            aODBCTables(J) = db.TableDefs(I).Name
+            J = J + 1
+        End If
+    Next I
+    
+    J = 0
+    For I = 0 To intTableCount - 1
+        strConnect = db.TableDefs(I).Connect
+        If Mid(strConnect, 1, 4) = "ODBC" Then
+          If Mid(strConnect, 13, 3) <> "sql" Then  ' Skip the SQL Server tables
+            strNewConnect = "ODBC;"
+            strNewConnect = strNewConnect & "DSN=Platinum for Windows;"
+            strNewConnect = strNewConnect & "DATAPATH=P:\Platinum\QCDTX;"
+            strNewConnect = strNewConnect & "DDFPATH=P:\Platinum\QCDTX;"
+            strNewConnect = strNewConnect & "NullEnabled=no;"
+            strNewConnect = strNewConnect & "FeaturesUsed=no;"
+            strNewConnect = strNewConnect & "AccessFriendly=no;"
+            strNewConnect = strNewConnect & "DateFormat=mdy;"
+            strNewConnect = strNewConnect & ";"
+            strNewConnect = strNewConnect & "TABLE="
+            strNewConnect = strNewConnect & aODBCTables(J)
+            db.TableDefs(aODBCTables(J)).Connect = strNewConnect
+            db.TableDefs(aODBCTables(J)).RefreshLink
+            J = J + 1
+          End If
+        End If
+    Next I
+
+    db.Close
+    DoCmd.Hourglass False
+    MsgBox "Platinum for Windows Links has been refreshed!"
+    
+Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+  
+End Sub
+Function RptNoData()
+    Dim Cancel As String
+    
+ On Error GoTo PROC_ERR
+ 
+    MsgBox "The report has no data." _
+        & "@Printing the report is canceled. " _
+        & "@Check the source of data for the report to make sure you " _
+        & "entered the correct criteria (for example, a valid range " _
+        & "of dates).", vbOKOnly + vbInformation
+    Cancel = True
+
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+    
+End Function
+Function AddHyphens(strInput As String)
+
+  On Error GoTo PROC_ERR
+    AddHyphens = Mid(strInput, 1, 3) & "-" & Mid(strInput, 4, 2) & "-" & Mid(strInput, 6, 4)
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Sub AddSomethingtoARCUST()
+
+  On Error GoTo PROC_ERR
+    Dim dbsDb As DAO.Database
+    Dim rstRs As DAO.Recordset
+
+    Set dbsDb = DBEngine(0)(0)
+    Set rstRs = dbsDb.OpenRecordset("ARCUST_local", dbOpenDynaset, dbSeeChanges)
+    rstRs.AddNew
+    rstRs("Customer_Key") = "AAAA3"
+    rstRs("Customer_Name") = "CRISWELL, JOHN D."
+    rstRs("Address_1") = "304 PLANTATION DR"
+    rstRs("Address_2") = ""
+    rstRs("City") = "COPPELL"
+    rstRs("State") = "TX"
+    rstRs("Zip_Code") = "75019"
+    rstRs.Update
+    rstRs.Close
+
+    GoTo Finish:
+
+    rstRs.MoveFirst
+    rstRs.Close
+    dbsDb.Close
+
+Finish:
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
+
+
+
+Function ConvertFirstName(strFirst1 As String)
+
+  On Error GoTo PROC_ERR
+    Dim strFirstCase As String
+
+    strFirstCase = Mid(strFirst1, 1, 1) & LCase(Mid(strFirst1, 2, 99))
+
+    ConvertFirstName = strFirstCase
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function ConvertLastName(StrLast1 As String)
+
+  On Error GoTo PROC_ERR
+    Dim StrLastCase As String
+
+    StrLastCase = Mid(StrLast1, 1, 1) & LCase(Mid(StrLast1, 2, 99))
+
+    ConvertLastName = StrLastCase
+
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function ConvertPlatDates(strMonth As String, strYear As String)
+  On Error GoTo PROC_ERR
+    Dim strDate As String
+    strDate = Mid(strMonth, 1, 2) & "/" & Mid(strMonth, 3, 2) & "/" & strYear
+    ConvertPlatDates = strDate
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+
+Function ConvertDate(strDate As String) As Date
+    'Purpose:  Converts a date to date datatype.  Parameter
+    '          must be in mmddyyyy format
+    '--------------------------------------------------------
+    '
+    ' Parameters: strDate -
+    ' Returns   : Date -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/28/07
+    ' Update Date:  12/28/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    
+    On Error GoTo ErrorHandler
+    
+    
+    ConvertDate = Mid(strDate, 1, 2) & "/" & Mid(strDate, 3, 2) & "/" & Mid(strDate, 5, 4)
+    
+    
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+
+
+Function FindDentist(frmMyForm As Form, ctlMyControl As Control, varMyID, varEndControl)
+
+   On Error GoTo ErrFindDentist
+   
+   If frmMyForm.Dirty Then DoCmd.DoMenuItem A_FORMBAR, A_FILE, A_SAVERECORD
+   
+   DoCmd.Echo False, "Searching. . ."
+
+   Dim rs As DAO.Recordset
+   Dim lngID As Long
+   Dim strCriteria As String
+   Dim strCRLF As String
+
+   Set rs = frmMyForm.RecordsetClone
+   lngID = ctlMyControl
+   strCRLF = Chr(13) & Chr(10)
+   strCriteria = varMyID & "=" & lngID ' Define search criteria.
+
+   rs.FindFirst strCriteria            ' Locate first occurrence.
+   If rs.NoMatch Then
+      MsgBox "Could not find the Record ID: " & lngID & "." & strCRLF & "Select 'Show All Records' from the" & strCRLF & "Records Menu and try again."
+   Else
+      frmMyForm.Bookmark = rs.Bookmark
+      DoCmd.GoToControl varEndControl
+   End If
+
+   DoCmd.Echo True
+   
+ExitFindDentist:
+   Exit Function
+   
+ErrFindDentist:
+
+    DoCmd.Echo True, "Find canceled."
+    Resume ExitFindDentist
+      
+End Function
+
+
+
+Function RemoveHyphens(strInput As String) As String
+
+  On Error GoTo PROC_ERR
+  
+    If Len(strInput) = 11 Then
+        RemoveHyphens = Mid(strInput, 1, 3) & Mid(strInput, 5, 2) & Mid(strInput, 8, 4)
+    Else
+        RemoveHyphens = strInput
+    End If
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+Function RemoveHyphen(strInput As String)
+
+  On Error GoTo PROC_ERR
+      
+      RemoveHyphen = Left(strInput, 4) & Right(strInput, 4)
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function UpdateLookupField(frmCurrentForm As Form, strCtlLookupField As String)
+  On Error GoTo PROC_ERR
+    
+    Dim strLookupName As String
+    frmCurrentForm(strCtlLookupField) = frmCurrentForm![L_Name] & ", " & frmCurrentForm![F_Name] & " " & frmCurrentForm![MI]
+
+  Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+Function BLookup(pExpr As String, pDomain As String, pcriteria As String) As Variant
+    ' Purpose: replacement function for DLookup
+    ' Input Parameters and other Input: Field to lookup, Table to look in, criteria w/o where
+    ' Returns:  field to lookup
+    '
+    ' Written:  03/11/98   By: Ben Stanley
+    ' Modified: mm/dd/yyyy   By: developer name
+    'On Error GoTo Err_blookup
+    
+    On Error GoTo PROC_ERR
+    
+    Dim Msg As String       'Text for (error) MsgBox
+    Dim db As DAO.Database
+    Dim rs As DAO.Recordset
+    Dim sSQL As String
+    
+    sSQL = "Select " & pExpr & " from " & pDomain & " where " & pcriteria & ";"
+    'MsgBox ssql
+    
+    Set db = CurrentDb()
+    Set rs = db.OpenRecordset(sSQL, dbOpenDynaset, dbSeeChanges)
+    
+    If rs.EOF = False Then
+        BLookup = rs(pExpr)
+    Else
+        BLookup = ""
+    End If
+    
+Exit_BLookup:
+    Exit Function
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+Public Sub DropDBO()
+
+   Dim dbs As DAO.Database
+   Dim rst As DAO.Recordset
+   Dim tdfSubscr As TableDef
+   Dim tdfLoop As TableDef
+   Dim prpLoop As Property
+   Dim strName As String
+
+   Set dbs = CurrentDb()
+   With dbs
+      For Each tdfLoop In .TableDefs
+           strName = tdfLoop.Name
+           Debug.Print strName
+           If Mid(strName, 1, 4) = "dbo_" Then
+                'Debug.Print tdfLoop.Name
+                tdfLoop.Name = LTrim(RTrim(Mid(strName, 5, Len(strName))))
+                Debug.Print tdfLoop.Name
+           End If
+           
+      Next tdfLoop
+  Set dbs = Nothing
+  
+End With
+
+
+
+End Sub
+
+Function TableInfo(strTableName As String)
+
+On Error GoTo TableInfoErr
+   ' Purpose:   Display the field names, types, sizes and descriptions for a table.
+   ' Argument:  Name of a table in the current database.
+   Dim db As DAO.Database
+   Dim tdf As DAO.TableDef
+   Dim fld As DAO.Field
+   
+   Set db = CurrentDb()
+   Set tdf = db.TableDefs(strTableName)
+   Debug.Print "FIELD NAME", "FIELD TYPE", "SIZE", "DESCRIPTION"
+   Debug.Print "==========", "==========", "====", "==========="
+
+   For Each fld In tdf.Fields
+      Debug.Print fld.Name,
+      Debug.Print FieldTypeName(fld),
+      Debug.Print fld.Size,
+      Debug.Print GetDescrip(fld)
+   Next
+   Debug.Print "==========", "==========", "====", "==========="
+
+TableInfoExit:
+   Set db = Nothing
+   Exit Function
+
+TableInfoErr:
+   Select Case Err
+   Case 3265&  'Table name invalid
+      MsgBox strTableName & " table doesn't exist"
+   Case Else
+      Debug.Print "TableInfo() Error " & Err & ": " & Error
+   End Select
+   Resume TableInfoExit
+End Function
+Function GetDescrip(obj As Object) As String
+    On Error Resume Next
+    GetDescrip = obj.Properties("Description")
+End Function
+Function FieldTypeName(fld As DAO.Field) As String
+    'Purpose: Converts the numeric results of DAO Field.Type to text.
+    Dim strReturn As String    'Name to return
+
+    Select Case CLng(fld.Type) 'fld.Type is Integer, but constants are Long.
+        Case dbBoolean: strReturn = "Yes/No"            ' 1
+        Case dbByte: strReturn = "Byte"                 ' 2
+        Case dbInteger: strReturn = "Integer"           ' 3
+        Case dbLong                                     ' 4
+            If (fld.Attributes And dbAutoIncrField) = 0& Then
+                strReturn = "Long Integer"
+            Else
+                strReturn = "AutoNumber"
+            End If
+        Case dbCurrency: strReturn = "Currency"         ' 5
+        Case dbSingle: strReturn = "Single"             ' 6
+        Case dbDouble: strReturn = "Double"             ' 7
+        Case dbDate: strReturn = "Date/Time"            ' 8
+        Case dbBinary: strReturn = "Binary"             ' 9 (no interface)
+        Case dbText                                     '10
+            If (fld.Attributes And dbFixedField) = 0& Then
+                strReturn = "Text"
+            Else
+                strReturn = "Text (fixed width)"        '(no interface)
+            End If
+        Case dbLongBinary: strReturn = "OLE Object"     '11
+        Case dbMemo                                     '12
+            If (fld.Attributes And dbHyperlinkField) = 0& Then
+                strReturn = "Memo"
+            Else
+                strReturn = "Hyperlink"
+            End If
+        Case dbGUID: strReturn = "GUID"                 '15
+
+        'Attached tables only: cannot create these in JET.
+        Case dbBigInt: strReturn = "Big Integer"        '16
+        Case dbVarBinary: strReturn = "VarBinary"       '17
+        Case dbChar: strReturn = "Char"                 '18
+        Case dbNumeric: strReturn = "Numeric"           '19
+        Case dbDecimal: strReturn = "Decimal"           '20
+        Case dbFloat: strReturn = "Float"               '21
+        Case dbTime: strReturn = "Time"                 '22
+        Case dbTimeStamp: strReturn = "Time Stamp"      '23
+
+        'Constants for complex types don't work prior to Access 2007.
+        Case 101&: strReturn = "Attachment"         'dbAttachment
+        Case 102&: strReturn = "Complex Byte"       'dbComplexByte
+        Case 103&: strReturn = "Complex Integer"    'dbComplexInteger
+        Case 104&: strReturn = "Complex Long"       'dbComplexLong
+        Case 105&: strReturn = "Complex Single"     'dbComplexSingle
+        Case 106&: strReturn = "Complex Double"     'dbComplexDouble
+        Case 107&: strReturn = "Complex GUID"       'dbComplexGUID
+        Case 108&: strReturn = "Complex Decimal"    'dbComplexDecimal
+        Case 109&: strReturn = "Complex Text"       'dbComplexText
+        Case Else: strReturn = "Field type " & fld.Type & " unknown"
+    End Select
+
+    FieldTypeName = strReturn
+End Function
+
+'************ Code Start ***************
+' This code was originally written by Dev Ashish.
+' It is not to be altered or distributed,
+' except as part of an application.
+' You are free to use it in any application,
+' provided the copyright notice is left unchanged.
+'
+' Code Courtesy of
+' Dev Ashish
+'
+Function fEnumControls(ByVal strfrmToEnum As String)
+'prints out control's Type and Name
+'will NOT enumerate controls within an embedded subform
+Dim astrCtlName() As String
+Dim I As Integer, intCnt As Integer
+Dim frm As Form
+'Un-Comment the next two lines for Access 95
+'Const acPage = 124
+'Const acTabCtl = 123
+    'if form is closed, exit function
+    If Not fIsLoaded(strfrmToEnum) Then
+        MsgBox "Form " & strfrmToEnum & " is probably closed!! " & _
+            vbCrLf & "Please open it & try again.", vbCritical
+        Exit Function
+    End If
+
+    Set frm = Forms(strfrmToEnum)
+    'Count the number of controls
+    intCnt = frm.Count
+    
+    'Initialize the array to hold control names
+    ReDim astrCtlName(0 To intCnt - 1, 0 To 1)
+
+    For I = 0 To intCnt - 1
+        astrCtlName(I, 0) = frm(I).Name & ", "
+        'Use ControlType to determine the Type of Control
+        Select Case frm(I).ControlType
+            Case acLabel: astrCtlName(I, 1) = "Label"
+            Case acRectangle: astrCtlName(I, 1) = "Rectangle"
+            Case acLine: astrCtlName(I, 1) = "Line"
+            Case acImage: astrCtlName(I, 1) = "Image"
+            Case acCommandButton: astrCtlName(I, 1) = "Command Button"
+            Case acOptionButton: astrCtlName(I, 1) = "Option button"
+            Case acCheckBox: astrCtlName(I, 1) = "Check box"
+            Case acOptionGroup: astrCtlName(I, 1) = "Option group"
+            Case acBoundObjectFrame: astrCtlName(I, 1) = "Bound object frame"
+            Case acTextBox: astrCtlName(I, 1) = "Text Box"
+            Case acListBox: astrCtlName(I, 1) = "List box"
+            Case acComboBox: astrCtlName(I, 1) = "Combo box"
+            Case acSubform: astrCtlName(I, 1) = "SubForm"
+            Case acObjectFrame: astrCtlName(I, 1) = "Unbound object frame or chart"
+            Case acPageBreak: astrCtlName(I, 1) = "Page break"
+            Case acPage: astrCtlName(I, 1) = "Page"
+            Case acCustomControl: astrCtlName(I, 1) = "ActiveX (custom) control"
+            Case acToggleButton: astrCtlName(I, 1) = "Toggle Button"
+            Case acTabCtl: astrCtlName(I, 1) = "Tab Control"
+        End Select
+    Next I
+    
+    'Print out the array in an orderly fashion
+    Debug.Print "Control Name", "Control Type"
+    Debug.Print "------------", "------------"
+    For I = 0 To intCnt - 1
+        Debug.Print astrCtlName(I, 0), astrCtlName(I, 1)
+    Next I
+    Erase astrCtlName
+
+'************ Code End ***************
 End Function

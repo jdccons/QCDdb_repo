@@ -6,6 +6,7 @@ Begin InputTables
     Name ="tblEnrollment_TaylorPub"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="SUBgroupID"
     Expression ="tblEnrollment_TaylorPub.SUBgroupID"
     Alias ="LUName"
@@ -19,21 +20,28 @@ Begin OutputColumns
     Name ="SUBmiddleNAME"
     Expression ="IIf(InStr([SUBfirstNAME],\" \")>0,Mid([SUBfirstNAME],(InStr([SUBfirstNAME],\" \""
         ")+1)),\"\")"
+    Alias ="Expr2"
     Name ="SUBlastNAME"
     Expression ="tblEnrollment_TaylorPub.SUBlastNAME"
     Alias ="SSN"
     Name ="SUBssn"
     Expression ="Mid([SUBssn],1,3) & Mid([SUBssn],5,2) & Mid([SUBssn],8,4)"
+    Alias ="Expr3"
     Name ="SUBdob"
     Expression ="tblEnrollment_TaylorPub.SUBdob"
+    Alias ="Expr4"
     Name ="SUBstreet1"
     Expression ="tblEnrollment_TaylorPub.SUBstreet1"
+    Alias ="Expr5"
     Name ="SUBstreet2"
     Expression ="tblEnrollment_TaylorPub.SUBstreet2"
+    Alias ="Expr6"
     Name ="SUBcity"
     Expression ="tblEnrollment_TaylorPub.SUBcity"
+    Alias ="Expr7"
     Name ="SUBstate"
     Expression ="tblEnrollment_TaylorPub.SUBstate"
+    Alias ="Expr8"
     Name ="SUBzip"
     Expression ="tblEnrollment_TaylorPub.SUBzip"
     Alias ="PhoneNo"
@@ -43,12 +51,14 @@ Begin OutputColumns
     Alias ="SubStatus"
     Name ="SUBstatus"
     Expression ="\"GRSUB\""
+    Alias ="Expr9"
     Name ="SUBeffDATE"
     Expression ="tblEnrollment_TaylorPub.SUBeffDATE"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="LUName"
@@ -61,10 +71,10 @@ Begin
     Left =40
     Top =22
     Right =778
-    Bottom =327
+    Bottom =346
     Left =-1
     Top =-1
-    Right =731
+    Right =723
     Bottom =144
     Left =0
     Top =0
@@ -73,8 +83,8 @@ Begin
         Left =38
         Top =6
         Right =272
-        Bottom =113
-        Top =12
+        Bottom =49
+        Top =0
         Name ="tblEnrollment_TaylorPub"
         Name =""
     End

@@ -27,7 +27,7 @@ Begin OutputColumns
     Expression ="[_Online_Report_Changes_WL].SubPhoneWork"
     Expression ="[_Online_Report_Changes_WL].SubPhoneHome"
     Expression ="[_Online_Report_Changes_WL].SUBdob"
-    Expression ="[_Online_Report_Changes_WL].SubNoDepent"
+    Expression ="[_Online_Report_Changes_WL].DepCnt"
     Expression ="[_Online_Report_Changes_WL].SubGender"
     Expression ="[_Online_Report_Changes_WL].SubAge"
     Expression ="[_Online_Report_Changes_WL].SubMaritalStatus"
@@ -69,7 +69,7 @@ Begin OutputColumns
     Expression ="[_Online_Report_Changes_WL].ModifyDate"
     Expression ="[_Online_Report_Changes_WL].CoverDesc"
     Expression ="[_Online_Report_Changes_WL].TblD"
-    Expression ="[_Online_Report_Changes_WL].DepCounter"
+    Expression ="[_Online_Report_Changes_WL].ID"
     Expression ="[_Online_Report_Changes_WL].DepSSN"
     Expression ="[_Online_Report_Changes_WL].EIMBRID_D"
     Expression ="[_Online_Report_Changes_WL].DepSubID"
@@ -199,10 +199,6 @@ Begin
     Begin
         dbText "Name" ="[_Online_Report_Changes_WL].SUBdob"
         dbInteger "ColumnOrder" ="23"
-    End
-    Begin
-        dbText "Name" ="[_Online_Report_Changes_WL].SubNoDepent"
-        dbInteger "ColumnOrder" ="24"
     End
     Begin
         dbText "Name" ="[_Online_Report_Changes_WL].SubGender"
@@ -351,13 +347,13 @@ Begin
 End
 Begin
     State =0
-    Left =42
-    Top =120
-    Right =1313
-    Bottom =631
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =408
     Left =-1
     Top =-1
-    Right =1252
+    Right =1253
     Bottom =188
     Left =0
     Top =0
@@ -366,7 +362,7 @@ Begin
         Left =38
         Top =6
         Right =288
-        Bottom =154
+        Bottom =139
         Top =0
         Name ="_Online_Report_Changes_WL"
         Name =""

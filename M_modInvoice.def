@@ -1,0 +1,566 @@
+Option Compare Database
+Option Explicit
+Public Function PostInvoiceIndividual_One() As Boolean
+'=========================================================================
+' Object:      PostInvoiceIndividual_One
+' Desc:        Calls code behind a button (btnPostPlt_Click) on the Individual
+'              invoice "One Off" form - frmInvIndiv_One; a macro calls this function
+'              and this function calls the code behind the button
+'
+' Called by:   user
+' Call:        called from a macro - InvoiceIndividual_One_File
+' Arguments:   None
+'
+' Comments:    None
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-08       J Criswell      1.0         Created
+'=========================================================================
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvIndiv_One.btnPostPlt_Click
+    PostInvoiceIndividual_One = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Function
+Public Function CreateInvoiceIndividual_One() As Boolean
+'=========================================================================
+' Object:      CreateInvoiceIndividual_One
+' Desc:        Calls code behind a button (btnBulkInvoices_Click) on the Individual
+'              invoices form - frmInvIndiv; a macro calls this function
+'              and this function calls the code behind the button
+'
+' Called by:   user
+' Call:        called from a macro - InvoiceAllAmerican_File
+' Arguments:   None
+'
+' Comments:    None
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-18       J Criswell      1.0         Created
+'=========================================================================
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvIndiv_One.btnCreateInvoice_Click
+    CreateInvoiceIndividual_One = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+
+End Function
+Public Function CreateInvoicesQCD() As Boolean
+'=========================================================================
+' Object:      CreateInvoicesQCD
+' Desc:        Calls code behind a button (Bulk_Invoices) on the QCD Only
+'              invoices form - frmInvGrp; a macro calls this function
+'              and this function calls the code behind the button
+'
+' Called by:   user
+' Call:        called from a macro - InvoiceQCD_File
+' Arguments:   None
+'
+' Comments:    None
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-08       J Criswell      1.0         Created
+'=========================================================================
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvGrp.Bulk_Invoices_Click
+    CreateInvoicesQCD = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+
+End Function
+Public Function PostInvoicesQCD() As Boolean
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvGrp.btnPostAlltoPlat_Click
+    PostInvoicesQCD = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+
+End Function
+Public Function PostInvoicesAllAmerican() As Boolean
+''=========================================================================
+'' Object:      PostInvoicesAllAmerican
+'' Desc:        Calls code behind a button (btnPostAlltoPlat_Click) on the All American
+''              invoices form - frmInvGrpAA_Ins; a macro calls this function
+''              and this function calls the code behind the button
+''
+'' Called by:   user
+'' Call:        called from a macro - InvoiceAllAmerican_File
+'' Arguments:   None
+''
+'' Comments:    None
+'' Changes:  ---------------------------------------------------------------
+'' Date             Developer       Version     Change
+'' 2015-11-08       J Criswell      1.0         Created
+''=========================================================================
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvGrpAA_Ins.btnPostAlltoPlat_Click
+    PostInvoicesAllAmerican = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Public Function PostInvoicesIndividual() As Boolean
+'=========================================================================
+' Object:      PostInvoicesIndividual
+' Desc:        Calls code behind a button (btnPostAlltoPlat_Click) on the Individual
+'              invoices form - frmInvIndiv; a macro calls this function
+'              and this function calls the code behind the button
+'
+' Called by:   user
+' Call:        called from a macro - InvoiceIndividual_File
+' Arguments:   None
+'
+' Comments:    None
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-08       J Criswell      1.0         Created
+'=========================================================================
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvIndiv.btnPostAlltoPlat_Click
+    PostInvoicesIndividual = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Public Function PrtInvQCDRate() As Boolean
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvGrp.btnPrtInvQCDRate_Click
+    PrtInvQCDRate = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+
+End Function
+
+Public Function CreateInvoicesAllAmerican() As Boolean
+'=========================================================================
+' Object:      CreateInvoicesAllAmerican
+' Desc:        Calls code behind a button (Bulk_Invoices) on the All American
+'              invoices form - frmInvGrpAA_Ins; a macro calls this function
+'              and this function calls the code behind the button
+'
+' Called by:   user
+' Call:        called from a macro - InvoiceAllAmerican_File
+' Arguments:   None
+'
+' Comments:    None
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-08       J Criswell      1.0         Created
+'=========================================================================
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvGrpAA_Ins.Bulk_Invoices_Click
+    CreateInvoicesAllAmerican = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Public Function CreateInvoicesIndividual()
+'=========================================================================
+' Object:      CreateInvoicesIndividual
+' Desc:        Calls code behind a button (btnBulkInvoices_Click) on the Individual
+'              invoices form - frmInvIndiv; a macro calls this function
+'              and this function calls the code behind the button
+'
+' Called by:   user
+' Call:        called from a macro - InvoiceAllAmerican_File
+' Arguments:   None
+'
+' Comments:    None
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-18       J Criswell      1.0         Created
+'=========================================================================
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvIndiv.btnBulkInvoices_Click
+    CreateInvoicesIndividual = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+
+End Function
+
+Public Function GetInvoiceDate() As Date
+' Purpose:  Pulls the most recent persistently saved
+'           invoice date from tblConstants
+
+On Error GoTo ErrorHandler
+
+    Dim strSQL As String
+    strSQL = " SELECT FieldDateValue FROM dbo.tblConstants WHERE FieldName = 'InvoiceDate';"
+    LoadADORecordset (strSQL)
+    
+    If Len(g_adoRS("FieldDateValue")) > 0 Then
+        GetInvoiceDate = g_adoRS("FieldDateValue")
+    Else
+        GetInvoiceDate = DateSerial(Year(Date), Month(Date) + 1, 1)
+        g_adoRS.Close
+    End If
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+    
+End Function
+Public Sub SaveInvoiceDate(dteInvoiceDate As Date)
+
+    On Error GoTo ErrorHandler
+    
+    Dim strSQL As String
+    
+    strSQL = "Update tblConstants " & _
+                "Set FieldDateValue = '" & dteInvoiceDate & "' " & _
+                "Where FieldName = 'InvoiceDate'"
+        
+    ExecuteSQL strSQL
+        
+Exit_Point:
+    Exit Sub
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+
+End Sub
+
+Public Function Create_Invoice_Data(proc_name As String, dteInvoiceDate As Date, strCustomerKey As String, strUserName As String) As Boolean
+'================================================================================
+' Object:               Create_invoice_data
+' Purpose:              This function calls a stored procedure
+'                       to retrieve the appropriate data for
+'                       an individual invoice; the data is inserted
+'                       into temp tables
+'
+' Stored Procedure:     stored procedure name is passed to function
+' Parameters:           InvoiceDate DateTime
+'                       CustomerKey varchar(20)
+'                       UserName as varchar(20)
+'
+'
+' Date Created:         9/15/2014
+' Developer:            John Criswell
+'
+' Change Log
+' Date Modified     Developer       Purpose
+' -------------------------------------------------------------------------------
+'
+'
+' VBA Procedure Parameters:
+' -------------------------------------------------------------------------------
+' None
+'
+' Returns:
+' -------------------------------------------------------------------------------
+' Nothing
+'
+'=================================================================================
+
+
+    On Error GoTo PROC_ERR
+    
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+         .ConnectionString = SetConnxn
+         .Open
+    End With
+    With g_adoCommand
+          .ActiveConnection = g_adoConnection
+          .CommandType = adCmdStoredProc
+          .CommandText = proc_name
+          
+          Set g_adoParm = .CreateParameter("@ReturnParm", adInteger, adParamReturnValue) 'Return parm
+          .Parameters.Append g_adoParm
+          
+          Set g_adoParm = .CreateParameter("@InvoiceDate", adDate, adParamInput)
+          .Parameters.Append g_adoParm
+          .Parameters("@InvoiceDate").value = dteInvoiceDate
+          
+          Set g_adoParm = .CreateParameter("@CustomerKey", adChar, adParamInput, 5)
+          .Parameters.Append g_adoParm
+          .Parameters("@CustomerKey").value = strCustomerKey
+          
+          Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+          .Parameters.Append g_adoParm
+          .Parameters("@UserName").value = strUserName
+          
+          .Execute
+          
+          g_iRtnVal = .Parameters.Item("@ReturnParm")
+    End With
+    
+    g_adoConnection.Close
+  
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+    
+    Create_Invoice_Data = g_iRtnVal
+    
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+End Function
+
+    
+' --------------   run stored procedure to create csv file   ---------
+Function Export_Invoice_Data(proc_name As String, dteInvoiceDate As Date, strUserName As String) As Boolean
+
+
+'================================================================================
+' Object:               Create_Invoice_Data
+' Purpose:              This procedure pulls data from ARTRANH_loca
+'                       and creates a CSV file to post to QuickBooks
+'
+' Stored Procedure:     stored procedure name is passed to function
+' Parameters:           InvoiceDate DateTime
+'                       UserName as varchar(20)
+'
+'
+' Date Created:         9/15/2014
+' Developer:            John Criswell
+'
+' Change Log
+' Date Modified     Developer       Purpose
+' -------------------------------------------------------------------------------
+'
+'
+' VBA Procedure Parameters:
+' -------------------------------------------------------------------------------
+' None
+'
+' Returns:
+' -------------------------------------------------------------------------------
+' Nothing
+'
+'=================================================================================
+
+    On Error GoTo HandleError
+    
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+         .ConnectionString = SetConnxn
+         .Open
+    End With
+    With g_adoCommand
+          .ActiveConnection = g_adoConnection
+          .CommandType = adCmdStoredProc
+          .CommandText = proc_name
+          
+          Set g_adoParm = .CreateParameter("@ReturnParm", adInteger, adParamReturnValue) 'Return parm
+          .Parameters.Append g_adoParm
+          
+          Set g_adoParm = .CreateParameter("@InvoiceDate", adDate, adParamInput)
+          .Parameters.Append g_adoParm
+          .Parameters("@InvoiceDate").value = dteInvoiceDate
+          
+          Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+          .Parameters.Append g_adoParm
+          .Parameters("@UserName").value = strUserName
+          
+          .Execute
+          
+          g_iRtnVal = .Parameters.Item("@ReturnParm")
+    End With
+    
+    g_adoConnection.Close
+  
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+    
+    Export_Invoice_Data = CBool(g_iRtnVal)
+    
+Exit Function
+
+HandleError:
+    Err.Raise Err.Number, IIf(Err.Source = Application.VBE.ActiveVBProject.Name, "modInvoice.Export_Invoice_Data" & " " & Erl, Err.Source), Err.DESCRIPTION
+    
+End Function
+
+Public Function CustIndivRefresh(strSQL As String, strSubID As String, strUserName As String) As Boolean
+
+On Error GoTo PROC_ERR
+    
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+         .ConnectionString = SetConnxn
+         .CommandTimeout = 300
+         .Open
+    End With
+    
+    With g_adoCommand
+          .ActiveConnection = g_adoConnection
+          .CommandTimeout = 300
+          .CommandType = adCmdStoredProc
+          .CommandText = strSQL
+          
+          Set g_adoParm = .CreateParameter("Return", adInteger, adParamReturnValue) 'Return parm
+          .Parameters.Append g_adoParm
+          
+          Set g_adoParm = .CreateParameter("@SubID", adChar, adParamInput, 8)
+          .Parameters.Append g_adoParm
+          .Parameters("@SubID").value = strSubID
+          
+          Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+          .Parameters.Append g_adoParm
+          .Parameters("@UserName").value = strUserName
+          
+          .Execute
+    End With
+    
+    g_iRtnVal = g_adoCommand(0)
+    
+    If g_iRtnVal = 1 Then
+        CustIndivRefresh = True
+    Else
+        CustIndivRefresh = False
+    End If
+    
+    g_adoConnection.Close
+  
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+  
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Function
+    
+    
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function:modIndiv.CustIndivRefresh"
+  Resume PROC_EXIT
+    
+End Function
+
+
+Public Function InvoicePostIndiv(strSQL As String, dteSalesReceiptDate As Date, strUserName As String) As Boolean
+
+    On Error GoTo PROC_ERR
+    
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+         .ConnectionString = SetConnxn
+         .CommandTimeout = 300
+         .Open
+    End With
+    
+    With g_adoCommand
+          .ActiveConnection = g_adoConnection
+          .CommandTimeout = 300
+          .CommandType = adCmdStoredProc
+          .CommandText = strSQL
+          
+          Set g_adoParm = .CreateParameter("Return", adInteger, adParamReturnValue)         'Return parm
+          .Parameters.Append g_adoParm
+          
+          Set g_adoParm = .CreateParameter("@InvoiceDate", adDate, adParamInput)
+          .Parameters.Append g_adoParm
+          .Parameters("@InvoiceDate").value = dteSalesReceiptDate
+          
+          Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+          .Parameters.Append g_adoParm
+          .Parameters("@UserName").value = strUserName
+          
+          .Execute
+    End With
+    
+    g_iRtnVal = g_adoCommand(0)
+    
+    If g_iRtnVal = 1 Then
+        InvoicePostIndiv = True
+    Else
+        InvoicePostIndiv = False
+    End If
+    
+    g_adoConnection.Close
+  
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+  
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Function
+    
+    
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function:  modIndiv.InvoicePostIndiv"
+  Resume PROC_EXIT
+
+End Function

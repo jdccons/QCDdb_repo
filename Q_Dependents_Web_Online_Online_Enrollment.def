@@ -1,35 +1,46 @@
 Operation =1
 Option =0
-Where ="(((dbo_tblDependent.SubSSN) In (SELECT SSN FROM [dbo_tblSubscriber] WHERE GROUPI"
-    "D = 'INDIV' AND [PseudoSSN] = 'Y' )))"
+Where ="((([dbo_tblDependent].[SubSSN]) In (SELECT SSN FROM [dbo_tblSubscriber] WHERE GR"
+    "OUPID = 'INDIV' AND [PseudoSSN] = 'Y' )))"
 Begin InputTables
     Name ="dbo_tblDependent"
     Name ="dbo_tblSubscriber"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="dbo_tblDependent.DepID"
+    Alias ="Expr2"
     Expression ="dbo_tblDependent.SubID"
+    Alias ="Expr3"
     Expression ="dbo_tblDependent.SubSSN"
+    Alias ="Expr4"
     Expression ="dbo_tblDependent.EIMBRID"
+    Alias ="Expr5"
     Expression ="dbo_tblDependent.DepSSN"
+    Alias ="Expr6"
     Expression ="dbo_tblDependent.FirstName"
+    Alias ="Expr7"
     Expression ="dbo_tblDependent.MiddleInitial"
+    Alias ="Expr8"
     Expression ="dbo_tblDependent.LastName"
+    Alias ="Expr9"
     Expression ="dbo_tblDependent.DOB"
+    Alias ="Expr10"
     Expression ="dbo_tblDependent.Age"
+    Alias ="Expr11"
     Expression ="dbo_tblDependent.Relationship"
+    Alias ="Expr12"
     Expression ="dbo_tblDependent.Gender"
+    Alias ="Expr13"
     Expression ="dbo_tblDependent.EffDate"
+    Alias ="Expr14"
     Expression ="dbo_tblDependent.PreexistingDate"
+    Alias ="Expr15"
     Expression ="dbo_tblDependent.DepID_local"
+    Alias ="Expr16"
     Expression ="dbo_tblDependent.DateChanged"
+    Alias ="Expr17"
     Expression ="dbo_tblDependent.PseudoSSN"
-End
-Begin Joins
-    LeftTable ="dbo_tblDependent"
-    RightTable ="dbo_tblSubscriber"
-    Expression ="dbo_tblDependent.SubID = dbo_tblSubscriber.SubID"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -51,10 +62,10 @@ Begin
     Left =4
     Top =32
     Right =931
-    Bottom =655
+    Bottom =552
     Left =-1
     Top =-1
-    Right =895
+    Right =912
     Bottom =340
     Left =0
     Top =0
@@ -63,7 +74,7 @@ Begin
         Left =48
         Top =12
         Right =307
-        Bottom =292
+        Bottom =55
         Top =0
         Name ="dbo_tblDependent"
         Name =""
@@ -72,7 +83,7 @@ Begin
         Left =355
         Top =12
         Right =499
-        Bottom =156
+        Bottom =55
         Top =0
         Name ="dbo_tblSubscriber"
         Name =""

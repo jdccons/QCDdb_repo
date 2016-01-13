@@ -1,35 +1,35 @@
 Operation =3
-Name ="ARCUST"
+Name ="ARCUST_local"
 Option =0
-Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmPendingSubscr]![PLTcustKEY]) AND ((tblInvAg"
-    "t.Primary)=True))"
+Where ="(((tblSubscr.PltCustKey)=Forms!frmPendingSubscr!PLTcustKEY) And ((tblIndivAgt.Pr"
+    "imary)=True))"
 Begin InputTables
     Name ="tblSubscr"
-    Name ="tblInvAgt"
+    Name ="tblIndivAgt"
 End
 Begin OutputColumns
     Name ="Customer_Key"
-    Expression ="tblSubscr.PLTcustKEY"
+    Expression ="tblSubscr.PltCustKey"
     Name ="Customer_Name"
     Expression ="tblSubscr.SUB_LUname"
     Name ="Address_1"
-    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SubStreet1"
     Name ="Address_2"
-    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SubStreet2"
     Name ="City"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Name ="State"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Name ="Zip_Code"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubZip"
     Name ="Phone_1"
-    Expression ="tblSubscr.SUBphoneHOME"
+    Expression ="tblSubscr.SubPhoneHome"
     Name ="Phone_2"
-    Expression ="tblSubscr.SUBphoneWORK"
+    Expression ="tblSubscr.SubPhoneWork"
     Name ="Territory_Ky"
-    Expression ="tblSubscr.SUBgeoID"
+    Expression ="tblSubscr.SubGeoID"
     Name ="Salespersn_Ky"
-    Expression ="tblInvAgt.AGENTid"
+    Expression ="tblIndivAgt.AgentId"
     Alias ="Date"
     Name ="RecDate"
     Expression ="Date()"
@@ -40,15 +40,15 @@ Begin OutputColumns
     Name ="RecUserID"
     Expression ="\"ACCESS\""
     Name ="Cust_Class_Ky"
-    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblSubscr.SubStatus"
     Alias ="OPENinv"
     Name ="Open_Or_Balfwd"
     Expression ="\"O\""
 End
 Begin Joins
     LeftTable ="tblSubscr"
-    RightTable ="tblInvAgt"
-    Expression ="tblSubscr.SubID = tblInvAgt.SubscrID"
+    RightTable ="tblIndivAgt"
+    Expression ="tblSubscr.SubID=tblIndivAgt.SubscrId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -62,11 +62,11 @@ Begin
     State =0
     Left =47
     Top =29
-    Right =1258
-    Bottom =386
+    Right =1083
+    Bottom =349
     Left =-1
     Top =-1
-    Right =1204
+    Right =1029
     Bottom =144
     Left =0
     Top =0

@@ -1,13 +1,13 @@
 Operation =1
 Option =2
-Where ="(((tmpEDI_rpt.Stat)<>\"DELETED\" And (tmpEDI_rpt.Stat)<>\"cancelled\" Or (tmpEDI"
-    "_rpt.Stat) Is Null))"
+Where ="(((tmpEDI_rpt.Stat)<>\"DELETED\" And (tmpEDI_rpt.Stat)<>\"cancelled\")) OR (((tm"
+    "pEDI_rpt.Stat) Is Null))"
 Begin InputTables
     Name ="tmpEDI_rpt"
 End
 Begin OutputColumns
     Expression ="tmpEDI_rpt.GroupID"
-    Expression ="tmpEDI_rpt.SUBssn"
+    Expression ="tmpEDI_rpt.SubSSN"
     Expression ="tmpEDI_rpt.GRMailCard"
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -24,10 +24,10 @@ Begin
     Left =62
     Top =84
     Right =1258
-    Bottom =446
+    Bottom =458
     Left =-1
     Top =-1
-    Right =1185
+    Right =1181
     Bottom =194
     Left =0
     Top =0
@@ -36,7 +36,7 @@ Begin
         Left =38
         Top =6
         Right =228
-        Bottom =128
+        Bottom =124
         Top =5
         Name ="tmpEDI_rpt"
         Name =""

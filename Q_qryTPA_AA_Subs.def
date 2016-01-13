@@ -1,0 +1,54 @@
+Operation =1
+Option =0
+Where ="(((s.GRP_TYPE)=4) AND ((s.MBR_ST) In (1,2)))"
+Begin InputTables
+    Name ="tpa_data_exchange_sub"
+    Alias ="s"
+End
+Begin OutputColumns
+    Expression ="s.SSN"
+    Expression ="s.SUB_ID"
+    Expression ="s.MBR_ID"
+    Expression ="s.GRP_ID"
+    Expression ="s.LAST_NAME"
+    Expression ="s.FIRST_NAME"
+    Expression ="s.MI"
+    Expression ="s.MBR_ST"
+End
+Begin OrderBy
+    Expression ="s.GRP_ID"
+    Flag =0
+    Expression ="s.SSN"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =125
+    Top =142
+    Right =1322
+    Bottom =519
+    Left =-1
+    Top =-1
+    Right =1178
+    Bottom =197
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =124
+        Top =0
+        Name ="s"
+        Name =""
+    End
+End

@@ -1,0 +1,510 @@
+Version =20
+VersionRequired =20
+Checksum =-790474850
+Begin Report
+    LayoutForPrint = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    TabularFamily =124
+    DateGrouping =1
+    GrpKeepTogether =1
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =10080
+    DatasheetFontHeight =10
+    ItemSuffix =26
+    Left =1140
+    Top =90
+    Right =7305
+    Bottom =7890
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x5f7c47394caee440
+    End
+    RecordSource ="SELECT vw_PFWSalesReceipts.Customer, vw_PFWSalesReceipts.[Customer Acct No], vw_"
+        "PFWSalesReceipts.RefNumber, vw_PFWSalesReceipts.[Transaction Date], vw_PFWSalesR"
+        "eceipts.Item, vw_PFWSalesReceipts.Price, vw_PFWSalesReceipts.[Is Pending] FROM v"
+        "w_PFWSalesReceipts WHERE (((vw_PFWSalesReceipts.[Is Pending])=\"P\"));"
+    Caption ="Sales Receipts"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0x38040000a005000038040000a005000000000000602700002c01000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc0243ef800501000100ea0a6f08640001000f00c80002000100 ,
+        0xc800020001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
+    End
+    Begin
+        Begin Label
+            FontItalic = NotDefault
+            BackStyle =0
+            TextAlign =1
+            TextFontFamily =18
+            FontSize =11
+            FontWeight =700
+            ForeColor =8388608
+            FontName ="Times New Roman"
+        End
+        Begin Rectangle
+            BackStyle =0
+            BorderWidth =1
+            BorderColor =8388608
+        End
+        Begin Line
+            BorderColor =8388608
+        End
+        Begin Image
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CheckBox
+            LabelX =230
+            LabelY =-30
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            OldBorderStyle =0
+            FontName ="Arial"
+        End
+        Begin ComboBox
+            OldBorderStyle =0
+            BackStyle =0
+            FontName ="Arial"
+        End
+        Begin Subform
+            OldBorderStyle =0
+        End
+        Begin BreakLevel
+            ControlSource ="Customer"
+        End
+        Begin FormHeader
+            KeepTogether = NotDefault
+            Height =570
+            Name ="ReportHeader"
+            GUID = Begin
+                0x5a94c971a6df704a8ca317e6b8e66458
+            End
+            Begin
+                Begin Label
+                    BackStyle =1
+                    Left =60
+                    Top =60
+                    Width =3180
+                    Height =510
+                    FontSize =20
+                    Name ="Label10"
+                    Caption ="Sales Receipts"
+                    GUID = Begin
+                        0xfdf7f459fbf577499bbf3577f02ad258
+                    End
+                End
+            End
+        End
+        Begin PageHeader
+            Height =315
+            Name ="PageHeaderSection"
+            GUID = Begin
+                0xbcb8de9950f331468e50f5292199b0e6
+            End
+            Begin
+                Begin Label
+                    Left =60
+                    Width =2310
+                    Height =300
+                    Name ="Customer_Label"
+                    Caption ="Customer"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xfc5a1274d4e14745b861f0162634e42c
+                    End
+                End
+                Begin Label
+                    Left =4155
+                    Width =1020
+                    Height =300
+                    Name ="Customer Acct No_Label"
+                    Caption ="Acct No"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Customer_Acct_No_Label"
+                    GUID = Begin
+                        0xc66f1ac12130434eba1802c0f6f335fc
+                    End
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =5310
+                    Width =495
+                    Height =300
+                    Name ="Transaction Date_Label"
+                    Caption ="Date"
+                    Tag ="DetachedLabel"
+                    EventProcPrefix ="Transaction_Date_Label"
+                    GUID = Begin
+                        0x95882e789061a64fa88b21ed3a0a7528
+                    End
+                End
+                Begin Label
+                    Left =5955
+                    Width =705
+                    Height =300
+                    Name ="Item_Label"
+                    Caption ="Item"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x8accc68e2f3d2643b458d128e5b81192
+                    End
+                End
+                Begin Label
+                    TextAlign =3
+                    Left =9135
+                    Width =720
+                    Height =300
+                    Name ="Price_Label"
+                    Caption ="Price"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x0488f10be44d274ab5a9cbd43060e005
+                    End
+                End
+                Begin Line
+                    BorderWidth =2
+                    Top =315
+                    Width =10080
+                    Name ="Line13"
+                    GUID = Begin
+                        0xf3b462df384827419ff7e3c406d5a7d6
+                    End
+                End
+                Begin Label
+                    Left =7665
+                    Width =705
+                    Height =300
+                    Name ="Label22"
+                    Caption ="Inv No"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x8dbe5f1d0054a94aa5902ba8d37f1b04
+                    End
+                End
+            End
+        End
+        Begin Section
+            KeepTogether = NotDefault
+            Height =300
+            Name ="Detail"
+            GUID = Begin
+                0xba0fc7e1cab57d4f92f9120212cdc900
+            End
+            Begin
+                Begin TextBox
+                    Left =60
+                    Top =30
+                    Width =3975
+                    Height =270
+                    Name ="Customer"
+                    ControlSource ="Customer"
+                    GUID = Begin
+                        0x06760532487d024fb20366810d23cd44
+                    End
+                End
+                Begin TextBox
+                    Left =4119
+                    Top =30
+                    Width =1005
+                    Height =270
+                    TabIndex =1
+                    Name ="Customer Acct No"
+                    ControlSource ="Customer Acct No"
+                    EventProcPrefix ="Customer_Acct_No"
+                    GUID = Begin
+                        0x5a4af352e2d6e948a127d63480c8ed19
+                    End
+                End
+                Begin TextBox
+                    Left =5208
+                    Top =30
+                    Width =795
+                    Height =270
+                    TabIndex =2
+                    Name ="Transaction Date"
+                    ControlSource ="Transaction Date"
+                    EventProcPrefix ="Transaction_Date"
+                    GUID = Begin
+                        0xa53c77c216139f42b916d2d995a3bc12
+                    End
+                End
+                Begin TextBox
+                    Left =6087
+                    Top =30
+                    Width =1410
+                    Height =270
+                    TabIndex =3
+                    Name ="Item"
+                    ControlSource ="Item"
+                    GUID = Begin
+                        0xe38519fbe485e14aa50d96088e5f579f
+                    End
+                End
+                Begin TextBox
+                    Left =9075
+                    Top =30
+                    Width =945
+                    Height =270
+                    TabIndex =4
+                    Name ="Price"
+                    ControlSource ="Price"
+                    Format ="Standard"
+                    GUID = Begin
+                        0x967bfc529d822644b388b10deac8ad06
+                    End
+                End
+                Begin TextBox
+                    Left =7581
+                    Top =30
+                    Width =1410
+                    Height =270
+                    TabIndex =5
+                    Name ="Text21"
+                    ControlSource ="RefNumber"
+                    GUID = Begin
+                        0xf54937261b44b2409f4ef9b4c1223300
+                    End
+                End
+            End
+        End
+        Begin PageFooter
+            Height =540
+            Name ="PageFooterSection"
+            GUID = Begin
+                0x1f2b495f61b93442a58d548ee4ad3bb2
+            End
+            Begin
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =1
+                    TextFontFamily =18
+                    Left =60
+                    Top =240
+                    Width =5040
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    ForeColor =8388608
+                    Name ="Text11"
+                    ControlSource ="=Now()"
+                    Format ="Long Date"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x32856cfe6804db4989cd37f31aa1acf3
+                    End
+                End
+                Begin TextBox
+                    FontItalic = NotDefault
+                    TextAlign =3
+                    TextFontFamily =18
+                    Left =4530
+                    Top =240
+                    Width =4545
+                    Height =300
+                    FontSize =9
+                    FontWeight =700
+                    TabIndex =1
+                    ForeColor =8388608
+                    Name ="Text12"
+                    ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
+                    FontName ="Times New Roman"
+                    GUID = Begin
+                        0x040e07d90f251847bb211855f4b465b4
+                    End
+                End
+                Begin Line
+                    BorderWidth =3
+                    Top =240
+                    Width =10080
+                    BorderColor =12632256
+                    Name ="Line14"
+                    GUID = Begin
+                        0xaae52c854445274aa91c7249a3603359
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            KeepTogether = NotDefault
+            Height =300
+            Name ="ReportFooter"
+            GUID = Begin
+                0x63183c88fddb3848b2d01033d70cb3a8
+            End
+            Begin
+                Begin TextBox
+                    Left =8565
+                    Width =1380
+                    Height =270
+                    Name ="SumOfInvoiceAmounts"
+                    ControlSource ="=Sum([Price])"
+                    Format ="Standard"
+                    GUID = Begin
+                        0x513cc88bb0871a448652b6f5e38396ce
+                    End
+                End
+                Begin Label
+                    Left =7125
+                    Width =1380
+                    Height =300
+                    Name ="Label16"
+                    Caption ="Total"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x516873581c626045af7a589261aa37a9
+                    End
+                End
+                Begin Line
+                    Left =8535
+                    Width =1485
+                    Name ="Line20"
+                    GUID = Begin
+                        0xca89c76e2b083a4dae49852e437c59df
+                    End
+                End
+                Begin TextBox
+                    DecimalPlaces =0
+                    Left =4335
+                    Width =360
+                    Height =270
+                    TabIndex =1
+                    Name ="CustomerCount"
+                    ControlSource ="=Count([Customer])"
+                    Format ="Fixed"
+                    GUID = Begin
+                        0xe7f56152de6b7b4f82f8afd8fb2d4b63
+                    End
+                    Begin
+                        Begin Label
+                            Left =3480
+                            Width =825
+                            Height =300
+                            Name ="Label24"
+                            Caption ="Count"
+                            Tag ="DetachedLabel"
+                            GUID = Begin
+                                0xfd789ad9f3b0d84f959956116523123c
+                            End
+                        End
+                    End
+                End
+                Begin Line
+                    LineSlant = NotDefault
+                    Left =4320
+                    Width =360
+                    Name ="Line25"
+                    GUID = Begin
+                        0xdb7afe727bcd4e47be3e365ff3c10d44
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private Sub Report_Close()
+
+    On Error GoTo PROC_ERR
+    
+    DoCmd.Restore
+    
+    If fIsLoaded("fdlgSalesReceipts") = True Then
+        DoCmd.Close acForm, "fdlgSalesReceipts"
+    End If
+    
+    If fIsLoaded("fmnuReportBilling") Then
+        DoCmd.Close acForm, "fmnuReportBilling"
+    End If
+    
+    If fIsLoaded("fmnuSwitchboard") = True Then
+        Forms![fmnuSwitchboard].Visible = True
+    End If
+    
+    Exit Sub
+    
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+
+
+End Sub
+
+Private Sub Report_Open(Cancel As Integer)
+
+    On Error GoTo Report_Open_Err
+    
+    If fIsLoaded("fdlgSalesReceipts") = True Then
+        Forms!fdlgSalesReceipts.Visible = False
+    End If
+    
+    If fIsLoaded("fmnuSwitchboard") = True Then
+        Forms!fmnuSwitchboard.Visible = False
+    End If
+    
+    Exit Sub
+    
+Report_Open_Exit:
+    Exit Sub
+
+Report_Open_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Report_Open_Exit
+    
+    
+    
+End Sub

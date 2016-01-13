@@ -2,19 +2,19 @@ Operation =1
 Option =8
 Where ="(((tblSubscr.PlanID)<>3 Or (tblSubscr.PlanID) Is Null))"
 Begin InputTables
+    Name ="qselAACardReport"
     Name ="tblGrp"
     Name ="tblSubscr"
-    Name ="qselAACardReport"
 End
 Begin OutputColumns
     Alias ="ZipSub"
-    Expression ="IIf([tblSubscr].[Subzip] Like \"#####-#\",Left([tblSubscr].[SubZip],Len([tblSubs"
-        "cr].[SubZip])-1),IIf([tblSubscr].[SubZip] Like \"#########\",Format([tblSubscr]."
-        "[SubZip],\"@@@@@-@@@@\"),[tblSubscr].[SubZip]))"
+    Expression ="IIf(tblSubscr.Subzip Like \"#####-#\",Left(tblSubscr.SubZip,Len(tblSubscr.SubZip"
+        ")-1),IIf(tblSubscr.SubZip Like \"#########\",Format(tblSubscr.SubZip,\"@@@@@-@@@"
+        "@\"),tblSubscr.SubZip))"
     Alias ="ZipGr"
     Expression ="IIf([GRzip] Like \"#####-#\",Left([GrZip],Len([GrZip])-1),IIf([GrZip] Like \"###"
         "######\",Format([GrZip],\"@@@@@-@@@@\"),[GrZip]))"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Expression ="tblSubscr.SubID"
     Expression ="tblSubscr.SubSSN"
     Expression ="tblSubscr.SubFirstName"
@@ -25,8 +25,8 @@ Begin OutputColumns
     Expression ="tblSubscr.SubCity"
     Expression ="tblSubscr.SubState"
     Expression ="tblSubscr.SubZip"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GRContBeg"
     Expression ="tblSubscr.SubGroupID"
     Expression ="tblSubscr.SubStatus"
     Expression ="tblSubscr.SubEffDate"
@@ -36,11 +36,11 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="qselAACardReport"
     RightTable ="tblSubscr"
-    Expression ="qselAACardReport.SUBssn = tblSubscr.SubSSN"
+    Expression ="qselAACardReport.SUBssn=tblSubscr.SubSSN"
     Flag =1
 End
 Begin OrderBy
@@ -54,16 +54,22 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="ZipSub"
+    End
+    Begin
+        dbText "Name" ="ZipGr"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1440
-    Bottom =776
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =570
     Left =-1
     Top =-1
-    Right =1433
+    Right =1253
     Bottom =350
     Left =0
     Top =0
@@ -72,7 +78,7 @@ Begin
         Left =805
         Top =18
         Right =1036
-        Bottom =207
+        Bottom =196
         Top =0
         Name ="tblGrp"
         Name =""
@@ -81,7 +87,7 @@ Begin
         Left =423
         Top =13
         Right =633
-        Bottom =247
+        Bottom =236
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -90,7 +96,7 @@ Begin
         Left =38
         Top =6
         Right =251
-        Bottom =183
+        Bottom =109
         Top =0
         Name ="qselAACardReport"
         Name =""

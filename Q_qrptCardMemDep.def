@@ -1,27 +1,29 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.PlanID)<>3)) OR (((tblSubscr.PlanID) Is Null))"
+Where ="(((tblSubscr.PlanID)<>3 Or (tblSubscr.PlanID) Is Null))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblDependent"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblDependent.DEPsubID"
-    Expression ="tblDependent.DEPfirstNAME"
-    Expression ="tblDependent.DEPmiddleNAME"
-    Expression ="tblDependent.DEPlastNAME"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblDependent.DepSubID"
+    Expression ="tblDependent.DepFirstName"
+    Expression ="tblDependent.DepMiddleName"
+    Expression ="tblDependent.DepLastName"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -29,10 +31,10 @@ Begin
     Left =66
     Top =92
     Right =971
-    Bottom =476
+    Bottom =416
     Left =-1
     Top =-1
-    Right =894
+    Right =890
     Bottom =144
     Left =0
     Top =0
@@ -41,7 +43,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =12
         Name ="tblSubscr"
         Name =""
@@ -50,7 +52,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblDependent"
         Name =""

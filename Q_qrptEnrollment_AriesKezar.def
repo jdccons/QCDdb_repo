@@ -18,7 +18,7 @@ Begin OutputColumns
     Expression ="Trim([Address]) & \"  \" & IIf(IsNull([Addr2]),\"\",[Addr2]) & ([CITY]) & \",  \""
         " & ([ST])"
     Alias ="SUBeffDATE2"
-    Expression ="#3/1/00#"
+    Expression ="#3/1/2000#"
     Alias ="Welcome"
     Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
         "loyee at No Monthly Charge.\""
@@ -37,6 +37,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="GRname"
@@ -75,14 +77,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =409
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =189
     Left =0
     Top =0
@@ -91,8 +93,8 @@ Begin
         Left =41
         Top =17
         Right =261
-        Bottom =124
-        Top =5
+        Bottom =60
+        Top =0
         Name ="tblEnrollment_AriesKezar"
         Name =""
     End

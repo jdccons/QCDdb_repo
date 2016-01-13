@@ -1,32 +1,35 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.Miscellaneous) Is Not Null) AND ((tblGrp.GroupType)=4))"
+Where ="(((tblGrp.Miscellaneous) Is Not Null) And ((tblGrp.GroupType)=4))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="tblGrp.ParentGroupID"
+    Alias ="Expr2"
     Expression ="tblGrp.Parent"
     Alias ="GroupID"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Alias ="GroupName"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Alias ="Note"
     Expression ="tblGrp.Miscellaneous"
+    Alias ="Expr3"
     Expression ="tblGrp.Color"
     Alias ="SubCt"
     Expression ="CtSubs([GroupID])"
     Alias ="GrpCt"
     Expression ="CtGrps([ParentGroupID])"
     Alias ="GrCancelled"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
 End
 Begin OrderBy
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Flag =0
     Expression ="tblGrp.Parent"
     Flag =1
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -60,14 +63,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =738
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =416
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =196
     Left =0
     Top =0
@@ -76,7 +79,7 @@ Begin
         Left =52
         Top =7
         Right =226
-        Bottom =144
+        Bottom =140
         Top =41
         Name ="tblGrp"
         Name =""

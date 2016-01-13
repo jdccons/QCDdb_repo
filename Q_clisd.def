@@ -1,20 +1,22 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"clisd\"))"
+Where ="(((tblSubscr.SubGroupID)=\"clisd\"))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubRate"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -22,10 +24,10 @@ Begin
     Left =87
     Top =43
     Right =997
-    Bottom =347
+    Bottom =367
     Left =-1
     Top =-1
-    Right =897
+    Right =895
     Bottom =144
     Left =0
     Top =0
@@ -34,7 +36,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =115
+        Bottom =109
         Top =13
         Name ="tblSubscr"
         Name =""

@@ -6,23 +6,25 @@ Begin InputTables
     Name ="ARTRAN_BAK"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARTRAN.Docno"
+    Alias ="Expr2"
     Expression ="ARTRAN.Applytodocno"
+    Alias ="Expr3"
     Expression ="ARTRAN.Custkey"
+    Alias ="Expr4"
     Expression ="ARTRAN.Trntyp"
+    Alias ="Expr5"
     Expression ="ARTRAN.Docdate"
+    Alias ="Expr6"
     Expression ="ARTRAN.Docamt"
-End
-Begin Joins
-    LeftTable ="ARTRAN_BAK"
-    RightTable ="ARTRAN"
-    Expression ="ARTRAN_BAK.Docno = ARTRAN.Docno"
-    Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -30,10 +32,10 @@ Begin
     Left =84
     Top =66
     Right =778
-    Bottom =371
+    Bottom =390
     Left =-1
     Top =-1
-    Right =687
+    Right =679
     Bottom =144
     Left =0
     Top =0
@@ -42,7 +44,7 @@ Begin
         Left =306
         Top =4
         Right =402
-        Bottom =111
+        Bottom =47
         Top =0
         Name ="ARTRAN"
         Name =""
@@ -51,7 +53,7 @@ Begin
         Left =116
         Top =9
         Right =212
-        Bottom =116
+        Bottom =52
         Top =0
         Name ="ARTRAN_BAK"
         Name =""

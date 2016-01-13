@@ -11,7 +11,7 @@ End
 Begin Joins
     LeftTable ="tblEnrollmentFees_temp"
     RightTable ="tblCommission"
-    Expression ="tblEnrollmentFees_temp.DocNo = tblCommission.COMMinvoiceNO"
+    Expression ="tblEnrollmentFees_temp.DocNo=tblCommission.CommInvoiceNo"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -26,10 +26,10 @@ Begin
     Left =76
     Top =58
     Right =1002
-    Bottom =371
+    Bottom =382
     Left =-1
     Top =-1
-    Right =919
+    Right =911
     Bottom =144
     Left =0
     Top =0
@@ -38,7 +38,7 @@ Begin
         Left =38
         Top =6
         Right =222
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tblEnrollmentFees_temp"
         Name =""
@@ -47,7 +47,7 @@ Begin
         Left =251
         Top =6
         Right =461
-        Bottom =105
+        Bottom =94
         Top =7
         Name ="tblCommission"
         Name =""

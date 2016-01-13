@@ -1,12 +1,12 @@
-Version =19
-VersionRequired =19
-Checksum =-844177416
+Version =20
+VersionRequired =20
+Checksum =-134770990
 Begin Form
     Width =5985
     ItemSuffix =109
-    Left =4170
-    Top =3165
-    Right =10530
+    Left =4176
+    Top =3168
+    Right =10536
     Bottom =6540
     RecSrcDt = Begin
         0x77e21065d6c4e140
@@ -39,6 +39,9 @@ Begin Form
             Height =255
             BackColor =12632256
             Name ="FormHeader0"
+            GUID = Begin
+                0x94f049190612bf4d9ef491fa3e357bc4
+            End
             Begin
                 Begin Label
                     OverlapFlags =85
@@ -50,6 +53,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text96"
                     Caption ="SSN/Descr. "
+                    GUID = Begin
+                        0xd239c32fc5f7f24ca2ced59105c17201
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -61,6 +67,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text97"
                     Caption ="Subscriber:"
+                    GUID = Begin
+                        0x6a3dedc04e99b346a548b4cb12026813
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -72,6 +81,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text98"
                     Caption ="Rate:"
+                    GUID = Begin
+                        0x044631f01ebc2f4c802d7db3948934af
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -84,6 +96,9 @@ Begin Form
                     BackColor =16711935
                     Name ="Text99"
                     Caption ="Qty.Ord."
+                    GUID = Begin
+                        0x17b225e6fb0dac46b8990fa720516289
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -96,6 +111,9 @@ Begin Form
                     BackColor =16711935
                     Name ="Text101"
                     Caption ="Qty.Shp."
+                    GUID = Begin
+                        0x8b18ed8215418a468c19300b81ff6c1b
+                    End
                 End
             End
         End
@@ -103,11 +121,17 @@ Begin Form
             Height =240
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x76b8c0e03de12d43904de984c19d59bb
+            End
             Begin
                 Begin Line
                     OverlapFlags =93
                     Width =5985
                     Name ="Line85"
+                    GUID = Begin
+                        0xe5ae0ac9a74cbc40b1d0ddd03b713a24
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -119,6 +143,9 @@ Begin Form
                     ControlSource ="ITEM KEY"
                     InputMask ="000\\-00\\-0000;0;_"
                     EventProcPrefix ="ITEM_KEY"
+                    GUID = Begin
+                        0xa833a4b3f7130c44b0eee8bef06bc0c9
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -129,6 +156,9 @@ Begin Form
                     TabIndex =1
                     Name ="DESCRIPTION"
                     ControlSource ="DESCRIPTION"
+                    GUID = Begin
+                        0xc9bb8c8881dbf74a8539c04b9a6baa95
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =2
@@ -141,6 +171,9 @@ Begin Form
                     ControlSource ="UNIT PRICE"
                     Format ="$#,##0.00;($#,##0.00)"
                     EventProcPrefix ="UNIT_PRICE"
+                    GUID = Begin
+                        0x4aa31fcbc996fa40bddc2b5abb5effdf
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -155,6 +188,9 @@ Begin Form
                     ControlSource ="QTY ORDERED"
                     DefaultValue ="1"
                     EventProcPrefix ="QTY_ORDERED"
+                    GUID = Begin
+                        0xb895d84fc0f3e6439f4d02dffc6c8691
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -169,6 +205,9 @@ Begin Form
                     ControlSource ="QTY SHIPPED"
                     DefaultValue ="1"
                     EventProcPrefix ="QTY_SHIPPED"
+                    GUID = Begin
+                        0x4545db41cb28664b98a2cda853c83e31
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -180,6 +219,9 @@ Begin Form
                     Name ="DOCUMENT NO"
                     ControlSource ="DOCUMENT NO"
                     EventProcPrefix ="DOCUMENT_NO"
+                    GUID = Begin
+                        0x0cbff821db543c40b3b1d7e90ebdcccd
+                    End
                 End
             End
         End
@@ -188,6 +230,9 @@ Begin Form
             Height =240
             BackColor =12632256
             Name ="FormFooter1"
+            GUID = Begin
+                0xdae544fb77b3094caff85e03794634c4
+            End
             Begin
                 Begin TextBox
                     DecimalPlaces =2
@@ -197,6 +242,9 @@ Begin Form
                     Name ="SubTotal"
                     ControlSource ="=Sum([UNIT PRICE])"
                     Format ="$#,##0.00;($#,##0.00)"
+                    GUID = Begin
+                        0xce48906abdaed042807ca8d4858d3fec
+                    End
                 End
             End
         End
@@ -219,7 +267,7 @@ Private Sub Form_GotFocus()
     Dim strCriterion$
 
     strCriterion = Forms![f-INVOICEsub]![CUST KEY]
-    strWhere = "[PLTcustKEY] = '" & strCriterion & "'"
+    strWhere = "[PltCustKey] = '" & strCriterion & "'"
 
     Set dbsDb = DBEngine(0)(0)
     Set rstRs = dbsDb.OpenRecordset("tblSubscr", dbOpenDynaset, dbSeeChanges)
@@ -227,11 +275,11 @@ Private Sub Form_GotFocus()
      Forms![f-INVOICEsub]![ITEM KEY] = rstRs("SUBssn")
     'Forms![f-INVOICE]![ADDRESS 1] = rs("GRstreet1")
     'Forms![f-INVOICE]![ADDRESS 2] = rs("GRstreet2")
-    'Forms![f-INVOICE]![CITY] = rs("GRcity")
-    'Forms![f-INVOICE]![STATE] = rs("GRstate")
-    'Forms![f-INVOICE]![ZIP CODE] = rs("GRzip")
+    'Forms![f-INVOICE]![City] = rs("GRcity")
+    'Forms![f-INVOICE]![State] = rs("GRstate")
+    'Forms![f-INVOICE]![Zip CODE] = rs("GRzip")
     'Forms![f-INVOICE]![ATTENTION] = rs("GRmainCONT")
-    'Forms![f-INVOICE]![TERRITORY KEY] = rs("GRPgeoID")
+    'Forms![f-INVOICE]![TERRITORY KEY] = rs("GRGeoID")
     'Forms![f-INVOICE]![SALESP    KEY] = rs("GRagentID1")
 
     rstRs.Close

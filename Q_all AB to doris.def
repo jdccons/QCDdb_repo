@@ -1,36 +1,39 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRPgeoID)=\"TXSSW\") AND ((tlkpClientServiceReps.RepName)=\"A & B GROU"
-    "P\") AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GRGeoID)=\"TXSSW\") AND ((tlkpClientServiceReps.RepName)=\"A & B GROUP"
+    "\") AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
-    Name ="tblGrp"
     Name ="tlkpClientServiceReps"
+    Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRGeoID"
     Expression ="tlkpClientServiceReps.RepName"
+    Alias ="Expr1"
     Expression ="tblGrp.GRPLANid"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRSrvCont"
+    Alias ="Expr2"
     Expression ="tblGrp.GRagentID1"
-    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GREE"
+    Alias ="Expr3"
     Expression ="tblGrp.GRExecSalesDirRate"
-    Expression ="tblGrp.GRee"
-    Expression ="tblGrp.GRfirstINVamt"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GREE"
+    Expression ="tblGrp.GRFirstInvAmt"
+    Expression ="tblGrp.GRCancelled"
 End
 Begin Joins
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -38,6 +41,8 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbMemo "OrderBy" ="[all AB to doris].Expr1000"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="Expr1000"
@@ -49,49 +54,40 @@ Begin
         dbBoolean "ColumnHidden" ="-1"
     End
     Begin
-        dbText "Name" ="tblGrp.GRPLANid"
-        dbBoolean "ColumnHidden" ="-1"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRPgeoID"
-        dbInteger "ColumnWidth" ="1155"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
         dbText "Name" ="tblGrp.GRname"
         dbInteger "ColumnWidth" ="3855"
         dbBoolean "ColumnHidden" ="0"
     End
 End
 Begin
-    State =2
-    Left =-6
-    Top =-25
-    Right =769
-    Bottom =487
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =647
+    Right =1253
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =38
-        Top =6
-        Right =134
-        Bottom =113
-        Top =35
-        Name ="tblGrp"
-        Name =""
-    End
-    Begin
         Left =172
         Top =6
         Right =268
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tlkpClientServiceReps"
+        Name =""
+    End
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =109
+        Top =35
+        Name ="tblGrp"
         Name =""
     End
 End

@@ -1,14 +1,19 @@
 Operation =1
 Option =8
-Where ="(((ARTRAN.DocumentDate)=[forms].[fdlgPrtBillingReconcile].[ctlInvdate]))"
+Where ="(((ARTRAN.DocumentDate)=forms.fdlgPrtBillingReconcile.ctlInvdate))"
 Begin InputTables
     Name ="ARTRAN"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARTRAN.CustomerKey"
+    Alias ="Expr2"
     Expression ="ARTRAN.DocumentNumber"
+    Alias ="Expr3"
     Expression ="ARTRAN.DocumentDate"
+    Alias ="Expr4"
     Expression ="ARTRAN.TransactionType"
+    Alias ="Expr5"
     Expression ="ARTRAN.DocumentAmt"
 End
 Begin Parameters
@@ -20,17 +25,18 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =930
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -39,8 +45,8 @@ Begin
         Left =71
         Top =6
         Right =232
-        Bottom =120
-        Top =14
+        Bottom =49
+        Top =0
         Name ="ARTRAN"
         Name =""
     End

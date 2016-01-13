@@ -1,7 +1,7 @@
 Operation =3
 Name ="tmpExportAllAmerican"
 Option =0
-Where ="(((tblGrp.GROUPid)=[Forms]![frmGrp]![ctlGROUPid]))"
+Where ="(((tblGrp.GroupID)=Forms!frmGrp!ctlGROUPid))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
@@ -68,8 +68,8 @@ Begin OutputColumns
     Expression ="Format([GRcontBEG],\"mmddyyyy\")"
     Alias ="EIDTCVEF"
     Name ="EIDTCVEF"
-    Expression ="IIf(IsNull([tblDependent].[PreexistingDate])=True,Format([SUBeffDATE],\"mmddyyyy"
-        "\"),Format([tblDependent].[PreexistingDate],\"mmddyyyy\"))"
+    Expression ="IIf(IsNull(tblDependent.PreexistingDate)=True,Format([SUBeffDATE],\"mmddyyyy\"),"
+        "Format(tblDependent.PreexistingDate,\"mmddyyyy\"))"
     Alias ="EIDTCVEN"
     Name ="EIDTCVEN"
     Expression ="Format([SUBexpDATE],\"mmddyyyy\")"
@@ -80,15 +80,15 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tlkpAllAmericanPlan"
-    Expression ="tblSubscr.PlanID = tlkpAllAmericanPlan.PlanID"
+    Expression ="tblSubscr.PlanID=tlkpAllAmericanPlan.PlanID"
     Flag =2
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =3
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =3
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -98,14 +98,14 @@ dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1440
-    Bottom =776
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =637
     Left =-1
     Top =-1
-    Right =1437
+    Right =1253
     Bottom =417
     Left =0
     Top =0
@@ -114,7 +114,7 @@ Begin
         Left =109
         Top =11
         Right =275
-        Bottom =185
+        Bottom =174
         Top =0
         Name ="tblGrp"
         Name =""
@@ -123,7 +123,7 @@ Begin
         Left =490
         Top =13
         Right =658
-        Bottom =277
+        Bottom =266
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -132,7 +132,7 @@ Begin
         Left =114
         Top =256
         Right =274
-        Bottom =370
+        Bottom =359
         Top =1
         Name ="tlkpAllAmericanPlan"
         Name =""
@@ -141,7 +141,7 @@ Begin
         Left =751
         Top =21
         Right =921
-        Bottom =210
+        Bottom =199
         Top =0
         Name ="tblDependent"
         Name =""

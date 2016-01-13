@@ -1,21 +1,21 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=No) AND ((tblAgent.AGENTid)=\"coara\"))"
+Where ="(((tblGrp.GRCancelled)=No) AND ((tblAgent.AgentId)=\"coara\"))"
 Begin InputTables
-    Name ="tblGrp"
     Name ="tblAgent"
     Name ="tlkpClientServiceReps"
+    Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblAgent.AGENTid"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblAgent.AgentId"
+    Expression ="tblGrp.GRName"
 End
 Begin Joins
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -23,17 +23,18 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =793
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -42,7 +43,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =68
+        Bottom =94
         Top =1
         Name ="tblGrp"
         Name =""
@@ -51,7 +52,7 @@ Begin
         Left =172
         Top =6
         Right =295
-        Bottom =68
+        Bottom =94
         Top =1
         Name ="tblAgent"
         Name =""
@@ -60,8 +61,8 @@ Begin
         Left =306
         Top =6
         Right =402
-        Bottom =53
-        Top =2
+        Bottom =94
+        Top =1
         Name ="tlkpClientServiceReps"
         Name =""
     End

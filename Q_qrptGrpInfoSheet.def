@@ -7,20 +7,20 @@ Begin OutputColumns
     Alias ="Zip2"
     Expression ="IIf([GRzip] Like \"#####-#\",Left([GRZip],Len([GRZip])-1),IIf([GRZip] Like \"###"
         "######\",Format([GRZip],\"@@@@@-@@@@\"),[GRZip]))"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRfax"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRmarkDIR"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRFax"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRMarkDir"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GRGeoID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -29,16 +29,19 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="Zip2"
+    End
 End
 Begin
     State =0
     Left =43
     Top =64
     Right =1258
-    Bottom =381
+    Bottom =388
     Left =-1
     Top =-1
-    Right =1208
+    Right =1200
     Bottom =144
     Left =0
     Top =0
@@ -47,7 +50,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblGrp"
         Name =""

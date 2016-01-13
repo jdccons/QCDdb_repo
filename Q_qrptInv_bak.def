@@ -1,0 +1,86 @@
+Operation =1
+Option =8
+Where ="(((ARTRANH_local.TransactionType)=\"I\"))"
+Begin InputTables
+    Name ="ARTRANH_local"
+    Name ="ARCUST_local"
+End
+Begin OutputColumns
+    Alias ="Custkey"
+    Expression ="ARTRANH_local.CustomerKey"
+    Alias ="Custname"
+    Expression ="ARCUST_local.CustomerName"
+    Alias ="CustAdd1Trim"
+    Expression ="ARCUST_local.CustomerAddress1"
+    Alias ="Custaddr2"
+    Expression ="ARCUST_local.CustomerAddress2"
+    Alias ="CityStateZip"
+    Expression ="[CustomerCity] & \" , \" & [CustomerState] & \"  \" & [CustomerZipCode]"
+    Alias ="Tranno"
+    Expression ="ARTRANH_local.DocumentNumber"
+    Alias ="Invdate"
+    Expression ="ARTRANH_local.DocumentDate"
+    Alias ="Salespkey"
+    Expression ="ARTRANH_local.SalespersonKey"
+    Expression ="ARTRANH_local.Spare"
+    Alias ="InvTot"
+    Expression ="ARTRANH_local.DocumentAmt"
+    Alias ="InvoiceType"
+    Expression ="2"
+    Alias ="DNM"
+    Expression ="IIf(ARTRANH_local.Spare3=\"QCD Only\",0,1)"
+    Expression ="ARTRANH_local.Spare3"
+    Alias ="GroupType"
+    Expression ="IIf(ARTRANH_LOCAL.Spare3=\"QCD Only\",1,4)"
+    Expression ="ARTRANH_local.DocumentDate"
+End
+Begin Joins
+    LeftTable ="ARTRANH_local"
+    RightTable ="ARCUST_local"
+    Expression ="ARTRANH_local.CustomerKey=ARCUST_local.CustomerKey"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="ARTRANH_local.CustomerKey"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =552
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =332
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =47
+        Top =9
+        Right =288
+        Bottom =262
+        Top =20
+        Name ="ARTRANH_local"
+        Name =""
+    End
+    Begin
+        Left =343
+        Top =8
+        Right =619
+        Bottom =261
+        Top =42
+        Name ="ARCUST_local"
+        Name =""
+    End
+End

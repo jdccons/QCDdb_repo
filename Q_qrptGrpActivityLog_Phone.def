@@ -1,0 +1,90 @@
+Operation =1
+Option =0
+Where ="(((tblGrpLog.LogPhoneLog)=No))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="tblGrpLog"
+    Name ="tblClientSvcRep"
+End
+Begin OutputColumns
+    Expression ="tblGrpLog.LogGrID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrpLog.LogNotes"
+    Expression ="tblGrpLog.LogDate"
+    Expression ="tblGrpLog.LogTime"
+    Expression ="tblGrpLog.LogCallBack"
+    Expression ="tblGrpLog.LogClientScvRepID"
+    Expression ="tblClientSvcRep.ClientSvcRepName"
+    Expression ="tblGrpLog.LogAcctMgrID"
+    Expression ="tblGrpLog.LogPurpose"
+    Expression ="tblGrpLog.LogOutcome"
+    Expression ="tblGrpLog.LogFollowupAction"
+    Expression ="tblGrpLog.LogSize"
+    Expression ="tblGrpLog.LogDateCallVisit"
+    Expression ="tblGrpLog.LogPhoneLog"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrpLog.LogApptCallTime"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpLog"
+    Expression ="tblGrp.GroupID=tblGrpLog.LogGrID"
+    Flag =2
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpLog"
+    Expression ="tblGrp.GroupID=tblGrpLog.LogGrID"
+    Flag =2
+    LeftTable ="tblGrpLog"
+    RightTable ="tblClientSvcRep"
+    Expression ="tblGrpLog.LogClientScvRepID=tblClientSvcRep.ClientSvcRepID"
+    Flag =2
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =2
+    Left =-8
+    Top =-30
+    Right =1370
+    Bottom =638
+    Left =-1
+    Top =-1
+    Right =1363
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =124
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =124
+        Top =6
+        Name ="tblGrpLog"
+        Name =""
+    End
+    Begin
+        Left =440
+        Top =6
+        Right =655
+        Bottom =124
+        Top =0
+        Name ="tblClientSvcRep"
+        Name =""
+    End
+End

@@ -1,0 +1,115 @@
+Operation =3
+Name ="ARTRAN_local"
+Option =0
+Begin InputTables
+    Name ="ARTRAN_temp"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Name ="DocumentNumber"
+    Expression ="ARTRAN_temp.DocumentNumber"
+    Alias ="Expr2"
+    Name ="ApplyTo"
+    Expression ="ARTRAN_temp.ApplyTo"
+    Alias ="Expr3"
+    Name ="TerritoryKey"
+    Expression ="ARTRAN_temp.TerritoryKey"
+    Alias ="Expr4"
+    Name ="SalespersonKey"
+    Expression ="ARTRAN_temp.SalespersonKey"
+    Alias ="Expr5"
+    Name ="CustomerKey"
+    Expression ="ARTRAN_temp.CustomerKey"
+    Alias ="Expr6"
+    Name ="CustomerClassKey"
+    Expression ="ARTRAN_temp.CustomerClassKey"
+    Alias ="Expr7"
+    Name ="OrderNumber"
+    Expression ="ARTRAN_temp.OrderNumber"
+    Alias ="Expr8"
+    Name ="ShipToKey"
+    Expression ="ARTRAN_temp.ShipToKey"
+    Alias ="Expr9"
+    Name ="CheckBatch"
+    Expression ="ARTRAN_temp.CheckBatch"
+    Alias ="Expr10"
+    Name ="TransactionType"
+    Expression ="ARTRAN_temp.TransactionType"
+    Alias ="Expr11"
+    Name ="DocumentDate"
+    Expression ="ARTRAN_temp.DocumentDate"
+    Alias ="Expr12"
+    Name ="AgeDate"
+    Expression ="ARTRAN_temp.AgeDate"
+    Alias ="Expr13"
+    Name ="DaysTillDue"
+    Expression ="ARTRAN_temp.DaysTillDue"
+    Alias ="Expr14"
+    Name ="DocumentAmt"
+    Expression ="ARTRAN_temp.DocumentAmt"
+    Alias ="Expr15"
+    Name ="DiscountAmt"
+    Expression ="ARTRAN_temp.DiscountAmt"
+    Alias ="Expr16"
+    Name ="FreightAmt"
+    Expression ="ARTRAN_temp.FreightAmt"
+    Alias ="Expr17"
+    Name ="TaxAmt"
+    Expression ="ARTRAN_temp.TaxAmt"
+    Alias ="Expr18"
+    Name ="CostAmt"
+    Expression ="ARTRAN_temp.CostAmt"
+    Alias ="Expr19"
+    Name ="CommissionHomeOvride"
+    Expression ="ARTRAN_temp.CommissionHomeOvride"
+    Alias ="Expr20"
+    Name ="RetentionInvoice"
+    Expression ="ARTRAN_temp.RetentionInvoice"
+    Alias ="Expr21"
+    Name ="SysDocID"
+    Expression ="ARTRAN_temp.SysDocID"
+    Alias ="Expr22"
+    Name ="ApplySysDocID"
+    Expression ="ARTRAN_temp.ApplySysDocID"
+    Alias ="Expr23"
+    Name ="Spare"
+    Expression ="ARTRAN_temp.Spare"
+    Alias ="Expr24"
+    Name ="RecUserID"
+    Expression ="ARTRAN_temp.RecUserID"
+    Alias ="Expr25"
+    Name ="RecDate"
+    Expression ="ARTRAN_temp.RecDate"
+    Alias ="Expr26"
+    Name ="RecTime"
+    Expression ="ARTRAN_temp.RecTime"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =105
+    Top =87
+    Right =1258
+    Bottom =411
+    Left =-1
+    Top =-1
+    Right =1138
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =575
+        Bottom =49
+        Top =0
+        Name ="ARTRAN_temp"
+        Name =""
+    End
+End

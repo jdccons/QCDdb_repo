@@ -1,7 +1,7 @@
 Operation =3
 Name ="tblCommission"
 Option =8
-Where ="(((ARTRAN.DocumentDate) Between #8/1/2011# And #8/31/2011#) AND ((ARTRAN.Transac"
+Where ="(((ARTRAN.DocumentDate) Between #8/1/2011# And #8/31/2011#) And ((ARTRAN.Transac"
     "tionType)='P'))"
 Begin InputTables
     Name ="ARTRAN"
@@ -10,23 +10,28 @@ Begin InputTables
     Name ="tblGrpAgt"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="COMMcustKEY"
     Expression ="ARTRAN.CustomerKey"
     Name ="COMMcustNAME"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr2"
     Name ="COMMcheckNO"
     Expression ="ARTRAN.DocumentNumber"
+    Alias ="Expr3"
     Name ="COMMinvoiceNO"
     Expression ="ARTRAN.ApplyTo"
     Alias ="CheckAmt"
     Name ="COMMcheckAMT"
     Expression ="([DocumentAmt])*-1"
     Name ="COMMagent"
-    Expression ="tblGrpAgt.AGENTid"
+    Expression ="tblGrpAgt.AgentId"
     Name ="COMMrate"
-    Expression ="tblGrpAgt.AgentRATE"
+    Expression ="tblGrpAgt.AgentRate"
+    Alias ="Expr4"
     Name ="COMMcustCLASS"
     Expression ="ARTRAN.CustomerClassKey"
+    Alias ="Expr5"
     Name ="COMMcheckDATE"
     Expression ="ARTRAN.DocumentDate"
     Alias ="AgentType"
@@ -36,15 +41,11 @@ End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGrpAgt"
-    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AgentId=tblGrpAgt.AgentId"
     Flag =1
     LeftTable ="tblGrp"
     RightTable ="tblGrpAgt"
-    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
-    Flag =1
-    LeftTable ="ARTRAN"
-    RightTable ="tblGrp"
-    Expression ="ARTRAN.CustomerKey = tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID=tblGrpAgt.GroupId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -58,10 +59,10 @@ Begin
     Left =76
     Top =58
     Right =1470
-    Bottom =614
+    Bottom =382
     Left =-1
     Top =-1
-    Right =1387
+    Right =1379
     Bottom =144
     Left =0
     Top =0
@@ -70,7 +71,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =120
+        Bottom =49
         Top =0
         Name ="ARTRAN"
         Name =""
@@ -79,7 +80,7 @@ Begin
         Left =234
         Top =5
         Right =330
-        Bottom =119
+        Bottom =108
         Top =0
         Name ="tblGrp"
         Name =""
@@ -88,7 +89,7 @@ Begin
         Left =683
         Top =6
         Right =779
-        Bottom =120
+        Bottom =109
         Top =0
         Name ="tblAgent"
         Name =""
@@ -97,7 +98,7 @@ Begin
         Left =440
         Top =6
         Right =536
-        Bottom =120
+        Bottom =109
         Top =0
         Name ="tblGrpAgt"
         Name =""

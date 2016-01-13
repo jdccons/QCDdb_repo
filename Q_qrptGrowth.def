@@ -1,12 +1,12 @@
 Operation =1
 Option =0
-Where ="(((tblGrowth.GroupID) Not Like \"INDV*\") AND ((tblGrowth.Year)=[Forms]![frmGrow"
-    "th]![txtYear]) AND ((tblGrowth.BeginInvoiceDate) Is Not Null) AND ((tblGrp.GRcan"
-    "celled)=No))"
+Where ="(((tblGrowth.GroupID) Not Like \"INDV*\") And ((tblGrowth.Year)=Forms!frmGrowth!"
+    "txtYear) And ((tblGrowth.BeginInvoiceDate) Is Not Null) And ((tblGrp.GRCancelled"
+    ")=No))"
 Begin InputTables
+    Name ="tlkpClientServiceReps"
     Name ="tblGrp"
     Name ="tblGrowth"
-    Name ="tlkpClientServiceReps"
 End
 Begin OutputColumns
     Expression ="tblGrowth.GroupID"
@@ -53,12 +53,12 @@ Begin OutputColumns
     Expression ="IIf((IsNull([CurrentSubscriberCount]) Or [CurrentSubscriberCount]=0),0,Format((I"
         "If(IsNull([CurrentSubscrswithDeps]),0,[CurrentSubscrswithDeps]))/[CurrentSubscri"
         "berCount],\"Fixed\"))"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
     Expression ="tblGrp.GRClientSvcRepID"
     Expression ="tlkpClientServiceReps.RepName"
-    Expression ="tblGrp.GRacctMgr"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRAcctMgr"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRName"
     Alias ="VarPentRate"
     Expression ="IIf([BeginPentRate]=0 Or IsNull([BeginPentRate]) Or [BeginPentRate]=\"No EE\",0,"
         "IIf([CurrentPentRate]=0 Or IsNull([CurrentPentRate]) Or [CurrentPentRate]=\"No E"
@@ -67,11 +67,11 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblGrowth"
-    Expression ="tblGrp.GROUPid = tblGrowth.GroupID"
+    Expression ="tblGrp.GroupID=tblGrowth.GroupID"
     Flag =2
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =3
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -91,25 +91,61 @@ Begin
         dbInteger "ColumnWidth" ="1692"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="BeginPentRate"
+    End
+    Begin
+        dbText "Name" ="BeginAvgCont"
+    End
+    Begin
+        dbText "Name" ="BeginPerSub"
+    End
+    Begin
+        dbText "Name" ="BeginDepIncl"
+    End
+    Begin
+        dbText "Name" ="CurrentPentRate"
+    End
+    Begin
+        dbText "Name" ="CurrentAvgCont"
+    End
+    Begin
+        dbText "Name" ="CurrentPerSub"
+    End
+    Begin
+        dbText "Name" ="CurrentDepIncl"
+    End
+    Begin
+        dbText "Name" ="VarPentRate"
+    End
 End
 Begin
     State =0
     Left =11
     Top =127
     Right =1176
-    Bottom =480
+    Bottom =487
     Left =-1
     Top =-1
-    Right =1158
+    Right =1150
     Bottom =180
     Left =0
     Top =0
     ColumnsShown =539
     Begin
+        Left =326
+        Top =14
+        Right =422
+        Bottom =102
+        Top =0
+        Name ="tlkpClientServiceReps"
+        Name =""
+    End
+    Begin
         Left =44
         Top =11
         Right =277
-        Bottom =121
+        Bottom =114
         Top =24
         Name ="tblGrp"
         Name =""
@@ -118,18 +154,9 @@ Begin
         Left =467
         Top =9
         Right =643
-        Bottom =119
+        Bottom =112
         Top =0
         Name ="tblGrowth"
-        Name =""
-    End
-    Begin
-        Left =326
-        Top =14
-        Right =422
-        Bottom =94
-        Top =0
-        Name ="tlkpClientServiceReps"
         Name =""
     End
 End

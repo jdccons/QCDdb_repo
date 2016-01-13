@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =901288618
+Checksum =-644287310
 Begin Form
     AutoResize = NotDefault
     RecordSelectors = NotDefault
@@ -15,20 +15,22 @@ Begin Form
     Width =6180
     ItemSuffix =131
     Left =2910
-    Top =690
-    Right =9135
-    Bottom =4590
-    Toolbar ="main"
+    Top =300
+    Right =9465
+    Bottom =5355
     RecSrcDt = Begin
-        0xc990284aeff6e240
+        0x3a08d89a21ace440
     End
-    RecordSource ="SELECT tblGrpLog.* FROM tblGrpLog WHERE (((tblGrpLog.LogGrID)=[Forms]![frmGrpLog"
-        "Switch]![GROUPid]) AND ((tblGrpLog.LogPhoneLog)=Yes)) ORDER BY tblGrpLog.LogDate"
-        " DESC , tblGrpLog.LogTime DESC;"
+    RecordSource ="SELECT tblGrpLog.LogID, tblGrpLog.LogGrID, tblGrpLog.LogNotes, tblGrpLog.LogDate"
+        ", tblGrpLog.LogTime, tblGrpLog.LogCallBack, tblGrpLog.LogClientScvRepID, tblGrpL"
+        "og.LogAcctMgrID, tblGrpLog.LogPurpose, tblGrpLog.LogOutcome, tblGrpLog.LogFollow"
+        "upAction, tblGrpLog.LogSize, tblGrpLog.LogDateCallVisit, tblGrpLog.LogApptCallTi"
+        "me, tblGrpLog.LogPhoneLog, tblGrpLog.TimeStmp FROM tblGrpLog WHERE (((tblGrpLog."
+        "LogGrID)=[Forms]![frmGrp].[ctlGroupID]) AND ((tblGrpLog.LogPhoneLog)=Yes)) ORDER"
+        " BY tblGrpLog.LogDate DESC , tblGrpLog.LogTime DESC;"
     Caption ="Group Phone Log"
     BeforeInsert ="[Event Procedure]"
     OnOpen ="[Event Procedure]"
-    MenuBar ="mnuMain"
     PrtMip = Begin
         0xd002000038040000d0020000d002000000000000a02900004029000001000000 ,
         0x010000006801000000000000a10700000100000000000000
@@ -107,6 +109,9 @@ Begin Form
             Height =540
             BackColor =12632256
             Name ="FormHeader0"
+            GUID = Begin
+                0x6d4aa69f6317e74383b437b89ace2ddf
+            End
             Begin
                 Begin Label
                     SpecialEffect =4
@@ -122,6 +127,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label124"
                     Caption ="Phone Log"
+                    GUID = Begin
+                        0x24e6ca2d86a5e741af86ca332761847b
+                    End
                 End
             End
         End
@@ -129,25 +137,30 @@ Begin Form
             Height =2820
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0xb771ecc772dbaf47b41c8a24d6ee95da
+            End
             Begin
                 Begin ComboBox
                     ColumnHeads = NotDefault
                     LimitToList = NotDefault
                     OverlapFlags =85
-                    ColumnCount =3
+                    ColumnCount =2
                     ListWidth =1800
                     Left =1620
                     Top =360
                     Width =2223
                     TabIndex =4
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"60\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
+                    GUID = Begin
+                        0x08c81501ec76884d9f8a2cd9cef1fd02
+                    End
                     Name ="cmbQCDrep"
                     ControlSource ="LogClientScvRepID"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT DISTINCTROW tlkpClientServiceReps.RepID, tlkpClientServiceReps.RepName, t"
-                        "lkpClientServiceReps.IsRepActive FROM tlkpClientServiceReps WHERE (((tlkpClientS"
-                        "erviceReps.IsRepActive)=Yes));"
-                    ColumnWidths ="0;1800;0"
+                    RowSource ="SELECT DISTINCTROW tblClientSvcRep.ClientSvcRepID, tblClientSvcRep.ClientSvcRepN"
+                        "ame FROM tblClientSvcRep;"
+                    ColumnWidths ="0;1800"
                     ValidationRule =">0"
                     ValidationText ="You must enter an Account Manager's name."
                     DefaultValue ="0"
@@ -169,6 +182,9 @@ Begin Form
                     ControlSource ="LogTime"
                     Format ="Medium Time"
                     DefaultValue ="Time()"
+                    GUID = Begin
+                        0x3a6cfa5196b55244a0523a9648518412
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -182,6 +198,9 @@ Begin Form
                     ControlSource ="LogCallBack"
                     Format ="Short Date"
                     InputMask ="99/99/0099;0;_"
+                    GUID = Begin
+                        0x5d3a948842b77b488bd487e2c269b50c
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -200,6 +219,9 @@ Begin Form
                     Format ="Short Date"
                     DefaultValue ="Date()"
                     InputMask ="99/99/0099;0;_"
+                    GUID = Begin
+                        0x13266a5506feec47995bed10ff0620b5
+                    End
                 End
                 Begin TextBox
                     DecimalPlaces =0
@@ -212,6 +234,9 @@ Begin Form
                     TabIndex =10
                     Name ="ctlLogNotes"
                     ControlSource ="LogNotes"
+                    GUID = Begin
+                        0xf6f2230afed6c241ae2daab160597736
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -226,6 +251,9 @@ Begin Form
                     Name ="ctlLogGrID"
                     ControlSource ="LogGrID"
                     DefaultValue ="=[Forms]![frmGrp]![GROUPid]"
+                    GUID = Begin
+                        0xf3b63d940031b347acc9eab51c95ef0e
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -239,6 +267,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text96"
                     Caption ="Date"
+                    GUID = Begin
+                        0xa7b1550afbdbcf4ea827e652a4c53adc
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -252,6 +283,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text97"
                     Caption ="Time"
+                    GUID = Begin
+                        0x081a295faf5a8c4c96d0186d95c7d60b
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -265,6 +299,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text98"
                     Caption ="Notes"
+                    GUID = Begin
+                        0x78a955ef3c22304689e348aa34c90261
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -278,6 +315,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label111"
                     Caption ="Call Back"
+                    GUID = Begin
+                        0x3445076241c3fc40aed49efa3789ec8c
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -291,6 +331,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label118"
                     Caption ="Client Svc.Rep."
+                    GUID = Begin
+                        0xf38f3f7750e2ce49a73ca94ca6c4ebcb
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =85
@@ -301,6 +344,9 @@ Begin Form
                     Name ="LogPurpose"
                     ControlSource ="LogPurpose"
                     StatusBarText ="Purpose of visit or Call - & - Why a Target?"
+                    GUID = Begin
+                        0xbba1d65a6eea4143b3e07e490b4ac2ca
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -311,6 +357,9 @@ Begin Form
                             FontWeight =700
                             Name ="Label119"
                             Caption ="Purpose/Target"
+                            GUID = Begin
+                                0xb24d0737a91e304daca11da8de3e954c
+                            End
                         End
                     End
                 End
@@ -326,6 +375,9 @@ Begin Form
                     Name ="LogOutcome"
                     ControlSource ="LogOutcome"
                     StatusBarText ="Outcome of Call or Meeting"
+                    GUID = Begin
+                        0x59a045b602ff4d47b8e1224c290e97be
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -336,6 +388,9 @@ Begin Form
                             FontWeight =700
                             Name ="Label120"
                             Caption ="Outcome"
+                            GUID = Begin
+                                0x86d57063f9372741b74a08207059b1ce
+                            End
                         End
                     End
                 End
@@ -351,6 +406,9 @@ Begin Form
                     Name ="LogFollowupAction"
                     ControlSource ="LogFollowupAction"
                     StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                    GUID = Begin
+                        0x016fa309c78dd44f941a3b6332d8db23
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =223
@@ -361,6 +419,9 @@ Begin Form
                             FontWeight =700
                             Name ="Label121"
                             Caption ="Follow up Action"
+                            GUID = Begin
+                                0x0b76b182817ad243ab462e2d209dd460
+                            End
                         End
                     End
                 End
@@ -372,6 +433,9 @@ Begin Form
                     Name ="LogDateCallVisit"
                     ControlSource ="LogDateCallVisit"
                     StatusBarText ="Date Called or Visited"
+                    GUID = Begin
+                        0xea8249b36259d44388f0861857a5ed7f
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =215
@@ -383,6 +447,9 @@ Begin Form
                     ControlSource ="LogApptCallTime"
                     Format ="Medium Time"
                     InputMask ="09:00\\ >LL;0"
+                    GUID = Begin
+                        0x437184134f2d774c857bd62fd26af6d1
+                    End
                 End
             End
         End
@@ -390,6 +457,9 @@ Begin Form
             Height =540
             BackColor =12632256
             Name ="FormFooter1"
+            GUID = Begin
+                0x9453806e6580ab44aa2885bb391ac233
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -422,6 +492,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x4a04c015a1960f488760ef1ee233f074
+                    End
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -433,6 +506,9 @@ Begin Form
                     Name ="LogSize"
                     ControlSource ="LogSize"
                     StatusBarText ="A, B, C+, or Baby C"
+                    GUID = Begin
+                        0x9d8903e27906734e94efc5e464f5ed06
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =93
@@ -443,6 +519,9 @@ Begin Form
                             FontWeight =700
                             Name ="Label123"
                             Caption ="Size"
+                            GUID = Begin
+                                0x367eca1eb83d4640ac0e02113c2388bc
+                            End
                         End
                     End
                 End
@@ -455,6 +534,9 @@ Begin Form
                     Name ="LogPhoneLog"
                     ControlSource ="LogPhoneLog"
                     StatusBarText ="Is it a Phone Log item"
+                    GUID = Begin
+                        0x2f48cb04b773374083aaaf9b8435108e
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -466,6 +548,9 @@ Begin Form
                     Name ="cmdAdd"
                     Caption ="Add Record"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x4aeb7eac76ae5a43a4d02ed513770611
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -477,6 +562,9 @@ Begin Form
                     Name ="cmdDelete"
                     Caption ="Delete"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xdab4b645d527aa47a529dcc3dcd1e31d
+                    End
                 End
             End
         End
@@ -576,7 +664,7 @@ Private Sub Form_Open(Cancel As Integer)
    
    Set dbs = CurrentDb()
    
-   strYear = Year(date)
+   strYear = Year(Date)
    strGroup = [Forms]![frmGrpLogSwitch].[GROUPid]
    
    strSQL = "SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginEligEmps, "

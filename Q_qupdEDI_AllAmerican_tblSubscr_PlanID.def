@@ -7,16 +7,16 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="tblSubscr.PlanID"
-    Expression ="[tlkpAllAmericanPlan]![PlanID]"
+    Expression ="tlkpAllAmericanPlan!PlanID"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tmpExportAllAmerican"
-    Expression ="tblSubscr.SUBssn = tmpExportAllAmerican.EISSN"
+    Expression ="tblSubscr.SubSSN=tmpExportAllAmerican.EISSN"
     Flag =1
     LeftTable ="tlkpAllAmericanPlan"
     RightTable ="tmpExportAllAmerican"
-    Expression ="tlkpAllAmericanPlan.PlanagerCode = tmpExportAllAmerican.EINMPLAN"
+    Expression ="tlkpAllAmericanPlan.PlanagerCode=tmpExportAllAmerican.EINMPLAN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -33,10 +33,10 @@ Begin
     Left =57
     Top =90
     Right =874
-    Bottom =407
+    Bottom =414
     Left =-1
     Top =-1
-    Right =810
+    Right =802
     Bottom =144
     Left =0
     Top =0
@@ -45,7 +45,7 @@ Begin
         Left =46
         Top =8
         Right =168
-        Bottom =103
+        Bottom =96
         Top =0
         Name ="tlkpAllAmericanPlan"
         Name =""
@@ -54,7 +54,7 @@ Begin
         Left =487
         Top =10
         Right =685
-        Bottom =105
+        Bottom =98
         Top =1
         Name ="tblSubscr"
         Name =""
@@ -63,7 +63,7 @@ Begin
         Left =253
         Top =4
         Right =455
-        Bottom =114
+        Bottom =107
         Top =5
         Name ="tmpExportAllAmerican"
         Name =""

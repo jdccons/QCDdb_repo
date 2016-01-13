@@ -1,37 +1,37 @@
 Operation =3
 Name ="tmpEDI_Rpt"
 Option =8
-Where ="(((tblSubscr.SUBgroupID) Is Null))"
+Where ="(((tblSubscr.SubGroupID) Is Null))"
 Begin InputTables
     Name ="tblEDI_App_Subscr"
     Name ="tblSubscr"
 End
 Begin OutputColumns
     Name ="SUBssn"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Name ="SUBfirstNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SubFirstName"
     Name ="SUBlastNAME"
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Alias ="SUBStreet"
     Name ="SUBStreet"
-    Expression ="[tblSubscr].[SUBstreet1] & \" \" & [tblSubscr].[SUBStreet2]"
+    Expression ="tblSubscr.SUBstreet1 & \" \" & tblSubscr.SUBStreet2"
     Name ="SUBcity"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Name ="SUBstate"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Name ="SUBzip"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubZip"
     Alias ="Stat"
     Name ="Stat"
     Expression ="\"INDIVL\""
     Name ="GroupID"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblSubscr"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblSubscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -39,6 +39,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -46,10 +47,10 @@ Begin
     Left =44
     Top =44
     Right =928
-    Bottom =494
+    Bottom =399
     Left =-1
     Top =-1
-    Right =877
+    Right =869
     Bottom =175
     Left =0
     Top =0
@@ -58,7 +59,7 @@ Begin
         Left =493
         Top =7
         Right =697
-        Bottom =136
+        Bottom =125
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -67,7 +68,7 @@ Begin
         Left =46
         Top =10
         Right =180
-        Bottom =139
+        Bottom =128
         Top =10
         Name ="tblSubscr"
         Name =""

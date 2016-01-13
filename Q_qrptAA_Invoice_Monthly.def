@@ -1,16 +1,19 @@
 Operation =1
 Option =0
-Where ="(((ARTRAN.DocumentDate)=[Forms]![fdlgAAMonthlyBillingReportCriteria]![txtDate]) "
-    "AND ((ARTRAN.TransactionType)=\"I\") AND ((tblGrp.GroupType)=4))"
+Where ="(((tblGrp.GroupType)=4) And ((ARTRAN.DocumentDate)=Forms!fdlgAAMonthlyBillingRep"
+    "ortCriteria!txtDate) And ((ARTRAN.TransactionType)=\"I\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="ARTRAN"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
     Expression ="ARTRAN.DocumentDate"
+    Alias ="Expr2"
     Expression ="ARTRAN.TransactionType"
+    Alias ="Expr3"
     Expression ="ARTRAN.DocumentAmt"
     Expression ="tblGrp.GroupType"
 End
@@ -18,14 +21,8 @@ Begin Parameters
     Name ="[Forms]![fdlgAAMonthlyBillingReportCriteria]![txtDate]"
     Flag =8
 End
-Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="ARTRAN"
-    Expression ="tblGrp.GROUPid = ARTRAN.CustomerKey"
-    Flag =1
-End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -71,10 +68,10 @@ Begin
     Left =26
     Top =31
     Right =1140
-    Bottom =619
+    Bottom =626
     Left =-1
     Top =-1
-    Right =1107
+    Right =1099
     Bottom =415
     Left =0
     Top =0
@@ -83,7 +80,7 @@ Begin
         Left =38
         Top =6
         Right =158
-        Bottom =341
+        Bottom =334
         Top =0
         Name ="tblGrp"
         Name =""
@@ -92,8 +89,8 @@ Begin
         Left =329
         Top =5
         Right =688
-        Bottom =355
-        Top =2
+        Bottom =48
+        Top =0
         Name ="ARTRAN"
         Name =""
     End

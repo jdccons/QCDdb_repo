@@ -1,34 +1,34 @@
 Operation =3
 Name ="tblInvHdrPreliminary"
 Option =8
-Where ="(((Left$([tblGrp]![GROUPid],1))>=[Forms]![frmInvGrpBulk_AA]![LetterFrom] And (Le"
-    "ft$([tblGrp]![GROUPid],1))<=[Forms]![frmInvGrpBulk_AA]![LetterTo]) AND ((IIf([Gr"
-    "Hold] Or [GrCancelled]=-1,\"Y\",\"\"))<>\"Y\") AND ((tblGrp.GroupType)=4))"
+Where ="(((Left$(tblGrp!GROUPid,1))>=Forms!frmInvGrpBulk_AA!LetterFrom And (Left$(tblGrp"
+    "!GROUPid,1))<=Forms!frmInvGrpBulk_AA!LetterTo) And ((IIf([GrHold] Or [GrCancelle"
+    "d]=-1,\"Y\",\"\"))<>\"Y\") And ((tblGrp.GroupType)=4))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
     Name ="Custkey"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Alias ="Default"
     Name ="Salespkey"
     Expression ="'CORPT'"
     Name ="Custname"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Name ="Custaddr1"
-    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRStreet1"
     Name ="Custaddr2"
-    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRStreet2"
     Name ="Custcity"
-    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRCity"
     Name ="Custstate"
-    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRState"
     Name ="Custzip"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRZip"
     Name ="CustAttn"
-    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRMainCont"
     Name ="Territkey"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
     Alias ="INVOICEdate"
     Name ="Invdate"
     Expression ="DLookUp(\"[FieldDateValue]\",\"tblConstants\",\"[FieldName] = 'InvoiceDate'\")"
@@ -46,7 +46,7 @@ Begin OutputColumns
     Expression ="Time()"
 End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -60,10 +60,10 @@ Begin
     Left =31
     Top =34
     Right =934
-    Bottom =377
+    Bottom =384
     Left =-1
     Top =-1
-    Right =896
+    Right =888
     Bottom =170
     Left =0
     Top =0
@@ -72,7 +72,7 @@ Begin
         Left =38
         Top =6
         Right =210
-        Bottom =116
+        Bottom =109
         Top =37
         Name ="tblGrp"
         Name =""

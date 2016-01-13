@@ -14,7 +14,7 @@ Begin OutputColumns
     Expression ="tblSubscr.SubCity"
     Expression ="tblSubscr.SubState"
     Expression ="tblSubscr.SubZip"
-    Expression ="tblSubscr.SUBdob"
+    Expression ="tblSubscr.SubDOB"
     Expression ="tblSubscr.SubEffDate"
     Expression ="tblDependent.DepSSN"
     Expression ="tblDependent.DepSubID"
@@ -25,13 +25,15 @@ Begin OutputColumns
     Expression ="tblDependent.DepAge"
     Expression ="tblDependent.DepRelationship"
     Expression ="tblDependent.DepGender"
+    Alias ="Expr1"
     Expression ="tblDependent.upsize_ts"
+    Alias ="Expr2"
     Expression ="tblDependent.TimeStmp"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 Begin OrderBy
@@ -97,14 +99,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1430
-    Bottom =795
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =498
     Left =-1
     Top =-1
-    Right =1427
+    Right =1253
     Bottom =278
     Left =0
     Top =0
@@ -113,7 +115,7 @@ Begin
         Left =38
         Top =6
         Right =265
-        Bottom =225
+        Bottom =214
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -122,7 +124,7 @@ Begin
         Left =343
         Top =16
         Right =830
-        Bottom =243
+        Bottom =239
         Top =0
         Name ="tblDependent"
         Name =""

@@ -1,8 +1,7 @@
 Operation =1
 Option =8
-Where ="(((tbldentist.DentGeoID) Between [FORMS]![fdlgPrtDentGeoCntProsp]![c-GEOfrom] An"
-    "d [FORMS]![fdlgPrtDentGeoCntProsp]![c-GEOto]) AND ((tbldentist.DentStatus)=\"P\""
-    "))"
+Where ="(((tbldentist.DentStatus)=\"P\") And ((tbldentist.DentGeoID) Between FORMS!fdlgP"
+    "rtDentGeoCntProsp![c-GEOfrom] And FORMS!fdlgPrtDentGeoCntProsp![c-GEOto]))"
 Begin InputTables
     Name ="tbldentist"
     Name ="tblGeographical"
@@ -16,7 +15,7 @@ End
 Begin Joins
     LeftTable ="tbldentist"
     RightTable ="tblGeographical"
-    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Expression ="tbldentist.DentGeoID=tblGeographical.GEOid"
     Flag =2
 End
 Begin OrderBy
@@ -27,6 +26,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -34,10 +35,10 @@ Begin
     Left =84
     Top =92
     Right =970
-    Bottom =397
+    Bottom =416
     Left =-1
     Top =-1
-    Right =879
+    Right =871
     Bottom =144
     Left =0
     Top =0
@@ -46,7 +47,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tbldentist"
         Name =""
@@ -55,7 +56,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tblGeographical"
         Name =""

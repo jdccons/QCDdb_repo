@@ -6,6 +6,7 @@ Begin InputTables
     Name ="tblImportFile_ASR_Employees"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="SUBssn"
     Expression ="tblImportFile_ASR_Employees.SSN"
     Alias ="LN"
@@ -28,14 +29,19 @@ Begin OutputColumns
     Alias ="Cov"
     Name ="SUBcoverage"
     Expression ="IIf([BENEFIT]=\"DE\",\"I\",IIf([BENEFIT]=\"D1\",\"O\",\"F\"))"
+    Alias ="Expr2"
     Name ="SUBstreet1"
     Expression ="tblImportFile_ASR_Employees.ADDRESS"
+    Alias ="Expr3"
     Name ="SUBcity"
     Expression ="tblImportFile_ASR_Employees.CITY"
+    Alias ="Expr4"
     Name ="SUBstate"
     Expression ="tblImportFile_ASR_Employees.STATE"
+    Alias ="Expr5"
     Name ="SUBzip"
     Expression ="tblImportFile_ASR_Employees.ZIP"
+    Alias ="Expr6"
     Name ="SUBphoneHOME"
     Expression ="tblImportFile_ASR_Employees.PHONE"
     Alias ="SUBgroupID"
@@ -53,12 +59,14 @@ Begin OutputColumns
     Alias ="LookUpName"
     Name ="SUB_LUname"
     Expression ="UCase([LAST_NAME]) & \" \" & UCase([FIRST_NAME]) & \", \" & UCase([MIDDLE_NAME])"
+    Alias ="Expr7"
     Name ="TransactionType"
     Expression ="tblImportFile_ASR_Employees.TRANSACTION_TYPE"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -66,10 +74,10 @@ Begin
     Left =-32
     Top =94
     Right =937
-    Bottom =448
+    Bottom =418
     Left =-1
     Top =-1
-    Right =962
+    Right =954
     Bottom =144
     Left =0
     Top =0
@@ -78,8 +86,8 @@ Begin
         Left =38
         Top =6
         Right =289
-        Bottom =113
-        Top =14
+        Bottom =49
+        Top =0
         Name ="tblImportFile_ASR_Employees"
         Name =""
     End

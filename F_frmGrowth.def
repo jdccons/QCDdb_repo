@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1691331065
+Checksum =-286899888
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -15,10 +15,10 @@ Begin Form
     Width =5475
     DatasheetFontHeight =10
     ItemSuffix =112
-    Left =6750
-    Top =1545
-    Right =12210
-    Bottom =6105
+    Left =6756
+    Top =1548
+    Right =12216
+    Bottom =6108
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x89296a3e12dee140
@@ -71,11 +71,17 @@ Begin Form
             Height =0
             BackColor =-2147483633
             Name ="FormHeader"
+            GUID = Begin
+                0xdbd021337865f6408b8f03e2311c6f89
+            End
         End
         Begin Section
             Height =4095
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x0d4046a2e7556a478a9c0af6ca9ac77b
+            End
             Begin
                 Begin Label
                     SpecialEffect =4
@@ -91,6 +97,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label5"
                     Caption ="In Group Growth Data Processing"
+                    GUID = Begin
+                        0xf0085992a0f96540978420d2dcbeca67
+                    End
                 End
                 Begin Tab
                     OverlapFlags =85
@@ -99,15 +108,21 @@ Begin Form
                     Width =5430
                     Height =3555
                     Name ="TabCtl10"
+                    GUID = Begin
+                        0xddc131dcba91cc448a5ee4bb3b139f9e
+                    End
                     Begin
                         Begin Page
                             OverlapFlags =215
-                            Left =180
-                            Top =945
-                            Width =5160
-                            Height =3015
+                            Left =156
+                            Top =900
+                            Width =5208
+                            Height =3084
                             Name ="Page11"
                             Caption ="Set Criteria"
+                            GUID = Begin
+                                0x95ce67d0d23f9348bc1132f6718f8298
+                            End
                             Begin
                                 Begin CommandButton
                                     Enabled = NotDefault
@@ -120,6 +135,9 @@ Begin Form
                                     Caption ="Process Beginning"
                                     OnClick ="[Event Procedure]"
                                     ControlTipText ="Process Beginning Yearly Numbers"
+                                    GUID = Begin
+                                        0x1495c217a0b1a8419c49cc7bc6e4b4c1
+                                    End
                                 End
                                 Begin TextBox
                                     OverlapFlags =215
@@ -128,6 +146,9 @@ Begin Form
                                     Width =900
                                     TabIndex =1
                                     Name ="txtDateAll"
+                                    GUID = Begin
+                                        0xe4e161e9981c7a47bb5e88817c4e598f
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
@@ -137,6 +158,9 @@ Begin Form
                                             Height =228
                                             Name ="Label40"
                                             Caption ="Select Start Date: "
+                                            GUID = Begin
+                                                0xe9bc2613a3a1c440aba999d3c5825497
+                                            End
                                         End
                                     End
                                 End
@@ -152,6 +176,9 @@ Begin Form
                                     Caption ="Process Monthly"
                                     OnClick ="[Event Procedure]"
                                     ControlTipText ="Process Monthly Numbers"
+                                    GUID = Begin
+                                        0xc762758194dc9a419040308676c2bdb5
+                                    End
                                 End
                                 Begin TextBox
                                     OverlapFlags =215
@@ -160,6 +187,9 @@ Begin Form
                                     Width =900
                                     TabIndex =3
                                     Name ="txtEOMAll"
+                                    GUID = Begin
+                                        0xc71f70a36955d7479f8b9a44a884c896
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
@@ -169,6 +199,9 @@ Begin Form
                                             Height =228
                                             Name ="Label42"
                                             Caption ="Process Dates: "
+                                            GUID = Begin
+                                                0xfc8993cbce153546a6a403b6ccf564f4
+                                            End
                                         End
                                     End
                                 End
@@ -181,6 +214,9 @@ Begin Form
                                     Name ="txtYear"
                                     AfterUpdate ="[Event Procedure]"
                                     OnExit ="[Event Procedure]"
+                                    GUID = Begin
+                                        0x79a0f9c0168ee643a0ab9afb7be490d9
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =215
@@ -190,6 +226,9 @@ Begin Form
                                             Height =228
                                             Name ="Label45"
                                             Caption ="Year: "
+                                            GUID = Begin
+                                                0xf5db15a37631d248b31e58d72132be88
+                                            End
                                         End
                                     End
                                 End
@@ -206,6 +245,9 @@ Begin Form
                                     FontSize =10
                                     Name ="Label48"
                                     Caption ="Select Date Range to process"
+                                    GUID = Begin
+                                        0x9bc6cfa03ab0334983d96f43fcf26bfd
+                                    End
                                 End
                                 Begin Label
                                     SpecialEffect =4
@@ -220,6 +262,9 @@ Begin Form
                                     FontSize =10
                                     Name ="Label49"
                                     Caption ="Year"
+                                    GUID = Begin
+                                        0x2d33b20f5e42014eb5bfe02bec3b546b
+                                    End
                                 End
                                 Begin ComboBox
                                     RowSourceTypeInt =1
@@ -228,6 +273,9 @@ Begin Form
                                     Top =1500
                                     Width =1320
                                     TabIndex =5
+                                    GUID = Begin
+                                        0x7d42afb815ef914191dd72991be00669
+                                    End
                                     Name ="cboStartDate"
                                     RowSourceType ="Value List"
                                     RowSource ="JAN 1;FEB 1;MAR 1;APR 1;MAY 1;JUN 1;JUL 1;AUG 1;SEP 1;OCT 1;NOV 1;DEC 1"
@@ -241,6 +289,9 @@ Begin Form
                                     Height =204
                                     Name ="Label53"
                                     Caption ="-"
+                                    GUID = Begin
+                                        0x4a6a75764774004ea37c37794a161cd8
+                                    End
                                 End
                                 Begin TextBox
                                     Locked = NotDefault
@@ -251,6 +302,9 @@ Begin Form
                                     TabIndex =6
                                     Name ="txtFilterDate"
                                     ControlTipText ="Adjust Date by changing Year"
+                                    GUID = Begin
+                                        0xfe84674ff20b49499b18b786fe552faa
+                                    End
                                 End
                                 Begin Label
                                     OverlapFlags =223
@@ -260,6 +314,9 @@ Begin Form
                                     Height =228
                                     Name ="Label56"
                                     Caption ="Form Filter Date:"
+                                    GUID = Begin
+                                        0x77ceae0369291342bd613dd374c617b2
+                                    End
                                 End
                                 Begin Rectangle
                                     OverlapFlags =247
@@ -268,6 +325,9 @@ Begin Form
                                     Width =2460
                                     Height =360
                                     Name ="Box57"
+                                    GUID = Begin
+                                        0x5002b348809649409f037762850bd4ab
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -278,6 +338,9 @@ Begin Form
                                     Width =2820
                                     TabIndex =7
                                     Name ="txtMessage"
+                                    GUID = Begin
+                                        0x82f43b62c651884d921140313eb61cda
+                                    End
                                 End
                                 Begin TextBox
                                     Locked = NotDefault
@@ -290,6 +353,9 @@ Begin Form
                                     BackColor =8454143
                                     Name ="txtDateTime"
                                     Format ="General Date"
+                                    GUID = Begin
+                                        0xdd13c1bad723bf429aecfc807ae9b35c
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =223
@@ -299,6 +365,9 @@ Begin Form
                                             Height =228
                                             Name ="Label111"
                                             Caption ="Report Numbers Last Run:"
+                                            GUID = Begin
+                                                0xab0b7a90f65b5d4882cc562ec29debfa
+                                            End
                                         End
                                     End
                                 End
@@ -306,12 +375,15 @@ Begin Form
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =180
-                            Top =945
-                            Width =5160
-                            Height =3015
+                            Left =156
+                            Top =900
+                            Width =5208
+                            Height =3084
                             Name ="Page12"
                             Caption ="Group Stats"
+                            GUID = Begin
+                                0x899744eb88e9064e8e20eb749f45e316
+                            End
                             Begin
                                 Begin OptionGroup
                                     OverlapFlags =255
@@ -320,6 +392,9 @@ Begin Form
                                     Width =2400
                                     Height =1980
                                     Name ="Frame13"
+                                    GUID = Begin
+                                        0x931e4a160f6bda459956742703b5993d
+                                    End
                                     Begin
                                         Begin Label
                                             SpecialEffect =4
@@ -334,6 +409,9 @@ Begin Form
                                             BackColor =-2147483633
                                             Name ="Label14"
                                             Caption ="Begin Invoice"
+                                            GUID = Begin
+                                                0xe27b6a7777b4c24f8c4effe8a2d7d449
+                                            End
                                         End
                                     End
                                 End
@@ -345,6 +423,9 @@ Begin Form
                                     Height =1980
                                     TabIndex =1
                                     Name ="Frame15"
+                                    GUID = Begin
+                                        0xe768be6eb2eaae4f9d69d0f7708e67e1
+                                    End
                                     Begin
                                         Begin Label
                                             SpecialEffect =4
@@ -359,6 +440,9 @@ Begin Form
                                             BackColor =-2147483633
                                             Name ="Label16"
                                             Caption ="Current Invoice"
+                                            GUID = Begin
+                                                0xf7807427c7231c4e88bba85de16eff87
+                                            End
                                         End
                                     End
                                 End
@@ -370,6 +454,9 @@ Begin Form
                                     TabIndex =2
                                     Name ="Text17"
                                     ControlSource ="BeginEligEmps"
+                                    GUID = Begin
+                                        0x98634ee79006c54d96cee19dafa62dd1
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -379,6 +466,9 @@ Begin Form
                                             Height =228
                                             Name ="Label18"
                                             Caption ="Eligible Emps"
+                                            GUID = Begin
+                                                0x3c3d88dbbc51b74f8880a7035aa842d3
+                                            End
                                         End
                                     End
                                 End
@@ -390,6 +480,9 @@ Begin Form
                                     TabIndex =3
                                     Name ="GroupID"
                                     ControlSource ="GroupID"
+                                    GUID = Begin
+                                        0xbf04b1483a993c4db12af33bbbecae5c
+                                    End
                                 End
                                 Begin TextBox
                                     OverlapFlags =247
@@ -399,6 +492,9 @@ Begin Form
                                     TabIndex =4
                                     Name ="Year"
                                     ControlSource ="Year"
+                                    GUID = Begin
+                                        0x7e90e2cb9da01444bfebefa3096cd5cb
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -408,6 +504,9 @@ Begin Form
                                             Height =228
                                             Name ="Label21"
                                             Caption ="Year:"
+                                            GUID = Begin
+                                                0x3aff96c6c594494a9daa954ed1600148
+                                            End
                                         End
                                     End
                                 End
@@ -419,6 +518,9 @@ Begin Form
                                     TabIndex =5
                                     Name ="BeginSubscriberCount"
                                     ControlSource ="BeginSubscriberCount"
+                                    GUID = Begin
+                                        0x948d29c634e18c4e8131211e97ef1363
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -428,6 +530,9 @@ Begin Form
                                             Height =228
                                             Name ="Label22"
                                             Caption ="Subscriber Count:"
+                                            GUID = Begin
+                                                0x003b28fe0bb2604b876f3d45e37637d6
+                                            End
                                         End
                                     End
                                 End
@@ -439,6 +544,9 @@ Begin Form
                                     TabIndex =6
                                     Name ="BeginDependentCount"
                                     ControlSource ="BeginDependentCount"
+                                    GUID = Begin
+                                        0x158c047cba58da4f9a4a3493eab32d8c
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -448,6 +556,9 @@ Begin Form
                                             Height =228
                                             Name ="Label23"
                                             Caption ="Dependent Count:"
+                                            GUID = Begin
+                                                0x27c3200dca449c41be7d99d573ad30be
+                                            End
                                         End
                                     End
                                 End
@@ -459,6 +570,9 @@ Begin Form
                                     TabIndex =7
                                     Name ="BeginInvoiceAmt"
                                     ControlSource ="BeginInvoiceAmt"
+                                    GUID = Begin
+                                        0x3d6becb4b3ac08418ad85634ab996286
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -468,6 +582,9 @@ Begin Form
                                             Height =228
                                             Name ="Label24"
                                             Caption ="Invoice Amt:"
+                                            GUID = Begin
+                                                0xb44e65d7d6aef847824a5470861da8cd
+                                            End
                                         End
                                     End
                                 End
@@ -479,6 +596,9 @@ Begin Form
                                     TabIndex =8
                                     Name ="BeginInvoiceDate"
                                     ControlSource ="BeginInvoiceDate"
+                                    GUID = Begin
+                                        0x70879bd0e1666e4796681140dabf1159
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -488,6 +608,9 @@ Begin Form
                                             Height =228
                                             Name ="Label25"
                                             Caption ="Invoice Date:"
+                                            GUID = Begin
+                                                0xfe7eb5fec6fa40479c1105d0c84474cd
+                                            End
                                         End
                                     End
                                 End
@@ -499,6 +622,9 @@ Begin Form
                                     TabIndex =9
                                     Name ="CurrentInvoiceAmt"
                                     ControlSource ="CurrentInvoiceAmt"
+                                    GUID = Begin
+                                        0x844503e8e63302448f69c99d3a4cd2ed
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -508,6 +634,9 @@ Begin Form
                                             Height =228
                                             Name ="Label26"
                                             Caption ="Invoice Amt:"
+                                            GUID = Begin
+                                                0x297eda2dd2ea4e4eb9e4eaf52c4e3e72
+                                            End
                                         End
                                     End
                                 End
@@ -519,6 +648,9 @@ Begin Form
                                     TabIndex =10
                                     Name ="CurrentInvoiceDate"
                                     ControlSource ="CurrentInvoiceDate"
+                                    GUID = Begin
+                                        0xdf260bdb92de6f4794fe9181bed69a76
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -528,6 +660,9 @@ Begin Form
                                             Height =228
                                             Name ="Label27"
                                             Caption ="Invoice Date:"
+                                            GUID = Begin
+                                                0xf75ecb7a7eaa944aaf10e5a27d2ce91f
+                                            End
                                         End
                                     End
                                 End
@@ -539,6 +674,9 @@ Begin Form
                                     TabIndex =11
                                     Name ="BeginSubscrswithDeps"
                                     ControlSource ="BeginSubscrswithDeps"
+                                    GUID = Begin
+                                        0xcd3664fb7822cd498bc0ef119e4411df
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =255
@@ -548,6 +686,9 @@ Begin Form
                                             Height =228
                                             Name ="Label32"
                                             Caption ="Subscrs w/Deps:"
+                                            GUID = Begin
+                                                0x5f3717f9532087499340f9af61b28365
+                                            End
                                         End
                                     End
                                 End
@@ -559,6 +700,9 @@ Begin Form
                                     TabIndex =12
                                     Name ="CurrentSubscriberCount"
                                     ControlSource ="CurrentSubscriberCount"
+                                    GUID = Begin
+                                        0xf157fc49edb7b245b437153686e6962b
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -568,6 +712,9 @@ Begin Form
                                             Height =228
                                             Name ="Label33"
                                             Caption ="Subscriber Count:"
+                                            GUID = Begin
+                                                0x5620c008086e0a4282b62104fc6e7d99
+                                            End
                                         End
                                     End
                                 End
@@ -579,6 +726,9 @@ Begin Form
                                     TabIndex =13
                                     Name ="CurrentDependentCount"
                                     ControlSource ="CurrentDependentCount"
+                                    GUID = Begin
+                                        0x299ae43bc7650c4ab802ffc9fd0b75e8
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -588,6 +738,9 @@ Begin Form
                                             Height =228
                                             Name ="Label34"
                                             Caption ="Dependent Count:"
+                                            GUID = Begin
+                                                0xd890207de2f2354e8d501fa045106ee6
+                                            End
                                         End
                                     End
                                 End
@@ -599,6 +752,9 @@ Begin Form
                                     TabIndex =14
                                     Name ="CurrentSubscrswithDeps"
                                     ControlSource ="CurrentSubscrswithDeps"
+                                    GUID = Begin
+                                        0xc584d6e200ae494a8ac23a7f65939250
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -608,6 +764,9 @@ Begin Form
                                             Height =228
                                             Name ="Label35"
                                             Caption ="Subscrs w/Deps:"
+                                            GUID = Begin
+                                                0xe6ae199c2007b74fa61cefd7df4cf4d0
+                                            End
                                         End
                                     End
                                 End
@@ -619,6 +778,9 @@ Begin Form
                                     TabIndex =15
                                     Name ="CurrentEligEmps"
                                     ControlSource ="CurrentEligEmps"
+                                    GUID = Begin
+                                        0x4960ac8ac5762a4ab37bd232d7d3d4af
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -628,6 +790,9 @@ Begin Form
                                             Height =228
                                             Name ="Label36"
                                             Caption ="Eligible Emps:"
+                                            GUID = Begin
+                                                0x44aef5b1caec1e439c5d5c45ce18e513
+                                            End
                                         End
                                     End
                                 End
@@ -641,6 +806,9 @@ Begin Form
                                     Width =3840
                                     TabIndex =16
                                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                                    GUID = Begin
+                                        0xda23a47d1d84bb4399c181cd94d9be89
+                                    End
                                     Name ="cboCompany"
                                     RowSourceType ="Table/Query"
                                     RowSource ="SELECT DISTINCTROW tblGrp.GROUPid, tblGrp.GRname FROM tblGrp RIGHT JOIN tblGrowt"
@@ -657,6 +825,9 @@ Begin Form
                                             Name ="Select Group_Label"
                                             Caption ="Select Group"
                                             EventProcPrefix ="Select_Group_Label"
+                                            GUID = Begin
+                                                0x5507c33dfe494f49a8df0eaedecb740a
+                                            End
                                         End
                                     End
                                 End
@@ -668,17 +839,23 @@ Begin Form
                                     TabIndex =17
                                     Name ="GRname"
                                     ControlSource ="GRname"
+                                    GUID = Begin
+                                        0x61ccff46b21cbb428ef0bbb787cce885
+                                    End
                                 End
                             End
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =180
-                            Top =945
-                            Width =5160
-                            Height =3015
+                            Left =156
+                            Top =900
+                            Width =5208
+                            Height =3084
                             Name ="Page19"
                             Caption ="Report Processing"
+                            GUID = Begin
+                                0x3e40812902a8e84a99801969c602696b
+                            End
                             Begin
                                 Begin ComboBox
                                     RowSourceTypeInt =1
@@ -688,6 +865,9 @@ Begin Form
                                     Left =1332
                                     Top =1368
                                     Width =2100
+                                    GUID = Begin
+                                        0x075e472e263078409c991792a2642e2e
+                                    End
                                     Name ="cboAcctMgr"
                                     RowSourceType ="Value List"
                                     ColumnWidths ="0;1560"
@@ -702,6 +882,9 @@ Begin Form
                                             Name ="Acct Mgr_Label"
                                             Caption ="Client Svc Rep"
                                             EventProcPrefix ="Acct_Mgr_Label"
+                                            GUID = Begin
+                                                0xd65ed3ed81c4994eb104879264eb4b16
+                                            End
                                         End
                                     End
                                 End
@@ -714,6 +897,9 @@ Begin Form
                                     TabIndex =1
                                     BackColor =10092543
                                     Name ="txtAcctMgr"
+                                    GUID = Begin
+                                        0xb4a3852de5d4a54a8e35117fc070aea6
+                                    End
                                 End
                                 Begin ComboBox
                                     RowSourceTypeInt =1
@@ -724,6 +910,9 @@ Begin Form
                                     Top =1728
                                     Width =2940
                                     TabIndex =2
+                                    GUID = Begin
+                                        0xb3ec07ec86aa9b4fa47152e203666b69
+                                    End
                                     Name ="cboGEOid"
                                     RowSourceType ="Value List"
                                     ColumnWidths ="0;2220"
@@ -737,6 +926,9 @@ Begin Form
                                             Height =228
                                             Name ="GEOid_Label"
                                             Caption ="GEOid"
+                                            GUID = Begin
+                                                0x13bca8ccf42ec44fa8b348bfa82bebc5
+                                            End
                                         End
                                     End
                                 End
@@ -749,6 +941,9 @@ Begin Form
                                     TabIndex =3
                                     BackColor =10092543
                                     Name ="txtGEOid"
+                                    GUID = Begin
+                                        0x7065e6ce43d6e946a98072e7df4b8b84
+                                    End
                                 End
                                 Begin Label
                                     SpecialEffect =4
@@ -763,6 +958,9 @@ Begin Form
                                     FontWeight =700
                                     Name ="Label67"
                                     Caption ="Select Report Filters (Defaults to All)"
+                                    GUID = Begin
+                                        0x955c806d2553984baf00c65d008948c3
+                                    End
                                 End
                                 Begin CommandButton
                                     OverlapFlags =247
@@ -774,6 +972,9 @@ Begin Form
                                     Name ="cmdPreviewReport"
                                     Caption ="Preview Report"
                                     OnClick ="[Event Procedure]"
+                                    GUID = Begin
+                                        0x0c7f963cecbadd4985a0d00015ddf3ed
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -784,6 +985,9 @@ Begin Form
                                     TabIndex =5
                                     BackColor =10092543
                                     Name ="txtAcctMgrName"
+                                    GUID = Begin
+                                        0xec327d9763ee1c44afecec73f3610e28
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -794,6 +998,9 @@ Begin Form
                                     TabIndex =6
                                     BackColor =10092543
                                     Name ="txtGEOName"
+                                    GUID = Begin
+                                        0x1aaa8cfcc3fde84b94288e31b2e0e7cb
+                                    End
                                 End
                                 Begin ComboBox
                                     RowSourceTypeInt =1
@@ -802,6 +1009,9 @@ Begin Form
                                     Top =2495
                                     Width =1020
                                     TabIndex =7
+                                    GUID = Begin
+                                        0x3e4ee675a7e8814c989109d926ac089c
+                                    End
                                     Name ="cboAfter"
                                     RowSourceType ="Value List"
                                     RowSource ="JAN 1;FEB 1;MAR 1;APR 1;MAY 1;JUN 1;JUL 1;AUG 1;SEP 1;OCT 1;NOV 1;DEC 1"
@@ -817,6 +1027,9 @@ Begin Form
                                     Name ="fraSelGroups"
                                     AfterUpdate ="[Event Procedure]"
                                     DefaultValue ="3"
+                                    GUID = Begin
+                                        0x8bf9e9b8322ba749ace9a64a09bb0c80
+                                    End
                                     Begin
                                         Begin Label
                                             SpecialEffect =4
@@ -831,6 +1044,9 @@ Begin Form
                                             BackColor =-2147483633
                                             Name ="Label83"
                                             Caption ="Select Groups"
+                                            GUID = Begin
+                                                0x8eb7042d90a57443a3d15e28018918fc
+                                            End
                                         End
                                         Begin OptionButton
                                             OverlapFlags =247
@@ -839,6 +1055,9 @@ Begin Form
                                             OptionValue =1
                                             Name ="OptExisting"
                                             OnGotFocus ="[Event Procedure]"
+                                            GUID = Begin
+                                                0x1285b282a7ffa944b2bde969d13cac1d
+                                            End
                                             Begin
                                                 Begin Label
                                                     OverlapFlags =247
@@ -848,6 +1067,9 @@ Begin Form
                                                     Height =228
                                                     Name ="Label86"
                                                     Caption ="Existing Groups Only"
+                                                    GUID = Begin
+                                                        0x56526d5fe232c54db0ce47c77f1c1d96
+                                                    End
                                                 End
                                             End
                                         End
@@ -858,6 +1080,9 @@ Begin Form
                                             OptionValue =2
                                             Name ="OptNew"
                                             OnGotFocus ="[Event Procedure]"
+                                            GUID = Begin
+                                                0xdcc5bd47f770544e833d930471d82f45
+                                            End
                                             Begin
                                                 Begin Label
                                                     OverlapFlags =247
@@ -867,6 +1092,9 @@ Begin Form
                                                     Height =228
                                                     Name ="Label88"
                                                     Caption ="New Groups Only"
+                                                    GUID = Begin
+                                                        0xe138725514d08d4982b14c42acbcffc2
+                                                    End
                                                 End
                                             End
                                         End
@@ -877,6 +1105,9 @@ Begin Form
                                             OptionValue =3
                                             Name ="OptAll"
                                             OnMouseUp ="[Event Procedure]"
+                                            GUID = Begin
+                                                0xd76a5ede5656324586e556d63d69fb49
+                                            End
                                             Begin
                                                 Begin Label
                                                     OverlapFlags =247
@@ -886,6 +1117,9 @@ Begin Form
                                                     Height =228
                                                     Name ="Label90"
                                                     Caption ="All Groups"
+                                                    GUID = Begin
+                                                        0xbf59f3e2222f294588ae1941f198dc46
+                                                    End
                                                 End
                                             End
                                         End
@@ -898,6 +1132,9 @@ Begin Form
                                     Top =3060
                                     Width =864
                                     TabIndex =9
+                                    GUID = Begin
+                                        0xc1c4ce3f1a58fe45b8ff6c68b568a2b6
+                                    End
                                     Name ="cboBetweenStart"
                                     RowSourceType ="Value List"
                                     RowSource ="JAN 1;FEB 1;MAR 1;APR 1;MAY 1;JUN 1;JUL 1;AUG 1;SEP 1;OCT 1;NOV 1;DEC 1"
@@ -910,6 +1147,9 @@ Begin Form
                                     Top =3060
                                     Width =960
                                     TabIndex =10
+                                    GUID = Begin
+                                        0x53a4a9e7dfa621418888a3460d96464e
+                                    End
                                     Name ="cboBetweenEnd"
                                     RowSourceType ="Value List"
                                     RowSource ="JAN 31;FEB 28;MAR 31;APR 30;MAY 31;JUN 30;JUL 31;AUG 31;SEP 30;OCT 31;NOV 30;DEC"
@@ -924,6 +1164,9 @@ Begin Form
                                     Height =228
                                     Name ="Label96"
                                     Caption ="and"
+                                    GUID = Begin
+                                        0xa8e61d567fb92d40bc9b4eeccffc0ba6
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -934,6 +1177,9 @@ Begin Form
                                     TabIndex =11
                                     BackColor =13434828
                                     Name ="txtAfterDate"
+                                    GUID = Begin
+                                        0x756ee1a3b577644abdf7ea4e7e2ba4e1
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -944,6 +1190,9 @@ Begin Form
                                     TabIndex =12
                                     BackColor =13434828
                                     Name ="txtBetweenStart"
+                                    GUID = Begin
+                                        0x2b39124cd46ada47a5b9dccb6c40be3a
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -954,6 +1203,9 @@ Begin Form
                                     TabIndex =13
                                     BackColor =13434828
                                     Name ="txtBetweenEnd"
+                                    GUID = Begin
+                                        0x75b3ff8ac832834da32a8ce8f2a03637
+                                    End
                                 End
                                 Begin OptionGroup
                                     OverlapFlags =247
@@ -965,6 +1217,9 @@ Begin Form
                                     Name ="fraSelDate"
                                     AfterUpdate ="[Event Procedure]"
                                     DefaultValue ="1"
+                                    GUID = Begin
+                                        0xbbee893754d1f948b743970563304933
+                                    End
                                     Begin
                                         Begin Label
                                             SpecialEffect =4
@@ -979,6 +1234,9 @@ Begin Form
                                             BackColor =-2147483633
                                             Name ="Label102"
                                             Caption ="Select Date Range"
+                                            GUID = Begin
+                                                0x45abbc9db3b32d419e987ebd703472f9
+                                            End
                                         End
                                         Begin OptionButton
                                             OverlapFlags =247
@@ -986,6 +1244,9 @@ Begin Form
                                             Top =2518
                                             OptionValue =1
                                             Name ="Option104"
+                                            GUID = Begin
+                                                0x9f568ad66721424c9be03e151ab043e4
+                                            End
                                             Begin
                                                 Begin Label
                                                     OverlapFlags =247
@@ -995,6 +1256,9 @@ Begin Form
                                                     Height =228
                                                     Name ="Label105"
                                                     Caption ="On / After"
+                                                    GUID = Begin
+                                                        0xb9c1744e9d74ad4cbce7d3212ceab02f
+                                                    End
                                                 End
                                             End
                                         End
@@ -1004,6 +1268,9 @@ Begin Form
                                             Top =2848
                                             OptionValue =2
                                             Name ="Option106"
+                                            GUID = Begin
+                                                0x5facb2ea074c904cbad777ab1c9c3ad2
+                                            End
                                             Begin
                                                 Begin Label
                                                     OverlapFlags =247
@@ -1013,6 +1280,9 @@ Begin Form
                                                     Height =228
                                                     Name ="Label107"
                                                     Caption ="Between"
+                                                    GUID = Begin
+                                                        0x09473ccfb50ca7478d42d0d9962680d2
+                                                    End
                                                 End
                                             End
                                         End
@@ -1027,17 +1297,23 @@ Begin Form
                                     TabIndex =15
                                     BackColor =13434828
                                     Name ="txtGroups"
+                                    GUID = Begin
+                                        0x66fc2ed37bf8a642bf22f7c2725fe181
+                                    End
                                 End
                             End
                         End
                         Begin Page
                             OverlapFlags =247
-                            Left =180
-                            Top =945
-                            Width =5160
-                            Height =3015
+                            Left =156
+                            Top =900
+                            Width =5208
+                            Height =3084
                             Name ="Page73"
                             Caption ="Maintenance"
+                            GUID = Begin
+                                0x378187bd59a7ef448713fa581ecf450f
+                            End
                             Begin
                                 Begin CommandButton
                                     OverlapFlags =247
@@ -1048,6 +1324,9 @@ Begin Form
                                     Name ="cmdDeleteGroup"
                                     Caption ="Delete All Groups from Growth Table for Process Year"
                                     OnClick ="[Event Procedure]"
+                                    GUID = Begin
+                                        0x027fcaf0afa73348bd83305d8a8cd7f4
+                                    End
                                 End
                                 Begin TextBox
                                     OverlapFlags =247
@@ -1056,6 +1335,9 @@ Begin Form
                                     Width =660
                                     TabIndex =1
                                     Name ="txtDeleteYear"
+                                    GUID = Begin
+                                        0x9254505bef9a4445a5f38a8732bd2e93
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -1065,6 +1347,9 @@ Begin Form
                                             Height =228
                                             Name ="Label76"
                                             Caption ="Process Year"
+                                            GUID = Begin
+                                                0xe4a0b0aeb89c5d48bf644c82bca3994d
+                                            End
                                         End
                                     End
                                 End
@@ -1074,6 +1359,9 @@ Begin Form
                                     Top =2400
                                     Width =720
                                     Name ="txtDeleteGroup"
+                                    GUID = Begin
+                                        0x258996dc3e98744b8b25d500715f5d84
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -1083,6 +1371,9 @@ Begin Form
                                             Height =228
                                             Name ="Label78"
                                             Caption ="Process Group"
+                                            GUID = Begin
+                                                0x7eab2c3592af484c8fef7bdb66d59f3f
+                                            End
                                         End
                                     End
                                 End
@@ -1095,6 +1386,9 @@ Begin Form
                                     Name ="cmdDeleteSelGroup"
                                     Caption ="Delete Process Group from the Growth table"
                                     OnClick ="[Event Procedure]"
+                                    GUID = Begin
+                                        0xb43145ca93ae6141a45dda0508d23d9c
+                                    End
                                 End
                             End
                         End
@@ -1106,6 +1400,9 @@ Begin Form
             Height =480
             BackColor =-2147483633
             Name ="FormFooter"
+            GUID = Begin
+                0xbd842f1491446b439cae0f29d4d78e30
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -1142,6 +1439,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x0d2be2e93230094f861e341a30dc8f19
+                    End
                 End
             End
         End
@@ -2015,8 +2315,8 @@ Private Sub Form_Load()
    Dim strList As String
    Dim strGEOlist As String
         
-        strYear = Format(date, "YYYY")
-        strMonth = Month(date)
+        strYear = Format(Date, "YYYY")
+        strMonth = Month(Date)
         With Me
         Select Case strMonth
         Case Is = "1"
@@ -2055,7 +2355,7 @@ Private Sub Form_Load()
        .Requery
        .txtMessage.BackColor = 16777215
        .txtMessage = ""
-       .txtYear = Format(date, "YYYY")
+       .txtYear = Format(Date, "YYYY")
        cboStartDate_AfterUpdate
        fraSelGroups_AfterUpdate
        fraSelDate_AfterUpdate
@@ -2087,7 +2387,7 @@ Private Sub Form_Load()
     If rst.RecordCount > 0 Then
       With rst
        Do While Not rst.EOF
-        strGEOlist = strGEOlist & !GeoID & "," & !GEOdesc & ";"
+        strGEOlist = strGEOlist & !GEOid & "," & !GEOdesc & ";"
         Me.cboGEOid.RowSource = strGEOlist
         .MoveNext
        Loop
@@ -2284,7 +2584,7 @@ Case Is = 1  ' Filter by date 1/1/YEAR only
                 GoTo NoReocords
             End If
         Else
-            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+            strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
             fSuccess = CheckFilter(strFilter)
             If fSuccess = True Then
                 DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2312,7 +2612,7 @@ Case Is = 1  ' Filter by date 1/1/YEAR only
      Else
         ' Preview with GEO filter
         If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
-            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+            strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
             fSuccess = CheckFilter(strFilter)
             If fSuccess = True Then
                 DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2331,7 +2631,7 @@ Case Is = 1  ' Filter by date 1/1/YEAR only
             End If
         Else
             ' Preview with both filters
-            strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+            strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRGeoID] = '" & Me.txtGeoID & "'"
             fSuccess = CheckFilter(strFilter)
             If fSuccess = True Then
                 DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2360,7 +2660,7 @@ Case Is = 2     ' Filter new Groups Only
                     GoTo NoReocords
                 End If
             Else
-            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+            strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
             fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2387,7 +2687,7 @@ Case Is = 2     ' Filter new Groups Only
         Else
         ' Preview with GEO filter
             If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
-                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2406,7 +2706,7 @@ Case Is = 2     ' Filter new Groups Only
                 End If
             Else
             ' Preview with both filters
-                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRGeoID] = '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2441,7 +2741,7 @@ Case Is = 2     ' Filter new Groups Only
                     GoTo NoReocords
                 End If
             Else
-                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2473,7 +2773,7 @@ Case Is = 2     ' Filter new Groups Only
         Else
             ' Preview with GEO filter
             If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
-                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2497,7 +2797,7 @@ Case Is = 2     ' Filter new Groups Only
                 End If
             Else
                 ' Preview with both filters
-                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRGeoID] = '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2535,7 +2835,7 @@ Case Is = 3
                     GoTo NoReocords
                 End If
             Else
-            strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+            strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2567,7 +2867,7 @@ Case Is = 3
         Else
         ' Preview with GEO filter
             If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
-                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2591,7 +2891,7 @@ Case Is = 3
                 End If
             Else
             ' Preview with both filters
-                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRGeoID] = '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2626,7 +2926,7 @@ Case Is = 3
                     GoTo NoReocords
                 End If
             Else
-                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2658,7 +2958,7 @@ Case Is = 3
         Else
             ' Preview with GEO filter
             If Me.txtAcctMgr = "All" And Me.txtGeoID <> "All" Then
-                strFilter = strFilter & " AND [GRPgeoID]= '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRGeoID]= '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2682,7 +2982,7 @@ Case Is = 3
                 End If
             Else
                 ' Preview with both filters
-                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRPgeoID] = '" & Me.txtGeoID & "'"
+                strFilter = strFilter & " AND [GRClientSvcRepID] = " & Me.txtAcctMgr & " AND [GRGeoID] = '" & Me.txtGeoID & "'"
                 fSuccess = CheckFilter(strFilter)
                 If fSuccess = True Then
                     DoCmd.OpenReport stDocName, acPreview, , strFilter
@@ -2721,8 +3021,7 @@ Private Function CheckFilter(strFilter As String) As Boolean
     'strSQL = strSQL & " INNER JOIN tblAcctMgr ON tblGrp.GRacctMgr = tblAcctMgr.AcctMgrID"
     'WHERE (((tblGrowth.BeginInvoiceDate)=#1/1/2000#) AND (([GRacctMgr])=1));
     strSQL = strSQL & " WHERE " & strFilter
-    'Debug.Print strSQL
-    
+       
     Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     If rst.RecordCount > 0 Then
         CheckFilter = True

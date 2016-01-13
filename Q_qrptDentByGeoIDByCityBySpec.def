@@ -23,11 +23,11 @@ End
 Begin Joins
     LeftTable ="tbldentist"
     RightTable ="tblGeographical"
-    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Expression ="tbldentist.DentGeoID=tblGeographical.GEOid"
     Flag =2
     LeftTable ="tbldentist"
     RightTable ="tbldentistspec"
-    Expression ="tbldentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Expression ="tbldentist.DentSpecialty=tbldentistspec.SPECIALTYID"
     Flag =2
 End
 Begin OrderBy
@@ -78,16 +78,22 @@ Begin
         dbInteger "ColumnWidth" ="1860"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="DENTcount"
+    End
+    Begin
+        dbText "Name" ="OpenToNewPatients"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1024
-    Bottom =650
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =438
     Left =-1
     Top =-1
-    Right =1021
+    Right =1253
     Bottom =218
     Left =0
     Top =0
@@ -96,7 +102,7 @@ Begin
         Left =38
         Top =6
         Right =199
-        Bottom =158
+        Bottom =154
         Top =0
         Name ="tbldentist"
         Name =""
@@ -105,7 +111,7 @@ Begin
         Left =304
         Top =9
         Right =476
-        Bottom =101
+        Bottom =97
         Top =0
         Name ="tblGeographical"
         Name =""
@@ -114,7 +120,7 @@ Begin
         Left =486
         Top =78
         Right =674
-        Bottom =170
+        Bottom =166
         Top =0
         Name ="tbldentistspec"
         Name =""

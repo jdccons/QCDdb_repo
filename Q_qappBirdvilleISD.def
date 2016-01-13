@@ -5,45 +5,62 @@ Begin InputTables
     Name ="BirdvilleISD"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="CUST KEY"
     Expression ="BirdvilleISD.Custkey"
+    Alias ="Expr2"
     Name ="CUST NAME"
     Expression ="BirdvilleISD.Custname"
+    Alias ="Expr3"
     Name ="ADDRESS 1"
     Expression ="BirdvilleISD.Custaddr1"
+    Alias ="Expr4"
     Name ="ADDRESS 2"
     Expression ="BirdvilleISD.Custaddr2"
+    Alias ="Expr5"
     Name ="CITY"
     Expression ="BirdvilleISD.Custcity"
+    Alias ="Expr6"
     Name ="STATE"
     Expression ="BirdvilleISD.Custstate"
+    Alias ="Expr7"
     Name ="ZIP CODE"
     Expression ="BirdvilleISD.Custzip"
+    Alias ="Expr8"
     Name ="TRANS NO"
     Expression ="BirdvilleISD.Tranno"
+    Alias ="Expr9"
     Name ="SEL STATUS"
     Expression ="BirdvilleISD.Statusflg"
     Alias ="Date"
     Name ="INV DATE"
     Expression ="#1/1/2000#"
+    Alias ="Expr10"
     Name ="TERRITORY KEY"
     Expression ="BirdvilleISD.Territkey"
+    Alias ="Expr11"
     Name ="SALESP    KEY"
     Expression ="BirdvilleISD.Salespkey"
+    Alias ="Expr12"
     Name ="CUST CLASS"
     Expression ="BirdvilleISD.Custclass"
+    Alias ="Expr13"
     Name ="CR MEMO FLAG"
     Expression ="BirdvilleISD.Crmemoflg"
+    Alias ="Expr14"
     Name ="SYSDOCID"
     Expression ="BirdvilleISD.Sysdocid"
+    Alias ="Expr15"
     Name ="RecUserID"
     Expression ="BirdvilleISD.RecUserID"
+    Alias ="Expr16"
     Name ="RecDate"
     Expression ="BirdvilleISD.RecDate"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -51,10 +68,10 @@ Begin
     Left =40
     Top =22
     Right =778
-    Bottom =391
+    Bottom =410
     Left =-1
     Top =-1
-    Right =731
+    Right =723
     Bottom =208
     Left =0
     Top =0
@@ -63,8 +80,8 @@ Begin
         Left =38
         Top =6
         Right =259
-        Bottom =173
-        Top =63
+        Bottom =49
+        Top =0
         Name ="BirdvilleISD"
         Name =""
     End

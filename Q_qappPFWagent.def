@@ -1,15 +1,15 @@
 Operation =3
 Name ="ARSALESP"
 Option =0
-Where ="(((tblAgent.AGENTid)=[Forms]![frmAgent]![ctlAGENTid]))"
+Where ="(((tblAgent.AgentId)=Forms!frmAgent!ctlAGENTid))"
 Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
     Name ="Salesp_Key"
-    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AgentId"
     Name ="Salesp_Name"
-    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.Agent_LUname"
     Alias ="CommKey"
     Name ="Comm_Key"
     Expression ="\"01\""
@@ -37,10 +37,10 @@ Begin
     Left =105
     Top =101
     Right =1027
-    Bottom =414
+    Bottom =425
     Left =-1
     Top =-1
-    Right =915
+    Right =907
     Bottom =144
     Left =0
     Top =0
@@ -49,7 +49,7 @@ Begin
         Left =74
         Top =13
         Right =252
-        Bottom =112
+        Bottom =101
         Top =0
         Name ="tblAgent"
         Name =""

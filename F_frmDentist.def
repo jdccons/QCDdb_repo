@@ -1,6 +1,6 @@
-Version =19
-VersionRequired =19
-Checksum =-134024548
+Version =20
+VersionRequired =20
+Checksum =647205667
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -11,10 +11,10 @@ Begin Form
     GridY =16
     Width =10101
     ItemSuffix =228
-    Left =3255
-    Top =510
+    Left =3252
+    Top =516
     Right =17520
-    Bottom =12210
+    Bottom =12132
     OrderBy ="qfrmDent.DENTcity"
     RecSrcDt = Begin
         0xb0a19afd2ff7e140
@@ -80,6 +80,7 @@ Begin Form
             SpecialEffect =2
             OldBorderStyle =0
             FontName ="Tahoma"
+            AsianLineBreak =255
         End
         Begin Section
             SpecialEffect =2
@@ -87,7 +88,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             GUID = Begin
-                0xdd3de35cb28712498b661c2788783d2f
+                0x5becd5b47b610f40976d4c2af748c053
             End
             Begin
                 Begin Label
@@ -104,7 +105,7 @@ Begin Form
                     Caption =" First: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x78284322c906be47858c6b2016ec9f30
+                        0xa85302e1c1c16040ba2c57715bc22cb2
                     End
                 End
                 Begin Label
@@ -120,7 +121,7 @@ Begin Form
                     Caption =" Address: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x031b37da98e0c847b07063de60caf913
+                        0xb0017c9d372f974eb81395ccee7c53e4
                     End
                 End
                 Begin Label
@@ -136,7 +137,7 @@ Begin Form
                     Caption ="Address 2: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x2dbd6376d63cc54ab840c6020d16b605
+                        0x364f72296f2bf34aad2a9761d5b4cc10
                     End
                 End
                 Begin Label
@@ -152,7 +153,7 @@ Begin Form
                     Caption ="City: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x59c12cbc2005c84db1d0e5ce7755118b
+                        0xd7b95d6925ed894b8b5a9834b7f0b172
                     End
                 End
                 Begin Label
@@ -169,7 +170,7 @@ Begin Form
                     Caption ="State : "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x00731a8bfd6b5245ac002e058b0d4c04
+                        0x3b6c545f3cf94146bd5c3e0a3adcccdf
                     End
                 End
                 Begin Label
@@ -186,7 +187,7 @@ Begin Form
                     Caption ="Zip: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xd6bd53fc89924f40b836d8f5ac6b885b
+                        0xdbd14e7c598f9d4899e2e7b51d2eb387
                     End
                 End
                 Begin TextBox
@@ -201,8 +202,9 @@ Begin Form
                     ControlSource ="DENTfirst"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x0cbc8cddd9d67347a14cdf67d6c53c10
+                        0x22b00b50d3b30c42aee4833afc073432
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -215,8 +217,9 @@ Begin Form
                     ControlSource ="DENTstreet1"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x97c04ae62ec7a64b8257e3164d3d27f0
+                        0x6e92503ec52a664c808c144b3d824784
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -230,8 +233,9 @@ Begin Form
                     ControlSource ="DENTstreet2"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x395f150f4603184bb93fa3fdc5e29bd1
+                        0x6185aa3faf0322408a0428582d50b360
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -245,8 +249,9 @@ Begin Form
                     ControlSource ="DENTcity"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xec9571b6907f244991a41478ae1b6e1a
+                        0x5efeaecadc728845914a6051897a604a
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -260,8 +265,9 @@ Begin Form
                     ControlSource ="DENTstate"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x45b606a8d38c7e449f112d4a29086556
+                        0x26c509e9116b874f800959d39a5b7c37
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     OverlapFlags =93
@@ -276,7 +282,7 @@ Begin Form
                     Caption ="Phone - Off: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xe01cef90b5198e4886476c454f90d19c
+                        0x75c4c9271b6b0f408c7b5f2b760ce1b6
                     End
                 End
                 Begin Label
@@ -292,7 +298,7 @@ Begin Form
                     Caption ="School: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xad9c25814844614a96e7db0fb4251f0b
+                        0xc14fb5bc57ac774490185b39cb4da6d2
                     End
                 End
                 Begin TextBox
@@ -308,8 +314,9 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="!\\(999\") \"000\\-0000;;_"
                     GUID = Begin
-                        0xe7dc10ba27072e4eaeb19c80ad3cb4fb
+                        0xf04b9384493934448283b04b72eea864
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     BackStyle =1
@@ -325,13 +332,13 @@ Begin Form
                     Caption ="Affil. Date: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x3b4dc3f460b35147866bd70222c3b1fc
+                        0x808e90fbb3c7844d8372d8ed3a1c26a5
                     End
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
                     OldBorderStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     Left =7425
                     Top =2235
                     Width =1284
@@ -342,8 +349,9 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x4e48cfed7d25e44bb3a895f894186ef8
+                        0xc7ba414db2e9fd44a43bd940f1d41ad4
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     BackStyle =1
@@ -359,13 +367,13 @@ Begin Form
                     Caption ="Geo. Id: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xa4fe1e01a982744bbd3fbdba37739996
+                        0x0a32a5188b881e44a874ef8cceca3d77
                     End
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
                     SpecialEffect =2
-                    OverlapFlags =87
+                    OverlapFlags =85
                     ColumnCount =2
                     ListWidth =3130
                     Left =7425
@@ -374,7 +382,7 @@ Begin Form
                     TabIndex =23
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"50\""
                     GUID = Begin
-                        0x100623aa8d24c3489542c101f16bddf3
+                        0x67ebce8d21fb864290db14762b1b6245
                     End
                     Name ="c-DENTgeoID"
                     ControlSource ="DENTgeoID"
@@ -387,7 +395,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =95
+                    OverlapFlags =93
                     TextAlign =3
                     Left =720
                     Top =375
@@ -399,7 +407,7 @@ Begin Form
                     Caption ="Last: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x7c2589207e7ace4a9f2d6daaf6e6e128
+                        0x5125b156df827a42a8f77112a01cbb4f
                     End
                 End
                 Begin TextBox
@@ -414,8 +422,9 @@ Begin Form
                     ControlSource ="DENTlast"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x6ed2ef413ecfd34c9052b6edcf6d0e95
+                        0xcf7b04f098c62c4bb4362f851da9ea69
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     BackStyle =1
@@ -431,7 +440,7 @@ Begin Form
                     Caption ="Phone - Hm: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xb4699aa1834bed40ba88fd9d39ca746a
+                        0x8d58e09945fb0849b82957c5a92f0088
                     End
                 End
                 Begin TextBox
@@ -447,12 +456,13 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="!\\(999\") \"000\\-0000;;_"
                     GUID = Begin
-                        0xb3c033a7171ea14c92da4ab0e34c5fc6
+                        0x486330f62a53ec429e41f69a58602386
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     BackStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =3
                     Left =3090
                     Top =2490
@@ -464,13 +474,13 @@ Begin Form
                     Caption ="Year Graduated: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xfccc2d0423552d4481a8c1bfa679a308
+                        0x0d70815e21d823469c19679013882c97
                     End
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
                     OldBorderStyle =1
-                    OverlapFlags =87
+                    OverlapFlags =85
                     Left =4620
                     Top =2490
                     Width =576
@@ -480,8 +490,9 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="0000"
                     GUID = Begin
-                        0xdb73e7723eb810418a3044a2377c62e8
+                        0x800f23ac0ec3ea408950e4c09bb69798
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     OverlapFlags =93
@@ -495,7 +506,7 @@ Begin Form
                     Caption ="Comments: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x1eba27b2858ba54e908cb9b802aa523d
+                        0x7f6cffb476c17d4a87f5a49549278dd1
                     End
                 End
                 Begin TextBox
@@ -512,8 +523,9 @@ Begin Form
                     ControlSource ="DENTcomments"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x50c08426d9c2c64fb7c3f8a0a126887f
+                        0xd1785027a070e945b6749cb6dde68065
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -527,8 +539,9 @@ Begin Form
                     ControlSource ="DENTschool"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x57c43cd291ae4f41a3be59817d6d46e3
+                        0x787baf9974caed4e98f4ecd7f7bb3f4a
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -542,8 +555,9 @@ Begin Form
                     ControlSource ="DENTlicense"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xe596fc506914044e97f80b13c02c274d
+                        0xea98cda3be49b74da7992fa69b9fcb19
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     OverlapFlags =93
@@ -558,7 +572,7 @@ Begin Form
                     Caption ="Specialty: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xfd1a68e73835054fb8f4cae73b6e6d0a
+                        0x4e7461fe6cb3204ebedd05cc511beab5
                     End
                 End
                 Begin Label
@@ -573,7 +587,7 @@ Begin Form
                     Caption ="License No.: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xe482d067259c144784fb02636ab8db23
+                        0x6ea2406ea37c494b9f94c6141c32091b
                     End
                 End
                 Begin Label
@@ -590,7 +604,7 @@ Begin Form
                     Caption ="MI:  "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x04de04ff1c90ca46a490be9cb27b9146
+                        0xce983b41f9e60e4f868bef783598f17c
                     End
                 End
                 Begin TextBox
@@ -605,8 +619,9 @@ Begin Form
                     ControlSource ="DENTmiddleINIT"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x2b70fb220102984d8abbbca956d73434
+                        0xfc6c97229cb5994580c332e836dd9beb
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -620,8 +635,9 @@ Begin Form
                     ControlSource ="DentKeyID"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x449ab4310ef1d14f8b82199e2a241aae
+                        0x9dd163133e01904d925ea8c5e0bf31b0
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     OverlapFlags =87
@@ -636,7 +652,7 @@ Begin Form
                     Caption ="Active/Inactive: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x1f49a12049ae0d4f82932b6af0e9186c
+                        0xd51f09d14274584ca14beb039d1af243
                     End
                 End
                 Begin Label
@@ -652,7 +668,7 @@ Begin Form
                     Caption ="Inactive Date: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x58878e218d17e94bbc79071360af861d
+                        0x6797a6077ac02943b855ab84ee13263f
                     End
                 End
                 Begin TextBox
@@ -669,8 +685,9 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="99/99/0099;0;_"
                     GUID = Begin
-                        0xe7b9f462dfce804b9cd897f0d21898cf
+                        0x11b3d920068afb4389f78bd766460c08
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     BackStyle =1
@@ -686,7 +703,7 @@ Begin Form
                     Caption ="Affil. Agreement: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x8006ea2509f604499aaa639b3e76fbba
+                        0xd04776dbcb8b7f4a8f95c730ea5d8f68
                     End
                 End
                 Begin Label
@@ -703,7 +720,7 @@ Begin Form
                     Caption ="State Board Cert.: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xa2138180da9bd04da2bf585efb461a27
+                        0x90ca8ca27ea0c245a72c24e1e2ac7f65
                     End
                 End
                 Begin Label
@@ -720,7 +737,7 @@ Begin Form
                     Caption ="Liability Insurance: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xdeb86cbcc4da9a4f9afc3a4e87461b5c
+                        0x4bc9042a235af142aae8f39168987afd
                     End
                 End
                 Begin Label
@@ -737,7 +754,7 @@ Begin Form
                     Caption ="Controlled Substance: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xc2bf90814352824ab6f1f61b7b022521
+                        0xf573e308e7bd3742ac8c4ac6326afafb
                     End
                 End
                 Begin TextBox
@@ -754,8 +771,9 @@ Begin Form
                     DefaultValue ="=\"Yes\""
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x236b7f9457a964499a986a0c9f16d275
+                        0x4b30ad9fefd364479db8d007baa1b212
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -771,8 +789,9 @@ Begin Form
                     DefaultValue ="=Yes"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x9268ee27a863ab44b40face3f5407939
+                        0xda41c50992b2794bb41f3f06e3396ae0
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -788,8 +807,9 @@ Begin Form
                     DefaultValue ="=Yes"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x514827f62a9b494795dbef3dcb8afb71
+                        0x3c1af00fd617794fa813192a61b8856f
                     End
+                    AsianLineBreak =0
                 End
                 Begin TextBox
                     FELineBreak = NotDefault
@@ -805,8 +825,9 @@ Begin Form
                     DefaultValue ="=Yes"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xc18070429cae4e46a48602db092668fd
+                        0x64abfd33b77b63489a1a146c4535f785
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     SpecialEffect =1
@@ -824,7 +845,7 @@ Begin Form
                     Caption ="Paper Work Complete/Incomplete"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xc91aa363a14dab4fbf9f96e2633380c2
+                        0x9ddbcba52cf4d04ab587c1e471cac844
                     End
                 End
                 Begin Label
@@ -839,7 +860,7 @@ Begin Form
                     Caption ="Close Office: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xd3406c1a859544468ad5491472d6c734
+                        0x71a0bc5ebf039a4da41ba7dc3a60cc62
                     End
                 End
                 Begin ComboBox
@@ -853,7 +874,7 @@ Begin Form
                     TabIndex =11
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"38\""
                     GUID = Begin
-                        0x4ffaa58419ad1d48bf981a93de1fa59f
+                        0x4cc486e3063d3c4dba54bf90dc4b97fe
                     End
                     Name ="c-DENTspecialty"
                     ControlSource ="DENTspecialty"
@@ -875,7 +896,7 @@ Begin Form
                     Caption ="Dentist ID: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xa3bbbf93df9caa4d860defb8c09bffbe
+                        0x906caacdfc44604786dfd7dae2ef6503
                     End
                 End
                 Begin Label
@@ -891,7 +912,7 @@ Begin Form
                     Caption ="Bilingual: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xc321f194fff8b14d9ca9eb2bde9c309a
+                        0x4fc1b08d7067b442a8af4f65efc07db9
                     End
                 End
                 Begin ComboBox
@@ -905,7 +926,7 @@ Begin Form
                     Width =835
                     TabIndex =16
                     GUID = Begin
-                        0xbcb4903c39a9ba4ca2b0fea9459478ac
+                        0x92521845949da04bbb956ca17a78a729
                     End
                     Name ="DENTstatus"
                     ControlSource ="DENTstatus"
@@ -922,7 +943,7 @@ Begin Form
                     Height =1815
                     Name ="Box190"
                     GUID = Begin
-                        0xf0a796bbf0ddbc4cb4f57b4cbbcff609
+                        0x4492aafab871e6499c626641c1024e87
                     End
                 End
                 Begin Rectangle
@@ -934,7 +955,7 @@ Begin Form
                     Height =1815
                     Name ="Box192"
                     GUID = Begin
-                        0xdd76b129edb7ad49a15207c961b3d522
+                        0x0e341550d7fa7b448cb4fe65c6cc287a
                     End
                 End
                 Begin TextBox
@@ -952,8 +973,9 @@ Begin Form
                     ControlSource ="DENT_LUname"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xbba66fea01f75946b1e50ad8ccb5eafa
+                        0x27007a659ded8f4fbcaa5dc987bd7867
                     End
+                    AsianLineBreak =0
                     Begin
                         Begin Label
                             Visible = NotDefault
@@ -970,7 +992,7 @@ Begin Form
                             Caption ="DENT_LUname:"
                             FontName ="MS Sans Serif"
                             GUID = Begin
-                                0xb164613d16d9a94e953b7316fc92c773
+                                0x7cc6a96f7d56a24194cc512130347495
                             End
                         End
                     End
@@ -987,7 +1009,7 @@ Begin Form
                     Caption ="B"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x9196c6c1f2c1d44c90ab296f71d36879
+                        0xbb7458d3004abb4182eddc966ebe333b
                     End
                 End
                 Begin CommandButton
@@ -1002,7 +1024,7 @@ Begin Form
                     Caption ="C"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x9713eb1bfc6f2744a74c4d2686b50a50
+                        0x6c074fe46d6a3442b710aeeab7108104
                     End
                 End
                 Begin CommandButton
@@ -1017,7 +1039,7 @@ Begin Form
                     Caption ="D"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xfa1de38cf12d8741b4c05e17fc99370d
+                        0x9c81c426a1ce5849b99def0fc29060cb
                     End
                 End
                 Begin CommandButton
@@ -1032,7 +1054,7 @@ Begin Form
                     Caption ="E"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x3b1a0db00b54ff42bcb72b971544817f
+                        0x8ebba45b06e00345bf26d5558016f354
                     End
                 End
                 Begin CommandButton
@@ -1047,7 +1069,7 @@ Begin Form
                     Caption ="F"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x96436d992dfb75418a4b1ba9b55f5737
+                        0x57389c9ca4e680498e84173d6569fbf9
                     End
                 End
                 Begin CommandButton
@@ -1062,7 +1084,7 @@ Begin Form
                     Caption ="G"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xe0c4c12d09024f4c9324c9b48d96203d
+                        0x9b3fe38fdd7c2a488c05c4241607bd8a
                     End
                 End
                 Begin CommandButton
@@ -1077,7 +1099,7 @@ Begin Form
                     Caption ="H"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xd684e1901f90d0438b8e98dc5bac5c86
+                        0xa0c75ebf7201d546aa24ba0532df96d2
                     End
                 End
                 Begin CommandButton
@@ -1092,7 +1114,7 @@ Begin Form
                     Caption ="I"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xe89624a017610948a6480bc0be1b0f6d
+                        0x084714dc65d57c45a2f74901f6e559f9
                     End
                 End
                 Begin CommandButton
@@ -1107,7 +1129,7 @@ Begin Form
                     Caption ="K"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xd55a8408a1216a42a004244e79c256d9
+                        0xbeb29395ab12114ba50245e79ad26b65
                     End
                 End
                 Begin CommandButton
@@ -1122,7 +1144,7 @@ Begin Form
                     Caption ="L"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x4e334be9f3edf9469dc7b46ca54dc931
+                        0x6db6ccb74ca91141b73c7800514c1fbf
                     End
                 End
                 Begin CommandButton
@@ -1137,7 +1159,7 @@ Begin Form
                     Caption ="M"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xdda9ec76409a294e8ebea6a206b2f772
+                        0xb501b429776c0c4f8e78e22c0f5d2655
                     End
                 End
                 Begin CommandButton
@@ -1152,7 +1174,7 @@ Begin Form
                     Caption ="N"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x7d8950864999f34ca887227d38a82af1
+                        0x43167bf62a24994e8f0df67da1b09dd3
                     End
                 End
                 Begin CommandButton
@@ -1167,7 +1189,7 @@ Begin Form
                     Caption ="O"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x846d230ec64d72428012eef0c8bb2f63
+                        0x09b705860698c54ba12cd249a9c2d76b
                     End
                 End
                 Begin CommandButton
@@ -1182,7 +1204,7 @@ Begin Form
                     Caption ="P"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x295a168917433947b6bb56a835042169
+                        0xfe38a1787580fb4ab90810fbcc184626
                     End
                 End
                 Begin CommandButton
@@ -1197,7 +1219,7 @@ Begin Form
                     Caption ="Q"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xaefd91f1fd2b0644b9637954b3e66230
+                        0xcef9b48c5257f74d8ed00c22c5ef97ca
                     End
                 End
                 Begin CommandButton
@@ -1212,7 +1234,7 @@ Begin Form
                     Caption ="R"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xbd300ca2f00517479ed09534e347311c
+                        0x5cd8f6b83c1276459019bb520d7b4621
                     End
                 End
                 Begin CommandButton
@@ -1227,7 +1249,7 @@ Begin Form
                     Caption ="S"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x65ac354a4dba0747b6e127234c7fb51c
+                        0xaa39487973d8b647957cd21c3e4fccdd
                     End
                 End
                 Begin CommandButton
@@ -1242,7 +1264,7 @@ Begin Form
                     Caption ="T"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xe94c743e9d975548ba6a4ec37fb98d7b
+                        0x36df34ee32959141826d2f48bb3525d8
                     End
                 End
                 Begin CommandButton
@@ -1257,7 +1279,7 @@ Begin Form
                     Caption ="U"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x58dfe07de6518440859bd375ceda244f
+                        0x2d62b87a114a7a4ca268c345406c171c
                     End
                 End
                 Begin CommandButton
@@ -1272,7 +1294,7 @@ Begin Form
                     Caption ="V"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x19bf97eee8141d439d35bd875918b7b5
+                        0x76265147f2e04244963b134e659c6bf5
                     End
                 End
                 Begin CommandButton
@@ -1287,7 +1309,7 @@ Begin Form
                     Caption ="W"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x8909e1ca38ecbe4a970d9bb599f54267
+                        0x5494bb51a06cfb4aa72faad95c3f9341
                     End
                 End
                 Begin CommandButton
@@ -1302,7 +1324,7 @@ Begin Form
                     Caption ="X"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0x92ef6387c24fb44d9dac02c88954002f
+                        0x42581cca4725034b91a08728ef91fd96
                     End
                 End
                 Begin CommandButton
@@ -1317,7 +1339,7 @@ Begin Form
                     Caption ="Y"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xf8e51bc3b4ac8642ad31fc74f663ca5e
+                        0xed2e081594160246a7d317fb21b97501
                     End
                 End
                 Begin CommandButton
@@ -1332,7 +1354,7 @@ Begin Form
                     Caption ="Z"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xd4cd90c766bc9146a3a649881730828d
+                        0x7e640d40e4875c4b9847b0611a2414e1
                     End
                 End
                 Begin ComboBox
@@ -1350,7 +1372,7 @@ Begin Form
                     BackColor =12632256
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"60\""
                     GUID = Begin
-                        0xc6402ef6bb770b4e9d387eb6f9fb78cc
+                        0x79cc51d1d46f4840946cd2fd399e149a
                     End
                     Name ="DentPickList"
                     RowSourceType ="Table/Query"
@@ -1378,7 +1400,7 @@ Begin Form
                             Caption ="Dentist  &Name:"
                             FontName ="MS Sans Serif"
                             GUID = Begin
-                                0x090f85354e4b4e4f89b04ac8c357cb92
+                                0xdff28763213f574c85b2f2649e51e25e
                             End
                         End
                     End
@@ -1404,8 +1426,9 @@ Begin Form
                     DefaultValue ="\"*\""
                     FontName ="Helv"
                     GUID = Begin
-                        0xf0bfb85a7b74ff40a003b54f4200a6b5
+                        0xb4288782dfdb4e49a818b91da08a397f
                     End
+                    AsianLineBreak =0
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -1419,7 +1442,7 @@ Begin Form
                             Caption ="&Filter on:"
                             FontName ="MS Sans Serif"
                             GUID = Begin
-                                0x54ddef874fbeb34f8d48402f399068e1
+                                0x79032dcb005ccd4b9dda65ea45d11507
                             End
                         End
                     End
@@ -1436,7 +1459,7 @@ Begin Form
                     Caption ="A"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xb86c9f36cee21f48ae8219bca89349e6
+                        0x105367ccf6b12046885c913961bb4d32
                     End
                 End
                 Begin CommandButton
@@ -1451,7 +1474,7 @@ Begin Form
                     Caption ="J"
                     OnClick ="=AlphaBtn([Form],\"DENTPickList\")"
                     GUID = Begin
-                        0xe849476da848cd46b625413503492084
+                        0x5f7123b433d017439b85d5938ed0dc64
                     End
                 End
                 Begin Label
@@ -1469,7 +1492,7 @@ Begin Form
                     Caption ="Prospect: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xac2214b02b8eb44b83ac1da3c3b32acc
+                        0xfaef90e18b9a004bb399f73f3110dff7
                     End
                 End
                 Begin TextBox
@@ -1490,8 +1513,9 @@ Begin Form
                     FontName ="Arial"
                     EventProcPrefix ="tbldentist_DENTprosp"
                     GUID = Begin
-                        0x76198c7fb219814e976bc12017e1021d
+                        0x7fe0d3211590504f9e831a57d45a0ab6
                     End
+                    AsianLineBreak =0
                 End
                 Begin Label
                     BackStyle =1
@@ -1506,7 +1530,7 @@ Begin Form
                     Caption ="Enter 4-digit year "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x7fad321e0da918438887e1065019d1f2
+                        0xdd63fd5be2ee86429b4154d220c26ef6
                     End
                 End
                 Begin Label
@@ -1522,7 +1546,7 @@ Begin Form
                     Caption ="PR Rep: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xbdb0284638a57b44bcc998c24924027c
+                        0x9e39a37fbca356478cbf3e5e21aed41e
                     End
                 End
                 Begin ComboBox
@@ -1537,7 +1561,7 @@ Begin Form
                     TabIndex =56
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"100\""
                     GUID = Begin
-                        0xe53c324a51bc694eac9ba25efae7a6f9
+                        0x17074d93ff7f9d4ea2070f5e187d32c6
                     End
                     Name ="cboProvRelsRep"
                     ControlSource ="ProvRelsRepID"
@@ -1558,7 +1582,7 @@ Begin Form
                     Name ="DentWebsite"
                     ControlSource ="DentWebsite"
                     GUID = Begin
-                        0x727ddf6f7f00a84b9a727e741628ae4c
+                        0xe3ab3c263df3d74bbd266a6f07d43e84
                     End
                     Begin
                         Begin Label
@@ -1572,7 +1596,7 @@ Begin Form
                             Name ="Label226"
                             Caption ="Website:"
                             GUID = Begin
-                                0xee2eafeea499de4fa8e1f51be054c21f
+                                0x041b9d6826ac364abe455da1160462ff
                             End
                         End
                     End
@@ -1588,7 +1612,7 @@ Begin Form
                     TabIndex =8
                     ColumnInfo ="\"\";\"\";\"10\";\"18\""
                     GUID = Begin
-                        0x1e0a452bbcfb8446a83625795b1d9793
+                        0x46cb9ae218c36943bb3b0cda6ac10b39
                     End
                     Name ="DENTzip"
                     ControlSource ="DENTzip"
@@ -1606,7 +1630,7 @@ Begin Form
                     Width =630
                     TabIndex =58
                     GUID = Begin
-                        0x6b9762e376573442a17110c79aa3366b
+                        0x315e6cc54fffa243860f864b02ecc427
                     End
                     Name ="DentSpecialPrice"
                     ControlSource ="DentSpecialPrice"
@@ -1626,7 +1650,7 @@ Begin Form
                             Name ="Label227"
                             Caption ="Special Price:"
                             GUID = Begin
-                                0xd469e280d28f6e4a81156f49e2539ad1
+                                0x3732699ce7c5a84abfa5ca306c91f050
                             End
                         End
                     End
@@ -1641,7 +1665,7 @@ Begin Form
                     Width =714
                     TabIndex =15
                     GUID = Begin
-                        0x08434551147676418bef3be7a8a82dd5
+                        0x6f54bb278e8e004199574dde74cbeeea
                     End
                     Name ="DENTcloseMYoff"
                     ControlSource ="DENTcloseMYoff"
@@ -1659,7 +1683,7 @@ Begin Form
                     Width =684
                     TabIndex =24
                     GUID = Begin
-                        0xaceb3686638bce429afc7330c6dae43b
+                        0xdce3176a01e3dd4d9914d9db5259a7cd
                     End
                     Name ="DENTbyLING"
                     ControlSource ="DentBilingual"

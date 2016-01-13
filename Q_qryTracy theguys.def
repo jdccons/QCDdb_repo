@@ -1,36 +1,38 @@
 Operation =2
 Name ="tblTracy"
 Option =8
-Where ="(([tbldentist].DENTstatus=\"A\"))"
+Where ="(((tbldentist.DentStatus)=\"A\"))"
 Begin InputTables
     Name ="tbldentist"
 End
 Begin OutputColumns
     Alias ="LName"
-    Expression ="[tbldentist].DENTlast"
+    Expression ="tbldentist.DentLast"
     Alias ="FName"
-    Expression ="[tbldentist].DENTfirst"
+    Expression ="tbldentist.DentFirst"
     Alias ="Address"
-    Expression ="[tbldentist].DENTstreet1"
+    Expression ="tbldentist.DentStreet1"
     Alias ="Address2"
-    Expression ="[tbldentist].DENTstreet2"
+    Expression ="tbldentist.DentStreet2"
     Alias ="City"
-    Expression ="[tbldentist].DENTcity"
+    Expression ="tbldentist.DentCity"
     Alias ="State"
-    Expression ="[tbldentist].DENTstate"
+    Expression ="tbldentist.DentState"
     Alias ="Zipcode"
-    Expression ="[tbldentist].DENTzip"
+    Expression ="tbldentist.DentZip"
     Alias ="Specialty"
-    Expression ="[tbldentist].DENTspecialty"
+    Expression ="tbldentist.DentSpecialty"
     Alias ="Phone"
-    Expression ="[tbldentist].DENTphoneOFFICE"
+    Expression ="tbldentist.DentPhoneOffice"
 End
 Begin OrderBy
-    Expression ="[tbldentist].DENTcity"
+    Expression ="tbldentist.DentCity"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="[t-dentist].DENTlast"
@@ -78,21 +80,21 @@ Begin
     Left =53
     Top =22
     Right =769
-    Bottom =328
+    Bottom =346
     Left =-1
     Top =-1
-    Right =709
+    Right =701
     Bottom =144
     Left =784
     Top =0
-    ColumnsShown =537
+    ColumnsShown =539
     Begin
-        Left =-746
+        Left =38
         Top =6
-        Right =-451
-        Bottom =118
-        Top =12
-        Name ="t-dentist"
+        Right =134
+        Bottom =124
+        Top =0
+        Name ="tbldentist"
         Name =""
     End
 End

@@ -1,12 +1,11 @@
 Version =20
 VersionRequired =20
-Checksum =-1895504703
+Checksum =1346274491
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -18,10 +17,10 @@ Begin Form
     Width =5880
     DatasheetFontHeight =10
     ItemSuffix =11
-    Left =3555
-    Top =465
-    Right =9105
-    Bottom =3705
+    Left =3552
+    Top =468
+    Right =9108
+    Bottom =3708
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xa94a4719b60de340
@@ -133,7 +132,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0xe9bc2ae287c86f4cbb18f17947405d16
+                0x02290fe44659cc49b3764b1ee913b530
             End
             Begin
                 Begin TextBox
@@ -145,7 +144,7 @@ Begin Form
                     BackColor =10092543
                     Name ="CoverID"
                     GUID = Begin
-                        0x6569b936cc3f0541bc0bee2e116fad92
+                        0xc29b31298d9be7499c6246622ec54052
                     End
                     Begin
                         Begin Label
@@ -157,7 +156,7 @@ Begin Form
                             Name ="Label0"
                             Caption ="CoverID:"
                             GUID = Begin
-                                0x2c5f2a1e3d19ff4eb2e000e20e112967
+                                0xf3c2a6097abf3f4e9aafba58d48fb162
                             End
                         End
                     End
@@ -171,7 +170,7 @@ Begin Form
                     TabIndex =1
                     Name ="COVERcode"
                     GUID = Begin
-                        0xced914a3aa05584b945726f8625cd30c
+                        0xf6a8bfe47c21f846aebbbf99957fbf58
                     End
                     Begin
                         Begin Label
@@ -183,7 +182,7 @@ Begin Form
                             Name ="Label1"
                             Caption ="COVER code:"
                             GUID = Begin
-                                0x252459fb03268547a69487d86635bce0
+                                0x69dcda5b843cda4f8fa409c8ffe05ac9
                             End
                         End
                     End
@@ -198,7 +197,7 @@ Begin Form
                     TabIndex =2
                     Name ="COVERdescr"
                     GUID = Begin
-                        0xdb91a99b5d57954d90122d289064a8a8
+                        0x1f481addf5fbe048bab2c819aaf17370
                     End
                     Begin
                         Begin Label
@@ -210,7 +209,7 @@ Begin Form
                             Name ="Label2"
                             Caption ="COVER descr:"
                             GUID = Begin
-                                0x0ae723826c9f7a45a941b9f35bd412e2
+                                0xfba0acd86ea51d4f8b0a3942e676f4fe
                             End
                         End
                     End
@@ -232,7 +231,7 @@ Begin Form
                     ColumnWidths ="720;720;2880"
                     AfterUpdate ="[Event Procedure]"
                     GUID = Begin
-                        0xefab8dbdb1a1974e81a99b4954d91b32
+                        0xf0eb2f344ad6094b809f564d063b6b40
                     End
                     Begin
                         Begin Label
@@ -244,7 +243,7 @@ Begin Form
                             Name ="Label6"
                             Caption ="Coverage's"
                             GUID = Begin
-                                0xf71f04cc46189342bfbef95414f897f4
+                                0x64d83256d0640c43a8fd18e8307c9289
                             End
                         End
                     End
@@ -260,7 +259,7 @@ Begin Form
                     Name ="Label7"
                     Caption ="Coverage Codes"
                     GUID = Begin
-                        0x2c30bef043d5634c8a93584bf46dc446
+                        0x2d3e14a00f48cd499475fd75cbaa042e
                     End
                 End
                 Begin CommandButton
@@ -274,7 +273,7 @@ Begin Form
                     Caption ="Update"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0xedf13076e953e647b379846ac84e59fb
+                        0x5f04ee74d1bf4c429b252ac8786e464c
                     End
                 End
                 Begin CommandButton
@@ -312,7 +311,7 @@ Begin Form
                     End
                     ControlTipText ="Close Form"
                     GUID = Begin
-                        0x0dbc8b3c5cc98e438589e8e6e617d84c
+                        0xf37dba4b7bd557418765b24a06a74d31
                     End
                 End
                 Begin CommandButton
@@ -326,7 +325,7 @@ Begin Form
                     Caption ="Add"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x71aa6ae00867c64589c3ee9b007a32e2
+                        0x37264d058f072743aacf46b7e631bdcc
                     End
                 End
             End
@@ -343,11 +342,11 @@ Option Compare Database
 Private Sub cmdAdd_Click()
     
     With Me
-        ExecuteSQL "EXEC uspAddCoverage '" & .COVERcode & "','" & .COVERdescr & "';"
+        ExecuteSQL "EXEC uspAddCoverage '" & .CoverCode & "','" & .CoverDescr & "';"
         .lstCoverages.Requery
         .CoverID = ""
-        .COVERcode = ""
-        .COVERdescr = ""
+        .CoverCode = ""
+        .CoverDescr = ""
     End With
 End Sub
 
@@ -355,11 +354,11 @@ Private Sub cmdUpdate_Click()
 
     With Me
       If .CoverID <> "" Then
-        ExecuteSQL "EXEC uspUpdateCoverage " & Me.CoverID & ",'" & Me.COVERcode & "','" & Me.COVERdescr & "';"
+        ExecuteSQL "EXEC uspUpdateCoverage " & Me.CoverID & ",'" & Me.CoverCode & "','" & Me.CoverDescr & "';"
         .lstCoverages.Requery
         .CoverID = ""
-        .COVERcode = ""
-        .COVERdescr = ""
+        .CoverCode = ""
+        .CoverDescr = ""
       Else
         MsgBox "Please select a Coverage from the list.", vbInformation, "Action Canceled"
       End If
@@ -369,8 +368,8 @@ End Sub
 Private Sub lstCoverages_AfterUpdate()
     With Me
         .CoverID = .lstCoverages.Column(0)
-        .COVERcode = .lstCoverages.Column(1)
-        .COVERdescr = .lstCoverages.Column(2)
+        .CoverCode = .lstCoverages.Column(1)
+        .CoverDescr = .lstCoverages.Column(2)
     End With
 End Sub
 Private Sub cmdClose_Click()

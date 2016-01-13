@@ -1,8 +1,8 @@
 Operation =1
 Option =8
-Where ="(((tblCommission.COMMcustCLASS)=\"INDIV\" Or (tblCommission.COMMcustCLASS)=\"GRO"
-    "UP\" Or (tblCommission.COMMcustCLASS)=\"IBCR\") AND ((tblCommission.EnrollmentFe"
-    "e)=No) AND ((tblCommission.COMMagent)<>\"CORPT\" And (tblCommission.COMMagent)<>"
+Where ="(((tblCommission.CommCustClass)=\"INDIV\" Or (tblCommission.CommCustClass)=\"GRO"
+    "UP\" Or (tblCommission.CommCustClass)=\"IBCR\") AND ((tblCommission.EnrollmentFe"
+    "e)=No) AND ((tblCommission.CommAgent)<>\"CORPT\" And (tblCommission.CommAgent)<>"
     "\"CORP\") AND ((tblCommission.PayCommTo)=1))"
 Begin InputTables
     Name ="tblCommission"
@@ -11,18 +11,20 @@ End
 Begin OutputColumns
     Expression ="tblCommission.*"
     Alias ="Salesp_Name"
-    Expression ="IIf([tblAgent].[PayCommTo]=1,[AGENCY],[AGENT_LUname])"
+    Expression ="IIf(tblAgent.PayCommTo=1,[AGENCY],[AGENT_LUname])"
 End
 Begin Joins
     LeftTable ="tblCommission"
     RightTable ="tblAgent"
-    Expression ="tblCommission.COMMagent = tblAgent.AGENTid"
+    Expression ="tblCommission.CommAgent=tblAgent.AgentId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblCommission.COMMcustNAME"
@@ -36,14 +38,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =894
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -52,7 +54,7 @@ Begin
         Left =38
         Top =6
         Right =172
-        Bottom =105
+        Bottom =94
         Top =5
         Name ="tblCommission"
         Name =""
@@ -61,7 +63,7 @@ Begin
         Left =270
         Top =3
         Right =444
-        Bottom =102
+        Bottom =91
         Top =0
         Name ="tblAgent"
         Name =""

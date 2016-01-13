@@ -1,46 +1,50 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=No) AND ((tlkpClientServiceReps.RepName)=\"Ken Thompson\""
+Where ="(((tblGrp.GRCancelled)=No) AND ((tlkpClientServiceReps.RepName)=\"Ken Thompson\""
     "))"
 Begin InputTables
     Name ="tblGrp"
+    Alias ="tblGrp_1"
     Name ="tlkpClientServiceReps"
     Name ="tblGrp"
-    Alias ="tblGrp_1"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
     Expression ="tblGrp.GRPLANid"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRfax"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRsrvCONT"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRnotes"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRFax"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRSrvCont"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRNotes"
     Expression ="tblGrp.GRClientSvcRepID"
+    Alias ="Expr2"
     Expression ="tblGrp.GRclientSVCrep"
-    Expression ="tblGrp.GRannvDATE"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRAnnvDate"
+    Expression ="tblGrp.GRCancelled"
     Expression ="tlkpClientServiceReps.RepName"
-    Expression ="tblGrp_1.GRee"
+    Expression ="tblGrp_1.GREE"
 End
 Begin Joins
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -48,39 +52,39 @@ Begin
     Left =70
     Top =52
     Right =757
-    Bottom =360
+    Bottom =376
     Left =-1
     Top =-1
-    Right =680
+    Right =672
     Bottom =144
     Left =660
     Top =0
     ColumnsShown =539
     Begin
-        Left =-488
+        Left =38
         Top =6
-        Right =-392
-        Bottom =117
-        Top =43
-        Name ="tblGrp"
+        Right =134
+        Bottom =109
+        Top =25
+        Name ="tblGrp_1"
         Name =""
     End
     Begin
         Left =-220
         Top =6
         Right =-124
-        Bottom =102
+        Bottom =94
         Top =0
         Name ="tlkpClientServiceReps"
         Name =""
     End
     Begin
-        Left =38
+        Left =-488
         Top =6
-        Right =134
-        Bottom =117
-        Top =25
-        Name ="tblGrp_1"
+        Right =-392
+        Bottom =109
+        Top =43
+        Name ="tblGrp"
         Name =""
     End
 End

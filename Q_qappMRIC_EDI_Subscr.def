@@ -5,6 +5,7 @@ Begin InputTables
     Name ="tblImportFile_MRIC_Employees"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="SUBssn"
     Expression ="tblImportFile_MRIC_Employees.SSN"
     Alias ="LN"
@@ -13,23 +14,31 @@ Begin OutputColumns
     Alias ="FN"
     Name ="SUBfirstNAME"
     Expression ="UCase([FirstName])"
+    Alias ="Expr2"
     Name ="SUBdob"
     Expression ="tblImportFile_MRIC_Employees.DOB"
+    Alias ="Expr3"
     Name ="SUBeffDATE"
     Expression ="tblImportFile_MRIC_Employees.EffDate"
     Alias ="Cov"
     Name ="SUBcoverage"
     Expression ="IIf([Coverage]=\"EO\",\"I\",IIf([Coverage]=\"EF\",\"F\",\"O\"))"
+    Alias ="Expr4"
     Name ="SUBstreet1"
     Expression ="tblImportFile_MRIC_Employees.Street1"
+    Alias ="Expr5"
     Name ="SUBstreet2"
     Expression ="tblImportFile_MRIC_Employees.Street2"
+    Alias ="Expr6"
     Name ="SUBcity"
     Expression ="tblImportFile_MRIC_Employees.City"
+    Alias ="Expr7"
     Name ="SUBstate"
     Expression ="tblImportFile_MRIC_Employees.State"
+    Alias ="Expr8"
     Name ="SUBzip"
     Expression ="tblImportFile_MRIC_Employees.Zip"
+    Alias ="Expr9"
     Name ="SUBphoneHOME"
     Expression ="tblImportFile_MRIC_Employees.Phone"
     Alias ="GrpStatus"
@@ -42,6 +51,7 @@ End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="LookUpName"
@@ -54,10 +64,10 @@ Begin
     Left =12
     Top =125
     Right =981
-    Bottom =554
+    Bottom =449
     Left =-1
     Top =-1
-    Right =962
+    Right =954
     Bottom =144
     Left =0
     Top =0
@@ -66,8 +76,8 @@ Begin
         Left =67
         Top =3
         Right =386
-        Bottom =110
-        Top =5
+        Bottom =46
+        Top =0
         Name ="tblImportFile_MRIC_Employees"
         Name =""
     End

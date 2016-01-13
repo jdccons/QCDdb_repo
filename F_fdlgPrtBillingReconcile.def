@@ -1,10 +1,12 @@
-Version =19
-VersionRequired =19
-Checksum =-1406104254
+Version =20
+VersionRequired =20
+Checksum =518573542
 Begin Form
+    Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
     MinButton = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
@@ -14,10 +16,10 @@ Begin Form
     BorderStyle =1
     Width =4608
     ItemSuffix =22
-    Left =5295
+    Left =5292
     Top =600
     Right =9900
-    Bottom =4905
+    Bottom =4908
     RecSrcDt = Begin
         0x1220ba0952cfe140
     End
@@ -25,7 +27,7 @@ Begin Form
     Caption ="Print Billing Reconciliation Report"
     OnOpen ="[Event Procedure]"
     OnClose ="[Event Procedure]"
-    MenuBar ="FormMenuBar"
+    MenuBar ="Dialog"
     PrtMip = Begin
         0xa0050000a0050000a0050000a00500000000000000120000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
@@ -44,6 +46,10 @@ Begin Form
         0x5c4e747365727665725c68706c6a350000000000000000000000000000000000 ,
         0x000000000000000000000000
     End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -64,6 +70,9 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             OnClick ="[Event Procedure]"
+            GUID = Begin
+                0x0f5015d6c752f44a9a9d79f9e51788aa
+            End
             Begin
                 Begin Label
                     BackStyle =0
@@ -77,6 +86,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text13"
                     Caption ="Date of Invoices:"
+                    GUID = Begin
+                        0xdb9a91292e25a646901a4b355dd1881f
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =2
@@ -90,6 +102,9 @@ Begin Form
                     ControlSource ="FieldDateValue"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xeb094963aaea95468af000926c021c01
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -122,6 +137,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0xed0baeb665cce84f8efe70397909134c
+                    End
                 End
                 Begin OptionGroup
                     SpecialEffect =1
@@ -133,6 +151,9 @@ Begin Form
                     TabIndex =2
                     Name ="PrtReport"
                     DefaultValue ="1"
+                    GUID = Begin
+                        0xb9ea8ba20eed61419dd6a26eb3998e2b
+                    End
                     Begin
                         Begin Label
                             BackStyle =0
@@ -145,6 +166,9 @@ Begin Form
                             BackColor =12632256
                             Name ="LblSortBy"
                             Caption ="Print Report:"
+                            GUID = Begin
+                                0xc55c1f388fc7114799f3ff653df2a4bc
+                            End
                         End
                         Begin OptionButton
                             OverlapFlags =87
@@ -154,6 +178,9 @@ Begin Form
                             Height =180
                             OptionValue =1
                             Name ="BtnNew"
+                            GUID = Begin
+                                0xf754faff5a31fc44beda82ef5112e006
+                            End
                             Begin
                                 Begin Label
                                     BackStyle =0
@@ -166,6 +193,9 @@ Begin Form
                                     Name ="LblNew Groups"
                                     Caption ="New Groups"
                                     EventProcPrefix ="LblNew_Groups"
+                                    GUID = Begin
+                                        0xcf2c8caed92f5349a9c386aef8af89d7
+                                    End
                                 End
                             End
                         End
@@ -177,10 +207,13 @@ Begin Form
                             Height =180
                             OptionValue =2
                             Name ="BtnCancelled"
+                            GUID = Begin
+                                0x9236b648a174084d8671f6f2c040ad0e
+                            End
                             Begin
                                 Begin Label
                                     BackStyle =0
-                                    OverlapFlags =95
+                                    OverlapFlags =87
                                     Left =1544
                                     Top =2081
                                     Width =1860
@@ -188,6 +221,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="LblCancelled"
                                     Caption ="Cancelled or Billing Hold"
+                                    GUID = Begin
+                                        0x6d0822dfb78e654280c17847bb29dc1e
+                                    End
                                 End
                             End
                         End
@@ -198,6 +234,9 @@ Begin Form
                             Width =1704
                             OptionValue =3
                             Name ="BtnZero"
+                            GUID = Begin
+                                0x42170cf3e5bd64419cb9d15da4449a0d
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -208,6 +247,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="LblZero"
                                     Caption ="Zero Dollar Invoices"
+                                    GUID = Begin
+                                        0x2730af28fcc0574b9a3cbf4a0704b255
+                                    End
                                 End
                             End
                         End
@@ -218,6 +260,9 @@ Begin Form
                             Width =1704
                             OptionValue =4
                             Name ="BtnNoInv"
+                            GUID = Begin
+                                0xcad128fb9886144aa2c0a4cd2f40e2b6
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -228,6 +273,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="LblNoInv"
                                     Caption ="No Invoices"
+                                    GUID = Begin
+                                        0x5686ed9e4d6df041b933c3e97a4c962c
+                                    End
                                 End
                             End
                         End
@@ -238,6 +286,9 @@ Begin Form
                             Width =1704
                             OptionValue =6
                             Name ="Option20"
+                            GUID = Begin
+                                0xaf5fe27757e18342a54ab8d49b9b8800
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =255
@@ -248,6 +299,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="Label21"
                                     Caption ="New Groups Employees"
+                                    GUID = Begin
+                                        0x50a8d65daf467f4fbe307d8e6b9d5025
+                                    End
                                 End
                             End
                         End
@@ -258,6 +312,9 @@ Begin Form
                             Width =1704
                             OptionValue =5
                             Name ="BntAll"
+                            GUID = Begin
+                                0x4ece08a33ce57143a9aad1060e45a2ae
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -268,6 +325,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="Label19"
                                     Caption ="Print all reports"
+                                    GUID = Begin
+                                        0x35467397e3892f468d20505f9f1e5520
+                                    End
                                 End
                             End
                         End
@@ -400,12 +460,12 @@ Private Sub PopDepCnt()
     Do While Not rst2.EOF
         strGrpID = rst2.Fields("GroupID")
         rst2.Edit
-        strSQL = "SELECT qselDepCnts.SUBgroupID, qselDepCnts.CountOfDEPcounter " & _
+        strSQL = "SELECT qselDepCnts.SUBgroupID, qselDepCnts.CountOfID " & _
                  "FROM qselDepCnts WHERE (((qselDepCnts.SUBgroupID)='" & strGrpID & "'));"
         Set rst = dbs.OpenRecordset(strSQL, dbOpenDynaset, dbSeeChanges)
         If rst.RecordCount > 0 Then
             
-            rst2.Fields("DepCnt") = rst.Fields("CountOfDEPcounter")
+            rst2.Fields("DepCnt") = rst.Fields("CountOfID")
         Else
             rst2.Fields("DepCnt") = 0
         End If

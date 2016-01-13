@@ -35,10 +35,10 @@ Begin OutputColumns
         "lig Start Date],1,4)"
     Alias ="GroupID"
     Name ="SUBgroupID"
-    Expression ="[Forms]![frmImportProcessing]![txtGrpID]"
+    Expression ="Forms!frmImportProcessing!txtGrpID"
     Alias ="PlanID"
     Name ="SUBplanIDgr"
-    Expression ="[Forms]![frmImportProcessing]![txtPlanID]"
+    Expression ="Forms!frmImportProcessing!txtPlanID"
     Alias ="Rate"
     Name ="SUBrate"
     Expression ="IIf([Tier Code]=\"1\",0,IIf([Tier Code]=\"2\",8,IIf([Tier Code]=\"3\",8,12)))"
@@ -59,13 +59,13 @@ Begin OutputColumns
     Expression ="UCase([Last Name]) & \", \" & UCase([First Name]) & \" \" & UCase([Middle Initia"
         "l])"
     Alias ="DepCnt"
-    Name ="SUBnoDEPENT"
+    Name ="DepCnt"
     Expression ="IIf(IsNull([CountOfDependent SSN]),0,[CountOfDependent SSN])"
 End
 Begin Joins
     LeftTable ="tblEDI_Subscr_Import"
     RightTable ="qselEDI_CountOfDep"
-    Expression ="tblEDI_Subscr_Import.[Primary SSN] = qselEDI_CountOfDep.[Primary SSN]"
+    Expression ="tblEDI_Subscr_Import.[Primary SSN]=qselEDI_CountOfDep.[Primary SSN]"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -92,10 +92,10 @@ Begin
     Left =33
     Top =93
     Right =1105
-    Bottom =498
+    Bottom =505
     Left =-1
     Top =-1
-    Right =1065
+    Right =1057
     Bottom =232
     Left =0
     Top =0
@@ -104,7 +104,7 @@ Begin
         Left =62
         Top =6
         Right =238
-        Bottom =206
+        Bottom =199
         Top =10
         Name ="tblEDI_Subscr_Import"
         Name =""
@@ -113,7 +113,7 @@ Begin
         Left =379
         Top =3
         Right =548
-        Bottom =83
+        Bottom =91
         Top =0
         Name ="qselEDI_CountOfDep"
         Name =""

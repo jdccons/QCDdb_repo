@@ -15,8 +15,8 @@ Begin OutputColumns
     Expression ="IIf([InvoiceType]=1,[SUBssn],[SubID])"
     Alias ="Desc"
     Name ="DESCRIPTION"
-    Expression ="(Trim([SUBlastNAME]) & \", \" & Trim([tblSubscr].[SUBfirstNAME]) & \" \" & Trim("
-        "[tblSubscr].[SUBmiddleNAME]))"
+    Expression ="(Trim([SUBlastNAME]) & \", \" & Trim(tblSubscr.SUBfirstNAME) & \" \" & Trim(tblS"
+        "ubscr.SUBmiddleNAME))"
     Name ="UNIT PRICE"
     Expression ="tblRates.Rate"
     Alias ="QtyOrdered"
@@ -37,20 +37,20 @@ End
 Begin Joins
     LeftTable ="tblInvHdrPreliminary"
     RightTable ="tblSubscr"
-    Expression ="tblInvHdrPreliminary.Custkey = tblSubscr.SUBgroupID"
+    Expression ="tblInvHdrPreliminary.Custkey=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =3
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="(Trim([SUBlastNAME]) & \", \" & Trim([tblSubscr].[SUBfirstNAME]) & \" \" & Trim("
-        "[tblSubscr].[SUBmiddleNAME]))"
+    Expression ="(Trim([SUBlastNAME]) & \", \" & Trim(tblSubscr.SUBfirstNAME) & \" \" & Trim(tblS"
+        "ubscr.SUBmiddleNAME))"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -75,19 +75,28 @@ Begin
     Left =23
     Top =17
     Right =966
-    Bottom =508
+    Bottom =515
     Left =-1
     Top =-1
-    Right =936
+    Right =928
     Bottom =318
     Left =0
     Top =0
     ColumnsShown =651
     Begin
+        Left =698
+        Top =9
+        Right =895
+        Bottom =247
+        Top =28
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
         Left =38
         Top =6
         Right =242
-        Bottom =266
+        Bottom =259
         Top =0
         Name ="tblInvHdrPreliminary"
         Name =""
@@ -96,25 +105,16 @@ Begin
         Left =322
         Top =9
         Right =532
-        Bottom =269
+        Bottom =262
         Top =11
         Name ="tblSubscr"
-        Name =""
-    End
-    Begin
-        Left =698
-        Top =9
-        Right =895
-        Bottom =254
-        Top =28
-        Name ="tblGrp"
         Name =""
     End
     Begin
         Left =576
         Top =98
         Right =672
-        Bottom =208
+        Bottom =201
         Top =0
         Name ="tblRates"
         Name =""

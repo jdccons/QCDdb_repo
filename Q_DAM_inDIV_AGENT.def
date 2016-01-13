@@ -1,15 +1,15 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBstatus)=\"TRADM\"))"
+Where ="(((tblSubscr.SubStatus)=\"TRADM\"))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubRate"
     Expression ="tblSubscr.SUBagentID1"
     Expression ="tblSubscr.SUBagentID2"
 End
@@ -18,6 +18,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -25,10 +26,10 @@ Begin
     Left =-17
     Top =-17
     Right =1019
-    Bottom =679
+    Bottom =607
     Left =-1
     Top =-1
-    Right =1029
+    Right =1021
     Bottom =444
     Left =61
     Top =0
@@ -37,7 +38,7 @@ Begin
         Left =114
         Top =-13
         Right =687
-        Bottom =416
+        Bottom =405
         Top =28
         Name ="tblSubscr"
         Name =""

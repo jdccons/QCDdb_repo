@@ -4,18 +4,31 @@ Begin InputTables
     Name ="tblEnrollment_Keller"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="tblEnrollment_Keller.Enrolled"
+    Alias ="Expr2"
     Expression ="tblEnrollment_Keller.SUBlastNAME"
+    Alias ="Expr3"
     Expression ="tblEnrollment_Keller.SUBfirstNAME"
+    Alias ="Expr4"
     Expression ="tblEnrollment_Keller.SUBmiddleNAME"
+    Alias ="Expr5"
     Expression ="tblEnrollment_Keller.SUBssn"
+    Alias ="Expr6"
     Expression ="tblEnrollment_Keller.Campus"
+    Alias ="Expr7"
     Expression ="tblEnrollment_Keller.SUBstreet1"
+    Alias ="Expr8"
     Expression ="tblEnrollment_Keller.SUBstreet2"
+    Alias ="Expr9"
     Expression ="tblEnrollment_Keller.SUBcity"
+    Alias ="Expr10"
     Expression ="tblEnrollment_Keller.SUBstate"
+    Alias ="Expr11"
     Expression ="tblEnrollment_Keller.SUBzip"
+    Alias ="Expr12"
     Expression ="tblEnrollment_Keller.SUBphoneHOME"
+    Alias ="Expr13"
     Expression ="tblEnrollment_Keller.SUBdob"
 End
 Begin OrderBy
@@ -26,6 +39,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblEnrollment_Keller.SUBmiddleNAME"
@@ -34,14 +49,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =447
     Left =-1
     Top =-1
-    Right =793
+    Right =1253
     Bottom =227
     Left =0
     Top =0
@@ -50,8 +65,8 @@ Begin
         Left =38
         Top =6
         Right =345
-        Bottom =182
-        Top =1
+        Bottom =49
+        Top =0
         Name ="tblEnrollment_Keller"
         Name =""
     End

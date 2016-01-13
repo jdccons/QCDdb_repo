@@ -1,36 +1,34 @@
 Operation =1
 Option =0
-Where ="(((tblAgent.AGENTactive)=\"A\"))"
+Where ="(((tblAgent.AgentActive)=\"A\"))"
 Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTid"
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.AgentId"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.Agent_LUname"
+    Alias ="Expr1"
     Expression ="tblAgent.AGENTtype"
-    Expression ="tblAgent.AGENTactive"
-    Expression ="tblAgent.AGENTSSN"
-    Expression ="tblAgent.AGENTtaxID"
+    Expression ="tblAgent.AgentActive"
+    Expression ="tblAgent.AgentSSN"
+    Expression ="tblAgent.AgentTaxID"
     Expression ="tblAgent.PayCommTo"
 End
 Begin OrderBy
-    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.Agent_LUname"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblAgent.AGENCY"
         dbInteger "ColumnWidth" ="3555"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblAgent.AGENTtype"
-        dbInteger "ColumnWidth" ="570"
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
@@ -69,10 +67,10 @@ Begin
     Left =62
     Top =44
     Right =778
-    Bottom =346
+    Bottom =370
     Left =-1
     Top =-1
-    Right =705
+    Right =701
     Bottom =146
     Left =0
     Top =0
@@ -81,7 +79,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblAgent"
         Name =""

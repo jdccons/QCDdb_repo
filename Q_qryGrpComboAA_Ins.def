@@ -1,28 +1,30 @@
 Operation =1
 Option =8
-Where ="(((tblGrp.GroupType)=4) AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GroupType)=4) AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblGrp"
     Name ="qselAA_RW"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="qselAA_RW"
-    Expression ="tblGrp.GROUPid = qselAA_RW.GROUPid"
+    Expression ="tblGrp.GroupID=qselAA_RW.GROUPid"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GROUPid"
@@ -36,14 +38,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1400
-    Bottom =950
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =390
     Left =-1
     Top =-1
-    Right =1397
+    Right =1253
     Bottom =170
     Left =0
     Top =0
@@ -52,7 +54,7 @@ Begin
         Left =48
         Top =7
         Right =213
-        Bottom =136
+        Bottom =125
         Top =26
         Name ="tblGrp"
         Name =""
@@ -61,7 +63,7 @@ Begin
         Left =251
         Top =6
         Right =414
-        Bottom =75
+        Bottom =79
         Top =0
         Name ="qselAA_RW"
         Name =""

@@ -1,32 +1,34 @@
 Operation =1
 Option =0
-Where ="(((tblGrp_1.GRPgeoID)=\"TXSSW\"))"
+Where ="(((tblGrp_1.GRGeoID)=\"TXSSW\"))"
 Begin InputTables
     Name ="tblGrp"
+    Alias ="tblGrp_1"
     Name ="tlkpClientServiceReps"
     Name ="tblGrp"
-    Alias ="tblGrp_1"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Expression ="tlkpClientServiceReps.RepName"
-    Expression ="tblGrp_1.GRstreet1"
-    Expression ="tblGrp_1.GRstreet2"
-    Expression ="tblGrp_1.GRcity"
-    Expression ="tblGrp_1.GRstate"
-    Expression ="tblGrp_1.GRzip"
-    Expression ="tblGrp_1.GRPgeoID"
+    Expression ="tblGrp_1.GRStreet1"
+    Expression ="tblGrp_1.GRStreet2"
+    Expression ="tblGrp_1.GRCity"
+    Expression ="tblGrp_1.GRState"
+    Expression ="tblGrp_1.GRZip"
+    Expression ="tblGrp_1.GRGeoID"
 End
 Begin Joins
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -34,39 +36,39 @@ Begin
     Left =12
     Top =55
     Right =720
-    Bottom =363
+    Bottom =379
     Left =-1
     Top =-1
-    Right =701
+    Right =693
     Bottom =144
     Left =681
     Top =0
     ColumnsShown =539
     Begin
-        Left =-643
+        Left =38
         Top =6
-        Right =-499
-        Bottom =113
-        Top =29
-        Name ="tblGrp"
+        Right =134
+        Bottom =109
+        Top =0
+        Name ="tblGrp_1"
         Name =""
     End
     Begin
         Left =-428
         Top =10
         Right =-332
-        Bottom =102
+        Bottom =98
         Top =0
         Name ="tlkpClientServiceReps"
         Name =""
     End
     Begin
-        Left =38
+        Left =-643
         Top =6
-        Right =134
-        Bottom =113
-        Top =0
-        Name ="tblGrp_1"
+        Right =-499
+        Bottom =109
+        Top =29
+        Name ="tblGrp"
         Name =""
     End
 End

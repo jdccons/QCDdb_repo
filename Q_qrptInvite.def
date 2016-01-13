@@ -9,8 +9,8 @@ Begin OutputColumns
     Alias ="Zip2"
     Expression ="IIf([SUBzip] Like \"#####-#\",Left([SUBZip],Len([SUBZip])-1),IIf([SUBZip] Like \""
         "#########\",Format([SUBZip],\"@@@@@-@@@@\"),[SUBZip]))"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblSubscr.SubStatus"
     Alias ="LastName"
     Expression ="(ConvertLastName([SUBlastNAME]))"
     Alias ="FirstName"
@@ -19,24 +19,24 @@ Begin OutputColumns
     Expression ="(\"Dear \" & [Firstname] & \" \" & [LastNAME] & \":\")"
     Alias ="Name"
     Expression ="([SubFirstName] & \" \" & [SUBlastName])"
-    Expression ="tblCoverage.COVERcode"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblCoverage.CoverCode"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -56,16 +56,25 @@ Begin
         dbInteger "ColumnWidth" ="2295"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="Zip2"
+    End
+    Begin
+        dbText "Name" ="LastName"
+    End
+    Begin
+        dbText "Name" ="FirstName"
+    End
 End
 Begin
     State =0
     Left =71
     Top =161
     Right =1168
-    Bottom =478
+    Bottom =485
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =144
     Left =0
     Top =0
@@ -74,7 +83,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblGrp"
         Name =""
@@ -83,7 +92,7 @@ Begin
         Left =223
         Top =6
         Right =319
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -92,7 +101,7 @@ Begin
         Left =399
         Top =2
         Right =495
-        Bottom =97
+        Bottom =90
         Top =0
         Name ="tblCoverage"
         Name =""

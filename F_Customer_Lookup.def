@@ -1,0 +1,428 @@
+Version =20
+VersionRequired =20
+Checksum =-898943791
+Begin Form
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    AllowDeletions = NotDefault
+    DividingLines = NotDefault
+    AllowAdditions = NotDefault
+    AllowEdits = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =2
+    ScrollBars =2
+    ViewsAllowed =2
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4050
+    DatasheetFontHeight =10
+    ItemSuffix =15
+    Left =270
+    Top =615
+    Right =14055
+    Bottom =8190
+    DatasheetGridlinesColor =12632256
+    Toolbar ="Source Code Control"
+    RecSrcDt = Begin
+        0x20d5c4125cb1e440
+    End
+    RecordSource ="SELECT vw_IndividualCustomer.CustomerKey, vw_IndividualCustomer.CustomerName, vw"
+        "_IndividualCustomer.CustomerCity, vw_IndividualCustomer.CustomerState, vw_Indivi"
+        "dualCustomer.CustomerZipCode, IIf([CreditHold]=\"N\",\"Active\",\"Cancelled\") A"
+        "S Expr1, vw_IndividualCustomer.Spare, vw_IndividualCustomer.Spare2, vw_Individua"
+        "lCustomer.Spare3 FROM vw_IndividualCustomer ORDER BY vw_IndividualCustomer.Custo"
+        "merKey;"
+    Caption ="Customer Lookup"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc02032f000001000100ea0a6f08640001000f00580202000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
+    End
+    AllowFormView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+        End
+        Begin FormHeader
+            Height =0
+            BackColor =-2147483633
+            Name ="FormHeader"
+            GUID = Begin
+                0xbaf714823193e349a14c449687a5e128
+            End
+        End
+        Begin Section
+            Height =3315
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x00e4bb9f2926b6408dfb84e5b444afd4
+            End
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =120
+                    Width =615
+                    Height =255
+                    ColumnWidth =1365
+                    Name ="CustomerKey"
+                    ControlSource ="CustomerKey"
+                    GUID = Begin
+                        0x304802199cd7aa4db75360e4fd7e3e44
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =120
+                            Width =1560
+                            Height =255
+                            Name ="CustomerKey_Label"
+                            Caption ="PltCustKey"
+                            GUID = Begin
+                                0x3ccdfad2987ccf409d731e42f36093ce
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =480
+                    Width =750
+                    Height =255
+                    ColumnWidth =1320
+                    TabIndex =1
+                    Name ="Spare"
+                    ControlSource ="Spare"
+                    InputMask ="0000\\-0000;0;_"
+                    GUID = Begin
+                        0xbe39685c7369ed4e95a2a836fcda410b
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =480
+                            Width =1560
+                            Height =255
+                            Name ="Spare_Label"
+                            Caption ="SubID"
+                            GUID = Begin
+                                0x69c8f4b9fde45d438560674b37f4d085
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =840
+                    Width =825
+                    Height =255
+                    ColumnWidth =1470
+                    TabIndex =2
+                    Name ="Spare2"
+                    ControlSource ="Spare2"
+                    InputMask ="000\\-00\\-0000;0;_"
+                    GUID = Begin
+                        0xa8179486a6b94c4dbbf0f19f3a469042
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =840
+                            Width =1560
+                            Height =255
+                            Name ="Spare2_Label"
+                            Caption ="SSN"
+                            GUID = Begin
+                                0x9e55d0c10d006c4492e161250d6d34c6
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1200
+                    Width =2310
+                    Height =255
+                    ColumnWidth =3120
+                    TabIndex =3
+                    Name ="CustomerName"
+                    ControlSource ="CustomerName"
+                    GUID = Begin
+                        0x13c2dd3d9dbb1f4bb289de44235416c4
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1200
+                            Width =1560
+                            Height =255
+                            Name ="CustomerName_Label"
+                            Caption ="Name"
+                            GUID = Begin
+                                0x09f4c250b9ba7a4a8977cb70dc2cfa23
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1560
+                    Width =2310
+                    Height =255
+                    ColumnWidth =1755
+                    TabIndex =4
+                    Name ="CustomerCity"
+                    ControlSource ="CustomerCity"
+                    GUID = Begin
+                        0x740ae6a08923604db9cae61066712f5b
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1560
+                            Width =1560
+                            Height =255
+                            Name ="CustomerCity_Label"
+                            Caption ="City"
+                            GUID = Begin
+                                0x452fa8fdf79dbf46adb58e5ab665cc84
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =1920
+                    Width =390
+                    Height =255
+                    ColumnWidth =1485
+                    TabIndex =5
+                    Name ="CustomerState"
+                    ControlSource ="CustomerState"
+                    GUID = Begin
+                        0x5c70680b03236844b7f29825e6364e8c
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =1920
+                            Width =1560
+                            Height =255
+                            Name ="CustomerState_Label"
+                            Caption ="ST"
+                            GUID = Begin
+                                0xf58b764ffead38468d7fe775ffc45250
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =2280
+                    Width =900
+                    Height =255
+                    ColumnWidth =1725
+                    TabIndex =6
+                    Name ="CustomerZipCode"
+                    ControlSource ="CustomerZipCode"
+                    GUID = Begin
+                        0xe73613b2bb9fd14f8dec94f29f4681c4
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =60
+                            Top =2280
+                            Width =1560
+                            Height =255
+                            Name ="CustomerZipCode_Label"
+                            Caption ="Zip"
+                            GUID = Begin
+                                0xf974c9ff482725489b40a2f9da8a6037
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1680
+                    Top =2655
+                    TabIndex =7
+                    Name ="CreditHold"
+                    ControlSource ="Expr1"
+                    ConditionalFormat = Begin
+                        0x010000008e000000020000000000000002000000000000000900000001000000 ,
+                        0x0000000000ff000000000000020000000a000000160000000100000000000000 ,
+                        0xff00000000000000000000000000000000000000000000000000000000000000 ,
+                        0x22004100630074006900760065002200000000002200430061006e0063006500 ,
+                        0x6c006c0065006400220000000000
+                    End
+                    GUID = Begin
+                        0x7dc85108e11b4f4ab75e6fcee4fed3f3
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =90
+                            Top =2655
+                            Width =1485
+                            Height =240
+                            Name ="Label14"
+                            Caption ="Status"
+                            GUID = Begin
+                                0xe30d25efce381e4cbad0c4508bd7d812
+                            End
+                        End
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+            GUID = Begin
+                0xead921eecb1b1246a2a19a4226688fe7
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database

@@ -7,49 +7,51 @@ Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="COMMcustKEY"
     Expression ="ARTRAN.Custkey"
     Name ="COMMcustNAME"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr2"
     Name ="COMMcheckNO"
     Expression ="ARTRAN.Docno"
+    Alias ="Expr3"
     Name ="COMMinvoiceNO"
     Expression ="ARTRAN.Applytodocno"
     Alias ="CheckAmt"
     Name ="COMMcheckAMT"
     Expression ="([Docamt]*(-1))"
+    Alias ="Expr4"
     Name ="COMMagent"
     Expression ="tblGrp.GRagentID2"
+    Alias ="Expr5"
     Name ="COMMrate"
     Expression ="tblGrp.GRagentRATE2"
+    Alias ="Expr6"
     Name ="COMMcustCLASS"
     Expression ="ARTRAN.Custclass"
+    Alias ="Expr7"
     Name ="COMMcheckDATE"
     Expression ="ARTRAN.Docdate"
     Alias ="AgentType"
     Name ="COMMagentTYPE"
     Expression ="2"
 End
-Begin Joins
-    LeftTable ="ARTRAN"
-    RightTable ="tblGrp"
-    Expression ="ARTRAN.Custkey = tblGrp.GROUPid"
-    Flag =1
-End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =440
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =220
     Left =0
     Top =0
@@ -58,7 +60,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =49
         Top =0
         Name ="ARTRAN"
         Name =""
@@ -67,7 +69,7 @@ Begin
         Left =285
         Top =6
         Right =381
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblGrp"
         Name =""

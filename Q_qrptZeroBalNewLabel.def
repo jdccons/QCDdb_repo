@@ -1,7 +1,7 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBflyerPRTdte) Is Null) AND ((tblSubscr.SUBstatus)=\"GRSUB\") AND "
-    "((tblGrp.GRcancelled)=False) AND ((tblRates.Rate)=0))"
+Where ="(((tblSubscr.SubFlyerPrtDte) Is Null) AND ((tblSubscr.SubStatus)=\"GRSUB\") AND "
+    "((tblGrp.GRCancelled)=False) AND ((tblRates.Rate)=0))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
@@ -9,19 +9,19 @@ Begin InputTables
 End
 Begin OutputColumns
     Expression ="tblSubscr.*"
-    Expression ="tblSubscr.SUBflyerPRTdte"
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblSubscr.SubFlyerPrtDte"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblGrp.GRCancelled"
     Expression ="tblRates.Rate"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -37,10 +37,10 @@ Begin
     Left =85
     Top =163
     Right =937
-    Bottom =480
+    Bottom =487
     Left =-1
     Top =-1
-    Right =845
+    Right =837
     Bottom =144
     Left =0
     Top =0
@@ -49,7 +49,7 @@ Begin
         Left =458
         Top =8
         Right =554
-        Bottom =103
+        Bottom =96
         Top =0
         Name ="tblGrp"
         Name =""
@@ -58,7 +58,7 @@ Begin
         Left =72
         Top =9
         Right =289
-        Bottom =89
+        Bottom =97
         Top =1
         Name ="tblSubscr"
         Name =""
@@ -67,7 +67,7 @@ Begin
         Left =337
         Top =-4
         Right =433
-        Bottom =106
+        Bottom =99
         Top =0
         Name ="tblRates"
         Name =""

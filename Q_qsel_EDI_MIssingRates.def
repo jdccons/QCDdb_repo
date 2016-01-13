@@ -20,7 +20,7 @@ End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="qsel_EDI_MIssingRates_1"
-    Expression ="tblEDI_App_Subscr.SubGroupID = qsel_EDI_MIssingRates_1.GROUPid"
+    Expression ="tblEDI_App_Subscr.SubGroupID=qsel_EDI_MIssingRates_1.GROUPid"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -53,10 +53,10 @@ Begin
     Left =-377
     Top =67
     Right =549
-    Bottom =499
+    Bottom =465
     Left =-1
     Top =-1
-    Right =894
+    Right =911
     Bottom =218
     Left =0
     Top =0
@@ -74,7 +74,7 @@ Begin
         Left =249
         Top =5
         Right =499
-        Bottom =198
+        Bottom =153
         Top =0
         Name ="qsel_EDI_MIssingRates_1"
         Name =""

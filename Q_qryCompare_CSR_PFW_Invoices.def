@@ -8,18 +8,12 @@ Begin OutputColumns
     Expression ="qryClientServicesReport_CurrentInvoices.GroupID"
     Alias ="CSR Invoice"
     Expression ="qryClientServicesReport_CurrentInvoices.CurrentInvoiceAmt"
+    Alias ="Expr1"
     Expression ="qryPlatinum_CurrentInvoices.CustomerKey"
     Alias ="PFW Invoice"
     Expression ="qryPlatinum_CurrentInvoices.DocumentAmt"
     Alias ="Difference"
     Expression ="[CurrentInvoiceAmt]-[DocumentAmt]"
-End
-Begin Joins
-    LeftTable ="qryClientServicesReport_CurrentInvoices"
-    RightTable ="qryPlatinum_CurrentInvoices"
-    Expression ="qryClientServicesReport_CurrentInvoices.GroupID = qryPlatinum_CurrentInvoices.Cu"
-        "stomerKey"
-    Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -35,14 +29,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1680
-    Bottom =962
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =450
     Left =-1
     Top =-1
-    Right =1673
+    Right =1253
     Bottom =230
     Left =0
     Top =0
@@ -51,7 +45,7 @@ Begin
         Left =38
         Top =6
         Right =218
-        Bottom =138
+        Bottom =94
         Top =0
         Name ="qryClientServicesReport_CurrentInvoices"
         Name =""
@@ -60,7 +54,7 @@ Begin
         Left =290
         Top =11
         Right =526
-        Bottom =127
+        Bottom =54
         Top =0
         Name ="qryPlatinum_CurrentInvoices"
         Name =""

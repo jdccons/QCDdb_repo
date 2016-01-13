@@ -5,19 +5,25 @@ Begin InputTables
     Name ="QCD_Dependents_DISD"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="DEPssn"
     Expression ="QCD_Dependents_DISD.DepSSN"
+    Alias ="Expr2"
     Name ="DEPsubID"
     Expression ="QCD_Dependents_DISD.SubSSN"
+    Alias ="Expr3"
     Name ="DEPfirstNAME"
     Expression ="QCD_Dependents_DISD.DepFirstName"
+    Alias ="Expr4"
     Name ="DEPlastNAME"
     Expression ="QCD_Dependents_DISD.DepLastName"
+    Alias ="Expr5"
     Name ="DEPmiddleNAME"
     Expression ="QCD_Dependents_DISD.DeptMI"
     Alias ="DOB"
     Name ="DEPdob"
     Expression ="Mid([DepDOB],1,2) & \"/\" & Mid([DepDOB],3,2) & \"/\" & Mid([DepDOB],5,4)"
+    Alias ="Expr6"
     Name ="DEPgender"
     Expression ="QCD_Dependents_DISD.DepGender"
     Alias ="Rel"
@@ -35,10 +41,10 @@ Begin
     Left =12
     Top =192
     Right =935
-    Bottom =512
+    Bottom =516
     Left =-1
     Top =-1
-    Right =916
+    Right =908
     Bottom =144
     Left =0
     Top =0
@@ -47,7 +53,7 @@ Begin
         Left =84
         Top =6
         Right =313
-        Bottom =120
+        Bottom =49
         Top =0
         Name ="QCD_Dependents_DISD"
         Name =""

@@ -1,116 +1,50 @@
 Operation =1
 Option =0
 Begin InputTables
-    Name ="qselACTGroups"
     Name ="qselACTCurGrp"
+    Name ="qselACTGroups"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="qselACTCurGrp.GroupID"
+    Alias ="Expr2"
     Expression ="qselACTCurGrp.COMPANY"
+    Alias ="Expr3"
     Expression ="qselACTCurGrp.GroupPlanID"
+    Alias ="Expr4"
     Expression ="qselACTCurGrp.GroupGeoID"
+    Alias ="Expr5"
     Expression ="qselACTCurGrp.ADDR1"
+    Alias ="Expr6"
     Expression ="qselACTCurGrp.ADDR2"
+    Alias ="Expr7"
     Expression ="qselACTCurGrp.CITY"
+    Alias ="Expr8"
     Expression ="qselACTCurGrp.STATE"
+    Alias ="Expr9"
     Expression ="qselACTCurGrp.ZIP"
+    Alias ="Expr10"
     Expression ="qselACTCurGrp.PhonePrimary"
+    Alias ="Expr11"
     Expression ="qselACTCurGrp.PhoneFax"
+    Alias ="Expr12"
     Expression ="qselACTCurGrp.NAME"
+    Alias ="Expr13"
     Expression ="qselACTCurGrp.ContBeg"
+    Alias ="Expr14"
     Expression ="qselACTCurGrp.ContEnd"
+    Alias ="Expr15"
     Expression ="qselACTCurGrp.AgentPrimary"
+    Alias ="Expr16"
     Expression ="qselACTCurGrp.AgentSecondary"
+    Alias ="Expr17"
     Expression ="qselACTCurGrp.ClientServiceRep"
+    Alias ="Expr18"
     Expression ="qselACTCurGrp.IDSTATUS"
+    Alias ="Expr19"
     Expression ="qselACTCurGrp.TITLE"
+    Alias ="Expr20"
     Expression ="qselACTCurGrp.CancelledDate"
-End
-Begin Joins
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.GroupID = qselACTGroups.GROUPid"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.COMPANY = qselACTGroups.GRname"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.GroupPlanID = qselACTGroups.GRPLANid"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.GroupGeoID = qselACTGroups.GRPgeoID"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.ADDR1 = qselACTGroups.GRstreet1"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.CITY = qselACTGroups.GRcity"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.STATE = qselACTGroups.GRstate"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.ZIP = qselACTGroups.GRzip"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.PhonePrimary = qselACTGroups.PhonePrimary"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.AgentPrimary = qselACTGroups.AgentPrimary"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.ClientServiceRep = qselACTGroups.ClientServiceRep"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.IDSTATUS = qselACTGroups.IDStatus"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.AccountManager = qselACTGroups.AcctMgrName"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.PhoneFax = qselACTGroups.PhoneFax"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.ContBeg = qselACTGroups.ContBeg"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.ContEnd = qselACTGroups.ContEnd"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.AgentSecondary = qselACTGroups.AgentSecondary"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.ExecSalesDir = qselACTGroups.ExecSalesDir"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.GroupType = qselACTGroups.[Group Type]"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.NAME = qselACTGroups.GRsrvCONT"
-    Flag =1
-    LeftTable ="qselACTCurGrp"
-    RightTable ="qselACTGroups"
-    Expression ="qselACTCurGrp.NAME2 = qselACTGroups.GRmainCONT"
-    Flag =1
 End
 Begin OrderBy
     Expression ="qselACTCurGrp.GroupID"
@@ -121,6 +55,8 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="qselACTCurGrp.ADDR2"
@@ -143,30 +79,30 @@ Begin
     Left =103
     Top =3
     Right =976
-    Bottom =725
+    Bottom =700
     Left =-1
     Top =-1
-    Right =866
+    Right =858
     Bottom =517
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =327
-        Top =4
-        Right =552
-        Bottom =463
-        Top =0
-        Name ="qselACTGroups"
-        Name =""
-    End
-    Begin
         Left =31
         Top =19
         Right =263
-        Bottom =418
-        Top =1
+        Bottom =62
+        Top =0
         Name ="qselACTCurGrp"
+        Name =""
+    End
+    Begin
+        Left =327
+        Top =4
+        Right =552
+        Bottom =392
+        Top =0
+        Name ="qselACTGroups"
         Name =""
     End
 End

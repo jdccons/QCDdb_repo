@@ -1,27 +1,27 @@
 Operation =1
 Option =0
-Where ="((((tblSubscr.SUBeffDATE)>#9/1/1999# Or (tblSubscr.SUBeffDATE)=#9/1/1999#) And ("
-    "(tblSubscr.SUBeffDATE)<#1/1/2000# Or (tblSubscr.SUBeffDATE)=#1/1/2000#)) AND ((t"
-    "blRates.Rate)>0) AND ((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Where ="((((tblSubscr.SubEffDate)>#9/1/1999# Or (tblSubscr.SubEffDate)=#9/1/1999#) And ("
+    "(tblSubscr.SubEffDate)<#1/1/2000# Or (tblSubscr.SubEffDate)=#1/1/2000#)) AND ((t"
+    "blRates.Rate)>0) AND ((tblSubscr.SubStatus)=\"GRSUB\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Expression ="tblSubscr.SUB_LUname"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubEffDate"
     Expression ="tblRates.Rate"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Flag =0
     Expression ="tblSubscr.SUB_LUname"
     Flag =0
@@ -39,10 +39,10 @@ Begin
     Left =18
     Top =38
     Right =1157
-    Bottom =448
+    Bottom =455
     Left =-1
     Top =-1
-    Right =1132
+    Right =1124
     Bottom =237
     Left =0
     Top =0
@@ -51,7 +51,7 @@ Begin
         Left =38
         Top =6
         Right =273
-        Bottom =176
+        Bottom =169
         Top =24
         Name ="tblSubscr"
         Name =""
@@ -60,7 +60,7 @@ Begin
         Left =362
         Top =20
         Right =458
-        Bottom =130
+        Bottom =123
         Top =0
         Name ="tblRates"
         Name =""

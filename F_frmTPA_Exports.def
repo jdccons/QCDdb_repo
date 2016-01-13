@@ -1,0 +1,565 @@
+Version =20
+VersionRequired =20
+Checksum =449280703
+Begin Form
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    ShortcutMenu = NotDefault
+    NavigationButtons = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ViewsAllowed =1
+    TabularFamily =0
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =4140
+    DatasheetFontHeight =10
+    ItemSuffix =9
+    Left =4950
+    Top =645
+    Right =9090
+    Bottom =3675
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xeff2fd2b6fa9e440
+    End
+    Caption ="TPA Exports"
+    MenuBar ="Dialog"
+    DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =3045
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0xcec1739864b9f44aa050730d68cbe470
+            End
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =960
+                    Top =300
+                    Width =288
+                    Height =288
+                    Name ="cmdExpAllAmerican"
+                    OnClick ="[Event Procedure]"
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Find Next"
+                    GUID = Begin
+                        0x73bcba0f4620c345884ac45693349b6d
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =1500
+                            Top =330
+                            Width =2475
+                            Height =239
+                            Name ="lblExpAllAmerican"
+                            Caption ="Export All American"
+                            GUID = Begin
+                                0x7c0b365703662f41891cb7fa7dac1205
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1560
+                    Top =2130
+                    Width =576
+                    Height =576
+                    TabIndex =4
+                    Name ="cmdClose"
+                    Caption ="Command2"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0xa57da73ab0413b4d97ebf0ed48d1a17b
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =960
+                    Top =708
+                    Width =288
+                    Height =288
+                    TabIndex =1
+                    Name ="cmdExpQCDOnly"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Find Next"
+                    GUID = Begin
+                        0xcf06ed7302ab7044ab2ffb25e5811c8e
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =1500
+                            Top =738
+                            Width =2475
+                            Height =239
+                            Name ="lblExpQCDOnly"
+                            Caption ="Export QCD Only"
+                            GUID = Begin
+                                0xa56dd886dd406d4baf16bf87c8aabd7a
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =960
+                    Top =1116
+                    Width =288
+                    Height =288
+                    TabIndex =2
+                    Name ="cmdExpIndividuals"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Find Next"
+                    GUID = Begin
+                        0xc1d4a8d12b43d64d8af96083a466975d
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =1500
+                            Top =1146
+                            Width =2475
+                            Height =239
+                            Name ="lblExpIndividuals"
+                            Caption ="Export Individuals"
+                            GUID = Begin
+                                0xcad2c7535a4f1a419bc82164e355bbb7
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =960
+                    Top =1524
+                    Width =288
+                    Height =288
+                    TabIndex =3
+                    Name ="cmdExpQCDOnlyPlusIndividuals"
+                    OnClick ="[Event Procedure]"
+                    ControlTipText ="Find Next"
+                    GUID = Begin
+                        0x48057fdb0107d34ca9598b2d93b4d5e8
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            Left =1500
+                            Top =1554
+                            Width =2475
+                            Height =239
+                            Name ="Label8"
+                            Caption ="QCD Only Plus Individuals"
+                            GUID = Begin
+                                0x766c32b0b579a944a01315a9cf9b99d8
+                            End
+                        End
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Private Function Export_tpa_data1() As Boolean
+    '============================================================================================================
+    ' Object:                   Export_tpa_data1
+    ' Purpose:                  Runs stored procedure to run SSIS package to create csv file
+    '
+    '
+    ' VBA Parameters:           Name   DateType       Returns
+    ' -----------------------------------------------------------------------------------------------------------
+    ' None
+    '
+    ' Stored Procedures:        Name                        Parms               DataType        Returns     Notes
+    ' -----------------------------------------------------------------------------------------------------------
+    '                           usp_tpa_exp_csv1            None
+    '
+    ' Change Log
+    ' Date Modified     Version       Developer         Purpose
+    ' -----------------------------------------------------------------------------------------------------------
+    ' 2016-01-08        1.0           J Criswell        Created
+    '
+    '
+    '
+    '============================================================================================================
+    
+    On Error GoTo PROC_ERR
+    
+    DoCmd.Hourglass True
+    
+    Dim strSQL As String
+    strSQL = "usp_tpa_exp_csv1"
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+        .ConnectionString = SetConnxn
+        .Open
+    End With
+    With g_adoCommand
+        .ActiveConnection = g_adoConnection
+        .CommandType = adCmdStoredProc
+        .CommandText = strSQL
+        Set g_adoParm = .CreateParameter("@ReturnParm", adInteger, adParamReturnValue) 'Return parm
+        .Parameters.Append g_adoParm
+        .Execute
+        g_iRtnVal = .Parameters.Item("@ReturnParm")
+    End With
+    
+    If g_iRtnVal = 1 Then
+        Export_tpa_data1 = True
+    Else
+        Export_tpa_data1 = False
+    End If
+    
+    g_adoConnection.Close
+    
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+    
+PROC_EXIT:
+    DoCmd.Hourglass False
+    Exit Function
+PROC_ERR:
+    MsgBox "Error " & Err.Number & ":  " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD:  Error"
+    GoTo PROC_EXIT
+    
+End Function
+
+Function Export_tpa_data(intGroupType As Integer) As Integer
+    
+    Dim strSQL As String
+    strSQL = "usp_tpa_exp_csv"
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+        .ConnectionString = SetConnxn
+        .Open
+    End With
+    With g_adoCommand
+        .ActiveConnection = g_adoConnection
+        .CommandType = adCmdStoredProc
+        .CommandText = strSQL
+        Set g_adoParm = .CreateParameter("@ReturnParm", adInteger, adParamReturnValue) 'Return parm
+        .Parameters.Append g_adoParm
+        Set g_adoParm = .CreateParameter("@GRP_TYPE", adInteger, adParamInput, 5)
+        .Parameters.Append g_adoParm
+        .Parameters("@GRP_TYPE").value = intGroupType
+        .Execute
+        g_iRtnVal = .Parameters.Item("@ReturnParm")
+    End With
+    
+    g_adoConnection.Close
+    
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+    
+    Export_tpa_data = g_iRtnVal
+    
+End Function
+Private Sub cmdExpAllAmerican_Click()
+    ' Comments   :  creates export files for TPA
+    ' Parameters :
+    ' Created    :  2015-11-07  J Criswell
+    ' Modified   :
+    '
+    '
+    '
+    ' --------------------------------------------------------
+    
+    On Error GoTo PROC_ERR
+    
+    Dim Msg As String
+    Dim Response As String
+    Dim db As DAO.Database
+    Dim strSQL As String
+    Dim OutputMeter As Variant
+    Dim MeterFull As Integer
+    Dim MeterCount As Integer
+    
+    Set db = CurrentDb()
+    
+    ' begin importing data into temporary tables
+    Msg = "Do you want to create an All American export file for the TPA?"
+    Response = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: export tpa data")
+    If Response = vbYes Then
+        Application.SetOption "Show Status Bar", True
+        MeterFull = 10
+        MeterCount = 1
+        DoCmd.Hourglass True
+        DoCmd.SetWarnings False
+        
+        If Export_tpa_data(4) = 1 Then
+            MsgBox "tpa data export succeeded."
+        Else
+            MsgBox "tpa data export failed."
+        End If
+        
+        Set db = Nothing
+        DoCmd.Hourglass False
+        DoCmd.SetWarnings True
+        OutputMeter = SysCmd(acSysCmdRemoveMeter)
+        
+    End If
+    
+PROC_EXIT:
+    Exit Sub
+    
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+    
+    
+End Sub
+Private Sub cmdClose_Click()
+    On Error GoTo Err_cmdClose_Click
+    
+    
+    DoCmd.Close
+    
+Exit_cmdClose_Click:
+    Exit Sub
+    
+Err_cmdClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+Private Sub cmdExpQCDOnlyPlusIndividuals_Click()
+    '============================================================================================================
+    ' Object:                   cmdExpQCDOnlyPlusIndividuals
+    ' Purpose:                  Runs a stored procedure usp_tpa_exp_csv1 that calls an SSIS package
+    '                           F:\Clients\Direct Care Administrators\SSIS\data_exchange\tpa_data_exchange_sub_export 1.dtsx
+    '                           that creates a csv file will all the QCD Only and Individual subscribers and dependents
+    '
+    '
+    ' VBA Parameters:           Name   DateType       Returns
+    ' -----------------------------------------------------------------------------------------------------------
+    ' None
+    '
+    ' Stored Procedures:        Name                        Parms               DataType        Returns     Notes
+    ' -----------------------------------------------------------------------------------------------------------
+    '                           usp_tpa_exp_csv1            None
+    '
+    ' Change Log
+    ' Date Modified     Version       Developer         Purpose
+    ' -----------------------------------------------------------------------------------------------------------
+    ' 2016-01-08        1.0           J Criswell        Created
+    '
+    '
+    '
+    '============================================================================================================
+    On Error GoTo PROC_ERR
+    
+    DoCmd.Hourglass True
+    
+    Dim Msg As String
+    Dim Response As String
+    Dim db As DAO.Database
+    Dim strSQL As String
+    Dim OutputMeter As Variant
+    Dim MeterFull As Integer
+    Dim MeterCount As Integer
+    
+    Set db = CurrentDb()
+    
+    ' start export
+    Msg = "Do you want to create a QCD Only Plus Individuals export file for the TPA?"
+    Response = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: export tpa data")
+    If Response = vbYes Then
+        Application.SetOption "Show Status Bar", True
+        MeterFull = 10
+        MeterCount = 1
+        DoCmd.Hourglass True
+        DoCmd.SetWarnings False
+        
+        If Export_tpa_data1 Then
+            MsgBox "tpa data export succeeded."
+        Else
+            MsgBox "tpa data export failed."
+        End If
+        
+        Set db = Nothing
+        DoCmd.Hourglass False
+        DoCmd.SetWarnings True
+        OutputMeter = SysCmd(acSysCmdRemoveMeter)
+        
+    End If
+    DoCmd.Hourglass False
+PROC_EXIT:
+    Exit Sub
+PROC_ERR:
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD: Error"
+    GoTo PROC_EXIT
+End Sub
+
+
+Private Sub cmdExpIndividuals_Click()
+    ' Comments   :  creates export files for TPA
+    ' Parameters :
+    ' Created    :  2015-11-07  J Criswell
+    ' Modified   :
+    '
+    '
+    '
+    ' --------------------------------------------------------
+    
+    On Error GoTo PROC_ERR
+    
+    Dim Msg As String
+    Dim Response As String
+    Dim db As DAO.Database
+    Dim strSQL As String
+    Dim OutputMeter As Variant
+    Dim MeterFull As Integer
+    Dim MeterCount As Integer
+    
+    Set db = CurrentDb()
+    
+    ' start export
+    Msg = "Do you want to create an Individuals export file for the TPA?"
+    Response = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: export tpa data")
+    If Response = vbYes Then
+        Application.SetOption "Show Status Bar", True
+        MeterFull = 10
+        MeterCount = 1
+        DoCmd.Hourglass True
+        DoCmd.SetWarnings False
+        
+        If Export_tpa_data(9) = 1 Then
+            MsgBox "tpa data export succeeded."
+        Else
+            MsgBox "tpa data export failed."
+        End If
+        
+        Set db = Nothing
+        DoCmd.Hourglass False
+        DoCmd.SetWarnings True
+        OutputMeter = SysCmd(acSysCmdRemoveMeter)
+        
+    End If
+    
+PROC_EXIT:
+    Exit Sub
+    
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+    
+End Sub
+
+Private Sub cmdExpQCDOnly_Click()
+    
+    ' Comments   :  creates export files for TPA
+    ' Parameters :
+    ' Created    :  2015-11-07  J Criswell
+    ' Modified   :
+    '
+    '
+    '
+    ' --------------------------------------------------------
+    
+    On Error GoTo PROC_ERR
+    
+    Dim Msg As String
+    Dim Response As String
+    Dim db As DAO.Database
+    Dim strSQL As String
+    Dim OutputMeter As Variant
+    Dim MeterFull As Integer
+    Dim MeterCount As Integer
+    
+    Set db = CurrentDb()
+    
+    ' start export
+    Msg = "Do you want to create a QCD Only export file for the TPA?"
+    Response = MsgBox(Msg, vbQuestion + vbYesNo + vbDefaultButton2, "QCD: export tpa data")
+    If Response = vbYes Then
+        Application.SetOption "Show Status Bar", True
+        MeterFull = 10
+        MeterCount = 1
+        DoCmd.Hourglass True
+        DoCmd.SetWarnings False
+        
+        If Export_tpa_data(1) = 1 Then
+            MsgBox "tpa data export succeeded."
+        Else
+            MsgBox "tpa data export failed."
+        End If
+        
+        Set db = Nothing
+        DoCmd.Hourglass False
+        DoCmd.SetWarnings True
+        OutputMeter = SysCmd(acSysCmdRemoveMeter)
+        
+    End If
+    
+PROC_EXIT:
+    Exit Sub
+    
+PROC_ERR:
+    MsgBox Err.DESCRIPTION
+    Resume PROC_EXIT
+    
+    
+End Sub

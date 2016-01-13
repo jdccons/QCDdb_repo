@@ -1,22 +1,25 @@
-Version =19
-VersionRequired =19
-Checksum =-1893212873
+Version =20
+VersionRequired =20
+Checksum =-194559951
 Begin Form
+    Modal = NotDefault
     RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
-    BorderStyle =1
     GridX =16
     GridY =16
     Width =12690
-    ItemSuffix =218
-    Left =3000
-    Top =60
-    Right =15690
+    ItemSuffix =223
+    Left =3300
+    Top =120
+    Right =15990
     Bottom =7785
     RecSrcDt = Begin
         0x35ece3e95140e340
@@ -31,22 +34,13 @@ Begin Form
         0x010000006801000000000000a10700000100000001000000
     End
     PrtDevMode = Begin
-        0x6870204c617365724a6574203130313020536572696573204472697665720000 ,
-        0x01043c059c00340303d700000200010000000000000001000700580200000100 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x000000000000000000000000000000000000000000000000000000005344444d ,
-        0x03050000030500006870204c617365724a657420313031320000000000000000 ,
-        0x0000000000000000000000000000000000000000010000000000000000000000 ,
-        0x0000000000000000010000000100000001000000010000000100000001000000 ,
-        0x0100000001000000010000000100000001000000010000000100000001000000 ,
-        0x0100000001000000010000000100000000000000010000000100000018040000 ,
-        0x0000000000000000000000000f0000002d000000000000000000000001000000 ,
-        0x000000000000000080808000ff000000ffff000000ff000000ffff000000ff00 ,
-        0xff00ff0000000000000000000000000000000000640000006400000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000000000000de030000de0300000000000000000000 ,
-        0x0080000000000000000000000100000000000000000000000000000100000000 ,
+        0x010400069c00fc0203d7000002000100ea0a6f08640001000700580200000100 ,
+        0x5802000000004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -61,13 +55,24 @@ Begin Form
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000000000000
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x080012003200010077696e73706f6f6c00006870204c617365724a6574203130 ,
-        0x313020536572696573204472697665720000444f54345f303031000000000000 ,
-        0x000000000000000000000000
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin Label
             BackStyle =0
@@ -95,41 +100,50 @@ Begin Form
         Begin Section
             CanGrow = NotDefault
             SpecialEffect =1
-            Height =7740
+            Height =8055
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x218313308375414da610e18770bf03fa
+            End
             Begin
                 Begin TextBox
                     OldBorderStyle =1
                     OverlapFlags =93
                     AccessKey =70
-                    Left =180
-                    Top =6960
+                    Left =225
+                    Top =7275
                     Width =1020
                     Height =245
-                    TabIndex =64
+                    TabIndex =66
                     Name ="FindSUBID"
                     AfterUpdate ="=FindSUBID_L([FindSUBID],\"FindSUBID\")"
                     FontName ="Helv"
                     InputMask ="0000\\-0000"
                     OnGotFocus ="[Event Procedure]"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x3480187413a17e48a432ff26e576c102
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
                     OverlapFlags =255
                     AccessKey =70
-                    Left =165
-                    Top =6975
+                    Left =210
+                    Top =7290
                     Width =1020
                     Height =245
-                    TabIndex =63
+                    TabIndex =65
                     Name ="FindSSN"
                     AfterUpdate ="=FindSSN_L([FindSSN],\"FindSSN\")"
                     FontName ="Helv"
                     InputMask ="000\\-00\\-0000;0;_"
                     OnGotFocus ="[Event Procedure]"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x523fd15e44219b4fbe2a6f5f13c29e08
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -141,9 +155,12 @@ Begin Form
                     Width =1584
                     TabIndex =2
                     BackColor =14079702
-                    Name ="SUBssn"
+                    Name ="SubSSN"
                     ControlSource ="SUBssn"
                     InputMask ="000\\-00\\-0000;;_"
+                    GUID = Begin
+                        0x5abfb88c584e6643be9e4cc3d35d0853
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -157,6 +174,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text4"
                     Caption ="Social Sec. #: "
+                    GUID = Begin
+                        0x36aba28487e6324f80eb508afba143fd
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -170,6 +190,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text5"
                     Caption =" First Name: "
+                    GUID = Begin
+                        0x34ead4cad78d5342bfca0e7797fb5547
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -183,6 +206,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text6"
                     Caption ="Address: "
+                    GUID = Begin
+                        0x01021b8000fe8d4a936e2e3555a51bf1
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -196,6 +222,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text7"
                     Caption ="Address 2: "
+                    GUID = Begin
+                        0x6f2c04641aa0504eb9c48318e1c00edd
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -209,6 +238,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="City: "
+                    GUID = Begin
+                        0xecefe8b4fe6dcf419fa89dd7dbbc1225
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -222,6 +254,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text9"
                     Caption ="State: "
+                    GUID = Begin
+                        0xd40dee18efa8104ebb35acbdc44bdd68
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -235,6 +270,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text10"
                     Caption ="Zip: "
+                    GUID = Begin
+                        0xdb73ad790263604cb07783ba08233185
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -246,8 +284,11 @@ Begin Form
                     Width =1584
                     TabIndex =4
                     BackColor =14079702
-                    Name ="SUBfirstNAME"
-                    ControlSource ="SUBfirstNAME"
+                    Name ="SubFirstName"
+                    ControlSource ="SubFirstName"
+                    GUID = Begin
+                        0xb21c9090113fa047aff555952fbb3bf3
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -261,6 +302,9 @@ Begin Form
                     BackColor =14079702
                     Name ="SUBstreet1"
                     ControlSource ="SUBstreet1"
+                    GUID = Begin
+                        0xe9b9c1812c105e4e8f15c091206bf356
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -274,6 +318,9 @@ Begin Form
                     BackColor =14079702
                     Name ="SUBstreet2"
                     ControlSource ="SUBstreet2"
+                    GUID = Begin
+                        0x68db4a50061efe40962947ac54b48989
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -287,6 +334,9 @@ Begin Form
                     BackColor =14079702
                     Name ="SUBcity"
                     ControlSource ="SUBcity"
+                    GUID = Begin
+                        0x6a0046a012f26f4c9456823f01640a69
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -300,6 +350,9 @@ Begin Form
                     BackColor =14079702
                     Name ="SUBstate"
                     ControlSource ="SUBstate"
+                    GUID = Begin
+                        0x47195ef051e9344087baa06f4661f0de
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -315,6 +368,9 @@ Begin Form
                     Name ="SUBzip"
                     ControlSource ="SUBzip"
                     InputMask ="00000\\-9999;;_"
+                    GUID = Begin
+                        0x354ee1b3d2c67746a6e539cabae4e04c
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -328,6 +384,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text38"
                     Caption ="Effective: "
+                    GUID = Begin
+                        0x0cf1757731d66d45920f7114a0e6b554
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -343,6 +402,9 @@ Begin Form
                     ControlSource ="SubEffDate"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x989c3ce8457a164ca7ae6a96e151b9ba
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -354,8 +416,11 @@ Begin Form
                     Width =2409
                     TabIndex =6
                     BackColor =14079702
-                    Name ="SUBlastNAME"
-                    ControlSource ="SUBlastNAME"
+                    Name ="SubLastName"
+                    ControlSource ="SubLastName"
+                    GUID = Begin
+                        0xda890f7c8386364a86c888661b10b78a
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -368,6 +433,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text64"
                     Caption ="Card Printed:"
+                    GUID = Begin
+                        0xf9f79f5ed52262498b1a7af7e22ae2c9
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -382,19 +450,25 @@ Begin Form
                     Name ="SubCardPrt"
                     ControlSource ="SubCardPrt"
                     Format ="Yes/No"
+                    GUID = Begin
+                        0xd7b20d39942ea043b8b4b058e29f8a70
+                    End
                 End
                 Begin Label
                     BackStyle =1
                     OverlapFlags =93
                     TextAlign =3
-                    Left =8640
-                    Top =3840
+                    Left =8880
+                    Top =4185
                     Width =705
-                    Height =1470
+                    Height =285
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text67"
                     Caption ="Notes: "
+                    GUID = Begin
+                        0x061c587328b4834993a6bc10d5fc60e8
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -402,14 +476,17 @@ Begin Form
                     SpecialEffect =0
                     OldBorderStyle =1
                     OverlapFlags =215
-                    Left =8640
-                    Top =4110
-                    Width =3834
+                    Left =8865
+                    Top =4455
+                    Width =3639
                     Height =2430
-                    TabIndex =32
+                    TabIndex =34
                     BackColor =14079702
                     Name ="SubNotes"
                     ControlSource ="SUBnotes"
+                    GUID = Begin
+                        0x1d9b7bb81f8f9e40ade4e4a1f431e921
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =0
@@ -423,6 +500,9 @@ Begin Form
                     BackColor =14079702
                     Name ="SUBmiddleNAME"
                     ControlSource ="SUBmiddleNAME"
+                    GUID = Begin
+                        0xc55850014fc8b346b56f0ce05235d064
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -436,6 +516,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text107"
                     Caption ="Coverage:"
+                    GUID = Begin
+                        0x7c619ab09121c6428e1da33bc070733f
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -451,6 +534,9 @@ Begin Form
                     ControlSource ="SubCardPrDate"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x5a6e0ed547f70c4cb47b8a9afde790ab
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -463,6 +549,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text112"
                     Caption ="Date Printed:"
+                    GUID = Begin
+                        0x08c687eddb45584782212dd478acb4e3
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -476,6 +565,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text114"
                     Caption ="Group ID: "
+                    GUID = Begin
+                        0x43db62add3f5fb45a31cd3a9792eee78
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -489,6 +581,9 @@ Begin Form
                     BackColor =14079702
                     Name ="SubGroupID"
                     ControlSource ="SubGroupID"
+                    GUID = Begin
+                        0x6920ba18c2efe44398ef20f92c3b913e
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -498,38 +593,47 @@ Begin Form
                     Left =9090
                     Top =2835
                     Width =3168
-                    TabIndex =30
+                    TabIndex =32
                     BackColor =14079702
                     Name ="CoverDesc"
                     ControlSource ="CoverDescr"
+                    GUID = Begin
+                        0x413b8b27a590414f8f0d1b66c3241ea1
+                    End
                 End
                 Begin Rectangle
                     OverlapFlags =93
-                    Left =120
-                    Top =4080
-                    Width =8430
+                    Left =150
+                    Top =4425
+                    Width =8640
                     Height =2505
                     BackColor =12632256
                     Name ="Box134"
+                    GUID = Begin
+                        0x96d19235b60f0c408c21d448be1b6cbd
+                    End
                 End
                 Begin Subform
                     Locked = NotDefault
                     OverlapFlags =215
-                    Left =177
-                    Top =4485
-                    Width =8280
-                    Height =1965
-                    TabIndex =33
+                    Left =207
+                    Top =4545
+                    Width =8505
+                    Height =2250
+                    TabIndex =35
                     Name ="subFrmCtlDependents"
                     SourceObject ="Form.fsubSubInqDep"
                     LinkChildFields ="DEPsubID"
                     LinkMasterFields ="SUBssn"
+                    GUID = Begin
+                        0x3c36bc0fca2a974bb9eae97af8cd53c9
+                    End
                 End
                 Begin Label
                     BackStyle =1
                     OverlapFlags =85
-                    Left =150
-                    Top =3750
+                    Left =180
+                    Top =4095
                     Width =1980
                     Height =285
                     FontSize =10
@@ -537,14 +641,21 @@ Begin Form
                     BackColor =12632256
                     Name ="Text123"
                     Caption ="  Dependent Info:"
+                    GUID = Begin
+                        0xd0ebf97f660e5346bf1525ea52eebfc7
+                    End
                 End
                 Begin Rectangle
                     BackStyle =0
                     OverlapFlags =255
+                    Left =180
                     Top =450
-                    Width =7470
-                    Height =3240
+                    Width =7290
+                    Height =3525
                     Name ="Box124"
+                    GUID = Begin
+                        0xb8ed3bcb98c0064cbb365673c71c9560
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -558,6 +669,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text128"
                     Caption ="Last: "
+                    GUID = Begin
+                        0x10c79ebbee10a348b09ee9f201028252
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -569,8 +683,11 @@ Begin Form
                     Width =576
                     TabIndex =17
                     BackColor =14079702
-                    Name ="SUBnoDEPENT"
-                    ControlSource ="SubNoDepent"
+                    Name ="DepCnt"
+                    ControlSource ="DepCnt"
+                    GUID = Begin
+                        0x3624d25fa4525048b076b412201feb44
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -584,6 +701,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text133"
                     Caption ="MI:  "
+                    GUID = Begin
+                        0xc330f7ccf02e0b4da0aa741f5faec1ac
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -597,246 +717,321 @@ Begin Form
                     BackColor =12632256
                     Name ="Text134"
                     Caption ="Rate: "
+                    GUID = Begin
+                        0x4a332e0ce4cd8344afc656ec31ca5f1b
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2052
-                    Top =7005
+                    Left =2097
+                    Top =7320
                     Width =312
-                    TabIndex =35
+                    TabIndex =37
                     Name ="B"
                     Caption ="B"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xd087ec7f4dff254095e1af6445a68d88
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2364
-                    Top =7005
+                    Left =2409
+                    Top =7320
                     Width =327
-                    TabIndex =36
+                    TabIndex =38
                     Name ="C"
                     Caption ="C"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xb5b433ededba814c82ace8eeff889073
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2691
-                    Top =7005
+                    Left =2736
+                    Top =7320
                     Width =327
-                    TabIndex =37
+                    TabIndex =39
                     Name ="D"
                     Caption ="D"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xa9d186ee6c8cda4bb02aca277f6f8b52
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =3018
-                    Top =7005
+                    Left =3063
+                    Top =7320
                     Width =297
-                    TabIndex =38
+                    TabIndex =40
                     Name ="E"
                     Caption ="E"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xc9df039bf7774345833710643d08b025
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =3315
-                    Top =7005
+                    Left =3360
+                    Top =7320
                     Width =297
-                    TabIndex =39
+                    TabIndex =41
                     Name ="F"
                     Caption ="F"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x47db3284af1c35409f783a2cf31dcc45
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =3612
-                    Top =7005
+                    Left =3657
+                    Top =7320
                     Width =327
-                    TabIndex =40
+                    TabIndex =42
                     Name ="G"
                     Caption ="G"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x36f4e609b377e244b8aca617285db834
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =3939
-                    Top =7005
+                    Left =3984
+                    Top =7320
                     Width =327
-                    TabIndex =41
+                    TabIndex =43
                     Name ="H"
                     Caption ="H"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x8fdea0129cd64644be0f829dabc43cf5
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =4266
-                    Top =7005
+                    Left =4311
+                    Top =7320
                     Width =342
-                    TabIndex =42
+                    TabIndex =44
                     Name ="I"
                     Caption ="I"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xcf10624c4fbd9f4381b89cd6224b42cf
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =4950
-                    Top =7005
+                    Left =4995
+                    Top =7320
                     Width =327
-                    TabIndex =44
+                    TabIndex =46
                     Name ="K"
                     Caption ="K"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xd6217bd301315843b0d3a7998a24f1fe
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =5277
-                    Top =7005
+                    Left =5322
+                    Top =7320
                     Width =327
-                    TabIndex =45
+                    TabIndex =47
                     Name ="L"
                     Caption ="L"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x891e8e9aafd9484686b2494c2cf7d0de
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =5604
-                    Top =7005
+                    Left =5649
+                    Top =7320
                     Width =327
-                    TabIndex =46
+                    TabIndex =48
                     Name ="M"
                     Caption ="M"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x43e1c00abe5dd24a95041cd7c5d12f13
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =5931
-                    Top =7005
+                    Left =5976
+                    Top =7320
                     Width =327
-                    TabIndex =47
+                    TabIndex =49
                     Name ="N"
                     Caption ="N"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x678d1eb30379dc48a214a0d17ee6b016
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =6258
-                    Top =7005
+                    Left =6303
+                    Top =7320
                     Width =327
-                    TabIndex =48
+                    TabIndex =50
                     Name ="O"
                     Caption ="O"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x9f0cb28353bea74a9285e412559238fb
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =6585
-                    Top =7005
+                    Left =6630
+                    Top =7320
                     Width =327
-                    TabIndex =49
+                    TabIndex =51
                     Name ="P"
                     Caption ="P"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xc74d609b36b2874f8b9220d63b92504d
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =6912
-                    Top =7005
+                    Left =6957
+                    Top =7320
                     Width =312
-                    TabIndex =50
+                    TabIndex =52
                     Name ="Q"
                     Caption ="Q"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x9a99a5320223194ebe3077796f2ceb06
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =7224
-                    Top =7005
+                    Left =7269
+                    Top =7320
                     Width =342
-                    TabIndex =51
+                    TabIndex =53
                     Name ="R"
                     Caption ="R"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x6b7d9dba5eff6d48a93eb6ef2abd9311
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =7566
-                    Top =7005
+                    Left =7611
+                    Top =7320
                     Width =312
-                    TabIndex =52
+                    TabIndex =54
                     Name ="S"
                     Caption ="S"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x73c181f3bd646d4a933cfb62df7effa8
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =7878
-                    Top =7005
+                    Left =7923
+                    Top =7320
                     Width =312
-                    TabIndex =53
+                    TabIndex =55
                     Name ="T"
                     Caption ="T"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x1fe1de2373e94049969dd55e807ed46e
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =8190
-                    Top =7005
+                    Left =8235
+                    Top =7320
                     Width =327
-                    TabIndex =54
+                    TabIndex =56
                     Name ="U"
                     Caption ="U"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x65a9c77acc5fcc4d911893c50d20e3e2
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =8517
-                    Top =7005
+                    Left =8562
+                    Top =7320
                     Width =327
-                    TabIndex =55
+                    TabIndex =57
                     Name ="V"
                     Caption ="V"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xc1fe294fbd443e4fba8c1fae1d42996e
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =8844
-                    Top =7005
+                    Left =8889
+                    Top =7320
                     Width =387
-                    TabIndex =56
+                    TabIndex =58
                     Name ="W"
                     Caption ="W"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xa13edd220fbe0d48a0230c3e6314db19
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =9231
-                    Top =7005
+                    Left =9276
+                    Top =7320
                     Width =312
-                    TabIndex =57
+                    TabIndex =59
                     Name ="X"
                     Caption ="X"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x5b1993819f2980479539e8671d9009f0
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =9543
-                    Top =7005
+                    Left =9588
+                    Top =7320
                     Width =342
-                    TabIndex =58
+                    TabIndex =60
                     Name ="Y"
                     Caption ="Y"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x4e2882c328185b4a84e8f54b90bb1774
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =9885
-                    Top =7005
+                    Left =9930
+                    Top =7320
                     Width =327
-                    TabIndex =59
+                    TabIndex =61
                     Name ="Z"
                     Caption ="Z"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x7f54da847f85cd439eb71eb8bedb02fb
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -845,19 +1040,21 @@ Begin Form
                     AccessKey =78
                     ColumnCount =3
                     ListRows =5
-                    Left =5121
-                    Top =7400
+                    Left =5166
+                    Top =7715
                     Width =5061
-                    TabIndex =60
+                    TabIndex =62
                     BoundColumn =1
                     BackColor =12632256
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
-                    Name ="SUBSCRPickList"
+                    GUID = Begin
+                        0xa2b1da871276314ebdc2d2b568001a11
+                    End
+                    Name ="SubscrPickList"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT DISTINCTROW tblSubscr.SUB_LUname AS Subscr_Name, tblSubscr.SUBssn, tblSub"
-                        "scr.SUBcity AS Subscr_City FROM tblSubscr WHERE (((tblSubscr.SUB_LUname) Like [F"
-                        "orms]![frmSubscrInquire]![AlphaControl] & \"*\") AND ((tblSubscr.SUBstatus)=\"GR"
-                        "SUB\")) ORDER BY tblSubscr.SUB_LUname;"
+                    RowSource ="SELECT DISTINCTROW tblSubscr.SUB_LUname AS Subscr_Name, tblSubscr.SubSSN, tblSub"
+                        "scr.SubCity AS Subscr_City FROM tblSubscr WHERE (((tblSubscr.SUB_LUname) Like [F"
+                        "orms]![frmSubscrInquire]![AlphaControl] & \"*\")) ORDER BY tblSubscr.SUB_LUname;"
                     ColumnWidths ="2880;0;1440"
                     StatusBarText ="Enter SUBSCR (last) name or click on arrow to view list."
                     AfterUpdate ="=FindSSN_L([SubscrPickList],\"SubscrPickList\")"
@@ -867,14 +1064,17 @@ Begin Form
                         Begin Label
                             OverlapFlags =85
                             TextAlign =3
-                            Left =3390
-                            Top =7395
+                            Left =3435
+                            Top =7710
                             Width =1710
                             Height =240
                             FontWeight =700
                             BorderColor =16777215
                             Name ="lblSUBSCRPickList"
                             Caption ="Subscriber &Name:"
+                            GUID = Begin
+                                0x01ec51461b9f544bb88ca2bb9464b314
+                            End
                         End
                     End
                 End
@@ -883,11 +1083,11 @@ Begin Form
                     OldBorderStyle =1
                     OverlapFlags =85
                     AccessKey =70
-                    Left =2610
-                    Top =7395
+                    Left =2655
+                    Top =7710
                     Width =720
                     Height =245
-                    TabIndex =61
+                    TabIndex =63
                     BackColor =12632256
                     Name ="AlphaControl"
                     StatusBarText ="Enter a letter or letters to filter on (e.g. \"smith\") and TAB out of field."
@@ -895,40 +1095,52 @@ Begin Form
                     OnExit ="=SearchBtn(\"SUBSCRPickList\")"
                     DefaultValue ="\"*\""
                     FontName ="Helv"
+                    GUID = Begin
+                        0xf5d9dbf1e734d04db631a3d5efe4a804
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
                             TextFontFamily =0
-                            Left =1740
-                            Top =7400
+                            Left =1785
+                            Top =7715
                             Width =795
                             Height =240
                             FontWeight =700
                             ForeColor =12582912
                             Name ="lblAlphaControl"
                             Caption ="&Filter on:"
+                            GUID = Begin
+                                0xdd5156ef36140f4c98fa356040d2102c
+                            End
                         End
                     End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =1740
-                    Top =7005
+                    Left =1785
+                    Top =7320
                     Width =312
-                    TabIndex =34
+                    TabIndex =36
                     Name ="A"
                     Caption ="A"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0xd3b5914bb0bf654bbdbd16780c1031cf
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =4608
-                    Top =7005
+                    Left =4653
+                    Top =7320
                     Width =342
-                    TabIndex =43
+                    TabIndex =45
                     Name ="J"
                     Caption ="J"
                     OnClick ="=AlphaBtn([Form],\"SUBSCRPickList\")"
+                    GUID = Begin
+                        0x0e7b2a4288453f45bb3fe944d0b607a7
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -938,11 +1150,14 @@ Begin Form
                     Left =9105
                     Top =3135
                     Width =1152
-                    TabIndex =31
+                    TabIndex =33
                     BackColor =14079702
                     Name ="SubRate"
                     ControlSource ="Rate"
                     Format ="$#,##0.00;($#,##0.00)"
+                    GUID = Begin
+                        0xea075519f229b2419165cfa76bb610bd
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -956,6 +1171,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text155"
                     Caption ="No. Dep.: "
+                    GUID = Begin
+                        0xf1844dd65dc0ee4d9585291d058e2ab2
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -969,6 +1187,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text161"
                     Caption ="Group: "
+                    GUID = Begin
+                        0xab808f08c8346a45b61ddde2f4cd4f2f
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -982,6 +1203,9 @@ Begin Form
                     BackColor =14079702
                     Name ="GrName"
                     ControlSource ="GRname"
+                    GUID = Begin
+                        0x4146102bc0842e4ba6315bc16b67cb3d
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -994,6 +1218,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text163"
                     Caption ="Grp Exp:"
+                    GUID = Begin
+                        0xf1ba6dda7c7eac4da571d46196d72531
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -1009,6 +1236,9 @@ Begin Form
                     ControlSource ="GrContEndDate"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x93b39dc3fa5cd847a338338b97c5ea15
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1022,6 +1252,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label165"
                     Caption ="Cancelled: "
+                    GUID = Begin
+                        0x4aa213bbfa276f408c959408710daeab
+                    End
                 End
                 Begin CheckBox
                     Locked = NotDefault
@@ -1030,10 +1263,13 @@ Begin Form
                     Left =9705
                     Top =1410
                     Width =240
-                    TabIndex =27
+                    TabIndex =29
                     BorderColor =14079702
                     Name ="chkCancelled"
                     ControlSource ="GRcancelled"
+                    GUID = Begin
+                        0xc0ff1a4e17eab148bb364deaa6a1bc5f
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -1047,6 +1283,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label169"
                     Caption ="Hold: "
+                    GUID = Begin
+                        0x19754c4a87b8ad4d8675cf2ad42d9f5c
+                    End
                 End
                 Begin CheckBox
                     Locked = NotDefault
@@ -1055,55 +1294,73 @@ Begin Form
                     Left =9705
                     Top =1650
                     Width =240
-                    TabIndex =28
+                    TabIndex =30
                     BorderColor =14079702
                     Name ="chkHold"
                     ControlSource ="GRhold"
+                    GUID = Begin
+                        0xb4c5ca3ce4382b4094a65c88bca49914
+                    End
                 End
                 Begin OptionGroup
                     OverlapFlags =255
-                    Left =105
-                    Top =6705
+                    Left =150
+                    Top =7020
                     Width =1580
                     Height =913
-                    TabIndex =62
+                    TabIndex =64
                     Name ="fraCriteria"
                     AfterUpdate ="[Event Procedure]"
                     DefaultValue ="1"
+                    GUID = Begin
+                        0x331f98b938a89144adb82c62afa52fc9
+                    End
                     Begin
                         Begin OptionButton
                             OverlapFlags =119
-                            Left =825
-                            Top =7333
+                            Left =870
+                            Top =7648
                             OptionValue =2
                             Name ="optSubID"
+                            GUID = Begin
+                                0x796ed4dc5309834888c594b5853c3fd8
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
-                                    Left =1055
-                                    Top =7305
+                                    Left =1100
+                                    Top =7620
                                     Width =570
                                     Height =240
                                     Name ="Label173"
                                     Caption ="Sub ID"
+                                    GUID = Begin
+                                        0x0c5c2cd64cc7f24480c15a8e9620d40a
+                                    End
                                 End
                             End
                         End
                         Begin OptionButton
                             OverlapFlags =119
-                            Left =150
-                            Top =7348
+                            Left =195
+                            Top =7663
                             OptionValue =1
                             Name ="optSSN"
+                            GUID = Begin
+                                0xd9008f5b9df8ce40a3be3dad065d6d2b
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
-                                    Left =380
-                                    Top =7320
+                                    Left =425
+                                    Top =7635
                                     Width =405
                                     Height =240
                                     Name ="Label170"
                                     Caption ="SSN"
+                                    GUID = Begin
+                                        0x3066aca4abfd3b4585693eaf9d45af9a
+                                    End
                                 End
                             End
                         End
@@ -1112,14 +1369,17 @@ Begin Form
                 Begin Label
                     OverlapFlags =247
                     TextAlign =1
-                    Left =150
-                    Top =6720
+                    Left =195
+                    Top =7035
                     Width =990
                     Height =225
                     FontWeight =700
                     BorderColor =16777215
                     Name ="Label172"
                     Caption ="Search"
+                    GUID = Begin
+                        0xb19015ad35126743af348f50a8fa944f
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -1136,6 +1396,9 @@ Begin Form
                     ControlSource ="SubID"
                     StatusBarText ="Subscriber ID"
                     InputMask ="####\\-####"
+                    GUID = Begin
+                        0xcc90fb4cbf10644b8b81aee9a7e1f8b3
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =247
@@ -1146,6 +1409,9 @@ Begin Form
                             FontWeight =700
                             Name ="Label182"
                             Caption ="Subscriber ID: "
+                            GUID = Begin
+                                0xa2a701869a1d9e459f51b53e46b8fc46
+                            End
                         End
                     End
                 End
@@ -1165,7 +1431,7 @@ Begin Form
                     Format ="Short Date"
                     InputMask ="99/99/00;0;_"
                     GUID = Begin
-                        0x88c8c55d7b02f848ae9bf59364e11cec
+                        0x4aa1cab32d6aff46b91839ca96a3d444
                     End
                 End
                 Begin Label
@@ -1180,7 +1446,7 @@ Begin Form
                     Name ="Label210"
                     Caption ="Pre-existing Date:"
                     GUID = Begin
-                        0x9181f0ef17cd3b47b0e88269f2b0e8e5
+                        0xb7086413bddedb4395226c812ce1f00c
                     End
                 End
                 Begin Label
@@ -1196,7 +1462,7 @@ Begin Form
                     Name ="Label186"
                     Caption ="Plan: "
                     GUID = Begin
-                        0x6e65163a97f76a4c9eec250ae13767fc
+                        0xe199061ce073e041b1f2cd4a4680fb9e
                     End
                 End
                 Begin TextBox
@@ -1207,12 +1473,12 @@ Begin Form
                     Left =9090
                     Top =2535
                     Width =1152
-                    TabIndex =29
+                    TabIndex =31
                     BackColor =14079702
                     Name ="PlanDesc"
                     ControlSource ="PlanDesc"
                     GUID = Begin
-                        0x1d05933438580a469c726cdf11298107
+                        0x4c416e34d2ddd94aa98d9f5e16535277
                     End
                 End
                 Begin Label
@@ -1228,7 +1494,7 @@ Begin Form
                     Name ="Label188"
                     Caption ="  Subscriber Info:"
                     GUID = Begin
-                        0xf16acdd55666184c8946f321b1a161c6
+                        0x1228ffe08e51df48aa9f534159f7b48b
                     End
                 End
                 Begin Rectangle
@@ -1240,7 +1506,7 @@ Begin Form
                     Height =1530
                     Name ="Box189"
                     GUID = Begin
-                        0x2fd30a2ecbd0604fbc8b815c140d4847
+                        0x58a39d7c5b53d94b8c8154992f49b490
                     End
                 End
                 Begin Label
@@ -1256,7 +1522,7 @@ Begin Form
                     Name ="Label190"
                     Caption ="  Group Info:"
                     GUID = Begin
-                        0xaa8e3b900aaa0e459aafb5e198ddb489
+                        0xed87e5fe3a696d48ac286f16b85797d0
                     End
                 End
                 Begin TextBox
@@ -1272,7 +1538,7 @@ Begin Form
                     Name ="SubGender"
                     ControlSource ="SubGender"
                     GUID = Begin
-                        0xe0eeb249f7dc8543a91c07ce7dce83a5
+                        0x7bee0f8024afac4a80e783c7696f5f43
                     End
                 End
                 Begin Label
@@ -1288,7 +1554,7 @@ Begin Form
                     Name ="Label192"
                     Caption ="Gender: "
                     GUID = Begin
-                        0xb18d35c342463843944b0660b9d63a56
+                        0x8adacd759d3bc44fbe917a593d48d9d7
                     End
                 End
                 Begin TextBox
@@ -1306,7 +1572,7 @@ Begin Form
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x544da8de4fe91c4bb5dc6fd58d1359ac
+                        0xb04214cad66f9544b3bcfc31cb7d659e
                     End
                 End
                 Begin Label
@@ -1321,7 +1587,7 @@ Begin Form
                     Name ="Label194"
                     Caption ="DOB:"
                     GUID = Begin
-                        0x4914a68625f31e41a9c21ab8e35e01f6
+                        0x55119bbf65a25a48a250ce6c183f2020
                     End
                 End
                 Begin Rectangle
@@ -1333,7 +1599,7 @@ Begin Form
                     Height =1110
                     Name ="Box195"
                     GUID = Begin
-                        0x100e92c1c106924eb8ab286a06860bea
+                        0x546bd79859b70441890212007f54b3db
                     End
                 End
                 Begin Label
@@ -1349,7 +1615,7 @@ Begin Form
                     Name ="Label196"
                     Caption ="  Plan Info:"
                     GUID = Begin
-                        0x77fab617e83f3240907a60fc498c52ae
+                        0x5e06e0281a311442b0cfbb2bcde8d607
                     End
                 End
                 Begin TextBox
@@ -1366,7 +1632,7 @@ Begin Form
                     ControlSource ="SubPhoneWork"
                     InputMask ="!\\(999\") \"000\\-0000;0;_"
                     GUID = Begin
-                        0x73d85498de3023449b4017f0f0c09cbf
+                        0xa01dd913e275fb4e82bf457ccedf595f
                     End
                     Begin
                         Begin Label
@@ -1380,7 +1646,7 @@ Begin Form
                             Name ="Label197"
                             Caption ="Work Phone:"
                             GUID = Begin
-                                0xfccb2d1fb4d23b449c7a8fc6a097b25d
+                                0x2b286262a134814fb2d36111fb4f88a0
                             End
                         End
                     End
@@ -1399,7 +1665,7 @@ Begin Form
                     ControlSource ="SubPhoneHome"
                     InputMask ="!\\(999\") \"000\\-0000;0;_"
                     GUID = Begin
-                        0x4e84b6ea9ac2de469167eb054a322281
+                        0x45942513cfe2c6488c9a8bfd5f6af1f9
                     End
                     Begin
                         Begin Label
@@ -1413,7 +1679,7 @@ Begin Form
                             Name ="Label198"
                             Caption ="Home Phone:"
                             GUID = Begin
-                                0x95d10e0c74a0724e969cb98d0c309d42
+                                0xbecf70d9b88963408f5ebdfb49462b91
                             End
                         End
                     End
@@ -1430,7 +1696,7 @@ Begin Form
                     Name ="TypeSubscr"
                     ControlSource ="SubStatus"
                     GUID = Begin
-                        0xd8b7ae0373c1a04193d61cfb1ffb8028
+                        0x50fc97fdfd047940b3baffeef1dea41e
                     End
                 End
                 Begin Label
@@ -1446,7 +1712,7 @@ Begin Form
                     Name ="Label200"
                     Caption =" Type Subscr: "
                     GUID = Begin
-                        0x568b3a1543673d4687063203b151ff7c
+                        0x02cc957d2aa7054499b680ac32754737
                     End
                 End
                 Begin TextBox
@@ -1462,7 +1728,7 @@ Begin Form
                     Name ="IndivSubStatus"
                     ControlSource ="IndivSubStatus"
                     GUID = Begin
-                        0xbacebb6307552346949519d3d0f5fddf
+                        0x8611e8af49cbc842a1c7b9d833142231
                     End
                 End
                 Begin Label
@@ -1478,7 +1744,7 @@ Begin Form
                     Name ="Label202"
                     Caption =" Indiv Status: "
                     GUID = Begin
-                        0x4801c7223d84654499bac2319cf695bc
+                        0x92c96361d4b12843a95657da0b6ab383
                     End
                 End
                 Begin TextBox
@@ -1494,7 +1760,7 @@ Begin Form
                     Name ="SubAge"
                     ControlSource ="SubAge"
                     GUID = Begin
-                        0xb3e8544c6a5e6b40b77d3c9e0b605f69
+                        0x302e8d5bad74a442a5b46729caeb2adb
                     End
                 End
                 Begin Label
@@ -1509,7 +1775,7 @@ Begin Form
                     Name ="Label204"
                     Caption ="Age:"
                     GUID = Begin
-                        0x04949912fbea9c4ab99b7cf1322fc051
+                        0xc6876eb96ffe1b439c301fd3b4e7be7e
                     End
                 End
                 Begin Label
@@ -1525,7 +1791,7 @@ Begin Form
                     Name ="Label205"
                     Caption ="Cont Beg: "
                     GUID = Begin
-                        0x00c602fc3a2eff4a85ef02d5a1e0d8d0
+                        0xd2ae7ce8e7e6a94b9b4d84ebefb464ea
                     End
                 End
                 Begin TextBox
@@ -1543,7 +1809,7 @@ Begin Form
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x57a05141e05a0a4d8d03a1969c1f8603
+                        0x2177c420d6827342aa9eed31873fe550
                     End
                 End
                 Begin Label
@@ -1559,7 +1825,7 @@ Begin Form
                     Name ="Label207"
                     Caption ="Cont End: "
                     GUID = Begin
-                        0xb74bdc53636aa644aab5113b7071c234
+                        0x1a1d1cc043e1584c87ae9e798c19175b
                     End
                 End
                 Begin TextBox
@@ -1577,7 +1843,7 @@ Begin Form
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x56ece31a34ade44a8568172f5c3126a8
+                        0xa60809da3378c645bfe61284ac6f6110
                     End
                 End
                 Begin Label
@@ -1593,7 +1859,7 @@ Begin Form
                     Name ="Label212"
                     Caption ="Ortho: "
                     GUID = Begin
-                        0x01f1e7e090d3e04baee0f243a3f891ee
+                        0x306f4793eb7fc444a3e96b1305c180f3
                     End
                 End
                 Begin TextBox
@@ -1604,12 +1870,12 @@ Begin Form
                     Left =11280
                     Top =780
                     Width =744
-                    TabIndex =65
+                    TabIndex =67
                     BackColor =14079702
                     Name ="OrthoCoverage"
                     ControlSource ="OrthoCoverage"
                     GUID = Begin
-                        0x261e34f90470a940ad1653d8837a7b0c
+                        0x3a9e8fb11887014c82350b8d3d4ceae5
                     End
                 End
                 Begin Label
@@ -1625,7 +1891,7 @@ Begin Form
                     Name ="Label214"
                     Caption ="Ortho Limit: "
                     GUID = Begin
-                        0xe40b5f663c006d489b383b8ba24ca4e3
+                        0x7bb38dff2a5fff4d9341a0da73b1a152
                     End
                 End
                 Begin TextBox
@@ -1636,12 +1902,12 @@ Begin Form
                     Left =11280
                     Top =1080
                     Width =744
-                    TabIndex =66
+                    TabIndex =68
                     BackColor =14079702
                     Name ="OrthoLifetimeLimit"
                     ControlSource ="OrthoLifetimeLimit"
                     GUID = Begin
-                        0x55f7dca17a528d4ea19a591eaed0364f
+                        0xe7815e5e31abb94287be380b41db0130
                     End
                 End
                 Begin Label
@@ -1657,7 +1923,7 @@ Begin Form
                     Name ="Label216"
                     Caption ="Waiting\015\012 Period: "
                     GUID = Begin
-                        0xfad5df1634bce7428de8ff32b33a2e46
+                        0xbfb1cd4a2c419e46ba5e528b2fd2c393
                     End
                 End
                 Begin TextBox
@@ -1668,12 +1934,94 @@ Begin Form
                     Left =11250
                     Top =1605
                     Width =744
-                    TabIndex =67
+                    TabIndex =69
                     BackColor =14079702
                     Name ="WaitingPeriod"
                     ControlSource ="WaitingPeriod"
                     GUID = Begin
-                        0xa686cad0d8c74144a871b5e6b1da64bd
+                        0xa51607180a566f459e61c6e9d4215850
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =510
+                    Top =3585
+                    Width =1080
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label218"
+                    Caption ="Date Add: "
+                    GUID = Begin
+                        0xd50d004665eca5498f699eb838749391
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =1620
+                    Top =3585
+                    Width =1044
+                    TabIndex =27
+                    BackColor =14079702
+                    Name ="DateAdd"
+                    ControlSource ="DateCreated"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xf130f2ad609f464d8c64a1216b6c5a55
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =247
+                    TextAlign =3
+                    Left =2790
+                    Top =3585
+                    Width =1080
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label220"
+                    Caption ="Date Del: "
+                    GUID = Begin
+                        0xf4065da36f5b9346978f93e10553c392
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    SpecialEffect =0
+                    OldBorderStyle =1
+                    OverlapFlags =247
+                    Left =3900
+                    Top =3585
+                    Width =1044
+                    TabIndex =28
+                    BackColor =14079702
+                    Name ="DateDel"
+                    ControlSource ="DateDeleted"
+                    Format ="m/d/yyyy"
+                    InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xb571d4718ca12c4bbc35626fa68eaf84
+                    End
+                End
+                Begin CommandButton
+                    Visible = NotDefault
+                    OverlapFlags =85
+                    Left =10980
+                    Top =7455
+                    Width =288
+                    Height =288
+                    TabIndex =70
+                    Name ="cmdChangeStatus"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xf3ad6cb23d00044c9a2fa42268169197
                     End
                 End
             End
@@ -1687,6 +2035,47 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database   'Use database order for string comparisons
 Option Explicit
+
+Public Sub cmdChangeStatus_Click()
+    
+    On Error GoTo Err_cmdChangeStatus_Click
+    
+    Dim stDocName As String
+    Dim stLinkCriteria As String
+    
+    If IsNull(Me.SUBssn) Then
+        MsgBox "Select a subscriber before changing the subscriber's status.", vbCritical, "QCD: Change status"
+    Else
+        ' check to see if subscriber is in
+        ' a QCD Only group or an individual
+        ' if true proceed
+        ' if not, msgbox
+        If RTrim(Me.PlanDesc) = "QCD Only" Then
+            ' check to see if the subscriber is in a cancelled group
+            ' if they are in a cancelled group
+            ' then they cannot change their status
+            If chkCancelled Then
+                MsgBox "You cannot change the status of subscribers in cancelled QCD Only groups.", vbInformation, "QCD: Subscr Search"
+            Else
+                stDocName = "fdlgChangeSubscrStatus"
+                DoCmd.OpenForm stDocName, , , stLinkCriteria
+                With Forms(stDocName)
+                    .txtID = Me.SUBssn
+                    .txtForm = Me.Name
+                End With
+            End If
+        Else
+            MsgBox "You cannot change the status of subscribers in All American groups.", vbInformation, "QCD: Subscr Search"
+        End If
+    End If
+    
+Exit_cmdChangeStatus_Click:
+    Exit Sub
+    
+Err_cmdChangeStatus_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_cmdChangeStatus_Click
+End Sub
 
 Private Sub FindSSN_Click()
         With Me!FindSSN
@@ -1713,9 +2102,9 @@ Private Sub FindSUBID_GotFocus()
     End With
 End Sub
 Private Sub Form_Current()
-
-On Error GoTo Err_Form_Current
-
+    
+    On Error GoTo Err_Form_Current
+    
     Dim dtePreexDate As Date  ' pre-existing date
     Dim lngDbD As Long        ' days between dates
     Dim fInWaitPer As Boolean ' in waiting period
@@ -1723,8 +2112,8 @@ On Error GoTo Err_Form_Current
     
     With Me
         If .TypeSubscr = "INDIV" Then
-           .TypeSubscr.BackColor = 16777088
-        ElseIf .TypeSubscr = "GRSUB" Then
+            .TypeSubscr.BackColor = 16777088
+            ElseIf .TypeSubscr = "GRSUB" Then
             .TypeSubscr.BackColor = 14079702
         Else
             .TypeSubscr.BackColor = 14079702
@@ -1733,13 +2122,17 @@ On Error GoTo Err_Form_Current
     
     With Me
         If .IndivSubStatus = "Cancelled" Then
-           .IndivSubStatus.BackColor = 255
-        ElseIf .IndivSubStatus = "Hold" Then
+            .IndivSubStatus.BackColor = 255
+            .DateDel.BackColor = 255
+            ElseIf .IndivSubStatus = "Hold" Then
             .IndivSubStatus.BackColor = 65535
-        ElseIf .IndivSubStatus = "Active" Then
+            .DateDel.BackColor = 14079702
+            ElseIf .IndivSubStatus = "Active" Then
             .IndivSubStatus.BackColor = 65280
+            .DateDel.BackColor = 14079702
         Else
             .IndivSubStatus.BackColor = 14079702
+            .DateDel.BackColor = 14079702
         End If
     End With
     
@@ -1752,54 +2145,54 @@ On Error GoTo Err_Form_Current
         Else
             dtePreexDate = CDate(.PreexistingDate)
         End If
-    lngDbD = DiffDays(dtePreexDate, date)
-    
-    fInWaitPer = False
-    
-    If IsLeapYear(Year(dtePreexDate)) Then
-        intDaysInYear = 366
-    Else
-        intDaysInYear = 365
-    End If
-    
-    If lngDbD < intDaysInYear And lngDbD > 0 Then
-        fInWaitPer = True
-    End If
-    
-    If .WaitingPeriod = "Yes" Then
-        If .PlanDesc <> "Red" And .PlanDesc <> "QCD Only" Then
-           If fInWaitPer Then
-              .SUBfirstNAME.BackColor = 255
-              .SUBlastNAME.BackColor = 255
-              .SUBmiddleNAME.BackColor = 255
-           End If
+        lngDbD = DiffDays(dtePreexDate, Date)
+        
+        fInWaitPer = False
+        
+        If IsLeapYear(Year(dtePreexDate)) Then
+            intDaysInYear = 366
+        Else
+            intDaysInYear = 365
         End If
-    End If
+        
+        If lngDbD < intDaysInYear And lngDbD > 0 Then
+            fInWaitPer = True
+        End If
+        
+        If .WaitingPeriod = "Yes" Then
+            If .PlanDesc <> "Red" And .PlanDesc <> "QCD Only" Then
+                If fInWaitPer Then
+                    .SUBfirstNAME.BackColor = 255
+                    .SUBlastNAME.BackColor = 255
+                    .SUBmiddleNAME.BackColor = 255
+                End If
+            End If
+        End If
     End With
     
     If Not IsNull(Me.SUBssn) Then
-
+        
         Me![AlphaControl] = Null
-        Me![SUBSCRPickList] = Null
+        Me![SubscrPickList] = Null
         Me.FindSSN = Null
         Me.FindSUBID = Null
         
         With Me
-          If .fraCriteria = 1 Then
-             .FindSSN.SetFocus
-          Else
-            .FindSUBID.SetFocus
-          End If
+            If .fraCriteria = 1 Then
+                .FindSSN.SetFocus
+            Else
+                .FindSUBID.SetFocus
+            End If
         End With
     End If
-
+    
 Exit_Form_Current:
     Exit Sub
-
+    
 Err_Form_Current:
     MsgBox Error$
     Resume Exit_Form_Current
-
+    
 End Sub
 Public Function PrintCard() As Boolean
     ' Comments  :
@@ -1823,7 +2216,7 @@ Public Function PrintCard() As Boolean
             Me.Requery
         Else
             MsgBox "You cannot print a card for a subscriber on the Blue plan. " _
-                        & vbCrLf & "Only GroupLink can print cards for subscribers " _
+                        & vbCrLf & "Only third party administrator can print cards for subscribers " _
                         & vbCrLf & "on the Blue plan.", vbCritical, "Card print error!"
         End If
     Else
@@ -1851,12 +2244,12 @@ Private Sub Form_Open(Cancel As Integer)
     
     '
     On Error GoTo ErrorHandler
-        
+    
     ExecuteSQL "TRUNCATE TABLE tblSubscrSearch"
     Me.Requery
     Me.FindSSN.SetFocus
     
-        
+    
 Exit_Point:
     Exit Sub
     
@@ -1866,21 +2259,26 @@ ErrorHandler:
     
 End Sub
 Private Sub fraCriteria_AfterUpdate()
-
+    On Error GoTo HandleError
     With Me
-      If .fraCriteria = 1 Then
-        .FindSSN.Visible = True
-        .FindSUBID.Visible = False
-        .FindSSN = ""
-        .FindSUBID = ""
-        .FindSSN.SetFocus
-      Else
-        .FindSSN.Visible = False
-        .FindSUBID.Visible = True
-        .FindSSN = ""
-        .FindSUBID = ""
-        .FindSUBID.SetFocus
-      End If
+        If .fraCriteria = 1 Then
+            .FindSSN.Visible = True
+            .FindSUBID.Visible = False
+            .FindSSN = ""
+            .FindSUBID = ""
+            .FindSSN.SetFocus
+        Else
+            .FindSSN.Visible = False
+            .FindSUBID.Visible = True
+            .FindSSN = ""
+            .FindSUBID = ""
+            .FindSUBID.SetFocus
+        End If
     End With
+    
+    Exit Sub
+HandleError:
+    Err.Raise Err.Number, IIf(Err.Source = Application.VBE.ActiveVBProject.Name, "Form_frmSubscrInquire.fraCriteria_AfterUpdate" & " " & Erl, Err.Source), Err.DESCRIPTION
+    
     
 End Sub

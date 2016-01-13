@@ -1,0 +1,824 @@
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private mcurAmtPaid As Currency
+Private mlngCoverID As Long
+Private mdtCreateDate As Date
+Private mdtDateCreated As Date
+Private mdtDateDeleted As Date
+Private mdtDateModified As Date
+Private mdtDateUpdated As Date
+Private mlngDepCnt As Long
+Private mstrEIMBRID As String
+Private mstrEmail As String
+Private mbooFlag As Boolean
+Private mvarGUID As Variant
+Private mlngID As Long
+Private mdtModifyDate As Date
+Private mlngPlanID As Long
+Private mstrPltCustKey As String
+Private mdtPreexistingDate As Date
+Private mlngRateID As Long
+Private mstrSub_LUName As String
+Private mlngSubAge As Long
+Private mstrSubBankDraftNo As String
+Private mlngSubCancelled As Long
+Private mbooSubCardPrt As Boolean
+Private mdtSubCardPrtDte As Date
+Private mstrSubCity As String
+Private mstrSubClassKey As String
+Private mbooSubCOBRA As Boolean
+Private mdtSubContBeg As Date
+Private mdtSubContEnd As Date
+Private mdtSubDOB As Date
+Private mdtSubEffDate As Date
+Private mstrSubEmail As String
+Private mdtSubExpDate As Date
+Private mstrSubFirstName As String
+Private mdtSubFlyerPrtDte As Date
+Private mstrSubGender As String
+Private mstrSubGeoID As String
+Private mstrSubGroupID As String
+Private mstrSubID As String
+Private mstrSubLastName As String
+Private mbooSubLOA As Boolean
+Private mstrSubMaritalStatus As String
+Private mstrSubMiddleName As String
+Private mbooSubMissing As Boolean
+Private mstrSubNotes As String
+Private mstrSubPhoneHome As String
+Private mstrSubPhoneWork As String
+Private mstrSubPymtFreq As String
+Private mdblSubRate As Double
+Private mstrSubSSN As String
+Private mstrSubState As String
+Private mstrSubStatus As String
+Private mstrSubStreet1 As String
+Private mstrSubStreet2 As String
+Private mstrSubZip As String
+Private mvarTimeStamp As Variant
+Private mstrTransactionType As String
+Private mstrUser01 As String
+Private mstrUser02 As String
+Private mstrUser03 As String
+Private mdtUser04 As Date
+Private mdtUser05 As Date
+Private mdtUser06 As Date
+Private mlngUser07 As Long
+Private mlngUser08 As Long
+Private mlngUser09 As Long
+Private mstrUserName As String
+Private mlngwSubID As Long
+Private mrstRecordset As Recordset
+Private mbooLoaded As Boolean
+Public Property Get AmtPaid() As Currency
+AmtPaid = mcurAmtPaid
+End Property
+
+Public Property Let AmtPaid(rData As Currency)
+mcurAmtPaid = rData
+End Property
+
+Public Property Get CoverID() As Long
+CoverID = mlngCoverID
+End Property
+
+Public Property Get CreateDate() As Date
+CreateDate = mdtCreateDate
+End Property
+
+Public Property Let CreateDate(rData As Date)
+mdtCreateDate = rData
+End Property
+
+Public Property Get DateCreated() As Date
+DateCreated = mdtDateCreated
+End Property
+
+Public Property Let DateCreated(rData As Date)
+mdtDateCreated = rData
+End Property
+
+Public Property Get DateDeleted() As Date
+DateDeleted = mdtDateDeleted
+End Property
+
+Public Property Let DateDeleted(rData As Date)
+mdtDateDeleted = rData
+End Property
+
+Public Property Get DateModified() As Date
+DateModified = mdtDateModified
+End Property
+
+Public Property Let DateModified(rData As Date)
+mdtDateModified = rData
+End Property
+
+Public Property Get DateUpdated() As Date
+DateUpdated = mdtDateUpdated
+End Property
+
+Public Property Let DateUpdated(rData As Date)
+mdtDateUpdated = rData
+End Property
+
+Public Property Get DepCnt() As Long
+DepCnt = mlngDepCnt
+End Property
+
+Public Property Let DepCnt(rData As Long)
+mlngDepCnt = rData
+End Property
+
+Public Property Get EIMBRID() As String
+EIMBRID = mstrEIMBRID
+End Property
+
+Public Property Let EIMBRID(rData As String)
+mstrEIMBRID = rData
+End Property
+
+Public Property Get Email() As String
+Email = mstrEmail
+End Property
+
+Public Property Let Email(rData As String)
+mstrEmail = rData
+End Property
+
+Public Property Get Flag() As Boolean
+Flag = mbooFlag
+End Property
+
+Public Property Let Flag(rData As Boolean)
+mbooFlag = rData
+End Property
+
+Public Property Get GUID() As Variant
+If IsObject(mvarGUID) Then
+Set GUID = mvarGUID
+Else
+GUID = mvarGUID
+End If
+
+End Property
+
+Public Property Let GUID(rData As Variant)
+mvarGUID = rData
+End Property
+
+Public Property Set GUID(rData As Variant)
+Set mvarGUID = rData
+End Property
+
+Public Property Get ID() As Long
+ID = mlngID
+End Property
+
+Public Property Get ModifyDate() As Date
+ModifyDate = mdtModifyDate
+End Property
+
+Public Property Let ModifyDate(rData As Date)
+mdtModifyDate = rData
+End Property
+
+Public Property Get PlanID() As Long
+PlanID = mlngPlanID
+End Property
+
+Public Property Get PLTcustKEY() As String
+PLTcustKEY = mstrPltCustKey
+End Property
+
+Public Property Let PLTcustKEY(rData As String)
+mstrPltCustKey = rData
+End Property
+
+Public Property Get PreexistingDate() As Date
+PreexistingDate = mdtPreexistingDate
+End Property
+
+Public Property Let PreexistingDate(rData As Date)
+mdtPreexistingDate = rData
+End Property
+
+Public Property Get RateID() As Long
+RateID = mlngRateID
+End Property
+
+Public Property Let RateID(rData As Long)
+mlngRateID = rData
+End Property
+
+Public Property Get SUB_LUname() As String
+SUB_LUname = mstrSub_LUName
+End Property
+
+Public Property Let SUB_LUname(rData As String)
+mstrSub_LUName = rData
+End Property
+
+Public Property Get SubAge() As Long
+SubAge = mlngSubAge
+End Property
+
+Public Property Let SubAge(rData As Long)
+mlngSubAge = rData
+End Property
+
+Public Property Get SUBbankDraftNo() As String
+SUBbankDraftNo = mstrSubBankDraftNo
+End Property
+
+Public Property Let SUBbankDraftNo(rData As String)
+mstrSubBankDraftNo = rData
+End Property
+
+Public Property Get SubCancelled() As Long
+SubCancelled = mlngSubCancelled
+End Property
+
+Public Property Let SubCancelled(rData As Long)
+mlngSubCancelled = rData
+End Property
+
+Public Property Get SUBcardPRT() As Boolean
+SUBcardPRT = mbooSubCardPrt
+End Property
+
+Public Property Let SUBcardPRT(rData As Boolean)
+mbooSubCardPrt = rData
+End Property
+
+Public Property Get SUBcardPRTdte() As Date
+SUBcardPRTdte = mdtSubCardPrtDte
+End Property
+
+Public Property Let SUBcardPRTdte(rData As Date)
+mdtSubCardPrtDte = rData
+End Property
+
+Public Property Get SUBcity() As String
+SUBcity = mstrSubCity
+End Property
+
+Public Property Let SUBcity(rData As String)
+mstrSubCity = rData
+End Property
+
+Public Property Get SUBclassKEY() As String
+SUBclassKEY = mstrSubClassKey
+End Property
+
+Public Property Let SUBclassKEY(rData As String)
+mstrSubClassKey = rData
+End Property
+
+Public Property Get SUBCOBRA() As Boolean
+SUBCOBRA = mbooSubCOBRA
+End Property
+
+Public Property Let SUBCOBRA(rData As Boolean)
+mbooSubCOBRA = rData
+End Property
+
+Public Property Get SubContBeg() As Date
+SubContBeg = mdtSubContBeg
+End Property
+
+Public Property Let SubContBeg(rData As Date)
+mdtSubContBeg = rData
+End Property
+
+Public Property Get SubContEnd() As Date
+SubContEnd = mdtSubContEnd
+End Property
+
+Public Property Let SubContEnd(rData As Date)
+mdtSubContEnd = rData
+End Property
+
+Public Property Get SUBdob() As Date
+SUBdob = mdtSubDOB
+End Property
+
+Public Property Let SUBdob(rData As Date)
+mdtSubDOB = rData
+End Property
+
+Public Property Get SUBeffDATE() As Date
+SUBeffDATE = mdtSubEffDate
+End Property
+
+Public Property Let SUBeffDATE(rData As Date)
+mdtSubEffDate = rData
+End Property
+
+Public Property Get SubEmail() As String
+SubEmail = mstrSubEmail
+End Property
+
+Public Property Let SubEmail(rData As String)
+mstrSubEmail = rData
+End Property
+
+Public Property Get SUBexpDATE() As Date
+SUBexpDATE = mdtSubExpDate
+End Property
+
+Public Property Let SUBexpDATE(rData As Date)
+mdtSubExpDate = rData
+End Property
+
+Public Property Get SUBfirstNAME() As String
+SUBfirstNAME = mstrSubFirstName
+End Property
+
+Public Property Let SUBfirstNAME(rData As String)
+mstrSubFirstName = rData
+End Property
+
+Public Property Get SUBflyerPRTdte() As Date
+SUBflyerPRTdte = mdtSubFlyerPrtDte
+End Property
+
+Public Property Let SUBflyerPRTdte(rData As Date)
+mdtSubFlyerPrtDte = rData
+End Property
+
+Public Property Get SUBGender() As String
+SUBGender = mstrSubGender
+End Property
+
+Public Property Let SUBGender(rData As String)
+mstrSubGender = rData
+End Property
+
+Public Property Get SUBgeoID() As String
+SUBgeoID = mstrSubGeoID
+End Property
+
+Public Property Let SUBgeoID(rData As String)
+mstrSubGeoID = rData
+End Property
+
+Public Property Get SUBgroupID() As String
+SUBgroupID = mstrSubGroupID
+End Property
+
+Public Property Let SUBgroupID(rData As String)
+mstrSubGroupID = rData
+End Property
+
+Public Property Get SubID() As String
+SubID = mstrSubID
+End Property
+
+Public Property Let SubID(rData As String)
+mstrSubID = rData
+End Property
+
+Public Property Get SUBlastNAME() As String
+SUBlastNAME = mstrSubLastName
+End Property
+
+Public Property Let SUBlastNAME(rData As String)
+mstrSubLastName = rData
+End Property
+
+Public Property Get SUBLOA() As Boolean
+SUBLOA = mbooSubLOA
+End Property
+
+Public Property Let SUBLOA(rData As Boolean)
+mbooSubLOA = rData
+End Property
+
+Public Property Get SubMaritalStatus() As String
+SubMaritalStatus = mstrSubMaritalStatus
+End Property
+
+Public Property Let SubMaritalStatus(rData As String)
+mstrSubMaritalStatus = rData
+End Property
+
+Public Property Get SUBmiddleNAME() As String
+SUBmiddleNAME = mstrSubMiddleName
+End Property
+
+Public Property Let SUBmiddleNAME(rData As String)
+mstrSubMiddleName = rData
+End Property
+
+Public Property Get SUBmissing() As Boolean
+SUBmissing = mbooSubMissing
+End Property
+
+Public Property Let SUBmissing(rData As Boolean)
+mbooSubMissing = rData
+End Property
+
+Public Property Get SUBnotes() As String
+SUBnotes = mstrSubNotes
+End Property
+
+Public Property Let SUBnotes(rData As String)
+mstrSubNotes = rData
+End Property
+
+Public Property Get SUBphoneHOME() As String
+SUBphoneHOME = mstrSubPhoneHome
+End Property
+
+Public Property Let SUBphoneHOME(rData As String)
+mstrSubPhoneHome = rData
+End Property
+
+Public Property Get SUBphoneWORK() As String
+SUBphoneWORK = mstrSubPhoneWork
+End Property
+
+Public Property Let SUBphoneWORK(rData As String)
+mstrSubPhoneWork = rData
+End Property
+
+Public Property Get SUBpymtFREQ() As String
+SUBpymtFREQ = mstrSubPymtFreq
+End Property
+
+Public Property Let SUBpymtFREQ(rData As String)
+mstrSubPymtFreq = rData
+End Property
+
+Public Property Get SUBrate() As Double
+SUBrate = mdblSubRate
+End Property
+
+Public Property Let SUBrate(rData As Double)
+mdblSubRate = rData
+End Property
+
+Public Property Get SUBssn() As String
+SUBssn = mstrSubSSN
+End Property
+
+Public Property Let SUBssn(rData As String)
+mstrSubSSN = rData
+End Property
+
+Public Property Get SUBstate() As String
+SUBstate = mstrSubState
+End Property
+
+Public Property Let SUBstate(rData As String)
+mstrSubState = rData
+End Property
+
+Public Property Get SubStatus() As String
+SubStatus = mstrSubStatus
+End Property
+
+Public Property Let SubStatus(rData As String)
+mstrSubStatus = rData
+End Property
+
+Public Property Get SUBstreet1() As String
+SUBstreet1 = mstrSubStreet1
+End Property
+
+Public Property Let SUBstreet1(rData As String)
+mstrSubStreet1 = rData
+End Property
+
+Public Property Get SUBstreet2() As String
+SUBstreet2 = mstrSubStreet2
+End Property
+
+Public Property Let SUBstreet2(rData As String)
+mstrSubStreet2 = rData
+End Property
+
+Public Property Get SUBzip() As String
+SUBzip = mstrSubZip
+End Property
+
+Public Property Let SUBzip(rData As String)
+mstrSubZip = rData
+End Property
+
+Public Property Get TimeStamp() As Variant
+If IsObject(mvarTimeStamp) Then
+Set TimeStamp = mvarTimeStamp
+Else
+TimeStamp = mvarTimeStamp
+End If
+
+End Property
+
+Public Property Let TimeStamp(rData As Variant)
+mvarTimeStamp = rData
+End Property
+
+Public Property Set TimeStamp(rData As Variant)
+Set mvarTimeStamp = rData
+End Property
+
+Public Property Get TransactionType() As String
+TransactionType = mstrTransactionType
+End Property
+
+Public Property Let TransactionType(rData As String)
+mstrTransactionType = rData
+End Property
+
+Public Property Get User01() As String
+User01 = mstrUser01
+End Property
+
+Public Property Let User01(rData As String)
+mstrUser01 = rData
+End Property
+
+Public Property Get User02() As String
+User02 = mstrUser02
+End Property
+
+Public Property Let User02(rData As String)
+mstrUser02 = rData
+End Property
+
+Public Property Get User03() As String
+User03 = mstrUser03
+End Property
+
+Public Property Let User03(rData As String)
+mstrUser03 = rData
+End Property
+
+Public Property Get User04() As Date
+User04 = mdtUser04
+End Property
+
+Public Property Let User04(rData As Date)
+mdtUser04 = rData
+End Property
+
+Public Property Get User05() As Date
+User05 = mdtUser05
+End Property
+
+Public Property Let User05(rData As Date)
+mdtUser05 = rData
+End Property
+
+Public Property Get User06() As Date
+User06 = mdtUser06
+End Property
+
+Public Property Let User06(rData As Date)
+mdtUser06 = rData
+End Property
+
+Public Property Get User07() As Long
+User07 = mlngUser07
+End Property
+
+Public Property Let User07(rData As Long)
+mlngUser07 = rData
+End Property
+
+Public Property Get User08() As Long
+User08 = mlngUser08
+End Property
+
+Public Property Let User08(rData As Long)
+mlngUser08 = rData
+End Property
+
+Public Property Get User09() As Long
+User09 = mlngUser09
+End Property
+
+Public Property Let User09(rData As Long)
+mlngUser09 = rData
+End Property
+
+Public Property Get UserName() As String
+UserName = mstrUserName
+End Property
+
+Public Property Let UserName(rData As String)
+mstrUserName = rData
+End Property
+
+Public Property Get wSubID() As Long
+wSubID = mlngwSubID
+End Property
+
+Public Property Let wSubID(rData As Long)
+mlngwSubID = rData
+End Property
+
+Private Property Get Recordset() As Recordset
+Set Recordset = mrstRecordset
+End Property
+
+Private Property Set Recordset(rData As Recordset)
+Set mrstRecordset = rData
+End Property
+
+Private Sub Load()
+With Recordset
+Me.AmtPaid = Nz(.Fields("AmtPaid").value)
+mlngCoverID = Nz(.Fields("CoverID").value)
+Me.CreateDate = Nz(.Fields("CreateDate").value)
+Me.DateCreated = Nz(.Fields("DateCreated").value)
+Me.DateDeleted = Nz(.Fields("DateDeleted").value)
+Me.DateModified = Nz(.Fields("DateModified").value)
+Me.DateUpdated = Nz(.Fields("DateUpdated").value)
+Me.DepCnt = Nz(.Fields("DepCnt").value)
+Me.EIMBRID = Nz(.Fields("EIMBRID").value)
+Me.Email = Nz(.Fields("Email").value)
+Me.Flag = Nz(.Fields("Flag").value)
+Me.GUID = Nz(.Fields("GUID").value)
+mlngID = Nz(.Fields("ID").value)
+Me.ModifyDate = Nz(.Fields("ModifyDate").value)
+mlngPlanID = Nz(.Fields("PlanID").value)
+Me.PLTcustKEY = Nz(.Fields("PltCustKey").value)
+Me.PreexistingDate = Nz(.Fields("PreexistingDate").value)
+Me.RateID = Nz(.Fields("RateID").value)
+Me.SUB_LUname = Nz(.Fields("Sub_LUName").value)
+Me.SubAge = Nz(.Fields("SubAge").value)
+Me.SUBbankDraftNo = Nz(.Fields("SubBankDraftNo").value)
+Me.SubCancelled = Nz(.Fields("SubCancelled").value)
+Me.SUBcardPRT = Nz(.Fields("SubCardPrt").value)
+Me.SUBcardPRTdte = Nz(.Fields("SubCardPrtDte").value)
+Me.SUBcity = Nz(.Fields("SubCity").value)
+Me.SUBclassKEY = Nz(.Fields("SubClassKey").value)
+Me.SUBCOBRA = Nz(.Fields("SubCOBRA").value)
+Me.SubContBeg = Nz(.Fields("SubContBeg").value)
+Me.SubContEnd = Nz(.Fields("SubContEnd").value)
+Me.SUBdob = Nz(.Fields("SubDOB").value)
+Me.SUBeffDATE = Nz(.Fields("SubEffDate").value)
+Me.SubEmail = Nz(.Fields("SubEmail").value)
+Me.SUBexpDATE = Nz(.Fields("SubExpDate").value)
+Me.SUBfirstNAME = Nz(.Fields("SubFirstName").value)
+Me.SUBflyerPRTdte = Nz(.Fields("SubFlyerPrtDte").value)
+Me.SUBGender = Nz(.Fields("SubGender").value)
+Me.SUBgeoID = Nz(.Fields("SubGeoID").value)
+Me.SUBgroupID = Nz(.Fields("SubGroupID").value)
+Me.SubID = Nz(.Fields("SubID").value)
+Me.SUBlastNAME = Nz(.Fields("SubLastName").value)
+Me.SUBLOA = Nz(.Fields("SubLOA").value)
+Me.SubMaritalStatus = Nz(.Fields("SubMaritalStatus").value)
+Me.SUBmiddleNAME = Nz(.Fields("SubMiddleName").value)
+Me.SUBmissing = Nz(.Fields("SubMissing").value)
+Me.SUBnotes = Nz(.Fields("SubNotes").value)
+Me.SUBphoneHOME = Nz(.Fields("SubPhoneHome").value)
+Me.SUBphoneWORK = Nz(.Fields("SubPhoneWork").value)
+Me.SUBpymtFREQ = Nz(.Fields("SubPymtFreq").value)
+Me.SUBrate = Nz(.Fields("SubRate").value)
+Me.SUBssn = Nz(.Fields("SubSSN").value)
+Me.SUBstate = Nz(.Fields("SubState").value)
+Me.SubStatus = Nz(.Fields("SubStatus").value)
+Me.SUBstreet1 = Nz(.Fields("SubStreet1").value)
+Me.SUBstreet2 = Nz(.Fields("SubStreet2").value)
+Me.SUBzip = Nz(.Fields("SubZip").value)
+Me.TimeStamp = Nz(.Fields("TimeStamp").value)
+Me.TransactionType = Nz(.Fields("TransactionType").value)
+Me.User01 = Nz(.Fields("User01").value)
+Me.User02 = Nz(.Fields("User02").value)
+Me.User03 = Nz(.Fields("User03").value)
+Me.User04 = Nz(.Fields("User04").value)
+Me.User05 = Nz(.Fields("User05").value)
+Me.User06 = Nz(.Fields("User06").value)
+Me.User07 = Nz(.Fields("User07").value)
+Me.User08 = Nz(.Fields("User08").value)
+Me.User09 = Nz(.Fields("User09").value)
+Me.UserName = Nz(.Fields("UserName").value)
+Me.wSubID = Nz(.Fields("wSubID").value)
+End With
+mbooLoaded = True
+End Sub
+Public Sub Update()
+With Recordset
+If mbooLoaded = True Then
+.Edit
+Else
+.AddNew
+End If
+.Fields("AmtPaid").value = Me.AmtPaid
+mlngCoverID = Nz(.Fields("CoverID").value)
+.Fields("CreateDate").value = Me.CreateDate
+.Fields("DateCreated").value = Me.DateCreated
+.Fields("DateDeleted").value = Me.DateDeleted
+.Fields("DateModified").value = Me.DateModified
+.Fields("DateUpdated").value = Me.DateUpdated
+.Fields("DepCnt").value = Me.DepCnt
+.Fields("EIMBRID").value = NullIfEmptyString(Me.EIMBRID)
+.Fields("Email").value = NullIfEmptyString(Me.Email)
+.Fields("Flag").value = Me.Flag
+.Fields("GUID").value = Me.GUID
+mlngID = Nz(.Fields("ID").value)
+.Fields("ModifyDate").value = Me.ModifyDate
+mlngPlanID = Nz(.Fields("PlanID").value)
+.Fields("PltCustKey").value = NullIfEmptyString(Me.PLTcustKEY)
+.Fields("PreexistingDate").value = Me.PreexistingDate
+.Fields("RateID").value = Me.RateID
+.Fields("Sub_LUName").value = NullIfEmptyString(Me.SUB_LUname)
+.Fields("SubAge").value = Me.SubAge
+.Fields("SubBankDraftNo").value = NullIfEmptyString(Me.SUBbankDraftNo)
+.Fields("SubCancelled").value = Me.SubCancelled
+.Fields("SubCardPrt").value = Me.SUBcardPRT
+.Fields("SubCardPrtDte").value = Me.SUBcardPRTdte
+.Fields("SubCity").value = NullIfEmptyString(Me.SUBcity)
+.Fields("SubClassKey").value = NullIfEmptyString(Me.SUBclassKEY)
+.Fields("SubCOBRA").value = Me.SUBCOBRA
+.Fields("SubContBeg").value = Me.SubContBeg
+.Fields("SubContEnd").value = Me.SubContEnd
+.Fields("SubDOB").value = Me.SUBdob
+.Fields("SubEffDate").value = Me.SUBeffDATE
+.Fields("SubEmail").value = NullIfEmptyString(Me.SubEmail)
+.Fields("SubExpDate").value = Me.SUBexpDATE
+.Fields("SubFirstName").value = NullIfEmptyString(Me.SUBfirstNAME)
+.Fields("SubFlyerPrtDte").value = Me.SUBflyerPRTdte
+.Fields("SubGender").value = NullIfEmptyString(Me.SUBGender)
+.Fields("SubGeoID").value = NullIfEmptyString(Me.SUBgeoID)
+.Fields("SubGroupID").value = NullIfEmptyString(Me.SUBgroupID)
+.Fields("SubID").value = NullIfEmptyString(Me.SubID)
+.Fields("SubLastName").value = NullIfEmptyString(Me.SUBlastNAME)
+.Fields("SubLOA").value = Me.SUBLOA
+.Fields("SubMaritalStatus").value = NullIfEmptyString(Me.SubMaritalStatus)
+.Fields("SubMiddleName").value = NullIfEmptyString(Me.SUBmiddleNAME)
+.Fields("SubMissing").value = Me.SUBmissing
+.Fields("SubNotes").value = NullIfEmptyString(Me.SUBnotes)
+.Fields("SubPhoneHome").value = NullIfEmptyString(Me.SUBphoneHOME)
+.Fields("SubPhoneWork").value = NullIfEmptyString(Me.SUBphoneWORK)
+.Fields("SubPymtFreq").value = NullIfEmptyString(Me.SUBpymtFREQ)
+.Fields("SubRate").value = Me.SUBrate
+.Fields("SubSSN").value = NullIfEmptyString(Me.SUBssn)
+.Fields("SubState").value = NullIfEmptyString(Me.SUBstate)
+.Fields("SubStatus").value = NullIfEmptyString(Me.SubStatus)
+.Fields("SubStreet1").value = NullIfEmptyString(Me.SUBstreet1)
+.Fields("SubStreet2").value = NullIfEmptyString(Me.SUBstreet2)
+.Fields("SubZip").value = NullIfEmptyString(Me.SUBzip)
+.Fields("TimeStamp").value = Me.TimeStamp
+.Fields("TransactionType").value = NullIfEmptyString(Me.TransactionType)
+.Fields("User01").value = NullIfEmptyString(Me.User01)
+.Fields("User02").value = NullIfEmptyString(Me.User02)
+.Fields("User03").value = NullIfEmptyString(Me.User03)
+.Fields("User04").value = Me.User04
+.Fields("User05").value = Me.User05
+.Fields("User06").value = Me.User06
+.Fields("User07").value = Me.User07
+.Fields("User08").value = Me.User08
+.Fields("User09").value = Me.User09
+.Fields("UserName").value = NullIfEmptyString(Me.UserName)
+.Fields("wSubID").value = Me.wSubID
+.Update
+End With
+mbooLoaded = True
+End Sub
+Public Sub AddNew()
+mbooLoaded = False
+End Sub
+Public Function FindFirst(Optional Criteria As Variant) As Boolean
+If IsMissing(Criteria) Then
+Recordset.MoveFirst
+FindFirst = Not Recordset.EOF
+Else
+Recordset.FindFirst Criteria
+FindFirst = Not Recordset.NoMatch
+End If
+If FindFirst Then Load
+End Function
+Public Function FindLast(Optional Criteria As Variant) As Boolean
+If IsMissing(Criteria) Then
+Recordset.MoveLast
+FindLast = Not Recordset.EOF
+Else
+Recordset.FindLast Criteria
+FindLast = Not Recordset.NoMatch
+End If
+If FindLast Then Load
+End Function
+Private Sub Class_Initialize()
+Set Recordset = CurrentDb.OpenRecordset("tblSubscr", dbOpenDynaset)
+End Sub
+Private Sub Class_Terminate()
+Recordset.Close
+Set Recordset = Nothing
+End Sub
+Function NullIfEmptyString(str As String) As Variant
+Dim strTrimmed As String: strTrimmed = Trim(str)
+If Len(strTrimmed) = 0 Then
+NullIfEmptyString = Null
+Else
+NullIfEmptyString = strTrimmed
+End If
+End Function

@@ -6,9 +6,14 @@ Begin
     Argument ="PrtScreen_Subscr()"
 End
 Begin
-    MacroName ="&Print_C&ard"
+    MacroName ="Print_&Card"
     Action ="RunCode"
     Argument ="PrintCard()"
+End
+Begin
+    MacroName ="Change &Status"
+    Action ="RunCode"
+    Argument ="ChangeStatus(Forms!frmGrpSubscr)"
 End
 Begin
     MacroName ="&Close"

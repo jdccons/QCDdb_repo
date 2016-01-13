@@ -1,7 +1,7 @@
 Operation =1
 Option =0
-Where ="(((tblInvoiceHistory.InvMonth)=[Forms]![frmInvoiceHistory].[txtBaseMonth]) AND ("
-    "(tblInvoiceHistory.InvYear)=[Forms]![frmInvoiceHistory].[txtBaseYear]))"
+Where ="(((tblInvoiceHistory.InvMonth)=Forms!frmInvoiceHistory.txtBaseMonth) And ((tblIn"
+    "voiceHistory.InvYear)=Forms!frmInvoiceHistory.txtBaseYear))"
 Begin InputTables
     Name ="tblInvoiceHistory"
 End
@@ -12,6 +12,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -19,10 +21,10 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =401
+    Bottom =420
     Left =-1
     Top =-1
-    Right =933
+    Right =925
     Bottom =196
     Left =0
     Top =0
@@ -31,7 +33,7 @@ Begin
         Left =38
         Top =6
         Right =164
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblInvoiceHistory"
         Name =""

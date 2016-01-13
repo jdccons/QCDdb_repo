@@ -1,20 +1,22 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"ALDNE\") AND ((tblSubscr.SUBrate)=0))"
+Where ="(((tblSubscr.SubGroupID)=\"ALDNE\") AND ((tblSubscr.SubRate)=0))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubRate"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -22,10 +24,10 @@ Begin
     Left =62
     Top =44
     Right =990
-    Bottom =533
+    Bottom =368
     Left =-1
     Top =-1
-    Right =917
+    Right =913
     Bottom =144
     Left =0
     Top =0
@@ -34,7 +36,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =13
         Name ="tblSubscr"
         Name =""

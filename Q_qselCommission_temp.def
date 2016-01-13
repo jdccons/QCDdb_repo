@@ -7,17 +7,19 @@ Begin OutputColumns
     Expression ="tblCommission.*"
 End
 Begin OrderBy
-    Expression ="tblCommission.COMMagent"
+    Expression ="tblCommission.CommAgent"
     Flag =0
-    Expression ="tblCommission.COMMcustKEY"
+    Expression ="tblCommission.CommCustKey"
     Flag =0
-    Expression ="tblCommission.COMMcheckDATE"
+    Expression ="tblCommission.CommCheckDate"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblCommission.COMMcustNAME"
@@ -26,14 +28,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =793
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -42,7 +44,7 @@ Begin
         Left =38
         Top =6
         Right =238
-        Bottom =113
+        Bottom =109
         Top =1
         Name ="tblCommission"
         Name =""

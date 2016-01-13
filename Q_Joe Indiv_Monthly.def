@@ -1,33 +1,33 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBstatus)=\"indiv\") AND ((tblRates.GroupID)='INDVM') AND ((tblSub"
-    "scr.SUBcontEND) Between #5/1/2006# And #5/31/2006#))"
+Where ="(((tblSubscr.SubStatus)=\"indiv\") AND ((tblRates.GroupID)='INDVM') AND ((tblSub"
+    "scr.SubContEnd) Between #5/1/2006# And #5/31/2006#))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblSubscr.SUBcontBEG"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubContBeg"
     Expression ="tblRates.GroupID"
-    Expression ="tblSubscr.SUBrate"
-    Expression ="tblSubscr.SUBcancelled"
-    Expression ="tblSubscr.SUBcardPRT"
-    Expression ="tblSubscr.SUBcontEND"
-    Expression ="tblSubscr.SUBnotes"
+    Expression ="tblSubscr.SubRate"
+    Expression ="tblSubscr.SubCancelled"
+    Expression ="tblSubscr.SubCardPrt"
+    Expression ="tblSubscr.SubContEnd"
+    Expression ="tblSubscr.SubNotes"
     Expression ="tblSubscr.SUBbankDraftNo"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -83,10 +83,10 @@ Begin
     Left =-12
     Top =6
     Right =1274
-    Bottom =588
+    Bottom =595
     Left =-1
     Top =-1
-    Right =1279
+    Right =1271
     Bottom =409
     Left =0
     Top =0
@@ -95,7 +95,7 @@ Begin
         Left =10
         Top =4
         Right =325
-        Bottom =309
+        Bottom =302
         Top =15
         Name ="tblSubscr"
         Name =""
@@ -104,7 +104,7 @@ Begin
         Left =363
         Top =6
         Right =459
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

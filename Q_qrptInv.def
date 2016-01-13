@@ -1,26 +1,47 @@
 Operation =1
 Option =8
+Where ="(((ARTRANH_local.TransactionType)=\"I\"))"
 Begin InputTables
-    Name ="ARHDR_temp"
+    Name ="ARTRANH_local"
+    Name ="ARCUST_local"
 End
 Begin OutputColumns
-    Expression ="ARHDR_temp.Custkey"
-    Expression ="ARHDR_temp.Custname"
-    Expression ="ARHDR_temp.CustAdd1Trim"
-    Expression ="ARHDR_temp.Custaddr2"
-    Expression ="ARHDR_temp.CityStateZip"
-    Expression ="ARHDR_temp.Tranno"
-    Expression ="ARHDR_temp.Invdate"
-    Expression ="ARHDR_temp.Salespkey"
-    Expression ="ARHDR_temp.Spare"
+    Alias ="Custkey"
+    Expression ="ARTRANH_local.CustomerKey"
+    Alias ="Custname"
+    Expression ="ARCUST_local.CustomerName"
+    Alias ="CustAdd1Trim"
+    Expression ="ARCUST_local.CustomerAddress1"
+    Alias ="Custaddr2"
+    Expression ="ARCUST_local.CustomerAddress2"
+    Alias ="CityStateZip"
+    Expression ="[CustomerCity] & \" , \" & [CustomerState] & \"  \" & [CustomerZipCode]"
+    Alias ="Tranno"
+    Expression ="ARTRANH_local.DocumentNumber"
+    Alias ="Invdate"
+    Expression ="ARTRANH_local.DocumentDate"
+    Alias ="Salespkey"
+    Expression ="ARTRANH_local.SalespersonKey"
+    Expression ="ARTRANH_local.Spare"
+    Alias ="InvTot"
+    Expression ="ARTRANH_local.DocumentAmt"
+    Alias ="InvoiceType"
+    Expression ="2"
     Alias ="DNM"
-    Expression ="IIf([GroupType]=2,1,IIf([GroupType]=3,1,IIf([GroupType]=4,1,0)))"
-    Expression ="ARHDR_temp.InvTot"
-    Expression ="ARHDR_temp.GroupType"
-    Expression ="ARHDR_temp.InvoiceType"
+    Expression ="IIf(ARTRANH_local.Spare3=\"QCD Only\",0,1)"
+    Expression ="ARTRANH_local.Spare3"
+    Alias ="GroupType"
+    Expression ="IIf(ARTRANH_LOCAL.Spare3=\"QCD Only\",1,4)"
+    Expression ="ARTRANH_local.DocumentDate"
+End
+Begin Joins
+    LeftTable ="ARTRANH_local"
+    RightTable ="ARCUST_local"
+    Expression ="ARTRANH_local.CustomerKey=ARCUST_local.CustomerKey"
+    Flag =1
 End
 Begin OrderBy
-    Expression ="ARHDR_temp.Custkey"
+    Expression ="ARTRANH_local.CustomerKey"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -30,27 +51,48 @@ dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="CityStateZip"
+    End
+    Begin
+        dbText "Name" ="InvoiceType"
+    End
+    Begin
+        dbText "Name" ="DNM"
+    End
+    Begin
+        dbText "Name" ="GroupType"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1400
-    Bottom =955
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =552
     Left =-1
     Top =-1
-    Right =1397
+    Right =1253
     Bottom =332
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =41
+        Left =47
         Top =9
-        Right =193
-        Bottom =258
-        Top =0
-        Name ="ARHDR_temp"
+        Right =288
+        Bottom =262
+        Top =20
+        Name ="ARTRANH_local"
+        Name =""
+    End
+    Begin
+        Left =343
+        Top =8
+        Right =619
+        Bottom =261
+        Top =42
+        Name ="ARCUST_local"
         Name =""
     End
 End

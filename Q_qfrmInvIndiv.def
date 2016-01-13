@@ -1,28 +1,69 @@
 Operation =1
 Option =8
-Where ="(((tblInvHdr.[CUST CLASS])=\"INDIV\"))"
 Begin InputTables
     Name ="tblInvHdr"
 End
 Begin OutputColumns
-    Expression ="tblInvHdr.*"
+    Expression ="tblInvHdr.[CUST KEY]"
+    Expression ="tblInvHdr.[CUST NAME]"
+    Expression ="tblInvHdr.[ADDRESS 1]"
+    Expression ="tblInvHdr.[ADDRESS 2]"
+    Expression ="tblInvHdr.[ADDRESS 3]"
+    Expression ="tblInvHdr.CITY"
+    Expression ="tblInvHdr.STATE"
+    Expression ="tblInvHdr.[ZIP CODE]"
+    Expression ="tblInvHdr.COUNTRY"
+    Expression ="tblInvHdr.ATTENTION"
+    Expression ="tblInvHdr.[TRANS NO]"
+    Expression ="tblInvHdr.[APPLY-TO]"
+    Expression ="tblInvHdr.[SEL STATUS]"
+    Expression ="tblInvHdr.[INV DATE]"
+    Expression ="tblInvHdr.[RECR CYCLE]"
+    Expression ="tblInvHdr.BUYER"
+    Expression ="tblInvHdr.[CUST PO]"
+    Expression ="tblInvHdr.[CHECK NO]"
+    Expression ="tblInvHdr.[CHECK AMTR]"
+    Expression ="tblInvHdr.[COMM OVRD]"
+    Expression ="tblInvHdr.[LOCATION  KEY]"
+    Expression ="tblInvHdr.[TERRITORY KEY]"
+    Expression ="tblInvHdr.[SALESP    KEY]"
+    Expression ="tblInvHdr.TERMS"
+    Expression ="tblInvHdr.FOB"
+    Expression ="tblInvHdr.[SHIP VIA]"
+    Expression ="tblInvHdr.[COMMENT KEY]"
+    Expression ="tblInvHdr.[CUST CLASS]"
+    Expression ="tblInvHdr.FREIGHT"
+    Expression ="tblInvHdr.[DISCOUNT MULT]"
+    Expression ="tblInvHdr.[CR MEMO FLAG]"
+    Expression ="tblInvHdr.[INVOICE NO]"
+    Expression ="tblInvHdr.SPARE"
+    Expression ="tblInvHdr.SPARE2"
+    Expression ="tblInvHdr.SPARE3"
+    Expression ="tblInvHdr.INVOICETOTAL"
+    Expression ="tblInvHdr.SYSDOCID"
+    Expression ="tblInvHdr.RecUserID"
+    Expression ="tblInvHdr.RecDate"
+    Expression ="tblInvHdr.RecTime"
+    Expression ="tblInvHdr.upsize_ts"
+    Expression ="tblInvHdr.DateModified"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
     State =0
-    Left =124
-    Top =133
-    Right =509
-    Bottom =489
+    Left =18
+    Top =66
+    Right =1286
+    Bottom =390
     Left =-1
     Top =-1
-    Right =378
+    Right =1249
     Bottom =144
     Left =0
     Top =0
@@ -31,8 +72,8 @@ Begin
         Left =38
         Top =6
         Right =290
-        Bottom =120
-        Top =0
+        Bottom =109
+        Top =3
         Name ="tblInvHdr"
         Name =""
     End

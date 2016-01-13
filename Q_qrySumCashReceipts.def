@@ -5,6 +5,7 @@ Begin InputTables
     Name ="ARTRAN"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARTRAN.TransactionType"
     Alias ="SumofDocument"
     Expression ="Sum(ARTRAN.DocumentAmt)"
@@ -18,6 +19,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -25,10 +27,10 @@ Begin
     Left =47
     Top =29
     Right =1002
-    Bottom =342
+    Bottom =353
     Left =-1
     Top =-1
-    Right =948
+    Right =940
     Bottom =144
     Left =0
     Top =0
@@ -37,8 +39,8 @@ Begin
         Left =77
         Top =4
         Right =173
-        Bottom =103
-        Top =11
+        Bottom =47
+        Top =0
         Name ="ARTRAN"
         Name =""
     End

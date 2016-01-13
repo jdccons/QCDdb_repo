@@ -21,11 +21,11 @@ End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGeographical"
-    Expression ="tblAgent.AGENTgeoID = tblGeographical.GEOid"
+    Expression ="tblAgent.AGENTgeoID=tblGeographical.GEOid"
     Flag =2
 End
 Begin OrderBy
-    Expression ="tblAgent.AGENTlast"
+    Expression ="tblAgent.AgentLast"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -34,6 +34,7 @@ dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
+dbText "Description" ="Data source for agent master listing report"
 Begin
     Begin
         dbText "Name" ="ADDR"
@@ -46,25 +47,26 @@ Begin
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
-        dbText "Name" ="tblAgent.AGENTtype"
-        dbInteger "ColumnWidth" ="2520"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
         dbText "Name" ="tblAgent.PayCommTo"
         dbInteger "ColumnWidth" ="2520"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="Zip2"
+    End
+    Begin
+        dbText "Name" ="Name"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =650
+    State =0
+    Left =18
+    Top =40
+    Right =1002
+    Bottom =360
     Left =-1
     Top =-1
-    Right =1277
+    Right =977
     Bottom =144
     Left =0
     Top =0
@@ -73,7 +75,7 @@ Begin
         Left =38
         Top =6
         Right =176
-        Bottom =113
+        Bottom =105
         Top =17
         Name ="tblAgent"
         Name =""
@@ -82,7 +84,7 @@ Begin
         Left =254
         Top =12
         Right =350
-        Bottom =104
+        Bottom =96
         Top =0
         Name ="tblGeographical"
         Name =""

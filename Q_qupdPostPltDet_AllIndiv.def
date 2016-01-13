@@ -2,8 +2,8 @@ Operation =3
 Name ="ARLIN"
 Option =8
 Begin InputTables
-    Name ="tblInvLin"
     Name ="tblInvHdr"
+    Name ="tblInvLin"
 End
 Begin OutputColumns
     Alias ="DocNo"
@@ -76,12 +76,13 @@ End
 Begin Joins
     LeftTable ="tblInvHdr"
     RightTable ="tblInvLin"
-    Expression ="tblInvHdr.[TRANS NO] = tblInvLin.[DOCUMENT NO]"
+    Expression ="tblInvHdr.[TRANS NO]=tblInvLin.[DOCUMENT NO]"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="[t-INVhdr].[CUST KEY]"
@@ -234,14 +235,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =483
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =429
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =209
     Left =0
     Top =0
@@ -250,7 +251,7 @@ Begin
         Left =218
         Top =1
         Right =351
-        Bottom =138
+        Bottom =134
         Top =0
         Name ="tblInvLin"
         Name =""
@@ -259,7 +260,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =35
         Name ="tblInvHdr"
         Name =""

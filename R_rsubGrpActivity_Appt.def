@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1345832007
+Checksum =569727558
 Begin Report
     LayoutForPrint = NotDefault
     FilterOn = NotDefault
@@ -11,7 +11,7 @@ Begin Report
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =15585
+    Width =14370
     DatasheetFontHeight =10
     ItemSuffix =25
     Top =75
@@ -19,32 +19,30 @@ Begin Report
     Bottom =3510
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0x530b7447d20de340
+        0x874370b932ace440
     End
     RecordSource ="SELECT tblGrpLog.LogGrID, tblGrp.GRname, tblGrpLog.LogNotes, tblGrpLog.LogDate, "
-        " tblGrpLog.LogTime, tblGrpLog.LogCallBack, tblGrpLog.LogAcctMgrID, tblGrpLog.Log"
-        "Purpose, tblGrpLog.LogOutcome, tblGrpLog.LogFollowupAction, tblGrpLog.LogSize, t"
-        "blGrpLog.LogDateCallVisit, tblGrpLog.LogPhoneLog,  tblGrp.GRcancelled, tblGrpLog"
-        ".LogApptCallTime, tblAcctMgr.AcctMgrName FROM (tblGrp LEFT JOIN tblGrpLog ON (tb"
-        "lGrp.GROUPid = tblGrpLog.LogGrID)  AND (tblGrp.GROUPid = tblGrpLog.LogGrID)) LEF"
-        "T JOIN tblAcctMgr ON tblGrpLog.LogAcctMgrID = tblAcctMgr.AcctMgrID WHERE (((tblG"
-        "rpLog.LogPhoneLog)=No)  AND [LogDateCallVisit] BETWEEN #9/1/2006# AND #10/31/200"
-        "6#);"
+        "tblGrpLog.LogTime,  tblGrpLog.LogCallBack, tblGrpLog.LogClientScvRepID, tblGrpLo"
+        "g.LogAcctMgrID,  tblGrpLog.LogPurpose, tblGrpLog.LogOutcome, tblGrpLog.LogFollow"
+        "upAction, tblGrpLog.LogSize, tblGrpLog.LogDateCallVisit, tblGrpLog.LogPhoneLog, "
+        " tblGrp.GRcancelled, tblGrpLog.LogApptCallTime, tlkpClientServiceReps.RepName FR"
+        "OM (tblGrp LEFT JOIN tblGrpLog ON (tblGrp.GroupID = tblGrpLog.LogGrID)  AND (tbl"
+        "Grp.GroupID = tblGrpLog.LogGrID))  LEFT JOIN tlkpClientServiceReps ON tblGrpLog."
+        "LogClientScvRepID = tlkpClientServiceReps.RepID WHERE (((tblGrpLog.LogPhoneLog)="
+        "No));"
     DatasheetFontName ="Arial"
     PrtMip = Begin
-        0xa0050000a0050000a0050000a005000000000000e13c0000f000000001000000 ,
+        0xd0020000a005000048030000a00500000000000022380000ff00000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     PrtDevMode = Begin
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x01043c079c00d00603c70000020014009a0b3408640001000700580200000100 ,
-        0x0000000000004134000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000050524956 ,
-        0xe012000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000180000000000102710271027 ,
-        0x0000102700000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc02032f000002000100ea0a6f08640001000700580202000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -60,46 +58,18 @@ Begin Report
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x000000000000000000000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000446f6375436f6d2050444620506f72743a00
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
     Begin
         Begin Label
@@ -114,8 +84,11 @@ Begin Report
         End
         Begin FormHeader
             KeepTogether = NotDefault
-            Height =495
+            Height =555
             Name ="ReportHeader"
+            GUID = Begin
+                0x16b75272b0aca949b3e9a104135a5306
+            End
             Begin
                 Begin Label
                     TextFontFamily =34
@@ -124,117 +97,151 @@ Begin Report
                     FontWeight =700
                     Name ="Label22"
                     Caption ="Appointments"
+                    GUID = Begin
+                        0x984f2a52f835ab498c72beeb80de25cc
+                    End
                 End
                 Begin Label
                     TextAlign =2
                     TextFontFamily =34
-                    Left =75
-                    Top =256
+                    Left =150
+                    Top =316
                     Width =384
                     Height =239
                     FontWeight =700
                     Name ="Label1"
                     Caption ="Size"
+                    GUID = Begin
+                        0x1c979a5f1e4d514f957e4ed78850394b
+                    End
                 End
                 Begin Label
                     TextAlign =2
                     TextFontFamily =34
-                    Left =840
-                    Top =255
+                    Left =915
+                    Top =316
                     Width =1050
                     Height =239
                     FontWeight =700
                     Name ="Label2"
                     Caption ="Date / Time"
+                    GUID = Begin
+                        0xe214f5854de8d6459a4ee94074011980
+                    End
                 End
                 Begin Label
                     TextAlign =2
                     TextFontFamily =34
-                    Left =6345
-                    Top =75
+                    Left =6925
+                    Top =135
                     Width =2415
                     Height =420
                     FontWeight =700
                     Name ="Label3"
                     Caption ="Meeting\015\012 Outcome"
+                    GUID = Begin
+                        0x3b38516c8bca8b44b1fb71c36874f0f8
+                    End
                 End
                 Begin Label
                     TextAlign =2
                     TextFontFamily =34
-                    Left =9615
-                    Top =255
+                    Left =9825
+                    Top =316
                     Width =1710
                     Height =239
                     FontWeight =700
                     Name ="Label4"
                     Caption ="Follow up Action"
+                    GUID = Begin
+                        0xd46fbc65ef8dc849abbaffb896e321b9
+                    End
                 End
                 Begin Label
                     TextAlign =2
                     TextFontFamily =34
-                    Left =1995
-                    Top =255
+                    Left =2910
+                    Top =330
                     Width =1215
                     Height =225
                     FontWeight =700
                     Name ="Label7"
                     Caption ="Client Svc Rep."
+                    GUID = Begin
+                        0x7faed34a70ce814182a94101a470c1e5
+                    End
                 End
                 Begin Label
                     TextAlign =2
                     TextFontFamily =34
-                    Left =12735
-                    Top =255
+                    Left =12135
+                    Top =316
                     Width =555
                     Height =239
                     FontWeight =700
                     Name ="Label16"
                     Caption ="Notes"
+                    GUID = Begin
+                        0x9def80434e985a4491e22f46d37cbebb
+                    End
                 End
                 Begin Label
                     TextFontFamily =34
-                    Left =4230
-                    Top =255
+                    Left =4500
+                    Top =316
                     Width =840
                     Height =239
                     FontWeight =700
                     Name ="Label24"
                     Caption ="Purpose"
+                    GUID = Begin
+                        0x001acc37233ae94d849599c14ca47c4f
+                    End
                 End
             End
         End
         Begin Section
             KeepTogether = NotDefault
             CanGrow = NotDefault
-            Height =240
+            Height =255
             Name ="Detail"
+            GUID = Begin
+                0xeda5214f9da0284987adb6dec7ee5e30
+            End
             Begin
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Top =1
+                    Left =120
+                    Top =16
                     Width =495
                     Height =239
                     Name ="LogSize"
                     ControlSource ="LogSize"
                     StatusBarText ="A, B, C+, or Baby C"
+                    GUID = Begin
+                        0xd66c87413c578447a8d704ff50de554c
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Left =495
-                    Top =1
-                    Width =795
+                    Left =633
+                    Top =16
+                    Width =1455
                     Height =239
                     TabIndex =1
                     Name ="LogDateCallVisit"
                     ControlSource ="LogDateCallVisit"
                     Format ="Short Date"
                     StatusBarText ="Date Called or Visited"
+                    GUID = Begin
+                        0xbbba84de480b444eb2d8ce8d600e4ee9
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -243,14 +250,17 @@ Begin Report
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Left =6285
-                    Top =1
-                    Width =3150
+                    Left =6768
+                    Top =16
+                    Width =2880
                     Height =239
                     TabIndex =2
                     Name ="LogOutcome"
                     ControlSource ="LogOutcome"
                     StatusBarText ="Outcome of Call or Meeting"
+                    GUID = Begin
+                        0xfb411f89fe00444aac568d1bda2702e2
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -259,13 +269,17 @@ Begin Report
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Left =9450
-                    Width =2430
+                    Left =9666
+                    Top =15
+                    Width =2304
                     Height =239
                     TabIndex =3
                     Name ="LogFollowupAction"
                     ControlSource ="LogFollowupAction"
                     StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                    GUID = Begin
+                        0xd6b29ef442efee438c4c3da999d645a8
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -274,14 +288,17 @@ Begin Report
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Left =2010
-                    Top =1
-                    Width =1470
+                    Left =2844
+                    Top =16
+                    Width =1368
                     Height =239
                     TabIndex =4
                     Name ="Text18"
-                    ControlSource ="RepName"
+                    ControlSource ="ClientSvcRepName"
                     StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                    GUID = Begin
+                        0x6f0437e016698045a90d3ac6d6795d0b
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -290,21 +307,25 @@ Begin Report
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Left =11880
-                    Width =2415
+                    Left =11988
+                    Top =15
+                    Width =2304
                     Height =239
                     TabIndex =5
-                    Name ="Text20"
+                    Name ="LogNotes"
                     ControlSource ="LogNotes"
                     StatusBarText ="Follow up Action Plan for Meetings and Phone Contact"
+                    GUID = Begin
+                        0xb018044d12a43e4e8bd018cd5e9008fe
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Left =1290
-                    Top =1
+                    Left =2106
+                    Top =16
                     Width =720
                     Height =239
                     TabIndex =6
@@ -312,6 +333,9 @@ Begin Report
                     ControlSource ="LogApptCallTime"
                     Format ="Short Time"
                     InputMask ="09:00\\ >LL;0"
+                    GUID = Begin
+                        0x239c75d83aa2cb4084b8208827afec0f
+                    End
                 End
                 Begin TextBox
                     CanGrow = NotDefault
@@ -320,14 +344,17 @@ Begin Report
                     OldBorderStyle =1
                     BorderWidth =1
                     BackStyle =0
-                    Left =3480
-                    Top =1
-                    Width =2790
+                    Left =4230
+                    Top =16
+                    Width =2520
                     Height =239
                     TabIndex =7
-                    Name ="Text21"
+                    Name ="LogPurpose"
                     ControlSource ="LogPurpose"
                     StatusBarText ="Outcome of Call or Meeting"
+                    GUID = Begin
+                        0xbf2316d814a92a4898f8d09c2106b920
+                    End
                 End
             End
         End
@@ -335,6 +362,9 @@ Begin Report
             KeepTogether = NotDefault
             Height =0
             Name ="ReportFooter"
+            GUID = Begin
+                0x22be2b513b91f0489f26d48798e8b769
+            End
         End
     End
 End

@@ -1,0 +1,73 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="ARTRANH_local"
+End
+Begin OutputColumns
+    Expression ="ARTRANH_local.CustomerKey"
+    Expression ="ARTRANH_local.DocumentNumber"
+    Expression ="ARTRANH_local.ApplyTo"
+    Expression ="ARTRANH_local.TransactionType"
+    Expression ="ARTRANH_local.DocumentDate"
+    Expression ="ARTRANH_local.DocumentAmt"
+    Alias ="SubID"
+    Expression ="ARTRANH_local.Spare"
+    Alias ="SSN"
+    Expression ="ARTRANH_local.Spare2"
+    Alias ="Type"
+    Expression ="ARTRANH_local.Spare3"
+    Expression ="ARTRANH_local.DateModified"
+    Expression ="ARTRANH_local.IFStatus"
+    Expression ="ARTRANH_local.ID"
+End
+Begin OrderBy
+    Expression ="ARTRANH_local.CustomerKey"
+    Flag =0
+    Expression ="ARTRANH_local.DocumentDate"
+    Flag =0
+    Expression ="ARTRANH_local.TransactionType"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+dbText "Description" ="Data source query for frmInvTxn."
+Begin
+    Begin
+        dbText "Name" ="ARTRANH_local.DateModified"
+        dbInteger "ColumnWidth" ="2205"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="SubID"
+    End
+    Begin
+        dbText "Name" ="SSN"
+    End
+End
+Begin
+    State =0
+    Left =61
+    Top =199
+    Right =1344
+    Bottom =523
+    Left =-1
+    Top =-1
+    Right =1268
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =273
+        Bottom =124
+        Top =22
+        Name ="ARTRANH_local"
+        Name =""
+    End
+End

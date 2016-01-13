@@ -16,11 +16,11 @@ End
 Begin Joins
     LeftTable ="tblSubscr_Bexar"
     RightTable ="tblRates"
-    Expression ="tblSubscr_Bexar.RateID = tblRates.RateID"
+    Expression ="tblSubscr_Bexar.RateID=tblRates.RateID"
     Flag =1
     LeftTable ="tblGrp_Bexar"
     RightTable ="tblSubscr_Bexar"
-    Expression ="tblGrp_Bexar.GROUPid = tblSubscr_Bexar.SUBgroupID"
+    Expression ="tblGrp_Bexar.GROUPid=tblSubscr_Bexar.SUBgroupID"
     Flag =1
 End
 Begin OrderBy
@@ -40,10 +40,10 @@ Begin
     Left =-52
     Top =49
     Right =1144
-    Bottom =545
+    Bottom =552
     Left =-1
     Top =-1
-    Right =1189
+    Right =1181
     Bottom =323
     Left =0
     Top =0
@@ -52,7 +52,7 @@ Begin
         Left =38
         Top =6
         Right =182
-        Bottom =239
+        Bottom =229
         Top =0
         Name ="tblGrp_Bexar"
         Name =""
@@ -61,7 +61,7 @@ Begin
         Left =248
         Top =6
         Right =736
-        Bottom =266
+        Bottom =259
         Top =0
         Name ="tblSubscr_Bexar"
         Name =""
@@ -70,7 +70,7 @@ Begin
         Left =824
         Top =12
         Right =920
-        Bottom =122
+        Bottom =115
         Top =0
         Name ="tblRates"
         Name =""

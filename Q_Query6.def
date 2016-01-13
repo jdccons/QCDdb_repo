@@ -1,0 +1,94 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SubStatus)=\"INDIV\"))"
+Begin InputTables
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Expression ="tblSubscr.ID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubID"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.PltCustKey"
+    Expression ="tblSubscr.PlanID"
+    Expression ="tblSubscr.CoverID"
+    Expression ="tblSubscr.RateID"
+    Expression ="tblSubscr.SubCancelled"
+    Expression ="tblSubscr.SUB_LUname"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubPhoneWork"
+    Expression ="tblSubscr.SubPhoneHome"
+    Expression ="tblSubscr.SubEmail"
+    Expression ="tblSubscr.SubDOB"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="tblSubscr.SubGender"
+    Expression ="tblSubscr.SubAge"
+    Expression ="tblSubscr.SubMaritalStatus"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblSubscr.SubExpDate"
+    Expression ="tblSubscr.SubClassKey"
+    Expression ="tblSubscr.PreexistingDate"
+    Expression ="tblSubscr.SubCardPrt"
+    Expression ="tblSubscr.SubCardPrtDte"
+    Expression ="tblSubscr.SubNotes"
+    Expression ="tblSubscr.TransactionType"
+    Expression ="tblSubscr.SubRate"
+    Expression ="tblSubscr.SubContBeg"
+    Expression ="tblSubscr.SubContEnd"
+    Expression ="tblSubscr.SubPymtFreq"
+    Expression ="tblSubscr.SubGeoID"
+    Expression ="tblSubscr.SUBbankDraftNo"
+    Expression ="tblSubscr.Flag"
+    Expression ="tblSubscr.UserName"
+    Expression ="tblSubscr.DateCreated"
+    Expression ="tblSubscr.DateUpdated"
+    Expression ="tblSubscr.DateDeleted"
+    Expression ="tblSubscr.CreateDate"
+    Expression ="tblSubscr.ModifyDate"
+    Expression ="tblSubscr.AmtPaid"
+    Expression ="tblSubscr.wSubID"
+    Expression ="tblSubscr.Email"
+End
+Begin OrderBy
+    Expression ="tblSubscr.PltCustKey"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =124
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

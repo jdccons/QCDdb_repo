@@ -1,8 +1,8 @@
 Operation =3
 Name ="tmpEDI_Rpt"
 Option =8
-Where ="(((qselAA_DepImportCnts.CountOfDEPsubID)<>[qselAA_DepExistingCnts]![CountOfDEPsu"
-    "bID]))"
+Where ="(((qselAA_DepImportCnts.CountOfDEPsubID)<>qselAA_DepExistingCnts!CountOfDEPsubID"
+    "))"
 Begin InputTables
     Name ="tblEDI_App_Subscr"
     Name ="tblSubscr"
@@ -11,58 +11,58 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="SUBssn"
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
     Name ="SUBfirstNAME"
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
     Name ="SUBlastNAME"
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     Alias ="SUBStreet"
     Name ="SUBStreet"
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     Name ="SUBcity"
-    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
     Name ="SUBstate"
-    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
     Name ="SUBzip"
-    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
     Alias ="Stat"
     Name ="Stat"
     Expression ="\"Change-C\""
     Name ="GroupID"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblSubscr"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblSubscr.SubSSN"
     Flag =1
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="qselAA_DepImportCnts"
-    Expression ="tblEDI_App_Subscr.SUBssn = qselAA_DepImportCnts.DEPsubID"
+    Expression ="tblEDI_App_Subscr.SubSSN=qselAA_DepImportCnts.DEPsubID"
     Flag =1
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="qselAA_DepExistingCnts"
-    Expression ="tblEDI_App_Subscr.SUBssn = qselAA_DepExistingCnts.DEPsubID"
+    Expression ="tblEDI_App_Subscr.SubSSN=qselAA_DepExistingCnts.DEPsubID"
     Flag =1
 End
 Begin Groups
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     GroupLevel =0
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
     GroupLevel =0
     Expression ="\"Change-C\""
     GroupLevel =0
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -83,10 +83,10 @@ Begin
     Left =30
     Top =90
     Right =938
-    Bottom =516
+    Bottom =445
     Left =-1
     Top =-1
-    Right =897
+    Right =893
     Bottom =175
     Left =0
     Top =0
@@ -95,7 +95,7 @@ Begin
         Left =235
         Top =11
         Right =439
-        Bottom =133
+        Bottom =129
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -104,7 +104,7 @@ Begin
         Left =46
         Top =10
         Right =180
-        Bottom =132
+        Bottom =128
         Top =10
         Name ="tblSubscr"
         Name =""
@@ -113,7 +113,7 @@ Begin
         Left =480
         Top =59
         Right =651
-        Bottom =136
+        Bottom =147
         Top =0
         Name ="qselAA_DepImportCnts"
         Name =""
@@ -122,7 +122,7 @@ Begin
         Left =677
         Top =8
         Right =814
-        Bottom =85
+        Bottom =96
         Top =0
         Name ="qselAA_DepExistingCnts"
         Name =""

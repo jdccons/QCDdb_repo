@@ -1,7 +1,7 @@
 Operation =3
 Name ="tmpEDI_Rpt"
 Option =8
-Where ="(((tlkpAllAmericanPlan.PlanID)<>[tblSubscr]![PlanID]))"
+Where ="(((tlkpAllAmericanPlan.PlanID)<>tblSubscr!PlanID))"
 Begin InputTables
     Name ="tlkpAllAmericanPlan"
     Name ="tblEDI_App_Subscr"
@@ -10,43 +10,44 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="SUBssn"
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
     Name ="SUBfirstNAME"
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
     Name ="SUBlastNAME"
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     Alias ="SUBStreet"
     Name ="SUBStreet"
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     Name ="SUBcity"
-    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
     Name ="SUBstate"
-    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
     Name ="SUBzip"
-    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
     Alias ="Stat"
     Name ="Stat"
     Expression ="\"Change-D\""
     Name ="GroupID"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblSubscr"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblSubscr.SubSSN"
     Flag =1
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tmpExportAllAmerican"
-    Expression ="tblEDI_App_Subscr.SUBssn = tmpExportAllAmerican.EISSN"
+    Expression ="tblEDI_App_Subscr.SubSSN=tmpExportAllAmerican.EISSN"
     Flag =1
     LeftTable ="tlkpAllAmericanPlan"
     RightTable ="tmpExportAllAmerican"
-    Expression ="tlkpAllAmericanPlan.PlanagerCode = tmpExportAllAmerican.EINMPLAN"
+    Expression ="tlkpAllAmericanPlan.PlanagerCode=tmpExportAllAmerican.EINMPLAN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -54,19 +55,28 @@ Begin
     Left =97
     Top =104
     Right =958
-    Bottom =504
+    Bottom =459
     Left =-1
     Top =-1
-    Right =854
+    Right =846
     Bottom =175
     Left =0
     Top =0
     ColumnsShown =651
     Begin
+        Left =639
+        Top =9
+        Right =735
+        Bottom =97
+        Top =0
+        Name ="tlkpAllAmericanPlan"
+        Name =""
+    End
+    Begin
         Left =229
         Top =10
         Right =433
-        Bottom =132
+        Bottom =128
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -75,7 +85,7 @@ Begin
         Left =46
         Top =10
         Right =180
-        Bottom =132
+        Bottom =128
         Top =10
         Name ="tblSubscr"
         Name =""
@@ -84,18 +94,9 @@ Begin
         Left =471
         Top =6
         Right =608
-        Bottom =143
+        Bottom =139
         Top =28
         Name ="tmpExportAllAmerican"
-        Name =""
-    End
-    Begin
-        Left =639
-        Top =9
-        Right =735
-        Bottom =101
-        Top =0
-        Name ="tlkpAllAmericanPlan"
         Name =""
     End
 End

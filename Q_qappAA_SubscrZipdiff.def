@@ -17,7 +17,8 @@ Begin OutputColumns
     Name ="DataElement"
     Expression ="\"Sub City\""
     Name ="SubSSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="Expr1"
     Name ="AAGrpID"
     Expression ="qselAA_Subscr.GRPid"
     Alias ="AA"
@@ -26,14 +27,9 @@ Begin OutputColumns
     Alias ="QCD"
     Name ="OldValue"
     Expression ="UCase([SUBzip])"
+    Alias ="Expr2"
     Name ="RptDate"
     Expression ="qselAA_Subscr.RptDate"
-End
-Begin Joins
-    LeftTable ="qselAA_Subscr"
-    RightTable ="tblSubscr"
-    Expression ="qselAA_Subscr.AA_SSN = tblSubscr.SUBssn"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -83,14 +79,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =673
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =410
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =190
     Left =0
     Top =0
@@ -99,7 +95,7 @@ Begin
         Left =379
         Top =6
         Right =636
-        Bottom =120
+        Bottom =109
         Top =7
         Name ="tblSubscr"
         Name =""
@@ -108,8 +104,8 @@ Begin
         Left =38
         Top =6
         Right =273
-        Bottom =120
-        Top =16
+        Bottom =49
+        Top =0
         Name ="qselAA_Subscr"
         Name =""
     End

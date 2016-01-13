@@ -19,15 +19,15 @@ End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblRates"
-    Expression ="tblEDI_App_Subscr.SubGroupID = tblRates.GroupID"
+    Expression ="tblEDI_App_Subscr.CoverID=tblRates.CoverID"
     Flag =2
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblRates"
-    Expression ="tblEDI_App_Subscr.PlanID = tblRates.PlanID"
+    Expression ="tblEDI_App_Subscr.PlanID=tblRates.PlanID"
     Flag =2
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblRates"
-    Expression ="tblEDI_App_Subscr.CoverID = tblRates.CoverID"
+    Expression ="tblEDI_App_Subscr.SubGroupID=tblRates.GroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -43,10 +43,10 @@ Begin
     Left =40
     Top =36
     Right =1258
-    Bottom =448
+    Bottom =414
     Left =-1
     Top =-1
-    Right =1207
+    Right =1203
     Bottom =198
     Left =0
     Top =0
@@ -55,7 +55,7 @@ Begin
         Left =38
         Top =6
         Right =190
-        Bottom =145
+        Bottom =139
         Top =8
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -64,7 +64,7 @@ Begin
         Left =261
         Top =3
         Right =437
-        Bottom =149
+        Bottom =136
         Top =0
         Name ="tblRates"
         Name =""

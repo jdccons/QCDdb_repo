@@ -6,17 +6,7 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="tblGrowth.SubscriberCount"
-    Expression ="[tblGrowth_SubscrCount_temp].[CountOfSUBssn]"
-End
-Begin Joins
-    LeftTable ="tblGrowth_SubscrCount_temp"
-    RightTable ="tblGrowth"
-    Expression ="tblGrowth_SubscrCount_temp.GROUPid = tblGrowth.GroupID"
-    Flag =1
-    LeftTable ="tblGrowth_SubscrCount_temp"
-    RightTable ="tblGrowth"
-    Expression ="tblGrowth_SubscrCount_temp.Year = tblGrowth.Year"
-    Flag =1
+    Expression ="tblGrowth_SubscrCount_temp.CountOfSUBssn"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -24,6 +14,7 @@ dbBoolean "UseTransaction" ="0"
 dbBoolean "FailOnError" ="0"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="qselGrowth_SubscrCount.GROUPid"
@@ -37,14 +28,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =458
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =238
     Left =0
     Top =0
@@ -53,7 +44,7 @@ Begin
         Left =273
         Top =10
         Right =454
-        Bottom =192
+        Bottom =188
         Top =0
         Name ="tblGrowth"
         Name =""
@@ -62,7 +53,7 @@ Begin
         Left =38
         Top =6
         Right =200
-        Bottom =127
+        Bottom =49
         Top =0
         Name ="tblGrowth_SubscrCount_temp"
         Name =""

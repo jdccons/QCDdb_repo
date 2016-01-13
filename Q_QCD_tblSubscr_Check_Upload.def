@@ -2,30 +2,30 @@ Operation =2
 Name ="tblSubscr_check"
 Database ="f:\\QCDdb\\QCD_Upload.mdb"
 Option =0
-Where ="(((tblSubscr.SUBstatus)='INDIV')) OR (((tblSubscr.SUBstatus)='GRSUB') AND ((tblG"
-    "rp.GRcancelled)=False))"
+Where ="(((tblSubscr.SubStatus)='INDIV')) OR (((tblSubscr.SubStatus)='GRSUB') AND ((tblG"
+    "rp.GRCancelled)=False))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
     Name ="tblCoverage"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="SUBcoverage"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverCode"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =3
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -39,10 +39,10 @@ Begin
     Left =45
     Top =26
     Right =1002
-    Bottom =466
+    Bottom =386
     Left =-1
     Top =-1
-    Right =950
+    Right =942
     Bottom =180
     Left =0
     Top =0
@@ -51,7 +51,7 @@ Begin
         Left =48
         Top =7
         Right =323
-        Bottom =132
+        Bottom =125
         Top =52
         Name ="tblSubscr"
         Name =""
@@ -60,7 +60,7 @@ Begin
         Left =420
         Top =4
         Right =563
-        Bottom =129
+        Bottom =122
         Top =33
         Name ="tblGrp"
         Name =""
@@ -69,7 +69,7 @@ Begin
         Left =735
         Top =6
         Right =831
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblCoverage"
         Name =""

@@ -1,7 +1,7 @@
 Operation =3
 Name ="tblInvLin"
 Option =8
-Where ="(((tblGrp.GROUPid)=[Forms]![frmInvGrp]![CUST KEY]) AND ((tblGrp.GroupType)=1))"
+Where ="(((tblGrp.GroupID)=Forms!frmInvGrp![CUST KEY]) And ((tblGrp.GroupType)=1))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
@@ -10,14 +10,14 @@ End
 Begin OutputColumns
     Alias ="DocNo"
     Name ="DOCUMENT NO"
-    Expression ="Trim$([Forms]![frmInvGrp]![TRANS NO])"
+    Expression ="Trim$(Forms!frmInvGrp![TRANS NO])"
     Alias ="ID"
     Name ="ITEM KEY"
     Expression ="IIf([InvoiceType]=1,[SUBssn],[SubID])"
     Alias ="Desc"
     Name ="DESCRIPTION"
-    Expression ="([tblSubscr].[SUBlastNAME] & \", \" & [tblSubscr].[SUBfirstNAME] & \" \" & [tblS"
-        "ubscr].[SUBmiddleNAME])"
+    Expression ="(tblSubscr.SUBlastNAME & \", \" & tblSubscr.SUBfirstNAME & \" \" & tblSubscr.SUB"
+        "middleNAME)"
     Name ="UNIT PRICE"
     Expression ="tblRates.Rate"
     Alias ="QtyOrdered"
@@ -36,18 +36,18 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
     Expression ="IIf([InvoiceType]=1,[SUBssn],[SubID])"
     Flag =0
-    Expression ="([tblSubscr].[SUBlastNAME] & \", \" & [tblSubscr].[SUBfirstNAME] & \" \" & [tblS"
-        "ubscr].[SUBmiddleNAME])"
+    Expression ="(tblSubscr.SUBlastNAME & \", \" & tblSubscr.SUBfirstNAME & \" \" & tblSubscr.SUB"
+        "middleNAME)"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -61,10 +61,10 @@ Begin
     Left =99
     Top =80
     Right =1000
-    Bottom =536
+    Bottom =499
     Left =-1
     Top =-1
-    Right =894
+    Right =886
     Bottom =239
     Left =0
     Top =0
@@ -73,7 +73,7 @@ Begin
         Left =38
         Top =6
         Right =172
-        Bottom =191
+        Bottom =184
         Top =0
         Name ="tblGrp"
         Name =""
@@ -82,7 +82,7 @@ Begin
         Left =211
         Top =5
         Right =376
-        Bottom =190
+        Bottom =183
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -91,7 +91,7 @@ Begin
         Left =414
         Top =6
         Right =510
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

@@ -5,13 +5,17 @@ Begin InputTables
     Name ="clients"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="clients.USER1"
+    Alias ="Expr2"
     Expression ="clients.USR1000"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -19,10 +23,10 @@ Begin
     Left =40
     Top =22
     Right =778
-    Bottom =436
+    Bottom =455
     Left =-1
     Top =-1
-    Right =731
+    Right =723
     Bottom =253
     Left =0
     Top =0
@@ -31,7 +35,7 @@ Begin
         Left =107
         Top =25
         Right =203
-        Bottom =132
+        Bottom =68
         Top =0
         Name ="clients"
         Name =""

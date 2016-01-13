@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1789741194
+Checksum =-1292312567
 Begin Form
     AutoResize = NotDefault
     MaxButton = NotDefault
@@ -28,9 +28,9 @@ Begin Form
     Bottom =2655
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0xb1c9ccb055b3e240
+        0x48279b891eade440
     End
-    RecordSource ="qryInvAgt"
+    RecordSource ="qryIndivAgt"
     DatasheetFontName ="Arial"
     Begin
         Begin Label
@@ -52,6 +52,9 @@ Begin Form
             Height =270
             BackColor =12632256
             Name ="Detail"
+            GUID = Begin
+                0x48856bda79d858499fe6348eec599ae6
+            End
             Begin
                 Begin TextBox
                     Locked = NotDefault
@@ -67,6 +70,9 @@ Begin Form
                     Name ="GRagentRATE1"
                     ControlSource ="AgentRATE"
                     Format ="Percent"
+                    GUID = Begin
+                        0xe9c788f3cc07c04d81b1686eb7387e17
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -80,6 +86,9 @@ Begin Form
                     TabIndex =2
                     Name ="txtPriAgentID"
                     ControlSource ="AGENTid"
+                    GUID = Begin
+                        0xa588222e7f6813429c4106549c4570ff
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -93,6 +102,9 @@ Begin Form
                     BackColor =10092543
                     Name ="txtGROUPid"
                     ControlSource ="GROUPid"
+                    GUID = Begin
+                        0x9b859eac8516f34ba09cb68434827f17
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -106,6 +118,9 @@ Begin Form
                     BackColor =10092543
                     Name ="Sort"
                     ControlSource ="Sort"
+                    GUID = Begin
+                        0x803e532c3cb3214592bfacb5fc2c6cb6
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -117,6 +132,9 @@ Begin Form
                     Height =180
                     Name ="Type"
                     ControlSource ="PayCommTo"
+                    GUID = Begin
+                        0x408e2a32093ee44bab5505d137f1ffc6
+                    End
                 End
                 Begin CheckBox
                     Visible = NotDefault
@@ -127,6 +145,9 @@ Begin Form
                     TabIndex =1
                     Name ="chkPrimary"
                     ControlSource ="Primary"
+                    GUID = Begin
+                        0x17285cd7d35f1d4f96d8774b08d47fb8
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -137,6 +158,9 @@ Begin Form
                     BackColor =14079702
                     Name ="GRagentID1"
                     ControlSource ="AGENT_LUname"
+                    GUID = Begin
+                        0x7ecc95ecbde5c14f8203839e854c48a7
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -149,6 +173,9 @@ Begin Form
                     Name ="AGENTtype"
                     ControlSource ="PayCommTo"
                     StatusBarText ="AGT for external third party agent, ESD for internal executive sales director"
+                    GUID = Begin
+                        0xac4950678a2b4f46af4a149122c9a9ec
+                    End
                 End
             End
         End

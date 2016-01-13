@@ -1,40 +1,40 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GROUPid)=\"champ\") AND ((tblGrp.GroupType)=3) AND ((tblGrp.GRcancelle"
+Where ="(((tblGrp.GroupID)=\"champ\") AND ((tblGrp.GroupType)=3) AND ((tblGrp.GRCancelle"
     "d)=No) AND ((tblSubscr.FOCType)=2))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBmiddleNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
-    Expression ="tblSubscr.SUBGender"
-    Expression ="tblSubscr.SUBdob"
-    Expression ="tblSubscr.SUBmiddleNAME"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBmiddleNAME"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubGender"
+    Expression ="tblSubscr.SubDOB"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -42,6 +42,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -54,10 +55,10 @@ Begin
     Left =87
     Top =24
     Right =1269
-    Bottom =801
+    Bottom =699
     Left =-1
     Top =-1
-    Right =1175
+    Right =1167
     Bottom =495
     Left =0
     Top =0
@@ -66,7 +67,7 @@ Begin
         Left =404
         Top =8
         Right =634
-        Bottom =432
+        Bottom =426
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -75,7 +76,7 @@ Begin
         Left =60
         Top =6
         Right =338
-        Bottom =445
+        Bottom =439
         Top =1
         Name ="tblGrp"
         Name =""

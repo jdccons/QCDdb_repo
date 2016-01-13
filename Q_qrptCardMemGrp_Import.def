@@ -12,7 +12,7 @@ Begin OutputColumns
     Alias ="ZipGr"
     Expression ="IIf([GRzip] Like \"#####-#\",Left([GrZip],Len([GrZip])-1),IIf([GrZip] Like \"###"
         "######\",Format([GrZip],\"@@@@@-@@@@\"),[GrZip]))"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Alias ="SUBssn"
     Expression ="tblImportGroupTemp.SSN"
     Alias ="SUBfirstNAME"
@@ -33,8 +33,8 @@ Begin OutputColumns
     Expression ="tblImportGroupTemp.ZipCode"
     Alias ="SUBplanIDgr"
     Expression ="tblImportGroupTemp.CoverageId"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GRContBeg"
     Alias ="SUBgroupID"
     Expression ="tblImportGroupTemp.GroupID"
     Alias ="SUBstatus"
@@ -47,7 +47,7 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblImportGroupTemp"
-    Expression ="tblGrp.GROUPid = tblImportGroupTemp.GroupID"
+    Expression ="tblGrp.GroupID=tblImportGroupTemp.GroupID"
     Flag =2
 End
 Begin OrderBy
@@ -58,17 +58,31 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="ZipSub"
+    End
+    Begin
+        dbText "Name" ="ZipGr"
+    End
+    Begin
+        dbText "Name" ="SUBstatus"
+    End
+    Begin
+        dbText "Name" ="SUBeffDATE"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =412
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =192
     Left =0
     Top =0
@@ -77,7 +91,7 @@ Begin
         Left =38
         Top =6
         Right =246
-        Bottom =158
+        Bottom =154
         Top =0
         Name ="tblGrp"
         Name =""
@@ -86,7 +100,7 @@ Begin
         Left =301
         Top =9
         Right =538
-        Bottom =146
+        Bottom =142
         Top =12
         Name ="tblImportGroupTemp"
         Name =""

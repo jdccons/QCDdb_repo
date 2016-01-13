@@ -1,20 +1,14 @@
 Operation =1
 Option =8
-Where ="(((tblAgent.AGENTactive)=\"A\") AND ((ARSALESP.SalespersonKey) Is Null))"
+Where ="(((tblAgent.AgentActive)=\"A\") And ((ARSALESP.SalespersonKey) Is Null))"
 Begin InputTables
     Name ="tblAgent"
     Name ="ARSALESP"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTid"
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENT_LUname"
-End
-Begin Joins
-    LeftTable ="tblAgent"
-    RightTable ="ARSALESP"
-    Expression ="tblAgent.AGENTid = ARSALESP.SalespersonKey"
-    Flag =2
+    Expression ="tblAgent.AgentId"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.Agent_LUname"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -45,10 +39,10 @@ Begin
     Left =81
     Top =142
     Right =1212
-    Bottom =459
+    Bottom =466
     Left =-1
     Top =-1
-    Right =1124
+    Right =1116
     Bottom =144
     Left =0
     Top =0
@@ -57,7 +51,7 @@ Begin
         Left =38
         Top =6
         Right =236
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblAgent"
         Name =""
@@ -66,7 +60,7 @@ Begin
         Left =337
         Top =9
         Right =630
-        Bottom =104
+        Bottom =52
         Top =0
         Name ="ARSALESP"
         Name =""

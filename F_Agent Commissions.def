@@ -1,0 +1,395 @@
+Version =20
+VersionRequired =20
+Checksum =-1244237835
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    MinButton = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    CloseButton = NotDefault
+    AllowDesignChanges = NotDefault
+    ScrollBars =2
+    ViewsAllowed =1
+    TabularFamily =2
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =8820
+    DatasheetFontHeight =10
+    ItemSuffix =36
+    Left =4755
+    Top =795
+    Right =11715
+    Bottom =2490
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x54c779b198ace440
+    End
+    RecordSource ="SELECT vw_Commission.AgentId, vw_Commission.AgentName, vw_Commission.Agency, vw_"
+        "Commission.Active, vw_Commission.CustomerKey, vw_Commission.CheckNo, vw_Commissi"
+        "on.CommMonth, vw_Commission.CheckDate, vw_Commission.CheckAmt, vw_Commission.Age"
+        "ntRate, vw_Commission.CommDue, vw_Commission.AgentType, vw_Commission.InvoiceNo,"
+        " vw_Commission.CustomerClassKey, vw_Commission.EnrollmentFee, vw_Commission.PayC"
+        "ommTo FROM vw_Commission ORDER BY vw_Commission.CommMonth DESC , vw_Commission.C"
+        "ustomerKey;"
+    Caption ="AgentCommissions"
+    DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            BackColor =-2147483633
+            ForeColor =-2147483630
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin Image
+            BackStyle =0
+            OldBorderStyle =0
+            PictureAlignment =2
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin OptionButton
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin CheckBox
+            SpecialEffect =2
+            LabelX =230
+            LabelY =-30
+        End
+        Begin OptionGroup
+            SpecialEffect =3
+        End
+        Begin BoundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =0
+            BackStyle =0
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            BackColor =-2147483643
+            ForeColor =-2147483640
+        End
+        Begin Subform
+            SpecialEffect =2
+        End
+        Begin UnboundObjectFrame
+            SpecialEffect =2
+            OldBorderStyle =1
+        End
+        Begin ToggleButton
+            FontSize =8
+            FontWeight =400
+            FontName ="MS Sans Serif"
+        End
+        Begin Tab
+            BackStyle =0
+        End
+        Begin FormHeader
+            Height =240
+            BackColor =12632256
+            Name ="FormHeader"
+            GUID = Begin
+                0x3909ab208e2f0842a1f429d322e05d68
+            End
+            Begin
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =1350
+                    Width =780
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="CustomerKey_Label"
+                    Caption ="Cust"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xddb1a74096deea4b89f023de68cfb9d9
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =3480
+                    Width =765
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="CheckNo_Label"
+                    Caption ="Chk No"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x5d6de3da880bbd4382d3f7385d287acf
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =4485
+                    Width =1005
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="CheckDate_Label"
+                    Caption ="Chk Date"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xa814efd9abaddd4d842b352f88f5cc59
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =7710
+                    Width =1110
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="CommDue_Label"
+                    Caption ="Comm Due"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x1285db50fa75d247b28abc5ca9456aae
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =5565
+                    Width =765
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="CheckAmt_Label"
+                    Caption ="Amt"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x379cbf134dd2b54db74f85b59885f4c5
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =6690
+                    Width =735
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="AgentRate_Label"
+                    Caption ="Rate"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0x67ee9664bdac04498bfc4e9f85a6892d
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Left =2340
+                    Width =810
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="InvoiceNo_Label"
+                    Caption ="Inv No"
+                    Tag ="DetachedLabel"
+                    GUID = Begin
+                        0xef4f58bbb8f63542a7b1bc0ada51a210
+                    End
+                End
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =2
+                    Width =1005
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label35"
+                    Caption ="Month"
+                    GUID = Begin
+                        0x693b87519aa61e45be67308ff2f7c9f3
+                    End
+                End
+            End
+        End
+        Begin Section
+            Height =300
+            BackColor =12632256
+            Name ="Detail"
+            GUID = Begin
+                0x517bb3d3fee1d74fba7599022e581edd
+            End
+            Begin
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Top =15
+                    Width =30
+                    Height =255
+                    ColumnWidth =615
+                    Name ="AgentId"
+                    ControlSource ="AgentId"
+                    GUID = Begin
+                        0x7006a9bdcc3ac744b1e1b987be474c56
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =1260
+                    Width =1080
+                    Height =255
+                    ColumnWidth =1260
+                    TabIndex =1
+                    Name ="CustomerKey"
+                    ControlSource ="CustomerKey"
+                    GUID = Begin
+                        0xe2b7b3eeedd06a4196c2dbc490509557
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =93
+                    IMESentenceMode =3
+                    Left =3420
+                    Width =1080
+                    Height =255
+                    ColumnWidth =1260
+                    TabIndex =2
+                    Name ="CheckNo"
+                    ControlSource ="CheckNo"
+                    GUID = Begin
+                        0x715feaf68eb5514d864b0d1f7b76a880
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =95
+                    IMESentenceMode =3
+                    Left =4500
+                    Width =1080
+                    Height =255
+                    ColumnWidth =1035
+                    TabIndex =3
+                    Name ="CheckDate"
+                    ControlSource ="CheckDate"
+                    GUID = Begin
+                        0xc364864b21b94e4a813b3d57f42219b4
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =95
+                    IMESentenceMode =3
+                    Left =5580
+                    Width =1080
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =4
+                    Name ="CheckAmt"
+                    ControlSource ="CheckAmt"
+                    Format ="Standard"
+                    GUID = Begin
+                        0x5f3701525b5fe54193d0c698cc3ea88d
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =95
+                    IMESentenceMode =3
+                    Left =6660
+                    Width =1080
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =5
+                    Name ="AgentRate"
+                    ControlSource ="AgentRate"
+                    Format ="Percent"
+                    GUID = Begin
+                        0xd715856fa1ba9a4c9442c51dbe378718
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    IMESentenceMode =3
+                    Left =7740
+                    Width =1080
+                    Height =255
+                    ColumnWidth =2310
+                    TabIndex =6
+                    Name ="CommDue"
+                    ControlSource ="CommDue"
+                    Format ="Standard"
+                    GUID = Begin
+                        0xf8a9733e1c221049ba7a232b1a8c6191
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =87
+                    IMESentenceMode =3
+                    Left =2340
+                    Width =1080
+                    Height =255
+                    ColumnWidth =1260
+                    TabIndex =7
+                    Name ="InvoiceNo"
+                    ControlSource ="InvoiceNo"
+                    GUID = Begin
+                        0x8b2acfc23e28574ab97f3cf5955aa6f9
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =120
+                    Width =1095
+                    Height =255
+                    TabIndex =8
+                    Name ="CommMonth"
+                    ControlSource ="CommMonth"
+                    GUID = Begin
+                        0xadfab87daee0ea49b7a87825351a075a
+                    End
+                End
+            End
+        End
+        Begin FormFooter
+            Height =0
+            BackColor =-2147483633
+            Name ="FormFooter"
+            GUID = Begin
+                0xee7023e1aeb28244a980f1b13476c243
+            End
+        End
+    End
+End

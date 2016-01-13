@@ -1,46 +1,57 @@
 Operation =3
 Name ="tblCommission"
 Option =0
-Where ="(((tblCommission_tmp.Docdate) Between #12/1/99# And #12/31/99#))"
+Where ="(((tblCommission_tmp.Docdate) Between #12/1/1999# And #12/31/1999#))"
 Begin InputTables
     Name ="tblCommission_tmp"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="COMMcustKEY"
     Expression ="tblCommission_tmp.Custkey"
+    Alias ="Expr2"
     Name ="COMMcustNAME"
     Expression ="tblCommission_tmp.GRname"
+    Alias ="Expr3"
     Name ="COMMcheckNO"
     Expression ="tblCommission_tmp.Docno"
+    Alias ="Expr4"
     Name ="COMMcheckDATE"
     Expression ="tblCommission_tmp.Docdate"
+    Alias ="Expr5"
     Name ="COMMcheckAMT"
     Expression ="tblCommission_tmp.CheckAmt"
+    Alias ="Expr6"
     Name ="COMMagent"
     Expression ="tblCommission_tmp.GRagentID2"
+    Alias ="Expr7"
     Name ="COMMrate"
     Expression ="tblCommission_tmp.GRagentRATE2"
+    Alias ="Expr8"
     Name ="COMMagentTYPE"
     Expression ="tblCommission_tmp.AgentType"
+    Alias ="Expr9"
     Name ="COMMinvoiceNO"
     Expression ="tblCommission_tmp.Applytodocno"
+    Alias ="Expr10"
     Name ="COMMcustCLASS"
     Expression ="tblCommission_tmp.Custclass"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -49,8 +60,8 @@ Begin
         Left =38
         Top =6
         Right =249
-        Bottom =113
-        Top =6
+        Bottom =49
+        Top =0
         Name ="tblCommission_tmp"
         Name =""
     End

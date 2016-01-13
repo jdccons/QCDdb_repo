@@ -1,20 +1,22 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBrate)=12) AND ((tblSubscr.SUBgroupID)=\"nsisd\"))"
+Where ="(((tblSubscr.SubRate)=12) AND ((tblSubscr.SubGroupID)=\"nsisd\"))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBrate"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubRate"
+    Expression ="tblSubscr.SubGroupID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -22,10 +24,10 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =349
+    Bottom =368
     Left =-1
     Top =-1
-    Right =929
+    Right =925
     Bottom =144
     Left =0
     Top =0
@@ -34,7 +36,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =12
         Name ="tblSubscr"
         Name =""

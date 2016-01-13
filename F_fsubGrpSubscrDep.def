@@ -1,24 +1,17 @@
 Version =20
 VersionRequired =20
-Checksum =1076667792
+Checksum =921603786
 Begin Form
     AutoCenter = NotDefault
     ScrollBars =2
     Width =7920
     ItemSuffix =123
-    Left =4815
-    Top =5850
-    Right =12930
-    Bottom =7440
+    Left =6345
+    Top =6105
+    Right =14445
+    Bottom =7800
     RecSrcDt = Begin
         0x554d10fdd146e340
-    End
-    GUID = Begin
-        0xbaf98dd1203e2a4d8766abb1cb356b86
-    End
-    NameMap = Begin
-        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
-        0x0000000000000000000000000000
     End
     RecordSource ="qfrmGrpSubDep"
     BeforeUpdate ="[Event Procedure]"
@@ -28,17 +21,17 @@ Begin Form
     End
     PrtDevMode = Begin
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x010402059c00f40453ef800101000100ea0a6f08640001000f00b00402000100 ,
+        0x010400069c00cc0353ef800101000100ea0a6f08640001000f00b00402000100 ,
         0xb004030001004c65747465720000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000010000000000000001000000 ,
         0x0200000001000000000000000000000000000000000000000000000050524956 ,
-        0xe220000000000000000000000000000000000000000000000000000000000000 ,
+        0xe230000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000180000000000102710271027 ,
-        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
-        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
-        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
-        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x000010270000000000000000f800cc0300000000000000000000000000000000 ,
+        0x00000000000000000200000000000000000010005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000c7a88e3205000000 ,
+        0x0300ff0001000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -54,28 +47,20 @@ Begin Form
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x3002000045424441000001000100000001000000010000000100000000000000 ,
-        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
+        0x01000000000000000000000000000000f8000000534d544a000000001000e800 ,
+        0x5400500020005000530020004400720069007600650072002000410043003100 ,
+        0x3400410036004200350043004600330032003400660032003900420039004100 ,
+        0x3200410041003400340044003700320033004200450039003700000050616765 ,
+        0x53697a650041340050616765526567696f6e0000496e707574536c6f74004465 ,
+        0x6661756c74005265736f6c7574696f6e003735647069004475706c6578004e6f ,
+        0x6e65000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000001000000
+        0x0000000000000000
     End
     PrtDevNames = Begin
-        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
-        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+        0x0800220048000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000545332303200
     End
     Begin
         Begin ComboBox
@@ -86,105 +71,112 @@ Begin Form
             BackColor =12632256
             Name ="FormHeader1"
             GUID = Begin
-                0x61f3f7fc5c33744782704cff8663d315
+                0xf9dcdd2b5169df44ad78d43eba434201
             End
             Begin
                 Begin Label
+                    BackStyle =0
                     OverlapFlags =93
                     TextAlign =2
                     Left =30
                     Width =1260
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =-2147483633
                     Name ="Text108"
                     Caption ="Social Sec. # "
                     GUID = Begin
-                        0xd257c30dca169c41ba08725a85117288
+                        0xd97978a8ca99bd45b7702376818bd112
                     End
                 End
                 Begin Label
+                    BackStyle =0
                     OverlapFlags =85
                     TextAlign =2
                     Left =3120
                     Width =1020
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =-2147483633
                     Name ="Text109"
                     Caption ="First Name"
                     GUID = Begin
-                        0x247d5c7d7ce0ae46a55c2d28c0d59d59
+                        0x21906b9d48f3714db9b2f95db4b22829
                     End
                 End
                 Begin Label
+                    BackStyle =0
                     OverlapFlags =215
                     TextAlign =2
                     Left =1245
                     Width =975
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =-2147483633
                     Name ="Text110"
                     Caption ="Last Name"
                     GUID = Begin
-                        0x2d5c1f8aac727343abf798a7aaa63ae6
+                        0xe3d0b1c9dccf954986dd97a6fd8cc584
                     End
                 End
                 Begin Label
+                    BackStyle =0
                     OverlapFlags =85
                     TextAlign =2
                     Left =5160
                     Width =885
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =-2147483633
                     Name ="Text111"
                     Caption ="DOB"
                     GUID = Begin
-                        0x8e2baa71acb6494f838674c1df79e7a0
+                        0xb8c8c08319eb51418b9f763971ab6850
                     End
                 End
                 Begin Label
+                    BackStyle =0
                     OverlapFlags =85
                     TextAlign =2
                     Left =4710
                     Width =435
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =-2147483633
                     Name ="Text115"
                     Caption ="MI"
                     GUID = Begin
-                        0x8300301f53c2cd4689237e791665b14a
+                        0x01e7b05bcbf737468aa1b296b8861bc3
                     End
                 End
                 Begin Label
+                    BackStyle =0
                     OverlapFlags =85
                     TextAlign =1
                     Left =6192
                     Width =450
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =-2147483633
                     Name ="Label121"
                     Caption ="Gen"
                     GUID = Begin
-                        0x07dda432c3c893438de80acc69433db5
+                        0x9a4d8eeba818264dbbf2db1ac16d7566
                     End
                 End
                 Begin Label
+                    BackStyle =0
                     OverlapFlags =85
                     TextAlign =2
                     Left =6768
                     Width =1005
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =-2147483633
                     Name ="Label122"
                     Caption ="Relation"
                     GUID = Begin
-                        0x039638e7dad58c43a64f6f64bc18adc4
+                        0x0e459d0f856a87468341dc17e9da20c5
                     End
                 End
             End
@@ -194,7 +186,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             GUID = Begin
-                0xd693e05ecf33d14d8d49b32df3efd2e9
+                0x969f6cbdc2e48d4090bbc70002bc1412
             End
             Begin
                 Begin TextBox
@@ -208,7 +200,7 @@ Begin Form
                     InputMask ="000\\-00\\-0000;;_"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x4e5b2199f9b5634eb176aa7553990e63
+                        0xd2b41e6f665a894e891d400b93f575fe
                     End
                 End
                 Begin TextBox
@@ -221,7 +213,7 @@ Begin Form
                     Name ="DEPfirstNAME"
                     ControlSource ="DEPfirstNAME"
                     GUID = Begin
-                        0x5c63ffa1346c374f8d7b7210f62c7af6
+                        0x49b5a8004e5e564a9a6c603ba1e49c48
                     End
                 End
                 Begin TextBox
@@ -234,7 +226,7 @@ Begin Form
                     Name ="DEPlastNAME"
                     ControlSource ="DEPlastNAME"
                     GUID = Begin
-                        0xbd96c627f5fd1245b136d1ce3c39f8a2
+                        0x3824c12b20b59140a273c12589454005
                     End
                 End
                 Begin TextBox
@@ -253,7 +245,7 @@ Begin Form
                     InputMask ="99/99/0000;0;_"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x55eaabf9927db94790b9d2b4d1fa860c
+                        0x0f12a211b392af4aa6788f64a3405e6e
                     End
                 End
                 Begin TextBox
@@ -267,7 +259,7 @@ Begin Form
                     Name ="DEPsubID"
                     ControlSource ="DEPsubID"
                     GUID = Begin
-                        0x3184f9b09764454ca853150c59a902f8
+                        0xce53c82bbd09884fab62bc1c941521a1
                     End
                 End
                 Begin TextBox
@@ -280,7 +272,7 @@ Begin Form
                     Name ="DEPmiddleNAME"
                     ControlSource ="DEPmiddleNAME"
                     GUID = Begin
-                        0x30b341316bb5f84586898a2d54ef15f3
+                        0x26896fe95b03354d986e5a239a78bb38
                     End
                 End
                 Begin TextBox
@@ -294,7 +286,7 @@ Begin Form
                     Name ="SUBgroupID"
                     ControlSource ="SUBgroupID"
                     GUID = Begin
-                        0xe7c66e10e3df2c4fa971f67e5e47f072
+                        0x394017100b06554fa6159bff3070b2d1
                     End
                 End
                 Begin ComboBox
@@ -305,7 +297,7 @@ Begin Form
                     Width =573
                     TabIndex =7
                     GUID = Begin
-                        0x4260e0a044728645826bd7cfb2f07b91
+                        0xb30a9fede1cf2b4a82a1fc49ee6d86f6
                     End
                     Name ="DEPgender"
                     ControlSource ="DEPgender"
@@ -322,7 +314,7 @@ Begin Form
                     Width =864
                     TabIndex =8
                     GUID = Begin
-                        0x2fe7503e6d79874ca51b9446333d8b63
+                        0x01c8e49a387c674989b6d0915f7500ba
                     End
                     Name ="DEPrelationship"
                     ControlSource ="DEPrelationship"
@@ -336,7 +328,7 @@ Begin Form
             Height =0
             Name ="FormFooter2"
             GUID = Begin
-                0x4c32e9c57b054d40b26d18bac8c4f9cb
+                0xe7768a54dad0e1448347a4ae2c61d9fe
             End
         End
     End
@@ -402,7 +394,7 @@ On Error GoTo ErrorHandler
         GoTo Exit_Point
     End If
  
-    'check to make sure the relationship for the dependent has been populate
+    'check to make sure the relationship for the dependent has been populated
     If IsNull(Forms!frmGrpSubscr!fsubGrpSubscrDep![DEPrelationship]) = True Then
         MsgBox "You must populate the Relationship field."
         Cancel = True

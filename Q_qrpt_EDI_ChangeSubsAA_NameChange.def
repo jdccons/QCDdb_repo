@@ -1,43 +1,44 @@
 Operation =3
 Name ="tmpEDI_Rpt"
 Option =8
-Where ="(((tblEDI_App_Subscr.SUBfirstNAME)<>[tblSubscr]![SUBfirstNAME])) OR (((tblEDI_Ap"
-    "p_Subscr.SUBlastNAME)<>[tblSubscr]![SUBlastNAME]))"
+Where ="(((tblEDI_App_Subscr.SubFirstName)<>tblSubscr!SUBfirstNAME)) Or (((tblEDI_App_Su"
+    "bscr.SubLastName)<>tblSubscr!SUBlastNAME))"
 Begin InputTables
     Name ="tblEDI_App_Subscr"
     Name ="tblSubscr"
 End
 Begin OutputColumns
     Name ="SUBssn"
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
     Name ="SUBfirstNAME"
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
     Name ="SUBlastNAME"
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     Alias ="Stat"
     Name ="Stat"
     Expression ="\"Change-A\""
     Name ="GroupID"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Alias ="SUBStreet"
     Name ="SUBStreet"
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     Name ="SUBcity"
-    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
     Name ="SUBstate"
-    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
     Name ="SUBzip"
-    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblSubscr"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblSubscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -45,10 +46,10 @@ Begin
     Left =29
     Top =25
     Right =968
-    Bottom =445
+    Bottom =380
     Left =-1
     Top =-1
-    Right =932
+    Right =924
     Bottom =175
     Left =0
     Top =0
@@ -57,7 +58,7 @@ Begin
         Left =493
         Top =7
         Right =697
-        Bottom =129
+        Bottom =125
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -66,7 +67,7 @@ Begin
         Left =46
         Top =10
         Right =180
-        Bottom =132
+        Bottom =128
         Top =1
         Name ="tblSubscr"
         Name =""

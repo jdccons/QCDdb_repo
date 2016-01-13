@@ -1,25 +1,25 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBgroupID)=\"CARFB\"))"
+Where ="(((tblSubscr.SubGroupID)=\"CARFB\"))"
 Begin InputTables
     Name ="tblSubscr"
-    Name ="tblCoverage"
     Name ="tblDependent"
     Name ="tblRates"
+    Name ="tblCoverage"
 End
 Begin OutputColumns
     Alias ="SSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="SUBSCRIBER NAME"
     Expression ="tblSubscr.SUB_LUname"
     Alias ="EFF DATE"
-    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SubEffDate"
     Alias ="RATE"
     Expression ="tblRates.Rate"
     Alias ="COVERAGE"
-    Expression ="tblCoverage.COVERdescr"
+    Expression ="tblCoverage.CoverDescr"
     Alias ="DEP COUNT"
-    Expression ="tblSubscr.SUBnoDEPENT"
+    Expression ="tblSubscr.DepCnt"
     Alias ="DEPENDENT NAME"
     Expression ="IIf(IsNull([DEPfirstNAME]),\"\",[DEPfirstNAME])+\" \"+IIf(IsNull([DEPmiddleNAME]"
         "),\"\",[DEPmiddleNAME])+\" \"+IIf(IsNull([DEPlastNAME]),\"\",[DEPlastNAME])"
@@ -27,20 +27,20 @@ Begin OutputColumns
     Expression ="\"\""
     Alias ="CHANGED INFORMATION"
     Expression ="\"\""
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =2
 End
 Begin OrderBy
@@ -100,10 +100,10 @@ Begin
     Left =62
     Top =42
     Right =1075
-    Bottom =481
+    Bottom =488
     Left =-1
     Top =-1
-    Right =1006
+    Right =998
     Bottom =266
     Left =0
     Top =0
@@ -112,25 +112,16 @@ Begin
         Left =38
         Top =6
         Right =152
-        Bottom =221
+        Bottom =214
         Top =46
         Name ="tblSubscr"
-        Name =""
-    End
-    Begin
-        Left =468
-        Top =34
-        Right =588
-        Bottom =129
-        Top =0
-        Name ="tblCoverage"
         Name =""
     End
     Begin
         Left =306
         Top =6
         Right =402
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblDependent"
         Name =""
@@ -139,9 +130,18 @@ Begin
         Left =669
         Top =76
         Right =765
-        Bottom =186
+        Bottom =179
         Top =0
         Name ="tblRates"
+        Name =""
+    End
+    Begin
+        Left =468
+        Top =34
+        Right =588
+        Bottom =122
+        Top =0
+        Name ="tblCoverage"
         Name =""
     End
 End

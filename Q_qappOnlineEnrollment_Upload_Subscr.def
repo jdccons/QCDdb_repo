@@ -14,10 +14,10 @@ Begin OutputColumns
     Expression ="\"P\""
     Alias ="EIMBRID"
     Name ="EIMBRID"
-    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Expression ="tblSubscr.SUBssn & \"00\""
     Alias ="EISBRID"
     Name ="EISBRID"
-    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Expression ="tblSubscr.SUBssn & \"00\""
     Alias ="EISSN"
     Name ="EISSN"
     Expression ="tblSubscr.SubSSN"
@@ -35,10 +35,10 @@ Begin OutputColumns
     Expression ="tblSubscr.SubMiddleName"
     Alias ="EIDTBR"
     Name ="EIDTBR"
-    Expression ="Format([tblSubscr].[SUBdob],\"mmddyyyy\")"
+    Expression ="Format(tblSubscr.SUBdob,\"mmddyyyy\")"
     Alias ="SEX"
     Name ="EISEX"
-    Expression ="IIf([tblSubscr].[SUBgender] Is Null,\"O\",[tblSubscr].[SUBgender])"
+    Expression ="IIf(tblSubscr.SUBgender Is Null,\"O\",tblSubscr.SUBgender)"
     Alias ="EIADD1"
     Name ="EIADD1"
     Expression ="tblSubscr.SubStreet1"
@@ -56,47 +56,47 @@ Begin OutputColumns
     Expression ="tblSubscr.SubZip"
     Alias ="EIHPHR"
     Name ="EIHPHR"
-    Expression ="StripChars_TSB([tblSubscr].[SubPhoneHome],\"-\")"
+    Expression ="StripChars_TSB(tblSubscr.SubPhoneHome,\"-\")"
     Alias ="EIWPHR"
     Name ="EIWPHR"
-    Expression ="StripChars_TSB([tblSubscr].[SubPhoneWork],\"-\")"
+    Expression ="StripChars_TSB(tblSubscr.SubPhoneWork,\"-\")"
     Alias ="EIGRPID"
     Name ="EIGRPID"
-    Expression ="'MNQ' & [tblSubscr].[SubGroupID]"
+    Expression ="'MNQ' & tblSubscr.SubGroupID"
     Alias ="EINMPLAN"
     Name ="EINMPLAN"
     Expression ="tlkpAllAmericanPlan.PlanagerCode"
     Alias ="EIDTCVEF"
     Name ="EIDTCVEF"
-    Expression ="IIf(IsNull([tblSubscr].[PreexistingDate])=True,Format([tblSubscr].[SUBeffDATE],\""
-        "mmddyyyy\"),Format([tblSubscr].[PreexistingDate],\"mmddyyyy\"))"
+    Expression ="IIf(IsNull(tblSubscr.PreexistingDate)=True,Format(tblSubscr.SUBeffDATE,\"mmddyyy"
+        "y\"),Format(tblSubscr.PreexistingDate,\"mmddyyyy\"))"
     Alias ="EIDTCVEN"
     Name ="EIDTCVEN"
-    Expression ="IIf(Not IsNull([tblSubscr].[DateDeleted]),Format([tblSubscr].[DateDeleted],\"mmd"
-        "dyyyy\"),Null)"
+    Expression ="IIf(Not IsNull(tblSubscr.DateDeleted),Format(tblSubscr.DateDeleted,\"mmddyyyy\")"
+        ",Null)"
     Alias ="EIMBRDP"
     Name ="EIMBRDP"
     Expression ="\"0\""
     Alias ="EIDTEFF"
     Name ="EIDTEFF"
-    Expression ="Format([tblGrp].[GRcontBEG],\"mmddyyyy\")"
+    Expression ="Format(tblGrp.GRcontBEG,\"mmddyyyy\")"
     Alias ="EIDTTERM"
     Name ="EIDTTERM"
-    Expression ="IIf([tblSubscr].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr].[DateDeleted],\""
-        "mmddyyyy\"))"
+    Expression ="IIf(tblSubscr.DateDeleted=#1/1/1900#,\"\",Format(tblSubscr.DateDeleted,\"mmddyyy"
+        "y\"))"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tlkpAllAmericanPlan"
-    Expression ="tblSubscr.PlanID = tlkpAllAmericanPlan.PlanID"
+    Expression ="tblSubscr.PlanID=tlkpAllAmericanPlan.PlanID"
     Flag =2
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =3
     LeftTable ="tblSubscr"
     RightTable ="tblEDI_App_Subscr"
-    Expression ="tblSubscr.SubSSN = tblEDI_App_Subscr.SubSSN"
+    Expression ="tblSubscr.SubSSN=tblEDI_App_Subscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -121,14 +121,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =864
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =593
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =373
     Left =0
     Top =0
@@ -137,7 +137,7 @@ Begin
         Left =683
         Top =164
         Right =848
-        Bottom =300
+        Bottom =297
         Top =37
         Name ="tblGrp"
         Name =""
@@ -146,7 +146,7 @@ Begin
         Left =345
         Top =80
         Right =571
-        Bottom =262
+        Bottom =258
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -155,7 +155,7 @@ Begin
         Left =643
         Top =64
         Right =871
-        Bottom =141
+        Bottom =152
         Top =0
         Name ="tlkpAllAmericanPlan"
         Name =""
@@ -164,7 +164,7 @@ Begin
         Left =35
         Top =79
         Right =213
-        Bottom =246
+        Bottom =242
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""

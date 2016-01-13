@@ -4,16 +4,16 @@ Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTid"
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENTSSN"
-    Expression ="tblAgent.AGENTfirst"
-    Expression ="tblAgent.AGENTlast"
-    Expression ="tblAgent.AGENTstreet1"
-    Expression ="tblAgent.AGENTstreet2"
-    Expression ="tblAgent.AGENTcity"
-    Expression ="tblAgent.AGENTstate"
-    Expression ="tblAgent.AGENTzip"
+    Expression ="tblAgent.AgentId"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.AgentSSN"
+    Expression ="tblAgent.AgentFirst"
+    Expression ="tblAgent.AgentLast"
+    Expression ="tblAgent.AgentStreet1"
+    Expression ="tblAgent.AgentStreet2"
+    Expression ="tblAgent.AgentCity"
+    Expression ="tblAgent.AgentState"
+    Expression ="tblAgent.AgentZip"
     Alias ="Country"
     Expression ="\"United States of America\""
     Alias ="PhonePrimary"
@@ -22,16 +22,19 @@ Begin OutputColumns
     Expression ="IIf([AgentFax] Is Not Null,CStr([AgentFax]),Null)"
     Alias ="PhoneCell"
     Expression ="IIf([AgentCell] Is Not Null,CStr([AgentCell]),Null)"
-    Expression ="tblAgent.AGENTtaxID"
-    Expression ="tblAgent.AGENTgeoID"
+    Expression ="tblAgent.AgentTaxID"
+    Expression ="tblAgent.AgentGeoID"
     Alias ="IDStatus"
     Expression ="IIf([AgentActive]=\"A\",\"Active\",\"Prospective\")"
+    Alias ="Expr1"
     Expression ="tblAgent.AGENTtype"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="Country"
@@ -58,16 +61,22 @@ Begin
         dbInteger "ColumnWidth" ="4215"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="PhoneCell"
+    End
+    Begin
+        dbText "Name" ="Expr1"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =451
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =231
     Left =0
     Top =0
@@ -76,7 +85,7 @@ Begin
         Left =35
         Top =13
         Right =257
-        Bottom =180
+        Bottom =176
         Top =0
         Name ="tblAgent"
         Name =""

@@ -1,13 +1,12 @@
 Operation =4
 Option =8
-Where ="((([tblInvHdrPreliminary].[CUST KEY])=DFirst(\"[CUST KEY]\",\"tblInvHdrPrelimina"
-    "ry\",\"IsNull([TRANS NO])\")))"
+Where ="(((tblInvHdrPreliminary.[CUST KEY])=DFirst(\"[CUST KEY]\",\"tblInvHdrPreliminary"
+    "\",\"IsNull([TRANS NO])\")))"
 Begin InputTables
     Name ="tblInvHdrPreliminary"
 End
 Begin OutputColumns
-    Alias ="Expr1"
-    Name ="tblInvHdrPreliminary.[TRANS NO]"
+    Name ="tblInvHdrPreliminary.TRANS NO"
     Expression ="GetNextTranNo()"
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -23,10 +22,10 @@ Begin
     Left =59
     Top =9
     Right =1174
-    Bottom =319
+    Bottom =333
     Left =-1
     Top =-1
-    Right =1108
+    Right =1100
     Bottom =144
     Left =0
     Top =0
@@ -35,7 +34,7 @@ Begin
         Left =38
         Top =6
         Right =470
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblInvHdrPreliminary"
         Name =""

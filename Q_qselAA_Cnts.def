@@ -5,7 +5,7 @@ Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Alias ="RedEES"
     Expression ="IIf([GroupType]=4,GetAA_Cnt([GROUPid],1,\"I\",\"S\"),0)"
     Alias ="RedEE1S"
@@ -39,16 +39,52 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="RedEES"
+    End
+    Begin
+        dbText "Name" ="RedEE1S"
+    End
+    Begin
+        dbText "Name" ="RedEEFS"
+    End
+    Begin
+        dbText "Name" ="WhtEE"
+    End
+    Begin
+        dbText "Name" ="WhtEE1S"
+    End
+    Begin
+        dbText "Name" ="WhtEEFS"
+    End
+    Begin
+        dbText "Name" ="BluEEIS"
+    End
+    Begin
+        dbText "Name" ="BluEEOS"
+    End
+    Begin
+        dbText "Name" ="BluEEFS"
+    End
+    Begin
+        dbText "Name" ="RED+EEOS"
+    End
+    Begin
+        dbText "Name" ="RED+EEIS"
+    End
+    Begin
+        dbText "Name" ="RED+EEFS"
+    End
 End
 Begin
     State =0
     Left =56
     Top =28
     Right =976
-    Bottom =441
+    Bottom =352
     Left =-1
     Top =-1
-    Right =913
+    Right =905
     Bottom =144
     Left =0
     Top =0
@@ -57,7 +93,7 @@ Begin
         Left =38
         Top =6
         Right =190
-        Bottom =101
+        Bottom =94
         Top =38
         Name ="tblGrp"
         Name =""

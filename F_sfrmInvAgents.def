@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1876233912
+Checksum =1942531988
 Begin Form
     AutoResize = NotDefault
     MaxButton = NotDefault
@@ -16,26 +16,66 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =4800
+    Width =5070
     DatasheetFontHeight =10
-    ItemSuffix =6
-    Left =10530
-    Top =4005
-    Right =15450
-    Bottom =5310
+    ItemSuffix =13
+    Left =10980
+    Top =4125
+    Right =16470
+    Bottom =5430
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0x64febdec317ae340
+        0x905c4cc891ade440
     End
-    GUID = Begin
-        0x4e82f02c0e74c243bb552e06767a9fad
-    End
-    NameMap = Begin
-        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
-        0x0000000000000000000000000000
-    End
-    RecordSource ="qryInvAgt"
+    RecordSource ="qryIndivAgt"
     DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00cc0343ff800101000100ea0a6f08640001000f004b0002000100 ,
+        0x4b00030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000000000000000000000000000000000000000000050524956 ,
+        0xe230000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000180000000000102710271027 ,
+        0x000010270000000000000000f800cc0300000000000000000000000000000000 ,
+        0x00000000000000000200000000000000000010005c4b03006843040000000000 ,
+        0x000000000000000000000000000000000000000000000000c7a88e3205000000 ,
+        0x0300ff0001000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x01000000000000000000000000000000f8000000534d544a000000001000e800 ,
+        0x5400500020005000530020004400720069007600650072002000300043003700 ,
+        0x3200410037003500330030003600430031003400660065006300380033004500 ,
+        0x4200300030003800330035004500460031003800420033003800000050616765 ,
+        0x53697a650041340050616765526567696f6e0000496e707574536c6f74004465 ,
+        0x6661756c74005265736f6c7574696f6e003735647069004475706c6578004e6f ,
+        0x6e65000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x0800220048000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000545330313600
+    End
     Begin
         Begin Label
             BackStyle =0
@@ -53,32 +93,33 @@ Begin Form
             SpecialEffect =2
         End
         Begin Section
-            Height =330
+            Height =270
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0x5ffd04610644de428923c6bfffc20a46
+                0xc1543c9be218514db6706f020f880cc5
             End
             Begin
                 Begin ComboBox
                     ColumnHeads = NotDefault
                     LimitToList = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     ColumnCount =3
-                    ListWidth =7200
-                    Width =2359
+                    ListWidth =5760
+                    Width =1849
                     Height =270
+                    BoundColumn =2
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
                     GUID = Begin
-                        0xa9937e1248af514e97696055f68fafe7
+                        0xa2fd10bf9ebb5f408ce7c4b0d627fc50
                     End
-                    Name ="GRagentID1"
-                    ControlSource ="AGENTid"
+                    Name ="AgentID1"
+                    ControlSource ="AgentId"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT tblAgent.AGENTid, tblAgent.AGENCY, [AGENTlast] & \", \"+[AGENTfirst] AS ["
-                        "Agent Name] FROM tblAgent WHERE (((tblAgent.AGENTactive)=\"A\")) ORDER BY tblAge"
-                        "nt.AGENCY, [AGENTlast] & \", \"+[AGENTfirst];"
-                    ColumnWidths ="0;3600;3600"
+                    RowSource ="SELECT tblAgent.Agent_LUname, tblAgent.Agency, tblAgent.AgentId FROM tblAgent WH"
+                        "ERE (((tblAgent.AGENTactive)=\"A\")) ORDER BY tblAgent.Agent_LUname, tblAgent.Ag"
+                        "ency;"
+                    ColumnWidths ="2880;2880;0"
                     StatusBarText ="Select a primary agent."
                     AfterUpdate ="[Event Procedure]"
                     OnDblClick ="[Event Procedure]"
@@ -87,85 +128,83 @@ Begin Form
                     DecimalPlaces =2
                     OldBorderStyle =1
                     OverlapFlags =93
-                    Left =4020
+                    Left =4280
                     Width =777
                     Height =270
-                    TabIndex =5
-                    Name ="GRagentRATE1"
-                    ControlSource ="AgentRATE"
+                    TabIndex =4
+                    Name ="AgentRate"
+                    ControlSource ="AgentRate"
                     Format ="Percent"
                     GUID = Begin
-                        0xe1f5d8181e04c544b14ed9b24181a9da
-                    End
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    TabStop = NotDefault
-                    OverlapFlags =93
-                    Left =3240
-                    Width =756
-                    Height =270
-                    TabIndex =3
-                    Name ="txtPriAgentID"
-                    ControlSource ="AGENTid"
-                    GUID = Begin
-                        0x47eeb8055de1c54fa15e246abdc41d2a
-                    End
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =247
-                    Left =3300
-                    Width =720
-                    Height =180
-                    TabIndex =4
-                    BackColor =10092543
-                    Name ="txtGROUPid"
-                    ControlSource ="GROUPid"
-                    GUID = Begin
-                        0x10077f188c0f384a8d534f063c0d4e4c
-                    End
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =247
-                    Left =4200
-                    Top =15
-                    Width =540
-                    Height =180
-                    TabIndex =6
-                    BackColor =10092543
-                    Name ="Sort"
-                    ControlSource ="Sort"
-                    GUID = Begin
-                        0xab511c0ba86a7348a131805a253228a0
-                    End
-                End
-                Begin TextBox
-                    Enabled = NotDefault
-                    TabStop = NotDefault
-                    OverlapFlags =85
-                    Left =2400
-                    Width =426
-                    Height =270
-                    TabIndex =1
-                    Name ="Type"
-                    ControlSource ="PayCommTo"
-                    GUID = Begin
-                        0x5c16d78fa8cce14b9062bd35836b2c24
+                        0x03582775b168994ca7b6b1f243426a67
                     End
                 End
                 Begin CheckBox
-                    OverlapFlags =85
-                    Left =2925
-                    Top =60
+                    OverlapFlags =247
+                    Left =4020
                     Width =270
                     Height =270
-                    TabIndex =2
+                    TabIndex =3
                     Name ="chkPrimary"
                     ControlSource ="Primary"
                     GUID = Begin
-                        0x1371e1e28d88834e82943620b488c288
+                        0xf23c0889847e9f40ad95f8f1eb95cfe2
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =4440
+                    Width =405
+                    Height =270
+                    TabIndex =5
+                    BackColor =65535
+                    Name ="PltCustKey"
+                    ControlSource ="PltCustKey"
+                    GUID = Begin
+                        0x64a4849ed4007145b3aaf84b3a57128d
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =95
+                    IMESentenceMode =3
+                    Left =1860
+                    Height =270
+                    ColumnWidth =3105
+                    TabIndex =1
+                    Name ="Agency"
+                    ControlSource ="Agency"
+                    GUID = Begin
+                        0x077a2f6522bf694ca5c74ae7a63f2c5e
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =3330
+                    Width =630
+                    Height =270
+                    TabIndex =2
+                    Name ="AgentID2"
+                    ControlSource ="AgentId"
+                    GUID = Begin
+                        0x6bdd7823148817408d9fb9066a8b071a
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =2565
+                    Width =600
+                    Height =270
+                    TabIndex =6
+                    BackColor =65535
+                    Name ="SubscrId"
+                    ControlSource ="SubscrId"
+                    GUID = Begin
+                        0x03c6a27abca1564bb7a2956ae4f3f33a
                     End
                 End
             End
@@ -180,34 +219,31 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
-Private Sub GRagentID1_AfterUpdate()
-On Error GoTo Err_GRagentID1_AfterUpdate
+Private Sub AgentID1_AfterUpdate()
 
-    If IsNull(Me![GRagentID1]) Or Me![GRagentID1] = "" Then
-        Me![txtPriAgentID] = ""
-    Else  'GRagentID1
-        Me.txtPriAgentID.Enabled = True
-        Me![txtPriAgentID] = Me![GRagentID1].Column(0)
-        Me.txtPriAgentID.Enabled = False
-        'Me![txtGroupID] = forms![frmGrp]![ctlGroupID]
-    End If
-    
-Exit_GRagentID1_AfterUpdate:
+On Error GoTo Err_AgentID1_AfterUpdate
+        
+        Me![PLTcustKEY] = Forms![frmIndivSubscr]![PLTcustKEY]
+        Me![SubscrId] = Forms![frmIndivSubscr]![SubID]
+        
+Exit_AgentID1_AfterUpdate:
     Exit Sub
     
-Err_GRagentID1_AfterUpdate:
+Err_AgentID1_AfterUpdate:
     MsgBox Err.DESCRIPTION
-    Resume Exit_GRagentID1_AfterUpdate
+    Resume Exit_AgentID1_AfterUpdate
+
 End Sub
 
-Private Sub GRagentID1_DblClick(Cancel As Integer)
 
-On Error GoTo Err_GRagentID1_DblClick
+Private Sub AgentID1_DblClick(Cancel As Integer)
+
+On Error GoTo Err_AgentID1_DblClick
 
     Dim stDocName As String
     Dim stLinkCriteria As String
 
-    If IsNull(Me![txtPriAgentID]) Then
+    If IsNull(Me![AgentID1]) Then
         MsgBox "You must add an Agent before you can edit.  Action Canceled!", vbExclamation, "QCD: Notice"
         Exit Sub
     End If
@@ -217,20 +253,16 @@ On Error GoTo Err_GRagentID1_DblClick
     DoCmd.OpenForm stDocName, acNormal, , , , acWindowNormal
     
     With Forms(stDocName)
-        .txtAgentID = Me![txtPriAgentID]
+        .txtAgentID = Me![AgentID1]
     End With
+  
     
-    'stDocName = "frmAgent"
-
-    'stLinkCriteria = "[AGENTid]=" & "'" & Me![txtPriAgentID] & "'"
-    'DoCmd.OpenForm stDocName, acNormal, , stLinkCriteria, acFormEdit
-    
-Exit_GRagentID1_DblClick:
+Exit_AgentID1_DblClick:
     Exit Sub
 
-Err_GRagentID1_DblClick:
+Err_AgentID1_DblClick:
     MsgBox Err.DESCRIPTION
-    Resume Exit_GRagentID1_DblClick
+    Resume Exit_AgentID1_DblClick
     
     
 End Sub

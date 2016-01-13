@@ -11,7 +11,7 @@ End
 Begin Joins
     LeftTable ="qryPreexistingDates"
     RightTable ="tblEDI_App_Subscr"
-    Expression ="qryPreexistingDates.[EISSN#] = tblEDI_App_Subscr.SUBssn"
+    Expression ="qryPreexistingDates.[EISSN#]=tblEDI_App_Subscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -27,10 +27,10 @@ Begin
     Left =244
     Top =81
     Right =921
-    Bottom =516
+    Bottom =540
     Left =-1
     Top =-1
-    Right =670
+    Right =662
     Bottom =279
     Left =0
     Top =0
@@ -39,7 +39,7 @@ Begin
         Left =308
         Top =31
         Right =517
-        Bottom =158
+        Bottom =149
         Top =0
         Name ="qryPreexistingDates"
         Name =""
@@ -48,7 +48,7 @@ Begin
         Left =61
         Top =28
         Right =257
-        Bottom =248
+        Bottom =236
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""

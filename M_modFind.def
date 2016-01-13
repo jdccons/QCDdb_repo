@@ -1,0 +1,428 @@
+Option Compare Database
+Option Explicit
+
+Public Function FindID(frmMyForm As Form, ctlMyControl As Control, varMyID, varEndControl) As Boolean
+    ' Purpose:
+    '   Use this in the AfterUpdate property of the combo box:
+    '   =FindID(Forms![FormName],[ComboBox],"[Record ID]","EndControlName")
+    
+    '   ctlMyControl -
+    '       this is the value in the control,
+    '       the control is client picklist combo
+    '       and the value is the SSN with no hyphens
+    
+    '   varMyId -
+    '       this is a control on the form
+    '       it is only the control name - not the value in the control
+    '       the control name is [SubSSN]
+    '       this is the control that contains
+    '       the SSN on the main form
+    '------------------------------------------------
+    ' Parameters: frmMyForm - the form name
+    '             ctlMyControl - the value in the picklist
+    '             varMyID - the name of the control on the main form
+    ' Returns   :  Boolean
+    ' Programmer:  John Criswell
+    ' Create Date:  11/16/07
+    ' Update Date:  11/16/07
+    ' Updated by:  John Criswell
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrFindID
+    
+    Dim rst As DAO.Recordset
+    Dim strID As String
+    Dim strCriteria As String
+    Dim strCRLF As String
+    
+    ' new code (saves the current record)
+    frmMyForm.Dirty = False
+'    If frmMyForm.Dirty Then
+'        DoCmd.DoMenuItem A_FORMBAR, A_FILE, A_SAVERECORD
+'    End If
+    
+    DoCmd.Echo False, "Searching. . ."
+
+    Set rst = frmMyForm.RecordsetClone          ' create a recordset clone of the recordset behind the form
+    strID = ctlMyControl                        ' this is the SSN value
+    strCRLF = Chr(13) & Chr(10)
+    strCriteria = varMyID & "='" & strID & "'"  ' Define search criteria.  i.e. [SubSSN] = 123456789
+    
+    rst.FindFirst strCriteria                   ' Locate first occurrence of the SSN
+    If rst.NoMatch Then
+        MsgBox "Could not find the Record ID: " & strID & "." & strCRLF & "Select 'Show All Records' from the" & strCRLF & "Records Menu and try again."
+        FindID = False
+    Else
+        frmMyForm.Bookmark = rst.Bookmark       ' set a bookmark at the SSN that was returned in the recordset
+        FindID = True
+        DoCmd.GoToControl varEndControl         ' shift the focus to the SSN control
+    End If
+    
+    DoCmd.Echo True
+    
+    rst.Close
+    Set rst = Nothing
+        
+ByeFindID:
+    
+    Exit Function
+    
+ErrFindID:
+    DoCmd.Echo True, "Find canceled."
+    Resume ByeFindID
+    
+End Function
+
+Function FindID_L(strSSN As String, strEndControl As String)
+    ' Comments  :
+    ' Parameters: frmMyForm
+    '             ctlMyControl
+    ' Returns   :  -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim strSQL As String
+    Dim strCrit As String
+    
+    strCrit = RemoveHyphens(strSSN)
+    
+    ExecuteSQL "EXEC uspSubscrSearch '" & strCrit & "', " & "'00000000'" & ", " & 1
+    
+    With Forms("frmSubscrInquire")
+        .Requery
+    End With
+    
+    DoCmd.GoToControl strEndControl
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Function FindSSN(strSSN As String, strEndControl As String) As Boolean
+
+  On Error GoTo PROC_ERR
+  
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strCriteria As String
+    Dim strWhere As String
+
+    Set dbs = CurrentDb()
+    
+    strCriteria = RemoveHyphens(strSSN)
+    strWhere = "[SUBssn] = '" & strCriteria & "'"
+
+    Set rst = Screen.ActiveForm.RecordsetClone
+    rst.FindFirst strWhere
+    If rst.NoMatch Then
+        MsgBox "That SSN is not in the database!"
+        FindSSN = False
+        DoCmd.GoToControl strEndControl
+    Else
+        Screen.ActiveForm.Bookmark = rst.Bookmark
+        FindSSN = True
+        DoCmd.GoToControl strEndControl
+    End If
+    
+    rst.Close
+    dbs.Close
+    Set rst = Nothing
+    Set dbs = Nothing
+    
+  Exit Function
+
+PROC_ERR:
+    FindSSN = False
+    MsgBox "The following error occured: " & Error$
+    Resume Next
+    
+End Function
+Function FindAgent_ID(strAgent_ID As String, strEndControl As String) As Boolean
+
+    On Error GoTo PROC_ERR
+  
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strCriteria As String
+    Dim strWhere As String
+    
+    Set dbs = CurrentDb()
+    
+    strCriteria = strAgent_ID
+    strWhere = "[AgentID] = '" & strCriteria & "'"
+
+    Set rst = Screen.ActiveForm.RecordsetClone
+    rst.FindFirst strWhere
+    If rst.NoMatch Then
+        MsgBox "That AgentID is not in the database!"
+        FindAgent_ID = False
+        DoCmd.GoToControl strEndControl
+    Else
+        Screen.ActiveForm.Bookmark = rst.Bookmark
+        FindAgent_ID = True
+        DoCmd.GoToControl strEndControl
+    End If
+    
+    rst.Close
+    dbs.Close
+    Set rst = Nothing
+    Set dbs = Nothing
+    
+    Exit Function
+    
+PROC_ERR:
+    FindAgent_ID = False
+    MsgBox "The following error occured: " & Error$
+    Resume Next
+
+End Function
+Function FindGRP_ID(strGRP_ID As String, strEndControl As String) As Boolean
+
+  On Error GoTo PROC_ERR
+  
+    Dim dbs As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strCriteria As String
+    Dim strWhere As String
+
+    Set dbs = CurrentDb()
+    
+    strCriteria = strGRP_ID
+    strWhere = "[GroupID] = '" & strCriteria & "'"
+
+    Set rst = Screen.ActiveForm.RecordsetClone
+    rst.FindFirst strWhere
+    If rst.NoMatch Then
+        MsgBox "That GroupID is not in the database!"
+        FindGRP_ID = False
+        DoCmd.GoToControl strEndControl
+    Else
+        Screen.ActiveForm.Bookmark = rst.Bookmark
+        FindGRP_ID = True
+        DoCmd.GoToControl strEndControl
+    End If
+    
+    rst.Close
+    dbs.Close
+    Set rst = Nothing
+    Set dbs = Nothing
+    
+  Exit Function
+
+PROC_ERR:
+    FindGRP_ID = False
+    MsgBox "The following error occured: " & Error$
+    Resume Next
+    
+End Function
+Function FindSUBID(strSubID As String, strEndControl As String)
+
+  On Error GoTo PROC_ERR
+    Dim strCriteria$
+    Dim strWhere$
+
+    strCriteria = strSubID
+    strWhere = "[SubID] = '" & strCriteria & "'"
+
+    Dim dbsDb As DAO.Database
+    Dim rstRs As DAO.Recordset
+
+    Set dbsDb = DBEngine(0)(0)
+    Set rstRs = Screen.ActiveForm.RecordsetClone
+    rstRs.FindFirst strWhere
+    If rstRs.NoMatch Then
+        MsgBox "That Subscriber ID is not in the database!"
+    Else
+        Screen.ActiveForm.Bookmark = rstRs.Bookmark
+
+        DoCmd.GoToControl strEndControl
+    End If
+    rstRs.Close
+    dbsDb.Close
+
+  Exit Function
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Function
+
+Function SetLabelColor(frmMyForm As Form, intLabelColor As Integer)
+    ' Purpose:  To set and reset a form label's font color
+    ' Usage:    =SetLabelColor([F],255)
+    '           in the OnEnter and OnExit properties.
+    '           This works only if the label name is
+    '           "lbl" & ActiveControl.Name.
+    On Error GoTo errSetLabelColor
+    ' The following line can also be put in the form's OnOpen or OnCurrent property
+        DoCmd.SelectObject A_FORM, frmMyForm.Name
+        Dim strCN As String
+        strCN = "lbl" & Screen.ActiveControl.Name
+        frmMyForm(strCN).ForeColor = intLabelColor
+        DoEvents
+errSetLabelColor:
+Exit Function
+End Function
+Function ShowAll(frmMyForm As Form, strMyCombo As String)
+    'OnPush of All button on forms with Alpha buttons.
+    On Error GoTo errShowAll
+        Dim ctlMyControl As Control
+        Set ctlMyControl = frmMyForm!AlphaControl
+        ctlMyControl = "*"
+        DoCmd.Echo True, "Show all cases in the combo box. . ."
+        DoCmd.Requery strMyCombo
+        DoCmd.Echo True
+        DoCmd.GoToControl strMyCombo
+errShowAll:
+    Exit Function
+End Function
+
+Function FindSSN_L(strSSN As String, strEndControl As String) As Boolean
+    ' Comments  :
+    ' Parameters: strSSN
+    '             strEndControl -
+    ' Returns   :  Boolean
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim Subscr As clsSubscr
+    Dim strCrit As String
+    
+    Set Subscr = New clsSubscr
+    
+    strCrit = RemoveHyphens(strSSN)
+    
+    'this will tell us if the subscriber is even in the database
+    Subscr.SSN = strCrit
+    
+    If Subscr.SSN = "000000000" Then
+        FindSSN_L = False
+        MsgBox "The SSN you have entered is not in the database.", vbCritical, "Not in database."
+    Else
+        ExecuteSQL "EXEC uspSubscrSearch '" & strCrit & "', " & "'00000000', " & 1
+        FindSSN_L = True
+    End If
+    
+    With Forms("frmSubscrInquire")
+        .Requery
+    End With
+    
+    DoCmd.GoToControl strEndControl
+    Forms("frmSubscrInquire").ActiveControl = ""
+    
+    Set Subscr = Nothing
+
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    FindSSN_L = False
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+
+Function FindSUBID_L(strSubID As String, strEndControl As String) As Boolean
+    ' Comments  :
+    ' Parameters: strSubID
+    '             strEndControl -
+    ' Returns   :  Boolean
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    Dim Subscr As clsSubscr
+    Dim strCrit As String
+    
+    Set Subscr = New clsSubscr
+    
+    Subscr.SubID = strSubID
+    
+    'this will tell us if the subscriber is even in the database
+    strCrit = Subscr.SubID
+    
+    If Subscr.SubID = "00000000" Then
+        FindSUBID_L = False
+        MsgBox "The Subscriber ID you have entered is not in the database.", vbCritical, "Not in database."
+    Else
+        ExecuteSQL "EXEC uspSubscrSearch " & "'000000000'" & ", '" & strCrit & "', " & 2
+        FindSUBID_L = True
+    End If
+    
+    With Forms("frmSubscrInquire")
+        .Requery
+    End With
+    
+    DoCmd.GoToControl strEndControl
+    Forms("frmSubscrInquire").ActiveControl = ""
+    
+    Set Subscr = Nothing
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    FindSUBID_L = False
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Function AlphaBtn(frmMyForm As Form, strMyCombo As String)
+' frmMyForm is the name of the form
+' strMyCombo is the name of the control
+' strMyButton is the value in the control
+'
+' OnPush of alphabet buttons, for requerying a combo box.
+
+On Error GoTo errAlphaBtn
+    
+    Dim strMyButton As String
+    
+    strMyButton = Screen.ActiveControl.ControlName  ' sets the value in the control
+    
+    frmMyForm![AlphaControl] = strMyButton  ' puts that value in the control
+    DoCmd.Echo True, "Sorting contents of combo box. . ."
+    
+    DoCmd.Requery strMyCombo
+    
+    DoCmd.GoToControl strMyCombo
+    SendKeys "{Delete}%{Down}"
+    
+    Exit Function
+
+errAlphaBtn:
+    Exit Function
+End Function
+
+Function SearchBtn(strMyCombo As String)
+    ' OnClick of the Search button of a combo box filter
+    ' OnExit of the AlphaControl
+    
+    On Error GoTo errSearchBtn
+    
+    Dim strN As String
+    Dim varResult As Variant
+    
+    strN = Screen.ActiveForm.Name
+    varResult = SetLabelColor(Forms(strN), 0)
+    
+    DoCmd.Echo True, "Sorting contents of combo box. . ."
+    DoCmd.Requery strMyCombo
+    DoCmd.Echo True
+    
+    DoCmd.GoToControl strMyCombo
+    SendKeys "{Delete}%{Down}"
+    
+errSearchBtn:
+    Exit Function
+End Function

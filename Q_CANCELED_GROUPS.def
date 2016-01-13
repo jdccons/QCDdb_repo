@@ -1,24 +1,24 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=True) AND ((tblGrp.GRee)>30))"
+Where ="(((tblGrp.GRCancelled)=True) AND ((tblGrp.GREE)>30))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRcancelledDate"
-    Expression ="tblGrp.GRannvDATE"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRee"
-    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRCancelledDate"
+    Expression ="tblGrp.GRAnnvDate"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GREE"
+    Expression ="tblGrp.GRPhone1"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -33,10 +33,10 @@ Begin
     Left =62
     Top =43
     Right =874
-    Bottom =369
+    Bottom =367
     Left =-1
     Top =-1
-    Right =805
+    Right =797
     Bottom =144
     Left =0
     Top =0
@@ -45,7 +45,7 @@ Begin
         Left =38
         Top =6
         Right =298
-        Bottom =101
+        Bottom =94
         Top =6
         Name ="tblGrp"
         Name =""

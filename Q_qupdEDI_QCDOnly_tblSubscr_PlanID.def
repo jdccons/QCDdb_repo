@@ -1,6 +1,6 @@
 Operation =4
 Option =0
-Where ="(((tblSubscr.SubGroupID)=[Forms]![frmImportProcessing]![txtGrpID]))"
+Where ="(((tblSubscr.SubGroupID)=Forms!frmImportProcessing!txtGrpID))"
 Begin InputTables
     Name ="tblSubscr"
 End
@@ -22,10 +22,10 @@ Begin
     Left =364
     Top =291
     Right =862
-    Bottom =603
+    Bottom =615
     Left =-1
     Top =-1
-    Right =491
+    Right =483
     Bottom =144
     Left =0
     Top =0
@@ -34,7 +34,7 @@ Begin
         Left =38
         Top =6
         Right =194
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""

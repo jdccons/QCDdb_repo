@@ -1,9 +1,14 @@
 Version =196611
 ColumnsShown =1
 Begin
-    MacroName ="&Print_C&ard"
+    MacroName ="&Print Card"
     Action ="RunCode"
     Argument ="PrintCard()"
+End
+Begin
+    MacroName ="Change &Status"
+    Action ="RunCode"
+    Argument ="ChangeStatus (Forms![frmSubscrInquire]) "
 End
 Begin
     MacroName ="&Close"

@@ -9,38 +9,37 @@ Begin InputTables
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubGroupID"
     Expression ="tblRates.Rate"
     Alias ="SUBcoverage"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverCode"
     Alias ="Calc Coverage"
-    Expression ="IIf([SUBnoDEPENT]=1,\"O\",IIf([SUBnoDEPENT]>1,'F','I'))"
+    Expression ="IIf([DepCnt]=1,\"O\",IIf([DepCnt]>1,'F','I'))"
     Alias ="Coverage Diff"
-    Expression ="IIf([tblSubscr].[CoverID]<>(IIf([SUBnoDEPENT]=1,2,IIf([SUBnoDEPENT]>1,4,1))),0,1"
-        ")"
-    Expression ="tblSubscr.SUBnoDEPENT"
-    Expression ="qryDependents_Count.CountOfDEPcounter"
+    Expression ="IIf(tblSubscr.CoverID<>(IIf([DepCnt]=1,2,IIf([DepCnt]>1,4,1))),0,1)"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="qryDependents_Count.CountOfID"
     Alias ="No of Deps Difference"
-    Expression ="[SUBnoDEPENT]-[CountOfDEPcounter]"
+    Expression ="[DepCnt]-[CountOfID]"
     Expression ="tblGrp.GroupType"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="qryDependents_Count"
-    Expression ="tblSubscr.SUBssn = qryDependents_Count.DEPsubID"
+    Expression ="tblSubscr.SubSSN=qryDependents_Count.DepSubID"
     Flag =2
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -51,19 +50,15 @@ dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
     Begin
-        dbText "Name" ="tblSubscr.SUBnoDEPENT"
-        dbInteger "ColumnWidth" ="1575"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="qryDependents_Count.CountOfDEPcounter"
-        dbInteger "ColumnWidth" ="1935"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
         dbText "Name" ="No of Deps Difference"
         dbInteger "ColumnWidth" ="2055"
         dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="Calc Coverage"
+    End
+    Begin
+        dbText "Name" ="Coverage Diff"
     End
 End
 Begin
@@ -71,10 +66,10 @@ Begin
     Left =22
     Top =108
     Right =1136
-    Bottom =530
+    Bottom =537
     Left =-1
     Top =-1
-    Right =1107
+    Right =1099
     Bottom =249
     Left =0
     Top =0
@@ -83,7 +78,7 @@ Begin
         Left =50
         Top =33
         Right =284
-        Bottom =128
+        Bottom =121
         Top =39
         Name ="tblGrp"
         Name =""
@@ -92,7 +87,7 @@ Begin
         Left =342
         Top =5
         Right =545
-        Bottom =190
+        Bottom =183
         Top =44
         Name ="tblSubscr"
         Name =""
@@ -101,7 +96,7 @@ Begin
         Left =613
         Top =8
         Right =749
-        Bottom =88
+        Bottom =96
         Top =0
         Name ="qryDependents_Count"
         Name =""
@@ -110,7 +105,7 @@ Begin
         Left =653
         Top =117
         Right =767
-        Bottom =212
+        Bottom =205
         Top =0
         Name ="tblCoverage"
         Name =""
@@ -119,7 +114,7 @@ Begin
         Left =786
         Top =42
         Right =882
-        Bottom =152
+        Bottom =145
         Top =0
         Name ="tblRates"
         Name =""

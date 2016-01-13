@@ -10,7 +10,7 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblEDI_App_Subscr"
-    Expression ="tblSubscr.SUBssn = tblEDI_App_Subscr.SUBssn"
+    Expression ="tblSubscr.SubSSN=tblEDI_App_Subscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -19,6 +19,7 @@ dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="0"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -26,10 +27,10 @@ Begin
     Left =55
     Top =33
     Right =929
-    Bottom =578
+    Bottom =357
     Left =-1
     Top =-1
-    Right =863
+    Right =859
     Bottom =144
     Left =0
     Top =0
@@ -38,7 +39,7 @@ Begin
         Left =324
         Top =9
         Right =544
-        Bottom =116
+        Bottom =112
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -47,7 +48,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""

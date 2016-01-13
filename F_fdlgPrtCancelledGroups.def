@@ -1,12 +1,12 @@
 Version =20
 VersionRequired =20
-Checksum =-667994441
+Checksum =712018314
 Begin Form
     AutoResize = NotDefault
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
@@ -14,14 +14,15 @@ Begin Form
     ViewsAllowed =1
     Width =4320
     ItemSuffix =20
-    Left =7125
-    Top =3735
-    Right =11895
-    Bottom =5880
+    Left =-22692
+    Top =1692
+    Right =-16584
+    Bottom =5892
     RecSrcDt = Begin
         0x2223dcb3b2c4e140
     End
     Caption ="Print Cancelled Groups Report"
+    MenuBar ="Dialog"
     AllowDatasheetView =0
     AllowPivotTableView =0
     AllowPivotChartView =0
@@ -41,6 +42,9 @@ Begin Form
             Height =2160
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x0a14ce179546654f8e8052ddb3c1d9a3
+            End
             Begin
                 Begin Label
                     BackStyle =0
@@ -54,6 +58,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text67"
                     Caption ="Cancelled Date: "
+                    GUID = Begin
+                        0xa73e6768322918469f67373fa339fd06
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -87,6 +94,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0x329198a1db45674097cf1bdd9b3e81d5
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =0
@@ -101,7 +111,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x3299b837ec3a9c40b372137b2c5f14d3
+                        0x8afe4b9cc709af4c9230018f9ae77014
                     End
                 End
                 Begin Label
@@ -115,7 +125,7 @@ Begin Form
                     Name ="Label19"
                     Caption ="Cancelled Groups"
                     GUID = Begin
-                        0x6028338fa708be49aa2dac2c3d7ab762
+                        0x22aa4fcb3cc80f46bb14ae40aa21050c
                     End
                 End
             End

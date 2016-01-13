@@ -1,21 +1,21 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"prpay\"))"
+Where ="(((tblSubscr.SubGroupID)=\"prpay\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubSSN"
     Expression ="tblRates.Rate"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -31,10 +31,10 @@ Begin
     Left =-60
     Top =42
     Right =1154
-    Bottom =485
+    Bottom =492
     Left =-1
     Top =-1
-    Right =1207
+    Right =1199
     Bottom =270
     Left =0
     Top =0
@@ -43,7 +43,7 @@ Begin
         Left =38
         Top =6
         Right =230
-        Bottom =236
+        Bottom =229
         Top =5
         Name ="tblSubscr"
         Name =""
@@ -52,7 +52,7 @@ Begin
         Left =268
         Top =6
         Right =364
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

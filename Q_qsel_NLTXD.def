@@ -1,17 +1,21 @@
 Operation =1
 Option =0
-Having ="(((NLTXD.DocumentNumber)='IBCR') AND ((NLTXD.TransactionAmt)<0))"
+Having ="(((NLTXD.DocumentNumber)='IBCR') And ((NLTXD.TransactionAmt)<0))"
 Begin InputTables
     Name ="NLTXD"
 End
 Begin OutputColumns
     Alias ="GroupID"
     Expression ="CStr(Left([Description],5))"
+    Alias ="Expr1"
     Expression ="NLTXD.DocumentNumber"
+    Alias ="Expr2"
     Expression ="NLTXD.TransactionAmt"
+    Alias ="Expr3"
     Expression ="NLTXD.Description"
     Alias ="AccountNo"
     Expression ="Trim([Acct])"
+    Alias ="Expr4"
     Expression ="NLTXD.ApplyDate"
 End
 Begin OrderBy
@@ -37,6 +41,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -44,10 +49,10 @@ Begin
     Left =-27
     Top =243
     Right =977
-    Bottom =615
+    Bottom =603
     Left =-1
     Top =-1
-    Right =997
+    Right =989
     Bottom =180
     Left =0
     Top =0
@@ -56,8 +61,8 @@ Begin
         Left =48
         Top =7
         Right =257
-        Bottom =136
-        Top =7
+        Bottom =50
+        Top =0
         Name ="NLTXD"
         Name =""
     End

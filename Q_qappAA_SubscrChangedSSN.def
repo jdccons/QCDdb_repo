@@ -16,7 +16,8 @@ Begin OutputColumns
     Name ="DataElement"
     Expression ="\"Sub Change SSN\""
     Name ="SubSSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="Expr1"
     Name ="AAGrpID"
     Expression ="qselAA_Changed_SSNs.GRPid"
     Alias ="AA"
@@ -24,15 +25,10 @@ Begin OutputColumns
     Expression ="qselAA_Changed_SSNs.[EISSN#]"
     Alias ="QCD"
     Name ="OldValue"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="Expr2"
     Name ="RptDate"
     Expression ="qselAA_Changed_SSNs.RptDate"
-End
-Begin Joins
-    LeftTable ="qselAA_Changed_SSNs"
-    RightTable ="tblSubscr"
-    Expression ="qselAA_Changed_SSNs.AA_SSN = tblSubscr.SUBssn"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -82,14 +78,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =673
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =534
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =314
     Left =0
     Top =0
@@ -98,7 +94,7 @@ Begin
         Left =351
         Top =16
         Right =608
-        Bottom =265
+        Bottom =254
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -107,7 +103,7 @@ Begin
         Left =36
         Top =13
         Right =282
-        Bottom =187
+        Bottom =56
         Top =0
         Name ="qselAA_Changed_SSNs"
         Name =""

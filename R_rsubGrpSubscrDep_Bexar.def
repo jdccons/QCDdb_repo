@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =2100448990
+Checksum =1880439473
 Begin Report
     AutoCenter = NotDefault
     DefaultView =0
@@ -89,6 +89,9 @@ Begin Report
         Begin FormHeader
             Height =240
             Name ="FormHeader1"
+            GUID = Begin
+                0x1fc26c601554d04d9c1c89766c28ea47
+            End
             Begin
                 Begin Label
                     TextAlign =2
@@ -98,6 +101,9 @@ Begin Report
                     FontWeight =700
                     Name ="Text109"
                     Caption ="First Name"
+                    GUID = Begin
+                        0xcff2765db35c364f9e477ce92e3b9cb1
+                    End
                 End
                 Begin Label
                     TextAlign =2
@@ -106,12 +112,18 @@ Begin Report
                     FontWeight =700
                     Name ="Text110"
                     Caption ="Last Name"
+                    GUID = Begin
+                        0x7759debac41ee448965c57452504d346
+                    End
                 End
             End
         End
         Begin Section
             Height =240
             Name ="Detail0"
+            GUID = Begin
+                0x47a824af37c4394886e3a0173115ae6c
+            End
             Begin
                 Begin TextBox
                     OldBorderStyle =0
@@ -123,6 +135,9 @@ Begin Report
                     TabIndex =1
                     Name ="uDEPfirstNAME"
                     ControlSource ="=UCase([DEPfirstNAME])"
+                    GUID = Begin
+                        0x40c62712946ed14aa957c196af8c9ff1
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =0
@@ -133,12 +148,18 @@ Begin Report
                     FontSize =7
                     Name ="uDEPlastNAME"
                     ControlSource ="=UCase([DEPlastNAME])"
+                    GUID = Begin
+                        0xb1aa3abe9828094aa7803db8861d1dde
+                    End
                 End
             End
         End
         Begin FormFooter
             Height =0
             Name ="FormFooter2"
+            GUID = Begin
+                0xe75dff4504bb5e4c9aff018e46f471b2
+            End
         End
     End
 End

@@ -1,13 +1,13 @@
 Operation =1
 Option =0
-Where ="(((tblGrowth.Year)=\"2000\") AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrowth.Year)=\"2000\") AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
-    Name ="tblGrowth"
     Name ="tblGrp"
+    Name ="tblGrowth"
 End
 Begin OutputColumns
     Expression ="tblGrowth.GroupID"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Expression ="tblGrowth.BeginInvoiceDate"
     Expression ="tblGrowth.BeginInvoiceAmt"
     Expression ="tblGrowth.CurrentInvoiceDate"
@@ -21,13 +21,15 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblGrowth"
-    Expression ="tblGrp.GROUPid = tblGrowth.GroupID"
+    Expression ="tblGrp.GroupID=tblGrowth.GroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrowth.BeginInvoiceAmt"
@@ -44,16 +46,22 @@ Begin
         dbInteger "ColumnWidth" ="3840"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="Variance"
+    End
+    Begin
+        dbText "Name" ="VarPerc"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =425
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =205
     Left =0
     Top =0
@@ -62,7 +70,7 @@ Begin
         Left =337
         Top =14
         Right =553
-        Bottom =151
+        Bottom =147
         Top =9
         Name ="tblGrowth"
         Name =""
@@ -71,7 +79,7 @@ Begin
         Left =80
         Top =11
         Right =254
-        Bottom =148
+        Bottom =144
         Top =30
         Name ="tblGrp"
         Name =""

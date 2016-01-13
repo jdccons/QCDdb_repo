@@ -1,8 +1,7 @@
 Version =20
 VersionRequired =20
-Checksum =-545207592
+Checksum =-1493339509
 Begin Form
-    OrderByOn = NotDefault
     DataEntry = NotDefault
     ScrollBars =2
     ViewsAllowed =1
@@ -11,20 +10,20 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =11760
+    Width =11505
     DatasheetFontHeight =10
     ItemSuffix =59
-    Left =1635
-    Top =1185
-    Right =13155
-    Bottom =8550
+    Left =1440
+    Top =990
+    Right =12555
+    Bottom =8010
     DatasheetBackColor =65535
     DatasheetGridlinesColor =12632256
-    Filter ="([SUBGroupID] Like \"INDVM\" and [SUBcancelled]=1) AND ((((tblSubscr.SUBstatus)="
-        "\"INDIV\")))"
-    OrderBy ="tblSubscr.SUBlastNAME"
+    Filter ="([SUBGroupID] Like \"INDV*\" AND [SUBGroupID] NOT IN (\"INDVM\") and [SUBcancell"
+        "ed]=1) AND ((((tblSubscr.SubStatus)=\"INDIV\")))"
+    OrderBy ="tblSubscr.SubLastName"
     RecSrcDt = Begin
-        0x6e644597b20de340
+        0xf283e0268c77e440
     End
     RecordSource ="qfrmIndivSubscrCoverage"
     Caption ="Individual Coverage"
@@ -38,14 +37,12 @@ Begin Form
     End
     PrtDevMode = Begin
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x01043c079c00d00603770006010001009a0b3408640001000f01580201000100 ,
-        0x5802040000004134000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000050524956 ,
-        0xe012000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000180000000000102710271027 ,
-        0x0000102700000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc020377000601000100ea0a6f08640001000f01580201000100 ,
+        0x5802040001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -61,46 +58,18 @@ Begin Form
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x000000000000000000000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x08001b002e000100000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000446f6375436f6d2050444620506f72743a00
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
     Begin
         Begin Label
@@ -135,8 +104,11 @@ Begin Form
         End
         Begin FormHeader
             Height =1635
-            BackColor =-2147483633
+            BackColor =12632256
             Name ="FormHeader"
+            GUID = Begin
+                0x0e7f02dcf637a64cbc37e77dfcb3a891
+            End
             Begin
                 Begin Label
                     BackStyle =1
@@ -150,6 +122,9 @@ Begin Form
                     BackColor =12632256
                     Name ="lblSSN"
                     Caption ="SS# "
+                    GUID = Begin
+                        0xd79dccb6ed1e1e429a7882fede90cb1a
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -163,6 +138,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text60"
                     Caption =" Last Name "
+                    GUID = Begin
+                        0x964df9becefa514a8524d46bc53b7fbc
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -176,6 +154,9 @@ Begin Form
                     BackColor =12632256
                     Name ="lblFirst"
                     Caption ="First "
+                    GUID = Begin
+                        0x5c3106259ecb774bb049413072863445
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -189,6 +170,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label0"
                     Caption ="MI "
+                    GUID = Begin
+                        0xb072799aa4e1164dbae458c1015401d6
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -202,12 +186,15 @@ Begin Form
                     BackColor =12632256
                     Name ="lblCoverage"
                     Caption ="Coverage "
+                    GUID = Begin
+                        0x42ed70a7b1fc844b914e758de833166b
+                    End
                 End
                 Begin Label
                     BackStyle =1
                     OverlapFlags =93
                     TextAlign =2
-                    Left =8580
+                    Left =8265
                     Top =1380
                     Width =1056
                     Height =255
@@ -215,12 +202,15 @@ Begin Form
                     BackColor =12632256
                     Name ="lblConBeg"
                     Caption ="Cont. Beg. "
+                    GUID = Begin
+                        0x17750406207c9f4c91dbd08b7c9c75e0
+                    End
                 End
                 Begin Label
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    Left =9615
+                    Left =9300
                     Top =1380
                     Width =936
                     Height =255
@@ -228,13 +218,16 @@ Begin Form
                     BackColor =12632256
                     Name ="lblConEng"
                     Caption ="Cont. End "
+                    GUID = Begin
+                        0x2f6d78c3bc9dc741918a131515a494c2
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
                     BackStyle =1
                     OverlapFlags =93
                     TextAlign =2
-                    Left =11040
+                    Left =10725
                     Top =1380
                     Width =690
                     Height =255
@@ -242,12 +235,15 @@ Begin Form
                     BackColor =12632256
                     Name ="Label2"
                     Caption ="Cancel"
+                    GUID = Begin
+                        0x3c310911540bff4f9eafb96120818abc
+                    End
                 End
                 Begin Label
                     BackStyle =1
                     OverlapFlags =215
                     TextAlign =2
-                    Left =10560
+                    Left =10245
                     Top =1380
                     Width =501
                     Height =255
@@ -255,6 +251,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label5"
                     Caption ="Draft"
+                    GUID = Begin
+                        0xb150dad22539864bab830329795d8d15
+                    End
                 End
                 Begin OptionGroup
                     OverlapFlags =85
@@ -265,6 +264,9 @@ Begin Form
                     Name ="OptFilter"
                     DefaultValue ="2"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x22f5d68356a8b948b55c83532411ce6c
+                    End
                     Begin
                         Begin Label
                             BackStyle =1
@@ -274,10 +276,13 @@ Begin Form
                             Width =645
                             Height =240
                             FontWeight =700
-                            BackColor =-2147483633
+                            BackColor =12632256
                             ForeColor =-2147483630
                             Name ="txtFilter"
                             Caption ="Filter"
+                            GUID = Begin
+                                0x683513f1e19dc244bf4da6f952da8700
+                            End
                         End
                         Begin OptionButton
                             OverlapFlags =87
@@ -285,6 +290,9 @@ Begin Form
                             Top =945
                             OptionValue =1
                             Name ="Option1"
+                            GUID = Begin
+                                0xee85c6e5d862fd43b500943505b11acb
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =87
@@ -296,6 +304,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="Label32"
                                     Caption ="Cancelled Only"
+                                    GUID = Begin
+                                        0xbcf668075fb2234587a893958ff2b389
+                                    End
                                 End
                             End
                         End
@@ -305,6 +316,9 @@ Begin Form
                             Top =945
                             OptionValue =3
                             Name ="Option3"
+                            GUID = Begin
+                                0xf3800f85e9f6d04d9c12354b151e7439
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =87
@@ -316,6 +330,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="Label37"
                                     Caption ="Monthly Only"
+                                    GUID = Begin
+                                        0x1c31b05cd3530140a20dab84da0f989b
+                                    End
                                 End
                             End
                         End
@@ -325,6 +342,9 @@ Begin Form
                             Top =945
                             OptionValue =4
                             Name ="Option4"
+                            GUID = Begin
+                                0xddef9d2c6505b547aefe82bb90059493
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =87
@@ -336,6 +356,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="Label39"
                                     Caption ="Yearly Only"
+                                    GUID = Begin
+                                        0x01da228ce729c7469cdc73d167e2518f
+                                    End
                                 End
                             End
                         End
@@ -345,6 +368,9 @@ Begin Form
                             Top =945
                             OptionValue =2
                             Name ="Option2"
+                            GUID = Begin
+                                0xf1f8980d0c5c964a9a519c1f089afa7a
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =87
@@ -356,6 +382,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="txtShowAll"
                                     Caption ="Show All"
+                                    GUID = Begin
+                                        0x381361c555b37945bb3cc44fbfa17134
+                                    End
                                 End
                             End
                         End
@@ -370,6 +399,9 @@ Begin Form
                     TabIndex =1
                     Name ="txtAllowEdits"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x5a12905029e7f546a3ab255ce71714f9
+                    End
                 End
                 Begin Label
                     OverlapFlags =87
@@ -380,6 +412,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label47"
                     Caption ="Allow Edits and Filter"
+                    GUID = Begin
+                        0xaf2093c7fcf8054b93e7a8132d19d8b6
+                    End
                 End
                 Begin Label
                     BackStyle =1
@@ -394,7 +429,7 @@ Begin Form
                     Name ="Label50"
                     Caption ="Billing Group"
                     GUID = Begin
-                        0x7fdd852b7e33c147be78d2dbba385a66
+                        0x8ede456cba9c6e40ae5fa5ea837c9f29
                     End
                 End
                 Begin TextBox
@@ -407,7 +442,7 @@ Begin Form
                     TabIndex =2
                     Name ="txtSelRec"
                     GUID = Begin
-                        0xf94e95491de3a94592bb88079f58c238
+                        0x8c9441f9b06cf14ab25effe1a7512b75
                     End
                     Begin
                         Begin Label
@@ -419,7 +454,7 @@ Begin Form
                             Name ="Label57"
                             Caption ="Selected Record"
                             GUID = Begin
-                                0x2b730d24cba5dc47bc5ce25631050aee
+                                0xabe690fa86165547b3ad2ce6402a53fc
                             End
                         End
                     End
@@ -428,7 +463,7 @@ Begin Form
                     BackStyle =1
                     OverlapFlags =85
                     TextAlign =2
-                    Left =7965
+                    Left =7650
                     Top =1380
                     Width =585
                     Height =255
@@ -437,19 +472,22 @@ Begin Form
                     Name ="Label58"
                     Caption ="Rate"
                     GUID = Begin
-                        0x6fdbb3064e279e409f53f45139bbed56
+                        0x267abb31b8611644b8bcec6e54c4c4d4
                     End
                 End
             End
         End
         Begin Section
             Height =270
-            BackColor =-2147483633
+            BackColor =12632256
             Name ="Detail"
+            GUID = Begin
+                0xf5eca24909599147b3714ae91a2cc214
+            End
             Begin
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =85
+                    OverlapFlags =93
                     Left =300
                     Top =15
                     Width =1014
@@ -459,11 +497,14 @@ Begin Form
                     ControlSource ="SUBssn"
                     InputMask ="000\\-00\\-0000;;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xd33e4b299185364786214a8587b8c6b1
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =85
-                    Left =2688
+                    OverlapFlags =93
+                    Left =2592
                     Top =15
                     Width =954
                     Height =255
@@ -472,11 +513,14 @@ Begin Form
                     Name ="ctlSUBfirstNAME"
                     ControlSource ="SUBfirstNAME"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xc017ea77ddcb0d4f9887cf80670e307f
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =85
-                    Left =1374
+                    OverlapFlags =87
+                    Left =1326
                     Top =15
                     Width =1254
                     Height =255
@@ -485,11 +529,14 @@ Begin Form
                     Name ="ctlSUBlastNAME"
                     ControlSource ="SUBlastNAME"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xb3efeabebb45ba40b24523f0b058d119
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =85
-                    Left =3702
+                    OverlapFlags =95
+                    Left =3558
                     Top =15
                     Width =216
                     Height =255
@@ -497,12 +544,15 @@ Begin Form
                     TabIndex =3
                     Name ="ctlSUBmiddleNAME"
                     ControlSource ="SUBmiddleNAME"
+                    GUID = Begin
+                        0xb506a5f873726648810147a04d4eaed8
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
                     OverlapFlags =93
                     TextAlign =3
-                    Left =8727
+                    Left =8376
                     Top =15
                     Width =918
                     Height =255
@@ -513,12 +563,15 @@ Begin Form
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x9e1be2d113d58d4a838157fdb9e6398c
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =95
                     TextAlign =3
-                    Left =9705
+                    Left =9306
                     Top =15
                     Width =918
                     Height =255
@@ -529,12 +582,15 @@ Begin Form
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x472b0f05ef636d438c5e93c17ff52a02
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
                     OldBorderStyle =1
-                    OverlapFlags =85
-                    Left =11259
+                    OverlapFlags =93
+                    Left =10764
                     Top =15
                     Width =471
                     Height =255
@@ -543,11 +599,14 @@ Begin Form
                     Name ="ctlSUBcancelled"
                     ControlSource ="SUBcancelled"
                     Format ="General Number"
+                    GUID = Begin
+                        0x94298a51aacd084788dd210d6fd2035f
+                    End
                 End
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =255
-                    Left =10605
+                    OverlapFlags =87
+                    Left =10236
                     Top =15
                     Width =516
                     Height =255
@@ -556,78 +615,56 @@ Begin Form
                     Name ="ctlSUBbankDraftNo"
                     ControlSource ="SUBbankDraftNo"
                     OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xdf4c8bf7f4e7fb4ab8c6714bfdc5825e
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
                     OldBorderStyle =1
-                    OverlapFlags =85
-                    Left =7941
+                    OverlapFlags =95
+                    Left =7638
                     Top =15
                     Width =726
                     Height =255
                     FontSize =7
                     TabIndex =8
                     Name ="ctlSUBrate"
-                    ControlSource ="Rate"
+                    ControlSource ="SUBrate"
                     Format ="$#,##0.00;($#,##0.00)"
                     OnClick ="[Event Procedure]"
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =247
-                    IMESentenceMode =3
-                    Left =9360
-                    Width =780
-                    TabIndex =9
-                    BackColor =10092543
-                    Name ="RateID"
-                    ControlSource ="RateID"
                     GUID = Begin
-                        0x8e068ecf1051cc449a6b4c9264a6e1e8
-                    End
-                End
-                Begin TextBox
-                    Visible = NotDefault
-                    OverlapFlags =247
-                    IMESentenceMode =3
-                    Left =10320
-                    Width =540
-                    TabIndex =10
-                    BackColor =10092543
-                    Name ="CoverID"
-                    ControlSource ="CoverID"
-                    GUID = Begin
-                        0x0c133c5fc89a7a41838759faca395fff
+                        0xe9f5d9062469c24bb0e4214664841b46
                     End
                 End
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =85
-                    Left =3960
+                    OverlapFlags =95
+                    Left =3786
                     Width =1854
                     Height =255
                     FontSize =7
-                    TabIndex =11
+                    TabIndex =9
                     Name ="txtGroupID"
                     ControlSource ="GRname"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x3f5ebaca4e479d4e8c6040eb35d97bee
+                        0xb424bf52bbd2ce408019e428fa4bdd2a
                     End
                 End
                 Begin TextBox
                     OldBorderStyle =1
-                    OverlapFlags =85
-                    Left =5880
+                    OverlapFlags =87
+                    Left =5652
                     Width =1974
                     Height =255
                     FontSize =7
-                    TabIndex =12
+                    TabIndex =10
                     Name ="txtCoverage"
                     ControlSource ="COVERdescr"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x52e850f322e1b548aafb0a0e71c9ce17
+                        0x17b336819a0fcb4b8982f0cfe34c8562
                     End
                 End
                 Begin CommandButton
@@ -636,20 +673,53 @@ Begin Form
                     Top =60
                     Width =180
                     Height =180
-                    TabIndex =13
+                    TabIndex =11
                     Name ="cmdEditRec"
                     OnClick ="[Event Procedure]"
                     ControlTipText ="Edit Record"
                     GUID = Begin
-                        0xa03bd44b57debc48bfd05a836dc923c5
+                        0x016ecb4cc18aac45bc2a76648b9e62eb
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =4095
+                    Top =15
+                    Width =780
+                    TabIndex =12
+                    BackColor =10092543
+                    Name ="RateID"
+                    ControlSource ="RateID"
+                    GUID = Begin
+                        0xe037e18791bb4445bcef6ad5dfc7d73b
+                    End
+                End
+                Begin TextBox
+                    Visible = NotDefault
+                    OverlapFlags =247
+                    IMESentenceMode =3
+                    Left =4965
+                    Top =15
+                    Width =540
+                    TabIndex =13
+                    BackColor =10092543
+                    Name ="CoverID"
+                    ControlSource ="CoverID"
+                    GUID = Begin
+                        0x5ed2b7af80bd494e8c38de0810b78613
                     End
                 End
             End
         End
         Begin FormFooter
             Height =0
-            BackColor =-2147483633
+            BackColor =12632256
             Name ="FormFooter"
+            GUID = Begin
+                0xdfbe262dce4e5b44bd1bd053c38807d5
+            End
         End
     End
 End
@@ -700,6 +770,8 @@ End Sub
 
 Private Sub cmdEditRec_Click()
 
+    On Error GoTo PROC_ERR
+
     DoCmd.OpenForm "frmUpdateIndividualSubscriber", acNormal, , , , acWindowNormal
     With Forms("frmUpdateIndividualSubscriber")
         .ctlSUBssn = Me.txtSelRec
@@ -716,7 +788,15 @@ Private Sub cmdEditRec_Click()
         .CoverID = Me.CoverID
         .RateID = Me.RateID
     End With
-
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
+  
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure: frmIndivSubscrCoverage.cmdEditRec"
+Resume PROC_EXIT
 End Sub
 
 Private Sub ctlSUBbankDraftNo_Click()
@@ -748,39 +828,51 @@ Private Sub ctlSUBssn_Click()
 End Sub
 
 Private Function SetRecID()
-    
     With Me
         .txtSelRec = Me.SUBssn
     End With
-
 End Function
 Private Sub Form_Current()
-With Me
-        If .ctlSUBcancelled = 2 Then
-            ' On Hold Customer change Name to Yellow
-            .ctlSUBfirstNAME.BackColor = 10092543
-            .ctlSUBlastNAME.BackColor = 10092543
-            .ctlSUBmiddleNAME.BackColor = 10092543
-        ElseIf .ctlSUBcancelled = 3 Then
-            ' Canceled change Name to Red
-            .ctlSUBfirstNAME.BackColor = 8421631
-            .ctlSUBlastNAME.BackColor = 8421631
-            .ctlSUBmiddleNAME.BackColor = 8421631
-            '.ctlSUBcancelled.BackColor = 65280
-        Else
-            ' Leave Name White
-            .ctlSUBfirstNAME.BackColor = 16777215
-            .ctlSUBlastNAME.BackColor = 16777215
-            .ctlSUBmiddleNAME.BackColor = 16777215
-            '.ctlSUBcancelled.BackColor = 16777215
-        End If
-        .Repaint
-        If Not IsNull(.SUBssn) Then
-            .txtSelRec = .SUBssn
-        Else
-            .txtSelRec = ""
-        End If
-    End With
+
+On Error GoTo PROC_ERR
+
+        With Me
+                If .ctlSUBcancelled = 2 Then
+                    ' On Hold Customer change Name to Yellow
+                    .ctlSUBfirstNAME.BackColor = 10092543
+                    .ctlSUBlastNAME.BackColor = 10092543
+                    .ctlSUBmiddleNAME.BackColor = 10092543
+                ElseIf .ctlSUBcancelled = 3 Then
+                    ' Canceled change Name to Red
+                    .ctlSUBfirstNAME.BackColor = 8421631
+                    .ctlSUBlastNAME.BackColor = 8421631
+                    .ctlSUBmiddleNAME.BackColor = 8421631
+                    '.ctlSUBcancelled.BackColor = 65280
+                Else
+                    ' Leave Name White
+                    .ctlSUBfirstNAME.BackColor = 16777215
+                    .ctlSUBlastNAME.BackColor = 16777215
+                    .ctlSUBmiddleNAME.BackColor = 16777215
+                    '.ctlSUBcancelled.BackColor = 16777215
+                End If
+                .Repaint
+                If Not IsNull(.SUBssn) Then
+                    .txtSelRec = .SUBssn
+                Else
+                    .txtSelRec = ""
+                End If
+        End With
+    
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
+
+
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure: frmIndivSubscrCoverage.Form"
+Resume PROC_EXIT
 End Sub
 
 Private Sub OptFilter_Click()
@@ -896,13 +988,16 @@ On Error GoTo PROC_ERR
         
         End With
     End If
-    Exit Sub
     
-      
-PROC_ERR:
-    MsgBox "The following error occured: " & Error$
-    Resume Next
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
 
+
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure: frmIndivSubscrCoverage.optFilter"
+Resume PROC_EXIT
  
 End Sub
 
@@ -912,8 +1007,6 @@ Private Sub Form_Open(Cancel As Integer)
     Me.Filter = ""
 
 End Sub
-
-
 
 Private Sub Text53_Click()
     Call SetRecID
@@ -948,10 +1041,14 @@ On Error GoTo PROC_ERR
      
     End With
     
-    Exit Sub
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  
+Exit Sub
+
 
 PROC_ERR:
-  MsgBox "The following error occured: " & Error$
-  Resume Next
-
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure: frmIndivSubscrCoverage.txtAllowEdits"
+Resume PROC_EXIT
 End Sub

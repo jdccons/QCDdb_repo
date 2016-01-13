@@ -6,15 +6,12 @@ Begin InputTables
     Name ="Subscribers_BEXIN_Blue"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="Subscribers_BEXIN_Blue.SSN"
+    Alias ="Expr2"
     Expression ="Subscribers_BEXIN_Blue.LastName"
+    Alias ="Expr3"
     Expression ="Subscribers_BEXIN_Blue.FirstName"
-End
-Begin Joins
-    LeftTable ="Subscribers_BEXIN_Blue"
-    RightTable ="tblSubscr"
-    Expression ="Subscribers_BEXIN_Blue.SSN = tblSubscr.SubSSN"
-    Flag =2
 End
 Begin OrderBy
     Expression ="Subscribers_BEXIN_Blue.LastName"
@@ -27,6 +24,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="Subscribers_BEXIN_Blue.SSN"
@@ -45,14 +43,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1440
-    Bottom =776
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =551
     Left =-1
     Top =-1
-    Right =1437
+    Right =1253
     Bottom =331
     Left =0
     Top =0
@@ -61,7 +59,7 @@ Begin
         Left =424
         Top =13
         Right =637
-        Bottom =247
+        Bottom =236
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -70,7 +68,7 @@ Begin
         Left =41
         Top =16
         Right =292
-        Bottom =171
+        Bottom =59
         Top =0
         Name ="Subscribers_BEXIN_Blue"
         Name =""

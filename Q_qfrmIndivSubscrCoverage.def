@@ -1,41 +1,41 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"INDIV\"))"
+Where ="(((tblSubscr.SubStatus)=\"INDIV\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="vwRates"
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBmiddleNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBeffDATE"
-    Expression ="tblSubscr.SUBcontBEG"
-    Expression ="tblSubscr.SUBcontEND"
-    Expression ="tblSubscr.SUBcancelled"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblSubscr.SubContBeg"
+    Expression ="tblSubscr.SubContEnd"
+    Expression ="tblSubscr.SubCancelled"
     Expression ="tblSubscr.SUBbankDraftNo"
-    Expression ="tblSubscr.SUBstatus"
+    Expression ="tblSubscr.SubStatus"
     Expression ="tblSubscr.RateID"
     Expression ="tblSubscr.CoverID"
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubRate"
     Expression ="vwRates.COVERdescr"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="vwRates"
-    Expression ="tblSubscr.RateID = vwRates.RateID"
+    Expression ="tblSubscr.RateID=vwRates.RateID"
     Flag =1
     LeftTable ="vwRates"
     RightTable ="tblGrp"
-    Expression ="vwRates.GroupID = tblGrp.GROUPid"
+    Expression ="vwRates.GroupID=tblGrp.GroupID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -56,10 +56,10 @@ Begin
     Left =38
     Top =181
     Right =1135
-    Bottom =520
+    Bottom =505
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =144
     Left =0
     Top =0
@@ -68,7 +68,7 @@ Begin
         Left =21
         Top =6
         Right =197
-        Bottom =101
+        Bottom =94
         Top =50
         Name ="tblSubscr"
         Name =""
@@ -77,7 +77,7 @@ Begin
         Left =235
         Top =6
         Right =331
-        Bottom =116
+        Bottom =109
         Top =1
         Name ="vwRates"
         Name =""
@@ -86,7 +86,7 @@ Begin
         Left =392
         Top =6
         Right =488
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblGrp"
         Name =""

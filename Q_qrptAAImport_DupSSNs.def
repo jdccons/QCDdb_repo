@@ -2,7 +2,7 @@ Operation =1
 Option =0
 Where ="(((ELGEXP.EIRECID)='P') AND ((Mid([EINMPLAN],8,3))='QCD')) OR (((ELGEXP.EIRECID)"
     "='P') AND ((ELGEXP.EINMPLAN)='QCDBLU-MNL'))"
-Having ="(((Count(ELGEXP.[EISSN#]))>1)) OR (((Count(ELGEXP.[EISSN#]))>1))"
+Having ="(((Count(ELGEXP.[EISSN#]))>1 Or (Count(ELGEXP.[EISSN#]))>1))"
 Begin InputTables
     Name ="ELGEXP"
 End
@@ -37,14 +37,14 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =0
-    Left =84
-    Top =106
-    Right =1258
-    Bottom =715
+    State =2
+    Left =-8
+    Top =-30
+    Right =1284
+    Bottom =590
     Left =-1
     Top =-1
-    Right =1163
+    Right =1273
     Bottom =241
     Left =0
     Top =0
@@ -53,8 +53,8 @@ Begin
         Left =38
         Top =6
         Right =217
-        Bottom =189
-        Top =2
+        Bottom =94
+        Top =0
         Name ="ELGEXP"
         Name =""
     End

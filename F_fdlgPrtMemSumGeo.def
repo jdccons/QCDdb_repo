@@ -1,30 +1,36 @@
-Version =17
-VersionRequired =17
-Checksum =1871280007
+Version =20
+VersionRequired =20
+Checksum =1656753431
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
     Width =5760
     DatasheetFontHeight =10
-    Left =300
-    Top =1050
-    Right =7845
-    Bottom =5985
+    Left =-22692
+    Top =1692
+    Right =-15144
+    Bottom =6612
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xf8a8fa3f4dc6e140
     End
     Caption ="Membership Report by Geo ID"
+    MenuBar ="Dialog"
     DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin Label
             BackStyle =0
@@ -42,6 +48,9 @@ Begin Form
             Height =2880
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x67b05f7e49ec4b4db3ff4ebdaa1ce2a3
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -79,6 +88,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0x903304cd0b8cc8428e4e94e156896b43
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -91,6 +103,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text62"
                     Caption ="Geographical  From: "
+                    GUID = Begin
+                        0xf726d3fb98c3914d8a6d6601acb97a2f
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -102,7 +117,10 @@ Begin Form
                     Top =720
                     Width =1015
                     TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x8e6ed5ffca208840974462236b97d860
+                    End
                     Name ="c-GEOfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -120,7 +138,10 @@ Begin Form
                     Top =1005
                     Width =1015
                     TabIndex =2
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x3c9bf9e96715044ab60ee7d746eaf5d5
+                    End
                     Name ="c-GEOto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -139,6 +160,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text24"
                     Caption =" To: "
+                    GUID = Begin
+                        0xb42832edafa30a408b0050d9985d3319
+                    End
                 End
             End
         End
@@ -163,22 +187,22 @@ On Error GoTo Err_PreviewButton_Click
     If Not IsNull([c-GEOfrom]) Then
         If Not IsNull([c-GEOto]) Then
             If strWhere = "" Then
-                strWhere = "[GRPgeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
+                strWhere = "[GRGeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
             Else
-                strWhere = strWhere & " AND [GRPgeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
+                strWhere = strWhere & " AND [GRGeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
             End If
         Else
             If strWhere = "" Then
-                strWhere = "[GRPgeoID] >= '" & Me![c-GEOfrom] & "'"
+                strWhere = "[GRGeoID] >= '" & Me![c-GEOfrom] & "'"
             Else
-                strWhere = strWhere & " AND [GRPgeoID] >= '" & Me![c-GEOfrom] & "'"
+                strWhere = strWhere & " AND [GRGeoID] >= '" & Me![c-GEOfrom] & "'"
             End If
         End If
     ElseIf Not IsNull([c-GEOto]) Then
         If strWhere = "" Then
-            strWhere = "[GRPgeoID] <= '" & Me![c-GEOto] & "'"
+            strWhere = "[GRGeoID] <= '" & Me![c-GEOto] & "'"
         Else
-            strWhere = strWhere & " AND [GRPgeoID] <= '" & Me![c-GEOto] & "'"
+            strWhere = strWhere & " AND [GRGeoID] <= '" & Me![c-GEOto] & "'"
         End If
     End If
 

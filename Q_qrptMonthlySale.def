@@ -1,0 +1,92 @@
+Operation =1
+Option =8
+Where ="(((ARTRAN.TransactionType)=\"I\" Or (ARTRAN.TransactionType)=\"C\") And ((ARTRAN"
+    ".CustomerClassKey)=\"GROUP\"))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="tblGrp"
+    Name ="qryAgtGrp_Primary"
+End
+Begin OutputColumns
+    Alias ="DocNo"
+    Expression ="Trim(RTrim([DocumentNumber]))"
+    Alias ="ApplyNo"
+    Expression ="Trim(RTrim([ApplyTo]))"
+    Alias ="Expr1"
+    Expression ="ARTRAN.CustomerKey"
+    Alias ="Expr2"
+    Expression ="ARTRAN.DocumentAmt"
+    Alias ="Expr3"
+    Expression ="ARTRAN.TransactionType"
+    Expression ="qryAgtGrp_Primary.AGENTid"
+    Alias ="Expr4"
+    Expression ="ARTRAN.TerritoryKey"
+    Alias ="Expr5"
+    Expression ="ARTRAN.CustomerClassKey"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRGeoID"
+    Alias ="DOCmonth"
+    Expression ="Format(Month([DocumentDate]),\"00\")"
+    Alias ="DOCYear"
+    Expression ="Year([DocumentDate])"
+    Alias ="Invoice Date"
+    Expression ="Format(([DocumentDate]),\"mm/dd/yyyy\")"
+End
+Begin OrderBy
+    Expression ="Format(([DocumentDate]),\"mm/dd/yyyy\")"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="3330"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =47
+    Top =43
+    Right =1276
+    Bottom =554
+    Left =-1
+    Top =-1
+    Right =1214
+    Bottom =331
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =55
+        Top =39
+        Right =225
+        Bottom =82
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =314
+        Top =42
+        Right =502
+        Bottom =205
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =539
+        Top =40
+        Right =703
+        Bottom =128
+        Top =0
+        Name ="qryAgtGrp_Primary"
+        Name =""
+    End
+End

@@ -1,17 +1,17 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GroupType)=4) AND ((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GroupType)=4) AND ((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
     Expression ="tblGrp.GroupType"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCancelled"
 End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -19,6 +19,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -31,10 +32,10 @@ Begin
     Left =84
     Top =66
     Right =1250
-    Bottom =745
+    Bottom =616
     Left =-1
     Top =-1
-    Right =1155
+    Right =1151
     Bottom =370
     Left =0
     Top =0
@@ -43,7 +44,7 @@ Begin
         Left =38
         Top =6
         Right =460
-        Bottom =345
+        Bottom =334
         Top =15
         Name ="tblGrp"
         Name =""

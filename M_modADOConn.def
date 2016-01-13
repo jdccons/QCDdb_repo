@@ -1,0 +1,29 @@
+Option Compare Database
+Option Explicit
+Public Function SetConnxn()
+    'Purpose:  sets the SQL Server connection string
+    '
+    '--------------------------------------------------------
+    '
+    ' Parameters:  -
+    ' Returns   :  -
+    ' Programmer:  John Criswell
+    ' Create Date:  12/09/07
+    ' Update Date:  12/09/07
+    ' Updated by:  John Criswell
+    ' Reason:
+    '---------------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    
+    SetConnxn = "Provider=sqloledb;Data Source=SQL;" & _
+             "Initial Catalog=QCDdataSQL2005_dev;User ID=sa;Password=ZAQ!2wsx"
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function

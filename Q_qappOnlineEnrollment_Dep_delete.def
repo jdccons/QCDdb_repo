@@ -25,14 +25,14 @@ Begin OutputColumns
     Expression ="tblDependent_temp.Relationship"
     Alias ="Expr1"
     Name ="DEPgender"
-    Expression ="Mid([tblDependent_temp].[Gender],1,1)"
+    Expression ="Mid(tblDependent_temp.Gender,1,1)"
     Name ="DepEffDate"
     Expression ="tblDependent_temp.EffDate"
 End
 Begin Joins
     LeftTable ="tblDependent_temp"
     RightTable ="tblSubscriber_temp"
-    Expression ="tblDependent_temp.SubSSN = tblSubscriber_temp.SSN"
+    Expression ="tblDependent_temp.SubSSN=tblSubscriber_temp.SSN"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -47,14 +47,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =659
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =444
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =224
     Left =0
     Top =0
@@ -63,7 +63,7 @@ Begin
         Left =105
         Top =17
         Right =304
-        Bottom =154
+        Bottom =150
         Top =0
         Name ="tblDependent_temp"
         Name =""
@@ -72,7 +72,7 @@ Begin
         Left =385
         Top =20
         Right =581
-        Bottom =127
+        Bottom =123
         Top =25
         Name ="tblSubscriber_temp"
         Name =""

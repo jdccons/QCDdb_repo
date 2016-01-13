@@ -1,28 +1,28 @@
 Operation =1
 Option =8
-Where ="(((tblGrp.GRcancelled)=No) AND ((tblGrp.GRhold)=No) AND ((tblGrp.GROUPid) Not Li"
+Where ="(((tblGrp.GRCancelled)=No) AND ((tblGrp.GRHold)=No) AND ((tblGrp.GroupID) Not Li"
     "ke \"INDV*\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRhold"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRHold"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GroupID"
     Alias ="SubName"
     Expression ="(Trim([SUBlastNAME]) & \", \" & Trim([SUBfirstNAME]) & \" \" & Trim([SUBmiddleNA"
         "ME]))"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblGrp.GRname"
-    Expression ="tblSubscr.SUBnoDEPENT"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblGrp.GRName"
+    Expression ="tblSubscr.DepCnt"
     Expression ="tblSubscr.SubID"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -43,10 +43,10 @@ Begin
     Left =102
     Top =142
     Right =1134
-    Bottom =459
+    Bottom =466
     Left =-1
     Top =-1
-    Right =1021
+    Right =1017
     Bottom =144
     Left =0
     Top =0
@@ -55,7 +55,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =38
         Name ="tblGrp"
         Name =""
@@ -64,7 +64,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblSubscr"
         Name =""

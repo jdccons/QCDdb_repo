@@ -1,22 +1,22 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"BEXIN\"))"
+Where ="(((tblSubscr.SubGroupID)=\"BEXIN\"))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -24,6 +24,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -31,10 +32,10 @@ Begin
     Left =62
     Top =48
     Right =1258
-    Bottom =769
+    Bottom =579
     Left =-1
     Top =-1
-    Right =1185
+    Right =1181
     Bottom =351
     Left =0
     Top =0
@@ -43,7 +44,7 @@ Begin
         Left =38
         Top =6
         Right =409
-        Bottom =307
+        Bottom =304
         Top =0
         Name ="tblSubscr"
         Name =""

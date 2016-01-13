@@ -4,15 +4,16 @@ Begin InputTables
     Name ="tblDependent"
 End
 Begin OutputColumns
-    Name ="tblDependent.DEPfirstNAME"
+    Name ="tblDependent.DepFirstName"
     Expression ="ReplaceChars_TSB([DEPfirstNAME],\"$\",\"'\")"
-    Name ="tblDependent.DEPlastNAME"
+    Name ="tblDependent.DepLastName"
     Expression ="ReplaceChars_TSB([DEPlastNAME],\"$\",\"'\")"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -20,10 +21,10 @@ Begin
     Left =71
     Top =170
     Right =974
-    Bottom =542
+    Bottom =530
     Left =-1
     Top =-1
-    Right =896
+    Right =888
     Bottom =180
     Left =0
     Top =0
@@ -32,7 +33,7 @@ Begin
         Left =72
         Top =10
         Right =347
-        Bottom =149
+        Bottom =143
         Top =2
         Name ="tblDependent"
         Name =""

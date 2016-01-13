@@ -1,0 +1,77 @@
+Operation =1
+Option =0
+Where ="((((tblGrp.GRContBeg)>#9/1/1999# Or (tblGrp.GRContBeg)=#9/1/1999#) And ((tblGrp."
+    "GRContBeg)<#1/1/2000# Or (tblGrp.GRContBeg)=#1/1/2000#)))"
+Begin InputTables
+    Name ="tblGrp"
+    Name ="qryNewPayingSubscribers"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="qryNewPayingSubscribers.SUB_LUname"
+    Expression ="qryNewPayingSubscribers.SubEffDate"
+End
+Begin Joins
+    LeftTable ="tblGrp"
+    RightTable ="qryNewPayingSubscribers"
+    Expression ="tblGrp.GroupID=qryNewPayingSubscribers.SubGroupID"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="tblGrp.GroupID"
+    Flag =0
+    Expression ="qryNewPayingSubscribers.SUB_LUname"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblGrp.GRname"
+        dbInteger "ColumnWidth" ="2775"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblGrp.GRcontBEG"
+        dbInteger "ColumnWidth" ="1245"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =467
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =247
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =241
+        Bottom =139
+        Top =0
+        Name ="qryNewPayingSubscribers"
+        Name =""
+    End
+    Begin
+        Left =290
+        Top =6
+        Right =541
+        Bottom =184
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+End

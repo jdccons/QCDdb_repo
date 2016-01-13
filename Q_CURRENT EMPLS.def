@@ -5,24 +5,24 @@ Begin InputTables
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Expression ="tblSubscr.SubID"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
     Expression ="tblRates.Rate"
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblSubscr.SUBnoDEPENT"
-    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="tblSubscr.SubEffDate"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -39,10 +39,10 @@ Begin
     Left =47
     Top =69
     Right =1258
-    Bottom =707
+    Bottom =711
     Left =-1
     Top =-1
-    Right =1204
+    Right =1196
     Bottom =462
     Left =0
     Top =0
@@ -51,7 +51,7 @@ Begin
         Left =38
         Top =6
         Right =461
-        Bottom =375
+        Bottom =364
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -60,7 +60,7 @@ Begin
         Left =499
         Top =6
         Right =745
-        Bottom =120
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

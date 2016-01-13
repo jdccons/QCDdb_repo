@@ -1,9 +1,10 @@
 Version =20
 VersionRequired =20
-Checksum =-835643924
+Checksum =-1605164759
 Begin Form
     AutoResize = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
@@ -17,15 +18,17 @@ Begin Form
     Width =3420
     DatasheetFontHeight =10
     ItemSuffix =7
-    Left =7890
-    Top =1455
-    Right =11055
-    Bottom =4110
+    Left =6828
+    Top =1704
+    Right =10284
+    Bottom =4464
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xb686f053efade240
     End
     Caption ="Open Group Form"
+    OnOpen ="[Event Procedure]"
+    MenuBar ="Dialog"
     DatasheetFontName ="Arial"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
@@ -116,7 +119,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0xe58657bf9f6c104c8a7aa443c48b74e7
+                0x8128e2cb6246a54993948f7742642ad3
             End
             Begin
                 Begin CommandButton
@@ -129,7 +132,7 @@ Begin Form
                     Caption ="Read Only"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0xae98b9848aabe74496603e1bdc04f198
+                        0x43e9e8c6428d6e4d9852f9ef9c4010af
                     End
                 End
                 Begin CommandButton
@@ -143,7 +146,7 @@ Begin Form
                     Caption ="Data Entry"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0xf713a12836055547b2fd9fc814834e3b
+                        0x89e9fa71ef2a13408d479d564d7ae492
                     End
                 End
                 Begin TextBox
@@ -155,7 +158,7 @@ Begin Form
                     Name ="txtPassword"
                     InputMask ="Password"
                     GUID = Begin
-                        0x8176e0160371854aa02c5e08e9760da9
+                        0x5679ce63f0996641bd3d5a772d6aac30
                     End
                     Begin
                         Begin Label
@@ -167,7 +170,7 @@ Begin Form
                             Name ="Label3"
                             Caption ="Password"
                             GUID = Begin
-                                0x74210352e9f1d04e8b5fff8bb5e40eba
+                                0x41a50a5bc821294fa4f47efb1a4e1423
                             End
                         End
                     End
@@ -187,7 +190,7 @@ Begin Form
                     Name ="Label4"
                     Caption ="Open Group Form"
                     GUID = Begin
-                        0x3b89f82eec934e4bb45975728c786e02
+                        0x4a5867d6aac0674c8abd4f7717161f16
                     End
                 End
                 Begin TextBox
@@ -201,7 +204,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtAgentID"
                     GUID = Begin
-                        0x5a70e3f195a1e34db0b4456e140a893a
+                        0x8bc81065966b0f4bbf441efa9f4e85f6
                     End
                 End
             End
@@ -299,7 +302,7 @@ Private Sub cmdOpenReadOnly_Click()
         .ctlGRsrvCONTtitle.Locked = True
         .GRfax.Locked = True
         .ctlGRemail.Locked = True
-        .GRPgeoID.Locked = True
+        .GRgeoID.Locked = True
         .ctlGRcancelled.Locked = True
         .ctlGRreinstatedDate.Locked = True
         .ctlGRinvSort.Locked = True
@@ -331,4 +334,8 @@ Exit_Point:
 ErrorHandler:
     MsgBox Err.DESCRIPTION & " " & Err.Number
     Resume Exit_Point
+End Sub
+
+Private Sub Form_Open(Cancel As Integer)
+   Me.txtPassword.SetFocus
 End Sub

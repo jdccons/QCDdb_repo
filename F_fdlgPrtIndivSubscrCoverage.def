@@ -1,9 +1,10 @@
 Version =20
 VersionRequired =20
-Checksum =933712024
+Checksum =328600796
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     OrderByOn = NotDefault
@@ -16,10 +17,10 @@ Begin Form
     GridY =24
     DatasheetFontHeight =10
     ItemSuffix =41
-    Left =5040
-    Top =1320
-    Right =12240
-    Bottom =5265
+    Left =5880
+    Top =432
+    Right =13080
+    Bottom =4380
     DatasheetGridlinesColor =12632256
     Filter ="[SUBplanIDin] Like \"*M*\""
     OrderBy ="tblSubscr.SUBlastNAME"
@@ -28,7 +29,7 @@ Begin Form
     End
     RecordSource ="qfrmIndivSubscrCoverage"
     Caption ="Individual Subscriber Coverage Report"
-    MenuBar ="ReportMenuBar"
+    MenuBar ="Dialog"
     DatasheetFontName ="Arial"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
@@ -100,6 +101,10 @@ Begin Form
         0x08001b002e000100000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000446f6375436f6d2050444620506f72743a00
     End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin Label
             BackStyle =0
@@ -135,6 +140,9 @@ Begin Form
             Height =3960
             BackColor =-2147483633
             Name ="FormHeader"
+            GUID = Begin
+                0x64509ae10956aa44a95ed77986aa090a
+            End
             Begin
                 Begin OptionGroup
                     OverlapFlags =85
@@ -144,6 +152,9 @@ Begin Form
                     Height =2600
                     Name ="Filter"
                     DefaultValue ="2"
+                    GUID = Begin
+                        0xc5d8a8ac02563c42afc0358341d29a13
+                    End
                     Begin
                         Begin Label
                             BackStyle =1
@@ -157,6 +168,9 @@ Begin Form
                             ForeColor =-2147483630
                             Name ="txtFilter"
                             Caption ="Filter"
+                            GUID = Begin
+                                0x820dacb27b8d624dafd506224c9bad80
+                            End
                         End
                         Begin OptionButton
                             OverlapFlags =87
@@ -165,6 +179,9 @@ Begin Form
                             Width =1610
                             OptionValue =1
                             Name ="Option1"
+                            GUID = Begin
+                                0xe252d8f86691fa4c866bc6a8e997c4f6
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -176,6 +193,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="Label32"
                                     Caption ="Cancelled Only"
+                                    GUID = Begin
+                                        0x56444cb377621a46984217e3cdfbc339
+                                    End
                                 End
                             End
                         End
@@ -186,6 +206,9 @@ Begin Form
                             Width =1610
                             OptionValue =3
                             Name ="Option3"
+                            GUID = Begin
+                                0x7e7ed969f56a2d41a922a79315b81ccc
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -197,6 +220,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="Label37"
                                     Caption ="Monthly Only"
+                                    GUID = Begin
+                                        0xfe76517bc3b63649bebffcbddb3b02ff
+                                    End
                                 End
                             End
                         End
@@ -207,6 +233,9 @@ Begin Form
                             Width =1730
                             OptionValue =4
                             Name ="Option4"
+                            GUID = Begin
+                                0x799bbd28474b6546a40f7c1090b05328
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -218,6 +247,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="Label39"
                                     Caption ="Yearly Only"
+                                    GUID = Begin
+                                        0xced7ac3707222f4abf6981177422ac41
+                                    End
                                 End
                             End
                         End
@@ -228,6 +260,9 @@ Begin Form
                             Width =1550
                             OptionValue =2
                             Name ="Option2"
+                            GUID = Begin
+                                0x740d7de869925f418b714620bf19a4d1
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -239,6 +274,9 @@ Begin Form
                                     ForeColor =-2147483630
                                     Name ="txtShowAll"
                                     Caption ="Show All"
+                                    GUID = Begin
+                                        0x163f8d22493fd2488e872144945afc45
+                                    End
                                 End
                             End
                         End
@@ -281,6 +319,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0x40567a259a92bb48bcdf60c23a9a9dec
+                    End
                 End
             End
         End
@@ -288,11 +329,17 @@ Begin Form
             Height =0
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x48a7eab07aafcc409aa923cac879376c
+            End
         End
         Begin FormFooter
             Height =0
             BackColor =-2147483633
             Name ="FormFooter"
+            GUID = Begin
+                0x17b5c1be2586a649a2031d8ae7c78b27
+            End
         End
     End
 End
@@ -322,19 +369,17 @@ Private Sub PreviewButton_Click()
         strWhere = "[SUBstatus] = ""INDIV"""
         DoCmd.OpenReport "rptIndivSubscrCoverage", acViewPreview, , strWhere
     End If
-    'Print Individual Subscribers who are monthly and haven't cancelled
     
+    'Print Individual Subscribers who are monthly and haven't cancelled
     If (Me![Filter] = 3) Then
-'        strWhere = "[PLANindTYPE] = ""MONTHLY"" and [SUBcancelled] <> 3"
-'        DoCmd.OpenReport "rptIndivSubscrCoverage", acViewPreview, , strWhere
-        DoCmd.OpenForm "fdlgPrtIndivSubscrCoverageCriteria", acNormal, , , , acWindowNormal
+        strWhere = "[SubGroupID] = ""INDVM"" and [SUBcancelled] <> 3"
+        DoCmd.OpenReport "rptIndivSubscrCoverage", acViewPreview, , strWhere
     End If
     
     'Print only Individual Subscribers with a yearly plan, that haven't cancelled
     If (Me![Filter] = 4) Then
-        strWhere = "[GroupID] IN ""('INDV1','INDV2','INDV3')"" and [SUBcancelled] <> 3"
+        strWhere = "[SubGroupID] IN ""('INDV1','INDV2','INDV3')"" and [SUBcancelled] <> 3"
         DoCmd.OpenReport "rptIndivSubscrCoverage", acViewPreview, , strWhere
-    ''DoCmd.ApplyFilter "qrptIndivSubscrCoverage", "[PLANindDESC] Like ""*Year*"""
-  
-     End If
+    End If
+    
 End Sub

@@ -1,28 +1,27 @@
 Version =20
 VersionRequired =20
-Checksum =618308477
+Checksum =184114219
 Begin Form
-    AutoResize = NotDefault
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
-    BorderStyle =3
-    Width =5040
-    ItemSuffix =20
-    Left =7035
-    Top =2940
-    Right =12075
-    Bottom =5685
+    Width =2730
+    ItemSuffix =25
+    Left =-22692
+    Top =1692
+    Right =-18168
+    Bottom =5580
     RecSrcDt = Begin
         0xd359ddb3b2c4e140
     End
     Caption ="Print Invoices"
+    MenuBar ="Dialog"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
@@ -69,127 +68,131 @@ Begin Form
         0x00000000000000000000000000000000000000000000000048504c617365724a ,
         0x65743232303000
     End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
         Begin CommandButton
             TextFontFamily =2
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
         End
         Begin ComboBox
             SpecialEffect =2
             FontName ="Tahoma"
         End
         Begin Section
-            Height =2760
+            Height =1845
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0xec3b4337d18cf04f982052434851b2a6
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
                     TextFontFamily =34
-                    Left =855
-                    Top =2040
-                    Width =1242
-                    Height =598
+                    Left =360
+                    Top =195
+                    Width =288
+                    Height =288
                     FontSize =8
-                    TabIndex =2
                     Name ="Rate"
-                    Caption ="Print Sorted by Rate"
                     StatusBarText ="Preview Report"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
-                End
-                Begin Label
-                    BackStyle =0
-                    OverlapFlags =85
-                    TextAlign =3
-                    Left =861
-                    Top =555
-                    Width =2010
-                    Height =240
-                    FontWeight =700
-                    BackColor =12632256
-                    Name ="Text8"
-                    Caption ="Invoice Number From: "
-                End
-                Begin Label
-                    BackStyle =0
-                    OverlapFlags =85
-                    TextAlign =3
-                    Left =885
-                    Top =915
-                    Width =1980
-                    Height =240
-                    FontWeight =700
-                    BackColor =12632256
-                    Name ="Text11"
-                    Caption ="  Invoice Number To: "
-                End
-                Begin Label
-                    OverlapFlags =85
-                    TextAlign =2
-                    Left =60
-                    Top =1560
-                    Width =4890
-                    Height =360
-                    FontWeight =700
-                    BackColor =12632256
-                    Name ="Text16"
-                    Caption ="To print \"all\" invoices, leave invoice numbers blank."
+                    GUID = Begin
+                        0xa5eabc9ab5329c43a13293ab92e9d498
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
                     TextFontFamily =34
-                    Left =2715
-                    Top =2040
-                    Width =1242
-                    Height =598
+                    Left =345
+                    Top =645
+                    Width =288
+                    Height =288
                     FontSize =8
-                    TabIndex =3
+                    TabIndex =1
                     Name ="Name"
-                    Caption ="Print Sorted by Name"
                     StatusBarText ="Preview Report"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
-                End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    SpecialEffect =0
-                    OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =2901
-                    Top =555
-                    Width =1413
-                    FontSize =10
-                    ColumnInfo ="\"\";\"\";\"10\";\"32\""
                     GUID = Begin
-                        0x03e0063b0514a84ca7f2e40d74e5ed92
+                        0xd9b13ee579dbae418ce54d5c67b962d4
                     End
-                    Name ="InvFrom"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT ARHDR.TransactionNumber FROM ARHDR INNER JOIN tblGrp ON ARHDR.CustomerKey"
-                        " = tblGrp.GROUPid WHERE (((tblGrp.GroupType) In (1,2,3))) ORDER BY ARHDR.Transac"
-                        "tionNumber;"
-                    FontName ="MS Sans Serif"
                 End
-                Begin ComboBox
-                    LimitToList = NotDefault
-                    SpecialEffect =0
+                Begin Label
                     OverlapFlags =85
-                    IMESentenceMode =3
-                    Left =2901
-                    Top =915
-                    Width =1413
-                    FontSize =10
-                    TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"10\";\"32\""
+                    Left =840
+                    Top =225
+                    Width =1725
+                    Height =285
+                    Name ="Label22"
+                    Caption ="Print sorted by rate"
                     GUID = Begin
-                        0x8455f03ab92d5b498715cec3863d656e
+                        0xbad43d9d9823764090a34e066d426189
                     End
-                    Name ="InvTo"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT ARHDR.TransactionNumber FROM ARHDR INNER JOIN tblGrp ON ARHDR.CustomerKey"
-                        " = tblGrp.GROUPid WHERE (((tblGrp.GroupType) In (1,2,3))) ORDER BY ARHDR.Transac"
-                        "tionNumber;"
-                    FontName ="MS Sans Serif"
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =855
+                    Top =705
+                    Width =1710
+                    Height =270
+                    Name ="Label23"
+                    Caption ="Print sorted by name"
+                    GUID = Begin
+                        0x01b4a8deb212f74e89d60e630b7167e8
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1950
+                    Top =1140
+                    Width =576
+                    Height =576
+                    TabIndex =2
+                    Name ="btnExit"
+                    Caption ="Command24"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x34fd9d497b15c545aefbe9294ba5ea90
+                    End
                 End
             End
         End
@@ -206,60 +209,6 @@ Sub BuildTempTables(strSelection As String, strInvFrom As String, strInvTo As St
 
     On Error GoTo ErrorHandler
     
-    Dim db As DAO.Database
-    
-    Dim strWhere As String
-    Dim strSQL As String
-    
-    Set db = CurrentDb()
-    
-    db.Execute "DELETE ARHDR_temp.* FROM ARHDR_temp;", dbSeeChanges
-    db.Execute "DELETE ARLIN_temp.* FROM ARLIN_temp;", dbSeeChanges
-    
-    If strSelection = "All" Then
-        'build temp tables for report
-        DoCmd.SetWarnings False
-        DoCmd.OpenQuery "qappARHDR_temp"
-        DoCmd.OpenQuery "qappARLIN_temp"
-        DoCmd.SetWarnings True
-    ElseIf strSelection = "Range" Then
-        
-        'header records
-        strWhere = "WHERE [ARHDR].[TransactionNumber] Between '" & strInvFrom & "' and '" & strInvTo & "';"
-        strSQL = "INSERT INTO ARHDR_temp ( Custkey, Custname, " & _
-             "CustAdd1Trim, Custaddr2, CityStateZip, Tranno, " & _
-             "Invdate, Salespkey, Spare, InvTot, GroupType, " & _
-             "GroupID, InvoiceType ) " & _
-             "SELECT DISTINCTROW ARHDR.CustomerKey, ARHDR." & _
-             "CustomerName, Trim([CustomerAddress1]) AS " & _
-             "CustAdd1Trim, ARHDR.CustomerAddress2, Trim(" & _
-             "[CustomerCity]) & ', ' & Trim([CustomerState]) & " & _
-             "'  ' & Trim([CustomerZipCode]) AS CityStateZip, " & _
-             "ARHDR.TransactionNumber, ARHDR.InvoiceDate, ARHDR." & _
-             "SalespersonKey, ARHDR.Spare, " & _
-             "SumInvoice([TransactionNumber]) AS InvTot, tblGrp.GroupType, " & _
-             "tblGrp.GroupID, tblGrp.InvoiceType " & _
-             "FROM ARHDR INNER JOIN tblGrp ON ARHDR.CustomerKey " & _
-             "= tblGrp.GroupID " & strWhere
-          
-        db.Execute strSQL, dbSeeChanges
-        
-        'detail records
-        strWhere = "WHERE [ARLIN].[TransactionNumber] Between '" & strInvFrom & "' and '" & strInvTo & "';"
-        
-        strSQL = "INSERT INTO ARLIN_temp ( Tranno, Description, "
-        strSQL = strSQL & "Unitprice ) "
-        strSQL = strSQL & "SELECT DISTINCTROW ARLIN.TransactionNumber, ARLIN."
-        strSQL = strSQL & "ItemDescription, ARLIN.Unitprice "
-        strSQL = strSQL & "FROM ARLIN " & strWhere
-        
-        'Debug.Print strSQL
-        
-        db.Execute strSQL, dbSeeChanges
-    End If
-    
-    db.Close
-    Set db = Nothing
     
 Exit_Point:
     Exit Sub
@@ -310,31 +259,10 @@ Private Sub Rate_Click()
     
     On Error GoTo ErrorHandler
     
-    Dim strInvFrom As String
-    Dim strInvTo As String
-    
     Me.Visible = False
+    Call BuildTempTables("All", "", "")
+    DoCmd.OpenReport "rptInv", A_PREVIEW, "qrptInv"
     
-    If IsNull([InvFrom]) Then
-        Call BuildTempTables("All", "", "")
-        DoCmd.OpenReport "rptInv", A_PREVIEW, "qrptInv"
-    Else
-        If Not IsNull([InvFrom]) Then
-            strInvFrom = Me![InvFrom]
-        End If
-
-        If IsNull([InvTo]) Then
-            strInvTo = [InvFrom]
-        End If
-
-        If Not IsNull([InvTo]) Then
-            strInvTo = Me![InvTo]
-        End If
-        
-        Call BuildTempTables("Range", InvFrom, InvTo)
-        DoCmd.OpenReport "rptInv", A_PREVIEW, "qrptInv"
-    End If
- 
 Exit_Point:
     Exit Sub
     
@@ -342,4 +270,18 @@ ErrorHandler:
     MsgBox Err.DESCRIPTION & " " & Err.Number
     Resume Exit_Point
   
+End Sub
+Private Sub btnExit_Click()
+On Error GoTo Err_btnExit_Click
+
+
+    DoCmd.Close
+
+Exit_btnExit_Click:
+    Exit Sub
+
+Err_btnExit_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_btnExit_Click
+    
 End Sub

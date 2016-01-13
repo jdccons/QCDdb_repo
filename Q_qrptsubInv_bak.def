@@ -1,0 +1,50 @@
+Operation =1
+Option =8
+Where ="(((ARLINH_local.LineItemType)=\"1\"))"
+Begin InputTables
+    Name ="ARLINH_local"
+End
+Begin OutputColumns
+    Alias ="Tranno"
+    Expression ="ARLINH_local.Spare"
+    Alias ="Description"
+    Expression ="ARLINH_local.ItemKey"
+    Alias ="Name"
+    Expression ="ARLINH_local.ItemDescription"
+    Expression ="ARLINH_local.UnitPrice"
+    Expression ="ARLINH_local.LineItemType"
+    Expression ="ARLINH_local.DocumentNumber"
+    Expression ="ARLINH_local.CustomerKey"
+    Expression ="ARLINH_local.ShipDate"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =569
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =349
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =11
+        Right =217
+        Bottom =264
+        Top =35
+        Name ="ARLINH_local"
+        Name =""
+    End
+End

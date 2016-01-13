@@ -1,29 +1,28 @@
 Operation =3
 Name ="tblInvHdrPreliminary"
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"INDIV\") AND ((Left$([SUB_LUname],1))>=[Forms]![frmInv"
-    "IndivBulk]![LetterFrom] And (Left$([SUB_LUname],1))<=[Forms]![frmInvIndivBulk]!["
-    "LetterTo]) AND ((tblSubscr.SUBcancelled)=No) AND ((tblPlanIndiv.PLANindTYPE)=\"M"
-    "ONTHLY\"))"
+Where ="(((tblSubscr.SubStatus)=\"INDIV\") And ((Left$([SUB_LUname],1))>=Forms!frmInvInd"
+    "ivBulk!LetterFrom And (Left$([SUB_LUname],1))<=Forms!frmInvIndivBulk!LetterTo) A"
+    "nd ((tblSubscr.SubCancelled)=No) And ((tblPlanIndiv.PlanIndType)=\"MONTHLY\"))"
 Begin InputTables
     Name ="tblPlanIndiv"
     Name ="tblSubscr"
 End
 Begin OutputColumns
     Name ="Custkey"
-    Expression ="tblSubscr.PLTcustKEY"
+    Expression ="tblSubscr.PltCustKey"
     Name ="Custname"
     Expression ="tblSubscr.SUB_LUname"
     Name ="Custaddr1"
-    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SubStreet1"
     Name ="Custaddr2"
-    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SubStreet2"
     Name ="Custcity"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Name ="Custstate"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Name ="Custzip"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubZip"
     Alias ="TRANSno"
     Name ="Tranno"
     Expression ="Null"
@@ -31,7 +30,7 @@ Begin OutputColumns
     Name ="Invdate"
     Expression ="DLookUp(\"[FieldDateValue]\",\"tblConstants\",\"[FieldName] = 'InvoiceDate'\")"
     Name ="Territkey"
-    Expression ="tblSubscr.SUBgeoID"
+    Expression ="tblSubscr.SubGeoID"
     Name ="Salespkey"
     Expression ="tblSubscr.SUBagentID1"
     Alias ="RecUser"
@@ -44,22 +43,17 @@ Begin OutputColumns
     Name ="RecTime"
     Expression ="Time()"
     Name ="Checkamt"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubRate"
     Name ="Checkno"
     Expression ="tblSubscr.SUBbankDraftNo"
     Name ="Custclass"
-    Expression ="tblSubscr.SUBstatus"
-End
-Begin Joins
-    LeftTable ="tblPlanIndiv"
-    RightTable ="tblSubscr"
-    Expression ="tblPlanIndiv.PLANindID = tblSubscr.SUBplanIDin"
-    Flag =1
+    Expression ="tblSubscr.SubStatus"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -67,10 +61,10 @@ Begin
     Left =128
     Top =84
     Right =778
-    Bottom =412
+    Bottom =434
     Left =-1
     Top =-1
-    Right =643
+    Right =635
     Bottom =170
     Left =0
     Top =0
@@ -79,7 +73,7 @@ Begin
         Left =354
         Top =6
         Right =443
-        Bottom =128
+        Bottom =124
         Top =0
         Name ="tblPlanIndiv"
         Name =""
@@ -88,7 +82,7 @@ Begin
         Left =55
         Top =5
         Right =316
-        Bottom =127
+        Bottom =123
         Top =37
         Name ="tblSubscr"
         Name =""

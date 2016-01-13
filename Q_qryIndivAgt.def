@@ -1,0 +1,70 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="tblAgent"
+    Alias ="a"
+    Name ="tblIndivAgt"
+    Alias ="ia"
+End
+Begin OutputColumns
+    Expression ="ia.SubscrId"
+    Expression ="a.Agency"
+    Expression ="a.PayCommTo"
+    Expression ="ia.AgentId"
+    Expression ="ia.Primary"
+    Expression ="ia.AgentRate"
+    Expression ="a.Agent_LUname"
+    Expression ="ia.PltCustKey"
+End
+Begin Joins
+    LeftTable ="a"
+    RightTable ="ia"
+    Expression ="a.AgentId=ia.AgentId"
+    Flag =1
+End
+Begin OrderBy
+    Expression ="ia.SubscrId"
+    Flag =0
+    Expression ="ia.Primary"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =-36
+    Top =110
+    Right =1342
+    Bottom =525
+    Left =-1
+    Top =-1
+    Right =1363
+    Bottom =235
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =124
+        Top =0
+        Name ="a"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =124
+        Top =0
+        Name ="ia"
+        Name =""
+    End
+End

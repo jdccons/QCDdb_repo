@@ -1,0 +1,144 @@
+Option Compare Database
+
+Public g_adoRS As New ADODB.Recordset
+Public g_adoConnection As New ADODB.Connection
+Public g_adoCommand As New ADODB.Command
+Public g_adoParm As New ADODB.Parameter
+
+Public g_daoRS As DAO.Recordset
+Public g_daoDB As DAO.Database
+
+
+Public g_lngResult                   As Long
+Public g_objPopup                    As Object
+Public g_iRtnVal                     As Long
+Public g_sRtnVal                     As String
+
+Public Const cScrollBarWidth         As Long = 250
+Public Const cGap                    As Long = 100
+Public Const cButtonHeight           As Long = 400
+Public gintCounter                   As Long
+Public Sub ExecuteSQL(strSQL, Optional lngTimeOut As Long)
+  On Error GoTo Err_ExecuteSQL
+
+  If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
+  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+
+  g_adoConnection.ConnectionString = SetConnxn
+  g_adoConnection.Open
+    
+  g_adoCommand.CommandTimeout = 360
+  g_adoCommand.ActiveConnection = g_adoConnection
+  g_adoCommand.CommandText = strSQL
+    
+  Set g_adoRS = g_adoCommand.Execute
+  
+'  If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
+'  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+ 
+Exit_ExecuteSQL:
+    Exit Sub
+
+Err_ExecuteSQL:
+    MsgBox "SQL statement could not be executed!" & vbCrLf & _
+            "SQL Statement:  " & strSQL & vbCrLf & _
+            "Error number:  " & Err.Number & vbCrLf & _
+            "Description:  " & Err.DESCRIPTION & vbCrLf & _
+            "Error source:  " & Err.Source
+
+    Resume Exit_ExecuteSQL
+  
+End Sub
+Public Sub GetOutPutParm(sSQL As String)
+'    Parameter 0 is the stored procedure Return code.
+'    sParmName = "Return"
+'    Set adoPRM = adoCMD.CreateParameter(sParmName, adInteger, adParamReturnValue, , 0)
+'    adoCMD.Parameters.Append adoPRM
+'    adoCMD.Parameters(sParmName).Value = -1
+   
+   On Error GoTo Err_GetOutPutParm
+   
+   Dim strSQLErrorMessage As String
+   
+   If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+   
+   With g_adoConnection
+        .ConnectionString = SetConnxn
+        .Open
+   End With
+   
+   With g_adoCommand
+       .ActiveConnection = g_adoConnection
+       .CommandType = adCmdStoredProc
+       .CommandText = sSQL
+       Set g_adoParm = .CreateParameter("Return", adVarChar, adParamOutput, 255)
+       .Parameters.Append g_adoParm
+       .Execute
+       g_sRtnVal = .Parameters.Item("Return")
+   End With
+
+  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+  
+  Set g_adoCommand = Nothing
+  Set g_adoConnection = Nothing
+  Set g_adoRS = Nothing
+  Set g_adoParm = Nothing
+  
+Exit_GetOutPutParm:
+    Exit Sub
+
+Err_GetOutPutParm:
+    If Err.Number <> -2147217900 Then
+        strSQLErrorMessage = GetSQLErrorMessage()
+        MsgBox "SQL statement could not be executed :" & vbCrLf & strCommand _
+               & vbCrLf & Err.DESCRIPTION & vbCrLf & _
+               "Error message: " & strSQLErrorMessage, vbOKOnly, "QCD " & Err.Source
+    Else
+        MsgBox "SQL statement could not be executed!" & vbCrLf & _
+            "SQL Statement:  " & strSQL & vbCrLf & _
+            "Error number:  " & Err.Number & vbCrLf & _
+            "Description:  " & Err.DESCRIPTION & vbCrLf & _
+            "Error source:  " & Err.Source
+    End If
+    g_adoConnection.Close
+    Resume Exit_GetOutPutParm
+End Sub
+
+Public Sub LoadADORecordset(strSQL, Optional lngTimeOut As Long)
+  
+  On Error GoTo Err_ExecuteSQL
+  
+  If g_adoRS.STATE = adStateOpen Then g_adoRS.Close
+  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+  
+  g_adoConnection.ConnectionString = SetConnxn
+  g_adoConnection.Open
+    
+   g_adoRS.CursorLocation = adUseServer
+   g_adoRS.CursorType = adOpenStatic
+  
+   g_adoRS.Open strSQL, g_adoConnection
+  
+Exit_ExecuteSQL:
+    Exit Sub
+
+Err_ExecuteSQL:
+    MsgBox "SQL statement could not be executed :" & vbCrLf & strCommand _
+           & vbCrLf & Err.DESCRIPTION, vbOKOnly, "QCD " & Err.Source
+    g_adoConnection.Close
+    Resume Exit_ExecuteSQL
+
+End Sub
+
+Public Function GetSQLErrorMessage() As String
+    
+    Dim strSQL As String
+    Dim strSQLErrorMessage As String
+    strSQL = "select ProcedureName, ErrorLine, ErrorMessage, AdditionalInfo " & _
+                "from ProcedureLog " & _
+                "where LogDate = (select Max(LogDate) from ProcedureLog);"
+    LoadADORecordset (strSQL)
+    strSQLErrorMessage = "Procedure:  " & g_adoRS("ProcedureName") & " " & vbCrLf & "Error Line:  " & CStr(g_adoRS("ErrorLine")) & " " & vbCrLf & "Error Message:  " & g_adoRS("ErrorMessage") & " " & vbCrLf & "Error Occured at:  " & g_adoRS("AdditionalInfo")
+    GetSQLErrorMessage = strSQLErrorMessage
+    
+End Function

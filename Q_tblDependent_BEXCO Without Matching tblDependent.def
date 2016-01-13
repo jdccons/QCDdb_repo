@@ -6,18 +6,18 @@ Begin InputTables
     Name ="tblDependent"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="tblDependent_BEXCO.SSN"
+    Alias ="Expr2"
     Expression ="tblDependent_BEXCO.[Type of dependent]"
+    Alias ="Expr3"
     Expression ="tblDependent_BEXCO.[Depn First name]"
+    Alias ="Expr4"
     Expression ="tblDependent_BEXCO.[Depn Last name]"
+    Alias ="Expr5"
     Expression ="tblDependent_BEXCO.[Depn Gender]"
+    Alias ="Expr6"
     Expression ="tblDependent_BEXCO.[Depn Birth Date]"
-End
-Begin Joins
-    LeftTable ="tblDependent_BEXCO"
-    RightTable ="tblDependent"
-    Expression ="tblDependent_BEXCO.SSN = tblDependent.DepSubID"
-    Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -57,10 +57,10 @@ Begin
     Left =18
     Top =40
     Right =1258
-    Bottom =352
+    Bottom =364
     Left =-1
     Top =-1
-    Right =1229
+    Right =1225
     Bottom =144
     Left =0
     Top =0
@@ -69,7 +69,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =49
         Top =0
         Name ="tblDependent_BEXCO"
         Name =""
@@ -78,7 +78,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblDependent"
         Name =""

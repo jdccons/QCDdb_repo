@@ -13,7 +13,7 @@ End
 Begin Joins
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblImportDependentTemp"
-    Expression ="tblImportGroupTemp.SSN = tblImportDependentTemp.DepID"
+    Expression ="tblImportGroupTemp.SSN=tblImportDependentTemp.DepID"
     Flag =1
 End
 Begin OrderBy
@@ -30,6 +30,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -37,10 +39,10 @@ Begin
     Left =114
     Top =24
     Right =990
-    Bottom =577
+    Bottom =384
     Left =-1
     Top =-1
-    Right =869
+    Right =861
     Bottom =180
     Left =0
     Top =0
@@ -49,7 +51,7 @@ Begin
         Left =48
         Top =7
         Right =168
-        Bottom =139
+        Bottom =125
         Top =0
         Name ="tblImportGroupTemp"
         Name =""
@@ -58,7 +60,7 @@ Begin
         Left =216
         Top =7
         Right =391
-        Bottom =142
+        Bottom =140
         Top =0
         Name ="tblImportDependentTemp"
         Name =""

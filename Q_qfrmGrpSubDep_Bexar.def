@@ -11,19 +11,21 @@ End
 Begin Joins
     LeftTable ="tblSubscr_Bexar"
     RightTable ="tblDependent_Bexar"
-    Expression ="tblSubscr_Bexar.SUBssn = tblDependent_Bexar.DEPsubID"
+    Expression ="tblSubscr_Bexar.SUBssn=tblDependent_Bexar.DepSubID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblDependent_Bexar.DEPlastNAME"
+    Expression ="tblDependent_Bexar.DepLastName"
     Flag =0
-    Expression ="tblDependent_Bexar.DEPfirstNAME"
+    Expression ="tblDependent_Bexar.DepFirstName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -31,10 +33,10 @@ Begin
     Left =62
     Top =96
     Right =1002
-    Bottom =401
+    Bottom =420
     Left =-1
     Top =-1
-    Right =933
+    Right =925
     Bottom =144
     Left =0
     Top =0
@@ -43,7 +45,7 @@ Begin
         Left =306
         Top =6
         Right =506
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblSubscr_Bexar"
         Name =""
@@ -52,7 +54,7 @@ Begin
         Left =34
         Top =4
         Right =218
-        Bottom =111
+        Bottom =107
         Top =0
         Name ="tblDependent_Bexar"
         Name =""

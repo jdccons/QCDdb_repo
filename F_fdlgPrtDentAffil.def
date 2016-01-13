@@ -1,14 +1,13 @@
 Version =20
 VersionRequired =20
-Checksum =521822729
+Checksum =-90190652
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -20,16 +19,17 @@ Begin Form
     Width =5640
     DatasheetFontHeight =10
     ItemSuffix =23
-    Left =1440
-    Top =1455
-    Right =7080
-    Bottom =6300
+    Left =-22692
+    Top =1692
+    Right =-15264
+    Bottom =8592
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x90faff309abde240
     End
     Caption ="Dentist Affiliation Report"
     OnOpen ="[Event Procedure]"
+    MenuBar ="Dialog"
     DatasheetFontName ="Arial"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
@@ -121,7 +121,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0x464bfec0465cea41917c23824a9fa9e4
+                0x080db9ff67b15948ad04906cafaff22a
             End
             Begin
                 Begin CommandButton
@@ -158,7 +158,7 @@ Begin Form
                     End
                     ControlTipText ="Close Form"
                     GUID = Begin
-                        0xcd66abac9f4b96439c173b0b55b25c39
+                        0x8dd84339492bef4ca78a992c7513f666
                     End
                 End
                 Begin ListBox
@@ -176,7 +176,7 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     OnDblClick ="[Event Procedure]"
                     GUID = Begin
-                        0x401fe3ef4b5fc64990d11f6772ddf848
+                        0x0ac1dcdd1e5ba64d92660206c24c6651
                     End
                     Begin
                         Begin Label
@@ -188,7 +188,7 @@ Begin Form
                             Name ="Label2"
                             Caption ="GEO "
                             GUID = Begin
-                                0x85c16c6cbc3034439f404b0db8350690
+                                0xe7ac6919420d1b46af318cceca3e90d8
                             End
                         End
                     End
@@ -204,7 +204,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtGeoSelected"
                     GUID = Begin
-                        0xcb2c247adf881a43b9857dbc80afd452
+                        0x240235a7d979534491b36a8d28d631fe
                     End
                 End
                 Begin ListBox
@@ -220,7 +220,7 @@ Begin Form
                     RowSource ="SELECT tmpGeoSel.GEO, tmpGeoSel.GeoDesc FROM tmpGeoSel ORDER BY tmpGeoSel.GEO;"
                     OnDblClick ="[Event Procedure]"
                     GUID = Begin
-                        0xcc7a2ddd32edab4c9212ffc546dc2c76
+                        0x89afdac0e1e97544af732af5da50e452
                     End
                     Begin
                         Begin Label
@@ -232,7 +232,7 @@ Begin Form
                             Name ="Label6"
                             Caption ="GEO Filter "
                             GUID = Begin
-                                0x29751b9ead06874cba54ffc7f2853619
+                                0x8393bfb1bd79ff419c79e3016d8beacf
                             End
                         End
                     End
@@ -249,7 +249,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Move Selected GEO"
                     GUID = Begin
-                        0xd1152b50315b5c4e89a993f275409b70
+                        0xda0525c6e0a4fd469003caf8cd44f22c
                     End
                 End
                 Begin CommandButton
@@ -264,7 +264,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Remove Selected GEO"
                     GUID = Begin
-                        0x9743c4aabf84d3459762a42a717499fd
+                        0x12f7e432e27e844fb2b3e4febfe82fab
                     End
                 End
                 Begin CommandButton
@@ -279,7 +279,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Move All GEO's"
                     GUID = Begin
-                        0xe8de748b68d34c4ea712ec8903ef0838
+                        0xeff0068fe3caa844bba0af7e00eb9c75
                     End
                 End
                 Begin CommandButton
@@ -294,7 +294,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Remove All GEO's"
                     GUID = Begin
-                        0x64d19298b51edd4b90d437552a050002
+                        0x1429808e98886e4b9bd51047c715e6ff
                     End
                 End
                 Begin CommandButton
@@ -334,7 +334,7 @@ Begin Form
                         0xffffff0000000000
                     End
                     GUID = Begin
-                        0x61da8714b9202a4dba351978e1f54d5a
+                        0x0b0a450047cc304c99dd0e88252aa800
                     End
                 End
                 Begin ListBox
@@ -352,7 +352,7 @@ Begin Form
                     AfterUpdate ="[Event Procedure]"
                     OnDblClick ="[Event Procedure]"
                     GUID = Begin
-                        0x5a0064de50b66041a668b16a87e15c36
+                        0xdf0cced5d2135a43be51682f1c793123
                     End
                     Begin
                         Begin Label
@@ -364,7 +364,7 @@ Begin Form
                             Name ="Label8"
                             Caption ="Specialty"
                             GUID = Begin
-                                0xdaa6873362750345ac0b9f0bcdf4a4eb
+                                0x3128fb4346c2e8418162b1bf6bf8446c
                             End
                         End
                     End
@@ -382,7 +382,7 @@ Begin Form
                     RowSource ="SELECT tmpSpecSel.Spec, tmpSpecSel.SpecDesc FROM tmpSpecSel ORDER BY tmpSpecSel."
                         "Spec;"
                     GUID = Begin
-                        0x285f2bc1a3a5e04582225ea443eac08e
+                        0xd1f2620aa14cc841a7c21dc50954a80b
                     End
                     Begin
                         Begin Label
@@ -394,7 +394,7 @@ Begin Form
                             Name ="Label10"
                             Caption ="Spec Filter"
                             GUID = Begin
-                                0xef84e301cf93a845b18e1f6acffccc8c
+                                0xba31f980a4c11e4b8f00e91bb5452b7f
                             End
                         End
                     End
@@ -411,7 +411,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Move Selected Spec"
                     GUID = Begin
-                        0x2d69a9bbb0178f42b12f4da756bc0925
+                        0xca0b2b3b4b28cc4a94f0e74d99c9053d
                     End
                 End
                 Begin CommandButton
@@ -426,7 +426,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Remove Selected Spec"
                     GUID = Begin
-                        0x7d3e31713ebff142ab0d1f379d4671d1
+                        0x038c63398864634f8f9de5b8be4013d9
                     End
                 End
                 Begin CommandButton
@@ -441,7 +441,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Move All Spec's"
                     GUID = Begin
-                        0xe53ead231416c046a019f17ceb029112
+                        0x8c7d28da38c07248954e7393ddaad356
                     End
                 End
                 Begin CommandButton
@@ -456,7 +456,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     ControlTipText ="Remove All Spec's"
                     GUID = Begin
-                        0x5938139053a15a46bbb55602d9dbb7f4
+                        0x01be30cdfa13c241981858b31612777d
                     End
                 End
                 Begin Rectangle
@@ -467,7 +467,7 @@ Begin Form
                     Height =3480
                     Name ="Box15"
                     GUID = Begin
-                        0x274f36adeda90245a4f97dd67d57afbe
+                        0x728832e45ddf954191452a063ab799cf
                     End
                 End
                 Begin Rectangle
@@ -478,7 +478,7 @@ Begin Form
                     Height =3480
                     Name ="Box16"
                     GUID = Begin
-                        0xf2488b81a8f3b245bbd8beee0d48025d
+                        0xd265e64feae0a44a8577c1fa6ed59dad
                     End
                 End
                 Begin Label
@@ -494,7 +494,7 @@ Begin Form
                     Caption ="Affiliation Date From: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x1fa37e301e3cbc4696c45c84bb742a91
+                        0xc1d7339e991fef40adfc9e0480d3e874
                     End
                 End
                 Begin Label
@@ -510,7 +510,7 @@ Begin Form
                     Caption ="To: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x845610bc8d11c54f827e3d4f0a14c6a2
+                        0xcbf39d3c15623c44aa822b83530a9c90
                     End
                 End
                 Begin TextBox
@@ -527,7 +527,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x2afa04fcd444f9408b5dde3c0ef663a7
+                        0x64d7e685265d07499b42c145d528bc51
                     End
                     AsianLineBreak =0
                 End
@@ -545,7 +545,7 @@ Begin Form
                     FontName ="MS Sans Serif"
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0xc7be04fa01f75b409ae302ffe85651f0
+                        0xe20c02fa06648345aa5fded8664c4226
                     End
                     AsianLineBreak =0
                 End
@@ -560,7 +560,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtSpecSelected"
                     GUID = Begin
-                        0x616a95b6663c7d449a19fc036d2fc9eb
+                        0x8fb0f566a34ec045bc1c1c7254eaafc7
                     End
                 End
                 Begin Label
@@ -574,7 +574,7 @@ Begin Form
                     Name ="Label18"
                     Caption ="Dentist Affiliation Report"
                     GUID = Begin
-                        0xb23d7156b5600240852ee0575d01a125
+                        0x4cfcf366f4c207448737d3e5421038bb
                     End
                 End
                 Begin Label
@@ -587,7 +587,7 @@ Begin Form
                     Name ="Label19"
                     Caption ="Geo and Specialty Filters default to ALL records if none selected."
                     GUID = Begin
-                        0x76bc7c18f9ecaf4ba694378a82970e5d
+                        0xe2b1bc7d07b8804093bbf0d5bdb9686d
                     End
                 End
                 Begin Label
@@ -601,7 +601,7 @@ Begin Form
                     Name ="Label20"
                     Caption ="*"
                     GUID = Begin
-                        0x51261c975557c9428a2af64f1800a652
+                        0xbecb6ac92f2b0c4691ac3b03abfddb3c
                     End
                 End
                 Begin Label
@@ -615,7 +615,7 @@ Begin Form
                     Name ="Label21"
                     Caption ="*"
                     GUID = Begin
-                        0x627cab6477df17478ca115f5b5b88b04
+                        0x0e744195d430ac4ba2921d072b62b8a8
                     End
                 End
                 Begin Label
@@ -629,7 +629,7 @@ Begin Form
                     Name ="Label22"
                     Caption ="*"
                     GUID = Begin
-                        0xe8d5bf5a556f9447b0b46ada10a2a3ab
+                        0xe2375b16f06c794a872a24e8dbc3c999
                     End
                 End
             End

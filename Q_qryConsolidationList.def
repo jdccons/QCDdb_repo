@@ -1,16 +1,23 @@
 Operation =1
 Option =0
-Where ="(((XRef.Cancelled)=0) AND ((XRef.Color)=\"Multi\"))"
+Where ="(((XRef.Cancelled)=0) And ((XRef.Color)=\"Multi\"))"
 Begin InputTables
     Name ="XRef"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="XRef.[Parent GroupID]"
+    Alias ="Expr2"
     Expression ="XRef.[Child GroupID]"
+    Alias ="Expr3"
     Expression ="XRef.[Emp Count]"
+    Alias ="Expr4"
     Expression ="XRef.Cancelled"
+    Alias ="Expr5"
     Expression ="XRef.Color"
+    Alias ="Expr6"
     Expression ="XRef.Parent"
+    Alias ="Expr7"
     Expression ="XRef.Flag"
 End
 Begin OrderBy
@@ -30,14 +37,14 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =712
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -46,7 +53,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =49
         Top =0
         Name ="XRef"
         Name =""

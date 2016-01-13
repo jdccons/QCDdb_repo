@@ -10,62 +10,62 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="SUBssn"
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
     Name ="SUBfirstNAME"
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
     Name ="SUBlastNAME"
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     Alias ="SUBStreet"
     Name ="SUBStreet"
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     Name ="SUBcity"
-    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
     Name ="SUBstate"
-    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
     Name ="SUBzip"
-    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
     Alias ="Stat"
     Name ="Stat"
     Expression ="\"Change-C\""
     Name ="GroupID"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblSubscr"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblSubscr.SubSSN"
     Flag =1
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblEDI_App_Dep"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblEDI_App_Dep.DEPsubID"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblEDI_App_Dep.DepSubID"
     Flag =1
     LeftTable ="tblEDI_App_Dep"
     RightTable ="qselAA_DepName_Match"
-    Expression ="tblEDI_App_Dep.DEPsubID = qselAA_DepName_Match.DEPsubID"
+    Expression ="tblEDI_App_Dep.DepSSN=qselAA_DepName_Match.tblEDI_App_Dep.DEPssn"
     Flag =2
     LeftTable ="tblEDI_App_Dep"
     RightTable ="qselAA_DepName_Match"
-    Expression ="tblEDI_App_Dep.DEPssn = qselAA_DepName_Match.tblEDI_App_Dep.DEPssn"
+    Expression ="tblEDI_App_Dep.DepSubID=qselAA_DepName_Match.DEPsubID"
     Flag =2
 End
 Begin Groups
-    Expression ="tblEDI_App_Subscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBfirstNAME"
+    Expression ="tblEDI_App_Subscr.SubFirstName"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBlastNAME"
+    Expression ="tblEDI_App_Subscr.SubLastName"
     GroupLevel =0
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBcity"
+    Expression ="tblEDI_App_Subscr.SubCity"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBstate"
+    Expression ="tblEDI_App_Subscr.SubState"
     GroupLevel =0
-    Expression ="tblEDI_App_Subscr.SUBzip"
+    Expression ="tblEDI_App_Subscr.SubZip"
     GroupLevel =0
     Expression ="\"Change-C\""
     GroupLevel =0
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -89,10 +89,10 @@ Begin
     Left =30
     Top =90
     Right =938
-    Bottom =516
+    Bottom =445
     Left =-1
     Top =-1
-    Right =901
+    Right =893
     Bottom =175
     Left =0
     Top =0
@@ -101,7 +101,7 @@ Begin
         Left =235
         Top =11
         Right =439
-        Bottom =133
+        Bottom =129
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -110,7 +110,7 @@ Begin
         Left =46
         Top =10
         Right =180
-        Bottom =132
+        Bottom =128
         Top =10
         Name ="tblSubscr"
         Name =""
@@ -119,7 +119,7 @@ Begin
         Left =475
         Top =10
         Right =608
-        Bottom =132
+        Bottom =128
         Top =0
         Name ="tblEDI_App_Dep"
         Name =""
@@ -128,7 +128,7 @@ Begin
         Left =662
         Top =5
         Right =828
-        Bottom =127
+        Bottom =123
         Top =0
         Name ="qselAA_DepName_Match"
         Name =""

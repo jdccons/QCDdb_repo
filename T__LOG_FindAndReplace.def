@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableDef name="_LOG_FindAndReplace" foreign="False">
+  <Properties/>
+  <SQL>CREATE TABLE [_LOG_FindAndReplace] (
+[SeqID] AUTOINCREMENT,
+[SessionTimeStamp] DATETIME,
+[EntryType] TEXT (8),
+[Container] TEXT (24),
+[DocumentName] TEXT (150),
+[ElementName] TEXT (150),
+[PropertyName] TEXT (64),
+[PropertyType] LONG,
+[OtherInfo] TEXT (64),
+[ReplacePerformed] TEXT (1),
+[OldValue] MEMO,
+[NewValue] MEMO,
+[lngValue1] LONG,
+[VersB4] SHORT);</SQL>
+  <Attributes value="0">
+    <dbHiddenObject value="False"/>
+    <dbAttachExclusive value="False"/>
+    <dbAttachSavePWD value="False"/>
+    <dbAttachedODBC value="False"/>
+    <dbAttachedTable value="False"/>
+    <dbSystemObject value="False"/>
+  </Attributes>
+  <FieldDefs>
+    <Field_0 name="SeqID">
+      <Value name="Value" type="4"/>
+      <Attributes name="Attributes" type="4" value="17"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="4"/>
+      <Name name="Name" type="12" value="SeqID"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="0"/>
+      <Size name="Size" type="4" value="4"/>
+      <SourceField name="SourceField" type="12" value="SeqID"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+    </Field_0>
+    <Field_1 name="SessionTimeStamp">
+      <Value name="Value" type="8"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="8"/>
+      <Name name="Name" type="12" value="SessionTimeStamp"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="1"/>
+      <Size name="Size" type="4" value="8"/>
+      <SourceField name="SourceField" type="12" value="SessionTimeStamp"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="8"/>
+      <VisibleValue name="VisibleValue" type="8"/>
+    </Field_1>
+    <Field_2 name="EntryType">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="EntryType"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="2"/>
+      <Size name="Size" type="4" value="8"/>
+      <SourceField name="SourceField" type="12" value="EntryType"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+    </Field_2>
+    <Field_3 name="Container">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="Container"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="3"/>
+      <Size name="Size" type="4" value="24"/>
+      <SourceField name="SourceField" type="12" value="Container"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+    </Field_3>
+    <Field_4 name="DocumentName">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="DocumentName"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="4"/>
+      <Size name="Size" type="4" value="150"/>
+      <SourceField name="SourceField" type="12" value="DocumentName"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+    </Field_4>
+    <Field_5 name="ElementName">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="ElementName"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="5"/>
+      <Size name="Size" type="4" value="150"/>
+      <SourceField name="SourceField" type="12" value="ElementName"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+    </Field_5>
+    <Field_6 name="PropertyName">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="PropertyName"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="6"/>
+      <Size name="Size" type="4" value="64"/>
+      <SourceField name="SourceField" type="12" value="PropertyName"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+    </Field_6>
+    <Field_7 name="PropertyType">
+      <Value name="Value" type="4"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="4"/>
+      <Name name="Name" type="12" value="PropertyType"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="7"/>
+      <Size name="Size" type="4" value="4"/>
+      <SourceField name="SourceField" type="12" value="PropertyType"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+    </Field_7>
+    <Field_8 name="OtherInfo">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="OtherInfo"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="8"/>
+      <Size name="Size" type="4" value="64"/>
+      <SourceField name="SourceField" type="12" value="OtherInfo"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+    </Field_8>
+    <Field_9 name="ReplacePerformed">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="ReplacePerformed"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="9"/>
+      <Size name="Size" type="4" value="1"/>
+      <SourceField name="SourceField" type="12" value="ReplacePerformed"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+    </Field_9>
+    <Field_10 name="OldValue">
+      <Value name="Value" type="12"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="12"/>
+      <Name name="Name" type="12" value="OldValue"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="10"/>
+      <Size name="Size" type="4" value="0"/>
+      <SourceField name="SourceField" type="12" value="OldValue"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="12"/>
+      <VisibleValue name="VisibleValue" type="12"/>
+    </Field_10>
+    <Field_11 name="NewValue">
+      <Value name="Value" type="12"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="12"/>
+      <Name name="Name" type="12" value="NewValue"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="11"/>
+      <Size name="Size" type="4" value="0"/>
+      <SourceField name="SourceField" type="12" value="NewValue"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="12"/>
+      <VisibleValue name="VisibleValue" type="12"/>
+    </Field_11>
+    <Field_12 name="lngValue1">
+      <Value name="Value" type="4"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="4"/>
+      <Name name="Name" type="12" value="lngValue1"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="12"/>
+      <Size name="Size" type="4" value="4"/>
+      <SourceField name="SourceField" type="12" value="lngValue1"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+    </Field_12>
+    <Field_13 name="VersB4">
+      <Value name="Value" type="3"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="3"/>
+      <Name name="Name" type="12" value="VersB4"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="13"/>
+      <Size name="Size" type="4" value="2"/>
+      <SourceField name="SourceField" type="12" value="VersB4"/>
+      <SourceTable name="SourceTable" type="12" value="_LOG_FindAndReplace"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="3"/>
+      <VisibleValue name="VisibleValue" type="3"/>
+    </Field_13>
+  </FieldDefs>
+</TableDef>

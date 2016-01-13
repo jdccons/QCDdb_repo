@@ -1,7 +1,7 @@
 Operation =3
 Name ="ARHDR"
 Option =8
-Where ="(((CStr(Format([TRANS NO],\"00000\")))=[Forms]![frmInvIndiv]![TRANS NO]))"
+Where ="(((CStr(Format([TRANS NO],\"00000\")))=Forms!frmInvIndiv![TRANS NO]))"
 Begin InputTables
     Name ="tblInvHdr"
 End
@@ -81,6 +81,7 @@ End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="[t-INVhdr].[CUST KEY]"
@@ -243,14 +244,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =362
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =142
     Left =0
     Top =0
@@ -259,7 +260,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =16
         Name ="tblInvHdr"
         Name =""

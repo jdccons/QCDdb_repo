@@ -9,17 +9,21 @@ Function SetPending_GrpSubr(strGrpID As String) As Boolean
     Dim dbs As DAO.Database
     Dim strSQL As String
    
-    Set dbs = CurrentDb()
+'    Set dbs = CurrentDb()
     
-    strSQL = "UPDATE tblSubscr SET tblSubscr."
-    strSQL = strSQL & "SUBgroupID = Null, tblSubscr.SUBstatus = 'PENDG', "
-    strSQL = strSQL & "tblSubscr.SUBeffDATE = Null, tblSubscr."
-    strSQL = strSQL & "SUBcardPRT = Null, tblSubscr."
-    strSQL = strSQL & "SUBcardPRTdte = Null, tblSubscr."
-    strSQL = strSQL & "DateUpdated = Date() "
-    strSQL = strSQL & "WHERE (((tblSubscr.SUBgroupID)='" & strGrpID & "'));"
+'    strSQL = "UPDATE tblSubscr SET tblSubscr."
+'    strSQL = strSQL & "SUBgroupID = Null, tblSubscr.SUBstatus = 'PENDG', "
+'    strSQL = strSQL & "tblSubscr.SUBeffDATE = Null, tblSubscr."
+'    strSQL = strSQL & "SUBcardPRT = Null, tblSubscr."
+'    strSQL = strSQL & "SUBcardPRTdte = Null, tblSubscr."
+'    strSQL = strSQL & "DateUpdated = Date() "
+'    strSQL = strSQL & "WHERE (((tblSubscr.SUBgroupID)='" & strGrpID & "'));"
+'
+    strSQL = "Update tblSubscr " & _
+    "set SubCancelled = 2 " & _
+    "where SUBgroupID = '" & strGrpID & "'"
     
-    dbs.Execute strSQL, dbSeeChanges
+    ExecuteSQL strSQL
     
     SetPending_GrpSubr = True
     
@@ -46,12 +50,12 @@ Function SetIndiv_PENDING(strCustKey As String) As Boolean
     Dim strSQL As String
     Dim strSSN As String
     
-    If isloaded("frmPendingSubscr") Then
+    If IsLoaded("frmPendingSubscr") Then
         strSSN = [Forms]![frmPendingSubscr].[SUBssn]
         Set dbs = CurrentDb()
      
         strSQL = "UPDATE tblSubscr SET tblSubscr.SUBstatus = 'INDIV', " & _
-            "tblSubscr.PLTcustKEY = '" & strCustKey & "', SUBcancelled =1" & _
+            "tblSubscr.PltCustKey = '" & strCustKey & "', SUBcancelled =1" & _
             "WHERE (((tblSubscr.SUBssn)='" & strSSN & "') " & _
             "AND tblSubscr.SUBstatus = 'PENDG');"
         dbs.Execute strSQL, dbSeeChanges
@@ -68,9 +72,9 @@ Function SetPending_CancelGrp() As Boolean
     Dim rst As DAO.Recordset
     Dim strGrp As String
     
-    If isloaded("frmGrp") Then
+    If IsLoaded("frmGrp") Then
         strGrp = [Forms]![frmGrp].[ctlGROUPid]
-    ElseIf isloaded("frmGrp_Cancelled") Then
+    ElseIf IsLoaded("frmGrp_Cancelled") Then
         strGrp = [Forms]![frmGrp_Cancelled].[ctlGROUPid]
     End If
     
@@ -106,9 +110,9 @@ Function SetActive_CancelGrp() As Boolean
     Dim strSQL As String
     Dim strGrp As String
     
-    If isloaded("frmGrp") Then
+    If IsLoaded("frmGrp") Then
         strGrp = [Forms]![frmGrp].[ctlGROUPid]
-    ElseIf isloaded("frmGrp_Cancelled") Then
+    ElseIf IsLoaded("frmGrp_Cancelled") Then
         strGrp = [Forms]![frmGrp_Cancelled].[ctlGROUPid]
     End If
     

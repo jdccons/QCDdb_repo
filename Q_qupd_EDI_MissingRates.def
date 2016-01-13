@@ -7,12 +7,12 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="tblEDI_App_Subscr.PlanID"
-    Expression ="[qsel_EDI_MIssingRates].[qsel_EDI_MIssingRates_1.PlanID]"
+    Expression ="qsel_EDI_MIssingRates.[qsel_EDI_MIssingRates_1.PlanID]"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="qsel_EDI_MIssingRates"
-    Expression ="tblEDI_App_Subscr.SubSSN = qsel_EDI_MIssingRates.SubSSN"
+    Expression ="tblEDI_App_Subscr.SubSSN=qsel_EDI_MIssingRates.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -39,7 +39,7 @@ Begin
         Left =38
         Top =6
         Right =221
-        Bottom =159
+        Bottom =154
         Top =4
         Name ="tblEDI_App_Subscr"
         Name =""

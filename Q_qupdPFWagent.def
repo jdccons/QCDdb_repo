@@ -1,12 +1,12 @@
 Operation =4
 Option =0
-Where ="(((ARSALESP.Salesp_Key)=[Forms]![frmAgent]![AGENTid]))"
+Where ="(((ARSALESP.Salesp_Key)=Forms!frmAgent!AGENTid))"
 Begin InputTables
     Name ="ARSALESP"
 End
 Begin OutputColumns
     Name ="ARSALESP.Salesp_Name"
-    Expression ="[Forms]![frmAgent]![AGENTlast] & \",  \" & [Forms]![frmAgent]![AGENTfirst]"
+    Expression ="Forms!frmAgent!AGENTlast & \",  \" & Forms!frmAgent!AGENTfirst"
     Name ="ARSALESP.Comm_Key"
     Expression ="\"01\""
     Name ="ARSALESP.RecDate"
@@ -28,10 +28,10 @@ Begin
     Left =47
     Top =3
     Right =1258
-    Bottom =316
+    Bottom =327
     Left =-1
     Top =-1
-    Right =1204
+    Right =1196
     Bottom =144
     Left =0
     Top =0
@@ -40,8 +40,8 @@ Begin
         Left =38
         Top =6
         Right =221
-        Bottom =105
-        Top =10
+        Bottom =49
+        Top =0
         Name ="ARSALESP"
         Name =""
     End

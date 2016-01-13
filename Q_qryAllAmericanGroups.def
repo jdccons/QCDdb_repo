@@ -1,0 +1,47 @@
+Operation =1
+Option =0
+Where ="(((tblGrp.GroupType)=4) AND ((tblGrp.GRCancelled)=False))"
+Begin InputTables
+    Name ="tblGrp"
+End
+Begin OutputColumns
+    Expression ="tblGrp.GroupID"
+    Alias ="Count of Subscrs"
+    Expression ="countSubscrs([GroupID])"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="Count of Subscrs"
+        dbInteger "ColumnWidth" ="2100"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =594
+    Top =62
+    Right =1122
+    Bottom =512
+    Left =-1
+    Top =-1
+    Right =513
+    Bottom =270
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =247
+        Bottom =199
+        Top =20
+        Name ="tblGrp"
+        Name =""
+    End
+End

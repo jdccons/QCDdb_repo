@@ -9,22 +9,22 @@ dbMemo "SQL" ="SELECT \"CH\" AS Record_Type, \"\" AS Action_Code, \"10001\" AS C
     "bscr_Bexar.SUBGender AS Gender, Format(Month([Subdob]),\"00\") & Format(Day([Sub"
     "Dob]),\"00\") & Year([SubDob]) AS Birth_Date, Format(Month([SUBEffDate]),\"00\")"
     " & Format(Day([SubEffDate]),\"00\") & Year([SubEffDate]) AS Effective_Date, Null"
-    " AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr_Bexar.SUBnoDEPENT\015\012FROM tbl"
-    "Grp_Bexar INNER JOIN tblSubscr_Bexar ON tblGrp_Bexar.GROUPid = tblSubscr_Bexar.S"
-    "UBgroupID\015\012\015\012UNION SELECT \"DP\" AS Record_Type, \"\" AS Action_Code"
-    ", \"10001\" AS Carrier_Number, \"1\" AS Group_Number, \"QCD of America\" AS Grou"
-    "p_Name, \"9000\" AS Plan_Number, tblSubscr_Bexar.SubID AS Member_Number, IIf([De"
-    "pRelationship]=\"S\",\"02\",\"03\") AS ID_Suffix, tblDependent_Bexar.DEPsubID AS"
-    " SSN, IIf([CoverID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\")) AS Coverage_Code,"
-    " tblDependent_Bexar.DEPlastNAME AS Last_Name, tblDependent_Bexar.DEPfirstNAME AS"
-    " First_Name, Mid([DepMiddleName],1,1) AS Middle_Initial, tblSubscr_Bexar.SUBstre"
-    "et1 AS Address_1, tblSubscr_Bexar.SUBstreet2 AS Address_2, tblSubscr_Bexar.SUBci"
-    "ty AS City, tblSubscr_Bexar.SUBstate AS State, Mid([SUBzip],1,9) AS Zip, tblDepe"
-    "ndent_Bexar.DEPgender AS Gender, Format(Month([Depdob]),\"00\") & Format(Day([De"
-    "pDob]),\"00\") & Year([DepDob]) AS Birth_Date, tblSubscr_Bexar.SUBeffDATE AS Eff"
-    "ective_Date, Null AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr_Bexar.SUBnoDEPEN"
-    "T\015\012FROM tblSubscr_Bexar INNER JOIN tblDependent_Bexar ON tblSubscr_Bexar.S"
-    "UBssn = tblDependent_Bexar.DEPsubID;\015\012"
+    " AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr_Bexar.DepCnt\015\012FROM tblGrp_B"
+    "exar INNER JOIN tblSubscr_Bexar ON tblGrp_Bexar.GROUPid = tblSubscr_Bexar.SUBgro"
+    "upID\015\012\015\012UNION SELECT \"DP\" AS Record_Type, \"\" AS Action_Code, \"1"
+    "0001\" AS Carrier_Number, \"1\" AS Group_Number, \"QCD of America\" AS Group_Nam"
+    "e, \"9000\" AS Plan_Number, tblSubscr_Bexar.SubID AS Member_Number, IIf([DepRela"
+    "tionship]=\"S\",\"02\",\"03\") AS ID_Suffix, tblDependent_Bexar.DEPsubID AS SSN,"
+    " IIf([CoverID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\")) AS Coverage_Code, tblD"
+    "ependent_Bexar.DEPlastNAME AS Last_Name, tblDependent_Bexar.DEPfirstNAME AS Firs"
+    "t_Name, Mid([DepMiddleName],1,1) AS Middle_Initial, tblSubscr_Bexar.SUBstreet1 A"
+    "S Address_1, tblSubscr_Bexar.SUBstreet2 AS Address_2, tblSubscr_Bexar.SUBcity AS"
+    " City, tblSubscr_Bexar.SUBstate AS State, Mid([SUBzip],1,9) AS Zip, tblDependent"
+    "_Bexar.DEPgender AS Gender, Format(Month([Depdob]),\"00\") & Format(Day([DepDob]"
+    "),\"00\") & Year([DepDob]) AS Birth_Date, tblSubscr_Bexar.SUBeffDATE AS Effectiv"
+    "e_Date, Null AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr_Bexar.DepCnt\015\012F"
+    "ROM tblSubscr_Bexar INNER JOIN tblDependent_Bexar ON tblSubscr_Bexar.SUBssn = tb"
+    "lDependent_Bexar.DEPsubID;\015\012"
 dbMemo "Connect" =""
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -32,4 +32,73 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="Record_Type"
+    End
+    Begin
+        dbText "Name" ="Action_Code"
+    End
+    Begin
+        dbText "Name" ="Carrier_Number"
+    End
+    Begin
+        dbText "Name" ="Group_Number"
+    End
+    Begin
+        dbText "Name" ="Group_Name"
+    End
+    Begin
+        dbText "Name" ="Plan_Number"
+    End
+    Begin
+        dbText "Name" ="Member_Number"
+    End
+    Begin
+        dbText "Name" ="ID_Suffix"
+    End
+    Begin
+        dbText "Name" ="SSN"
+    End
+    Begin
+        dbText "Name" ="Coverage_Code"
+    End
+    Begin
+        dbText "Name" ="Last_Name"
+    End
+    Begin
+        dbText "Name" ="First_Name"
+    End
+    Begin
+        dbText "Name" ="Middle_Initial"
+    End
+    Begin
+        dbText "Name" ="Address_1"
+    End
+    Begin
+        dbText "Name" ="Address_2"
+    End
+    Begin
+        dbText "Name" ="City"
+    End
+    Begin
+        dbText "Name" ="State"
+    End
+    Begin
+        dbText "Name" ="Zip"
+    End
+    Begin
+        dbText "Name" ="Gender"
+    End
+    Begin
+        dbText "Name" ="Birth_Date"
+    End
+    Begin
+        dbText "Name" ="Effective_Date"
+    End
+    Begin
+        dbText "Name" ="Term_Date"
+    End
+    Begin
+        dbText "Name" ="Sub_Group_ID"
+    End
 End

@@ -1,26 +1,31 @@
-Version =17
-VersionRequired =17
-Checksum =1611660032
+Version =20
+VersionRequired =20
+Checksum =-59979918
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     BorderStyle =1
     Width =6054
     ItemSuffix =21
-    Left =4050
+    Left =4056
     Top =1440
     Right =8040
-    Bottom =6225
+    Bottom =6228
     RecSrcDt = Begin
         0xa7cedeb3b2c4e140
     End
     Caption ="Print Monthly Sales Report"
-    MenuBar ="MainMenuMenuBar"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -29,11 +34,17 @@ Begin Form
             Height =0
             BackColor =12632256
             Name ="FormHeader1"
+            GUID = Begin
+                0x1d582abce26492478c1cef111e2467bd
+            End
         End
         Begin Section
             Height =3821
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x619cfd7976318d4489756343f6a66629
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -68,6 +79,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0xc452d95259db7c479d8c927a9d58caf6
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -81,6 +95,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="Invoice Month: "
+                    GUID = Begin
+                        0x8fe839d7267a934087b320d005bca506
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =2
@@ -90,6 +107,9 @@ Begin Form
                     Width =438
                     FontSize =10
                     Name ="InvMonth"
+                    GUID = Begin
+                        0xaa8913e70d95e841a1f950d7e5ed419d
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -103,19 +123,25 @@ Begin Form
                     BackColor =12632256
                     Name ="Text11"
                     Caption ="Invoice Year: "
+                    GUID = Begin
+                        0x120a13f6a30ec844b5a32f994d181d9e
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =2
-                    OverlapFlags =87
+                    OverlapFlags =95
                     Left =3033
                     Top =1080
                     Width =573
                     FontSize =10
                     TabIndex =1
                     Name ="InvYear"
+                    GUID = Begin
+                        0x87752285c4aa7840bc9529ee810000f0
+                    End
                 End
                 Begin Label
-                    OverlapFlags =85
+                    OverlapFlags =87
                     TextAlign =1
                     Left =3615
                     Top =1080
@@ -124,6 +150,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text19"
                     Caption ="Enter four-digit year (e.g., 1996)"
+                    GUID = Begin
+                        0x6d741b1c0c29614c94ffc7510021cd5c
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -137,6 +166,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text15"
                     Caption ="Geographical Count From:  "
+                    GUID = Begin
+                        0x6590ff2277e9c34ca038101a897cafc9
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -150,6 +182,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text20"
                     Caption =" To:  "
+                    GUID = Begin
+                        0x93a3395dd1b5a249908d8f1ccbf502eb
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -161,7 +196,10 @@ Begin Form
                     Top =1440
                     Width =1000
                     TabIndex =2
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x9f3aa1e92c4aa248a713aed88a297706
+                    End
                     Name ="c-GEOfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -179,7 +217,10 @@ Begin Form
                     Top =1800
                     Width =1000
                     TabIndex =3
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x44c3c3e211cf9c4a9b7fb621e9e315f9
+                    End
                     Name ="c-GEOto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -192,6 +233,9 @@ Begin Form
         Begin FormFooter
             Height =0
             Name ="FormFooter2"
+            GUID = Begin
+                0x370f7b14a72bcc429cbee82cf9e111f2
+            End
         End
     End
 End
@@ -245,7 +289,7 @@ Private Sub PreviewButton_Click()
 
 
     strWhere = "[DOCmonth] = " & strInvMonth & " and [DocYear] = '" & strInvYear & "' "
-    strWhere = strWhere & " AND [GRPgeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
+    strWhere = strWhere & " AND [GRGeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
   
   
     If DCount("*", strData, strWhere) = 0 Then

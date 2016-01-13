@@ -5,17 +5,19 @@ Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
 End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -28,10 +30,10 @@ Begin
     Left =30
     Top =12
     Right =950
-    Bottom =555
+    Bottom =336
     Left =-1
     Top =-1
-    Right =913
+    Right =905
     Bottom =144
     Left =0
     Top =0
@@ -40,7 +42,7 @@ Begin
         Left =38
         Top =6
         Right =231
-        Bottom =120
+        Bottom =109
         Top =0
         Name ="tblGrp"
         Name =""

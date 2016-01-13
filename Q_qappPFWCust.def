@@ -1,38 +1,38 @@
 Operation =3
-Name ="ARCUST"
+Name ="ARCUST_local"
 Option =0
-Where ="(((tblGrp.GROUPid)=[Forms]![frmGrp]![ctlGROUPid]))"
+Where ="(((tblGrp.GroupId)=Forms!frmGrp!ctlGROUPid))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
     Name ="CustomerName"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Name ="CustomerAddress1"
-    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRStreet1"
     Name ="CustomerAddress2"
-    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRStreet2"
     Name ="CustomerCity"
-    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRCity"
     Name ="CustomerState"
-    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRState"
     Name ="CustomerZipCode"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRZip"
     Name ="AttnPhone"
-    Expression ="tblGrp.GRphone1"
+    Expression ="tblGrp.GRPhone1"
     Name ="CustomerAttention"
-    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRMainCont"
     Name ="ContactPhone"
-    Expression ="tblGrp.GRphone2"
+    Expression ="tblGrp.GRPhone2"
     Name ="ContactName"
-    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRSrvCont"
     Name ="FaxNumber"
-    Expression ="tblGrp.GRfax"
+    Expression ="tblGrp.GRFax"
     Alias ="SalesPerCode"
     Name ="SalespersonKey"
     Expression ="\"CORPT\""
     Name ="TerritoryKey"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
     Name ="EmailAddress"
     Expression ="tblGrp.GRemail"
     Alias ="Date"
@@ -42,7 +42,7 @@ Begin OutputColumns
     Name ="RecUserID"
     Expression ="\"QCDdb\""
     Name ="CustomerKey"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupId"
     Alias ="CLASS"
     Name ="CustomerClassKey"
     Expression ="\"GROUP\""
@@ -58,14 +58,14 @@ dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1024
-    Bottom =644
+    State =0
+    Left =18
+    Top =40
+    Right =1002
+    Bottom =360
     Left =-1
     Top =-1
-    Right =1021
+    Right =977
     Bottom =144
     Left =0
     Top =0

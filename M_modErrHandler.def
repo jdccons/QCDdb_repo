@@ -1,0 +1,66 @@
+Option Compare Database
+
+'Private | Public Function | Sub procedurename()
+'  On Error GoTo errHandler
+'  ...
+'exitHere:
+'  ...
+'errHandler:
+'  MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION & " in " & _
+'   VBE.ActiveCodePane.CodeModule, vbOKOnly, "Error"
+'  Resume exitHere
+'End Sub
+
+Public Function ErrorHandlerFunction()
+    On Error GoTo PROC_ERR
+    Dim X As Integer
+    X = 1 / 0
+    ErrorHandlerFunction = X
+    '...
+PROC_EXIT:
+    '...
+PROC_ERR:
+    MsgBox "Error " & Err.Number & ":  " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD:  Error"
+    GoTo PROC_EXIT
+End Function
+
+'  /---   ***   error handler for functions   ***   ---/
+Public Function ErrorHandlingCode()
+    
+    On Error GoTo PROC_ERR
+    
+    Dim X As Integer
+    X = 1 / 0
+    ErrorHandlingCode = X
+    
+PROC_EXIT:
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    Exit Function
+    
+    
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: modErrorHandler.ErrorHandlingCode "
+    Resume PROC_EXIT
+    
+End Function
+
+'  error handler for procedures
+Private Sub ErrorHandlerProcdedure()
+    
+    On Error GoTo PROC_ERR
+    
+    
+    
+PROC_EXIT:
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    Exit Sub
+    
+    
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure: frmFormName.ctlControlName"
+    Resume PROC_EXIT
+    
+End Sub

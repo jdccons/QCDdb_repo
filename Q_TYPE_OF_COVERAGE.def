@@ -1,23 +1,23 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"JUDSN\"))"
+Where ="(((tblSubscr.SubGroupID)=\"JUDSN\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblCoverage"
 End
 Begin OutputColumns
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverCode"
     Alias ="CountOfSUBssn"
-    Expression ="Count(tblSubscr.SUBssn)"
+    Expression ="Count(tblSubscr.SubSSN)"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr.CoverID=tblCoverage.CoverID"
     Flag =2
 End
 Begin Groups
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverCode"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -33,10 +33,10 @@ Begin
     Left =84
     Top =65
     Right =1002
-    Bottom =382
+    Bottom =389
     Left =-1
     Top =-1
-    Right =911
+    Right =903
     Bottom =144
     Left =0
     Top =0
@@ -45,7 +45,7 @@ Begin
         Left =38
         Top =6
         Right =191
-        Bottom =121
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -54,7 +54,7 @@ Begin
         Left =260
         Top =6
         Right =356
-        Bottom =101
+        Bottom =94
         Top =0
         Name ="tblCoverage"
         Name =""

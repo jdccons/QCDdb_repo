@@ -1,14 +1,14 @@
-Version =17
-VersionRequired =17
-Checksum =-427656590
+Version =20
+VersionRequired =20
+Checksum =363650229
 Begin Form
     AutoResize = NotDefault
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
     MinButton = NotDefault
     ControlBox = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
@@ -17,14 +17,19 @@ Begin Form
     BorderStyle =1
     Width =4530
     ItemSuffix =20
-    Left =3690
-    Top =2145
+    Left =3696
+    Top =2148
     Right =8220
-    Bottom =3825
+    Bottom =3828
     RecSrcDt = Begin
         0xa7cedeb3b2c4e140
     End
     Caption ="Print Monthly Sales Report by ESD"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -36,6 +41,9 @@ Begin Form
             Height =1695
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x0ed83f36f7a00847acd976e0de81f0ef
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -70,6 +78,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0xbce1b37b76e7614fae3ccb155f9529a5
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -83,6 +94,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="Invoice Month: "
+                    GUID = Begin
+                        0x6a078bf057b851478cbb70a29e78bbca
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -96,6 +110,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text11"
                     Caption ="Invoice Year: "
+                    GUID = Begin
+                        0x909b8007ff6c1e4bb0990c35f987d720
+                    End
                 End
                 Begin ComboBox
                     LimitToList = NotDefault
@@ -106,6 +123,9 @@ Begin Form
                     Top =270
                     Width =858
                     FontSize =10
+                    GUID = Begin
+                        0x02c9810c9df4044eb195d606a61e46a1
+                    End
                     Name ="InvMonth"
                     RowSourceType ="Value List"
                     RowSource ="1;2;3;4;5;6;7;8;9;10;11;12"
@@ -121,6 +141,9 @@ Begin Form
                     Width =843
                     FontSize =10
                     TabIndex =1
+                    GUID = Begin
+                        0x23a3c2754834fe4faac9ed9cd036e4ab
+                    End
                     Name ="InvYear"
                     RowSourceType ="Value List"
                     RowSource ="2000;2001;2002;2003;2004;2005;2006;2007"

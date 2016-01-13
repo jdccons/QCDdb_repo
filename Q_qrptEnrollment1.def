@@ -36,7 +36,7 @@ Begin OutputColumns
     Expression ="tblEnrollment.SUBeffDATE"
     Expression ="tblEnrollment.Enrolled"
     Alias ="GRName"
-    Expression ="[Forms]![frmImportDataDownload]![txtGroupName]"
+    Expression ="Forms!frmImportDataDownload!txtGroupName"
     Alias ="Welcome"
     Expression ="([GrName]) & \" is providing the QCD Dental & Vision Benefit program to each emp"
         "loyee at No Monthly Charge.\""
@@ -52,6 +52,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="GRname"
@@ -89,10 +91,10 @@ Begin
     Left =35
     Top =113
     Right =978
-    Bottom =629
+    Bottom =456
     Left =-1
     Top =-1
-    Right =936
+    Right =928
     Bottom =163
     Left =0
     Top =0
@@ -101,7 +103,7 @@ Begin
         Left =74
         Top =3
         Right =257
-        Bottom =135
+        Bottom =121
         Top =15
         Name ="tblEnrollment"
         Name =""

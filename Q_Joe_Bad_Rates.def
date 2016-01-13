@@ -1,9 +1,9 @@
 Operation =1
 Option =0
-Where ="((([tblSubscr].[RateID]-[tblRates].[RateID])<>0))"
+Where ="(((tblSubscr.RateID-tblRates.RateID)<>0))"
 Begin InputTables
-    Name ="tblRates"
     Name ="tblSubscr"
+    Name ="tblRates"
 End
 Begin OutputColumns
     Expression ="tblSubscr.SubGroupID"
@@ -15,20 +15,20 @@ Begin OutputColumns
     Expression ="tblRates.CoverID"
     Expression ="tblRates.RateID"
     Alias ="Expr1"
-    Expression ="[tblSubscr].[RateID]-[tblRates].[RateID]"
+    Expression ="tblSubscr.RateID-tblRates.RateID"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.SubGroupID = tblRates.GroupID"
+    Expression ="tblSubscr.CoverID=tblRates.CoverID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.PlanID = tblRates.PlanID"
+    Expression ="tblSubscr.PlanID=tblRates.PlanID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.CoverID = tblRates.CoverID"
+    Expression ="tblSubscr.SubGroupID=tblRates.GroupID"
     Flag =1
 End
 Begin OrderBy
@@ -60,10 +60,10 @@ Begin
     Left =62
     Top =84
     Right =1258
-    Bottom =540
+    Bottom =552
     Left =-1
     Top =-1
-    Right =1189
+    Right =1181
     Bottom =288
     Left =0
     Top =0
@@ -72,7 +72,7 @@ Begin
         Left =303
         Top =18
         Right =677
-        Bottom =140
+        Bottom =136
         Top =0
         Name ="tblRates"
         Name =""
@@ -81,7 +81,7 @@ Begin
         Left =59
         Top =11
         Right =219
-        Bottom =253
+        Bottom =249
         Top =0
         Name ="tblSubscr"
         Name =""

@@ -1,0 +1,77 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="Carfb Import empl"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Expression ="[Carfb Import empl].EmployeeSSN"
+    Alias ="Expr2"
+    Expression ="[Carfb Import empl].FirstName"
+    Alias ="Expr3"
+    Expression ="[Carfb Import empl].MiddleInitial"
+    Alias ="Expr4"
+    Expression ="[Carfb Import empl].LastName"
+    Alias ="Expr5"
+    Expression ="[Carfb Import empl].Address1"
+    Alias ="Expr6"
+    Expression ="[Carfb Import empl].Address2"
+    Alias ="Expr7"
+    Expression ="[Carfb Import empl].City"
+    Alias ="Expr8"
+    Expression ="[Carfb Import empl].State"
+    Alias ="Expr9"
+    Expression ="[Carfb Import empl].Zip"
+    Alias ="Expr10"
+    Expression ="[Carfb Import empl].HomePhone"
+    Alias ="Expr11"
+    Expression ="[Carfb Import empl].Blank"
+    Alias ="Expr12"
+    Expression ="[Carfb Import empl].GroupID"
+    Alias ="Expr13"
+    Expression ="[Carfb Import empl].Rate"
+    Alias ="Expr14"
+    Expression ="[Carfb Import empl].DateOfBirth"
+    Alias ="Expr15"
+    Expression ="[Carfb Import empl].NoOfDependents"
+    Alias ="Expr16"
+    Expression ="[Carfb Import empl].EffectiveDate"
+    Alias ="Expr17"
+    Expression ="[Carfb Import empl].CoverageType"
+    Alias ="Expr18"
+    Expression ="[Carfb Import empl].Gender"
+    Alias ="CoverID"
+    Expression ="IIf([Carfb Import empl].coveragetype=\"I\",1,IIf([Carfb Import empl].coveragetyp"
+        "e=\"O\",2,IIf([Carfb Import empl].coveragetype=\"F\",4,0)))"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =29
+    Top =18
+    Right =1350
+    Bottom =570
+    Left =-1
+    Top =-1
+    Right =1306
+    Bottom =372
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =141
+        Bottom =49
+        Top =0
+        Name ="Carfb Import empl"
+        Name =""
+    End
+End

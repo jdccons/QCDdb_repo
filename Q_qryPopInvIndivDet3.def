@@ -1,7 +1,7 @@
 Operation =3
 Name ="tblInvLin"
 Option =8
-Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmInvIndiv]![CUST KEY]))"
+Where ="(((tblSubscr.PltCustKey)=Forms!frmInvIndiv![CUST KEY]))"
 Begin InputTables
     Name ="tblSubscr"
 End
@@ -11,25 +11,26 @@ Begin OutputColumns
     Expression ="2"
     Alias ="DocNo"
     Name ="DOCUMENT NO"
-    Expression ="CStr([Forms]![frmInvIndiv]![TRANS NO])"
+    Expression ="CStr(Forms!frmInvIndiv![TRANS NO])"
     Alias ="Descr"
     Name ="DESCRIPTION"
-    Expression ="(\"Contract Ending: \" & [tblSubscr].[SUBcontEND])"
+    Expression ="(\"Contract Ending: \" & tblSubscr.SUBcontEND)"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =483
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -38,7 +39,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""

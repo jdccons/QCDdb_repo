@@ -8,9 +8,9 @@ Public Function CheckInvPriAgt(strSubID As String) As Boolean
     
     Set dbs = CurrentDb()
     
-    strSQL = "SELECT tblSubscr.SubID, tblInvAgt.AGENTid, tblInvAgt.Primary " & _
-             "FROM tblSubscr INNER JOIN tblInvAgt ON tblSubscr.SubID = tblInvAgt.SubscrID " & _
-             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblInvAgt.Primary)=True));"
+    strSQL = "SELECT tblSubscr.SubID, tblIndivAgt.AGENTid, tblIndivAgt.Primary " & _
+             "FROM tblSubscr INNER JOIN tblIndivAgt ON tblSubscr.SubID = tblIndivAgt.SubscrID " & _
+             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblIndivAgt.Primary)=True));"
     
     Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     If rst.RecordCount > 0 Then
@@ -32,9 +32,9 @@ Public Function CheckInvSecAgt(strSubID As String) As Boolean
     
     Set dbs = CurrentDb()
     
-    strSQL = "SELECT tblSubscr.SubID, tblInvAgt.AGENTid, tblInvAgt.Primary " & _
-             "FROM tblSubscr INNER JOIN tblInvAgt ON tblSubscr.SubID = tblInvAgt.SubscrID " & _
-             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblInvAgt.Primary)=False));"
+    strSQL = "SELECT tblSubscr.SubID, tblIndivAgt.AGENTid, tblIndivAgt.Primary " & _
+             "FROM tblSubscr INNER JOIN tblIndivAgt ON tblSubscr.SubID = tblIndivAgt.SubscrID " & _
+             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblIndivAgt.Primary)=False));"
     
     Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     If rst.RecordCount > 0 Then
@@ -56,9 +56,9 @@ Public Function GetInvPriAgt(strSubID As String) As Long
     
     Set dbs = CurrentDb()
     
-    strSQL = "SELECT tblSubscr.SubID, tblInvAgt.AGENTid, tblInvAgt.Primary " & _
-             "FROM tblSubscr INNER JOIN tblInvAgt ON tblSubscr.SubID = tblInvAgt.SubscrID " & _
-             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblInvAgt.Primary)=True));"
+    strSQL = "SELECT tblSubscr.SubID, tblIndivAgt.AGENTid, tblIndivAgt.Primary " & _
+             "FROM tblSubscr INNER JOIN tblIndivAgt ON tblSubscr.SubID = tblIndivAgt.SubscrID " & _
+             "WHERE (((tblSubscr.SubID)='" & strSubID & "') AND ((tblIndivAgt.Primary)=True));"
     
     Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     If rst.RecordCount > 0 Then

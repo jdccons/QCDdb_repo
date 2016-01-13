@@ -15,6 +15,7 @@ Begin OutputColumns
     Expression ="tblInvHdr_BEXHM.[TRANS NO]"
     Alias ="Invdate"
     Expression ="tblInvHdr_BEXHM.[INV DATE]"
+    Alias ="Expr1"
     Expression ="tblInvLin_BEXHM.Unitprice"
     Alias ="CustAdd1Trim"
     Expression ="Trim([GRstreet1])"
@@ -26,20 +27,12 @@ Begin OutputColumns
     Expression ="Trim([CityTrim] & \", \" & [GRstate] & \"  \" & [GRzip])"
     Expression ="tblGrp_Bexar.GROUPid"
 End
-Begin Joins
-    LeftTable ="tblInvHdr_BEXHM"
-    RightTable ="tblInvLin_BEXHM"
-    Expression ="tblInvHdr_BEXHM.[TRANS NO] = tblInvLin_BEXHM.Docno"
-    Flag =1
-    LeftTable ="tblGrp_Bexar"
-    RightTable ="tblInvHdr_BEXHM"
-    Expression ="tblGrp_Bexar.GROUPid = tblInvHdr_BEXHM.[CUST KEY]"
-    Flag =1
-End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="CityStateZip"
@@ -53,14 +46,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =915
-    Bottom =848
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =552
     Left =-1
     Top =-1
-    Right =912
+    Right =1253
     Bottom =332
     Left =0
     Top =0
@@ -69,7 +62,7 @@ Begin
         Left =597
         Top =73
         Right =782
-        Bottom =187
+        Bottom =116
         Top =0
         Name ="tblInvHdr_BEXHM"
         Name =""
@@ -78,7 +71,7 @@ Begin
         Left =966
         Top =54
         Right =1177
-        Bottom =198
+        Bottom =97
         Top =0
         Name ="tblInvLin_BEXHM"
         Name =""
@@ -87,7 +80,7 @@ Begin
         Left =132
         Top =66
         Right =450
-        Bottom =180
+        Bottom =169
         Top =14
         Name ="tblGrp_Bexar"
         Name =""

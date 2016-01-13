@@ -25,11 +25,11 @@ End
 Begin Joins
     LeftTable ="tbldentist"
     RightTable ="tbldentistspec"
-    Expression ="tbldentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Expression ="tbldentist.DentSpecialty=tbldentistspec.SPECIALTYID"
     Flag =2
     LeftTable ="tbldentist"
     RightTable ="tblGeographical"
-    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Expression ="tbldentist.DentGeoID=tblGeographical.GEOid"
     Flag =2
 End
 Begin OrderBy
@@ -48,16 +48,22 @@ Begin
         dbInteger "ColumnWidth" ="1725"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="Zip2"
+    End
+    Begin
+        dbText "Name" ="Bilingual"
+    End
 End
 Begin
     State =0
     Left =40
     Top =88
     Right =1000
-    Bottom =477
+    Bottom =412
     Left =-1
     Top =-1
-    Right =953
+    Right =945
     Bottom =144
     Left =0
     Top =0
@@ -66,7 +72,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tbldentist"
         Name =""
@@ -75,7 +81,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tbldentistspec"
         Name =""
@@ -84,7 +90,7 @@ Begin
         Left =306
         Top =6
         Right =402
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tblGeographical"
         Name =""

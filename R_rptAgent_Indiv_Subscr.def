@@ -1,6 +1,6 @@
-Version =19
-VersionRequired =19
-Checksum =726753961
+Version =20
+VersionRequired =20
+Checksum =-1838842419
 Begin Report
     LayoutForPrint = NotDefault
     AllowDesignChanges = NotDefault
@@ -18,10 +18,10 @@ Begin Report
     Left =1140
     Top =90
     Right =12540
-    Bottom =10890
+    Bottom =7890
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0xc15528a6b2a2e340
+        0x7d6d86aa4baee440
     End
     RecordSource ="SELECT tblAgent.AGENTid, tblAgent.AGENCY, tblAgent.AGENTSSN, tblAgent.AGENTfirst"
         ", tblAgent.AGENTlast, tblAgent.AGENTstreet1, tblAgent.AGENTstreet2, tblAgent.AGE"
@@ -31,19 +31,17 @@ Begin Report
     OnClose ="[Event Procedure]"
     DatasheetFontName ="Arial"
     PrtMip = Begin
-        0xa0050000a0050000a0050000a005000000000000dc240000200d000001000000 ,
+        0xa0050000a0050000a0050000a005000000000000192400003804000001000000 ,
         0x010000006801000000000000a10700000100000001000000
     End
     PrtDevMode = Begin
-        0x5c5c7773323030335c4850343230300000000000000000000000000000000000 ,
-        0x010400069c00ec1443ff800701000100ea0a6f08640001000f00580202000100 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc0243ff800701000100ea0a6f08640001000f00580202000100 ,
         0x5802020000004c65747465720000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000010000000000000001000000 ,
-        0x020000000c010000ffffffff0000000000000000000000000000000044494e55 ,
-        0x220030036c05800fbc9264af0000000000000000000000000000000000000000 ,
-        0x0000000000000000200000000000000001000100000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000010000000000000000000000 ,
-        0x0000000000000200000000000000000000000000000000000000000000000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -57,52 +55,20 @@ Begin Report
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000000000000000000000000000030030000534d544a ,
-        0x00000000100020034800500020004c0061007300650072004a00650074002000 ,
-        0x34003200300030002000500043004c00200036000000496e70757442696e0046 ,
-        0x4f524d534f5552434500524553444c4c00556e69726573444c4c005265736f6c ,
-        0x7574696f6e0036303064706900466173745265730054727565004f7269656e74 ,
-        0x6174696f6e00504f5254524149540048504f7269656e74526f74617465313830 ,
-        0x0046616c7365004850537461706c696e674f70706f7365640046616c73650050 ,
-        0x6170657253697a65004c4554544552004d6564696154797065004175746f0044 ,
-        0x75706c6578004e4f4e45004850466f6e74496e7374616c6c6572005452554500 ,
-        0x4850504a4c456e636f64696e670055544638004f757470757442696e00417574 ,
-        0x6f00537461706c696e67004e6f6e6500537461706c696e67436d6443616c6c62 ,
-        0x61636b00537461706c696e67436d64436200436f6c6c617465004f4646004a52 ,
-        0x436f6e73747261696e7473004a524348445061727469616c004a524844496e73 ,
-        0x74616c6c6564004a5248444f6666004a5248444e6f74496e7374616c6c656400 ,
-        0x4a5248444f666600545441734269746d61707353657474696e670054544d6f64 ,
-        0x654f75746c696e650052455443686f69636500547275650048504c706953656c ,
-        0x656374696f6e004e6f6e6500485050434c36506173735468726f756768005472 ,
-        0x7565004a52436d6443616c6c6261636b004a52004850436f6c6f724d6f646500 ,
-        0x4d4f4e4f4348524f4d455f4d4f4445004850426f726e4f6e4461746500485042 ,
-        0x4f440048504a6f6242794a6f624f76657272696465004a424a4f004850584d4c ,
-        0x46696c6555736564004850584d4c46696c654e616d6500485050444c54797065 ,
-        0x0050444c5f50434c36005072696e745175616c69747947726f75700050514772 ,
-        0x6f75705f330045636f6e6f6d6f64650046616c73650048504a6f624163636f75 ,
-        0x6e74696e670048504a4f42414343545f4a4f4241434e54000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000800f00004955504801001100000000000100000002000000 ,
-        0x0100000000000000000000000300000000000000000000000100010064000100 ,
-        0x000002000200000001000000020000004c006500740074006500720000000000 ,
-        0x0000000000000000000000000000000000000000010000000600000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x000000000000000000000000000000000000000020005b006e006f006e006500 ,
-        0x5d00000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x080012002300010077696e73706f6f6c00005c5c7773323030335c4850343230 ,
-        0x300000485034323030000000000000000000000000000000000000
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
     Begin
         Begin Label
@@ -130,6 +96,7 @@ Begin Report
             TextFontFamily =18
             BackStyle =0
             FontName ="Times New Roman"
+            AsianLineBreak =255
         End
         Begin ListBox
             TextFontFamily =18
@@ -150,7 +117,7 @@ Begin Report
             Height =3000
             Name ="ReportHeader"
             GUID = Begin
-                0xdae9ef2ea6bf8145916576d53293eef8
+                0xc697fd5598bbea4d823eacb86bdd201a
             End
             Begin
                 Begin Label
@@ -164,7 +131,7 @@ Begin Report
                     Name ="Label22"
                     Caption ="Individual Subscribers for Agent"
                     GUID = Begin
-                        0x0b6260b2f0487142841cad7f6e0de1f1
+                        0x3fed5461c4d3964dbdc7c707faf28233
                     End
                 End
                 Begin TextBox
@@ -175,7 +142,7 @@ Begin Report
                     Name ="AGENTid"
                     ControlSource ="AGENTid"
                     GUID = Begin
-                        0x57059ea2b365b34c8a66e9aaadbb7703
+                        0xe4a135976602ed4cb9a5d4e687ed678c
                     End
                     Begin
                         Begin Label
@@ -186,7 +153,7 @@ Begin Report
                             Name ="AGENTid_Label"
                             Caption ="Agent ID:"
                             GUID = Begin
-                                0xe68ba195c0b3264c9127544723c4242a
+                                0x83eab1289a22914e8e815c356f3e4f9b
                             End
                         End
                     End
@@ -200,7 +167,7 @@ Begin Report
                     Name ="AGENCY"
                     ControlSource ="AGENCY"
                     GUID = Begin
-                        0x21daa28cc134d7448c1bd5448903ce37
+                        0x1bfeedeac039e145b1f30bd0eb1399be
                     End
                     Begin
                         Begin Label
@@ -211,7 +178,7 @@ Begin Report
                             Name ="AGENCY_Label"
                             Caption ="Agency:"
                             GUID = Begin
-                                0x1b306b0289d89148b4beb3f59cea23ad
+                                0x6e13d4b865ab6c41a6f88ad0f04a30e2
                             End
                         End
                     End
@@ -226,7 +193,7 @@ Begin Report
                     ControlSource ="AGENTSSN"
                     InputMask ="000\\-00\\-0000;;_"
                     GUID = Begin
-                        0x19f178cc71366a4aaba9c37ce05609a3
+                        0x15eb0ec98747df47ba6d02505c357dc9
                     End
                     Begin
                         Begin Label
@@ -237,7 +204,7 @@ Begin Report
                             Name ="AGENTSSN_Label"
                             Caption ="Agent SSN:"
                             GUID = Begin
-                                0x0ce27208b507404eb8a59a9a963a3b2f
+                                0x89b9c2ddf296054b888e14f5cc6edd95
                             End
                         End
                     End
@@ -251,7 +218,7 @@ Begin Report
                     Name ="AGENTfirst"
                     ControlSource ="AGENTfirst"
                     GUID = Begin
-                        0xcb193f4cc61a4d4985ee6219f7089e4e
+                        0x2c0bdcb050e46842b5389e7efc0cd9dd
                     End
                     Begin
                         Begin Label
@@ -262,7 +229,7 @@ Begin Report
                             Name ="AGENTfirst_Label"
                             Caption ="Agent First Name:"
                             GUID = Begin
-                                0x3363357dfc65fd49a6ea41df0e53667c
+                                0x9f966015100a0347a92b97488614ac0d
                             End
                         End
                     End
@@ -276,7 +243,7 @@ Begin Report
                     Name ="AGENTlast"
                     ControlSource ="AGENTlast"
                     GUID = Begin
-                        0x4a0ed655db0c8443ab7b79c62e217d46
+                        0xa0aeaf2113903445a3382a3d36e9510d
                     End
                     Begin
                         Begin Label
@@ -287,7 +254,7 @@ Begin Report
                             Name ="AGENTlast_Label"
                             Caption ="Agent Last Name:"
                             GUID = Begin
-                                0xea7664683e905c4bb27ec1f539224b6f
+                                0x6c9c8069a2f8b1488bd038071893c46e
                             End
                         End
                     End
@@ -301,7 +268,7 @@ Begin Report
                     Name ="AGENTstreet1"
                     ControlSource ="AGENTstreet1"
                     GUID = Begin
-                        0xa01dc25ee1880441b15eb541d72fa7a0
+                        0x6678131a5d591b4e8225a156f8cdd062
                     End
                     Begin
                         Begin Label
@@ -312,7 +279,7 @@ Begin Report
                             Name ="AGENTstreet1_Label"
                             Caption ="Street 1:"
                             GUID = Begin
-                                0xf609ce6e6ce0da459aff765115579191
+                                0x241e6a72bb55714e8b62b32a32a85c83
                             End
                         End
                     End
@@ -326,7 +293,7 @@ Begin Report
                     Name ="AGENTstreet2"
                     ControlSource ="AGENTstreet2"
                     GUID = Begin
-                        0xdf705ed76be2934fbce4da06532d2de7
+                        0x9e98f9edb79e2545aeda73654fc55c1d
                     End
                     Begin
                         Begin Label
@@ -337,7 +304,7 @@ Begin Report
                             Name ="AGENTstreet2_Label"
                             Caption ="Street 2:"
                             GUID = Begin
-                                0x54f878a0570cdb47b5a293184cc9b06a
+                                0x4b1ef130f91c7b4fb19dcf906480e527
                             End
                         End
                     End
@@ -351,7 +318,7 @@ Begin Report
                     Name ="AGENTcity"
                     ControlSource ="AGENTcity"
                     GUID = Begin
-                        0xd1383a83e33d19428b5bef6e6b067f9e
+                        0x9aae2e0a08c6a54c934edc8fddcfe6ce
                     End
                     Begin
                         Begin Label
@@ -362,7 +329,7 @@ Begin Report
                             Name ="AGENTcity_Label"
                             Caption ="City:"
                             GUID = Begin
-                                0x3620431df74fd8459d051fa775ea89d4
+                                0xa86103c4fb91da4a9ff4c18b0615fbd8
                             End
                         End
                     End
@@ -376,7 +343,7 @@ Begin Report
                     Name ="AGENTstate"
                     ControlSource ="AGENTstate"
                     GUID = Begin
-                        0xb40d3145ba0a44468ed0632342011845
+                        0x3f395bab1b3eb34fb160177d8bace599
                     End
                     Begin
                         Begin Label
@@ -387,7 +354,7 @@ Begin Report
                             Name ="AGENTstate_Label"
                             Caption ="ST:"
                             GUID = Begin
-                                0x707ecda0e0dbdf4897d4b3caab7a7e6c
+                                0xb3f894528815874eb29f82ada0c5cbfb
                             End
                         End
                     End
@@ -401,7 +368,7 @@ Begin Report
                     Name ="AGENTzip"
                     ControlSource ="AGENTzip"
                     GUID = Begin
-                        0x55b16129c2906f429a10cf09930d38e9
+                        0x9ae15ad09925a54a9b758622e4618728
                     End
                     Begin
                         Begin Label
@@ -412,7 +379,7 @@ Begin Report
                             Name ="AGENTzip_Label"
                             Caption ="Zip:"
                             GUID = Begin
-                                0x234244ca13a2424895d406537118ac5a
+                                0x7a76b3c7ab87c349871c6e3bbc38c122
                             End
                         End
                     End
@@ -427,7 +394,7 @@ Begin Report
                     ControlSource ="AGENTphone"
                     InputMask ="!\\(999\") \"000\\-0000;;_"
                     GUID = Begin
-                        0x182534bb1795794bafa4a6ae4e1f4652
+                        0x5deb1f4eacb3574893722600fa0071d8
                     End
                     Begin
                         Begin Label
@@ -438,7 +405,7 @@ Begin Report
                             Name ="AGENTphone_Label"
                             Caption ="Phone:"
                             GUID = Begin
-                                0x57e5c517e1135447abc62ed1d88397c4
+                                0x4b04df1c3d554e488bb11cf7aae88379
                             End
                         End
                     End
@@ -449,7 +416,7 @@ Begin Report
                     Width =6480
                     Name ="Line25"
                     GUID = Begin
-                        0x80ac5568580de14e99838b9217c1e7cc
+                        0xacd152033250b94d8846e8aa8b6a2224
                     End
                 End
             End
@@ -458,7 +425,7 @@ Begin Report
             Height =510
             Name ="PageHeaderSection"
             GUID = Begin
-                0xc3311e202fc0214eb7253545caf1b25d
+                0xb5def22805a1b741b5435faa884a65af
             End
             Begin
                 Begin Label
@@ -471,7 +438,7 @@ Begin Report
                     Caption ="Last Name"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x5e21e7ddfb2f934fa591c5ba3fea4ab2
+                        0x08d910839a27c640b4c2a3af3f2df7fc
                     End
                 End
                 Begin Label
@@ -484,7 +451,7 @@ Begin Report
                     Caption ="SSN"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xc434fc4a7128144d96e5e4057fa3edd2
+                        0xf1e8264e452da94fa83389e3b31737ff
                     End
                 End
                 Begin Label
@@ -496,7 +463,7 @@ Begin Report
                     Caption ="SubID"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xbdfec5f882463b4998eb08be4291fddf
+                        0xae21ee0b9da90a42a2fd637325ee5731
                     End
                 End
                 Begin Label
@@ -510,7 +477,7 @@ Begin Report
                     Caption ="Plan ID"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xd318ec9985e271469419390a1b52dd9c
+                        0xd645c895b753754a90328151b120e22a
                     End
                 End
                 Begin Label
@@ -524,7 +491,7 @@ Begin Report
                     Caption ="Cover ID"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x10c6376d921c45409d65a16f55c46890
+                        0x887aaa38ecd853458ef33748f43ac57f
                     End
                 End
                 Begin Label
@@ -537,7 +504,7 @@ Begin Report
                     Caption ="First Name"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x869e7a416786f54a88e42839d4385c2d
+                        0x0573797ca0ba37439f8f506af8c49613
                     End
                 End
                 Begin Line
@@ -547,7 +514,7 @@ Begin Report
                     Name ="Line21"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x8305d089ccd67b4b88ea6181a36a4c41
+                        0x6e28fd9e8f8fbc4d910eba746bc80bd7
                     End
                 End
                 Begin Line
@@ -556,7 +523,7 @@ Begin Report
                     Name ="Line22"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xf606e4e5ca57f242b0c7543c6b906dde
+                        0xbe8c2c83ff163b4d95a6b1bca1534b4b
                     End
                 End
                 Begin Line
@@ -566,7 +533,7 @@ Begin Report
                     Name ="Line23"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x0cdc709c792b3d47bb3557fc24871519
+                        0xd42851fe224675438572820a3a1bafae
                     End
                 End
                 Begin Line
@@ -576,7 +543,7 @@ Begin Report
                     Name ="Line24"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x816dacab4cfe0543bc8c1f154d92afc1
+                        0xda11054fd63d3f45aaf9ef92040e1e50
                     End
                 End
                 Begin Label
@@ -589,7 +556,7 @@ Begin Report
                     Caption ="Active"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xf4fd594d32501c4abd4d6d78e15b12c3
+                        0x6938f5ddad6b6745b1d894c3c9701fe0
                     End
                 End
             End
@@ -600,7 +567,7 @@ Begin Report
             Height =1080
             Name ="Detail"
             GUID = Begin
-                0xb5864a0e83fdbd4f85e2587bde53f1ae
+                0xded7f79ec5a3d34fbf183cd48d85132e
             End
             Begin
                 Begin Subform
@@ -611,7 +578,7 @@ Begin Report
                     LinkChildFields ="AGENTid"
                     LinkMasterFields ="AGENTid"
                     GUID = Begin
-                        0xeba76ba4c1490a4482009e3aa4ae1216
+                        0xd2710c7e47047c409ac4323cd50bc168
                     End
                 End
             End
@@ -620,7 +587,7 @@ Begin Report
             Height =2010
             Name ="PageFooterSection"
             GUID = Begin
-                0x2d03a57f3d7bd04d8c65e3219219a2c1
+                0x502c544ec8ba9c4599667c55f2e9e74c
             End
             Begin
                 Begin TextBox
@@ -633,7 +600,7 @@ Begin Report
                     ControlSource ="=Now()"
                     Format ="Long Date"
                     GUID = Begin
-                        0x382465001db59741a215d6f8c3b18d00
+                        0x2c49726c2c87864ab1f6671609964150
                     End
                 End
                 Begin TextBox
@@ -647,14 +614,14 @@ Begin Report
                     Name ="Text20"
                     ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
                     GUID = Begin
-                        0xa733ea8534cc1b46932865ecfaadc7d1
+                        0xa63aacbf1b7f2945bae5b71956de20a9
                     End
                 End
                 Begin Line
                     Width =8928
                     Name ="Line29"
                     GUID = Begin
-                        0x79a4ac7945f02745a90d54c93f9671ea
+                        0x0e58ec048faff34e8b1e484204c29f9d
                     End
                 End
                 Begin Line
@@ -662,7 +629,7 @@ Begin Report
                     Width =8928
                     Name ="Line30"
                     GUID = Begin
-                        0x5ef950e5edfeaf4f8ad28b5a0993bd57
+                        0x6fe27f2d3b91144bb14739d1b3296ffe
                     End
                 End
                 Begin Label
@@ -673,7 +640,7 @@ Begin Report
                     Name ="Label28"
                     Caption ="Active\015\0121 - Active\015\0122 - Hold\015\0123 - Cancelled"
                     GUID = Begin
-                        0xeabe90a051ca91428b4807aa1b174ca3
+                        0xce8add56135f16429129cc2de47eec20
                     End
                 End
                 Begin Label
@@ -685,7 +652,7 @@ Begin Report
                     Caption ="PlanID\015\0121 - Red\015\0122 -White\015\0123 - Blue\015\0124 - Red Plus\015\012"
                         "5 - QCD Only"
                     GUID = Begin
-                        0x7cf78cc064458f4a869a48e47f79a2a1
+                        0xd82fb6f1fe842f4090046728d9566739
                     End
                 End
                 Begin Label
@@ -697,7 +664,7 @@ Begin Report
                     Caption ="CoverID\015\0121 - Individual Only\015\0122 - Individual Plus One\015\0123 - Ind"
                         "ividual  with Children\015\0124 - Family"
                     GUID = Begin
-                        0x60452cf30a320742945cfd76d777854a
+                        0x30799c2a41594043b1b366b80ff5f48b
                     End
                 End
             End
@@ -707,7 +674,7 @@ Begin Report
             Height =0
             Name ="ReportFooter"
             GUID = Begin
-                0x825f879b94fa454b8b4cf98499621760
+                0xbb5db569aa144f42bb19ae4292fff3fa
             End
         End
     End
@@ -722,8 +689,8 @@ Option Compare Database
 Private Sub Report_Close()
 
     DoCmd.Restore
-    DoCmd.Close A_FORM, "frmAgent_Indiv_Subscr"
-    Forms![fmnuSwitchboard].Visible = True
-    DoCmd.OpenForm "fmnuReportAgent"
+    DoCmd.Close A_FORM, "fdlgAgentIndivSubscr"
+    'Forms![fmnuSwitchboard].Visible = True
+    'DoCmd.OpenForm "fmnuReportAgent"
 
 End Sub

@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-53289670
+Checksum =-340775760
 Begin Form
     AllowFilters = NotDefault
     RecordSelectors = NotDefault
@@ -19,28 +19,30 @@ Begin Form
     GridY =24
     Width =9360
     DatasheetFontHeight =10
-    ItemSuffix =23
-    Left =4800
-    Top =240
-    Right =13920
-    Bottom =4755
+    ItemSuffix =24
+    Left =5385
+    Top =960
+    Right =14490
+    Bottom =5460
     DatasheetGridlinesColor =12632256
     Filter ="[ItemNumber] = 0 AND [Argument] = 'Default' "
     RecSrcDt = Begin
         0xc3324a1fd3c6e140
     End
     GUID = Begin
-        0x11a7c6dc3a5a5249b5c14304cebeebae
+        0x23955b96630caa4096e2e4ecbbed6b09
     End
     NameMap = Begin
-        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
-        0x0000000000000000000000000000
+        0x0acc0e5500000000c6a27bd840405d468c43b2783375400f00000000827c457e ,
+        0x60b1e440000000000000000053007700690074006300680062006f0061007200 ,
+        0x640020004900740065006d007300000000000000000000000000000000000000 ,
+        0x000000000c000000030000000000000000000000000000000000
     End
     RecordSource ="Switchboard Items"
     Caption ="Switchboard"
     OnCurrent ="[Event Procedure]"
     OnOpen ="[Event Procedure]"
-    MenuBar ="mnuMain"
+    MenuBar ="MainMenuMenuBar"
     DatasheetFontName ="Arial"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
@@ -48,17 +50,12 @@ Begin Form
     End
     PrtDevMode = Begin
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x010402059c00f40453ef800101000100ea0a6f08640001000f00b00402000100 ,
+        0x010400069c00fc0253ef800101000100ea0a6f08640001000f00b00402000100 ,
         0xb004030001004c65747465720000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000010000000000000001000000 ,
-        0x0200000001000000000000000000000000000000000000000000000050524956 ,
-        0xe220000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000180000000000102710271027 ,
-        0x0000102700000000000000000000c40200000000000000000000000000000000 ,
-        0x00000000000000000300000000000000300210005c4b03006843040000000000 ,
-        0x000000000000000000000000000000000000000000000000449f6be605000000 ,
-        0x04000000ff00ff00010000000000000000000000000000000000000000000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -74,28 +71,18 @@ Begin Form
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x3002000045424441000001000100000001000000010000000100000000000000 ,
-        0x5300740061006e00640061007200640000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000001000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x08001c0026000100000000000000000000000000000000000000000000000000 ,
-        0x0000000000004d7920446f63756d656e74735c2a2e70646600
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
     End
     OnLoad ="[Event Procedure]"
     Begin
@@ -129,7 +116,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x03df1f756b46bd4cb8e3d93df4d6a6d7
+                0xf120a0947a6a814890026b9405a32ebd
             End
             Begin
                 Begin Rectangle
@@ -143,7 +130,7 @@ Begin Form
                     BackColor =8421504
                     Name ="VerticalShadowBox"
                     GUID = Begin
-                        0x92d3adb7bb13bb488c5d91d21281611d
+                        0x097868cebfe2a04cb44b61855e691295
                     End
                 End
                 Begin CommandButton
@@ -158,7 +145,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(1)"
                     FontName ="System"
                     GUID = Begin
-                        0xb8f88d14fceece47ad5669e5a50ea648
+                        0xd5712d7ce99bdb4eaec53a6e6ffe63a6
                     End
                     Begin
                         Begin Label
@@ -171,7 +158,7 @@ Begin Form
                             Name ="OptionLabel1"
                             OnClick ="=HandleButtonClick(1)"
                             GUID = Begin
-                                0x0f34c7404f96db4c8a96f0cd08831e77
+                                0xee17a46f22ba6743903e464b4ec2892e
                             End
                         End
                     End
@@ -189,7 +176,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(2)"
                     FontName ="System"
                     GUID = Begin
-                        0xbbb6afcafcf4904db350a55f170b9f62
+                        0x77adaf041292a942b19086ca4a5f4d3d
                     End
                     Begin
                         Begin Label
@@ -202,7 +189,7 @@ Begin Form
                             Name ="OptionLabel2"
                             OnClick ="=HandleButtonClick(2)"
                             GUID = Begin
-                                0xa455902d839c17429e068ebda9270762
+                                0x0b3e9ccdf4e1f24686ad4daa2f29d202
                             End
                         End
                     End
@@ -220,7 +207,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(3)"
                     FontName ="System"
                     GUID = Begin
-                        0x4a6883ce28114d4784ddb43037b38e07
+                        0x490c8a63ee148f4692bd7e0af2ff54b3
                     End
                     Begin
                         Begin Label
@@ -233,7 +220,7 @@ Begin Form
                             Name ="OptionLabel3"
                             OnClick ="=HandleButtonClick(3)"
                             GUID = Begin
-                                0x5fdeb5bde07b024192db1e439ecc2d7b
+                                0x35fd0c431bcbe44eb62e5a591623f1f9
                             End
                         End
                     End
@@ -251,7 +238,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(4)"
                     FontName ="System"
                     GUID = Begin
-                        0x46da7040cd4175459004e5bb4d2c8738
+                        0xef2e026b3b2ddd458f80035ca716a934
                     End
                     Begin
                         Begin Label
@@ -264,7 +251,7 @@ Begin Form
                             Name ="OptionLabel4"
                             OnClick ="=HandleButtonClick(4)"
                             GUID = Begin
-                                0xa9b480309c57ca4a991c884581fc0ace
+                                0xa1d89d660a281347b8c254986d8109b5
                             End
                         End
                     End
@@ -282,7 +269,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(5)"
                     FontName ="System"
                     GUID = Begin
-                        0x0bb912d330953048a6ab1b7bf2035733
+                        0x1603fa6a2763e542800389490e0fdd58
                     End
                     Begin
                         Begin Label
@@ -295,7 +282,7 @@ Begin Form
                             Name ="OptionLabel5"
                             OnClick ="=HandleButtonClick(5)"
                             GUID = Begin
-                                0x794769275765c04498308c53d73d3f4a
+                                0xcb3e4dfabb25854f8480942b812b0f10
                             End
                         End
                     End
@@ -313,7 +300,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(6)"
                     FontName ="System"
                     GUID = Begin
-                        0xd400e7c0eef9574494476e97da84cff1
+                        0xa6b9992260506d448f3c4f5e5b4d1032
                     End
                     Begin
                         Begin Label
@@ -326,7 +313,7 @@ Begin Form
                             Name ="OptionLabel6"
                             OnClick ="=HandleButtonClick(6)"
                             GUID = Begin
-                                0x8045ca4b8444e442b9a451872d4b3b32
+                                0x95ebe97b916e1544868245c22fb9627d
                             End
                         End
                     End
@@ -344,7 +331,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(7)"
                     FontName ="System"
                     GUID = Begin
-                        0xd82e06fa647c674486fb5c003502953e
+                        0x5113b83c9fddf8499036e00e5d05e69d
                     End
                     Begin
                         Begin Label
@@ -357,7 +344,7 @@ Begin Form
                             Name ="OptionLabel7"
                             OnClick ="=HandleButtonClick(7)"
                             GUID = Begin
-                                0x5cdac03d22836b4084634643dad41add
+                                0x5f69bd2061087c46963d121a5237fb11
                             End
                         End
                     End
@@ -375,7 +362,7 @@ Begin Form
                     OnClick ="=HandleButtonClick(8)"
                     FontName ="System"
                     GUID = Begin
-                        0x35beb161d4e0504fb35d85d6a1c727d3
+                        0xa46adafb6ca3ce4da73d3e4c1d8507eb
                     End
                     Begin
                         Begin Label
@@ -388,7 +375,7 @@ Begin Form
                             Name ="OptionLabel8"
                             OnClick ="=HandleButtonClick(8)"
                             GUID = Begin
-                                0x4b787a570c7eff4f8c96acf5c80dce0b
+                                0xb27fc2c06987e14eb9a536406411266d
                             End
                         End
                     End
@@ -403,7 +390,7 @@ Begin Form
                     BorderColor =8421376
                     Name ="HorizontalHeaderBox"
                     GUID = Begin
-                        0xe9158abb425c90439402ae9a4031ef74
+                        0x2377bb9ccd6e0943980b781bef2996ef
                     End
                 End
                 Begin Line
@@ -414,7 +401,7 @@ Begin Form
                     Width =4698
                     Name ="HorizontalDividingLine"
                     GUID = Begin
-                        0xc9305412cb923d4c926cc6e41cb821a2
+                        0xb909b66444c03244a381dba0fbc346aa
                     End
                 End
                 Begin Image
@@ -425,21 +412,22 @@ Begin Form
                     BackColor =8421376
                     Name ="Picture"
                     GUID = Begin
-                        0xb0d22b7ab912a74f9e692db1312f5477
+                        0x44bc59a70cf4c8448d78198f97bc1027
                     End
                 End
                 Begin Label
                     OverlapFlags =215
                     TextAlign =2
-                    Left =3015
+                    Left =2910
                     Top =120
-                    Width =4170
-                    Height =405
+                    Width =4365
+                    Height =450
                     FontSize =18
+                    ForeColor =65535
                     Name ="Label22"
-                    Caption ="QCD of America"
+                    Caption ="QCD of America (Dev)"
                     GUID = Begin
-                        0xc8657b03ff4969458ba0f4abff735d0b
+                        0x2c867e1229cba2468a083328eba7a6cc
                     End
                 End
                 Begin Rectangle
@@ -452,7 +440,7 @@ Begin Form
                     BackColor =10040115
                     Name ="Box66"
                     GUID = Begin
-                        0xda75fd9d5d00a34096cade0f0c31cbc6
+                        0x8aaae35823094b4982f168e637e6e18f
                     End
                 End
                 Begin TextBox
@@ -466,7 +454,7 @@ Begin Form
                     TabIndex =8
                     Name ="txtVersion"
                     GUID = Begin
-                        0x3f0d35729b6b8349a23150b0762ff3f2
+                        0xba6e1c7545d35f47ac1a1e37782fe43d
                     End
                     Begin
                         Begin Label
@@ -482,7 +470,7 @@ Begin Form
                             Caption ="Current Version"
                             FontName ="Tahoma"
                             GUID = Begin
-                                0x31b933b72a725a418ca934da5a299bbf
+                                0x007404251abca24fa6b8c3b0d93d5928
                             End
                         End
                     End
@@ -501,7 +489,7 @@ Begin Form
                     ForeColor =10092543
                     Name ="txtVersionFE"
                     GUID = Begin
-                        0x219daf4510f83a458ac86daa4497b20a
+                        0x5674ead64e34de42b4ff8195a627e2a4
                     End
                     Begin
                         Begin Label
@@ -517,9 +505,22 @@ Begin Form
                             Caption ="Front-End Ver."
                             FontName ="Tahoma"
                             GUID = Begin
-                                0xc5cbaecacd6af348bdae3573f3094e20
+                                0x41ffbb45d686af4881777f5f88fcbdac
                             End
                         End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =215
+                    Left =840
+                    Top =1125
+                    Width =288
+                    Height =288
+                    TabIndex =10
+                    Name ="btnQuit"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x8b517bd97db8e342a3725c8b4c085465
                     End
                 End
             End
@@ -540,12 +541,6 @@ End Sub
 
 Private Sub Form_Open(Cancel As Integer)
 
-    ' Run a querydef that synchronizes the rates
-'    DoCmd.SetWarnings False
-'    DoCmd.Hourglass True
-'    DoCmd.OpenQuery "Joe_Fix_Bad_Rates"
-'    DoCmd.Hourglass False
-'    DoCmd.SetWarnings True
     
     ' Minimize the database window and initialize the form.
 
@@ -553,6 +548,16 @@ Private Sub Form_Open(Cancel As Integer)
     Me.Filter = "[ItemNumber] = 0 AND [Argument] = 'Default' "
     Me.FilterOn = True
     
+    Dim db As Database
+    Set db = CurrentDb()
+     
+    Dim newtitle
+     
+    Set newtitle = db.CreateProperty("Apptitle", dbText, "QCD of America DEV")
+    'db.Properties.Append newtitle
+    db.Properties("AppTitle").value = "QCD of America DEV"
+    Call Application.RefreshTitleBar
+        
 End Sub
 
 Private Sub Form_Current()
@@ -754,3 +759,19 @@ Private Function CheckVersion() As Boolean
   Set dbs = Nothing
   CheckVersion = True
 End Function
+
+
+Public Sub btnQuit_Click()
+On Error GoTo Err_btnQuit_Click
+
+
+    Application.Quit acQuitPrompt
+
+Exit_btnQuit_Click:
+    Exit Sub
+
+Err_btnQuit_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_btnQuit_Click
+    
+End Sub

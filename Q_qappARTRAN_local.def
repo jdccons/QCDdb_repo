@@ -1,0 +1,118 @@
+Operation =3
+Name ="ARTRAN_local"
+Option =0
+Where ="(((ARTRAN.DocumentDate)>=#1/1/2014#))"
+Begin InputTables
+    Name ="ARTRAN"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Name ="DocumentNumber"
+    Expression ="ARTRAN.DocumentNumber"
+    Alias ="Expr2"
+    Name ="ApplyTo"
+    Expression ="ARTRAN.ApplyTo"
+    Alias ="Expr3"
+    Name ="TerritoryKey"
+    Expression ="ARTRAN.TerritoryKey"
+    Alias ="Expr4"
+    Name ="SalespersonKey"
+    Expression ="ARTRAN.SalespersonKey"
+    Alias ="Expr5"
+    Name ="CustomerKey"
+    Expression ="ARTRAN.CustomerKey"
+    Alias ="Expr6"
+    Name ="CustomerClassKey"
+    Expression ="ARTRAN.CustomerClassKey"
+    Alias ="Expr7"
+    Name ="OrderNumber"
+    Expression ="ARTRAN.OrderNumber"
+    Alias ="Expr8"
+    Name ="ShipToKey"
+    Expression ="ARTRAN.ShipToKey"
+    Alias ="Expr9"
+    Name ="CheckBatch"
+    Expression ="ARTRAN.CheckBatch"
+    Alias ="Expr10"
+    Name ="TransactionType"
+    Expression ="ARTRAN.TransactionType"
+    Alias ="Expr11"
+    Name ="DocumentDate"
+    Expression ="ARTRAN.DocumentDate"
+    Alias ="Expr12"
+    Name ="AgeDate"
+    Expression ="ARTRAN.AgeDate"
+    Alias ="Expr13"
+    Name ="DaysTillDue"
+    Expression ="ARTRAN.DaysTillDue"
+    Alias ="Expr14"
+    Name ="DocumentAmt"
+    Expression ="ARTRAN.DocumentAmt"
+    Alias ="Expr15"
+    Name ="DiscountAmt"
+    Expression ="ARTRAN.DiscountAmt"
+    Alias ="Expr16"
+    Name ="FreightAmt"
+    Expression ="ARTRAN.FreightAmt"
+    Alias ="Expr17"
+    Name ="TaxAmt"
+    Expression ="ARTRAN.TaxAmt"
+    Alias ="Expr18"
+    Name ="CostAmt"
+    Expression ="ARTRAN.CostAmt"
+    Alias ="Expr19"
+    Name ="CommissionHomeOvride"
+    Expression ="ARTRAN.CommissionHomeOvride"
+    Alias ="Expr20"
+    Name ="RetentionInvoice"
+    Expression ="ARTRAN.RetentionInvoice"
+    Alias ="Expr21"
+    Name ="SysDocID"
+    Expression ="ARTRAN.SysDocID"
+    Alias ="Expr22"
+    Name ="ApplySysDocID"
+    Expression ="ARTRAN.ApplySysDocID"
+    Alias ="Expr23"
+    Name ="Spare"
+    Expression ="ARTRAN.Spare"
+    Alias ="Expr24"
+    Name ="RecUserID"
+    Expression ="ARTRAN.RecUserID"
+    Alias ="Expr25"
+    Name ="RecDate"
+    Expression ="ARTRAN.RecDate"
+    Alias ="Expr26"
+    Name ="RecTime"
+    Expression ="ARTRAN.RecTime"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =113
+    Top =129
+    Right =1266
+    Bottom =453
+    Left =-1
+    Top =-1
+    Right =1138
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =231
+        Bottom =49
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+End

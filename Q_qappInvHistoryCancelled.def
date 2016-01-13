@@ -2,20 +2,20 @@ Operation =3
 Name ="tblInvHistoryCancelled"
 Option =0
 Begin InputTables
-    Name ="tblGrp"
-    Name ="qselInvoiceCancelled"
     Name ="tlkpClientServiceReps"
     Name ="tblGeographical"
+    Name ="qselInvoiceCancelled"
+    Name ="tblGrp"
 End
 Begin OutputColumns
     Name ="GrpID"
     Expression ="qselInvoiceCancelled.GrpID"
     Name ="GRname"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Name ="GRcity"
-    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRCity"
     Name ="GRstate"
-    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRState"
     Alias ="BaseAmt"
     Name ="BaseAmt"
     Expression ="0"
@@ -37,24 +37,25 @@ End
 Begin Joins
     LeftTable ="qselInvoiceCancelled"
     RightTable ="tblGrp"
-    Expression ="qselInvoiceCancelled.GrpID = tblGrp.GROUPid"
+    Expression ="qselInvoiceCancelled.GrpID=tblGrp.GroupID"
     Flag =1
     LeftTable ="tblGeographical"
     RightTable ="tblGrp"
-    Expression ="tblGeographical.GEOid = tblGrp.GRPgeoID"
+    Expression ="tblGeographical.GEOid=tblGrp.GRGeoID"
     Flag =1
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
     Begin
         dbText "Name" ="tblGeographical.GEOdesc"
@@ -67,37 +68,19 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =368
+    Bottom =387
     Left =-1
     Top =-1
-    Right =933
+    Right =925
     Bottom =163
     Left =0
     Top =0
     ColumnsShown =651
     Begin
-        Left =240
-        Top =5
-        Right =485
-        Bottom =127
-        Top =0
-        Name ="tblGrp"
-        Name =""
-    End
-    Begin
-        Left =31
-        Top =10
-        Right =185
-        Bottom =117
-        Top =0
-        Name ="qselInvoiceCancelled"
-        Name =""
-    End
-    Begin
         Left =523
         Top =6
         Right =745
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tlkpClientServiceReps"
         Name =""
@@ -106,9 +89,27 @@ Begin
         Left =783
         Top =6
         Right =949
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tblGeographical"
+        Name =""
+    End
+    Begin
+        Left =31
+        Top =10
+        Right =185
+        Bottom =113
+        Top =0
+        Name ="qselInvoiceCancelled"
+        Name =""
+    End
+    Begin
+        Left =240
+        Top =5
+        Right =485
+        Bottom =123
+        Top =0
+        Name ="tblGrp"
         Name =""
     End
 End

@@ -3,8 +3,8 @@ Option =8
 Where ="(((tblSubscr.PlanID)<>3 Or (tblSubscr.PlanID) Is Null) AND ((tblSubscr.SubID)='2"
     "5188872'))"
 Begin InputTables
-    Name ="tblDependent"
     Name ="tblSubscr"
+    Name ="tblDependent"
 End
 Begin OutputColumns
     Expression ="tblSubscr.SubSSN"
@@ -18,7 +18,7 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"

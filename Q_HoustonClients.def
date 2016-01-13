@@ -1,28 +1,30 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRPgeoID)=\"TXHSE\"))"
+Where ="(((tblGrp.GRGeoID)=\"TXHSE\"))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRphone2"
-    Expression ="tblGrp.GRfax"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRsrvCONT"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRee"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRPhone2"
+    Expression ="tblGrp.GRFax"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRSrvCont"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GREE"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -30,10 +32,10 @@ Begin
     Left =70
     Top =52
     Right =778
-    Bottom =358
+    Bottom =376
     Left =-1
     Top =-1
-    Right =701
+    Right =693
     Bottom =144
     Left =0
     Top =0
@@ -42,7 +44,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =117
+        Bottom =109
         Top =28
         Name ="tblGrp"
         Name =""

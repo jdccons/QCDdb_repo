@@ -1,41 +1,41 @@
 Operation =1
 Option =8
-Where ="(((tblGrp.GRcancelled)=No) AND ((tblGrp.GRhold)=No))"
+Where ="(((tblGrp.GRCancelled)=No) AND ((tblGrp.GRHold)=No))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblAgent"
-    Name ="tblSubscr"
     Name ="tblGrpAgt"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRhold"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRHold"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GroupID"
     Alias ="SubName"
     Expression ="(Trim([SUBlastNAME]) & \", \" & Trim([SUBfirstNAME]) & \" \" & Trim([SUBmiddleNA"
         "ME]))"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblGrp.GRname"
-    Expression ="tblSubscr.SUBnoDEPENT"
-    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblGrp.GRName"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="tblAgent.Agent_LUname"
     Expression ="tblSubscr.SubID"
     Alias ="ID"
     Expression ="IIf(IsNull([InvoiceType])=False,[SUBssn],IIf([InvoiceType]=1,[SUBssn],[SubID]))"
-    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AgentId"
 End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGrpAgt"
-    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AgentId=tblGrpAgt.AgentId"
     Flag =1
     LeftTable ="tblGrp"
     RightTable ="tblGrpAgt"
-    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
+    Expression ="tblGrp.GroupID=tblGrpAgt.GroupId"
     Flag =1
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -50,16 +50,19 @@ Begin
         dbInteger "ColumnWidth" ="1965"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="ID"
+    End
 End
 Begin
     State =0
     Left =112
     Top =161
     Right =1018
-    Bottom =478
+    Bottom =485
     Left =-1
     Top =-1
-    Right =899
+    Right =891
     Bottom =144
     Left =0
     Top =0
@@ -68,7 +71,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =38
         Name ="tblGrp"
         Name =""
@@ -77,27 +80,27 @@ Begin
         Left =638
         Top =15
         Right =734
-        Bottom =110
+        Bottom =103
         Top =0
         Name ="tblAgent"
-        Name =""
-    End
-    Begin
-        Left =219
-        Top =13
-        Right =409
-        Bottom =108
-        Top =0
-        Name ="tblSubscr"
         Name =""
     End
     Begin
         Left =446
         Top =7
         Right =575
-        Bottom =117
+        Bottom =110
         Top =0
         Name ="tblGrpAgt"
+        Name =""
+    End
+    Begin
+        Left =219
+        Top =13
+        Right =409
+        Bottom =101
+        Top =0
+        Name ="tblSubscr"
         Name =""
     End
 End

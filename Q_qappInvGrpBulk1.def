@@ -1,47 +1,51 @@
 Operation =3
 Name ="tblInvHdrPreliminary"
 Option =8
-Where ="(((Left$([GROUPid],1))>=[Forms]![frmInvGrpBulk]![LetterFrom] And (Left$([GROUPid"
-    "],1))<=[Forms]![frmInvGrpBulk]![LetterTo])) OR (((Left$([GROUPid],1))<=[Forms]!["
-    "frmInvGrpBulk]![LetterTo]) AND (([Forms]![frmInvGrpBulk]![LetterFrom])=\"A\"))"
+Where ="(((Left$([GROUPid],1))>=Forms!frmInvGrpBulk!LetterFrom And (Left$([GROUPid],1))<"
+    "=Forms!frmInvGrpBulk!LetterTo)) Or (((Left$([GROUPid],1))<=Forms!frmInvGrpBulk!L"
+    "etterTo) And ((Forms!frmInvGrpBulk!LetterFrom)=\"A\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="qryInvGrpBulk0"
 End
 Begin OutputColumns
     Name ="CUST KEY"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Name ="CUST NAME"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Name ="ADDRESS 1"
-    Expression ="tblGrp.GRstreet1"
+    Expression ="tblGrp.GRStreet1"
     Name ="ADDRESS 2"
-    Expression ="tblGrp.GRstreet2"
+    Expression ="tblGrp.GRStreet2"
     Name ="CITY"
-    Expression ="tblGrp.GRcity"
+    Expression ="tblGrp.GRCity"
     Name ="STATE"
-    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRState"
     Name ="ZIP CODE"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GRZip"
     Name ="ATTENTION"
-    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRMainCont"
     Alias ="TRANSno"
     Name ="TRANS NO"
     Expression ="Null"
     Alias ="INVOICEdate"
     Name ="INV DATE"
     Expression ="DLookUp(\"[FieldDateValue]\",\"tblConstant\",\"[FieldName] = 'InvoiceDate'\")"
+    Alias ="Expr1"
     Name ="LOCATION  KEY"
     Expression ="tblGrp.GRagentRATE1"
     Name ="TERRITORY KEY"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
+    Alias ="Expr2"
     Name ="SALESP    KEY"
     Expression ="tblGrp.GRagentID1"
+    Alias ="Expr3"
     Name ="FOB"
     Expression ="tblGrp.GRagentRATE2"
     Alias ="CUSTclass"
     Name ="CUST CLASS"
     Expression ="\"GROUP\""
+    Alias ="Expr4"
     Name ="SPARE3"
     Expression ="tblGrp.GRagentID2"
     Alias ="RecUser"
@@ -57,16 +61,17 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="qryInvGrpBulk0"
-    Expression ="tblGrp.GROUPid = qryInvGrpBulk0.[VALID GROUPS]"
+    Expression ="tblGrp.GroupID=qryInvGrpBulk0.[VALID GROUPS]"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -74,10 +79,10 @@ Begin
     Left =106
     Top =62
     Right =778
-    Bottom =393
+    Bottom =412
     Left =-1
     Top =-1
-    Right =665
+    Right =657
     Bottom =170
     Left =0
     Top =0
@@ -86,7 +91,7 @@ Begin
         Left =38
         Top =6
         Right =234
-        Bottom =126
+        Bottom =124
         Top =0
         Name ="tblGrp"
         Name =""
@@ -95,7 +100,7 @@ Begin
         Left =330
         Top =8
         Right =463
-        Bottom =70
+        Bottom =81
         Top =0
         Name ="qryInvGrpBulk0"
         Name =""

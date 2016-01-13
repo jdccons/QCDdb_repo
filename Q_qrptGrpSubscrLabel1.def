@@ -1,6 +1,6 @@
 Operation =1
 Option =8
-Where ="(((tblGrp.GROUPid)=[Forms]![fdlgGrpSubscrLabel].[GROUPforLABELS]))"
+Where ="(((tblGrp.GroupID)=Forms!fdlgGrpSubscrLabel.GROUPforLABELS))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
@@ -9,24 +9,24 @@ Begin OutputColumns
     Alias ="Zip2"
     Expression ="IIf([SUBzip] Like \"#####-#\",Left([SUBZip],Len([SUBZip])-1),IIf([SUBZip] Like \""
         "#########\",Format([SUBZip],\"@@@@@-@@@@\"),[SUBZip]))"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBmiddleNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =2
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -36,16 +36,19 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="Zip2"
+    End
 End
 Begin
     State =0
     Left =76
     Top =124
     Right =1258
-    Bottom =587
+    Bottom =591
     Left =-1
     Top =-1
-    Right =1175
+    Right =1167
     Bottom =287
     Left =0
     Top =0
@@ -54,7 +57,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =105
+        Bottom =94
         Top =0
         Name ="tblGrp"
         Name =""
@@ -63,7 +66,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =105
+        Bottom =94
         Top =0
         Name ="tblSubscr"
         Name =""

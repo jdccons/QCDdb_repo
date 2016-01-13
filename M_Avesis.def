@@ -1,0 +1,385 @@
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private mstrAction_Code As String
+Private mstrAddress_1 As String
+Private mstrAddress_2 As String
+Private mvarAvesis_Key As Variant
+Private mstrBirth_Date As String
+Private mstrCarrier_Number As String
+Private mstrCity As String
+Private mstrCoverage_Code As String
+Private mstrEffective_Date As String
+Private mstrFirst_Name As String
+Private mstrGender As String
+Private mstrGroup_Name As String
+Private mstrGroup_Number As String
+Private mstrID_Suffix As String
+Private mstrLast_Name As String
+Private mstrMember_Number As String
+Private mstrMiddle_Initial As String
+Private mlngNoDEPS As Long
+Private mstrPlan_Number As String
+Private mstrRecord_Type As String
+Private mstrSSN As String
+Private mstrState As String
+Private mstrSub_Group_ID As String
+Private mstrSubSSN As String
+Private mstrTerm_Date As String
+Private mvarTime_stmp As Variant
+Private mstrZip As String
+Private mrstRecordset As Recordset
+Private mbooLoaded As Boolean
+Public Property Get Action_Code() As String
+Action_Code = mstrAction_Code
+End Property
+
+Public Property Let Action_Code(rData As String)
+mstrAction_Code = rData
+End Property
+
+Public Property Get ADDRESS_1() As String
+ADDRESS_1 = mstrAddress_1
+End Property
+
+Public Property Let ADDRESS_1(rData As String)
+mstrAddress_1 = rData
+End Property
+
+Public Property Get ADDRESS_2() As String
+ADDRESS_2 = mstrAddress_2
+End Property
+
+Public Property Let ADDRESS_2(rData As String)
+mstrAddress_2 = rData
+End Property
+
+Public Property Get Avesis_Key() As Variant
+If IsObject(mvarAvesis_Key) Then
+Set Avesis_Key = mvarAvesis_Key
+Else
+Avesis_Key = mvarAvesis_Key
+End If
+
+End Property
+
+Public Property Let Avesis_Key(rData As Variant)
+mvarAvesis_Key = rData
+End Property
+
+Public Property Set Avesis_Key(rData As Variant)
+Set mvarAvesis_Key = rData
+End Property
+
+Public Property Get Birth_Date() As String
+Birth_Date = mstrBirth_Date
+End Property
+
+Public Property Let Birth_Date(rData As String)
+mstrBirth_Date = rData
+End Property
+
+Public Property Get Carrier_Number() As String
+Carrier_Number = mstrCarrier_Number
+End Property
+
+Public Property Let Carrier_Number(rData As String)
+mstrCarrier_Number = rData
+End Property
+
+Public Property Get CITY() As String
+CITY = mstrCity
+End Property
+
+Public Property Let CITY(rData As String)
+mstrCity = rData
+End Property
+
+Public Property Get Coverage_Code() As String
+Coverage_Code = mstrCoverage_Code
+End Property
+
+Public Property Let Coverage_Code(rData As String)
+mstrCoverage_Code = rData
+End Property
+
+Public Property Get Effective_Date() As String
+Effective_Date = mstrEffective_Date
+End Property
+
+Public Property Let Effective_Date(rData As String)
+mstrEffective_Date = rData
+End Property
+
+Public Property Get FIRST_NAME() As String
+FIRST_NAME = mstrFirst_Name
+End Property
+
+Public Property Let FIRST_NAME(rData As String)
+mstrFirst_Name = rData
+End Property
+
+Public Property Get GENDER() As String
+GENDER = mstrGender
+End Property
+
+Public Property Let GENDER(rData As String)
+mstrGender = rData
+End Property
+
+Public Property Get Group_Name() As String
+Group_Name = mstrGroup_Name
+End Property
+
+Public Property Let Group_Name(rData As String)
+mstrGroup_Name = rData
+End Property
+
+Public Property Get Group_Number() As String
+Group_Number = mstrGroup_Number
+End Property
+
+Public Property Let Group_Number(rData As String)
+mstrGroup_Number = rData
+End Property
+
+Public Property Get ID_Suffix() As String
+ID_Suffix = mstrID_Suffix
+End Property
+
+Public Property Let ID_Suffix(rData As String)
+mstrID_Suffix = rData
+End Property
+
+Public Property Get LAST_NAME() As String
+LAST_NAME = mstrLast_Name
+End Property
+
+Public Property Let LAST_NAME(rData As String)
+mstrLast_Name = rData
+End Property
+
+Public Property Get Member_Number() As String
+Member_Number = mstrMember_Number
+End Property
+
+Public Property Let Member_Number(rData As String)
+mstrMember_Number = rData
+End Property
+
+Public Property Get Middle_Initial() As String
+Middle_Initial = mstrMiddle_Initial
+End Property
+
+Public Property Let Middle_Initial(rData As String)
+mstrMiddle_Initial = rData
+End Property
+
+Public Property Get NoDEPS() As Long
+NoDEPS = mlngNoDEPS
+End Property
+
+Public Property Let NoDEPS(rData As Long)
+mlngNoDEPS = rData
+End Property
+
+Public Property Get Plan_Number() As String
+Plan_Number = mstrPlan_Number
+End Property
+
+Public Property Let Plan_Number(rData As String)
+mstrPlan_Number = rData
+End Property
+
+Public Property Get Record_Type() As String
+Record_Type = mstrRecord_Type
+End Property
+
+Public Property Let Record_Type(rData As String)
+mstrRecord_Type = rData
+End Property
+
+Public Property Get SSN() As String
+SSN = mstrSSN
+End Property
+
+Public Property Let SSN(rData As String)
+mstrSSN = rData
+End Property
+
+Public Property Get STATE() As String
+STATE = mstrState
+End Property
+
+Public Property Let STATE(rData As String)
+mstrState = rData
+End Property
+
+Public Property Get Sub_Group_ID() As String
+Sub_Group_ID = mstrSub_Group_ID
+End Property
+
+Public Property Let Sub_Group_ID(rData As String)
+mstrSub_Group_ID = rData
+End Property
+
+Public Property Get SUBssn() As String
+SUBssn = mstrSubSSN
+End Property
+
+Public Property Let SUBssn(rData As String)
+mstrSubSSN = rData
+End Property
+
+Public Property Get Term_Date() As String
+Term_Date = mstrTerm_Date
+End Property
+
+Public Property Let Term_Date(rData As String)
+mstrTerm_Date = rData
+End Property
+
+Public Property Get Time_stmp() As Variant
+If IsObject(mvarTime_stmp) Then
+Set Time_stmp = mvarTime_stmp
+Else
+Time_stmp = mvarTime_stmp
+End If
+
+End Property
+
+Public Property Let Time_stmp(rData As Variant)
+mvarTime_stmp = rData
+End Property
+
+Public Property Set Time_stmp(rData As Variant)
+Set mvarTime_stmp = rData
+End Property
+
+Public Property Get ZIP() As String
+ZIP = mstrZip
+End Property
+
+Public Property Let ZIP(rData As String)
+mstrZip = rData
+End Property
+
+Private Property Get Recordset() As Recordset
+Set Recordset = mrstRecordset
+End Property
+
+Private Property Set Recordset(rData As Recordset)
+Set mrstRecordset = rData
+End Property
+
+Private Sub Load()
+With Recordset
+Me.Action_Code = Nz(.Fields("Action_Code").value)
+Me.ADDRESS_1 = Nz(.Fields("Address_1").value)
+Me.ADDRESS_2 = Nz(.Fields("Address_2").value)
+Me.Avesis_Key = Nz(.Fields("Avesis_Key").value)
+Me.Birth_Date = Nz(.Fields("Birth_Date").value)
+Me.Carrier_Number = Nz(.Fields("Carrier_Number").value)
+Me.CITY = Nz(.Fields("City").value)
+Me.Coverage_Code = Nz(.Fields("Coverage_Code").value)
+Me.Effective_Date = Nz(.Fields("Effective_Date").value)
+Me.FIRST_NAME = Nz(.Fields("First_Name").value)
+Me.GENDER = Nz(.Fields("Gender").value)
+Me.Group_Name = Nz(.Fields("Group_Name").value)
+Me.Group_Number = Nz(.Fields("Group_Number").value)
+Me.ID_Suffix = Nz(.Fields("ID_Suffix").value)
+Me.LAST_NAME = Nz(.Fields("Last_Name").value)
+Me.Member_Number = Nz(.Fields("Member_Number").value)
+Me.Middle_Initial = Nz(.Fields("Middle_Initial").value)
+Me.NoDEPS = Nz(.Fields("NoDEPS").value)
+Me.Plan_Number = Nz(.Fields("Plan_Number").value)
+Me.Record_Type = Nz(.Fields("Record_Type").value)
+Me.SSN = Nz(.Fields("SSN").value)
+Me.STATE = Nz(.Fields("State").value)
+Me.Sub_Group_ID = Nz(.Fields("Sub_Group_ID").value)
+Me.SUBssn = Nz(.Fields("SUBssn").value)
+Me.Term_Date = Nz(.Fields("Term_Date").value)
+Me.Time_stmp = Nz(.Fields("Time_stmp").value)
+Me.ZIP = Nz(.Fields("Zip").value)
+End With
+mbooLoaded = True
+End Sub
+Public Sub Update()
+With Recordset
+If mbooLoaded = True Then
+.Edit
+Else
+.AddNew
+End If
+.Fields("Action_Code").value = NullIfEmptyString(Me.Action_Code)
+.Fields("Address_1").value = NullIfEmptyString(Me.ADDRESS_1)
+.Fields("Address_2").value = NullIfEmptyString(Me.ADDRESS_2)
+.Fields("Avesis_Key").value = Me.Avesis_Key
+.Fields("Birth_Date").value = NullIfEmptyString(Me.Birth_Date)
+.Fields("Carrier_Number").value = NullIfEmptyString(Me.Carrier_Number)
+.Fields("City").value = NullIfEmptyString(Me.CITY)
+.Fields("Coverage_Code").value = NullIfEmptyString(Me.Coverage_Code)
+.Fields("Effective_Date").value = NullIfEmptyString(Me.Effective_Date)
+.Fields("First_Name").value = NullIfEmptyString(Me.FIRST_NAME)
+.Fields("Gender").value = NullIfEmptyString(Me.GENDER)
+.Fields("Group_Name").value = NullIfEmptyString(Me.Group_Name)
+.Fields("Group_Number").value = NullIfEmptyString(Me.Group_Number)
+.Fields("ID_Suffix").value = NullIfEmptyString(Me.ID_Suffix)
+.Fields("Last_Name").value = NullIfEmptyString(Me.LAST_NAME)
+.Fields("Member_Number").value = NullIfEmptyString(Me.Member_Number)
+.Fields("Middle_Initial").value = NullIfEmptyString(Me.Middle_Initial)
+.Fields("NoDEPS").value = Me.NoDEPS
+.Fields("Plan_Number").value = NullIfEmptyString(Me.Plan_Number)
+.Fields("Record_Type").value = NullIfEmptyString(Me.Record_Type)
+.Fields("SSN").value = NullIfEmptyString(Me.SSN)
+.Fields("State").value = NullIfEmptyString(Me.STATE)
+.Fields("Sub_Group_ID").value = NullIfEmptyString(Me.Sub_Group_ID)
+.Fields("SUBssn").value = NullIfEmptyString(Me.SUBssn)
+.Fields("Term_Date").value = NullIfEmptyString(Me.Term_Date)
+.Fields("Time_stmp").value = Me.Time_stmp
+.Fields("Zip").value = NullIfEmptyString(Me.ZIP)
+.Update
+End With
+mbooLoaded = True
+End Sub
+Public Sub AddNew()
+mbooLoaded = False
+End Sub
+Public Function FindFirst(Optional Criteria As Variant) As Boolean
+If IsMissing(Criteria) Then
+Recordset.MoveFirst
+FindFirst = Not Recordset.EOF
+Else
+Recordset.FindFirst Criteria
+FindFirst = Not Recordset.NoMatch
+End If
+If FindFirst Then Load
+End Function
+Public Function FindLast(Optional Criteria As Variant) As Boolean
+If IsMissing(Criteria) Then
+Recordset.MoveLast
+FindLast = Not Recordset.EOF
+Else
+Recordset.FindLast Criteria
+FindLast = Not Recordset.NoMatch
+End If
+If FindLast Then Load
+End Function
+Private Sub Class_Initialize()
+Set Recordset = CurrentDb.OpenRecordset("Avesis", dbOpenDynaset)
+End Sub
+Private Sub Class_Terminate()
+Recordset.Close
+Set Recordset = Nothing
+End Sub
+Function NullIfEmptyString(str As String) As Variant
+Dim strTrimmed As String: strTrimmed = Trim(str)
+If Len(strTrimmed) = 0 Then
+NullIfEmptyString = Null
+Else
+NullIfEmptyString = strTrimmed
+End If
+End Function

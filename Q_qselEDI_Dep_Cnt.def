@@ -4,18 +4,20 @@ Begin InputTables
     Name ="tblEDI_App_Dep"
 End
 Begin OutputColumns
-    Expression ="tblEDI_App_Dep.DEPsubID"
+    Expression ="tblEDI_App_Dep.DepSubID"
     Alias ="DepCnt"
-    Expression ="Count(tblEDI_App_Dep.DEPsubID)"
+    Expression ="Count(tblEDI_App_Dep.DepSubID)"
 End
 Begin Groups
-    Expression ="tblEDI_App_Dep.DEPsubID"
+    Expression ="tblEDI_App_Dep.DepSubID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -23,10 +25,10 @@ Begin
     Left =79
     Top =334
     Right =1232
-    Bottom =647
+    Bottom =658
     Left =-1
     Top =-1
-    Right =1146
+    Right =1138
     Bottom =144
     Left =0
     Top =0
@@ -35,7 +37,7 @@ Begin
         Left =38
         Top =6
         Right =294
-        Bottom =122
+        Bottom =109
         Top =0
         Name ="tblEDI_App_Dep"
         Name =""

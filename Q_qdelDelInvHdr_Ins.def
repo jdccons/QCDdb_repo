@@ -1,6 +1,6 @@
 Operation =5
 Option =8
-Where ="(((tblInvHdr.[TRANS NO])=[Forms]![frmInvGrp_Ins]![TRANS NO]))"
+Where ="(((tblInvHdr.[TRANS NO])=Forms!frmInvGrp_Ins![TRANS NO]))"
 Begin InputTables
     Name ="tblInvHdr"
 End
@@ -12,6 +12,7 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -19,10 +20,10 @@ Begin
     Left =153
     Top =109
     Right =1128
-    Bottom =445
+    Bottom =433
     Left =-1
     Top =-1
-    Right =968
+    Right =960
     Bottom =144
     Left =0
     Top =0
@@ -31,7 +32,7 @@ Begin
         Left =48
         Top =7
         Right =168
-        Bottom =139
+        Bottom =125
         Top =0
         Name ="tblInvHdr"
         Name =""

@@ -5,6 +5,7 @@ Begin InputTables
     Name ="ARTRAN"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARTRAN.CustomerKey"
     Alias ="Year"
     Expression ="\"2000\""
@@ -22,6 +23,7 @@ dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -29,10 +31,10 @@ Begin
     Left =40
     Top =22
     Right =778
-    Bottom =393
+    Bottom =346
     Left =-1
     Top =-1
-    Right =731
+    Right =723
     Bottom =144
     Left =0
     Top =0
@@ -41,8 +43,8 @@ Begin
         Left =38
         Top =6
         Right =207
-        Bottom =105
-        Top =3
+        Bottom =49
+        Top =0
         Name ="ARTRAN"
         Name =""
     End

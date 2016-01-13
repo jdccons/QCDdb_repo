@@ -1,28 +1,27 @@
 Operation =6
 Option =0
-Where ="(((tblGrp.GroupType) In (1,4)) AND ((tblGrp.GRcancelled)=False) AND ((tblGrowth."
+Where ="(((tblGrp.GroupType) In (1,4)) AND ((tblGrp.GRCancelled)=False) AND ((tblGrowth."
     "Year)=Year(Date())))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblGrowth"
 End
 Begin OutputColumns
+    Alias ="CountOfGROUPid"
+    Expression ="Count(tblGrp.GroupID)"
     Alias ="TypeofGroup"
     Expression ="IIf([GroupType]=1,\"QCD Only\",\"All American\")"
     GroupLevel =2
-    Alias ="HeadCountCategory"
-    Expression ="IIf([tblGrowth].[CurrentEligEmps]<50,1,2)"
-    GroupLevel =1
-    Alias ="CountOfGROUPid"
-    Expression ="Count(tblGrp.GROUPid)"
     Alias ="Total"
-    Expression ="Count(tblGrp.GROUPid)"
+    Expression ="Count(tblGrp.GroupID)"
     GroupLevel =2
+    Expression ="IIf(tblGrowth.CurrentEligEmps<50,1,2)"
+    GroupLevel =1
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblGrowth"
-    Expression ="tblGrp.GROUPid = tblGrowth.GroupID"
+    Expression ="tblGrp.GroupID=tblGrowth.GroupID"
     Flag =2
 End
 Begin OrderBy
@@ -32,10 +31,10 @@ End
 Begin Groups
     Expression ="IIf([GroupType]=1,\"QCD Only\",\"All American\")"
     GroupLevel =2
-    Expression ="IIf([tblGrowth].[CurrentEligEmps]<50,1,2)"
-    GroupLevel =1
     Expression ="tblGrp.GroupType"
     GroupLevel =2
+    Expression ="IIf(tblGrowth.CurrentEligEmps<50,1,2)"
+    GroupLevel =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -68,16 +67,19 @@ Begin
         dbInteger "ColumnWidth" ="2295"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="TypeofGroup"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1024
-    Bottom =624
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =472
     Left =-1
     Top =-1
-    Right =1017
+    Right =1253
     Bottom =252
     Left =0
     Top =0
@@ -86,7 +88,7 @@ Begin
         Left =38
         Top =6
         Right =213
-        Bottom =188
+        Bottom =184
         Top =38
         Name ="tblGrp"
         Name =""
@@ -95,7 +97,7 @@ Begin
         Left =251
         Top =6
         Right =473
-        Bottom =158
+        Bottom =154
         Top =0
         Name ="tblGrowth"
         Name =""

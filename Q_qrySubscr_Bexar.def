@@ -1,9 +1,9 @@
 Operation =1
 Option =8
 Begin InputTables
-    Name ="tblCoverage"
     Name ="tblSubscr_Bexar"
     Name ="tblGrp_Bexar"
+    Name ="tblCoverage"
     Name ="tblRates"
 End
 Begin OutputColumns
@@ -12,8 +12,8 @@ Begin OutputColumns
     Expression ="tblGrp_Bexar.GRcontEND"
     Expression ="tblGrp_Bexar.GRname"
     Expression ="tblGrp_Bexar.GRcancelled"
-    Expression ="tblCoverage.COVERdescr"
-    Expression ="tblCoverage.COVERcode"
+    Expression ="tblCoverage.CoverDescr"
+    Expression ="tblCoverage.CoverCode"
     Alias ="GroupType"
     Expression ="1"
     Expression ="tblRates.Rate"
@@ -21,15 +21,15 @@ End
 Begin Joins
     LeftTable ="tblSubscr_Bexar"
     RightTable ="tblGrp_Bexar"
-    Expression ="tblSubscr_Bexar.SUBgroupID = tblGrp_Bexar.GROUPid"
+    Expression ="tblSubscr_Bexar.SUBgroupID=tblGrp_Bexar.GROUPid"
     Flag =1
     LeftTable ="tblSubscr_Bexar"
     RightTable ="tblCoverage"
-    Expression ="tblSubscr_Bexar.CoverID = tblCoverage.CoverID"
+    Expression ="tblSubscr_Bexar.CoverID=tblCoverage.CoverID"
     Flag =2
     LeftTable ="tblSubscr_Bexar"
     RightTable ="tblRates"
-    Expression ="tblSubscr_Bexar.RateID = tblRates.RateID"
+    Expression ="tblSubscr_Bexar.RateID=tblRates.RateID"
     Flag =2
 End
 Begin OrderBy
@@ -43,16 +43,19 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="GroupType"
+    End
 End
 Begin
     State =0
     Left =179
     Top =221
     Right =1056
-    Bottom =581
+    Bottom =588
     Left =-1
     Top =-1
-    Right =870
+    Right =862
     Bottom =187
     Left =0
     Top =0
@@ -61,7 +64,7 @@ Begin
         Left =541
         Top =9
         Right =701
-        Bottom =104
+        Bottom =97
         Top =0
         Name ="tblCoverage"
         Name =""
@@ -70,7 +73,7 @@ Begin
         Left =39
         Top =8
         Right =202
-        Bottom =118
+        Bottom =111
         Top =24
         Name ="tblSubscr_Bexar"
         Name =""
@@ -79,7 +82,7 @@ Begin
         Left =277
         Top =7
         Right =481
-        Bottom =117
+        Bottom =110
         Top =32
         Name ="tblGrp_Bexar"
         Name =""
@@ -88,7 +91,7 @@ Begin
         Left =740
         Top =24
         Right =836
-        Bottom =134
+        Bottom =127
         Top =0
         Name ="tblRates"
         Name =""

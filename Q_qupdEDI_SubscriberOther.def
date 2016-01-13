@@ -6,28 +6,29 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="tblEDI_App_Subscr.SubID"
-    Expression ="[tblSubscr]![SubID]"
-    Name ="tblEDI_App_Subscr.SUBcardPRT"
-    Expression ="[tblSubscr]![SUBcardPRT]"
-    Name ="tblEDI_App_Subscr.SUBcardPRTdte"
-    Expression ="[tblSubscr]![SUBcardPRTdte]"
-    Name ="tblEDI_App_Subscr.SUBnotes"
-    Expression ="[tblSubscr]![SUBnotes]"
+    Expression ="tblSubscr!SubID"
+    Name ="tblEDI_App_Subscr.SubCardPrt"
+    Expression ="tblSubscr!SUBcardPRT"
+    Name ="tblEDI_App_Subscr.SubCardPrtDte"
+    Expression ="tblSubscr!SUBcardPRTdte"
+    Name ="tblEDI_App_Subscr.SubNotes"
+    Expression ="tblSubscr!SUBnotes"
     Name ="tblEDI_App_Subscr.DateCreated"
-    Expression ="[tblSubscr]![DateCreated]"
+    Expression ="tblSubscr!DateCreated"
     Name ="tblEDI_App_Subscr.DateUpdated"
-    Expression ="[tblSubscr]![DateUpdated]"
+    Expression ="tblSubscr!DateUpdated"
 End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblSubscr"
-    Expression ="tblEDI_App_Subscr.SUBssn = tblSubscr.SUBssn"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblSubscr.SubSSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -35,10 +36,10 @@ Begin
     Left =20
     Top =51
     Right =925
-    Bottom =452
+    Bottom =375
     Left =-1
     Top =-1
-    Right =898
+    Right =890
     Bottom =144
     Left =0
     Top =0
@@ -47,7 +48,7 @@ Begin
         Left =38
         Top =6
         Right =262
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -56,7 +57,7 @@ Begin
         Left =311
         Top =9
         Right =553
-        Bottom =101
+        Bottom =97
         Top =0
         Name ="tblSubscr"
         Name =""

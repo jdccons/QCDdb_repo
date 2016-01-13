@@ -7,6 +7,7 @@ Begin InputTables
 End
 Begin OutputColumns
     Expression ="[__tblInvoice_Aug].*"
+    Alias ="Expr1"
     Expression ="[__tblInvoice_Aug_Detail].Unitprice"
     Alias ="CustAdd1Trim"
     Expression ="Trim([Address_1])"
@@ -23,20 +24,12 @@ Begin OutputColumns
     Alias ="InvDate"
     Expression ="[__tblInvoice_Aug].Docdate"
 End
-Begin Joins
-    LeftTable ="__tblInvoice_Aug"
-    RightTable ="__tblInvoice_Aug_Detail"
-    Expression ="[__tblInvoice_Aug].Docno = [__tblInvoice_Aug_Detail].Docno"
-    Flag =1
-    LeftTable ="ARCUST"
-    RightTable ="__tblInvoice_Aug"
-    Expression ="ARCUST.Customer_Key = [__tblInvoice_Aug].Custkey"
-    Flag =1
-End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="CityStateZip"
@@ -55,14 +48,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =460
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =240
     Left =0
     Top =0
@@ -71,8 +64,8 @@ Begin
         Left =96
         Top =10
         Right =259
-        Bottom =117
-        Top =8
+        Bottom =53
+        Top =0
         Name ="__tblInvoice_Aug"
         Name =""
     End
@@ -80,8 +73,8 @@ Begin
         Left =394
         Top =14
         Right =615
-        Bottom =121
-        Top =3
+        Bottom =57
+        Top =0
         Name ="__tblInvoice_Aug_Detail"
         Name =""
     End
@@ -89,8 +82,8 @@ Begin
         Left =531
         Top =127
         Right =702
-        Bottom =234
-        Top =1
+        Bottom =170
+        Top =0
         Name ="ARCUST"
         Name =""
     End

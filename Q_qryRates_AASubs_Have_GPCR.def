@@ -4,8 +4,8 @@ Where ="(((tblSubscr.PlanID) Is Null) AND ((tblGrp.GroupType)=4)) OR (((tblSubsc
     "D) Is Null) AND ((tblGrp.GroupType)=4)) OR (((tblSubscr.RateID) Is Null) AND ((t"
     "blGrp.GroupType)=4))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
     Expression ="tblSubscr.SubSSN"
@@ -16,12 +16,12 @@ Begin OutputColumns
     Expression ="tblSubscr.CoverID"
     Expression ="tblSubscr.RateID"
     Expression ="tblGrp.GroupType"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 Begin OrderBy
@@ -42,10 +42,10 @@ Begin
     Left =18
     Top =40
     Right =1258
-    Bottom =573
+    Bottom =460
     Left =-1
     Top =-1
-    Right =1229
+    Right =1225
     Bottom =240
     Left =0
     Top =0
@@ -54,7 +54,7 @@ Begin
         Left =324
         Top =2
         Right =513
-        Bottom =184
+        Bottom =180
         Top =8
         Name ="tblSubscr"
         Name =""
@@ -63,7 +63,7 @@ Begin
         Left =38
         Top =6
         Right =226
-        Bottom =173
+        Bottom =169
         Top =34
         Name ="tblGrp"
         Name =""

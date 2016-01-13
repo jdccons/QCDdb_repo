@@ -29,8 +29,8 @@ Begin OutputColumns
     Expression ="tblSubscr.SubZip"
     Expression ="tblSubscr.SubPhoneWork"
     Expression ="tblSubscr.SubPhoneHome"
-    Expression ="tblSubscr.SUBdob"
-    Expression ="tblSubscr.SubNoDepent"
+    Expression ="tblSubscr.SubDOB"
+    Expression ="tblSubscr.DepCnt"
     Expression ="tblSubscr.SubGender"
     Expression ="tblSubscr.SubAge"
     Expression ="tblSubscr.SubMaritalStatus"
@@ -53,11 +53,11 @@ Begin OutputColumns
     Expression ="tblSubscr.DateUpdated"
     Expression ="tblSubscr.DateDeleted"
     Expression ="tblSubscr.SUBemployeeName"
-    Expression ="tblSubscr.SUBflyerPRTdte"
+    Expression ="tblSubscr.SubFlyerPrtDte"
     Expression ="tblSubscr.SUBplanIDgr"
     Expression ="tblSubscr.SUBplanIDin"
     Expression ="tblSubscr.SUBcoverage"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubRate"
     Expression ="tblSubscr.SUBCOBRA"
     Expression ="tblSubscr.SUBLOA"
     Expression ="tblSubscr.SUBmissing"
@@ -73,7 +73,7 @@ Begin OutputColumns
     Expression ="[_Online_Report_Changes_W].CoverDesc"
     Alias ="TblD"
     Expression ="'L'"
-    Expression ="tblDependent.DepCounter"
+    Expression ="tblDependent.ID"
     Expression ="tblDependent.DepSSN"
     Alias ="EIMBRID_D"
     Expression ="tblDependent.EIMBRID"
@@ -96,11 +96,11 @@ End
 Begin Joins
     LeftTable ="_Online_Report_Changes_W"
     RightTable ="tblSubscr"
-    Expression ="[_Online_Report_Changes_W].SubSSN = tblSubscr.SubSSN"
+    Expression ="[_Online_Report_Changes_W].SubSSN=tblSubscr.SubSSN"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =2
 End
 Begin Groups
@@ -148,9 +148,9 @@ Begin Groups
     GroupLevel =0
     Expression ="tblSubscr.SubPhoneHome"
     GroupLevel =0
-    Expression ="tblSubscr.SUBdob"
+    Expression ="tblSubscr.SubDOB"
     GroupLevel =0
-    Expression ="tblSubscr.SubNoDepent"
+    Expression ="tblSubscr.DepCnt"
     GroupLevel =0
     Expression ="tblSubscr.SubGender"
     GroupLevel =0
@@ -196,7 +196,7 @@ Begin Groups
     GroupLevel =0
     Expression ="tblSubscr.SUBemployeeName"
     GroupLevel =0
-    Expression ="tblSubscr.SUBflyerPRTdte"
+    Expression ="tblSubscr.SubFlyerPrtDte"
     GroupLevel =0
     Expression ="tblSubscr.SUBplanIDgr"
     GroupLevel =0
@@ -204,7 +204,7 @@ Begin Groups
     GroupLevel =0
     Expression ="tblSubscr.SUBcoverage"
     GroupLevel =0
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubRate"
     GroupLevel =0
     Expression ="tblSubscr.SUBCOBRA"
     GroupLevel =0
@@ -234,7 +234,7 @@ Begin Groups
     GroupLevel =0
     Expression ="'L'"
     GroupLevel =0
-    Expression ="tblDependent.DepCounter"
+    Expression ="tblDependent.ID"
     GroupLevel =0
     Expression ="tblDependent.DepSSN"
     GroupLevel =0
@@ -271,7 +271,6 @@ dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
-dbMemo "OrderBy" ="[_Online_Report_Changes_L].SubSSN"
 Begin
     Begin
         dbText "Name" ="[_Online_Report_Changes_W].CoverDesc"
@@ -288,11 +287,11 @@ Begin
     State =0
     Left =26
     Top =59
-    Right =1404
-    Bottom =277
+    Right =1318
+    Bottom =447
     Left =-1
     Top =-1
-    Right =1373
+    Right =1277
     Bottom =208
     Left =0
     Top =0
@@ -301,7 +300,7 @@ Begin
         Left =38
         Top =6
         Right =230
-        Bottom =169
+        Bottom =154
         Top =0
         Name ="_Online_Report_Changes_W"
         Name =""
@@ -310,7 +309,7 @@ Begin
         Left =257
         Top =6
         Right =537
-        Bottom =169
+        Bottom =154
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -319,7 +318,7 @@ Begin
         Left =562
         Top =6
         Right =799
-        Bottom =169
+        Bottom =154
         Top =7
         Name ="tblDependent"
         Name =""

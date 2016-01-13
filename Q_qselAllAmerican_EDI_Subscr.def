@@ -42,12 +42,6 @@ Begin OutputColumns
     Expression ="Mid([EINMPLAN],8,3)"
     Expression ="tmpExportAllAmerican.EINMPLAN"
 End
-Begin Joins
-    LeftTable ="tmpExportAllAmerican"
-    RightTable ="qselAA_CntOfDeps"
-    Expression ="tmpExportAllAmerican.EISBRID = qselAA_CntOfDeps.EISBRID"
-    Flag =2
-End
 Begin OrderBy
     Expression ="tmpExportAllAmerican.EINMPLAN"
     Flag =0
@@ -72,10 +66,10 @@ Begin
     Left =76
     Top =98
     Right =1258
-    Bottom =403
+    Bottom =407
     Left =-1
     Top =-1
-    Right =1175
+    Right =1167
     Bottom =129
     Left =0
     Top =0
@@ -84,7 +78,7 @@ Begin
         Left =25
         Top =6
         Right =208
-        Bottom =105
+        Bottom =94
         Top =0
         Name ="tmpExportAllAmerican"
         Name =""
@@ -93,7 +87,7 @@ Begin
         Left =326
         Top =-1
         Right =475
-        Bottom =98
+        Bottom =42
         Top =0
         Name ="qselAA_CntOfDeps"
         Name =""

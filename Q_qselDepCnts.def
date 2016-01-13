@@ -1,29 +1,31 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Where ="(((tblSubscr.SubStatus)=\"GRSUB\"))"
 Begin InputTables
-    Name ="tblDependent"
     Name ="tblSubscr"
+    Name ="tblDependent"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBgroupID"
-    Alias ="CountOfDEPcounter"
-    Expression ="Count(tblDependent.DEPcounter)"
+    Expression ="tblSubscr.SubGroupID"
+    Alias ="CountOfID"
+    Expression ="Count(tblDependent.ID)"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 Begin Groups
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -31,30 +33,30 @@ Begin
     Left =106
     Top =88
     Right =1002
-    Bottom =547
+    Bottom =412
     Left =-1
     Top =-1
-    Right =885
+    Right =881
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =543
     Begin
-        Left =279
-        Top =15
-        Right =449
-        Bottom =107
-        Top =0
-        Name ="tblDependent"
-        Name =""
-    End
-    Begin
         Left =38
         Top =6
         Right =170
-        Bottom =113
+        Bottom =109
         Top =21
         Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =279
+        Top =15
+        Right =449
+        Bottom =103
+        Top =0
+        Name ="tblDependent"
         Name =""
     End
 End

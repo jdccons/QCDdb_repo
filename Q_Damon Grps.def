@@ -1,15 +1,15 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRContBeg"
     Expression ="tblGrp.GroupType"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -45,14 +45,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1429
-    Bottom =795
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =696
     Left =-1
     Top =-1
-    Right =1426
+    Right =1253
     Bottom =476
     Left =0
     Top =0

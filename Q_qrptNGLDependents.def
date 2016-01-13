@@ -1,22 +1,22 @@
 Operation =1
 Option =0
 Begin InputTables
-    Name ="tblDependent"
     Name ="tblSubscr"
+    Name ="tblDependent"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="Name"
-    Expression ="IIf([SUBnoDEPENT]>0,Trim([DEPlastNAME]) & \", \" & Trim([DEPfirstNAME]),\"\")"
+    Expression ="IIf([DepCnt]>0,Trim([DEPlastNAME]) & \", \" & Trim([DEPfirstNAME]),\"\")"
     Alias ="Rel"
     Expression ="IIf(Not IsNull([DEPrelationship]),IIf([DEPrelationship]=\"S\",\"Spouse\",IIf([DE"
         "Prelationship]=\"C\",\"Child\",\"Other\")),Null)"
-    Expression ="tblDependent.DEPdob"
+    Expression ="tblDependent.DepDOB"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -24,6 +24,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="Name"
@@ -37,34 +38,34 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1273
-    Bottom =922
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =483
     Left =-1
     Top =-1
-    Right =1266
+    Right =1253
     Bottom =263
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =358
-        Top =7
-        Right =609
-        Bottom =196
-        Top =0
-        Name ="tblDependent"
-        Name =""
-    End
-    Begin
         Left =59
         Top =11
         Right =283
-        Bottom =200
+        Bottom =189
         Top =20
         Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =358
+        Top =7
+        Right =609
+        Bottom =185
+        Top =0
+        Name ="tblDependent"
         Name =""
     End
 End

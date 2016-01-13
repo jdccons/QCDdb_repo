@@ -1,24 +1,38 @@
 Operation =1
 Option =8
-Where ="(((tblCommission.COMMcustCLASS)=\"INDIV\" Or (tblCommission.COMMcustCLASS)=\"GRO"
-    "UP\" Or (tblCommission.COMMcustCLASS)=\"IBCR\") AND ((tblCommission.EnrollmentFe"
-    "e)=No) AND ((tblCommission.COMMagent)<>\"CORPT\" And (tblCommission.COMMagent)<>"
-    "\"CORP\"))"
+Where ="(((tblCommission.CommAgent)<>\"CORPT\" And (tblCommission.CommAgent)<>\"CORP\") "
+    "AND ((tblCommission.CommCustClass)=\"INDIV\" Or (tblCommission.CommCustClass)=\""
+    "GROUP\" Or (tblCommission.CommCustClass)=\"IBCR\") AND ((tblCommission.Enrollmen"
+    "tFee)=No))"
 Begin InputTables
     Name ="tblCommission"
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblCommission.*"
+    Expression ="tblCommission.ID"
+    Expression ="tblCommission.CommCustKey"
+    Expression ="tblCommission.CommCustName"
+    Expression ="tblCommission.CommCheckNo"
+    Expression ="tblCommission.CommCheckDate"
+    Expression ="tblCommission.CommCheckAmt"
+    Expression ="tblCommission.CommAgent"
+    Expression ="tblCommission.CommName"
+    Expression ="tblCommission.CommRate"
+    Expression ="tblCommission.CommAgentType"
+    Expression ="tblCommission.CommInvoiceNo"
+    Expression ="tblCommission.CommCustClass"
+    Expression ="tblCommission.EnrollmentFee"
+    Expression ="tblCommission.PayCommTo"
+    Expression ="tblCommission.CommOrderNo"
     Alias ="Salesp_Name"
-    Expression ="IIf([tblAgent].[PayCommTo]=1,[AGENCY] & \" -- \" & \"FEIN = \" & Format([AGENTta"
-        "xID],\"00-0000000;;_\"),[AGENT_LUname] & \" -- \" & \"SSN = \" & Format([AGENTSS"
-        "N],\"000-00-0000;;_\"))"
+    Expression ="IIf(tblAgent.PayCommTo=1,[AGENCY] & \" -- \" & \"FEIN = \" & Format([AGENTtaxID]"
+        ",\"00-0000000;;_\"),[AGENT_LUname] & \" -- \" & \"SSN = \" & Format([AGENTSSN],\""
+        "000-00-0000;;_\"))"
 End
 Begin Joins
     LeftTable ="tblCommission"
     RightTable ="tblAgent"
-    Expression ="tblCommission.COMMagent = tblAgent.AGENTid"
+    Expression ="tblCommission.CommAgent=tblAgent.AgentId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -26,6 +40,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblCommission.COMMcustNAME"
@@ -41,12 +56,12 @@ End
 Begin
     State =0
     Left =68
-    Top =12
+    Top =64
     Right =903
-    Bottom =417
+    Bottom =492
     Left =-1
     Top =-1
-    Right =828
+    Right =820
     Bottom =248
     Left =0
     Top =0
@@ -55,8 +70,8 @@ Begin
         Left =38
         Top =6
         Right =239
-        Bottom =120
-        Top =4
+        Bottom =109
+        Top =0
         Name ="tblCommission"
         Name =""
     End
@@ -64,7 +79,7 @@ Begin
         Left =312
         Top =4
         Right =596
-        Bottom =214
+        Bottom =212
         Top =0
         Name ="tblAgent"
         Name =""

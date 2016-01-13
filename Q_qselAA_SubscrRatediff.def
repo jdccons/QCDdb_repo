@@ -1,8 +1,8 @@
 Operation =1
 Option =0
 Begin InputTables
-    Name ="tblSubscr"
     Name ="qselAA_Subscr_Rates"
+    Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
@@ -12,8 +12,10 @@ Begin OutputColumns
     Expression ="\"Subscriber Change\""
     Alias ="Elem"
     Expression ="\"Sub Rate Change\""
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="Expr1"
     Expression ="qselAA_Subscr_Rates.GRPid"
+    Alias ="Expr2"
     Expression ="qselAA_Subscr_Rates.RptDate"
     Alias ="AA"
     Expression ="qselAA_Subscr_Rates.Rate"
@@ -21,13 +23,9 @@ Begin OutputColumns
     Expression ="tblRates.Rate"
 End
 Begin Joins
-    LeftTable ="qselAA_Subscr_Rates"
-    RightTable ="tblSubscr"
-    Expression ="qselAA_Subscr_Rates.AA_SSN = tblSubscr.SUBssn"
-    Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -55,10 +53,10 @@ Begin
     Left =-111
     Top =48
     Right =1129
-    Bottom =434
+    Bottom =410
     Left =-1
     Top =-1
-    Right =1233
+    Right =1225
     Bottom =182
     Left =0
     Top =0
@@ -67,7 +65,7 @@ Begin
         Left =96
         Top =13
         Right =353
-        Bottom =138
+        Bottom =131
         Top =16
         Name ="tblSubscr"
         Name =""
@@ -76,7 +74,7 @@ Begin
         Left =425
         Top =7
         Right =721
-        Bottom =147
+        Bottom =50
         Top =0
         Name ="qselAA_Subscr_Rates"
         Name =""
@@ -85,7 +83,7 @@ Begin
         Left =759
         Top =6
         Right =855
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

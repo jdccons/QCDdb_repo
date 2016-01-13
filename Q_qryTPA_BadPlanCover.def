@@ -1,0 +1,48 @@
+Operation =1
+Option =0
+Begin InputTables
+    Name ="vw_tpa_plan_cover"
+End
+Begin OutputColumns
+    Expression ="vw_tpa_plan_cover.SSN"
+    Expression ="vw_tpa_plan_cover.GRP_ID"
+    Expression ="vw_tpa_plan_cover.PLAN"
+    Expression ="vw_tpa_plan_cover.COV"
+End
+Begin OrderBy
+    Expression ="vw_tpa_plan_cover.GRP_ID"
+    Flag =0
+    Expression ="vw_tpa_plan_cover.SSN"
+    Flag =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =370
+    Top =42
+    Right =1247
+    Bottom =451
+    Left =-1
+    Top =-1
+    Right =858
+    Bottom =229
+    Left =214
+    Top =37
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =124
+        Top =0
+        Name ="vw_tpa_plan_cover"
+        Name =""
+    End
+End

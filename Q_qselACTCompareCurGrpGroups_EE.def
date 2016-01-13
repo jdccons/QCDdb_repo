@@ -5,23 +5,17 @@ Begin InputTables
     Name ="qselACTGroups_EE"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="qselACTCurGrp_EE.USER1"
+    Alias ="Expr2"
     Expression ="qselACTCurGrp_EE.USR1000"
-End
-Begin Joins
-    LeftTable ="qselACTCurGrp_EE"
-    RightTable ="qselACTGroups_EE"
-    Expression ="qselACTCurGrp_EE.USER1 = qselACTGroups_EE.GroupID"
-    Flag =1
-    LeftTable ="qselACTCurGrp_EE"
-    RightTable ="qselACTGroups_EE"
-    Expression ="qselACTCurGrp_EE.USR1000 = qselACTGroups_EE.CurrentEligEmps"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -29,10 +23,10 @@ Begin
     Left =47
     Top =29
     Right =1258
-    Bottom =342
+    Bottom =353
     Left =-1
     Top =-1
-    Right =1204
+    Right =1196
     Bottom =144
     Left =0
     Top =0
@@ -41,7 +35,7 @@ Begin
         Left =38
         Top =6
         Right =194
-        Bottom =90
+        Bottom =49
         Top =0
         Name ="qselACTCurGrp_EE"
         Name =""
@@ -50,7 +44,7 @@ Begin
         Left =233
         Top =7
         Right =460
-        Bottom =91
+        Bottom =95
         Top =0
         Name ="qselACTGroups_EE"
         Name =""

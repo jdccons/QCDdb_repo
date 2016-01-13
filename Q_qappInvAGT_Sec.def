@@ -1,15 +1,15 @@
 Operation =3
-Name ="tblInvAgt"
+Name ="tblIndivAgt"
 Option =0
 Begin InputTables
-    Name ="tblAgent"
     Name ="tblSubscr"
+    Name ="tblAgent"
 End
 Begin OutputColumns
     Name ="SubscrID"
     Expression ="tblSubscr.SubID"
     Name ="AGENTid"
-    Expression ="tblAgent.AGENTid"
+    Expression ="tblAgent.AgentId"
     Name ="AgentRATE"
     Expression ="tblSubscr.SUBagentRATE2"
     Alias ="Pri"
@@ -19,7 +19,7 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblAgent"
-    Expression ="tblSubscr.SUBagentID2 = tblAgent.AGENTid"
+    Expression ="tblSubscr.SUBagentID2=tblAgent.AgentId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -33,10 +33,10 @@ Begin
     Left =522
     Top =93
     Right =1298
-    Bottom =406
+    Bottom =417
     Left =-1
     Top =-1
-    Right =769
+    Right =761
     Bottom =144
     Left =0
     Top =0
@@ -45,7 +45,7 @@ Begin
         Left =426
         Top =5
         Right =607
-        Bottom =104
+        Bottom =93
         Top =0
         Name ="tblAgent"
         Name =""
@@ -54,7 +54,7 @@ Begin
         Left =173
         Top =6
         Right =339
-        Bottom =120
+        Bottom =109
         Top =38
         Name ="tblSubscr"
         Name =""

@@ -6,7 +6,7 @@ Begin InputTables
     Name ="tblInvHdrPreliminary"
 End
 Begin OutputColumns
-    Name ="tblInvHdrPreliminary.SYSDOCID"
+    Name ="tblInvHdrPreliminary.Sysdocid"
     Expression ="GetNextSysDocID()"
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -14,17 +14,18 @@ dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
 dbBoolean "FailOnError" ="0"
 dbText "Description" ="Adding Transaction Numbers to Invoices . . ."
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =798
-    Bottom =504
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =795
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -33,8 +34,8 @@ Begin
         Left =38
         Top =6
         Right =213
-        Bottom =113
-        Top =32
+        Bottom =109
+        Top =0
         Name ="tblInvHdrPreliminary"
         Name =""
     End

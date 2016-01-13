@@ -5,26 +5,33 @@ Begin InputTables
     Name ="tblImportFile_ASR_Dependents"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="DEPsubID"
     Expression ="tblImportFile_ASR_Dependents.SSN"
+    Alias ="Expr2"
     Name ="DEPlastNAME"
     Expression ="tblImportFile_ASR_Dependents.LAST_NAME"
+    Alias ="Expr3"
     Name ="DEPfirstNAME"
     Expression ="tblImportFile_ASR_Dependents.FIRST_NAME"
+    Alias ="Expr4"
     Name ="DEPmiddleNAME"
     Expression ="tblImportFile_ASR_Dependents.MIDDLE_NAME"
     Alias ="DateOfBirth"
     Name ="DEPdob"
     Expression ="Mid([BIRTH_DATE],1,2) & \"/\" & Mid([BIRTH_DATE],3,2) & \"/\" & Mid([BIRTH_DATE]"
         ",5,4)"
+    Alias ="Expr5"
     Name ="DEPrelationship"
     Expression ="tblImportFile_ASR_Dependents.RELATION"
+    Alias ="Expr6"
     Name ="DEPgender"
     Expression ="tblImportFile_ASR_Dependents.SEX"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -32,10 +39,10 @@ Begin
     Left =66
     Top =67
     Right =940
-    Bottom =526
+    Bottom =545
     Left =-1
     Top =-1
-    Right =867
+    Right =859
     Bottom =298
     Left =0
     Top =0
@@ -44,7 +51,7 @@ Begin
         Left =45
         Top =26
         Right =374
-        Bottom =255
+        Bottom =69
         Top =0
         Name ="tblImportFile_ASR_Dependents"
         Name =""

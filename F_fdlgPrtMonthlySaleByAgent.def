@@ -1,25 +1,27 @@
 Version =20
 VersionRequired =20
-Checksum =-235749188
+Checksum =-904798066
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     BorderStyle =1
     Width =5184
     ItemSuffix =20
     Left =6960
-    Top =4185
-    Right =12150
-    Bottom =6450
+    Top =4188
+    Right =12156
+    Bottom =6456
     RecSrcDt = Begin
         0xa7cedeb3b2c4e140
     End
     Caption ="Print Monthly Sales Report by Agent"
+    MenuBar ="Dialog"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
         0x010000006801000000000000a10700000100000001000000
@@ -66,6 +68,10 @@ Begin Form
         0x00000000000000000000000000000000000000000000000048504c617365724a ,
         0x65743232303000
     End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -77,6 +83,9 @@ Begin Form
             Height =2280
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x280f83558c1a1345aa1c51a1c03af5e2
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -111,10 +120,13 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0x99f6681bcb716f46ba40eb6b3dd4d512
+                    End
                 End
                 Begin Label
                     BackStyle =0
-                    OverlapFlags =93
+                    OverlapFlags =85
                     TextAlign =3
                     Left =1170
                     Top =105
@@ -124,6 +136,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="Invoice Month: "
+                    GUID = Begin
+                        0xde63c751d190294688aa6526d1867312
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -137,6 +152,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text11"
                     Caption ="Invoice Year: "
+                    GUID = Begin
+                        0xe960e8514c49fe489da067a0b4c481f6
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -150,6 +168,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text15"
                     Caption ="GeoID From:  "
+                    GUID = Begin
+                        0x772a343f534e874184a7470d310b0500
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -163,6 +184,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text20"
                     Caption ="GeoID To:  "
+                    GUID = Begin
+                        0x356b3a18271e064a9e6b8bdf0d17b790
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -174,6 +198,9 @@ Begin Form
                     Width =1000
                     TabIndex =2
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0xb403e468fda52f40b5eec792cfe21041
+                    End
                     Name ="cboGeoFrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -190,6 +217,9 @@ Begin Form
                     Width =1000
                     TabIndex =3
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x3ad05b822ca4d4449050e80d3eac8812
+                    End
                     Name ="cboGeoTo"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -198,10 +228,13 @@ Begin Form
                 End
                 Begin ComboBox
                     RowSourceTypeInt =1
-                    OverlapFlags =87
+                    OverlapFlags =85
                     Left =2670
                     Top =105
                     Width =1000
+                    GUID = Begin
+                        0x8368f6b8fdcf0c408f78af63db17c4a9
+                    End
                     Name ="cboInvMonth"
                     RowSourceType ="Value List"
                     RowSource ="1;2;3;4;5;6;7;8;9;10;11;12"
@@ -213,6 +246,9 @@ Begin Form
                     Top =465
                     Width =1000
                     TabIndex =1
+                    GUID = Begin
+                        0xd083317b99fe764cb0ec28850198ca6f
+                    End
                     Name ="cboInvYear"
                     RowSourceType ="Value List"
                     RowSource ="1999;2000;2001;2002;2003;2004;2005;2006"
@@ -321,8 +357,6 @@ Private Sub PreviewButton_Click()
              "TransactionType)='I' Or (ARTRAN.TransactionType)=" & _
              "'C') AND ((ARTRAN.CustomerClassKey)='GROUP'));"
            
-    'Debug.Print strSQL
-    
     Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     
     If rst.RecordCount > 0 Then

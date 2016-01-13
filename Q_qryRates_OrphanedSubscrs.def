@@ -1,18 +1,18 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GROUPid) Is Null))"
+Where ="(((tblGrp.GroupID) Is Null))"
 Begin InputTables
     Name ="qryRates_GroupIDforSubs"
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="qryRates_GroupIDforSubs.SUBgroupID"
-    Expression ="tblGrp.GROUPid"
+    Expression ="qryRates_GroupIDforSubs.SubGroupID"
+    Expression ="tblGrp.GroupID"
 End
 Begin Joins
     LeftTable ="qryRates_GroupIDforSubs"
     RightTable ="tblGrp"
-    Expression ="qryRates_GroupIDforSubs.SUBgroupID = tblGrp.GROUPid"
+    Expression ="qryRates_GroupIDforSubs.SubGroupID=tblGrp.GroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -28,10 +28,10 @@ Begin
     Left =62
     Top =84
     Right =1258
-    Bottom =396
+    Bottom =408
     Left =-1
     Top =-1
-    Right =1189
+    Right =1181
     Bottom =144
     Left =0
     Top =0
@@ -40,7 +40,7 @@ Begin
         Left =38
         Top =6
         Right =247
-        Bottom =68
+        Bottom =79
         Top =0
         Name ="qryRates_GroupIDforSubs"
         Name =""
@@ -49,7 +49,7 @@ Begin
         Left =329
         Top =5
         Right =558
-        Bottom =112
+        Bottom =108
         Top =0
         Name ="tblGrp"
         Name =""

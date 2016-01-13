@@ -1,12 +1,14 @@
 Operation =5
 Option =0
-Where ="(((ELGEXP.RecID) In (SELECT ELGEXP_pd.RecID FROM ELGEXP_pd WHERE (((ELGEXP_pd.De"
-    "lete)=True));)))"
+Where ="((([ELGEXP].[RecID]) In (SELECT ELGEXP_pd.RecID FROM ELGEXP_pd WHERE (((ELGEXP_p"
+    "d.Delete)=True));)))"
 Begin InputTables
     Name ="ELGEXP"
 End
 Begin OutputColumns
     Expression ="ELGEXP.*"
+    Alias ="Expr1"
+    Expression ="ELGEXP.RecID"
     Expression ="ELGEXP.RecID"
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -283,10 +285,10 @@ Begin
     Left =38
     Top =86
     Right =1429
-    Bottom =851
+    Bottom =731
     Left =-1
     Top =-1
-    Right =1359
+    Right =1376
     Bottom =465
     Left =0
     Top =0
@@ -295,7 +297,7 @@ Begin
         Left =57
         Top =32
         Right =284
-        Bottom =342
+        Bottom =75
         Top =0
         Name ="ELGEXP"
         Name =""

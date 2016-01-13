@@ -1,31 +1,31 @@
 Operation =4
 Option =0
-Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmIndivSubscr]![PLTcustKEY]))"
+Where ="(((tblSubscr.PltCustKey)=Forms!frmIndivSubscr!PLTcustKEY))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="ARCUST"
 End
 Begin OutputColumns
     Name ="ARCUST.CustomerName"
-    Expression ="[tblSubscr].[SUB_LUname]"
+    Expression ="tblSubscr.SUB_LUname"
     Name ="ARCUST.CustomerAddress1"
-    Expression ="[tblSubscr].[SUBstreet1]"
+    Expression ="tblSubscr.SUBstreet1"
     Name ="ARCUST.CustomerAddress2"
-    Expression ="[tblSubscr].[SUBstreet2]"
+    Expression ="tblSubscr.SUBstreet2"
     Name ="ARCUST.CustomerCity"
-    Expression ="[tblSubscr].[SUBcity]"
+    Expression ="tblSubscr.SUBcity"
     Name ="ARCUST.CustomerState"
-    Expression ="[tblSubscr].[SUBstate]"
+    Expression ="tblSubscr.SUBstate"
     Name ="ARCUST.CustomerZipCode"
-    Expression ="[tblSubscr].[SUBzip]"
+    Expression ="tblSubscr.SUBzip"
     Name ="ARCUST.AttnPhone"
-    Expression ="[tblSubscr].[SUBphoneHOME]"
+    Expression ="tblSubscr.SUBphoneHOME"
     Name ="ARCUST.ContactPhone"
-    Expression ="[tblSubscr].[SUBphoneWORK]"
+    Expression ="tblSubscr.SUBphoneWORK"
     Name ="ARCUST.CustomerClassKey"
     Expression ="\"INDIV\""
     Name ="ARCUST.TerritoryKey"
-    Expression ="[tblSubscr].[SUBgeoID]"
+    Expression ="tblSubscr.SUBgeoID"
     Name ="ARCUST.SalespersonKey"
     Expression ="\"CORPT\""
     Name ="ARCUST.RecDate"
@@ -34,12 +34,6 @@ Begin OutputColumns
     Expression ="\"QCDdb\""
     Name ="ARCUST.PaymentMthd"
     Expression ="\"O\""
-End
-Begin Joins
-    LeftTable ="tblSubscr"
-    RightTable ="ARCUST"
-    Expression ="tblSubscr.PLTcustKEY = ARCUST.CustomerKey"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -53,10 +47,10 @@ Begin
     Left =47
     Top =29
     Right =1002
-    Bottom =554
+    Bottom =565
     Left =-1
     Top =-1
-    Right =948
+    Right =940
     Bottom =356
     Left =0
     Top =0
@@ -65,7 +59,7 @@ Begin
         Left =38
         Top =6
         Right =195
-        Bottom =240
+        Bottom =229
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -74,7 +68,7 @@ Begin
         Left =263
         Top =7
         Right =425
-        Bottom =301
+        Bottom =50
         Top =0
         Name ="ARCUST"
         Name =""

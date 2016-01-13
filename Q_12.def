@@ -1,0 +1,66 @@
+Operation =1
+Option =0
+Where ="(((tblAgent.AgentActive)=\"A\"))"
+Begin InputTables
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Expression ="tblAgent.AgentId"
+    Expression ="tblAgent.AgentFirst"
+    Expression ="tblAgent.AgentLast"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.AgentStreet1"
+    Expression ="tblAgent.AgentStreet2"
+    Expression ="tblAgent.AgentCity"
+    Expression ="tblAgent.AgentState"
+    Expression ="tblAgent.AgentZip"
+    Expression ="tblAgent.AgentActive"
+    Alias ="Expr1"
+    Expression ="tblAgent.AGENTtype"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+    Begin
+        dbText "Name" ="tblAgent.AGENTlast"
+        dbInteger "ColumnWidth" ="1920"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENCY"
+        dbInteger "ColumnWidth" ="5805"
+        dbBoolean "ColumnHidden" ="0"
+    End
+    Begin
+        dbText "Name" ="tblAgent.AGENTstreet1"
+        dbInteger "ColumnWidth" ="3075"
+        dbBoolean "ColumnHidden" ="0"
+    End
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =636
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =416
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =420
+        Bottom =379
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

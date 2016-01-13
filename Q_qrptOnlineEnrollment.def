@@ -6,26 +6,26 @@ Begin InputTables
 End
 Begin OutputColumns
     Expression ="tmpEDI_rpt.GroupID"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Alias ="GRLocation"
     Expression ="[GRcity] & \", \" & [GRstate]"
-    Expression ="tmpEDI_rpt.SUBssn"
-    Expression ="tmpEDI_rpt.SUBfirstNAME"
-    Expression ="tmpEDI_rpt.SUBlastNAME"
+    Expression ="tmpEDI_rpt.SubSSN"
+    Expression ="tmpEDI_rpt.SubFirstName"
+    Expression ="tmpEDI_rpt.SubLastName"
     Alias ="Plan"
     Expression ="IIf(Not IsNull([PlanDesc]),[PlanDesc],\"Missing\")"
     Alias ="Coverage"
     Expression ="IIf(Not IsNull([CoverageDesc]),[CoverageDesc],\"Missing\")"
-    Expression ="tmpEDI_rpt.SUBStreet"
-    Expression ="tmpEDI_rpt.SUBcity"
-    Expression ="tmpEDI_rpt.SUBstate"
-    Expression ="tmpEDI_rpt.SUBzip"
+    Expression ="tmpEDI_rpt.SubStreet"
+    Expression ="tmpEDI_rpt.SubCity"
+    Expression ="tmpEDI_rpt.SubState"
+    Expression ="tmpEDI_rpt.SubZIP"
     Expression ="tmpEDI_rpt.Stat"
 End
 Begin Joins
     LeftTable ="tmpEDI_rpt"
     RightTable ="tblGrp"
-    Expression ="tmpEDI_rpt.GroupID = tblGrp.GROUPid"
+    Expression ="tmpEDI_rpt.GroupID=tblGrp.GroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -60,16 +60,19 @@ Begin
         dbInteger "ColumnWidth" ="1980"
         dbBoolean "ColumnHidden" ="0"
     End
+    Begin
+        dbText "Name" ="Plan"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =640
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =414
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =194
     Left =0
     Top =0
@@ -78,7 +81,7 @@ Begin
         Left =38
         Top =6
         Right =228
-        Bottom =158
+        Bottom =154
         Top =1
         Name ="tmpEDI_rpt"
         Name =""
@@ -87,7 +90,7 @@ Begin
         Left =370
         Top =5
         Right =540
-        Bottom =127
+        Bottom =123
         Top =4
         Name ="tblGrp"
         Name =""

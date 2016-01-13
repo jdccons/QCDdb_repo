@@ -5,30 +5,27 @@ Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENTfirst"
-    Expression ="tblAgent.AGENT_LUname"
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENTstreet1"
-    Expression ="tblAgent.AGENTcity"
-    Expression ="tblAgent.AGENTstate"
-    Expression ="tblAgent.AGENTzip"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRcontBEG"
-    Expression ="tblGrp.[GRagent%]"
+    Expression ="tblAgent.AgentFirst"
+    Expression ="tblAgent.Agent_LUname"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.AgentStreet1"
+    Expression ="tblAgent.AgentCity"
+    Expression ="tblAgent.AgentState"
+    Expression ="tblAgent.AgentZip"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRContBeg"
+    Expression ="tblGrp.[GRAgent%]"
+    Alias ="Expr1"
     Expression ="tblGrp.GRagentRATE1"
-End
-Begin Joins
-    LeftTable ="tblAgent"
-    RightTable ="tblGrp"
-    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -36,10 +33,10 @@ Begin
     Left =84
     Top =66
     Right =778
-    Bottom =368
+    Bottom =390
     Left =-1
     Top =-1
-    Right =687
+    Right =679
     Bottom =144
     Left =0
     Top =0
@@ -48,7 +45,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =7
         Name ="tblAgent"
         Name =""
@@ -57,7 +54,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =113
+        Bottom =109
         Top =44
         Name ="tblGrp"
         Name =""

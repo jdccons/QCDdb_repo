@@ -1,36 +1,36 @@
 Operation =1
 Option =8
-Where ="(((tblGrp.GRcancelled)=No) AND ((tblGrp.GROUPid) Not Like \"INDV*\"))"
+Where ="(((tblGrp.GRCancelled)=No) AND ((tblGrp.GroupID) Not Like \"INDV*\"))"
 Begin InputTables
     Name ="tblGrp"
-    Name ="tblSubscr"
     Name ="tblGeographical"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRhold"
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRHold"
+    Expression ="tblGrp.GroupID"
     Alias ="SubName"
     Expression ="([SUBlastNAME] & \", \" & [SUBfirstNAME] & \" \" & [SUBmiddleNAME])"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRGeoID"
     Expression ="tblGeographical.GEOdesc"
-    Expression ="tblSubscr.SUBnoDEPENT"
+    Expression ="tblSubscr.DepCnt"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblGeographical"
-    Expression ="tblGrp.GRPgeoID = tblGeographical.GEOid"
+    Expression ="tblGrp.GRGeoID=tblGeographical.GEOid"
     Flag =2
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -51,10 +51,10 @@ Begin
     Left =77
     Top =116
     Right =1165
-    Bottom =433
+    Bottom =440
     Left =-1
     Top =-1
-    Right =1081
+    Right =1073
     Bottom =144
     Left =0
     Top =0
@@ -63,27 +63,27 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =38
         Name ="tblGrp"
-        Name =""
-    End
-    Begin
-        Left =172
-        Top =6
-        Right =268
-        Bottom =101
-        Top =0
-        Name ="tblSubscr"
         Name =""
     End
     Begin
         Left =306
         Top =6
         Right =402
-        Bottom =86
+        Bottom =94
         Top =0
         Name ="tblGeographical"
+        Name =""
+    End
+    Begin
+        Left =172
+        Top =6
+        Right =268
+        Bottom =94
+        Top =0
+        Name ="tblSubscr"
         Name =""
     End
 End

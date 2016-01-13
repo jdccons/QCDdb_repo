@@ -1,25 +1,25 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"CYFAR\"))"
+Where ="(((tblSubscr.SubGroupID)=\"CYFAR\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBmiddleNAME"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
     Expression ="tblRates.Rate"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -55,10 +55,10 @@ Begin
     Left =68
     Top =89
     Right =1165
-    Bottom =496
+    Bottom =503
     Left =-1
     Top =-1
-    Right =1090
+    Right =1082
     Bottom =234
     Left =0
     Top =0
@@ -67,7 +67,7 @@ Begin
         Left =38
         Top =6
         Right =217
-        Bottom =191
+        Bottom =184
         Top =9
         Name ="tblSubscr"
         Name =""
@@ -76,7 +76,7 @@ Begin
         Left =255
         Top =6
         Right =351
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

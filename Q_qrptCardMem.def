@@ -8,23 +8,23 @@ Begin OutputColumns
     Expression ="IIf([Subzip] Like \"#####-#\",Left([SubZip],Len([SubZip])-1),IIf([SubZip] Like \""
         "#########\",Format([SubZip],\"@@@@@-@@@@\"),[SubZip]))"
     Expression ="tblSubscr.SubID"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBmiddleNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
-    Expression ="tblSubscr.SUBeffDATE"
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblSubscr.SUBcontEND"
-    Expression ="tblSubscr.SUBcardPRT"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubMiddleName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubContEnd"
+    Expression ="tblSubscr.SubCardPrt"
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -34,16 +34,19 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="ZipSub"
+    End
 End
 Begin
     State =0
-    Left =111
-    Top =92
-    Right =1029
-    Bottom =409
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =911
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -52,7 +55,7 @@ Begin
         Left =38
         Top =6
         Right =196
-        Bottom =101
+        Bottom =94
         Top =26
         Name ="tblSubscr"
         Name =""

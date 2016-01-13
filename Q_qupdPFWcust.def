@@ -1,48 +1,48 @@
 Operation =4
 Option =0
-Where ="(((tblGrp.GROUPid)=[Forms]![frmGrp].[GroupID]))"
+Where ="(((tblGrp.GroupId)=Forms!frmGrp.GroupID))"
 Begin InputTables
     Name ="tblGrp"
-    Name ="ARCUST"
+    Name ="ARCUST_local"
 End
 Begin OutputColumns
-    Name ="ARCUST.CustomerName"
-    Expression ="[tblGrp].[GrName]"
-    Name ="ARCUST.CustomerAddress1"
-    Expression ="[tblGrp].[GRstreet1]"
-    Name ="ARCUST.CustomerAddress2"
-    Expression ="[tblGrp].[GRstreet2]"
-    Name ="ARCUST.CustomerCity"
-    Expression ="[tblGrp].[GRcity]"
-    Name ="ARCUST.CustomerState"
-    Expression ="[tblGrp].[GRstate]"
-    Name ="ARCUST.CustomerZipCode"
-    Expression ="[tblGrp].[GRzip]"
-    Name ="ARCUST.AttnPhone"
-    Expression ="[tblGrp].[GRphone1]"
-    Name ="ARCUST.CustomerAttention"
-    Expression ="[tblGrp].[GRmainCONT]"
-    Name ="ARCUST.ContactPhone"
-    Expression ="[tblGrp].[GRphone2]"
-    Name ="ARCUST.ContactName"
-    Expression ="[tblGrp].[GRsrvCONT]"
-    Name ="ARCUST.FaxNumber"
-    Expression ="[tblGrp].[GRfax]"
-    Name ="ARCUST.TerritoryKey"
-    Expression ="[tblGrp].[GRPgeoID]"
-    Name ="ARCUST.EmailAddress"
-    Expression ="[tblGrp].[GRemail]"
-    Name ="ARCUST.RecDate"
+    Name ="ARCUST_local.CustomerName"
+    Expression ="tblGrp.GrName"
+    Name ="ARCUST_local.CustomerAddress1"
+    Expression ="tblGrp.GRstreet1"
+    Name ="ARCUST_local.CustomerAddress2"
+    Expression ="tblGrp.GRstreet2"
+    Name ="ARCUST_local.CustomerCity"
+    Expression ="tblGrp.GRcity"
+    Name ="ARCUST_local.CustomerState"
+    Expression ="tblGrp.GRstate"
+    Name ="ARCUST_local.CustomerZipCode"
+    Expression ="tblGrp.GRzip"
+    Name ="ARCUST_local.AttnPhone"
+    Expression ="tblGrp.GRphone1"
+    Name ="ARCUST_local.CustomerAttention"
+    Expression ="tblGrp.GRmainCONT"
+    Name ="ARCUST_local.ContactPhone"
+    Expression ="tblGrp.GRphone2"
+    Name ="ARCUST_local.ContactName"
+    Expression ="tblGrp.GRsrvCONT"
+    Name ="ARCUST_local.FaxNumber"
+    Expression ="tblGrp.GRfax"
+    Name ="ARCUST_local.TerritoryKey"
+    Expression ="tblGrp.GRGeoID"
+    Name ="ARCUST_local.EmailAddress"
+    Expression ="tblGrp.GRemail"
+    Name ="ARCUST_local.RecDate"
     Expression ="Format(Date(),\"mm/dd/yyyy\")"
-    Name ="ARCUST.RecUserID"
+    Name ="ARCUST_local.RecUserID"
     Expression ="\"frmGrp\""
-    Name ="ARCUST.PaymentMthd"
+    Name ="ARCUST_local.PaymentMthd"
     Expression ="\"O\""
 End
 Begin Joins
     LeftTable ="tblGrp"
-    RightTable ="ARCUST"
-    Expression ="tblGrp.GROUPid = ARCUST.CustomerKey"
+    RightTable ="ARCUST_local"
+    Expression ="tblGrp.GroupId=ARCUST_local.CustomerKey"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -54,14 +54,14 @@ dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1024
-    Bottom =644
+    State =0
+    Left =18
+    Top =40
+    Right =1002
+    Bottom =652
     Left =-1
     Top =-1
-    Right =1021
+    Right =977
     Bottom =436
     Left =0
     Top =0
@@ -76,12 +76,12 @@ Begin
         Name =""
     End
     Begin
-        Left =257
-        Top =3
-        Right =419
-        Bottom =342
-        Top =23
-        Name ="ARCUST"
+        Left =260
+        Top =6
+        Right =356
+        Bottom =120
+        Top =0
+        Name ="ARCUST_local"
         Name =""
     End
 End

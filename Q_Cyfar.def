@@ -12,19 +12,21 @@ Begin OutputColumns
     Expression ="tblSubscr.SubGroupID"
     Expression ="tblSubscr.SubEffDate"
     Expression ="tblRates.Rate"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="tblSubscr.PlanID"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.SubGroupID = tblRates.GroupID"
+    Expression ="tblSubscr.CoverID=tblRates.CoverID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.PlanID = tblRates.PlanID"
+    Expression ="tblSubscr.PlanID=tblRates.PlanID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.CoverID = tblRates.CoverID"
+    Expression ="tblSubscr.SubGroupID=tblRates.GroupID"
     Flag =1
 End
 Begin OrderBy
@@ -40,14 +42,14 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1428
-    Bottom =795
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =641
     Left =-1
     Top =-1
-    Right =1425
+    Right =1253
     Bottom =421
     Left =0
     Top =0
@@ -56,7 +58,7 @@ Begin
         Left =51
         Top =7
         Right =615
-        Bottom =331
+        Bottom =320
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -65,7 +67,7 @@ Begin
         Left =712
         Top =26
         Right =1150
-        Bottom =155
+        Bottom =144
         Top =0
         Name ="tblRates"
         Name =""

@@ -5,27 +5,25 @@ Begin InputTables
     Name ="qrptBillingReconcileARTRAN"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRcancelledDate"
-    Expression ="tblGrp.GRreinstatedDate"
-    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRCancelledDate"
+    Expression ="tblGrp.GRReinstatedDate"
+    Expression ="tblGrp.GRHold"
+    Alias ="Expr1"
     Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    Alias ="Expr2"
     Expression ="qrptBillingReconcileARTRAN.DocumentNumber"
+    Alias ="Expr3"
     Expression ="qrptBillingReconcileARTRAN.DocumentAmt"
-End
-Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="qrptBillingReconcileARTRAN"
-    Expression ="tblGrp.GROUPid = qrptBillingReconcileARTRAN.CustomerKey"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -34,14 +32,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1024
-    Bottom =644
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =500
     Left =-1
     Top =-1
-    Right =1021
+    Right =1253
     Bottom =280
     Left =0
     Top =0
@@ -50,7 +48,7 @@ Begin
         Left =57
         Top =8
         Right =247
-        Bottom =228
+        Bottom =216
         Top =0
         Name ="tblGrp"
         Name =""
@@ -59,7 +57,7 @@ Begin
         Left =306
         Top =6
         Right =520
-        Bottom =227
+        Bottom =49
         Top =0
         Name ="qrptBillingReconcileARTRAN"
         Name =""

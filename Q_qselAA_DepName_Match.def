@@ -5,36 +5,38 @@ Begin InputTables
     Name ="tblEDI_App_Dep"
 End
 Begin OutputColumns
-    Expression ="tblDependent.DEPsubID"
-    Expression ="tblDependent.DEPssn"
-    Expression ="tblEDI_App_Dep.DEPssn"
-    Expression ="tblDependent.DEPfirstNAME"
-    Expression ="tblEDI_App_Dep.DEPfirstNAME"
+    Expression ="tblDependent.DepSubID"
+    Expression ="tblDependent.DepSSN"
+    Expression ="tblEDI_App_Dep.DepSSN"
+    Expression ="tblDependent.DepFirstName"
+    Expression ="tblEDI_App_Dep.DepFirstName"
 End
 Begin Joins
     LeftTable ="tblDependent"
     RightTable ="tblEDI_App_Dep"
-    Expression ="tblDependent.DEPsubID = tblEDI_App_Dep.DEPsubID"
+    Expression ="tblDependent.DepLastName=tblEDI_App_Dep.DepLastName"
     Flag =1
     LeftTable ="tblDependent"
     RightTable ="tblEDI_App_Dep"
-    Expression ="tblDependent.DEPfirstNAME = tblEDI_App_Dep.DEPfirstNAME"
+    Expression ="tblDependent.DepFirstName=tblEDI_App_Dep.DepFirstName"
     Flag =1
     LeftTable ="tblDependent"
     RightTable ="tblEDI_App_Dep"
-    Expression ="tblDependent.DEPlastNAME = tblEDI_App_Dep.DEPlastNAME"
+    Expression ="tblDependent.DepSubID=tblEDI_App_Dep.DepSubID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblDependent.DEPsubID"
+    Expression ="tblDependent.DepSubID"
     Flag =0
-    Expression ="tblDependent.DEPssn"
+    Expression ="tblDependent.DepSSN"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblDependent.DEPssn"
@@ -52,10 +54,10 @@ Begin
     Left =56
     Top =59
     Right =974
-    Bottom =580
+    Bottom =383
     Left =-1
     Top =-1
-    Right =911
+    Right =903
     Bottom =144
     Left =0
     Top =0
@@ -64,7 +66,7 @@ Begin
         Left =38
         Top =6
         Right =202
-        Bottom =113
+        Bottom =109
         Top =2
         Name ="tblDependent"
         Name =""
@@ -73,7 +75,7 @@ Begin
         Left =238
         Top =8
         Right =458
-        Bottom =115
+        Bottom =111
         Top =2
         Name ="tblEDI_App_Dep"
         Name =""

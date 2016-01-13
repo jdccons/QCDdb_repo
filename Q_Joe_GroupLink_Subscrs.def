@@ -1,7 +1,7 @@
 Operation =1
 Option =0
-Where ="(((ELGEXP.EIRECID)=\"P\") AND ((Mid([EINMPLAN],8,3))=\"QCD\")) OR (((ELGEXP.EIRE"
-    "CID)=\"P\") AND ((ELGEXP.EINMPLAN)=\"QCDBLU-MNL\"))"
+Where ="(((ELGEXP.EIRECID)=\"P\") AND ((Mid([EINMPLAN],8,3))=\"QCD\")) OR (((ELGEXP.EINM"
+    "PLAN)=\"QCDBLU-MNL\") AND ((ELGEXP.EIRECID)=\"P\"))"
 Begin InputTables
     Name ="ELGEXP"
 End
@@ -25,14 +25,14 @@ dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =0
-    Left =40
-    Top =62
-    Right =772
-    Bottom =571
+    State =2
+    Left =-10
+    Top =-32
+    Right =1282
+    Bottom =592
     Left =-1
     Top =-1
-    Right =721
+    Right =1277
     Bottom =144
     Left =0
     Top =0
@@ -41,8 +41,8 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
-        Top =16
+        Bottom =94
+        Top =0
         Name ="ELGEXP"
         Name =""
     End

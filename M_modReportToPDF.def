@@ -1625,7 +1625,7 @@ Dim fld As DAO.Field
 ' inner loop counter
 Dim I As Integer
 
-Dim rel As Relation
+Dim REL As Relation
 
 
 ' Let's see if the DynaPDF.DLL is available.
@@ -2444,8 +2444,8 @@ For ctr = 0 To rb.NumWindows - 1
             ' See if there are any matching Relation entries.
             ' If there are then store the required information
             ' to allow us to draw the Relationship table/field Lines
-            For Each rel In db.Relations
-                If rel.Table = .WinName Then ' Then
+            For Each REL In db.Relations
+                If REL.Table = .WinName Then ' Then
                     ' There is a matching relation for this Relationship Window Table.
                     ' We need to find the rel field for this entry and
                     ' store the absolute position of this field in the table->fields collection.
@@ -2470,28 +2470,28 @@ For ctr = 0 To rb.NumWindows - 1
                     
                     ' Draw the Line for this Relationship
                     ' Get the Ordinal Position of the Primary and ForeignTable fields
-                    Set fld = rel.Fields(0)
+                    Set fld = REL.Fields(0)
                     
                     ReOPp = tdf.Fields(fld.Name).OrdinalPosition
                     
                     ' Check if ForeignTable prop is a Clone/Copy
                     lRet = 0
-                    If rel.Table = rel.ForeignTable Then
+                    If REL.Table = REL.ForeignTable Then
                         ' Determine which copy(_x) this one is
-                        If Len(rel.Table) * 2 = Len(rel.Name) Then
-                            S = rel.ForeignTable & "_" & 1
+                        If Len(REL.Table) * 2 = Len(REL.Name) Then
+                            S = REL.ForeignTable & "_" & 1
                             lRet = 1
                         Else
                             ' Grab last character of Name prop. This logic will
                             ' only support to a max of 9 clones/copies
-                            S = Right$(rel.Name, 1)
-                            S = rel.ForeignTable & "_" & Val(S) + 1
+                            S = Right$(REL.Name, 1)
+                            S = REL.ForeignTable & "_" & Val(S) + 1
                             lRet = 1
                         End If
                     
                     End If
                     
-                    Set tdfForeign = db.TableDefs(rel.ForeignTable)
+                    Set tdfForeign = db.TableDefs(REL.ForeignTable)
                     ReOPf = tdfForeign.Fields(fld.ForeignName).OrdinalPosition + 1
                     
                     ' Calc the start and ending X,Y cordinates for the
@@ -2513,7 +2513,7 @@ For ctr = 0 To rb.NumWindows - 1
                     ' the left side of the Primary table. Otherwise, it will originate
                     ' from the right side of the Primary table
                     If lRet = 0 Then
-                        S = rel.ForeignTable
+                        S = REL.ForeignTable
                     End If
                     
                     For I = 0 To rb.NumWindows - 1
@@ -2604,7 +2604,7 @@ EXIT_RelationsToPDF:
 Set db = Nothing
 Set tdf = Nothing
 Set fld = Nothing
-Set rel = Nothing
+Set REL = Nothing
 
 ' If we aready loaded then free the library
 If hLibStrStorage <> 0 Then

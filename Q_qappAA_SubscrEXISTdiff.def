@@ -22,7 +22,7 @@ Begin OutputColumns
     Name ="AAGrpID"
     Expression ="qselAA_Subscr_PreexistingDate.GRPid"
     Name ="SubSSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="AA"
     Name ="NewValue"
     Expression ="CDate(Left([EIDTCVEF],2) & \"/\" & Mid([EIDTCVEF],3,2) & \"/\" & Right([EIDTCVEF"
@@ -36,7 +36,7 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="qselAA_Subscr_PreexistingDate"
-    Expression ="tblSubscr.SUBssn = qselAA_Subscr_PreexistingDate.AA_SSN"
+    Expression ="tblSubscr.SubSSN=qselAA_Subscr_PreexistingDate.AA_SSN"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -61,10 +61,10 @@ Begin
     Left =47
     Top =69
     Right =1258
-    Bottom =469
+    Bottom =473
     Left =-1
     Top =-1
-    Right =1204
+    Right =1196
     Bottom =224
     Left =0
     Top =0
@@ -73,7 +73,7 @@ Begin
         Left =418
         Top =15
         Right =675
-        Bottom =174
+        Bottom =163
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -82,7 +82,7 @@ Begin
         Left =98
         Top =15
         Right =342
-        Bottom =129
+        Bottom =118
         Top =0
         Name ="qselAA_Subscr_PreexistingDate"
         Name =""

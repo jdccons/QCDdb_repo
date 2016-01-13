@@ -1,25 +1,25 @@
 Operation =1
 Option =0
-Where ="(((tblInvoiceHistory.InvMonth)=1) AND ((tblInvoiceHistory.InvYear)=2002) AND ((["
-    "tblGrp].[GRExecSalesDirID])=\"GENSA\"))"
+Where ="(((tblInvoiceHistory.InvMonth)=1) And ((tblInvoiceHistory.InvYear)=2002) And ((t"
+    "blGrp.GRExecSalesDirID)=\"GENSA\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblInvoiceHistory"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRfax"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRcontEND"
-    Expression ="tblGrp.GRee"
-    Expression ="tblGrp.GRcancelledDate"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRFax"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRContEnd"
+    Expression ="tblGrp.GREE"
+    Expression ="tblGrp.GRCancelledDate"
     Expression ="tblInvoiceHistory.InvMonth"
     Expression ="tblInvoiceHistory.InvYear"
     Expression ="tblInvoiceHistory.TotalBilling"
@@ -33,7 +33,7 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblInvoiceHistory"
-    Expression ="tblGrp.GROUPid = tblInvoiceHistory.GrpID"
+    Expression ="tblGrp.GroupID=tblInvoiceHistory.GrpID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -54,10 +54,10 @@ Begin
     Left =93
     Top =114
     Right =1229
-    Bottom =431
+    Bottom =438
     Left =-1
     Top =-1
-    Right =1129
+    Right =1121
     Bottom =144
     Left =0
     Top =0
@@ -66,7 +66,7 @@ Begin
         Left =172
         Top =6
         Right =319
-        Bottom =86
+        Bottom =94
         Top =27
         Name ="tblGrp"
         Name =""
@@ -75,7 +75,7 @@ Begin
         Left =431
         Top =14
         Right =527
-        Bottom =94
+        Bottom =102
         Top =0
         Name ="tblInvoiceHistory"
         Name =""

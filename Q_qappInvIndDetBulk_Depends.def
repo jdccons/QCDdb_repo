@@ -2,9 +2,9 @@ Operation =3
 Name ="tblInvLin"
 Option =8
 Begin InputTables
+    Name ="tblInvHdrPreliminary"
     Name ="tblSubscr"
     Name ="tblDependent"
-    Name ="tblInvHdrPreliminary"
 End
 Begin OutputColumns
     Alias ="LineType"
@@ -13,10 +13,10 @@ Begin OutputColumns
     Name ="DOCUMENT NO"
     Expression ="tblInvHdrPreliminary.Tranno"
     Name ="ITEM KEY"
-    Expression ="tblDependent.DEPssn"
+    Expression ="tblDependent.DepSSN"
     Alias ="Desc"
     Name ="DESCRIPTION"
-    Expression ="([tblDependent].[DEPlastNAME] & \", \" & [tblDependent].[DEPfirstNAME])"
+    Expression ="(tblDependent.DEPlastNAME & \", \" & tblDependent.DEPfirstNAME)"
     Alias ="QtyOrdered"
     Name ="QTY ORDERED"
     Expression ="1"
@@ -33,27 +33,28 @@ End
 Begin Joins
     LeftTable ="tblInvHdrPreliminary"
     RightTable ="tblSubscr"
-    Expression ="tblInvHdrPreliminary.Custkey = tblSubscr.PLTcustKEY"
+    Expression ="tblInvHdrPreliminary.Custkey=tblSubscr.PltCustKey"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =483
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -62,7 +63,7 @@ Begin
         Left =179
         Top =10
         Right =275
-        Bottom =117
+        Bottom =113
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -71,7 +72,7 @@ Begin
         Left =296
         Top =7
         Right =392
-        Bottom =114
+        Bottom =110
         Top =0
         Name ="tblDependent"
         Name =""
@@ -80,7 +81,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblInvHdrPreliminary"
         Name =""

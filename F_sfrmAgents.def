@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1754406585
+Checksum =-2029940310
 Begin Form
     AutoResize = NotDefault
     MaxButton = NotDefault
@@ -16,23 +16,16 @@ Begin Form
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
-    Width =4800
+    Width =4845
     DatasheetFontHeight =10
     ItemSuffix =6
-    Left =12120
-    Top =4215
-    Right =17235
-    Bottom =5730
+    Left =7752
+    Top =2772
+    Right =12876
+    Bottom =4296
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x42587902120ee340
-    End
-    GUID = Begin
-        0xa758511cb668b54f8bfb094b657af11f
-    End
-    NameMap = Begin
-        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
-        0x0000000000000000000000000000
     End
     RecordSource ="qryGrpAgt"
     DatasheetFontName ="Arial"
@@ -57,20 +50,20 @@ Begin Form
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0xcb19a6b27d062c42aafbbb2bac5ec1a8
+                0x0a5681d415e44347856e396250b396d0
             End
             Begin
                 Begin ComboBox
                     ColumnHeads = NotDefault
                     LimitToList = NotDefault
-                    OverlapFlags =85
+                    OverlapFlags =93
                     ColumnCount =3
                     ListWidth =7200
                     Width =2359
                     Height =270
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
                     GUID = Begin
-                        0x20c5ef764cb95f4a8967c80e73ff502f
+                        0x4e3b5e4a0058d344a45d5f3c7176237f
                     End
                     Name ="GRagentID1"
                     ControlSource ="AGENTid"
@@ -86,7 +79,7 @@ Begin Form
                 Begin TextBox
                     DecimalPlaces =2
                     OldBorderStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     Left =4020
                     Width =777
                     Height =270
@@ -94,14 +87,15 @@ Begin Form
                     Name ="GRagentRATE1"
                     ControlSource ="AgentRATE"
                     Format ="Percent"
+                    DefaultValue ="0"
                     GUID = Begin
-                        0x9eff0c975ef3874f91eb7efc9ac1520f
+                        0x4dc0f8c6243a4547ae6980dc0e34b7c9
                     End
                 End
                 Begin TextBox
                     Enabled = NotDefault
                     TabStop = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =85
                     Left =3240
                     Width =756
                     Height =270
@@ -109,13 +103,14 @@ Begin Form
                     Name ="txtPriAgentID"
                     ControlSource ="AGENTid"
                     GUID = Begin
-                        0x6b3db9bbaff52c4f9f490e309d98d4b8
+                        0xddd78aa24e0fee46b7b571267ec6cc33
                     End
                 End
                 Begin TextBox
                     Visible = NotDefault
                     OverlapFlags =247
-                    Left =3300
+                    Left =645
+                    Top =45
                     Width =720
                     Height =180
                     TabIndex =4
@@ -123,14 +118,14 @@ Begin Form
                     Name ="txtGROUPid"
                     ControlSource ="GROUPid"
                     GUID = Begin
-                        0x11aa06590cba1d44b2a44f95ced2a37c
+                        0x48d09ddabfdc1f4cba801808d0271cc8
                     End
                 End
                 Begin TextBox
                     Visible = NotDefault
                     OverlapFlags =247
-                    Left =4200
-                    Top =15
+                    Left =1470
+                    Top =45
                     Width =540
                     Height =180
                     TabIndex =6
@@ -138,7 +133,7 @@ Begin Form
                     Name ="Sort"
                     ControlSource ="Sort"
                     GUID = Begin
-                        0x2a90690cc4ea534faea3b450214c2294
+                        0xa54db4fbfb13a24ead7aee6a5063e51c
                     End
                 End
                 Begin TextBox
@@ -152,7 +147,7 @@ Begin Form
                     Name ="Type"
                     ControlSource ="PayCommTo"
                     GUID = Begin
-                        0x7e130d3031b56140ade38f7e3ccbf6ba
+                        0x463eefbc8cd76c4ab4da9c4af8e9217b
                     End
                 End
                 Begin CheckBox
@@ -165,7 +160,7 @@ Begin Form
                     Name ="chkPrimary"
                     ControlSource ="Primary"
                     GUID = Begin
-                        0x31a0418ce28b414aacdfeabfd4df3b8a
+                        0x822227f9171c3f439a3baeaa41cbb4f1
                     End
                 End
             End

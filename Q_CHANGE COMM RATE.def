@@ -1,23 +1,31 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRagentID1)=\"VHUMA\") AND ((tblGrp.GRagentID2)=\"VHUMA\") AND ((tblGr"
+Where ="(((tblGrp.GRagentID1)=\"VHUMA\") And ((tblGrp.GRagentID2)=\"VHUMA\") And ((tblGr"
     "p.GRExecSalesDirID)=\"VHUMA\"))"
 Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr1"
     Expression ="tblGrp.GRagentID1"
+    Alias ="Expr2"
     Expression ="tblGrp.GRagentRATE1"
+    Alias ="Expr3"
     Expression ="tblGrp.GRagentID2"
+    Alias ="Expr4"
     Expression ="tblGrp.GRExecSalesDirID"
+    Alias ="Expr5"
     Expression ="tblGrp.GRExecSalesDirRate"
+    Alias ="Expr6"
     Expression ="tblGrp.GRagentRATE2"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -25,10 +33,10 @@ Begin
     Left =44
     Top =26
     Right =778
-    Bottom =334
+    Bottom =350
     Left =-1
     Top =-1
-    Right =727
+    Right =719
     Bottom =144
     Left =0
     Top =0
@@ -37,7 +45,7 @@ Begin
         Left =306
         Top =6
         Right =502
-        Bottom =117
+        Bottom =109
         Top =35
         Name ="tblGrp"
         Name =""

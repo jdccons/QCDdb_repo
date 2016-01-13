@@ -1,7 +1,7 @@
 Operation =3
 Name ="tmpAA_VarianceReport"
 Option =0
-Where ="(((CDate([EffDate]))<>[SUBeffDATE])) OR (((tblSubscr.SUBeffDATE)<>CDate([EffDate"
+Where ="(((CDate([EffDate]))<>[SUBeffDATE])) OR (((tblSubscr.SubEffDate)<>CDate([EffDate"
     "])))"
 Begin InputTables
     Name ="tblSubscr"
@@ -18,7 +18,8 @@ Begin OutputColumns
     Name ="DataElement"
     Expression ="\"Eff Date\""
     Name ="SubSSN"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="Expr1"
     Name ="AAGrpID"
     Expression ="qselAA_Subscr.GRPid"
     Alias ="AA"
@@ -26,15 +27,10 @@ Begin OutputColumns
     Expression ="CDate([EffDate])"
     Alias ="QCD"
     Name ="OldValue"
-    Expression ="tblSubscr.SUBeffDATE"
+    Expression ="tblSubscr.SubEffDate"
+    Alias ="Expr2"
     Name ="RptDate"
     Expression ="qselAA_Subscr.RptDate"
-End
-Begin Joins
-    LeftTable ="qselAA_Subscr"
-    RightTable ="tblSubscr"
-    Expression ="qselAA_Subscr.AA_SSN = tblSubscr.SUBssn"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -58,10 +54,10 @@ Begin
     Left =18
     Top =38
     Right =1258
-    Bottom =514
+    Bottom =389
     Left =-1
     Top =-1
-    Right =1233
+    Right =1225
     Bottom =171
     Left =0
     Top =0
@@ -70,7 +66,7 @@ Begin
         Left =379
         Top =6
         Right =636
-        Bottom =116
+        Bottom =109
         Top =15
         Name ="tblSubscr"
         Name =""
@@ -79,8 +75,8 @@ Begin
         Left =38
         Top =6
         Right =273
-        Bottom =116
-        Top =24
+        Bottom =49
+        Top =0
         Name ="qselAA_Subscr"
         Name =""
     End

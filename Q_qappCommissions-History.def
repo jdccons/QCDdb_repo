@@ -1,0 +1,106 @@
+Operation =3
+Name ="tblCommission"
+Option =8
+Where ="(((ARTRANH.DocumentDate) Between #1/1/2014# And #6/30/2014#) And ((ARTRANH.Trans"
+    "actionType)='P'))"
+Begin InputTables
+    Name ="ARTRANH"
+    Name ="tblGrp"
+    Name ="tblAgent"
+    Name ="tblGrpAgt"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Name ="COMMcustKEY"
+    Expression ="ARTRANH.CustomerKey"
+    Name ="COMMcustNAME"
+    Expression ="tblGrp.GRName"
+    Alias ="Expr2"
+    Name ="COMMcheckNO"
+    Expression ="ARTRANH.DocumentNumber"
+    Alias ="Expr3"
+    Name ="COMMinvoiceNO"
+    Expression ="ARTRANH.ApplyTo"
+    Alias ="CheckAmt"
+    Name ="COMMcheckAMT"
+    Expression ="([DocumentAmt])*-1"
+    Name ="COMMagent"
+    Expression ="tblGrpAgt.AgentId"
+    Name ="COMMrate"
+    Expression ="tblGrpAgt.AgentRate"
+    Alias ="Expr4"
+    Name ="COMMcustCLASS"
+    Expression ="ARTRANH.CustomerClassKey"
+    Alias ="Expr5"
+    Name ="COMMcheckDATE"
+    Expression ="ARTRANH.DocumentDate"
+    Alias ="AgentType"
+    Name ="COMMagentTYPE"
+    Expression ="tblAgent.PayCommTo"
+End
+Begin Joins
+    LeftTable ="tblAgent"
+    RightTable ="tblGrpAgt"
+    Expression ="tblAgent.AgentId=tblGrpAgt.AgentId"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="tblGrpAgt"
+    Expression ="tblGrp.GroupID=tblGrpAgt.GroupId"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =-1
+    Top =38
+    Right =1247
+    Bottom =493
+    Left =-1
+    Top =-1
+    Right =1233
+    Bottom =275
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =217
+        Bottom =49
+        Top =0
+        Name ="ARTRANH"
+        Name =""
+    End
+    Begin
+        Left =274
+        Top =6
+        Right =437
+        Bottom =199
+        Top =0
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =715
+        Top =12
+        Right =887
+        Bottom =190
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =489
+        Top =7
+        Right =665
+        Bottom =155
+        Top =0
+        Name ="tblGrpAgt"
+        Name =""
+    End
+End

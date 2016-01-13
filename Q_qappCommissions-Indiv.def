@@ -1,0 +1,105 @@
+Operation =3
+Name ="tblCommission"
+Option =0
+Where ="(((ARTRAN.CustomerClassKey)='INDIV') And ((ARTRAN.DocumentDate) Between #1/1/201"
+    "4# And #6/30/2014#) And ((ARTRAN.TransactionType)='P'))"
+Begin InputTables
+    Name ="ARTRAN"
+    Name ="tblIndivAgt"
+    Name ="tblSubscr"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Name ="COMMcustKEY"
+    Expression ="ARTRAN.CustomerKey"
+    Name ="COMMcustNAME"
+    Expression ="tblSubscr.SUB_LUname"
+    Alias ="Expr2"
+    Name ="COMMcheckNO"
+    Expression ="ARTRAN.DocumentNumber"
+    Alias ="Expr3"
+    Name ="COMMinvoiceNO"
+    Expression ="ARTRAN.ApplyTo"
+    Alias ="CheckAmt"
+    Name ="COMMcheckAMT"
+    Expression ="([DocumentAmt]*(-1))"
+    Name ="COMMagent"
+    Expression ="tblIndivAgt.AgentId"
+    Name ="COMMrate"
+    Expression ="tblIndivAgt.AgentRate"
+    Alias ="Expr4"
+    Name ="COMMcustCLASS"
+    Expression ="ARTRAN.CustomerClassKey"
+    Alias ="Expr5"
+    Name ="COMMcheckDATE"
+    Expression ="ARTRAN.DocumentDate"
+    Name ="COMMagentTYPE"
+    Expression ="tblAgent.PayCommTo"
+End
+Begin Joins
+    LeftTable ="tblIndivAgt"
+    RightTable ="tblSubscr"
+    Expression ="tblIndivAgt.SubscrId=tblSubscr.SubID"
+    Flag =1
+    LeftTable ="tblIndivAgt"
+    RightTable ="tblAgent"
+    Expression ="tblIndivAgt.AgentId=tblAgent.AgentId"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =20
+    Top =116
+    Right =1258
+    Bottom =620
+    Left =-1
+    Top =-1
+    Right =1223
+    Bottom =324
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =171
+        Bottom =49
+        Top =0
+        Name ="ARTRAN"
+        Name =""
+    End
+    Begin
+        Left =404
+        Top =12
+        Right =569
+        Bottom =160
+        Top =0
+        Name ="tblInvAgt"
+        Name =""
+    End
+    Begin
+        Left =210
+        Top =8
+        Right =354
+        Bottom =231
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =621
+        Top =10
+        Right =800
+        Bottom =233
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+End

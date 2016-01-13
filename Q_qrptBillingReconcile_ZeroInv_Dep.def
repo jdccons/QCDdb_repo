@@ -1,39 +1,39 @@
 Operation =1
 Option =0
-Having ="(((tblGrp.GROUPid) Not In (\"INDV1\",\"INDV2\",\"INDV3\",\"INDVM\")))"
+Having ="(((tblGrp.GroupID) Not In (\"INDV1\",\"INDV2\",\"INDV3\",\"INDVM\")))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
     Name ="tblRates"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
     Alias ="SubRate2"
     Expression ="Sum(IIf(IsNull([rate]),0,([rate])))"
     Alias ="SubDep2"
-    Expression ="Sum(IIf(IsNull([SUBnoDEPENT]),0,([SUBnoDEPENT])))"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRhold"
+    Expression ="Sum(IIf(IsNull([DepCnt]),0,([DepCnt])))"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRHold"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =2
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.RateID = tblRates.RateID"
+    Expression ="tblSubscr.RateID=tblRates.RateID"
     Flag =2
 End
 Begin Groups
-    Expression ="tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID"
     GroupLevel =0
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     GroupLevel =0
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
     GroupLevel =0
-    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GRHold"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -74,10 +74,10 @@ Begin
     Left =93
     Top =114
     Right =1165
-    Bottom =488
+    Bottom =438
     Left =-1
     Top =-1
-    Right =1065
+    Right =1057
     Bottom =144
     Left =0
     Top =0
@@ -86,7 +86,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =101
+        Bottom =94
         Top =39
         Name ="tblGrp"
         Name =""
@@ -95,7 +95,7 @@ Begin
         Left =172
         Top =6
         Right =331
-        Bottom =101
+        Bottom =94
         Top =15
         Name ="tblSubscr"
         Name =""
@@ -104,7 +104,7 @@ Begin
         Left =369
         Top =6
         Right =465
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

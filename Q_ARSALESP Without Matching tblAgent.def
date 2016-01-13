@@ -1,24 +1,22 @@
 Operation =1
 Option =8
-Where ="(((tblAgent.AGENTid) Is Null))"
+Where ="(((tblAgent.AgentId) Is Null))"
 Begin InputTables
     Name ="ARSALESP"
     Name ="tblAgent"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="ARSALESP.Salesp_Key"
+    Alias ="Expr2"
     Expression ="ARSALESP.Salesp_Name"
-End
-Begin Joins
-    LeftTable ="ARSALESP"
-    RightTable ="tblAgent"
-    Expression ="ARSALESP.Salesp_Key = tblAgent.AGENTid"
-    Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="ARSALESP.Salesp_Name"
@@ -31,10 +29,10 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =349
+    Bottom =368
     Left =-1
     Top =-1
-    Right =929
+    Right =925
     Bottom =144
     Left =0
     Top =0
@@ -43,7 +41,7 @@ Begin
         Left =38
         Top =6
         Right =192
-        Bottom =113
+        Bottom =49
         Top =0
         Name ="ARSALESP"
         Name =""
@@ -52,7 +50,7 @@ Begin
         Left =290
         Top =6
         Right =501
-        Bottom =113
+        Bottom =109
         Top =15
         Name ="tblAgent"
         Name =""

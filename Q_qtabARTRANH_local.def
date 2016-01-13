@@ -5,31 +5,30 @@ Begin InputTables
     Name ="tblGrp"
 End
 Begin OutputColumns
+    Alias ="The Value"
+    Expression ="Sum(ARTRANH_local.DocumentAmt)"
     Alias ="Custkey"
     Expression ="ARTRANH_local.CustomerKey"
     GroupLevel =2
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     GroupLevel =2
-    Alias ="Expr1"
-    Expression ="Format([Documentdate],\"mmm\") In (\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun"
-        "\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\")"
-    GroupLevel =1
-    Alias ="The Value"
-    Expression ="Sum(ARTRANH_local.DocumentAmt)"
     Alias ="Total Of Docamt"
     Expression ="Sum(ARTRANH_local.DocumentAmt)"
     GroupLevel =2
+    Expression ="Format([Documentdate],\"mmm\") In (\"Jan\",\"Feb\",\"Mar\",\"Apr\",\"May\",\"Jun"
+        "\",\"Jul\",\"Aug\",\"Sep\",\"Oct\",\"Nov\",\"Dec\")"
+    GroupLevel =1
 End
 Begin Joins
     LeftTable ="ARTRANH_local"
     RightTable ="tblGrp"
-    Expression ="ARTRANH_local.CustomerKey = tblGrp.GROUPid"
+    Expression ="ARTRANH_local.CustomerKey=tblGrp.GroupID"
     Flag =1
 End
 Begin Groups
     Expression ="ARTRANH_local.CustomerKey"
     GroupLevel =2
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     GroupLevel =2
     Expression ="Format([Documentdate],\"mmm\")"
     GroupLevel =1
@@ -111,10 +110,10 @@ Begin
     Left =18
     Top =39
     Right =1258
-    Bottom =356
+    Bottom =363
     Left =-1
     Top =-1
-    Right =1233
+    Right =1225
     Bottom =144
     Left =0
     Top =0
@@ -123,7 +122,7 @@ Begin
         Left =38
         Top =11
         Right =232
-        Bottom =112
+        Bottom =99
         Top =0
         Name ="ARTRANH_local"
         Name =""
@@ -132,7 +131,7 @@ Begin
         Left =289
         Top =7
         Right =541
-        Bottom =102
+        Bottom =95
         Top =0
         Name ="tblGrp"
         Name =""

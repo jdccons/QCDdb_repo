@@ -11,23 +11,25 @@ Begin OutputColumns
     Alias ="DEPsubID"
     Expression ="tblImportDependentTemp.ID"
     Alias ="DEPfirstNAME"
-    Expression ="[tblImportDependentTemp]![FirstName]"
+    Expression ="tblImportDependentTemp!FirstName"
     Alias ="DEPmiddleNAME"
-    Expression ="[tblImportDependentTemp]![MiddleInit]"
+    Expression ="tblImportDependentTemp!MiddleInit"
     Alias ="DEPlastNAME"
-    Expression ="[tblImportDependentTemp]![LastName]"
+    Expression ="tblImportDependentTemp!LastName"
     Expression ="tblImportGroupTemp.PrintRecords"
 End
 Begin Joins
     LeftTable ="tblImportGroupTemp"
     RightTable ="tblImportDependentTemp"
-    Expression ="tblImportGroupTemp.SSN = tblImportDependentTemp.DepID"
+    Expression ="tblImportGroupTemp.SSN=tblImportDependentTemp.DepID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -35,10 +37,10 @@ Begin
     Left =46
     Top =149
     Right =948
-    Bottom =593
+    Bottom =542
     Left =-1
     Top =-1
-    Right =895
+    Right =887
     Bottom =213
     Left =0
     Top =0
@@ -47,7 +49,7 @@ Begin
         Left =88
         Top =6
         Right =248
-        Bottom =176
+        Bottom =169
         Top =0
         Name ="tblImportGroupTemp"
         Name =""
@@ -56,7 +58,7 @@ Begin
         Left =323
         Top =6
         Right =528
-        Bottom =176
+        Bottom =169
         Top =0
         Name ="tblImportDependentTemp"
         Name =""

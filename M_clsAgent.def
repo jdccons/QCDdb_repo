@@ -1,0 +1,451 @@
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = False
+Attribute VB_Exposed = False
+Option Compare Database
+
+Private mstrAgency As String
+Private mstrAgent_LUname As String
+Private mstrAgentActive As String
+Private mstrAgentCell As String
+Private mstrAgentCity As String
+Private mstrAgentCLIC As String
+Private mdblAgentCommission As Double
+Private mstrAgentEmail As String
+Private mstrAgentFax As String
+Private mstrAgentFirst As String
+Private mstrAgentGeoID As String
+Private mstrAgentId As String
+Private mstrAgentLast As String
+Private mstrAgentMiddle As String
+Private mstrAgentNGL As String
+Private mstrAgentNotes As String
+Private mstrAgentPhone As String
+Private mstrAgentSSN As String
+Private mstrAgentState As String
+Private mstrAgentStreet1 As String
+Private mstrAgentStreet2 As String
+Private mstrAgentTaxID As String
+Private mstrAgentZip As String
+Private mdtDateModified As Date
+Private mlngID As Long
+Private miPayCommTo As Integer
+Private mstrUser01 As String
+Private mstrUser02 As String
+Private mstrUser03 As String
+Private mdtUser04 As Date
+Private mdtUser05 As Date
+Private mdtUser06 As Date
+Private mlngUser07 As Long
+Private mlngUser08 As Long
+Private mlngUser09 As Long
+Private mrstRecordset As Recordset
+Private mbooLoaded As Boolean
+Public Property Get AGENCY() As String
+AGENCY = mstrAgency
+End Property
+
+Public Property Let AGENCY(rData As String)
+mstrAgency = rData
+End Property
+
+Public Property Get AGENT_LUname() As String
+AGENT_LUname = mstrAgent_LUname
+End Property
+
+Public Property Let AGENT_LUname(rData As String)
+mstrAgent_LUname = rData
+End Property
+
+Public Property Get AGENTactive() As String
+AGENTactive = mstrAgentActive
+End Property
+
+Public Property Let AGENTactive(rData As String)
+mstrAgentActive = rData
+End Property
+
+Public Property Get AGENTcell() As String
+AGENTcell = mstrAgentCell
+End Property
+
+Public Property Let AGENTcell(rData As String)
+mstrAgentCell = rData
+End Property
+
+Public Property Get AGENTcity() As String
+AGENTcity = mstrAgentCity
+End Property
+
+Public Property Let AGENTcity(rData As String)
+mstrAgentCity = rData
+End Property
+
+Public Property Get AGENTclic() As String
+AGENTclic = mstrAgentCLIC
+End Property
+
+Public Property Let AGENTclic(rData As String)
+mstrAgentCLIC = rData
+End Property
+
+Public Property Get AGENTcommission() As Double
+AGENTcommission = mdblAgentCommission
+End Property
+
+Public Property Let AGENTcommission(rData As Double)
+mdblAgentCommission = rData
+End Property
+
+Public Property Get AGENTemail() As String
+AGENTemail = mstrAgentEmail
+End Property
+
+Public Property Let AGENTemail(rData As String)
+mstrAgentEmail = rData
+End Property
+
+Public Property Get AGENTfax() As String
+AGENTfax = mstrAgentFax
+End Property
+
+Public Property Let AGENTfax(rData As String)
+mstrAgentFax = rData
+End Property
+
+Public Property Get AGENTfirst() As String
+AGENTfirst = mstrAgentFirst
+End Property
+
+Public Property Let AGENTfirst(rData As String)
+mstrAgentFirst = rData
+End Property
+
+Public Property Get AGENTgeoID() As String
+AGENTgeoID = mstrAgentGeoID
+End Property
+
+Public Property Let AGENTgeoID(rData As String)
+mstrAgentGeoID = rData
+End Property
+
+Public Property Get AGENTid() As String
+AGENTid = mstrAgentId
+End Property
+
+Public Property Let AGENTid(rData As String)
+mstrAgentId = rData
+End Property
+
+Public Property Get AGENTlast() As String
+AGENTlast = mstrAgentLast
+End Property
+
+Public Property Let AGENTlast(rData As String)
+mstrAgentLast = rData
+End Property
+
+Public Property Get AgentMiddle() As String
+AgentMiddle = mstrAgentMiddle
+End Property
+
+Public Property Let AgentMiddle(rData As String)
+mstrAgentMiddle = rData
+End Property
+
+Public Property Get AGENTngl() As String
+AGENTngl = mstrAgentNGL
+End Property
+
+Public Property Let AGENTngl(rData As String)
+mstrAgentNGL = rData
+End Property
+
+Public Property Get AGENTnotes() As String
+AGENTnotes = mstrAgentNotes
+End Property
+
+Public Property Let AGENTnotes(rData As String)
+mstrAgentNotes = rData
+End Property
+
+Public Property Get AGENTphone() As String
+AGENTphone = mstrAgentPhone
+End Property
+
+Public Property Let AGENTphone(rData As String)
+mstrAgentPhone = rData
+End Property
+
+Public Property Get AGENTSSN() As String
+AGENTSSN = mstrAgentSSN
+End Property
+
+Public Property Let AGENTSSN(rData As String)
+mstrAgentSSN = rData
+End Property
+
+Public Property Get AGENTstate() As String
+AGENTstate = mstrAgentState
+End Property
+
+Public Property Let AGENTstate(rData As String)
+mstrAgentState = rData
+End Property
+
+Public Property Get AGENTstreet1() As String
+AGENTstreet1 = mstrAgentStreet1
+End Property
+
+Public Property Let AGENTstreet1(rData As String)
+mstrAgentStreet1 = rData
+End Property
+
+Public Property Get AGENTstreet2() As String
+AGENTstreet2 = mstrAgentStreet2
+End Property
+
+Public Property Let AGENTstreet2(rData As String)
+mstrAgentStreet2 = rData
+End Property
+
+Public Property Get AGENTtaxID() As String
+AGENTtaxID = mstrAgentTaxID
+End Property
+
+Public Property Let AGENTtaxID(rData As String)
+mstrAgentTaxID = rData
+End Property
+
+Public Property Get AGENTzip() As String
+AGENTzip = mstrAgentZip
+End Property
+
+Public Property Let AGENTzip(rData As String)
+mstrAgentZip = rData
+End Property
+
+Public Property Get DateModified() As Date
+DateModified = mdtDateModified
+End Property
+
+Public Property Let DateModified(rData As Date)
+mdtDateModified = rData
+End Property
+
+Public Property Get ID() As Long
+ID = mlngID
+End Property
+
+Public Property Get PayCommTo() As Integer
+PayCommTo = miPayCommTo
+End Property
+
+Public Property Let PayCommTo(rData As Integer)
+miPayCommTo = rData
+End Property
+
+Public Property Get User01() As String
+User01 = mstrUser01
+End Property
+
+Public Property Let User01(rData As String)
+mstrUser01 = rData
+End Property
+
+Public Property Get User02() As String
+User02 = mstrUser02
+End Property
+
+Public Property Let User02(rData As String)
+mstrUser02 = rData
+End Property
+
+Public Property Get User03() As String
+User03 = mstrUser03
+End Property
+
+Public Property Let User03(rData As String)
+mstrUser03 = rData
+End Property
+
+Public Property Get User04() As Date
+User04 = mdtUser04
+End Property
+
+Public Property Let User04(rData As Date)
+mdtUser04 = rData
+End Property
+
+Public Property Get User05() As Date
+User05 = mdtUser05
+End Property
+
+Public Property Let User05(rData As Date)
+mdtUser05 = rData
+End Property
+
+Public Property Get User06() As Date
+User06 = mdtUser06
+End Property
+
+Public Property Let User06(rData As Date)
+mdtUser06 = rData
+End Property
+
+Public Property Get User07() As Long
+User07 = mlngUser07
+End Property
+
+Public Property Let User07(rData As Long)
+mlngUser07 = rData
+End Property
+
+Public Property Get User08() As Long
+User08 = mlngUser08
+End Property
+
+Public Property Let User08(rData As Long)
+mlngUser08 = rData
+End Property
+
+Public Property Get User09() As Long
+User09 = mlngUser09
+End Property
+
+Public Property Let User09(rData As Long)
+mlngUser09 = rData
+End Property
+
+Private Property Get Recordset() As Recordset
+Set Recordset = mrstRecordset
+End Property
+
+Private Property Set Recordset(rData As Recordset)
+Set mrstRecordset = rData
+End Property
+
+Private Sub Load()
+With Recordset
+Me.AGENCY = Nz(.Fields("Agency").value)
+Me.AGENT_LUname = Nz(.Fields("Agent_LUname").value)
+Me.AGENTactive = Nz(.Fields("AgentActive").value)
+Me.AGENTcell = Nz(.Fields("AgentCell").value)
+Me.AGENTcity = Nz(.Fields("AgentCity").value)
+Me.AGENTclic = Nz(.Fields("AgentCLIC").value)
+Me.AGENTcommission = Nz(.Fields("AgentCommission").value)
+Me.AGENTemail = Nz(.Fields("AgentEmail").value)
+Me.AGENTfax = Nz(.Fields("AgentFax").value)
+Me.AGENTfirst = Nz(.Fields("AgentFirst").value)
+Me.AGENTgeoID = Nz(.Fields("AgentGeoID").value)
+Me.AGENTid = Nz(.Fields("AgentId").value)
+Me.AGENTlast = Nz(.Fields("AgentLast").value)
+Me.AgentMiddle = Nz(.Fields("AgentMiddle").value)
+Me.AGENTngl = Nz(.Fields("AgentNGL").value)
+Me.AGENTnotes = Nz(.Fields("AgentNotes").value)
+Me.AGENTphone = Nz(.Fields("AgentPhone").value)
+Me.AGENTSSN = Nz(.Fields("AgentSSN").value)
+Me.AGENTstate = Nz(.Fields("AgentState").value)
+Me.AGENTstreet1 = Nz(.Fields("AgentStreet1").value)
+Me.AGENTstreet2 = Nz(.Fields("AgentStreet2").value)
+Me.AGENTtaxID = Nz(.Fields("AgentTaxID").value)
+Me.AGENTzip = Nz(.Fields("AgentZip").value)
+Me.DateModified = Nz(.Fields("DateModified").value)
+mlngID = Nz(.Fields("ID").value)
+Me.PayCommTo = Nz(.Fields("PayCommTo").value)
+Me.User01 = Nz(.Fields("User01").value)
+Me.User02 = Nz(.Fields("User02").value)
+Me.User03 = Nz(.Fields("User03").value)
+Me.User04 = Nz(.Fields("User04").value)
+Me.User05 = Nz(.Fields("User05").value)
+Me.User06 = Nz(.Fields("User06").value)
+Me.User07 = Nz(.Fields("User07").value)
+Me.User08 = Nz(.Fields("User08").value)
+Me.User09 = Nz(.Fields("User09").value)
+End With
+mbooLoaded = True
+End Sub
+Public Sub Update()
+With Recordset
+If mbooLoaded = True Then
+.Edit
+Else
+.AddNew
+End If
+.Fields("Agency").value = NullIfEmptyString(Me.AGENCY)
+.Fields("Agent_LUname").value = NullIfEmptyString(Me.AGENT_LUname)
+.Fields("AgentActive").value = NullIfEmptyString(Me.AGENTactive)
+.Fields("AgentCell").value = NullIfEmptyString(Me.AGENTcell)
+.Fields("AgentCity").value = NullIfEmptyString(Me.AGENTcity)
+.Fields("AgentCLIC").value = NullIfEmptyString(Me.AGENTclic)
+.Fields("AgentCommission").value = Me.AGENTcommission
+.Fields("AgentEmail").value = NullIfEmptyString(Me.AGENTemail)
+.Fields("AgentFax").value = NullIfEmptyString(Me.AGENTfax)
+.Fields("AgentFirst").value = NullIfEmptyString(Me.AGENTfirst)
+.Fields("AgentGeoID").value = NullIfEmptyString(Me.AGENTgeoID)
+.Fields("AgentId").value = NullIfEmptyString(Me.AGENTid)
+.Fields("AgentLast").value = NullIfEmptyString(Me.AGENTlast)
+.Fields("AgentMiddle").value = NullIfEmptyString(Me.AgentMiddle)
+.Fields("AgentNGL").value = NullIfEmptyString(Me.AGENTngl)
+.Fields("AgentNotes").value = NullIfEmptyString(Me.AGENTnotes)
+.Fields("AgentPhone").value = NullIfEmptyString(Me.AGENTphone)
+.Fields("AgentSSN").value = NullIfEmptyString(Me.AGENTSSN)
+.Fields("AgentState").value = NullIfEmptyString(Me.AGENTstate)
+.Fields("AgentStreet1").value = NullIfEmptyString(Me.AGENTstreet1)
+.Fields("AgentStreet2").value = NullIfEmptyString(Me.AGENTstreet2)
+.Fields("AgentTaxID").value = NullIfEmptyString(Me.AGENTtaxID)
+.Fields("AgentZip").value = NullIfEmptyString(Me.AGENTzip)
+.Fields("DateModified").value = Me.DateModified
+mlngID = Nz(.Fields("ID").value)
+.Fields("PayCommTo").value = Me.PayCommTo
+.Fields("User01").value = NullIfEmptyString(Me.User01)
+.Fields("User02").value = NullIfEmptyString(Me.User02)
+.Fields("User03").value = NullIfEmptyString(Me.User03)
+.Fields("User04").value = Me.User04
+.Fields("User05").value = Me.User05
+.Fields("User06").value = Me.User06
+.Fields("User07").value = Me.User07
+.Fields("User08").value = Me.User08
+.Fields("User09").value = Me.User09
+.Update
+End With
+mbooLoaded = True
+End Sub
+Public Sub AddNew()
+mbooLoaded = False
+End Sub
+Public Function FindFirst(Optional Criteria As Variant) As Boolean
+If IsMissing(Criteria) Then
+    Recordset.MoveFirst
+    FindFirst = Not Recordset.EOF
+Else
+    Recordset.FindFirst Criteria
+    FindFirst = Not Recordset.NoMatch
+End If
+If FindFirst Then Load
+End Function
+Public Function FindLast(Optional Criteria As Variant) As Boolean
+If IsMissing(Criteria) Then
+    Recordset.MoveLast
+    FindLast = Not Recordset.EOF
+Else
+    Recordset.FindLast Criteria
+    FindLast = Not Recordset.NoMatch
+End If
+If FindLast Then Load
+End Function
+Private Sub Class_Initialize()
+Set Recordset = CurrentDb.OpenRecordset("tblAgent", dbOpenDynaset, dbSeeChanges)
+End Sub
+Private Sub Class_Terminate()
+Recordset.Close
+Set Recordset = Nothing
+End Sub
+Function NullIfEmptyString(str As String) As Variant
+Dim strTrimmed As String: strTrimmed = Trim(str)
+If Len(strTrimmed) = 0 Then
+NullIfEmptyString = Null
+Else
+NullIfEmptyString = strTrimmed
+End If
+End Function

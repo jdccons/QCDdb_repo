@@ -1,23 +1,150 @@
 Option Compare Database
 Option Explicit
 Public fDelete As Boolean
+Public gintProcessStatus As Integer
+' functions and procedures
+' for groups
+
+Public Function ValidSSN() As Boolean
+'=========================================================================
+' Object:      ValidSSN
+' Desc:        Checks data in tpa file to insure no dup SSN
+'
+' Called by:   fdlgAASync.cmdProcess
+'              fdlgAASync.cmdImport
+' Call:
+' Arguments:   None
+'
+' Comments:    Returns true or false
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-10       J Criswell      1.0         Created
+'=========================================================================
+
+    On Error GoTo FUNC_ERR
+    
+    Dim db As DAO.Database
+    Dim rst As DAO.Recordset
+    Dim strSQL As String
+    Set db = CurrentDb()
+     ' dup SSNs
+    strSQL = "SELECT tpa_data_exchange_sub.SSN " & _
+                "FROM tpa_data_exchange_sub " & _
+                "GROUP BY tpa_data_exchange_sub.SSN " & _
+                "HAVING (((Count(tpa_data_exchange_sub.SSN))>1));"
+
+
+    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+    If rst.EOF And rst.BOF Then
+        ValidSSN = True
+    Else
+        ValidSSN = False
+    End If
+    
+    rst.Close
+    Set db = Nothing
+    
+FUNC_EXIT:
+  Exit Function
+    
+    
+FUNC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: modGrp.Check_tpa_Plans_Covers "
+  Resume FUNC_EXIT
+  End Function
+
+
+
+Public Function ValidPlanCover() As Boolean
+'=========================================================================
+' Object:      ValidPlanCover
+' Desc:        Checks data in tpa file to insure the plans and coverages
+'              are correct; this is done by comparing the group id, the plan id
+'              and the cover id to the same on tblRates
+'
+' Called by:   fdlgAASync.cmdProcess
+'              fdlgAASync.cmdImport
+' Call:
+' Arguments:   None
+'
+' Comments:    Returns true or false
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2015-11-10       J Criswell      1.0         Created
+'=========================================================================
+
+On Error GoTo FUNC_ERR
+
+        Dim db As DAO.Database
+        Dim rst As DAO.Recordset
+        Dim strSQL As String
+        
+        Set db = CurrentDb()
+ 
+        ' incorrect plans and rates
+        strSQL = "select * from vw_tpa_plan_cover;"
+        Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+        
+        If rst.EOF And rst.BOF Then
+            ValidPlanCover = True
+        Else
+            ValidPlanCover = False
+        End If
+        
+        rst.Close
+        Set db = Nothing
+        
+FUNC_EXIT:
+  Exit Function
+    
+    
+FUNC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: modGrp.Check_tpa_Plans_Covers "
+  Resume FUNC_EXIT
+        
+End Function
+Public Function GoToSubscriber(MyForm As Form) As Boolean
+
+On Error GoTo ErrorHandler
+
+    Call MyForm.btnSubscr_Click
+    GoToSubscriber = True
+
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Function
+
 
 Sub SalesbyGroupbyMonth()
 
-    Dim db As DAO.Database
-    Set db = CurrentDb()
+On Error GoTo ErrorHandler
+
+'    Dim db As DAO.Database
+'    Set db = CurrentDb()
+'
+'    DoCmd.SetWarnings False
+'
+'    ExecuteSQL "TRUNCATE TABLE ARTRANH_local;"
+'    DoCmd.OpenQuery "qappSales_ARTRANH"
+'    DoCmd.OpenQuery "qappSales_ARTRAN"
+'    DoCmd.TransferSpreadsheet acExport, 8, "qtabARTRANH_local", "F:\Share\SalesbyGroupByMonth"
+'
+'    DoCmd.SetWarnings False
+'
+'    db.Close
+'    Set db = Nothing
     
-    DoCmd.SetWarnings False
-        
-    ExecuteSQL "TRUNCATE TABLE ARTRANH_local;"
-    DoCmd.OpenQuery "qappSales_ARTRANH"
-    DoCmd.OpenQuery "qappSales_ARTRAN"
-    DoCmd.TransferSpreadsheet acExport, 8, "qtabARTRANH_local", "F:\Share\SalesbyGroupByMonth"
+Exit_Point:
+    Exit Sub
     
-    DoCmd.SetWarnings False
-    
-    db.Close
-    Set db = Nothing
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
 
 End Sub
 Sub DeleteSubscribers(strGroupID As String)
@@ -29,25 +156,26 @@ Sub DeleteSubscribers(strGroupID As String)
     
     Dim rs As DAO.Recordset
     
-    strSQL = "SELECT tblSubscr.SUBgroupID FROM tblSubscr WHERE (((tblSubscr.SUBgroupID)='" & strGroupID & "'));"
+    strSQL = "SELECT tblSubscr.SUBgroupID " & _
+                "FROM tblSubscr " & _
+                "WHERE (((tblSubscr.SUBgroupID)='" & strGroupID & "')) " & _
+                "AND (((tblSubscr.SubCancelled) = 1));"
     
     Set rs = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
     If rs.RecordCount > 0 Then
-        DoCmd.SetWarnings False
-        strSQL = "DELETE tblSubscr.*, tblSubscr.SUBgroupID FROM tblSubscr WHERE (((tblSubscr.SUBgroupID)='" & strGroupID & "'));"
-        
-        dbs.Execute strSQL
-                
-        DoCmd.SetWarnings True
-        
-        rs.Close
-        dbs.Close
-        Set dbs = Nothing
+    DoCmd.SetWarnings False
+        strSQL = "UPDATE tblSubscr " & _
+                    "SET SubCancelled = 3 " & _
+                    "WHERE SubGroupID = '" & strGroupID & "'"
+        ExecuteSQL strSQL
     Else
-        rs.Close
-        dbs.Close
-        Set dbs = Nothing
+        MsgBox "There are no subscribers to delete."
     End If
+    DoCmd.SetWarnings True
+        
+    rs.Close
+    dbs.Close
+    Set dbs = Nothing
     
 End Sub
 Function IsThereEligEmps(strGroupID As String, strYear As String) As Boolean
@@ -88,8 +216,8 @@ IsThereEligEmps_Err:
     GoTo IsThereEligEmps_Exit
 End Function
 Function IsThereGrowth(strGroupID As String, strYear As String) As Boolean
-'Purpose:  Determines whether a record exists in tblGrowth
-'John Criswell 3/4/00
+    'Purpose:  Determines whether a record exists in tblGrowth
+    'John Criswell 3/4/00
 
 On Error GoTo IsThereGrowth_Err
 
@@ -121,68 +249,6 @@ IsThereGrowth_Err:
     MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
     GoTo IsThereGrowth_Exit
 End Function
-Function PrtScreen_wLog()
-    
-    Dim stDocName As String
-    Dim strGrpID As String
-    Dim strWhere As String
-    
-    ' Modified 3/1/2000 to print the New Activity report for the current Group
-    ' by Tim Cook from the Group Form by the Menu
-    Dim strSubRptPhone As String
-    Dim strSubRptAppt As String
-    Dim strName As String
-    
-    strSubRptPhone = "SELECT tblGrpLog.LogGrID, tblGrp.GRname, tblGrpLog.LogNotes, tblGrpLog.LogDate, "
-    strSubRptPhone = strSubRptPhone & " tblGrpLog.LogTime, tblGrpLog.LogCallBack, tblGrpLog.LogClientScvRepID, "
-    strSubRptPhone = strSubRptPhone & " tblGrpLog.LogPurpose, tblGrpLog.LogOutcome, tblGrpLog.LogFollowupAction, "
-    strSubRptPhone = strSubRptPhone & " tblGrpLog.LogSize, tblGrpLog.LogDateCallVisit, tblGrpLog.LogPhoneLog,"
-    strSubRptPhone = strSubRptPhone & " tblGrp.GRcancelled, tblGrpLog.LogApptCallTime, tlkpClientServiceReps.RepName"
-    strSubRptPhone = strSubRptPhone & " FROM (tblGrp LEFT JOIN tblGrpLog ON (tblGrp.GroupID = tblGrpLog.LogGrID) "
-    strSubRptPhone = strSubRptPhone & " AND (tblGrp.GroupID = tblGrpLog.LogGrID)) "
-    strSubRptPhone = strSubRptPhone & " LEFT JOIN tlkpClientServiceReps ON tblGrpLog.LogClientScvRepID = tlkpClientServiceReps.RepID"
-    strSubRptPhone = strSubRptPhone & " WHERE (((tblGrpLog.LogPhoneLog)=Yes));"
-
-    strSubRptAppt = "SELECT tblGrpLog.LogGrID, tblGrp.GRname, tblGrpLog.LogNotes, tblGrpLog.LogDate, tblGrpLog.LogTime, "
-    strSubRptAppt = strSubRptAppt & " tblGrpLog.LogCallBack, tblGrpLog.LogClientScvRepID, tblGrpLog.LogAcctMgrID, "
-    strSubRptAppt = strSubRptAppt & " tblGrpLog.LogPurpose, tblGrpLog.LogOutcome, tblGrpLog.LogFollowupAction,"
-    strSubRptAppt = strSubRptAppt & " tblGrpLog.LogSize, tblGrpLog.LogDateCallVisit, tblGrpLog.LogPhoneLog, "
-    strSubRptAppt = strSubRptAppt & " tblGrp.GRcancelled, tblGrpLog.LogApptCallTime, tlkpClientServiceReps.RepName"
-    strSubRptAppt = strSubRptAppt & " FROM (tblGrp LEFT JOIN tblGrpLog ON (tblGrp.GroupID = tblGrpLog.LogGrID) "
-    strSubRptAppt = strSubRptAppt & " AND (tblGrp.GroupID = tblGrpLog.LogGrID)) "
-    strSubRptAppt = strSubRptAppt & " LEFT JOIN tlkpClientServiceReps ON tblGrpLog.LogClientScvRepID = tlkpClientServiceReps.RepID"
-    strSubRptAppt = strSubRptAppt & " WHERE (((tblGrpLog.LogPhoneLog)=No));"
-    
-    ' Set the sub reports record source here
-    DoCmd.Echo False
-    strName = "rsubGrpActivity_Phone"
-    DoCmd.OpenReport strName, acViewDesign
-        
-    With Reports(strName)
-        .RecordSource = strSubRptPhone
-        .FilterOn = True
-    End With
-        
-    DoCmd.Close acReport, strName, acSaveYes
-    strName = "rsubGrpActivity_Appt"
-    DoCmd.OpenReport strName, acViewDesign
-        
-    With Reports(strName)
-        .RecordSource = strSubRptAppt
-        .FilterOn = True
-    End With
-     
-    DoCmd.Close acReport, strName, acSaveYes
-    DoCmd.Echo True
-   
-    
-    strGrpID = Forms!frmGrp!GROUPid
-    strWhere = "(([tblGrp].[GroupID]) = '" & strGrpID & "')"
-   
-    stDocName = "rptGrpActivity_New"   ' old report "rptGrp_wLog"
-    DoCmd.OpenReport stDocName, acPreview, , strWhere
-    
-End Function
 Function Delete_GrpSubscr(strSSN As String) As Boolean
     
     On Error GoTo Err_Delete_GrpSubscr
@@ -201,10 +267,15 @@ Function Delete_GrpSubscr(strSSN As String) As Boolean
         Delete_GrpSubscr = False
         GoTo Exit_Delete_GrpSubscr
     End If
+    Forms!frmGrpSubscr.Painting = False
     
     DoCmd.Echo False
-    ExecuteSQL "EXEC uspDelGrpSubscr '" & strSSN & "'"
-    fDelete = True
+    ' this completely removes the subscriber
+    ' from the subscriber table
+    ' going forward, deleted subscribers
+    ' will get a SubCancelled=3
+    'ExecuteSQL "EXEC uspDelGrpSubscr '" & strSSN & "'"
+    fDelete = True  ' flag for frmGrpSubscr to know subscriber was deleted from the backend
     DoCmd.Echo True
     
     dbs.Close
@@ -225,6 +296,8 @@ Err_Delete_GrpSubscr:
     
 End Function
 Function PrtEnvelope()
+
+On Error GoTo ErrorHandler
     
     Dim stDocName As String
     Dim strGrpID As String
@@ -238,9 +311,18 @@ Function PrtEnvelope()
     
     PrtEnvelope = True
     
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
 End Function
 Function PrtScreen()
     
+On Error GoTo ErrorHandler
+
     Dim stDocName As String
     Dim strGrpID As String
     Dim strWhere As String
@@ -253,6 +335,13 @@ Function PrtScreen()
     DoCmd.OpenReport stDocName, acPreview, , strWhere
     
     PrtScreen = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
     
 End Function
 Function HEBsubscr()
@@ -290,7 +379,7 @@ End Sub
 Function UpdateCustKeyGroup()
 On Error GoTo UpdateCustKeyGroup_Err
 
-    If (Eval("DLookUp(""Customer_Key"",""ARCUST"",""[Customer_Key] = Forms![frmGrp]![GroupID]"") Is Not Null And [Forms]![frmGrp].[Dirty]")) Then
+    If (Eval("DLookUp(""Customer_Key"",""ARCUST_local"",""[Customer_Key] = Forms![frmGrp]![GroupID]"") Is Not Null And [Forms]![frmGrp].[Dirty]")) Then
         Beep
         MsgBox "This customer key already exists in Platinum.  Modifications to this customer key are not allowed.", vbCritical, "UNABLE TO UPDATE"
                 
@@ -298,7 +387,7 @@ On Error GoTo UpdateCustKeyGroup_Err
         
     Exit Function
     End If
-    If (Eval("DLookUp(""Customer_Key"",""ARCUST"",""[Customer_Key] = Forms![frmGrp]![GroupID]"") Is Not Null And [Forms]![frmGrp].[Dirty]")) Then
+    If (Eval("DLookUp(""Customer_Key"",""ARCUST_local"",""[Customer_Key] = Forms![frmGrp]![GroupID]"") Is Not Null And [Forms]![frmGrp].[Dirty]")) Then
         DoCmd.RunCommand acCmdUndo
     End If
 
@@ -344,12 +433,12 @@ Change_Anniv_Date_Err:
 
 End Function
 
+Function GrpSubscrLabel()
+
 ' sj 08/19/1999
 ' This function is called from fdlgGrpSubscrLabel
 ' it was converted from macro m-GROUPsubMAILlabels
 
-
-Function GrpSubscrLabel()
 On Error GoTo GrpSubscrLabel_Err
 
     DoCmd.SetWarnings False
@@ -359,14 +448,12 @@ On Error GoTo GrpSubscrLabel_Err
        DoCmd.OpenQuery "qrptGrpSubscrLabel3", acNormal, acEdit
     End If
     DoCmd.OpenReport "rptGrpSubscrLabel"
-    ''DoCmd.OpenReport "rptGrpSubscrLabel", acNormal, "", ""
-    ''Beep
     MsgBox "The mailing labels for group " + Forms!fdlgGrpSubscrLabel!GROUPforLABELS + " have been printed.  You may print labels for another group now by repeating steps 1-4 or return to the Main Menu by closing the 'Group Subscriber Mailing Labels' screen.", vbOKOnly, "GROUP Subscriber MAILING LABELS"
     
     Forms![fdlgGrpSubscrLabel].Visible = True
     DoCmd.Close A_FORM, "fdlgGrpSubscrLabel"
     Forms![fmnuSwitchboard].Visible = True
-     DoCmd.OpenForm "fmnuReportGrp"
+    DoCmd.OpenForm "fmnuReportGrp"
    
     DoCmd.Hourglass False
     DoCmd.SetWarnings True
@@ -381,8 +468,10 @@ GrpSubscrLabel_Err:
 
 End Function
 
-'' This function is called from fsubGrpZipCodeCounts2 was converted from m_GROUPzipCodeCOUNT@2()
+
 Function GrpZipcodeCount()
+'' This function is called from fsubGrpZipCodeCounts2 was converted from m_GROUPzipCodeCOUNT@2()
+
 On Error GoTo GrpZipcodeCount_Err
 
     DoCmd.SetWarnings False
@@ -402,9 +491,10 @@ GrpZipcodeCount_Err:
 
 End Function
 
-' This function is called from rptMispricedGrSubscr and from converted macMispricedGrSubs
 
 Function MispricedGrSubs()
+
+' This function is called from rptMispricedGrSubscr and from converted macMispricedGrSubs
 On Error GoTo MispricedGrSubs_Err
 
     DoCmd.SetWarnings False

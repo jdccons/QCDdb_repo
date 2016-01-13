@@ -5,8 +5,9 @@ Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
 
+'  ------   private property variables   ------
+Private mcurAmtPaid As Currency
 Private m_strConnectionString As String
-
 Private m_strSSN As String
 Private m_strEIMBRID As String
 Private m_strSubID As String
@@ -40,1391 +41,290 @@ Private m_strTransactionType As String
 Private m_datDateCreated As Date
 Private m_datDateUpdated As Date
 Private m_datDateDeleted As Date
-
 Private m_datSubContBeg As Date
 Private m_datSubContEnd As Date
-
 Private m_intDepCnt As Integer
 Private m_intSpouseCnt As Integer
 Private m_intOtherCnt As Integer
 Private m_strPlanName As String
 Private m_strCoverage As String
+Private m_strBankDraftNo As String
+Private m_strUserName As String
+Private mstrUser02 As String
+Private mstrUser01 As String
 
+
+'   ------   constants   ------
 Private Const m_Active = 1
 Private Const m_Hold = 2
 Private Const m_Cancelled = 3
 
+
+
+
+
+' ------  properties  -------
 Public Property Get SSN() As String
-    ' Purpose:  retrieves the value for SSN
-    '
-    '------------------------------------------------
-    ' Parameters:  -
-    ' Programmer:  John Criswell
-    ' Create Date:  11/15/07
-    ' Update Date:  11/15/07
-    ' Updated by:  John Criswell
-    ' --------------------------------------------------
-    On Error GoTo ErrorHandler:
-    
     SSN = m_strSSN
-    
-Exit_Point:
-    Exit Property
-    
-ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume Exit_Point
-    
 End Property
 Public Property Let SSN(p_Data As String)
-    ' Comments  :
-    ' Parameters:
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo ErrorHandler
-    
-    'If CheckSSN(p_Data) Then
-        m_strSSN = p_Data
-    'Else
-    '    'MsgBox "The SSN is not in the database.", vbOKCancel, "Not in database."
-    '    m_strSSN = "000000000"
-    'End If
-
-    
-Exit_Point:
-    Exit Property
-    
-ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume Exit_Point
-    
+    m_strSSN = p_Data
 End Property
 Public Property Get EIMBRID() As String
-    ' Purpose:  retrieves the value for EIMBRID
-    '
-    '------------------------------------------------
-    ' Parameters:  -
-    ' Programmer:  John Criswell
-    ' Create Date:  03/20/2009
-    ' Update Date:
-    ' Updated by:
-    ' --------------------------------------------------
-    
-    On Error GoTo PROC_ERR
-    
-        EIMBRID = m_strEIMBRID
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    Err.Raise Err.Number
-    
+    EIMBRID = m_strEIMBRID
 End Property
 Public Property Let EIMBRID(p_Data As String)
-    ' Purpose:  sets the value for EIMBRID
-    '
-    ' Comments  :
-    ' Parameters:
-    ' Created   : 03/20/2009 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    
-    On Error GoTo PROC_ERR
-    
-            m_strEIMBRID = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    Err.Raise Err.Number
-    
+    m_strEIMBRID = p_Data
 End Property
-
-
-
-
 Public Property Get SubID() As String
-    ' Comments  :
-    ' Parameters:
-    ' Returns   : String
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
     SubID = m_strSubID
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-
 End Property
 Public Property Let SubID(p_Data As String)
-    ' Comments  :  This will set the subscriber's id
-    '              based on the SSN
-    ' Parameters:
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-          
-    'If CheckSubID(p_Data) Then
-        m_strSubID = p_Data
-        'm_strSSN = FindSSN(p_Data)
-    'Else
-    '    'MsgBox "The SubID is not in the database.", vbCritical, "Not in database."
-    '    m_strSubID = "000000000"
-    'End If
-    
-   
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
+    m_strSubID = p_Data
 End Property
 Public Property Get Status() As String
-    ' Comments  :  This is either GRSUB and INDIV
-    '              to determine if the sub is a group
-    '              subscriber or an individual
-    ' Parameters:
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    
-    On Error GoTo PROC_ERR
-    
     Status = m_strStatus
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let Status(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strStatus = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get GROUPid() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     GROUPid = m_strGroupID
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let GROUPid(m_GroupID As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strGroupID = m_GroupID
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get PlanID() As Integer
-
-    
-    On Error GoTo PROC_ERR
-    
     PlanID = m_intPlanID
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let PlanID(p_Data As Integer)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_intPlanID = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get CoverID() As Integer
-
-    
-    On Error GoTo PROC_ERR
-    
     CoverID = m_intCoverID
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let CoverID(p_Data As Integer)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_intCoverID = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get RateID() As Integer
-
-    
-    On Error GoTo PROC_ERR
-    
     RateID = m_intRateID
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let RateID(p_Data As Integer)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_intRateID = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get LastName() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     LastName = m_strLastName
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let LastName(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strLastName = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get FirstName() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     FirstName = m_strFirstName
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let FirstName(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strFirstName = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get MiddleInitial() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     MiddleInitial = m_strMiddleInitial
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let MiddleInitial(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strMiddleInitial = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get LUName() As String
-
-    On Error GoTo PROC_ERR
-    
     LUName = m_strLUName
-
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let LUName(p_Data As String)
-
-    On Error GoTo PROC_ERR
-    
     m_strLUName = p_Data
-
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get Street1() As String
-
-    On Error GoTo PROC_ERR
-    
     Street1 = m_strStreet1
-
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let Street1(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strStreet1 = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get Street2() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     Street2 = m_strStreet2
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let Street2(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strStreet2 = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get CITY() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     CITY = m_strCity
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let CITY(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strCity = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get STATE() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     STATE = m_strState
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let STATE(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strState = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get ZIP() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     ZIP = m_strZip
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let ZIP(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strZip = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get PhoneWork() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     PhoneWork = m_strPhoneWork
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let PhoneWork(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strPhoneWork = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get PhoneHome() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     PhoneHome = m_strPhoneHome
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let PhoneHome(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strPhoneHome = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get DOB() As Date
-
-    
-    On Error GoTo PROC_ERR
-    
     DOB = m_datDOB
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let DOB(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datDOB = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get NoOfDeps() As Integer
-
-    
-    On Error GoTo PROC_ERR
-    
     NoOfDeps = m_intNoOfDeps
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let NoOfDeps(p_Data As Integer)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_intNoOfDeps = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
-Public Property Get Gender() As String
-
-    
-    On Error GoTo PROC_ERR
-    
-    Gender = m_strGender
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
+Public Property Get GENDER() As String
+    GENDER = m_strGender
 End Property
-Public Property Let Gender(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
+Public Property Let GENDER(p_Data As String)
     m_strGender = p_Data
+End Property
+Public Property Get AmtPaid() As Currency
+AmtPaid = mcurAmtPaid
+End Property
 
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
+Public Property Let AmtPaid(rData As Currency)
+mcurAmtPaid = rData
 End Property
 Public Property Get Age() As Integer
-
-    
-    On Error GoTo PROC_ERR
-    
     Age = m_intAge
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let Age(p_Data As Integer)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_intAge = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get MaritalStatus() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     MaritalStatus = m_strMaritalStatus
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let MaritalStatus(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strMaritalStatus = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get EffectiveDate() As Date
-
-    
-    On Error GoTo PROC_ERR
-    
     EffectiveDate = m_datEffectiveDate
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let EffectiveDate(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datEffectiveDate = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get PreexistingDate() As Date
-
-    
-    On Error GoTo PROC_ERR
-    
     PreexistingDate = m_datPreexistingDate
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let PreexistingDate(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datPreexistingDate = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
-
 Public Property Get SubContBeg() As Date
-
-    
-    On Error GoTo PROC_ERR
-    
     SubContBeg = m_datSubContBeg
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let SubContBeg(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datSubContBeg = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
-
 Public Property Get SubContEnd() As Date
-
-    
-    On Error GoTo PROC_ERR
-    
     SubContEnd = m_datSubContEnd
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let SubContEnd(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datSubContEnd = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
-
-
-
-
 Public Property Get CardPrt() As Byte
-
-    On Error GoTo PROC_ERR
-    
     CardPrt = m_bytCardPrt
-
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let CardPrt(p_Data As Byte)
-
-    On Error GoTo PROC_ERR
-    
     m_bytCardPrt = p_Data
-   
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get CardPrtDate() As Date
-
-    On Error GoTo PROC_ERR
-    
     CardPrtDate = m_datCardPrtDate
- 
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let CardPrtDate(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datCardPrtDate = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get Notes() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     Notes = m_strNotes
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let Notes(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strNotes = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get TransactionType() As String
-
-    
-    On Error GoTo PROC_ERR
-    
     TransactionType = m_strTransactionType
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    Err.Raise Err.Number
-    
 End Property
 Public Property Let TransactionType(p_Data As String)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_strTransactionType = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    Err.Raise Err.Number
-    
 End Property
-
-
-
-
 Public Property Get DateCreated() As Date
-
-    
-    On Error GoTo PROC_ERR
-    
     DateCreated = m_datDateCreated
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let DateCreated(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datDateCreated = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get DateUpdated() As Date
-
-    
-    On Error GoTo PROC_ERR
-    
     DateUpdated = m_datDateUpdated
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Let DateUpdated(p_Data As Date)
-
-    
-    On Error GoTo PROC_ERR
-    
     m_datDateUpdated = p_Data
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get DateDeleted() As Date
-    
-    On Error GoTo PROC_ERR
-    
     DateDeleted = m_datDateDeleted
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    Err.Raise Err.Number
-    
 End Property
 Public Property Let DateDeleted(p_Data As Date)
-
-    On Error GoTo PROC_ERR
-    
     m_datDateDeleted = p_Data
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    Err.Raise Err.Number
-    
 End Property
 Public Property Get DepCnt() As Integer
-    ' Comments  :
-    ' Parameters:
-    ' Returns   : Integer
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
     m_intDepCnt = CntDeps(m_strSSN)
     DepCnt = m_intDepCnt
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get SpouseCnt() As Integer
-    ' Comments  :
-    ' Parameters:
-    ' Returns   : Integer
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
     m_intSpouseCnt = CntSpouses(m_strSSN, "S")
     SpouseCnt = m_intSpouseCnt
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get OtherCnt() As Integer
-    ' Comments  :  This property determines how many
-    '              others that the subscriber has
-    ' Parameters:
-    ' Returns   : Integer
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
     m_intOtherCnt = CntOthers(m_strSSN, "O")
     OtherCnt = m_intOtherCnt
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-    
 End Property
 Public Property Get PlanName() As String
-
-    ' Comments  :
-    ' Parameters:
-    ' Returns   : Integer
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
     m_strPlanName = GetPlanName(m_strSSN)
     PlanName = m_strPlanName
-
-    
-PROC_EXIT:
-    Exit Property
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-
+End Property
+Public Property Get BankDraftNo() As String
+    BankDraftNo = m_strBankDraftNo
+End Property
+Public Property Let BankDraftNo(p_Data As String)
+    m_strBankDraftNo = p_Data
+End Property
+Public Property Get UserName() As String
+    UserName = m_strUserName
+End Property
+Public Property Let UserName(p_Data As String)
+    m_strUserName = p_Data
+End Property
+Public Property Get User01() As String
+    User01 = mstrUser01
+End Property
+Public Property Let User01(rData As String)
+    mstrUser01 = rData
+End Property
+Public Property Get User02() As String
+    User02 = mstrUser02
+End Property
+Public Property Let User02(rData As String)
+    mstrUser02 = rData
 End Property
 
 
-Private Function CntDeps(strSSN As String) As Integer
-  
-    ' Comments  :  This function will return the number of dependents
-    '              the subscriber has; for Indiv only it must be zero;
-    '              for Indiv + 1, Indiv + Child(ren), and Indiv + Family,
-    '              it must be at least two and at least one spouse or
-    '              other
-    ' Parameters:
-    ' Returns   : Integer
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
-    LoadADORecordSet "uspCntDeps '" & strSSN & "'"
-    
-    If Not g_adoRS.EOF Then
-      CntDeps = g_adoRS("CntOfDeps")
-      g_adoRS.Close
-    End If
-    
-    Set g_adoRS = Nothing
-    
-PROC_EXIT:
-    Exit Function
+'   XXXXXXXXXXXXXXXX    IndivSubStatus property    XXXXXXXXXXXXXXXXXXX
 
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-  
-End Function
-Private Function GetPlanName(strSSN As String) As String
-
-    ' Comments  :  This function will return the plan that the
-    '              subscriber currently has
-    ' Parameters:
-    ' Returns   : String
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
-    LoadADORecordSet "uspGetPlanName '" & strSSN & "'"
-    
-    If Not g_adoRS.EOF Then
-      GetPlanName = g_adoRS("PlanName")
-      g_adoRS.Close
-    End If
-    
-PROC_EXIT:
-    Exit Function
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-
-End Function
-Private Function CntSpouses(strSSN As String, strDepRel As String) As Integer
-  
-    ' Comments  :  This function will return the number of spouses
-    '              the subscriber has; hopefully it is either 0 or 1
-    ' Parameters:
-    ' Returns   : Integer
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
-    LoadADORecordSet "uspCntSpouses '" & strSSN & "', " & "'" & strDepRel & "'"
-    
-    If Not g_adoRS.EOF Then
-      CntSpouses = g_adoRS("CntOfSpouses")
-      g_adoRS.Close
-    End If
-    
-PROC_EXIT:
-    Exit Function
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-  
-End Function
-Private Function CntOthers(strSSN As String, strDepRel As String) As Integer
-  
-    ' Comments  :  This function will return the number of others
-    '              the subscriber has; it can be unlimited but for
-    '              Indiv + 1, it must be at least one
-    ' Parameters:
-    ' Returns   : Integer
-    ' Created   : 11/10/07 16:13 JC
-    ' Modified  :
-    '
-    ' --------------------------------------------------
-    On Error GoTo PROC_ERR
-    
-    LoadADORecordSet "uspCntOthers '" & strSSN & "', " & "'" & strDepRel & "'"
-    
-    If Not g_adoRS.EOF Then
-      CntOthers = g_adoRS("CntOfOthers")
-      g_adoRS.Close
-    End If
-    
-    Set g_adoRS = Nothing
-    
-PROC_EXIT:
-    Exit Function
-
-PROC_ERR:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume PROC_EXIT
-  
-End Function
 Public Property Get IndivSubStatus() As String
     ' Comments  : an individial subscriber can have a status of
     '             1, 2, or 3
@@ -1437,44 +337,44 @@ Public Property Get IndivSubStatus() As String
     ' Modified  :
     '
     ' --------------------------------------------------
-    
-    On Error GoTo ErrorHandler
-    
     Dim strSQL As String
     Dim intIndivSubStatus As Integer
     
     strSQL = "SELECT tblSubscr.SUBssn, tblSubscr.SUBstatus, " & _
-             "tblSubscr.SUBcancelled " & _
-             "FROM tblSubscr " & _
-             "WHERE (((tblSubscr.SUBssn)='" & m_strSSN & "') " & _
-             "AND ((tblSubscr.SUBstatus)='INDIV'));"
-    Call LoadADORecordSet(strSQL)
+    "tblSubscr.SUBcancelled " & _
+    "FROM tblSubscr " & _
+    "WHERE (((tblSubscr.SUBssn)='" & m_strSSN & "') " & _
+    "AND ((tblSubscr.SUBstatus)='INDIV'));"
+    Call LoadADORecordset(strSQL)
     
     intIndivSubStatus = g_adoRS.Fields("SubCancelled")
     
     Select Case intIndivSubStatus
         Case m_Active
-            IndivSubStatus = "Active"
+        IndivSubStatus = "Active"
         Case m_Hold
-            IndivSubStatus = "Hold"
+        IndivSubStatus = "Hold"
         Case m_Cancelled
-            IndivSubStatus = "Cancelled"
+        IndivSubStatus = "Cancelled"
         Case Else
-            IndivSubStatus = ""
+        IndivSubStatus = ""
     End Select
     
     g_adoRS.Close
     Set g_adoRS = Nothing
-
-Exit_Point:
-    Exit Property
     
-ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume Exit_Point
 End Property
+
+
+
 ' XXXXXXXXXXXXXXX   Public Functions XXXXXXXXXXXXXXXXXX
-'
+
+'  CheckSSN()
+'  LoadFromSSN()
+'  Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
+'  DeleteSub()
+
+
 Public Function CheckSSN(strSSN As String) As String
     '--------------------------------------------------------
     ' Purpose:  Find out if the subscriber is in the database
@@ -1482,7 +382,6 @@ Public Function CheckSSN(strSSN As String) As String
     ' Parameters:  -
     ' Returns   : string
     '   Values  : Std_Sub
-    '           : Bexar_Sub
     '           : Not_Found
     ' Programmer:  John Criswell
     ' Create Date:  11/15/07
@@ -1490,38 +389,23 @@ Public Function CheckSSN(strSSN As String) As String
     ' Updated by:  John Criswell
     ' -------------------------------------------------------
     
-
+    
     On Error GoTo ErrorHandler
     
     Dim strSQL As String
     strSQL = "SELECT tblSubscr.SUBssn " & _
-             "FROM tblSubscr " & _
-             "WHERE (((tblSubscr.SUBssn)='" & strSSN & "'));"
+    "FROM tblSubscr " & _
+    "WHERE (((tblSubscr.SUBssn)='" & strSSN & "'));"
     
-    Call LoadADORecordSet(strSQL)
-    
-    'Debug.Print g_adoRS.RecordCount
-    
+    Call LoadADORecordset(strSQL)
     If g_adoRS.RecordCount > 0 Then
         CheckSSN = "Std_Sub"
-        'Debug.Print strSQL
     Else
-        'check to see if the ssn is in tblSubscr_Bexar
-        g_adoRS.Close
-        strSQL = "SELECT tblSubscr_Bexar.SUBssn " & _
-             "FROM tblSubscr_Bexar " & _
-             "WHERE (((tblSubscr_Bexar.SUBssn)='" & strSSN & "'));"
-        'Debug.Print strSQL
-        Call LoadADORecordSet(strSQL)
-        If g_adoRS.RecordCount > 0 Then
-           CheckSSN = "Bexar_Sub"
-        Else
-           CheckSSN = "Not_Found"
-        End If
+        CheckSSN = "Not Found"
     End If
     
     Set g_adoRS = Nothing
-
+    
 Exit_Point:
     Exit Function
     
@@ -1529,7 +413,6 @@ ErrorHandler:
     MsgBox Err.DESCRIPTION & " " & Err.Number
     Resume Exit_Point
 End Function
-
 Public Function LoadFromSSN(p_SSN As String, p_GroupID As String) As Boolean
     ' Comments  :  Loads this object's values by loading a record based on the given ID
     ' Parameters: p_SSN -
@@ -1537,59 +420,36 @@ Public Function LoadFromSSN(p_SSN As String, p_GroupID As String) As Boolean
     ' Modified  :
     '
     ' --------------------------------------------------
-        
+    
     On Error GoTo PROC_ERR
-        
+    
     Dim strSQL As String
     
-    If p_GroupID <> "BEXHM" Then
-        strSQL = "SELECT SubSSN, EIMBRID, SubID, "
-        strSQL = strSQL & "SubStatus, SubGroupID, "
-        strSQL = strSQL & "PlanID, CoverID, RateID, "
-        strSQL = strSQL & "Sub_LUName, "
-        strSQL = strSQL & "SubLastName, SubFirstName, "
-        strSQL = strSQL & "SubMiddleName, "
-        strSQL = strSQL & "SubStreet1, SubStreet2, "
-        strSQL = strSQL & "SubCity, SubState, SubZip, "
-        strSQL = strSQL & "SubPhoneWork, SubPhoneHome, "
-        strSQL = strSQL & "SubDOB, "
-        strSQL = strSQL & "SubNoDepent, SubGender, "
-        strSQL = strSQL & "SubAge, SubMaritalStatus, SubEffDate, "
-        strSQL = strSQL & "PreexistingDate, "
-        strSQL = strSQL & "SubCardPrt, SubCardPrtDte, "
-        strSQL = strSQL & "SubNotes, TransactionType, "
-        strSQL = strSQL & "DateCreated, DateUpdated, "
-        strSQL = strSQL & "DateDeleted "
-        strSQL = strSQL & "FROM tblSubscr "
-        strSQL = strSQL & "WHERE SubSSN='" & p_SSN & "'"
-        
-        LoadFromSSN = LoadData(strSQL)
-        
-    ElseIf p_GroupID = "BEXHM" Then
-        strSQL = "SELECT SubSSN, EIMBRID, SubID, "
-        strSQL = strSQL & "SubStatus, SubGroupID, "
-        strSQL = strSQL & "PlanID, CoverID, RateID, "
-        strSQL = strSQL & "Sub_LUName, "
-        strSQL = strSQL & "SubLastName, SubFirstName, "
-        strSQL = strSQL & "SubMiddleName, "
-        strSQL = strSQL & "SubStreet1, SubStreet2, "
-        strSQL = strSQL & "SubCity, SubState, SubZip, "
-        strSQL = strSQL & "SubPhoneWork, SubPhoneHome, "
-        strSQL = strSQL & "SubDOB, "
-        strSQL = strSQL & "SubNoDepent, SubGender, "
-        strSQL = strSQL & "SubAge, SubMaritalStatus, SubEffDate, "
-        strSQL = strSQL & "PreexistingDate, "
-        strSQL = strSQL & "SubCardPrt, SubCardPrtDte, "
-        strSQL = strSQL & "SubNotes, TransactionType, "
-        strSQL = strSQL & "DateCreated, DateUpdated, "
-        strSQL = strSQL & "DateDeleted "
-        strSQL = strSQL & "FROM tblSubscr_Bexar "
-        strSQL = strSQL & "WHERE SubSSN='" & p_SSN & "'"
-        'Debug.Print strSQL
-        LoadFromSSN = LoadData(strSQL)
     
-    End If
-     
+    strSQL = "SELECT SubSSN, EIMBRID, SubID, "
+    strSQL = strSQL & "SubStatus, SubGroupID, "
+    strSQL = strSQL & "PlanID, CoverID, RateID, "
+    strSQL = strSQL & "Sub_LUName, "
+    strSQL = strSQL & "SubLastName, SubFirstName, "
+    strSQL = strSQL & "SubMiddleName, "
+    strSQL = strSQL & "SubStreet1, SubStreet2, "
+    strSQL = strSQL & "SubCity, SubState, SubZip, "
+    strSQL = strSQL & "SubPhoneWork, SubPhoneHome, "
+    strSQL = strSQL & "SubDOB, "
+    strSQL = strSQL & "DepCnt, SubGender, "
+    strSQL = strSQL & "SubAge, SubMaritalStatus, SubEffDate, "
+    strSQL = strSQL & "PreexistingDate, "
+    strSQL = strSQL & "SubCardPrt, SubCardPrtDte, "
+    strSQL = strSQL & "SubNotes, TransactionType, "
+    strSQL = strSQL & "SubBankDraftNo, "
+    strSQL = strSQL & "DateCreated, DateUpdated, "
+    strSQL = strSQL & "DateDeleted "
+    strSQL = strSQL & "FROM tblSubscr "
+    strSQL = strSQL & "WHERE SubSSN='" & p_SSN & "'"
+    
+    LoadFromSSN = LoadData(strSQL)
+    
+    
 PROC_EXIT:
     Exit Function
     
@@ -1598,7 +458,6 @@ PROC_ERR:
     Resume PROC_EXIT
     
 End Function
-
 Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
     ' Comments  :
     ' Parameters: p_SSN -
@@ -1610,251 +469,136 @@ Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
     On Error GoTo PROC_ERR
     
     Dim strSQL As String
-    If strGroupID <> "BEXHM" Then
-        If strAction = "Update" Then
-        
-            strSQL = strSQL & " UPDATE tblSubscr"
-            strSQL = strSQL & " Set SubSSN = '" & Me.SSN & "',"
-            strSQL = strSQL & " EIMBRID = '" & Me.EIMBRID & "',"
-            strSQL = strSQL & " SubID = '" & Me.SubID & "',"
-            strSQL = strSQL & " SubStatus = '" & Me.Status & "',"
-            strSQL = strSQL & " SubGroupID = '" & Me.GROUPid & "',"
-            strSQL = strSQL & " PlanID = " & Me.PlanID & ","
-            strSQL = strSQL & " CoverID = " & Me.CoverID & ","
-            strSQL = strSQL & " RateID = " & Me.RateID & ","
-            strSQL = strSQL & " SubLastName = '" & ReplaceChars_TSB(Me.LastName, "'", "''") & "',"
-            strSQL = strSQL & " SubFirstName = '" & ReplaceChars_TSB(Me.FirstName, "'", "''") & "',"
-            strSQL = strSQL & " SubMiddleName = '" & Me.MiddleInitial & "',"
-            strSQL = strSQL & " Sub_LUName = '" & ReplaceChars_TSB(Me.LUName, "'", "''") & "',"
-            strSQL = strSQL & " SubStreet1 = '" & Me.Street1 & "',"
-            strSQL = strSQL & " SubStreet2 = '" & Me.Street2 & "',"
-            strSQL = strSQL & " SubCity = '" & Me.CITY & "',"
-            strSQL = strSQL & " SubState = '" & Me.STATE & "',"
-            strSQL = strSQL & " SubZip = '" & Me.ZIP & "',"
-            strSQL = strSQL & " SubPhoneWork = '" & Me.PhoneWork & "',"
-            strSQL = strSQL & " SubPhoneHome = '" & Me.PhoneHome & "',"
-            strSQL = strSQL & " SubDOB = '" & Me.DOB & "',"
-            strSQL = strSQL & " SubNoDepent = " & Me.NoOfDeps & ","
-            strSQL = strSQL & " SubGender = '" & Mid(Me.Gender, 1, 1) & "',"
-            strSQL = strSQL & " SubAge = " & Me.Age & ","
-            strSQL = strSQL & " SubMaritalStatus = '" & Me.MaritalStatus & "',"
-            strSQL = strSQL & " SubEffDate = " & DateFormat(Me.EffectiveDate) & ","
-            strSQL = strSQL & " PreexistingDate = " & DateFormat(Me.PreexistingDate) & ","
-            strSQL = strSQL & " SubCardPrt = " & Me.CardPrt & ","
-            strSQL = strSQL & " SubCardPrtDte = " & DateFormat(Me.CardPrtDate) & ","
-            strSQL = strSQL & " SubContBeg = " & DateFormat(Me.SubContBeg) & ","
-            strSQL = strSQL & " SubContEnd = " & DateFormat(Me.SubContEnd) & ","
-            strSQL = strSQL & " SubNotes = '" & Me.Notes & "',"
-            strSQL = strSQL & " TransactionType = '" & Me.TransactionType & "',"
-            strSQL = strSQL & " DateCreated = " & DateFormat(Me.DateCreated) & ","
-            strSQL = strSQL & " DateUpdated = " & DateFormat(Me.DateUpdated) & ","
-            strSQL = strSQL & " DateDeleted = " & DateFormat(Me.DateDeleted) & ","
-            strSQL = strSQL & " Flag = 1"
-            strSQL = strSQL & " WHERE SubSSN = '" & (strSSN) & "'"
-            
-            ExecuteSQL strSQL
-            
-        ElseIf strAction = "Add" Then
-            strSQL = ""
-            strSQL = "INSERT INTO tblSubscr "
-            strSQL = strSQL & "(SubSSN, "                                                 '1
-            strSQL = strSQL & "EIMBRID, "
-            strSQL = strSQL & "SubID, "                                                   '2
-            strSQL = strSQL & "SUBstatus, "                                               '3
-            strSQL = strSQL & "SUBGroupID, "                                              '4
-            strSQL = strSQL & "PlanID, "                                                  '5
-            strSQL = strSQL & "CoverID, "                                                 '6
-            strSQL = strSQL & "RateID, "                                                  '7
-            strSQL = strSQL & "Sub_LUName, "                                              '8
-            strSQL = strSQL & "SubLastName, "                                             '9
-            strSQL = strSQL & "SubFirstName, "                                            '10
-            strSQL = strSQL & "SubMiddleName, "                                           '11
-            strSQL = strSQL & "SubStreet1, "                                              '12
-            strSQL = strSQL & "SubStreet2, "                                              '13
-            strSQL = strSQL & "SubCity, "                                                 '14
-            strSQL = strSQL & "SubState, "                                                '15
-            strSQL = strSQL & "SubZip, "                                                  '16
-            strSQL = strSQL & "SubPhoneWork, "                                            '17
-            strSQL = strSQL & "SubPhoneHome, "                                            '18
-            strSQL = strSQL & "SUBdob, "                                                  '19
-            strSQL = strSQL & "SubNoDepent, "                                             '20
-            strSQL = strSQL & "SubGender, "                                               '21
-            strSQL = strSQL & "SubAge, "                                                  '22
-            strSQL = strSQL & "SubMaritalStatus, "                                        '23
-            strSQL = strSQL & "SubEffDate, "                                              '24
-            strSQL = strSQL & "PreexistingDate, "                                         '25
-            strSQL = strSQL & "SubCardPrt, "                                              '26
-            strSQL = strSQL & "SubCardPrtDte,  "                                          '27
-            strSQL = strSQL & "SubContBeg,  "                                          '27
-            strSQL = strSQL & "SubContEnd,  "                                          '27
-            strSQL = strSQL & "SubNotes,  "                                               '28
-            strSQL = strSQL & "TransactionType,  "                                        '29
-            strSQL = strSQL & "DateCreated, "                                             '30
-            strSQL = strSQL & "DateUpdated, "                                             '31
-            strSQL = strSQL & "DateDeleted, "                                             '32
-            strSQL = strSQL & "Flag) "                                                    '33
-            strSQL = strSQL & "VALUES ('" & Me.SSN & "', "                                '1
-            strSQL = strSQL & "'" & Me.EIMBRID & "', "
-            strSQL = strSQL & "'" & Me.SubID & "', "                                      '2
-            strSQL = strSQL & "'" & Me.Status & "', "                                     '3
-            strSQL = strSQL & "'" & Me.GROUPid & "', "                                    '4
-            strSQL = strSQL & "" & Me.PlanID & ", "                                       '5
-            strSQL = strSQL & "" & Me.CoverID & ", "                                      '6
-            strSQL = strSQL & "" & Me.RateID & ", "                                       '7
-            strSQL = strSQL & "'" & ReplaceChars_TSB(Me.LUName, "'", "''") & "', "        '8
-            strSQL = strSQL & "'" & ReplaceChars_TSB(Me.LastName, "'", "''") & "', "      '9
-            strSQL = strSQL & "'" & ReplaceChars_TSB(Me.FirstName, "'", "''") & "', "     '10
-            strSQL = strSQL & "'" & Me.MiddleInitial & "', "                              '11
-            strSQL = strSQL & "'" & Me.Street1 & "', "                                    '12
-            strSQL = strSQL & "'" & Me.Street2 & "', "                                    '13
-            strSQL = strSQL & "'" & Me.CITY & "', "                                       '14
-            strSQL = strSQL & "'" & Me.STATE & "', "                                      '15
-            strSQL = strSQL & "'" & Me.ZIP & "', "                                        '16
-            strSQL = strSQL & "'" & Me.PhoneWork & "', "                                  '17
-            strSQL = strSQL & "'" & Me.PhoneHome & "', "                                  '18
-            strSQL = strSQL & "'" & Me.DOB & "', "                                        '19
-            strSQL = strSQL & "" & Me.NoOfDeps & ", "                                     '20
-            strSQL = strSQL & "'" & Me.Gender & "', "                                     '21
-            strSQL = strSQL & "" & Me.Age & ", "                                          '22
-            strSQL = strSQL & "'" & Me.MaritalStatus & "', "                              '23
-            strSQL = strSQL & "" & DateFormat(Me.EffectiveDate) & ", "                    '24
-            strSQL = strSQL & "" & DateFormat(Me.PreexistingDate) & ", "                  '25
-            strSQL = strSQL & "" & Me.CardPrt & ", "                                      '26
-            strSQL = strSQL & "" & DateFormat(Me.CardPrtDate) & ", "                      '27
-            strSQL = strSQL & "" & DateFormat(Me.SubContBeg) & ", "                      '27
-            strSQL = strSQL & "" & DateFormat(Me.SubContEnd) & ", "                      '27
-            strSQL = strSQL & "'" & Me.Notes & "', "                                      '28
-            strSQL = strSQL & "'" & Me.TransactionType & "', "                            '29
-            strSQL = strSQL & "" & DateFormat(Me.DateCreated) & ", "                      '30
-            strSQL = strSQL & "" & DateFormat(Me.DateUpdated) & ", "                      '31
-            strSQL = strSQL & "" & DateFormat(Me.DateDeleted) & ", "                      '32
-            strSQL = strSQL & "" & 1 & ")"                                                '33
-            'Debug.Print strSQL
-            ExecuteSQL strSQL
-            
-        End If
-    ElseIf strGroupID = "BEXHM" Then
-        If strAction = "Update" Then
-        
-            strSQL = strSQL & " UPDATE tblSubscr_Bexar"
-            strSQL = strSQL & " Set SubSSN = '" & Me.SSN & "',"
-            strSQL = strSQL & " EIMBRID = '" & Me.EIMBRID & "',"
-            strSQL = strSQL & " SubID = '" & Me.SubID & "',"
-            strSQL = strSQL & " SubStatus = '" & Me.Status & "',"
-            strSQL = strSQL & " SubGroupID = '" & Me.GROUPid & "',"
-            strSQL = strSQL & " PlanID = " & Me.PlanID & ","
-            strSQL = strSQL & " CoverID = " & Me.CoverID & ","
-            strSQL = strSQL & " RateID = " & Me.RateID & ","
-            strSQL = strSQL & " SubLastName = '" & ReplaceChars_TSB(Me.LastName, "'", "''") & "',"
-            strSQL = strSQL & " SubFirstName = '" & ReplaceChars_TSB(Me.FirstName, "'", "''") & "',"
-            strSQL = strSQL & " SubMiddleName = '" & Me.MiddleInitial & "',"
-            strSQL = strSQL & " Sub_LUName = '" & ReplaceChars_TSB(Me.LUName, "'", "''") & "',"
-            strSQL = strSQL & " SubStreet1 = '" & Me.Street1 & "',"
-            strSQL = strSQL & " SubStreet2 = '" & Me.Street2 & "',"
-            strSQL = strSQL & " SubCity = '" & Me.CITY & "',"
-            strSQL = strSQL & " SubState = '" & Me.STATE & "',"
-            strSQL = strSQL & " SubZip = '" & Me.ZIP & "',"
-            strSQL = strSQL & " SubPhoneWork = '" & Me.PhoneWork & "',"
-            strSQL = strSQL & " SubPhoneHome = '" & Me.PhoneHome & "',"
-            strSQL = strSQL & " SubDOB = '" & Me.DOB & "',"
-            strSQL = strSQL & " SubNoDepent = " & Me.NoOfDeps & ","
-            strSQL = strSQL & " SubGender = '" & Mid(Me.Gender, 1, 1) & "',"
-            strSQL = strSQL & " SubAge = " & Me.Age & ","
-            strSQL = strSQL & " SubMaritalStatus = '" & Me.MaritalStatus & "',"
-            strSQL = strSQL & " SubEffDate = " & DateFormat(Me.EffectiveDate) & ","
-            strSQL = strSQL & " PreexistingDate = " & DateFormat(Me.PreexistingDate) & ","
-            strSQL = strSQL & " SubCardPrt = " & Me.CardPrt & ","
-            strSQL = strSQL & " SubCardPrtDte = " & DateFormat(Me.CardPrtDate) & ","
-            strSQL = strSQL & " SubNotes = '" & Me.Notes & "',"
-            strSQL = strSQL & " TransactionType = '" & Me.TransactionType & "',"
-            strSQL = strSQL & " DateCreated = " & DateFormat(Me.DateCreated) & ","
-            strSQL = strSQL & " DateUpdated = " & DateFormat(Me.DateUpdated) & ","
-            strSQL = strSQL & " DateDeleted = " & DateFormat(Me.DateDeleted) & ","
-            strSQL = strSQL & " Flag = 1"
-            strSQL = strSQL & " WHERE SubSSN = '" & (strSSN) & "'"
-
-        
-            ExecuteSQL strSQL
-            
-        ElseIf strAction = "Add" Then
-            strSQL = ""
-            strSQL = "INSERT INTO tblSubscr_Bexar "
-            strSQL = strSQL & "(SubSSN, "                                                 '1
-            strSQL = strSQL & "EIMBRID, "
-            strSQL = strSQL & "SubID, "                                                   '2
-            strSQL = strSQL & "SUBstatus, "                                               '3
-            strSQL = strSQL & "SUBGroupID, "                                              '4
-            strSQL = strSQL & "PlanID, "                                                  '5
-            strSQL = strSQL & "CoverID, "                                                 '6
-            strSQL = strSQL & "RateID, "                                                  '7
-            strSQL = strSQL & "Sub_LUName, "                                              '8
-            strSQL = strSQL & "SubLastName, "                                             '9
-            strSQL = strSQL & "SubFirstName, "                                            '10
-            strSQL = strSQL & "SubMiddleName, "                                           '11
-            strSQL = strSQL & "SubStreet1, "                                              '12
-            strSQL = strSQL & "SubStreet2, "                                              '13
-            strSQL = strSQL & "SubCity, "                                                 '14
-            strSQL = strSQL & "SubState, "                                                '15
-            strSQL = strSQL & "SubZip, "                                                  '16
-            strSQL = strSQL & "SubPhoneWork, "                                            '17
-            strSQL = strSQL & "SubPhoneHome, "                                            '18
-            strSQL = strSQL & "SUBdob, "                                                  '19
-            strSQL = strSQL & "SubNoDepent, "                                             '20
-            strSQL = strSQL & "SubGender, "                                               '21
-            strSQL = strSQL & "SubAge, "                                                  '22
-            strSQL = strSQL & "SubMaritalStatus, "                                        '23
-            strSQL = strSQL & "SubEffDate, "                                              '24
-            strSQL = strSQL & "PreexistingDate, "                                         '25
-            strSQL = strSQL & "SubCardPrt, "                                              '26
-            strSQL = strSQL & "SubCardPrtDte,  "                                          '27
-            strSQL = strSQL & "SubNotes,  "                                               '28
-            strSQL = strSQL & "TransactionType,  "                                        '29
-            strSQL = strSQL & "DateCreated, "                                             '30
-            strSQL = strSQL & "DateUpdated, "                                             '31
-            strSQL = strSQL & "DateDeleted, "                                             '32
-            strSQL = strSQL & "Flag) "                                                    '33
-            strSQL = strSQL & "VALUES ('" & Me.SSN & "', "                                '1
-            strSQL = strSQL & "'" & Me.EIMBRID & "', "
-            strSQL = strSQL & "'" & Me.SubID & "', "                                      '2
-            strSQL = strSQL & "'" & Me.Status & "', "                                     '3
-            strSQL = strSQL & "'" & Me.GROUPid & "', "                                    '4
-            strSQL = strSQL & "" & Me.PlanID & ", "                                       '5
-            strSQL = strSQL & "" & Me.CoverID & ", "                                      '6
-            strSQL = strSQL & "" & Me.RateID & ", "                                       '7
-            strSQL = strSQL & "'" & ReplaceChars_TSB(Me.LUName, "'", "''") & "', "        '8
-            strSQL = strSQL & "'" & ReplaceChars_TSB(Me.LastName, "'", "''") & "', "      '9
-            strSQL = strSQL & "'" & Me.FirstName & "', "                                  '10
-            strSQL = strSQL & "'" & Me.MiddleInitial & "', "                              '11
-            strSQL = strSQL & "'" & Me.Street1 & "', "                                    '12
-            strSQL = strSQL & "'" & Me.Street2 & "', "                                    '13
-            strSQL = strSQL & "'" & Me.CITY & "', "                                       '14
-            strSQL = strSQL & "'" & Me.STATE & "', "                                      '15
-            strSQL = strSQL & "'" & Me.ZIP & "', "                                        '16
-            strSQL = strSQL & "'" & Me.PhoneWork & "', "                                  '17
-            strSQL = strSQL & "'" & Me.PhoneHome & "', "                                  '18
-            strSQL = strSQL & "'" & Me.DOB & "', "                                        '19
-            strSQL = strSQL & "" & Me.NoOfDeps & ", "                                     '20
-            strSQL = strSQL & "'" & Me.Gender & "', "                                     '21
-            strSQL = strSQL & "" & Me.Age & ", "                                          '22
-            strSQL = strSQL & "'" & Me.MaritalStatus & "', "                              '23
-            strSQL = strSQL & "" & DateFormat(Me.EffectiveDate) & ", "                    '24
-            strSQL = strSQL & "" & DateFormat(Me.PreexistingDate) & ", "                  '25
-            strSQL = strSQL & "" & Me.CardPrt & ", "                                      '26
-            strSQL = strSQL & "" & DateFormat(Me.CardPrtDate) & ", "                      '27
-            strSQL = strSQL & "'" & Me.Notes & "', "                                      '28
-            strSQL = strSQL & "'" & Me.TransactionType & "', "                            '29
-            strSQL = strSQL & "" & DateFormat(Me.DateCreated) & ", "                      '30
-            strSQL = strSQL & "" & DateFormat(Me.DateUpdated) & ", "                      '31
-            strSQL = strSQL & "" & DateFormat(Me.DateDeleted) & ", "                      '32
-            strSQL = strSQL & "" & 1 & ")"                                                '33
-
-                        
-            ExecuteSQL strSQL
-            
-        End If
     
-    
+    If strAction = "Update" Then
+        
+        strSQL = strSQL & " UPDATE tblSubscr"
+        strSQL = strSQL & " Set SubSSN = '" & Me.SSN & "',"
+        strSQL = strSQL & " EIMBRID = '" & Me.EIMBRID & "',"
+        strSQL = strSQL & " SubID = '" & Me.SubID & "',"
+        strSQL = strSQL & " SubStatus = '" & Me.Status & "',"
+        strSQL = strSQL & " SubGroupID = '" & Me.GROUPid & "',"
+        strSQL = strSQL & " PlanID = " & Me.PlanID & ","
+        strSQL = strSQL & " CoverID = " & Me.CoverID & ","
+        strSQL = strSQL & " RateID = " & Me.RateID & ","
+        strSQL = strSQL & " SubLastName = '" & ReplaceChars_TSB(Me.LastName, "'", "''") & "',"
+        strSQL = strSQL & " SubFirstName = '" & ReplaceChars_TSB(Me.FirstName, "'", "''") & "',"
+        strSQL = strSQL & " SubMiddleName = '" & Me.MiddleInitial & "',"
+        strSQL = strSQL & " Sub_LUName = '" & ReplaceChars_TSB(Me.LUName, "'", "''") & "',"
+        strSQL = strSQL & " SubStreet1 = '" & Me.Street1 & "',"
+        strSQL = strSQL & " SubStreet2 = '" & Me.Street2 & "',"
+        strSQL = strSQL & " SubCity = '" & Me.CITY & "',"
+        strSQL = strSQL & " SubState = '" & Me.STATE & "',"
+        strSQL = strSQL & " SubZip = '" & Me.ZIP & "',"
+        strSQL = strSQL & " SubPhoneWork = '" & Me.PhoneWork & "',"
+        strSQL = strSQL & " SubPhoneHome = '" & Me.PhoneHome & "',"
+        strSQL = strSQL & " SubDOB = '" & Me.DOB & "',"
+        strSQL = strSQL & " DepCnt = " & Me.NoOfDeps & ","
+        strSQL = strSQL & " SubGender = '" & Mid(Me.GENDER, 1, 1) & "',"
+        strSQL = strSQL & " SubAge = " & Me.Age & ","
+        strSQL = strSQL & " SubMaritalStatus = '" & Me.MaritalStatus & "',"
+        strSQL = strSQL & " SubEffDate = " & DateFormat(Me.EffectiveDate) & ","
+        strSQL = strSQL & " PreexistingDate = " & DateFormat(Me.PreexistingDate) & ","
+        strSQL = strSQL & " SubCardPrt = " & Me.CardPrt & ","
+        strSQL = strSQL & " SubCardPrtDte = " & DateFormat(Me.CardPrtDate) & ","
+        strSQL = strSQL & " SubContBeg = " & DateFormat(Me.SubContBeg) & ","
+        strSQL = strSQL & " SubContEnd = " & DateFormat(Me.SubContEnd) & ","
+        strSQL = strSQL & " SubNotes = '" & Me.Notes & "',"
+        strSQL = strSQL & " SubBankDraftNo = '" & Me.BankDraftNo & "',"
+        strSQL = strSQL & " TransactionType = '" & Me.TransactionType & "',"
+        strSQL = strSQL & " UserName = '" & Me.UserName & "',"
+        strSQL = strSQL & " DateCreated = " & DateFormat(Me.DateCreated) & ","
+        strSQL = strSQL & " DateUpdated = " & DateFormat(Me.DateUpdated) & ","
+        strSQL = strSQL & " DateDeleted = " & DateFormat(Me.DateDeleted) & ","
+        strSQL = strSQL & " Flag = 1"
+        strSQL = strSQL & " WHERE SubSSN = '" & (strSSN) & "'"
+        
+        ExecuteSQL strSQL
+        
+        ElseIf strAction = "Add" Then
+        strSQL = ""
+        strSQL = "INSERT INTO tblSubscr "
+        strSQL = strSQL & "(SubSSN, "                                                 '1
+        strSQL = strSQL & "EIMBRID, "                                                   '1a
+        strSQL = strSQL & "SubID, "                                                   '2
+        strSQL = strSQL & "SUBstatus, "                                               '3
+        strSQL = strSQL & "SUBGroupID, "                                              '4
+        strSQL = strSQL & "PlanID, "                                                  '5
+        strSQL = strSQL & "CoverID, "                                                 '6
+        strSQL = strSQL & "RateID, "                                                  '7
+        strSQL = strSQL & "Sub_LUName, "                                              '8
+        strSQL = strSQL & "SubLastName, "                                             '9
+        strSQL = strSQL & "SubFirstName, "                                            '10
+        strSQL = strSQL & "SubMiddleName, "                                           '11
+        strSQL = strSQL & "SubStreet1, "                                              '12
+        strSQL = strSQL & "SubStreet2, "                                              '13
+        strSQL = strSQL & "SubCity, "                                                 '14
+        strSQL = strSQL & "SubState, "                                                '15
+        strSQL = strSQL & "SubZip, "                                                  '16
+        strSQL = strSQL & "SubPhoneWork, "                                            '17
+        strSQL = strSQL & "SubPhoneHome, "                                            '18
+        strSQL = strSQL & "SUBdob, "                                                  '19
+        strSQL = strSQL & "DepCnt, "                                             '20
+        strSQL = strSQL & "SubGender, "                                               '21
+        strSQL = strSQL & "SubAge, "                                                  '22
+        strSQL = strSQL & "SubMaritalStatus, "                                        '23
+        strSQL = strSQL & "SubEffDate, "                                              '24
+        strSQL = strSQL & "PreexistingDate, "                                         '25
+        strSQL = strSQL & "SubCardPrt, "                                              '26
+        strSQL = strSQL & "SubCardPrtDte,  "                                          '27
+        strSQL = strSQL & "SubContBeg,  "                                          '27
+        strSQL = strSQL & "SubContEnd,  "                                          '27
+        strSQL = strSQL & "SubNotes,  "                                               '28
+        strSQL = strSQL & "SubBankDraftNo,  "                                               '28a
+        strSQL = strSQL & "TransactionType,  "                                        '29
+        strSQL = strSQL & "UserName,  "                                                 '29a
+        strSQL = strSQL & "DateCreated, "                                             '30
+        strSQL = strSQL & "DateUpdated, "                                             '31
+        strSQL = strSQL & "DateDeleted, "                                             '32
+        strSQL = strSQL & "Flag) "                                                    '33
+        strSQL = strSQL & "VALUES ('" & Me.SSN & "', "                                '1
+        strSQL = strSQL & "'" & Me.EIMBRID & "', "                                      '1a
+        strSQL = strSQL & "'" & Me.SubID & "', "                                      '2
+        strSQL = strSQL & "'" & Me.Status & "', "                                     '3
+        strSQL = strSQL & "'" & Me.GROUPid & "', "                                    '4
+        strSQL = strSQL & "" & Me.PlanID & ", "                                       '5
+        strSQL = strSQL & "" & Me.CoverID & ", "                                      '6
+        strSQL = strSQL & "" & Me.RateID & ", "                                       '7
+        strSQL = strSQL & "'" & ReplaceChars_TSB(Me.LUName, "'", "''") & "', "        '8
+        strSQL = strSQL & "'" & ReplaceChars_TSB(Me.LastName, "'", "''") & "', "      '9
+        strSQL = strSQL & "'" & ReplaceChars_TSB(Me.FirstName, "'", "''") & "', "     '10
+        strSQL = strSQL & "'" & Me.MiddleInitial & "', "                              '11
+        strSQL = strSQL & "'" & Me.Street1 & "', "                                    '12
+        strSQL = strSQL & "'" & Me.Street2 & "', "                                    '13
+        strSQL = strSQL & "'" & Me.CITY & "', "                                       '14
+        strSQL = strSQL & "'" & Me.STATE & "', "                                      '15
+        strSQL = strSQL & "'" & Me.ZIP & "', "                                        '16
+        strSQL = strSQL & "'" & Me.PhoneWork & "', "                                  '17
+        strSQL = strSQL & "'" & Me.PhoneHome & "', "                                  '18
+        strSQL = strSQL & "'" & Me.DOB & "', "                                        '19
+        strSQL = strSQL & "" & Me.NoOfDeps & ", "                                     '20
+        strSQL = strSQL & "'" & Me.GENDER & "', "                                     '21
+        strSQL = strSQL & "" & Me.Age & ", "                                          '22
+        strSQL = strSQL & "'" & Me.MaritalStatus & "', "                              '23
+        strSQL = strSQL & "" & DateFormat(Me.EffectiveDate) & ", "                    '24
+        strSQL = strSQL & "" & DateFormat(Me.PreexistingDate) & ", "                  '25
+        strSQL = strSQL & "" & Me.CardPrt & ", "                                      '26
+        strSQL = strSQL & "" & DateFormat(Me.CardPrtDate) & ", "                      '27
+        strSQL = strSQL & "" & DateFormat(Me.SubContBeg) & ", "                      '27
+        strSQL = strSQL & "" & DateFormat(Me.SubContEnd) & ", "                      '27
+        strSQL = strSQL & "'" & Me.Notes & "', "                                      '28
+        strSQL = strSQL & "'" & Me.BankDraftNo & "', "                                      '28a
+        strSQL = strSQL & "'" & Me.TransactionType & "', "                            '29
+        strSQL = strSQL & "'" & Me.UserName & "', "                                   '29a
+        strSQL = strSQL & "" & DateFormat(Me.DateCreated) & ", "                      '30
+        strSQL = strSQL & "" & DateFormat(Me.DateUpdated) & ", "                      '31
+        strSQL = strSQL & "" & DateFormat(Me.DateDeleted) & ", "                      '32
+        strSQL = strSQL & "" & 1 & ")"                                                '33
+        
+        ExecuteSQL strSQL
+        
     End If
+    
     
 PROC_EXIT:
     Exit Sub
@@ -1879,7 +623,7 @@ Public Sub DeleteSub(strSSN)
     On Error GoTo PROC_ERR
     
     Dim strSQL
-
+    
     strSQL = "DELETE FROM tblSubscr WHERE SubSSN = '" & strSSN & "'"
     ExecuteSQL strSQL
     
@@ -1891,89 +635,190 @@ PROC_ERR:
     Resume PROC_EXIT
     
 End Sub
-Public Sub DeleteSub_Bexar(strSSN)
-    ' Comments  :  Deletes a subscriber from the the Bexar
-    '              County table in the database
-    '              this applies only to QCD Only Subscribers
-    '              if the subscriber is in an All American Group
-    '              we must submit the transaction to GroupLink
-    '              with the DateDeleted populated with the deleted date
-    ' Parameters: p_SSN -
-    ' Returns   :  -
+
+
+
+
+' XXXXXXXXXXXXXXXXXXXXXX   Private functions   XXXXXXXXXXXXXXX
+'  CntDeps() - returns number of sub deps
+'  CntSpouses() - returns the number of spouses (0, 1)
+'  CntOthers() - returns number of members not dep or spouse
+'  GetPlanName() - returns the name of each plan (red, white, etc.)
+'  LoadData() - gets data from database
+'  FillFromRS() - fills recordset with data retrieved from the database
+'  CheckSubID() - is this SubID even in the database
+'  FindSSN() - is this SSN even in the database
+'  DateFormat() - convert dates to format acceptable to SQL Server
+
+Private Function CntDeps(strSSN As String) As Integer
+    
+    ' Comments  :  This function will return the number of dependents
+    '              the subscriber has; for Indiv only it must be zero;
+    '              for Indiv + 1, Indiv + Child(ren), and Indiv + Family,
+    '              it must be at least two and at least one spouse or
+    '              other
+    ' Parameters:
+    ' Returns   : Integer
+    ' Created   : 11/10/07 16:13 JC
     ' Modified  :
     '
     ' --------------------------------------------------
+    On Error GoTo ErrorHandler
     
-    On Error GoTo PROC_ERR
+    LoadADORecordset "uspCntDeps '" & strSSN & "'"
     
-    Dim strSQL
-
-    strSQL = "DELETE FROM tblSubscr_Bexar WHERE SubSSN = '" & strSSN & "'"
-    ExecuteSQL strSQL
-    
-PROC_EXIT:
-    Exit Sub
-    
-PROC_ERR:
-    Err.Raise Err.Number
-    Resume PROC_EXIT
-    
-End Sub
-' XXXXXXXXXXXXXXXXXXXXXX   Private functions   XXXXXXXXXXXXXXX
-Private Function LoadData(p_strSQL) As Boolean
-               
-        Call LoadADORecordSet(p_strSQL)
-        LoadData = FillFromRS(g_adoRS)
+    If Not g_adoRS.EOF Then
+        CntDeps = g_adoRS("CntOfDeps")
         g_adoRS.Close
-        Set g_adoRS = Nothing
-        
+    End If
+    
+    Set g_adoRS = Nothing
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Function
+Private Function CntSpouses(strSSN As String, strDepRel As String) As Integer
+    
+    ' Comments  :  This function will return the number of spouses
+    '              the subscriber has; hopefully it is either 0 or 1
+    ' Parameters:
+    ' Returns   : Integer
+    ' Created   : 11/10/07 16:13 JC
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    On Error GoTo ErrorHandler
+    
+    LoadADORecordset "uspCntSpouses '" & strSSN & "', " & "'" & strDepRel & "'"
+    
+    If Not g_adoRS.EOF Then
+        CntSpouses = g_adoRS("CntOfSpouses")
+        g_adoRS.Close
+    End If
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Private Function CntOthers(strSSN As String, strDepRel As String) As Integer
+    
+    ' Comments  :  This function will return the number of others
+    '              the subscriber has; it can be unlimited but for
+    '              Indiv + 1, it must be at least one
+    ' Parameters:
+    ' Returns   : Integer
+    ' Created   : 11/10/07 16:13 JC
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    On Error GoTo ErrorHandler
+    
+    LoadADORecordset "uspCntOthers '" & strSSN & "', " & "'" & strDepRel & "'"
+    
+    If Not g_adoRS.EOF Then
+        CntOthers = g_adoRS("CntOfOthers")
+        g_adoRS.Close
+    End If
+    
+    Set g_adoRS = Nothing
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Private Function GetPlanName(strSSN As String) As String
+    
+    ' Comments  :  This function will return the plan that the
+    '              subscriber currently has
+    ' Parameters:
+    ' Returns   : String
+    ' Created   : 11/10/07 16:13 JC
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    On Error GoTo ErrorHandler
+    
+    LoadADORecordset "uspGetPlanName '" & strSSN & "'"
+    
+    If Not g_adoRS.EOF Then
+        GetPlanName = g_adoRS("PlanName")
+        g_adoRS.Close
+    End If
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Private Function LoadData(p_strSQL) As Boolean
+    
+    Call LoadADORecordset(p_strSQL)
+    LoadData = FillFromRS(g_adoRS)
+    g_adoRS.Close
+    Set g_adoRS = Nothing
+    
 End Function
 Private Function FillFromRS(p_RS) As Boolean
     
-    On Error GoTo ErrHandler
-        
-        If p_RS.EOF Then
-            Err.Number = 1
-            GoTo ErrHandler
-        Else
-            Me.SSN = p_RS.Fields("SubSSN")                       '1
-            Me.EIMBRID = p_RS.Fields("EIMBRID")
-            Me.SubID = p_RS.Fields("SubID")                      '2
-            Me.Status = p_RS.Fields("SubStatus")                 '3
-            Me.GROUPid = p_RS.Fields("SubGroupID")               '4
-            Me.PlanID = p_RS.Fields("PlanID")                    '5
-            Me.CoverID = p_RS.Fields("CoverID")                  '6
-            Me.RateID = p_RS.Fields("RateID")                    '7
-            Me.LastName = p_RS.Fields("SubLastName")             '8
-            Me.FirstName = p_RS.Fields("SubFirstName")           '9
-            Me.MiddleInitial = p_RS.Fields("SubMiddleName")      '10
-            Me.Street1 = p_RS.Fields("SubStreet1")               '11
-            Me.Street2 = p_RS.Fields("SubStreet2")               '12
-            Me.CITY = p_RS.Fields("SubCity")                     '13
-            Me.STATE = p_RS.Fields("SubState")                   '14
-            Me.ZIP = p_RS.Fields("SubZip")                       '15
-            Me.PhoneWork = p_RS.Fields("SubPhoneWork")           '16
-            Me.PhoneHome = p_RS.Fields("SubPhoneHome")           '17
-            Me.DOB = p_RS.Fields("SubDOB")                       '18
-            Me.NoOfDeps = p_RS.Fields("SubNoDepent")             '19
-            Me.Gender = p_RS.Fields("SubGender")                 '20
-            Me.Age = p_RS.Fields("SubAge")                       '21
-            Me.EffectiveDate = p_RS.Fields("SubEffDate")         '22
-            Me.PreexistingDate = p_RS.Fields("PreexistingDate")  '23
-            Me.CardPrt = p_RS.Fields("SubCardPrt")               '24
-            Me.CardPrtDate = p_RS.Fields("SubCardPrtDte")        '25
-            Me.DateCreated = p_RS.Fields("DateCreated")          '26
-            Me.DateUpdated = p_RS.Fields("DateUpdated")          '27
-            Me.MaritalStatus = p_RS.Fields("SubMaritalStatus")   '28
-            FillFromRS = True
-        End If
-
+    On Error GoTo errHandler
+    
+    If p_RS.EOF Then
+        Err.Number = 1
+        GoTo errHandler
+    Else
+        Me.SSN = p_RS.Fields("SubSSN")                       '1
+        Me.EIMBRID = p_RS.Fields("EIMBRID")                  '1a
+        Me.SubID = p_RS.Fields("SubID")                      '2
+        Me.Status = p_RS.Fields("SubStatus")                 '3
+        Me.GROUPid = p_RS.Fields("SubGroupID")               '4
+        Me.PlanID = p_RS.Fields("PlanID")                    '5
+        Me.CoverID = p_RS.Fields("CoverID")                  '6
+        Me.RateID = p_RS.Fields("RateID")                    '7
+        Me.LastName = p_RS.Fields("SubLastName")             '8
+        Me.FirstName = p_RS.Fields("SubFirstName")           '9
+        Me.MiddleInitial = p_RS.Fields("SubMiddleName")      '10
+        Me.Street1 = p_RS.Fields("SubStreet1")               '11
+        Me.Street2 = p_RS.Fields("SubStreet2")               '12
+        Me.CITY = p_RS.Fields("SubCity")                     '13
+        Me.STATE = p_RS.Fields("SubState")                   '14
+        Me.ZIP = p_RS.Fields("SubZip")                       '15
+        Me.PhoneWork = p_RS.Fields("SubPhoneWork")           '16
+        Me.PhoneHome = p_RS.Fields("SubPhoneHome")           '17
+        Me.DOB = p_RS.Fields("SubDOB")                       '18
+        Me.NoOfDeps = p_RS.Fields("DepCnt")                  '19
+        Me.GENDER = p_RS.Fields("SubGender")                 '20
+        Me.Age = p_RS.Fields("SubAge")                       '21
+        Me.EffectiveDate = p_RS.Fields("SubEffDate")         '22
+        Me.PreexistingDate = p_RS.Fields("PreexistingDate")  '23
+        Me.CardPrt = p_RS.Fields("SubCardPrt")               '24
+        Me.CardPrtDate = p_RS.Fields("SubCardPrtDte")        '25
+        Me.DateCreated = p_RS.Fields("DateCreated")          '26
+        Me.DateUpdated = p_RS.Fields("DateUpdated")          '27
+        Me.MaritalStatus = p_RS.Fields("SubMaritalStatus")   '28
+        Me.BankDraftNo = p_RS.Fields("SubBankDraftNo")       '28a
+        FillFromRS = True
+    End If
+    
 ErrExit:
     Exit Function
-ErrHandler:
+errHandler:
     If Err.Number = 94 Then
         Resume Next
-    ElseIf Err.Number = 1 Then
+        ElseIf Err.Number = 1 Then
         FillFromRS = False
     Else
         MsgBox Err.DESCRIPTION & " " & Err.Number
@@ -1993,31 +838,19 @@ Private Function CheckSubID(strSubID As String) As Boolean
     ' Updated by:  John Criswell
     ' --------------------------------------------------
     
-
+    
     On Error GoTo ErrorHandler
     
-
+    
     Dim strSQL As String
     'check to see if the Subscriber ID is in tblSubscr
     strSQL = "SELECT tblSubscr.SubID " & _
-             "FROM tblSubscr " & _
-             "WHERE (((tblSubscr.SubID)='" & strSubID & "'));"
-    Call LoadADORecordSet(strSQL)
+    "FROM tblSubscr " & _
+    "WHERE (((tblSubscr.SubID)='" & strSubID & "'));"
+    Call LoadADORecordset(strSQL)
     
     If g_adoRS.RecordCount > 0 Then
         CheckSubID = True
-    Else
-        'check to see if the Subscriber ID is in tblSubscr_Bexar
-        g_adoRS.Close
-        strSQL = "SELECT tblSubscr_Bexar.SubID " & _
-             "FROM tblSubscr_Bexar " & _
-             "WHERE (((tblSubscr_Bexar.SubID)='" & strSubID & "'));"
-        Call LoadADORecordSet(strSQL)
-        If g_adoRS.RecordCount > 0 Then
-           CheckSubID = True
-        Else
-           CheckSubID = False
-        End If
     End If
     
     Set g_adoRS = Nothing
@@ -2029,10 +862,10 @@ Exit_Point:
 ErrorHandler:
     MsgBox Err.DESCRIPTION & " " & Err.Number
     Resume Exit_Point
-
+    
 End Function
 Private Function FindSSN(strSubID As String) As String
-
+    
     ' Purpose:  Find out if the subscriber is in the database
     '
     '------------------------------------------------
@@ -2044,16 +877,16 @@ Private Function FindSSN(strSubID As String) As String
     ' Updated by:  John Criswell
     ' --------------------------------------------------
     
-
+    
     On Error GoTo ErrorHandler
     
     Dim strSQL As String
-
+    
     strSQL = "SELECT SubSSN " & _
-             "FROM tblSubscr " & _
-             "WHERE SubID = '" & strSubID & "'"
-             
-    Call LoadADORecordSet(strSQL)
+    "FROM tblSubscr " & _
+    "WHERE SubID = '" & strSubID & "'"
+    
+    Call LoadADORecordset(strSQL)
     If g_adoRS.RecordCount > 0 Then
         FindSSN = g_adoRS.Fields("SubSSN")
     Else
@@ -2062,400 +895,27 @@ Private Function FindSSN(strSubID As String) As String
     
     Set g_adoRS = Nothing
     
-
+    
 Exit_Point:
     Exit Function
     
 ErrorHandler:
     MsgBox Err.DESCRIPTION & " " & Err.Number
     Resume Exit_Point
-
+    
 End Function
 
 Private Function DateFormat(PropertyDate As Date) As String
-
+    On Error GoTo ErrorHandler
     If PropertyDate = #12:00:00 AM# Then
         DateFormat = "Null"
     Else
         DateFormat = "'" & PropertyDate & "'"
     End If
-
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
 End Function
-'**********************
-'Functions:
-
-'Class cSubscriber
-'
-''Private, class member variables
-'Private m_SubID
-'Private m_SSN
-'Private m_SubscriberID
-'Private m_GroupID
-'Private m_PlanID
-'Private m_CoverID
-'Private m_LastName
-'Private m_FirstName
-'Private m_MiddleInitial
-'Private m_Street1
-'Private m_Street2
-'Private m_City
-'Private m_State
-'Private m_Zip
-'Private m_PhoneWork
-'Private m_PhoneHome
-'Private m_Email
-'Private m_DOB
-'Private m_NoDependents
-'Private m_Gender
-'Private m_Age
-'Private m_EffectiveDate
-'Private m_EmploymentDate
-'Private m_EmploymentStatus
-'Private m_Occupation_Title
-'Private m_MaritalStatus
-'Private m_CardPrinted
-'Private m_CardPrintedDate
-'Private m_MembershipStatus
-'Private m_DateCreated
-'Private m_DateChanged
-'Private m_DateDeleted
-'
-'
-'Private m_Dependents
-'
-''1 Read the SubID value
-'Public Property Get SubID()
-'    SubID = m_SubID
-'End Property
-''store a new SSN value
-'Public Property Let SubID(p_Data)
-'    m_SubID = p_Data
-'End Property
-'
-'
-''2 Read the SSN value
-'Public Property Get SSN()
-'    SSN = CStr(m_SSN)
-'End Property
-''store a new SSN value
-'Public Property Let SSN(p_Data)
-'    m_SSN = p_Data
-'End Property
-'
-''3 Read the SubscriberID value
-'Public Property Get SubscriberID()
-'    SubscriberID = m_SubscriberID
-'End Property
-''store a new SubscriberID value
-'Public Property Let SubscriberID(p_Data)
-'    m_SubscriberID = p_Data
-'End Property
-'
-''4 Read the GroupID value
-'Public Property Get GroupID()
-'    GroupID = m_GroupID
-'End Property
-''store a new GroupID value
-'Public Property Let GroupID(p_Data)
-'    m_GroupID = p_Data
-'End Property
-'
-''5 Read the PlanID value
-'Public Property Get PlanID()
-'    PlanID = m_PlanID
-'End Property
-''store a new PlanID value
-'Public Property Let PlanID(p_Data)
-'    m_PlanID = p_Data
-'End Property
-'
-''6 Read the CoverID value
-'Public Property Get CoverID()
-'    CoverID = CInt(m_CoverID)
-'End Property
-''store a new CoverID value
-'Public Property Let CoverID(p_Data)
-'    m_CoverID = p_Data
-'End Property
-'
-''7 Read the LastName value
-'Public Property Get LastName()
-'    LastName = m_LastName
-'End Property
-''store a new LastName value
-'Public Property Let LastName(p_Data)
-'    m_LastName = p_Data
-'End Property
-'
-''8 Read the FirstName value
-'Public Property Get FirstName()
-'    FirstName = m_FirstName
-'End Property
-''store a new FirstName value
-'Public Property Let FirstName(p_Data)
-'    m_FirstName = p_Data
-'End Property
-'
-'
-''9 Read the MiddleInitial value
-'Public Property Get MiddleInitial()
-'    MiddleInitial = m_MiddleInitial
-'End Property
-''store a new MiddleInitial value
-'Public Property Let MiddleInitial(p_Data)
-'    m_MiddleInitial = p_Data
-'End Property
-'
-''10 Read the Street1 value
-'Public Property Get Street1()
-'    Street1 = m_Street1
-'End Property
-''store a new Street1 value
-'Public Property Let Street1(p_Data)
-'    m_Street1 = p_Data
-'End Property
-'
-''11 Read the Street2 value
-'Public Property Get Street2()
-'    Street2 = m_Street2
-'End Property
-''store a new Street2 value
-'Public Property Let Street2(p_Data)
-'    m_Street2 = p_Data
-'End Property
-'
-''12 Read the City value
-'Public Property Get City()
-'    City = m_City
-'End Property
-''store a new City value
-'Public Property Let City(p_Data)
-'    m_City = p_Data
-'End Property
-'
-''13 Read the State value
-'Public Property Get State()
-'    State = m_State
-'End Property
-''store a new State value
-'Public Property Let State(p_Data)
-'    m_State = p_Data
-'End Property
-'
-''14 Read the Zip value
-'Public Property Get Zip()
-'    Zip = m_Zip
-'End Property
-''store a new Zip value
-'Public Property Let Zip(p_Data)
-'    m_Zip = p_Data
-'End Property
-'
-''15 Read the PhoneWork value
-'Public Property Get PhoneWork()
-'    PhoneWork = m_PhoneWork
-'End Property
-''store a new PhoneWork value
-'Public Property Let PhoneWork(p_Data)
-'    m_PhoneWork = p_Data
-'End Property
-'
-''16 Read the PhoneHome value
-'Public Property Get PhoneHome()
-'    PhoneHome = m_PhoneHome
-'End Property
-''store a new PhoneHome value
-'Public Property Let PhoneHome(p_Data)
-'    m_PhoneHome = p_Data
-'End Property
-'
-''17 Read the Email value
-'Public Property Get Email()
-'    Email = m_Email
-'End Property
-''store a new Email value
-'Public Property Let Email(p_Data)
-'    m_Email = p_Data
-'End Property
-'
-''18 Read the DOB value
-'Public Property Get DOB()
-'    DOB = m_DOB
-'End Property
-''store a new DOB value
-'Public Property Let DOB(p_Data)
-'    m_DOB = p_Data
-'End Property
-'
-''19 Read the NoDependents value
-'Public Property Get NoDependents()
-'    NoDependents = m_NoDependents
-'End Property
-''store a new NoDependents value
-'Public Property Let NoDependents(p_Data)
-'    m_NoDependents = p_Data
-'End Property
-'
-''20 Read the Gender value
-'Public Property Get Gender()
-'    Gender = m_Gender
-'End Property
-''store a new Gender value
-'Public Property Let Gender(p_Data)
-'    m_Gender = p_Data
-'End Property
-'
-''21 Read the Age value
-'Public Property Get Age()
-'    Age = m_Age
-'End Property
-''store a new Age value
-'Public Property Let Age(p_Data)
-'    m_Age = p_Data
-'End Property
-'
-''22 Read the EffectiveDate value
-'Public Property Get EffectiveDate()
-'    EffectiveDate = m_EffectiveDate
-'End Property
-''store a new EffectiveDate value
-'Public Property Let EffectiveDate(p_Data)
-'    m_EffectiveDate = p_Data
-'End Property
-'
-''23 Read the EmploymentDate value
-'Public Property Get EmploymentDate()
-'    EmploymentDate = m_EmploymentDate
-'End Property
-''store a new EmploymentDate value
-'Public Property Let EmploymentDate(p_Data)
-'    m_EmploymentDate = p_Data
-'End Property
-'
-''24 Read the EmploymentStatus value
-'Public Property Get EmploymentStatus()
-'    EmploymentStatus = m_EmploymentStatus
-'End Property
-''store a new EmploymentStatus value
-'Public Property Let EmploymentStatus(p_Data)
-'    m_EmploymentStatus = p_Data
-'End Property
-'
-''25 Read the Occupation_Title value
-'Public Property Get Occupation_Title()
-'    Occupation_Title = m_Occupation_Title
-'End Property
-''store a new Occupation_Title value
-'Public Property Let Occupation_Title(p_Data)
-'    m_Occupation_Title = p_Data
-'End Property
-'
-''26 Read the MaritalStatus value
-'Public Property Get MaritalStatus()
-'    MaritalStatus = m_MaritalStatus
-'End Property
-''store a new MaritalStatus value
-'Public Property Let MaritalStatus(p_Data)
-'    m_MaritalStatus = p_Data
-'End Property
-'
-''27 Read the CardPrinted value
-'Public Property Get CardPrinted()
-'    CardPrinted = m_CardPrinted
-'End Property
-''store a new CardPrinted value
-'Public Property Let CardPrinted(p_Data)
-'    m_CardPrinted = p_Data
-'End Property
-'
-''28 Read the CardPrintedDate value
-'Public Property Get CardPrintedDate()
-'    CardPrintedDate = m_CardPrintedDate
-'End Property
-''store a new CardPrintedDate value
-'Public Property Let CardPrintedDate(p_Data)
-'    m_CardPrintedDate = p_Data
-'End Property
-'
-''29 Read the MembershipStatus value
-'Public Property Get MembershipStatus()
-'    MembershipStatus = m_MembershipStatus
-'End Property
-''store a new MembershipStatus value
-'Public Property Let MembershipStatus(p_Data)
-'    m_MembershipStatus = p_Data
-'End Property
-'
-''30 Read the DateCreated value
-'Public Property Get DateCreated()
-'    DateCreated = m_DateCreated
-'End Property
-''store a new DateCreated value
-'Public Property Let DateCreated(p_Data)
-'    m_DateCreated = p_Data
-'End Property
-'
-''31 Read the DateChanged value
-'Public Property Get DateChanged()
-'    DateChanged = m_DateChanged
-'End Property
-''store a new DateChanged value
-'Public Property Let DateChanged(p_Data)
-'    m_DateChanged = p_Data
-'End Property
-'
-''32 Read the DateDeleted value
-'Public Property Get DateDeleted()
-'    DateDeleted = m_DateDeleted
-'End Property
-''store a new DateDeleted value
-'Public Property Let DateDeleted(p_Data)
-'    m_DateDeleted = p_Data
-'End Property
-'
-'
-'
-''instantiates the members object to load all dependents into the subscriber object
-'Public Property Get Dependents()
-'    If Not IsObject(m_Dependents) Then
-'        Set Members = New cMembers
-'        Call Members.GetDependentsBySubID(Me.SubID)
-'        Set m_Dependents = Members.Dependents
-'    'Response.Write "The is the 'Me.SubID' property of the Subscriber object: " & Me.SubID & "<br>" & "<br>"
-'        Set Dependents = Nothing
-'    End If
-'    Set Dependents = m_Dependents
-'End Property
-'
-''#############  Public Functions, accessible to the web pages ##############
-'  Public Function IsSubscriber(p_SSN)
-'    Dim strSQL
-'    Dim rs
-'    strSQL = "SELECT * FROM tblSubscriber WHERE SSN = '" & p_SSN & "'"
-'    'echobr(strSQL)
-'    Set rs = LoadRSFromDB(strSQL)
-'    If rs.EOF Then
-'      IsSubscriber = False
-'    Else
-'      IsSubscriber = True
-'    End If
-'    rs.Close
-'    Set rs = Nothing
-'  End Function
-'
-'  Dim Run
-'
-
-'
-'   '#############  Private Functions                           ##############
-
-'
-'Private Function LoadData(p_strSQL)
-'        Dim rs
-'        Set rs = LoadRSFromDB(p_strSQL)
-'        LoadData = FillFromRS(rs)
-'        rs.Close
-'        Set rs = Nothing
-'End Function
-
-'***************

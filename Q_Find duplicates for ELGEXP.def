@@ -1,0 +1,59 @@
+Operation =1
+Option =0
+Having ="(((Count([EIMBRID]))>1) AND ((Count([EIMBRDP@]))>1))"
+Begin InputTables
+    Name ="ELGEXP"
+End
+Begin OutputColumns
+    Alias ="EIMBRID Field"
+    Expression ="First([EIMBRID])"
+    Alias ="EISSN# Field"
+    Expression ="First([EISSN#])"
+    Alias ="EINMPLAN Field"
+    Expression ="First([EINMPLAN])"
+    Alias ="EIMBRDP@ Field"
+    Expression ="First([EIMBRDP@])"
+    Alias ="NumberOfDups"
+    Expression ="Count([EIMBRID])"
+End
+Begin Groups
+    Expression ="[EIMBRID]"
+    GroupLevel =0
+    Expression ="[EISSN#]"
+    GroupLevel =0
+    Expression ="[EINMPLAN]"
+    GroupLevel =0
+    Expression ="[EIMBRDP@]"
+    GroupLevel =0
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =543
+    Begin
+        Left =38
+        Top =6
+        Right =134
+        Bottom =49
+        Top =0
+        Name ="ELGEXP"
+        Name =""
+    End
+End

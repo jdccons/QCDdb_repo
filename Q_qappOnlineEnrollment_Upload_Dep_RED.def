@@ -3,10 +3,10 @@ Name ="tmpExportAllAmerican"
 Option =0
 Where ="(((tblGrp.GroupType)=4) AND ((tblSubscr.PlanID)=1))"
 Begin InputTables
+    Name ="tblEDI_App_Subscr"
     Name ="tblGrp"
     Name ="tblSubscr"
     Name ="tblDependent"
-    Name ="tblEDI_App_Subscr"
 End
 Begin OutputColumns
     Alias ="EIRECID"
@@ -16,7 +16,7 @@ Begin OutputColumns
     Expression ="tblDependent.EIMBRID"
     Alias ="EISBRID"
     Name ="EISBRID"
-    Expression ="[tblSubscr].[SUBssn] & \"00\""
+    Expression ="tblSubscr.SUBssn & \"00\""
     Alias ="EISSN"
     Name ="EISSN"
     Expression ="tblDependent.DepSSN"
@@ -52,10 +52,10 @@ Begin OutputColumns
     Expression ="tblSubscr.SubZip"
     Alias ="EIHPHR"
     Name ="EIHPHR"
-    Expression ="StripChars_TSB([tblSubscr].[SubPhoneHome],\"-\")"
+    Expression ="StripChars_TSB(tblSubscr.SubPhoneHome,\"-\")"
     Alias ="EIWPHR"
     Name ="EIWPHR"
-    Expression ="StripChars_TSB([tblSubscr].[SubPhoneWork],\"-\")"
+    Expression ="StripChars_TSB(tblSubscr.SubPhoneWork,\"-\")"
     Alias ="EIGRPID"
     Name ="EIGRPID"
     Expression ="'MNQ' & [GROUPid]"
@@ -67,33 +67,33 @@ Begin OutputColumns
     Expression ="Format([GRcontBEG],\"mmddyyyy\")"
     Alias ="EIDTCVEF"
     Name ="EIDTCVEF"
-    Expression ="Format([tblDependent].[DepEffDate],\"mmddyyyy\")"
+    Expression ="Format(tblDependent.DepEffDate,\"mmddyyyy\")"
     Alias ="EIDTCVEN"
     Name ="EIDTCVEN"
-    Expression ="IIf(Not IsNull([tblSubscr].[DateDeleted]),Format([tblSubscr].[DateDeleted],\"mmd"
-        "dyyyy\"),Null)"
+    Expression ="IIf(Not IsNull(tblSubscr.DateDeleted),Format(tblSubscr.DateDeleted,\"mmddyyyy\")"
+        ",Null)"
     Alias ="EIMBRDP"
     Name ="EIMBRDP"
-    Expression ="IIf([tblDependent].[DepRelationship]=\"S\",1,2)"
+    Expression ="IIf(tblDependent.DepRelationship=\"S\",1,2)"
     Alias ="EIDTTERM"
     Name ="EIDTTERM"
-    Expression ="IIf([tblSubscr].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr].[DateDeleted],\""
-        "mmddyyyy\"))"
+    Expression ="IIf(tblSubscr.DateDeleted=#1/1/1900#,\"\",Format(tblSubscr.DateDeleted,\"mmddyyy"
+        "y\"))"
     Name ="DepID"
-    Expression ="tblDependent.DepCounter"
+    Expression ="tblDependent.ID"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblDependent"
-    Expression ="tblEDI_App_Subscr.SubSSN = tblDependent.DepSubID"
+    Expression ="tblEDI_App_Subscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -112,19 +112,28 @@ Begin
     Left =18
     Top =14
     Right =1258
-    Bottom =599
+    Bottom =611
     Left =-1
     Top =-1
-    Right =1233
+    Right =1225
     Bottom =417
     Left =0
     Top =0
     ColumnsShown =651
     Begin
+        Left =937
+        Top =13
+        Right =1166
+        Bottom =116
+        Top =0
+        Name ="tblEDI_App_Subscr"
+        Name =""
+    End
+    Begin
         Left =109
         Top =11
         Right =275
-        Bottom =163
+        Bottom =159
         Top =35
         Name ="tblGrp"
         Name =""
@@ -133,7 +142,7 @@ Begin
         Left =490
         Top =13
         Right =658
-        Bottom =315
+        Bottom =311
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -142,18 +151,9 @@ Begin
         Left =709
         Top =15
         Right =879
-        Bottom =197
+        Bottom =193
         Top =0
         Name ="tblDependent"
-        Name =""
-    End
-    Begin
-        Left =937
-        Top =13
-        Right =1166
-        Bottom =120
-        Top =0
-        Name ="tblEDI_App_Subscr"
         Name =""
     End
 End

@@ -1,25 +1,30 @@
-Version =17
-VersionRequired =17
-Checksum =-74231693
+Version =20
+VersionRequired =20
+Checksum =1455456736
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     Width =5760
     ItemSuffix =28
-    Left =3660
-    Top =1725
-    Right =9825
-    Bottom =6180
+    Left =-22692
+    Top =1692
+    Right =-15144
+    Bottom =6444
     RecSrcDt = Begin
         0xd359ddb3b2c4e140
     End
     Caption ="Dentist Geographical Count"
-    MenuBar ="FormMenuBar"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -28,6 +33,9 @@ Begin Form
             Height =2715
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x306f66d83166eb479886d4fe3b2c132c
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -61,6 +69,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0xcba60d412da28145b5ec175c6802570c
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -74,6 +85,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text15"
                     Caption ="Geographical Count From: "
+                    GUID = Begin
+                        0x3fe6a50a9fa5d64f9dcabd6df97b0189
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -87,6 +101,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption =" To: "
+                    GUID = Begin
+                        0xca333e069e12554ab9912d7c11fdb504
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -97,7 +114,10 @@ Begin Form
                     Left =3441
                     Top =375
                     Width =1000
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x4733529467bd1d4794e517e1f3d4d0ac
+                    End
                     Name ="c-GEOfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -115,7 +135,10 @@ Begin Form
                     Top =735
                     Width =1000
                     TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x5a7fa6ab77f48b44aa8ad97b0d7b30f8
+                    End
                     Name ="c-GEOto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"

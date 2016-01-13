@@ -1,30 +1,26 @@
 Operation =1
 Option =8
-Where ="(((tblSubscr.SUBstatus)=\"PENDG\"))"
+Where ="(((tblSubscr.SubStatus)=\"PENDG\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblPlanIndiv"
 End
 Begin OutputColumns
     Expression ="tblSubscr.*"
-    Expression ="tblPlanIndiv.PLANindDESC"
+    Expression ="tblPlanIndiv.PlanIndDesc"
     Alias ="PlanRate"
     Expression ="CVar(\"$\" & [PLANindRATE] & \" per month\")"
 End
-Begin Joins
-    LeftTable ="tblSubscr"
-    RightTable ="tblPlanIndiv"
-    Expression ="tblSubscr.SUBplanIDin = tblPlanIndiv.PLANindID"
-    Flag =2
-End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -32,10 +28,10 @@ Begin
     Left =53
     Top =127
     Right =1077
-    Bottom =515
+    Bottom =451
     Left =-1
     Top =-1
-    Right =1017
+    Right =1009
     Bottom =144
     Left =0
     Top =0
@@ -44,7 +40,7 @@ Begin
         Left =48
         Top =7
         Right =168
-        Bottom =139
+        Bottom =125
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -53,7 +49,7 @@ Begin
         Left =216
         Top =7
         Right =336
-        Bottom =139
+        Bottom =125
         Top =0
         Name ="tblPlanIndiv"
         Name =""

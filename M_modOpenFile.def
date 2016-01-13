@@ -73,7 +73,7 @@ Function GetOpenFile_TSB(strInitialDir As String, strTitle As String) As String
   '             strTitle - title for the dialog
   ' Returns   : string path, name and extension of the file selected
   '
-  Dim fOk As Boolean
+  Dim fOK As Boolean
   Dim typWinOpen As TSBAPI_WINOPENFILENAME
   Dim typOpenFile As TSBAPI_OPENFILE
   Dim strFilter As String
@@ -100,7 +100,7 @@ Function GetOpenFile_TSB(strInitialDir As String, strTitle As String) As String
   ConvertTSB2Win typOpenFile, typWinOpen
   
   ' Call the Common dialog
-  fOk = TSBAPI_GetOpenFileName(typWinOpen)
+  fOK = TSBAPI_GetOpenFileName(typWinOpen)
   
   ' Convert the Win structure back to a TSB structure
   ConvertWin2TSB typWinOpen, typOpenFile

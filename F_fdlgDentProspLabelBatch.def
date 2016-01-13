@@ -1,22 +1,23 @@
-Version =17
-VersionRequired =17
-Checksum =-960599018
+Version =20
+VersionRequired =20
+Checksum =-742009332
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     NavigationButtons = NotDefault
     ScrollBars =2
+    ViewsAllowed =1
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
     GridY =24
     Width =9885
     DatasheetFontHeight =10
-    Left =990
-    Top =1635
-    Right =10875
-    Bottom =6810
+    Left =-22068
+    Top =2112
+    Right =-10392
+    Bottom =7428
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x537e2b9756f8e140
@@ -25,7 +26,12 @@ Begin Form
     Caption ="Prospect Dentist Mailing Label Selection"
     OnOpen ="[Event Procedure]"
     OnClose ="[Event Procedure]"
+    MenuBar ="Dialog"
     DatasheetFontName ="Arial"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin Label
             BackStyle =0
@@ -49,6 +55,9 @@ Begin Form
             Height =2490
             BackColor =-2147483633
             Name ="FormHeader"
+            GUID = Begin
+                0x794c0c83f114b142a781ac94a7ba8562
+            End
             Begin
                 Begin Label
                     OverlapFlags =93
@@ -59,6 +68,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="Label?"
+                    GUID = Begin
+                        0x863255f685adad48b5ffb64d4343f745
+                    End
                 End
                 Begin Label
                     OverlapFlags =215
@@ -71,6 +83,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text9"
                     Caption ="GeoID"
+                    GUID = Begin
+                        0x92af434c11f87d47bd4c40da5820513c
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -83,6 +98,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text10"
                     Caption ="ID"
+                    GUID = Begin
+                        0xac34f62f25b7ab489aeac4dd980466fd
+                    End
                 End
                 Begin Label
                     OverlapFlags =93
@@ -95,6 +113,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text17"
                     Caption ="1. Select the Prospects for which to Print Labels"
+                    GUID = Begin
+                        0x68fbe986d5496c4382a85becd527dc2f
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -107,6 +128,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text18"
                     Caption ="4. Click the \"Print Labels\" Button"
+                    GUID = Begin
+                        0x084017ffa33a1441acb15fa7f14ec7c7
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -120,6 +144,9 @@ Begin Form
                     Caption ="Print Labels"
                     OnClick ="=ProspLabelBatch2()"
                     EventProcPrefix ="Print_Labels"
+                    GUID = Begin
+                        0x2497a44994d36e4881e6c7ebccafa2e0
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -132,6 +159,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text20"
                     Caption ="3. Enter a Note Here to be Added to the Prospects' Comments:"
+                    GUID = Begin
+                        0xe01c9dcef681dd46a9d5ab10f80375ba
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -144,6 +174,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text22"
                     Caption ="Last Mail"
+                    GUID = Begin
+                        0x43966307ab3dba4094873773f7cbfc67
+                    End
                 End
                 Begin TextBox
                     ScrollBars =2
@@ -157,6 +190,9 @@ Begin Form
                     Height =420
                     TabIndex =1
                     Name ="Note"
+                    GUID = Begin
+                        0x459b7a11593f3a4fb263a74014915eeb
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -169,6 +205,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text25"
                     Caption ="Dentist Name"
+                    GUID = Begin
+                        0xe81bffbe6c8d0241940de1a7cf0c88d9
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -181,6 +220,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text26"
                     Caption ="Location"
+                    GUID = Begin
+                        0x2a92f137617d3346ab2c7b0b5a51229e
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -195,6 +237,9 @@ Begin Form
                     Caption ="View Comments"
                     OnClick ="[Event Procedure]"
                     EventProcPrefix ="View_Comments"
+                    GUID = Begin
+                        0x33ec38e94479944993647a95314ade8b
+                    End
                 End
                 Begin Label
                     OverlapFlags =87
@@ -207,6 +252,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text29"
                     Caption ="2. Click the \"View Comments\" Button or Double-Click the "
+                    GUID = Begin
+                        0xa130b3b3569843498ceaec075f424475
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -219,6 +267,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label31"
                     Caption ="Prospect's Name to Display Comments (if desired)"
+                    GUID = Begin
+                        0xef652a2179a320479692d2c16bd756f9
+                    End
                 End
             End
         End
@@ -226,6 +277,9 @@ Begin Form
             Height =300
             BackColor =-2147483633
             Name ="Detail"
+            GUID = Begin
+                0x4a62c036a4b37e47bca39385e90a7684
+            End
             Begin
                 Begin OptionButton
                     OverlapFlags =85
@@ -233,6 +287,9 @@ Begin Form
                     Name ="txtDENTmail"
                     ControlSource ="DENTmail"
                     AfterUpdate ="[Event Procedure]"
+                    GUID = Begin
+                        0x8b69d8f3fcf2754d91da1ae0d65f6829
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -247,6 +304,9 @@ Begin Form
                     Name ="DENTname"
                     ControlSource ="=[DENTlast] & \", \" & [DENTfirst]"
                     OnDblClick ="DENTprospLABELbatch3"
+                    GUID = Begin
+                        0xd3d52444403abe4a89ef4323d3290c82
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -262,6 +322,9 @@ Begin Form
                     BackColor =12632256
                     Name ="DENTgeoID"
                     ControlSource ="DENTgeoID"
+                    GUID = Begin
+                        0x5fd96fb2d0923f4ba683be890b22842a
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -276,6 +339,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Field14"
                     ControlSource ="=\"[\" & [DentKeyID] & \"] \""
+                    GUID = Begin
+                        0xcde4fae88d03ff438a0667dd06abf22c
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -293,6 +359,9 @@ Begin Form
                     Name ="Field15"
                     ControlSource ="=[DENTstreet1] & \" \" & [DENTstreet2] & \"  \" & [DENTcity] & \", \" & [DENTsta"
                         "te] & \"  \" & [DENTzip]"
+                    GUID = Begin
+                        0x19869425fdfcd84ab94d194330dc0fcf
+                    End
                 End
                 Begin TextBox
                     TabStop = NotDefault
@@ -307,6 +376,9 @@ Begin Form
                     Name ="txtDENTlastMAILING"
                     ControlSource ="DENTlastMAILING"
                     Format ="m/d/yyyy"
+                    GUID = Begin
+                        0xd720fd7a21abf244a47c41ccc91e8dda
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -320,6 +392,9 @@ Begin Form
                     BackColor =65535
                     Name ="DENTcomments"
                     ControlSource ="DENTcomments"
+                    GUID = Begin
+                        0x9118954a4bd13e468b11b407109b14f6
+                    End
                 End
             End
         End
@@ -327,6 +402,9 @@ Begin Form
             Height =0
             BackColor =-2147483633
             Name ="FormFooter"
+            GUID = Begin
+                0x5c9467bab4521f47a2aa01715ce35bcb
+            End
         End
     End
 End
@@ -341,7 +419,7 @@ Option Explicit
 Private Sub Button0_AfterUpdate()
   On Error GoTo PROC_ERR
     If (Forms!fdlgDentProspLabelBatch![txtDENTmail] = True) Then
-        Forms!fdlgDentProspLabelBatch![txtDENTlastMAILING] = date
+        Forms!fdlgDentProspLabelBatch![txtDENTlastMAILING] = Date
     End If
 
   Exit Sub
@@ -381,7 +459,7 @@ Private Sub txtDENTmail_AfterUpdate()
 
   On Error GoTo PROC_ERR
 If (Forms!fdlgDentProspLabelBatch![txtDENTmail] = True) Then
-        Forms!fdlgDentProspLabelBatch![txtDENTlastMAILING] = date
+        Forms!fdlgDentProspLabelBatch![txtDENTlastMAILING] = Date
     End If
 
   Exit Sub

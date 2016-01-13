@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =82659633
+Checksum =152768539
 Begin Form
     AutoResize = NotDefault
     RecordSelectors = NotDefault
@@ -11,15 +11,14 @@ Begin Form
     CloseButton = NotDefault
     ScrollBars =2
     ViewsAllowed =1
-    BorderStyle =0
-    Width =7920
+    Width =7785
     ItemSuffix =123
-    Left =3795
-    Top =5670
-    Right =11820
-    Bottom =7380
+    Left =4005
+    Top =6105
+    Right =12240
+    Bottom =8085
     RecSrcDt = Begin
-        0x2cde7af8d146e340
+        0x27dcf0a1dca9e440
     End
     RecordSource ="qfrmFindSubDep"
     PrtMip = Begin
@@ -38,6 +37,9 @@ Begin Form
             Height =240
             BackColor =12632256
             Name ="FormHeader1"
+            GUID = Begin
+                0xceda1461bfbdb248a1dd361b44ef1171
+            End
             Begin
                 Begin Label
                     OverlapFlags =93
@@ -49,6 +51,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text108"
                     Caption ="Social Sec. # "
+                    GUID = Begin
+                        0x00335662519af54b8afa7164ce73684b
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -60,6 +65,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text109"
                     Caption ="First Name"
+                    GUID = Begin
+                        0x7e171712e28a3648bc6f982bd0e2a81c
+                    End
                 End
                 Begin Label
                     OverlapFlags =215
@@ -71,6 +79,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text110"
                     Caption ="Last Name"
+                    GUID = Begin
+                        0xa33c57256a2cf943b07cb5b1bf8df356
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -82,6 +93,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text111"
                     Caption ="DOB"
+                    GUID = Begin
+                        0x027e6322c70fc646b9554f985b4b9a9a
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -93,6 +107,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text115"
                     Caption ="MI"
+                    GUID = Begin
+                        0x17c9852b32a5274996c073d6c80bb844
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -104,6 +121,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label121"
                     Caption ="Gen"
+                    GUID = Begin
+                        0x1a413a8fe92d76408fbebb4a1552f829
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -115,6 +135,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Label122"
                     Caption ="Relation"
+                    GUID = Begin
+                        0xa2351f9e7e0c2843b6e327134af2ee3f
+                    End
                 End
             End
         End
@@ -122,6 +145,9 @@ Begin Form
             Height =240
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0xd513bab10285a04783540aed307183fe
+            End
             Begin
                 Begin TextBox
                     SpecialEffect =2
@@ -133,6 +159,9 @@ Begin Form
                     Name ="DEPssn"
                     ControlSource ="DEPssn"
                     InputMask ="000\\-00\\-0000;;_"
+                    GUID = Begin
+                        0x18b0ab4a8d8c3a469959433433f8cd17
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -145,6 +174,9 @@ Begin Form
                     BackColor =14079702
                     Name ="DEPfirstNAME"
                     ControlSource ="DEPfirstNAME"
+                    GUID = Begin
+                        0x51eefa5b9e7b424583c09139afa43c25
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -157,6 +189,9 @@ Begin Form
                     BackColor =14079702
                     Name ="DEPlastNAME"
                     ControlSource ="DEPlastNAME"
+                    GUID = Begin
+                        0x447ed0dcfb3efa43aa06bb817aab80ba
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -173,6 +208,9 @@ Begin Form
                     ValidationRule ="Is Not Null"
                     ValidationText ="You must populate the dependent DOB field."
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x472d377e2f046b499bb8c4e65f147a59
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -184,6 +222,9 @@ Begin Form
                     BackColor =65408
                     Name ="DEPsubID"
                     ControlSource ="DEPsubID"
+                    GUID = Begin
+                        0x8c0482e3de3a254c98029c3ebd2b1aea
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -196,6 +237,9 @@ Begin Form
                     BackColor =14079702
                     Name ="DEPmiddleNAME"
                     ControlSource ="DEPmiddleNAME"
+                    GUID = Begin
+                        0x1c2f87a2efbf5a48bf2675c2fc096b8e
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -208,6 +252,9 @@ Begin Form
                     BackColor =65408
                     Name ="SUBgroupID"
                     ControlSource ="SUBgroupID"
+                    GUID = Begin
+                        0x819641ef5613d44f90160b9772dd3579
+                    End
                 End
                 Begin TextBox
                     Locked = NotDefault
@@ -222,7 +269,7 @@ Begin Form
                     Name ="DEPgender"
                     ControlSource ="DEPgender"
                     GUID = Begin
-                        0x5073f1022842d84fb95839bcc0f48ac0
+                        0xeb40bed329dbc24fbc68f1f0cfc67d2e
                     End
                 End
                 Begin TextBox
@@ -238,7 +285,7 @@ Begin Form
                     Name ="DEPrelationship"
                     ControlSource ="DEPrelationship"
                     GUID = Begin
-                        0x2414cdf4d55a534db686c2c9c5456231
+                        0x441541825f667b4fb8738119e578fecd
                     End
                 End
             End
@@ -246,6 +293,9 @@ Begin Form
         Begin FormFooter
             Height =0
             Name ="FormFooter2"
+            GUID = Begin
+                0x9888aecf35ad0347a2d9c07f5d43da8d
+            End
         End
     End
 End

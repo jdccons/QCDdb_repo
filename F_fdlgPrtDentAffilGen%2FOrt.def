@@ -1,10 +1,10 @@
-Version =17
-VersionRequired =17
-Checksum =1449861473
+Version =20
+VersionRequired =20
+Checksum =1176948672
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
@@ -12,14 +12,19 @@ Begin Form
     ViewsAllowed =1
     Width =5745
     ItemSuffix =43
-    Left =3660
-    Top =2955
-    Right =9210
-    Bottom =6120
+    Left =-22692
+    Top =1692
+    Right =-15156
+    Bottom =8064
     RecSrcDt = Begin
         0xd359ddb3b2c4e140
     End
     Caption ="Dentist Affiliation Report-General & Orthodontist Only"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -28,11 +33,17 @@ Begin Form
             Height =15
             BackColor =12632256
             Name ="FormHeader1"
+            GUID = Begin
+                0x5d3bc8394865544ba7921e9b413a0d9a
+            End
         End
         Begin Section
             Height =3840
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x0e0749c4694d6e439fc305db40ae3be5
+            End
             Begin
                 Begin Label
                     BackStyle =0
@@ -46,6 +57,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text62"
                     Caption ="Geographical  From: "
+                    GUID = Begin
+                        0xa7b144e7d2e23d499485524bd353fb01
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -55,7 +69,10 @@ Begin Form
                     Left =3279
                     Top =720
                     Width =1015
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x5890e70519469a4aad5298296c54f756
+                    End
                     Name ="c-GEOfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -72,7 +89,10 @@ Begin Form
                     Top =960
                     Width =1015
                     TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0xb6a4af9e81116147b528f708bf66392e
+                    End
                     Name ="c-GEOto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblGeographical.GEOid AS Geo_ID, tblGeographical.GEOdesc AS Geo_Descripti"
@@ -82,7 +102,7 @@ Begin Form
                 End
                 Begin Label
                     BackStyle =0
-                    OverlapFlags =87
+                    OverlapFlags =247
                     TextAlign =3
                     Left =1407
                     Top =960
@@ -92,6 +112,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text24"
                     Caption =" To: "
+                    GUID = Begin
+                        0xd3516296903c25419bd72e599ff02846
+                    End
                 End
                 Begin CommandButton
                     OverlapFlags =85
@@ -125,6 +148,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0xb810d93482deb6468f1138d23378b1eb
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -138,6 +164,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text41"
                     Caption ="Affiliation Date From: "
+                    GUID = Begin
+                        0x658536f6ab72474c817b45dd3dcc0c42
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -151,6 +180,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text42"
                     Caption ="To: "
+                    GUID = Begin
+                        0x3b77d6dcc522654ca508bcbef1a620f4
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =95
@@ -161,6 +193,9 @@ Begin Form
                     Name ="AffilDATE1"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xfb896a02d1bab0418d89149031f85a15
+                    End
                 End
                 Begin TextBox
                     OverlapFlags =87
@@ -171,12 +206,18 @@ Begin Form
                     Name ="AffilDATE2"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x879bf070b7b72f4cb6ad06152c03434b
+                    End
                 End
             End
         End
         Begin FormFooter
             Height =0
             Name ="FormFooter2"
+            GUID = Begin
+                0xd6f8f64d95524c4e8efbbf17a2462b0c
+            End
         End
     End
 End

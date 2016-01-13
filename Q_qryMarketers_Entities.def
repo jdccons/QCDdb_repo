@@ -1,24 +1,24 @@
 Operation =1
 Option =0
-Where ="(((tblAgent.AGENTactive)=\"A\") AND ((tblAgent.PayCommTo)=1))"
+Where ="(((tblAgent.AgentActive)=\"A\") AND ((tblAgent.PayCommTo)=1))"
 Begin InputTables
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblAgent.AGENCY"
-    Expression ="tblAgent.AGENTstreet1"
-    Expression ="tblAgent.AGENTstreet2"
-    Expression ="tblAgent.AGENTcity"
-    Expression ="tblAgent.AGENTstate"
-    Expression ="tblAgent.AGENTzip"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.AgentStreet1"
+    Expression ="tblAgent.AgentStreet2"
+    Expression ="tblAgent.AgentCity"
+    Expression ="tblAgent.AgentState"
+    Expression ="tblAgent.AgentZip"
     Alias ="Contact Name"
     Expression ="[AGENTlast]+\", \"+[AgentFirst]"
     Alias ="Phone"
     Expression ="Format([AGENTphone],\"(###) ###-####\")"
-    Expression ="tblAgent.AGENTemail"
+    Expression ="tblAgent.AgentEmail"
 End
 Begin OrderBy
-    Expression ="tblAgent.AGENCY"
+    Expression ="tblAgent.Agency"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -26,6 +26,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblAgent.AGENCY"
@@ -39,14 +40,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1280
-    Bottom =900
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =604
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =384
     Left =0
     Top =0
@@ -55,7 +56,7 @@ Begin
         Left =38
         Top =6
         Right =365
-        Bottom =315
+        Bottom =304
         Top =1
         Name ="tblAgent"
         Name =""

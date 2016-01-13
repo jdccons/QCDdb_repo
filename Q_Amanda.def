@@ -4,13 +4,13 @@ Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBlastNAME"
+    Expression ="tblSubscr.SubLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -18,6 +18,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -25,10 +26,10 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =492
+    Bottom =427
     Left =-1
     Top =-1
-    Right =933
+    Right =925
     Bottom =203
     Left =0
     Top =0
@@ -37,7 +38,7 @@ Begin
         Left =38
         Top =6
         Right =263
-        Bottom =173
+        Bottom =169
         Top =20
         Name ="tblSubscr"
         Name =""

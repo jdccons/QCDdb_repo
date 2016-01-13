@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =-1084072761
+Version =20
+VersionRequired =20
+Checksum =-494037271
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -22,15 +22,14 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =5
     Left =4860
-    Top =765
+    Top =375
     Right =10755
-    Bottom =1965
+    Bottom =1575
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xc7f61fcf2b99e140
     End
     Caption ="Processing"
-    MenuBar ="mnuMain"
     DatasheetFontName ="Arial"
     Begin
         Begin Label
@@ -55,6 +54,9 @@ Begin Form
             Height =1200
             BackColor =16777088
             Name ="Detail"
+            GUID = Begin
+                0x021329facb8e6b40bd6a4f9a75ab6a3d
+            End
             Begin
                 Begin Label
                     SpecialEffect =4
@@ -71,6 +73,9 @@ Begin Form
                     Name ="Label0"
                     Caption ="Processing request.  Please wait."
                     OnDblClick ="[Event Procedure]"
+                    GUID = Begin
+                        0xdb4e65ec39dfe847a668ed6f10eb86f4
+                    End
                 End
             End
         End

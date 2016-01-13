@@ -1,11 +1,10 @@
 Version =20
 VersionRequired =20
-Checksum =2062173090
+Checksum =-572270409
 Begin Form
     AutoCenter = NotDefault
     DividingLines = NotDefault
     AllowAdditions = NotDefault
-    AllowDesignChanges = NotDefault
     DefaultView =2
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -14,20 +13,20 @@ Begin Form
     Width =11520
     DatasheetFontHeight =11
     ItemSuffix =65
-    Left =1050
-    Top =5955
-    Right =12855
-    Bottom =7905
+    Left =216
+    Top =480
+    Right =13524
+    Bottom =11772
     DatasheetGridlinesColor =15062992
     RecSrcDt = Begin
-        0x9afe3a4c3724e440
+        0xf83f23aad27ae440
     End
-    RecordSource ="SELECT tblEDI_App_Dep.DepCounter, tblEDI_App_Dep.DepSSN, tblEDI_App_Dep.EIMBRID,"
-        " tblEDI_App_Dep.DepSubID, tblEDI_App_Dep.DepFirstName, tblEDI_App_Dep.DepMiddleN"
-        "ame, tblEDI_App_Dep.DepLastName, tblEDI_App_Dep.DepDOB, tblEDI_App_Dep.DepAge, t"
-        "blEDI_App_Dep.DepRelationship, tblEDI_App_Dep.DepGender, tblEDI_App_Dep.DepEffDa"
-        "te, tblEDI_App_Dep.PreexistingDate, tblEDI_App_Dep.CreateDate, tblEDI_App_Dep.Mo"
-        "difyDate FROM tblEDI_App_Dep;"
+    RecordSource ="SELECT tblEDI_App_Dep.ID, tblEDI_App_Dep.DepSSN, tblEDI_App_Dep.EIMBRID, tblEDI_"
+        "App_Dep.DepSubID, tblEDI_App_Dep.DepFirstName, tblEDI_App_Dep.DepMiddleName, tbl"
+        "EDI_App_Dep.DepLastName, tblEDI_App_Dep.DepDOB, tblEDI_App_Dep.DepAge, tblEDI_Ap"
+        "p_Dep.DepRelationship, tblEDI_App_Dep.DepGender, tblEDI_App_Dep.DepEffDate, tblE"
+        "DI_App_Dep.PreexistingDate, tblEDI_App_Dep.CreateDate, tblEDI_App_Dep.ModifyDate"
+        " FROM tblEDI_App_Dep;"
     Caption ="tblEDI_Dep_Import_d"
     DatasheetFontName ="Calibri"
     AllowPivotTableView =0
@@ -117,7 +116,7 @@ Begin Form
             BackColor =15849926
             Name ="FormHeader"
             GUID = Begin
-                0x3bdefb5fee9978448707d36f7e390a57
+                0x9a0e76d5115a0c4a9214e403fa6a49ba
             End
             UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
                 0x01
@@ -139,7 +138,7 @@ Begin Form
             Height =8775
             Name ="Detail"
             GUID = Begin
-                0x1053dca4550bcb429857a80f5d800def
+                0xa991f2f6a409f44babdca2f6cddb45ec
             End
             UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
                 0x01
@@ -165,10 +164,10 @@ Begin Form
                     Height =315
                     BorderColor =12835293
                     ForeColor =4138256
-                    Name ="DepCounter"
-                    ControlSource ="DepCounter"
+                    Name ="ID"
+                    ControlSource ="ID"
                     GUID = Begin
-                        0x3d612c2f5fcfb24f80e30c610697858c
+                        0xa2dfbfb069979f42a122d104968302a5
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -198,9 +197,9 @@ Begin Form
                             BorderColor =16777215
                             ForeColor =13995605
                             Name ="Label50"
-                            Caption ="DepCounter:"
+                            Caption ="ID:"
                             GUID = Begin
-                                0x7f0de8590f95184d999b735e5685a16b
+                                0x8b8e53bb1b725d4ba7467ee3e0044395
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -232,7 +231,7 @@ Begin Form
                     Name ="DepSSN"
                     ControlSource ="DepSSN"
                     GUID = Begin
-                        0x9d01223cf9ad03438dcf73f91c0f2fbf
+                        0xc7c0d2c8b387bc408c695aa71382d374
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -264,7 +263,7 @@ Begin Form
                             Name ="Label51"
                             Caption ="DepSSN:"
                             GUID = Begin
-                                0x664e4aca9296c54eb1b61b8fae7e0c59
+                                0x76a1595f8d8e9c469da00d44e593cbb0
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -296,7 +295,7 @@ Begin Form
                     Name ="EIMBRID"
                     ControlSource ="EIMBRID"
                     GUID = Begin
-                        0x6a20141a95a00048b13ea12cc52c573f
+                        0xeabbbf4d61c3ad4a9b5f2b25cad6c7ca
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -328,7 +327,7 @@ Begin Form
                             Name ="Label52"
                             Caption ="EIMBRID:"
                             GUID = Begin
-                                0xfcd482f438c80e46adaf75204ea4cefb
+                                0xb8fd5457a6b3b440ae1d57a0416d1e35
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -360,7 +359,7 @@ Begin Form
                     Name ="DepSubID"
                     ControlSource ="DepSubID"
                     GUID = Begin
-                        0xad691febeaaa304695f9b217648842da
+                        0x9a0ff115fc2aed429bc802e3b23a2f0c
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -392,7 +391,7 @@ Begin Form
                             Name ="Label53"
                             Caption ="DepSubID:"
                             GUID = Begin
-                                0xdf7f6df38a700b4f85ad42a3f2d94609
+                                0x7e25d9f92f14b5409621f72c5ea799e1
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -424,7 +423,7 @@ Begin Form
                     Name ="DepFirstName"
                     ControlSource ="DepFirstName"
                     GUID = Begin
-                        0x355cf0130fdcfe40a8aa5f5d5f9d58dd
+                        0xa33451b33db5ba49aa0d1d3cab116e15
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -456,7 +455,7 @@ Begin Form
                             Name ="Label54"
                             Caption ="DepFirstName:"
                             GUID = Begin
-                                0x966961356326d341b304279f89464eec
+                                0xeb63455b4de04344bbc50ec939327829
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -488,7 +487,7 @@ Begin Form
                     Name ="DepMiddleName"
                     ControlSource ="DepMiddleName"
                     GUID = Begin
-                        0x15bbfeaf542a7e40afb955cc7684be8b
+                        0x95eac79f6b28694099f37e4a738bd88c
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -520,7 +519,7 @@ Begin Form
                             Name ="Label55"
                             Caption ="DepMiddleName:"
                             GUID = Begin
-                                0xe69b01229885344ba7fbf91f59fde721
+                                0xc4165e27d38eb0449e7ab7104e688b68
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -552,7 +551,7 @@ Begin Form
                     Name ="DepLastName"
                     ControlSource ="DepLastName"
                     GUID = Begin
-                        0xed952ac969a4ee488179699fc36897c1
+                        0x4dbb36ae6411cf469040657e319bdabe
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -584,7 +583,7 @@ Begin Form
                             Name ="Label56"
                             Caption ="DepLastName:"
                             GUID = Begin
-                                0xd40151d9c48b1d4b98b4080b885bc435
+                                0x83ce09fff3c2314e91af525e22bc88f0
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -616,7 +615,7 @@ Begin Form
                     Name ="DepDOB"
                     ControlSource ="DepDOB"
                     GUID = Begin
-                        0x8db27743700daf42941a2ad8205851f5
+                        0x5237b17fb590c24aa7c6e8e1d15e467f
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -648,7 +647,7 @@ Begin Form
                             Name ="Label57"
                             Caption ="DepDOB:"
                             GUID = Begin
-                                0x7699aa323f527d44a8cf22ccf12b7f48
+                                0xbc628e8bd382fc47aedf307affc3fc63
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -680,7 +679,7 @@ Begin Form
                     Name ="DepAge"
                     ControlSource ="DepAge"
                     GUID = Begin
-                        0x60110d51c837fc49a492391811cd4a91
+                        0xfbb4727f308cc4409e63fd5e7c45c602
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -712,7 +711,7 @@ Begin Form
                             Name ="Label58"
                             Caption ="DepAge:"
                             GUID = Begin
-                                0x46d226792507e54fa6c3acecab27c7f7
+                                0xac5fc9d1155d954388eb2530d0ee7e7c
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -744,7 +743,7 @@ Begin Form
                     Name ="DepRelationship"
                     ControlSource ="DepRelationship"
                     GUID = Begin
-                        0xb5375d63a3c67d4f8bd43df5780db0a4
+                        0x0464b4ffc00fe547a8cd13502a9becbe
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -776,7 +775,7 @@ Begin Form
                             Name ="Label59"
                             Caption ="DepRelationship:"
                             GUID = Begin
-                                0x16edcc985e5ec64bbe619a74d20c8ba1
+                                0xe083d1efb680fa4a95e21954417c01a4
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -808,7 +807,7 @@ Begin Form
                     Name ="DepGender"
                     ControlSource ="DepGender"
                     GUID = Begin
-                        0x7a7b31ec38e4e848baefb5671024be18
+                        0xd710585386d5b54ca13a59aa974a02d4
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -840,7 +839,7 @@ Begin Form
                             Name ="Label60"
                             Caption ="DepGender:"
                             GUID = Begin
-                                0x3c4115784dbb3544a6ee33e05da2dc8f
+                                0x02cb088ed2f46a42be79a3318f33d259
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -872,7 +871,7 @@ Begin Form
                     Name ="DepEffDate"
                     ControlSource ="DepEffDate"
                     GUID = Begin
-                        0xb5920068651e914b836660b9af275ec0
+                        0x6eb2c47ca438d647875f1fb24f6834b9
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -904,7 +903,7 @@ Begin Form
                             Name ="Label61"
                             Caption ="DepEffDate:"
                             GUID = Begin
-                                0x158ad26a4780c042a3f2d3a5489f40f0
+                                0x232ad1740f34524987a9a38600cdb629
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -936,7 +935,7 @@ Begin Form
                     Name ="PreexistingDate"
                     ControlSource ="PreexistingDate"
                     GUID = Begin
-                        0x3224f1186368374bb0f145181744260c
+                        0x3964dd655ef3344e94e3f361292c56af
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -968,7 +967,7 @@ Begin Form
                             Name ="Label62"
                             Caption ="PreexistingDate:"
                             GUID = Begin
-                                0x0a9d3a27d527a24f86fae49a35e82268
+                                0xb6bce52edff8a54883565bdd24c6e554
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1000,7 +999,7 @@ Begin Form
                     Name ="CreateDate"
                     ControlSource ="CreateDate"
                     GUID = Begin
-                        0xa1576b50aaf96f43b55711b72b7030e2
+                        0x236bdb8486d8d14dba08f7889e831b98
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1032,7 +1031,7 @@ Begin Form
                             Name ="Label63"
                             Caption ="CreateDate:"
                             GUID = Begin
-                                0x8f09f08d959318458a24499f4fbc9ba7
+                                0x88dd9a53c2038844ba92d984f1dcad25
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1064,7 +1063,7 @@ Begin Form
                     Name ="ModifyDate"
                     ControlSource ="ModifyDate"
                     GUID = Begin
-                        0xcc93bfcfc3b12d49ab1f518578c701de
+                        0x1eac3944076bb24a8bc8aee21f451b4b
                     End
                     UnknownProp = {272 ,462 ,4 ,4 ,4 } Begin
                         0xa6a6a600
@@ -1096,7 +1095,7 @@ Begin Form
                             Name ="Label64"
                             Caption ="ModifyDate:"
                             GUID = Begin
-                                0x90d724bd858ca24db75140aefd835ff0
+                                0x9e9479802f1bf94a95532aa9b889ac42
                             End
                             UnknownProp = {268 ,462 ,4 ,4 ,4 } Begin
                                 0xa6a6a600
@@ -1122,7 +1121,7 @@ Begin Form
             Height =0
             Name ="FormFooter"
             GUID = Begin
-                0xed65535db134a143b8e3609ad8879681
+                0x5715e6464ccc1c4ba26cb8a2a233912e
             End
             UnknownProp = {256 ,475 ,1 ,1 ,1 } Begin
                 0x01

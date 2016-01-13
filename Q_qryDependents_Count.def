@@ -4,12 +4,12 @@ Begin InputTables
     Name ="tblDependent"
 End
 Begin OutputColumns
-    Expression ="tblDependent.DEPsubID"
-    Alias ="CountOfDEPcounter"
-    Expression ="Count(tblDependent.DEPcounter)"
+    Expression ="tblDependent.DepSubID"
+    Alias ="CountOfID"
+    Expression ="Count(tblDependent.ID)"
 End
 Begin Groups
-    Expression ="tblDependent.DEPsubID"
+    Expression ="tblDependent.DepSubID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -19,16 +19,19 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="CountOfID"
+    End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1680
-    Bottom =962
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =530
     Left =-1
     Top =-1
-    Right =1677
+    Right =1253
     Bottom =310
     Left =0
     Top =0
@@ -37,7 +40,7 @@ Begin
         Left =38
         Top =6
         Right =305
-        Bottom =202
+        Bottom =199
         Top =0
         Name ="tblDependent"
         Name =""

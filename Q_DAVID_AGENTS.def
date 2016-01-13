@@ -1,28 +1,40 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRPgeoID)=\"TXCEN\" Or (tblGrp.GRPgeoID)=\"TXSSW\"))"
+Where ="(((tblGrp.GRGeoID)=\"TXCEN\" Or (tblGrp.GRGeoID)=\"TXSSW\"))"
 Begin InputTables
     Name ="Agents"
     Name ="tblGrp"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Expression ="Agents.NAME"
+    Alias ="Expr2"
     Expression ="Agents.COMPANY"
+    Alias ="Expr3"
     Expression ="Agents.ADDR1"
+    Alias ="Expr4"
     Expression ="Agents.ADDR2"
+    Alias ="Expr5"
     Expression ="Agents.ADDR3"
+    Alias ="Expr6"
     Expression ="Agents.CITY"
+    Alias ="Expr7"
     Expression ="Agents.STATE"
+    Alias ="Expr8"
     Expression ="Agents.ZIP"
+    Alias ="Expr9"
     Expression ="Agents.PHONE"
+    Alias ="Expr10"
     Expression ="Agents.IDSTATUS"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRGeoID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -30,10 +42,10 @@ Begin
     Left =62
     Top =44
     Right =1002
-    Bottom =349
+    Bottom =368
     Left =-1
     Top =-1
-    Right =933
+    Right =925
     Bottom =144
     Left =0
     Top =0
@@ -42,8 +54,8 @@ Begin
         Left =38
         Top =6
         Right =195
-        Bottom =113
-        Top =73
+        Bottom =49
+        Top =0
         Name ="Agents"
         Name =""
     End
@@ -51,7 +63,7 @@ Begin
         Left =229
         Top =8
         Right =325
-        Bottom =115
+        Bottom =111
         Top =0
         Name ="tblGrp"
         Name =""

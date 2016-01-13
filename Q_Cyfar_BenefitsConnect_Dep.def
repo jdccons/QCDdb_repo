@@ -1,40 +1,40 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GROUPid)=\"cyfar\"))"
+Where ="(((tblGrp.GroupID)=\"cyfar\"))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblSubscr"
     Name ="tblDependent"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblDependent.DEPssn"
-    Expression ="tblDependent.DEPlastNAME"
-    Expression ="tblDependent.DEPfirstNAME"
-    Expression ="tblSubscr.SUBstreet1"
-    Expression ="tblSubscr.SUBstreet2"
-    Expression ="tblSubscr.SUBcity"
-    Expression ="tblSubscr.SUBstate"
-    Expression ="tblSubscr.SUBzip"
-    Expression ="tblDependent.DEPdob"
-    Expression ="tblDependent.DEPrelationship"
-    Expression ="tblDependent.DEPgender"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblDependent.DepSSN"
+    Expression ="tblDependent.DepLastName"
+    Expression ="tblDependent.DepFirstName"
+    Expression ="tblSubscr.SubStreet1"
+    Expression ="tblSubscr.SubStreet2"
+    Expression ="tblSubscr.SubCity"
+    Expression ="tblSubscr.SubState"
+    Expression ="tblSubscr.SubZip"
+    Expression ="tblDependent.DepDOB"
+    Expression ="tblDependent.DepRelationship"
+    Expression ="tblDependent.DepGender"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Flag =0
-    Expression ="tblDependent.DEPlastNAME"
+    Expression ="tblDependent.DepLastName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -42,6 +42,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblSubscr.SUBstreet1"
@@ -50,14 +51,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-6
-    Top =-32
-    Right =1282
-    Bottom =926
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =617
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =397
     Left =0
     Top =0
@@ -66,7 +67,7 @@ Begin
         Left =15
         Top =62
         Right =164
-        Bottom =296
+        Bottom =285
         Top =0
         Name ="tblGrp"
         Name =""
@@ -75,7 +76,7 @@ Begin
         Left =213
         Top =13
         Right =439
-        Bottom =307
+        Bottom =296
         Top =1
         Name ="tblSubscr"
         Name =""
@@ -84,7 +85,7 @@ Begin
         Left =577
         Top =27
         Right =849
-        Bottom =231
+        Bottom =220
         Top =0
         Name ="tblDependent"
         Name =""

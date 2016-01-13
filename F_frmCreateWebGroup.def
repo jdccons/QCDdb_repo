@@ -1,12 +1,11 @@
-Version =19
-VersionRequired =19
-Checksum =1595607890
+Version =20
+VersionRequired =20
+Checksum =-1748157708
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
-    AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -19,9 +18,9 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =10
     Left =12120
-    Top =3270
+    Top =3276
     Right =16440
-    Bottom =6375
+    Bottom =6372
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x054ea2f66f90e340
@@ -354,6 +353,7 @@ Begin Form
             SpecialEffect =2
             OldBorderStyle =0
             FontName ="Tahoma"
+            AsianLineBreak =255
         End
         Begin ComboBox
             SpecialEffect =2
@@ -364,7 +364,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x96f457a9ae710d4090d7031ff553b8a7
+                0x03f181d882643c419ae3a81a04ebcd0f
             End
             Begin
                 Begin ComboBox
@@ -379,7 +379,7 @@ Begin Form
                     Height =299
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"10\""
                     GUID = Begin
-                        0x05afd58ca2621b41b50e59405af52e2d
+                        0xdc64808486a0cf4bbeade0e645c5ef36
                     End
                     Name ="cboGroupID"
                     RowSourceType ="Table/Query"
@@ -398,7 +398,7 @@ Begin Form
                             Caption ="Group ID:"
                             EventProcPrefix ="Create_Web_Group_Label"
                             GUID = Begin
-                                0xb151d9c585f1f644ab352182365c69b9
+                                0xca3fe453aa8af148bcdff59f843d6199
                             End
                         End
                     End
@@ -415,7 +415,7 @@ Begin Form
                     Height =299
                     TabIndex =1
                     GUID = Begin
-                        0x9ef936e543e9244284ceed91fea25c9a
+                        0x91374cd96730b44aad39f5309de61b89
                     End
                     Name ="cboCoverageType"
                     RowSourceType ="Value List"
@@ -432,7 +432,7 @@ Begin Form
                             Name ="Label3"
                             Caption ="Coverage Type:"
                             GUID = Begin
-                                0x2ae978a3551f9e4d96939b3f78030963
+                                0x81e58b11e4f21943bc8318fa57545f40
                             End
                         End
                     End
@@ -449,7 +449,7 @@ Begin Form
                     Height =299
                     TabIndex =2
                     GUID = Begin
-                        0x635aacd8f7e7a24594fe58297b4e61fb
+                        0x3d720bfefb18db4b9edce68e19bfdfb4
                     End
                     Name ="cboGroupType"
                     RowSourceType ="Value List"
@@ -466,7 +466,7 @@ Begin Form
                             Name ="Label5"
                             Caption ="Group Type:"
                             GUID = Begin
-                                0x13aa5b1b75ea3641b2ed39276cffe330
+                                0x5a1c3c1ef2f1454a8e9392d8f0fd555d
                             End
                         End
                     End
@@ -481,7 +481,7 @@ Begin Form
                     TabIndex =3
                     Name ="txtPassword"
                     GUID = Begin
-                        0x8db70e17fc2cf04c9b268046874ad702
+                        0xd7631d61bb111546b6e5c3f71260580a
                     End
                     Begin
                         Begin Label
@@ -494,7 +494,7 @@ Begin Form
                             Name ="Label7"
                             Caption ="Password:"
                             GUID = Begin
-                                0x28ebfb22498c454f90df2ee9e52030f7
+                                0xb9c3c97f7debad40a388f3839b36e775
                             End
                         End
                     End
@@ -510,7 +510,7 @@ Begin Form
                     Caption ="Create Group"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0xb74cf732001e094bb0757d1d5e957101
+                        0x260698d921e4814b97ce68de8662ebdc
                     End
                 End
                 Begin CommandButton
@@ -546,7 +546,7 @@ Begin Form
                         0xffffff0000000000
                     End
                     GUID = Begin
-                        0x51921f148c854d46af484a03daa8dc6c
+                        0xbecabbccf3b81445abe8287a3be31230
                     End
                 End
             End

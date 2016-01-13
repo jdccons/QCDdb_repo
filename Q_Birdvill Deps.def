@@ -1,25 +1,25 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBgroupID)=\"birdv\"))"
+Where ="(((tblSubscr.SubGroupID)=\"birdv\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblDependent"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBrate"
-    Expression ="tblSubscr.SUBnoDEPENT"
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblDependent.DEPssn"
-    Expression ="tblDependent.DEPlastNAME"
-    Expression ="tblDependent.DEPfirstNAME"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubRate"
+    Expression ="tblSubscr.DepCnt"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblDependent.DepSSN"
+    Expression ="tblDependent.DepLastName"
+    Expression ="tblDependent.DepFirstName"
 End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -27,6 +27,8 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbMemo "OrderBy" ="Query6.SUBlastNAME"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblSubscr.SUBssn"
@@ -49,11 +51,6 @@ Begin
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
-        dbText "Name" ="tblSubscr.SUBnoDEPENT"
-        dbInteger "ColumnWidth" ="1560"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
         dbText "Name" ="tblSubscr.SUBgroupID"
         dbInteger "ColumnWidth" ="1305"
         dbBoolean "ColumnHidden" ="0"
@@ -70,14 +67,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-27
-    Right =1280
-    Bottom =925
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =568
     Left =-1
     Top =-1
-    Right =1273
+    Right =1253
     Bottom =348
     Left =0
     Top =0
@@ -86,7 +83,7 @@ Begin
         Left =38
         Top =6
         Right =331
-        Bottom =313
+        Bottom =304
         Top =5
         Name ="tblSubscr"
         Name =""
@@ -95,7 +92,7 @@ Begin
         Left =373
         Top =11
         Right =577
-        Bottom =335
+        Bottom =324
         Top =0
         Name ="tblDependent"
         Name =""

@@ -1,0 +1,608 @@
+Version =20
+VersionRequired =20
+Checksum =2086273739
+Begin Form
+    AutoResize = NotDefault
+    Modal = NotDefault
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    AllowDesignChanges = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =95
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =3915
+    DatasheetFontHeight =10
+    ItemSuffix =16
+    Left =8715
+    Top =1260
+    Right =12990
+    Bottom =5355
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x7c75f298dab0e440
+    End
+    Caption ="Edit Transactions"
+    MenuBar ="Dialog"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010400069c00fc02032f000001000100ea0a6f08640001000f00580202000100 ,
+        0x5802030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
+    End
+    PrtDevNames = Begin
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x006e756c3a00
+    End
+    OnLoad ="[Event Procedure]"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+        End
+        Begin ComboBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =3450
+            BackColor =-2147483633
+            Name ="Detail"
+            GUID = Begin
+                0x9ff02dca234b214ebc7cac8c1efee092
+            End
+            Begin
+                Begin ComboBox
+                    ColumnHeads = NotDefault
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    ListWidth =5040
+                    Left =1657
+                    Top =1170
+                    Height =256
+                    TabIndex =1
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"32\""
+                    GUID = Begin
+                        0x18cafc609a06914bafad26100c82d0b6
+                    End
+                    Name ="cboCustomerKey"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT DISTINCT art.CustomerKey, arc.CustomerName, art.Spare3 AS Type FROM ARTRA"
+                        "NH_local AS art INNER JOIN ARCUST_local AS arc ON art.CustomerKey=arc.CustomerKe"
+                        "y WHERE (((art.Spare3)=(Forms!fdlgInvTxn!cboRecordType)) And ((arc.CreditHold)=\""
+                        "N\")) ORDER BY art.CustomerKey;"
+                    ColumnWidths ="1140;2250;1152"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =120
+                            Top =1170
+                            Width =1260
+                            Height =240
+                            Name ="CustomerKey_Label"
+                            Caption ="Customer Key: "
+                            GUID = Begin
+                                0x0d6f68b92ff21d4bbef5f5143790de65
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1657
+                    Top =1920
+                    Height =256
+                    TabIndex =2
+                    Name ="FromDate"
+                    Format ="Short Date"
+                    ValidationRule ="<>\"\""
+                    ValidationText ="Please enter a proper date."
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    OnLostFocus ="[Event Procedure]"
+                    GUID = Begin
+                        0x70e7799cf3e79d4bba51ac0c55b97ee1
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =165
+                            Top =1920
+                            Width =1260
+                            Height =240
+                            Name ="Label5"
+                            Caption ="From Date: "
+                            GUID = Begin
+                                0x784159b45a82044c8acc79de4bb5df3d
+                            End
+                        End
+                    End
+                End
+                Begin TextBox
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    Left =1657
+                    Top =2250
+                    Height =256
+                    TabIndex =3
+                    Name ="ToDate"
+                    Format ="Short Date"
+                    BeforeUpdate ="[Event Procedure]"
+                    AfterUpdate ="[Event Procedure]"
+                    OnLostFocus ="[Event Procedure]"
+                    GUID = Begin
+                        0x17e38046840c484eb8e27d60ac22e653
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =140
+                            Top =2250
+                            Width =1260
+                            Height =240
+                            Name ="Label7"
+                            Caption ="To Date: "
+                            GUID = Begin
+                                0x669632a131833347b52a08e39f51db3d
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =815
+                    Top =2700
+                    Width =576
+                    Height =576
+                    TabIndex =4
+                    Name ="btnOpenForm"
+                    Caption ="Command9"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadadadadadadadaadadadadadadadad000000000000000a ,
+                        0x088888888888880d088888800000080a08888880ffff080d080000800000080a ,
+                        0x088888888888880d088888800000080a08888880ffff080d080000800000080a ,
+                        0x088888888888880d044444444444440a044444444444440d000000000000000a ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Open Form"
+                    GUID = Begin
+                        0xc7814932c68d114380b813d4fb031ac5
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =1660
+                    Top =2700
+                    Width =576
+                    Height =576
+                    TabIndex =5
+                    Name ="btnClose"
+                    Caption ="Command10"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0xfa903939ff7921438d54bb9aedd1cde0
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =515
+                    Top =1530
+                    Width =2445
+                    Height =255
+                    Name ="Label11"
+                    Caption ="Leave blank for all transactions."
+                    GUID = Begin
+                        0xc200371961db2a4d8b85c26dc832fdd2
+                    End
+                End
+                Begin ComboBox
+                    RowSourceTypeInt =1
+                    OverlapFlags =85
+                    IMESentenceMode =3
+                    ListWidth =1440
+                    Left =1657
+                    Top =435
+                    Height =256
+                    GUID = Begin
+                        0xa3fff8664f8ba7429fc1f44f7c588052
+                    End
+                    Name ="cboRecordType"
+                    RowSourceType ="Value List"
+                    RowSource ="\"QCD Only\";\"All American\";\"Individual\""
+                    ColumnWidths ="1440"
+                    AfterUpdate ="[Event Procedure]"
+                    OnLostFocus ="[Event Procedure]"
+                    Begin
+                        Begin Label
+                            OverlapFlags =85
+                            TextAlign =3
+                            Left =180
+                            Top =435
+                            Width =1260
+                            Height =245
+                            Name ="cboSubscrType_Label"
+                            Caption ="Record Type:"
+                            GUID = Begin
+                                0x4958ee61c91c214d80120670489550ff
+                            End
+                        End
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =435
+                    Top =795
+                    Width =2565
+                    Height =255
+                    Name ="Label14"
+                    Caption ="Leave blank for all record types."
+                    GUID = Begin
+                        0x763bfa056146cb4d8423dd053c56e295
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =2505
+                    Top =2700
+                    Width =810
+                    Height =405
+                    TabIndex =6
+                    Name ="btnRefresh"
+                    Caption ="Refresh"
+                    OnClick ="[Event Procedure]"
+                    GUID = Begin
+                        0x9b1634e35c61e64abbc6a7c14cfe009a
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Dim m_i As Integer
+Function Build_RowSource(SelectPick As Integer) As String
+    
+    Dim strSQL As String
+    strSQL = "SELECT DISTINCT art.CustomerKey, arc.CustomerName, art.Spare3 AS Type"
+    strSQL = strSQL & " FROM ARTRANH_local AS art"
+    strSQL = strSQL & " INNER JOIN ARCUST_local AS arc"
+    strSQL = strSQL & " ON art.CustomerKey=arc.CustomerKey"
+    strSQL = strSQL & " WHERE (((art.Spare3)=(Forms!fdlgInvTxn!cboRecordType)) And ((arc.CreditHold)=""N""))"
+    strSQL = strSQL & " ORDER BY art.CustomerKey;"
+    
+    Build_RowSource = strSQL
+    
+End Function
+
+Function SelectPick() As Integer
+    ' record type 0,3,5,7
+    ' customer key 0, 1
+    ' from and to date
+    ' 0 = no record type or no customer key
+    '   0 + 0 = 0
+    '   0 + 1 = 1
+    '   3 + 0 = 3
+    '   3 + 1 = 4
+    '   5 + 0 = 5
+    '   5 + 1 = 6
+    '   7 + 0 = 7
+    '   7 + 1 = 8
+
+    Dim intSelection As Integer
+    If (Me.cboRecordType) = "" And (Me.cboCustomerKey) = "" Then intSelection = 0
+    If (Me.cboRecordType) = "" And (Me.cboCustomerKey) <> "" Then intSelection = 1
+    If (Me.cboRecordType) = "QCD Only" And (Me.cboCustomerKey) = "" Then intSelection = 3
+    If (Me.cboRecordType) = "QCD Only" And (Me.cboCustomerKey) <> "" Then intSelection = 4
+    If (Me.cboRecordType) = "All American" And (Me.cboCustomerKey) = "" Then intSelection = 5
+    If (Me.cboRecordType) = "All American" And (Me.cboCustomerKey) <> "" Then intSelection = 6
+    If (Me.cboRecordType) = "Individual" And (Me.cboCustomerKey) = "" Then intSelection = 7
+    If (Me.cboRecordType) = "Individual" And (Me.cboCustomerKey) <> "" Then intSelection = 8
+    
+    SelectPick = intSelection
+
+End Function
+Private Sub btnOpenForm_Click()
+On Error GoTo Err_btnOpenForm_Click
+
+    Dim stDocName As String: stDocName = "frmInvTxn"
+    Dim stLinkCriteria As String
+    If Me.FromDate <> "" And Me.ToDate <> "" Then
+        Select Case m_i
+            Case 0
+                stLinkCriteria = "([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#)"
+            Case 1
+                stLinkCriteria = "([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#) "
+                stLinkCriteria = stLinkCriteria & "And ([CustomerKey] = '" & Me!cboCustomerKey.Column(0) & "') "
+            Case 3
+                stLinkCriteria = "([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#) "
+                stLinkCriteria = stLinkCriteria & "And ([Type] = 'QCD Only')"
+            Case 4
+                stLinkCriteria = "([Type] = 'QCD Only') "
+                stLinkCriteria = stLinkCriteria & "And ([CustomerKey] = '" & Me!cboCustomerKey.Column(0) & "') "
+                stLinkCriteria = stLinkCriteria & "And ([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#)"
+            Case 5
+                stLinkCriteria = "([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#) "
+                stLinkCriteria = stLinkCriteria & "And ([Type] = 'All American')"
+            Case 6
+                stLinkCriteria = "([Type] = 'All American') "
+                stLinkCriteria = stLinkCriteria & "And ([CustomerKey] = '" & Me!cboCustomerKey.Column(0) & "') "
+                stLinkCriteria = stLinkCriteria & "And ([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#)"
+            Case 7
+                stLinkCriteria = "([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#) "
+                stLinkCriteria = stLinkCriteria & "And ([Type] = 'Individual')"
+            Case 8
+                stLinkCriteria = "([Type] = 'Individual') "
+                stLinkCriteria = stLinkCriteria & "And ([CustomerKey] = '" & Me!cboCustomerKey.Column(0) & "') "
+                stLinkCriteria = stLinkCriteria & "And ([DocumentDate] between " & "#" & Me![FromDate] & "# And #" & Me![ToDate] & "#)"
+        End Select
+        DoCmd.OpenForm stDocName, acFormDS, , stLinkCriteria, acFormEdit, acWindowNormal
+    Else
+        MsgBox "You must populate from and to dates.", vbInformation, "QCD: Warning"
+        DoCmd.GoToControl "FromDate"
+    End If
+
+Exit_btnOpenForm_Click:
+    Exit Sub
+
+Err_btnOpenForm_Click:
+    If Err.Number = 94 Then
+        Resume Next
+    Else
+        MsgBox Err.DESCRIPTION
+        Resume Exit_btnOpenForm_Click
+    End If
+    
+End Sub
+Private Sub btnClose_Click()
+On Error GoTo Err_btnClose_Click
+
+
+    DoCmd.Close
+
+Exit_btnClose_Click:
+    Exit Sub
+
+Err_btnClose_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_btnClose_Click
+    
+End Sub
+
+
+
+Private Sub cboCustomerKey_AfterUpdate()
+    m_i = SelectPick()
+End Sub
+
+Private Sub cboCustomerKey_BeforeUpdate(Cancel As Integer)
+    On Error GoTo PROC_ERR
+    Dim strSQL As String
+    Dim strCustomerKey As String: strCustomerKey = Me.cboCustomerKey
+    If strCustomerKey <> "" Then
+        strSQL = "SELECT DISTINCT art.CustomerKey, arc.CustomerName"
+        strSQL = strSQL & " FROM ARTRANH_local AS art"
+        strSQL = strSQL & " INNER JOIN ARCUST_local AS arc"
+        strSQL = strSQL & " ON art.CustomerKey=arc.CustomerKey"
+        strSQL = strSQL & " WHERE ((arc.CreditHold ='N')"
+        strSQL = strSQL & " AND (art.CustomerKey = '" & strCustomerKey & "'))"
+        strSQL = strSQL & " ORDER BY art.CustomerKey;"
+        LoadADORecordset (strSQL)
+        If g_adoRS.EOF Then
+            MsgBox "That customer key is not in the list.", vbInformation, "QCD: Alert"
+            Cancel = True
+            g_adoRS.Close
+        Else
+            g_adoRS.Close
+        End If
+    End If
+PROC_EXIT:
+    Exit Sub
+PROC_ERR:
+    If Err.Number = 94 Then
+        Resume Next
+    Else
+        MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION & " in " & _
+        VBE.ActiveCodePane.CodeModule, vbOKOnly, "Procedure:  Form_cboCustomerKey_BeforeUpdate"
+        GoTo PROC_EXIT
+    End If
+    
+    
+End Sub
+
+Private Sub cboRecordType_AfterUpdate()
+    m_i = SelectPick()
+    With Me
+        .cboCustomerKey = ""
+        .cboCustomerKey.RowSource = Build_RowSource(m_i)
+    End With
+End Sub
+
+Private Sub cboRecordType_LostFocus()
+    Call cboRecordType_AfterUpdate
+End Sub
+
+Private Sub Form_Load()
+    m_i = 0
+End Sub
+
+Private Sub FromDate_AfterUpdate()
+    m_i = SelectPick()
+End Sub
+
+Private Sub FromDate_BeforeUpdate(Cancel As Integer)
+On Error GoTo PROC_ERR
+    If IsNull(Me.FromDate) Then
+        Cancel = True
+        MsgBox "Please enter a From Date.", vbInformation, "QCD: Required"
+        DoCmd.GoToControl "FromDate"
+        GoTo PROC_EXIT
+    End If
+PROC_EXIT:
+Exit Sub
+PROC_ERR:
+MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD: Error"
+    GoTo PROC_EXIT
+End Sub
+
+Private Sub FromDate_LostFocus()
+    Call FromDate_BeforeUpdate(0)
+End Sub
+
+Private Sub ToDate_AfterUpdate()
+    m_i = SelectPick()
+End Sub
+
+Private Sub ToDate_BeforeUpdate(Cancel As Integer)
+    On Error GoTo PROC_ERR
+    If IsNull(Me.ToDate) Then
+        Cancel = True
+        MsgBox "Please enter a To Date.", vbInformation, "QCD: Required"
+        DoCmd.GoToControl "ToDate"
+        GoTo PROC_EXIT
+    End If
+PROC_EXIT:
+Exit Sub
+PROC_ERR:
+MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION & " in " & _
+    VBE.ActiveCodePane.CodeModule, vbOKOnly, "QCD: Error"
+    GoTo PROC_EXIT
+End Sub
+
+
+Private Sub ToDate_LostFocus()
+    Call ToDate_BeforeUpdate(0)
+End Sub
+Private Sub btnRefresh_Click()
+On Error GoTo Err_btnRefresh_Click
+
+    m_i = 0
+    With Me
+        .cboRecordType = ""
+        .cboCustomerKey = ""
+        .FromDate = ""
+        .ToDate = ""
+    End With
+    DoCmd.GoToControl "cboRecordType"
+    Me.Requery
+
+Exit_btnRefresh_Click:
+    Exit Sub
+
+Err_btnRefresh_Click:
+    MsgBox Err.DESCRIPTION
+    Resume Exit_btnRefresh_Click
+    
+End Sub

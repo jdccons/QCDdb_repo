@@ -1,6 +1,6 @@
-Version =17
-VersionRequired =17
-Checksum =-90638846
+Version =20
+VersionRequired =20
+Checksum =1012879485
 Begin Form
     MaxButton = NotDefault
     MinButton = NotDefault
@@ -8,10 +8,10 @@ Begin Form
     ScrollBars =2
     Width =6774
     ItemSuffix =109
-    Left =795
-    Top =720
-    Right =11520
-    Bottom =7920
+    Left =10125
+    Top =4125
+    Right =16530
+    Bottom =5820
     RecSrcDt = Begin
         0x7043db832fa1e240
     End
@@ -40,6 +40,9 @@ Begin Form
             Height =255
             BackColor =12632256
             Name ="FormHeader0"
+            GUID = Begin
+                0x99a2fd49a9ac6743baf175342999db6f
+            End
             Begin
                 Begin Label
                     OverlapFlags =85
@@ -51,6 +54,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text96"
                     Caption ="Social Sec. #: "
+                    GUID = Begin
+                        0xeb9cea9b09f2fc44a1cd758693377264
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -62,6 +68,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text97"
                     Caption ="Subscriber:"
+                    GUID = Begin
+                        0x64620fa7e0dfe946aff4f9342e785ac1
+                    End
                 End
                 Begin Label
                     OverlapFlags =85
@@ -73,6 +82,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text98"
                     Caption ="Rate:"
+                    GUID = Begin
+                        0x76a3fef04ea7ae42aeb8e1e983e2b32e
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -85,6 +97,9 @@ Begin Form
                     BackColor =16711935
                     Name ="Text99"
                     Caption ="Qty.Ord."
+                    GUID = Begin
+                        0x16ce8e04b1a4e842b45fbfd06093aa7d
+                    End
                 End
                 Begin Label
                     Visible = NotDefault
@@ -97,6 +112,9 @@ Begin Form
                     BackColor =16711935
                     Name ="Text101"
                     Caption ="Qty.Shp."
+                    GUID = Begin
+                        0xc9a2816e9108f049872f47b7a417b3d8
+                    End
                 End
             End
         End
@@ -104,44 +122,65 @@ Begin Form
             Height =240
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x6141ee01000d6844ba78a06057d83bcc
+            End
             Begin
                 Begin Line
                     OverlapFlags =93
                     Width =6765
                     Name ="Line85"
+                    GUID = Begin
+                        0xdd2d89a693c26342ba279f92087f3791
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     DecimalPlaces =0
                     SpecialEffect =2
                     OverlapFlags =87
                     Left =30
                     Width =1323
+                    BackColor =12632256
                     Name ="ITEM KEY"
                     ControlSource ="ITEM KEY"
                     InputMask ="000\\-00\\-0000;0;_"
                     EventProcPrefix ="ITEM_KEY"
+                    GUID = Begin
+                        0x99803712d6ec1b44bd058a037e4b6fb1
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     DecimalPlaces =0
                     SpecialEffect =2
                     OverlapFlags =87
                     Left =1632
                     Width =3318
                     TabIndex =1
+                    BackColor =12632256
                     Name ="DESCRIPTION"
                     ControlSource ="DESCRIPTION"
+                    GUID = Begin
+                        0xd50cf4870602ba4b9b9452b6892a8ce6
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     DecimalPlaces =2
                     SpecialEffect =2
                     OverlapFlags =95
                     Left =5265
                     Width =708
                     TabIndex =2
+                    BackColor =12632256
                     Name ="UNIT PRICE"
                     ControlSource ="UNIT PRICE"
                     Format ="Standard"
                     EventProcPrefix ="UNIT_PRICE"
+                    GUID = Begin
+                        0x907d9c102a08fa45bf1572ece7c1a52c
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -156,6 +195,9 @@ Begin Form
                     ControlSource ="QTY ORDERED"
                     DefaultValue ="1"
                     EventProcPrefix ="QTY_ORDERED"
+                    GUID = Begin
+                        0x7ef9ab46ae2ea84d857a5d4f96bc7fda
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -170,6 +212,9 @@ Begin Form
                     ControlSource ="QTY SHIPPED"
                     DefaultValue ="1"
                     EventProcPrefix ="QTY_SHIPPED"
+                    GUID = Begin
+                        0x88245803caee1e44bef5732416459ee7
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -181,6 +226,9 @@ Begin Form
                     Name ="DOCUMENT NO"
                     ControlSource ="DOCUMENT NO"
                     EventProcPrefix ="DOCUMENT_NO"
+                    GUID = Begin
+                        0xf1502d664e46404b8859c30d7949ff2a
+                    End
                 End
             End
         End
@@ -189,6 +237,9 @@ Begin Form
             Height =240
             BackColor =12632256
             Name ="FormFooter1"
+            GUID = Begin
+                0x1e5b8c33c0e29749bd015767fbb7aeb4
+            End
             Begin
                 Begin TextBox
                     DecimalPlaces =2
@@ -198,6 +249,9 @@ Begin Form
                     Name ="SubTotal"
                     ControlSource ="=Sum([UNIT PRICE])"
                     Format ="$#,##0.00;($#,##0.00)"
+                    GUID = Begin
+                        0x7946eef4989b624f8e52e224204c75d9
+                    End
                 End
             End
         End

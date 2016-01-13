@@ -21,7 +21,7 @@ Begin OutputColumns
     Expression ="tblCoverage.CoverDescr"
     Alias ="SUBStreet"
     Name ="SubStreet"
-    Expression ="[tblEDI_App_Subscr].[SUBstreet1] & \" \" & [tblEDI_App_Subscr].[SUBStreet2]"
+    Expression ="tblEDI_App_Subscr.SUBstreet1 & \" \" & tblEDI_App_Subscr.SUBStreet2"
     Name ="SubCity"
     Expression ="tblEDI_App_Subscr.SubCity"
     Name ="SubState"
@@ -36,11 +36,11 @@ End
 Begin Joins
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblPlans"
-    Expression ="tblEDI_App_Subscr.PlanID = tblPlans.PlanID"
+    Expression ="tblEDI_App_Subscr.PlanID=tblPlans.PlanID"
     Flag =2
     LeftTable ="tblEDI_App_Subscr"
     RightTable ="tblCoverage"
-    Expression ="tblEDI_App_Subscr.CoverID = tblCoverage.CoverID"
+    Expression ="tblEDI_App_Subscr.CoverID=tblCoverage.CoverID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -86,10 +86,10 @@ Begin
     Left =38
     Top =86
     Right =421
-    Bottom =600
+    Bottom =581
     Left =-1
     Top =-1
-    Right =351
+    Right =368
     Bottom =315
     Left =0
     Top =0
@@ -98,7 +98,7 @@ Begin
         Left =57
         Top =30
         Right =260
-        Bottom =227
+        Bottom =223
         Top =0
         Name ="tblEDI_App_Subscr"
         Name =""
@@ -107,7 +107,7 @@ Begin
         Left =375
         Top =31
         Right =519
-        Bottom =108
+        Bottom =119
         Top =0
         Name ="tblPlans"
         Name =""
@@ -116,7 +116,7 @@ Begin
         Left =632
         Top =27
         Right =728
-        Bottom =119
+        Bottom =115
         Top =0
         Name ="tblCoverage"
         Name =""

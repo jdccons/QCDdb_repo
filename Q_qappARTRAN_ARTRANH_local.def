@@ -1,0 +1,119 @@
+Operation =3
+Name ="ARTRANH_local"
+Option =0
+Where ="(((qryARTRAN_ARTRANH.TransactionType)<>\"I\") And ((qryARTRAN_ARTRANH.DocumentDa"
+    "te) Between #1/1/2014# And #7/31/2014#))"
+Begin InputTables
+    Name ="qryARTRAN_ARTRANH"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Name ="DocumentNumber"
+    Expression ="qryARTRAN_ARTRANH.DocumentNumber"
+    Alias ="Expr2"
+    Name ="ApplyTo"
+    Expression ="qryARTRAN_ARTRANH.ApplyTo"
+    Alias ="Expr3"
+    Name ="TerritoryKey"
+    Expression ="qryARTRAN_ARTRANH.TerritoryKey"
+    Alias ="Expr4"
+    Name ="SalespersonKey"
+    Expression ="qryARTRAN_ARTRANH.SalespersonKey"
+    Alias ="Expr5"
+    Name ="CustomerKey"
+    Expression ="qryARTRAN_ARTRANH.CustomerKey"
+    Alias ="Expr6"
+    Name ="CustomerClassKey"
+    Expression ="qryARTRAN_ARTRANH.CustomerClassKey"
+    Alias ="Expr7"
+    Name ="OrderNumber"
+    Expression ="qryARTRAN_ARTRANH.OrderNumber"
+    Alias ="Expr8"
+    Name ="ShipToKey"
+    Expression ="qryARTRAN_ARTRANH.ShipToKey"
+    Alias ="Expr9"
+    Name ="CheckBatch"
+    Expression ="qryARTRAN_ARTRANH.CheckBatch"
+    Alias ="Expr10"
+    Name ="TransactionType"
+    Expression ="qryARTRAN_ARTRANH.TransactionType"
+    Alias ="Expr11"
+    Name ="DocumentDate"
+    Expression ="qryARTRAN_ARTRANH.DocumentDate"
+    Alias ="Expr12"
+    Name ="AgeDate"
+    Expression ="qryARTRAN_ARTRANH.AgeDate"
+    Alias ="Expr13"
+    Name ="DaysTillDue"
+    Expression ="qryARTRAN_ARTRANH.DaysTillDue"
+    Alias ="Expr14"
+    Name ="DocumentAmt"
+    Expression ="qryARTRAN_ARTRANH.DocumentAmt"
+    Alias ="Expr15"
+    Name ="DiscountAmt"
+    Expression ="qryARTRAN_ARTRANH.DiscountAmt"
+    Alias ="Expr16"
+    Name ="FreightAmt"
+    Expression ="qryARTRAN_ARTRANH.FreightAmt"
+    Alias ="Expr17"
+    Name ="TaxAmt"
+    Expression ="qryARTRAN_ARTRANH.TaxAmt"
+    Alias ="Expr18"
+    Name ="CostAmt"
+    Expression ="qryARTRAN_ARTRANH.CostAmt"
+    Alias ="Expr19"
+    Name ="CommissionHomeOvride"
+    Expression ="qryARTRAN_ARTRANH.CommissionHomeOvride"
+    Alias ="Expr20"
+    Name ="RetentionInvoice"
+    Expression ="qryARTRAN_ARTRANH.RetentionInvoice"
+    Alias ="Expr21"
+    Name ="SysDocID"
+    Expression ="qryARTRAN_ARTRANH.SysDocID"
+    Alias ="Expr22"
+    Name ="ApplySysDocID"
+    Expression ="qryARTRAN_ARTRANH.ApplySysDocID"
+    Alias ="Expr23"
+    Name ="Spare"
+    Expression ="qryARTRAN_ARTRANH.Spare"
+    Alias ="Expr24"
+    Name ="RecUserID"
+    Expression ="qryARTRAN_ARTRANH.RecUserID"
+    Alias ="Expr25"
+    Name ="RecDate"
+    Expression ="qryARTRAN_ARTRANH.RecDate"
+    Alias ="Expr26"
+    Name ="RecTime"
+    Expression ="qryARTRAN_ARTRANH.RecTime"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbByte "Orientation" ="0"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
+    Left =-1
+    Top =-1
+    Right =1253
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =651
+    Begin
+        Left =38
+        Top =6
+        Right =413
+        Bottom =49
+        Top =0
+        Name ="qryARTRAN_ARTRANH"
+        Name =""
+    End
+End

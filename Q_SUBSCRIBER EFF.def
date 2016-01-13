@@ -1,22 +1,22 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBcancelled)<>3))"
+Where ="(((tblSubscr.SubCancelled)<>3))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblSubscr.SUBfirstNAME"
-    Expression ="tblSubscr.SUBlastNAME"
-    Expression ="tblSubscr.SUBeffDATE"
-    Expression ="tblSubscr.SUBcancelled"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblSubscr.SubFirstName"
+    Expression ="tblSubscr.SubLastName"
+    Expression ="tblSubscr.SubEffDate"
+    Expression ="tblSubscr.SubCancelled"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -32,10 +32,10 @@ Begin
     Left =70
     Top =54
     Right =1002
-    Bottom =419
+    Bottom =414
     Left =-1
     Top =-1
-    Right =925
+    Right =917
     Bottom =180
     Left =0
     Top =0
@@ -44,7 +44,7 @@ Begin
         Left =384
         Top =16
         Right =504
-        Bottom =145
+        Bottom =134
         Top =39
         Name ="tblSubscr"
         Name =""
@@ -53,7 +53,7 @@ Begin
         Left =216
         Top =7
         Right =336
-        Bottom =136
+        Bottom =125
         Top =0
         Name ="tblGrp"
         Name =""

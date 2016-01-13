@@ -1,7 +1,37 @@
 Option Compare Database
-
 Global lngRateID As Long
-Function FindRate(GROUPid As String, CoverID As Integer, PlanID As Integer) As Double
+Public Function GetRateID(strGroupID As String, intPlanID As Integer, intCoverID As Integer) As Long
+'------------------------------------------------
+'Purpose:  Find the RateID
+'------------------------------------------------
+'Programmer:  Tim Cook
+'Create Date: 10/26/2006
+'Update Date:  10/30/2007
+'Updated by:  John Criswell
+
+On Error GoTo ErrorHandler
+    
+    Dim strSQL As String
+
+    strSQL = "SELECT tblRates.RateID, tblRates.GroupID, tblRates.PlanID, " & _
+                "tblRates.CoverID " & _
+                "FROM tblRates " & _
+                "WHERE (((tblRates.GroupID)='" & strGroupID & "') " & _
+                "AND ((tblRates.PlanID)= " & intPlanID & ") " & _
+                "AND ((tblRates.CoverID)= " & intCoverID & "));"
+    Call LoadADORecordset(strSQL)
+               
+    GetRateID = g_adoRS("RateID")
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+Public Function FindRate(GROUPid As String, CoverID As Integer, PlanID As Integer) As Double
 '------------------------------------------------
 'Purpose:  Find the plan rate based on plan id
 '          and coverage type
@@ -13,11 +43,10 @@ Function FindRate(GROUPid As String, CoverID As Integer, PlanID As Integer) As D
 
 On Error GoTo ErrorHandler
     
-    LoadADORecordSet "uspFindRate '" & GROUPid & "'," & CoverID & "," & PlanID
+    LoadADORecordset "uspFindRate '" & GROUPid & "'," & CoverID & "," & PlanID
     
     If Not g_adoRS.EOF Then
       FindRate = g_adoRS("Rate")
-      lngRateID = g_adoRS("RateID")
       g_adoRS.Close
     End If
     

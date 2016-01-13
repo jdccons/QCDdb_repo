@@ -6,35 +6,26 @@ Begin InputTables
 End
 Begin OutputColumns
     Name ="tblGrowth.FirstInvoiceAmt"
-    Expression ="[tblGrowth_temp].[SumOfDocamt]"
+    Expression ="tblGrowth_temp.SumOfDocamt"
     Name ="tblGrowth.FirstInvoiceDate"
-    Expression ="#1/1/00#"
-End
-Begin Joins
-    LeftTable ="tblGrowth_temp"
-    RightTable ="tblGrowth"
-    Expression ="tblGrowth_temp.Custkey = tblGrowth.GroupID"
-    Flag =1
-    LeftTable ="tblGrowth_temp"
-    RightTable ="tblGrowth"
-    Expression ="tblGrowth_temp.Year = tblGrowth.Year"
-    Flag =1
+    Expression ="#1/1/2000#"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =144
     Left =0
     Top =0
@@ -43,7 +34,7 @@ Begin
         Left =315
         Top =7
         Right =488
-        Bottom =114
+        Bottom =110
         Top =0
         Name ="tblGrowth"
         Name =""
@@ -52,7 +43,7 @@ Begin
         Left =38
         Top =6
         Right =176
-        Bottom =98
+        Bottom =49
         Top =0
         Name ="tblGrowth_temp"
         Name =""

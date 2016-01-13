@@ -2,8 +2,8 @@ Operation =3
 Name ="tblHaneyExport"
 Option =8
 Begin InputTables
-    Name ="tblInvLin"
     Name ="tblInvHdr"
+    Name ="tblInvLin"
 End
 Begin OutputColumns
     Alias ="GroupID"
@@ -28,7 +28,7 @@ End
 Begin Joins
     LeftTable ="tblInvHdr"
     RightTable ="tblInvLin"
-    Expression ="tblInvHdr.[TRANS NO] = tblInvLin.[DOCUMENT NO]"
+    Expression ="tblInvHdr.[TRANS NO]=tblInvLin.[DOCUMENT NO]"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -36,6 +36,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbBoolean "UseTransaction" ="0"
+dbByte "Orientation" ="0"
 Begin
 End
 Begin
@@ -43,10 +44,10 @@ Begin
     Left =13
     Top =96
     Right =1057
-    Bottom =528
+    Bottom =485
     Left =-1
     Top =-1
-    Right =1037
+    Right =1029
     Bottom =209
     Left =0
     Top =0
@@ -55,7 +56,7 @@ Begin
         Left =242
         Top =18
         Right =470
-        Bottom =150
+        Bottom =136
         Top =0
         Name ="tblInvLin"
         Name =""
@@ -64,7 +65,7 @@ Begin
         Left =34
         Top =14
         Right =193
-        Bottom =146
+        Bottom =132
         Top =10
         Name ="tblInvHdr"
         Name =""

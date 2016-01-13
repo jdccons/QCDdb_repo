@@ -17,39 +17,43 @@ Public Function CountDependents(strSSN As String) As Integer
     
     On Error GoTo ErrorHandler
     
-    
-    Dim db As DAO.Database
-    Dim rs As DAO.Recordset
     Dim strSQL As String
-    
-    Set db = CurrentDb()
-    
-    strSQL = "SELECT Count(tblDependent.DEPcounter) AS "
-    strSQL = strSQL & "CountOfDEPcounter "
-    strSQL = strSQL & "FROM tblDependent "
-    strSQL = strSQL & "WHERE (((tblDependent.DEPsubID)="
-    strSQL = strSQL & "'" & strSSN & "'));"
-    
-    
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rs.RecordCount > 0 Then
-        CountDependents = rs("CountOfDEPcounter")
+    strSQL = "select dbo.udf_DepCnt('" & strSSN & "') as [DepCnt];"
+    Call LoadADORecordset(strSQL)
+    If g_adoRS.RecordCount > 0 Then
+        CountDependents = g_adoRS("DepCnt")
     Else
         CountDependents = 0
     End If
     
-    rs.Close
-    db.Close
-    Set db = Nothing
-    
+    g_adoRS.Close
     
 Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume Exit_Point
+    If Err.Number = 94 Then
+        Resume Next
+    Else
+        MsgBox Err.DESCRIPTION & " " & Err.Number
+        Resume Exit_Point
+    End If
 End Function
+Function PrintIndividualCard() As Boolean
+    
+    Call Form_frmIndivSubscr.PrtCardMem_Click
+    PrintIndividualCard = True
+    
+End Function
+Public Sub RemoveIndividual(strSubID)
+
+    Dim strSQL As String
+    strSQL = "DELETE FROM tblSubscr " & _
+                "WHERE SubID = '" & strSubID & "'"
+                
+    ExecuteSQL strSQL
+    
+End Sub
 
 Public Function CountFamily(strSSN As String) As Integer
     'Purpose:  Counts the number of family members for an
@@ -118,12 +122,12 @@ Function PrtScreen_Indiv()
     
     
     Dim stDocName As String
-    Dim StrIndivID As String
+    Dim strIndivID As String
     Dim strWhere As String
     
     
-    StrIndivID = Forms!frmIndivSubscr!SUBssn
-    strWhere = "(([tblSubscr].[SUBssn]) = """ & StrIndivID & """)"
+    strIndivID = Forms!frmIndivSubscr!SUBssn
+    strWhere = "(([tblSubscr].[SUBssn]) = """ & strIndivID & """)"
     
     stDocName = "rptIndivSubscr"
     DoCmd.OpenReport stDocName, acPreview, , strWhere
@@ -155,12 +159,12 @@ Function PrtScreen_IndivInquire()
     
     
     Dim stDocName As String
-    Dim StrIndivID As String
+    Dim strIndivID As String
     Dim strWhere As String
     
     
-    StrIndivID = Forms!frmSubscrInquire!SUBssn
-    strWhere = "(([tblSubscr].[SUBssn]) = """ & StrIndivID & """)"
+    strIndivID = Forms!frmSubscrInquire!SUBssn
+    strWhere = "(([tblSubscr].[SUBssn]) = """ & strIndivID & """)"
     
     stDocName = "rptGrpSubscr"
     DoCmd.OpenReport stDocName, acPreview, , strWhere
@@ -173,38 +177,387 @@ ErrorHandler:
     MsgBox Err.DESCRIPTION & " " & Err.Number
     Resume Exit_Point
 End Function
-Function UpdateCustKeyIndiv()
-    'Purpose:  Updates the individual PFW customer key
-    '          don't believe this function is being used
+
+Public Function CountAgents(strSubID As String) As Integer
+    
+    'Purpose:  Count the number of agents assigned to the
+    '           the individual
+    '
     '--------------------------------------------------------
     '
-    ' Parameters:  -
-    ' Returns   :  -
+    ' Parameters: strSubID -
+    ' Returns   : Integer -
     ' Programmer:  John Criswell
-    ' Create Date:  12/11/07
-    ' Update Date:  12/11/07
-    ' Updated by:  John Criswell
+    ' Create Date:
+    ' Update Date:
+    ' Updated by:
     ' Reason:
     '---------------------------------------------------------
-   
-    On Error GoTo UpdateCustKeyIndiv_Err
+    On Error GoTo ErrorHandler
+
+    Dim strSQL As String
+    strSQL = "select PltCustKey, AgentId " & _
+                "from vw_IndivAgt " & _
+                "where SubscrId = '" & strSubID & "'"
     
-    If (Eval("DLookUp(""Customer_Key"",""ARCUST"",""[Customer_Key] = Forms![frmIndivSubscr]![PLTcustKEY]"") Is Not Null And [Forms]![frmIndivSubscr].[Dirty]")) Then
-        Beep
-        MsgBox "This customer key already exists in Platinum.  Modifications to this customer key are not allowed.", vbCritical, "UNABLE TO UPDATE"
-        SendKeys "{Esc}" + "{Esc}"
-        Exit Function
+    Call LoadADORecordset(strSQL)
+    
+    If g_adoRS.EOF Then
+        CountAgents = 0
+    Else
+        CountAgents = g_adoRS.RecordCount
     End If
-    If (Eval("DLookUp(""Customer_Key"",""ARCUST"",""[Customer_Key] = Forms![frmIndivSubscr]![PLTcustKEY]"") Is Not Null And [Forms]![frmIndivSubscr].[Dirty]")) Then
-        DoCmd.RunCommand acCmdUndo
-    End If
     
     
-UpdateCustKeyIndiv_Exit:
+Exit_Point:
     Exit Function
     
-UpdateCustKeyIndiv_Err:
-    MsgBox Error$
-    Resume UpdateCustKeyIndiv_Exit
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+
+Public Function InsertDefaultAgent(strSubID As String, strPltCustKey As String) As Boolean
     
+    'Purpose:  Inserts a default agent in tblIndivAgt
+    '
+    '
+    '--------------------------------------------------------
+    '
+    ' Parameters: strSubID, strPltCustKey -
+    ' Returns   : Integer -
+    ' Programmer:  John Criswell
+    ' Create Date:
+    ' Update Date:
+    ' Updated by:
+    ' Reason:
+    '---------------------------------------------------------
+    On Error GoTo ErrorHandler
+   
+    Dim strSQL As String
+    strSQL = "SELECT SubscrID FROM tblIndivAgt " & _
+                "WHERE SubscrID = '" & strSubID & "';"
+    LoadADORecordset (strSQL)
+    If g_adoRS.EOF Then
+        strSQL = "INSERT INTO tblIndivAgt " & _
+                "(AgentID, SubscrID, PltCustKey, [Primary], AgentRate, " & _
+                "CommOwed ) " & _
+                "VALUES ('CORPT', '" & strSubID & "', '" & _
+                strPltCustKey & "', " & _
+                "1, 0, 0)"
+        ExecuteSQL strSQL
+        InsertDefaultAgent = True
+    Else
+        InsertDefaultAgent = False
+        g_adoRS.Close
+    End If
+    
+    
+    
+    Exit Function
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+    
+End Function
+Public Function ChangeIndivStatus() As Boolean
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmIndivSubscr.cmdChangeStatus_Click
+    ChangeIndivStatus = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Public Function IndivInvoice()
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmIndivSubscr.Invoice_Click
+    IndivInvoice = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
+End Function
+
+Public Function CustomerLookup()
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmIndivSubscr.Customer_Lookup_Click
+    CustomerLookup = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+
+End Function
+
+Public Function DupPltCustKeys(Optional strPltCustKey As String) As Boolean
+
+    On Error GoTo ErrorHandler
+    
+    Dim strSQL As String
+    If Not IsNull(strPltCustKey) Then
+        strSQL = "Select CustomerKey " & _
+                    "From vw_Customer " & _
+                    "Where CustomerKey = '" & strPltCustKey & "' "
+       LoadADORecordset strSQL
+        If g_adoRS.EOF Then
+            DupPltCustKeys = False
+        Else
+            DupPltCustKeys = True
+        End If
+        
+    ElseIf IsNull(strPltCustKey) Then
+        strSQL = "Select CustomerKey, count(CustomerKey) CntCustomerKey " & _
+                    "From vw_Customer " & _
+                    "Group By CustomerKey " & _
+                    "Having count(CustomerKey) > 1;"
+        LoadADORecordset strSQL
+        If g_adoRS.EOF Then
+            DupPltCustKeys = False
+        Else
+            DupPltCustKeys = True
+        End If
+        
+    End If
+    
+    
+    Exit Function
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+Public Function DeleteSalesReceipt_One() As Boolean
+    '  Calls a procedure in a form (frmInvIndiv_One.btnDelete_Click)
+    '  to delete a sales receipt
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvIndiv_One.btnDelete_Click
+    DeleteSalesReceipt_One = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+Function DeleteSalesReceipt() As Boolean
+'  Calls a procedure in a form (frmInvIndiv.btnDelete_Click)
+'  to delete a sales receipt
+'  Code used on a menu bar (mnuInvIndiv_Edit)
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmInvIndiv.btnDelete_Click
+    DeleteSalesReceipt = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Function DeleteIndivSubscr() As Boolean
+'  Calls a procedure in a form (frmIndivSubscr.btnDelete_Click)
+'  to delete s subscriber
+'  Code used on a menu bar (mnuIndivSubscr_Edit)
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmIndivSubscr.btnDelete_Click
+    DeleteIndivSubscr = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+
+Public Function DeleteIndividualSubscriber(strSubID As String, strUserName As String) As Boolean
+'-------------------------------------------
+'Purpose:   Deletes a Individual Customer from the
+'           tblSubscr
+'-------------------------------------------
+'
+On Error GoTo Err_DeleteIndividualSubscriber
+
+        Dim strSQL As String
+        strSQL = "SELECT tblSubscr.PltCustKey " & _
+                    "FROM tblSubscr " & _
+                    "WHERE (((tblSubscr.SubID)='" & strSubID & "'));"
+                    
+        Call LoadADORecordset(strSQL)
+        
+        If g_adoRS.EOF Then
+            DeleteIndividualSubscriber = False
+        Else
+            strSQL = "usp_DeleteIndividualSubscriber"
+            
+            If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+            
+            With g_adoConnection
+                 .ConnectionString = SetConnxn
+                 .Open
+            End With
+            With g_adoCommand
+                  .ActiveConnection = g_adoConnection
+                  .CommandType = adCmdStoredProc
+                  .CommandText = strSQL
+                  'Return parm
+                  Set g_adoParm = .CreateParameter("ReturnValue", adInteger, adParamReturnValue)
+                  .Parameters.Append g_adoParm
+                  ' SubID input
+                  Set g_adoParm = .CreateParameter("@SubID", adChar, adParamInput, 8)
+                  .Parameters.Append g_adoParm
+                  .Parameters("@SubID").value = strSubID
+                  ' UserName input
+                  Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+                  .Parameters.Append g_adoParm
+                  .Parameters("@UserName").value = strUserName
+                  .Execute
+                  g_iRtnVal = .Parameters.Item("ReturnValue")
+            End With
+            If g_iRtnVal = 1 Then
+                DeleteIndividualSubscriber = True
+            Else
+                DeleteIndividualSubscriber = False
+            End If
+        End If
+        
+        If g_adoConnection.STATE = adStateOpen Then
+                g_adoConnection.Close
+                Set g_adoCommand = Nothing
+                Set g_adoConnection = Nothing
+                Set g_adoRS = Nothing
+                Set g_adoParm = Nothing
+        End If
+        
+Exit Function
+        
+Exit_DeleteIndividualSubscriber:
+    Exit Function
+    
+Err_DeleteIndividualSubscriber:
+    ' Display error information.
+    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Exit_DeleteIndividualSubscriber
+
+End Function
+
+Public Function mneumonic(strLastName As String, strFirstName As String) As String
+    
+    On Error GoTo PROC_ERR
+    
+    'using the first three letters of the last name
+    'and the first two letters for the first name
+    'generate a five character mneumonic to be used
+    'as the "Platinum" customer key
+    Dim strLongName As String
+    Dim strShortName As String
+    Dim strSQL As String
+    Dim I As Integer
+    
+    strLongName = UCase(Mid(strLastName, 1, 3) & Mid(strFirstName, 1, 2))
+    strShortName = UCase(Mid(strLastName, 1, 3) & Mid(strFirstName, 1, 1))
+    
+    If DupPltCustKeys(strLongName) Then
+        strSQL = "SELECT ID, PltCustKey"
+        strSQL = strSQL & " FROM tblSubscr"
+        strSQL = strSQL & " WHERE SUBSTRING(PltCustKey,1,4) = '" & strShortName & "' AND SubClassKey = 'INDIV'"
+        strSQL = strSQL & " ORDER BY ID;"
+        LoadADORecordset (strSQL)
+        g_adoRS.MoveLast
+        
+        If Not IsNumeric(Mid(g_adoRS("PltCustKey"), 5, 5)) Then
+            strLongName = strShortName & "1"
+        ElseIf IsNumeric(Mid(g_adoRS("PltCustKey"), 5, 5)) Then
+            I = CInt(Mid(g_adoRS("PltCustKey"), 5, 5))
+            I = I + 1
+            strLongName = strShortName & CStr(I)
+        Else
+            strLongName = strShortName & Chr(Asc(Mid(g_adoRS("PltCustKey"), 5, 5)) + 1)
+        End If
+    End If
+'
+
+    g_adoRS.Close
+    mneumonic = strLongName
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Function
+
+
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function:modIndiv.mneumonic"
+  Resume PROC_EXIT
+    
+End Function
+
+Public Function BillingGroup(dteSubContBeg As Date, dteSubContEnd As Date) As String
+
+On Error GoTo PROC_ERR
+
+    ' based on the number of months
+    ' between the contract begin and
+    ' end dates, determine the billing
+    ' group the individual belongs to
+    Dim intMonths As Integer
+    intMonths = DateDiff("m", dteSubContBeg, dteSubContEnd)
+    Select Case intMonths
+        Case 1 To 12
+            BillingGroup = "INDV1"
+         Case 13 To 24
+            BillingGroup = "INDV2"
+         Case 25 To 36
+            BillingGroup = "INDV3"
+        Case Is > 36
+            BillingGroup = "INDV3"
+    End Select
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Function
+
+
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function:modIndiv.BillingGroup"
+  Resume PROC_EXIT
+
+
 End Function

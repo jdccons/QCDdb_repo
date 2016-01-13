@@ -1,10 +1,10 @@
 Operation =1
 Option =8
-Where ="(((tblCommission.COMMagent)=\"rm1\" Or (tblCommission.COMMagent)=\"rm2\" Or (tbl"
-    "Commission.COMMagent)=\"rm3\" Or (tblCommission.COMMagent)=\"rm4\" Or (tblCommis"
-    "sion.COMMagent)=\"rm5\" Or (tblCommission.COMMagent)=\"rm6\" Or (tblCommission.C"
-    "OMMagent)=\"rm7\") AND ((tblCommission.COMMcustCLASS)=\"INDIV\" Or (tblCommissio"
-    "n.COMMcustCLASS)=\"GROUP\"))"
+Where ="(((tblCommission.CommAgent)=\"rm1\" Or (tblCommission.CommAgent)=\"rm2\" Or (tbl"
+    "Commission.CommAgent)=\"rm3\" Or (tblCommission.CommAgent)=\"rm4\" Or (tblCommis"
+    "sion.CommAgent)=\"rm5\" Or (tblCommission.CommAgent)=\"rm6\" Or (tblCommission.C"
+    "ommAgent)=\"rm7\") AND ((tblCommission.CommCustClass)=\"INDIV\" Or (tblCommissio"
+    "n.CommCustClass)=\"GROUP\"))"
 Begin InputTables
     Name ="tblCommission"
     Name ="tblAgent"
@@ -12,18 +12,20 @@ End
 Begin OutputColumns
     Expression ="tblCommission.*"
     Alias ="Salesp_Name"
-    Expression ="tblAgent.AGENT_LUname"
+    Expression ="tblAgent.Agent_LUname"
 End
 Begin Joins
     LeftTable ="tblCommission"
     RightTable ="tblAgent"
-    Expression ="tblCommission.COMMagent = tblAgent.AGENTid"
+    Expression ="tblCommission.CommAgent=tblAgent.AgentId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -31,10 +33,10 @@ Begin
     Left =93
     Top =92
     Right =1002
-    Bottom =397
+    Bottom =416
     Left =-1
     Top =-1
-    Right =902
+    Right =894
     Bottom =144
     Left =0
     Top =0
@@ -43,7 +45,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =3
         Name ="tblCommission"
         Name =""
@@ -52,7 +54,7 @@ Begin
         Left =394
         Top =6
         Right =490
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblAgent"
         Name =""

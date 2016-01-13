@@ -1,31 +1,31 @@
 Operation =3
 Name ="ARCUST"
 Option =0
-Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmIndivSubscr]![PLTcustKEY]))"
+Where ="(((tblSubscr.PltCustKey)=Forms!frmIndivSubscr!PLTcustKEY))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
     Name ="CustomerKey"
-    Expression ="tblSubscr.PLTcustKEY"
+    Expression ="tblSubscr.PltCustKey"
     Name ="CustomerName"
     Expression ="tblSubscr.SUB_LUname"
     Name ="CustomerAddress1"
-    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SubStreet1"
     Name ="CustomerAddress2"
-    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SubStreet2"
     Name ="CustomerCity"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Name ="CustomerState"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Name ="CustomerZipCode"
-    Expression ="tblSubscr.SUBzip"
+    Expression ="tblSubscr.SubZip"
     Name ="AttnPhone"
-    Expression ="tblSubscr.SUBphoneHOME"
+    Expression ="tblSubscr.SubPhoneHome"
     Name ="ContactPhone"
-    Expression ="tblSubscr.SUBphoneWORK"
+    Expression ="tblSubscr.SubPhoneWork"
     Name ="TerritoryKey"
-    Expression ="tblSubscr.SUBgeoID"
+    Expression ="tblSubscr.SubGeoID"
     Alias ="Date"
     Name ="RecDate"
     Expression ="Format(Date(),\"mm/dd/yyyy\")"
@@ -51,10 +51,10 @@ Begin
     Left =-25
     Top =29
     Right =1011
-    Bottom =388
+    Bottom =353
     Left =-1
     Top =-1
-    Right =1029
+    Right =1021
     Bottom =144
     Left =0
     Top =0
@@ -63,7 +63,7 @@ Begin
         Left =41
         Top =5
         Right =200
-        Bottom =104
+        Bottom =93
         Top =0
         Name ="tblSubscr"
         Name =""

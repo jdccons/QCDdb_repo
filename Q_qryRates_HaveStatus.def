@@ -1,26 +1,27 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBstatus) Is Null))"
+Where ="(((tblSubscr.SubStatus) Is Null))"
 Begin InputTables
-    Name ="tblSubscr"
     Name ="tblGrp"
+    Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBssn"
-    Expression ="tblSubscr.SUBgroupID"
-    Expression ="tblSubscr.SUBstatus"
-    Expression ="tblSubscr.SUBcancelled"
+    Expression ="tblSubscr.SubSSN"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubStatus"
+    Expression ="tblSubscr.SubCancelled"
+    Alias ="Expr1"
     Expression ="tblSubscr.SUBcancelled1"
-    Expression ="tblGrp.GRcancelled"
+    Expression ="tblGrp.GRCancelled"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID=tblSubscr.SubGroupID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBcancelled"
+    Expression ="tblSubscr.SubCancelled"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -33,14 +34,14 @@ dbText "Description" ="tblRates clean up - 01 (checks for PENDG, GRSUB, AND INDI
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1280
-    Bottom =936
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =460
     Left =-1
     Top =-1
-    Right =1277
+    Right =1253
     Bottom =240
     Left =0
     Top =0
@@ -49,7 +50,7 @@ Begin
         Left =324
         Top =2
         Right =513
-        Bottom =184
+        Bottom =180
         Top =0
         Name ="tblSubscr"
         Name =""
@@ -58,7 +59,7 @@ Begin
         Left =38
         Top =6
         Right =245
-        Bottom =188
+        Bottom =184
         Top =31
         Name ="tblGrp"
         Name =""

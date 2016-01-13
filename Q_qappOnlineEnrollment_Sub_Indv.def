@@ -47,7 +47,8 @@ Begin OutputColumns
     Expression ="tblSubscriber_temp.PhoneWork"
     Name ="SUBdob"
     Expression ="tblSubscriber_temp.DOB"
-    Name ="SubNoDepent"
+    Alias ="Expr1"
+    Name ="DepCnt"
     Expression ="tblSubscriber_temp.NoDependents"
     Name ="SubGender"
     Expression ="tblSubscriber_temp.Gender"
@@ -269,10 +270,10 @@ Begin
     Left =65
     Top =42
     Right =969
-    Bottom =515
+    Bottom =382
     Left =-1
     Top =-1
-    Right =872
+    Right =889
     Bottom =160
     Left =0
     Top =0
@@ -281,7 +282,7 @@ Begin
         Left =120
         Top =4
         Right =452
-        Bottom =153
+        Bottom =152
         Top =0
         Name ="tblSubscriber_temp"
         Name =""

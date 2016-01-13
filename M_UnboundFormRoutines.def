@@ -89,7 +89,7 @@ Sub ap_LoadRecord(rstDynCurrent As DAO.Recordset, frmCurrForm As Form)
       ctlCurrent.Enabled = False
 
         '-- Store the recordset value into the form control
-        ctlCurrent.Value = rstDynCurrent(ctlCurrent.Name).Value
+        ctlCurrent.value = rstDynCurrent(ctlCurrent.Name).value
 
       End If
       Err = 0
@@ -180,7 +180,7 @@ Function ap_NewRecord(frmCurrForm As Form, intDisable As Integer)
                ctlCurrent.Enabled = True
             End If
 
-            ctlCurrent.Value = Null
+            ctlCurrent.value = Null
 
          Else '-- Otherwise enable it unless told to DisplayOnly in the
               '-- Tag property of the control.
@@ -193,22 +193,22 @@ Function ap_NewRecord(frmCurrForm As Form, intDisable As Integer)
 
             '-- Handle the default value assigned to the control.
             If IsNull(ctlCurrent.DefaultValue) Then
-               ctlCurrent.Value = Null
+               ctlCurrent.value = Null
             Else
 
                '-- Default value is a function.
                If Left$(ctlCurrent.DefaultValue, 1) = "=" Then
 
-                  ctlCurrent.Value = Eval(Mid$(ctlCurrent.DefaultValue, 2))
+                  ctlCurrent.value = Eval(Mid$(ctlCurrent.DefaultValue, 2))
                Else
 
                   '-- Default value is a string.
                   If InStr(ctlCurrent.DefaultValue, """") <> 0 Then
 
-                     ctlCurrent.Value = Eval(ctlCurrent.DefaultValue)
+                     ctlCurrent.value = Eval(ctlCurrent.DefaultValue)
 
                   Else '-- Default value any other type'
-                     ctlCurrent.Value = ctlCurrent.DefaultValue
+                     ctlCurrent.value = ctlCurrent.DefaultValue
                   End If
                End If
             End If
@@ -323,7 +323,7 @@ Function ap_SaveRecord(frmCurrForm As Form, varIntAskSave) As Integer
       Set qdfSave = dbsDbLocal.QueryDefs(ap_GetRecordSource(frmCurrForm))
       For intI = 0 To qdfSave.Parameters.Count - 1   '~~Access 2.0
           Set prm = qdfSave.Parameters(intI)
-          prm.Value = Eval(prm.Name)
+          prm.value = Eval(prm.Name)
       Next intI
 
       Set rstDynCurrent = qdfSave.OpenRecordset()
@@ -374,12 +374,12 @@ Function ap_SaveRecord(frmCurrForm As Form, varIntAskSave) As Integer
 
             If intCheckField Then
                '-- If data has changed, the update it.
-               If IsNull(rstDynCurrent(ctlCurrent.Name).Value) And Not IsNull(ctlCurrent.Value) Then
-                  rstDynCurrent(ctlCurrent.Name).Value = ctlCurrent.Value
-               ElseIf Not IsNull(rstDynCurrent(ctlCurrent.Name).Value) And IsNull(ctlCurrent.Value) Then
-                  rstDynCurrent(ctlCurrent.Name).Value = ctlCurrent.Value
-               ElseIf rstDynCurrent(ctlCurrent.Name).Value <> ctlCurrent.Value Then
-                  rstDynCurrent(ctlCurrent.Name).Value = ctlCurrent.Value
+               If IsNull(rstDynCurrent(ctlCurrent.Name).value) And Not IsNull(ctlCurrent.value) Then
+                  rstDynCurrent(ctlCurrent.Name).value = ctlCurrent.value
+               ElseIf Not IsNull(rstDynCurrent(ctlCurrent.Name).value) And IsNull(ctlCurrent.value) Then
+                  rstDynCurrent(ctlCurrent.Name).value = ctlCurrent.value
+               ElseIf rstDynCurrent(ctlCurrent.Name).value <> ctlCurrent.value Then
+                  rstDynCurrent(ctlCurrent.Name).value = ctlCurrent.value
                End If
             End If
 
@@ -455,7 +455,7 @@ Sub ap_ValueStandardSearch(frmCurrForm As Form)
 
     For intI = 0 To qdfSearch.Parameters.Count - 1   '~~Access 2.0
         Set prm = qdfSearch.Parameters(intI)
-        prm.Value = Eval(prm.Name)
+        prm.value = Eval(prm.Name)
     Next intI
 
      '-- Open the recordset

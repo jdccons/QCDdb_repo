@@ -15,7 +15,7 @@ Begin OutputColumns
     Expression ="tblSubscr_delete.EIMBRID"
     Alias ="EISBRID"
     Name ="EISBRID"
-    Expression ="[tblSubscr_delete].[SUBssn] & \"00\""
+    Expression ="tblSubscr_delete.SUBssn & \"00\""
     Alias ="EISSN"
     Name ="EISSN"
     Expression ="tblSubscr_delete.SubSSN"
@@ -51,12 +51,12 @@ Begin OutputColumns
     Expression ="tblSubscr_delete.SubZip"
     Alias ="EIHPHR"
     Name ="EIHPHR"
-    Expression ="IIf(Not IsNull([tblSubscr_delete].[SubPhoneHome]),StripChars_TSB([tblSubscr_dele"
-        "te].[SubPhoneHome],\"-\"),\"\")"
+    Expression ="IIf(Not IsNull(tblSubscr_delete.SubPhoneHome),StripChars_TSB(tblSubscr_delete.Su"
+        "bPhoneHome,\"-\"),\"\")"
     Alias ="EIWPHR"
     Name ="EIWPHR"
-    Expression ="IIf(Not IsNull([tblSubscr_delete].[SubPhoneWork]),StripChars_TSB([tblSubscr_dele"
-        "te].[SubPhoneWork],\"-\"),\"\")"
+    Expression ="IIf(Not IsNull(tblSubscr_delete.SubPhoneWork),StripChars_TSB(tblSubscr_delete.Su"
+        "bPhoneWork,\"-\"),\"\")"
     Alias ="EIGRPID"
     Name ="EIGRPID"
     Expression ="'MNQ' & [GROUPid]"
@@ -68,29 +68,28 @@ Begin OutputColumns
     Expression ="Format([GRcontBEG],\"mmddyyyy\")"
     Alias ="EIDTCVEF"
     Name ="EIDTCVEF"
-    Expression ="IIf(IsNull([tblSubscr_delete].[PreexistingDate])=True,Format([tblSubscr_delete]."
-        "[SUBeffDATE],\"mmddyyyy\"),Format([tblSubscr_delete].[PreexistingDate],\"mmddyyy"
-        "y\"))"
+    Expression ="IIf(IsNull(tblSubscr_delete.PreexistingDate)=True,Format(tblSubscr_delete.SUBeff"
+        "DATE,\"mmddyyyy\"),Format(tblSubscr_delete.PreexistingDate,\"mmddyyyy\"))"
     Alias ="EIDTCVEN"
     Name ="EIDTCVEN"
-    Expression ="IIf(Not IsNull([tblSubscr_delete].[DateDeleted]),Format([tblSubscr_delete].[Date"
-        "Deleted],\"mmddyyyy\"),Null)"
+    Expression ="IIf(Not IsNull(tblSubscr_delete.DateDeleted),Format(tblSubscr_delete.DateDeleted"
+        ",\"mmddyyyy\"),Null)"
     Alias ="EIMBRDP"
     Name ="EIMBRDP"
     Expression ="\"0\""
     Alias ="EIDTTERM"
     Name ="EIDTTERM"
-    Expression ="IIf([tblSubscr_delete].[DateDeleted]=#1/1/1900#,\"\",Format([tblSubscr_delete].["
-        "DateDeleted],\"mmddyyyy\"))"
+    Expression ="IIf(tblSubscr_delete.DateDeleted=#1/1/1900#,\"\",Format(tblSubscr_delete.DateDel"
+        "eted,\"mmddyyyy\"))"
 End
 Begin Joins
     LeftTable ="tblSubscr_delete"
     RightTable ="tlkpAllAmericanPlan"
-    Expression ="tblSubscr_delete.PlanID = tlkpAllAmericanPlan.PlanID"
+    Expression ="tblSubscr_delete.PlanID=tlkpAllAmericanPlan.PlanID"
     Flag =2
     LeftTable ="tblGrp"
     RightTable ="tblSubscr_delete"
-    Expression ="tblGrp.GROUPid = tblSubscr_delete.SubGroupID"
+    Expression ="tblGrp.GroupID=tblSubscr_delete.SubGroupID"
     Flag =3
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -112,10 +111,10 @@ Begin
     Left =40
     Top =10
     Right =1258
-    Bottom =605
+    Bottom =617
     Left =-1
     Top =-1
-    Right =1211
+    Right =1203
     Bottom =427
     Left =0
     Top =0
@@ -124,7 +123,7 @@ Begin
         Left =605
         Top =39
         Right =771
-        Bottom =191
+        Bottom =187
         Top =35
         Name ="tblGrp"
         Name =""
@@ -133,7 +132,7 @@ Begin
         Left =113
         Top =32
         Right =352
-        Bottom =274
+        Bottom =270
         Top =3
         Name ="tblSubscr_delete"
         Name =""
@@ -142,7 +141,7 @@ Begin
         Left =592
         Top =218
         Right =752
-        Bottom =310
+        Bottom =306
         Top =0
         Name ="tlkpAllAmericanPlan"
         Name =""

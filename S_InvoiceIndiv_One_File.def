@@ -1,0 +1,19 @@
+Version =196611
+ColumnsShown =1
+Begin
+    MacroName ="&Create Sales Receipt"
+    Action ="RunCode"
+    Argument ="CreateInvoiceIndividual_One()"
+End
+Begin
+    MacroName ="&Post Sales Receipt(s)"
+    Action ="RunCode"
+    Argument ="PostInvoiceIndividual_One()"
+End
+Begin
+    MacroName ="&Close"
+    Action ="Close"
+    Argument ="-1"
+    Argument =""
+    Argument ="0"
+End

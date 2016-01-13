@@ -5,18 +5,25 @@ Begin InputTables
     Name ="tmpBEXHM_deps_2009"
 End
 Begin OutputColumns
+    Alias ="Expr1"
     Name ="DEPsubID"
     Expression ="tmpBEXHM_deps_2009.SubSSN"
+    Alias ="Expr2"
     Name ="DEPlastNAME"
     Expression ="tmpBEXHM_deps_2009.[Depn Last name]"
+    Alias ="Expr3"
     Name ="DEPfirstNAME"
     Expression ="tmpBEXHM_deps_2009.[Depn First name]"
+    Alias ="Expr4"
     Name ="DEPmiddleNAME"
     Expression ="tmpBEXHM_deps_2009.[Middle Initial]"
+    Alias ="Expr5"
     Name ="DEPrelationship"
     Expression ="tmpBEXHM_deps_2009.[Type of dependent]"
+    Alias ="Expr6"
     Name ="DEPgender"
     Expression ="tmpBEXHM_deps_2009.[Depn Gender]"
+    Alias ="Expr7"
     Name ="DEPdob"
     Expression ="tmpBEXHM_deps_2009.[Depn Birth Date]"
 End
@@ -27,14 +34,14 @@ dbByte "Orientation" ="0"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1440
-    Bottom =776
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =683
     Left =-1
     Top =-1
-    Right =1437
+    Right =1253
     Bottom =463
     Left =0
     Top =0
@@ -43,7 +50,7 @@ Begin
         Left =38
         Top =6
         Right =381
-        Bottom =317
+        Bottom =49
         Top =0
         Name ="tmpBEXHM_deps_2009"
         Name =""

@@ -1,41 +1,41 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=False))"
+Where ="(((tblGrp.GRCancelled)=False))"
 Begin InputTables
-    Name ="tlkpClientServiceReps"
     Name ="tblGrp"
+    Name ="tlkpClientServiceReps"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
     Alias ="PhonePrimary"
     Expression ="IIf([GRPhone1] Is Not Null,CStr([GRphone1]),Null)"
     Alias ="PhoneSecondary"
     Expression ="IIf([GRPhone2] Is Not Null,CStr([GRphone2]),Null)"
     Alias ="PhoneFax"
     Expression ="IIf([GRFax] Is Not Null,CStr([GRfax]),Null)"
-    Expression ="tblGrp.GRmainCONT"
-    Expression ="tblGrp.GRsrvCONT"
+    Expression ="tblGrp.GRMainCont"
+    Expression ="tblGrp.GRSrvCont"
     Alias ="ContBeg"
     Expression ="Format([GRcontBEG],\"m/d/yy\")"
     Alias ="ContEnd"
     Expression ="Format([GRcontEND],\"m/d/yy\")"
-    Expression ="tblGrp.GRnotes"
+    Expression ="tblGrp.GRNotes"
     Alias ="ClientServiceRep"
     Expression ="tlkpClientServiceReps.RepName"
     Alias ="IDStatus"
     Expression ="IIf([GRcancelled]=-1,\"Cancelled\",\"Active\")"
-    Expression ="tblGrp.GRemail"
+    Expression ="tblGrp.GREmail"
     Alias ="Country"
     Expression ="\"United States of America\""
     Alias ="Title"
-    Expression ="tblGrp.GRmainCONTtitle"
+    Expression ="tblGrp.GRMainContTitle"
     Alias ="Group Type"
     Expression ="IIf([GroupType]=1,\"QCD Only\",IIf([GroupType]=2,\"Mixed\",\"Freedom of Choice\""
         "))"
@@ -43,7 +43,7 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tlkpClientServiceReps"
-    Expression ="tblGrp.GRClientSvcRepID = tlkpClientServiceReps.RepID"
+    Expression ="tblGrp.GRClientSvcRepID=tlkpClientServiceReps.RepID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -61,11 +61,6 @@ Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
         dbInteger "ColumnWidth" ="3210"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRPgeoID"
-        dbInteger "ColumnWidth" ="1125"
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
@@ -164,30 +159,30 @@ Begin
     Left =105
     Top =86
     Right =1258
-    Bottom =490
+    Bottom =497
     Left =-1
     Top =-1
-    Right =1146
+    Right =1138
     Bottom =231
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =248
-        Top =16
-        Right =385
-        Bottom =111
-        Top =0
-        Name ="tlkpClientServiceReps"
-        Name =""
-    End
-    Begin
         Left =13
         Top =11
         Right =144
-        Bottom =166
+        Bottom =159
         Top =33
         Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =248
+        Top =16
+        Right =385
+        Bottom =104
+        Top =0
+        Name ="tlkpClientServiceReps"
         Name =""
     End
 End

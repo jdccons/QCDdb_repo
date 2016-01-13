@@ -16,15 +16,15 @@ End
 Begin Joins
     LeftTable ="tbldentist"
     RightTable ="tblGeographical"
-    Expression ="tbldentist.DentGeoID = tblGeographical.GEOid"
+    Expression ="tbldentist.DentGeoID=tblGeographical.GEOid"
     Flag =2
     LeftTable ="tbldentist"
     RightTable ="tbldentistspec"
-    Expression ="tbldentist.DentSpecialty = tbldentistspec.SPECIALTYID"
+    Expression ="tbldentist.DentSpecialty=tbldentistspec.SPECIALTYID"
     Flag =2
     LeftTable ="tbldentist"
     RightTable ="tlkpProvRelsRep"
-    Expression ="tbldentist.ProvRelsRepID = tlkpProvRelsRep.ProvRelsRepID"
+    Expression ="tbldentist.ProvRelsRepID=tlkpProvRelsRep.ProvRelsRepID"
     Flag =2
 End
 Begin OrderBy
@@ -35,6 +35,8 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
@@ -42,10 +44,10 @@ Begin
     Left =62
     Top =96
     Right =778
-    Bottom =401
+    Bottom =420
     Left =-1
     Top =-1
-    Right =709
+    Right =701
     Bottom =144
     Left =0
     Top =0
@@ -54,7 +56,7 @@ Begin
         Left =38
         Top =6
         Right =155
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tbldentist"
         Name =""
@@ -63,7 +65,7 @@ Begin
         Left =172
         Top =6
         Right =268
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tblGeographical"
         Name =""
@@ -72,7 +74,7 @@ Begin
         Left =306
         Top =6
         Right =402
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tbldentistspec"
         Name =""
@@ -81,7 +83,7 @@ Begin
         Left =440
         Top =6
         Right =536
-        Bottom =83
+        Bottom =94
         Top =0
         Name ="tlkpProvRelsRep"
         Name =""

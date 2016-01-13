@@ -1,24 +1,30 @@
-Version =17
-VersionRequired =17
-Checksum =-612876026
+Version =20
+VersionRequired =20
+Checksum =1128300525
 Begin Form
-    PopUp = NotDefault
     Modal = NotDefault
     RecordSelectors = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DefaultView =0
     ScrollBars =0
+    ViewsAllowed =1
     Width =6045
     ItemSuffix =24
-    Left =1080
-    Top =1125
-    Right =7125
-    Bottom =5775
+    Left =-22692
+    Top =1692
+    Right =-14856
+    Bottom =8400
     RecSrcDt = Begin
         0x2223dcb3b2c4e140
     End
     Caption ="Contract Expiration Report - Group"
+    MenuBar ="Dialog"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
         Begin CommandButton
             TextFontFamily =2
@@ -27,6 +33,9 @@ Begin Form
             Height =4663
             BackColor =12632256
             Name ="Detail0"
+            GUID = Begin
+                0x2abace52cc7864418992d90da8c93130
+            End
             Begin
                 Begin Label
                     BackStyle =0
@@ -40,6 +49,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text67"
                     Caption ="Contract Ending Date From: "
+                    GUID = Begin
+                        0xe51ccd4454d8384598164e764497ee9b
+                    End
                 End
                 Begin OptionGroup
                     SpecialEffect =1
@@ -51,6 +63,9 @@ Begin Form
                     TabIndex =4
                     Name ="OptSortBy"
                     DefaultValue ="1"
+                    GUID = Begin
+                        0xca26cb038066da48b5dd7be7f805cadb
+                    End
                     Begin
                         Begin Label
                             BackStyle =0
@@ -63,6 +78,9 @@ Begin Form
                             BackColor =12632256
                             Name ="LblSortBy"
                             Caption ="Sort By"
+                            GUID = Begin
+                                0xb0094c2bdd7a134dab13705576df805e
+                            End
                         End
                         Begin OptionButton
                             SpecialEffect =2
@@ -73,6 +91,9 @@ Begin Form
                             Height =180
                             OptionValue =1
                             Name ="BtnCustID"
+                            GUID = Begin
+                                0x8bb0b7636869e84e8de77274738e5877
+                            End
                             Begin
                                 Begin Label
                                     BackStyle =0
@@ -84,6 +105,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="LblContractEnd"
                                     Caption ="Contract Ending Date"
+                                    GUID = Begin
+                                        0x391fd11c424647469a17066b084ff852
+                                    End
                                 End
                             End
                         End
@@ -96,6 +120,9 @@ Begin Form
                             Height =180
                             OptionValue =2
                             Name ="BtnCustName"
+                            GUID = Begin
+                                0x2fa36b0f3a50054d878be9fe7b1ad4d4
+                            End
                             Begin
                                 Begin Label
                                     BackStyle =0
@@ -107,6 +134,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="LblGeo"
                                     Caption ="Geographical"
+                                    GUID = Begin
+                                        0x98c40a3c774e984a880e85d26a3bcfd2
+                                    End
                                 End
                             End
                         End
@@ -118,6 +148,9 @@ Begin Form
                             Width =1584
                             OptionValue =3
                             Name ="Button21"
+                            GUID = Begin
+                                0xd74b99c9baa1694ea9b706d72afbbe84
+                            End
                             Begin
                                 Begin Label
                                     OverlapFlags =247
@@ -128,6 +161,9 @@ Begin Form
                                     BackColor =12632256
                                     Name ="LblGroup"
                                     Caption ="Group"
+                                    GUID = Begin
+                                        0x27e9add6d132f34197b080173a527429
+                                    End
                                 End
                             End
                         End
@@ -166,6 +202,9 @@ Begin Form
                         0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
                         0xffffff0000000000
                     End
+                    GUID = Begin
+                        0x2f2cab8c82e52f4981264471d2e9164b
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =2
@@ -176,6 +215,9 @@ Begin Form
                     Name ="FromDate"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x11a942af63f6884191394b45193a237e
+                    End
                 End
                 Begin TextBox
                     SpecialEffect =2
@@ -187,6 +229,9 @@ Begin Form
                     Name ="ToDate"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0xfd79c5fa69ec404aa23be36e0bafa5c0
+                    End
                     Begin
                         Begin Label
                             OverlapFlags =85
@@ -199,6 +244,9 @@ Begin Form
                             BackColor =12632256
                             Name ="Text7"
                             Caption ="To: "
+                            GUID = Begin
+                                0x300da2796b7d674db59a57654e9070f5
+                            End
                         End
                     End
                 End
@@ -214,6 +262,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text15"
                     Caption ="Geographical From: "
+                    GUID = Begin
+                        0x5b2c47d50cae6c4ea34df12719d6b691
+                    End
                 End
                 Begin Label
                     BackStyle =0
@@ -227,6 +278,9 @@ Begin Form
                     BackColor =12632256
                     Name ="Text8"
                     Caption =" To: "
+                    GUID = Begin
+                        0x0790e3e447531841b354348537f1bc65
+                    End
                 End
                 Begin ComboBox
                     ColumnHeads = NotDefault
@@ -239,7 +293,10 @@ Begin Form
                     Top =1425
                     Width =1000
                     TabIndex =2
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x9075092c449fca458a1aa58d335016f6
+                    End
                     Name ="c-GEOfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT qryGeoID.GEOid AS Geo_ID, qryGeoID.GEOdesc AS Geo_Description FROM qryGeo"
@@ -258,7 +315,10 @@ Begin Form
                     Top =1785
                     Width =1000
                     TabIndex =3
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"5\""
+                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
+                    GUID = Begin
+                        0x08e9f09b62c8c94c9c1438df6ab2048b
+                    End
                     Name ="c-GEOto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT qryGeoID.GEOid AS Geo_ID, qryGeoID.GEOdesc AS Geo_Description FROM qryGeo"
@@ -302,22 +362,22 @@ On Error GoTo Err_PreviewButton_Click
     If Not IsNull([c-GEOfrom]) Then
         If Not IsNull([c-GEOto]) Then
             If strWhere = "" Then
-                strWhere = "[GRPgeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
+                strWhere = "[GRGeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
             Else
-                strWhere = strWhere & " AND [GRPgeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
+                strWhere = strWhere & " AND [GRGeoID] BETWEEN '" & Me![c-GEOfrom] & "' AND '" & Me![c-GEOto] & "'"
             End If
         Else
             If strWhere = "" Then
-                strWhere = "[GRPgeoID] >= '" & Me![c-GEOfrom] & "'"
+                strWhere = "[GRGeoID] >= '" & Me![c-GEOfrom] & "'"
             Else
-                strWhere = strWhere & " AND [GRPgeoID] >= '" & Me![c-GEOfrom] & "'"
+                strWhere = strWhere & " AND [GRGeoID] >= '" & Me![c-GEOfrom] & "'"
             End If
         End If
     ElseIf Not IsNull([c-GEOto]) Then
         If strWhere = "" Then
-            strWhere = "[GRPgeoID] <= '" & Me![c-GEOto] & "'"
+            strWhere = "[GRGeoID] <= '" & Me![c-GEOto] & "'"
         Else
-            strWhere = strWhere & " AND [GRPgeoID] <= '" & Me![c-GEOto] & "'"
+            strWhere = strWhere & " AND [GRGeoID] <= '" & Me![c-GEOto] & "'"
         End If
     End If
     

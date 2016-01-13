@@ -1,8 +1,8 @@
 Operation =1
 Option =8
 Where ="(((tblAgent.PayCommTo)=1 Or (tblAgent.PayCommTo)=2 Or (tblAgent.PayCommTo)=3) AN"
-    "D ((ARTRAN.TransactionType)=\"I\" Or (ARTRAN.TransactionType)=\"C\") AND ((ARTRA"
-    "N.CustomerClassKey)=\"GROUP\"))"
+    "D (([ARTRAN].[TransactionType])=\"I\" Or ([ARTRAN].[TransactionType])=\"C\") AND"
+    " (([ARTRAN].[CustomerClassKey])=\"GROUP\"))"
 Begin InputTables
     Name ="ARTRAN"
     Name ="tblGrp"
@@ -15,16 +15,20 @@ Begin OutputColumns
     Expression ="Trim(RTrim([DocumentNumber]))"
     Alias ="ApplyNo"
     Expression ="Trim(RTrim([ApplyTo]))"
+    Alias ="Expr1"
     Expression ="ARTRAN.CustomerKey"
+    Alias ="Expr2"
     Expression ="ARTRAN.DocumentAmt"
+    Alias ="Expr3"
     Expression ="ARTRAN.TransactionType"
+    Alias ="Expr4"
     Expression ="ARTRAN.CustomerClassKey"
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Alias ="Invoice Date"
     Expression ="ARTRAN.DocumentDate"
-    Expression ="tblGrpAgt.AGENTid"
-    Expression ="tblAgent.AGENT_LUname"
-    Expression ="tblAgent.AGENTgeoID"
+    Expression ="tblGrpAgt.AgentId"
+    Expression ="tblAgent.Agent_LUname"
+    Expression ="tblAgent.AgentGeoID"
     Expression ="tblGeographical.GEOdesc"
     Alias ="DocMonth"
     Expression ="Month([DocumentDate])"
@@ -35,19 +39,15 @@ End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGeographical"
-    Expression ="tblAgent.AGENTgeoID = tblGeographical.GEOid"
+    Expression ="tblAgent.AgentGeoID = tblGeographical.GEOid"
     Flag =2
     LeftTable ="tblAgent"
     RightTable ="tblGrpAgt"
-    Expression ="tblAgent.AGENTid = tblGrpAgt.AGENTid"
+    Expression ="tblAgent.AgentId = tblGrpAgt.AgentId"
     Flag =1
     LeftTable ="tblGrp"
     RightTable ="tblGrpAgt"
-    Expression ="tblGrp.GROUPid = tblGrpAgt.GROUPid"
-    Flag =1
-    LeftTable ="ARTRAN"
-    RightTable ="tblGrp"
-    Expression ="ARTRAN.CustomerKey = tblGrp.GROUPid"
+    Expression ="tblGrp.GroupID = tblGrpAgt.GroupId"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -55,6 +55,7 @@ dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -72,10 +73,10 @@ Begin
     Left =4
     Top =34
     Right =976
-    Bottom =597
+    Bottom =573
     Left =-1
     Top =-1
-    Right =891
+    Right =957
     Bottom =359
     Left =0
     Top =0
@@ -84,7 +85,7 @@ Begin
         Left =30
         Top =19
         Right =247
-        Bottom =328
+        Bottom =62
         Top =0
         Name ="ARTRAN"
         Name =""
@@ -93,7 +94,7 @@ Begin
         Left =276
         Top =22
         Right =482
-        Bottom =316
+        Bottom =305
         Top =0
         Name ="tblGrp"
         Name =""
@@ -102,7 +103,7 @@ Begin
         Left =732
         Top =19
         Right =941
-        Bottom =343
+        Bottom =332
         Top =7
         Name ="tblAgent"
         Name =""
@@ -111,7 +112,7 @@ Begin
         Left =971
         Top =19
         Right =1201
-        Bottom =103
+        Bottom =107
         Top =0
         Name ="tblGeographical"
         Name =""
@@ -120,7 +121,7 @@ Begin
         Left =523
         Top =22
         Right =697
-        Bottom =151
+        Bottom =140
         Top =0
         Name ="tblGrpAgt"
         Name =""

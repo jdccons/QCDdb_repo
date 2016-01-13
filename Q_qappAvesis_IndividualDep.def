@@ -1,7 +1,7 @@
 Operation =3
 Name ="Avesis"
 Option =0
-Where ="(((tblSubscr.SUBcancelled)=1) AND ((tblSubscr.SUBstatus)=\"INDIV\"))"
+Where ="(((tblSubscr.SubCancelled)=1) AND ((tblSubscr.SubStatus)=\"INDIV\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblDependent"
@@ -33,37 +33,37 @@ Begin OutputColumns
     Expression ="IIf([DepRelationship]=\"S\",\"02\",\"03\")"
     Alias ="SSN"
     Name ="SSN"
-    Expression ="tblDependent.DEPsubID"
+    Expression ="tblDependent.DepSubID"
     Alias ="Coverage_Code"
     Name ="Coverage_Code"
     Expression ="IIf([CoverID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\"))"
     Alias ="Last_Name"
     Name ="Last_Name"
-    Expression ="tblDependent.DEPlastNAME"
+    Expression ="tblDependent.DepLastName"
     Alias ="First_Name"
     Name ="First_Name"
-    Expression ="tblDependent.DEPfirstNAME"
+    Expression ="tblDependent.DepFirstName"
     Alias ="Middle_Initial"
     Name ="Middle_Initial"
     Expression ="Mid([DepMiddleName],1,1)"
     Alias ="Address_1"
     Name ="Address_1"
-    Expression ="tblSubscr.SUBstreet1"
+    Expression ="tblSubscr.SubStreet1"
     Alias ="Address_2"
     Name ="Address_2"
-    Expression ="tblSubscr.SUBstreet2"
+    Expression ="tblSubscr.SubStreet2"
     Alias ="City"
     Name ="City"
-    Expression ="tblSubscr.SUBcity"
+    Expression ="tblSubscr.SubCity"
     Alias ="State"
     Name ="State"
-    Expression ="tblSubscr.SUBstate"
+    Expression ="tblSubscr.SubState"
     Alias ="Zip"
     Name ="Zip"
     Expression ="Mid([SUBzip],1,9)"
     Alias ="Gender"
     Name ="Gender"
-    Expression ="tblDependent.DEPgender"
+    Expression ="tblDependent.DepGender"
     Alias ="Birth_Date"
     Name ="Birth_Date"
     Expression ="Format(Month([Depdob]),\"00\") & Format(Day([DepDob]),\"00\") & Year([DepDob])"
@@ -81,7 +81,7 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblDependent"
-    Expression ="tblSubscr.SUBssn = tblDependent.DEPsubID"
+    Expression ="tblSubscr.SubSSN=tblDependent.DepSubID"
     Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -104,14 +104,14 @@ Begin
     End
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1272
-    Bottom =921
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =413
     Left =-1
     Top =-1
-    Right =1269
+    Right =1253
     Bottom =193
     Left =0
     Top =0
@@ -120,7 +120,7 @@ Begin
         Left =118
         Top =24
         Right =349
-        Bottom =123
+        Bottom =112
         Top =29
         Name ="tblSubscr"
         Name =""
@@ -129,7 +129,7 @@ Begin
         Left =401
         Top =27
         Right =634
-        Bottom =126
+        Bottom =115
         Top =0
         Name ="tblDependent"
         Name =""

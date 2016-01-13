@@ -1,8 +1,8 @@
 Operation =1
 Option =0
-Where ="((((tblGrp.GRcontBEG)>#9/1/99# Or (tblGrp.GRcontBEG)=#9/1/99#) And ((tblGrp.GRco"
-    "ntBEG)<#1/1/00# Or (tblGrp.GRcontBEG)=#1/1/00#)) AND ((tblSubscr.SUBeffDATE) Bet"
-    "ween #8/2/99# And #8/31/99#) AND ((tblSubscr.SUBstatus)=\"GRSUB\"))"
+Where ="((((tblGrp.GRContBeg)>#9/1/1999# Or (tblGrp.GRContBeg)=#9/1/1999#) And ((tblGrp."
+    "GRContBeg)<#1/1/2000# Or (tblGrp.GRContBeg)=#1/1/2000#)) AND ((tblSubscr.SubEffD"
+    "ate) Between #8/2/1999# And #8/31/1999#) AND ((tblSubscr.SubStatus)=\"GRSUB\"))"
 Begin InputTables
     Name ="tblSubscr"
     Name ="tblGrp"
@@ -12,7 +12,7 @@ End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblSubscr"
-    Expression ="tblGrp.GROUPid = tblSubscr.SUBgroupID"
+    Expression ="tblGrp.GroupID = tblSubscr.SubGroupID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -21,17 +21,19 @@ dbBoolean "UseTransaction" ="-1"
 dbBoolean "FailOnError" ="0"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =800
-    Bottom =485
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =415
     Left =-1
     Top =-1
-    Right =797
+    Right =1253
     Bottom =195
     Left =0
     Top =0
@@ -40,7 +42,7 @@ Begin
         Left =38
         Top =6
         Right =307
-        Bottom =143
+        Bottom =139
         Top =20
         Name ="tblSubscr"
         Name =""
@@ -49,7 +51,7 @@ Begin
         Left =345
         Top =6
         Right =563
-        Bottom =113
+        Bottom =109
         Top =15
         Name ="tblGrp"
         Name =""

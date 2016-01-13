@@ -1,61 +1,59 @@
 Operation =1
-Option =8
+Option =0
 Begin InputTables
     Name ="tblAgent"
     Name ="tblGeographical"
 End
 Begin OutputColumns
-    Alias ="Zip2"
-    Expression ="IIf([AGENTzip] Like \"#####-#\",Left([AgentZip],Len([AgentZip])-1),IIf([AgentZip"
-        "] Like \"#########\",Format([AgentZip],\"@@@@@-@@@@\"),[AgentZip]))"
-    Expression ="tblAgent.*"
-    Expression ="tblGeographical.GEOdesc"
+    Expression ="tblAgent.ID"
+    Expression ="tblAgent.AgentId"
+    Expression ="tblAgent.Agency"
+    Expression ="tblAgent.AgentSSN"
+    Expression ="tblAgent.Agent_LUname"
+    Expression ="tblAgent.AgentFirst"
+    Expression ="tblAgent.AgentLast"
+    Expression ="tblAgent.AgentMiddle"
+    Expression ="tblAgent.AgentStreet1"
+    Expression ="tblAgent.AgentStreet2"
+    Expression ="tblAgent.AgentCity"
+    Expression ="tblAgent.AgentState"
+    Expression ="tblAgent.AgentZip"
+    Expression ="tblAgent.AgentPhone"
+    Expression ="tblAgent.AgentFax"
+    Expression ="tblAgent.AgentCell"
+    Expression ="tblAgent.AgentEmail"
+    Expression ="tblAgent.AgentCommission"
+    Expression ="tblAgent.AgentTaxID"
+    Expression ="tblGeographical.GeoDesc"
+    Expression ="tblAgent.AgentActive"
+    Expression ="tblAgent.PayCommTo"
+    Expression ="tblAgent.AgentNotes"
+    Expression ="tblAgent.AgentCLIC"
+    Expression ="tblAgent.AgentNGL"
 End
 Begin Joins
     LeftTable ="tblAgent"
     RightTable ="tblGeographical"
-    Expression ="tblAgent.AGENTgeoID = tblGeographical.GEOid"
+    Expression ="tblAgent.AgentGeoID=tblGeographical.GeoID"
     Flag =2
-End
-Begin OrderBy
-    Expression ="tblAgent.AGENTid"
-    Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
-    Begin
-        dbText "Name" ="tblAgent.AGENTid"
-        dbInteger "ColumnWidth" ="915"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblAgent.AGENT_LUname"
-        dbInteger "ColumnWidth" ="2160"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblAgent.AGENTfirst"
-        dbInteger "ColumnWidth" ="990"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGeographical.GEOdesc"
-        dbInteger "ColumnWidth" ="2715"
-        dbBoolean "ColumnHidden" ="0"
-    End
 End
 Begin
     State =0
-    Left =105
-    Top =165
-    Right =1258
-    Bottom =478
+    Left =104
+    Top =98
+    Right =1344
+    Bottom =422
     Left =-1
     Top =-1
-    Right =1146
+    Right =1221
     Bottom =144
     Left =0
     Top =0
@@ -63,17 +61,17 @@ Begin
     Begin
         Left =38
         Top =6
-        Right =197
-        Bottom =105
-        Top =0
+        Right =134
+        Bottom =124
+        Top =17
         Name ="tblAgent"
         Name =""
     End
     Begin
-        Left =321
-        Top =5
-        Right =505
-        Bottom =89
+        Left =172
+        Top =6
+        Right =268
+        Bottom =109
         Top =0
         Name ="tblGeographical"
         Name =""

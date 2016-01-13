@@ -1,72 +1,70 @@
 Operation =1
 Option =0
-Where ="(((IIf([GrHold] Or [GrCancelled]=-1,\"Y\",\"\"))=\"Y\") AND ((qrptBillingReconci"
+Where ="(((IIf([GrHold] Or [GrCancelled]=-1,\"Y\",\"\"))=\"Y\") And ((qrptBillingReconci"
     "leARTRAN.TransactionType)=\"I\" Or (qrptBillingReconcileARTRAN.TransactionType)="
-    "\"C\" Or (qrptBillingReconcileARTRAN.TransactionType)=\"A\")) OR (((IIf([GrHold]"
-    " Or [GrCancelled]=-1,\"Y\",\"\"))=\"Y\") AND ((qrptBillingReconcileARTRAN.Transa"
+    "\"C\" Or (qrptBillingReconcileARTRAN.TransactionType)=\"A\")) Or (((IIf([GrHold]"
+    " Or [GrCancelled]=-1,\"Y\",\"\"))=\"Y\") And ((qrptBillingReconcileARTRAN.Transa"
     "ctionType) Is Null))"
 Begin InputTables
-    Name ="qrptBillingReconcileARTRAN"
     Name ="tblGrp"
+    Name ="qrptBillingReconcileARTRAN"
 End
 Begin OutputColumns
     Alias ="Flag"
     Expression ="IIf([GrHold] Or [GrCancelled]=-1,\"Y\",\"\")"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRcancelledDate"
-    Expression ="tblGrp.GRreinstatedDate"
-    Expression ="tblGrp.GRhold"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRCancelledDate"
+    Expression ="tblGrp.GRReinstatedDate"
+    Expression ="tblGrp.GRHold"
+    Alias ="Expr1"
     Expression ="qrptBillingReconcileARTRAN.DocumentAmt"
+    Alias ="Expr2"
     Expression ="qrptBillingReconcileARTRAN.DocumentDate"
+    Alias ="Expr3"
     Expression ="qrptBillingReconcileARTRAN.TransactionType"
     Alias ="DocNo"
     Expression ="Trim(RTrim([DocumentNumber]))"
-End
-Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="qrptBillingReconcileARTRAN"
-    Expression ="tblGrp.GROUPid = qrptBillingReconcileARTRAN.CustomerKey"
-    Flag =1
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="-1"
 dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-30
-    Right =1024
-    Bottom =644
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =364
     Left =-1
     Top =-1
-    Right =1021
+    Right =1253
     Bottom =144
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =232
-        Top =12
-        Right =509
-        Bottom =111
-        Top =1
-        Name ="qrptBillingReconcileARTRAN"
-        Name =""
-    End
-    Begin
         Left =41
         Top =10
         Right =169
-        Bottom =109
+        Bottom =98
         Top =0
         Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =232
+        Top =12
+        Right =509
+        Bottom =55
+        Top =0
+        Name ="qrptBillingReconcileARTRAN"
         Name =""
     End
 End

@@ -1,0 +1,55 @@
+Operation =4
+Option =0
+Begin InputTables
+    Name ="tblCommission"
+    Name ="tblAgent"
+End
+Begin OutputColumns
+    Name ="tblCommission.PayCommTo"
+    Expression ="tblAgent.PayCommTo"
+End
+Begin Joins
+    LeftTable ="tblCommission"
+    RightTable ="tblAgent"
+    Expression ="tblCommission.CommAgent=tblAgent.AgentId"
+    Flag =1
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbBoolean "UseTransaction" ="-1"
+dbBoolean "FailOnError" ="0"
+dbByte "Orientation" ="0"
+Begin
+End
+Begin
+    State =0
+    Left =134
+    Top =116
+    Right =1258
+    Bottom =440
+    Left =-1
+    Top =-1
+    Right =1109
+    Bottom =144
+    Left =0
+    Top =0
+    ColumnsShown =579
+    Begin
+        Left =453
+        Top =12
+        Right =585
+        Bottom =115
+        Top =0
+        Name ="tblAgent"
+        Name =""
+    End
+    Begin
+        Left =107
+        Top =4
+        Right =298
+        Bottom =107
+        Top =10
+        Name ="tblCommission"
+        Name =""
+    End
+End

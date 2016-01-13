@@ -1,7 +1,7 @@
 Operation =3
 Name ="ARHDR"
 Option =8
-Where ="(((CStr(Format([TRANS NO],\"0000000\")))=[Forms]![frmInvGrp_Bexar]![TRANS NO]))"
+Where ="(((CStr(Format([TRANS NO],\"0000000\")))=Forms!frmInvGrp_Bexar![TRANS NO]))"
 Begin InputTables
     Name ="tblInvHdr"
 End
@@ -260,10 +260,10 @@ Begin
     Left =40
     Top =22
     Right =1002
-    Bottom =395
+    Bottom =414
     Left =-1
     Top =-1
-    Right =955
+    Right =947
     Bottom =212
     Left =0
     Top =0
@@ -272,7 +272,7 @@ Begin
         Left =38
         Top =6
         Right =175
-        Bottom =150
+        Bottom =139
         Top =31
         Name ="tblInvHdr"
         Name =""

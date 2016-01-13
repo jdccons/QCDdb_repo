@@ -8,24 +8,24 @@ dbMemo "SQL" ="SELECT \"CH\" AS Record_Type, \"\" AS Action_Code, \"10001\" AS C
     " Mid([SUBzip],1,9) AS Zip, tblSubscr.SubGender AS Gender, Format(Month([SUBdob])"
     ",\"00\") & Format(Day([SubDob]),\"00\") & Year([SubDob]) AS Birth_Date, Format(M"
     "onth([SUBEffDate]),\"00\") & Format(Day([SubEffDate]),\"00\") & Year([SubEffDate"
-    "]) AS Effective_Date, Null AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr.SubNoDe"
-    "pent\015\012FROM tblGrp INNER JOIN tblSubscr ON tblGrp.GROUPid = tblSubscr.SubGr"
-    "oupID\015\012WHERE (((tblSubscr.SubStatus)=\"GRSUB\") AND ((tblGrp.GRcancelled)="
-    "False))\015\012\015\012UNION SELECT \"DP\" AS Record_Type, \"\" AS Action_Code, "
-    "\"10001\" AS Carrier_Number, \"1\" AS Group_Number, \"QCD of America\" AS Group_"
-    "Name, \"9000\" AS Plan_Number, tblSubscr.SubID AS Member_Number, IIf([DepRelatio"
-    "nship]=\"S\",\"02\",\"03\") AS ID_Suffix, tblDependent.DepSubID AS SSN, IIf([Cov"
-    "erID]=1,\"EE\",IIf([CoverID]=2,\"DEP\",\"FAM\")) AS Coverage_Code, tblDependent."
-    "DepLastName AS Last_Name, tblDependent.DepFirstName AS First_Name, Mid([DepMiddl"
-    "eName],1,1) AS Middle_Initial, tblSubscr.SubStreet1 AS Address_1, tblSubscr.SubS"
-    "treet2 AS Address_2, tblSubscr.SubCity AS City, tblSubscr.SubState AS State, Mid"
-    "([SUBzip],1,9) AS Zip, tblDependent.DepGender AS Gender, Format(Month([Depdob]),"
-    "\"00\") & Format(Day([DepDob]),\"00\") & Year([DepDob]) AS Birth_Date, Format(Mo"
-    "nth([SUBEffDate]),\"00\") & Format(Day([SubEffDate]),\"00\") & Year([SubEffDate]"
-    ") AS Effective_Date, Null AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr.SubNoDep"
-    "ent\015\012FROM (tblGrp INNER JOIN tblSubscr ON tblGrp.GROUPid = tblSubscr.SubGr"
-    "oupID) INNER JOIN tblDependent ON tblSubscr.SubSSN = tblDependent.DepSubID\015\012"
-    "WHERE (((tblSubscr.SubStatus)=\"GRSUB\") AND ((tblGrp.GRcancelled)=False));\015\012"
+    "]) AS Effective_Date, Null AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr.DepCnt\015"
+    "\012FROM tblGrp INNER JOIN tblSubscr ON tblGrp.GROUPid = tblSubscr.SubGroupID\015"
+    "\012WHERE (((tblSubscr.SubStatus)=\"GRSUB\") AND ((tblGrp.GRcancelled)=False))\015"
+    "\012\015\012UNION SELECT \"DP\" AS Record_Type, \"\" AS Action_Code, \"10001\" A"
+    "S Carrier_Number, \"1\" AS Group_Number, \"QCD of America\" AS Group_Name, \"900"
+    "0\" AS Plan_Number, tblSubscr.SubID AS Member_Number, IIf([DepRelationship]=\"S\""
+    ",\"02\",\"03\") AS ID_Suffix, tblDependent.DepSubID AS SSN, IIf([CoverID]=1,\"EE"
+    "\",IIf([CoverID]=2,\"DEP\",\"FAM\")) AS Coverage_Code, tblDependent.DepLastName "
+    "AS Last_Name, tblDependent.DepFirstName AS First_Name, Mid([DepMiddleName],1,1) "
+    "AS Middle_Initial, tblSubscr.SubStreet1 AS Address_1, tblSubscr.SubStreet2 AS Ad"
+    "dress_2, tblSubscr.SubCity AS City, tblSubscr.SubState AS State, Mid([SUBzip],1,"
+    "9) AS Zip, tblDependent.DepGender AS Gender, Format(Month([Depdob]),\"00\") & Fo"
+    "rmat(Day([DepDob]),\"00\") & Year([DepDob]) AS Birth_Date, Format(Month([SUBEffD"
+    "ate]),\"00\") & Format(Day([SubEffDate]),\"00\") & Year([SubEffDate]) AS Effecti"
+    "ve_Date, Null AS Term_Date, \"\" AS Sub_Group_ID, tblSubscr.DepCnt\015\012FROM ("
+    "tblGrp INNER JOIN tblSubscr ON tblGrp.GROUPid = tblSubscr.SubGroupID) INNER JOIN"
+    " tblDependent ON tblSubscr.SubSSN = tblDependent.DepSubID\015\012WHERE (((tblSub"
+    "scr.SubStatus)=\"GRSUB\") AND ((tblGrp.GRcancelled)=False));\015\012"
 dbMemo "Connect" =""
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -33,4 +33,73 @@ dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
 Begin
+    Begin
+        dbText "Name" ="Record_Type"
+    End
+    Begin
+        dbText "Name" ="Action_Code"
+    End
+    Begin
+        dbText "Name" ="Carrier_Number"
+    End
+    Begin
+        dbText "Name" ="Group_Number"
+    End
+    Begin
+        dbText "Name" ="Group_Name"
+    End
+    Begin
+        dbText "Name" ="Plan_Number"
+    End
+    Begin
+        dbText "Name" ="Member_Number"
+    End
+    Begin
+        dbText "Name" ="ID_Suffix"
+    End
+    Begin
+        dbText "Name" ="SSN"
+    End
+    Begin
+        dbText "Name" ="Coverage_Code"
+    End
+    Begin
+        dbText "Name" ="Last_Name"
+    End
+    Begin
+        dbText "Name" ="First_Name"
+    End
+    Begin
+        dbText "Name" ="Middle_Initial"
+    End
+    Begin
+        dbText "Name" ="Address_1"
+    End
+    Begin
+        dbText "Name" ="Address_2"
+    End
+    Begin
+        dbText "Name" ="City"
+    End
+    Begin
+        dbText "Name" ="State"
+    End
+    Begin
+        dbText "Name" ="Zip"
+    End
+    Begin
+        dbText "Name" ="Gender"
+    End
+    Begin
+        dbText "Name" ="Birth_Date"
+    End
+    Begin
+        dbText "Name" ="Effective_Date"
+    End
+    Begin
+        dbText "Name" ="Term_Date"
+    End
+    Begin
+        dbText "Name" ="Sub_Group_ID"
+    End
 End

@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1986702408
+Checksum =-2118576208
 Begin Form
     AutoResize = NotDefault
     PopUp = NotDefault
@@ -11,7 +11,6 @@ Begin Form
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
-    AllowDesignChanges = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
@@ -23,10 +22,10 @@ Begin Form
     Width =4920
     DatasheetFontHeight =10
     ItemSuffix =9
-    Left =5145
-    Top =2190
-    Right =9960
-    Bottom =6225
+    Left =-23016
+    Top =1104
+    Right =-21588
+    Bottom =852
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x18480290f051e240
@@ -60,7 +59,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x281d98825d120e4ab12adb1977a88aee
+                0x65d58ee1191ddf4e846201990d9ec4d1
             End
             Begin
                 Begin Label
@@ -72,7 +71,7 @@ Begin Form
                     Name ="Label8"
                     Caption ="Double Click Date to Select Date and Close."
                     GUID = Begin
-                        0x0aafd251d00de548a3418719eb5839bd
+                        0x7618ce87c681824da3ce231c3ca85077
                     End
                 End
                 Begin CustomControl
@@ -205,7 +204,7 @@ Begin Form
                     ControlTipText ="Double Click Date to Select it and Close Form"
                     Class ="MSCAL.Calendar.7"
                     GUID = Begin
-                        0x3c4e2f13ee623e4396b7f70211faa91a
+                        0x7134415fa8cee040adfa0258d697b114
                     End
                 End
                 Begin TextBox
@@ -218,7 +217,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtFillBox"
                     GUID = Begin
-                        0x10ef2e48e883e145a1c586761463de99
+                        0x789690f6010e64498fdf5a328b39c374
                     End
                 End
                 Begin CommandButton
@@ -256,7 +255,7 @@ Begin Form
                     End
                     ControlTipText ="Close Form"
                     GUID = Begin
-                        0x016c95fa683fef42864c1b65d13cee4e
+                        0x26b6b140ac365740a3f15b550e56a03b
                     End
                 End
                 Begin CommandButton
@@ -270,7 +269,7 @@ Begin Form
                     Caption ="Insert Selected Date"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0x0dd79400b8f50f41baba3715036e995b
+                        0x06b464a23a4844459db5574cbe9dbbaa
                     End
                 End
                 Begin TextBox
@@ -283,7 +282,7 @@ Begin Form
                     BackColor =16777164
                     Name ="txtDate"
                     GUID = Begin
-                        0x2012f47e100df544b0e7879570dbab5b
+                        0xa3c58a054f621e4d93dc7802e321689d
                     End
                 End
                 Begin TextBox
@@ -296,7 +295,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtFormName"
                     GUID = Begin
-                        0xd09dcc801428294fbe44b8a8aa2fc70b
+                        0x8a4879cf4c2f574fa9c426c3b9619277
                     End
                 End
             End
@@ -311,11 +310,11 @@ Attribute VB_Exposed = False
 Option Compare Database
 
 Private Sub ActiveXCtl0_AfterUpdate()
-    Me.txtDate = Me.ActiveXCtl0.Value
+    Me.txtDate = Me.ActiveXCtl0.value
 End Sub
 
 Private Sub ActiveXCtl0_DblClick()
-    Me.txtDate = Me.ActiveXCtl0.Value
+    Me.txtDate = Me.ActiveXCtl0.value
     Call cmdUseDate_Click
     DoCmd.Close acForm, "frmPickDate"
 End Sub
@@ -353,6 +352,6 @@ Dim ctl As Control
         .Day = DatePart("d", Now())
         ' Refresh Calendar control.
         .Refresh
-        Me.txtDate = .Value
+        Me.txtDate = .value
     End With
 End Sub

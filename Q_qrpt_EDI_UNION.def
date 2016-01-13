@@ -4,30 +4,32 @@ Begin InputTables
     Name ="tmpEDI_rpt"
 End
 Begin OutputColumns
-    Expression ="tmpEDI_rpt.SUBssn"
-    Expression ="tmpEDI_rpt.SUBfirstNAME"
-    Expression ="tmpEDI_rpt.SUBlastNAME"
-    Expression ="tmpEDI_rpt.SUBStreet"
-    Expression ="tmpEDI_rpt.SUBcity"
-    Expression ="tmpEDI_rpt.SUBstate"
-    Expression ="tmpEDI_rpt.SUBzip"
+    Expression ="tmpEDI_rpt.SubSSN"
+    Expression ="tmpEDI_rpt.SubFirstName"
+    Expression ="tmpEDI_rpt.SubLastName"
+    Expression ="tmpEDI_rpt.SubStreet"
+    Expression ="tmpEDI_rpt.SubCity"
+    Expression ="tmpEDI_rpt.SubState"
+    Expression ="tmpEDI_rpt.SubZIP"
     Expression ="tmpEDI_rpt.Stat"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-6
-    Top =-25
-    Right =952
-    Bottom =619
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =414
     Left =-1
     Top =-1
-    Right =951
+    Right =1253
     Bottom =194
     Left =0
     Top =0
@@ -36,7 +38,7 @@ Begin
         Left =38
         Top =6
         Right =228
-        Bottom =163
+        Bottom =154
         Top =1
         Name ="tmpEDI_rpt"
         Name =""

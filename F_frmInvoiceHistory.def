@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =439022182
+Checksum =-1654498360
 Begin Form
     PopUp = NotDefault
     RecordSelectors = NotDefault
@@ -18,10 +18,10 @@ Begin Form
     Width =4680
     DatasheetFontHeight =10
     ItemSuffix =50
-    Left =5250
-    Top =1950
-    Right =9930
-    Bottom =6870
+    Left =4170
+    Top =4350
+    Right =10635
+    Bottom =9705
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xfcc2a1bb0b26e240
@@ -113,12 +113,18 @@ Begin Form
             Height =0
             BackColor =-2147483633
             Name ="FormHeader"
+            GUID = Begin
+                0x0464287c3dea604fb49b44d4d6002578
+            End
         End
         Begin Section
             Height =4575
             BackColor =-2147483633
             Name ="Detail"
             OnClick ="[Event Procedure]"
+            GUID = Begin
+                0xa986b88fc970cd49a1eba97fc50d3b22
+            End
             Begin
                 Begin Label
                     SpecialEffect =4
@@ -134,6 +140,9 @@ Begin Form
                     FontWeight =700
                     Name ="Label0"
                     Caption ="Invoice History"
+                    GUID = Begin
+                        0x8d16f654dfe3fd449c53124da97c955c
+                    End
                 End
                 Begin Tab
                     OverlapFlags =85
@@ -142,6 +151,9 @@ Begin Form
                     Width =4575
                     Height =3975
                     Name ="TabCtl1"
+                    GUID = Begin
+                        0x65dd1f7f31b8d54f9b22dc4b218bfcf0
+                    End
                     Begin
                         Begin Page
                             OverlapFlags =215
@@ -151,6 +163,9 @@ Begin Form
                             Height =3435
                             Name ="Page2"
                             Caption ="History Report"
+                            GUID = Begin
+                                0xe02852c250f4eb4b871b800e91b9e9e1
+                            End
                             Begin
                                 Begin ComboBox
                                     RowSourceTypeInt =1
@@ -160,6 +175,9 @@ Begin Form
                                     Left =1260
                                     Top =1620
                                     Width =1380
+                                    GUID = Begin
+                                        0xfea3674adf56c34c8eb4169a0ba41ea9
+                                    End
                                     Name ="cboBaseMonth"
                                     RowSourceType ="Value List"
                                     RowSource ="1;\"January\";2;\"February\";3;\"March\";4;\"April\";5;\"May\";6;\"June\";7;\"Ju"
@@ -176,6 +194,9 @@ Begin Form
                                             Name ="Select Base Month_Label"
                                             Caption =" Month:"
                                             EventProcPrefix ="Select_Base_Month_Label"
+                                            GUID = Begin
+                                                0xf60898d1ac66874d9c1bf41f86f7fdc1
+                                            End
                                         End
                                     End
                                 End
@@ -187,6 +208,9 @@ Begin Form
                                     Height =240
                                     Name ="Label19"
                                     Caption ="Report Criteria"
+                                    GUID = Begin
+                                        0x40f9b3e7776a7b41a91ec09fac062ac1
+                                    End
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
@@ -197,6 +221,9 @@ Begin Form
                                     Width =720
                                     TabIndex =1
                                     ColumnInfo ="\"\";\"\";\"4\";\"4\""
+                                    GUID = Begin
+                                        0x4934ef2c4f8aad4c95bc46195a5bec3a
+                                    End
                                     Name ="cboBaseYear"
                                     RowSourceType ="Table/Query"
                                     RowSource ="SELECT DISTINCTROW qselInvoiceHistoryYears.InvYear FROM qselInvoiceHistoryYears "
@@ -213,6 +240,9 @@ Begin Form
                                             Name ="Base Year_Label"
                                             Caption ="Year:"
                                             EventProcPrefix ="Base_Year_Label"
+                                            GUID = Begin
+                                                0xcf13b825240c494d81769ee1b5e85652
+                                            End
                                         End
                                     End
                                 End
@@ -225,6 +255,9 @@ Begin Form
                                     TabIndex =2
                                     BackColor =10092543
                                     Name ="txtBaseMonth"
+                                    GUID = Begin
+                                        0x62ad728bdb7fef47982e978493bacbdc
+                                    End
                                 End
                                 Begin ComboBox
                                     LimitToList = NotDefault
@@ -236,6 +269,9 @@ Begin Form
                                     Top =2280
                                     Width =1380
                                     TabIndex =3
+                                    GUID = Begin
+                                        0xb094a439139f794ca405547645323e13
+                                    End
                                     Name ="cboCompareMonth"
                                     RowSourceType ="Value List"
                                     RowSource ="1;\"January\";2;\"February\";3;\"March\";4;\"April\";5;\"May\";6;\"June\";7;\"Ju"
@@ -251,6 +287,9 @@ Begin Form
                                             Height =228
                                             Name ="Label27"
                                             Caption ="Month:"
+                                            GUID = Begin
+                                                0xc614bc5287324a4e9864819535d32832
+                                            End
                                         End
                                     End
                                 End
@@ -263,6 +302,9 @@ Begin Form
                                     Width =720
                                     TabIndex =4
                                     ColumnInfo ="\"\";\"\";\"4\";\"4\""
+                                    GUID = Begin
+                                        0x4d75315581e903488153ac4f4fdd366b
+                                    End
                                     Name ="cboCompareYear"
                                     RowSourceType ="Table/Query"
                                     RowSource ="SELECT DISTINCTROW qselInvoiceHistoryYears.InvYear FROM qselInvoiceHistoryYears "
@@ -278,6 +320,9 @@ Begin Form
                                             Height =228
                                             Name ="Label29"
                                             Caption ="Year:"
+                                            GUID = Begin
+                                                0x99883c8458f13a4c850a3e12fb495de3
+                                            End
                                         End
                                     End
                                 End
@@ -291,6 +336,9 @@ Begin Form
                                     Width =2040
                                     Height =270
                                     TabIndex =5
+                                    GUID = Begin
+                                        0xb99a50f2272ada4184554d6b96a2f066
+                                    End
                                     Name ="cboClientSvcRep"
                                     RowSourceType ="Value List"
                                     ColumnWidths ="0;1440"
@@ -305,6 +353,9 @@ Begin Form
                                             Name ="Client Service Rep_Label"
                                             Caption ="Client Service Rep: "
                                             EventProcPrefix ="Client_Service_Rep_Label"
+                                            GUID = Begin
+                                                0x4b7880fa00966f4baaf458ea1ba0ef7d
+                                            End
                                         End
                                     End
                                 End
@@ -320,6 +371,9 @@ Begin Form
                                     Width =2025
                                     Height =270
                                     TabIndex =6
+                                    GUID = Begin
+                                        0x7c2f0071c2d2e74fabe451bc15644049
+                                    End
                                     Name ="cboGeoID"
                                     RowSourceType ="Value List"
                                     ColumnWidths ="720;2880"
@@ -333,6 +387,9 @@ Begin Form
                                             Height =240
                                             Name ="Label40"
                                             Caption ="Geo ID: "
+                                            GUID = Begin
+                                                0x703e37189e6ec2429ceba3ce2854409b
+                                            End
                                         End
                                     End
                                 End
@@ -345,6 +402,9 @@ Begin Form
                                     TabIndex =7
                                     BackColor =10092543
                                     Name ="txtCompareMonth"
+                                    GUID = Begin
+                                        0xa86ca2a4cd39164096640e8f8783fec4
+                                    End
                                 End
                                 Begin Label
                                     OverlapFlags =215
@@ -355,6 +415,9 @@ Begin Form
                                     FontWeight =700
                                     Name ="Label34"
                                     Caption ="Base (most recent)"
+                                    GUID = Begin
+                                        0xa2df09bf0c0e214c98297983e5040f61
+                                    End
                                 End
                                 Begin Label
                                     OverlapFlags =215
@@ -365,6 +428,9 @@ Begin Form
                                     FontWeight =700
                                     Name ="Label35"
                                     Caption ="Compare to"
+                                    GUID = Begin
+                                        0xf973c396ebfda54ea7dddd41aae1d15f
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -375,6 +441,9 @@ Begin Form
                                     TabIndex =8
                                     BackColor =10092543
                                     Name ="txtBaseYear"
+                                    GUID = Begin
+                                        0xe83feacf05f78d4cb84130684fd35e4c
+                                    End
                                 End
                                 Begin TextBox
                                     Visible = NotDefault
@@ -385,6 +454,9 @@ Begin Form
                                     TabIndex =9
                                     BackColor =10092543
                                     Name ="txtCompareYear"
+                                    GUID = Begin
+                                        0x59216da2f4eb874595825ee30a5c07e5
+                                    End
                                 End
                                 Begin CommandButton
                                     OverlapFlags =215
@@ -395,6 +467,9 @@ Begin Form
                                     Name ="cmdInvHistReport"
                                     Caption ="Preview Report"
                                     OnClick ="[Event Procedure]"
+                                    GUID = Begin
+                                        0x99b6ce6fc8cc3b458e708d5650f1c140
+                                    End
                                 End
                                 Begin OptionGroup
                                     OverlapFlags =215
@@ -405,6 +480,9 @@ Begin Form
                                     TabIndex =11
                                     Name ="fraReport"
                                     DefaultValue ="1"
+                                    GUID = Begin
+                                        0x45bb769c4c6c214b868503f35de8ca96
+                                    End
                                     Begin
                                         Begin Label
                                             BackStyle =1
@@ -416,6 +494,9 @@ Begin Form
                                             BackColor =-2147483633
                                             Name ="Label44"
                                             Caption ="Report by"
+                                            GUID = Begin
+                                                0xfa8113f567ae7b4f969980a0832c21c4
+                                            End
                                         End
                                         Begin OptionButton
                                             OverlapFlags =215
@@ -423,6 +504,9 @@ Begin Form
                                             Top =4162
                                             OptionValue =1
                                             Name ="Option46"
+                                            GUID = Begin
+                                                0x8753faf95dc1244a9714d0d587ad7092
+                                            End
                                             Begin
                                                 Begin Label
                                                     OverlapFlags =215
@@ -432,6 +516,9 @@ Begin Form
                                                     Height =228
                                                     Name ="Label47"
                                                     Caption ="C. S. Rep"
+                                                    GUID = Begin
+                                                        0x9fadca40aea81b4ab9367873441d51f2
+                                                    End
                                                 End
                                             End
                                         End
@@ -441,6 +528,9 @@ Begin Form
                                             Top =4168
                                             OptionValue =2
                                             Name ="Option48"
+                                            GUID = Begin
+                                                0x8466eb344816c443a302690a0045def4
+                                            End
                                             Begin
                                                 Begin Label
                                                     OverlapFlags =247
@@ -450,6 +540,9 @@ Begin Form
                                                     Height =228
                                                     Name ="Label49"
                                                     Caption ="Geo ID"
+                                                    GUID = Begin
+                                                        0x96042e9cf554d849be0991189f613bf8
+                                                    End
                                                 End
                                             End
                                         End
@@ -465,6 +558,9 @@ Begin Form
                             Height =3435
                             Name ="Page3"
                             Caption ="Download History"
+                            GUID = Begin
+                                0x9317d56cd8a3464993b1f4067e118167
+                            End
                             Begin
                                 Begin TextBox
                                     Visible = NotDefault
@@ -474,6 +570,9 @@ Begin Form
                                     Width =840
                                     BackColor =10092543
                                     Name ="txtMonth"
+                                    GUID = Begin
+                                        0x9d63dcef4c4c0d4aa115ea4af47a9d55
+                                    End
                                 End
                                 Begin ComboBox
                                     RowSourceTypeInt =1
@@ -484,6 +583,9 @@ Begin Form
                                     Top =1320
                                     Width =1680
                                     TabIndex =1
+                                    GUID = Begin
+                                        0x1052d98133396a478658f0f542a661f9
+                                    End
                                     Name ="cboMonth"
                                     RowSourceType ="Value List"
                                     RowSource ="1;\"January\";2;\"February\";3;\"March\";4;\"April\";5;\"May\";6;\"June\";7;\"Ju"
@@ -500,6 +602,9 @@ Begin Form
                                             Name ="Select Month_Label"
                                             Caption ="Select Month to Download"
                                             EventProcPrefix ="Select_Month_Label"
+                                            GUID = Begin
+                                                0x9084ff6fe8ec7047aaca089529818b07
+                                            End
                                         End
                                     End
                                 End
@@ -511,6 +616,9 @@ Begin Form
                                     TabIndex =2
                                     BackColor =16777164
                                     Name ="txtYear"
+                                    GUID = Begin
+                                        0x812b010831c3474d9ec3442b36e33a35
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -520,6 +628,9 @@ Begin Form
                                             Height =228
                                             Name ="Label9"
                                             Caption ="Year"
+                                            GUID = Begin
+                                                0x2edd3a0043842c4bbfe5674eed45003d
+                                            End
                                         End
                                     End
                                 End
@@ -532,6 +643,9 @@ Begin Form
                                     TabIndex =3
                                     BackColor =16777164
                                     Name ="txtDateStart"
+                                    GUID = Begin
+                                        0x5ff3a5dd6ef0ff44b0a48e103edc1948
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -541,6 +655,9 @@ Begin Form
                                             Height =228
                                             Name ="Label11"
                                             Caption ="From:"
+                                            GUID = Begin
+                                                0x8b88300653887445b3e419c3f09d4b3a
+                                            End
                                         End
                                     End
                                 End
@@ -553,6 +670,9 @@ Begin Form
                                     TabIndex =4
                                     BackColor =16777164
                                     Name ="txtDateEnd"
+                                    GUID = Begin
+                                        0x66fb2e891044244ca9bb0679b2cae326
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -562,6 +682,9 @@ Begin Form
                                             Height =228
                                             Name ="Label13"
                                             Caption ="To:"
+                                            GUID = Begin
+                                                0x51d6957433492643bd018bde64e9ca62
+                                            End
                                         End
                                     End
                                 End
@@ -573,6 +696,9 @@ Begin Form
                                     Height =240
                                     Name ="Label14"
                                     Caption ="Date Range to download"
+                                    GUID = Begin
+                                        0xe9bce60b2e64cc4dbb3ee1ae427ffde5
+                                    End
                                 End
                                 Begin CommandButton
                                     OverlapFlags =247
@@ -584,6 +710,9 @@ Begin Form
                                     Name ="cmdDownload"
                                     Caption ="Download History"
                                     OnClick ="[Event Procedure]"
+                                    GUID = Begin
+                                        0x26cd11405271614788fae2d60bae3db8
+                                    End
                                 End
                                 Begin TextBox
                                     Locked = NotDefault
@@ -596,6 +725,9 @@ Begin Form
                                     BackColor =8454143
                                     Name ="txtDateTime2"
                                     Format ="General Date"
+                                    GUID = Begin
+                                        0x158bde83d20b0b40a6b3c0362f0aa44a
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =255
@@ -605,6 +737,9 @@ Begin Form
                                             Height =255
                                             Name ="Label112"
                                             Caption ="Client Srvs Numbers Last Run: "
+                                            GUID = Begin
+                                                0x92fdd4d0b741e24eba1cfdfe00542185
+                                            End
                                         End
                                     End
                                 End
@@ -619,6 +754,9 @@ Begin Form
                                     BackColor =8454143
                                     Name ="txtInvHostDate2"
                                     Format ="General Date"
+                                    GUID = Begin
+                                        0x5f20e37057bfc1418ab72c3347b1bb38
+                                    End
                                     Begin
                                         Begin Label
                                             OverlapFlags =247
@@ -628,6 +766,9 @@ Begin Form
                                             Height =255
                                             Name ="Label125"
                                             Caption ="Inv. Hist. Numbers Last Run: "
+                                            GUID = Begin
+                                                0xb895cda572285d4c858975982b402f46
+                                            End
                                         End
                                     End
                                 End
@@ -641,6 +782,9 @@ Begin Form
             Height =540
             BackColor =-2147483633
             Name ="FormFooter"
+            GUID = Begin
+                0xe7d081653733be499b3b4fc5a9603d3a
+            End
             Begin
                 Begin CommandButton
                     OverlapFlags =85
@@ -675,6 +819,9 @@ Begin Form
                         0xffffff0000000000
                     End
                     ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x66845cbdd248d84fb49aebaec2ea6215
+                    End
                 End
             End
         End
@@ -789,7 +936,7 @@ Private Sub cmdDownload_Click()
             "GROUP BY ARTRAN.CustomerKey, CLng(Month(" & _
             "[DocumentDate])), CLng(Year([DocumentDate]));"
             
-            'Debug.Print strSQL
+            
     
     dbs.Execute strSQL, dbSeeChanges
     
@@ -830,8 +977,8 @@ Private Sub Form_Load()
     
     ' Set the Month and Year
     With Me
-       .txtYear = Year(date)
-       .cboMonth = Month(date)
+       .txtYear = Year(Date)
+       .cboMonth = Month(Date)
     End With
     
     'load row souce property for client service representive combo box
@@ -871,7 +1018,7 @@ Private Sub Form_Load()
     If rst.RecordCount > 0 Then
       With rst
        Do While Not rst.EOF
-        strList = strList & !GeoID & "," & !GEOdesc & ";"
+        strList = strList & !GEOid & "," & !GEOdesc & ";"
         Me.cboGEOid.RowSource = strList
         .MoveNext
        Loop
@@ -1116,7 +1263,7 @@ On Error GoTo Err_cmdInvHistReport_Click
         
         If .cboGEOid <> Null Or Me.cboGEOid <> "All" Then
             strGeoID = .cboGEOid
-            strWhere = strWhere & " AND ((tblgrp.GRPgeoID) = '" & strGeoID & "')"
+            strWhere = strWhere & " AND ((tblgrp.GRGeoID) = '" & strGeoID & "')"
         End If
     End With
     
@@ -1137,7 +1284,7 @@ On Error GoTo Err_cmdInvHistReport_Click
     strSQL = strSQL & "tblGrp.GroupID = tblInvoiceHistory.GrpID)"
     strSQL = strSQL & " ON tlkpClientServiceReps.RepID = tblGrp."
     strSQL = strSQL & "GRClientSvcRepID) ON tblGeographical."
-    strSQL = strSQL & "GEOid = tblGrp.GRPgeoID "
+    strSQL = strSQL & "GEOid = tblGrp.GRGeoID "
     
     strSQL = strSQL & strWhere
       

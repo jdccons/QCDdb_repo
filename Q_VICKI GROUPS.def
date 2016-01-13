@@ -1,38 +1,30 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblGrp"
     Name ="tblAgent"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRContBeg"
+    Alias ="Expr1"
     Expression ="tblGrp.GRagentID2"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRphone1"
-    Expression ="tblGrp.GRphone2"
-End
-Begin Joins
-    LeftTable ="tblAgent"
-    RightTable ="tblGrp"
-    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
-    Flag =1
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRPhone1"
+    Expression ="tblGrp.GRPhone2"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
         dbInteger "ColumnWidth" ="3870"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRagentID2"
-        dbInteger "ColumnWidth" ="1275"
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
@@ -61,10 +53,10 @@ Begin
     Left =105
     Top =87
     Right =1258
-    Bottom =708
+    Bottom =719
     Left =-1
     Top =-1
-    Right =1146
+    Right =1138
     Bottom =452
     Left =0
     Top =0
@@ -73,7 +65,7 @@ Begin
         Left =38
         Top =6
         Right =369
-        Bottom =420
+        Bottom =409
         Top =0
         Name ="tblGrp"
         Name =""
@@ -82,7 +74,7 @@ Begin
         Left =441
         Top =3
         Right =961
-        Bottom =372
+        Bottom =361
         Top =0
         Name ="tblAgent"
         Name =""

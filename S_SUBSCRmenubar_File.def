@@ -1,11 +1,12 @@
-Version =0
+Version =196611
 ColumnsShown =1
 Begin
+    MacroName ="Change &Status"
+    Action ="RunCode"
+    Argument ="ChangeSubscrStatus () "
+End
+Begin
     MacroName ="&Close"
-    Action ="DoMenuItem"
-    Argument ="20"
-    Argument ="0"
-    Argument ="0"
-    Argument ="1"
-    Argument ="0"
+    Action ="RunCommand"
+    Argument ="58"
 End

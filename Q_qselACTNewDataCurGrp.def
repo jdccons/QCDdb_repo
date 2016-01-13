@@ -1,25 +1,25 @@
 Operation =1
 Option =0
 Begin InputTables
-    Name ="tlkpClientServiceReps"
     Name ="tblGrp"
+    Name ="tlkpClientServiceReps"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GROUPid"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRPgeoID"
-    Expression ="tblGrp.GRstreet1"
-    Expression ="tblGrp.GRstreet2"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
-    Expression ="tblGrp.GRzip"
+    Expression ="tblGrp.GroupID"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRGeoID"
+    Expression ="tblGrp.GRStreet1"
+    Expression ="tblGrp.GRStreet2"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
+    Expression ="tblGrp.GRZip"
     Alias ="Phone"
     Expression ="IIf([GRphone1] Is Not Null,CDbl(Mid([GRphone1],1,10)),Null)"
     Alias ="Alt Phone"
     Expression ="IIf([GRphone2] Is Not Null,CDbl(Mid([GRphone2],1,10)),Null)"
     Alias ="Fax"
     Expression ="IIf([GRfax] Is Not Null,CDbl(Mid([GRfax],1,10)),Null)"
-    Expression ="tblGrp.GRmainCONT"
+    Expression ="tblGrp.GRMainCont"
     Alias ="ContBegDate"
     Expression ="Year([GRcontBEG]) & Format(Month([GRcontBEG]),\"00\") & Format(Day([GRcontBEG]),"
         "\"00\")"
@@ -29,19 +29,19 @@ Begin OutputColumns
     Alias ="CancelDate"
     Expression ="Year([GRcancelledDATE]) & Format(Month([GRcancelledDATE]),\"00\") & Format(Day(["
         "GRcancelledDATE]),\"00\")"
-    Expression ="tblGrp.GRnotes"
+    Expression ="tblGrp.GRNotes"
     Expression ="tlkpClientServiceReps.RepName"
     Alias ="Status"
     Expression ="IIf([GRcancelled]=-1,\"Cancelled\",\"Active\")"
-    Expression ="tblGrp.GRemail"
+    Expression ="tblGrp.GREmail"
     Alias ="Country"
     Expression ="\"United States of America\""
-    Expression ="tblGrp.GRmainCONTtitle"
+    Expression ="tblGrp.GRMainContTitle"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tlkpClientServiceReps"
-    Expression ="tblGrp.GRClientSvcRepID = tlkpClientServiceReps.RepID"
+    Expression ="tblGrp.GRClientSvcRepID=tlkpClientServiceReps.RepID"
     Flag =2
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -57,30 +57,30 @@ Begin
     Left =93
     Top =114
     Right =1229
-    Bottom =518
+    Bottom =525
     Left =-1
     Top =-1
-    Right =1129
+    Right =1121
     Bottom =231
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =387
-        Top =5
-        Right =552
-        Bottom =85
-        Top =0
-        Name ="tlkpClientServiceReps"
-        Name =""
-    End
-    Begin
         Left =8
         Top =12
         Right =167
-        Bottom =107
+        Bottom =100
         Top =0
         Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =387
+        Top =5
+        Right =552
+        Bottom =93
+        Top =0
+        Name ="tlkpClientServiceReps"
         Name =""
     End
 End

@@ -1,25 +1,40 @@
 Version =20
 VersionRequired =20
-Checksum =-667323596
+Checksum =1607353415
 Begin Form
+    Modal = NotDefault
     RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     DefaultView =0
     ScrollBars =0
-    BorderStyle =1
+    ViewsAllowed =1
     Width =10224
-    ItemSuffix =122
-    Left =4410
-    Top =645
-    Right =14640
-    Bottom =6750
+    ItemSuffix =124
+    Left =8130
+    Top =105
+    Right =18360
+    Bottom =5625
     RecSrcDt = Begin
-        0x9b3a5419d1a0e240
+        0xc66c53581575e440
     End
-    RecordSource ="qfrmInvGrp"
-    Caption ="Invoice Entry - Group (All American Only)"
-    AfterUpdate ="[Event Procedure]"
-    MenuBar ="FormMenuBar"
+    RecordSource ="SELECT DISTINCTROW tblInvHdr.[CUST KEY], tblInvHdr.[CUST NAME], tblInvHdr.[ADDRE"
+        "SS 1], tblInvHdr.[ADDRESS 2], tblInvHdr.[ADDRESS 3], tblInvHdr.CITY, tblInvHdr.S"
+        "TATE, tblInvHdr.[ZIP CODE], tblInvHdr.COUNTRY, tblInvHdr.ATTENTION, tblInvHdr.[T"
+        "RANS NO], tblInvHdr.[APPLY-TO], tblInvHdr.[SEL STATUS], tblInvHdr.[INV DATE], tb"
+        "lInvHdr.[RECR CYCLE], tblInvHdr.BUYER, tblInvHdr.[CUST PO], tblInvHdr.[CHECK NO]"
+        ", tblInvHdr.[CHECK AMTR], tblInvHdr.[COMM OVRD], tblInvHdr.[LOCATION  KEY], tblI"
+        "nvHdr.[TERRITORY KEY], tblInvHdr.[SALESP    KEY], tblInvHdr.TERMS, tblInvHdr.FOB"
+        ", tblInvHdr.[SHIP VIA], tblInvHdr.[COMMENT KEY], tblInvHdr.[CUST CLASS], tblInvH"
+        "dr.FREIGHT, tblInvHdr.[DISCOUNT MULT], tblInvHdr.[CR MEMO FLAG], tblInvHdr.[INVO"
+        "ICE NO], tblInvHdr.SPARE, tblInvHdr.SPARE2, tblInvHdr.SPARE3, tblInvHdr.INVOICET"
+        "OTAL, tblInvHdr.SYSDOCID, tblInvHdr.RecUserID, tblInvHdr.RecDate, tblInvHdr.RecT"
+        "ime, tblInvHdr.upsize_ts, tblInvHdr.DateModified\015\012FROM tblInvHdr\015\012WH"
+        "ERE (((tblInvHdr.SPARE3)=\"All American\"));"
+    Caption ="Invoice Entry - All American"
+    OnCurrent ="[Event Procedure]"
+    MenuBar ="InvoiceAllAmerican"
     PrtMip = Begin
         0xd002000038040000d0020000d002000000000000a02900004029000001000000 ,
         0x010000006801000000000000a10700000100000000000000
@@ -75,7 +90,16 @@ Begin Form
         0x08001c0026000100000000000000000000000000000000000000000000000000 ,
         0x0000000000004d7920446f63756d656e74735c2a2e70646600
     End
+    OnLoad ="=LockBoundControls(screen.ActiveForm,True)"
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
     Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
         Begin CommandButton
             TextFontFamily =2
         End
@@ -87,200 +111,307 @@ Begin Form
             SpecialEffect =2
         End
         Begin FormHeader
-            Height =0
+            CanGrow = NotDefault
+            Height =510
             BackColor =12632256
             Name ="FormHeader0"
+            GUID = Begin
+                0x96774b8e586b324998b2de609092cae6
+            End
+            Begin
+                Begin Label
+                    BackStyle =1
+                    OverlapFlags =85
+                    TextAlign =3
+                    Left =255
+                    Top =150
+                    Width =1350
+                    Height =240
+                    FontWeight =700
+                    BackColor =12632256
+                    Name ="Label122"
+                    Caption ="Input Date: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x3d20e63ddb86854f96e6c1133381a429
+                    End
+                End
+                Begin TextBox
+                    OldBorderStyle =1
+                    OverlapFlags =85
+                    TextAlign =1
+                    Left =1650
+                    Top =150
+                    Width =1020
+                    Name ="INPUT_DATE"
+                    Format ="m/d/yyyy"
+                    AfterUpdate ="[Event Procedure]"
+                    DefaultValue ="=DateSerial(Year(Date()),Month(Date())+1,1)"
+                    InputMask ="99/99/0000;0;_"
+                    GUID = Begin
+                        0x4ce9e2ee917375449fbe26958be112e9
+                    End
+                End
+                Begin Label
+                    OverlapFlags =85
+                    Left =2790
+                    Top =135
+                    Width =4815
+                    Height =255
+                    Name ="Label126"
+                    Caption ="Enter an invoice date and click File>Create Invoices"
+                    GUID = Begin
+                        0x3a5c82dca6494849bb3aae4696040ef4
+                    End
+                End
+            End
         End
         Begin Section
             CanGrow = NotDefault
-            Height =5400
+            Height =4260
             BackColor =12632256
             Name ="Detail Section"
             EventProcPrefix ="Detail_Section"
+            GUID = Begin
+                0xd79ea2b68d64bb48b5678c4730a60601
+            End
             Begin
-                Begin ComboBox
-                    SpecialEffect =2
-                    OverlapFlags =93
-                    ColumnCount =2
-                    ListWidth =3925
-                    Left =1470
-                    Top =165
-                    Width =1008
-                    ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
-                    Name ="CUST KEY"
-                    ControlSource ="CUST KEY"
-                    RowSourceType ="Table/Query"
-                    RowSource ="SELECT qryGrpComboAA_Ins.GROUPid, qryGrpComboAA_Ins.GRname FROM qryGrpComboAA_In"
-                        "s ORDER BY qryGrpComboAA_Ins.GROUPid;"
-                    ColumnWidths ="750;2925"
-                    AfterUpdate ="[Event Procedure]"
-                    EventProcPrefix ="CUST_KEY"
-                End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =93
                     TextAlign =3
-                    Left =180
-                    Top =435
+                    Left =249
+                    Top =606
                     Width =1251
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text5"
                     Caption ="Group Name: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xd8ca6e559181254b955596b6b012ed9d
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =95
                     TextAlign =3
-                    Left =180
-                    Top =675
+                    Left =249
+                    Top =846
                     Width =1251
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text6"
                     Caption =" Address: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x66cbcb81f823724abf0222520d78feae
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =95
                     TextAlign =3
-                    Left =180
-                    Top =915
+                    Left =249
+                    Top =1086
                     Width =1251
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text7"
                     Caption ="Address 2: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xdf13b524210c4f47809233f46dcf28ec
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =95
                     TextAlign =3
-                    Left =180
-                    Top =1155
+                    Left =249
+                    Top =1326
                     Width =1251
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text8"
                     Caption ="City: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x64989d710b3a2547a573cb665a05e58e
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =215
                     TextAlign =3
-                    Left =780
-                    Top =1365
+                    Left =849
+                    Top =1536
                     Width =651
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text9"
                     Caption ="State: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x5ad1fbb6ea3ac547be8f62decb58262d
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =93
                     TextAlign =3
-                    Left =1920
-                    Top =1380
+                    Left =1974
+                    Top =1551
                     Width =471
                     Height =225
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text10"
                     Caption ="Zip: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x7cc48639d3dff74fa90a8b40e03ce685
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     OldBorderStyle =1
-                    OverlapFlags =95
-                    Left =1470
-                    Top =420
+                    OverlapFlags =93
+                    Left =1524
+                    Top =591
                     Width =2466
-                    TabIndex =1
+                    TabIndex =2
+                    BackColor =12632256
                     Name ="CUST NAME"
                     ControlSource ="CUST NAME"
                     EventProcPrefix ="CUST_NAME"
+                    GUID = Begin
+                        0x37bc8e7852362f4dbfb363b4344315d0
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     OldBorderStyle =1
                     OverlapFlags =95
-                    Left =1470
-                    Top =660
+                    Left =1524
+                    Top =831
                     Width =2463
-                    TabIndex =2
+                    TabIndex =3
+                    BackColor =12632256
                     Name ="ADDRESS 1"
                     ControlSource ="ADDRESS 1"
                     EventProcPrefix ="ADDRESS_1"
+                    GUID = Begin
+                        0x3c424752e6375e49a0588b8bc4351270
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     OldBorderStyle =1
                     OverlapFlags =95
-                    Left =1470
-                    Top =900
+                    Left =1524
+                    Top =1071
                     Width =2463
-                    TabIndex =3
+                    TabIndex =4
+                    BackColor =12632256
                     Name ="ADDRESS 2"
                     ControlSource ="ADDRESS 2"
                     EventProcPrefix ="ADDRESS_2"
+                    GUID = Begin
+                        0x05f647fb605f3b4ab838c10192829c0c
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     OldBorderStyle =1
                     OverlapFlags =95
-                    Left =1470
-                    Top =1140
+                    Left =1524
+                    Top =1311
                     Width =1728
-                    TabIndex =4
+                    TabIndex =5
+                    BackColor =12632256
                     Name ="CITY"
                     ControlSource ="CITY"
+                    GUID = Begin
+                        0x45355115557dda4bb0affab078eff10c
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     OldBorderStyle =1
                     OverlapFlags =95
-                    Left =1470
-                    Top =1380
+                    Left =1524
+                    Top =1551
                     Width =432
                     Height =225
-                    TabIndex =5
+                    TabIndex =6
+                    BackColor =12632256
                     Name ="STATE"
                     ControlSource ="STATE"
+                    GUID = Begin
+                        0x63580cb0d05e0347a4a9880f542a57eb
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     DecimalPlaces =0
                     OldBorderStyle =1
                     OverlapFlags =95
-                    Left =2385
-                    Top =1395
+                    Left =2439
+                    Top =1566
                     Width =1008
                     Height =210
-                    TabIndex =6
+                    TabIndex =7
+                    BackColor =12632256
                     Name ="ZIP CODE"
                     ControlSource ="ZIP CODE"
                     InputMask ="00000\\-9999;;_"
                     EventProcPrefix ="ZIP_CODE"
+                    GUID = Begin
+                        0x2f1661b136c76240a99ee2b344c5e729
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =85
                     TextAlign =3
-                    Left =165
-                    Top =1635
+                    Left =219
+                    Top =1806
                     Width =1281
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text65"
                     Caption ="Attn: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x77e7400c6a3fb24ba17a135d5f27c532
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     DecimalPlaces =0
                     OldBorderStyle =1
                     OverlapFlags =87
-                    Left =1470
-                    Top =1620
+                    Left =1524
+                    Top =1791
                     Width =2448
-                    TabIndex =7
+                    TabIndex =8
+                    BackColor =12632256
                     Name ="ATTENTION"
                     ControlSource ="ATTENTION"
+                    GUID = Begin
+                        0x1bbea7047c0f0b4b98a152f54ca8253a
+                    End
                 End
                 Begin Label
-                    OverlapFlags =93
+                    BackStyle =1
+                    OverlapFlags =85
                     TextAlign =3
                     Left =5070
                     Top =120
@@ -290,49 +421,66 @@ Begin Form
                     BackColor =12632256
                     Name ="Text67"
                     Caption ="Invoice No: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x5954bb25c899534a88ea3fe1357f76e7
+                    End
                 End
                 Begin TextBox
                     Enabled = NotDefault
                     Locked = NotDefault
                     OldBorderStyle =1
-                    OverlapFlags =93
+                    OverlapFlags =85
                     Left =6480
                     Top =105
                     Width =1020
-                    TabIndex =8
+                    TabIndex =9
                     BackColor =12632256
                     Name ="TRANS NO"
                     ControlSource ="TRANS NO"
                     EventProcPrefix ="TRANS_NO"
+                    GUID = Begin
+                        0x72dbf6aa1da5cc4394f5ed5a6e47ab13
+                    End
                 End
                 Begin Label
-                    OverlapFlags =95
+                    BackStyle =1
+                    OverlapFlags =93
                     TextAlign =3
-                    Left =5070
-                    Top =360
+                    Left =150
+                    Top =60
                     Width =1350
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text69"
                     Caption ="Invoice Date: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x6d66b6e5b6874b4180b147da2ea8b162
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     OldBorderStyle =1
-                    OverlapFlags =95
+                    OverlapFlags =87
                     TextAlign =1
-                    Left =6480
-                    Top =345
+                    Left =1515
+                    Top =60
                     Width =1020
-                    TabIndex =9
+                    BackColor =12632256
                     Name ="INV DATE"
                     ControlSource ="INV DATE"
                     Format ="m/d/yyyy"
                     InputMask ="99/99/0000;0;_"
                     EventProcPrefix ="INV_DATE"
+                    GUID = Begin
+                        0x3a3e39f443da06438f370bd4207e96fd
+                    End
                 End
                 Begin Label
-                    OverlapFlags =95
+                    BackStyle =1
+                    OverlapFlags =93
                     TextAlign =3
                     Left =5070
                     Top =600
@@ -342,20 +490,30 @@ Begin Form
                     BackColor =12632256
                     Name ="Text71"
                     Caption ="Comm Ovrd: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x8913adfaec19594482ed9a37e85444ad
+                    End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     DecimalPlaces =0
                     OldBorderStyle =1
-                    OverlapFlags =95
+                    OverlapFlags =93
                     Left =6480
                     Top =585
                     Width =1020
                     TabIndex =10
+                    BackColor =12632256
                     Name ="COMM OVRD"
                     ControlSource ="COMM OVRD"
                     EventProcPrefix ="COMM_OVRD"
+                    GUID = Begin
+                        0x59d22350f4c54f4780c960cb3d1e3d9f
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =95
                     TextAlign =3
                     Left =5070
@@ -366,6 +524,10 @@ Begin Form
                     BackColor =12632256
                     Name ="Text73"
                     Caption ="Territory/GEO: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x00a6a0fd98a54340a64f4753ca5dcea9
+                    End
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -381,45 +543,42 @@ Begin Form
                     Name ="TERRITORY KEY"
                     ControlSource ="TERRITORY KEY"
                     EventProcPrefix ="TERRITORY_KEY"
+                    GUID = Begin
+                        0x5475852b7d1e6d47b08dc11b84afab95
+                    End
                 End
                 Begin Subform
                     OverlapFlags =85
                     SpecialEffect =0
-                    Left =1470
-                    Top =1920
+                    Left =1500
+                    Top =2145
                     Width =6669
-                    Height =3420
+                    Height =1965
                     TabIndex =12
                     Name ="fsubInvGrpAA"
                     SourceObject ="Form.fsubInvGrpAA"
-                    LinkChildFields ="DOCUMENT NO"
-                    LinkMasterFields ="TRANS NO"
-                End
-                Begin CommandButton
-                    OverlapFlags =85
-                    TextFontFamily =34
-                    Left =4065
-                    Top =300
-                    Width =900
-                    Height =705
-                    FontSize =8
-                    TabIndex =13
-                    Name ="btnCreateInvoice"
-                    Caption ="Create Single Invoice"
-                    OnClick ="[Event Procedure]"
-                    FontName ="MS Sans Serif"
+                    LinkChildFields ="CUST KEY"
+                    LinkMasterFields ="CUST KEY"
+                    GUID = Begin
+                        0x7eb1da23e7648c4fac9bc8344cac8f98
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =85
                     TextAlign =3
-                    Left =195
-                    Top =165
-                    Width =1251
+                    Left =240
+                    Top =330
+                    Width =1260
                     Height =240
                     FontWeight =700
                     BackColor =12632256
                     Name ="Text102"
-                    Caption ="Group Name: "
+                    Caption ="Group ID: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xac2e711959e35e408677aeed81859460
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -431,12 +590,15 @@ Begin Form
                     Left =7590
                     Top =1155
                     Width =1830
-                    TabIndex =14
+                    TabIndex =13
                     BackColor =12632256
                     Name ="AGENT1 NAME"
                     ControlSource ="=DLookUp(\"[AGENT_LUname]\",\"tblAgent\",\"[AGENTid] = Forms![frmInvGrpAA_Ins]!["
                         "SALESP    KEY]\")"
                     EventProcPrefix ="AGENT1_NAME"
+                    GUID = Begin
+                        0x7ac1362921421746956524740133291a
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -448,12 +610,15 @@ Begin Form
                     Left =7590
                     Top =1395
                     Width =1830
-                    TabIndex =15
+                    TabIndex =14
                     BackColor =12632256
                     Name ="AGENT2 NAME"
                     ControlSource ="=DLookUp(\"[AGENT_LUname]\",\"tblAgent\",\"[AGENTid] = Forms![frmInvGrpAA_Ins]!["
                         "SPARE3]\")"
                     EventProcPrefix ="AGENT2_NAME"
+                    GUID = Begin
+                        0xc2d56890383b9a41a6d7d4d3e2b7af84
+                    End
                 End
                 Begin TextBox
                     Enabled = NotDefault
@@ -464,27 +629,32 @@ Begin Form
                     Left =7515
                     Top =825
                     Width =2685
-                    TabIndex =16
+                    TabIndex =15
                     BackColor =12632256
                     Name ="TERRITORY NAME"
                     ControlSource ="=DLookUp(\"[GEODESC]\",\"tblGeographical\",\"[GEOid] = Forms![frmInvGrpAA_ins]!["
                         "TERRITORY KEY]\")"
                     EventProcPrefix ="TERRITORY_NAME"
+                    GUID = Begin
+                        0xd4187c05ead0c04c94ba0d3f62433ce8
+                    End
                 End
                 Begin CommandButton
+                    Visible = NotDefault
                     OverlapFlags =85
                     TextFontFamily =34
-                    Left =4065
-                    Top =1155
-                    Width =900
-                    Height =705
+                    Left =4020
+                    Top =105
+                    Width =288
+                    Height =288
                     FontSize =8
-                    TabIndex =17
-                    Name ="Bulk Invoices"
-                    Caption ="Create Batch Invoices"
+                    TabIndex =16
+                    Name ="Bulk_Invoices"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
-                    EventProcPrefix ="Bulk_Invoices"
+                    GUID = Begin
+                        0x4950acb9796e1840a975b73e3bc52c5a
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -496,10 +666,13 @@ Begin Form
                     Top =105
                     Width =1020
                     Height =216
-                    TabIndex =18
+                    TabIndex =17
                     BackColor =65535
                     Name ="txtSYSDOCID"
                     ControlSource ="SYSDOCID"
+                    GUID = Begin
+                        0x4dac9a85e42556428d6fae2f84185728
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -511,10 +684,13 @@ Begin Form
                     Top =390
                     Width =1020
                     Height =216
-                    TabIndex =19
+                    TabIndex =18
                     BackColor =65535
                     Name ="txtRecUserID"
                     ControlSource ="RecUserID"
+                    GUID = Begin
+                        0x5f26dfc72b1bb04aa5203389b13c7da6
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -526,11 +702,14 @@ Begin Form
                     Top =105
                     Width =1020
                     Height =216
-                    TabIndex =20
+                    TabIndex =19
                     BackColor =65535
                     Name ="txtRecTime"
                     ControlSource ="RecTime"
                     Format ="Long Time"
+                    GUID = Begin
+                        0xda33988aec85ef409bbda90d7c2bdf0a
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -542,11 +721,14 @@ Begin Form
                     Top =390
                     Width =1020
                     Height =216
-                    TabIndex =21
+                    TabIndex =20
                     BackColor =65535
                     Name ="txtRecDate"
                     ControlSource ="RecDate"
                     Format ="Short Date"
+                    GUID = Begin
+                        0x4f9b77bfcaf9414d940707018e17fdbd
+                    End
                 End
                 Begin Subform
                     Locked = NotDefault
@@ -555,11 +737,14 @@ Begin Form
                     Top =1080
                     Width =4710
                     Height =795
-                    TabIndex =22
+                    TabIndex =21
                     Name ="sfrmAgentsAA"
                     SourceObject ="Form.sfrmAgentsAA"
                     LinkChildFields ="GROUPid"
                     LinkMasterFields ="CUST KEY"
+                    GUID = Begin
+                        0xcfdd93207cc887499694c8630df964d1
+                    End
                 End
                 Begin TextBox
                     Visible = NotDefault
@@ -571,11 +756,31 @@ Begin Form
                     Top =615
                     Width =1020
                     Height =216
-                    TabIndex =23
+                    TabIndex =22
                     BackColor =65535
                     Name ="CUST CLASS"
                     ControlSource ="CUST CLASS"
                     EventProcPrefix ="CUST_CLASS"
+                    GUID = Begin
+                        0x0f74241b47fe75499a3b8a6436eda7a0
+                    End
+                End
+                Begin TextBox
+                    Locked = NotDefault
+                    OldBorderStyle =1
+                    OverlapFlags =87
+                    Left =1524
+                    Top =336
+                    Width =1008
+                    TabIndex =1
+                    BackColor =12632256
+                    Name ="CUST KEY"
+                    ControlSource ="CUST KEY"
+                    AfterUpdate ="[Event Procedure]"
+                    EventProcPrefix ="CUST_KEY"
+                    GUID = Begin
+                        0x82b25c773a83c14e8741c776609129ef
+                    End
                 End
             End
         End
@@ -583,6 +788,9 @@ Begin Form
             Height =720
             BackColor =12632256
             Name ="FormFooter1"
+            GUID = Begin
+                0xf0c2c8579e0a95438730af0d2c4d0353
+            End
             Begin
                 Begin TextBox
                     OldBorderStyle =1
@@ -591,11 +799,15 @@ Begin Form
                     Top =90
                     Width =1332
                     Name ="INVOICE TOTAL"
-                    ControlSource ="=[fsubInvGrpAA].[Form]![SubTotal]"
+                    ControlSource ="=fsubInvGrpAA.Form!SubTotal"
                     Format ="$#,##0.00;($#,##0.00)"
                     EventProcPrefix ="INVOICE_TOTAL"
+                    GUID = Begin
+                        0x12e28794a4ac14469f14bbe53330cb24
+                    End
                 End
                 Begin Label
+                    BackStyle =1
                     OverlapFlags =87
                     TextAlign =3
                     Left =5190
@@ -606,6 +818,10 @@ Begin Form
                     BackColor =12632256
                     Name ="Text92"
                     Caption ="Invoice Total: "
+                    FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0x92b31dcc0a162041bd3c6727a5a5f9f8
+                    End
                 End
                 Begin Line
                     LineSlant = NotDefault
@@ -616,6 +832,9 @@ Begin Form
                     Width =2640
                     Height =15
                     Name ="Line97"
+                    GUID = Begin
+                        0xd97dac2418fd4c46b61b3acea3d340f0
+                    End
                 End
                 Begin Line
                     LineSlant = NotDefault
@@ -626,34 +845,27 @@ Begin Form
                     Width =2640
                     Height =15
                     Name ="Line98"
+                    GUID = Begin
+                        0x51d00512f2fa3e42bc769b70b19fa47f
+                    End
                 End
                 Begin CommandButton
-                    OverlapFlags =85
-                    TextFontFamily =34
-                    Left =2160
-                    Top =105
-                    Width =1221
-                    Height =576
-                    FontSize =8
-                    TabIndex =1
-                    Name ="btnPostPlt"
-                    Caption ="Post This\015\012Inv to Plt"
-                    OnClick ="[Event Procedure]"
-                    FontName ="MS Sans Serif"
-                End
-                Begin CommandButton
+                    Visible = NotDefault
                     OverlapFlags =85
                     TextFontFamily =34
                     Left =3600
                     Top =105
-                    Width =1221
-                    Height =576
+                    Width =288
+                    Height =288
                     FontSize =8
-                    TabIndex =2
+                    TabIndex =1
                     Name ="btnPostAlltoPlat"
-                    Caption ="Post All\015\012 Invs to  Plt"
+                    Caption ="\015\012 Invs to QB"
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
+                    GUID = Begin
+                        0xe394933c4ddd384dbd7ecf53059feac3
+                    End
                 End
             End
         End
@@ -665,248 +877,173 @@ Attribute VB_Creatable = True
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database   'Use database order for string comparisons
-
 Option Explicit
 
 'Declare module level global variables
+Dim mstrCustKey As String
+Dim mstrTranNo As String
+Dim mlngSysDocId As Long
+Dim mdteInvoiceDate As Date
+Function Export_Invoice_Data(dteInvoiceDate As Date) As Integer
 
-Dim mStrCustKey$
-Private Sub btnCreateInvoice_Click()
-'Purpose:  Populate subform with subscriber information
-'Progammer:  Suzanne Johnsen
-'Date Created:  9/21/99
-'Date Updated:  6/15/04
-'Updated By:    Tim Cook
-
-    On Error GoTo PROC_ERR
+    Dim strSQL As String
+    strSQL = "usp_AllAmericanInvoice_csv"
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+         .ConnectionString = SetConnxn
+         .Open
+    End With
+    With g_adoCommand
+          .ActiveConnection = g_adoConnection
+          .CommandType = adCmdStoredProc
+          .CommandText = strSQL
+          Set g_adoParm = .CreateParameter("@ReturnParm", adInteger, adParamReturnValue) 'Return parm
+          .Parameters.Append g_adoParm
+          Set g_adoParm = .CreateParameter("@InvoiceDate", adDate, adParamInput)
+          .Parameters.Append g_adoParm
+          .Parameters("@InvoiceDate").value = dteInvoiceDate
+          .Execute
+          g_iRtnVal = .Parameters.Item("@ReturnParm")
+    End With
     
-    DoCmd.SetWarnings False
-    DoCmd.OpenQuery "qryPopInvGrpDet_AA"
-    Me.Refresh
-    DoCmd.SetWarnings True
+    g_adoConnection.Close
+  
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
     
-    Exit Sub
-
-PROC_ERR:
-  MsgBox "The following error occured: " & Error$
-  Resume Next
-End Sub
-Private Sub btnPostAlltoPlat_Click()
-'Purpose:  Posts all mixed group invoices to Platinum
+    Export_Invoice_Data = g_iRtnVal
+  
+End Function
+' post All American Invoices to QuickBooks
+Public Sub btnPostAlltoPlat_Click()
+'Purpose:  Posts All American groups to QuickBooks
 'Programmer:  Tim Cook
 'Date Created:  1/31/02
 'Updated by:  John Criswell
 'Date Updated:  3/19/02
+'Updated by:  John Criswell
+'Date Updated:  9/14/2014
+'Reason:  changed processing code to stored procedures
 
+'Updated by:  John Criswell
+'Date Updated:  11/08/2015
+'Reason:  added stored procedure to create csv file for QuickBooks
   On Error GoTo PROC_ERR
-          
-        Dim db As DAO.Database
-        Dim rs As DAO.Recordset
-        Dim strSQL As String
-                          
-        DoCmd.Hourglass True
-        DoCmd.SetWarnings False
-       
-        'check to see if any invoices being posted have already been posted before
-        If AreAnyInvoicesInPlat() Then
-            MsgBox "One or more of the invoices you are trying to post already exist in Platinum.  Please remove from Platinum and start over."""
-            GoTo PROC_EXIT
-        Else
-            'Nothing
-        End If
-        
-        Set db = CurrentDb()
-        
-        ' Populate the Haney Export Table
-        'DoCmd.OpenQuery "qdelHaneyExport"
-        'DoCmd.OpenQuery "qappPost_Haney_All"
-        
-        ' Output the Haney File
-        'DoCmd.TransferDatabase acExport, "Paradox 5.X", "P:\QCDdb", acTable, _
-        '    "tblHaneyExport", "Haney_Ex.DB", False
-        
-        'select all qualifying invoices
-        strSQL = "SELECT DISTINCTROW tblInvHdr.[CUST KEY], tblInvHdr.[CUST NAME], tblInvHdr.[ADDRESS 1], " & _
-            "tblInvHdr.[ADDRESS 2], tblInvHdr.CITY, tblInvHdr.STATE, tblInvHdr.[ZIP CODE], tblInvHdr.ATTENTION, " & _
-            "CStr(Format([TRANS NO],'00000')) AS Trans_No, tblInvHdr.[INV DATE], tblInvHdr.[INV DATE], tblInvHdr.[INV DATE], " & _
-            "tblInvHdr.[INV DATE], tblInvHdr.[TERRITORY KEY], tblInvHdr.[SALESP    KEY], tblInvHdr.SPARE3, 1 AS Crd_Memo, " & _
-            "tblInvHdr.[CUST CLASS], 'S' AS Sel_Status, 'I' AS [TRANS TYPE], 0 AS Freightamt, 1 AS Reserved, 0 AS ReservedOECst, " & _
-            "tblInvHdr.SYSDOCID, 0 AS Applysysdocid, 0 AS Oedocid, tblInvHdr.RecUserID, tblInvHdr.RecDate, " & _
-            "CStr(Format([RecTime],'hh:nn:ss')) AS [Time] FROM tblInvHdr;"
-        
-        ' Create snapshot-type recordset object.
-        Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-        If rs.RecordCount > 0 Then
-           'insert header records into PfW
-           DoCmd.OpenQuery "qappPostPltHdr_Ins_all"
-                            
-            'Check Platinum to insure data was transferred correctly
-            If DidAllInvoicesPosttoPlat() Then
-                'nothing
-            Else
-                MsgBox "At least one invoice did not post to Platinum."
-                GoTo PROC_EXIT
-            End If
-        End If
-        rs.Close
-            
-        strSQL = "SELECT DISTINCTROW Format([DOCUMENT NO],'00000') AS DocNo, ([ITEM KEY]) & '  ' & ([Description]) AS SSN, " & _
-                "tblInvLin.[UNIT PRICE], tblInvLin.[QTY ORDERED], tblInvLin.[QTY SHIPPED], 0 AS Discprcnt, " & _
-                "[REV ACCT] & [REV SUB] AS RevAcct, 1 AS LineItemTy, 'l' AS TransType, Date() AS ReqDate, Date() AS ShipDate, " & _
-                "Date() AS DocDate, 'GROUP' AS [Group], tblInvHdr.RecUserID, tblInvHdr.RecDate, " & _
-                "CStr(Format([RecTime],'hh:nn:ss')) AS [Time], tblInvHdr.SYSDOCID, 1 AS syslinsq, tblInvHdr.SYSDOCID, 1 AS Origlinsq, " & _
-                "1 AS Row, 1 AS Origsysid " & _
-                "FROM tblInvHdr INNER JOIN tblInvLin ON tblInvHdr.[TRANS NO] = tblInvLin.[DOCUMENT NO];"
-            
-        ' Create snapshot-type Recordset object.
-        Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-        If rs.RecordCount > 0 Then
-            'insert detail records into PfW
-            DoCmd.OpenQuery "qappPostPltDet_Ins_all"
-        End If
-        rs.Close
-                
-        'MsgBox "The Haney Export file has been created.  Please send P:\QCDdb\Haney_Ex.db file to The Haney Group for Processing.", vbInformation, "Output complete"
+  
+    Dim dteInvoiceDate As Date
+    Dim strGroupType As String
+    Dim strInput As String
     
-        'remove data from form
-        DoCmd.OpenQuery "qdelDelInvHdr_all"
-        Forms![frmInvGrpAA_Ins].Requery
+    strGroupType = "All American"
+    strInput = InputBox("Enter an invoice date.")
+     
+    Do While Not IsDate(strInput)
+         strInput = InputBox("The date you entered is not a valid date." & vbCrLf & "Please re-enter a valid invoice date")
+    Loop
+    
+    dteInvoiceDate = CDate(strInput)
+    
+    '  check for duplicate PltCustKeys
+    If DupPltCustKeys() Then
+        MsgBox "There are duplicate PltCustKeys.  The process will fail unless the duplicates are fixed."
+        GoTo PROC_EXIT
+    End If
+    
+   'check to see if any invoices being posted were posted before
+    If AreAnyInvoicesInPlat(dteInvoiceDate, strGroupType) Then
+       MsgBox "One or more of the invoices you are trying to post already exist in the QB transaction table.  Please remove these transactions and start over."
+       GoTo PROC_EXIT
+    Else
+      'Nothing
+    End If
+     
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
+       
+   ' process invoices in pre condition
+   ' and insert them into ARTRANH_local (post)
+   ExecuteSQL "usp_InvoicePostGroup" & "' " & dteInvoiceDate & "', " & "'" & strGroupType & "'"
+   
+   'Check ARTRANH_local
+   'to insure data was transferred correctly
+    If DidAllInvoicesPosttoPlat() Then
+        MsgBox "All invoices posted to QuickBooks holding table."
+    Else
+        MsgBox "At least one invoice did not post to QuickBooks holding table."
+        GoTo PROC_EXIT
+    End If
+    
+    ' create csv file for importing into QuickBooks
+    If Export_Invoice_Data(dteInvoiceDate) = 1 Then
+        MsgBox "invoice data export succeeded."
+    Else
+        MsgBox "invoice data export failed."
+    End If
+       
+    'remove data from form
+    DoCmd.OpenQuery "qdelDelInvHdr_all"
+    Forms![frmInvGrpAA_Ins].Requery
+    DoCmd.SetWarnings True
+    DoCmd.Hourglass False
+    
+    Exit Sub
        
 PROC_EXIT:
-    
-  Set db = Nothing
   DoCmd.SetWarnings True
   DoCmd.Hourglass False
   Exit Sub
 
 PROC_ERR:
   
-  MsgBox "There was an error Creating the Haney Export file, or in posting to Platium." & vbCrLf & _
+  MsgBox "There was an error processing All American invoices." & vbCrLf & _
     vbCrLf & "The error number is: " & Err.Number & " and the system Error message is: " & Err.DESCRIPTION, vbCritical, "Export Error"
   
   Resume PROC_EXIT:
   
 End Sub
-Private Sub btnPostPlt_Click()
-'Purpose:  Posts a single group invoice to Platinum
-'Programmer:  Suzanne Johnsen
-'Date Created:  9/21/99
-'Updated by:  John Criswell
-'Date Updated:  1/11/00
-
-On Error GoTo PROC_ERR
-        
-        Dim wsp As Workspace, dbs As DAO.Database, rst As DAO.Recordset
-        Dim strName As String, strMessage As String, strPrompt As String
-        Dim fInTrans As Boolean
-        Dim strSQL As String, strSQL_up As String
-        
-        Dim strTranNo As String
-        strTranNo = Format(Me![TRANS NO], "0000000")
-        
-        DoCmd.Hourglass True
-        DoCmd.SetWarnings False
-        
-        'fInTrans = False
-
-        ' Return reference to default Workspace object.
-        'Set wsp = DBEngine.Workspaces(0)
-        ' Return reference to current database.
-        Set dbs = CurrentDb()
-        
-        ' Populate the Haney Export Table
-        'DoCmd.OpenQuery "qdelHaneyExport"
-        'DoCmd.OpenQuery "qappPost_Haney_Indiv"
-        
-        ' Output the Haney File
-        'DoCmd.TransferDatabase acExport, "Paradox 5.X", "P:\QCDdb", acTable, _
-        '    "tblHaneyExport", "Haney_Ex.DB", False
-        
-        'append ARHDR
-        strSQL = "SELECT DISTINCTROW tblInvHdr.[CUST KEY], CStr(Format([TRANS NO],'0000000')) AS Trans_No "
-        strSQL = strSQL & "FROM tblInvHdr WHERE (((CStr(Format([TRANS NO],'0000000')))='" & strTranNo & "'));"
-
-        ' Create table-type Recordset object.
-        Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
-        If rst.RecordCount > 0 Then
-            ' This is the OLD query that appended to PfW
-            DoCmd.OpenQuery "qappPostPltHdr_AA"  'changed name of query to conform to LNC -- jdc 1/11/00
-            rst.Close
-            Set rst = Nothing
-        End If
-        
+Public Sub Bulk_Invoices_Click()
   
-            'Check both Access and Platinum
-            'to insure data was transferred correctly
-            If DidThisInvoicePosttoPlat(strTranNo) Then
-                'nothing
-            Else
-                MsgBox "This invoice " & strTranNo & " did not post to Platinum."
-                GoTo PROC_EXIT
-            End If
-              
-            strSQL = "SELECT DISTINCTROW ([ITEM KEY]) & '  ' & ([Description]) AS SSN "
-            strSQL = strSQL & "FROM tblInvHdr LEFT JOIN tblInvLin ON tblInvHdr.[TRANS NO] = tblInvLin.[DOCUMENT NO] "
-            strSQL = strSQL & "WHERE (((tblInvLin.[DOCUMENT NO])='" & strTranNo & "'));"
-     
-            'Create table-type Recordset object.
-            Set rst = dbs.OpenRecordset(strSQL, dbOpenSnapshot)
-            If rst.RecordCount > 0 Then
-                DoCmd.OpenQuery "qappPostPltDet_AA"  'changed name of query to conform to LNC -- jdc 1/11/00
-                rst.Close
-                Set rst = Nothing
-            End If
-            
-        
-        'MsgBox "The Haney Export file has been created.  Please send P:\QCDdb\Haney_Ex.db file to The Haney Group for Processing.", vbInformation, "Output complete"
+  On Error GoTo PROC_ERR
+   
+    Dim strGroupType As String
+    Dim dteInvoiceDate As Date
     
-        'remove data from form
-        DoCmd.OpenQuery "qdelDelInvHdr_AA"
-        Forms![frmInvGrpAA_Ins].Requery
-        
-        dbs.Close
-        Set dbs = Nothing
-        
-        DoCmd.SetWarnings True
-        DoCmd.Hourglass False
-        
-    Exit Sub
+    DoCmd.Hourglass True
+    DoCmd.SetWarnings False
     
-PROC_EXIT:
-
-    Set dbs = Nothing
-    Set wsp = Nothing
-
+    If IsNull(Me.INPUT_DATE) Or Me.INPUT_DATE = "" Then
+        MsgBox "Input date required."
+        Me.INPUT_DATE.SetFocus
+    Else
+        dteInvoiceDate = Me.INPUT_DATE
+        
+        ' save the date entered in INPUT_DATE
+        Call SaveInvoiceDate(dteInvoiceDate)
+        
+        strGroupType = "All American"
+        ExecuteSQL "usp_InvoicePreGroup '" & dteInvoiceDate & "', " & "'" & strGroupType & "'"
+    End If
+    
+    Forms![frmInvGrpAA_Ins].Requery
+    Me.Refresh
+    
     DoCmd.SetWarnings True
     DoCmd.Hourglass False
-    Exit Sub
-    
-PROC_ERR:
-    MsgBox "There was an error Creating the Haney Export file, or in posting to Platium." & vbCrLf & _
-    vbCrLf & "The error number is: " & Err.Number & " and the system Error message is: " & Err.DESCRIPTION, vbCritical, "Export Error"
-    
-    'If fInTrans Then
-    '    wsp.Rollback ' rollback Changes
-    'End If
-
-  Resume PROC_EXIT
-End Sub
-
-
-Private Sub Bulk_Invoices_Click()
-  On Error GoTo PROC_ERR
-    Dim strDocName As String
-    Dim strLinkCriteria As String
-
-    strDocName = "frmInvGrpBulk_AA"
-    DoCmd.OpenForm strDocName, , , strLinkCriteria
   
   Exit Sub
 
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
+    
 PROC_ERR:
   MsgBox "The following error occured: " & Error$
   Resume Next
 End Sub
+
+
 
 Private Sub CUST_KEY_AfterUpdate()
 'Purpose:  gets information for the form based on the customer key,
@@ -931,7 +1068,7 @@ Private Sub CUST_KEY_AfterUpdate()
     Dim strWhere As String
     Dim strCriterion As String
     Dim strTranNo As String
-    Dim lngSysDocID As Long
+    Dim lngSysDocId As Long
     Dim varInvoiceDate As Variant
     Dim varRecTime As Variant
     Dim varRecDate As Variant
@@ -956,11 +1093,11 @@ Private Sub CUST_KEY_AfterUpdate()
     End If
     
     ' Get the next SysDocID from ARNEXTSY
-    lngSysDocID = GetCurrentSysDocID()
+    lngSysDocId = GetCurrentSysDocID()
        
-    Forms![frmInvGrpAA_Ins]![SYSDOCID] = lngSysDocID
+    Forms![frmInvGrpAA_Ins]![SYSDOCID] = lngSysDocId
     Forms![frmInvGrpAA_Ins]![RecUserID] = "INVOICE"
-    Forms![frmInvGrpAA_Ins]![RecDate] = date
+    Forms![frmInvGrpAA_Ins]![RecDate] = Date
     Forms![frmInvGrpAA_Ins]![RecTime] = Time()
         
     strCriterion = Forms![frmInvGrpAA_Ins]![CUST KEY]
@@ -978,7 +1115,7 @@ Private Sub CUST_KEY_AfterUpdate()
         [STATE] = rs("GRstate")
         [ZIP CODE] = rs("GRzip")
         [ATTENTION] = rs("GRmainCONT")
-        [TERRITORY KEY] = rs("GRPgeoID")
+        [TERRITORY KEY] = rs("GRGeoID")
         [CUST CLASS] = rs("GRclassKEY")
         [INV DATE] = varInvoiceDate
     End With
@@ -986,8 +1123,6 @@ Private Sub CUST_KEY_AfterUpdate()
     db.Close
     Set db = Nothing
     
-    'DoCmd.RunCommand acCmdSave
-    'SendKeys "+{ENTER}", True
     Me.Dirty = False
     DoCmd.Hourglass False
 
@@ -1001,27 +1136,54 @@ Err_CUST_KEY_AfterUpdate:
   MsgBox "The following error occured: " & Error$
   GoTo Exit_CUST_KEY_AfterUpdate
 End Sub
+Function GetInvoiceDate()
 
-Private Sub Form_AfterUpdate()
+    Dim strSQL As String
+    strSQL = " SELECT FieldDateValue FROM dbo.tblConstants WHERE FieldName = 'InvoiceDate';"
+    LoadADORecordset (strSQL)
+    
+    If Len(g_adoRS("FieldDateValue")) > 0 Then
+        GetInvoiceDate = g_adoRS("FieldDateValue")
+    Else
+        GetInvoiceDate = DateSerial(Year(Date), Month(Date) + 1, 1)
+    g_adoRS.Close
+    End If
 
-On Error GoTo Err_Form_AfterUpdate
+End Function
+Private Sub Form_Current()
+    
+    On Error GoTo PROC_ERR
+    
+    With Forms![frmInvGrpAA_Ins]
+        INPUT_DATE = GetInvoiceDate()
+    End With
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
+    
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: frmInvGrpAA_Ins.Form_Current "
+  Resume PROC_EXIT
+    
+End Sub
 
-    Dim dbs As DAO.Database
-    Dim rst As DAO.Recordset
-    Set dbs = CurrentDb()
-    Set rst = dbs.OpenRecordset("tblConstants", dbOpenDynaset, dbSeeChanges)
-    rst.Edit
-    rst("FieldDateValue") = Me![INV DATE]
-    rst.Update
-    rst.Close
-    dbs.Close
-
-Exit_Form_AfterUpdate:
-    Exit Sub
-
-Err_Form_AfterUpdate:
-    MsgBox Error$
-    Resume Exit_Form_AfterUpdate
-
-
+Private Sub INPUT_DATE_AfterUpdate()
+    
+   On Error GoTo PROC_ERR
+    
+    Dim dteInputDate As Date
+    dteInputDate = Me.INPUT_DATE
+    ' save the date
+    
+PROC_EXIT:
+  DoCmd.SetWarnings True
+  DoCmd.Hourglass False
+  Exit Sub
+    
+PROC_ERR:
+  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: frmInvGrpAA_Ins.INPUT_DATE_AfterUpdate "
+  Resume PROC_EXIT
+    
 End Sub

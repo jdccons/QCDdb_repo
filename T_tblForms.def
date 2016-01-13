@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<TableDef name="tblForms" foreign="False">
+  <Properties/>
+  <SQL>CREATE TABLE [tblForms] (
+[ID] AUTOINCREMENT,
+[Name] TEXT (50),
+[Caption] TEXT (100),
+[Description] TEXT (255),
+[Notes] TEXT (50),
+[DateCreated] DATETIME,
+[DateModified] DATETIME,
+[TxnDate] DATETIME);</SQL>
+  <Attributes value="0">
+    <dbHiddenObject value="False"/>
+    <dbAttachExclusive value="False"/>
+    <dbAttachSavePWD value="False"/>
+    <dbAttachedODBC value="False"/>
+    <dbAttachedTable value="False"/>
+    <dbSystemObject value="False"/>
+  </Attributes>
+  <FieldDefs>
+    <Field_0 name="ID">
+      <Value name="Value" type="4"/>
+      <Attributes name="Attributes" type="4" value="17"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="4"/>
+      <Name name="Name" type="12" value="ID"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="0"/>
+      <Size name="Size" type="4" value="4"/>
+      <SourceField name="SourceField" type="12" value="ID"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="4"/>
+      <VisibleValue name="VisibleValue" type="4"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="-1"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+    </Field_0>
+    <Field_1 name="Name">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="Name"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="1"/>
+      <Size name="Size" type="4" value="50"/>
+      <SourceField name="SourceField" type="12" value="Name"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="3285"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <UnicodeCompression name="UnicodeCompression" type="1" value="True"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+    </Field_1>
+    <Field_2 name="Caption">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="Caption"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="2"/>
+      <Size name="Size" type="4" value="100"/>
+      <SourceField name="SourceField" type="12" value="Caption"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="True"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="4785"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+      <UnicodeCompression name="UnicodeCompression" type="1" value="True"/>
+    </Field_2>
+    <Field_3 name="Description">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="Description"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="3"/>
+      <Size name="Size" type="4" value="255"/>
+      <SourceField name="SourceField" type="12" value="Description"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="True"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="-1"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+      <UnicodeCompression name="UnicodeCompression" type="1" value="True"/>
+    </Field_3>
+    <Field_4 name="Notes">
+      <Value name="Value" type="10"/>
+      <Attributes name="Attributes" type="4" value="2"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="10"/>
+      <Name name="Name" type="12" value="Notes"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="4"/>
+      <Size name="Size" type="4" value="50"/>
+      <SourceField name="SourceField" type="12" value="Notes"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="True"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="10"/>
+      <VisibleValue name="VisibleValue" type="10"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="2970"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <DisplayControl name="DisplayControl" type="3" value="109"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+      <UnicodeCompression name="UnicodeCompression" type="1" value="True"/>
+    </Field_4>
+    <Field_5 name="DateCreated">
+      <Value name="Value" type="8"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="8"/>
+      <Name name="Name" type="12" value="DateCreated"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="5"/>
+      <Size name="Size" type="4" value="8"/>
+      <SourceField name="SourceField" type="12" value="DateCreated"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="8"/>
+      <VisibleValue name="VisibleValue" type="8"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="2310"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+    </Field_5>
+    <Field_6 name="DateModified">
+      <Value name="Value" type="8"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="8"/>
+      <Name name="Name" type="12" value="DateModified"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="6"/>
+      <Size name="Size" type="4" value="8"/>
+      <SourceField name="SourceField" type="12" value="DateModified"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="8"/>
+      <VisibleValue name="VisibleValue" type="8"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="2205"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+    </Field_6>
+    <Field_7 name="TxnDate">
+      <Value name="Value" type="8"/>
+      <Attributes name="Attributes" type="4" value="1"/>
+      <CollatingOrder name="CollatingOrder" type="3" value="1033"/>
+      <Type name="Type" type="3" value="8"/>
+      <Name name="Name" type="12" value="TxnDate"/>
+      <OrdinalPosition name="OrdinalPosition" type="3" value="7"/>
+      <Size name="Size" type="4" value="8"/>
+      <SourceField name="SourceField" type="12" value="TxnDate"/>
+      <SourceTable name="SourceTable" type="12" value="tblForms"/>
+      <ValidateOnSet name="ValidateOnSet" type="1"/>
+      <DataUpdatable name="DataUpdatable" type="1" value="False"/>
+      <ForeignName name="ForeignName" type="12"/>
+      <DefaultValue name="DefaultValue" type="12" value=""/>
+      <ValidationRule name="ValidationRule" type="12" value=""/>
+      <ValidationText name="ValidationText" type="12" value=""/>
+      <Required name="Required" type="1" value="False"/>
+      <AllowZeroLength name="AllowZeroLength" type="1" value="False"/>
+      <FieldSize name="FieldSize" type="4"/>
+      <OriginalValue name="OriginalValue" type="8"/>
+      <VisibleValue name="VisibleValue" type="8"/>
+      <ColumnWidth name="ColumnWidth" type="3" value="-1"/>
+      <ColumnOrder name="ColumnOrder" type="3" value="0"/>
+      <ColumnHidden name="ColumnHidden" type="1" value="False"/>
+      <IMEMode name="IMEMode" type="2" value="0"/>
+      <IMESentenceMode name="IMESentenceMode" type="2" value="3"/>
+    </Field_7>
+  </FieldDefs>
+</TableDef>

@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1853775007
+Checksum =806402547
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -16,20 +16,13 @@ Begin Form
     Width =2340
     DatasheetFontHeight =10
     ItemSuffix =11
-    Left =5385
-    Top =3810
-    Right =7635
-    Bottom =3960
+    Left =5388
+    Top =3816
+    Right =7584
+    Bottom =3912
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x41052430120ee340
-    End
-    GUID = Begin
-        0xac465a49c4e5a54aa60efe5ebef5608e
-    End
-    NameMap = Begin
-        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
-        0x0000000000000000000000000000
     End
     RecordSource ="SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginEligEmps, tblGrowth.Cur"
         "rentEligEmps FROM tblGrowth WHERE (((tblGrowth.GroupID)=[Forms]![frmGrp]![ctlGRO"
@@ -128,7 +121,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x0f09211d916bce4eb1b1fb4c2c7d9f8a
+                0x30f9aa176b1b2c4eb3ae72cc58aa93c7
             End
             Begin
                 Begin TextBox
@@ -142,7 +135,7 @@ Begin Form
                     ControlSource ="Year"
                     ControlTipText ="Process Year"
                     GUID = Begin
-                        0xc90ef93b12ffa949ac3b5465dcc9ecd8
+                        0x53ae71f91c0e834fa2bbe7522bac771d
                     End
                 End
                 Begin TextBox
@@ -156,7 +149,7 @@ Begin Form
                     ControlSource ="BeginEligEmps"
                     ControlTipText ="Beginning EE"
                     GUID = Begin
-                        0x00c71d0a154edf4d9d81edbf5047f8ae
+                        0x6a4f234c5e10bb418511e4862f91d227
                     End
                 End
                 Begin TextBox
@@ -168,7 +161,7 @@ Begin Form
                     ControlSource ="CurrentEligEmps"
                     ControlTipText ="Current EE"
                     GUID = Begin
-                        0x60500da6a10ead42951dcd2fccac2ea0
+                        0xd3d5565e5ecdb545bcc7e784c5edbce0
                     End
                 End
                 Begin TextBox
@@ -181,7 +174,7 @@ Begin Form
                     Name ="GroupID"
                     ControlSource ="GroupID"
                     GUID = Begin
-                        0x97d55b6b1175a844bac0029a54540e8d
+                        0x6e5162735a287d43a3726d0573c3b4bf
                     End
                 End
                 Begin Label
@@ -191,7 +184,7 @@ Begin Form
                     Name ="Label6"
                     Caption ="Yr"
                     GUID = Begin
-                        0x029968b83f44a94ba34e9ef1c2722fa8
+                        0xa938483bbabcf74f901cb676ac26924f
                     End
                 End
                 Begin Label
@@ -202,7 +195,7 @@ Begin Form
                     Name ="Label7"
                     Caption ="B"
                     GUID = Begin
-                        0x51d0cea5e443fa40b384ac1d81ad4e4e
+                        0x0c78675291917a4d9062a7303861a97a
                     End
                 End
                 Begin Label
@@ -213,7 +206,7 @@ Begin Form
                     Name ="Label8"
                     Caption ="C"
                     GUID = Begin
-                        0x1ca6ac41f1cf224ba5aa234d1c5f521c
+                        0xf8ff9ed731cc5045812794f6a1a847bd
                     End
                 End
             End

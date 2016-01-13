@@ -1,18 +1,18 @@
 Operation =1
 Option =0
-Where ="(((tblSubscr.SUBstatus)<>\"PENDG\"))"
+Where ="(((tblSubscr.SubStatus)<>\"PENDG\"))"
 Begin InputTables
     Name ="tblSubscr"
 End
 Begin OutputColumns
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
 End
 Begin OrderBy
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     Flag =0
 End
 Begin Groups
-    Expression ="tblSubscr.SUBgroupID"
+    Expression ="tblSubscr.SubGroupID"
     GroupLevel =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -28,10 +28,10 @@ Begin
     Left =62
     Top =84
     Right =421
-    Bottom =602
+    Bottom =408
     Left =-1
     Top =-1
-    Right =1185
+    Right =344
     Bottom =144
     Left =0
     Top =0
@@ -40,7 +40,7 @@ Begin
         Left =38
         Top =6
         Right =200
-        Bottom =113
+        Bottom =109
         Top =20
         Name ="tblSubscr"
         Name =""

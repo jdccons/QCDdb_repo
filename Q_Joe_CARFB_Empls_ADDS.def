@@ -1,0 +1,61 @@
+Operation =1
+Option =0
+Where ="(((tblSubscr.SubGroupID) Is Null)) OR (((tblSubscr.SubSSN) Is Null))"
+Begin InputTables
+    Name ="Carfb Import empl"
+    Name ="tblSubscr"
+End
+Begin OutputColumns
+    Alias ="Expr1"
+    Expression ="[Carfb Import empl].GroupID"
+    Alias ="Expr2"
+    Expression ="[Carfb Import empl].EmployeeSSN"
+    Expression ="tblSubscr.SubGroupID"
+    Expression ="tblSubscr.SubSSN"
+    Alias ="Expr3"
+    Expression ="[Carfb Import empl].FirstName"
+    Alias ="Expr4"
+    Expression ="[Carfb Import empl].MiddleInitial"
+    Alias ="Expr5"
+    Expression ="[Carfb Import empl].LastName"
+End
+dbBoolean "ReturnsRecords" ="-1"
+dbInteger "ODBCTimeout" ="60"
+dbByte "RecordsetType" ="0"
+dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
+Begin
+End
+Begin
+    State =0
+    Left =29
+    Top =18
+    Right =1350
+    Bottom =570
+    Left =-1
+    Top =-1
+    Right =1306
+    Bottom =372
+    Left =0
+    Top =0
+    ColumnsShown =539
+    Begin
+        Left =38
+        Top =6
+        Right =141
+        Bottom =49
+        Top =0
+        Name ="Carfb Import empl"
+        Name =""
+    End
+    Begin
+        Left =387
+        Top =22
+        Right =659
+        Bottom =230
+        Top =0
+        Name ="tblSubscr"
+        Name =""
+    End
+End

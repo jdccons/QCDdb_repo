@@ -3,16 +3,16 @@ Option =0
 Where ="(((tblInvoiceHistory.InvMonth)=[intMonth]) AND ((tblInvoiceHistory.InvYear)=[int"
     "Year]) AND ((tblGrp.GRClientSvcRepID) Between 1 And 6))"
 Begin InputTables
-    Name ="tblInvoiceHistory"
-    Name ="tblGrp"
     Name ="tlkpClientServiceReps"
     Name ="tblGeographical"
+    Name ="tblGrp"
+    Name ="tblInvoiceHistory"
 End
 Begin OutputColumns
     Expression ="tblInvoiceHistory.GrpID"
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcity"
-    Expression ="tblGrp.GRstate"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRCity"
+    Expression ="tblGrp.GRState"
     Alias ="BaseAmt"
     Expression ="tblInvoiceHistory.TotalBilling"
     Alias ="BaseMonth"
@@ -22,24 +22,24 @@ Begin OutputColumns
     Expression ="tlkpClientServiceReps.RepName"
     Expression ="tblGeographical.GEOdesc"
     Expression ="tblGrp.GRClientSvcRepID"
-    Expression ="tblGrp.GRPgeoID"
+    Expression ="tblGrp.GRGeoID"
 End
 Begin Joins
     LeftTable ="tblGrp"
     RightTable ="tblInvoiceHistory"
-    Expression ="tblGrp.GROUPid = tblInvoiceHistory.GrpID"
+    Expression ="tblGrp.GroupID=tblInvoiceHistory.GrpID"
     Flag =1
     LeftTable ="tblGeographical"
     RightTable ="tblGrp"
-    Expression ="tblGeographical.GEOid = tblGrp.GRPgeoID"
+    Expression ="tblGeographical.GEOid=tblGrp.GRGeoID"
     Flag =1
     LeftTable ="tlkpClientServiceReps"
     RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID = tblGrp.GRClientSvcRepID"
+    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
     Flag =1
 End
 Begin OrderBy
-    Expression ="tblGrp.GRname"
+    Expression ="tblGrp.GRName"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -48,44 +48,28 @@ dbBoolean "UseTransaction" ="-1"
 dbByte "RecordsetType" ="0"
 dbMemo "OrderBy" ="qselInvHistoryBase.GRClientSvcRepID"
 dbBoolean "OrderByOn" ="-1"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
 End
 Begin
-    State =2
-    Left =-4
-    Top =-23
-    Right =1024
-    Bottom =630
+    State =0
+    Left =18
+    Top =40
+    Right =1286
+    Bottom =400
     Left =-1
     Top =-1
-    Right =1017
+    Right =1253
     Bottom =180
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =48
-        Top =7
-        Right =168
-        Bottom =114
-        Top =0
-        Name ="tblInvoiceHistory"
-        Name =""
-    End
-    Begin
-        Left =240
-        Top =5
-        Right =485
-        Bottom =127
-        Top =3
-        Name ="tblGrp"
-        Name =""
-    End
-    Begin
         Left =523
         Top =6
         Right =665
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tlkpClientServiceReps"
         Name =""
@@ -94,9 +78,27 @@ Begin
         Left =703
         Top =6
         Right =849
-        Bottom =98
+        Bottom =94
         Top =0
         Name ="tblGeographical"
+        Name =""
+    End
+    Begin
+        Left =240
+        Top =5
+        Right =485
+        Bottom =123
+        Top =3
+        Name ="tblGrp"
+        Name =""
+    End
+    Begin
+        Left =48
+        Top =7
+        Right =168
+        Bottom =110
+        Top =0
+        Name ="tblInvoiceHistory"
         Name =""
     End
 End

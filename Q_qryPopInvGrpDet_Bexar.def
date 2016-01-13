@@ -8,14 +8,14 @@ End
 Begin OutputColumns
     Alias ="DocNo"
     Name ="DOCUMENT NO"
-    Expression ="Trim([Forms]![frmInvGrp_Bexar]![TRANS NO])"
+    Expression ="Trim(Forms!frmInvGrp_Bexar![TRANS NO])"
     Alias ="ID"
     Name ="ITEM KEY"
     Expression ="tblSubscr_Bexar.SUBssn"
     Alias ="Desc"
     Name ="DESCRIPTION"
-    Expression ="([tblSubscr_Bexar].[SUBlastNAME] & \", \" & [tblSubscr_Bexar].[SUBfirstNAME] & \""
-        " \" & [tblSubscr_Bexar].[SUBmiddleNAME])"
+    Expression ="(tblSubscr_Bexar.SUBlastNAME & \", \" & tblSubscr_Bexar.SUBfirstNAME & \" \" & t"
+        "blSubscr_Bexar.SUBmiddleNAME)"
     Name ="UNIT PRICE"
     Expression ="tblRates.Rate"
     Alias ="QtyOrdered"
@@ -34,14 +34,14 @@ End
 Begin Joins
     LeftTable ="tblSubscr_Bexar"
     RightTable ="tblRates"
-    Expression ="tblSubscr_Bexar.RateID = tblRates.RateID"
+    Expression ="tblSubscr_Bexar.RateID=tblRates.RateID"
     Flag =1
 End
 Begin OrderBy
     Expression ="tblSubscr_Bexar.SUBssn"
     Flag =0
-    Expression ="([tblSubscr_Bexar].[SUBlastNAME] & \", \" & [tblSubscr_Bexar].[SUBfirstNAME] & \""
-        " \" & [tblSubscr_Bexar].[SUBmiddleNAME])"
+    Expression ="(tblSubscr_Bexar.SUBlastNAME & \", \" & tblSubscr_Bexar.SUBfirstNAME & \" \" & t"
+        "blSubscr_Bexar.SUBmiddleNAME)"
     Flag =0
 End
 dbBoolean "ReturnsRecords" ="-1"
@@ -60,10 +60,10 @@ Begin
     Left =8
     Top =14
     Right =970
-    Bottom =330
+    Bottom =337
     Left =-1
     Top =-1
-    Right =955
+    Right =947
     Bottom =143
     Left =0
     Top =0
@@ -72,7 +72,7 @@ Begin
         Left =30
         Top =6
         Right =339
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblSubscr_Bexar"
         Name =""
@@ -81,7 +81,7 @@ Begin
         Left =377
         Top =6
         Right =473
-        Bottom =116
+        Bottom =109
         Top =0
         Name ="tblRates"
         Name =""

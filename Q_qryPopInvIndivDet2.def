@@ -1,7 +1,7 @@
 Operation =3
 Name ="tblInvLin"
 Option =8
-Where ="(((tblSubscr.PLTcustKEY)=[Forms]![frmInvIndiv]![CUST KEY]))"
+Where ="(((tblSubscr.PltCustKey)=Forms!frmInvIndiv![CUST KEY]))"
 Begin InputTables
     Name ="tblSubscr"
 End
@@ -11,12 +11,12 @@ Begin OutputColumns
     Expression ="1"
     Alias ="DocNo"
     Name ="DOCUMENT NO"
-    Expression ="CStr([Forms]![frmInvIndiv]![TRANS NO])"
+    Expression ="CStr(Forms!frmInvIndiv![TRANS NO])"
     Name ="ITEM KEY"
-    Expression ="tblSubscr.SUBssn"
+    Expression ="tblSubscr.SubSSN"
     Alias ="Desc"
     Name ="DESCRIPTION"
-    Expression ="([tblSubscr].[SUBlastNAME] & \", \" & [tblSubscr].[SUBfirstNAME])"
+    Expression ="(tblSubscr.SUBlastNAME & \", \" & tblSubscr.SUBfirstNAME)"
     Alias ="QtyOrdered"
     Name ="QTY ORDERED"
     Expression ="1"
@@ -30,7 +30,7 @@ Begin OutputColumns
     Name ="REV SUB"
     Expression ="CStr(2000)"
     Name ="UNIT PRICE"
-    Expression ="tblSubscr.SUBrate"
+    Expression ="tblSubscr.SubRate"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
@@ -43,10 +43,10 @@ Begin
     Left =52
     Top =115
     Right =1267
-    Bottom =427
+    Bottom =439
     Left =-1
     Top =-1
-    Right =1208
+    Right =1200
     Bottom =144
     Left =0
     Top =0
@@ -55,7 +55,7 @@ Begin
         Left =38
         Top =6
         Right =134
-        Bottom =113
+        Bottom =109
         Top =0
         Name ="tblSubscr"
         Name =""

@@ -1,33 +1,36 @@
 Operation =1
 Option =0
-Where ="(((tblGrp.GRcancelled)=No))"
+Where ="(((tblGrp.GRCancelled)=No))"
 Begin InputTables
     Name ="tblAgent"
     Name ="tblGrp"
 End
 Begin OutputColumns
-    Expression ="tblGrp.GRname"
-    Expression ="tblGrp.GRcontBEG"
+    Expression ="tblGrp.GRName"
+    Expression ="tblGrp.GRContBeg"
+    Alias ="Expr1"
     Expression ="tblGrp.GRagentID1"
+    Alias ="Expr2"
     Expression ="tblGrp.GRagentID1"
+    Alias ="Expr3"
     Expression ="tblGrp.GRagentRATE1"
+    Alias ="Expr4"
     Expression ="tblGrp.GRExecSalesDirID"
+    Alias ="Expr5"
     Expression ="tblGrp.GRExecSalesDirRate"
+    Alias ="Expr6"
     Expression ="tblGrp.GRagentID2"
+    Alias ="Expr7"
     Expression ="tblGrp.GRagentRATE2"
-    Expression ="tblGrp.GRcancelled"
-    Expression ="tblGrp.GRPgeoID"
-End
-Begin Joins
-    LeftTable ="tblAgent"
-    RightTable ="tblGrp"
-    Expression ="tblAgent.AGENTid = tblGrp.GRagentID1"
-    Flag =1
+    Expression ="tblGrp.GRCancelled"
+    Expression ="tblGrp.GRGeoID"
 End
 dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
+dbByte "Orientation" ="0"
+dbByte "DefaultView" ="2"
 Begin
     Begin
         dbText "Name" ="tblGrp.GRname"
@@ -37,41 +40,6 @@ Begin
     Begin
         dbText "Name" ="tblGrp.GRcontBEG"
         dbInteger "ColumnWidth" ="1245"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="Expr1002"
-        dbInteger "ColumnWidth" ="1005"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRagentID1"
-        dbInteger "ColumnWidth" ="1140"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRagentRATE1"
-        dbInteger "ColumnWidth" ="840"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRExecSalesDirRate"
-        dbInteger "ColumnWidth" ="825"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRExecSalesDirID"
-        dbInteger "ColumnWidth" ="1065"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRagentID2"
-        dbInteger "ColumnWidth" ="1110"
-        dbBoolean "ColumnHidden" ="0"
-    End
-    Begin
-        dbText "Name" ="tblGrp.GRagentRATE2"
-        dbInteger "ColumnWidth" ="1590"
         dbBoolean "ColumnHidden" ="0"
     End
     Begin
@@ -85,10 +53,10 @@ Begin
     Left =84
     Top =66
     Right =778
-    Bottom =404
+    Bottom =426
     Left =-1
     Top =-1
-    Right =687
+    Right =679
     Bottom =180
     Left =0
     Top =0
@@ -97,7 +65,7 @@ Begin
         Left =48
         Top =7
         Right =168
-        Bottom =129
+        Bottom =125
         Top =6
         Name ="tblAgent"
         Name =""
@@ -106,7 +74,7 @@ Begin
         Left =199
         Top =11
         Right =319
-        Bottom =133
+        Bottom =129
         Top =4
         Name ="tblGrp"
         Name =""
