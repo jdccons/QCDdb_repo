@@ -255,7 +255,7 @@ On Error GoTo ErrorHandler
     If Len(g_adoRS("FieldDateValue")) > 0 Then
         GetInvoiceDate = g_adoRS("FieldDateValue")
     Else
-        GetInvoiceDate = DateSerial(Year(Date), Month(Date) + 1, 1)
+        GetInvoiceDate = DateSerial(Year(date), Month(date) + 1, 1)
         g_adoRS.Close
     End If
     
@@ -340,15 +340,15 @@ Public Function Create_Invoice_Data(proc_name As String, dteInvoiceDate As Date,
           
           Set g_adoParm = .CreateParameter("@InvoiceDate", adDate, adParamInput)
           .Parameters.Append g_adoParm
-          .Parameters("@InvoiceDate").value = dteInvoiceDate
+          .Parameters("@InvoiceDate").Value = dteInvoiceDate
           
           Set g_adoParm = .CreateParameter("@CustomerKey", adChar, adParamInput, 5)
           .Parameters.Append g_adoParm
-          .Parameters("@CustomerKey").value = strCustomerKey
+          .Parameters("@CustomerKey").Value = strCustomerKey
           
           Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
           .Parameters.Append g_adoParm
-          .Parameters("@UserName").value = strUserName
+          .Parameters("@UserName").Value = strUserName
           
           .Execute
           
@@ -422,11 +422,11 @@ Function Export_Invoice_Data(proc_name As String, dteInvoiceDate As Date, strUse
           
           Set g_adoParm = .CreateParameter("@InvoiceDate", adDate, adParamInput)
           .Parameters.Append g_adoParm
-          .Parameters("@InvoiceDate").value = dteInvoiceDate
+          .Parameters("@InvoiceDate").Value = dteInvoiceDate
           
           Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
           .Parameters.Append g_adoParm
-          .Parameters("@UserName").value = strUserName
+          .Parameters("@UserName").Value = strUserName
           
           .Execute
           
@@ -470,11 +470,11 @@ On Error GoTo PROC_ERR
           
           Set g_adoParm = .CreateParameter("@SubID", adChar, adParamInput, 8)
           .Parameters.Append g_adoParm
-          .Parameters("@SubID").value = strSubID
+          .Parameters("@SubID").Value = strSubID
           
           Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
           .Parameters.Append g_adoParm
-          .Parameters("@UserName").value = strUserName
+          .Parameters("@UserName").Value = strUserName
           
           .Execute
     End With
@@ -529,11 +529,11 @@ Public Function InvoicePostIndiv(strSQL As String, dteSalesReceiptDate As Date, 
           
           Set g_adoParm = .CreateParameter("@InvoiceDate", adDate, adParamInput)
           .Parameters.Append g_adoParm
-          .Parameters("@InvoiceDate").value = dteSalesReceiptDate
+          .Parameters("@InvoiceDate").Value = dteSalesReceiptDate
           
           Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
           .Parameters.Append g_adoParm
-          .Parameters("@UserName").value = strUserName
+          .Parameters("@UserName").Value = strUserName
           
           .Execute
     End With
