@@ -45,15 +45,7 @@ Function PrintIndividualCard() As Boolean
     PrintIndividualCard = True
     
 End Function
-Public Sub RemoveIndividual(strSubID)
 
-    Dim strSQL As String
-    strSQL = "DELETE FROM tblSubscr " & _
-                "WHERE SubID = '" & strSubID & "'"
-                
-    ExecuteSQL strSQL
-    
-End Sub
 
 Public Function CountFamily(strSSN As String) As Integer
     'Purpose:  Counts the number of family members for an
@@ -443,11 +435,11 @@ On Error GoTo Err_DeleteIndividualSubscriber
                   ' SubID input
                   Set g_adoParm = .CreateParameter("@SubID", adChar, adParamInput, 8)
                   .Parameters.Append g_adoParm
-                  .Parameters("@SubID").value = strSubID
+                  .Parameters("@SubID").Value = strSubID
                   ' UserName input
                   Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
                   .Parameters.Append g_adoParm
-                  .Parameters("@UserName").value = strUserName
+                  .Parameters("@UserName").Value = strUserName
                   .Execute
                   g_iRtnVal = .Parameters.Item("ReturnValue")
             End With
