@@ -1,15 +1,37 @@
 Version =20
 VersionRequired =20
-Checksum =-134770990
+Checksum =-175616776
 Begin Form
     Width =5985
     ItemSuffix =109
-    Left =4176
-    Top =3168
-    Right =10536
+    Left =4170
+    Top =3165
+    Right =10530
     Bottom =6540
     RecSrcDt = Begin
         0x77e21065d6c4e140
+    End
+    GUID = Begin
+        0x349751615eab514c9bd4220d3cc03b8e
+    End
+    NameMap = Begin
+        0x0acc0e55000000001d611e90a9a1af46a49d7ca2491bf328000000005841f918 ,
+        0xb8b1e4407c5ffa0f1c00000071007200790049006e0076004c0069006e000000 ,
+        0x0000000043035e838513ca48aa3492fa3f36c8bd070000001d611e90a9a1af46 ,
+        0xa49d7ca2491bf3284900540045004d0020004b00450059000000000000000c77 ,
+        0xaf956ad9724cb9f1ad57871238d4070000001d611e90a9a1af46a49d7ca2491b ,
+        0xf3284400450053004300520049005000540049004f004e000000000000007635 ,
+        0xe5960c2f994aba4ab8ec8b1193cb070000001d611e90a9a1af46a49d7ca2491b ,
+        0xf32855004e004900540020005000520049004300450000000000000017667aa8 ,
+        0xd96c8a4f86a6064eb9bb80b1070000001d611e90a9a1af46a49d7ca2491bf328 ,
+        0x51005400590020004f00520044004500520045004400000000000000c0fccfbb ,
+        0x5eefb0438b99571bab455847070000001d611e90a9a1af46a49d7ca2491bf328 ,
+        0x51005400590020005300480049005000500045004400000000000000476bdb6e ,
+        0xaaf4f048b5e174bed22a4781070000001d611e90a9a1af46a49d7ca2491bf328 ,
+        0x44004f00430055004d0045004e00540020004e004f00000000000000fc603f6c ,
+        0x4ed8fa458ea93648cb63147706000000349751615eab514c9bd4220d3cc03b8e ,
+        0x55004e0049005400200050005200490043004500000000000000000000000000 ,
+        0x000000000000000000000c000000030000000000000000000000000000000000
     End
     RecordSource ="qryInvLin"
     PrtMip = Begin
@@ -40,7 +62,7 @@ Begin Form
             BackColor =12632256
             Name ="FormHeader0"
             GUID = Begin
-                0x94f049190612bf4d9ef491fa3e357bc4
+                0x61ffdb01c132a842aed90fcc8c76d46f
             End
             Begin
                 Begin Label
@@ -54,7 +76,7 @@ Begin Form
                     Name ="Text96"
                     Caption ="SSN/Descr. "
                     GUID = Begin
-                        0xd239c32fc5f7f24ca2ced59105c17201
+                        0x6f3808d8fcf9124788f62315a9fbb8a4
                     End
                 End
                 Begin Label
@@ -68,7 +90,7 @@ Begin Form
                     Name ="Text97"
                     Caption ="Subscriber:"
                     GUID = Begin
-                        0x6a3dedc04e99b346a548b4cb12026813
+                        0x425e5b5cafb13341b3c8786b70497168
                     End
                 End
                 Begin Label
@@ -82,7 +104,7 @@ Begin Form
                     Name ="Text98"
                     Caption ="Rate:"
                     GUID = Begin
-                        0x044631f01ebc2f4c802d7db3948934af
+                        0xb0e3eac374da154eb76b14296f870a79
                     End
                 End
                 Begin Label
@@ -97,7 +119,7 @@ Begin Form
                     Name ="Text99"
                     Caption ="Qty.Ord."
                     GUID = Begin
-                        0x17b225e6fb0dac46b8990fa720516289
+                        0xafc885191d0c2b459daaa6ff1e7513c5
                     End
                 End
                 Begin Label
@@ -112,7 +134,7 @@ Begin Form
                     Name ="Text101"
                     Caption ="Qty.Shp."
                     GUID = Begin
-                        0x8b18ed8215418a468c19300b81ff6c1b
+                        0x1e7abba017ca8140898ff549285a587d
                     End
                 End
             End
@@ -122,7 +144,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             GUID = Begin
-                0x76b8c0e03de12d43904de984c19d59bb
+                0x0431be4d5ce276449e26423e20201e56
             End
             Begin
                 Begin Line
@@ -130,7 +152,7 @@ Begin Form
                     Width =5985
                     Name ="Line85"
                     GUID = Begin
-                        0xe5ae0ac9a74cbc40b1d0ddd03b713a24
+                        0x7202ed94bddf5349b366376512c8c684
                     End
                 End
                 Begin TextBox
@@ -144,7 +166,7 @@ Begin Form
                     InputMask ="000\\-00\\-0000;0;_"
                     EventProcPrefix ="ITEM_KEY"
                     GUID = Begin
-                        0xa833a4b3f7130c44b0eee8bef06bc0c9
+                        0x96571f0320ef61428a01710ee65f0b56
                     End
                 End
                 Begin TextBox
@@ -157,7 +179,7 @@ Begin Form
                     Name ="DESCRIPTION"
                     ControlSource ="DESCRIPTION"
                     GUID = Begin
-                        0xc9bb8c8881dbf74a8539c04b9a6baa95
+                        0x3a8b80ba38deb44ba81266be7b50758a
                     End
                 End
                 Begin TextBox
@@ -172,7 +194,7 @@ Begin Form
                     Format ="$#,##0.00;($#,##0.00)"
                     EventProcPrefix ="UNIT_PRICE"
                     GUID = Begin
-                        0x4aa31fcbc996fa40bddc2b5abb5effdf
+                        0xfc603f6c4ed8fa458ea93648cb631477
                     End
                 End
                 Begin TextBox
@@ -189,7 +211,7 @@ Begin Form
                     DefaultValue ="1"
                     EventProcPrefix ="QTY_ORDERED"
                     GUID = Begin
-                        0xb895d84fc0f3e6439f4d02dffc6c8691
+                        0xbd4dc7426c37d345a79a29a0410aa7ba
                     End
                 End
                 Begin TextBox
@@ -206,7 +228,7 @@ Begin Form
                     DefaultValue ="1"
                     EventProcPrefix ="QTY_SHIPPED"
                     GUID = Begin
-                        0x4545db41cb28664b98a2cda853c83e31
+                        0x8d0e32a9ec5a5e45b9c90b470518aff8
                     End
                 End
                 Begin TextBox
@@ -220,7 +242,7 @@ Begin Form
                     ControlSource ="DOCUMENT NO"
                     EventProcPrefix ="DOCUMENT_NO"
                     GUID = Begin
-                        0x0cbff821db543c40b3b1d7e90ebdcccd
+                        0x83347984ba71a3428b4c5adc6a42d507
                     End
                 End
             End
@@ -231,7 +253,7 @@ Begin Form
             BackColor =12632256
             Name ="FormFooter1"
             GUID = Begin
-                0xdae544fb77b3094caff85e03794634c4
+                0xd13d00a83c9b7d4990f4b1b9e317810e
             End
             Begin
                 Begin TextBox
@@ -243,7 +265,7 @@ Begin Form
                     ControlSource ="=Sum([UNIT PRICE])"
                     Format ="$#,##0.00;($#,##0.00)"
                     GUID = Begin
-                        0xce48906abdaed042807ca8d4858d3fec
+                        0xb157d8758dd99b44a18d0832cb3c9791
                     End
                 End
             End
