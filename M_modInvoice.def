@@ -441,10 +441,13 @@ Function Export_Invoice_Data(proc_name As String, dteInvoiceDate As Date, strUse
     
     Export_Invoice_Data = CBool(g_iRtnVal)
     
-Exit Function
+Exit_Point:
+    Exit Function
+    
 
 HandleError:
     Err.Raise Err.Number, IIf(Err.Source = Application.VBE.ActiveVBProject.Name, "modInvoice.Export_Invoice_Data" & " " & Erl, Err.Source), Err.DESCRIPTION
+    Resume Exit_Point
     
 End Function
 
@@ -495,8 +498,6 @@ On Error GoTo PROC_ERR
   
     
 PROC_EXIT:
-  DoCmd.SetWarnings True
-  DoCmd.Hourglass False
   Exit Function
     
     
@@ -554,8 +555,6 @@ Public Function InvoicePostIndiv(strSQL As String, dteSalesReceiptDate As Date, 
   
     
 PROC_EXIT:
-  DoCmd.SetWarnings True
-  DoCmd.Hourglass False
   Exit Function
     
     
