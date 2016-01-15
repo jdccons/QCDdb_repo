@@ -273,6 +273,53 @@ ErrorHandler:
     Resume Exit_Point
 End Function
 
+Public Function SyncCustomers(strSQL As String, strUserName As String) As Boolean
+' Purpose    : Syncs to ARCUST_local
+' Author     : J Criswell
+' Description:
+' Date       : 2016-01-16
+
+    
+    On Error GoTo HandleError
+    
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    With g_adoConnection
+         .ConnectionString = SetConnxn
+         .Open
+    End With
+    With g_adoCommand
+          .ActiveConnection = g_adoConnection
+          .CommandType = adCmdStoredProc
+          .CommandText = strSQL
+          
+          Set g_adoParm = .CreateParameter("@ReturnParm", adInteger, adParamReturnValue) 'Return parm
+          .Parameters.Append g_adoParm
+          
+          Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+          .Parameters.Append g_adoParm
+          .Parameters("@UserName").Value = strUserName
+          
+          .Execute
+          
+          g_iRtnVal = .Parameters.Item("@ReturnParm")
+    End With
+    
+    g_adoConnection.Close
+  
+    Set g_adoCommand = Nothing
+    Set g_adoConnection = Nothing
+    Set g_adoParm = Nothing
+    
+    SyncCustomers = CBool(g_iRtnVal)
+HandleExit:
+    Exit Function
+HandleError:
+    MsgBox Err.DESCRIPTION
+    Resume HandleExit
+End Function
+
+
+
 Public Function IndivInvoice()
 
 On Error GoTo ErrorHandler
