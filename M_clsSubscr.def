@@ -9,6 +9,7 @@ Option Explicit
 Private mcurAmtPaid As Currency
 Private m_strConnectionString As String
 Private m_strSSN As String
+Private m_strPltCustKey As String
 Private m_strEIMBRID As String
 Private m_strSubID As String
 Private m_strStatus As String
@@ -70,6 +71,12 @@ End Property
 Public Property Let SSN(p_Data As String)
     m_strSSN = p_Data
 End Property
+Public Property Get PltCustKey() As String
+    PltCustKey = m_strPltCustKey
+End Property
+Public Property Let PltCustKey(p_Data As String)
+    m_strPltCustKey = p_Data
+End Property
 Public Property Get EIMBRID() As String
     EIMBRID = m_strEIMBRID
 End Property
@@ -88,10 +95,10 @@ End Property
 Public Property Let Status(p_Data As String)
     m_strStatus = p_Data
 End Property
-Public Property Get GROUPid() As String
-    GROUPid = m_strGroupID
+Public Property Get GroupID() As String
+    GroupID = m_strGroupID
 End Property
-Public Property Let GROUPid(m_GroupID As String)
+Public Property Let GroupID(m_GroupID As String)
     m_strGroupID = m_GroupID
 End Property
 Public Property Get PlanID() As Integer
@@ -227,16 +234,16 @@ End Property
 Public Property Let PreexistingDate(p_Data As Date)
     m_datPreexistingDate = p_Data
 End Property
-Public Property Get SubContBeg() As Date
-    SubContBeg = m_datSubContBeg
+Public Property Get SUBcontBEG() As Date
+    SUBcontBEG = m_datSubContBeg
 End Property
-Public Property Let SubContBeg(p_Data As Date)
+Public Property Let SUBcontBEG(p_Data As Date)
     m_datSubContBeg = p_Data
 End Property
-Public Property Get SubContEnd() As Date
-    SubContEnd = m_datSubContEnd
+Public Property Get SUBcontEND() As Date
+    SUBcontEND = m_datSubContEnd
 End Property
-Public Property Let SubContEnd(p_Data As Date)
+Public Property Let SUBcontEND(p_Data As Date)
     m_datSubContEnd = p_Data
 End Property
 Public Property Get CardPrt() As Byte
@@ -474,10 +481,11 @@ Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
         
         strSQL = strSQL & " UPDATE tblSubscr"
         strSQL = strSQL & " Set SubSSN = '" & Me.SSN & "',"
+        strSQL = strSQL & " PltCustKey = '" & Me.PltCustKey & "',"
         strSQL = strSQL & " EIMBRID = '" & Me.EIMBRID & "',"
         strSQL = strSQL & " SubID = '" & Me.SubID & "',"
         strSQL = strSQL & " SubStatus = '" & Me.Status & "',"
-        strSQL = strSQL & " SubGroupID = '" & Me.GROUPid & "',"
+        strSQL = strSQL & " SubGroupID = '" & Me.GroupID & "',"
         strSQL = strSQL & " PlanID = " & Me.PlanID & ","
         strSQL = strSQL & " CoverID = " & Me.CoverID & ","
         strSQL = strSQL & " RateID = " & Me.RateID & ","
@@ -501,8 +509,8 @@ Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
         strSQL = strSQL & " PreexistingDate = " & DateFormat(Me.PreexistingDate) & ","
         strSQL = strSQL & " SubCardPrt = " & Me.CardPrt & ","
         strSQL = strSQL & " SubCardPrtDte = " & DateFormat(Me.CardPrtDate) & ","
-        strSQL = strSQL & " SubContBeg = " & DateFormat(Me.SubContBeg) & ","
-        strSQL = strSQL & " SubContEnd = " & DateFormat(Me.SubContEnd) & ","
+        strSQL = strSQL & " SubContBeg = " & DateFormat(Me.SUBcontBEG) & ","
+        strSQL = strSQL & " SubContEnd = " & DateFormat(Me.SUBcontEND) & ","
         strSQL = strSQL & " SubNotes = '" & Me.Notes & "',"
         strSQL = strSQL & " SubBankDraftNo = '" & Me.BankDraftNo & "',"
         strSQL = strSQL & " TransactionType = '" & Me.TransactionType & "',"
@@ -519,6 +527,7 @@ Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
         strSQL = ""
         strSQL = "INSERT INTO tblSubscr "
         strSQL = strSQL & "(SubSSN, "                                                 '1
+        strSQL = strSQL & "PltCustKey, "                                                ' 1b
         strSQL = strSQL & "EIMBRID, "                                                   '1a
         strSQL = strSQL & "SubID, "                                                   '2
         strSQL = strSQL & "SUBstatus, "                                               '3
@@ -557,10 +566,11 @@ Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
         strSQL = strSQL & "DateDeleted, "                                             '32
         strSQL = strSQL & "Flag) "                                                    '33
         strSQL = strSQL & "VALUES ('" & Me.SSN & "', "                                '1
+        strSQL = strSQL & "'" & Me.PltCustKey & "', "                                   '1b
         strSQL = strSQL & "'" & Me.EIMBRID & "', "                                      '1a
         strSQL = strSQL & "'" & Me.SubID & "', "                                      '2
         strSQL = strSQL & "'" & Me.Status & "', "                                     '3
-        strSQL = strSQL & "'" & Me.GROUPid & "', "                                    '4
+        strSQL = strSQL & "'" & Me.GroupID & "', "                                    '4
         strSQL = strSQL & "" & Me.PlanID & ", "                                       '5
         strSQL = strSQL & "" & Me.CoverID & ", "                                      '6
         strSQL = strSQL & "" & Me.RateID & ", "                                       '7
@@ -584,8 +594,8 @@ Public Sub StoreSub(strAction As String, strSSN As String, strGroupID As String)
         strSQL = strSQL & "" & DateFormat(Me.PreexistingDate) & ", "                  '25
         strSQL = strSQL & "" & Me.CardPrt & ", "                                      '26
         strSQL = strSQL & "" & DateFormat(Me.CardPrtDate) & ", "                      '27
-        strSQL = strSQL & "" & DateFormat(Me.SubContBeg) & ", "                      '27
-        strSQL = strSQL & "" & DateFormat(Me.SubContEnd) & ", "                      '27
+        strSQL = strSQL & "" & DateFormat(Me.SUBcontBEG) & ", "                      '27
+        strSQL = strSQL & "" & DateFormat(Me.SUBcontEND) & ", "                      '27
         strSQL = strSQL & "'" & Me.Notes & "', "                                      '28
         strSQL = strSQL & "'" & Me.BankDraftNo & "', "                                      '28a
         strSQL = strSQL & "'" & Me.TransactionType & "', "                            '29
@@ -784,7 +794,7 @@ Private Function FillFromRS(p_RS) As Boolean
         Me.EIMBRID = p_RS.Fields("EIMBRID")                  '1a
         Me.SubID = p_RS.Fields("SubID")                      '2
         Me.Status = p_RS.Fields("SubStatus")                 '3
-        Me.GROUPid = p_RS.Fields("SubGroupID")               '4
+        Me.GroupID = p_RS.Fields("SubGroupID")               '4
         Me.PlanID = p_RS.Fields("PlanID")                    '5
         Me.CoverID = p_RS.Fields("CoverID")                  '6
         Me.RateID = p_RS.Fields("RateID")                    '7
