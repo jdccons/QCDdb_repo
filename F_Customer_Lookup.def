@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-898943791
+Checksum =1314759851
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -31,14 +31,43 @@ Begin Form
     DatasheetGridlinesColor =12632256
     Toolbar ="Source Code Control"
     RecSrcDt = Begin
-        0x20d5c4125cb1e440
+        0x8d1ad780d4b1e440
+    End
+    GUID = Begin
+        0x6f11e6e2bc49e24299515eee612f75fe
+    End
+    NameMap = Begin
+        0x0acc0e5500000000abab88de8903a14fa1d3cd45c0a2dca600000000fba1d380 ,
+        0xd4b1e44044830c0c80060000760077005f0049006e0064006900760069006400 ,
+        0x750061006c0043007500730074006f006d0065007200000000000000e3c9f5db ,
+        0xe782654aad7a6d362db7146007000000abab88de8903a14fa1d3cd45c0a2dca6 ,
+        0x43007500730074006f006d00650072004b006500790000000000000011a6c92d ,
+        0x472e03439415f865ad137b2c07000000abab88de8903a14fa1d3cd45c0a2dca6 ,
+        0x43007500730074006f006d00650072004e0061006d0065000000000000004e66 ,
+        0x02e261b85f4a9d18fdd5b5f3a7e707000000abab88de8903a14fa1d3cd45c0a2 ,
+        0xdca643007500730074006f006d00650072004300690074007900000000000000 ,
+        0x51cb6c4a25bf25458bec91aa059bf50b07000000abab88de8903a14fa1d3cd45 ,
+        0xc0a2dca643007500730074006f006d0065007200530074006100740065000000 ,
+        0x00000000d17b084fcad90b449c356a4951291af507000000abab88de8903a14f ,
+        0xa1d3cd45c0a2dca643007500730074006f006d00650072005a00690070004300 ,
+        0x6f0064006500000000000000d119dcc19be2694898c9e64010e375fd07000000 ,
+        0xabab88de8903a14fa1d3cd45c0a2dca643007200650064006900740048006f00 ,
+        0x6c006400000000000000623c373eb2951a4aafa12916ded447e407000000abab ,
+        0x88de8903a14fa1d3cd45c0a2dca6530070006100720065000000000000001b47 ,
+        0xd9bad5388a419474c9779b85793607000000abab88de8903a14fa1d3cd45c0a2 ,
+        0xdca6530070006100720065003200000000000000a43e14583f13a3468bbdb222 ,
+        0x6461779b07000000abab88de8903a14fa1d3cd45c0a2dca65300700061007200 ,
+        0x650033000000000000004a28c5859ee90c48b0f5efbeda55bbac070000000000 ,
+        0x0000000000000000000000000000450078007000720031000000000000000000 ,
+        0x00000000000000000000000000000c0000000300000000000000000000000000 ,
+        0x00000000
     End
     RecordSource ="SELECT vw_IndividualCustomer.CustomerKey, vw_IndividualCustomer.CustomerName, vw"
         "_IndividualCustomer.CustomerCity, vw_IndividualCustomer.CustomerState, vw_Indivi"
         "dualCustomer.CustomerZipCode, IIf([CreditHold]=\"N\",\"Active\",\"Cancelled\") A"
         "S Expr1, vw_IndividualCustomer.Spare, vw_IndividualCustomer.Spare2, vw_Individua"
         "lCustomer.Spare3 FROM vw_IndividualCustomer ORDER BY vw_IndividualCustomer.Custo"
-        "merKey;"
+        "merKey; "
     Caption ="Customer Lookup"
     DatasheetFontName ="Arial"
     PrtMip = Begin
@@ -160,7 +189,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormHeader"
             GUID = Begin
-                0xbaf714823193e349a14c449687a5e128
+                0xe9ea03ef97e97247ba99029c219e4d96
             End
         End
         Begin Section
@@ -168,7 +197,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x00e4bb9f2926b6408dfb84e5b444afd4
+                0x4f25321fb4935443bf0ee5d184fe6e3c
             End
             Begin
                 Begin TextBox
@@ -182,7 +211,7 @@ Begin Form
                     Name ="CustomerKey"
                     ControlSource ="CustomerKey"
                     GUID = Begin
-                        0x304802199cd7aa4db75360e4fd7e3e44
+                        0x4f4c7ae22ff6794faf38195592fd98da
                     End
                     Begin
                         Begin Label
@@ -194,7 +223,7 @@ Begin Form
                             Name ="CustomerKey_Label"
                             Caption ="PltCustKey"
                             GUID = Begin
-                                0x3ccdfad2987ccf409d731e42f36093ce
+                                0xbce190297259d743904c86936eb60ca5
                             End
                         End
                     End
@@ -212,7 +241,7 @@ Begin Form
                     ControlSource ="Spare"
                     InputMask ="0000\\-0000;0;_"
                     GUID = Begin
-                        0xbe39685c7369ed4e95a2a836fcda410b
+                        0x425473da80688a4daa423f77474bef07
                     End
                     Begin
                         Begin Label
@@ -224,7 +253,7 @@ Begin Form
                             Name ="Spare_Label"
                             Caption ="SubID"
                             GUID = Begin
-                                0x69c8f4b9fde45d438560674b37f4d085
+                                0xee0335a245f5164f8b26053833254d25
                             End
                         End
                     End
@@ -242,7 +271,7 @@ Begin Form
                     ControlSource ="Spare2"
                     InputMask ="000\\-00\\-0000;0;_"
                     GUID = Begin
-                        0xa8179486a6b94c4dbbf0f19f3a469042
+                        0x32c25c75131cee45beb89a4deec5485c
                     End
                     Begin
                         Begin Label
@@ -254,7 +283,7 @@ Begin Form
                             Name ="Spare2_Label"
                             Caption ="SSN"
                             GUID = Begin
-                                0x9e55d0c10d006c4492e161250d6d34c6
+                                0x0c8b93d5a82eea4898643e997eaf562e
                             End
                         End
                     End
@@ -271,7 +300,7 @@ Begin Form
                     Name ="CustomerName"
                     ControlSource ="CustomerName"
                     GUID = Begin
-                        0x13c2dd3d9dbb1f4bb289de44235416c4
+                        0x324a518557895549b60bb991acd10f6b
                     End
                     Begin
                         Begin Label
@@ -283,7 +312,7 @@ Begin Form
                             Name ="CustomerName_Label"
                             Caption ="Name"
                             GUID = Begin
-                                0x09f4c250b9ba7a4a8977cb70dc2cfa23
+                                0x9523c0f8f7b7fb49a034d89bf595b302
                             End
                         End
                     End
@@ -300,7 +329,7 @@ Begin Form
                     Name ="CustomerCity"
                     ControlSource ="CustomerCity"
                     GUID = Begin
-                        0x740ae6a08923604db9cae61066712f5b
+                        0xca292dc9df11ee4fb98d7f6115b9d5f4
                     End
                     Begin
                         Begin Label
@@ -312,7 +341,7 @@ Begin Form
                             Name ="CustomerCity_Label"
                             Caption ="City"
                             GUID = Begin
-                                0x452fa8fdf79dbf46adb58e5ab665cc84
+                                0xfc687d6e2bad2f489522323511b1f80b
                             End
                         End
                     End
@@ -329,7 +358,7 @@ Begin Form
                     Name ="CustomerState"
                     ControlSource ="CustomerState"
                     GUID = Begin
-                        0x5c70680b03236844b7f29825e6364e8c
+                        0x9ad789b894c08147acdb8df963ba624a
                     End
                     Begin
                         Begin Label
@@ -341,7 +370,7 @@ Begin Form
                             Name ="CustomerState_Label"
                             Caption ="ST"
                             GUID = Begin
-                                0xf58b764ffead38468d7fe775ffc45250
+                                0xdba269d35e61aa4cb318be594cd38d1a
                             End
                         End
                     End
@@ -358,7 +387,7 @@ Begin Form
                     Name ="CustomerZipCode"
                     ControlSource ="CustomerZipCode"
                     GUID = Begin
-                        0xe73613b2bb9fd14f8dec94f29f4681c4
+                        0xd5812e6fe3de1f40a3ce8bb1028e49f6
                     End
                     Begin
                         Begin Label
@@ -370,7 +399,7 @@ Begin Form
                             Name ="CustomerZipCode_Label"
                             Caption ="Zip"
                             GUID = Begin
-                                0xf974c9ff482725489b40a2f9da8a6037
+                                0xd77e21de394c8c4097f971f4dfbc5ac9
                             End
                         End
                     End
@@ -391,7 +420,7 @@ Begin Form
                         0x6c006c0065006400220000000000
                     End
                     GUID = Begin
-                        0x7dc85108e11b4f4ab75e6fcee4fed3f3
+                        0x43bcf04b3605e344adaa9e0995c24cc1
                     End
                     Begin
                         Begin Label
@@ -403,7 +432,7 @@ Begin Form
                             Name ="Label14"
                             Caption ="Status"
                             GUID = Begin
-                                0xe30d25efce381e4cbad0c4508bd7d812
+                                0x110df19b9e7f064d8e441c62fa62b1c8
                             End
                         End
                     End
@@ -415,7 +444,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormFooter"
             GUID = Begin
-                0xead921eecb1b1246a2a19a4226688fe7
+                0x30414e0f3d0df84dba0de8f25670dc15
             End
         End
     End
