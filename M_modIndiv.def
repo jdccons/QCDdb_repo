@@ -550,16 +550,15 @@ Public Function mneumonic(strLastName As String, strFirstName As String) As Stri
         Else
             strLongName = strShortName & Chr(Asc(Mid(g_adoRS("PltCustKey"), 5, 5)) + 1)
         End If
-    End If
-'
+    End If '
 
     g_adoRS.Close
     mneumonic = strLongName
+    
+    Exit Function
+    
 PROC_EXIT:
-  DoCmd.SetWarnings True
-  DoCmd.Hourglass False
-  Exit Function
-
+    Exit Function
 
 PROC_ERR:
   MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function:modIndiv.mneumonic"
