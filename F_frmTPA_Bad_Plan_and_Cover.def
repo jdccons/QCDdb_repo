@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =543807017
+Checksum =187003242
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -8,8 +8,9 @@ Begin Form
     ShortcutMenu = NotDefault
     AutoCenter = NotDefault
     NavigationButtons = NotDefault
+    DefaultView =2
     ScrollBars =2
-    ViewsAllowed =1
+    ViewsAllowed =2
     TabularFamily =0
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
@@ -18,13 +19,29 @@ Begin Form
     Width =3960
     DatasheetFontHeight =10
     ItemSuffix =13
-    Left =7815
-    Top =2400
-    Right =11775
-    Bottom =5280
+    Left =7950
+    Top =2100
+    Right =12135
+    Bottom =5730
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xbd56cc2c66aae440
+    End
+    GUID = Begin
+        0xac86571b5e115a458806f02aa0b41a99
+    End
+    NameMap = Begin
+        0x0acc0e550000000020d263faeed28e4fa5d1ede00dfec098000000009b103980 ,
+        0xd4b1e440618b22cb000000007400700061005f0064006100740061005f006500 ,
+        0x78006300680061006e00670065005f00730075006200000000000000b674840e ,
+        0x6856714d9256ea44e6bcb5ea0700000020d263faeed28e4fa5d1ede00dfec098 ,
+        0x4700520050005f0049004400000000000000919630f6cd6bcb459d8c8529a53e ,
+        0xd50f0700000020d263faeed28e4fa5d1ede00dfec098530053004e0000000000 ,
+        0x00003e534018ed4b60489d5036dc437607de0700000020d263faeed28e4fa5d1 ,
+        0xede00dfec09850004c0041004e00000000000000b05e07659f02614f97768974 ,
+        0xab48779e0700000020d263faeed28e4fa5d1ede00dfec09843004f0056000000 ,
+        0x00000000000000000000000000000000000000000c0000000300000000000000 ,
+        0x00000000000000000000
     End
     RecordSource ="tpa_data_exchange_sub"
     Caption ="TPA Bad Plan and Cover"
@@ -71,7 +88,7 @@ Begin Form
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x006e756c3a00
     End
-    AllowDatasheetView =0
+    AllowFormView =0
     AllowPivotTableView =0
     AllowPivotChartView =0
     AllowPivotChartView =0
@@ -150,7 +167,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormHeader"
             GUID = Begin
-                0xfb0302649ebbd44292a8722b94b3f69d
+                0x563b379601d43544a17199b0d155fa73
             End
             Begin
                 Begin Label
@@ -161,7 +178,7 @@ Begin Form
                     Name ="Label9"
                     Caption ="GroupID"
                     GUID = Begin
-                        0xc21539e79dcedb44ab9abc56ec628a1f
+                        0xf514311afd15b642a700b964951a6cd7
                     End
                 End
                 Begin Label
@@ -172,7 +189,7 @@ Begin Form
                     Name ="Label10"
                     Caption ="SSN"
                     GUID = Begin
-                        0x3329fdd97af7404ab101b227b7612e74
+                        0x50f46f8619088542a2e92a3cf2a0e692
                     End
                 End
                 Begin Label
@@ -183,7 +200,7 @@ Begin Form
                     Name ="Label11"
                     Caption ="PlanID"
                     GUID = Begin
-                        0x66b42da97ca8834f8c1c4296dfe102c0
+                        0xed6fe89d14c5d244940b2d71dec3fb25
                     End
                 End
                 Begin Label
@@ -194,7 +211,7 @@ Begin Form
                     Name ="Label12"
                     Caption ="CoverID"
                     GUID = Begin
-                        0x2223ded6538a6a41b601e29e89a13284
+                        0x17ba53a14ea1fd48b2c0ca0ec749372e
                     End
                 End
             End
@@ -204,7 +221,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x295c5b415f666140a239bab12337998d
+                0xfd5f840a5659c448933fcafa04e161a6
             End
             Begin
                 Begin TextBox
@@ -218,7 +235,7 @@ Begin Form
                     ControlSource ="GRP_ID"
                     OnDblClick ="[Event Procedure]"
                     GUID = Begin
-                        0x70a83bfacc9c7042bc8319eb71c9a206
+                        0xd0a687763b3d984998d5c084a1a36f4b
                     End
                 End
                 Begin TextBox
@@ -233,7 +250,7 @@ Begin Form
                     ControlSource ="SSN"
                     InputMask ="000\\-00\\-0000;0;_"
                     GUID = Begin
-                        0x88dd8c032a13b7489212e7b3ad5ce8c2
+                        0x1a3674f5b91b524295eacfbf0b05d2e6
                     End
                 End
                 Begin TextBox
@@ -248,7 +265,7 @@ Begin Form
                     Name ="PLAN"
                     ControlSource ="PLAN"
                     GUID = Begin
-                        0xfc9787141319b148a45b902b189c3e8a
+                        0xf632dfd4577a5b4b85b65150fb4086be
                     End
                 End
                 Begin TextBox
@@ -263,7 +280,7 @@ Begin Form
                     Name ="COV"
                     ControlSource ="COV"
                     GUID = Begin
-                        0x7b386829f7c23a4685f41d42189a4662
+                        0xc46538a787cc954da3239a2a62059e5e
                     End
                 End
             End
@@ -273,7 +290,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormFooter"
             GUID = Begin
-                0xd1416c3fa3ea8c4292004981423f9752
+                0xfeab7b565307f84aaa45180fabe88513
             End
         End
     End
