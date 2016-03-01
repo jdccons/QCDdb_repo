@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =187003242
+Checksum =-1358021439
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -20,19 +20,16 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =13
     Left =7950
-    Top =2100
+    Top =1320
     Right =12135
-    Bottom =5730
+    Bottom =4950
     DatasheetGridlinesColor =12632256
-    RecSrcDt = Begin
-        0xbd56cc2c66aae440
-    End
     GUID = Begin
         0xac86571b5e115a458806f02aa0b41a99
     End
     NameMap = Begin
         0x0acc0e550000000020d263faeed28e4fa5d1ede00dfec098000000009b103980 ,
-        0xd4b1e440618b22cb000000007400700061005f0064006100740061005f006500 ,
+        0xd4b1e44000000000000000007400700061005f0064006100740061005f006500 ,
         0x78006300680061006e00670065005f00730075006200000000000000b674840e ,
         0x6856714d9256ea44e6bcb5ea0700000020d263faeed28e4fa5d1ede00dfec098 ,
         0x4700520050005f0049004400000000000000919630f6cd6bcb459d8c8529a53e ,
@@ -43,7 +40,10 @@ Begin Form
         0x00000000000000000000000000000000000000000c0000000300000000000000 ,
         0x00000000000000000000
     End
-    RecordSource ="tpa_data_exchange_sub"
+    RecordSource ="SELECT tpa_data_exchange_sub.GRP_ID, tpa_data_exchange_sub.SSN, tpa_data_exchang"
+        "e_sub.PLAN, tpa_data_exchange_sub.COV FROM tpa_data_exchange_sub ORDER BY tpa_da"
+        "ta_exchange_sub.GRP_ID, tpa_data_exchange_sub.SSN, tpa_data_exchange_sub.PLAN, t"
+        "pa_data_exchange_sub.COV; "
     Caption ="TPA Bad Plan and Cover"
     OnClose ="[Event Procedure]"
     MenuBar ="Dialog"
