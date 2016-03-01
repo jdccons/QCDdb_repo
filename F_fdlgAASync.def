@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1069863621
+Checksum =1069896015
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -20,9 +20,9 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =36
     Left =7785
-    Top =1020
+    Top =240
     Right =14025
-    Bottom =8010
+    Bottom =7230
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xf4f15965d3a0e240
@@ -1122,7 +1122,7 @@ On Error GoTo Err_btnTPA_Bad_Plan_and_Rate_Click
             Loop
         End If
         stDocName = "frmTPA_Bad_Plan_and_Cover"
-        DoCmd.OpenForm stDocName, , , strWhere
+        DoCmd.OpenForm stDocName, acFormDS, , strWhere, acFormEdit, acWindowNormal
     End If
     rst.Close
     Set db = Nothing
