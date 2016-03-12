@@ -70,7 +70,7 @@ Public Sub FormNames()
     
 End Sub
 Sub AllFormsColl()
-Application.CurrentProject.AllForms(0).value
+Application.CurrentProject.AllForms(0).Value
 'Application.CurrentProject.AllForms(0).Properties ("name")
 
 End Sub
@@ -95,7 +95,7 @@ Sub AllForms()
                 rs.Fields("Name") = .Name
                 rs.Fields("DateCreated") = .DateCreated
                 rs.Fields("DateModified") = .DateModified
-                rs.Fields("TxnDate") = Date
+                rs.Fields("TxnDate") = date
                 rs.Update
             End With
     Next obj
@@ -814,43 +814,6 @@ End Function
 
 
 
-Function FindDentist(frmMyForm As Form, ctlMyControl As Control, varMyID, varEndControl)
-
-   On Error GoTo ErrFindDentist
-   
-   If frmMyForm.Dirty Then DoCmd.DoMenuItem A_FORMBAR, A_FILE, A_SAVERECORD
-   
-   DoCmd.Echo False, "Searching. . ."
-
-   Dim rs As DAO.Recordset
-   Dim lngID As Long
-   Dim strCriteria As String
-   Dim strCRLF As String
-
-   Set rs = frmMyForm.RecordsetClone
-   lngID = ctlMyControl
-   strCRLF = Chr(13) & Chr(10)
-   strCriteria = varMyID & "=" & lngID ' Define search criteria.
-
-   rs.FindFirst strCriteria            ' Locate first occurrence.
-   If rs.NoMatch Then
-      MsgBox "Could not find the Record ID: " & lngID & "." & strCRLF & "Select 'Show All Records' from the" & strCRLF & "Records Menu and try again."
-   Else
-      frmMyForm.Bookmark = rs.Bookmark
-      DoCmd.GoToControl varEndControl
-   End If
-
-   DoCmd.Echo True
-   
-ExitFindDentist:
-   Exit Function
-   
-ErrFindDentist:
-
-    DoCmd.Echo True, "Find canceled."
-    Resume ExitFindDentist
-      
-End Function
 
 
 
@@ -1127,3 +1090,56 @@ Dim frm As Form
 
 '************ Code End ***************
 End Function
+Public Sub CreateNewDB(strTargetDB As String)
+    
+    Dim qdf As QueryDef
+    Dim tbl As TableDef
+    
+    'strNewDB = InputBox("Please Enter New Database Name", "Database Name", "New_database")
+    On Error Resume Next
+    'strTargetDB = CurrentProject.path & "\" & strNewDB & ".mdb"
+    'DBEngine.CreateDatabase strTargetDB, dbLangGeneral
+    For Each qdf In CurrentDb.QueryDefs
+        'If Left$(qdf.Name, 3) = "qry" Then
+        DoCmd.TransferDatabase acExport, "Microsoft Access", _
+        strTargetDB, acQuery, qdf.Name, qdf.Name
+        'End If
+    Next
+    
+    For Each tbl In CurrentDb.TableDefs
+        'If (tbl.Connect) <> "" Then
+        If (tbl.Name) <> "MySys*" Then
+            DoCmd.TransferDatabase acExport, "Microsoft Access", _
+            strTargetDB, acTable, tbl.Name, tbl.Name
+        End If
+        'End If
+    Next
+    
+    Dim obj As AccessObject, dbs As Object
+    Set dbs = Application.CurrentProject
+    
+    ' forms
+    For Each obj In dbs.AllForms
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acForm, obj.Name, obj.Name
+    Next obj
+    ' modules
+    For Each obj In dbs.AllModules
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acModule, obj.Name, _
+        obj.Name
+    Next obj
+    ' macros
+    For Each obj In dbs.AllMacros
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acMacro, obj.Name, _
+        obj.Name
+    Next obj
+    ' reports
+    For Each obj In dbs.AllReports
+        DoCmd.TransferDatabase acExport, "Microsoft Access", strTargetDB, acReport, obj.Name, _
+        obj.Name
+    Next obj
+    Set obj = Nothing
+    Set dbs = Nothing
+    ' "F:\QCDFrontend\dev\container3.mdb"
+    On Error GoTo 0
+    Exit Sub
+End Sub
