@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-478559174
+Checksum =-167388670
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -12,12 +12,26 @@ Begin Form
     ViewsAllowed =1
     Width =5040
     ItemSuffix =20
-    Left =-22692
-    Top =1692
-    Right =-15864
-    Bottom =6492
+    Left =915
+    Top =1035
+    Right =7740
+    Bottom =5850
     RecSrcDt = Begin
         0xd359ddb3b2c4e140
+    End
+    GUID = Begin
+        0x9d08946e9816b54e931aaed01f67e0b6
+    End
+    NameMap = Begin
+        0x0acc0e5500000000361952fb81a12e43964edaff0f5c49a000000000614f3bfc ,
+        0xd1b9e44040d02a0b78e21c55740062006c0047007200700000000000000073a4 ,
+        0xac18ec8def479d81914ffab646d007000000361952fb81a12e43964edaff0f5c ,
+        0x49a0470072006f00750070005400790070006500000000000000000000000000 ,
+        0x00000000000000000000000000005ceb1c1aac75170067005c02f8861a104100 ,
+        0x5200480044005200000000000000ff5d8209c2c76a44a0561e61a8d79b220700 ,
+        0x0000361952fb81a12e43964edaff0f5c49a0470052004f005500500069006400 ,
+        0x000000000000000000000000000000000000000000000c000000030000000000 ,
+        0x000000000000000000000000
     End
     Caption ="PrintAll American Invoices"
     MenuBar ="Dialog"
@@ -84,7 +98,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             GUID = Begin
-                0x2f8224f191c17b4985279462c41212f9
+                0x0b2f727ced151e4ab78a2b18a635b90c
             End
             Begin
                 Begin CommandButton
@@ -102,7 +116,7 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x95d653096ec72848b1acfa5a845fd866
+                        0x8650d3f153510c48a5f6ddd81eb71c5d
                     End
                 End
                 Begin Label
@@ -118,7 +132,7 @@ Begin Form
                     Name ="Text8"
                     Caption ="Invoice Number From: "
                     GUID = Begin
-                        0xa478f181575d2443a35dd35acec3e5fb
+                        0x1a9d7096ac9d6c408e8fe2869065f4b6
                     End
                 End
                 Begin Label
@@ -134,7 +148,7 @@ Begin Form
                     Name ="Text11"
                     Caption ="  Invoice Number To: "
                     GUID = Begin
-                        0xc4c2624054a87e498055bf2baafc0fd4
+                        0x190cfe13ffaa944ba6b4a14e39b7fddd
                     End
                 End
                 Begin Label
@@ -149,7 +163,7 @@ Begin Form
                     Name ="Text16"
                     Caption ="To print \"all\" invoices, leave invoice numbers blank."
                     GUID = Begin
-                        0x38ca10e469db754ba4411da1d4dc73e9
+                        0x847edc4ca0700e4ab3bc4bb25da3e76c
                     End
                 End
                 Begin CommandButton
@@ -167,7 +181,7 @@ Begin Form
                     OnClick ="[Event Procedure]"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xff9f1e3c11e1a84eac95485c81bdc73a
+                        0x0df7d8efc58fe94c8bbcb1c905d62ead
                     End
                 End
                 Begin ComboBox
@@ -179,15 +193,14 @@ Begin Form
                     Top =555
                     Width =1413
                     FontSize =10
-                    ColumnInfo ="\"\";\"\";\"10\";\"32\""
                     GUID = Begin
-                        0xabfeb2f9f6e6494e8848afd24d53b2f0
+                        0xf236f9328d59744e8547116c64e1d2af
                     End
                     Name ="InvFrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT ARHDR.TransactionNumber FROM ARHDR INNER JOIN tblGrp ON ARHDR.CustomerKey"
-                        " = tblGrp.GROUPid WHERE (((tblGrp.GroupType)=4)) ORDER BY ARHDR.TransactionNumbe"
-                        "r;"
+                        "=tblGrp.GROUPid WHERE (((tblGrp.GroupType)=4)) ORDER BY ARHDR.TransactionNumber;"
+                        " "
                     FontName ="MS Sans Serif"
                 End
                 Begin ComboBox
@@ -200,15 +213,14 @@ Begin Form
                     Width =1413
                     FontSize =10
                     TabIndex =1
-                    ColumnInfo ="\"\";\"\";\"10\";\"32\""
                     GUID = Begin
-                        0x8ee9ec2ec94d5c4997894348e1eba44c
+                        0x5500b21d4838ce42a4000b5d1c2b5f55
                     End
                     Name ="InvTo"
                     RowSourceType ="Table/Query"
-                    RowSource ="SELECT ARHDR.TransactionNumber\015\012FROM ARHDR INNER JOIN tblGrp ON ARHDR.Cust"
-                        "omerKey = tblGrp.GROUPid\015\012WHERE (((tblGrp.GroupType)=4))\015\012ORDER BY A"
-                        "RHDR.TransactionNumber;\015\012"
+                    RowSource ="SELECT ARHDR.TransactionNumber FROM ARHDR INNER JOIN tblGrp ON ARHDR.CustomerKey"
+                        "=tblGrp.GROUPid WHERE (((tblGrp.GroupType)=4)) ORDER BY ARHDR.TransactionNumber;"
+                        " "
                     FontName ="MS Sans Serif"
                 End
             End
