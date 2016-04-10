@@ -3,6 +3,15 @@ Option Explicit
 
 Function DelAgent()
 
-    Call Forms("frmAgent_e").ConfirmDelete
+    On Error GoTo PROC_ERR
+
+    Call [Form_Agent].btnDelete_Click
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function: modAgent.DelAgent"
+    GoTo PROC_EXIT
 
 End Function
