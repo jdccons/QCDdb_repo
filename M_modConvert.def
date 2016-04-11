@@ -73,9 +73,9 @@ Function SetPending_CancelGrp() As Boolean
     Dim strGrp As String
     
     If IsLoaded("frmGrp") Then
-        strGrp = [Forms]![frmGrp].[ctlGROUPid]
+        strGrp = [Forms]![frmGrp].[ctlGroupID]
     ElseIf IsLoaded("frmGrp_Cancelled") Then
-        strGrp = [Forms]![frmGrp_Cancelled].[ctlGROUPid]
+        strGrp = [Forms]![frmGrp_Cancelled].[ctlGroupID]
     End If
     
     Set dbs = CurrentDb()
@@ -111,9 +111,9 @@ Function SetActive_CancelGrp() As Boolean
     Dim strGrp As String
     
     If IsLoaded("frmGrp") Then
-        strGrp = [Forms]![frmGrp].[ctlGROUPid]
+        strGrp = [Forms]![frmGrp].[ctlGroupID]
     ElseIf IsLoaded("frmGrp_Cancelled") Then
-        strGrp = [Forms]![frmGrp_Cancelled].[ctlGROUPid]
+        strGrp = [Forms]![frmGrp_Cancelled].[ctlGroupID]
     End If
     
     Set dbs = CurrentDb()
@@ -141,14 +141,6 @@ Function SetActive_CancelGrp() As Boolean
 End Function
 
 
-Function ShowGrpForm()
-
-    Dim strWhere As String
-    
-    strWhere = "[GRcancelled] = False"
-    DoCmd.OpenForm "frmGrp", acNormal, , strWhere
-       
-End Function
 
 Function ShowGrpFormCancel()
 
