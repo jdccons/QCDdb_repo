@@ -2,9 +2,6 @@ Option Compare Database
 Option Explicit
 Public fDelete As Boolean
 Public gintProcessStatus As Integer
-' functions and procedures
-' for groups
-
 Public Function ValidSSN() As Boolean
 '=========================================================================
 ' Object:      ValidSSN
@@ -215,6 +212,77 @@ IsThereEligEmps_Err:
     MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
     GoTo IsThereEligEmps_Exit
 End Function
+Function GetBasePlan(strGroupID As String) As Integer
+    ' this function finds the minimum plan authorized for the group
+    On Error GoTo PROC_ERR
+    
+    Dim strSQL As String
+    strSQL = "SELECT TOP(1) * " & _
+                "FROM tblRates " & _
+                "WHERE GroupID = '" & strGroupID & "' " & _
+                "AND PlanID = ( " & _
+                                "SELECT min(PlanID) PlanID " & _
+                                "FROM tblRates " & _
+                                "WHERE GroupID = '" & strGroupID & "' " & _
+                                ");"
+    LoadADORecordset (strSQL)
+    If g_adoRS.EOF Then
+        g_adoRS.Close
+        Err.Number = 33000
+        Err.DESCRIPTION = "Group not in group table. Or plans have not be setup for the group.  Contact support."
+        GoTo PROC_ERR
+    Else
+        GetBasePlan = g_adoRS("PlanID")
+    End If
+    
+    g_adoRS.Close
+    
+    Exit Function
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function: modGrp.GetBasePlan"
+    GoTo PROC_EXIT
+
+End Function
+
+Function GetBaseCover(strGroupID As String) As Integer
+    On Error GoTo PROC_ERR
+    
+    Dim strSQL As String
+    strSQL = "SELECT TOP(1) * " & _
+                "FROM tblRates " & _
+                "WHERE GroupID = '" & strGroupID & "' " & _
+                "AND CoverID = ( " & _
+                                "SELECT min(CoverID) CoverID " & _
+                                "FROM tblRates " & _
+                                "WHERE GroupID = '" & strGroupID & "' " & _
+                                ");"
+    LoadADORecordset (strSQL)
+    If g_adoRS.EOF Then
+        g_adoRS.Close
+        Err.Number = 33000
+        Err.DESCRIPTION = "Group not in group table. Or plans have not be setup for the group.  Contact support."
+        GoTo PROC_ERR
+    Else
+        GetBaseCover = g_adoRS("CoverID")
+    End If
+    
+    g_adoRS.Close
+    
+    Exit Function
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function:  modGrp.GetBaseCover"
+    GoTo PROC_EXIT
+
+End Function
+
 Function IsThereGrowth(strGroupID As String, strYear As String) As Boolean
     'Purpose:  Determines whether a record exists in tblGrowth
     'John Criswell 3/4/00
@@ -249,48 +317,94 @@ IsThereGrowth_Err:
     MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
     GoTo IsThereGrowth_Exit
 End Function
-Function Delete_GrpSubscr(strSSN As String) As Boolean
+Function DeleteGroupSubscr() As Boolean
+'  Calls a procedure in a form (frmGrpSubscr.cmdDeleteSubscr_Click)
+'  to delete a subscriber
+'  Code used on a menu bar (GrpSubscrMenuBar_Edit)
+
+On Error GoTo ErrorHandler
+
+    Call Form_frmGrpSubscr.cmdDeleteSubscr_Click
+    DeleteGroupSubscr = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+End Function
+Function GotRates(strGroupID As String) As Boolean
+' function to determine if a group has rates in tblRates
+
+    Dim strSQL As String
+    strSQL = "select distinct 1 as Rcds from tblRates where GroupID = '" & strGroupID & "';"
+    ExecuteSQL (strSQL)
+    If g_adoRS.EOF Then
+        GotRates = False
+    Else
+        GotRates = True
+    End If
+    g_adoRS.Close
+    
+End Function
+Function Delete_GrpSubscr(strSSN As String, strUserName As String) As Boolean
     
     On Error GoTo Err_Delete_GrpSubscr
     
-    'Purpose:  Delete the subscriber from tblSubscr
-    Dim dbs As DAO.Database
-    Dim strSQL As String
-    Dim intAns As Integer
-    
-    fDelete = False
-       
-    Set dbs = CurrentDb()
-    
-    intAns = MsgBox("Are you sure you want to delete this subscriber from this group?", vbExclamation + vbYesNo, "Confirm Delete")
-    If intAns = vbNo Then
-        Delete_GrpSubscr = False
-        GoTo Exit_Delete_GrpSubscr
-    End If
-    Forms!frmGrpSubscr.Painting = False
-    
-    DoCmd.Echo False
-    ' this completely removes the subscriber
-    ' from the subscriber table
-    ' going forward, deleted subscribers
-    ' will get a SubCancelled=3
-    'ExecuteSQL "EXEC uspDelGrpSubscr '" & strSSN & "'"
-    fDelete = True  ' flag for frmGrpSubscr to know subscriber was deleted from the backend
-    DoCmd.Echo True
-    
-    dbs.Close
-    Set dbs = Nothing
-    
-    Delete_GrpSubscr = True
-    
+    'Purpose:  Mark the subscriber and dependent records as cancelled
+
+        Dim strSQL As String
+        strSQL = "SELECT 1 as SubCnt FROM tblSubscr where SubSSN = '" & strSSN & "';"
+        Call LoadADORecordset(strSQL)
+        If g_adoRS.EOF Then
+            Delete_GrpSubscr = False
+        Else
+            strSQL = "uspDelGrpSubscr"
+            If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+            With g_adoConnection
+                 .ConnectionString = SetConnxn
+                 .Open
+            End With
+            With g_adoCommand
+                  .ActiveConnection = g_adoConnection
+                  .CommandType = adCmdStoredProc
+                  .CommandText = strSQL
+                  'Return parm
+                  Set g_adoParm = .CreateParameter("ReturnValue", adInteger, adParamReturnValue)
+                  .Parameters.Append g_adoParm
+                  ' SSN input
+                  Set g_adoParm = .CreateParameter("@SSN", adChar, adParamInput, 9)
+                  .Parameters.Append g_adoParm
+                  .Parameters("@SSN").Value = strSSN
+                  ' UserName input
+                  Set g_adoParm = .CreateParameter("@UserName", adVarChar, adParamInput, 20)
+                  .Parameters.Append g_adoParm
+                  .Parameters("@UserName").Value = strUserName
+                  .Execute
+                  g_iRtnVal = .Parameters.Item("ReturnValue")
+            End With
+            If g_iRtnVal = 1 Then
+                Delete_GrpSubscr = True
+            Else
+                Delete_GrpSubscr = False
+            End If
+        End If
+        
+        If g_adoConnection.STATE = adStateOpen Then
+                g_adoConnection.Close
+                Set g_adoCommand = Nothing
+                Set g_adoConnection = Nothing
+                Set g_adoRS = Nothing
+                Set g_adoParm = Nothing
+        End If
+
 Exit_Delete_GrpSubscr:
     Exit Function
     
 Err_Delete_GrpSubscr:
     Delete_GrpSubscr = False
     DoCmd.Echo True
-    dbs.Close
-    Set dbs = Nothing
     MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
     GoTo Exit_Delete_GrpSubscr
     
@@ -303,7 +417,7 @@ On Error GoTo ErrorHandler
     Dim strGrpID As String
     Dim strWhere As String
        
-    strGrpID = Forms!frmGrp!GROUPid
+    strGrpID = Forms!frmGrp!GroupID
     strWhere = "(([tblGrp].[GroupID]) = """ & strGrpID & """)"
    
     stDocName = "rptEnvelope_Group"
@@ -328,7 +442,7 @@ On Error GoTo ErrorHandler
     Dim strWhere As String
     
     
-    strGrpID = Forms!frmGrp!GROUPid
+    strGrpID = Forms!frmGrp!GroupID
     strWhere = "(([tblGrp].[GroupID]) = """ & strGrpID & """)"
    
     stDocName = "rptGrp"
@@ -419,7 +533,7 @@ Function Change_Anniv_Date()
         strStyle = vbCritical
         strTitle = "Data Discrepancy"
         strResponse = MsgBox(strMsg, strStyle, strTitle)
-        Forms!frmGrp!GRannvDATE = Null
+        Forms!frmGrp!GRAnnvDate = Null
         DoCmd.GoToControl "GRsec125"
     End If
 
@@ -433,6 +547,16 @@ Change_Anniv_Date_Err:
 
 End Function
 
+Function GetGroupName(strGroupID As String) As String
+            
+    Dim strSQL As String
+    ' group name
+    strSQL = "select GRName from tblGrp where GroupID = '" & strGroupID & "';"
+    LoadADORecordset (strSQL)
+    GetGroupName = g_adoRS("GRName")
+    g_adoRS.Close
+            
+End Function
 Function GrpSubscrLabel()
 
 ' sj 08/19/1999
@@ -509,4 +633,46 @@ MispricedGrSubs_Err:
     MsgBox Error$
     Resume MispricedGrSubs_Exit
 
+End Function
+
+Function GetSubClassKey(intGroupType) As String
+
+On Error GoTo HandleError
+
+    Select Case intGroupType
+        Case 1
+            GetSubClassKey = "QCDOn"
+        Case 4
+            GetSubClassKey = "AllAm"
+        Case 9
+            GetSubClassKey = "Indiv"
+        Case Else
+            GetSubClassKey = ""
+    End Select
+            
+        
+HandleExit:
+Exit Function
+HandleError:
+MsgBox Err.DESCRIPTION
+Resume HandleExit
+
+End Function
+
+
+Function ShowGrpForm()
+
+On Error GoTo PROC_ERR
+
+    Dim strWhere As String
+    strWhere = "[GRcancelled] = False"
+    DoCmd.OpenForm "frmGrp", acNormal, , strWhere
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Function: modGrp.ShowGrpForm"
+    GoTo PROC_EXIT
+       
 End Function
