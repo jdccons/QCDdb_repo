@@ -29,10 +29,11 @@ Public Function ValidSSN() As Boolean
                 "FROM tpa_data_exchange_sub " & _
                 "GROUP BY tpa_data_exchange_sub.SSN " & _
                 "HAVING (((Count(tpa_data_exchange_sub.SSN))>1));"
+    Debug.Print strSQL
 
 
     Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rst.EOF And rst.BOF Then
+    If rst.RecordCount > 0 Then
         ValidSSN = True
     Else
         ValidSSN = False
@@ -82,7 +83,7 @@ On Error GoTo FUNC_ERR
         strSQL = "select * from vw_tpa_plan_cover;"
         Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
         
-        If rst.EOF And rst.BOF Then
+        If rst.RecordCount > 0 Then
             ValidPlanCover = True
         Else
             ValidPlanCover = False
