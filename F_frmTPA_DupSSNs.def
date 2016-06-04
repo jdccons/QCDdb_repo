@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1640318060
+Checksum =329268561
 Begin Form
     Modal = NotDefault
     MaxButton = NotDefault
@@ -21,11 +21,30 @@ Begin Form
     ItemSuffix =12
     Left =5625
     Top =915
-    Right =15255
+    Right =10530
     Bottom =3075
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x59d30a1065aae440
+    End
+    GUID = Begin
+        0x8ba988faa74273429e630838b11c69cc
+    End
+    NameMap = Begin
+        0x0acc0e550000000071438041cc6a3646af4f11e30ca2c7cd000000002ff37feb ,
+        0x54bce4403200080132000802760077005f007400700061005f00640075007000 ,
+        0x5f00730073006e0000000000000074d8934c6c59794cbb4b8e45e0da7a820700 ,
+        0x000071438041cc6a3646af4f11e30ca2c7cd49004400000000000000c6c63244 ,
+        0xc0c7b74f92034a4f7195cf250700000071438041cc6a3646af4f11e30ca2c7cd ,
+        0x4700520050005f00490044000000000000005918b21d76d2604f8133c769de3b ,
+        0x0fd60700000071438041cc6a3646af4f11e30ca2c7cd530053004e0000000000 ,
+        0x0000986f88aadb64c84683843d417d3788b10700000071438041cc6a3646af4f ,
+        0x11e30ca2c7cd5300550042005f0049004400000000000000a8e553e1d68be94c ,
+        0xb0a56fb097e4f88b0700000071438041cc6a3646af4f11e30ca2c7cd4c004100 ,
+        0x530054005f004e0041004d004500000000000000bec6ee9245013c4a83422c77 ,
+        0x2d90be210700000071438041cc6a3646af4f11e30ca2c7cd4600490052005300 ,
+        0x54005f004e0041004d0045000000000000000000000000000000000000000000 ,
+        0x00000c000000030000000000000000000000000000000000
     End
     RecordSource ="vw_tpa_dup_ssn"
     Caption ="Dup SSNs"
@@ -110,7 +129,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormHeader"
             GUID = Begin
-                0x8622230ae314a94e943b4615bb85426e
+                0xb614e8ed0495264092fd1d14dbcf6280
             End
         End
         Begin Section
@@ -118,7 +137,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0xd18a569dc7352c44b8e7471f322ae710
+                0xccb021957628184081edb7bec857a5a9
             End
             Begin
                 Begin TextBox
@@ -131,7 +150,7 @@ Begin Form
                     Name ="ID"
                     ControlSource ="ID"
                     GUID = Begin
-                        0x1c24d3a5c7b2c342a605020da2da5637
+                        0x1160739d954bc84e8914c37d806b8467
                     End
                     Begin
                         Begin Label
@@ -143,7 +162,7 @@ Begin Form
                             Name ="ID_Label"
                             Caption ="ID"
                             GUID = Begin
-                                0xa6ddd8b0a519f840b8911e80d9f0d89d
+                                0xfae39b494ab55e41b0488c3ea400f132
                             End
                         End
                     End
@@ -160,7 +179,7 @@ Begin Form
                     Name ="GRP_ID"
                     ControlSource ="GRP_ID"
                     GUID = Begin
-                        0x54114f26b03cc843babc3f576f422c93
+                        0x5b6ba83b752ed746b921bf3d45c17051
                     End
                     Begin
                         Begin Label
@@ -172,7 +191,7 @@ Begin Form
                             Name ="GRP_ID_Label"
                             Caption ="GRP_ID"
                             GUID = Begin
-                                0x18bfa9c5a68e574888321545dbc2bb81
+                                0xb852285c54276e438da5f846e8d7bb9e
                             End
                         End
                     End
@@ -190,7 +209,7 @@ Begin Form
                     ControlSource ="SSN"
                     InputMask ="000\\-00\\-0000;0;_"
                     GUID = Begin
-                        0x0de800bd64217f4291e2d0ba1064b3a3
+                        0x63d07316111e404d966274bebe8247fa
                     End
                     Begin
                         Begin Label
@@ -202,7 +221,7 @@ Begin Form
                             Name ="SSN_Label"
                             Caption ="SSN"
                             GUID = Begin
-                                0x3045e0068ceed6408fa80043cbfe498b
+                                0xc8fd8b3934c52945a35309afa3d89f25
                             End
                         End
                     End
@@ -220,7 +239,7 @@ Begin Form
                     ControlSource ="SUB_ID"
                     InputMask ="0000\\-0000;0;_"
                     GUID = Begin
-                        0xa17632caf99b3b459c64f6b70815319f
+                        0xfc8c4f3fa5663e4683ab07f0ef3e2ae0
                     End
                     Begin
                         Begin Label
@@ -232,7 +251,7 @@ Begin Form
                             Name ="SUB_ID_Label"
                             Caption ="SUB_ID"
                             GUID = Begin
-                                0x3148a4c9c82ab74b81b917386c93e808
+                                0x3d688ba29347b749a6a10977345fac97
                             End
                         End
                     End
@@ -249,7 +268,7 @@ Begin Form
                     Name ="LAST_NAME"
                     ControlSource ="LAST_NAME"
                     GUID = Begin
-                        0x3e35769c52e5414fa333af2279a10786
+                        0x59f6cb2292078c48a2e45792383d3612
                     End
                     Begin
                         Begin Label
@@ -261,7 +280,7 @@ Begin Form
                             Name ="LAST_NAME_Label"
                             Caption ="LAST_NAME"
                             GUID = Begin
-                                0xd0c37f52f5ad9e4b8fce2e9d7f28074c
+                                0x7757f50d9e1ee5409ee4203ee880784b
                             End
                         End
                     End
@@ -278,7 +297,7 @@ Begin Form
                     Name ="FIRST_NAME"
                     ControlSource ="FIRST_NAME"
                     GUID = Begin
-                        0x4e71887645903f4f9e8b629eb5f3b20e
+                        0xde1c1f51cb32cd4bb09a93b34093dbc0
                     End
                     Begin
                         Begin Label
@@ -290,7 +309,7 @@ Begin Form
                             Name ="FIRST_NAME_Label"
                             Caption ="FIRST_NAME"
                             GUID = Begin
-                                0xeeafc7e3fd553442914ae026ebef78da
+                                0x0a23f4ee3eba614f88672f4716009fcd
                             End
                         End
                     End
@@ -302,7 +321,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormFooter"
             GUID = Begin
-                0x32b5dd3afafec841a8afd78c7c91c2be
+                0xa69b7b1b40a12c4aab9ac75b23975a61
             End
         End
     End
