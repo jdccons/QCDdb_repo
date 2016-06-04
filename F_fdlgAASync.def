@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1059559642
+Checksum =-1059918113
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -20,9 +20,9 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =36
     Left =7260
-    Top =690
+    Top =1470
     Right =12855
-    Bottom =6645
+    Bottom =7425
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xf4f15965d3a0e240
@@ -461,33 +461,39 @@ On Error GoTo PROC_ERR
     If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
     With g_adoConnection
          .ConnectionString = SetConnxn
-         .CommandTimeout = 300
+         .CommandTimeout = 360
          .Open
     End With
-    
+    Set g_adoParm = Nothing
     With g_adoCommand
           .ActiveConnection = g_adoConnection
-          .CommandTimeout = 300
+          .CommandTimeout = 360
           .CommandType = adCmdStoredProc
           .CommandText = strSQL
           
-          Set g_adoParm = .CreateParameter("Return", adInteger, adParamReturnValue) 'Return parm
+          g_adoParmName = "Return"
+          Set g_adoParm = .CreateParameter(g_adoParmName, adInteger, adParamReturnValue, , 0) 'Return parm
           .Parameters.Append g_adoParm
+          .Parameters(g_adoParmName).Value = 0
           
-          Set g_adoParm = .CreateParameter("@User", adVarChar, adParamInput, 50)
+          g_adoParmName = "@User"
+          Set g_adoParm = .CreateParameter(g_adoParmName, adVarChar, adParamInput, 50)
           .Parameters.Append g_adoParm
-          .Parameters("@User").Value = strUserName
+          .Parameters(g_adoParmName).Value = strUserName
           
-          Set g_adoParm = .CreateParameter("@Path", adVarChar, adParamInput, 100)
+          g_adoParmName = "@Path"
+          Set g_adoParm = .CreateParameter(g_adoParmName, adVarChar, adParamInput, 100)
           .Parameters.Append g_adoParm
-          .Parameters("@Path").Value = strPath
+          .Parameters(g_adoParmName).Value = strPath
           
-          Set g_adoParm = .CreateParameter("@File", adVarChar, adParamInput, 50)
+          g_adoParmName = "@File"
+          Set g_adoParm = .CreateParameter(g_adoParmName, adVarChar, adParamInput, 50)
           .Parameters.Append g_adoParm
-          .Parameters("@File").Value = strFileName
+          .Parameters(g_adoParmName).Value = strFileName
           
           .Execute
     End With
+    
     
     g_iRtnVal = g_adoCommand(0)
     g_adoConnection.Close
@@ -510,23 +516,20 @@ End Function
 Private Sub btnDupSSNs_Click()
 
     On Error GoTo Err_btnDupSSNs_Click
-
-    Dim db As DAO.Database
-    Dim rst As DAO.Recordset
     Dim stDocName As String
+    Dim strSQL As String
+    strSQL = "select * from vw_tpa_dup_ssn"
+    LoadADORecordset strSQL, 360
     
-    Set db = CurrentDb()
-    Set rst = db.OpenRecordset("vw_tpa_dup_ssn", dbOpenSnapshot)
-    If rst.BOF And rst.EOF Then
-        MsgBox "There are no duplicate SSNs.", vbOKOnly, "QCD: Dup SSNs."
-    Else
+    If g_adoRS.RecordCount > 0 Then
         ' open form to fix problems
          stDocName = "frmTPA_DupSSNs"
          DoCmd.OpenForm stDocName, acFormDS, , , acFormEdit, acWindowNormal
+    Else
+        MsgBox "There are no duplicate SSNs.", vbOKOnly, "QCD: Dup SSNs."
     End If
     
-    rst.Close
-    Set db = Nothing
+    g_adoRS.Close
         
 Exit_btnDupSSNs_Click:
     Exit Sub
@@ -854,6 +857,7 @@ Private Sub cmdProcess_Click()
             DoCmd.SetWarnings False
             
             ' process data from tpa file
+            mstrSQL = ""
             mstrSQL = "usp_tpa_import_csv"
             mstrUser = GetCurrentUserName()
             mstrFileName = PickFile()
@@ -892,6 +896,7 @@ Private Sub cmdProcess_Click()
                     gintProcessStatus = ValidPlanCover
                 End If
                 
+                'check for invalid plans and covers
                 If ValidPlanCover Then
                     gintProcessStatus = ValidPlanCover
                 Else
