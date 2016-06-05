@@ -29,9 +29,7 @@ Public Function ValidSSN() As Boolean
                 "FROM tpa_data_exchange_sub " & _
                 "GROUP BY tpa_data_exchange_sub.SSN " & _
                 "HAVING (((Count(tpa_data_exchange_sub.SSN))>1));"
-    Debug.Print strSQL
-
-
+                
     Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
     If rst.RecordCount > 0 Then
         ValidSSN = True
@@ -73,24 +71,18 @@ Public Function ValidPlanCover() As Boolean
 
 On Error GoTo FUNC_ERR
 
-        Dim db As DAO.Database
-        Dim rst As DAO.Recordset
         Dim strSQL As String
-        
-        Set db = CurrentDb()
- 
+
         ' incorrect plans and rates
         strSQL = "select * from vw_tpa_plan_cover;"
-        Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
+        LoadADORecordset strSQL, 360
         
-        If rst.RecordCount > 0 Then
+        If g_adoRS.RecordCount > 0 Then
             ValidPlanCover = True
         Else
             ValidPlanCover = False
         End If
-        
-        rst.Close
-        Set db = Nothing
+        g_adoRS.Clone
         
 FUNC_EXIT:
   Exit Function
