@@ -20,25 +20,20 @@ Public Function ValidSSN() As Boolean
 
     On Error GoTo FUNC_ERR
     
-    Dim db As DAO.Database
-    Dim rst As DAO.Recordset
+
     Dim strSQL As String
-    Set db = CurrentDb()
+
      ' dup SSNs
-    strSQL = "SELECT tpa_data_exchange_sub.SSN " & _
-                "FROM tpa_data_exchange_sub " & _
-                "GROUP BY tpa_data_exchange_sub.SSN " & _
-                "HAVING (((Count(tpa_data_exchange_sub.SSN))>1));"
+    strSQL = "select 1 from vw_tpa_dup_ssn;"
                 
-    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rst.RecordCount > 0 Then
+    LoadADORecordset strSQL, 360
+    If g_adoRS.RecordCount > 0 Then
         ValidSSN = True
     Else
         ValidSSN = False
     End If
     
-    rst.Close
-    Set db = Nothing
+    g_adoRS.Close
     
 FUNC_EXIT:
   Exit Function
@@ -74,7 +69,7 @@ On Error GoTo FUNC_ERR
         Dim strSQL As String
 
         ' incorrect plans and rates
-        strSQL = "select * from vw_tpa_plan_cover;"
+        strSQL = "select 1 from vw_tpa_plan_cover;"
         LoadADORecordset strSQL, 360
         
         If g_adoRS.RecordCount > 0 Then
