@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1358021439
+Checksum =-1308452695
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -20,30 +20,30 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =13
     Left =7950
-    Top =1320
-    Right =12135
-    Bottom =4950
+    Top =930
+    Right =10530
+    Bottom =4560
     DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0xc76682f3b9c3e440
+    End
     GUID = Begin
         0xac86571b5e115a458806f02aa0b41a99
     End
     NameMap = Begin
-        0x0acc0e550000000020d263faeed28e4fa5d1ede00dfec098000000009b103980 ,
-        0xd4b1e44000000000000000007400700061005f0064006100740061005f006500 ,
-        0x78006300680061006e00670065005f00730075006200000000000000b674840e ,
-        0x6856714d9256ea44e6bcb5ea0700000020d263faeed28e4fa5d1ede00dfec098 ,
-        0x4700520050005f0049004400000000000000919630f6cd6bcb459d8c8529a53e ,
-        0xd50f0700000020d263faeed28e4fa5d1ede00dfec098530053004e0000000000 ,
-        0x00003e534018ed4b60489d5036dc437607de0700000020d263faeed28e4fa5d1 ,
-        0xede00dfec09850004c0041004e00000000000000b05e07659f02614f97768974 ,
-        0xab48779e0700000020d263faeed28e4fa5d1ede00dfec09843004f0056000000 ,
-        0x00000000000000000000000000000000000000000c0000000300000000000000 ,
-        0x00000000000000000000
+        0x0acc0e5500000000889bdd7cc6033944bceb0343870138ac00000000424a8af3 ,
+        0xb9c3e4400b00000000000000760077005f007400700061005f0070006c006100 ,
+        0x6e005f0063006f007600650072000000000000005c31248e03413841ad9b5924 ,
+        0xb83d283a07000000889bdd7cc6033944bceb0343870138ac4700520050005f00 ,
+        0x49004400000000000000b82bbfccc002b446ab7bd429cb77844707000000889b ,
+        0xdd7cc6033944bceb0343870138ac530053004e000000000000005202498a2514 ,
+        0x7f4080bb1e8d45e9175007000000889bdd7cc6033944bceb0343870138ac5000 ,
+        0x4c0041004e000000000000005c86b6c1ece7f243a3397545699a901207000000 ,
+        0x889bdd7cc6033944bceb0343870138ac43004f00560000000000000000000000 ,
+        0x0000000000000000000000000c00000003000000000000000000000000000000 ,
+        0x0000
     End
-    RecordSource ="SELECT tpa_data_exchange_sub.GRP_ID, tpa_data_exchange_sub.SSN, tpa_data_exchang"
-        "e_sub.PLAN, tpa_data_exchange_sub.COV FROM tpa_data_exchange_sub ORDER BY tpa_da"
-        "ta_exchange_sub.GRP_ID, tpa_data_exchange_sub.SSN, tpa_data_exchange_sub.PLAN, t"
-        "pa_data_exchange_sub.COV; "
+    RecordSource ="vw_tpa_plan_cover"
     Caption ="TPA Bad Plan and Cover"
     OnClose ="[Event Procedure]"
     MenuBar ="Dialog"
