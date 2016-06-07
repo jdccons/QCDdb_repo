@@ -28,9 +28,9 @@ Public Function ValidSSN() As Boolean
                 
     LoadADORecordset strSQL, 360
     If g_adoRS.RecordCount > 0 Then
-        ValidSSN = True
+        ValidSSN = False ' SSNs validated and they failed
     Else
-        ValidSSN = False
+        ValidSSN = True ' SSNs validated and they passed
     End If
     
     g_adoRS.Close
@@ -73,9 +73,9 @@ On Error GoTo FUNC_ERR
         LoadADORecordset strSQL, 360
         
         If g_adoRS.RecordCount > 0 Then
-            ValidPlanCover = True
+            ValidPlanCover = False ' plans and rates validated and they fail
         Else
-            ValidPlanCover = False
+            ValidPlanCover = True ' plans and rates validated and they pass
         End If
         g_adoRS.Clone
         
