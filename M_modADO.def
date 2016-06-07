@@ -4,6 +4,7 @@ Public g_adoRS As New ADODB.Recordset
 Public g_adoConnection As New ADODB.Connection
 Public g_adoCommand As New ADODB.Command
 Public g_adoParm As New ADODB.Parameter
+Public g_adoParmName As String
 
 Public g_daoRS As DAO.Recordset
 Public g_daoDB As DAO.Database
@@ -44,10 +45,60 @@ Err_ExecuteSQL:
             "SQL Statement:  " & strSQL & vbCrLf & _
             "Error number:  " & Err.Number & vbCrLf & _
             "Description:  " & Err.DESCRIPTION & vbCrLf & _
-            "Error source:  " & Err.Source
+            "Error source:  " & Err.Source, vbCritical, "Procedure:  modADO.ExecuteSQL"
 
     Resume Exit_ExecuteSQL
   
+End Sub
+Public Sub GetOutPutParmInt(sSQL As String)
+
+    On Error GoTo Err_GetOutPutParmInt
+    
+    Dim strSQLErrorMessage As String
+    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    
+    With g_adoConnection
+        .ConnectionString = SetConnxn
+        .Open
+    End With
+   
+   With g_adoCommand
+       .ActiveConnection = g_adoConnection
+       .CommandType = adCmdStoredProc
+       .CommandTimeout = 360
+       .CommandText = sSQL
+       Set g_adoParm = .CreateParameter("ReturnParm", adInteger, adParamOutput)
+       .Parameters.Append g_adoParm
+       .Execute
+       g_iRtnVal = .Parameters.Item("ReturnParm")
+   End With
+
+  If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+  
+  Set g_adoCommand = Nothing
+  Set g_adoConnection = Nothing
+  Set g_adoRS = Nothing
+  Set g_adoParm = Nothing
+  
+Exit_GetOutPutParmInt:
+    Exit Sub
+
+Err_GetOutPutParmInt:
+    If Err.Number <> -2147217900 Then
+        strSQLErrorMessage = GetSQLErrorMessage()
+        MsgBox "SQL statement could not be executed :" & vbCrLf & strCommand _
+               & vbCrLf & Err.DESCRIPTION & vbCrLf & _
+               "Error message: " & strSQLErrorMessage, vbOKOnly, "QCD " & Err.Source
+    Else
+        MsgBox "SQL statement could not be executed!" & vbCrLf & _
+            "SQL Statement:  " & strSQL & vbCrLf & _
+            "Error number:  " & Err.Number & vbCrLf & _
+            "Description:  " & Err.DESCRIPTION & vbCrLf & _
+            "Error source:  " & Err.Source
+    End If
+    g_adoConnection.Close
+    Resume Exit_GetOutPutParmInt
+
 End Sub
 Public Sub GetOutPutParm(sSQL As String)
 '    Parameter 0 is the stored procedure Return code.
@@ -70,6 +121,7 @@ Public Sub GetOutPutParm(sSQL As String)
    With g_adoCommand
        .ActiveConnection = g_adoConnection
        .CommandType = adCmdStoredProc
+       .CommandTimeout = 360
        .CommandText = sSQL
        Set g_adoParm = .CreateParameter("Return", adVarChar, adParamOutput, 255)
        .Parameters.Append g_adoParm
