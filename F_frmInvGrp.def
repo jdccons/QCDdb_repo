@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =131440425
+Checksum =-1069504279
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -12,9 +12,9 @@ Begin Form
     Width =9420
     ItemSuffix =129
     Left =585
-    Top =600
+    Top =990
     Right =10005
-    Bottom =6345
+    Bottom =6735
     RecSrcDt = Begin
         0x26f762421076e440
     End
@@ -23,11 +23,11 @@ Begin Form
     End
     NameMap = Begin
         0x0acc0e5500000000f0913de709be63418753d8ebd94a1a65000000007bf60d7a ,
-        0xd4b1e4400200f000390102007100660072006d0049006e007600470072007000 ,
+        0xd4b1e440050000008f0200007100660072006d0049006e007600470072007000 ,
         0x0000000000003b552f51a15a3246901a7c14ffe6393801000000dba7e3d921bc ,
-        0xe44013000000a6021400660073007500620049006e0076004700720070000000 ,
+        0xe44092b3ee1a00000000660073007500620049006e0076004700720070000000 ,
         0x000000001d611e90a9a1af46a49d7ca2491bf328000000005841f918b8b1e440 ,
-        0x00000000c90100c871007200790049006e0076004c0069006e00000000000000 ,
+        0x000000001f13000c71007200790049006e0076004c0069006e00000000000000 ,
         0x75258fb9db7e0c4fa61a78345264af39070000001d611e90a9a1af46a49d7ca2 ,
         0x491bf328430055005300540020004b00450059000000000000005dd9f7d07c2b ,
         0x7f4ab6b08c0d2792203407000000f0913de709be63418753d8ebd94a1a654300 ,
@@ -63,8 +63,8 @@ Begin Form
         0x1a654300550053005400200043004c00410053005300000000000000438da926 ,
         0x8fd2ef4eac658e3f4b975ac401000000c0a0ad82d4b1e44020004b0045005900 ,
         0x7300660072006d004100670065006e0074007300410041000000000000003096 ,
-        0xeee65d6eb64681e15dff331869bb00000000efe76380d4b1e4400200a800c000 ,
-        0x0100710072007900470072007000410067007400000000000000e6f050c3c812 ,
+        0xeee65d6eb64681e15dff331869bb00000000efe76380d4b1e440000000005e00 ,
+        0x6d01710072007900470072007000410067007400000000000000e6f050c3c812 ,
         0x35429572882d3592049b070000003096eee65d6eb64681e15dff331869bb4700 ,
         0x52004f0055005000690064000000000000001db0ac608f078b438637843b8638 ,
         0x62c70600000098f8f4f9ac820641b4ef89f97eb3082066007300750062004900 ,
@@ -962,12 +962,6 @@ Public Sub btnPostAlltoPlat_Click()
     
     dteInvoiceDate = CDate(strInput)
     
-    '  check for duplicate PltCustKeys
-    If DupPltCustKeys() Then
-        MsgBox "There are duplicate PltCustKeys.  The process will fail unless the duplicates are fixed."
-        GoTo PROC_EXIT
-    End If
-    
    'check to see if any invoices being posted were posted before
     If AreAnyInvoicesInPlat(dteInvoiceDate, strGroupType) Then
        MsgBox "One or more of the invoices you are trying to post already exist in the QB transaction table.  Please remove these transactions and start over."
@@ -1032,11 +1026,7 @@ Public Sub Bulk_Invoices_Click()
     DoCmd.Hourglass True
     DoCmd.SetWarnings False
     
-    '  check for duplicate PltCustKeys
-    If DupPltCustKeys() Then
-        MsgBox "There are duplicate PltCustKeys.  The process will fail unless the duplicates are fixed."
-        GoTo PROC_EXIT
-    End If
+    
     
     If IsNull(Me.INPUT_DATE) Or Me.INPUT_DATE = "" Then
         MsgBox "Input date required."
