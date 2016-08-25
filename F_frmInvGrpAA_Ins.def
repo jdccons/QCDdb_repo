@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-262342953
+Checksum =-253560926
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -13,9 +13,9 @@ Begin Form
     Width =10224
     ItemSuffix =124
     Left =8130
-    Top =105
+    Top =495
     Right =10530
-    Bottom =5625
+    Bottom =6015
     RecSrcDt = Begin
         0x20d75f84d4b1e440
     End
@@ -103,9 +103,9 @@ Begin Form
         0x730069007a0065005f00740073000000000000002151adfa0acd59438c51e7e2 ,
         0x3e1371f507000000ffdce768b1f7ed43a2160a368771b82b4400610074006500 ,
         0x4d006f00640069006600690065006400000000000000b28e9cc4e2aceb4db898 ,
-        0xa99649d8d3d701000000df52e282d4b1e440a46dbf0400000000660073007500 ,
+        0xa99649d8d3d701000000df52e282d4b1e44013ee336a100ba209660073007500 ,
         0x620049006e007600470072007000410041000000000000001d611e90a9a1af46 ,
-        0xa49d7ca2491bf328000000005841f918b8b1e44000000000c90100c871007200 ,
+        0xa49d7ca2491bf328000000005841f918b8b1e440000000007d1a006771007200 ,
         0x790049006e0076004c0069006e0000000000000075258fb9db7e0c4fa61a7834 ,
         0x5264af39070000001d611e90a9a1af46a49d7ca2491bf3284300550053005400 ,
         0x20004b0045005900000000000000438da9268fd2ef4eac658e3f4b975ac40100 ,
@@ -1043,13 +1043,7 @@ Public Sub btnPostAlltoPlat_Click()
     Loop
     
     dteInvoiceDate = CDate(strInput)
-    
-    '  check for duplicate PltCustKeys
-    If DupPltCustKeys() Then
-        MsgBox "There are duplicate PltCustKeys.  The process will fail unless the duplicates are fixed."
-        GoTo PROC_EXIT
-    End If
-    
+        
    'check to see if any invoices being posted were posted before
     If AreAnyInvoicesInPlat(dteInvoiceDate, strGroupType) Then
        MsgBox "One or more of the invoices you are trying to post already exist in the QB transaction table.  Please remove these transactions and start over."
