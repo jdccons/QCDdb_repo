@@ -270,7 +270,7 @@ Exit_Point:
     
 ErrorHandler:
     MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume Exit_Point
+    GoTo Exit_Point
 End Function
 
 Public Function SyncCustomers(strSQL As String, strUserName As String) As Boolean
@@ -354,15 +354,28 @@ ErrorHandler:
 End Function
 
 Public Function DupPltCustKeys(Optional strPltCustKey As String) As Boolean
+    '  function will check for duplicate PltCustKeys for individuals.
+    '  if a PltCustKey is passed to the function, it will check to see
+    '  if that single value has a duplicate in tblSubscr.
+    '  if no PltCustKey is passed to the function, it will check if any
+    '  duplicate PltCustKey exists in tblSubscr.
+    '  this applies only to active subscribers
 
     On Error GoTo ErrorHandler
     
     Dim strSQL As String
     If Not IsNull(strPltCustKey) Then
-        strSQL = "Select CustomerKey " & _
-                    "From vw_Customer " & _
-                    "Where CustomerKey = '" & strPltCustKey & "' "
-       LoadADORecordset strSQL
+        strSQL = "SELECT " & _
+                    "CustomerKey " & _
+                 "FROM " & _
+                    "vw_IndividualCustomer " & _
+                "WHERE " & _
+                    "CustomerKey = '" & strPltCustKey & "' " & _
+                    "AND CreditHold = 'N' " & _
+                "Group BY " & _
+                    "CustomerKey " & _
+                "HAVING COUNT(CustomerKey) > 1;"
+        LoadADORecordset strSQL
         If g_adoRS.EOF Then
             DupPltCustKeys = False
         Else
@@ -370,10 +383,14 @@ Public Function DupPltCustKeys(Optional strPltCustKey As String) As Boolean
         End If
         
     ElseIf IsNull(strPltCustKey) Then
-        strSQL = "Select CustomerKey, count(CustomerKey) CntCustomerKey " & _
-                    "From vw_Customer " & _
-                    "Group By CustomerKey " & _
-                    "Having count(CustomerKey) > 1;"
+        strSQL = "SELECT " & _
+                    "CustomerKey, COUNT(CustomerKey) NoDups " & _
+                "FROM " & _
+                    "vw_IndividualCustomer " & _
+                "WHERE " & _
+                "CreditHold = 'N' " & _
+                "GROUP BY CustomerKey " & _
+                "HAVING COUNT(CustomerKey) > 1;"
         LoadADORecordset strSQL
         If g_adoRS.EOF Then
             DupPltCustKeys = False
@@ -550,9 +567,7 @@ Public Function mneumonic(strLastName As String, strFirstName As String) As Stri
         Else
             strLongName = strShortName & Chr(Asc(Mid(g_adoRS("PltCustKey"), 5, 5)) + 1)
         End If
-    End If '
-
-    g_adoRS.Close
+    End If
     mneumonic = strLongName
     
     Exit Function
