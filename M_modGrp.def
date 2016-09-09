@@ -664,3 +664,39 @@ PROC_ERR:
     GoTo PROC_EXIT
        
 End Function
+
+Function IsAgent(strGroupID As String) As Boolean
+
+    On Error GoTo ErrorHandler
+    
+    ' Comments  : checks status of group agent
+    ' Parameters:  - strGroupID (string)
+    ' Returns   : Boolean
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    Dim strSQL As String
+    strSQL = "SELECT ID " & _
+                "FROM " & _
+                    "dbo.tblGrpAgt " & _
+                "WHERE " & _
+                    "GroupID = '" & strGroupID & "'"
+    Call LoadADORecordset(strSQL)
+    If g_adoRS.RecordCount > 0 Then
+        IsAgent = True
+    Else
+        IsAgent = False
+    End If
+   
+    g_adoRS.Close
+    Set g_adoRS = Nothing
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+
+End Function
