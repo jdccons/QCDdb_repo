@@ -550,7 +550,7 @@ Public Function mneumonic(strLastName As String, strFirstName As String) As Stri
     strLongName = UCase(Mid(strLastName, 1, 3) & Mid(strFirstName, 1, 2))
     strShortName = UCase(Mid(strLastName, 1, 3) & Mid(strFirstName, 1, 1))
     
-    If DupPltCustKeys(strLongName) Then
+    If IsIndiv(strLongName) Then
         strSQL = "SELECT ID, PltCustKey"
         strSQL = strSQL & " FROM tblSubscr"
         strSQL = strSQL & " WHERE SUBSTRING(PltCustKey,1,4) = '" & strShortName & "' AND SubClassKey = 'INDIV'"
@@ -613,4 +613,42 @@ PROC_ERR:
   Resume PROC_EXIT
 
 
+End Function
+
+Function IsIndiv(strPltCustKey As String) As Boolean
+    '  function will check for the existence of an individual
+    '  in tblSubscr using the PltCustKey;
+    '  it only looks for active individuals;
+    '  the function is used when assigning PltCustKeys
+    '  to new individuals - see function mneumonic()
+
+    On Error GoTo ErrorHandler
+
+    Dim strSQL As String
+    strSQL = "SELECT " & _
+                    "CustomerKey " & _
+                 "FROM " & _
+                    "vw_IndividualCustomer " & _
+                "WHERE " & _
+                    "CustomerKey = '" & strPltCustKey & "' " & _
+                    "AND CreditHold = 'N' "
+    LoadADORecordset strSQL
+    If g_adoRS.EOF Then
+        IsIndiv = False
+    Else
+        IsIndiv = True
+    End If
+    
+    g_adoRS.Close
+    
+    Exit Function
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+        
+        
 End Function
