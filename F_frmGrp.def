@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1881955797
+Checksum =916219792
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -16,9 +16,10 @@ Begin Form
     GridY =16
     Width =11505
     ItemSuffix =247
-    Left =3540
-    Right =16020
-    Bottom =8940
+    Left =4065
+    Top =-195
+    Right =15570
+    Bottom =8715
     AfterInsert ="[Event Procedure]"
     Filter ="[GRcancelled] = False"
     OrderBy ="GRname"
@@ -30,10 +31,10 @@ Begin Form
     End
     NameMap = Begin
         0x0acc0e5500000000e82f2307fb5c3446b2886dec15c74ba60000000092a21ee9 ,
-        0x54bce4400000000000000000740062006c00470072007000000000000000fb13 ,
-        0x6c3de438334dbeb610a2c820770201000000d511ade2d6b9e440000000000100 ,
+        0x54bce440abfef81a76040000740062006c00470072007000000000000000fb13 ,
+        0x6c3de438334dbeb610a2c820770201000000fe66b1de77d8e4404bf11fc00600 ,
         0x00007300660072006d004100670065006e00740073000000000000003096eee6 ,
-        0x5d6eb64681e15dff331869bb00000000efe76380d4b1e4400000000002000002 ,
+        0x5d6eb64681e15dff331869bb00000000efe76380d4b1e4400000000054000054 ,
         0x710072007900470072007000410067007400000000000000e6f050c3c8123542 ,
         0x9572882d3592049b070000003096eee65d6eb64681e15dff331869bb47005200 ,
         0x4f005500500069006400000000000000a0556ccd134f93488f7b56317b89e51d ,
@@ -58,8 +59,8 @@ Begin Form
         0xe82f2307fb5c3446b2886dec15c74ba64700520063006f006e00740045004e00 ,
         0x4400000000000000532a51b6df260248bff93bea1363d2df07000000e82f2307 ,
         0xfb5c3446b2886dec15c74ba647005200470065006f0049004400000000000000 ,
-        0x142ec0e2c617114f893625e8c81162380000000058c51be954bce440ffffffff ,
-        0x01000000740062006c00470065006f0067007200610070006800690063006100 ,
+        0x142ec0e2c617114f893625e8c81162380000000058c51be954bce44071000000 ,
+        0x38554d09740062006c00470065006f0067007200610070006800690063006100 ,
         0x6c000000000000004b5c98cf5ab1d44b8f03b5268a9561a607000000142ec0e2 ,
         0xc617114f893625e8c8116238470045004f0069006400000000000000dd449bb0 ,
         0x34f66547be78a8045d6463c107000000142ec0e2c617114f893625e8c8116238 ,
@@ -110,15 +111,15 @@ Begin Form
         0x4ba649006e0073000000000000006de49e31c4d947409174f232cca005460700 ,
         0x0000e82f2307fb5c3446b2886dec15c74ba649006e0076006f00690063006500 ,
         0x5400790070006500000000000000f30f46461423ed44a5c62ea58ab753e80000 ,
-        0x0000aa5f9ae854bce440310036016a1a0000740062006c0043006f0076006500 ,
+        0x0000aa5f9ae854bce4400200e2073e040000740062006c0043006f0076006500 ,
         0x7200610067006500000000000000586d5189fbda8c42a92d261de1168a500700 ,
         0x0000f30f46461423ed44a5c62ea58ab753e843006f0076006500720049004400 ,
         0x00000000000067b05e0e2ec20046afc6d69281e0437907000000f30f46461423 ,
         0xed44a5c62ea58ab753e843004f00560045005200640065007300630072000000 ,
         0x000000006a5a99e6f3766d438718f2ab43e6dd0807000000f30f46461423ed44 ,
         0xa5c62ea58ab753e843004f0056004500520063006f0064006500000000000000 ,
-        0x60d8757a44f1c64db5a5b30b40a651fc0000000085d35be954bce44031003601 ,
-        0x771a0000740062006c0050006c0061006e0073000000000000009947f829648f ,
+        0x60d8757a44f1c64db5a5b30b40a651fc0000000085d35be954bce4400200e207 ,
+        0x4b040000740062006c0050006c0061006e0073000000000000009947f829648f ,
         0xb14d9f248e3718e714aa0700000060d8757a44f1c64db5a5b30b40a651fc5000 ,
         0x6c0061006e0049004400000000000000cb9140890121674ab77c2974531eebe0 ,
         0x0700000060d8757a44f1c64db5a5b30b40a651fc50006c0061006e0044006500 ,
@@ -132,7 +133,7 @@ Begin Form
         0x1951872c28cd6f469d85f6f438e515f507000000e82f2307fb5c3446b2886dec ,
         0x15c74ba64700520043006c00690065006e007400530076006300520065007000 ,
         0x4900440000000000000028ace9583bddb649859ce03de8ba40f5000000006e97 ,
-        0x86e854bce44088c7d80a78e2f41a740062006c0043006c00690065006e007400 ,
+        0x86e854bce440106ac00e78e2f81a740062006c0043006c00690065006e007400 ,
         0x530076006300520065007000000000000000bf233ba7a0a5964ebcac5a95b0e0 ,
         0xbf180700000028ace9583bddb649859ce03de8ba40f543006c00690065006e00 ,
         0x7400530076006300520065007000490044000000000000009292bb570824984f ,
@@ -140,8 +141,8 @@ Begin Form
         0x690065006e0074005300760063005200650070004e0061006d00650000000000 ,
         0x0000da2a49a789a1cd47acc7b309a473a5f307000000e82f2307fb5c3446b288 ,
         0x6dec15c74ba64700520041006300630074004d00670072000000000000007395 ,
-        0x09d93235724189b67a10ca5cb62200000000298274e854bce44088c7d80a78e2 ,
-        0xf41a740062006c0041006300630074004d00670072000000000000006416c900 ,
+        0x09d93235724189b67a10ca5cb62200000000298274e854bce440106ac00e78e2 ,
+        0xf81a740062006c0041006300630074004d00670072000000000000006416c900 ,
         0x5ea5364391018d564e1e61c907000000739509d93235724189b67a10ca5cb622 ,
         0x41006300630074004d006700720049004400000000000000ae513894a8057a44 ,
         0xa2d45118267ed62a07000000739509d93235724189b67a10ca5cb62241006300 ,
@@ -2228,12 +2229,14 @@ Begin Form
                     End
                 End
                 Begin TextBox
+                    Locked = NotDefault
                     OldBorderStyle =1
                     OverlapFlags =85
                     TextAlign =1
                     Left =1479
                     Top =78
                     Width =864
+                    BackColor =12632256
                     Name ="ctlGroupID"
                     ControlSource ="GroupID"
                     AfterUpdate ="[Event Procedure]"
@@ -4733,6 +4736,48 @@ On Error GoTo BeforeUpdate_Err
     If Not IsNull(Me!GroupID) Then
         strCustKey = Me![GroupID]
     End If
+    
+    ' check to see if an agentif exits for the group
+    If Not IsNull(Me.ctlGroupID) Then
+        If mintGroupType <> conIndivGrp Then
+            If IsAgent(Me.GroupID) = False Then
+                MsgBox "You must populate the agent subform with at least one agent."
+                intCancel = True
+                fValid = False
+                GoTo BeforeUpdate_Exit
+            End If
+        End If
+    End If
+    
+    ' check to see if group has rates
+    If Not IsNull(Me.ctlGroupID) Then
+        If mintGroupType <> conIndivGrp Then
+            If GotRates(Me.GroupID) = False Then
+                MsgBox "You must assign rates to the group."
+                intCancel = True
+                fValid = False
+                GoTo BeforeUpdate_Exit
+            End If
+        End If
+    End If
+
+    ' check to see if the customer service representative control has been populated
+    If IsNull(Me.cboGRClientSvcRepID) Then
+        MsgBox "Please select a Customer Service Representative"
+        intCancel = True
+        fValid = False
+        Me.cboGRClientSvcRepID.SetFocus
+        GoTo BeforeUpdate_Exit
+    End If
+    
+    ' check to see if the account manager control has been populated
+    If IsNull(Me.cboGRAcctMgr) Then
+        MsgBox "Please select an Account Manager"
+        intCancel = True
+        fValid = False
+        Me.cboGRAcctMgr.SetFocus
+        GoTo BeforeUpdate_Exit
+    End If
 
     ' check to see if the group type control has been populated
     If IsNull(Me.optgrpGroupType) Then
@@ -4761,6 +4806,7 @@ On Error GoTo BeforeUpdate_Err
         GoTo BeforeUpdate_Exit
     End If
 
+    ' check to see if cancelled customer has a reinstatement date (for edits)
     If IsNull(Me![ctlGRreinstatedDate]) And (Me![ctlGRcancelled]) = 0 And Not IsNull(Me![ctlGRcancelledDate]) Then
         Msg = "This customer was cancelled" & vbCrLf
         Msg = Msg & "(there is a cancel date)" & vbCrLf
@@ -4771,6 +4817,7 @@ On Error GoTo BeforeUpdate_Err
         Exit Sub
     End If
 
+    ' check to see the canceled customer has a cancel date
     If IsNull(Me.[ctlGRcancelledDate]) And Me.ctlGRcancelled = -1 Then
        Msg = "This customer was cancelled" & vbCrLf
        Msg = Msg & "and must have a cancel date!"
@@ -4810,19 +4857,6 @@ Private Sub Form_Current()
     If Not IsNull(Me.GroupType) Then
         mintGroupType = Me.GroupType
     End If
-    
-
-    'If the group id control is populated, make sure
-    'an agent has been assigned to the group
-'    If Not IsNull(Me.ctlGroupID) Then
-'        If mintGroupType <> conIndivGrp Then
-'            If IsAgent(Me.GroupID) = False Then
-'                MsgBox "You must populate the agent subform with at least one agent."
-'                DoCmd.CancelEvent
-'                GoTo Exit_Form_Current
-'            End If
-'        End If
-'    End If
 
     With Me
         .lstCoverageRate.Requery
