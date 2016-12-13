@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1779429234
+Checksum =-1748145047
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -19,10 +19,10 @@ Begin Form
     Width =5220
     DatasheetFontHeight =10
     ItemSuffix =37
-    Left =7425
-    Top =2745
-    Right =12645
-    Bottom =9540
+    Left =7035
+    Top =495
+    Right =12600
+    Bottom =5325
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xf4f15965d3a0e240
@@ -288,7 +288,7 @@ Begin Form
             FontName ="MS Sans Serif"
         End
         Begin Section
-            Height =6810
+            Height =6525
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
@@ -356,10 +356,10 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =85
                     Left =1872
-                    Top =5580
+                    Top =4905
                     Width =1620
                     Height =432
-                    TabIndex =9
+                    TabIndex =8
                     Name ="cmdImport"
                     Caption ="Import New"
                     OnClick ="[Event Procedure]"
@@ -369,8 +369,8 @@ Begin Form
                 End
                 Begin CommandButton
                     OverlapFlags =85
-                    Left =2343
-                    Top =6165
+                    Left =2355
+                    Top =5940
                     Width =432
                     Height =432
                     TabIndex =10
@@ -587,10 +587,10 @@ Begin Form
                 Begin CommandButton
                     OverlapFlags =85
                     Left =1872
-                    Top =4950
+                    Top =5370
                     Width =1620
                     Height =432
-                    TabIndex =8
+                    TabIndex =9
                     Name ="btnPendingDeletions"
                     Caption ="Pend Del"
                     OnClick ="[Event Procedure]"
@@ -638,9 +638,9 @@ Private Function PickFile() As String
         ' the class properties to be set.
         mstrFileName = .GetFileName(True, "*.csv", "", "CSV files (*.csv)|Text files (*.txt)|*.txt|All Files (*.*)|*.*")
         mstrPath = GetPathPart_TSB(mstrFileName)
-        mstrFileName = Mid(mstrFileName, Len(mstrPath) + 1, Len(mstrFileName))
+        mstrFileName = Mid(mstrFileName, Len(mstrPath) + 1, Len(mstrFileName)) & "\"
         mstrPath = Replace(mstrPath, "F:\", "\\dc\datafiles\")
-        mstrPath = mstrPath & "\"
+        mstrPath = Mid(mstrPath, 1, Len(mstrPath) - 1)
         
         ' make sure that it's a file
         If IsNull(mstrFileName) Then
@@ -660,6 +660,8 @@ FUNC_ERR:
   GoTo FUNC_EXIT
   
 End Function
+
+
 Private Function Run_Procedure(strSQL As String, strUserName As String, strPath As String, strFileName As String) As Integer
 
 On Error GoTo PROC_ERR
@@ -718,6 +720,7 @@ PROC_ERR:
   Resume PROC_EXIT
     
 End Function
+
 
 Private Sub btnDupSSNs_Click()
 
@@ -861,8 +864,6 @@ PROC_ERR:
     Resume PROC_EXIT
 
 End Sub
-
-
 Private Sub cmdImport_Click()
   ' Comments   :    This is the final import for
   '                 subscribers and dependents
@@ -1061,6 +1062,10 @@ Private Sub cmdProcess_Click()
             MeterCount = 1
             DoCmd.Hourglass True
             DoCmd.SetWarnings False
+            
+            ' update the pending deletions to deleted based on their date deleted value
+            mstrSQL = "usp_UpdateDeleted NULL, NULL, ''"
+            ExecuteSQL mstrSQL
             
             ' process data from tpa file
             mstrSQL = ""
