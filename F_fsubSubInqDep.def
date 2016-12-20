@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =152768539
+Checksum =-1344026358
 Begin Form
     AutoResize = NotDefault
     RecordSelectors = NotDefault
@@ -14,13 +14,48 @@ Begin Form
     Width =7785
     ItemSuffix =123
     Left =4005
-    Top =6105
-    Right =12240
-    Bottom =8085
+    Top =4995
+    Right =10530
+    Bottom =6975
     RecSrcDt = Begin
-        0x27dcf0a1dca9e440
+        0xaf55a9fb32b9e440
     End
-    RecordSource ="qfrmFindSubDep"
+    GUID = Begin
+        0x8ba1e7baaf368548a7e2b15be61cad9e
+    End
+    NameMap = Begin
+        0x0acc0e5500000000d80fc03da2e5f4458d0ef9d0ae0bc7d400000000177fc7e8 ,
+        0x54bce440760a02302c691700740062006c0044006500700065006e0064006500 ,
+        0x6e0074000000000000002b3f16c57704c5409cd124054df471fa07000000d80f ,
+        0xc03da2e5f4458d0ef9d0ae0bc7d4440065007000430061006e00630065006c00 ,
+        0x6c0065006400000000000000d74aebbc1e4648439217a8fc4497753e07000000 ,
+        0xd80fc03da2e5f4458d0ef9d0ae0bc7d444006500700053007500620049004400 ,
+        0x0000000000002e3ac03d57f2dc43aa3e6fc5f1ca954d07000000d80fc03da2e5 ,
+        0xf4458d0ef9d0ae0bc7d4440065007000530053004e00000000000000f8a8ca4f ,
+        0x003c36448ea73efceec2463d07000000d80fc03da2e5f4458d0ef9d0ae0bc7d4 ,
+        0x440065007000460069007200730074004e0061006d00650000000000000035a7 ,
+        0xf9b492e9564cbaff416355c9766307000000d80fc03da2e5f4458d0ef9d0ae0b ,
+        0xc7d44400650070004d006900640064006c0065004e0061006d00650000000000 ,
+        0x0000cb5958fbdf24e34fbc1b6fef4a069cdb07000000d80fc03da2e5f4458d0e ,
+        0xf9d0ae0bc7d44400650070004c006100730074004e0061006d00650000000000 ,
+        0x00005bd21ba64a7f0442ab1a9bd3b254e18007000000d80fc03da2e5f4458d0e ,
+        0xf9d0ae0bc7d444006500700044004f0042000000000000004336fc3687244744 ,
+        0x9c2025727bd5b81c07000000d80fc03da2e5f4458d0ef9d0ae0bc7d444006500 ,
+        0x7000410067006500000000000000383c025b90753a449fa1e618312ecae80700 ,
+        0x0000d80fc03da2e5f4458d0ef9d0ae0bc7d4440065007000520065006c006100 ,
+        0x740069006f006e00730068006900700000000000000023f70eca04f70e49b125 ,
+        0xd0c3a9c1250707000000d80fc03da2e5f4458d0ef9d0ae0bc7d4440065007000 ,
+        0x470065006e00640065007200000000000000fac2bc2b18fbc943927246c67cb2 ,
+        0x756e07000000d80fc03da2e5f4458d0ef9d0ae0bc7d449004400000000000000 ,
+        0x0000000000000000000000000000000007000000000000000000000000000000 ,
+        0x00000000530055004200670072006f0075007000490044000000000000000000 ,
+        0x00000000000000000000000000000c0000000300000000000000000000000000 ,
+        0x00000000
+    End
+    RecordSource ="SELECT tblDependent.DepSubID, tblDependent.DepSSN, tblDependent.DepFirstName, tb"
+        "lDependent.DepMiddleName, tblDependent.DepLastName, tblDependent.DepDOB, tblDepe"
+        "ndent.DepAge, tblDependent.DepRelationship, tblDependent.DepGender, tblDependent"
+        ".ID FROM tblDependent WHERE (((tblDependent.DepCancelled) In (1,2))); "
     PrtMip = Begin
         0x000000000000000000000000000000000000000033180000f000000001000000 ,
         0x010000006801000000000000a10700000100000001000000
@@ -38,7 +73,7 @@ Begin Form
             BackColor =12632256
             Name ="FormHeader1"
             GUID = Begin
-                0xceda1461bfbdb248a1dd361b44ef1171
+                0x3fdfee104b6dae4985bb38948ed8996f
             End
             Begin
                 Begin Label
@@ -52,7 +87,7 @@ Begin Form
                     Name ="Text108"
                     Caption ="Social Sec. # "
                     GUID = Begin
-                        0x00335662519af54b8afa7164ce73684b
+                        0x4ce9e49c14fa98459ef60a2bd41763f9
                     End
                 End
                 Begin Label
@@ -66,7 +101,7 @@ Begin Form
                     Name ="Text109"
                     Caption ="First Name"
                     GUID = Begin
-                        0x7e171712e28a3648bc6f982bd0e2a81c
+                        0xa33281437b72814c9a717ef62ca003d0
                     End
                 End
                 Begin Label
@@ -80,7 +115,7 @@ Begin Form
                     Name ="Text110"
                     Caption ="Last Name"
                     GUID = Begin
-                        0xa33c57256a2cf943b07cb5b1bf8df356
+                        0x2b337fcc132c694d84ac586fd9443e18
                     End
                 End
                 Begin Label
@@ -94,7 +129,7 @@ Begin Form
                     Name ="Text111"
                     Caption ="DOB"
                     GUID = Begin
-                        0x027e6322c70fc646b9554f985b4b9a9a
+                        0x147c5001c820e54f931d810991ec1b10
                     End
                 End
                 Begin Label
@@ -108,7 +143,7 @@ Begin Form
                     Name ="Text115"
                     Caption ="MI"
                     GUID = Begin
-                        0x17c9852b32a5274996c073d6c80bb844
+                        0x131f4d5ef2ad2149ac29ea6c0c8448ec
                     End
                 End
                 Begin Label
@@ -122,7 +157,7 @@ Begin Form
                     Name ="Label121"
                     Caption ="Gen"
                     GUID = Begin
-                        0x1a413a8fe92d76408fbebb4a1552f829
+                        0xeade70eded79c841b785c2dd91ea65be
                     End
                 End
                 Begin Label
@@ -136,7 +171,7 @@ Begin Form
                     Name ="Label122"
                     Caption ="Relation"
                     GUID = Begin
-                        0xa2351f9e7e0c2843b6e327134af2ee3f
+                        0x7c937bbcda5d3340af28a8a3ba320202
                     End
                 End
             End
@@ -146,7 +181,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             GUID = Begin
-                0xd513bab10285a04783540aed307183fe
+                0x687aa8be900fa14c8db4377501de3fa8
             End
             Begin
                 Begin TextBox
@@ -160,7 +195,7 @@ Begin Form
                     ControlSource ="DEPssn"
                     InputMask ="000\\-00\\-0000;;_"
                     GUID = Begin
-                        0x18b0ab4a8d8c3a469959433433f8cd17
+                        0x66e69363216a6d4990053da07829444d
                     End
                 End
                 Begin TextBox
@@ -175,7 +210,7 @@ Begin Form
                     Name ="DEPfirstNAME"
                     ControlSource ="DEPfirstNAME"
                     GUID = Begin
-                        0x51eefa5b9e7b424583c09139afa43c25
+                        0x91a0c5fd404bf94397d21086a3df7791
                     End
                 End
                 Begin TextBox
@@ -190,7 +225,7 @@ Begin Form
                     Name ="DEPlastNAME"
                     ControlSource ="DEPlastNAME"
                     GUID = Begin
-                        0x447ed0dcfb3efa43aa06bb817aab80ba
+                        0x57784371e16be340a957ba5f814343a0
                     End
                 End
                 Begin TextBox
@@ -209,7 +244,7 @@ Begin Form
                     ValidationText ="You must populate the dependent DOB field."
                     InputMask ="99/99/0000;0;_"
                     GUID = Begin
-                        0x472d377e2f046b499bb8c4e65f147a59
+                        0x85d858fca0c2a44e8afb99d61df15df0
                     End
                 End
                 Begin TextBox
@@ -223,7 +258,7 @@ Begin Form
                     Name ="DEPsubID"
                     ControlSource ="DEPsubID"
                     GUID = Begin
-                        0x8c0482e3de3a254c98029c3ebd2b1aea
+                        0x41a79d391754354aabf2cb0b843e3360
                     End
                 End
                 Begin TextBox
@@ -238,7 +273,7 @@ Begin Form
                     Name ="DEPmiddleNAME"
                     ControlSource ="DEPmiddleNAME"
                     GUID = Begin
-                        0x1c2f87a2efbf5a48bf2675c2fc096b8e
+                        0x5dd8ab66700e1a4e938fdd80c338e566
                     End
                 End
                 Begin TextBox
@@ -253,7 +288,7 @@ Begin Form
                     Name ="SUBgroupID"
                     ControlSource ="SUBgroupID"
                     GUID = Begin
-                        0x819641ef5613d44f90160b9772dd3579
+                        0x279a48f6e5642f43a844f0f8260db2bb
                     End
                 End
                 Begin TextBox
@@ -269,7 +304,7 @@ Begin Form
                     Name ="DEPgender"
                     ControlSource ="DEPgender"
                     GUID = Begin
-                        0xeb40bed329dbc24fbc68f1f0cfc67d2e
+                        0x33142943f2043e468dda85e53149f741
                     End
                 End
                 Begin TextBox
@@ -285,7 +320,7 @@ Begin Form
                     Name ="DEPrelationship"
                     ControlSource ="DEPrelationship"
                     GUID = Begin
-                        0x441541825f667b4fb8738119e578fecd
+                        0xaa1ecf581d7c004ea9e40d1d9841fd2c
                     End
                 End
             End
@@ -294,7 +329,7 @@ Begin Form
             Height =0
             Name ="FormFooter2"
             GUID = Begin
-                0x9888aecf35ad0347a2d9c07f5d43da8d
+                0x659f4511b592ff48adde5612913218af
             End
         End
     End
