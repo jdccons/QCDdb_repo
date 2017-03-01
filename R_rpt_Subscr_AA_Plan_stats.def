@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-51846043
+Checksum =-1457061034
 Begin Report
     LayoutForPrint = NotDefault
     AllowDesignChanges = NotDefault
@@ -16,33 +16,16 @@ Begin Report
     DatasheetFontHeight =10
     ItemSuffix =15
     Left =270
-    Top =210
+    Top =600
     Right =11430
-    Bottom =5610
+    Bottom =6000
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x7129234d6fe5e440
     End
-    GUID = Begin
-        0x46e5c0eb0b145a439c57d26b1106043a
-    End
-    NameMap = Begin
-        0x0acc0e550000000009d95fc7038b9a46962c7ef8b2d28e13000000008348234d ,
-        0x6fe5e4408c6ad074201eee00760077005f005300750062007300630072005f00 ,
-        0x410041005f0050006c0061006e005f0073007400610074007300000000000000 ,
-        0x267f0bbebdf2f74085fd356730a9d0fc0700000009d95fc7038b9a46962c7ef8 ,
-        0xb2d28e13470072006f007500700049004400000000000000d68169a9ebbd8d46 ,
-        0xbc0c53f31a3870a30700000009d95fc7038b9a46962c7ef8b2d28e1352006500 ,
-        0x6400000000000000fc0efded15c8ba48b0d4f78ec1113b7e0700000009d95fc7 ,
-        0x038b9a46962c7ef8b2d28e13570068006900740065000000000000008ea9755e ,
-        0xbbeca44a87c14994589aa81b0700000009d95fc7038b9a46962c7ef8b2d28e13 ,
-        0x42006c0075006500000000000000025846cb80b82549b507021598a6504e0700 ,
-        0x000009d95fc7038b9a46962c7ef8b2d28e13520065006400200050006c007500 ,
-        0x7300000000000000000000000000000000000000000000000c00000003000000 ,
-        0x0000000000000000000000000000
-    End
     RecordSource ="vw_Subscr_AA_Plan_stats"
     Caption ="All American Subscribers -- Plan Stats"
+    OnClose ="[Event Procedure]"
     DatasheetFontName ="Arial"
     PrtMip = Begin
         0xa0050000a0050000a0050000a0050000000000009a2400008601000001000000 ,
@@ -306,7 +289,7 @@ Begin Report
             Height =945
             Name ="ReportHeader"
             GUID = Begin
-                0x1c553d59dfa6094ea1305f9f8c69c4f7
+                0x2729f5e810cda34cb1befae903c060c6
             End
             Begin
                 Begin Label
@@ -319,7 +302,7 @@ Begin Report
                     Name ="Label10"
                     Caption ="All American Subscribers -- Plan Stats"
                     GUID = Begin
-                        0x1f1eae6df526d9469cb7e4412e9676e9
+                        0x3c49d44d61b1ae439644c947bbca66ad
                     End
                 End
             End
@@ -328,7 +311,7 @@ Begin Report
             Height =450
             Name ="PageHeaderSection"
             GUID = Begin
-                0x225ebaf59f045f4181feac36b871a98a
+                0xe1efb2c90685da478af2f07c2c0240c9
             End
             Begin
                 Begin Label
@@ -340,7 +323,7 @@ Begin Report
                     Caption ="GroupID"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x27054524adb38647a11471dc2264580c
+                        0x0998ac7eb90f2349a81fcf9125a690fe
                     End
                 End
                 Begin Label
@@ -353,7 +336,7 @@ Begin Report
                     Caption ="Red"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xd068b5bc9f57fb4f9e78d45b8621256d
+                        0xe6b38395149c1b449c8c7de2490bf4ba
                     End
                 End
                 Begin Label
@@ -366,7 +349,7 @@ Begin Report
                     Caption ="White"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xffdd86ed73b0dc40af595a93fc8848d5
+                        0x141c1fa9d7ede64c82a2bc93508e91fb
                     End
                 End
                 Begin Label
@@ -379,7 +362,7 @@ Begin Report
                     Caption ="Blue"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xb8a5225efa6ed44e81c981c16f9bf656
+                        0xa4590dc38221c043af038e491c4921b4
                     End
                 End
                 Begin Label
@@ -393,7 +376,7 @@ Begin Report
                     Tag ="DetachedLabel"
                     EventProcPrefix ="Red_Plus_Label"
                     GUID = Begin
-                        0x99fee4d977057145b80eb891b4e6233d
+                        0x70d0a227ad367549b604c1bc9dee7e4a
                     End
                 End
                 Begin Line
@@ -403,7 +386,7 @@ Begin Report
                     Width =6075
                     Name ="Line13"
                     GUID = Begin
-                        0x3f46b156b9c7d242998bf018ea0ee6e7
+                        0xbb9d8cf326b2c649a21a5a2f569dee42
                     End
                 End
             End
@@ -413,7 +396,7 @@ Begin Report
             Height =390
             Name ="Detail"
             GUID = Begin
-                0xb798ac7f26fedb439cc8d12c90a102fb
+                0xa433551f4a3990429bb1cb636fa725c8
             End
             Begin
                 Begin TextBox
@@ -425,7 +408,7 @@ Begin Report
                     Name ="GroupID"
                     ControlSource ="GroupID"
                     GUID = Begin
-                        0x7d701062a98bb7439563c9833d6bc1af
+                        0x291c1380a20a004d97e29a9770453b9b
                     End
                 End
                 Begin TextBox
@@ -438,7 +421,7 @@ Begin Report
                     Name ="Red"
                     ControlSource ="Red"
                     GUID = Begin
-                        0xf8799c2f14831444a864f338470365a8
+                        0xc5babe3346cad84ab12f22d4d1497023
                     End
                 End
                 Begin TextBox
@@ -451,7 +434,7 @@ Begin Report
                     Name ="White"
                     ControlSource ="White"
                     GUID = Begin
-                        0xcfd337054ef5d046a7a4aa5dadde7a16
+                        0x6ffbaea9e117694f891ba1b288e42cb3
                     End
                 End
                 Begin TextBox
@@ -464,7 +447,7 @@ Begin Report
                     Name ="Blue"
                     ControlSource ="Blue"
                     GUID = Begin
-                        0xc386395a66ecac4399786e44f89cbffb
+                        0xa675b333eb6cfc499894d37d62af4a33
                     End
                 End
                 Begin TextBox
@@ -478,7 +461,7 @@ Begin Report
                     ControlSource ="Red Plus"
                     EventProcPrefix ="Red_Plus"
                     GUID = Begin
-                        0x7327b7ab6a2f464db83881e7bb52b730
+                        0xb2640e7cf720914382242befd75e2875
                     End
                 End
             End
@@ -487,7 +470,7 @@ Begin Report
             Height =540
             Name ="PageFooterSection"
             GUID = Begin
-                0xe27414046cb7b34da0e466e91df07747
+                0x6fa784eca2c3ee4a81975aa1512e6ade
             End
             Begin
                 Begin TextBox
@@ -507,7 +490,7 @@ Begin Report
                     Format ="Long Date"
                     FontName ="Times New Roman"
                     GUID = Begin
-                        0xd6eedac569c10a4db0283ab0012e68be
+                        0x49dd0b7f1ecb9640a0e390dd6cb32f2d
                     End
                 End
                 Begin TextBox
@@ -527,7 +510,7 @@ Begin Report
                     ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
                     FontName ="Times New Roman"
                     GUID = Begin
-                        0xabadb554c349df42b465bfceeb0dc8e4
+                        0x58e79087a46b734595628b0a73e20659
                     End
                 End
                 Begin Line
@@ -538,7 +521,7 @@ Begin Report
                     BorderColor =12632256
                     Name ="Line14"
                     GUID = Begin
-                        0xed370fb752e46544b27863ffd8c70c8c
+                        0x25aaaaf9e78926438b1476203feadffc
                     End
                 End
             End
@@ -548,8 +531,27 @@ Begin Report
             Height =0
             Name ="ReportFooter"
             GUID = Begin
-                0xa386582ce45c644cb31d2ecf3e761e43
+                0xd3dd604e359efe47b32371e38da3f342
             End
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+Private Sub Report_Close()
+
+  On Error GoTo PROC_ERR
+    Forms![fmnuSwitchboard].Visible = True
+    DoCmd.OpenForm "fmnuReportGrp"
+
+  Exit Sub
+
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+End Sub
