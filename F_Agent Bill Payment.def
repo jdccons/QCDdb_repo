@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1611697578
+Checksum =2030036272
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -19,20 +19,45 @@ Begin Form
     Width =9150
     DatasheetFontHeight =10
     ItemSuffix =19
-    Left =4110
-    Top =1155
-    Right =13215
-    Bottom =6120
+    Left =4350
+    Top =1575
+    Right =13455
+    Bottom =6540
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0x60cc206afbace440
+        0x42123277d4b1e440
+    End
+    GUID = Begin
+        0x5e1aa00fa6873840a906ecf7e1efa6b8
+    End
+    NameMap = Begin
+        0x0acc0e550000000082685db2ab88b34ca4684611d3eef13b000000006ac24518 ,
+        0x2ebce4408e00fe07eb7f0000760077005f0043006f006d006d00690073007300 ,
+        0x69006f006e005f00430068006b005f0050006d00740073000000000000009264 ,
+        0xc995d50cd845abfd668580da6d4b0700000082685db2ab88b34ca4684611d3ee ,
+        0xf13b4100670065006e00740020004e0061006d0065000000000000002bd4da71 ,
+        0xe5b13a4cba54e9cc2c0cdade0700000082685db2ab88b34ca4684611d3eef13b ,
+        0x4d0065006d006f0000000000000094ab1e0beed6f5478d0665919c24d3e40700 ,
+        0x000082685db2ab88b34ca4684611d3eef13b510043004400200049006e007600 ,
+        0x2000520065006600000000000000755d97e24ee60a4d98b406d3af94b2c90700 ,
+        0x000082685db2ab88b34ca4684611d3eef13b43006f006d006d00200044007500 ,
+        0x65000000000000001d135dcf2bacb34b8530a1a77b4d06da0700000082685db2 ,
+        0xab88b34ca4684611d3eef13b5100430044002000430068006b0020004e006f00 ,
+        0x00000000000064ff8ee9f97fa94bb8cae2778c4383500700000082685db2ab88 ,
+        0xb34ca4684611d3eef13b5100430044002000430068006b002000440061007400 ,
+        0x6500000000000000437314eab012b94896c8aefd1fd2f1e60700000082685db2 ,
+        0xab88b34ca4684611d3eef13b5100430044002000430068006b00200041006d00 ,
+        0x7400000000000000fbc78a56dc92004987a8a8ddeeccb1bf0700000082685db2 ,
+        0xab88b34ca4684611d3eef13b4100670065006e00740049004400000000000000 ,
+        0x000000000000000000000000000000000c000000030000000000000000000000 ,
+        0x000000000000
     End
     RecordSource ="SELECT vw_Commission_Chk_Pmts.[Agent Name], vw_Commission_Chk_Pmts.[Agent Name],"
         " vw_Commission_Chk_Pmts.Memo, vw_Commission_Chk_Pmts.[QCD Inv Ref], vw_Commissio"
         "n_Chk_Pmts.[Comm Due], vw_Commission_Chk_Pmts.[QCD Chk No], vw_Commission_Chk_Pm"
         "ts.[QCD Chk Date], vw_Commission_Chk_Pmts.[QCD Chk Amt], vw_Commission_Chk_Pmts."
         "AgentID FROM vw_Commission_Chk_Pmts ORDER BY vw_Commission_Chk_Pmts.[QCD Chk Dat"
-        "e] DESC , vw_Commission_Chk_Pmts.[QCD Inv Ref];"
+        "e] DESC , vw_Commission_Chk_Pmts.[QCD Inv Ref]; "
     Caption ="Agent Bill Payment"
     DatasheetFontName ="Arial"
     AllowDatasheetView =0
@@ -111,10 +136,9 @@ Begin Form
         End
         Begin FormHeader
             Height =240
-            BackColor =12632256
             Name ="FormHeader"
             GUID = Begin
-                0xa81cccfbfa0d0546904d721d27f652b7
+                0xe32672ab4a96654b943d6bf609ca42f5
             End
             Begin
                 Begin Label
@@ -125,12 +149,12 @@ Begin Form
                     Width =1335
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="TxnDate_Label"
                     Caption ="Check Date"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xf5bcdeb36c0d824cb52ff43546124c34
+                        0xf5ee66e1fcfc2e4d8d4596a762524f75
                     End
                 End
                 Begin Label
@@ -141,12 +165,12 @@ Begin Form
                     Width =1140
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="Label11"
                     Caption ="Check No"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x136b8dfcd62eaa4dae9a2332eeeaffe6
+                        0xd1deaf97a314354faadf507c57a9da96
                     End
                 End
                 Begin Label
@@ -157,12 +181,12 @@ Begin Form
                     Width =1530
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="Label12"
                     Caption ="Check Amt"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x450eeefca8f0d34aaebbdc8252942abf
+                        0x548006a7149ae941bd06492a0005db7b
                     End
                 End
                 Begin Label
@@ -173,12 +197,12 @@ Begin Form
                     Width =1140
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="Label16"
                     Caption ="Reference"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xc2c53b0bf388224bbdfcd0e07de730f2
+                        0xd57838fd12f80645bbb24f07f2262660
                     End
                 End
                 Begin Label
@@ -189,12 +213,12 @@ Begin Form
                     Width =1335
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="Label17"
                     Caption ="Comm Due"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x47725c500e7a7b45a89b1be522e380b9
+                        0x8d74b0a6c93abd479802b400efe6fe6e
                     End
                 End
                 Begin Label
@@ -205,12 +229,12 @@ Begin Form
                     Width =1335
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="Label18"
                     Caption ="Memo"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x27d7ea75e5f9b94eb6eb1e4a07f8c755
+                        0xbc73c038146c1c4eb52d495e36200fa2
                     End
                 End
             End
@@ -220,7 +244,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0xb723249b9fa5d943a48b5c291b5b2e3d
+                0xf8f8d27014cb744a973ef36c8b33d2ac
             End
             Begin
                 Begin TextBox
@@ -236,7 +260,7 @@ Begin Form
                     Name ="RefNumber"
                     ControlSource ="QCD Chk No"
                     GUID = Begin
-                        0xb2a6c20a97f62e4cbc72647244bb1b6b
+                        0x306d60ccd83c0c4ea7f7e4f6df7fffec
                     End
                 End
                 Begin TextBox
@@ -252,7 +276,7 @@ Begin Form
                     ControlSource ="QCD Chk Date"
                     Format ="Short Date"
                     GUID = Begin
-                        0x926815299a38984798e47fd56b44eab6
+                        0x647efc08452e914ca27806131585a1d1
                     End
                 End
                 Begin TextBox
@@ -268,7 +292,7 @@ Begin Form
                     ControlSource ="QCD Chk Amt"
                     Format ="Standard"
                     GUID = Begin
-                        0x5174a20f7327ec438c40d67610bb86d5
+                        0x1bdbc4894e4a1e45b8bc52695b5717d0
                     End
                 End
                 Begin TextBox
@@ -282,7 +306,7 @@ Begin Form
                     ControlSource ="QCD Inv Ref"
                     EventProcPrefix ="QCD_Inv_Ref"
                     GUID = Begin
-                        0xeaef4386467c1948aecdb303c8d084ea
+                        0x6436a581318e384d8f95a7eda6985b44
                     End
                 End
                 Begin TextBox
@@ -297,7 +321,7 @@ Begin Form
                     Format ="Standard"
                     EventProcPrefix ="Comm_Due"
                     GUID = Begin
-                        0xd1f21c37b4f8fa4f88000fb29a7d824f
+                        0x21af0c6a80b0674aa7782fea43b26f39
                     End
                 End
                 Begin TextBox
@@ -310,7 +334,7 @@ Begin Form
                     Name ="Memo"
                     ControlSource ="Memo"
                     GUID = Begin
-                        0xa7b93af277012a458d3ec3aa7db49d41
+                        0x4f50f458e5199949b26035f86ba2616c
                     End
                 End
             End
@@ -320,7 +344,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormFooter"
             GUID = Begin
-                0x4f8ff1879644054d8acd8d14c371e399
+                0xad34ef6c2d34c442948308d68b840a30
             End
         End
     End

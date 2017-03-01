@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1944544241
+Checksum =-762980998
 Begin Report
     OrderByOn = NotDefault
     DefaultView =0
@@ -14,6 +14,59 @@ Begin Report
     RecSrcDt = Begin
         0x0ada1fcad7afe240
     End
+    GUID = Begin
+        0x3dea75e3e9f3b243aa36343928eb303f
+    End
+    NameMap = Begin
+        0x0acc0e5500000000726c3aaa1b8916499ba68753d9e54f390000000087ed9e85 ,
+        0xd4b1e4400000000060b31800710072007000740049006e007600000000000000 ,
+        0x8c8207e3087485478e955c954a55526007000000726c3aaa1b8916499ba68753 ,
+        0xd9e54f3943007500730074006e0061006d0065000000000000009703fd3acedb ,
+        0xc940955f7b3e616d895507000000726c3aaa1b8916499ba68753d9e54f394300 ,
+        0x75007300740041006400640031005400720069006d00000000000000f683c4eb ,
+        0xc8c1eb4c96d991474a6e1b5707000000726c3aaa1b8916499ba68753d9e54f39 ,
+        0x43007500730074006100640064007200320000000000000016b784379c0cba44 ,
+        0xa7c07b0da3cf5f6907000000726c3aaa1b8916499ba68753d9e54f3943006900 ,
+        0x74007900530074006100740065005a00690070000000000000004a0c05c19785 ,
+        0x8a4f8a6e414320a1115007000000726c3aaa1b8916499ba68753d9e54f395400 ,
+        0x720061006e006e006f00000000000000e2a1d2247bf02342b8fd21f812210405 ,
+        0x07000000726c3aaa1b8916499ba68753d9e54f3949006e007600640061007400 ,
+        0x6500000000000000c87aeb258391ac4780b7ed576cd5a5b407000000726c3aaa ,
+        0x1b8916499ba68753d9e54f39530061006c006500730070006b00650079000000 ,
+        0x00000000c2e71020d263584c86108b8bd12fbfe407000000726c3aaa1b891649 ,
+        0x9ba68753d9e54f39530070006100720065000000000000007ff8cdfad7b4ac4e ,
+        0x9e8336aaf873ba4107000000726c3aaa1b8916499ba68753d9e54f3949006e00 ,
+        0x760054006f007400000000000000a530745c35e6a445be2d5b7455ef5db50600 ,
+        0x00003dea75e3e9f3b243aa36343928eb303f44004e004d00000000000000f372 ,
+        0x7d25d4de5b4f82fdface9839356407000000726c3aaa1b8916499ba68753d9e5 ,
+        0x4f3944004e004d00000000000000829140aa2dda614d800552278d65ed4b0700 ,
+        0x0000726c3aaa1b8916499ba68753d9e54f39470072006f007500700054007900 ,
+        0x70006500000000000000f1d2a9d4292f074492dd6c7a1303650c07000000726c ,
+        0x3aaa1b8916499ba68753d9e54f3949006e0076006f0069006300650054007900 ,
+        0x70006500000000000000d0926ea68d4e204081ab1b973a2af5f4060000003dea ,
+        0x75e3e9f3b243aa36343928eb303f49006e0076006f0069006300650054007900 ,
+        0x70006500000000000000287018383f67d6468e46dbcddec6139007000000726c ,
+        0x3aaa1b8916499ba68753d9e54f3943007500730074006b006500790000000000 ,
+        0x00005a9deb45cc3edb4ba5ddffddf7323c4f02000000f8e87086d4b1e4404875 ,
+        0x9d0a00000000720073007500620049006e007600420079004e0061006d006500 ,
+        0x00000000000023059977fe897949a7390e33e1716821000000005bf64c86d4b1 ,
+        0xe4409c48d50b02000000710072007000740073007500620049006e0076000000 ,
+        0x000000001481fef9650c274386c515eeaddca0cf0700000023059977fe897949 ,
+        0xa7390e33e17168215400720061006e006e006f000000000000005d8231ce9a3e ,
+        0xbe488ae088f64ab5046202000000464b8186d4b1e4406e006f00000074007300 ,
+        0x720070007400470072007000410041005f0043006e0074007300000000000000 ,
+        0x8079591688025c42bb98d5d4233b6652000000001019a485d4b1e44001000000 ,
+        0x00aa18007100730065006c00410041005f0043006e0074007300000000000000 ,
+        0xff5d8209c2c76a44a0561e61a8d79b22070000008079591688025c42bb98d5d4 ,
+        0x233b6652470052004f005500500069006400000000000000b40badc08a90374f ,
+        0x91dafd31ae95905102000000ebcd9586d4b1e440500069006400000073007200 ,
+        0x7000740047007200700046004f0043005f0043006e0074007300000000000000 ,
+        0x7c2ee8c4ef82194ebddb80da93050af3000000002cb3a585d4b1e44040a8960b ,
+        0x0807680b7100730065006c0046004f0043005f0043006e007400730000000000 ,
+        0x0000ff5d8209c2c76a44a0561e61a8d79b22070000007c2ee8c4ef82194ebddb ,
+        0x80da93050af3470052004f005500500069006400000000000000000000000000 ,
+        0x000000000000000000000c000000030000000000000000000000000000000000
+    End
     RecordSource ="qrptInv"
     Caption ="Print Invoices By Name"
     OnOpen ="[Event Procedure]"
@@ -25,19 +78,12 @@ Begin Report
     End
     PrtDevMode = Begin
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x010400069c008806033f800001000100ea0a6f08640001000700580202000100 ,
+        0x010400069c00fc02033f800001000100ea0a6f08640001000700580202000100 ,
         0x5802030001004c65747465720000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000010000000000000001000000 ,
-        0x0200000000010000000000000000000000000000000000000000000050524956 ,
-        0xe230000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000180000000000102710271027 ,
-        0x000010270000000000000000a8037c0600000000000000000000000000000000 ,
-        0x000000000000000003000000000000000c0010005c4b03006843040000000000 ,
-        0x000000000100010000000000000000000000000000000000d0b9e1c425000000 ,
-        0x00000100ff000200ff0000000000000000000000000001000200000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000020001000300000000000000000000000000000000000000000000000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200c000fc020000ac13d8c00000000000000000000000000000000000000000 ,
+        0x0000000000000000050000000000070000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -51,42 +97,20 @@ Begin Report
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x01000000000000000000000000000000a8030000534d544a0000000010009803 ,
-        0x5400500020005000530020004400720069007600650072002000310030003200 ,
-        0x4200360038003800330046004300460030003400390032003400420031004100 ,
-        0x3100370036003900360032004300330042003800460030003400000052495061 ,
-        0x706572506f6c6963790050726f6d707455736572005061676553697a65004134 ,
-        0x0050616765526567696f6e0000496e707574536c6f74003154726179004c6561 ,
-        0x64696e674564676500004475706c6578004e6f6e65005265736f6c7574696f6e ,
-        0x0036303064706900436f6c6c6174650046616c73650052495072696e744d6f64 ,
-        0x650030726869740052696d616765736d004f666600436f6c6f724d6f64656c00 ,
-        0x434d594b0052505342697473506572506978656c003242697473506572506978 ,
-        0x656c00525053524742636f72726563740044657461696c427269676874005250 ,
-        0x53436f6c6f7252656e6444696374004175746f00525053446974686572547970 ,
-        0x65004175746f00525053426c61636b4d6f6465006772617900525053426c6163 ,
-        0x6b4f7665725072696e740046616c736500525053436f6c6f72536570004e6f6e ,
-        0x650052636d796b73696d756c6174696f6e004f6666004d656469615479706500 ,
-        0x4175746f004f757470757442696e0044656661756c7400537461706c654c6f63 ,
-        0x6174696f6e004e6f6e6500524950756e6368004e6f6e650052495a666f6c6400 ,
-        0x4e6f6e65005249466f6c6454797065004e6f6e65004f7665726c6170466f6c64 ,
-        0x004f666600524952696e6742696e64004e6f6e6500524952696e674244506f73 ,
-        0x6974696f6e004c656674005249526f746174654279313830004f66660052494f ,
-        0x7269656e744f7672004f666600466163657570004f666600524957617465726d ,
-        0x61726b004f6666005249574d5465787400436f6e666964656e7469616c005249 ,
-        0x776d466f6e740048656c76657469636142005249776d53697a65003336005249 ,
-        0x776d416e676c65003435446567005249776d546578745374796c650047726179 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000c00000053505054 ,
-        0x01000000
+        0x000000000000000000000000010000000000000000000000c0000000534d544a ,
+        0x000000001000b000530065006e006400200074006f0020004d00690063007200 ,
+        0x6f0073006f006600740020004f006e0065004e006f0074006500200031003500 ,
+        0x20004400720069007600650072000000524553444c4c00556e69726573444c4c ,
+        0x00506170657253697a65004c4554544552004f7269656e746174696f6e00504f ,
+        0x525452414954005265736f6c7574696f6e0044504936303000436f6c6f724d6f ,
+        0x646500323462707000000000000000000000000000000000
     End
     PrtDevNames = Begin
-        0x080022004d000100000000000000000000000000000000000000000000000000 ,
+        0x08002c0041000100000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000000545330303100
+        0x006e756c3a00
     End
     OnActivate ="[Event Procedure]"
     Begin
@@ -121,14 +145,14 @@ Begin Report
             Height =0
             Name ="ReportHeader2"
             GUID = Begin
-                0xf86510590a95c045a235f81f52ee0a2a
+                0x25746567dad7ea468f2898eed77a1675
             End
         End
         Begin PageHeader
             Height =0
             Name ="PageHeader0"
             GUID = Begin
-                0xb7a61be4e0036d4e9086514daaf2d134
+                0x7c3404bf2a86cb409fc7bb3cdec707fb
             End
         End
         Begin BreakHeader
@@ -138,7 +162,7 @@ Begin Report
             OnFormat ="[Event Procedure]"
             Name ="GroupHeader0"
             GUID = Begin
-                0x37e2eb768ed2bf4693e8fe98b0d7e1bf
+                0x3dcf78b1ab918340b3772222e1c469c7
             End
             Begin
                 Begin Label
@@ -154,7 +178,7 @@ Begin Report
                     Caption ="Invoice Total : "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x52acc838b446864b93586a7a04967142
+                        0xa755e417abe27745b63ce584cedc2c9b
                     End
                 End
                 Begin Rectangle
@@ -164,7 +188,7 @@ Begin Report
                     Width =4476
                     Name ="Box220"
                     GUID = Begin
-                        0x66947aa76f80d8498b0b0f85e67011be
+                        0x5f58558c29a920438b0d8981b5f0d012
                     End
                 End
                 Begin Label
@@ -177,7 +201,7 @@ Begin Report
                     Caption ="QCD of America"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x6e726f3519774f458cf59f35db55b0b9
+                        0x463ba8306211ba49a83cd8f24ac3130d
                     End
                 End
                 Begin Label
@@ -192,7 +216,7 @@ Begin Report
                     Caption ="12222 Merit Drive, Suite 1070"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x5ac538ed0b4ba941a378d7e7208620c1
+                        0xca923384caea3647ab2ab1af5e66fc7b
                     End
                 End
                 Begin Label
@@ -207,7 +231,7 @@ Begin Report
                     Caption ="Dallas, Texas  75251"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xc9a2bf0cf0883c4ea137aa0698c5efcb
+                        0x3b18e5365a045a40879d6a56c50ed71a
                     End
                 End
                 Begin Label
@@ -222,7 +246,7 @@ Begin Report
                     Caption ="(972) 726-0444 or (800) 229-0304"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x3f328c80e08dcb4e8c687866c8cebbc6
+                        0x8320d161fa846c43aa7535709e0aff50
                     End
                 End
                 Begin Line
@@ -231,7 +255,7 @@ Begin Report
                     Width =11370
                     Name ="Line225"
                     GUID = Begin
-                        0x15ae04b5179c0d4cb3242a1deb71d864
+                        0xa87ec8bd901ccf46ac1021705bdaad78
                     End
                 End
                 Begin Line
@@ -240,7 +264,7 @@ Begin Report
                     Width =11370
                     Name ="Line226"
                     GUID = Begin
-                        0x4065524209ae764b994b5cd80d823265
+                        0xe53e3bcfbad92746898c47cb6db4be94
                     End
                 End
                 Begin Label
@@ -256,7 +280,7 @@ Begin Report
                     Caption ="Invoice Number: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xa7f565a5cb312f45a344d2a96013ed49
+                        0xa11812ed7e45ea468ee5927a0591295c
                     End
                 End
                 Begin Label
@@ -272,7 +296,7 @@ Begin Report
                     Caption ="Invoice Date: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x3d30f9e3a968aa478dfae967c7ac1586
+                        0x715a645a04834d478765f4ec55ecf980
                     End
                 End
                 Begin Label
@@ -288,7 +312,7 @@ Begin Report
                     Caption ="Terms: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xbd55958eefd9514fb68a05f78f86297b
+                        0x2f5bd07a3435b641a8676885fe71ba9c
                     End
                 End
                 Begin TextBox
@@ -302,7 +326,7 @@ Begin Report
                     ControlSource ="Custname"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x779ee63da168d0419e1fa99c328ff166
+                        0xacb744824d4f7a4c8cecd7d1f319ca7b
                     End
                 End
                 Begin TextBox
@@ -317,7 +341,7 @@ Begin Report
                     ControlSource ="CustAdd1Trim"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x2844afdd5176c44e8431b7a0044dfa65
+                        0xbbbf827e8e6d8243bbc3af78f2624084
                     End
                 End
                 Begin TextBox
@@ -332,7 +356,7 @@ Begin Report
                     ControlSource ="Custaddr2"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x29de7a1c8af2a84ea7bb96834d05ae0d
+                        0xdfa7b6ec59811e4884e4790de753f5bc
                     End
                 End
                 Begin TextBox
@@ -346,7 +370,7 @@ Begin Report
                     ControlSource ="CityStateZip"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xf9288a1d81f25c4f9cacdaee00e1cdf5
+                        0xcc38568242ed9444bcb7d9db9358226c
                     End
                     Begin
                         Begin Label
@@ -363,7 +387,7 @@ Begin Report
                             Caption ="Agent: "
                             FontName ="MS Sans Serif"
                             GUID = Begin
-                                0x995bfecdaa955240834c75c259d4fbc8
+                                0x331a9adcf77e834a82330f7bdc9f6bb9
                             End
                         End
                     End
@@ -381,7 +405,7 @@ Begin Report
                     ControlSource ="Tranno"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x67c43119c86d864dbe794f4e2351091b
+                        0x3f6ba2fd290c6249a11c82812af43aaf
                     End
                 End
                 Begin TextBox
@@ -398,7 +422,7 @@ Begin Report
                     Format ="m/d/yyyy"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xf33408559ae8004089d3d958412d93bd
+                        0x54a6050f18427a4c86e670e5cfec75f3
                     End
                 End
                 Begin Label
@@ -415,7 +439,7 @@ Begin Report
                     Caption ="Corporate Rep: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xd7e89aa9fb0cd74c9f8cfacaa6427737
+                        0x467db4d83581514782e13949f587de00
                     End
                 End
                 Begin TextBox
@@ -431,7 +455,7 @@ Begin Report
                     ControlSource ="Salespkey"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xedb619205236bc478507058461738131
+                        0xd478638dc3c02d4a909be0cf05987422
                     End
                 End
                 Begin Line
@@ -441,7 +465,7 @@ Begin Report
                     Width =11370
                     Name ="Line240"
                     GUID = Begin
-                        0x2304ac6e4cada94a8fd794cff479e2f8
+                        0x4990975b48536b4987a54fcd2600e978
                     End
                 End
                 Begin Label
@@ -456,7 +480,7 @@ Begin Report
                     Caption ="Please see attached invoice summary for invoice detail"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0xe345ad87a119ed429ba1f38a0bb6fa12
+                        0x93bab3c0f8636941b0c79ec310ec8da1
                     End
                 End
                 Begin TextBox
@@ -472,7 +496,7 @@ Begin Report
                     ControlSource ="Spare"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x52a67d629b71534495b65eccfed0053d
+                        0x4150f16c3ec64f4eac44461456f0d62f
                     End
                 End
                 Begin Label
@@ -487,7 +511,7 @@ Begin Report
                     Caption ="Due Upon Receipt"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x543cfacc7865d24fb7faa09ef6c5a0f6
+                        0xfb0df53954145d4a91455a8705aff05a
                     End
                 End
                 Begin TextBox
@@ -504,7 +528,7 @@ Begin Report
                     Format ="$#,##0.00;($#,##0.00)"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x3edb444a724cfa49b23d7384944b13bd
+                        0xd46bc7e063e83f40842b2daae9d03f63
                     End
                 End
                 Begin Label
@@ -517,7 +541,7 @@ Begin Report
                     Caption ="®"
                     FontName ="Times New Roman"
                     GUID = Begin
-                        0xdf088a1be6088a478291261ab5983fef
+                        0xf8d151effafdce47b322e7ee95e79e68
                     End
                 End
                 Begin TextBox
@@ -534,7 +558,7 @@ Begin Report
                     ControlSource ="=IIf([DNM]=0,\"\",\"DO NOT MAIL\")"
                     FontName ="Times New Roman"
                     GUID = Begin
-                        0x0bdcab89573fdf4a9d72b9ae4fc513a6
+                        0x48666631531e744d9cb68cfaa66e7d1d
                     End
                 End
                 Begin Label
@@ -551,7 +575,7 @@ Begin Report
                         "\012Thank you for your business!"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x675ce5c44a1d02429db500df21e089a6
+                        0x8ccf77a67e78b34b80eec9e34f0c058e
                     End
                 End
                 Begin TextBox
@@ -563,7 +587,7 @@ Begin Report
                     Name ="DNM"
                     ControlSource ="DNM"
                     GUID = Begin
-                        0x4e30ac4b7a6aa94e859ba474908cc70a
+                        0xa530745c35e6a445be2d5b7455ef5db5
                     End
                 End
             End
@@ -573,7 +597,7 @@ Begin Report
             Height =0
             Name ="Detail0"
             GUID = Begin
-                0xbc825db2b4661643b8e8b3e65fa27d2d
+                0x085971e164f98446ba9603446264cba1
             End
             Begin
                 Begin Line
@@ -581,7 +605,7 @@ Begin Report
                     Width =10650
                     Name ="Line31"
                     GUID = Begin
-                        0x42b48f92b64df54baa115a5b52058913
+                        0x74cee8bbc656524e8dbd069875faf6ef
                     End
                 End
             End
@@ -593,7 +617,7 @@ Begin Report
             Height =6240
             Name ="GroupFooter1"
             GUID = Begin
-                0xaf47880fffb91248a48e7ce1875e3fdb
+                0x21266450ab411d49837e6ffa026d5871
             End
             Begin
                 Begin Subform
@@ -605,7 +629,7 @@ Begin Report
                     LinkChildFields ="Tranno"
                     LinkMasterFields ="Tranno"
                     GUID = Begin
-                        0x600d705172f22c439c743b8f5ce80630
+                        0xf77ed31187fd3642873c2a145f1d2c77
                     End
                 End
                 Begin Label
@@ -620,7 +644,7 @@ Begin Report
                     Caption ="Invoice Number: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x407fcd45968d5b489a69abf93a2c6dba
+                        0x97e45812ae93a947af2eacd000557d9c
                     End
                 End
                 Begin Label
@@ -636,7 +660,7 @@ Begin Report
                     Caption ="Invoice Date: "
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x2a69a14ea6ed9e4a857e9fe537547305
+                        0xfcbb8854597a1f47a6dfc36866a50520
                     End
                 End
                 Begin TextBox
@@ -651,7 +675,7 @@ Begin Report
                     ControlSource ="Tranno"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x88696ed9f69b094090e285bac0d2b876
+                        0x91790a6cee36204585ca7a00b8f9f41a
                     End
                 End
                 Begin TextBox
@@ -669,7 +693,7 @@ Begin Report
                     FontName ="MS Sans Serif"
                     EventProcPrefix ="Invoice_Date"
                     GUID = Begin
-                        0xa7dc49009268934dbef5bf1706c498b0
+                        0x5fbcd8b33bab04479c06a879cde0665e
                     End
                 End
                 Begin Label
@@ -682,7 +706,7 @@ Begin Report
                     Name ="Text265"
                     Caption ="Name"
                     GUID = Begin
-                        0x6659f11d0a68954884f94b6cf7c97182
+                        0x0bc274c6ea5770499e0d1e5bec76c39f
                     End
                 End
                 Begin Label
@@ -695,7 +719,7 @@ Begin Report
                     Name ="Text266"
                     Caption ="Rate"
                     GUID = Begin
-                        0x4ff62b6e9064a442b7a5be234a9d6186
+                        0xfea52b78d47cc74b8a6c570775bf3f70
                     End
                 End
                 Begin Label
@@ -708,7 +732,7 @@ Begin Report
                     Name ="Text268"
                     Caption ="Name"
                     GUID = Begin
-                        0xe2d410221d0fbe4d9fd08eeba388bfb4
+                        0xb3b675418d923b45bca46a4f7258a5ca
                     End
                 End
                 Begin Label
@@ -721,7 +745,7 @@ Begin Report
                     Name ="Text269"
                     Caption ="Rate"
                     GUID = Begin
-                        0xd9399bc1a6f1e54e94507f90412af6ea
+                        0xb8e84ac269c47d46aab18626fef191cb
                     End
                 End
                 Begin Label
@@ -732,7 +756,7 @@ Begin Report
                     Name ="Text270"
                     Caption ="|"
                     GUID = Begin
-                        0x8c479e8e3f872c4197120eae9451709a
+                        0x50fb6be2c95ffc4db10686a499a84e29
                     End
                 End
                 Begin Label
@@ -745,7 +769,7 @@ Begin Report
                     Name ="Text272"
                     Caption ="Name"
                     GUID = Begin
-                        0x68138632d2087c428c352e00f35773a4
+                        0x5137da5e25af7548a2096e65792e5951
                     End
                 End
                 Begin Label
@@ -758,7 +782,7 @@ Begin Report
                     Name ="Text273"
                     Caption ="Rate"
                     GUID = Begin
-                        0x33d25d07ad1ff247a92707731a47c633
+                        0x4bd1c5f03b03f9489d0553923cbcf6d5
                     End
                 End
                 Begin Label
@@ -769,7 +793,7 @@ Begin Report
                     Name ="Text274"
                     Caption ="|"
                     GUID = Begin
-                        0x5521ca094f6f8a438c98c1e796da9afd
+                        0xa111c79177996d428c58099b12519b8b
                     End
                 End
                 Begin Label
@@ -782,7 +806,7 @@ Begin Report
                     Caption ="QCD of America"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x7efd29d0d163af499d655a178bc1521f
+                        0xaa8d8e94ee295b4a9176f965390f7cdf
                     End
                 End
                 Begin Line
@@ -790,7 +814,7 @@ Begin Report
                     Width =11400
                     Name ="Line283"
                     GUID = Begin
-                        0xd09d6424d12272489186dcf3ce5db299
+                        0xcd8a5dc783f0524dbde31c32f1681dbd
                     End
                 End
                 Begin Label
@@ -804,7 +828,7 @@ Begin Report
                     Caption ="Invoice Summary"
                     FontName ="MS Sans Serif"
                     GUID = Begin
-                        0x12ab31ef1726654a8f656deb569d9d1b
+                        0x493b806cf1824f41a98028abfc9bed43
                     End
                 End
                 Begin Line
@@ -812,7 +836,7 @@ Begin Report
                     Width =11400
                     Name ="Line295"
                     GUID = Begin
-                        0xc86b18823d5cc64d9c7456bd14ee3a59
+                        0x0f68461e511ec647aece69188a6ff262
                     End
                 End
                 Begin Line
@@ -820,7 +844,7 @@ Begin Report
                     Width =11400
                     Name ="Line296"
                     GUID = Begin
-                        0x6f59576e5a9450439a0d0d77baa9ab13
+                        0x90e6315468926545a383bc1c5f396a95
                     End
                 End
                 Begin TextBox
@@ -833,7 +857,7 @@ Begin Report
                     ControlSource ="GroupType"
                     StatusBarText ="1: Managed Cost Benefit; 2: Mixed MCB & Indemnity; 3: Freedom of Choice"
                     GUID = Begin
-                        0x75197318bf36ff47af2ea66d51317bc4
+                        0xb948f16ff8ff024b974983db709394d7
                     End
                 End
                 Begin TextBox
@@ -846,7 +870,7 @@ Begin Report
                     ControlSource ="InvoiceType"
                     StatusBarText ="1:  SSN; 2:  SubID"
                     GUID = Begin
-                        0xd00ac7fb7a23ae4882526f321aec2082
+                        0xd0926ea68d4e204081ab1b973a2af5f4
                     End
                 End
                 Begin TextBox
@@ -859,7 +883,7 @@ Begin Report
                     Name ="Text337"
                     ControlSource ="=IIf([InvoiceType]=1,\"SSN\",\"Sub ID\")"
                     GUID = Begin
-                        0x7efe0d61c7d65f4da47c06c5f8fba5cc
+                        0xe8f0457fcab1ec48a9642fa236ccf72d
                     End
                 End
                 Begin TextBox
@@ -872,7 +896,7 @@ Begin Report
                     Name ="Text307"
                     ControlSource ="=IIf([InvoiceType]=1,\"SSN\",\"Sub ID\")"
                     GUID = Begin
-                        0x23dfecd1bfa3534b8441300cffbbc1db
+                        0x663b25054e4fc84ea35b55f526e3d8e3
                     End
                 End
                 Begin TextBox
@@ -885,7 +909,7 @@ Begin Report
                     Name ="Text308"
                     ControlSource ="=IIf([InvoiceType]=1,\"SSN\",\"Sub ID\")"
                     GUID = Begin
-                        0xb857240c2ffbdb44b4d39a42a2846063
+                        0xda9e39045c37104f952e9161863648db
                     End
                 End
                 Begin Subform
@@ -899,7 +923,7 @@ Begin Report
                     LinkChildFields ="GROUPid"
                     LinkMasterFields ="GROUPid"
                     GUID = Begin
-                        0x96cd7d3984faf040bca526c0420ebc70
+                        0x69eb4958ca5dca489b4a7ef650876604
                     End
                 End
                 Begin TextBox
@@ -911,7 +935,7 @@ Begin Report
                     Name ="GROUPid"
                     ControlSource ="Custkey"
                     GUID = Begin
-                        0xe4ff89bbc6f31d4da2bdc64699ad936e
+                        0x34f799b93b4ee3449403fa9cb5a018b3
                     End
                 End
                 Begin Subform
@@ -925,7 +949,7 @@ Begin Report
                     LinkChildFields ="GROUPid"
                     LinkMasterFields ="GROUPid"
                     GUID = Begin
-                        0xacd2c21d9290c74ea3f3bedb80f9d4b4
+                        0x8efd308b733c914b8204ec0932a9ac32
                     End
                 End
             End
@@ -934,7 +958,7 @@ Begin Report
             Height =360
             Name ="PageFooter1"
             GUID = Begin
-                0xce86f92bdf9cc445929e40e391902008
+                0x8f4dfd1d81df4f43bf338c69ae904ecc
             End
             Begin
                 Begin TextBox
@@ -944,7 +968,7 @@ Begin Report
                     Name ="Field293"
                     ControlSource ="=\"Page \" & [Page]"
                     GUID = Begin
-                        0x5530e0f16165464eb9f24d46169096c0
+                        0x760ff73d6d6c394ea6fd40d024cf1df9
                     End
                 End
                 Begin TextBox
@@ -956,7 +980,7 @@ Begin Report
                     Name ="Field297"
                     ControlSource ="Custname"
                     GUID = Begin
-                        0xf47b679b722ff7448e496ab3bc4dd45c
+                        0x4061df5054c7174ea6574ae88bff36b3
                     End
                 End
                 Begin TextBox
@@ -969,7 +993,7 @@ Begin Report
                     Name ="Field298"
                     ControlSource ="Tranno"
                     GUID = Begin
-                        0xe7fd1bc0aa49c6409f18e9e530a0278c
+                        0x0e4133e815d0e34796056853b0104d96
                     End
                 End
                 Begin Label
@@ -980,7 +1004,7 @@ Begin Report
                     Name ="Text299"
                     Caption ="Invoice Number: "
                     GUID = Begin
-                        0x18979d5ae14d6c4e9991465409424976
+                        0x2c27a96ecca30347b7665c8a9db0889e
                     End
                 End
                 Begin TextBox
@@ -992,7 +1016,7 @@ Begin Report
                     Name ="Field300"
                     ControlSource ="Custkey"
                     GUID = Begin
-                        0x2115cfaca198be448316322546dd8367
+                        0x84d733e03701ac44b3793d7bf233e7d0
                     End
                 End
             End
@@ -1002,7 +1026,7 @@ Begin Report
             Height =0
             Name ="ReportFooter3"
             GUID = Begin
-                0xb52fde08ee7b0b4b9d74f8839cd7bd76
+                0x769104217894244ba826ba361cee9cb9
             End
         End
     End

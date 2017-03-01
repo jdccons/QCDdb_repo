@@ -35,7 +35,7 @@ Public Sub ComboSetFirst(cbo As ComboBox)
     On Error GoTo PROC_ERR
     
     ' Set the value to combo's first ItemData value
-    cbo.value = cbo.ItemData(0)
+    cbo.Value = cbo.ItemData(0)
     
 PROC_EXIT:
     Exit Sub
@@ -421,7 +421,7 @@ Public Function FormControlPropertiesChange(ByVal strForm As String, ByVal strPr
         On Error Resume Next
         
         For Each ctl In Forms(strForm).Controls
-            ctl.Properties(strProperty).value = varValue
+            ctl.Properties(strProperty).Value = varValue
             
             ' Keep track of the number of controls changed
             If Err = 0 Then
@@ -998,7 +998,7 @@ Public Function FormPropertyChange(ByVal strForm As String, ByVal strProperty As
     
     ' If the Form isn't already open, open it in design view
     If FormOpenDesign(strForm, True, acSaveYes) Then
-        Forms(strForm).Properties(strProperty).value = varValue
+        Forms(strForm).Properties(strProperty).Value = varValue
         fChanged = True
         
         If fSave Then
@@ -1694,6 +1694,32 @@ PROC_ERR:
     Resume PROC_EXIT
 End Sub
 
+
+
+Public Sub LockControls(frm As Form, fLock As Boolean)
+    ' Comments: Locks all the text boxes and combo boxes on a form.
+    
+    On Error GoTo PROC_ERR
+    
+    Dim ctl As Control
+    For Each ctl In frm.Controls
+        If GetControlType(ctl) = "Combo Box" Or GetControlType(ctl) = "Text Box" Then
+            ctl.Locked = fLock
+            If fLock Then
+                ctl.BackColor = 15263976  ' gray
+            Else
+                ctl.BackColor = 16777215  ' white
+            End If
+        End If
+    Next ctl
+    
+PROC_EXIT:
+    Exit Sub
+    
+PROC_ERR:
+    MsgBox "Error: " & Err.Number & ". " & Err.DESCRIPTION, , "modForms.LockControls"
+    Resume PROC_EXIT
+End Sub
 Public Sub WaitUntilFormClose(strForm As String)
     ' Comments: Wait for the form to close, using the Sleep command
     '           rather than DoEvents (which eats up CPU processing resources).

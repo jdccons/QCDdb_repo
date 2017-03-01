@@ -8,10 +8,15 @@ End
 Begin
     MacroName ="&Delete"
     Action ="RunCode"
-    Argument ="DeleteSubscr()"
+    Argument ="DeleteGroupSubscr()"
 End
 Begin
     Action ="Requery"
+End
+Begin
+    MacroName ="&Change Status"
+    Action ="RunCode"
+    Argument ="ChangeSubscrStatus(Forms(\"frmGrpSubscr\"))"
 End
 Begin
     MacroName ="&Save"

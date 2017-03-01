@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1630912309
+Checksum =-1320495796
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -12,12 +12,24 @@ Begin Form
     ViewsAllowed =1
     Width =5775
     ItemSuffix =48
-    Left =-22692
-    Top =1692
-    Right =-15132
-    Bottom =7812
+    Left =915
+    Top =1035
+    Right =8475
+    Bottom =7170
     RecSrcDt = Begin
         0xd359ddb3b2c4e140
+    End
+    GUID = Begin
+        0x9abd10468e4fd94e914938dcea7d0871
+    End
+    NameMap = Begin
+        0x0acc0e55000000006140643b8db6884ab8d7bc9f8355bc980000000032802c7b ,
+        0xd4b1e44067008602d5711a1071007200790047007200700043006f006d006200 ,
+        0x6f00000000000000ff5d8209c2c76a44a0561e61a8d79b22070000006140643b ,
+        0x8db6884ab8d7bc9f8355bc98470052004f005500500069006400000000000000 ,
+        0xc24b51ae8a44854eb595f10c92e7c58f070000006140643b8db6884ab8d7bc9f ,
+        0x8355bc98470052006e0061006d00650000000000000000000000000000000000 ,
+        0x0000000000000c000000030000000000000000000000000000000000
     End
     Caption ="Membership Report -  Groups in Detail"
     MenuBar ="Dialog"
@@ -80,7 +92,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             GUID = Begin
-                0x8e3792e69709bc4a8fc7dac38faad630
+                0x8349e6c4d19b4b44ab7cb07dceff891e
             End
             Begin
                 Begin Label
@@ -95,7 +107,7 @@ Begin Form
                     Name ="LblCustID"
                     Caption ="Group From "
                     GUID = Begin
-                        0x836c0f62fcf94b47a52510d77ea4f924
+                        0xd4828cecd83287449d1557e58c25dd21
                     End
                 End
                 Begin OptionGroup
@@ -109,7 +121,7 @@ Begin Form
                     Name ="OptSortBy"
                     DefaultValue ="1"
                     GUID = Begin
-                        0xad0bc0dcecad6747812a517da18f4209
+                        0x6c458a076f740840a12252e6eb3772ea
                     End
                     Begin
                         Begin Label
@@ -124,7 +136,7 @@ Begin Form
                             Name ="LblSortBy"
                             Caption ="Sort By"
                             GUID = Begin
-                                0xb996e36edc1678439102f286c9716f33
+                                0x2f3d0b5a5ae3674284bce438dcd8c1df
                             End
                         End
                         Begin OptionButton
@@ -137,7 +149,7 @@ Begin Form
                             OptionValue =1
                             Name ="BUTTON1"
                             GUID = Begin
-                                0xa720334ec20f7c44977944829e809349
+                                0x2bea808840d0b74f81812f9aa0416e1d
                             End
                             Begin
                                 Begin Label
@@ -151,7 +163,7 @@ Begin Form
                                     Name ="Group"
                                     Caption ="Group "
                                     GUID = Begin
-                                        0x52200735a39a574b88ccd7de07d153bb
+                                        0x9452e7b95e36e244b6eafcb4c140de67
                                     End
                                 End
                             End
@@ -166,7 +178,7 @@ Begin Form
                             OptionValue =2
                             Name ="BUTTON2"
                             GUID = Begin
-                                0x0071012365ea0d458bd809e76114da17
+                                0x2260ea456f99a04681f2c788a523dbc1
                             End
                             Begin
                                 Begin Label
@@ -180,7 +192,7 @@ Begin Form
                                     Name ="Geographical"
                                     Caption ="Geographical "
                                     GUID = Begin
-                                        0x4e2d1d2b3c49c54cbbba7199ef355eff
+                                        0x31b69f956c8b3a438107d8967f9b9731
                                     End
                                 End
                             End
@@ -195,7 +207,7 @@ Begin Form
                             OptionValue =3
                             Name ="Button3"
                             GUID = Begin
-                                0x15c09a300e36584f827186156968ef19
+                                0x5f31e7b74914be47a6ec8fd4f6d01873
                             End
                             Begin
                                 Begin Label
@@ -209,7 +221,7 @@ Begin Form
                                     Name ="City"
                                     Caption ="City"
                                     GUID = Begin
-                                        0x6972fa72a204f84c83623e197b921a45
+                                        0xadd7e06504d5b7468e83755549473893
                                     End
                                 End
                             End
@@ -224,7 +236,7 @@ Begin Form
                             OptionValue =4
                             Name ="Button4"
                             GUID = Begin
-                                0x200da52f3ab9a447908ce9050160a95c
+                                0x855ea4ca67c47d4fb5928cebd9975871
                             End
                             Begin
                                 Begin Label
@@ -238,7 +250,7 @@ Begin Form
                                     Name ="State"
                                     Caption ="State"
                                     GUID = Begin
-                                        0x0f6641902f126644b3b258960d6e4105
+                                        0xb187f133bce56b4591db09bfd9eafdcf
                                     End
                                 End
                             End
@@ -256,12 +268,12 @@ Begin Form
                     Width =1152
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
                     GUID = Begin
-                        0x84edc6bacb537f4aa230949dabbb4dd2
+                        0x2ba4c4efd7197c48a775c2ff2b9b97c9
                     End
                     Name ="c-GRPfrom"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT qryGrpCombo.GROUPid AS Group_ID, qryGrpCombo.GRname AS Group_Name FROM qr"
-                        "yGrpCombo ORDER BY qryGrpCombo.GRname;"
+                        "yGrpCombo ORDER BY qryGrpCombo.GRname; "
                     ColumnWidths ="810;3240"
                     EventProcPrefix ="c_GRPfrom"
                 End
@@ -298,7 +310,7 @@ Begin Form
                         0xffffff0000000000
                     End
                     GUID = Begin
-                        0x2170f70760c01d4c8df2104cbc7051ec
+                        0xcae6e9295baea0469cddcac73da57d55
                     End
                 End
                 Begin ComboBox
@@ -313,18 +325,18 @@ Begin Form
                     TabIndex =1
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"10\";\"10\""
                     GUID = Begin
-                        0x0edcbea44db19f43b9e0ff825cdab8d7
+                        0xd5f6d2ef1eaced469073a0c225429a08
                     End
                     Name ="c-GRPto"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT qryGrpCombo.GROUPid AS Group_ID, qryGrpCombo.GRname AS Group_Name FROM qr"
-                        "yGrpCombo ORDER BY qryGrpCombo.GRname;"
+                        "yGrpCombo ORDER BY qryGrpCombo.GRname; "
                     ColumnWidths ="810;3240"
                     EventProcPrefix ="c_GRPto"
                 End
                 Begin Label
                     BackStyle =0
-                    OverlapFlags =215
+                    OverlapFlags =87
                     TextAlign =3
                     Left =1785
                     Top =525
@@ -334,7 +346,7 @@ Begin Form
                     Name ="Text30"
                     Caption ="To "
                     GUID = Begin
-                        0x40cd54a5f2da7449bb7646badf79a93a
+                        0xc2752da3f5aa9842af5790c9ccb1c641
                     End
                 End
             End

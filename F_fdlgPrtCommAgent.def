@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-615145
+Checksum =481124030
 Begin Form
     Modal = NotDefault
     RecordSelectors = NotDefault
@@ -19,11 +19,20 @@ Begin Form
     Width =3885
     DatasheetFontHeight =10
     ItemSuffix =11
-    Right =5895
-    Bottom =3990
+    Left =6315
+    Top =1635
+    Right =12210
+    Bottom =4230
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x8903859034dde140
+    End
+    GUID = Begin
+        0x935ea0476251aa468ef738087c0682e6
+    End
+    NameMap = Begin
+        0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
+        0x0000000000000000000000000000
     End
     Caption ="Agent Commissions"
     MenuBar ="Dialog"
@@ -94,7 +103,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0xc70ec44975f00f41bc680fd90386c29d
+                0x8b53c6d3bd1e3e43889bc2d6bf5154c2
             End
             Begin
                 Begin ComboBox
@@ -106,7 +115,7 @@ Begin Form
                     Top =495
                     Width =885
                     GUID = Begin
-                        0xae0e376131114b4db576c2a74386d7da
+                        0x9ca1d3b33626f24da887f4f78b7262fd
                     End
                     Name ="cboCommissionMonth"
                     RowSourceType ="Value List"
@@ -125,7 +134,7 @@ Begin Form
                             Name ="Label1"
                             Caption ="Month:  "
                             GUID = Begin
-                                0x72548bd56fc8fa418c24389a770b06e6
+                                0xdb004acc70c2284da9757ce2d3b7e8a5
                             End
                         End
                     End
@@ -140,7 +149,7 @@ Begin Form
                     Width =885
                     TabIndex =1
                     GUID = Begin
-                        0xb7858f70eaa8904ea9cb8f1fc799c701
+                        0x28ccfa1bd7a49f4daeecd68f02fb8c86
                     End
                     Name ="cboYear"
                     RowSourceType ="Value List"
@@ -160,7 +169,7 @@ Begin Form
                             Name ="Label6"
                             Caption ="Year:  "
                             GUID = Begin
-                                0x61f090f2b2698348a37a85c518e2c935
+                                0xac6497714182264dac0a02a63e35c75e
                             End
                         End
                     End
@@ -182,7 +191,7 @@ Begin Form
                     End
                     ControlTipText ="Create Temporary Report Table"
                     GUID = Begin
-                        0xe444b65962dc5d448acb74312e5f6c6e
+                        0x11562ed22c397241abdad39a00c3ee67
                     End
                 End
                 Begin TextBox
@@ -194,7 +203,7 @@ Begin Form
                     TabIndex =3
                     Name ="txtProcessing"
                     GUID = Begin
-                        0xf6a0d52bcf2ab7478725a566353e988e
+                        0x321a69e3f24ea248bfb4c0c7fc0f2960
                     End
                 End
             End
@@ -293,8 +302,12 @@ Private Sub cmdCreateTempRptTbl_Click()
     
     Dim strMonth As String
     Dim strYear As String
-    
+    Dim strUserName As String
     Dim strInvoiceDate As String
+    Dim dteMonthFirstDay As Date
+    Dim dteMonthLastDay As Date
+    
+    strUserName = GetCurrentUserName()
     
     ' user visual communication
     With Me
@@ -307,14 +320,14 @@ Private Sub cmdCreateTempRptTbl_Click()
     strMonth = Me![cboCommissionMonth]
     strYear = Me![cboYear]
     strInvoiceDate = strYear & "-" & strMonth & "-" & "01"
-    g_dteMonthFirstDay = MonthFirstDay(CInt(strMonth), CInt(strYear))
-    g_dteMonthLastDay = MonthLastDay(CInt(strMonth), CInt(strYear))
+    dteMonthFirstDay = MonthFirstDay(CInt(strMonth), CInt(strYear))
+    dteMonthLastDay = MonthLastDay(CInt(strMonth), CInt(strYear))
     
     DoCmd.Hourglass True
     DoCmd.SetWarnings False
     
     '  pull new customer accounts into ARCUST_local
-    ExecuteSQL "usp_ARCUST_local"
+    ExecuteSQL "usp_ARCUST_local" & "' " & strUserName & "'"
     
     '  pull group customer payments from QuickBooks
     '  and put them into ARTRANH_local for the selected month
@@ -323,7 +336,7 @@ Private Sub cmdCreateTempRptTbl_Click()
     ExecuteSQL "usp_Synch_TxnID" & "' " & strInvoiceDate & "'"
     
     '  populate the commission temp table
-    ExecuteSQL "usp_Commission" & "' " & g_dteMonthFirstDay & "', '" & g_dteMonthLastDay & "'"
+    ExecuteSQL "usp_Commission" & "' " & dteMonthFirstDay & "', '" & dteMonthLastDay & "'"
     
     ' clear user visual communication
     With Me

@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1942531988
+Checksum =2037821858
 Begin Form
     AutoResize = NotDefault
     MaxButton = NotDefault
@@ -26,6 +26,35 @@ Begin Form
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x905c4cc891ade440
+    End
+    GUID = Begin
+        0x3880b75f0e6165439168b1b67e1ad6f9
+    End
+    NameMap = Begin
+        0x0acc0e5500000000b9b48d8e11ccc640b1838289d13bee8000000000fab40019 ,
+        0xb8b1e440000000000000000071007200790049006e0064006900760041006700 ,
+        0x7400000000000000ac5aa4f0767bd64daf2cc9c2b2db114507000000b9b48d8e ,
+        0x11ccc640b1838289d13bee804100670065006e00740049006400000000000000 ,
+        0x50eaf298d99c754aa0626b673d7c5b4700000000c9a9d8aa16b9e440a8671700 ,
+        0x00000000740062006c004100670065006e0074000000000000009e44fedddd4e ,
+        0xf047ae78b184ae6861cb0700000050eaf298d99c754aa0626b673d7c5b474100 ,
+        0x470045004e0054006100630074006900760065000000000000001e3b688275ba ,
+        0x86468021a57998fa71200700000050eaf298d99c754aa0626b673d7c5b474100 ,
+        0x670065006e0074005f004c0055006e0061006d0065000000000000001434de68 ,
+        0x0fef3c4caa7eb1280dee5cb60700000050eaf298d99c754aa0626b673d7c5b47 ,
+        0x4100670065006e00630079000000000000004c48138b34887545bb2119624edd ,
+        0xed670700000050eaf298d99c754aa0626b673d7c5b474100670065006e007400 ,
+        0x49006400000000000000f6d1a04f4caf3e47a9c5487298a7270807000000b9b4 ,
+        0x8d8e11ccc640b1838289d13bee804100670065006e0074005200610074006500 ,
+        0x000000000000dff267997fe9324a9c181223fc22b91207000000b9b48d8e11cc ,
+        0xc640b1838289d13bee805000720069006d00610072007900000000000000a560 ,
+        0x4b7d6f910141b8c5ad15ece05af007000000b9b48d8e11ccc640b1838289d13b ,
+        0xee8050006c00740043007500730074004b00650079000000000000001434de68 ,
+        0x0fef3c4caa7eb1280dee5cb607000000b9b48d8e11ccc640b1838289d13bee80 ,
+        0x4100670065006e00630079000000000000009eab770ca933f14ebb20863cf3dc ,
+        0x858007000000b9b48d8e11ccc640b1838289d13bee8053007500620073006300 ,
+        0x720049006400000000000000000000000000000000000000000000000c000000 ,
+        0x030000000000000000000000000000000000
     End
     RecordSource ="qryIndivAgt"
     DatasheetFontName ="Arial"
@@ -97,13 +126,13 @@ Begin Form
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0xc1543c9be218514db6706f020f880cc5
+                0x0c0926c67a37104a84e48bd3dc6a74c0
             End
             Begin
                 Begin ComboBox
                     ColumnHeads = NotDefault
                     LimitToList = NotDefault
-                    OverlapFlags =93
+                    OverlapFlags =85
                     ColumnCount =3
                     ListWidth =5760
                     Width =1849
@@ -111,14 +140,14 @@ Begin Form
                     BoundColumn =2
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
                     GUID = Begin
-                        0xa2fd10bf9ebb5f408ce7c4b0d627fc50
+                        0x18bc2ca4d4ccd345b0a970884b6af571
                     End
                     Name ="AgentID1"
                     ControlSource ="AgentId"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblAgent.Agent_LUname, tblAgent.Agency, tblAgent.AgentId FROM tblAgent WH"
                         "ERE (((tblAgent.AGENTactive)=\"A\")) ORDER BY tblAgent.Agent_LUname, tblAgent.Ag"
-                        "ency;"
+                        "ency; "
                     ColumnWidths ="2880;2880;0"
                     StatusBarText ="Select a primary agent."
                     AfterUpdate ="[Event Procedure]"
@@ -136,11 +165,11 @@ Begin Form
                     ControlSource ="AgentRate"
                     Format ="Percent"
                     GUID = Begin
-                        0x03582775b168994ca7b6b1f243426a67
+                        0x3bd3b5ca31729a4385f621ee7e579202
                     End
                 End
                 Begin CheckBox
-                    OverlapFlags =247
+                    OverlapFlags =215
                     Left =4020
                     Width =270
                     Height =270
@@ -148,7 +177,7 @@ Begin Form
                     Name ="chkPrimary"
                     ControlSource ="Primary"
                     GUID = Begin
-                        0xf23c0889847e9f40ad95f8f1eb95cfe2
+                        0xe634bd40fd3cc748914203d8fb2c79ad
                     End
                 End
                 Begin TextBox
@@ -163,11 +192,11 @@ Begin Form
                     Name ="PltCustKey"
                     ControlSource ="PltCustKey"
                     GUID = Begin
-                        0x64a4849ed4007145b3aaf84b3a57128d
+                        0x583d465334914542bf2033e63c26eb25
                     End
                 End
                 Begin TextBox
-                    OverlapFlags =95
+                    OverlapFlags =93
                     IMESentenceMode =3
                     Left =1860
                     Height =270
@@ -176,7 +205,7 @@ Begin Form
                     Name ="Agency"
                     ControlSource ="Agency"
                     GUID = Begin
-                        0x077a2f6522bf694ca5c74ae7a63f2c5e
+                        0xbe93b9cf6ad50a4a8490f7251f392e5d
                     End
                 End
                 Begin TextBox
@@ -189,7 +218,7 @@ Begin Form
                     Name ="AgentID2"
                     ControlSource ="AgentId"
                     GUID = Begin
-                        0x6bdd7823148817408d9fb9066a8b071a
+                        0x75749f5d05af9344b2e768bec3178ce5
                     End
                 End
                 Begin TextBox
@@ -204,7 +233,7 @@ Begin Form
                     Name ="SubscrId"
                     ControlSource ="SubscrId"
                     GUID = Begin
-                        0x03c6a27abca1564bb7a2956ae4f3f33a
+                        0xdd7030da4afc564d975b94b499fe4eec
                     End
                 End
             End
@@ -223,7 +252,7 @@ Private Sub AgentID1_AfterUpdate()
 
 On Error GoTo Err_AgentID1_AfterUpdate
         
-        Me![PLTcustKEY] = Forms![frmIndivSubscr]![PLTcustKEY]
+        Me![PltCustKey] = Forms![frmIndivSubscr]![PltCustKey]
         Me![SubscrId] = Forms![frmIndivSubscr]![SubID]
         
 Exit_AgentID1_AfterUpdate:

@@ -20,15 +20,15 @@ End
 Begin Joins
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.CoverID=tblRates.CoverID"
+    Expression ="tblSubscr.CoverID = tblRates.CoverID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.PlanID=tblRates.PlanID"
+    Expression ="tblSubscr.PlanID = tblRates.PlanID"
     Flag =1
     LeftTable ="tblSubscr"
     RightTable ="tblRates"
-    Expression ="tblSubscr.SubGroupID=tblRates.GroupID"
+    Expression ="tblSubscr.SubGroupID = tblRates.GroupID"
     Flag =1
 End
 Begin OrderBy
@@ -59,24 +59,15 @@ Begin
     State =0
     Left =62
     Top =84
-    Right =1258
+    Right =1324
     Bottom =552
     Left =-1
     Top =-1
-    Right =1181
+    Right =1243
     Bottom =288
     Left =0
     Top =0
     ColumnsShown =539
-    Begin
-        Left =303
-        Top =18
-        Right =677
-        Bottom =136
-        Top =0
-        Name ="tblRates"
-        Name =""
-    End
     Begin
         Left =59
         Top =11
@@ -84,6 +75,15 @@ Begin
         Bottom =249
         Top =0
         Name ="tblSubscr"
+        Name =""
+    End
+    Begin
+        Left =303
+        Top =18
+        Right =677
+        Bottom =136
+        Top =0
+        Name ="tblRates"
         Name =""
     End
 End

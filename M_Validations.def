@@ -1,6 +1,13 @@
 Option Compare Database
+Option Explicit
 
 Public strMsg As String
+Public Const Indiv = 1
+Public Const IndivPlusOne = 2
+Public Const IndivPlusChild = 3
+Public Const IndivPlusFamily = 4
+Public Const FourTier = 4
+Public Const ThreeTier = 3
 
 Function ValidateDateFormat(varDateIn As Variant) As Boolean
     
@@ -88,4 +95,96 @@ PROC_ERR:
       
   Resume PROC_EXIT
   
+End Function
+
+Public Function ValidateDepsWithPlan(strSSN As String, intTierType As Integer, intCoverID As Integer, intDepCnt As Integer, intSpouseCnt As Integer, intOtherCnt As Integer) As Integer
+    ' Comments  :
+    ' Parameters: strSSN -
+    ' Modified  :
+    '
+    ' --------------------------------------------------
+    
+    On Error GoTo ErrorHandler
+    
+    ValidateDepsWithPlan = 0
+    
+    If intTierType = FourTier Then
+        Select Case intCoverID
+            Case Indiv ' no dependents at all
+                If intDepCnt <> 0 Then
+                    MsgBox "You have selected Individual Only coverage " & vbCrLf & _
+                    "and you have also created dependents. " & vbCrLf & vbCrLf & _
+                    "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = 1
+                End If
+            Case IndivPlusOne ' one dependent who is either a spouse or an other
+                If intDepCnt <> 1 Or _
+                    intDepCnt = 1 And intSpouseCnt <> 1 And intOtherCnt = 0 Then
+                    MsgBox "You have selected Individual Plus One coverage and " & vbCrLf & _
+                    "you have either no dependents or more than one dependent. " & vbCrLf & _
+                    "Or you may have one child and no spouse or other. " & vbCrLf & vbCrLf & _
+                    "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = 2
+                End If
+            Case IndivPlusChild ' multiple dependents, multiple children, no spouse, no other
+                If intDepCnt < 1 Or _
+                    intDepCnt >= 1 And intSpouseCnt <> 0 Or _
+                    intDepCnt >= 1 And intOtherCnt <> 0 Then
+                   MsgBox "You have selected Individual Plus One coverage and " & vbCrLf & _
+                    "you have either no dependents or more than one dependent. " & vbCrLf & _
+                    "Or you may have one child and no spouse or 'other relationship'. " & vbCrLf & vbCrLf & _
+                    "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = 3
+                End If
+            Case IndivPlusFamily ' multiple dependents, one or more children, only one spouse or other
+                If intDepCnt <= 1 Or _
+                    intDepCnt > 1 And intSpouseCnt = 0 And intOtherCnt <> 1 Or _
+                    intDepCnt > 1 And intSpouseCnt <> 1 And intOtherCnt = 0 Then
+                    MsgBox "You have selected Individual Plus Family coverage and " & vbCrLf & _
+                        "you either have no dependents or you don't have a spouse " & vbCrLf & _
+                        "or an other. " & vbCrLf & vbCrLf & _
+                        "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = 4
+                End If
+        End Select
+        ' four tier?
+    ElseIf intTierType <> FourTier Then
+        'if the plan is not four tier then validate the dependents with the plans
+         Select Case intCoverID
+            Case Indiv
+                If intDepCnt <> 0 Then
+                    MsgBox "You have selected Individual Only coverage " & vbCrLf & _
+                    "and you have also created dependents. " & vbCrLf & vbCrLf & _
+                    "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = 5
+                End If
+            Case IndivPlusOne
+                If intDepCnt <> 1 Or _
+                    intDepCnt = 1 And intSpouseCnt <> 0 And intOtherCnt <> 0 Then
+                    MsgBox "You have selected Individual Plus One coverage and " & vbCrLf & _
+                    "you have either no dependents or more than one dependent. " & vbCrLf & _
+                    "Or you may have one child and no spouse or other. " & vbCrLf & vbCrLf & _
+                    "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = 6
+                End If
+            Case IndivPlusFamily
+                If intDepCnt <= 1 Or _
+                    intDepCnt > 1 And intSpouseCnt = 0 And intOtherCnt <> 1 Or _
+                    intDepCnt > 1 And intSpouseCnt <> 1 And intOtherCnt = 0 Then
+                     MsgBox "You have selected Individual Plus Family coverage and " & vbCrLf & _
+                        "you either have no dependents or you don't have a spouse " & vbCrLf & _
+                        "or an other. " & vbCrLf & vbCrLf & _
+                        "You must change the coverage or the dependents."
+                    ValidateDepsWithPlan = 7
+                End If
+        End Select
+    End If
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    ValidateDepsWithPlan = 8
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    GoTo Exit_Point
 End Function

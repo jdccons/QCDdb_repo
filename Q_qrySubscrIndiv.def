@@ -14,7 +14,7 @@ Begin OutputColumns
     Expression ="tblSubscr.CoverID"
     Expression ="tblSubscr.RateID"
     Expression ="tblSubscr.SubCancelled"
-    Expression ="tblSubscr.SUB_LUname"
+    Expression ="tblSubscr.Sub_LUName"
     Expression ="tblSubscr.SubLastName"
     Expression ="tblSubscr.SubFirstName"
     Expression ="tblSubscr.SubMiddleName"
@@ -42,29 +42,17 @@ Begin OutputColumns
     Expression ="tblSubscr.SubContEnd"
     Expression ="tblSubscr.SubPymtFreq"
     Expression ="tblSubscr.SubGeoID"
-    Expression ="tblSubscr.SUBbankDraftNo"
+    Expression ="tblSubscr.SubBankDraftNo"
     Expression ="tblSubscr.Flag"
     Expression ="tblSubscr.UserName"
     Expression ="tblSubscr.DateCreated"
     Expression ="tblSubscr.DateUpdated"
     Expression ="tblSubscr.DateDeleted"
-    Expression ="tblSubscr.SUBemployeeName"
-    Expression ="tblSubscr.[SUBm/s]"
     Expression ="tblSubscr.SubFlyerPrtDte"
-    Expression ="tblSubscr.SUBplanIDgr"
-    Expression ="tblSubscr.SUBplanIDin"
-    Expression ="tblSubscr.SUBcoverage"
     Expression ="tblSubscr.SubRate"
-    Expression ="tblSubscr.SUBCOBRA"
-    Expression ="tblSubscr.SUBLOA"
-    Expression ="tblSubscr.SUBmissing"
-    Expression ="tblSubscr.SUBagentID1"
-    Expression ="tblSubscr.SUBagentRATE1"
-    Expression ="tblSubscr.SUBagentID2"
-    Expression ="tblSubscr.SUBagentRATE2"
-    Expression ="tblSubscr.GRExecSalesDirID"
-    Expression ="tblSubscr.GRExecSalesDirRate"
-    Expression ="tblSubscr.FOCType"
+    Expression ="tblSubscr.SubCOBRA"
+    Expression ="tblSubscr.SubLOA"
+    Expression ="tblSubscr.SubMissing"
 End
 Begin OrderBy
     Expression ="tblSubscr.SubLastName"
@@ -76,17 +64,18 @@ dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
+dbText "Description" ="promote"
 Begin
 End
 Begin
-    State =0
-    Left =18
-    Top =40
-    Right =1286
-    Bottom =364
+    State =2
+    Left =-8
+    Top =-30
+    Right =859
+    Bottom =521
     Left =-1
     Top =-1
-    Right =1253
+    Right =852
     Bottom =144
     Left =0
     Top =0

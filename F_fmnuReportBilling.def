@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-235677314
+Checksum =1428958643
 Begin Form
     PopUp = NotDefault
     Modal = NotDefault
@@ -13,13 +13,31 @@ Begin Form
     BorderStyle =1
     Width =6192
     ItemSuffix =19
-    Left =6456
+    Left =6450
     Top =2400
-    Right =12648
-    Bottom =6768
+    Right =12645
+    Bottom =6765
     HelpContextId =551
     RecSrcDt = Begin
         0xa7cedeb3b2c4e140
+    End
+    GUID = Begin
+        0x0b95b3716a27f748a83b5be09d8a2000
+    End
+    NameMap = Begin
+        0x0acc0e550000000065e1074c2b7f1946b22fee95f382e05300000000b6089f28 ,
+        0x5bbce440b075170038d52a0b740062006c005200650070006f00720074000000 ,
+        0x000000001c4fb16f265a33438a39f618e27b6ec50700000065e1074c2b7f1946 ,
+        0xb22fee95f382e0534d0065006e0075004900740065006d000000000000000443 ,
+        0x14b17f02ff4d8263f1b2a2f9deaa0700000065e1074c2b7f1946b22fee95f382 ,
+        0xe0535200650070006f007200740049004400000000000000d5f43e9d42b84d49 ,
+        0xb5ab6098f5228bb70700000065e1074c2b7f1946b22fee95f382e05352006500 ,
+        0x70006f00720074005400690074006c0065000000000000008fa9856047a4cc4c ,
+        0x886e4b710cfbca520700000065e1074c2b7f1946b22fee95f382e05352006500 ,
+        0x70006f00720074004e0061006d0065000000000000006673910472e5764994d3 ,
+        0xd8eee6dc10f30700000065e1074c2b7f1946b22fee95f382e053430072006900 ,
+        0x7400650072006900610046006f0072006d000000000000000000000000000000 ,
+        0x00000000000000000c000000030000000000000000000000000000000000
     End
     Caption ="Billing  Reports"
     MenuBar ="FormMenuBar"
@@ -74,7 +92,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail0"
             GUID = Begin
-                0xab9029ac3c873a4081a13ad3b7dd7f10
+                0x4df2e223f79bba43aa95b54bdc609109
             End
             Begin
                 Begin Rectangle
@@ -87,7 +105,7 @@ Begin Form
                     Height =2925
                     Name ="Box13"
                     GUID = Begin
-                        0x2c81803cfc3f4f4a820b4778db8b3a71
+                        0x9ea1e7156ece7f40bcf081db5f59bc04
                     End
                 End
                 Begin ListBox
@@ -105,12 +123,12 @@ Begin Form
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT DISTINCTROW tblReport.ReportID, tblReport.ReportTitle, tblReport.ReportNa"
                         "me, tblReport.CriteriaForm, tblReport.MenuItem FROM tblReport WHERE (((tblReport"
-                        ".MenuItem)=10)) ORDER BY tblReport.ReportTitle;"
+                        ".MenuItem)=10)) ORDER BY tblReport.ReportID, tblReport.ReportTitle; "
                     ColumnWidths ="0;4320;0;0"
                     StatusBarText ="Current Report"
                     OnDblClick ="=Preview()"
                     GUID = Begin
-                        0x97da65833afe6048abb1f0410fbaa0b4
+                        0xc4692618fa4e28458ecb310fbbce9036
                     End
                 End
                 Begin CommandButton
@@ -149,7 +167,7 @@ Begin Form
                         0xffffff0000000000
                     End
                     GUID = Begin
-                        0xcf990ac89454cf40905931b234f16da5
+                        0x1c86dc6e7998b740a9d055654bc09069
                     End
                 End
             End

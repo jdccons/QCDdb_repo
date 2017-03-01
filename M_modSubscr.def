@@ -1,11 +1,11 @@
 Option Compare Database
 Option Explicit
-Public Function ChangeStatus(MyForm As Form) As Boolean
+Public Function ChangeSubscrStatus(MyForm As Form) As Boolean
 
 On Error GoTo PROC_ERR
 
     Call MyForm.cmdChangeStatus_Click
-    ChangeStatus = True
+    ChangeSubscrStatus = True
     
 PROC_EXIT:
   DoCmd.SetWarnings True
@@ -14,7 +14,7 @@ PROC_EXIT:
 
 PROC_ERR:
   MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: modSubscr.ChangeSubscrStatus "
-  Resume PROC_EXIT
+  GoTo PROC_EXIT
 
 End Function
 Sub PopulateGrpSubIDs(strGroupID As String)
@@ -118,15 +118,15 @@ Function CalcAge(DOB As Date) As Integer
     
     
     
-    If Month(DOB) > Month(Date) Then
-        CalcAge = DateDiff("yyyy", DOB, Date) - 1
-    ElseIf Month(DOB) < Month(Date) Then
-        CalcAge = DateDiff("yyyy", DOB, Date)
-    ElseIf Month(DOB) = Month(Date) Then
-        If Day(DOB) > Day(Date) Then
-            CalcAge = DateDiff("yyyy", DOB, Date) - 1
+    If Month(DOB) > Month(date) Then
+        CalcAge = DateDiff("yyyy", DOB, date) - 1
+    ElseIf Month(DOB) < Month(date) Then
+        CalcAge = DateDiff("yyyy", DOB, date)
+    ElseIf Month(DOB) = Month(date) Then
+        If Day(DOB) > Day(date) Then
+            CalcAge = DateDiff("yyyy", DOB, date) - 1
         Else
-            CalcAge = DateDiff("yyyy", DOB, Date)
+            CalcAge = DateDiff("yyyy", DOB, date)
         End If
     End If
     
@@ -154,7 +154,7 @@ Function PrtScreen_Subscr()
     Dim strWhere As String
 
     strDocName = "rptGrpSubscr"
-    strSubscrId = Forms!frmGrpSubscr!SUBssn
+    strSubscrId = Forms!frmGrpSubscr!SubSSN
     strWhere = "(([tblSubscr].[SUBssn]) = """ & strSubscrId & """)"
 
     DoCmd.OpenReport strDocName, acPreview, , strWhere
@@ -205,34 +205,35 @@ ErrorHandler:
     
 End Sub
 
-Function DependentCheck(strSSN As String) As Long
+Function GetDependentCount(strSSN As String) As Long
+    ' count the subscriber's dependents
     
-    On Error GoTo DependentCheck_Err
+    On Error GoTo GetDependentCount_Err
     
     Dim strSQL As String
-    Dim db As DAO.Database
-    Dim rst As DAO.Recordset
     
-    Set db = CurrentDb()
-    
-    strSQL = "SELECT tblDependent.DEPsubID, Count(tblDependent.ID) AS CountOfID " & _
-             "FROM tblDependent GROUP BY tblDependent.DEPsubID " & _
-             "HAVING (((tblDependent.DEPsubID)='" & strSSN & "'));"
-    Set rst = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    If rst.RecordCount > 0 Then
-        DependentCheck = rst.Fields("CountOfID")
-        rst.Close
+    strSQL = "SELECT DepSubID, Count(ID) AS DepCnt " & _
+                "FROM tblDependent " & _
+                "WHERE DepCancelled = 1 " & _
+                "GROUP BY DepSubID " & _
+                "HAVING (((DepSubID)='" & strSSN & "'));"
+                
+    LoadADORecordset (strSQL)
+    If g_adoRS.RecordCount > 0 Then
+        GetDependentCount = g_adoRS("DepCnt")
     Else
-        DependentCheck = 0
+        GetDependentCount = 0
     End If
     
-On Error GoTo DependentCheck_Err
-    Set db = Nothing
-DependentCheck_Exit:
+    g_adoRS.Close
+    
+    Exit Function
+
+GetDependentCount_Exit:
     Exit Function
     
-DependentCheck_Err:
+GetDependentCount_Err:
     MsgBox Error$
-    Resume DependentCheck_Exit
+    GoTo GetDependentCount_Exit
 
 End Function

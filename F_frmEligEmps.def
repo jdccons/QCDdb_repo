@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1579459159
+Checksum =143609283
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -15,17 +15,37 @@ Begin Form
     Width =2760
     DatasheetFontHeight =10
     ItemSuffix =6
-    Left =1776
-    Top =1692
-    Right =4452
+    Left =1770
+    Top =1695
+    Right =4455
     Bottom =4560
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0xd263e4a330d8e140
+        0x10c3ab83d4b1e440
+    End
+    GUID = Begin
+        0x9202594e9f64424bb34b0d5ff6554b39
+    End
+    NameMap = Begin
+        0x0acc0e5500000000779f6f556b20d747aa5bd6504a764eeb00000000e0588c29 ,
+        0x16bbe440f8100088ea60cc02740062006c00470072006f007700740068000000 ,
+        0x00000000c0a2da8d910c8c48bce0826a356e59ff07000000779f6f556b20d747 ,
+        0xaa5bd6504a764eeb470072006f0075007000490044000000000000006a4db9e4 ,
+        0xebcd9e40b11c8d9cfaffd7c701000000ec3a7c3116bbe4400000000000000000 ,
+        0x660072006d0047007200700000000000000004a71d95727ebc458dd94ff38c6e ,
+        0x7149060000006a4db9e4ebcd9e40b11c8d9cfaffd7c7630074006c0047005200 ,
+        0x4f0055005000690064000000000000004ca46bd9c4032d449b7f48559e7a66aa ,
+        0x07000000779f6f556b20d747aa5bd6504a764eeb590065006100720000000000 ,
+        0x00002884f623ef9d9f4f94b5229c4e4ea12c07000000779f6f556b20d747aa5b ,
+        0xd6504a764eeb42006500670069006e0045006c006900670045006d0070007300 ,
+        0x0000000000001740c12285889f4c8a9c39917fc2875b07000000779f6f556b20 ,
+        0xd747aa5bd6504a764eeb430075007200720065006e00740045006c0069006700 ,
+        0x45006d0070007300000000000000000000000000000000000000000000000c00 ,
+        0x0000030000000000000000000000000000000000
     End
     RecordSource ="SELECT tblGrowth.GroupID, tblGrowth.Year, tblGrowth.BeginEligEmps, tblGrowth.Cur"
-        "rentEligEmps FROM tblGrowth WHERE (((tblGrowth.GroupID)=[Forms]![frmGrp]![ctlGRO"
-        "UPid]));"
+        "rentEligEmps FROM tblGrowth WHERE (((tblGrowth.GroupID)=Forms!frmGrp!ctlGROUPid)"
+        "); "
     Caption ="Eligible Emps"
     DatasheetFontName ="Arial"
     Begin
@@ -47,7 +67,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormHeader"
             GUID = Begin
-                0xe7d1419f5306fa48954042ec852df413
+                0x29346d751983c24c8bbacd934c1a5ba6
             End
             Begin
                 Begin Label
@@ -59,7 +79,7 @@ Begin Form
                     Name ="Label1"
                     Caption ="Year:"
                     GUID = Begin
-                        0x35d3dc2630c3a64396d81e4c988855ac
+                        0xe4738bbf91bbf1449b636acc0b3d11d9
                     End
                 End
                 Begin Label
@@ -72,7 +92,7 @@ Begin Form
                     Name ="Label2"
                     Caption ="Begin Elig Emps:"
                     GUID = Begin
-                        0xbc83b1ee7b8cc24e9c5de106b223b77f
+                        0xa66f87486eb1b344b480238261cf5527
                     End
                 End
                 Begin Label
@@ -85,7 +105,7 @@ Begin Form
                     Name ="Label3"
                     Caption ="Current Elig Emps:"
                     GUID = Begin
-                        0x3c595e8dade99040876f261e0935d29f
+                        0xde357f2db66c2d4095757648fe090863
                     End
                 End
                 Begin Label
@@ -102,7 +122,7 @@ Begin Form
                     Name ="Label4"
                     Caption ="Eligible Employees"
                     GUID = Begin
-                        0x65fb9a6966c1af4d9dfbf57ae6b2a24f
+                        0xd276bab5087d2c4aaf5f9c8f387ea774
                     End
                 End
             End
@@ -112,7 +132,7 @@ Begin Form
             BackColor =-2147483633
             Name ="Detail"
             GUID = Begin
-                0x13faf70bce3bf740ba4b50cfe981a233
+                0x9e5ffff95d6b3345b4faf70e41aa8baf
             End
             Begin
                 Begin TextBox
@@ -122,7 +142,7 @@ Begin Form
                     Name ="Year"
                     ControlSource ="Year"
                     GUID = Begin
-                        0xd9f307edb7ed7541822c72884c5b2df1
+                        0xcae587fd89096a4c8fca257cc2382750
                     End
                 End
                 Begin TextBox
@@ -133,7 +153,7 @@ Begin Form
                     Name ="BeginEligEmps"
                     ControlSource ="BeginEligEmps"
                     GUID = Begin
-                        0xfab8ff52309802438ccbfef00b96758d
+                        0x38aa224567b33c4892eb5a635b4559c7
                     End
                 End
                 Begin TextBox
@@ -144,7 +164,7 @@ Begin Form
                     Name ="CurrentEligEmps"
                     ControlSource ="CurrentEligEmps"
                     GUID = Begin
-                        0xe8002ad74aff154e99325713cdb0ff07
+                        0x10d5f359347b8f478e20ffabd17240c2
                     End
                 End
                 Begin TextBox
@@ -157,7 +177,7 @@ Begin Form
                     Name ="GroupID"
                     ControlSource ="GroupID"
                     GUID = Begin
-                        0xe351fa5963d3de478cbb8275a1527746
+                        0x48d26d3ebc01c54ca160ccdbb9e00022
                     End
                 End
             End
@@ -167,7 +187,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormFooter"
             GUID = Begin
-                0x56e8252783bd154ea0ff89dfc9a98462
+                0xd56133b9e200d24bacbbe965159767a9
             End
             Begin
                 Begin CommandButton
@@ -204,7 +224,7 @@ Begin Form
                     End
                     ControlTipText ="Close Form"
                     GUID = Begin
-                        0xf2c66cf9ac8e4d45b2771ebbd6b8c785
+                        0xdea5d9f7f2fc2d40851e61d1b874c3f1
                     End
                 End
             End

@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-2029940310
+Checksum =-1888095255
 Begin Form
     AutoResize = NotDefault
     MaxButton = NotDefault
@@ -9,6 +9,8 @@ Begin Form
     NavigationButtons = NotDefault
     CloseButton = NotDefault
     DividingLines = NotDefault
+    FilterOn = NotDefault
+    OrderByOn = NotDefault
     ScrollBars =2
     ViewsAllowed =1
     BorderStyle =0
@@ -19,13 +21,43 @@ Begin Form
     Width =4845
     DatasheetFontHeight =10
     ItemSuffix =6
-    Left =7752
-    Top =2772
-    Right =12876
-    Bottom =4296
+    Left =7755
+    Top =2775
+    Right =12870
+    Bottom =4290
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x42587902120ee340
+    End
+    GUID = Begin
+        0xfb136c3de438334dbeb610a2c8207702
+    End
+    NameMap = Begin
+        0x0acc0e55000000003096eee65d6eb64681e15dff331869bb00000000efe76380 ,
+        0xd4b1e44000e0ee0a000000007100720079004700720070004100670074000000 ,
+        0x000000006d31c76097783d4ab04e7bd846825c34070000003096eee65d6eb646 ,
+        0x81e15dff331869bb4100470045004e0054006900640000000000000050eaf298 ,
+        0xd99c754aa0626b673d7c5b4700000000c9a9d8aa16b9e440fc72170000000000 ,
+        0x740062006c004100670065006e0074000000000000009e44fedddd4ef047ae78 ,
+        0xb184ae6861cb0700000050eaf298d99c754aa0626b673d7c5b47410047004500 ,
+        0x4e0054006100630074006900760065000000000000004c48138b34887545bb21 ,
+        0x19624edded670700000050eaf298d99c754aa0626b673d7c5b47410047004500 ,
+        0x4e005400690064000000000000001434de680fef3c4caa7eb1280dee5cb60700 ,
+        0x000050eaf298d99c754aa0626b673d7c5b474100470045004e00430059000000 ,
+        0x00000000755c01e5ed2f5645be42a5ff18b9ff4d0700000050eaf298d99c754a ,
+        0xa0626b673d7c5b474100470045004e0054006c00610073007400000000000000 ,
+        0x9c8f0bd34d90934a8f9be0a29ab67b370700000050eaf298d99c754aa0626b67 ,
+        0x3d7c5b474100470045004e005400660069007200730074000000000000006447 ,
+        0x46cea190844bb22129c79ce4a400070000003096eee65d6eb64681e15dff3318 ,
+        0x69bb4100670065006e0074005200410054004500000000000000c99a2f60ad67 ,
+        0xbe4c954c0ebbb8226b76070000003096eee65d6eb64681e15dff331869bb4700 ,
+        0x52004f0055005000690064000000000000000000000000000000000000000000 ,
+        0x0000070000003096eee65d6eb64681e15dff331869bb53006f00720074000000 ,
+        0x000000005737464c6892ff43959f59803653129a070000003096eee65d6eb646 ,
+        0x81e15dff331869bb50006100790043006f006d006d0054006f00000000000000 ,
+        0x7daeee287b899a45bca38d8b45787efd070000003096eee65d6eb64681e15dff ,
+        0x331869bb5000720069006d006100720079000000000000000000000000000000 ,
+        0x00000000000000000c000000030000000000000000000000000000000000
     End
     RecordSource ="qryGrpAgt"
     DatasheetFontName ="Arial"
@@ -50,7 +82,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0x0a5681d415e44347856e396250b396d0
+                0x49e21444c15cb3419abc2264b75dd729
             End
             Begin
                 Begin ComboBox
@@ -63,14 +95,14 @@ Begin Form
                     Height =270
                     ColumnInfo ="\"\";\"\";\"\";\"\";\"\";\"\";\"10\";\"100\""
                     GUID = Begin
-                        0x4e3b5e4a0058d344a45d5f3c7176237f
+                        0x340e48d945f7f9498ff9d10da16325a7
                     End
                     Name ="GRagentID1"
                     ControlSource ="AGENTid"
                     RowSourceType ="Table/Query"
                     RowSource ="SELECT tblAgent.AGENTid, tblAgent.AGENCY, [AGENTlast] & \", \"+[AGENTfirst] AS ["
                         "Agent Name] FROM tblAgent WHERE (((tblAgent.AGENTactive)=\"A\")) ORDER BY tblAge"
-                        "nt.AGENCY, [AGENTlast] & \", \"+[AGENTfirst];"
+                        "nt.AGENCY, [AGENTlast] & \", \"+[AGENTfirst]; "
                     ColumnWidths ="0;3600;3600"
                     StatusBarText ="Select a primary agent."
                     AfterUpdate ="[Event Procedure]"
@@ -89,7 +121,7 @@ Begin Form
                     Format ="Percent"
                     DefaultValue ="0"
                     GUID = Begin
-                        0x4dc0f8c6243a4547ae6980dc0e34b7c9
+                        0x3b0840e3b6c33f4bb582e9fc23afd24e
                     End
                 End
                 Begin TextBox
@@ -103,7 +135,7 @@ Begin Form
                     Name ="txtPriAgentID"
                     ControlSource ="AGENTid"
                     GUID = Begin
-                        0xddd78aa24e0fee46b7b571267ec6cc33
+                        0xa1c3da8cb5460e46921449affe7b1537
                     End
                 End
                 Begin TextBox
@@ -118,7 +150,7 @@ Begin Form
                     Name ="txtGROUPid"
                     ControlSource ="GROUPid"
                     GUID = Begin
-                        0x48d09ddabfdc1f4cba801808d0271cc8
+                        0x026267325e685c44a294f5451f8f607e
                     End
                 End
                 Begin TextBox
@@ -133,7 +165,7 @@ Begin Form
                     Name ="Sort"
                     ControlSource ="Sort"
                     GUID = Begin
-                        0xa54db4fbfb13a24ead7aee6a5063e51c
+                        0xa3dcd6683504b74c90f671ddad5486d3
                     End
                 End
                 Begin TextBox
@@ -147,7 +179,7 @@ Begin Form
                     Name ="Type"
                     ControlSource ="PayCommTo"
                     GUID = Begin
-                        0x463eefbc8cd76c4ab4da9c4af8e9217b
+                        0x95d5d44934e4454780486b4954a2dc18
                     End
                 End
                 Begin CheckBox
@@ -160,7 +192,7 @@ Begin Form
                     Name ="chkPrimary"
                     ControlSource ="Primary"
                     GUID = Begin
-                        0x822227f9171c3f439a3baeaa41cbb4f1
+                        0xf8180dda788eed439221382471e605af
                     End
                 End
             End
@@ -182,7 +214,7 @@ On Error GoTo Err_GRagentID1_AfterUpdate
         Me![txtPriAgentID] = ""
     Else
         Me![txtPriAgentID] = Me![GRagentID1].Column(0)
-        Me![txtGROUPid] = Forms![frmGrp]![ctlGROUPid]
+        Me![txtGROUPid] = Forms![frmGrp]![ctlGroupID]
     End If
     
 Exit_GRagentID1_AfterUpdate:

@@ -44,8 +44,6 @@ Begin OutputColumns
     Expression ="tblEDI_App_Subscr.SubPhoneWork"
     Name ="SUBgroupID"
     Expression ="tblEDI_App_Subscr.SubGroupID"
-    Name ="SUBemployeeName"
-    Expression ="tblEDI_App_Subscr.SUBemployeeName"
     Name ="SUBdob"
     Expression ="tblEDI_App_Subscr.SUBdob"
     Name ="DepCnt"
@@ -77,18 +75,6 @@ Begin OutputColumns
     Expression ="UCase([SUB_LUname])"
     Name ="SUBgeoID"
     Expression ="tblEDI_App_Subscr.SubGeoID"
-    Name ="SUBagentID1"
-    Expression ="tblEDI_App_Subscr.SUBagentID1"
-    Name ="SUBagentRATE1"
-    Expression ="tblEDI_App_Subscr.SUBagentRATE1"
-    Name ="SUBagentID2"
-    Expression ="tblEDI_App_Subscr.SUBagentID2"
-    Name ="SUBagentRATE2"
-    Expression ="tblEDI_App_Subscr.SUBagentRATE2"
-    Name ="GRExecSalesDirID"
-    Expression ="tblEDI_App_Subscr.GRExecSalesDirID"
-    Name ="GRExecSalesDirRate"
-    Expression ="tblEDI_App_Subscr.GRExecSalesDirRate"
     Name ="SUBmissing"
     Expression ="tblEDI_App_Subscr.SUBmissing"
     Name ="DateCreated"
@@ -117,7 +103,7 @@ dbBoolean "ReturnsRecords" ="-1"
 dbInteger "ODBCTimeout" ="60"
 dbBoolean "UseTransaction" ="-1"
 dbByte "Orientation" ="0"
-dbText "Description" ="p"
+dbText "Description" ="promote"
 Begin
     Begin
         dbText "Name" ="LU_Name"
@@ -126,14 +112,14 @@ Begin
     End
 End
 Begin
-    State =0
-    Left =62
-    Top =84
-    Right =1258
-    Bottom =408
+    State =2
+    Left =-8
+    Top =-30
+    Right =859
+    Bottom =521
     Left =-1
     Top =-1
-    Right =1181
+    Right =852
     Bottom =144
     Left =0
     Top =0

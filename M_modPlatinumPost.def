@@ -2,7 +2,24 @@ Option Compare Database   'Use database order for string comparisons
 Option Explicit
 
 Dim crlf As String
-
+Function GetTierType(strGroupID As String, intPlanID As Integer) As Integer
+    ' how many coverages does this plan offer?
+    Dim intCntOfCoverages As Integer
+    
+    LoadADORecordset "uspTierType '" & strGroupID & "', " & intPlanID
+    
+    ' how many tiers?
+    If Not g_adoRS.EOF Then
+      intCntOfCoverages = g_adoRS("CntOfCoverages")
+    Else
+      intCntOfCoverages = 0
+    End If
+    
+    GetTierType = intCntOfCoverages
+    g_adoRS.Close
+    
+    
+End Function
 
 Function SumInvoice(TRANNO As String) As Double
     ' Comments  :  Sums a PfW invoice

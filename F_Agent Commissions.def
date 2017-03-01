@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1244237835
+Checksum =1473726786
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -19,13 +19,52 @@ Begin Form
     Width =8820
     DatasheetFontHeight =10
     ItemSuffix =36
-    Left =4755
-    Top =795
-    Right =11715
-    Bottom =2490
+    Left =4350
+    Top =1590
+    Right =13425
+    Bottom =6555
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0x54c779b198ace440
+        0xe12524ca32bce440
+    End
+    GUID = Begin
+        0x061a629f6f35fb4dbbda4b0cd0d5486e
+    End
+    NameMap = Begin
+        0x0acc0e5500000000e13a695d0181864887b9ca06f1c4456f0000000086371c14 ,
+        0x2ebce4408e003608a17f0000760077005f0043006f006d006d00690073007300 ,
+        0x69006f006e00000000000000d3033854cc1a424d89b6a79c8cabfca807000000 ,
+        0xe13a695d0181864887b9ca06f1c4456f4100670065006e007400490064000000 ,
+        0x0000000000b5c382f593e64ab6f0601207c8f82007000000e13a695d01818648 ,
+        0x87b9ca06f1c4456f4100670065006e0074004e0061006d006500000000000000 ,
+        0x807c6d5b1028574f8c3dd54a3ec4d98807000000e13a695d0181864887b9ca06 ,
+        0xf1c4456f4100670065006e006300790000000000000056244764fb5b9143a103 ,
+        0x8715268f7ab607000000e13a695d0181864887b9ca06f1c4456f410063007400 ,
+        0x6900760065000000000000002f0c8a6a7936034aa132d85e1266f22307000000 ,
+        0xe13a695d0181864887b9ca06f1c4456f43007500730074006f006d0065007200 ,
+        0x4b0065007900000000000000e852893051264b459e511920fbca6ce807000000 ,
+        0xe13a695d0181864887b9ca06f1c4456f43006800650063006b004e006f000000 ,
+        0x00000000d972457c9f790b4d8fc54ec7235b1dda07000000e13a695d01818648 ,
+        0x87b9ca06f1c4456f43006f006d006d004d006f006e0074006800000000000000 ,
+        0xc46d4e493f44d449a315c41fbe1cbd4607000000e13a695d0181864887b9ca06 ,
+        0xf1c4456f43006800650063006b0044006100740065000000000000007266c7b2 ,
+        0x8da87641b5f3d541d740150507000000e13a695d0181864887b9ca06f1c4456f ,
+        0x43006800650063006b0041006d007400000000000000aa0ab62bc1a77e478767 ,
+        0x52e7ae88e3f807000000e13a695d0181864887b9ca06f1c4456f410067006500 ,
+        0x6e00740052006100740065000000000000005bd8409dbb44c14a9d0f1c8c1727 ,
+        0x009607000000e13a695d0181864887b9ca06f1c4456f43006f006d006d004400 ,
+        0x75006500000000000000885a7e049ba57a4e8044ba850faf2c0c07000000e13a ,
+        0x695d0181864887b9ca06f1c4456f4100670065006e0074005400790070006500 ,
+        0x000000000000bb6907cb0ae40246a2c6f60d5c58cb9d07000000e13a695d0181 ,
+        0x864887b9ca06f1c4456f49006e0076006f006900630065004e006f0000000000 ,
+        0x00003dbef137d8dc924981a5a32429cf852807000000e13a695d0181864887b9 ,
+        0xca06f1c4456f43007500730074006f006d006500720043006c00610073007300 ,
+        0x4b006500790000000000000084865468d44d804ca580812e811238f507000000 ,
+        0xe13a695d0181864887b9ca06f1c4456f45006e0072006f006c006c006d006500 ,
+        0x6e007400460065006500000000000000eb764180b0ddc94d95697c12886dfb10 ,
+        0x07000000e13a695d0181864887b9ca06f1c4456f50006100790043006f006d00 ,
+        0x6d0054006f00000000000000000000000000000000000000000000000c000000 ,
+        0x030000000000000000000000000000000000
     End
     RecordSource ="SELECT vw_Commission.AgentId, vw_Commission.AgentName, vw_Commission.Agency, vw_"
         "Commission.Active, vw_Commission.CustomerKey, vw_Commission.CheckNo, vw_Commissi"
@@ -33,7 +72,7 @@ Begin Form
         "ntRate, vw_Commission.CommDue, vw_Commission.AgentType, vw_Commission.InvoiceNo,"
         " vw_Commission.CustomerClassKey, vw_Commission.EnrollmentFee, vw_Commission.PayC"
         "ommTo FROM vw_Commission ORDER BY vw_Commission.CommMonth DESC , vw_Commission.C"
-        "ustomerKey;"
+        "ustomerKey; "
     Caption ="AgentCommissions"
     DatasheetFontName ="Arial"
     AllowDatasheetView =0
@@ -112,10 +151,9 @@ Begin Form
         End
         Begin FormHeader
             Height =240
-            BackColor =12632256
             Name ="FormHeader"
             GUID = Begin
-                0x3909ab208e2f0842a1f429d322e05d68
+                0xb0378214fdf5c345afd78acf6041aba1
             End
             Begin
                 Begin Label
@@ -126,12 +164,12 @@ Begin Form
                     Width =780
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="CustomerKey_Label"
                     Caption ="Cust"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xddb1a74096deea4b89f023de68cfb9d9
+                        0x22ac69935e49464d80f67a4ce5a6b5df
                     End
                 End
                 Begin Label
@@ -142,12 +180,12 @@ Begin Form
                     Width =765
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="CheckNo_Label"
                     Caption ="Chk No"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x5d6de3da880bbd4382d3f7385d287acf
+                        0xf9ac916db12c17468caf78664299a9c7
                     End
                 End
                 Begin Label
@@ -158,12 +196,12 @@ Begin Form
                     Width =1005
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="CheckDate_Label"
                     Caption ="Chk Date"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xa814efd9abaddd4d842b352f88f5cc59
+                        0xdf86e40d981d874da8b3e362f4d956f7
                     End
                 End
                 Begin Label
@@ -174,12 +212,12 @@ Begin Form
                     Width =1110
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="CommDue_Label"
                     Caption ="Comm Due"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x1285db50fa75d247b28abc5ca9456aae
+                        0x3c81e08ca6c887429abe48cb2d2acb47
                     End
                 End
                 Begin Label
@@ -190,12 +228,12 @@ Begin Form
                     Width =765
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="CheckAmt_Label"
                     Caption ="Amt"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x379cbf134dd2b54db74f85b59885f4c5
+                        0x6ea11c370a37cf42b34f48b1d2aead69
                     End
                 End
                 Begin Label
@@ -206,12 +244,12 @@ Begin Form
                     Width =735
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="AgentRate_Label"
                     Caption ="Rate"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x67ee9664bdac04498bfc4e9f85a6892d
+                        0x3770bb558d06f64ca499750fb5c8a3c1
                     End
                 End
                 Begin Label
@@ -222,12 +260,12 @@ Begin Form
                     Width =810
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="InvoiceNo_Label"
                     Caption ="Inv No"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xef4f58bbb8f63542a7b1bc0ada51a210
+                        0x9b6747dbb966aa479cc31e15859d3643
                     End
                 End
                 Begin Label
@@ -237,11 +275,11 @@ Begin Form
                     Width =1005
                     Height =240
                     FontWeight =700
-                    BackColor =12632256
+                    BackColor =16777215
                     Name ="Label35"
                     Caption ="Month"
                     GUID = Begin
-                        0x693b87519aa61e45be67308ff2f7c9f3
+                        0xca14e186d7356c4cb9aef5803bab3702
                     End
                 End
             End
@@ -251,7 +289,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0x517bb3d3fee1d74fba7599022e581edd
+                0x1b5c4d35f204c44bb6e8f295e06f457b
             End
             Begin
                 Begin TextBox
@@ -264,7 +302,7 @@ Begin Form
                     Name ="AgentId"
                     ControlSource ="AgentId"
                     GUID = Begin
-                        0x7006a9bdcc3ac744b1e1b987be474c56
+                        0x008312848b556942bc196924e2535fa4
                     End
                 End
                 Begin TextBox
@@ -278,7 +316,7 @@ Begin Form
                     Name ="CustomerKey"
                     ControlSource ="CustomerKey"
                     GUID = Begin
-                        0xe2b7b3eeedd06a4196c2dbc490509557
+                        0xeaa81aebdbf428449e114865b11bf079
                     End
                 End
                 Begin TextBox
@@ -292,7 +330,7 @@ Begin Form
                     Name ="CheckNo"
                     ControlSource ="CheckNo"
                     GUID = Begin
-                        0x715feaf68eb5514d864b0d1f7b76a880
+                        0xfdef8fc316466b429bd14819d0207c9f
                     End
                 End
                 Begin TextBox
@@ -306,7 +344,7 @@ Begin Form
                     Name ="CheckDate"
                     ControlSource ="CheckDate"
                     GUID = Begin
-                        0xc364864b21b94e4a813b3d57f42219b4
+                        0x9d71591150ff8045b270847239fec8d3
                     End
                 End
                 Begin TextBox
@@ -321,7 +359,7 @@ Begin Form
                     ControlSource ="CheckAmt"
                     Format ="Standard"
                     GUID = Begin
-                        0x5f3701525b5fe54193d0c698cc3ea88d
+                        0x5dcb05b66e296a4ca5d392cbef3669d1
                     End
                 End
                 Begin TextBox
@@ -336,7 +374,7 @@ Begin Form
                     ControlSource ="AgentRate"
                     Format ="Percent"
                     GUID = Begin
-                        0xd715856fa1ba9a4c9442c51dbe378718
+                        0xa7100561dfd93c42a75b25999b9481dd
                     End
                 End
                 Begin TextBox
@@ -351,7 +389,7 @@ Begin Form
                     ControlSource ="CommDue"
                     Format ="Standard"
                     GUID = Begin
-                        0xf8a9733e1c221049ba7a232b1a8c6191
+                        0x5b60bdf45f024c4dbe95f97a05598e10
                     End
                 End
                 Begin TextBox
@@ -365,7 +403,7 @@ Begin Form
                     Name ="InvoiceNo"
                     ControlSource ="InvoiceNo"
                     GUID = Begin
-                        0x8b2acfc23e28574ab97f3cf5955aa6f9
+                        0x9b9d175bb3dc37479b412ee4f93683ee
                     End
                 End
                 Begin TextBox
@@ -378,7 +416,7 @@ Begin Form
                     Name ="CommMonth"
                     ControlSource ="CommMonth"
                     GUID = Begin
-                        0xadfab87daee0ea49b7a87825351a075a
+                        0xeee50f3b8e84bb43a1a8d63c97ca53a0
                     End
                 End
             End
@@ -388,7 +426,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormFooter"
             GUID = Begin
-                0xee7023e1aeb28244a980f1b13476c243
+                0x7ff4f84ded7bb7498c908f0a3f54e6bf
             End
         End
     End

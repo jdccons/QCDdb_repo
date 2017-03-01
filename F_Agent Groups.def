@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-178499958
+Checksum =-990829994
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -19,13 +19,61 @@ Begin Form
     Width =10095
     DatasheetFontHeight =10
     ItemSuffix =36
-    Left =6615
-    Top =255
-    Right =18630
-    Bottom =4785
+    Left =4440
+    Top =1785
+    Right =14235
+    Bottom =6525
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0x5aeaf8c011ade440
+        0x717024ca32bce440
+    End
+    GUID = Begin
+        0xe7471730333f82429282a2c7b1acc127
+    End
+    NameMap = Begin
+        0x0acc0e550000000013db52dc33183d4498cbc14345b31e37000000005920b613 ,
+        0x2ebce4401800000018bd7a02760077005f0043007500730074006f006d006500 ,
+        0x72005f004100670065006e0074000000000000006913334547391d4fa785f24e ,
+        0xcc09a0370700000013db52dc33183d4498cbc14345b31e374100670065006e00 ,
+        0x7400490064000000000000006600829c6643dc468cd6de8ff498483007000000 ,
+        0x13db52dc33183d4498cbc14345b31e3743007500730074006f006d0065007200 ,
+        0x4b0065007900000000000000362672040bfc734a92e8a14b89bb5aeb07000000 ,
+        0x13db52dc33183d4498cbc14345b31e3743007500730074006f006d0065007200 ,
+        0x4e0061006d006500000000000000618dca0c5e06a24f91d03354aee0eb740700 ,
+        0x000013db52dc33183d4498cbc14345b31e375400650072007200690074006f00 ,
+        0x720079004b00650079000000000000008ee9045afb3fe44f90586b5cd8838b0e ,
+        0x0700000013db52dc33183d4498cbc14345b31e3743007500730074006f006d00 ,
+        0x6500720041006400640072006500730073003100000000000000624beec68dce ,
+        0x934bb0bfe633dd69dd620700000013db52dc33183d4498cbc14345b31e374300 ,
+        0x7500730074006f006d0065007200410064006400720065007300730032000000 ,
+        0x000000008cf8d3c725c93c40a9a8827d253e46bd0700000013db52dc33183d44 ,
+        0x98cbc14345b31e3743007500730074006f006d00650072004300690074007900 ,
+        0x000000000000b7b5ac56f34a3f479fec6fa4d790f9600700000013db52dc3318 ,
+        0x3d4498cbc14345b31e3743007500730074006f006d0065007200530074006100 ,
+        0x7400650000000000000039c9b47db971b04ab8c7e75dec1141030700000013db ,
+        0x52dc33183d4498cbc14345b31e3743007500730074006f006d00650072005a00 ,
+        0x6900700043006f00640065000000000000008232cab729e1af47a354b90adb83 ,
+        0x8ae70700000013db52dc33183d4498cbc14345b31e3743006f006e0074006100 ,
+        0x630074004e0061006d006500000000000000af1ade49a3e2ae4db4ff4ce17ee8 ,
+        0x30350700000013db52dc33183d4498cbc14345b31e3745006d00610069006c00 ,
+        0x41006400640072006500730073000000000000000322ba940698c94f97efc546 ,
+        0x4b6813af0700000013db52dc33183d4498cbc14345b31e3743006f006e007400 ,
+        0x610063007400500068006f006e006500000000000000fd119e6b78092a478021 ,
+        0xda1c313a77fc0700000013db52dc33183d4498cbc14345b31e37540065006c00 ,
+        0x650078004e0075006d00620065007200000000000000b9d1a313de97be419546 ,
+        0x722898e8efe90700000013db52dc33183d4498cbc14345b31e37430075007300 ,
+        0x74006f006d006500720043006c006100730073004b0065007900000000000000 ,
+        0xbb70fcd8c9133d4da86c838aa8f0df710700000013db52dc33183d4498cbc143 ,
+        0x45b31e374c006f0063006100740069006f006e004b0065007900000000000000 ,
+        0x97254b22b84b5743ae13324d721bf2400700000013db52dc33183d4498cbc143 ,
+        0x45b31e3743007200650064006900740048006f006c006400000000000000681f ,
+        0x23799139e14cb3243cd135e9da030700000013db52dc33183d4498cbc14345b3 ,
+        0x1e3753007000610072006500000000000000f47b8cf57905bc4bbe6a13eb16ff ,
+        0x073e0700000013db52dc33183d4498cbc14345b31e3753007000610072006500 ,
+        0x320000000000000056b11b32045ee844b7cb0e0c172cc4d20700000013db52dc ,
+        0x33183d4498cbc14345b31e375300700061007200650033000000000000000000 ,
+        0x00000000000000000000000000000c0000000300000000000000000000000000 ,
+        0x00000000
     End
     RecordSource ="SELECT vw_Customer_Agent.AgentId, vw_Customer_Agent.CustomerKey, vw_Customer_Age"
         "nt.CustomerName, vw_Customer_Agent.TerritoryKey, vw_Customer_Agent.CustomerAddre"
@@ -35,7 +83,7 @@ Begin Form
         "ustomer_Agent.TelexNumber, vw_Customer_Agent.CustomerClassKey, vw_Customer_Agent"
         ".LocationKey, vw_Customer_Agent.CreditHold, vw_Customer_Agent.Spare, vw_Customer"
         "_Agent.Spare2, vw_Customer_Agent.Spare3 FROM vw_Customer_Agent ORDER BY vw_Custo"
-        "mer_Agent.CreditHold, vw_Customer_Agent.Spare3, vw_Customer_Agent.CustomerName;"
+        "mer_Agent.CreditHold, vw_Customer_Agent.Spare3, vw_Customer_Agent.CustomerName; "
     Caption ="Agent Groups"
     DatasheetFontName ="Arial"
     PrtMip = Begin
@@ -154,10 +202,9 @@ Begin Form
         End
         Begin FormHeader
             Height =210
-            BackColor =12632256
             Name ="FormHeader"
             GUID = Begin
-                0x625629b12d84924c9739754d9948bc65
+                0x77e4decfc2cb274b857e88cc2ca16d00
             End
             Begin
                 Begin Label
@@ -169,7 +216,7 @@ Begin Form
                     Name ="Label27"
                     Caption ="CustID"
                     GUID = Begin
-                        0x8b04e8497e1a984780d6f5eeb9f57dd5
+                        0xdf18020582142a4eab6f393b18a39702
                     End
                 End
                 Begin Label
@@ -181,7 +228,7 @@ Begin Form
                     Name ="Label28"
                     Caption ="Name"
                     GUID = Begin
-                        0x826c80190033074cac1e87f1bd2a2fe1
+                        0xbd1ceb5af52e1a4bb6c82e630fbe9607
                     End
                 End
                 Begin Label
@@ -193,7 +240,7 @@ Begin Form
                     Name ="Label29"
                     Caption ="City"
                     GUID = Begin
-                        0xcb1b7050c3b43c42acd03d6bcadea000
+                        0xae96b1b7acc7674eae9e038cdfc59f16
                     End
                 End
                 Begin Label
@@ -205,7 +252,7 @@ Begin Form
                     Name ="Label30"
                     Caption ="ST"
                     GUID = Begin
-                        0xa02197ab6784db41b3e7b09252e34e32
+                        0x512d9a8a73cb6045a66056a51dc81e70
                     End
                 End
                 Begin Label
@@ -217,7 +264,7 @@ Begin Form
                     Name ="Label31"
                     Caption ="Type"
                     GUID = Begin
-                        0x2d0b7da29898ca45abb41fba4462833f
+                        0x2c901891b59a2442b19a5172935d125f
                     End
                 End
                 Begin Label
@@ -229,7 +276,7 @@ Begin Form
                     Name ="Label35"
                     Caption ="Cancelled"
                     GUID = Begin
-                        0xdb0796af5897924bbb4d49f7f93f2137
+                        0xd0dbe3884ea08742840bb46a75c34270
                     End
                 End
             End
@@ -239,7 +286,7 @@ Begin Form
             BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0x83769d92d184644080ade0fd527f082d
+                0x3a0a7525494e044793f81a2f3521087c
             End
             Begin
                 Begin TextBox
@@ -249,7 +296,7 @@ Begin Form
                     Name ="CustomerKey"
                     ControlSource ="CustomerKey"
                     GUID = Begin
-                        0x264fae6c7feae1499195bf745319040a
+                        0x44707338d6ffad40825467c7c3724e21
                     End
                 End
                 Begin TextBox
@@ -261,7 +308,7 @@ Begin Form
                     Name ="CustomerName"
                     ControlSource ="CustomerName"
                     GUID = Begin
-                        0xc651a8c194c1ae4280b51682ec93e27b
+                        0x7ed6b5f477727a4c86d72ca321f77efd
                     End
                 End
                 Begin TextBox
@@ -273,7 +320,7 @@ Begin Form
                     Name ="CustomerCity"
                     ControlSource ="CustomerCity"
                     GUID = Begin
-                        0x77d979d76131dd40aa84a180561e632e
+                        0x1bc192f231f599428887821e8c2b5227
                     End
                 End
                 Begin TextBox
@@ -286,7 +333,7 @@ Begin Form
                     ControlSource ="CustomerState"
                     Format ="s\\T"
                     GUID = Begin
-                        0xb17ec061d36cef47931acbce5073f097
+                        0xd93b2b7a66a47e43a2e5d693caca0980
                     End
                 End
                 Begin TextBox
@@ -300,7 +347,7 @@ Begin Form
                     ControlSource ="Spare3"
                     Format ="\\Ty\"pe\""
                     GUID = Begin
-                        0x9531ac9d8c785b419928546cc1197dfc
+                        0xd4d64aa79c3dbb4fa08c283ad4dc83ec
                     End
                 End
                 Begin TextBox
@@ -318,7 +365,7 @@ Begin Form
                         0x2200590022000000000022004e00220000000000
                     End
                     GUID = Begin
-                        0xa50c2bf428ac3642aecfd4cfca4f3a74
+                        0x8934ba644d50c740a81d73e3a32c489e
                     End
                 End
             End
@@ -328,7 +375,7 @@ Begin Form
             BackColor =-2147483633
             Name ="FormFooter"
             GUID = Begin
-                0x694e1ab773bf2041acbeca8b27e2395e
+                0x577f8d5a5f44084ca01c9a0d72875f42
             End
         End
     End

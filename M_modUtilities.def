@@ -2,7 +2,24 @@ Option Explicit
 Private Declare Function GetUserName Lib "advapi32.dll" Alias "GetUserNameA" _
                      (ByVal IpBuffer As String, nSize As Long) As Long
 Global gintSortOrder As Integer
-
+'=======================================================
+'ReplaceAndSplit by alainbryden, optimized by aikimark
+'Uses the native REPLACE() function to replace all delimiters with a common
+'delimiter, and then splits them based on that.
+'=======================================================
+Public Function ReplaceAndSplit(ByRef Text As String, ByRef DelimChars As String) As String()
+    Dim DelimLen As Long, Delim As Long
+    Dim strTemp As String, Delim1 As String, Arr() As String, ThisDelim As String
+    strTemp = Text
+    Delim1 = Left$(DelimChars, 1)
+    DelimLen = Len(DelimChars)
+    For Delim = 2 To DelimLen
+        ThisDelim = Mid$(DelimChars, Delim, 1)
+        If InStr(strTemp, ThisDelim) <> 0 Then _
+            strTemp = Replace(strTemp, ThisDelim, Delim1)
+    Next
+    ReplaceAndSplit = Split(strTemp, Delim1)
+End Function
   Public Sub turnOffFormProps()
         Dim strForm As String, db As DAO.Database
         Dim doc As DAO.Document
@@ -164,7 +181,6 @@ Public Function DropLinks()
         ' If the table has a connect string, it's a linked table.
         If Len(tdf.Connect) > 0 Then
             DoCmd.DeleteObject acTable, tdf.Name
-            
         End If
     Next tdf
 

@@ -139,7 +139,7 @@ Function FindSSN(strSSN As String, strEndControl As String) As Boolean
 
 PROC_ERR:
     FindSSN = False
-    MsgBox "The following error occured: " & Error$
+    MsgBox "The following error occured: " & Error$ & " " & Err.Number
     Resume Next
     
 End Function
@@ -377,7 +377,7 @@ ErrorHandler:
     Resume Exit_Point
 End Function
 
-Function AlphaBtn(frmMyForm As Form, strMyCombo As String)
+Public Function AlphaBtn(frmMyForm As Form, strMyCombo As String)
 ' frmMyForm is the name of the form
 ' strMyCombo is the name of the control
 ' strMyButton is the value in the control

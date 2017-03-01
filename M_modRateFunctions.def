@@ -31,7 +31,7 @@ ErrorHandler:
     Resume Exit_Point
 
 End Function
-Public Function FindRate(GROUPid As String, CoverID As Integer, PlanID As Integer) As Double
+Public Function FindRate(GroupID As String, CoverID As Integer, PlanID As Integer) As Double
 '------------------------------------------------
 'Purpose:  Find the plan rate based on plan id
 '          and coverage type
@@ -43,12 +43,14 @@ Public Function FindRate(GROUPid As String, CoverID As Integer, PlanID As Intege
 
 On Error GoTo ErrorHandler
     
-    LoadADORecordset "uspFindRate '" & GROUPid & "'," & CoverID & "," & PlanID
+    LoadADORecordset "uspFindRate '" & GroupID & "'," & CoverID & "," & PlanID
     
-    If Not g_adoRS.EOF Then
-      FindRate = g_adoRS("Rate")
-      g_adoRS.Close
+    If g_adoRS.EOF Then
+        FindRate = 0
+    Else
+        FindRate = g_adoRS("Rate")
     End If
+    g_adoRS.Close
     
 Exit_Point:
     Exit Function
