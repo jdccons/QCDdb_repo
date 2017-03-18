@@ -2,35 +2,28 @@ Operation =1
 Option =8
 Begin InputTables
     Name ="tblCalendar"
-    Name ="tlkpClientServiceReps"
     Name ="tblGrp"
-    Name ="qselEligEmps_Current"
-    Name ="qselSubscriberCount_Current"
+    Name ="tblClientSvcRep"
+    Name ="vw_Grp_Sub_Count"
 End
 Begin OutputColumns
     Expression ="tblGrp.*"
-    Expression ="tlkpClientServiceReps.RepName"
     Expression ="tblCalendar.calMonth"
-    Expression ="qselEligEmps_Current.CurrentEligEmps"
-    Expression ="qselSubscriberCount_Current.CurrentSubscriberCount"
+    Expression ="vw_Grp_Sub_Count.SubCnt"
 End
 Begin Joins
-    LeftTable ="tblGrp"
-    RightTable ="qselEligEmps_Current"
-    Expression ="tblGrp.GroupID=qselEligEmps_Current.GroupID"
-    Flag =2
-    LeftTable ="tblGrp"
-    RightTable ="qselSubscriberCount_Current"
-    Expression ="tblGrp.GroupID=qselSubscriberCount_Current.GroupID"
-    Flag =2
-    LeftTable ="tlkpClientServiceReps"
-    RightTable ="tblGrp"
-    Expression ="tlkpClientServiceReps.RepID=tblGrp.GRClientSvcRepID"
-    Flag =3
     LeftTable ="tblCalendar"
     RightTable ="tblGrp"
     Expression ="tblCalendar.calID=tblGrp.GRAnnvDate"
     Flag =3
+    LeftTable ="tblGrp"
+    RightTable ="tblClientSvcRep"
+    Expression ="tblGrp.GRClientSvcRepID=tblClientSvcRep.ClientSvcRepID"
+    Flag =1
+    LeftTable ="tblGrp"
+    RightTable ="vw_Grp_Sub_Count"
+    Expression ="tblGrp.GroupID=vw_Grp_Sub_Count.GroupID"
+    Flag =1
 End
 Begin OrderBy
     Expression ="tblGrp.GRName"
@@ -42,64 +35,56 @@ dbByte "RecordsetType" ="0"
 dbBoolean "OrderByOn" ="0"
 dbByte "Orientation" ="0"
 dbByte "DefaultView" ="2"
+dbText "Description" ="Recordsource for rptGrp (print screen for group form)"
 Begin
 End
 Begin
     State =0
     Left =48
-    Top =96
-    Right =880
-    Bottom =499
+    Top =25
+    Right =935
+    Bottom =525
     Left =-1
     Top =-1
-    Right =817
-    Bottom =223
+    Right =872
+    Bottom =320
     Left =0
     Top =0
     ColumnsShown =539
     Begin
-        Left =38
-        Top =6
-        Right =240
-        Bottom =169
-        Top =34
-        Name ="tblGrp"
-        Name =""
-    End
-    Begin
-        Left =467
-        Top =6
-        Right =563
-        Bottom =94
+        Left =368
+        Top =148
+        Right =608
+        Bottom =236
         Top =0
         Name ="tblCalendar"
         Name =""
     End
     Begin
-        Left =601
+        Left =38
         Top =6
-        Right =697
-        Bottom =94
-        Top =0
-        Name ="qselEligEmps_Current"
+        Right =240
+        Bottom =274
+        Top =10
+        Name ="tblGrp"
         Name =""
     End
     Begin
-        Left =455
-        Top =102
-        Right =682
-        Bottom =190
+        Left =369
+        Top =-1
+        Right =602
+        Bottom =102
         Top =0
-        Name ="qselSubscriberCount_Current"
+        Name ="tblClientSvcRep"
         Name =""
     End
     Begin
-        Left =278
-        Top =84
-        Right =374
-        Bottom =172
+        Left =666
+        Top =98
+        Right =779
+        Bottom =237
         Top =0
-        Name ="tlkpClientServiceReps"
+        Name ="vw_Grp_Sub_Count"
         Name =""
     End
 End
