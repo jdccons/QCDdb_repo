@@ -3,30 +3,39 @@ ColumnsShown =1
 Begin
     MacroName ="&Print_Screen"
     Action ="RunCode"
+    Comment ="Prints a report that is a facsimile of the group subscriber form."
     Argument ="PrtScreen_Subscr()"
 End
 Begin
     MacroName ="Print_&Card"
     Action ="RunCode"
+    Comment ="Prints a group member card."
     Argument ="PrintCard()"
 End
 Begin
     MacroName ="Print &Invite"
     Action ="RunCode"
+    Comment ="Prints an invitation to a group member who has terminated coverage.  Asks member"
+        " to consider individual coverage."
     Argument ="PrtInvite()"
 End
 Begin
     MacroName ="Print &Envelope"
     Action ="RunCode"
+    Comment ="Prints a #10 envelope to a group member.  It is intended to contain the invite l"
+        "etter and the individual member packet."
     Argument ="PrtSubscrEnvelope()"
 End
 Begin
     MacroName ="Change &Status"
     Action ="RunCode"
+    Comment ="Allows user to change subscribers enrollment status from active to inactive etc."
+        " (various combinations)"
     Argument ="ChangeStatus(Forms!frmGrpSubscr)"
 End
 Begin
     MacroName ="&Close"
     Action ="RunCommand"
+    Comment ="Closes the current form."
     Argument ="58"
 End
