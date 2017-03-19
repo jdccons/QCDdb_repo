@@ -11,6 +11,16 @@ Begin
     Argument ="PrintCard()"
 End
 Begin
+    MacroName ="Print &Invite"
+    Action ="RunCode"
+    Argument ="PrtInvite()"
+End
+Begin
+    MacroName ="Print &Envelope"
+    Action ="RunCode"
+    Argument ="PrtSubscrEnvelope()"
+End
+Begin
     MacroName ="Change &Status"
     Action ="RunCode"
     Argument ="ChangeStatus(Forms!frmGrpSubscr)"
