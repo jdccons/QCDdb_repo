@@ -150,12 +150,12 @@ Function PrtScreen_Subscr()
     On Error GoTo ErrorHandler
 
     Dim strDocName As String
-    Dim strSubscrId As String
+    Dim strSubscrID As String
     Dim strWhere As String
 
     strDocName = "rptGrpSubscr"
-    strSubscrId = Forms!frmGrpSubscr!SubSSN
-    strWhere = "(([tblSubscr].[SUBssn]) = """ & strSubscrId & """)"
+    strSubscrID = Forms!frmGrpSubscr!SUBssn
+    strWhere = "(([tblSubscr].[SUBssn]) = """ & strSubscrID & """)"
 
     DoCmd.OpenReport strDocName, acPreview, , strWhere
 
@@ -236,4 +236,54 @@ GetDependentCount_Err:
     MsgBox Error$
     GoTo GetDependentCount_Exit
 
+End Function
+
+Function PrtInvite()
+
+On Error GoTo ErrorHandler
+    
+    Dim strDocName As String
+    Dim strSubscrID As String
+    Dim strWhere As String
+
+    strDocName = "rptInvite"
+    strSubscrID = Forms!frmGrpSubscr!SUBssn
+    strWhere = "(([tblSubscr].[SUBssn]) = """ & strSubscrID & """)"
+    
+    DoCmd.OpenReport strDocName, acPreview, , strWhere
+    
+    PrtInvite = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+
+Function PrtSubscrEnvelope()
+
+On Error GoTo ErrorHandler
+
+    Dim strDocName As String
+    Dim strSubscrID As String
+    Dim strWhere As String
+       
+    strSubscrID = Forms!frmGrpSubscr!SUBssn
+    strWhere = "(([SubSSN]) = " & "'" & strSubscrID & "'" & ")"
+   
+    strDocName = "rptEnvelope_Subscr"
+    DoCmd.OpenReport strDocName, acPreview, , strWhere
+    
+    PrtSubscrEnvelope = True
+    
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.DESCRIPTION & " " & Err.Number
+    Resume Exit_Point
+    
 End Function
