@@ -3,20 +3,31 @@ ColumnsShown =1
 Begin
     MacroName ="Create &Invoices"
     Action ="RunCode"
+    Comment ="Creates bulk QCD Only invoices by inserting records into a temp tables (tblInvHd"
+        "r & tblInvLin)"
     Argument ="CreateInvoicesQCD()"
 End
 Begin
     MacroName ="&Post Invoices"
     Action ="RunCode"
+    Comment ="Posts invoices to ARTRANH_local."
     Argument ="PostInvoicesQCD()"
 End
 Begin
     MacroName ="Print Invoices &Rate"
     Action ="RunCode"
+    Comment ="Prints the invoices from ARTRANH_local (rptInv)"
     Argument ="PrtInvQCDRate()"
+End
+Begin
+    MacroName ="Clear &Temp Table"
+    Action ="RunCode"
+    Comment ="Clears the temp tables (tblInvHdr & tblInvLin)"
+    Argument ="ClearTempTable()"
 End
 Begin
     MacroName ="&Close"
     Action ="RunCommand"
+    Comment ="Closes the form"
     Argument ="58"
 End
