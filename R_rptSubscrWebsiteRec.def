@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1542435713
+Checksum =1931355473
 Begin Report
     LayoutForPrint = NotDefault
     AllowDesignChanges = NotDefault
@@ -17,14 +17,43 @@ Begin Report
     ItemSuffix =33
     Left =1140
     Top =90
-    Right =15885
+    Right =10530
     Bottom =6120
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xc343b547d290e340
     End
+    GUID = Begin
+        0x559542347b5a1e4c8cdb92b7361312df
+    End
+    NameMap = Begin
+        0x0acc0e55000000008699b2cac6f33d41899a0c8309a63f8800000000dc9db5eb ,
+        0x54bce44058931800709818007600770053007500620073006300720057006500 ,
+        0x62007300690074006500520065006300000000000000141eaa03f874e94fb054 ,
+        0xeea6557f6487070000008699b2cac6f33d41899a0c8309a63f88470072006f00 ,
+        0x7500700049004400000000000000fce5c7d4a321584d93fc3239057a252f0700 ,
+        0x00008699b2cac6f33d41899a0c8309a63f88530053004e00000000000000c695 ,
+        0x341596ac9940acd3849beec676ee070000008699b2cac6f33d41899a0c8309a6 ,
+        0x3f884c006100730074004e0061006d006500000000000000ce8d179a7527bb48 ,
+        0xa6fc4bc74ad70438070000008699b2cac6f33d41899a0c8309a63f8846006900 ,
+        0x7200730074004e0061006d00650000000000000035eb5cdcaf16c742852c3ce7 ,
+        0xf62217c9070000008699b2cac6f33d41899a0c8309a63f884d0065006d006200 ,
+        0x65007200730068006900700053007400610074007500730000000000000085e7 ,
+        0x26c3f9ec064aaf58f6fe88ba0fee070000008699b2cac6f33d41899a0c8309a6 ,
+        0x3f8844006100740065004300720065006100740065006400000000000000eb57 ,
+        0x857343c9f84582f2b134126afed4070000008699b2cac6f33d41899a0c8309a6 ,
+        0x3f8844006100740065004300680061006e00670065006400000000000000d81d ,
+        0xd6f4d2169c4e85432d9da0fed7ff070000008699b2cac6f33d41899a0c8309a6 ,
+        0x3f884400610074006500440065006c006500740065006400000000000000f46d ,
+        0x1686fcc5a74ebfc8f0b961f1f2e0070000008699b2cac6f33d41899a0c8309a6 ,
+        0x3f8844006f0077006e006c006f00610064004400610074006500000000000000 ,
+        0x000000000000000000000000000000000c000000030000000000000000000000 ,
+        0x000000000000
+    End
     RecordSource ="vwSubscrWebsiteRec"
     Caption ="Subscriber Reconciliation between Website and Access"
+    OnOpen ="[Event Procedure]"
+    OnClose ="[Event Procedure]"
     DatasheetFontName ="Arial"
     PrtMip = Begin
         0xa0050000a0050000a0050000a005000000000000a03200008601000001000000 ,
@@ -32,19 +61,12 @@ Begin Report
     End
     PrtDevMode = Begin
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x010400069c0088060fff800302000100960a1608640001000700580202000100 ,
+        0x010403069c000c030fff800302000100960a1608640001000700580202000100 ,
         0x5802020000004c65747465720000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000010000000000000001000000 ,
-        0x0200000000010000000000000000000000000000000000000000000050524956 ,
-        0xe230000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000180000000000102710271027 ,
-        0x000010270000000000000000a8037c0600000000000000000000000000000000 ,
-        0x000000000000000003000000000000000c0010005c4b03006843040000000000 ,
-        0x000000000100010000000000000000000000000000000000d0b9e1c425000000 ,
-        0x00000100ff000200ff0000000000000000000000000001000200000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000020001000300000000000000000000000000000000000000000000000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200b0000c030000c1951cfb0000000000000000000000000000000000000000 ,
+        0x0000000000000000060000000100000000000000020001000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
@@ -58,42 +80,21 @@ Begin Report
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x01000000000000000000000000000000a8030000534d544a0000000010009803 ,
-        0x5400500020005000530020004400720069007600650072002000310030003200 ,
-        0x4200360038003800330046004300460030003400390032003400420031004100 ,
-        0x3100370036003900360032004300330042003800460030003400000052495061 ,
-        0x706572506f6c6963790050726f6d707455736572005061676553697a65004134 ,
-        0x0050616765526567696f6e0000496e707574536c6f74003154726179004c6561 ,
-        0x64696e674564676500004475706c6578004e6f6e65005265736f6c7574696f6e ,
-        0x0036303064706900436f6c6c6174650046616c73650052495072696e744d6f64 ,
-        0x650030726869740052696d616765736d004f666600436f6c6f724d6f64656c00 ,
-        0x434d594b0052505342697473506572506978656c003242697473506572506978 ,
-        0x656c00525053524742636f72726563740044657461696c427269676874005250 ,
-        0x53436f6c6f7252656e6444696374004175746f00525053446974686572547970 ,
-        0x65004175746f00525053426c61636b4d6f6465006772617900525053426c6163 ,
-        0x6b4f7665725072696e740046616c736500525053436f6c6f72536570004e6f6e ,
-        0x650052636d796b73696d756c6174696f6e004f6666004d656469615479706500 ,
-        0x4175746f004f757470757442696e0044656661756c7400537461706c654c6f63 ,
-        0x6174696f6e004e6f6e6500524950756e6368004e6f6e650052495a666f6c6400 ,
-        0x4e6f6e65005249466f6c6454797065004e6f6e65004f7665726c6170466f6c64 ,
-        0x004f666600524952696e6742696e64004e6f6e6500524952696e674244506f73 ,
-        0x6974696f6e004c656674005249526f746174654279313830004f66660052494f ,
-        0x7269656e744f7672004f666600466163657570004f666600524957617465726d ,
-        0x61726b004f6666005249574d5465787400436f6e666964656e7469616c005249 ,
-        0x776d466f6e740048656c76657469636142005249776d53697a65003336005249 ,
-        0x776d416e676c65003435446567005249776d546578745374796c650047726179 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
         0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000c00000053505054 ,
-        0x01000000
+        0x000000000000000000000000010000000000000000000000b0000000534d544a ,
+        0x000000001000a00053006e00610067006900740020003100b0000000534d544a ,
+        0x000000001000a00053006e006100670069007400200031003000200050007200 ,
+        0x69006e007400650072000000496e70757442696e004d414e55414c0052455344 ,
+        0x4c4c00556e69726573444c4c004f7269656e746174696f6e00504f5254524149 ,
+        0x5400506170657253697a65004c4554544552005265736f6c7574696f6e004f70 ,
+        0x74696f6e3300436f6c6f724d6f64650032346270700000000000000000000000 ,
+        0x0000000000000000
     End
     PrtDevNames = Begin
-        0x080022004d000100000000000000000000000000000000000000000000000000 ,
-        0x0000000000000000000000000000000000000000000000000000000000000000 ,
-        0x00000000000000000000000000545330303100
+        0x08001a0024000100000000000000000000000000000000000000000000000000 ,
+        0x00000000433a5c50726f6772616d446174615c54656368536d6974685c536e61 ,
+        0x6769742031305c5072696e746572506f727446696c6500
     End
     Begin
         Begin Label
@@ -149,14 +150,14 @@ Begin Report
             Height =0
             Name ="ReportHeader"
             GUID = Begin
-                0x92ba699412759e43bedbe07489405f86
+                0xfbf142d05cfb5146955ba810fa01f748
             End
         End
         Begin PageHeader
             Height =1320
             Name ="PageHeaderSection"
             GUID = Begin
-                0x745c3bf80b9ec54884b905a3369c2f62
+                0xa7eddec44308764394284c1f42249328
             End
             Begin
                 Begin Label
@@ -171,7 +172,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xdab3ea5229b3d24fbb52003d9c328e71
+                        0xfc96c6659d066d48b8647a761ef13fb5
                     End
                 End
                 Begin Label
@@ -186,7 +187,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xf6dcf2b70b2ae84e8cf4d20c37591d6e
+                        0xd86bb16b8400cb458def417a90168bfb
                     End
                 End
                 Begin Label
@@ -201,7 +202,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x8961b6488f46464bb32eb4f967853e6e
+                        0xec5738694e7f834e882ca8f7480fd16a
                     End
                 End
                 Begin Label
@@ -216,7 +217,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x69204ab54b412a4db629216b04281f34
+                        0x6c36bb3c3c5abd40a04998f33e1dd91e
                     End
                 End
                 Begin Label
@@ -232,7 +233,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x380b0e16d0f45b48811b711ad75fb951
+                        0xb36e444405455842862849b0850a93d0
                     End
                 End
                 Begin Label
@@ -248,7 +249,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x71e67d5ae8c9a5479d5214e07081b2d6
+                        0xa7f794e763d22943aa9ca9bd35190531
                     End
                 End
                 Begin Label
@@ -264,7 +265,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0xe916fd65c27c284f8e2eae634c3bc98a
+                        0xad4f71b80fa69a43b9c53ebef61728cf
                     End
                 End
                 Begin Label
@@ -280,7 +281,7 @@ Begin Report
                     FontName ="Calibri"
                     Tag ="DetachedLabel"
                     GUID = Begin
-                        0x4b2f55ca1e316642925d7bc289f11ebd
+                        0x57addae41ca7a9478dd4870c958210ea
                     End
                 End
                 Begin Line
@@ -289,7 +290,7 @@ Begin Report
                     Width =10860
                     Name ="Line31"
                     GUID = Begin
-                        0x3d5c637f97a00545b6dd8da199db769b
+                        0x01b2d5c9b731154ba347979261dca1e3
                     End
                 End
                 Begin Label
@@ -304,14 +305,14 @@ Begin Report
                     Caption ="Subscriber Reconciliation between Website and Access"
                     FontName ="Calibri"
                     GUID = Begin
-                        0x93c026351c41a54f8926b00c15cab85b
+                        0xdb56b9bef3c2dc4aa8fb024252c2e335
                     End
                 End
                 Begin Line
                     Width =12960
                     Name ="Line21"
                     GUID = Begin
-                        0x1646a577627eff4eabdc24b008da775d
+                        0xc2b26548c831f34f96440e520705f687
                     End
                 End
                 Begin Line
@@ -319,7 +320,7 @@ Begin Report
                     Width =12960
                     Name ="Line22"
                     GUID = Begin
-                        0x77cf72d67d8f7d43af3de957fc660d8d
+                        0xfaca65ae4ed74a48bb7edd58a7109f56
                     End
                 End
                 Begin Line
@@ -327,7 +328,7 @@ Begin Report
                     Width =12960
                     Name ="Line23"
                     GUID = Begin
-                        0xedc2d4f0eb05ec40bded90365e028c6d
+                        0x8afb6702c9d6cc4c82f3c49e8b646247
                     End
                 End
                 Begin Line
@@ -335,7 +336,7 @@ Begin Report
                     Width =12960
                     Name ="Line24"
                     GUID = Begin
-                        0xc3790dd4c8e09146b1b134f8c6d6b19e
+                        0xdd810a6d4963c645b9090b6ad15e9c4e
                     End
                 End
             End
@@ -345,7 +346,7 @@ Begin Report
             Height =480
             Name ="GroupHeader0"
             GUID = Begin
-                0x63069c70e2b08b4dac0646079ce15d2a
+                0x4d0588166c2f5c459ad5a110529640d8
             End
             Begin
                 Begin TextBox
@@ -361,7 +362,7 @@ Begin Report
                     ControlSource ="GroupID"
                     FontName ="Calibri"
                     GUID = Begin
-                        0x94a4623c9baed0488d261bcf320df23d
+                        0xcee7acfe52150c46a29af6c622435140
                     End
                     Begin
                         Begin Label
@@ -373,7 +374,7 @@ Begin Report
                             Caption ="GroupID"
                             FontName ="Calibri"
                             GUID = Begin
-                                0xf649e794e89a924ea90d38ca5255b580
+                                0xb3296a1f5808ec46bf666103f97f8ace
                             End
                         End
                     End
@@ -383,7 +384,7 @@ Begin Report
                     Width =4320
                     Name ="Line32"
                     GUID = Begin
-                        0xf04157bff288854e96653c90ca81675a
+                        0xac830ea75b1b3748bd7a9c1f31c84c56
                     End
                 End
             End
@@ -393,7 +394,7 @@ Begin Report
             Height =390
             Name ="Detail"
             GUID = Begin
-                0x1747c6c4e64f32408e27276f5becfdb7
+                0x7860ba2e55a24344b6f181187ea9fb75
             End
             Begin
                 Begin TextBox
@@ -407,7 +408,7 @@ Begin Report
                     ControlSource ="SSN"
                     FontName ="Calibri"
                     GUID = Begin
-                        0xe6e7cbd72ccc2546adfe3e8b87a3c6e0
+                        0xc9340649215d0f498e44dc9865b3d702
                     End
                 End
                 Begin TextBox
@@ -422,7 +423,7 @@ Begin Report
                     ControlSource ="LastName"
                     FontName ="Calibri"
                     GUID = Begin
-                        0xe0dc16de14f18a45a6a033b90f0f33bc
+                        0x515bfd47d2b638449112f10c9d208370
                     End
                 End
                 Begin TextBox
@@ -437,7 +438,7 @@ Begin Report
                     ControlSource ="FirstName"
                     FontName ="Calibri"
                     GUID = Begin
-                        0x716b455163b3db4a8ec7dd7ceaa1a38a
+                        0x653d59461925b242831d3e153f2a7dea
                     End
                 End
                 Begin TextBox
@@ -452,7 +453,7 @@ Begin Report
                     ControlSource ="MembershipStatus"
                     FontName ="Calibri"
                     GUID = Begin
-                        0xc0a134519e26d24ca276fefadbdfb7c5
+                        0xe6cc8893ce187049af8649ffb0ff128d
                     End
                 End
                 Begin TextBox
@@ -468,7 +469,7 @@ Begin Report
                     Format ="Short Date"
                     FontName ="Calibri"
                     GUID = Begin
-                        0xce5e29c2de664b47bddb74462252fa97
+                        0x8276d12342871c44ab8dc4626e34df44
                     End
                 End
                 Begin TextBox
@@ -484,7 +485,7 @@ Begin Report
                     Format ="Short Date"
                     FontName ="Calibri"
                     GUID = Begin
-                        0xb68a5196ba6ca543a0b3809bb857f0a1
+                        0x4d3f11bfc0f525448674598c0473c99c
                     End
                 End
                 Begin TextBox
@@ -500,7 +501,7 @@ Begin Report
                     Format ="Short Date"
                     FontName ="Calibri"
                     GUID = Begin
-                        0xac6f494e4c45934891809b3ac0c8da78
+                        0x2cf4484e5558d446ad74600d45ae206f
                     End
                 End
                 Begin TextBox
@@ -516,7 +517,7 @@ Begin Report
                     Format ="Short Date"
                     FontName ="Calibri"
                     GUID = Begin
-                        0x2bc0c9e5df91d7478cbfd3936c142f47
+                        0xc3c44227dd5762468e7beb2c551ef0a3
                     End
                 End
             End
@@ -525,7 +526,7 @@ Begin Report
             Height =510
             Name ="PageFooterSection"
             GUID = Begin
-                0x14cbcbd06b31724bbb07b3d3144aaa84
+                0x0b3d401c1513954b8daee005a7d8329a
             End
             Begin
                 Begin TextBox
@@ -541,7 +542,7 @@ Begin Report
                     Format ="Long Date"
                     FontName ="Calibri"
                     GUID = Begin
-                        0x29d180fac16dc947a61b8432e9b83db5
+                        0xb92915ac3cb37545a85d83f769656185
                     End
                 End
                 Begin TextBox
@@ -557,14 +558,14 @@ Begin Report
                     ControlSource ="=\"Page \" & [Page] & \" of \" & [Pages]"
                     FontName ="Calibri"
                     GUID = Begin
-                        0xfce51023f6835c429eb1ba062f37bc59
+                        0x628a723c52ad494699be8bf83f2067d0
                     End
                 End
                 Begin Line
                     Width =12960
                     Name ="Line29"
                     GUID = Begin
-                        0xd7a23a9c1db8ee4a832fc2f26f04a80d
+                        0x3f1416cc2449ff449c2c215ce8b7be48
                     End
                 End
                 Begin Line
@@ -572,7 +573,7 @@ Begin Report
                     Width =12960
                     Name ="Line30"
                     GUID = Begin
-                        0xb8fbbf661cf80247aaad86b8feb2da0e
+                        0xf4536d44ecbee74caf502fc15b970c4b
                     End
                 End
             End
@@ -582,8 +583,66 @@ Begin Report
             Height =0
             Name ="ReportFooter"
             GUID = Begin
-                0x8c33a3cdf90e774db9bd28ee2a000b89
+                0x7621b0383d40294dbe5d6a5d193a86c6
             End
         End
     End
 End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+'  report open and close procedures
+Option Compare Database
+Option Explicit
+
+Private Sub Report_Close()
+
+    On Error GoTo PROC_ERR
+    
+    DoCmd.Restore
+    
+    If fIsLoaded("fmnuSwitchboard") = True Then
+        Forms![fmnuSwitchboard].Visible = True
+    End If
+    
+    If fIsLoaded("fmnuReportWebsite") = True Then
+        Forms!fmnuReportWebsite.Visible = True
+    End If
+    
+    Exit Sub
+    
+PROC_ERR:
+  MsgBox "The following error occured: " & Error$
+  Resume Next
+
+
+End Sub
+
+Private Sub Report_Open(Cancel As Integer)
+
+    On Error GoTo Report_Open_Err
+
+    
+    If fIsLoaded("fmnuReportWebsite") = True Then
+        Forms!fmnuReportWebsite.Visible = False
+    End If
+    
+    If fIsLoaded("fmnuSwitchboard") = True Then
+        Forms!fmnuSwitchboard.Visible = False
+    End If
+    
+    Exit Sub
+    
+Report_Open_Exit:
+    Exit Sub
+
+Report_Open_Err:
+      
+    MsgBox "Error " & Err.Number & ": " & Err.DESCRIPTION
+    GoTo Report_Open_Exit
+    
+    
+    
+End Sub
