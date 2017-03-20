@@ -341,6 +341,12 @@ Function Delete_GrpSubscr(strSSN As String, strUserName As String) As Boolean
     On Error GoTo Err_Delete_GrpSubscr
     
     'Purpose:  Mark the subscriber and dependent records as cancelled
+    '
+    '------------------------------------------------
+    'Programmer:    John Criswell
+    'Create Date:   11/15/2015
+    'Update Date:   3/18/2016
+    'Updated by:    John Criswell
 
         Dim strSQL As String
         strSQL = "SELECT 1 as SubCnt FROM tblSubscr where SubSSN = '" & strSSN & "';"
@@ -699,4 +705,60 @@ ErrorHandler:
     Resume Exit_Point
 
 
+End Function
+
+Public Sub CreateNewGroup(strGroup As String)
+'Author     :  John Criswell
+'Description:  If record is new, creates new group
+'Date       :  2016-12-29
+    
+    On Error GoTo HandleError
+    
+    Dim strSQL As String
+    strSQL = "insert into tblGrp(GroupId, GRAcctMgr, GRClientSvcRepID) " & _
+    "values ('" & strGroup & "', 1, 1)"
+    ExecuteSQL strSQL
+
+    strSQL = "insert into tblGrpAgt (AgentId, GroupId, [Primary], AgentRate) " & _
+    "values('CORPT', '" & strGroup & "', 1, 0)"
+    ExecuteSQL strSQL
+    
+    
+HandleExit:
+    Exit Sub
+HandleError:
+    MsgBox Err.DESCRIPTION
+    Resume HandleExit
+End Sub
+Public Function ClearTempTable() As Boolean
+'=========================================================================
+' Object:      ClearTempTable
+' Desc:        Deletes all records from tblInvHdr and tblInvLin
+'
+' Called by:   frmInvGrp.cmdClearTempTable
+'
+' Call:
+' Arguments:
+'
+' Comments:    Returns true or false
+' Changes:  ---------------------------------------------------------------
+' Date             Developer       Version     Change
+' 2017-03-20       J Criswell      1.0         Created
+'=========================================================================
+    On Error GoTo HandleError
+    
+    Dim strSQL As String
+    strSQL = "DELETE FROM tblInvLin;"
+    ExecuteSQL strSQL
+    strSQL = "DELETE FROM tblInvHdr;"
+    ExecuteSQL strSQL
+    
+    Forms!frmInvGrp.Requery
+    
+    ClearTempTable = True
+HandleExit:
+    Exit Function
+HandleError:
+    MsgBox Err.DESCRIPTION
+    Resume HandleExit
 End Function
