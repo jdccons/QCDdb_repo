@@ -45,7 +45,7 @@ Public Sub FormNames()
     Dim rs As DAO.Recordset
     Dim doc As DAO.Document
     Set db = CurrentDb
-    Set rs = db.OpenRecordset("tblForms", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("form_objects", dbOpenDynaset, dbSeeChanges)
     
     For Each doc In db.Containers("Forms").Documents
         strForm = doc.Name
@@ -53,8 +53,8 @@ Public Sub FormNames()
         With rs
             .AddNew
             .Fields("Name") = doc.Name
-            .Fields("Caption") = Forms(strForm).Properties("Caption")
-            '.Fields("DateModified") = Forms(strForm).Properties("DateModified")
+            .Fields("Description") = Forms(strForm).Properties("Caption")
+            .Fields("DateModified") = Forms(strForm).Properties("DateModified")
             .Update
         End With
         DoCmd.Close acForm, strForm, acSaveNo
@@ -99,7 +99,7 @@ Sub AllForms()
     Dim db As DAO.Database
     Dim rs As DAO.Recordset
     Set db = CurrentDb()
-    Set rs = db.OpenRecordset("tblForms", dbOpenDynaset, dbSeeChanges)
+    Set rs = db.OpenRecordset("form_objects", dbOpenDynaset, dbSeeChanges)
     
     ' Search for open AccessObject objects in AllForms collection.
     For Each obj In dbs.AllForms
@@ -110,9 +110,8 @@ Sub AllForms()
                
                 rs.AddNew
                 rs.Fields("Name") = .Name
-                rs.Fields("DateCreated") = .DateCreated
                 rs.Fields("DateModified") = .DateModified
-                rs.Fields("TxnDate") = date
+                rs.Fields("Description") = FormDescription(.Name)
                 rs.Update
             End With
     Next obj
@@ -150,7 +149,7 @@ Sub TableNames()
     Dim tdfLoop As TableDef
     
     Set dbs = CurrentDb()
-    Set rs = dbs.OpenRecordset("tblTables", dbOpenDynaset, dbSeeChanges)
+    Set rs = dbs.OpenRecordset("table_objects", dbOpenDynaset, dbSeeChanges)
     
     With dbs
       Debug.Print .TableDefs.Count & _
@@ -1159,3 +1158,217 @@ Public Sub CreateNewDB(strTargetDB As String)
     On Error GoTo 0
     Exit Sub
 End Sub
+
+Sub AllReports()
+    Dim obj As AccessObject, dbs As Object
+    Set dbs = Application.CurrentProject
+    ' Search for open AccessObject objects in AllReports collection.
+    For Each obj In dbs.AllReports
+        If obj.IsLoaded = True Then
+            ' Print name of obj.
+            Debug.Print obj.Name
+        End If
+    Next obj
+End Sub
+
+'---------------------------------------------------------------------------------------
+' Procedure : ListDbRpts
+' Author    : CARDA Consultants Inc.
+' Website   : http://www.cardaconsultants.com
+' Purpose   : Returns a ';' separated string containing the names of all the reports
+'             within the database (use Split() to convert the string to an array)
+' Copyright : The following may be altered and reused as you wish so long as the
+'             copyright notice is left unchanged (including Author, Website and
+'             Copyright).  It may not be sold/resold or reposted on other sites (links
+'             back to this site are allowed).
+'
+' Revision History:
+' Rev       Date(yyyy/mm/dd)        Description
+' **************************************************************************************
+' 1         2007-Nov                 Initial Release
+'---------------------------------------------------------------------------------------
+Function ListDbRpts() As String
+On Error GoTo Error_Handler
+ 
+    Dim DbO     As AccessObject
+    Dim DbP     As Object
+    Dim Rpts    As String
+ 
+    Set DbP = Application.CurrentProject
+ 
+    For Each DbO In DbP.AllReports
+        Rpts = Rpts & ";" & DbO.Name
+    Next DbO
+    Rpts = Right(Rpts, Len(Rpts) - 1) 'Truncate initial ;
+ 
+    ListDbRpts = Rpts
+ 
+Exit Function
+ 
+Error_Handler:
+    MsgBox "MS Access has generated the following error" & vbCrLf & vbCrLf & "Error Number: " & _
+    Err.Number & vbCrLf & "Error Source: ListDbRpts" & vbCrLf & "Error Description: " & _
+    Err.DESCRIPTION, vbCritical, "An Error has Occured!"
+    Exit Function
+End Function
+
+Function ListAllTables() As String
+
+    Dim tbl As AccessObject, db As Object
+    Dim strMsg As String
+     
+    On Error GoTo Error_Handler
+     
+    Set db = Application.CurrentData
+    For Each tbl In db.AllTables
+    Debug.Print tbl.Name
+    Next tbl
+     
+    strMsg = " -- Tables listing complete -- "
+     
+Procedure_Done:
+    ListAllTables = strMsg
+Exit Function
+ 
+Error_Handler:
+strMsg = Err.Number & " " & Err.DESCRIPTION
+Resume Procedure_Done
+ 
+End Function
+
+Function ListAllReports() As String
+
+Dim strMsg As String
+Dim rpt As AccessObject, db As Object
+ 
+On Error GoTo Error_Handler
+ 
+Set db = Application.CurrentProject
+For Each rpt In db.AllReports
+Debug.Print rpt.Name & ", " & rpt.DateCreated & ", " & rpt.DateModified
+Next rpt
+ 
+strMsg = " -- Reports listing complete -- "
+ 
+Procedure_Done:
+ListAllReports = strMsg
+Exit Function
+ 
+Error_Handler:
+strMsg = Err.Number & " " & Err.DESCRIPTION
+Resume Procedure_Done
+ 
+End Function
+
+
+Public Function ReportDescription(ByVal pName As String) As String
+    Dim strReturn As String
+    Dim strMsg As String
+
+On Error GoTo ErrorHandler
+
+    strReturn = _
+        CurrentDb.Containers("Reports").Documents(pName).Properties("Description")
+
+ExitHere:
+    On Error GoTo 0
+    ReportDescription = strReturn
+    Exit Function
+
+ErrorHandler:
+    Select Case Err.Number
+    Case 3270 'Property not found.'
+        'strReturn = "(no Description)"'
+        '* no Description -> just echo report name *'
+        strReturn = pName
+    Case Else
+        strMsg = "Error " & Err.Number & " (" & Err.DESCRIPTION _
+            & ") in procedure ReportDescription"
+        MsgBox strMsg
+        strReturn = vbNullString
+    End Select
+    GoTo ExitHere
+End Function
+Public Function FormDescription(ByVal pName As String) As String
+    Dim strReturn As String
+    Dim strMsg As String
+
+On Error GoTo ErrorHandler
+
+    strReturn = _
+        CurrentDb.Containers("Forms").Documents(pName).Properties("Description")
+
+ExitHere:
+    On Error GoTo 0
+    FormDescription = strReturn
+    Exit Function
+
+ErrorHandler:
+    Select Case Err.Number
+    Case 3270 'Property not found.'
+        'strReturn = "(no Description)"'
+        '* no Description -> just echo report name *'
+        strReturn = pName
+    Case Else
+        strMsg = "Error " & Err.Number & " (" & Err.DESCRIPTION _
+            & ") in procedure ReportDescription"
+        MsgBox strMsg
+        strReturn = vbNullString
+    End Select
+    GoTo ExitHere
+End Function
+Public Function ListAllReportObjects() As Variant
+
+
+    Dim db As DAO.Database
+    Dim doc As Document
+    
+    Set db = CurrentDb
+    
+    Application.Echo False
+    
+    For Each doc In db.Containers("forms").Documents
+        Debug.Print "Form name: ", doc.Name
+        DoCmd.OpenForm doc.Name, acDesign
+        Debug.Print "Record source: ", Forms(doc.Name).RecordSource
+        Debug.Print
+        DoCmd.Close acForm, doc.Name
+    Next
+
+    For Each doc In db.Containers("reports").Documents
+        Debug.Print "Report name: ", doc.Name
+        DoCmd.OpenReport doc.Name, acDesign
+        Debug.Print "Record source: ", Forms(doc.Name).RecordSource
+        Debug.Print
+        DoCmd.Close acReport, doc.Name
+    Next
+    
+    Application.Echo True
+    
+    ListAllReportObjects = True
+End Function
+
+
+Function ListAllForms() As String
+'~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dim strMsg As String
+Dim frm As AccessObject, obj As Object
+ 
+On Error GoTo Error_Handler
+ 
+Set obj = Application.CurrentProject
+For Each frm In obj.AllForms
+Debug.Print frm.Name & " | " & frm.DateCreated & " | " & frm.DateModified & " | " & frm.FullName & " | " & frm.Type & " | "; FormDescription(frm.Name)
+Next frm
+ 
+strMsg = " -- Forms listing complete -- "
+ 
+Procedure_Done:
+ListAllForms = strMsg
+Exit Function
+ 
+Error_Handler:
+strMsg = Err.Number & " " & Err.DESCRIPTION
+Resume Procedure_Done
+ 
+End Function
