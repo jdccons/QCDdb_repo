@@ -657,6 +657,7 @@ FUNC_EXIT:
   
 FUNC_ERR:
   MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Function:  fdlgAASync.Func_PickFile"
+  
   GoTo FUNC_EXIT
   
 End Function
@@ -812,6 +813,7 @@ PROC_EXIT:
     
 PROC_ERR:
   MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Function:  Form_fdlgAASync.Func_Run_Procedure"
+  Call LogError(Err.Number, Err.Description, "Function:  Form_fdlgAASync.Func_Run_Procedure", , True)
   Resume PROC_EXIT
     
 End Function
@@ -1028,7 +1030,8 @@ Private Sub cmdImport_Click()
             gintProcessStatus = 1
             MsgBox "tpa import succeeded.", vbExclamation, "QCD: tpa import"
         Else
-            Err.Raise vbObjectError + 513, "usp_tpa_final", "tpa import failed. Contact support."
+            'Err.Raise vbObjectError + 513, "usp_tpa_final", "tpa import failed. Contact support."
+             MsgBox "tpa import failed.", vbCritical, "QCD: tpa import"
             gintProcessStatus = 0
             GoTo HandleError
         End If
@@ -1045,10 +1048,10 @@ ExitProc:
     Exit Sub
 
 HandleError:
-  gintProcessStatus = 0
-  MsgBox "Error: " & Err.Description & _
-     " (" & Err.Number & ")", vbCritical
-  Resume ExitProc
+    gintProcessStatus = 0
+    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Procedure:  fdlgAASync.cmdImport"
+    Call LogError(Err.Number, Err.Description, "Procedure:  fdlgAASync.cmdImport", , True)
+    Resume ExitProc
 
 End Sub
 
@@ -1158,7 +1161,7 @@ Private Sub cmdProcess_Click()
             If run_sp_flag_del_subs(mstrSQL, mstrUser) Then
                 gintProcessStatus = 1
             Else
-                MsgBox "The update to flag pending deletion subscribers failed.  Contatct Support.", vbInformation, "QCD: Flag pending deletions"
+                MsgBox "The update to flag pending deletion subscribers failed.  Contatct Support.", vbCritical, "QCD: Flag pending deletions"
                 gintProcessStatus = 0
                 GoTo PROC_EXIT
             End If
@@ -1171,7 +1174,7 @@ Private Sub cmdProcess_Click()
                 If run_sp_del_subs(mstrSQL, dteDateDeleted, mstrUser) Then
                     gintProcessStatus = 1
                 Else
-                    MsgBox "The update for pending deletion subscribers failed.  Contatct Support.", vbInformation, "QCD: Process pending deletions"
+                    MsgBox "The update for pending deletion subscribers failed.  Contatct Support.", vbCritical, "QCD: Process pending deletions"
                     gintProcessStatus = 0
                     GoTo PROC_EXIT
                 End If
@@ -1197,13 +1200,17 @@ Private Sub cmdProcess_Click()
                             If g_sRtnVal = "Procedure Succeeded" Then
                                 gintProcessStatus = 1
                             Else
-                                MsgBox "tpa data import failed; contact support.", vbInformation, "QCD: Process tpa data"
+                                MsgBox "Processing dependents failed; contact support.", vbCritical, "QCD: Process tpa data"
                                 gintProcessStatus = 0
                                 GoTo PROC_EXIT
                             End If
+                        Else
+                            MsgBox "Processing subscribers failed; contact support.", vbCritical, "QCD: Process tpa data"
+                            gintProcessStatus = 0
+                            GoTo PROC_EXIT
                         End If
                     Else
-                        MsgBox "The file processing failed; contact support.", vbInformation, "QCD: Process tpa data"
+                        MsgBox "The tpa csv file process failed; contact support.", vbCritical, "QCD: Process tpa data"
                         gintProcessStatus = 0
                         GoTo PROC_EXIT
                     End If
@@ -1263,6 +1270,7 @@ PROC_EXIT:
 
 PROC_ERR:
   MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Procedure:fdlgAASync.cmdProcess"
+  Call LogError(Err.Number, Err.Description, "Procedure:fdlgAASync.cmdProcess", , True)
   Resume PROC_EXIT
 
     
@@ -1404,11 +1412,13 @@ On Error GoTo Err_btnTPA_Bad_Plan_and_Rate_Click
         MsgBox "Plans and covers are correct", vbOKOnly, "QCD: Plans and covers."
         GoTo Exit_btnTPA_Bad_Plan_and_Rate_Click
     Else
+        ' get list of SSN's with bad plans and covers to use in where clause for form
         rst.MoveLast
         rst.MoveFirst
         I = 0
         J = rst.RecordCount
         strWhere = "SSN IN ("
+        
         
         ReDim strSSN(I To J)
         If rst.RecordCount > 0 Then
