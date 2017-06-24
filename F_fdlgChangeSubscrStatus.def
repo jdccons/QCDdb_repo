@@ -1,18 +1,18 @@
 Version =20
 VersionRequired =20
-Checksum =-1724627047
+Checksum =1471374436
 Begin Form
-    Modal = NotDefault
     RecordSelectors = NotDefault
     MaxButton = NotDefault
-    MinButton = NotDefault
     ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
     NavigationButtons = NotDefault
     DividingLines = NotDefault
     DefaultView =0
     ScrollBars =0
     ViewsAllowed =1
     TabularFamily =0
+    BorderStyle =3
     PictureAlignment =2
     DatasheetGridlinesBehavior =3
     GridX =24
@@ -22,14 +22,14 @@ Begin Form
     ItemSuffix =21
     Left =5205
     Top =30
-    Right =7965
-    Bottom =3675
+    Right =10725
+    Bottom =5055
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0x7d2de97571b1e240
     End
     GUID = Begin
-        0x363f00d79e78ac49886bd232803d2f88
+        0xb76ebb91e7af1045bd4a47e2d8c7d6cc
     End
     NameMap = Begin
         0x0acc0e5500000000000000000000000000000000000000000c00000003000000 ,
@@ -1193,10 +1193,10 @@ Begin Form
         End
         Begin Section
             Height =3666
-            BackColor =-2147483633
+            BackColor =12632256
             Name ="Detail"
             GUID = Begin
-                0x638c353793241049a2920e21b9327564
+                0x28832e347768a54fa1d439736f363b11
             End
             Begin
                 Begin OptionGroup
@@ -1208,7 +1208,7 @@ Begin Form
                     Name ="fraStatus"
                     DefaultValue ="1"
                     GUID = Begin
-                        0x777cfcb5a7283b49abd354d75b309f0b
+                        0x8cff2147cd78ab4dabaec22dd0c4302f
                     End
                     Begin
                         Begin Label
@@ -1222,7 +1222,7 @@ Begin Form
                             Name ="Label1"
                             Caption ="Change Status"
                             GUID = Begin
-                                0x65d3a72288744540bda7b195c145e886
+                                0xa6f8bf7946037f418adba1e6178ef313
                             End
                         End
                         Begin OptionButton
@@ -1232,7 +1232,7 @@ Begin Form
                             OptionValue =1
                             Name ="Option3"
                             GUID = Begin
-                                0x1fa9bd4864006a46857e8bd5beefeec6
+                                0x9e04adca981a8e459444516cda0e6293
                             End
                             Begin
                                 Begin Label
@@ -1244,7 +1244,7 @@ Begin Form
                                     Name ="Label4"
                                     Caption ="Active to Cancel"
                                     GUID = Begin
-                                        0x90d2b8b49730c9458a058ac5cefd568b
+                                        0x0a68e8a09a8e1d44953dd8a81c174339
                                     End
                                 End
                             End
@@ -1256,7 +1256,7 @@ Begin Form
                             OptionValue =2
                             Name ="Option5"
                             GUID = Begin
-                                0xf11d571c8c832642b2e5c77d2b2779b1
+                                0x884107bc802b364b82e3b63832e6015e
                             End
                             Begin
                                 Begin Label
@@ -1268,7 +1268,7 @@ Begin Form
                                     Name ="Label6"
                                     Caption ="Active to Hold"
                                     GUID = Begin
-                                        0xe7a808745959e04ba1f868909b7ca63f
+                                        0x7ea0e7ed289dc249a2b9d6cf1e8f69aa
                                     End
                                 End
                             End
@@ -1280,7 +1280,7 @@ Begin Form
                             OptionValue =3
                             Name ="Option7"
                             GUID = Begin
-                                0x3b0d659ad975a94495302080af2b9eed
+                                0x2859a5cff8a99844812073f196c16da6
                             End
                             Begin
                                 Begin Label
@@ -1292,7 +1292,7 @@ Begin Form
                                     Name ="Label8"
                                     Caption ="Cancel to Active"
                                     GUID = Begin
-                                        0xf11a8fee84ee1045b96a132a7f37e3ad
+                                        0xb1bb5882b5f6c546b4c0be55c0e19df9
                                     End
                                 End
                             End
@@ -1304,7 +1304,7 @@ Begin Form
                             OptionValue =4
                             Name ="Option9"
                             GUID = Begin
-                                0x2b0bd396a613e448b78b87d83b6015a7
+                                0xd50e055c1929c64f80755b0996067fb4
                             End
                             Begin
                                 Begin Label
@@ -1316,7 +1316,7 @@ Begin Form
                                     Name ="Label10"
                                     Caption ="Cancel to Hold"
                                     GUID = Begin
-                                        0x7a7ea5c54b880a4e940d35400819a36a
+                                        0x8f6f909d170dfa4598edada8e4bbb989
                                     End
                                 End
                             End
@@ -1328,7 +1328,7 @@ Begin Form
                             OptionValue =5
                             Name ="Option11"
                             GUID = Begin
-                                0x31ac9d9ce723b1408dffae23c794574a
+                                0x3a4d10fa5d212142b2bd649c6ef442fd
                             End
                             Begin
                                 Begin Label
@@ -1340,7 +1340,7 @@ Begin Form
                                     Name ="Label12"
                                     Caption ="Hold to Active"
                                     GUID = Begin
-                                        0x5d85677b9c677d4e9b8d902009ebe9ee
+                                        0x24f058654521fa4c9487706c895162aa
                                     End
                                 End
                             End
@@ -1352,7 +1352,7 @@ Begin Form
                             OptionValue =6
                             Name ="Option13"
                             GUID = Begin
-                                0xf0194d5e4775bc4fbfd9fd609c476a00
+                                0x5a5e66aab32fc8479264c6d4f9064399
                             End
                             Begin
                                 Begin Label
@@ -1364,7 +1364,7 @@ Begin Form
                                     Name ="Label14"
                                     Caption ="Hold to Cancel"
                                     GUID = Begin
-                                        0xad18aaee28d8b54793eb7344e6785a53
+                                        0x1db8c995cd9e2d46bc4d76bbfa2403fd
                                     End
                                 End
                             End
@@ -1382,7 +1382,7 @@ Begin Form
                     Caption ="Change"
                     OnClick ="[Event Procedure]"
                     GUID = Begin
-                        0xa2875a6ef5c06f40b53d184ffdcd6f4e
+                        0xae8ed73d2c35b4448f77f4f9ef03fec2
                     End
                 End
                 Begin CommandButton
@@ -1420,7 +1420,7 @@ Begin Form
                     End
                     ControlTipText ="Close Form"
                     GUID = Begin
-                        0x54242f4ad6b9c44c9f279f27ee9cef96
+                        0xefcc89135426a446861d4dde884a0dd7
                     End
                 End
                 Begin Label
@@ -1438,7 +1438,7 @@ Begin Form
                     Name ="Label17"
                     Caption ="Status Change"
                     GUID = Begin
-                        0x0fe58bd33235cd4f90a56b8de88d4c54
+                        0x230273eadca1794ca9ce3075662fbc5e
                     End
                 End
                 Begin TextBox
@@ -1452,7 +1452,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtID"
                     GUID = Begin
-                        0x778342f263111b45a35ccb74343d9728
+                        0x1ae655fc209de54a9791a0a1fa740d0c
                     End
                 End
                 Begin TextBox
@@ -1466,7 +1466,7 @@ Begin Form
                     BackColor =10092543
                     Name ="txtForm"
                     GUID = Begin
-                        0x565ebd4504b8e945b9ee7979c5c3a3fb
+                        0xf3505885f8842e4396a33218e6c277e8
                     End
                 End
             End
@@ -1480,20 +1480,20 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Compare Database
 Option Explicit
-Private Function Run_Procedure(strSQL As String, strSSN As String, intStat As Integer, strCurrentUserName As String) As Integer
+Private Function run_procedure(strSQL As String, strSSN As String, intStat As Integer, strCurrentUserName As String) As Integer
 
 On Error GoTo PROC_ERR
     
-    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    If g_adoConnection.State = adStateOpen Then g_adoConnection.Close
     With g_adoConnection
          .ConnectionString = SetConnxn
-         .CommandTimeout = 300
+         .CommandTimeout = 360
          .Open
     End With
     
     With g_adoCommand
           .ActiveConnection = g_adoConnection
-          .CommandTimeout = 300
+          .CommandTimeout = 360
           .CommandType = adCmdStoredProc
           .CommandText = strSQL
           
@@ -1522,7 +1522,7 @@ On Error GoTo PROC_ERR
     Set g_adoConnection = Nothing
     Set g_adoParm = Nothing
     
-    Run_Procedure = g_iRtnVal
+    run_procedure = g_iRtnVal
     
 PROC_EXIT:
   DoCmd.SetWarnings True
@@ -1530,7 +1530,7 @@ PROC_EXIT:
   Exit Function
 
 PROC_ERR:
-  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: fdlgChangeSubscrStatus.Run_Procedure "
+  MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, " Function: fdlgChangeSubscrStatus.Run_Procedure "
   Resume PROC_EXIT
   
   End Function
@@ -1588,8 +1588,9 @@ On Error GoTo PROC_ERR
     
     strUserName = GetCurrentUserName()
         strSQL = "usp_ChangeSubscrStatus"
-        If Run_Procedure(strSQL, strSSN, intStat, strUserName) Then
+        If run_procedure(strSQL, strSSN, intStat, strUserName) Then
             gintProcessStatus = 1
+            Forms(strForm).Dirty = False
 '            With Forms(strForm)
 '                .txtSubCanceled = intStat
 '                .SUBlastNAME.BackColor = lngColor
@@ -1610,7 +1611,7 @@ PROC_EXIT:
   Exit Sub
 
 PROC_ERR:
-  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function: fdlgChangeSubscrStatus.Run_Procedure "
+  MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, " Function: fdlgChangeSubscrStatus.Run_Procedure "
   GoTo PROC_EXIT
   
 End Sub
@@ -1625,7 +1626,7 @@ Exit_cmdClose_Click:
     Exit Sub
 
 Err_cmdClose_Click:
-    MsgBox Err.DESCRIPTION
+    MsgBox Err.Description
     Resume Exit_cmdClose_Click
     
 End Sub
@@ -1651,7 +1652,7 @@ PROC_EXIT:
 
 
 PROC_ERR:
-  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, "Procedure: fdlgChangeSubscrStatus.Form_Close"
+  MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Procedure: fdlgChangeSubscrStatus.Form_Close"
   Resume PROC_EXIT
 
 End Sub
