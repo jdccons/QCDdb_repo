@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-1394269913
+Checksum =1378916133
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -18,9 +18,9 @@ Begin Form
     DatasheetFontHeight =10
     ItemSuffix =63
     Left =2670
-    Top =195
-    Right =17820
-    Bottom =9030
+    Top =975
+    Right =18330
+    Bottom =8325
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
         0xea0e144b8c92e240
@@ -30,7 +30,7 @@ Begin Form
     End
     NameMap = Begin
         0x0acc0e5500000000975240dd377f354386ca6a25b49c4453010000004ae7d606 ,
-        0x94e9e440ff0072030400a0006600730075006200440077006e00440065007400 ,
+        0x94e9e44014219f11000000006600730075006200440077006e00440065007400 ,
         0x610069006c00000000000000000000000000000000000000000000000c000000 ,
         0x030000000000000000000000000000000000
     End
@@ -1343,31 +1343,6 @@ HandleError:
     Resume ExitProc
     
 End Function
-Private Function NewSub() As String
-' Object:      Object name
-' Desc:        Description of what the object does
-'
-' Called by:   user
-' Call:        how is it called
-' Arguments:   any parameters, their data types, and the
-'              possible values
-' Comments:    No error-checking.
-' Changes----------------------------------------------
-' Date             Developer       Version     Change
-' 04042017       name      1.0         Created
-'======================================================
-    On Error GoTo PROC_ERR
-    
-PROC_EXIT:
-    Exit Function
-PROC_ERR:
-    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Form_frmOnlineEnrollmentProcessing.NewSub"
-    GoTo PROC_EXIT
-    
-    
-End Function
-
-
 
 Private Sub btnCommitToDb_Maint_Click()
 
@@ -1397,16 +1372,18 @@ On Error GoTo HandleError
                 ' nothing
                 gintProcessStatus = 1
             Else
-                Me.txtStatusDataImport = "Import Errors!  Call support!"
+                Me.txtStatusDataImport = "Commit to database errors!  Call support!"
+                gintProcessStatus = 0
                 GoTo ExitProc
             End If
       
             If gintProcessStatus = 1 Then
                 ' *** Update the Web Server with the Records that have been processed ***
                 ExecuteSQL "EXEC usp_WebsiteSyncDwnld"
+                Me.txtStatusDataImport = "Commit to database succeeeded!"
                 gintProcessStatus = 1
             Else
-                Me.txtStatusDataImport = "Import Errors!  Call support!"
+                Me.txtStatusDataImport = "Commit to database errors!  Call support!"
                 gintProcessStatus = 0
             End If
             
