@@ -17,13 +17,86 @@ Public Function SetConnxn()
     On Error GoTo ErrorHandler
     
     
-    SetConnxn = "Provider=sqloledb;Data Source=SQL;" & _
-             "Initial Catalog=QCDdataSQL2005_dev;User ID=sa;Password=ZAQ!2wsx"
+'    SetConnxn = "Provider=sqloledb;Data Source=SQL;" & _
+'             "Initial Catalog=QCDdataSQL2005_uat;User ID=sa;Password=ZAQ!2wsx"
+             
+'    SetConnxn = "Driver={SQL SERVER};Server=SQL;" & _
+'                "Database=QCDdataSQL2005_uat;" & _
+'                "Trusted_Connection=yes;"
+
+'    SetConnxn = "Driver=SQL Server;" & _
+'                "Server=SQL;" & _
+'                "Database=QCDdataSQL2005_uat;" & _
+'                "UID=MSAccess;" & _
+'                "Password=pETl42M266AU"
+                
+    SetConnxn = "Provider=sqloledb;" & _
+                "Data Source=SQL;" & _
+                "Initial Catalog=QCDdataSQL2005_uat;" & _
+                "UID=sa;" & _
+                "Password=ZAQ!2wsx;" & _
+                "Connect Timeout=300"
+
+                        
+    'Description=QCD database new;
+    'DRIVER=SQL Server;
+    'SERVER=SQL;
+    'UID=MSAccess;
+    'APP=Microsoft Office 2003;
+    'WSID=JOHN-LAT-E6510;
+    'DATABASE=QCDdataSQL2005_uat;
+    'TABLE=dbo.tblVersion_Control
+
+    'SetConnxn = "DRIVER=SQL Server Native Client 11.0 " & _
+                "LANGUAGE = us_english " & _
+                "Database = QCDdataSQL2005_uat " & _
+                "WSID = WIN7 " & _
+                "APP=Microsoft Office 2003 " & _
+                "Trusted_Connection = Yes " & _
+                "SERVER = SQL " & _
+                "Description=QCD database with Integ Sec"
     
 Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 End Function
+    
+    
+Public Function SetNETConnxn()
+
+    On Error GoTo ErrorHandler
+    
+    
+    SetNETConnxn = "Server=SQL; " & _
+                    "Database=QCDdataSQL2005_uat; " & _
+                    "Trusted_Connection=False; " & _
+                    "User ID=sa; " & _
+                    "Password=ZAQ!2wsx; " & _
+                    "Connect Timeout=600"
+                    
+'    SetNETConnxn = "Provider=sqloledb;" & _
+'                "Data Source=SQL;" & _
+'                "Initial Catalog=QCDdataSQL2005_uat;" & _
+'                "UID=sa;" & _
+'                "Password=ZAQ!2wsx" & _
+'                "Connect Timeout=300"
+
+    Exit Function
+
+Exit_Point:
+    Exit Function
+    
+ErrorHandler:
+    MsgBox Err.Description & " " & Err.Number
+    Resume Exit_Point
+
+End Function
+
+    
+    
+    
+    
+    
