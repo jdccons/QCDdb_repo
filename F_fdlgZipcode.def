@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-468420769
+Checksum =418936433
 Begin Form
     RecordSelectors = NotDefault
     MaxButton = NotDefault
@@ -41,7 +41,7 @@ Begin Form
         0xe45707000000dba2de1cc90c2a42b59163326e526db343006900740079000000 ,
         0x0000000034c4eb9f72e87c478656e6934abfddcf07000000dba2de1cc90c2a42 ,
         0xb59163326e526db35300740061007400650000000000000042db3c0b88924142 ,
-        0xb4698c12221bf05f000000004317fbfd6cf7e44007003a070f024dff74006d00 ,
+        0xb4698c12221bf05f000000004317fbfd6cf7e4403700fc04e100000074006d00 ,
         0x70005a006900700063006f0064006500530065006c000000000000002f5ef62d ,
         0x30f68142acad8138603fa72b0700000042db3c0b88924142b4698c12221bf05f ,
         0x5a006900700063006f00640065000000000000005033c77d33cd6141b1cb58d3 ,
@@ -455,13 +455,14 @@ Private Sub cmdPrint_Click()
     Dim strWhere_old As String
     Dim strSearchField As String
     
-    strSearchField = "[DentZip1]"
+    'strSearchField = "[DentZip1]"
     mintReportID = Me.OpenArgs
         
     oReport.FindFirst ("[ReportID] = " & mintReportID)
     With oReport
         mstrCriteriaForm = .CriteriaForm
-        strWhere_old = .Where
+        strSearchField = .Where
+        'strWhere_old = .Where
     End With
     
     Set frm = Forms(mstrCriteriaForm)
@@ -477,21 +478,21 @@ Private Sub cmdPrint_Click()
         Next I
         strIn = Left(strIn, Len(strIn) - 1)
         mstrWhere = strSearchField & " IN (" & strIn & ")"
-        If strWhere_old = mstrWhere Then
-            mstrWhere = strWhere_old
-        Else
-            mstrWhere = mstrWhere
-        End If
+'        If strWhere_old = mstrWhere Then
+'            mstrWhere = strWhere_old
+'        Else
+'            mstrWhere = mstrWhere
+'        End If
         DoCmd.OpenReport mstrReportName, acViewPreview, , mstrWhere, , mintReportID
     Else
         MsgBox "Please select some zipcodes."
     End If
     
     ' save where clause
-    With oReport
-        .Where = mstrWhere
-        .Update
-    End With
+'    With oReport
+'        .Where = mstrWhere
+'        .Update
+'    End With
     
     Set oReport = Nothing
     Set ctl = Nothing
