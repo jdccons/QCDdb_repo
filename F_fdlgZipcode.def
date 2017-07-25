@@ -1,0 +1,578 @@
+Version =20
+VersionRequired =20
+Checksum =-468420769
+Begin Form
+    RecordSelectors = NotDefault
+    MaxButton = NotDefault
+    ShortcutMenu = NotDefault
+    AutoCenter = NotDefault
+    NavigationButtons = NotDefault
+    DividingLines = NotDefault
+    DefaultView =0
+    ScrollBars =0
+    ViewsAllowed =1
+    TabularFamily =96
+    BorderStyle =3
+    PictureAlignment =2
+    DatasheetGridlinesBehavior =3
+    GridX =24
+    GridY =24
+    Width =8760
+    DatasheetFontHeight =10
+    ItemSuffix =23
+    Left =5790
+    Top =345
+    Right =14550
+    Bottom =6510
+    DatasheetGridlinesColor =12632256
+    RecSrcDt = Begin
+        0x90faff309abde240
+    End
+    GUID = Begin
+        0xf6333c609067e24db5a14a72f6e5de97
+    End
+    NameMap = Begin
+        0x0acc0e5500000000dba2de1cc90c2a42b59163326e526db300000000602cf9fd ,
+        0x6cf7e440945f170041004c0074006d0070005a006900700063006f0064006500 ,
+        0x0000000000003b5e65d07f26c74a8387570b42c85a2507000000dba2de1cc90c ,
+        0x2a42b59163326e526db34d006f007600650064000000000000003423e4c26821 ,
+        0xfc48b205be7da116243807000000dba2de1cc90c2a42b59163326e526db35a00 ,
+        0x6900700063006f006400650000000000000010625bdcebb42c46b339e99e385d ,
+        0xe45707000000dba2de1cc90c2a42b59163326e526db343006900740079000000 ,
+        0x0000000034c4eb9f72e87c478656e6934abfddcf07000000dba2de1cc90c2a42 ,
+        0xb59163326e526db35300740061007400650000000000000042db3c0b88924142 ,
+        0xb4698c12221bf05f000000004317fbfd6cf7e44007003a070f024dff74006d00 ,
+        0x70005a006900700063006f0064006500530065006c000000000000002f5ef62d ,
+        0x30f68142acad8138603fa72b0700000042db3c0b88924142b4698c12221bf05f ,
+        0x5a006900700063006f00640065000000000000005033c77d33cd6141b1cb58d3 ,
+        0xdf76c5310700000042db3c0b88924142b4698c12221bf05f4300690074007900 ,
+        0x00000000000086b0ffd8b0850f42b82ae1a7cb45d9430700000042db3c0b8892 ,
+        0x4142b4698c12221bf05f53007400610074006500000000000000000000000000 ,
+        0x000000000000000000000c000000030000000000000000000000000000000000
+    End
+    Caption ="Zipcode Selection"
+    OnOpen ="[Event Procedure]"
+    MenuBar ="Dialog"
+    DatasheetFontName ="Arial"
+    PrtMip = Begin
+        0xa0050000a0050000a0050000a005000000000000201c0000e010000001000000 ,
+        0x010000006801000000000000a10700000100000001000000
+    End
+    PrtDevMode = Begin
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x010403069c000c0343ef800501000100ea0a6f08640001000f00c80002000100 ,
+        0xc800030001004c65747465720000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000010000000000000001000000 ,
+        0x0200000001000000ffffffff0000000000000000000000000000000044494e55 ,
+        0x2200b0000c030000c1951cfb0000000000000000000000000000000000000000 ,
+        0x0000000000000000060000000100000000000000020001000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+        0x000000000000000000000000010000000000000000000000b0000000534d544a ,
+        0x000000001000a00053006e00610067006900740020003100b0000000534d544a ,
+        0x000000001000a00053006e006100670069007400200031003000200050007200 ,
+        0x69006e007400650072000000496e70757442696e004d414e55414c0052455344 ,
+        0x4c4c00556e69726573444c4c004f7269656e746174696f6e00504f5254524149 ,
+        0x5400506170657253697a65004c4554544552005265736f6c7574696f6e004f70 ,
+        0x74696f6e3300436f6c6f724d6f64650032346270700000000000000000000000 ,
+        0x0000000000000000
+    End
+    PrtDevNames = Begin
+        0x08001a0024000100000000000000000000000000000000000000000000000000 ,
+        0x00000000433a5c50726f6772616d446174615c54656368536d6974685c536e61 ,
+        0x6769742031305c5072696e746572506f727446696c6500
+    End
+    AllowDatasheetView =0
+    AllowPivotTableView =0
+    AllowPivotChartView =0
+    AllowPivotChartView =0
+    Begin
+        Begin Label
+            BackStyle =0
+            FontName ="Tahoma"
+        End
+        Begin Rectangle
+            SpecialEffect =3
+            BackStyle =0
+        End
+        Begin CommandButton
+            FontSize =8
+            FontWeight =400
+            ForeColor =-2147483630
+            FontName ="Tahoma"
+        End
+        Begin TextBox
+            FELineBreak = NotDefault
+            SpecialEffect =2
+            OldBorderStyle =0
+            FontName ="Tahoma"
+            AsianLineBreak =255
+        End
+        Begin ListBox
+            SpecialEffect =2
+            FontName ="Tahoma"
+        End
+        Begin Section
+            Height =6180
+            BackColor =12632256
+            Name ="Detail"
+            GUID = Begin
+                0xda1e9a3acc8b164dafef432bf6f8df7f
+            End
+            Begin
+                Begin CommandButton
+                    OverlapFlags =85
+                    Left =4380
+                    Top =5580
+                    Width =432
+                    Height =432
+                    TabIndex =5
+                    Name ="cmdClose"
+                    Caption ="Command0"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000010000000100000000100040000000000800000000000000000000000 ,
+                        0x0000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff00c0c0c00000ffff00ff000000c0c0c000 ,
+                        0xffff0000ffffff00dadad0dadadadadaadad00adadadadaddad030dadadadada ,
+                        0xad0330adadadadad0033300000000adaa03330ff0dadadadd03300ff0adad4da ,
+                        0xa03330ff0dad44add03330ff0ad44444a03330ff0d444444d03330ff0ad44444 ,
+                        0xa0330fff0dad44add030ffff0adad4daa00fffff0dadadadd00000000adadada ,
+                        0xadadadadadadadad000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000000000000000000000000000000000000000000000000000 ,
+                        0x0000000000000000
+                    End
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff000000c0c0c000ffff00000000ff00c0c0c00000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    ControlTipText ="Close Form"
+                    GUID = Begin
+                        0x86d68f64424bfd4cbba0235da94e789a
+                    End
+                End
+                Begin ListBox
+                    ColumnHeads = NotDefault
+                    OverlapFlags =215
+                    MultiSelect =2
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    Left =360
+                    Top =720
+                    Width =3240
+                    Height =4320
+                    Name ="lstZipcode"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tmpZipcode.Zipcode, tmpZipcode.City, tmpZipcode.State, tmpZipcode.Moved F"
+                        "ROM tmpZipcode WHERE (((tmpZipcode.Moved)=0)) ORDER BY tmpZipcode.Zipcode;"
+                    ColumnWidths ="720;1440;360"
+                    GUID = Begin
+                        0x0d7366fb844d9d4ba095cc730de5ecfc
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =360
+                            Top =480
+                            Width =765
+                            Height =240
+                            Name ="Label2"
+                            Caption ="Zipcodes"
+                            GUID = Begin
+                                0xb7b7fe52cff7e947bd1db5458ce92c26
+                            End
+                        End
+                    End
+                End
+                Begin ListBox
+                    ColumnHeads = NotDefault
+                    OverlapFlags =215
+                    MultiSelect =2
+                    IMESentenceMode =3
+                    ColumnCount =3
+                    Left =4965
+                    Top =720
+                    Width =3240
+                    Height =4320
+                    TabIndex =1
+                    Name ="lstZipcodeSel"
+                    RowSourceType ="Table/Query"
+                    RowSource ="SELECT tmpZipcodeSel.Zipcode, tmpZipcodeSel.City, tmpZipcodeSel.State FROM tmpZi"
+                        "pcodeSel ORDER BY tmpZipcodeSel.Zipcode;"
+                    ColumnWidths ="720;1440;360"
+                    GUID = Begin
+                        0x9a1ebae828adc1419275bd752b62e576
+                    End
+                    Begin
+                        Begin Label
+                            OverlapFlags =93
+                            Left =4980
+                            Top =479
+                            Width =1410
+                            Height =240
+                            Name ="Label6"
+                            Caption ="Selected Zipcodes "
+                            GUID = Begin
+                                0x21e2f4b3771da9408a36a6265dbd3850
+                            End
+                        End
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =4140
+                    Top =1200
+                    Width =360
+                    TabIndex =2
+                    Name ="cmdAdd"
+                    Caption =">"
+                    OnClick ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    ControlTipText ="Move Selected GEO"
+                    GUID = Begin
+                        0xf49c28520febad4caf4e97d009681e55
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =93
+                    Left =4140
+                    Top =1740
+                    Width =360
+                    TabIndex =3
+                    Name ="cmdDelete"
+                    Caption ="<"
+                    OnClick ="[Event Procedure]"
+                    FontName ="MS Sans Serif"
+                    ControlTipText ="Remove Selected GEO"
+                    GUID = Begin
+                        0xbd512baeebc9e746baa1454319f7589b
+                    End
+                End
+                Begin CommandButton
+                    OverlapFlags =85
+                    AccessKey =82
+                    TextFontFamily =2
+                    Left =3840
+                    Top =5580
+                    Width =432
+                    Height =432
+                    FontSize =10
+                    FontWeight =700
+                    TabIndex =4
+                    ForeColor =0
+                    Name ="cmdPrint"
+                    Caption ="Print Preview&R"
+                    StatusBarText ="Preview Report"
+                    OnClick ="[Event Procedure]"
+                    PictureData = Begin
+                        0x2800000017000000160000000100040000000000080100000000000000000000 ,
+                        0x1000000000000000000000000000800000800000008080008000000080008000 ,
+                        0x8080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00 ,
+                        0xffff0000ffffff00888888888888888888888889888888888888888888888884 ,
+                        0x88888888888888888888888388888888888888888888888e8888000000000000 ,
+                        0x8800888288880ffffffffff08000888d88880fffffff00007008888888880fff ,
+                        0xfff078870788888588880fffff0788f77088888288880fffff08888780888884 ,
+                        0x88880fffff08f8878088888888880fffff07ff877088888088880ffffff07887 ,
+                        0x0888888088880fffffff00008888888088880ffffffffff08888888088880fff ,
+                        0xffff00008888888088880fffffff08088888888188880fffffff008888888886 ,
+                        0x8888000000000888888888808888888888888888888888808888888888888888 ,
+                        0x88888880888888888888888888888880
+                    End
+                    FontName ="System"
+                    ObjectPalette = Begin
+                        0x0003100000000000800000000080000080800000000080008000800000808000 ,
+                        0x80808000c0c0c000ff00000000ff0000ffff00000000ff00ff00ff0000ffff00 ,
+                        0xffffff0000000000
+                    End
+                    GUID = Begin
+                        0xcf0282e4269eae4a988c3416cc3cc62c
+                    End
+                End
+                Begin Rectangle
+                    OverlapFlags =223
+                    Left =300
+                    Top =420
+                    Width =8100
+                    Height =4920
+                    Name ="Box15"
+                    GUID = Begin
+                        0xb82284fe94d73943bffe72b0356905f1
+                    End
+                End
+            End
+        End
+    End
+End
+CodeBehindForm
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = True
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Option Compare Database
+Option Explicit
+
+Dim mdbs As DAO.Database
+Dim mrst As DAO.Recordset
+Dim mstrSQL As String
+Dim mstrWhere As String
+Dim mstrCriteriaForm As String
+Dim mstrReportName As String
+Dim mintReportID As Integer
+Dim mintMenuItem As Integer
+    
+
+Private Sub cmdAdd_Click()
+
+    On Error GoTo PROC_ERR
+    
+    Dim frm As Form, ctl As Control
+    Dim I As Integer
+    Dim strIn As String
+    
+    Set frm = Forms(mstrCriteriaForm)
+    Set ctl = frm("lstZipcode")
+
+    For I = 0 To ctl.ListCount - 1
+        If ctl.Selected(I) Then
+            strIn = strIn & "'" & ctl.Column(0, I) & "',"
+        End If
+    Next I
+    strIn = Left(strIn, Len(strIn) - 1)
+
+    ' add items to the selections table
+     mstrSQL = "INSERT INTO tmpZipcodeSel ( Zipcode , City , State )"
+     mstrSQL = mstrSQL & " SELECT Zipcode , City , State"
+     mstrSQL = mstrSQL & " FROM tmpZipcode"
+     mstrSQL = mstrSQL & " WHERE Zipcode IN ( " & strIn & " );"
+     ExecuteSQL mstrSQL
+     
+     ' remove items from the base table
+     mstrSQL = "UPDATE tmpZipcode SET tmpZipcode.Moved = -1"
+     mstrSQL = mstrSQL & " WHERE (((tmpZipcode.Zipcode)IN (" & strIn & ")));"
+     ExecuteSQL mstrSQL
+    
+     Me.lstZipcode.Requery
+     Me.lstZipcodeSel.Requery
+     
+     Set ctl = Nothing
+     Set frm = Nothing
+
+PROC_EXIT:
+    Exit Sub
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Form_fdlgZipcode.cmdAdd_Click"
+    GoTo PROC_EXIT
+
+End Sub
+
+Private Sub cmdClose_Click()
+    On Error GoTo Err_cmdClose_Click
+    
+    DoCmd.Close
+    
+Exit_cmdClose_Click:
+    Exit Sub
+    
+Err_cmdClose_Click:
+    MsgBox Err.Description
+    Resume Exit_cmdClose_Click
+    
+End Sub
+
+
+Private Sub cmdDelete_Click()
+
+    On Error GoTo PROC_ERR
+
+    Dim frm As Form, ctl As Control
+    Dim I As Integer
+    Dim strIn As String
+    
+    Set frm = Forms(mstrCriteriaForm)
+    Set ctl = frm("lstZipcodeSel")
+    
+    For I = 0 To ctl.ListCount - 1
+        If ctl.Selected(I) Then
+            strIn = strIn & "'" & ctl.Column(0, I) & "',"
+        End If
+    Next I
+    strIn = Left(strIn, Len(strIn) - 1)
+    
+    ' delete from selections table
+    mstrSQL = "DELETE FROM tmpZipcodeSel "
+    mstrSQL = mstrSQL & "WHERE Zipcode IN ( " & strIn & " );"
+    ExecuteSQL mstrSQL
+    
+    ' add to base table
+    mstrSQL = "UPDATE tmpZipcode SET tmpZipcode.Moved = 0"
+    mstrSQL = mstrSQL & " WHERE (((tmpZipcode.Zipcode)IN (" & strIn & ")));"
+    ExecuteSQL mstrSQL
+    
+    Me.lstZipcode.Requery
+    Me.lstZipcodeSel.Requery
+    
+    Set ctl = Nothing
+    Set frm = Nothing
+    
+PROC_EXIT:
+    Exit Sub
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Form_fdlgZipcode.cmdDelete_Click"
+    GoTo PROC_EXIT
+    
+    
+End Sub
+
+Private Sub cmdPrint_Click()
+    On Error GoTo PROC_ERR
+    
+    Dim oReport As clsReport
+    Set oReport = New clsReport
+    Dim frm As Form
+    Dim ctl As Control
+    Dim I As Integer
+    Dim strIn As String
+    Dim strWhere_old As String
+    Dim strSearchField As String
+    
+    strSearchField = "[DentZip1]"
+    mintReportID = Me.OpenArgs
+        
+    oReport.FindFirst ("[ReportID] = " & mintReportID)
+    With oReport
+        mstrCriteriaForm = .CriteriaForm
+        strWhere_old = .Where
+    End With
+    
+    Set frm = Forms(mstrCriteriaForm)
+    Set ctl = frm("lstZipcodeSel")
+    ' check to see if anything was selected
+    ' i.e. is there data in tmpZipcodeSel?
+    ' if yes, put selections in an array,
+    ' then open report with array as where
+    If GetRecCnt Then
+        strIn = ""
+        For I = 1 To ctl.ListCount - 1
+            strIn = strIn & "'" & ctl.Column(0, I) & "',"
+        Next I
+        strIn = Left(strIn, Len(strIn) - 1)
+        mstrWhere = strSearchField & " IN (" & strIn & ")"
+        If strWhere_old = mstrWhere Then
+            mstrWhere = strWhere_old
+        Else
+            mstrWhere = mstrWhere
+        End If
+        DoCmd.OpenReport mstrReportName, acViewPreview, , mstrWhere, , mintReportID
+    Else
+        MsgBox "Please select some zipcodes."
+    End If
+    
+    ' save where clause
+    With oReport
+        .Where = mstrWhere
+        .Update
+    End With
+    
+    Set oReport = Nothing
+    Set ctl = Nothing
+    Set frm = Nothing
+    
+PROC_EXIT:
+    Exit Sub
+PROC_ERR:
+    If Err.Number = 3075 Then
+        Resume Next
+    Else
+        MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Form_fdlgZipcode.cmdPrint_Click"
+        GoTo PROC_EXIT
+    End If
+    
+End Sub
+
+Private Function GetRecCnt() As Boolean
+
+    On Error GoTo PROC_ERR
+    
+    mstrSQL = "select 1 from tmpZipcodeSel"
+    Set mdbs = CurrentDb()
+    Set mrst = mdbs.OpenRecordset(mstrSQL, dbOpenSnapshot)
+    If mrst.RecordCount > 0 Then
+        GetRecCnt = True
+    Else
+        GetRecCnt = False
+    End If
+    mrst.Close
+    Set mdbs = Nothing
+    
+PROC_EXIT:
+    Exit Function
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "fdlgZipcode.GetRecCnt"
+    GoTo PROC_EXIT
+    
+End Function
+
+Private Sub Form_Open(Cancel As Integer)
+
+    On Error GoTo PROC_ERR
+    
+    Dim oReport As clsReport
+    Set oReport = New clsReport
+    Dim strStoredProcedure As String
+    
+    ' clear any selections from previous report requests
+    mstrSQL = "DELETE FROM tmpZipcodeSel"
+    ExecuteSQL mstrSQL
+
+    mintReportID = Me.OpenArgs
+    
+    ' instantiate report object
+    oReport.FindFirst ("[ReportID] = " & mintReportID)
+    With oReport
+        mstrCriteriaForm = .CriteriaForm
+        mstrReportName = .ReportName
+        strStoredProcedure = .usp
+        mstrWhere = .Where
+        mintMenuItem = .MenuItem
+    End With
+
+    ' get list of zipcodes from dentist table
+    ' and populate list box
+    If IsNull(strStoredProcedure) Or strStoredProcedure = "" Then
+        GoTo PROC_EXIT
+    Else
+        ExecuteSQL "exec " & strStoredProcedure
+    End If
+    
+    Me.lstZipcode.Requery
+    Me.lstZipcodeSel.Requery
+    
+    Set oReport = Nothing
+    
+PROC_EXIT:
+    Exit Sub
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Form_fdlgZipcode.Form_Open"
+    GoTo PROC_EXIT
+    
+End Sub
