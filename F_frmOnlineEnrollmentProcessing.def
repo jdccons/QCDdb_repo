@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =1378916133
+Checksum =-1403674135
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -19,7 +19,7 @@ Begin Form
     ItemSuffix =63
     Left =2670
     Top =975
-    Right =18330
+    Right =15750
     Bottom =8325
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
@@ -30,7 +30,7 @@ Begin Form
     End
     NameMap = Begin
         0x0acc0e5500000000975240dd377f354386ca6a25b49c4453010000004ae7d606 ,
-        0x94e9e44014219f11000000006600730075006200440077006e00440065007400 ,
+        0x94e9e44000000000000000006600730075006200440077006e00440065007400 ,
         0x610069006c00000000000000000000000000000000000000000000000c000000 ,
         0x030000000000000000000000000000000000
     End
@@ -1026,6 +1026,13 @@ Function CommitToDB() As Boolean
                 
               ' assign a Pltatinum Customer Key
               .PltCustKey = mneumonic(ReplaceChars_TSB(rst("SubLastName"), "'", ""), ReplaceChars_TSB(rst("SubFirstName"), "'", ""))
+              
+              If .PltCustKey = "Unable to find unique key" Then
+                MsgBox "Unable to find a unique key (PltCustKey) f " & vbCrLf & _
+                "for " & rst("SubLastName") & ", " & rst("SubFirstName") & "." & vbCrLf & _
+                "Please assign this PltCustKey manually."
+                rst.MoveNext
+              End If
               
               ' The fields below are Individual only updates
               .SubID = AssignSubID()   'rst("SubID")
