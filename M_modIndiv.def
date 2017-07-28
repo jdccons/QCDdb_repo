@@ -35,66 +35,27 @@ ErrorHandler:
     If Err.Number = 94 Then
         Resume Next
     Else
-        MsgBox Err.DESCRIPTION & " " & Err.Number
+        MsgBox Err.Description & " " & Err.Number
         Resume Exit_Point
     End If
 End Function
-Function PrintIndividualCard() As Boolean
+Function PrintIndividualCard() As Integer
     
+    On Error GoTo PROC_ERR
+
     Call Form_frmIndivSubscr.PrtCardMem_Click
     PrintIndividualCard = True
     
-End Function
-
-
-Public Function CountFamily(strSSN As String) As Integer
-    'Purpose:  Counts the number of family members for an
-    '          All American subscriber
-    '--------------------------------------------------------
-    '
-    ' Parameters: strSSN -
-    ' Returns   : Integer -
-    ' Programmer:  John Criswell
-    ' Create Date:  12/11/07
-    ' Update Date:  12/11/07
-    ' Updated by:  John Criswell
-    ' Reason:
-    '---------------------------------------------------------
-    
-    
-    On Error GoTo ErrorHandler
-    
-    
-    Dim db As DAO.Database
-    Dim rs As DAO.Recordset
-    Dim strSQL As String
-    
-    Set db = CurrentDb()
-    
-    strSQL = "SELECT tblDependent.DEPsubID " & _
-               "FROM (tblGrp INNER JOIN tblSubscr ON tblGrp.GroupID = tblSubscr.SubGroupID) " & _
-               "INNER JOIN tblDependent ON tblSubscr.SUBssn = tblDependent.DEPsubID " & _
-               "WHERE (((tblGrp.GroupType)=4) " & _
-               "AND ((tblGrp.GRcancelled)=0) " & _
-               "AND ((tblDependent.DEPsubID)='" & strSSN & "') " & _
-               "AND ((tblDependent.DEPrelationship)='C'" & _
-               "Or (tblDependent.DEPrelationship)='S'));"
-    
-    Set rs = db.OpenRecordset(strSQL, dbOpenSnapshot)
-    CountFamily = rs.RecordCount
-    
-    rs.Close
-    db.Close
-    Set db = Nothing
-    
-    
-Exit_Point:
+PROC_EXIT:
     Exit Function
     
-ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
-    Resume Exit_Point
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Function: modIndiv.PrintIndividualCard"
+    GoTo PROC_EXIT
+    
 End Function
+
+
 
 Function PrtScreen_Indiv()
     'Purpose:  Prints a report that looks like the
@@ -118,7 +79,7 @@ Function PrtScreen_Indiv()
     Dim strWhere As String
     
     
-    strIndivID = Forms!frmIndivSubscr!SUBssn
+    strIndivID = Forms!frmIndivSubscr!SubSSN
     strWhere = "(([tblSubscr].[SUBssn]) = """ & strIndivID & """)"
     
     stDocName = "rptIndivSubscr"
@@ -129,7 +90,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 End Function
 Function PrtScreen_IndivInquire()
@@ -145,7 +106,7 @@ Function PrtScreen_IndivInquire()
     ' Reason:
     '---------------------------------------------------------
     
-    'This function is used to preview a "print Screen" on the find group subscriber form
+    'This function is used to preview a "print Screen" on the find group subscriber form (frmSubscrInquire)
     
     On Error GoTo ErrorHandler
     
@@ -155,7 +116,7 @@ Function PrtScreen_IndivInquire()
     Dim strWhere As String
     
     
-    strIndivID = Forms!frmSubscrInquire!SUBssn
+    strIndivID = Forms!frmSubscrInquire!SubSSN
     strWhere = "(([tblSubscr].[SUBssn]) = """ & strIndivID & """)"
     
     stDocName = "rptGrpSubscr"
@@ -166,7 +127,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 End Function
 
@@ -205,7 +166,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 
 End Function
@@ -253,7 +214,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
     
     
@@ -269,12 +230,15 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     GoTo Exit_Point
 End Function
 
 Public Function SyncCustomers(strSQL As String, strUserName As String) As Boolean
 ' Purpose    : Syncs to ARCUST_local
+'               called from frmInvIndiv; after invoices are posted
+'               to Quickbooks, the individual subscribers are synchronized
+'               to the customers in ARCUST_local;
 ' Author     : J Criswell
 ' Description:
 ' Date       : 2016-01-16
@@ -282,7 +246,7 @@ Public Function SyncCustomers(strSQL As String, strUserName As String) As Boolea
     
     On Error GoTo HandleError
     
-    If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+    If g_adoConnection.State = adStateOpen Then g_adoConnection.Close
     With g_adoConnection
          .ConnectionString = SetConnxn
          .Open
@@ -314,7 +278,7 @@ Public Function SyncCustomers(strSQL As String, strUserName As String) As Boolea
 HandleExit:
     Exit Function
 HandleError:
-    MsgBox Err.DESCRIPTION
+    MsgBox Err.Description
     Resume HandleExit
 End Function
 
@@ -331,7 +295,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
     
 End Function
@@ -347,7 +311,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 
 
@@ -407,7 +371,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 
 End Function
@@ -424,7 +388,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 
 End Function
@@ -442,7 +406,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 End Function
 Function DeleteIndivSubscr() As Boolean
@@ -459,7 +423,7 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
 End Function
 
@@ -483,7 +447,7 @@ On Error GoTo Err_DeleteIndividualSubscriber
         Else
             strSQL = "usp_DeleteIndividualSubscriber"
             
-            If g_adoConnection.STATE = adStateOpen Then g_adoConnection.Close
+            If g_adoConnection.State = adStateOpen Then g_adoConnection.Close
             
             With g_adoConnection
                  .ConnectionString = SetConnxn
@@ -514,7 +478,7 @@ On Error GoTo Err_DeleteIndividualSubscriber
             End If
         End If
         
-        If g_adoConnection.STATE = adStateOpen Then
+        If g_adoConnection.State = adStateOpen Then
                 g_adoConnection.Close
                 Set g_adoCommand = Nothing
                 Set g_adoConnection = Nothing
@@ -529,9 +493,32 @@ Exit_DeleteIndividualSubscriber:
     
 Err_DeleteIndividualSubscriber:
     ' Display error information.
-    MsgBox "Error number " & Err.Number & ": " & Err.DESCRIPTION
+    MsgBox "Error number " & Err.Number & ": " & Err.Description
     GoTo Exit_DeleteIndividualSubscriber
 
+End Function
+Private Function IsCustKey(strCustKey As String) As Boolean
+
+    Dim strSQL As String
+    strSQL = strSQL & "SELECT CustKey " & vbCrLf
+    strSQL = strSQL & " FROM ( " & vbCrLf
+    strSQL = strSQL & " SELECT GroupID AS CustKey " & vbCrLf
+    strSQL = strSQL & " FROM tblGrp " & vbCrLf
+    strSQL = strSQL & " UNION ALL " & vbCrLf
+    strSQL = strSQL & " SELECT PltCustKey AS CustKey " & vbCrLf
+    strSQL = strSQL & " FROM tblSubscr " & vbCrLf
+    strSQL = strSQL & " WHERE SubStatus = 'INDIV' " & vbCrLf
+    strSQL = strSQL & " ) ck "
+    strSQL = strSQL & " WHERE CustKey = '" & strCustKey & "'"
+    strSQL = strSQL & " ORDER BY CustKey ASC"
+    LoadADORecordset (strSQL)
+    If g_adoRS.RecordCount > 0 Then
+        IsCustKey = True
+    Else
+        IsCustKey = False
+    End If
+    Set g_adoRS = Nothing
+    
 End Function
 
 Public Function mneumonic(strLastName As String, strFirstName As String) As String
@@ -539,48 +526,73 @@ Public Function mneumonic(strLastName As String, strFirstName As String) As Stri
     On Error GoTo PROC_ERR
     
     'using the first three letters of the last name
-    'and the first two letters for the first name
+    'and the first two letters of the first name,
     'generate a five character mneumonic to be used
     'as the "Platinum" customer key
+    
     Dim strLongName As String
     Dim strShortName As String
     Dim strSQL As String
     Dim I As Integer
+    Dim strWhere As String
+    Dim strOrderBy As String
+    Dim fValid As Boolean
     
     strLongName = UCase(Mid(strLastName, 1, 3) & Mid(strFirstName, 1, 2))
     strShortName = UCase(Mid(strLastName, 1, 3) & Mid(strFirstName, 1, 1))
-    
-    If IsIndiv(strLongName) Then
-        strSQL = "SELECT ID, PltCustKey"
-        strSQL = strSQL & " FROM tblSubscr"
-        strSQL = strSQL & " WHERE SUBSTRING(PltCustKey,1,4) = '" & strShortName & "' AND SubClassKey = 'INDIV'"
-        strSQL = strSQL & " ORDER BY ID;"
-        LoadADORecordset (strSQL)
-        g_adoRS.MoveLast
+
+    If IsCustKey(strLongName) Then
+
+    ' need a list of first four chars (short name (first three chars of last name, plus first char of the first name))
+    ' go through the list and see if there is a first four;
+    ' if no, then add 1 to the end of the first four
+    ' if yes, then test if the fifth char is numeric and increment
         
-        If Not IsNumeric(Mid(g_adoRS("PltCustKey"), 5, 5)) Then
-            strLongName = strShortName & "1"
-        ElseIf IsNumeric(Mid(g_adoRS("PltCustKey"), 5, 5)) Then
-            I = CInt(Mid(g_adoRS("PltCustKey"), 5, 5))
-            I = I + 1
-            strLongName = strShortName & CStr(I)
-        Else
-            strLongName = strShortName & Chr(Asc(Mid(g_adoRS("PltCustKey"), 5, 5)) + 1)
+        strSQL = strSQL & "SELECT CustKey " & vbCrLf
+        strSQL = strSQL & " FROM ( " & vbCrLf
+        strSQL = strSQL & " SELECT GroupID AS CustKey " & vbCrLf
+        strSQL = strSQL & " FROM tblGrp " & vbCrLf
+        strSQL = strSQL & " UNION ALL " & vbCrLf
+        strSQL = strSQL & " SELECT PltCustKey AS CustKey " & vbCrLf
+        strSQL = strSQL & " FROM tblSubscr " & vbCrLf
+        strSQL = strSQL & " WHERE SubStatus = 'INDIV' " & vbCrLf
+        strSQL = strSQL & " ) ck "
+        strWhere = " WHERE SUBSTRING(CustKey,1,4) = '" & strShortName & "'"
+        strOrderBy = " ORDER BY CustKey DESC"
+        strSQL = strSQL & strWhere & strOrderBy
+
+        LoadADORecordset (strSQL)
+
+        If g_adoRS.RecordCount > 0 Then                             ' is the short name in the list
+            If Not IsNumeric(Mid(g_adoRS("CustKey"), 5, 1)) Then    ' if the last letter is a char, then replace it with 1
+                strLongName = strShortName & "1"
+                mneumonic = strLongName
+            Else                                                    ' if the last number is a number, then increment it
+                I = CInt(Mid(g_adoRS("CustKey"), 5, 1))
+                I = I + 1
+                strLongName = strShortName & CStr(I)
+                mneumonic = strLongName
+            End If
         End If
+    Else
+        mneumonic = strLongName
     End If
-    mneumonic = strLongName
-    
-    Exit Function
+        
+    fValid = IsCustKey(mneumonic)
+    If fValid = True Then
+        mneumonic = "Unable to find unique key"
+    End If
+    Set g_adoRS = Nothing
     
 PROC_EXIT:
     Exit Function
 
 PROC_ERR:
-  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function:modIndiv.mneumonic"
+  MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, " Function:modIndiv.mneumonic"
   Resume PROC_EXIT
     
 End Function
-
+  
 Public Function BillingGroup(dteSubContBeg As Date, dteSubContEnd As Date) As String
 
 On Error GoTo PROC_ERR
@@ -609,7 +621,7 @@ PROC_EXIT:
 
 
 PROC_ERR:
-  MsgBox "Error: (" & Err.Number & ") " & Err.DESCRIPTION, vbCritical, " Function:modIndiv.BillingGroup"
+  MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, " Function:modIndiv.BillingGroup"
   Resume PROC_EXIT
 
 
@@ -647,8 +659,30 @@ Exit_Point:
     Exit Function
     
 ErrorHandler:
-    MsgBox Err.DESCRIPTION & " " & Err.Number
+    MsgBox Err.Description & " " & Err.Number
     Resume Exit_Point
         
         
+End Function
+
+Public Function PrtCardPDF(strSubID As String) As Boolean
+'Author     :  John Criswell
+'Description:   runs a report to create an individual card
+'               in PDF format
+'Date       : 2017-04-04
+    
+    On Error GoTo PROC_ERR
+    
+        Dim strWhere As String
+        strWhere = "[SubID] = '" & strSubID & "'"
+        
+        DoCmd.OpenReport "rptCardMemIndiv_to_PDF_one", acViewPreview, , strWhere
+        PrtCardPDF = True
+    
+PROC_EXIT:
+    Exit Function
+    
+PROC_ERR:
+    MsgBox "Error: (" & Err.Number & ") " & Err.Description, vbCritical, "Function: modIndiv.PrtCardPDF"
+    GoTo PROC_EXIT
 End Function
