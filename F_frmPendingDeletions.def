@@ -1,6 +1,6 @@
 Version =20
 VersionRequired =20
-Checksum =-941807143
+Checksum =989788739
 Begin Form
     RecordSelectors = NotDefault
     AutoCenter = NotDefault
@@ -19,7 +19,7 @@ Begin Form
     Bottom =8025
     DatasheetGridlinesColor =12632256
     RecSrcDt = Begin
-        0xab5b3d8fe6f1e440
+        0x8bc39967acf9e440
     End
     GUID = Begin
         0x85ed1247333825468fa6926d82703104
@@ -29,35 +29,36 @@ Begin Form
         0xe6f1e440124c747202000080760077005f00500065006e00640069006e006700 ,
         0x440065006c006500740069006f006e00730000000000000002e0061bf452974b ,
         0xacbfb88791a1df020700000081be477822270b4a9e23a1d0bcbea65b53007500 ,
-        0x6200530074006100740075007300000000000000eb8131770d410f409ac5b445 ,
-        0xfd6004210700000081be477822270b4a9e23a1d0bcbea65b5300750062005300 ,
-        0x53004e0000000000000097fee5ebe90cda4db015eb524bc738770700000081be ,
-        0x477822270b4a9e23a1d0bcbea65b5300750062004900440000000000000070d2 ,
-        0x132d8bee744ba2eeb974e6751e4b0700000081be477822270b4a9e23a1d0bcbe ,
-        0xa65b450049004d0042005200490044000000000000009d2621ca213889458284 ,
-        0x9adae2322dc00700000081be477822270b4a9e23a1d0bcbea65b530075006200 ,
-        0x470072006f007500700049004400000000000000ff589af834721a4a82d9a743 ,
+        0x6200530074006100740075007300000000000000ff589af834721a4a82d9a743 ,
         0x82b72c0a0700000081be477822270b4a9e23a1d0bcbea65b5300750062004300 ,
-        0x6c006100730073004b0065007900000000000000e9e1f9930a8b24418717e7e5 ,
-        0xec7cd1a80700000081be477822270b4a9e23a1d0bcbea65b5300750062005f00 ,
-        0x4c0055004e0061006d006500000000000000e5b83e37288d564a92e747b4ed74 ,
-        0x5f670700000081be477822270b4a9e23a1d0bcbea65b44006100740065004300 ,
-        0x7200650061007400650064000000000000004d6e3b8bcf721f43ac1ff9e60f8a ,
-        0xb00c0700000081be477822270b4a9e23a1d0bcbea65b44006100740065005500 ,
-        0x7000640061007400650064000000000000008ea25ba97f12ad469c62e8e35a7a ,
-        0xa2630700000081be477822270b4a9e23a1d0bcbea65b44006100740065004400 ,
-        0x65006c006500740065006400000000000000da8eab321a44df42a0ab34361cef ,
-        0xfcf90700000081be477822270b4a9e23a1d0bcbea65b46006c00610067000000 ,
-        0x000000009562f56deac2b04496dc77c1a41bd7ca0700000099b1f645850ff94a ,
-        0xa2a1799a47c7bf18490044000000000000000000000000000000000000000000 ,
+        0x6c006100730073004b00650079000000000000007387aa6c2679154fb8fbfa3e ,
+        0x783f803f0700000081be477822270b4a9e23a1d0bcbea65b4900440000000000 ,
+        0x0000eb8131770d410f409ac5b445fd6004210700000081be477822270b4a9e23 ,
+        0xa1d0bcbea65b530075006200530053004e0000000000000097fee5ebe90cda4d ,
+        0xb015eb524bc738770700000081be477822270b4a9e23a1d0bcbea65b53007500 ,
+        0x62004900440000000000000070d2132d8bee744ba2eeb974e6751e4b07000000 ,
+        0x81be477822270b4a9e23a1d0bcbea65b450049004d0042005200490044000000 ,
+        0x000000009d2621ca2138894582849adae2322dc00700000081be477822270b4a ,
+        0x9e23a1d0bcbea65b530075006200470072006f00750070004900440000000000 ,
+        0x0000e9e1f9930a8b24418717e7e5ec7cd1a80700000081be477822270b4a9e23 ,
+        0xa1d0bcbea65b5300750062005f004c0055004e0061006d006500000000000000 ,
+        0xe5b83e37288d564a92e747b4ed745f670700000081be477822270b4a9e23a1d0 ,
+        0xbcbea65b44006100740065004300720065006100740065006400000000000000 ,
+        0x4d6e3b8bcf721f43ac1ff9e60f8ab00c0700000081be477822270b4a9e23a1d0 ,
+        0xbcbea65b44006100740065005500700064006100740065006400000000000000 ,
+        0x8ea25ba97f12ad469c62e8e35a7aa2630700000081be477822270b4a9e23a1d0 ,
+        0xbcbea65b4400610074006500440065006c006500740065006400000000000000 ,
+        0xda8eab321a44df42a0ab34361ceffcf90700000081be477822270b4a9e23a1d0 ,
+        0xbcbea65b46006c00610067000000000000000000000000000000000000000000 ,
         0x00000c000000030000000000000000000000000000000000
     End
-    RecordSource ="SELECT vw_PendingDeletions.SubSSN, vw_PendingDeletions.SubID, vw_PendingDeletion"
-        "s.EIMBRID, vw_PendingDeletions.SubStatus, vw_PendingDeletions.SubGroupID, vw_Pen"
-        "dingDeletions.SubClassKey, vw_PendingDeletions.Sub_LUName, vw_PendingDeletions.D"
-        "ateCreated, vw_PendingDeletions.DateUpdated, vw_PendingDeletions.DateDeleted, vw"
-        "_PendingDeletions.Flag FROM vw_PendingDeletions WHERE (((vw_PendingDeletions.Sub"
-        "Status)=\"GRSUB\"));"
+    RecordSource ="SELECT vw_PendingDeletions.ID, vw_PendingDeletions.SubSSN, vw_PendingDeletions.S"
+        "ubID, vw_PendingDeletions.EIMBRID, vw_PendingDeletions.SubStatus, vw_PendingDele"
+        "tions.SubGroupID, vw_PendingDeletions.SubClassKey, vw_PendingDeletions.Sub_LUNam"
+        "e, vw_PendingDeletions.DateCreated, vw_PendingDeletions.DateUpdated, vw_PendingD"
+        "eletions.DateDeleted, vw_PendingDeletions.Flag FROM vw_PendingDeletions WHERE (("
+        "(vw_PendingDeletions.SubStatus)=\"GRSUB\") AND ((vw_PendingDeletions.SubClassKey"
+        ")=\"ALLAM\"));"
     Caption ="Delete Pending Deletions"
     DatasheetFontName ="Arial"
     Begin
@@ -782,7 +783,8 @@ Private Sub btnDelete_Click()
     
     UserName = GetCurrentUserName()
     DoCmd.RunCommand acCmdSaveRecord
-    strSQL = "exec usp_UpdateDeleted" & " NULL" & ",' " & UserName & "', ''"
+    'strSQL = "exec usp_UpdateDeleted" & " NULL" & ",' " & UserName & "', ''"
+    strSQL = "exec usp_UpdateDeleted" & " NULL" & ",' " & UserName & "'"
     ExecuteSQL strSQL
     DoCmd.Requery
     Me.Refresh
@@ -810,7 +812,8 @@ Private Sub btnDeletePick_Click()
     DateDeleted = DeleteDateCalendar.Value
     sDateDeleted = CStr(Year(DateDeleted)) & "-" & IIf(Len(CStr(Month(DateDeleted))) = 1, "0" & CStr(Month(DateDeleted)), CStr(Month(DateDeleted))) & "-" & IIf(Len(CStr(Day(DateDeleted))) = 1, "0" & CStr(Day(DateDeleted)), CStr(Day(DateDeleted))) & " 00:00:00"
     sDateDeleted = "'" & sDateDeleted & "'"
-    sDateDeleted = sDateDeleted & ", '" & UserName & "', ''"
+    'sDateDeleted = sDateDeleted & ", '" & UserName & "', ''"
+    sDateDeleted = sDateDeleted & ", '" & UserName & "'"
     DoCmd.RunCommand acCmdSaveRecord
     strSQL = "exec usp_UpdateDeleted " & sDateDeleted
     ExecuteSQL strSQL
